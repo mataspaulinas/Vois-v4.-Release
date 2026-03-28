@@ -1,0 +1,678 @@
+OIS_Cafe_v2 → VOIS Migration Matrix
+Part 2: Home/Portfolio, Venue Workspace Shell, Overview, Assessment, Signals Review
+
+This is now the execution layer.
+
+For each area, I will define:
+
+what exactly exists in OIS_Cafe_v2
+what value must survive
+where it should live in VOIS
+whether it belongs to core or ontology
+whether it should be migrated now, later, or not directly
+implementation risk
+implementation tranche
+what developers must preserve
+what they must not carry over
+
+This is the level you can actually give to agents.
+
+1. HOME / PORTFOLIO
+A. Capability summary
+
+This area gives the user a cross-venue command surface.
+
+Main capabilities:
+
+portfolio dashboard
+venue cards
+aggregate stats
+venue filtering
+venue sorting
+compare selector
+comparison flow
+quick venue entry
+status pills / state indicators
+B. What value must survive
+
+The important thing is not “old homepage design.”
+
+The value is:
+
+a portfolio-wide operational heartbeat
+fast venue selection
+quick triage across multiple venues
+comparison between venues
+visible venue state without opening each venue one by one
+
+This is what makes the product feel like a platform rather than a single-site tool.
+
+C. Target home in VOIS
+
+Best future home:
+
+Owner default home, or
+Global portfolio workspace above venue level
+
+Not:
+
+inside one venue
+buried in settings
+mixed into assessment flow
+
+This is a top-level surface.
+
+D. Core vs ontology
+Core
+portfolio page shell
+venue card framework
+status/filter/sort mechanics
+compare workflow mechanics
+portfolio summary structure
+quick-entry navigation
+Ontology
+domain-specific metrics semantics
+domain-specific status wording
+domain-specific interpretation text
+recommended comparison axes, if they are industry-specific
+E. Migration decision
+
+MIGRATE / ADAPT
+
+Do not literal-copy.
+Do preserve the capability set.
+
+F. Priority
+
+Tranche 1
+
+This should come back early because it improves real live usage quickly.
+
+G. Risk
+
+Medium
+
+Not because it is dangerous technically, but because it can easily overlap with:
+
+owner dashboard
+portfolio pulse
+command center
+recent activity surfaces
+
+So it needs one clear home.
+
+H. What devs must preserve
+portfolio visibility
+quick entry into venue workspace
+comparison capability
+venue triage logic
+high signal-to-noise ratio
+I. What devs must not carry over
+old file structure
+old JS layout
+duplicate command surfaces
+fake metrics
+café-hardcoded labels in universal shell
+J. Recommended VOIS implementation shape
+
+I would implement this in VOIS as:
+
+Surface
+
+Owner Command / Portfolio
+
+Blocks inside it
+portfolio stats strip
+venue health/status cards
+quick filters
+compare action
+recent movement / recent activity
+“enter venue” action
+Future extension
+systemic alerts
+cross-venue signal trend
+portfolio-level copilot shortcut
+K. Acceptance criteria
+
+This migration is successful when:
+
+the user can see all venues in one place
+venue cards feel operational, not decorative
+filtering and sorting are useful
+comparison works meaningfully
+entering a venue feels like a shift from global to local context
+no duplicated “owner home” exists elsewhere
+2. VENUE WORKSPACE SHELL
+A. Capability summary
+
+This is the operational spine of the venue-level app.
+
+Current subnav sequence:
+
+Overview
+Assessment
+Signals
+Console
+Plan
+Report
+History
+B. What value must survive
+
+The value is not the tabs themselves.
+The value is that the workspace expresses a real operational sequence.
+
+This shell says:
+
+start with context
+assess reality
+review machine interpretation
+think and discuss
+formalize diagnosis
+execute
+preserve continuity
+
+That is one of the strongest structural achievements in OIS_Cafe_v2.
+
+C. Target home in VOIS
+
+Best future home:
+
+Manager venue shell
+with read-only/filtered owner access where appropriate
+pocket should not inherit this whole shell directly
+D. Core vs ontology
+Core
+
+Everything here is core:
+
+workspace shell
+subnav
+page ownership
+venue identity persistence
+navigation continuity
+role-aware access to tabs
+Ontology
+
+Only page labels or content hints if they vary by domain
+
+E. Migration decision
+
+MIGRATE STRONGLY
+
+This is a structural feature, not a cosmetic one.
+
+F. Priority
+
+Tranche 1
+
+This should shape the VOIS venue workspace early.
+
+G. Risk
+
+Medium
+
+The danger is collision with:
+
+newer role shells
+Today/Pocket/Owner defaults
+active plan truth
+future copilot placement
+
+So the shell must be merged thoughtfully, not reintroduced blindly.
+
+H. What devs must preserve
+logical sequence of work
+venue-local continuity
+stable venue subnav
+clear page ownership
+strong sense of “inside one venue”
+I. What devs must not carry over
+old route names by habit
+duplicate pages with overlapping purpose
+generic tabs with no operational meaning
+mixing global and local context in one surface
+J. Recommended VOIS implementation shape
+
+I would express this as:
+
+Venue shell
+Overview
+Assessment
+Signals Review
+Copilot / Console
+Plan / Execution
+Report
+History
+Role rules
+Manager: full shell
+Owner: read/overview emphasis, selected actions
+Pocket: separate shift-oriented shell, not this full nav
+K. Acceptance criteria
+
+This migration is successful when:
+
+the venue feels like a coherent workspace
+each page has a distinct purpose
+a user can move through diagnosis → execution logically
+no page feels redundant
+role differences do not break workspace coherence
+3. OVERVIEW
+A. Capability summary
+
+The venue-level situational page.
+
+Capabilities likely include:
+
+venue profile
+governance fields
+current state
+summary widgets
+recent outputs
+profile editing
+contextual awareness before deeper work
+B. What value must survive
+
+The key value is:
+
+stable orientation
+identity of the venue
+current state snapshot
+recent operational context
+not needing to guess “where am I and what is this venue right now?”
+
+Overview prevents the workspace from becoming a set of isolated tools.
+
+C. Target home in VOIS
+
+Best future home:
+
+first page inside a venue
+venue root page
+manager/owner situational anchor
+D. Core vs ontology
+Core
+venue profile shell
+governance fields
+summary widgets
+current-state overview
+recent artifact references
+overview composition
+Ontology
+domain-specific profile fields
+domain-specific summary metrics
+domain-specific language inside widgets
+E. Migration decision
+
+MIGRATE / ADAPT
+
+But keep it disciplined.
+
+F. Priority
+
+Tranche 2
+
+Useful, but slightly less urgent than shell, assessment, signals, plan.
+
+G. Risk
+
+Medium
+
+The main risk is Overview bloat.
+
+Overview pages love to become:
+
+a mini dashboard
+a mini plan page
+a mini report page
+a mini activity page
+all at once
+
+That must be prevented.
+
+H. What devs must preserve
+venue identity
+current state clarity
+governance context
+quick recent awareness
+sense of place
+I. What devs must not carry over
+page bloat
+duplicated widgets that belong elsewhere
+second source of plan/report truth
+cluttered profile forms
+J. Recommended VOIS implementation shape
+
+Inside Venue Overview:
+
+venue identity block
+governance/context block
+latest assessment/report/plan summary strip
+current status indicators
+recent activity summary
+quick actions: assess / open plan / open report
+
+That is enough.
+
+K. Acceptance criteria
+
+This migration is successful when:
+
+Overview gives fast situational awareness
+user immediately understands venue context
+page is clean and non-duplicative
+widgets point to deeper pages rather than replacing them
+4. ASSESSMENT
+A. Capability summary
+
+One of the strongest areas in the app.
+
+Capabilities include:
+
+guided intake
+stepper
+quality signal / word count
+AI-assisted intake
+saved assessment objects
+rerun/reopen posture
+structured input discipline
+B. What value must survive
+
+This page teaches the user how to create a meaningful assessment.
+
+The essential value is:
+
+guidance
+structure
+input quality awareness
+persistence
+repeatability
+trust in the starting point
+
+This is not just about submitting text.
+It is about shaping operational observation into usable evidence.
+
+C. Target home in VOIS
+
+Best future home:
+
+Manager venue workflow
+assessment as a formal page or staged flow
+owner may review outputs, but not necessarily own this workflow
+pocket should not own full assessment
+D. Core vs ontology
+Core
+intake form structure
+stepper
+word count
+quality indicators
+AI intake mechanics
+assessment persistence
+rerun/save logic
+reopen prior assessments
+draft generation initiation
+Ontology
+domain-specific intake hints
+domain language examples
+extraction hints
+domain-specific prompt framing
+signal interpretation hints
+E. Migration decision
+
+MIGRATE STRONGLY
+
+This is a must-carry capability cluster.
+
+F. Priority
+
+Tranche 1
+
+This should be restored early because the whole system depends on it.
+
+G. Risk
+
+High
+
+Touches:
+
+ontology mount/binding
+assessment persistence
+AI runtime
+signal generation
+downstream report/plan logic
+historical identity
+role permissions
+
+So it needs focused implementation, not casual rebuilding.
+
+H. What devs must preserve
+intake guidance
+structured flow
+input-quality awareness
+assessment persistence
+reopen/rerun discipline
+user sense that good input matters
+I. What devs must not carry over
+ad hoc hardcoded café prompts in core
+old request/response coupling
+loose save semantics
+black-box intake with no visibility
+architecture shortcuts from old runtime
+J. Recommended VOIS implementation shape
+
+Assessment in VOIS should have:
+
+Stage 1
+
+Context / instructions
+
+Stage 2
+
+Input / intake text
+
+Stage 3
+
+Quality review
+
+word count
+quality hints
+maybe structure reminders
+Stage 4
+
+Run assessment
+
+Stage 5
+
+Review machine interpretation before activation downstream
+
+This aligns naturally with your newer truth discipline.
+
+K. Acceptance criteria
+
+This migration is successful when:
+
+a manager can create a real assessment without guessing format
+the page improves input quality
+the resulting assessment object is saved and reloadable
+reruns do not destroy history
+the assessment clearly belongs to the bound ontology/domain
+the next step naturally leads into Signals Review
+5. SIGNALS REVIEW
+A. Capability summary
+
+This is one of the most important serious-product layers in the entire app.
+
+Capabilities include:
+
+AI-generated signal review
+accept/reject/toggle behavior
+active signal summary
+filtering
+signal history
+view mappings
+inspect affected blocks
+B. What value must survive
+
+This page is where the machine becomes accountable.
+
+Its essential value is:
+
+user can inspect machine interpretation
+user can correct it
+user can see downstream implications
+user can preserve trust before plan/report generation
+
+Without this page, the system becomes much more opaque and less credible.
+
+C. Target home in VOIS
+
+Best future home:
+
+direct stage after Assessment
+standalone Signals Review tab in the venue shell
+possibly tightly connected to draft plan/report generation gate
+D. Core vs ontology
+Core
+review shell
+signal toggle/confirm/reject mechanics
+active signals summary
+save reviewed signal state
+filter UI
+signal history page mechanics
+mapping inspection shell
+block impact shell
+Ontology
+actual signals
+categories
+relationships
+mapping logic
+block effects
+explanatory descriptions
+severity meanings
+domain grouping
+E. Migration decision
+
+MUST MIGRATE
+
+This is top-tier capability.
+
+F. Priority
+
+Tranche 1
+
+I would put this among the first serious migrations.
+
+G. Risk
+
+Very high
+
+Touches:
+
+assessment truth
+AI interpretation
+ontology
+downstream planning
+review semantics
+historical continuity
+
+This is one of the highest-risk/high-value migration zones.
+
+H. What devs must preserve
+visible machine interpretation
+human correction layer
+active signal summary
+signal filtering
+mapping visibility
+connection from signal to intervention consequences
+I. What devs must not carry over
+hidden signal mutation
+automatic downstream activation without review
+café hardcoding in universal review shell
+duplicate signal truth across assessment/plan/report
+overly technical ontology dump that ordinary managers cannot parse
+J. Recommended VOIS implementation shape
+
+I would design this page with:
+
+Primary zones
+reviewed signals list
+active summary strip
+filters
+signal detail drawer
+mapping / affected blocks drawer
+save reviewed state
+Strong rule
+
+Reviewed signals should become the authoritative interpreted signal set for that assessment run.
+
+That is where the seriousness is.
+
+K. Acceptance criteria
+
+This migration is successful when:
+
+reviewed signals are clearly distinct from raw machine proposals
+users can confirm/reject/toggle confidently
+signal-to-block implications are visible
+downstream report/plan uses the reviewed signal truth
+history preserves reviewed signal state
+nothing silently bypasses this layer
+Cross-section summary for these five areas
+Highest-value carryovers so far
+
+If I rank just these first five sections:
+
+Tier 1
+Venue Workspace Shell
+Assessment
+Signals Review
+Tier 2
+Home / Portfolio
+Overview
+
+That means if your agents have limited time, the biggest wins are:
+
+restore venue shell structure
+restore strong assessment flow
+restore signals review
+then bring back portfolio and overview
+Recommended implementation order for agents
+Tranche A
+
+Venue Workspace Shell
+
+Tranche B
+
+Assessment
+
+Tranche C
+
+Signals Review
+
+Tranche D
+
+Portfolio / Home
+
+Tranche E
+
+Overview
+
+That order preserves the main operational chain first.
+
+What comes next
+
+The next best section is:
+
+Part 3
+Console / Copilot
+Report
+Plan
+History
+Signal Map
+
+That next block is extremely important, especially:
+
+copilot
+plan
+history
+
+Those are some of the richest parts of OIS_Cafe_v2.

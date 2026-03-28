@@ -1,0 +1,779 @@
+OIS_Cafe_v2 → current VOIS v4 gap map
+
+This is now the practical bridge between:
+
+the café-era rich app
+and
+the cleaned VOIS v4 line that is moving toward Firebase Hosting + Render backend
+
+This is the important question:
+
+What already exists in VOIS v4, what is missing, what is partial, and what should be restored first?
+
+I will structure this as:
+
+current VOIS v4 status
+gap vs OIS_Cafe_v2
+restore priority
+recommended target area in VOIS
+implementation notes
+
+I am not treating VOIS v4 as empty. It already has serious foundations:
+
+FastAPI backend
+React/Vite frontend
+role shells
+auth rollout direction
+core/ontology separation direction
+deployment shaping
+active/draft workflow hardening direction
+
+So this is not “build everything from scratch.”
+This is:
+restore product depth into a cleaner architecture.
+
+0. Overall verdict
+What VOIS v4 already has strongly
+
+VOIS v4 appears strongest in:
+
+architectural direction
+backend/frontend split
+role-based app thinking
+auth modernization
+core vs ontology separation
+deployment maturity direction
+workflow truth discipline
+What OIS_Cafe_v2 still has that VOIS v4 needs back
+
+OIS_Cafe_v2 is still much richer in:
+
+venue workspace depth
+assessment UX richness
+signal review transparency
+plan execution richness
+history continuity feel
+library browsing
+help/manual structure
+knowledge/learning system
+portfolio feel
+notification/activity realism
+copilot depth and thread richness
+
+So the gap is not “capability concept.”
+The gap is:
+mature user-facing depth.
+
+1. VENUE WORKSPACE SHELL
+OIS_Cafe_v2 had
+clear venue-level subnav
+strong operational sequence:
+Overview
+Assessment
+Signals
+Console
+Plan
+Report
+History
+one clear venue-local operating context
+VOIS v4 currently seems to have
+role shell direction
+page-level architecture
+clearer structural discipline
+but less visibly mature venue-level workflow richness
+Gap
+
+VOIS v4 likely has the shell concept, but not the full café-era venue workflow confidence yet.
+
+The main missing value is:
+
+the venue shell as a lived operational journey
+not just
+a set of pages
+Restore priority
+
+Critical / first-wave
+
+Restore target in VOIS
+Manager venue shell
+owner gets filtered access
+pocket remains separate
+Exact restore goal
+
+Restore the feeling that:
+“inside a venue, the app knows the order of work.”
+
+Dev instruction
+
+Do not rebuild old nav mechanically.
+Rebuild the operational sequence.
+
+2. PORTFOLIO / HOME
+OIS_Cafe_v2 had
+portfolio dashboard
+venue cards
+status pills
+sorting/filtering
+comparison flow
+multi-venue heartbeat
+VOIS v4 currently seems to have
+platform ambition
+likely owner/portfolio direction
+but less obvious mature portfolio UX
+Gap
+
+VOIS v4 likely has the idea of a portfolio layer, but not yet the same degree of:
+
+triage
+compare
+visual venue pulse
+quick movement between venues
+Restore priority
+
+High / first-to-second wave
+
+Restore target in VOIS
+Owner Command surface
+Global portfolio workspace
+Exact restore goal
+
+Owner should be able to open the app and feel:
+
+portfolio state
+what needs attention
+where to go next
+Dev instruction
+
+This should not become a decorative dashboard.
+It should be a decision surface.
+
+3. OVERVIEW
+OIS_Cafe_v2 had
+venue profile
+governance info
+summary widgets
+recent-state awareness
+a contextual anchor inside venue workspace
+VOIS v4 currently seems to have
+stronger structural foundations
+possibly a simpler root page
+but likely not the same mature situational page
+Gap
+
+VOIS v4 likely needs a more intentional venue Overview page that answers:
+
+where am I
+what venue is this
+what is the current state
+what happened recently
+Restore priority
+
+Medium-high
+
+Restore target in VOIS
+first page inside venue shell
+Exact restore goal
+
+Restore Overview as:
+
+situational awareness
+not
+duplicate dashboard
+not
+duplicate plan
+not
+duplicate report
+4. ASSESSMENT
+OIS_Cafe_v2 had
+guided intake
+stepper
+quality guidance
+word count
+AI intake posture
+saved assessments
+reopen/rerun flow
+better user coaching around input quality
+VOIS v4 currently seems to have
+assessment architecture
+stronger truth model
+ontology binding direction
+but probably not the same rich assessment UX yet
+Gap
+
+This is a major gap.
+
+VOIS v4 likely has the assessment mechanism, but still needs to regain:
+
+guided intake UX
+quality feedback
+human coaching around better input
+clearer staged transition into reviewable results
+Restore priority
+
+Critical / first-wave
+
+Restore target in VOIS
+Manager Assessment page
+Exact restore goal
+
+Make the user feel:
+
+supported
+guided
+structurally helped
+before AI runs
+Dev instruction
+
+Do not just expose a textarea and Run button.
+Restore the pre-run coaching layer.
+
+5. SIGNALS REVIEW
+OIS_Cafe_v2 had
+reviewed signals
+toggles
+active signals summary
+filtering
+signal history
+mapping visibility
+affected blocks visibility
+VOIS v4 currently seems to have
+architecture that respects signal truth more seriously
+likely signal flow awareness
+but not yet the full mature review surface
+Gap
+
+This is one of the biggest high-value gaps.
+
+VOIS v4 needs to regain:
+
+visible post-AI signal review
+operator correction layer
+explicit reviewed-signal truth
+signal-to-action explainability
+Restore priority
+
+Critical / first-wave
+
+Restore target in VOIS
+dedicated Signals Review stage/page after Assessment
+Exact restore goal
+
+Bring back the sense that:
+“the machine proposes; the human reviews.”
+
+Dev instruction
+
+This is not optional polish.
+It is one of the main trust surfaces of the product.
+
+6. CONSOLE / COPILOT
+OIS_Cafe_v2 had
+persisted threads
+archived threads
+grouped threads
+renamed threads
+file uploads
+attachment rendering
+files tab
+proactive prompts
+signal update proposals
+conversational continuity
+VOIS v4 currently seems to have
+copilot direction
+role shells
+auth hardening direction
+likely cleaner structure
+but not yet the same visible conversational richness
+Gap
+
+Very significant.
+
+VOIS v4 likely has the conceptual copilot path, but it still needs to restore:
+
+thread richness
+archive/live lifecycle
+attachment-based reasoning
+thread organization
+visible signal update proposals
+stronger workspace continuity
+Restore priority
+
+High / second wave
+
+Restore target in VOIS
+Manager venue copilot
+Owner command copilot
+separate simpler pocket support lane
+Exact restore goal
+
+Move from:
+
+“there is an assistant”
+to
+“there is an operational conversation system”
+Dev instruction
+
+This must be a dedicated tranche.
+Do not let it arrive as a random chat UI restyle.
+
+7. PLAN
+OIS_Cafe_v2 had
+rich task structure
+expandable tasks
+sub-actions
+deliverables
+due dates
+assignments
+comments
+review request / decision
+add block
+plan hub with supporting context
+VOIS v4 currently seems to have
+stronger active/draft workflow discipline
+more serious architectural guardrails
+some plan model hardening
+but probably less user-facing execution richness than OIS_Cafe_v2
+Gap
+
+This is a major gap, but a healthy one.
+
+VOIS v4 likely has better truth discipline, while OIS_Cafe_v2 had better execution richness.
+
+What must happen is:
+
+preserve VOIS v4 truth discipline
+restore OIS_Cafe_v2 execution richness
+Restore priority
+
+Critical / second wave
+Possibly end of first wave if current Plan is still too thin.
+
+Restore target in VOIS
+Manager Execution Workspace
+Active Plan surface
+Exact restore goal
+
+Bring back:
+
+plan depth
+real task anatomy
+contextual plan hub
+while keeping:
+active vs draft safety
+Dev instruction
+
+This is one of the most important synthesis zones:
+old richness + new truth model
+
+8. REPORT
+OIS_Cafe_v2 had
+persisted report artifact
+report toolbar
+report retrieval
+report as a formal output object
+VOIS v4 currently seems to have
+report architecture direction
+cleaner artifact thinking
+but probably less mature user-facing report surface
+Gap
+
+Moderate.
+
+The concept likely exists, but it needs:
+
+stronger artifact feel
+clearer provenance
+better user-facing report page confidence
+Restore priority
+
+Medium-high
+
+Restore target in VOIS
+venue Report page
+report artifact view tied to run lineage
+Exact restore goal
+
+Report should feel like:
+
+a real saved diagnostic artifact
+not
+a generated blob on a page
+9. HISTORY
+OIS_Cafe_v2 had
+assessment history
+timeline
+signal history
+reopen prior cycles
+continuity across assessments
+VOIS v4 currently seems to have
+stronger architecture for artifact identity
+core/ontology separation awareness
+but likely less mature visible history UX
+Gap
+
+Significant.
+
+VOIS v4 likely understands history conceptually better, but needs to restore:
+
+user-facing longitudinal continuity
+timeline feel
+easy reopening of prior work
+historical signal memory
+Restore priority
+
+High / second wave
+
+Restore target in VOIS
+venue History page
+possibly owner-level historical summaries later
+Exact restore goal
+
+Make the system feel cumulative again.
+
+Dev instruction
+
+This should not just be “saved runs list.”
+It needs:
+
+continuity
+timeline
+interpretability
+10. SIGNAL MAP / HEATMAP
+OIS_Cafe_v2 had
+matrix/heatmap view
+trace
+precursors
+timeline lens
+state save/restore
+lens switching
+systemic flagging
+add block from intelligence view
+VOIS v4 currently seems to have
+ontology separation ambition
+platform-level logic
+but likely not this fully expressed map UX yet
+Gap
+
+Big capability gap.
+But not immediate launch blocker.
+
+Restore priority
+
+Later / advanced wave
+
+Restore target in VOIS
+owner intelligence layer
+advanced manager intelligence layer
+Exact restore goal
+
+Keep it as:
+
+strategic platform differentiator
+not
+early deployment dependency
+Dev instruction
+
+Protect it conceptually now.
+Restore it later when the ontology graph and plan action hooks are stable.
+
+11. LIBRARIES
+OIS_Cafe_v2 had
+Signal Library
+Block Library
+Tool Library
+drawers/details
+citation chains
+mapping visibility
+ontology browsing
+VOIS v4 currently seems to have
+ontology separation work
+runtime/mount direction
+but likely not yet the same mature browsing/reference UX
+Gap
+
+Major strategic gap.
+
+VOIS v4 is heading toward a cleaner ontology architecture, but it still needs the user-facing ontology browser richness.
+
+Restore priority
+
+High / second-to-third wave
+
+Restore target in VOIS
+Reference / Libraries area
+ontology-aware browsing shell
+Exact restore goal
+
+Bring back the ability to inspect:
+
+what the system knows
+how things connect
+why a recommendation exists
+Dev instruction
+
+This is one of the key proof points for the new core/ontology architecture.
+It should be rebuilt cleanly, not skipped.
+
+12. KNOWLEDGE BASE
+OIS_Cafe_v2 had
+bookmarks
+notes
+focus mode
+reading progress
+struggle tracking
+article scoring
+study copilot
+category/domain filtering
+VOIS v4 currently seems to have
+strategic room for knowledge/help
+but probably not the same mature learning engine yet
+Gap
+
+Two gaps actually:
+
+missing KB system richness
+missing clear split between product knowledge and domain knowledge
+Restore priority
+
+Medium / third wave
+
+Restore target in VOIS
+universal KB engine
+mounted domain content packs
+Exact restore goal
+
+Keep the learning mechanics.
+Reclassify the content.
+
+Dev instruction
+
+Do not import café content into universal help.
+Restore the system, then classify the content.
+
+13. HELP / MANUAL / TOURS
+OIS_Cafe_v2 had
+structured manual chapters
+glossary/terminology
+tours
+help index
+onboarding help
+VOIS v4 currently seems to have
+constitutions and architecture docs
+but likely weaker in-product teaching surfaces right now
+Gap
+
+High.
+
+VOIS v4 likely has more governance docs than user-facing help maturity right now.
+
+Restore priority
+
+High / second-to-third wave
+
+Restore target in VOIS
+product Help Center
+tours
+role-aware onboarding
+glossary
+Exact restore goal
+
+Make the app capable of teaching itself again.
+
+Dev instruction
+
+This is not nice-to-have.
+For a deep system like VOIS, it is one of the key adoption layers.
+
+14. SETTINGS
+OIS_Cafe_v2 had
+API key status
+engine settings
+export posture
+trust/control surfaces
+VOIS v4 currently seems to have
+more serious modern auth/runtime direction
+likely better architecture
+but maybe still incomplete user-facing settings surface
+Gap
+
+Moderate.
+
+VOIS v4 probably has the right direction, but needs a clearer trust-oriented settings experience.
+
+Restore priority
+
+Medium / later wave
+
+Restore target in VOIS
+split user settings and system/admin settings
+Exact restore goal
+
+Settings should signal seriousness, not just collect options.
+
+15. USERS / NOTIFICATIONS / ACTIVITY
+OIS_Cafe_v2 had
+workspace users
+notifications
+unread counts
+due-soon visibility
+proactive notifications
+recent activity
+shell awareness of workspace movement
+VOIS v4 currently seems to have
+live-hosting direction
+auth and role foundations
+but likely less mature workspace-liveness UI
+Gap
+
+Meaningful.
+
+This is one of the subtle maturity gaps:
+VOIS v4 may be structurally stronger, but less visibly alive.
+
+Restore priority
+
+Medium-high / second-to-third wave
+
+Restore target in VOIS
+role-aware activity and alerting layer
+topbar/shell activity system
+Exact restore goal
+
+Make the workspace feel active and timely, not static.
+
+Dev instruction
+
+Bring back:
+
+useful alerts
+recent activity
+due soon
+But avoid:
+noise
+spam
+shallow fake activity
+Direct status map: already strong / partial / missing
+
+Here is the cleanest blunt classification.
+
+Already stronger in VOIS v4 than OIS_Cafe_v2
+
+These are areas where VOIS v4 likely already leads:
+
+architectural cleanliness
+backend/frontend separation
+auth modernization direction
+core vs ontology separation direction
+deployment readiness direction
+active/draft workflow discipline
+
+So these are not donor targets from OIS_Cafe_v2.
+These are areas VOIS v4 should protect.
+
+Partially present in VOIS v4 but needs richness restored
+venue workspace shell
+assessment
+report
+plan
+history
+copilot
+overview
+settings
+
+This is where the current line likely has the concept, but not the same user-facing maturity.
+
+Weak or missing and strongly worth restoring
+signals review depth
+portfolio/home triage richness
+libraries/reference browsing
+help/manual/tours
+KB learning engine
+activity/notifications realism
+signal map intelligence surface
+
+These are the strongest donor areas.
+
+What should be restored first into the Firebase-bound app
+
+If the goal is:
+“make the live hosted app feel real and deep as fast as possible”
+
+then the best restore sequence is:
+
+Wave 1 — restore serious workflow
+Venue Workspace Shell
+Assessment
+Signals Review
+Wave 2 — restore execution and continuity
+Plan depth
+History
+Report artifact confidence
+Wave 3 — restore living intelligence
+Console/Copilot richness
+Portfolio/Home
+Notifications/Activity
+Wave 4 — restore explainability and adoption
+Libraries
+Help/Manual/Tours
+Knowledge Base system
+Wave 5 — restore advanced platform intelligence
+Signal Map
+deeper settings/admin posture
+
+That is the best path.
+
+The most important strategic insight
+
+The strongest synthesis is not:
+
+copy OIS_Cafe_v2 into VOIS v4
+
+The strongest synthesis is:
+
+keep VOIS v4 as the clean machine
+and
+restore OIS_Cafe_v2’s user-facing richness into it
+
+That is the winning combination.
+
+In plain words:
+
+VOIS v4 = cleaner bones
+OIS_Cafe_v2 = richer muscle and skin
+
+You need both.
+
+Final gap verdict by product value
+Biggest current gaps in VOIS v4
+
+If I rank by “what the live hosted app will feel most missing without”:
+
+Signals Review
+Assessment UX richness
+Plan execution richness
+Venue workspace maturity
+History continuity
+Copilot thread richness
+Libraries/reference browsing
+Help/manual/tours
+Portfolio triage layer
+Notifications/activity
+KB learning engine
+Signal map
+
+That is the honest order.
+
+Best next artifact
+
+The most useful next thing is now very clear:
+
+Implementation prompt pack for migration waves
+
+Meaning:
+
+one high-grade prompt for Wave 1
+one for Wave 2
+one for Wave 3
+etc.
+
+So your agents can execute this in disciplined slices rather than in chaos.

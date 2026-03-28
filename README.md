@@ -55,6 +55,7 @@ Mounted ontology meaning comes from packs under `ontology_packs`. The archived `
 - [VOIS Visual Reset Constitution](docs/architecture/VOIS_VISUAL_RESET_CONSTITUTION.md)
 - [Capability Inventory](docs/product/CAPABILITY_INVENTORY.md)
 - [Feature Inventory](docs/product/FEATURE_INVENTORY.md)
+- [Feature Migration Strategy](docs/product/Feature%20Migration/FEATURE_MIGRATION_STRATEGY.md)
 - [Portability and Deployment](docs/product/PORTABILITY_AND_DEPLOYMENT.md)
 - [Runbook](RUNBOOK.md)
 

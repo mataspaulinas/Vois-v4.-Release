@@ -1,0 +1,470 @@
+Good. Here is the execution pack.
+
+This is designed so you can hand it to Codex, Claude, or another disciplined agent and make them work in controlled migration waves instead of random feature grabbing.
+
+The structure is:
+
+one master rule block
+then one prompt per wave
+each wave has scope, boundaries, non-negotiables, required outputs, and acceptance gates
+
+You should treat these as developer-grade migration briefs.
+
+Master rule block for every wave
+
+Use this block at the top of every migration prompt:
+
+You are working on disciplined feature recovery and restoration into the current VOIS v4 repo.
+
+Your job is not to copy old code.
+Your job is not to recreate legacy architecture.
+Your job is to restore high-value capability from OIS_Cafe_v2 into the current VOIS v4 line while preserving:
+- current architecture
+- current auth direction
+- current core vs ontology split
+- current active/draft truth discipline
+- current deployment direction
+- current role-shell logic
+
+You must treat OIS_Cafe_v2 as a donor of product value, not architectural authority.
+
+Non-negotiable rules:
+1. Do not transplant old files or old folder structure.
+2. Do not revive old monolithic JS or old backend patterns.
+3. Do not hardcode café ontology into core.
+4. Do not create duplicate truths for plan, signals, report, or history.
+5. Do not create duplicate homes for the same action.
+6. Do not weaken role clarity.
+7. Do not bypass current auth/runtime architecture.
+8. Every restored feature must be translated into the current repo structure.
+
+Required method:
+- inspect the current VOIS v4 implementation in the relevant area
+- inspect the OIS_Cafe_v2 donor feature
+- identify the capability gap
+- design the cleanest translation
+- implement only the scoped wave
+- verify that current architecture remains intact
+- produce a precise closure report
+
+Required final output format:
+1. Current-state audit in VOIS v4
+2. Donor capability summary from OIS_Cafe_v2
+3. Gap statement
+4. Implementation plan
+5. Files changed
+6. Tests/checks run
+7. Risks and follow-up items
+8. Closure verdict
+Wave 1 prompt
+Restore serious workflow spine
+
+This is the most important wave.
+
+You are executing Wave 1 of OIS_Cafe_v2 → VOIS v4 migration.
+
+Scope:
+Restore the serious workflow spine only:
+1. Venue Workspace Shell
+2. Assessment UX richness
+3. Signals Review
+
+Goal:
+Make the current VOIS v4 app feel like a real operational workspace again at venue level, without breaking the cleaned architecture.
+
+What must be restored from OIS_Cafe_v2:
+- venue-level operational sequence
+- strong venue subnav / workspace coherence
+- guided assessment flow
+- intake quality support
+- staged assessment behavior
+- visible reviewed-signal layer
+- reviewed-signal correction flow
+- signal filtering/summary/mapping visibility at a useful level
+
+What must NOT be restored literally:
+- old route structure
+- old JS file organization
+- old API shapes unless truly compatible
+- café-hardcoded domain logic in core
+- legacy storage assumptions
+- old monolithic UI patterns
+
+Architecture constraints:
+- preserve current role shell model
+- preserve current ontology-binding direction
+- preserve current active/draft truth discipline
+- preserve current auth flow
+- preserve current repo architecture
+
+Required work order:
+STEP 1 — Audit current VOIS v4 implementation for:
+- venue shell
+- assessment page/flow
+- signals/signal review layer
+
+STEP 2 — Audit donor capability in OIS_Cafe_v2 for the same three areas.
+
+STEP 3 — Produce a gap map:
+- what already exists
+- what is partial
+- what is missing
+- what should be adapted rather than recreated
+
+STEP 4 — Implement only the minimum serious restoration needed to make these three areas feel materially stronger.
+
+STEP 5 — Verify:
+- shell coherence
+- assessment flow coherence
+- signal review coherence
+- no truth duplication
+- no ontology leakage into core
+
+Acceptance criteria:
+- venue workspace has a clear operational spine
+- assessment is no longer thin or under-guided
+- signal review is explicit and useful, not hidden
+- downstream trust is improved
+- no old architecture is revived
+
+Required final output:
+1. before/after description of venue workflow
+2. files changed
+3. what was restored
+4. what was intentionally deferred
+5. risks
+6. closure verdict
+Wave 2 prompt
+Restore execution and continuity
+You are executing Wave 2 of OIS_Cafe_v2 → VOIS v4 migration.
+
+Scope:
+Restore:
+1. Plan execution richness
+2. History continuity
+3. Report artifact confidence
+
+Goal:
+Strengthen VOIS v4 so it no longer feels like it stops at diagnosis.
+It must feel able to:
+- execute
+- remember
+- formalize
+
+Donor reference:
+Use OIS_Cafe_v2 as the donor for:
+- rich task anatomy
+- plan context hub
+- deliverables / sub-actions / due dates / comments / assignments
+- review workflow
+- history timeline / prior-cycle reopening
+- report artifact seriousness
+
+Non-negotiables:
+- preserve current active/draft truth discipline
+- preserve stored lineage
+- do not allow draft execution mutation if current VOIS rules forbid it
+- do not create report truth detached from reviewed signals
+- do not flatten rich plan features into a simplistic checklist
+
+Required work order:
+STEP 1 — Audit current VOIS v4:
+- Plan surface
+- task model
+- execution mutations
+- History page
+- Report page/artifact model
+
+STEP 2 — Audit donor richness from OIS_Cafe_v2.
+
+STEP 3 — Map the clean synthesis:
+- old execution richness
+- new truth discipline
+
+STEP 4 — Implement only scoped Wave 2 restoration.
+
+STEP 5 — Verify:
+- active plan remains authoritative
+- history remains lineage-safe
+- report remains tied to source run/signal truth
+- no duplicate execution surfaces appear
+
+Acceptance criteria:
+- plan feels materially richer
+- history feels cumulative
+- report feels like a real artifact
+- no workflow truth regressions occur
+
+Required final output:
+1. synthesis summary: old richness + new truth model
+2. files changed
+3. restored features
+4. deferred features
+5. risks
+6. closure verdict
+Wave 3 prompt
+Restore living intelligence
+You are executing Wave 3 of OIS_Cafe_v2 → VOIS v4 migration.
+
+Scope:
+Restore:
+1. Console / Copilot richness
+2. Portfolio / Home triage layer
+3. Notifications / Activity realism
+
+Goal:
+Make the live VOIS v4 app feel operationally alive, contextual, and multi-venue aware.
+
+Donor value from OIS_Cafe_v2:
+- thread continuity
+- archived/live threads
+- thread organization
+- file-aware copilot interaction
+- proactive prompts
+- signal update proposal lane
+- portfolio heartbeat
+- venue cards / comparison / triage
+- activity / due-soon / notifications / unread behavior
+
+Non-negotiables:
+- do not turn copilot into a second truth system
+- do not let notifications become noisy
+- do not create duplicate owner/global command surfaces
+- do not create cross-venue permission confusion
+- do not revive legacy storage or old thread architecture blindly
+
+Required work order:
+STEP 1 — Audit current VOIS v4 for:
+- copilot
+- owner/global shell
+- activity/notifications
+
+STEP 2 — Audit OIS_Cafe_v2 donor capabilities in those areas.
+
+STEP 3 — Decide the clean target split:
+- Owner command
+- Manager copilot
+- Pocket support lane
+- global activity surfaces
+
+STEP 4 — Implement scoped restoration.
+
+STEP 5 — Verify:
+- threads persist correctly
+- venue context is correct
+- owner/global surface is useful
+- activity and notifications are meaningful
+- no architecture truth is weakened
+
+Acceptance criteria:
+- copilot feels materially richer
+- portfolio/home feels useful and triage-oriented
+- activity gives the app real movement
+- no duplicate truth or duplicated homes appear
+
+Required final output:
+1. role-aware surface map
+2. files changed
+3. restored features
+4. deferred features
+5. risks
+6. closure verdict
+Wave 4 prompt
+Restore explainability and adoption surfaces
+You are executing Wave 4 of OIS_Cafe_v2 → VOIS v4 migration.
+
+Scope:
+Restore:
+1. Libraries (Blocks / Tools / Signals)
+2. Help / Manual / Tours / Terminology
+3. Knowledge Base system
+
+Goal:
+Make VOIS v4 explainable, teachable, and self-supporting.
+
+Donor value from OIS_Cafe_v2:
+- block/tool/signal browsing
+- citation chain visibility
+- ontology reference browsing
+- structured help/manual chapters
+- tours and terminology
+- KB engine with bookmarks, notes, progress, focus mode, study posture
+
+Critical architecture rule:
+Separate:
+- product help
+- product glossary
+- universal KB engine
+from:
+- café/domain knowledge
+- ontology-specific doctrine
+- domain-specific reference content
+
+Non-negotiables:
+- do not dump café content into core help
+- do not hardcode ontology content into universal knowledge surfaces
+- do not rebuild legacy file browsing patterns
+- do not create reference surfaces without ontology-mount awareness
+
+Required work order:
+STEP 1 — Audit current VOIS v4 for:
+- libraries/reference surfaces
+- help center / onboarding / tours
+- KB or knowledge surfaces
+
+STEP 2 — Audit donor depth in OIS_Cafe_v2.
+
+STEP 3 — Produce the split architecture:
+- core browsing shell
+- core help
+- core KB engine
+- mounted ontology/domain content
+
+STEP 4 — Implement scoped restoration.
+
+STEP 5 — Verify:
+- explainability increases
+- product help is distinct from café/domain doctrine
+- libraries work with current ontology architecture
+- KB behaves as a system, not just static pages
+
+Acceptance criteria:
+- users can browse meaningful reference surfaces
+- help/tours make the product easier to learn
+- KB engine supports deep reading behavior
+- content separation is preserved cleanly
+
+Required final output:
+1. content separation map
+2. files changed
+3. restored systems
+4. remaining domain-content classification tasks
+5. risks
+6. closure verdict
+Wave 5 prompt
+Restore advanced platform intelligence
+You are executing Wave 5 of OIS_Cafe_v2 → VOIS v4 migration.
+
+Scope:
+Restore:
+1. Signal Map / Heatmap / Intelligence Map
+2. deeper admin/settings trust surfaces
+3. advanced portfolio/systemic intelligence
+
+Goal:
+Reintroduce the most advanced and differentiating intelligence features only after the core live product is stable.
+
+Donor value from OIS_Cafe_v2:
+- signal heatmap / matrix
+- trace
+- timeline lens
+- precursor logic
+- systemic flagging
+- add-block from intelligence view
+- richer control/trust posture in settings/admin surfaces
+
+Non-negotiables:
+- do not treat visualization as decoration
+- do not reintroduce ontology confusion
+- do not let intelligence views bypass plan truth
+- do not add advanced admin clutter without clear trust value
+- do not implement this wave if prior waves are still unstable
+
+Required work order:
+STEP 1 — Audit current VOIS v4 maturity and confirm preconditions.
+STEP 2 — Audit donor advanced intelligence features.
+STEP 3 — Define the clean target:
+- owner intelligence surface
+- advanced manager analysis surface
+- system-trust settings/admin surface
+
+STEP 4 — Implement only if prior workflow, history, and ontology seams are stable.
+
+STEP 5 — Verify:
+- intelligence view is grounded
+- action handoff is safe
+- settings/admin surfaces add real trust
+- no advanced feature undermines the simpler workflow surfaces
+
+Acceptance criteria:
+- advanced intelligence reveals real patterns
+- map views are explainable and stable
+- actions from map/intelligence remain safe
+- settings/admin surfaces feel serious, not bloated
+
+Required final output:
+1. readiness confirmation
+2. files changed
+3. restored intelligence features
+4. deferred intelligence features
+5. risks
+6. closure verdict
+One-shot audit prompt before any wave
+
+Use this if you want the agent to inspect the current repo before starting a wave.
+
+You are preparing a migration wave from OIS_Cafe_v2 into current VOIS v4.
+
+Before implementing anything, audit the current VOIS v4 repo in the scoped area and produce:
+
+1. current implementation summary
+2. donor capability summary from OIS_Cafe_v2
+3. capability gap list
+4. what should be preserved from current VOIS v4
+5. what should be restored from donor app
+6. what must not be carried over
+7. implementation proposal
+8. risk level
+9. recommended tranche verdict
+
+Do not implement yet.
+This is an audit and migration design pass only.
+Closure prompt after each wave
+
+Use this after implementation so the agent finishes like an adult instead of stopping mid-air.
+
+You have completed a scoped migration wave.
+
+Now produce a strict closure report.
+
+Required format:
+1. Wave name
+2. Scope completed
+3. Current-state before
+4. Donor value restored
+5. Files changed
+6. Architecture protections preserved
+7. Tests/checks run
+8. Remaining issues
+9. Deferred follow-ups
+10. Final verdict:
+- CLOSED
+- IMPLEMENTED BUT NOT STABILIZED
+- PARTIAL
+- BLOCKED
+
+Be honest.
+Do not overstate completeness.
+My recommendation for actual execution order
+
+Do not give all waves at once.
+
+Run them like this:
+
+Wave 1
+verify
+Wave 2
+verify
+Wave 3
+verify
+Wave 4
+verify
+Wave 5
+
+That is the only sane order.
+
+The most important instruction to give every agent
+
+If you want one extra line to append to every prompt, use this:
+
+Extra instruction: preserve VOIS v4 as the clean machine, and use OIS_Cafe_v2 only as a donor of product richness, never as an architectural source of truth.

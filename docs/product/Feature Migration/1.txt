@@ -1,0 +1,879 @@
+I’m isolating OIS_Cafe_v2 specifically and mapping it page-by-page and feature-by-feature, so we can separate actual product value from legacy implementation noise.
+
+Thought for 2m 47s
+
+Yes. I mapped OIS_Cafe_v2 as its own product line, and it is rich.
+
+The app is not just “assessment + report.” It is a full café-era operating workspace with clear product areas:
+
+portfolio/home
+venue workspace
+assessment
+signals review
+overview
+console/copilot
+report
+plan
+history
+libraries
+signal intelligence map
+knowledge base
+help
+settings
+notifications/workspace shell
+
+The main frontend is under 06_app/static/, with specialized files like app-home.js, app-portfolio.js, app-kb.js, app-sigmap.js, app-shell.js, and one very large app.js. The backend in 06_app/app.py exposes a broad API surface for auth, AI intake, chat threads, projects, plans, reports, KB, ontology, tools, settings, notifications, templates, search, signal history, and signal map endpoints. So this is a real product line, not a prototype.
+
+Top-level app map
+
+From the UI structure and API surface, the product is organized into two big layers:
+
+1. Portfolio layer
+
+This is the “home / all venues” level.
+
+Main surfaces:
+
+Home / Portfolio
+Venue cards
+Compare venues
+Portfolio stats
+Activity / notifications
+Signal Map at portfolio level
+2. Venue workspace layer
+
+This is the “inside one venue” level.
+
+Main surfaces:
+
+Overview
+Assessment
+Signals
+Console
+Report
+Plan
+History
+
+That split is good and still very relevant to VOIS.
+
+Deep feature map by page / area
+A. Home / Portfolio
+
+This area is driven mainly by app-home.js and app-portfolio.js.
+
+Core functions I found include:
+
+showHomepage
+renderPortfolioDashboard
+renderHomepage
+loadHomepageAsync
+showCompareSelector
+runVenueComparison
+renderDashStats
+renderStatusPills
+sortVenueCards
+renderVenueCards
+filterVenues
+showVenueSelector
+What this page does
+
+This is not a simple landing page. It acts as a portfolio command surface.
+
+It includes:
+
+venue portfolio overview
+summary stats
+filtering by status
+sorting
+venue cards
+venue comparison flow
+active/archived framing
+quick selection into a venue workspace
+Product value
+
+This page gives the operator a sense of:
+
+what exists
+what is active
+what needs attention
+where to go next
+Migration value
+
+Very high.
+
+This is one of the strongest things worth carrying into the Firebase-bound VOIS line because it creates a real cross-venue control surface rather than a single-workspace tool.
+
+Migration caution
+
+Do not copy the page literally.
+The value to preserve is:
+
+portfolio heartbeat
+venue selection logic
+compare capability
+quick triage posture
+B. Venue Workspace Shell
+
+This is the heart of the app.
+
+The venue subnav includes:
+
+Overview
+Assessment
+Signals
+Console
+Plan
+Report
+History
+
+That is a strong operational sequence.
+
+What this means
+
+The workspace is not organized as random pages. It reflects a logic:
+
+understand venue
+assess it
+review signals
+reason in console/copilot
+generate report
+create plan
+inspect history
+
+That sequence is strategically very strong.
+
+Migration value
+
+Extremely high.
+
+This is one of the best structural pieces in the app.
+
+Migration caution
+
+This must be translated into the current role/shell model, not pasted back as old route structure.
+
+C. Overview page
+
+The Overview view appears to be the venue anchor page. It also seems to host plan/report widgets and broader venue context.
+
+Relevant functions include:
+
+renderOverview
+renderOverviewPlanWidget
+openVenueProfileEditor
+saveVenueProfile
+saveVenueGovernanceFields
+refreshCurrentVenueData
+What this page likely includes
+
+From the IDs, APIs, and surrounding logic, Overview appears to contain:
+
+venue profile summary
+core venue metadata
+governance fields
+current state summary
+recent assessment/report/plan signals
+quick operational widgets
+overview content block
+Product value
+
+This is the venue “situational awareness” page.
+
+It likely answers:
+
+what venue is this
+what is its current state
+what has been done recently
+what is the latest plan/report posture
+Migration value
+
+High.
+
+Migration caution
+
+Overview should stay a situational page, not become a second Today/Plan truth.
+
+D. Assessment page
+
+The Assessment surface is one of the strongest parts of this line.
+
+Relevant features/functions:
+
+renderIntakeGuidance
+updateIntakeStepper
+updateIntakeWordCount
+updateInputQuality
+/api/ai-intake
+/api/run
+/api/project/<slug>/assessment
+/api/project/<slug>/assessment/<filename>
+What the Assessment page does
+
+It is not just a textbox and submit button.
+
+It includes:
+
+guided intake
+quality signals for user input
+stepper / structured input posture
+AI-assisted intake
+saved assessment persistence
+assessment history linkage
+Product value
+
+This page teaches the operator how to produce a usable assessment, rather than assuming they already know how.
+
+That is very important.
+
+Migration value
+
+Extremely high.
+
+Best value to preserve
+intake guidance
+input quality indicators
+structured intake flow
+persisted assessment objects
+rerun/save discipline
+Migration caution
+
+This must align with your current draft/active semantics and ontology-binding model.
+
+E. Signals Review page
+
+This is a critical operational layer between intake and plan/report.
+
+Relevant features/functions:
+
+toggleSignal
+renderActiveSignalsSummary
+renderSignalFilterChips
+toggleActiveFilter
+saveSignals
+renderAiSignalReview
+/api/project/<slug>/signal-history
+/api/signal/<signal_id>/mappings
+/api/signal/<signal_id>/affected-blocks
+What this page does
+
+It seems to provide:
+
+signal review after AI intake
+accept/reject/toggle posture
+active signal summary
+filtering by type/category/severity
+mapping visibility into blocks / ontology logic
+Product value
+
+This page is the “trust correction” layer.
+
+It lets the user inspect what the machine thinks before it becomes downstream action.
+
+Migration value
+
+Extremely high.
+
+This is one of the most important serious-product capabilities in the whole archive.
+
+Migration caution
+
+Do not flatten this into a hidden background step.
+It should remain visible and reviewable.
+
+F. Console / Copilot page
+
+The “Console” area appears to be a central AI/workspace reasoning area.
+
+Relevant features/functions:
+
+toggleChat
+loadChatThreads
+renderChatThreadList
+renderThreadItem
+renderThreadsWithDividers
+toggleThreadGroup
+toggleThreadSelectMode
+toggleArchivedView
+loadArchivedThreads
+openThreadCrossVenue
+openThread
+renderChatMessages
+renderMessageAttachment
+renderChatFilesTab
+startRenameThread
+renderSignalUpdateBar
+applySignalUpdate
+
+Backend routes include:
+
+/api/chat/threads
+/api/chat/threads/all
+/api/chat/thread/<thread_id>
+/api/chat/thread/<thread_id>/message
+/api/chat/upload
+/api/chat/uploads/...
+/api/copilot/proactive
+What this page does
+
+This is not a toy chatbot.
+
+It appears to support:
+
+persisted threads
+archived threads
+cross-venue thread opening
+attachments
+files tab
+thread grouping
+thread rename
+signal update proposals
+proactive assistant behavior
+Product value
+
+Massive.
+
+This is one of the strongest feature clusters in the whole app line.
+
+Migration value
+
+Extremely high.
+
+Migration caution
+
+High risk.
+This touches:
+
+auth
+storage
+role context
+venue context
+active/draft truth
+file access
+ontology grounding
+
+This should be migrated as a dedicated tranche.
+
+G. Report page
+
+Relevant features/functions:
+
+showReportToolbar
+saveReportHTML
+/api/report/<filename>
+What the report layer appears to include
+saved report artifact
+toolbar actions
+per-venue report rendering
+direct report persistence
+
+Likely connected to assessment and plan.
+
+Product value
+
+The report is the formal decision artifact, not just a screen.
+
+Migration value
+
+High.
+
+Best value to preserve
+saved report artifact
+export/save behavior
+relationship between report and plan
+report as persistent truth object
+Migration caution
+
+Needs alignment with new report spine and trust artifacts.
+
+H. Plan page
+
+The Plan layer is one of the deepest and most operationally valuable parts.
+
+Relevant features/functions:
+
+loadPlan
+updatePlanBadge
+renderEmptyPlan
+renderPlan
+renderPlanHubSignals
+renderPlanHubReport
+renderPlanHubHistory
+renderPlanHubOverview
+renderPlanFocusView
+togglePlanLayer
+toggleTaskExpand
+openStatusDropdown
+toggleSubAction
+toggleDeliverable
+updateTaskDueDate
+
+Backend routes include:
+
+/api/project/<slug>/plan
+/api/project/<slug>/plan/task/<task_id>/status
+/api/project/<slug>/plan/task/<task_id>/action/<action_id>/toggle
+/api/project/<slug>/plan/task/<task_id>/deliverable/<int:idx>/toggle
+/api/project/<slug>/plan/task/<task_id>/comment
+/api/project/<slug>/plan/task/<task_id>/assign
+/api/project/<slug>/plan/task/<task_id>/due-date
+/api/project/<slug>/plan/review/request
+/api/project/<slug>/plan/review/decision
+/api/project/<slug>/plan/add-block
+What the page does
+
+This is not a flat checklist.
+
+It includes:
+
+plan hub with multiple context sources
+focus views
+expandable tasks
+sub-actions
+deliverables
+due dates
+assignment
+review workflow
+add-block behavior
+Product value
+
+Extremely high.
+
+This is one of the strongest operational systems in the archive.
+
+Migration value
+
+Extremely high.
+
+Migration caution
+
+Must be reconciled with the newer active/draft plan discipline.
+But the richness here is very worth preserving.
+
+I. History page
+
+The venue nav labels History as its own first-class tab.
+
+Relevant backend routes:
+
+/api/project/<slug>/assessments
+/api/project/<slug>/assessment/<filename>
+/api/project/<slug>/timeline
+/api/project/<slug>/signal-history
+What it appears to do
+assessment history
+timeline
+reload prior assessments
+signal evolution
+historical continuity
+Product value
+
+This is critical if the system is to feel like an operational intelligence system rather than a one-time generator.
+
+Migration value
+
+Very high.
+
+J. Knowledge Base
+
+This is one of the richest single modules in the app.
+
+app-kb.js is huge and includes features like:
+
+bookmarks
+progress tracking
+struggle tracking
+filtering by category/domain
+article scoring
+related footer
+focus mode
+highlighting
+notes panel
+note editing
+study copilot opening
+article builders for specific operational topics
+
+Relevant functions include:
+
+_kbToggleBookmark
+_kbGetProgress
+_kbToggleStruggle
+_kbFetchArticles
+_kbScoreArticle
+renderKBHome
+renderKBArticle
+_kbSetupProgressTracking
+_kbToggleFocusMode
+_kbToggleNotesPanel
+_kbOpenStudyCopilot
+
+API routes:
+
+/api/kb/articles
+/api/kb/articles/<slug>
+/api/kb/categories
+/api/kb/domains
+What this module does
+
+This is not static documentation.
+
+It behaves more like:
+
+a study system
+operational reference library
+guided learning surface
+article interaction layer
+Product value
+
+Huge.
+
+Migration value
+
+High, but split carefully.
+
+Important distinction
+
+This module mixes at least two things:
+
+product help
+café/domain knowledge
+
+Those must be separated in VOIS:
+
+product help stays universal
+café knowledge belongs to the café ontology/domain pack
+K. Help system
+
+Relevant endpoints:
+
+/api/help/tours
+/api/help/terminology
+
+Frontend files:
+
+help-system.js
+help-system.css
+What it does
+
+Likely includes:
+
+tours
+contextual help
+terminology support
+guided onboarding behavior
+Product value
+
+Strong, especially for self-use and future team adoption.
+
+Migration value
+
+High.
+
+L. Signal Map / Heatmap / Intelligence map
+
+This is another standout feature.
+
+Relevant UI:
+
+nav-heatmap
+heatmap-view
+sigmap-* ids
+
+Relevant functions:
+
+saveState
+restoreState
+switchLens
+renderPortfolio
+renderTimeline
+renderTrace
+addBlockToPlan
+flagSystemic
+openSigmapDrawer
+updateStatusBar
+renderHeatmap
+
+API routes:
+
+/api/sigmap/portfolio-matrix
+/api/sigmap/signal-timeline/<slug>
+/api/sigmap/trace
+/api/sigmap/flag-systemic
+/api/sigmap/precursors/<signal_id>
+What this module does
+
+This is not a decorative chart.
+It appears to offer:
+
+portfolio-level signal intelligence
+lens switching
+filters
+systemic issue flagging
+trace/precursor logic
+timeline view
+direct action from map into plan
+Product value
+
+Very high and strategically distinctive.
+
+Migration value
+
+Very high.
+
+Migration caution
+
+High risk, because it touches signal logic, mappings, and plan interaction.
+
+M. Libraries
+
+Three first-class library surfaces:
+
+Blocks
+Tools
+Signals
+
+UI labels:
+
+Block Library
+Tool Library
+Signal Library
+
+Relevant functions:
+
+loadBlockLibrary
+renderBlockLibrary
+openBlockDrawer
+renderBlockDetail
+renderCitationChain
+loadToolLibrary
+renderToolLibrary
+openToolDrawer
+renderToolDrawer
+loadSignalLibrary
+renderSignalLibrary
+openSignalDrawer
+renderSignalDrawer
+
+Ontology and library API routes:
+
+/api/blocks
+/api/block/<block_id>
+/api/tools
+/api/tool/<tool_id>
+/api/ontology/signals
+/api/ontology/failure-modes
+/api/ontology/response-patterns
+/api/ontology/blocks
+/api/ontology/modules
+mapping endpoints
+What these pages do
+
+These are ontology/library browsing surfaces with filters, drawers, mapping visibility, and citation chains.
+
+Product value
+
+Very high for internal operator depth and explainability.
+
+Migration value
+
+Very high.
+
+Migration caution
+
+These must align with the newer core/ontology separation work.
+
+N. Settings
+
+Relevant functions:
+
+renderSettings
+saveEngineSetting
+
+Relevant routes:
+
+/api/settings/api-key-status
+/api/settings/api-key
+/api/settings/engine
+/api/settings/export
+What this page does
+
+Settings is more than cosmetic.
+It appears to manage:
+
+API key posture
+engine behavior
+export settings
+Product value
+
+Moderate to high.
+
+Migration value
+
+Good, but not first priority unless needed for live staging.
+
+O. Workspace shell / notifications / users
+
+app-shell.js contains:
+
+workspace user loading
+notifications center
+unread count
+venue dropdown behavior
+topbar label updates
+workspace shell state
+
+Relevant routes:
+
+/api/workspace/users
+/api/notifications
+/api/notifications-clear
+/api/notifications/<id>/status
+/api/activity/recent
+/api/tasks/due-soon
+/api/notifications/proactive
+What this gives the app
+
+A sense of live workspace behavior:
+
+users
+shared space
+topbar switching
+notification center
+activity awareness
+Migration value
+
+High for realism and seriousness.
+
+Functional categories across the whole app
+
+If I classify OIS_Cafe_v2 by product category, it looks like this:
+
+1. Workspace & navigation
+portfolio shell
+venue workspace shell
+venue subnav
+topbar venue switching
+notifications
+command palette
+sidebar
+drawers/panels
+2. Diagnostic workflow
+guided intake
+AI intake
+signal review
+assessment persistence
+history
+report generation
+3. Execution workflow
+plan hub
+tasks
+sub-actions
+deliverables
+due dates
+assignment
+review workflow
+add block
+4. Intelligence & explainability
+signal map
+signal mappings
+affected blocks
+ontology browsing
+citation chains
+trace/timeline/precursors
+5. Support intelligence
+copilot threads
+archived threads
+attachments
+proactive prompts
+files tab
+signal update bar
+6. Learning & guidance
+KB
+product help
+tours
+terminology
+focus mode
+notes/highlights
+7. Workspace administration
+settings
+engine settings
+export posture
+workspace users
+notifications
+Strongest migration candidates from this app line
+
+If we stay strictly inside OIS_Cafe_v2, the most valuable migration clusters are:
+
+Highest priority
+venue workspace structure
+assessment + signal review sequence
+plan depth
+copilot thread system
+signal map
+libraries
+history continuity
+Second priority
+KB/help split and redesign
+portfolio dashboard
+workspace notifications
+settings trust surfaces
+Lower priority
+older shell visuals
+legacy auth flows
+old styling system
+implementation-specific local storage tricks
+What not to copy literally
+
+Do not copy literally:
+
+the old monolithic app.js
+the old route structure
+old café-specific assumptions in universal surfaces
+old styling tokens/system
+old storage patterns
+old auth posture
+
+The value is in:
+
+the product surfaces
+the sequence
+the richness
+the user learning and trust model
+
+Not in the code form.
+
+Best next move
+
+The best next artifact is:
+
+OIS_Cafe_v2 → VOIS Feature Migration Matrix
+
+Broken into:
+
+Portfolio/Home
+Venue Workspace Shell
+Overview
+Assessment
+Signals Review
+Console/Copilot
+Report
+Plan
+History
+Signal Map
+Libraries
+Knowledge Base
+Help
+Settings
+Notifications / Workspace
+
+And for each:
+
+capability
+exact source area
+value
+migrate / adapt / defer / reject
+target home in VOIS
+core vs ontology
+risk
+tranche
+
+That would turn this from analysis into an actual migration plan.

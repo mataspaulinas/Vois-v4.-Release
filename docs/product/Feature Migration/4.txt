@@ -1,0 +1,875 @@
+OIS_Cafe_v2 → VOIS Migration Matrix
+Part 4: Libraries, Knowledge Base, Help/Manual/Tours, Settings, Users/Notifications/Activity
+
+This block contains much of the app’s hidden maturity.
+
+It is easy to underestimate these areas because they are not the core diagnostic pipeline. But in reality, they are what make the product feel:
+
+explainable
+teachable
+trustworthy
+operationally alive
+sticky over time
+
+If Parts 2 and 3 gave you:
+
+workflow
+intelligence
+execution
+
+then Part 4 gives you:
+
+depth
+learning
+confidence
+workspace realism
+11. LIBRARIES — BLOCKS / TOOLS / SIGNALS
+A. Capability summary
+
+This is the structured reference and explainability layer of the system.
+
+The app includes dedicated library surfaces for:
+
+Blocks
+Tools
+Signals
+
+And likely also browsable ontology-related entities such as:
+
+failure modes
+response patterns
+modules
+mappings
+citation chains
+
+This is not passive documentation. It is an active operational reference layer.
+
+B. What value must survive
+
+The value is:
+
+being able to inspect what the system is made of
+seeing how signals relate to interventions
+understanding the building blocks behind recommendations
+exposing ontology and action logic in a user-readable way
+giving operators confidence that the system is not opaque magic
+
+This is major product value.
+
+C. User jobs this solves
+
+It helps the user:
+
+inspect a block in detail
+understand what a tool is
+browse operational signals
+understand system reasoning
+explore ontology without needing raw files
+inspect citation chains and relationships
+learn how interventions are constructed
+D. Feature inventory
+
+Observed capabilities include:
+
+block library
+tool library
+signal library
+drawers
+detail views
+citation chain rendering
+ontology browsing endpoints
+mapping-aware detail pages or drawers
+likely filter/search behaviors
+
+This creates a “reference brain” inside the product.
+
+E. Product value
+
+Very high.
+
+This is one of the most important trust-building surfaces in the app.
+
+It does two things at once:
+
+helps the user understand the machine
+helps the operator work more intelligently
+F. Core vs ontology
+Core
+library shell
+drawers/detail components
+filter/search mechanics
+citation-chain presentation shell
+reference navigation
+cross-linking patterns between entities
+Ontology
+blocks
+tools
+signals
+failure modes
+response patterns
+modules
+mapping content
+explanatory text
+citations/relationships
+Split rule
+
+The browsing framework is core.
+The content being browsed is ontology-owned.
+
+G. Migration decision
+
+MUST MIGRATE CONCEPTUALLY
+
+This is too important to lose.
+
+It may not return all at once visually, but VOIS absolutely needs:
+
+ontology browsing
+block/tool/signal inspection
+explainability surfaces
+H. Priority
+
+Tranche 2 to 3
+
+Not earlier than shell + assessment + signal review + plan basics, but it should come back relatively soon.
+
+I. Risk
+
+High
+
+Why:
+
+your new architecture is separating core from ontology
+this area lives exactly on that boundary
+if migrated badly, it can blur what belongs where
+if migrated well, it becomes one of the strongest proof points of the platform
+J. What devs must preserve
+block inspection depth
+tool inspection depth
+signal inspection depth
+mapping visibility
+citation chains
+explainability value
+ability to browse knowledge in product
+K. What devs must not carry over
+hardcoded café content in core
+raw old file assumptions
+ontology browsing tied to legacy folder structure
+drawers that expose too much internal noise without product framing
+L. Recommended VOIS implementation shape
+
+I would structure this as:
+
+Universal reference shell
+Signal Library
+Block Library
+Tool Library
+Detail surfaces
+drawer or side panel
+relation panel
+citation chain panel
+“used by / affects / related to” sections
+Rule
+
+The same shell should support different ontology packs cleanly.
+
+M. Acceptance criteria
+
+This migration is successful when:
+
+users can browse block/tool/signal knowledge from the app
+the source of recommendations becomes more transparent
+ontology content stays mounted, not hardcoded
+the library is useful for real work, not just internal curiosity
+the system feels more explainable after migration, not less
+12. KNOWLEDGE BASE
+A. Capability summary
+
+This is one of the richest surfaces in OIS_Cafe_v2.
+
+It behaves less like “documentation” and more like:
+
+a study system
+operational reading environment
+guided knowledge surface
+reflective learning tool
+
+It includes:
+
+bookmarks
+progress tracking
+struggle tracking
+scoring
+focus mode
+notes
+highlighting-like behaviors
+category and domain filters
+article rendering
+study copilot entry
+
+This is much more mature than a standard KB.
+
+B. What value must survive
+
+The value is not just “articles.”
+
+The value is:
+
+structured learning inside the product
+progress over time
+a way to internalize operational doctrine
+personalized reading state
+knowledge connected to action, not just stored
+
+This is a huge advantage for:
+
+self-training
+team onboarding
+partner training
+operator discipline
+C. User jobs this solves
+
+It helps the user:
+
+learn operational concepts
+revisit important articles
+track reading progress
+mark where they struggle
+take notes
+focus on learning
+use AI help while studying
+move from operational problem to deeper understanding
+D. Feature inventory
+
+Observed:
+
+bookmarks
+progress tracking
+struggle toggle
+score article
+KB home
+article pages
+focus mode
+notes panel
+note editing
+study copilot
+category filters
+domain filters
+related-footer article linkage
+
+This is a real knowledge product, not an appendix.
+
+E. Product value
+
+Huge.
+
+But this area must be separated carefully.
+
+F. Core vs ontology
+Core
+KB engine/shell
+reading interface
+bookmarks
+progress tracking
+note-taking
+focus mode
+scoring/struggle mechanics
+study copilot shell
+category browsing shell
+Ontology/domain
+café-specific articles
+local regulatory articles
+café operational doctrine
+domain-specific educational content
+domain vocabulary and examples
+Split rule
+
+The KB system is core.
+Most of the current content in OIS_Cafe_v2 is ontology/domain content.
+
+That distinction is critical.
+
+G. Migration decision
+
+MIGRATE THE SYSTEM, SPLIT THE CONTENT
+
+This is one of the clearest split cases in the whole archive.
+
+H. Priority
+
+Tranche 3
+
+The KB engine is important, but not as urgent as shell, assessment, plan, history.
+
+The system should return.
+The content classification should happen carefully.
+
+I. Risk
+
+Medium to high
+
+Main risk:
+
+mixing product help with café doctrine
+burying domain knowledge into generic help
+losing the richness of reading state while simplifying too much
+J. What devs must preserve
+progress tracking
+bookmarks
+notes
+focus mode
+study posture
+article filtering
+related knowledge movement
+study-copilot entry
+K. What devs must not carry over
+all café articles into universal product KB
+local-language/domain-specific content as platform default
+content entanglement
+legacy article file assumptions
+study state coupled to old storage model
+L. Recommended VOIS implementation shape
+
+Split into two layers:
+
+1. Universal product knowledge engine
+bookmarks
+notes
+focus mode
+progress
+article shell
+filtering
+study copilot
+2. Mounted domain knowledge pack content
+café operational doctrine
+regulatory summaries
+local market insights
+domain-specific articles
+
+This is the right long-term architecture.
+
+M. Acceptance criteria
+
+This migration is successful when:
+
+KB remains an active learning system, not just static docs
+users can track reading state
+product help and domain knowledge are clearly separated
+ontology packs can contribute knowledge without polluting core
+the reading experience still feels deep and intentional
+13. HELP / MANUAL / TOURS / TERMINOLOGY
+A. Capability summary
+
+This is a mature adoption layer.
+
+It includes:
+
+structured manual chapters
+tours
+terminology
+help index
+likely changelog/help navigation
+contextual assistance assets
+
+This is much stronger than standard app help.
+
+B. What value must survive
+
+The key value is:
+
+the system teaches itself
+users can onboard properly
+terminology is stabilized
+features are explained in product context
+help is structured, not reactive only
+
+This matters a lot for VOIS because the app is deep and non-trivial.
+
+C. User jobs this solves
+
+It helps the user:
+
+learn the app
+understand product concepts
+follow guided tours
+reduce confusion
+understand terms consistently
+onboard themselves and others
+return to structured explanations later
+D. Feature inventory
+
+Observed or strongly implied:
+
+help center
+tours
+terminology/glossary
+manual chapter rendering
+dedicated help UI layer
+welcome/onboarding sequences
+chaptered documentation structure
+
+This is a strong self-service support system.
+
+E. Product value
+
+Very high.
+
+This is one of the biggest enablers of adoption and long-term usability.
+
+F. Core vs ontology
+Core
+product help center
+product manual
+tours
+app glossary
+troubleshooting/help UX
+contextual help system
+Ontology/domain
+domain-specific terminology
+domain interpretation notes
+café-specific operational manual content
+Split rule
+
+Product help belongs to core.
+Domain doctrine belongs to ontology/domain packs.
+
+G. Migration decision
+
+MIGRATE STRONGLY, WITH CONTENT SPLIT
+
+This should absolutely exist in VOIS.
+
+H. Priority
+
+Tranche 2 to 3
+
+Not before the main workflow is stable, but should come back relatively early because it amplifies usability.
+
+I. Risk
+
+Low to medium
+
+Main challenge is classification:
+
+what is product help
+what is café help
+what is glossary
+what is domain training
+J. What devs must preserve
+structured manual feel
+tours
+glossary/terminology
+contextual guidance
+chaptered help
+product self-teaching behavior
+K. What devs must not carry over
+café doctrine mixed into product help
+static dead docs disconnected from product surfaces
+manual pages that duplicate UI without adding value
+brittle legacy route structure for help
+L. Recommended VOIS implementation shape
+
+I would implement:
+
+Product Help Center
+getting started
+role-based help
+workflow explanations
+tours
+troubleshooting
+product glossary
+Separate domain help / doctrine
+mounted with ontology pack
+accessible via KB or domain reference layer
+M. Acceptance criteria
+
+This migration is successful when:
+
+a new user can onboard without outside explanation
+terminology is consistent
+tours are meaningful
+help feels integrated, not bolted on
+domain doctrine is separated from product guidance
+14. SETTINGS
+A. Capability summary
+
+Settings in OIS_Cafe_v2 are more serious than normal app settings.
+
+They include:
+
+API key posture
+engine settings
+export settings
+save behavior around core operational configuration
+
+This gives the app a sense of trust and control.
+
+B. What value must survive
+
+The important value is:
+
+visible control over key system behavior
+trust posture
+explicit configuration rather than hidden assumptions
+administrative seriousness
+
+This matters more as VOIS becomes a live hosted app with auth and deployment.
+
+C. User jobs this solves
+
+It helps the user:
+
+inspect whether provider access exists
+control engine behavior
+inspect export settings
+manage app posture
+understand system state
+D. Feature inventory
+
+Observed:
+
+settings page
+engine settings save flow
+API key status endpoint
+API key persistence endpoint
+export settings endpoint
+
+Likely acts as a trust/control layer.
+
+E. Product value
+
+Moderate to high.
+
+Not the first thing that creates magic, but very important for seriousness.
+
+F. Core vs ontology
+Core
+settings shell
+provider posture
+auth posture
+export settings
+engine behavior settings
+environment/status display
+Ontology
+
+Potentially very little, unless future packs expose pack-specific configuration
+
+G. Migration decision
+
+MIGRATE SELECTIVELY
+
+Preserve the trust/control idea, not necessarily every old setting.
+
+H. Priority
+
+Tranche 3
+
+After main workflow, history, and help are back.
+
+I. Risk
+
+Low to medium
+
+Main risk:
+
+exposing too many internals too early
+bringing back provider settings that no longer fit real hosted architecture
+conflating admin and user settings
+J. What devs must preserve
+explicit control posture
+visibility into system configuration status
+trust surfaces
+export readiness/settings if still relevant
+K. What devs must not carry over
+settings clutter
+obsolete API key model if hosted auth/runtime changed
+hidden environment assumptions
+exposing infrastructure internals without need
+L. Recommended VOIS implementation shape
+
+I would separate Settings into:
+
+User / workspace settings
+profile
+session
+role-safe controls
+System / admin settings
+auth posture
+provider posture
+export posture
+engine status/settings
+deployment-safe diagnostics
+
+This is cleaner.
+
+M. Acceptance criteria
+
+This migration is successful when:
+
+settings improve trust
+users can see meaningful system state
+irrelevant or outdated settings are not revived
+the page feels deliberate, not like a junk drawer
+15. WORKSPACE USERS / NOTIFICATIONS / ACTIVITY
+A. Capability summary
+
+This is the “living workspace” layer.
+
+It includes:
+
+users
+recent activity
+notifications
+unread counts
+notification clear/update behavior
+due-soon tasks
+proactive notification behavior
+shell awareness of live workspace state
+
+This makes the app feel active and shared.
+
+B. What value must survive
+
+The key value is:
+
+the app feels alive
+the user sees movement and urgency
+operational signals reach the user
+due items and activity feel visible
+workspace context extends beyond static pages
+
+This is subtle but powerful.
+
+C. User jobs this solves
+
+It helps the user:
+
+see what changed
+know what needs attention soon
+notice proactive system signals
+feel connected to current workspace state
+understand who is in the workspace
+D. Feature inventory
+
+Observed:
+
+workspace users endpoint
+notifications list
+clear notifications
+update notification status
+recent activity endpoint
+due-soon task endpoint
+proactive notification endpoint
+shell unread logic
+topbar state changes
+
+This is serious shell maturity.
+
+E. Product value
+
+High.
+
+This is one of those things that quietly make the app feel operational rather than static.
+
+F. Core vs ontology
+Core
+users
+notifications
+unread counts
+recent activity
+due-soon reminders
+proactive notification framework
+topbar/workspace awareness
+Ontology
+wording of domain-specific notifications
+domain-specific proactive prompts
+some event interpretation
+Split rule
+
+Notification mechanics are core.
+Domain interpretation of events can be ontology-aware.
+
+G. Migration decision
+
+MIGRATE SELECTIVELY
+
+Preserve the realism and operational alerting, but do not bring back noise.
+
+H. Priority
+
+Tranche 2 to 3
+
+Useful once the core live app exists. Not first deployment blocker, but important soon after.
+
+I. Risk
+
+Medium
+
+Main risks:
+
+notification spam
+fake activity
+shallow proactive behavior
+overlaps with copilot prompts or pocket surfaces
+activity without clear actionability
+J. What devs must preserve
+recent activity visibility
+due-soon awareness
+unread logic
+proactive but useful alerts
+sense of live workspace
+K. What devs must not carry over
+noisy notification center
+unclear or low-value reminders
+duplicated urgency surfaces
+fake “activity” with no operational consequence
+topbar clutter
+L. Recommended VOIS implementation shape
+
+I would implement:
+
+Workspace activity layer
+recent activity
+due soon
+unread notifications
+clear action destinations
+Role-aware delivery
+Owner gets summary/high-level alerts
+Manager gets workflow/action alerts
+Pocket gets shift-relevant alerts only
+
+That split is important.
+
+M. Acceptance criteria
+
+This migration is successful when:
+
+activity surfaces feel useful
+notifications point to action
+unread logic is real
+proactive behavior helps rather than distracts
+workspace feels alive but not noisy
+Cross-section summary for Part 4
+Strongest value carriers in this block
+
+If I rank these five areas:
+
+Tier 1
+Libraries
+Help / Manual / Tours
+Knowledge Base system
+Tier 2
+Users / Notifications / Activity
+Tier 3
+Settings
+
+That does not mean Settings are weak. It means the real strategic lift here is:
+
+explainability
+learning
+trust
+adoption
+
+That is where a lot of OIS_Cafe_v2 maturity lives.
+
+Overall OIS_Cafe_v2 migration ranking
+
+Now that Parts 2, 3, and 4 are mapped, the strongest migration priorities from the whole app look like this:
+
+Priority group A — must restore
+Venue Workspace Shell
+Assessment
+Signals Review
+Plan depth
+History continuity
+Priority group B — major richness restore
+Console/Copilot
+Home/Portfolio
+Libraries
+Help/Manual/Tours
+Report
+Priority group C — depth and maturity restore
+Knowledge Base engine
+Notifications/Activity
+Overview
+Settings
+Priority group D — advanced later restore
+Signal Map / Heatmap
+Best implementation order for VOIS
+
+If I were sequencing this for disciplined migration, I would do:
+
+Tranche 1
+Venue Workspace Shell
+Assessment
+Signals Review
+Tranche 2
+Plan
+History
+Report linkage basics
+Tranche 3
+Console/Copilot
+Portfolio/Home
+Notifications/Activity
+Tranche 4
+Libraries
+Help/Manual/Tours
+KB engine
+Tranche 5
+Settings hardening
+Signal Map
+advanced intelligence layers
+
+That order gives you:
+
+workflow
+execution
+interaction
+learning/explainability
+advanced intelligence
+
+Which is the right order for a live hosted product.
+
+What should come next
+
+The next useful artifact is no longer just narrative.
+
+The next thing should be one of these:
+
+Option 1
+
+Master migration table
+A compact matrix covering all 15 areas with:
+
+area
+capabilities
+target home in VOIS
+core vs ontology
+decision
+tranche
+risk
+Option 2
+
+Execution prompt pack for agents
+One prompt per area:
+
+Workspace Shell prompt
+Assessment prompt
+Signals Review prompt
+Plan prompt
+Console/Copilot prompt
+etc.
+Option 3
+
+Direct mapping against current vois-v4
+Meaning:
+
+what already exists there
+what is missing
+what should be restored first
+where it should land in the live Firebase-bound repo
+
+That third one is probably the most powerful next step, because it turns this archive scan into a live development roadmap.
+
+Proceed and I’ll do the direct:
+OIS_Cafe_v2 → current VOIS v4 gap map.

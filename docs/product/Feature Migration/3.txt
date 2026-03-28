@@ -1,0 +1,920 @@
+OIS_Cafe_v2 → VOIS Migration Matrix
+Part 3: Console/Copilot, Report, Plan, History, Signal Map
+
+This block contains some of the most strategically important capabilities in the whole app line.
+
+If Part 2 gave you the operational spine, Part 3 gives you:
+
+interactive intelligence
+formal artifacts
+execution depth
+continuity
+system-level visibility
+
+This is where the product starts feeling serious, differentiated, and hard to replace.
+
+6. CONSOLE / COPILOT
+A. Capability summary
+
+This is not a simple assistant chat.
+
+It is a multi-state, context-rich operational reasoning surface with:
+
+persisted threads
+thread groups
+archived threads
+cross-venue thread access
+attachments
+file-aware interaction
+signal update proposals
+proactive prompts
+conversation continuity
+
+From the structure, it behaves more like:
+an operational conversation workspace
+than
+a generic AI panel.
+
+B. What value must survive
+
+The most important value here is not “chat.”
+
+The value is:
+
+persistent reasoning over time
+contextual operational dialogue
+ability to attach files and discuss them
+thread continuity across venue work
+actionable assistant interventions
+signal correction proposals inside conversational flow
+workspace memory and human review
+
+This is a very major capability.
+
+C. User jobs this solves
+
+It helps the user:
+
+ask context-aware questions
+continue a diagnostic thread over time
+inspect uploaded material
+get prompted proactively
+keep discussions organized by thread
+archive old lines of inquiry
+move between venue-local and broader context
+apply AI-suggested signal changes with review
+D. Feature inventory
+
+The Console/Copilot area contains or strongly implies:
+
+Thread system
+thread list
+grouped thread rendering
+archived view
+archive loading
+rename thread
+select mode
+group toggle
+open thread
+open thread cross-venue
+Message system
+rendered chat messages
+attachment rendering
+file upload
+file listing tab
+message composition
+possibly thread-level metadata/state
+AI assistance layer
+proactive copilot prompts
+signal update bar
+apply signal update
+context-sensitive assistant behavior
+Backend support
+thread endpoints
+per-thread message endpoints
+upload endpoints
+proactive copilot endpoint
+all-thread listing
+thread detail fetch
+E. Product value
+
+Extremely high.
+
+This feature set transforms the product from:
+
+page-driven workflow only
+into
+page workflow plus ongoing operational dialogue
+
+That is a serious jump in usefulness and stickiness.
+
+F. Core vs ontology
+Core
+thread model
+message model
+archive/live state
+rename/archive/select mechanics
+file upload and attachment plumbing
+venue scoping
+cross-venue access rules
+UI shell
+signal update review lane
+proactive prompt framework
+AI interaction orchestration
+Ontology
+domain-specific grounding
+domain knowledge referenced in answers
+domain-specific interpretation logic
+domain vocabulary
+domain reasoning style
+Split rule
+
+The conversation machinery is core.
+The domain meaning inside it is ontology-grounded.
+
+G. Migration decision
+
+MIGRATE IN A DEDICATED TRANCHE
+
+This is too important to skip, but too risky to roll into casual UX work.
+
+H. Priority
+
+Tranche 2
+Not because it is less valuable, but because:
+
+the venue shell
+assessment
+signals review
+must stabilize first
+
+Once those exist, Console/Copilot becomes much more meaningful.
+
+I. Risk
+
+Very high
+
+It touches:
+
+auth
+role access
+venue scoping
+file handling
+signal review truth
+AI runtime
+history continuity
+cross-venue permissions
+proactive notifications
+
+This is one of the highest-risk areas in the archive.
+
+J. What devs must preserve
+persisted thread continuity
+archived thread behavior
+file-aware conversation
+venue-aware context
+signal update proposal lane
+proactive assistant behavior
+thread organization
+K. What devs must not carry over
+old backend wiring
+old storage shortcuts
+confusing cross-venue permissions
+chat as a second source of truth
+invisible AI side effects
+attachments without explicit auth/scoping controls
+café-specific assumptions hardcoded into core copilot flows
+L. Recommended VOIS implementation shape
+
+I would structure this in VOIS as:
+
+Manager venue copilot
+venue-scoped threads
+files tab
+proactive prompts
+signal-change proposal lane
+artifact-aware context
+Owner command copilot
+portfolio/global thread mode
+cross-venue reasoning
+system-level questioning
+Pocket
+
+Not the same full copilot.
+Pocket should more likely get:
+
+help request lane
+coaching lane
+small operational assist surface
+M. Recommended internal architecture rule
+
+Copilot must never become:
+
+a second plan editor
+a hidden task executor
+a hidden signal mutator
+a hidden report generator without trace
+
+It must remain:
+
+visible
+grounded
+reviewable
+subordinate to formal truth objects
+N. Acceptance criteria
+
+This migration is successful when:
+
+threads persist and reopen reliably
+venue context is clear and correct
+archived/live behavior is real
+attachments work within permissions
+AI suggestions do not silently mutate truth
+signal update proposals are explicitly reviewed
+owner and manager experiences differ appropriately
+copilot enriches work without becoming competing truth
+7. REPORT
+A. Capability summary
+
+The Report page is the formal artifact layer.
+
+This is where the app turns assessment + reviewed signals into:
+
+structured output
+persistent narrative
+a document-like operational result
+
+It includes saved artifact behavior and likely report toolbar actions.
+
+B. What value must survive
+
+The report is not just a view.
+
+Its essential value is:
+
+formalized diagnostic output
+saved artifact
+reviewable historical object
+bridge between diagnosis and execution
+narrative explanation of what the system sees
+
+Without this, the system feels like it only computes but does not formalize.
+
+C. User jobs this solves
+
+It helps the user:
+
+understand the current diagnosis clearly
+review a structured narrative
+preserve the result of an assessment cycle
+possibly export or share in the future
+compare report evolution over time
+D. Feature inventory
+
+Observed or strongly implied:
+
+report rendering
+report toolbar
+save report HTML
+report retrieval by filename/artifact
+report persistence by venue
+likely connection to plan and assessments
+E. Product value
+
+High.
+
+This is one of the main things that makes the system feel professional rather than ephemeral.
+
+F. Core vs ontology
+Core
+report object
+artifact persistence
+report rendering shell
+toolbar
+history linkage
+report provenance
+retrieval by run/history
+Ontology
+domain language blocks
+explanatory wording
+domain framing of findings
+domain-specific report sections where appropriate
+Split rule
+
+The report engine/artifact model is core.
+The specific meaning and explanatory content is ontology-grounded.
+
+G. Migration decision
+
+MIGRATE / ALIGN
+
+The capability absolutely should survive, but it must align with the newer report spine and trust-artifact model.
+
+H. Priority
+
+Tranche 2
+
+Important, but can follow once:
+
+assessment
+signals review
+plan direction
+are stable
+I. Risk
+
+Medium
+
+Main risks:
+
+duplicate report truth
+unclear relationship to reviewed signals
+unclear relationship to active/draft plan
+loss of provenance
+report feeling detached from history
+J. What devs must preserve
+persisted report artifact
+formal narrative structure
+clear relationship to the underlying assessment cycle
+historical retrievability
+toolbar/action surface
+K. What devs must not carry over
+detached report rendering with weak provenance
+report as a free-floating HTML blob with no lineage
+domain-specific wording embedded directly in core templates
+report generation that bypasses reviewed signal truth
+L. Recommended VOIS implementation shape
+
+The report in VOIS should likely include:
+
+Primary zones
+report summary
+findings / themes
+supporting signal references
+recommended intervention framing
+provenance / trust metadata
+link to source assessment and source reviewed signals
+link to resulting plan if created
+Strong rule
+
+The report must clearly show what run / assessment / signal state it came from.
+
+M. Acceptance criteria
+
+This migration is successful when:
+
+reports are saved as real artifacts
+users can reopen them later
+report content is tied to a specific assessment/run lineage
+reviewed signal truth is visible or traceable
+report and plan relationship is understandable
+the page feels formal and trustworthy, not disposable
+8. PLAN
+A. Capability summary
+
+This is one of the strongest areas in OIS_Cafe_v2.
+
+The Plan page is not a simple task list. It is a rich execution environment with:
+
+plan loading
+empty state
+multi-context plan hub
+focus views
+task expansion
+status updates
+sub-actions
+deliverables
+comments
+due dates
+assignments
+review request / decision
+add block
+
+This is serious operational product design.
+
+B. What value must survive
+
+The core value here is:
+
+operational richness
+plans as structured execution objects
+real granularity
+human review
+contextual execution, not just checklist flattening
+
+The page makes plans feel alive and accountable.
+
+C. User jobs this solves
+
+It helps the user:
+
+understand what needs to be done
+update task state
+inspect deeper task structure
+track deliverables
+assign responsibility
+request/approve review
+connect plan with source context
+add intervention blocks
+D. Feature inventory
+
+Observed features:
+
+full plan rendering
+empty-plan handling
+plan hub sections
+plan focus view
+expand/collapse task details
+status dropdown
+sub-action toggles
+deliverable toggles
+task comments
+task assignment
+due date editing
+review request
+review decision
+add block into plan
+
+The “Plan Hub” is especially notable because it suggests the plan is not isolated. It is contextualized by:
+
+signals
+report
+history
+overview
+
+That is very strong.
+
+E. Product value
+
+Extremely high.
+
+This is one of the most important feature clusters to bring back into VOIS depth.
+
+F. Core vs ontology
+Core
+plan object
+task hierarchy
+status model
+sub-actions
+deliverables
+comments
+due dates
+assignments
+review workflow
+focus views
+hub shell
+expansion/collapse behavior
+Ontology
+block definitions
+intervention library
+block metadata
+task content derived from ontology
+some deliverable semantics
+Split rule
+
+Execution mechanics are core.
+Intervention content is ontology-derived.
+
+G. Migration decision
+
+MUST MIGRATE IN DEPTH
+
+This should not be reduced to a minimal list if you want VOIS to feel serious.
+
+H. Priority
+
+Tranche 2
+Possibly even end of Tranche 1 / beginning of Tranche 2 depending on current state of the Firebase-bound app.
+
+It is a very important operational differentiator.
+
+I. Risk
+
+Very high
+
+Touches:
+
+active/draft plan truth
+execution mutations
+review semantics
+role permissions
+block insertion
+history
+task ownership
+future mobile/pocket flows
+
+This area must align with your newer workflow discipline.
+
+J. What devs must preserve
+plan richness
+task detail depth
+sub-actions
+deliverables
+due dates
+comments
+review workflow
+contextual plan hub
+add-block capability
+K. What devs must not carry over
+old weak truth semantics
+ambiguous latest vs active plan reads
+task mutation on draft plans if that violates new discipline
+café-hardcoded blocks in core
+plan UI clutter with no hierarchy
+old JS implementation patterns
+L. Recommended VOIS implementation shape
+
+Plan should likely become:
+Manager Execution Workspace
+
+Main zones
+active plan summary
+L1/L2/L3 grouping if current architecture supports it
+task detail drawer or expandable card
+sub-actions
+deliverables
+comments
+due dates
+ownership
+review state
+linked trust context
+Supporting context panels
+linked reviewed signals
+linked report summary
+linked recent history
+Strong rule
+
+Plan mutations should only affect the active execution truth, never shadow or draft truth unless explicitly in review mode.
+
+M. Acceptance criteria
+
+This migration is successful when:
+
+plans feel operationally rich, not flattened
+task structure is preserved
+users can update meaningful task attributes
+comments, due dates, deliverables, and sub-actions all exist coherently
+review workflow is explicit
+plan context remains visible
+active/draft truth remains safe
+9. HISTORY
+A. Capability summary
+
+The History page is the continuity layer.
+
+It includes:
+
+past assessments
+historical reopening
+timeline
+signal history
+likely continuity across diagnostic cycles
+
+This is crucial to making the app feel cumulative and intelligent.
+
+B. What value must survive
+
+The value is:
+
+memory
+continuity
+longitudinal operational learning
+ability to inspect progression
+evidence that the system is not just one assessment at a time
+C. User jobs this solves
+
+It helps the user:
+
+revisit prior assessments
+inspect how things changed
+understand patterns over time
+compare past and current diagnostic posture
+preserve institutional memory
+D. Feature inventory
+
+Observed:
+
+assessments list
+historical assessment retrieval
+timeline endpoint
+signal-history endpoint
+continuity between runs
+E. Product value
+
+Very high.
+
+This is one of the features that makes the whole product credible.
+
+F. Core vs ontology
+Core
+history timeline
+retrieval UI
+artifact lineage
+comparison shell
+continuity structures
+storage and identity model
+Ontology
+signal naming
+interpretation of historical changes
+domain-specific change wording
+Split rule
+
+History is core.
+Meaning inside history is ontology-aware.
+
+G. Migration decision
+
+MIGRATE STRONGLY
+
+This should absolutely survive.
+
+H. Priority
+
+Tranche 2
+
+It is highly important, but can follow once primary workflow surfaces are stable.
+
+I. Risk
+
+Medium to high
+
+Biggest risks:
+
+historical reinterpretation when ontology binding changes
+confusion between current venue state and old run state
+weak artifact lineage
+missing comparison model
+J. What devs must preserve
+historical assessment list
+timeline
+signal evolution visibility
+continuity of artifacts
+ability to reopen prior cycles
+K. What devs must not carry over
+old filename-based assumptions as the main identity model
+shallow history with no lineage
+rendering old runs through current ontology instead of stored identity
+mixing current state and historical state carelessly
+L. Recommended VOIS implementation shape
+
+History in VOIS should have:
+
+Main views
+timeline
+assessments/runs list
+historical reports/plans linkage
+signal change view
+drill-in into a prior cycle
+Strong rule
+
+Each historical item must retain:
+
+run identity
+ontology identity
+source assessment linkage
+historical truth as it existed then
+M. Acceptance criteria
+
+This migration is successful when:
+
+old runs can be reopened clearly
+users can inspect progression over time
+signal history is visible
+history feels like institutional memory
+rebinding a venue does not rewrite old meaning
+10. SIGNAL MAP / HEATMAP / INTELLIGENCE MAP
+A. Capability summary
+
+This is a major differentiator and one of the most ambitious features in the app.
+
+Capabilities include:
+
+portfolio matrix
+signal timeline
+trace view
+heatmap rendering
+save/restore state
+lens switch
+systemic flagging
+precursor logic
+drawer/details
+add block to plan from map context
+
+This is not just visualization. It is exploratory operational intelligence.
+
+B. What value must survive
+
+The real value here is:
+
+seeing patterns the user would miss in flat lists
+understanding systemic issues
+exploring signal relationships
+moving from intelligence view to action
+making portfolio-level complexity visible
+
+This is strategically very strong.
+
+C. User jobs this solves
+
+It helps the user:
+
+inspect systemic patterns
+explore signal concentration
+understand precursor relationships
+examine timelines
+change analytical lens
+flag issues as systemic
+jump from map insight into planning action
+D. Feature inventory
+
+Observed:
+
+portfolio matrix
+timeline
+trace
+precursors
+heatmap
+lens switching
+state save/restore
+open map drawer
+status bar updates
+add block to plan
+flag systemic issue
+E. Product value
+
+Very high.
+
+Potentially one of the most category-defining features if executed well.
+
+F. Core vs ontology
+Core
+map shell
+visualization framework
+lens selection framework
+state persistence
+interaction model
+action hooks
+systemic flagging workflow
+portfolio/local toggle behavior
+Ontology
+actual signal graph semantics
+relationships
+precursor definitions
+domain labels
+category structures
+mapping content
+Split rule
+
+The visualization engine is core.
+The meaning inside the map is ontology-grounded.
+
+G. Migration decision
+
+DEFER BUT PROTECT
+
+This should definitely exist in VOIS, but I would not put it in the earliest live tranche unless the current app already has the necessary signal architecture stabilized.
+
+H. Priority
+
+Tranche 3
+
+Important and distinctive, but not first-live priority.
+
+I. Risk
+
+Very high
+
+Touches:
+
+ontology graph structure
+portfolio intelligence
+signal mappings
+plan insertion logic
+cross-venue intelligence
+historical patterns
+systems interpretation
+
+This is a high-research, high-value migration.
+
+J. What devs must preserve
+map as operational intelligence, not decoration
+lens switching
+timeline / trace / precursor logic
+ability to move from insight to action
+portfolio/systemic framing
+K. What devs must not carry over
+old rendering stack by habit
+noisy visuals with low interpretive value
+weakly grounded graph links
+action shortcuts that bypass plan truth discipline
+café-specific graph assumptions in universal core
+L. Recommended VOIS implementation shape
+
+This should likely become:
+
+Owner intelligence surface
+Advanced manager analysis surface
+not a first-launch mandatory page for every role
+Primary modules
+portfolio matrix
+venue lens
+timeline lens
+trace lens
+precursor lens
+systemic issue flagging
+action handoff into plan/block workflow
+M. Acceptance criteria
+
+This migration is successful when:
+
+the map reveals something flat lists do not
+users can switch analytical lenses meaningfully
+graph/state behavior is stable
+insights can safely inform action
+signal relationships are grounded and explainable
+the feature feels operational, not ornamental
+Cross-section summary for Part 3
+Strongest value carriers in this block
+
+If I rank these five areas just by migration importance:
+
+Tier 1
+Plan
+Console/Copilot
+History
+Tier 2
+Report
+Tier 3
+Signal Map
+
+That does not mean Signal Map is weak.
+It means it is powerful but should likely return after the core workflow is stable.
+
+Recommended implementation order for agents
+Tranche F
+
+Plan depth restoration
+
+Tranche G
+
+History continuity restoration
+
+Tranche H
+
+Console/Copilot tranche
+
+Tranche I
+
+Report artifact hardening
+
+Tranche J
+
+Signal Map / advanced intelligence tranche
+
+That order is based on:
+
+execution truth first
+continuity second
+conversational intelligence third
+advanced intelligence later
+Product strategy insight from Part 3
+
+If I step back, OIS_Cafe_v2 is strong because it is not only:
+
+diagnostic
+or generative
+or chat-driven
+
+It combines:
+
+formal artifacts
+interactive intelligence
+execution depth
+continuity
+systemic visibility
+
+That is why it still feels rich.
+
+The migration challenge is to recover that richness without reviving legacy architecture.
+
+What comes next
+
+The next logical section is:
+
+Part 4
+Libraries: Blocks / Tools / Signals
+Knowledge Base
+Help / Manual / Tours / Terminology
+Settings
+Workspace Users / Notifications / Activity
+
+That block is extremely important because it covers:
+
+explainability
+knowledge systems
+training/adoption
+trust surfaces
+live workspace feel
+
+That is where a lot of OIS_Cafe_v2’s hidden maturity lives.
+
+Proceed and I’ll do Part 4 in the same migration-matrix depth.
