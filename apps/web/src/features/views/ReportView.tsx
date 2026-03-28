@@ -97,6 +97,23 @@ export function ReportView({
         ) : null}
       </div>
 
+      {/* Provenance lineage */}
+      {selectedEngineRun ? (
+        <div className="focus-card" style={{ fontSize: "var(--text-sm, 13px)" }}>
+          <p className="section-eyebrow">Report provenance</p>
+          <div className="dependency-list">
+            <span>Run: {formatTimestamp(selectedEngineRun.created_at)}</span>
+            <span>Load: {selectedEngineRun.load_classification}</span>
+            <span>Ontology: {selectedEngineRun.ontology_version}</span>
+            <span>{selectedEngineRun.active_signal_names.length} reviewed signals</span>
+            <span>{selectedEngineRun.plan_task_count} plan tasks</span>
+          </div>
+          <p style={{ marginTop: "var(--space-2, 8px)", opacity: 0.6 }}>
+            This report was generated from a specific assessment and reviewed signal state. The diagnostic output, plan, and trust artifacts are all anchored to this run.
+          </p>
+        </div>
+      ) : null}
+
       {currentSessionReport ? (
         <div className="diagnostic-grid">
           <div className="diagnostic-column">

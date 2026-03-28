@@ -271,7 +271,6 @@ def test_integration_events_are_tenant_scoped():
                 organization_id=other_org.id,
                 name="Hidden Venue",
                 slug="hidden-integration-venue",
-                vertical="restaurant",
                 status=VenueStatus.ACTIVE,
                 concept="Secret concept",
                 location="Elsewhere",

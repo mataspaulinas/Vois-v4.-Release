@@ -9,7 +9,6 @@ from app.models.domain import Assessment, EngineRun, OperationalPlan, Organizati
 from app.services.legacy_bridge import LegacyEngineService
 from app.services.ontology import get_ontology_repository
 from app.services.ontology_bindings import (
-    compatibility_binding_for_vertical,
     hydrate_assessment_identity,
     hydrate_engine_run_identity,
     hydrate_plan_identity,
@@ -43,7 +42,6 @@ def test_round_trip_persistence():
             organization_id=org_id,
             name="Test Venue",
             slug=f"test-venue-{venue_id[:8]}",
-            vertical="cafe",
         )
         db.add(venue)
         db.add(
@@ -56,7 +54,7 @@ def test_round_trip_persistence():
             )
         )
         db.flush()
-        ontology_id, ontology_version = compatibility_binding_for_vertical(venue.vertical)
+        ontology_id, ontology_version = ("cafe", "v1")
         set_venue_binding(
             db,
             venue,

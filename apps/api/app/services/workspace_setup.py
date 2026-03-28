@@ -120,7 +120,6 @@ def claim_owner_workspace(
             organization_id=organization.id,
             name=payload.first_venue.name,
             slug=payload.first_venue.slug,
-            vertical=payload.first_venue.vertical,
             status=VenueStatus.ACTIVE,
             concept=payload.first_venue.concept,
             location=payload.first_venue.location,

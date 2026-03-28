@@ -36,6 +36,7 @@ type AssessmentViewProps = {
   formatTimestamp: (isoTimestamp: string) => string;
   onOpenHistory: () => void;
   onOpenReport: () => void;
+  onOpenSignalsReview: () => void;
   reviewPlan: { id: string; status: string; title: string } | null;
   activePlan: { id: string; status: string; title: string } | null;
   onApprovePlan: (planId: string) => void;
@@ -69,6 +70,7 @@ export function AssessmentView({
   formatTimestamp,
   onOpenHistory,
   onOpenReport,
+  onOpenSignalsReview,
   reviewPlan,
   activePlan,
   onApprovePlan,
@@ -183,6 +185,7 @@ export function AssessmentView({
               onChange={(event) => onIntakeChange(event.target.value)}
               placeholder="Paste reviews, audit notes, consultant observations, complaints, or field reports..."
             />
+            <IntakeQualityBar text={intakeText} />
             {sampleIntakeNotes.length ? (
               <div className="sample-actions">
                 {sampleIntakeNotes.map((sample) => (
@@ -203,7 +206,14 @@ export function AssessmentView({
         <SectionCard
           eyebrow="Signal Intake"
           title="Inferred signal set"
-          description="Review each AI-detected signal. Confirm or reject before saving. Add signals manually via browse."
+          description="Review each AI-detected signal. Confirm or reject before saving. Use the dedicated Signals Review page for deeper inspection."
+          actions={
+            intakePreview ? (
+              <button className="btn btn-secondary" onClick={onOpenSignalsReview}>
+                Open full review
+              </button>
+            ) : null
+          }
         >
           {intakePreview ? (
             <div className="inference-list">
@@ -468,6 +478,39 @@ export function AssessmentView({
           </div>
         </div>
       </SectionCard>
+    </div>
+  );
+}
+
+function IntakeQualityBar({ text }: { text: string }) {
+  const wordCount = text.trim() ? text.trim().split(/\s+/).length : 0;
+  const quality =
+    wordCount === 0
+      ? { level: "empty", label: "No input yet", hint: "Paste operational evidence to begin." }
+      : wordCount < 30
+        ? { level: "thin", label: "Thin input", hint: "Add more detail. Short inputs produce weak signal detection." }
+        : wordCount < 80
+          ? { level: "minimal", label: "Minimal", hint: "Acceptable, but richer observations improve diagnostic quality." }
+          : wordCount < 200
+            ? { level: "good", label: "Good depth", hint: "Enough detail for meaningful signal extraction." }
+            : { level: "rich", label: "Rich input", hint: "Comprehensive evidence. Signal detection will be thorough." };
+
+  const barWidth = Math.min(100, Math.round((wordCount / 200) * 100));
+  const barColor =
+    quality.level === "empty" ? "var(--border, #ccc)"
+      : quality.level === "thin" ? "var(--danger, #dc2626)"
+        : quality.level === "minimal" ? "var(--warning, #f59e0b)"
+          : "var(--success, #16a34a)";
+
+  return (
+    <div style={{ marginTop: "var(--space-2, 8px)" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: "var(--text-xs, 11px)", opacity: 0.7, marginBottom: 4 }}>
+        <span>{quality.label} ({wordCount} words)</span>
+        <span>{quality.hint}</span>
+      </div>
+      <div style={{ height: 4, borderRadius: 2, background: "var(--surface-2, #f0f0f0)", overflow: "hidden" }}>
+        <div style={{ height: "100%", width: `${barWidth}%`, background: barColor, borderRadius: 2, transition: "width 0.3s ease" }} />
+      </div>
     </div>
   );
 }

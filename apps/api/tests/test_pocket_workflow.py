@@ -241,7 +241,6 @@ def test_full_pocket_employee_workflow():
                 "organization_id": org_id,
                 "name": "Other Cafe",
                 "slug": "other-cafe",
-                "vertical": "restaurant",
                 "ontology_binding": {
                     "ontology_id": "restaurant-legacy",
                     "ontology_version": "v8",

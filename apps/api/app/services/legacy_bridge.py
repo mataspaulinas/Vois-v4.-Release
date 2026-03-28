@@ -101,16 +101,36 @@ class LegacyEngineService:
 
 
 def _default_engine_mount_root() -> Path:
+    """Resolve the engine mount root for the legacy bridge.
+
+    Resolution order:
+    1. Explicit ``EXTRACTED_ENGINE_ROOT`` env var (highest precedence).
+    2. First active mountable ontology pack that has an engine_mount directory.
+    3. Raise if nothing is found.
+
+    This no longer hardcodes ``cafe``.  The legacy bridge is developer-only
+    so any active pack's engine mount is acceptable for parity testing.
+    """
     configured_root = os.getenv("EXTRACTED_ENGINE_ROOT")
     if configured_root:
         return Path(configured_root).resolve()
 
-    pack_root = ROOT_DIR / "ontology_packs" / "cafe" / "runtime" / "engine_mount"
-    if pack_root.exists():
-        return pack_root
+    # Scan ontology_packs for a pack with an engine_mount directory.
+    # Prefer "cafe" for backwards-compatibility with legacy parity test fixtures,
+    # then fall back to any other pack that has an engine mount.
+    packs_root = ROOT_DIR / "ontology_packs"
+    if packs_root.exists():
+        cafe_candidate = packs_root / "cafe" / "runtime" / "engine_mount"
+        if cafe_candidate.exists():
+            return cafe_candidate
+        for pack_dir in sorted(packs_root.iterdir()):
+            candidate = pack_dir / "runtime" / "engine_mount"
+            if candidate.exists():
+                return candidate
 
     raise RuntimeError(
-        "Compatibility engine mount not found. Expected ontology_packs/cafe/runtime/engine_mount inside the product root."
+        "No engine mount found under ontology_packs/*/runtime/engine_mount. "
+        "Set EXTRACTED_ENGINE_ROOT or ensure at least one ontology pack has a runtime engine mount."
     )
 
 

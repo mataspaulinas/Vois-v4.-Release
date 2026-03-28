@@ -122,7 +122,6 @@ def test_tenant_scoped_reads_hide_other_organization_data():
                 organization_id=other_org.id,
                 name="Hidden Venue",
                 slug="hidden-venue",
-                vertical="restaurant",
                 status=VenueStatus.ACTIVE,
                 concept="Secret concept",
                 location="Elsewhere",

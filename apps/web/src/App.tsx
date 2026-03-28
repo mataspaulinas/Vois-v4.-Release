@@ -162,6 +162,7 @@ import {
   VenueSubview,
 } from "./features/shell/types";
 import { AssessmentView } from "./features/views/AssessmentView";
+import { SignalsReviewView } from "./features/views/SignalsReviewView";
 import { ConsoleView } from "./features/views/ConsoleView";
 import { HistoryView } from "./features/views/HistoryView";
 import { KnowledgeBaseView } from "./features/views/KnowledgeBaseView";
@@ -591,6 +592,17 @@ export default function App() {
     fetchAuthSecurityPosture()
       .then((payload) => {
         setSecurityPosture(payload);
+        // Proactively surface AI unavailability for real roles so they
+        // discover it before attempting copilot interaction.
+        if (
+          activeRole &&
+          activeRole !== "developer" &&
+          !payload.ai_live_activation_ready
+        ) {
+          setCopilotIssue(
+            "Live AI is not configured. Copilot, AI intake, and report enhancement are unavailable until an AI provider is set up."
+          );
+        }
       })
       .catch((err: Error) => {
         setError(err.message);
@@ -2540,7 +2552,7 @@ export default function App() {
   return (
     <div className="ois-shell">
       <WelcomeOverlay
-        open={isDeveloperRole && !preferences.welcomeDismissed}
+        open={!preferences.welcomeDismissed}
         resumeVenueName={resumePulse?.venue_name ?? null}
         resumeReason={portfolioSummary?.resume_reason ?? null}
         portfolioNotes={portfolioSummary?.portfolio_notes ?? []}
@@ -2740,6 +2752,7 @@ export default function App() {
                         auditEntries={auditEntries}
                         formatTimestamp={formatTimestamp}
                         onOpenAssessment={() => handleSelectVenueView("assessment")}
+                        onOpenSignals={() => handleSelectVenueView("signals")}
                         onOpenReport={() => handleSelectVenueView("report")}
                         onOpenPlan={() => handleSelectVenueView("plan")}
                       />
@@ -2780,6 +2793,24 @@ export default function App() {
                           formatTimestamp={formatTimestamp}
                           onOpenHistory={() => handleSelectVenueView("history")}
                           onOpenReport={() => handleSelectVenueView("report")}
+                          onOpenSignalsReview={() => handleSelectVenueView("signals")}
+                        />
+                      )
+                    ) : null}
+
+                    {shellRoute.venueView === "signals" ? (
+                      selectedOntologyIssue ? (
+                        <OntologyConfigurationState venueName={workspaceVenue.name} message={selectedOntologyIssue} />
+                      ) : (
+                        <SignalsReviewView
+                          intakePreview={intakePreview}
+                          ontologyBundle={ontologyBundle}
+                          rejectedSignalIds={rejectedSignalIds}
+                          manuallyAddedSignalIds={manuallyAddedSignalIds}
+                          onToggleSignalRejection={handleToggleSignalRejection}
+                          onToggleManualSignal={handleToggleManualSignal}
+                          onOpenAssessment={() => handleSelectVenueView("assessment")}
+                          onOpenReport={() => handleSelectVenueView("report")}
                         />
                       )
                     ) : null}
@@ -2810,6 +2841,7 @@ export default function App() {
                         progressDetail={progressDetail}
                         savingProgress={savingProgress}
                         updatingTaskId={updatingTaskId}
+                        venueId={workspaceVenue?.id ?? null}
                         onProgressSummaryChange={setProgressSummary}
                         onProgressDetailChange={setProgressDetail}
                         onCreateProgressEntry={handleCreateProgressEntry}
@@ -3025,6 +3057,7 @@ export default function App() {
                         progressDetail={progressDetail}
                         savingProgress={savingProgress}
                         updatingTaskId={updatingTaskId}
+                        venueId={workspaceVenue?.id ?? null}
                         onProgressSummaryChange={setProgressSummary}
                         onProgressDetailChange={setProgressDetail}
                         onCreateProgressEntry={handleCreateProgressEntry}
@@ -3387,7 +3420,7 @@ function preferredThreadId(threads: CopilotThreadSummary[], activeVenueId: strin
 }
 
 function toVenueView(value: string): VenueSubview {
-  if (value === "assessment" || value === "history" || value === "plan" || value === "report" || value === "console") {
+  if (value === "assessment" || value === "signals" || value === "history" || value === "plan" || value === "report" || value === "console") {
     return value;
   }
   return "overview";

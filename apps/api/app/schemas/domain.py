@@ -29,7 +29,6 @@ class VenueCreate(BaseModel):
     organization_id: str
     name: str
     slug: str
-    vertical: str | None = None
     ontology_binding: VenueOntologyBindingWrite
     initial_manager_user_id: str | None = None
     status: VenueStatus = VenueStatus.ACTIVE
@@ -46,7 +45,6 @@ class VenueRead(BaseModel):
     organization_id: str
     name: str
     slug: str
-    vertical: str | None = None
     status: VenueStatus
     concept: str | None = None
     location: str | None = None
@@ -100,7 +98,6 @@ class OwnerSetupStateRead(BaseModel):
 class SetupVenueCreate(BaseModel):
     name: str
     slug: str
-    vertical: str | None = None
     ontology_binding: VenueOntologyBindingWrite
     concept: str | None = None
     location: str | None = None
@@ -228,6 +225,8 @@ class AssessmentHistoryItem(BaseModel):
     engine_run_id: str | None = None
     plan_load_classification: str | None = None
     plan_task_count: int = 0
+    ontology_id: str | None = None
+    ontology_version: str | None = None
 
 
 class AssessmentExecutionRequest(BaseModel):

@@ -17,6 +17,7 @@ If a migration idea conflicts with the current role model, auth posture, active/
 ## Read this first
 
 - [Feature Migration Strategy](FEATURE_MIGRATION_STRATEGY.md)
+- [Migration Report — 2026-03-29](FEATURE_MIGRATION_REPORT_2026-03-29.md)
 
 That document is the authoritative curated plan for this folder.
 

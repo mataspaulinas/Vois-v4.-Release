@@ -236,7 +236,6 @@ def _create_fixture_venue(
             "organization_id": organization_id,
             "name": venue_context.get("venue_name") or fixture["manifest"]["label"],
             "slug": fixture_id.lower(),
-            "vertical": vertical,
             "ontology_binding": {
                 "ontology_id": "cafe" if vertical == "cafe" else "restaurant-legacy",
                 "ontology_version": "v1" if vertical == "cafe" else "v8",

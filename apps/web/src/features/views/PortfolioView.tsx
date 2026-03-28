@@ -305,6 +305,22 @@ export function PortfolioView({
           </SectionCard>
         ) : null}
 
+        {bootstrap.configuration_issues.length > 0 ? (
+          <SectionCard
+            eyebrow="Configuration"
+            title="Issues requiring attention"
+            description="These issues may prevent normal venue operation until resolved."
+          >
+            <div className="thread-list">
+              {bootstrap.configuration_issues.map((issue) => (
+                <div className="history-card" key={issue} style={{ borderLeft: "3px solid var(--danger, #dc2626)" }}>
+                  <p className="history-note">{issue}</p>
+                </div>
+              ))}
+            </div>
+          </SectionCard>
+        ) : null}
+
         <SectionCard
           eyebrow="Runtime"
           title="Platform posture"
@@ -377,7 +393,7 @@ function fallbackPulse(venue: Venue) {
 }
 
 function toVenueView(value: string): VenueSubview {
-  if (value === "assessment" || value === "history" || value === "plan" || value === "report" || value === "console") {
+  if (value === "assessment" || value === "signals" || value === "history" || value === "plan" || value === "report" || value === "console") {
     return value;
   }
   return "overview";
@@ -387,6 +403,8 @@ function ctaFor(value: string) {
   switch (toVenueView(value)) {
     case "assessment":
       return "Go to assessment";
+    case "signals":
+      return "Review signals";
     case "report":
       return "Open report";
     case "plan":

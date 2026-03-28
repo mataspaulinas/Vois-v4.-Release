@@ -6,7 +6,7 @@ type MobileTabStripProps = {
   onSelectView: (view: VenueSubview) => void;
 };
 
-const mobileViews: VenueSubview[] = ["overview", "assessment", "plan", "report"];
+const mobileViews: VenueSubview[] = ["overview", "assessment", "signals", "plan", "report"];
 
 export function MobileTabStrip({ visible, activeView, onSelectView }: MobileTabStripProps) {
   if (!visible) {
@@ -21,7 +21,7 @@ export function MobileTabStrip({ visible, activeView, onSelectView }: MobileTabS
           className={`mobile-tab ${activeView === view ? "active" : ""}`}
           onClick={() => onSelectView(view)}
         >
-          {view === "assessment" ? "Intake" : titleCase(view)}
+          {view === "assessment" ? "Intake" : view === "signals" ? "Review" : titleCase(view)}
         </button>
       ))}
     </div>

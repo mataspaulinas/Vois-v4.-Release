@@ -186,7 +186,6 @@ class Venue(Base):
     organization_id: Mapped[str] = mapped_column(ForeignKey("organizations.id"), index=True)
     name: Mapped[str] = mapped_column(String(255))
     slug: Mapped[str] = mapped_column(String(255), unique=True, index=True)
-    vertical: Mapped[str | None] = mapped_column(String(64), nullable=True)
     status: Mapped[VenueStatus] = mapped_column(Enum(VenueStatus), default=VenueStatus.ACTIVE)
     concept: Mapped[str | None] = mapped_column(String(255), nullable=True)
     location: Mapped[str | None] = mapped_column(String(255), nullable=True)

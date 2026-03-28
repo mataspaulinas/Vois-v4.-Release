@@ -85,6 +85,8 @@ def list_assessments(
                 engine_run_id=engine_run.id if engine_run else None,
                 plan_load_classification=engine_run.plan_load_classification if engine_run else None,
                 plan_task_count=task_counts_by_plan.get(plan.id, 0) if plan else 0,
+                ontology_id=assessment.ontology_id,
+                ontology_version=assessment.ontology_version,
             )
         )
     return history

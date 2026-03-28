@@ -1,7 +1,7 @@
 """
 Phase 2 exit criterion: Full cafe intake → signals → assessment → report → plan → tasks journey.
 
-This test walks the complete cafe vertical cycle through the HTTP API to prove
+This test walks the complete cafe venue cycle through the HTTP API to prove
 that every layer (ontology, engine, plan, task editing) works end-to-end.
 """
 
@@ -10,7 +10,7 @@ from fastapi.testclient import TestClient
 
 def test_full_cafe_journey_intake_to_task_completion():
     """
-    Complete cafe vertical journey:
+    Complete cafe venue journey:
       1. Bootstrap + create cafe venue
       2. Load cafe ontology bundle (180 signals, 108 FMs, 55 RPs, 192 blocks)
       3. Save assessment with cafe signals
@@ -38,7 +38,6 @@ def test_full_cafe_journey_intake_to_task_completion():
                 "organization_id": org_id,
                 "name": "Journey Test Cafe",
                 "slug": "journey-test-cafe",
-                "vertical": "cafe",
                 "ontology_binding": {
                     "ontology_id": "cafe",
                     "ontology_version": "v1",
@@ -51,7 +50,7 @@ def test_full_cafe_journey_intake_to_task_completion():
         assert venue_resp.status_code == 201, venue_resp.text
         venue = venue_resp.json()
         venue_id = venue["id"]
-        assert venue["vertical"] == "cafe"
+        assert "vertical" not in venue
 
         # ── Step 2: Load cafe ontology bundle ──
         binding_resp = client.get(f"/api/v1/venues/{venue_id}/ontology-binding")

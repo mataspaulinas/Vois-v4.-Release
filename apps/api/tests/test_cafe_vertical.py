@@ -1,8 +1,8 @@
 """
-Phase 1 deferred integration test — Cafe vertical venue creation.
+Phase 1 deferred integration test — Cafe venue ontology binding.
 
-Exit criterion: POST /api/v1/venues with vertical:"cafe" creates a venue
-with cafe ontology loaded correctly and the full intake → engine cycle works.
+Exit criterion: POST /api/v1/venues with an explicit cafe ontology binding
+loads the cafe pack correctly and the full intake → engine cycle works.
 
 Deferred from Phase 1, must pass before Phase 2 workflow work begins.
 """
@@ -13,7 +13,7 @@ from fastapi.testclient import TestClient
 def test_cafe_venue_creation_and_ontology_load():
     """
     Create a cafe venue and verify the cafe ontology bundle loads correctly.
-    Covers: venue creation, vertical enum, ontology bundle integrity.
+    Covers: venue creation, explicit ontology binding, ontology bundle integrity.
     """
     from app.main import create_app
 
@@ -33,7 +33,6 @@ def test_cafe_venue_creation_and_ontology_load():
                 "organization_id": organization_id,
                 "name": "Test Cafe",
                 "slug": "test-cafe-integration",
-                "vertical": "cafe",
                 "ontology_binding": {
                     "ontology_id": "cafe",
                     "ontology_version": "v1",
@@ -45,14 +44,14 @@ def test_cafe_venue_creation_and_ontology_load():
         )
         assert create_response.status_code == 201, create_response.text
         venue = create_response.json()
-        assert venue["vertical"] == "cafe"
+        assert "vertical" not in venue
         assert venue["name"] == "Test Cafe"
         venue_id = venue["id"]
 
         # Verify venue is retrievable
         get_response = client.get(f"/api/v1/venues/{venue_id}")
         assert get_response.status_code == 200
-        assert get_response.json()["vertical"] == "cafe"
+        assert "vertical" not in get_response.json()
 
         # Load the cafe ontology bundle
         binding_response = client.get(f"/api/v1/venues/{venue_id}/ontology-binding")
@@ -92,11 +91,11 @@ def test_cafe_venue_creation_and_ontology_load():
 
 def test_cafe_venue_assessment_and_engine_cycle():
     """
-    Full cafe vertical cycle: create venue → save assessment with cafe signals →
+    Full cafe venue cycle: create venue → save assessment with cafe signals →
     run engine → verify full output including failure modes, response patterns,
     and plan tasks.
 
-    Covers: vertical-aware intake, engine failure mode scoring, response pattern
+    Covers: ontology-bound intake, engine failure mode scoring, response pattern
     scoring, and plan task generation for cafe ontology (192 blocks, 430 RP→block
     mappings).
     """
@@ -118,7 +117,6 @@ def test_cafe_venue_assessment_and_engine_cycle():
                 "organization_id": organization_id,
                 "name": "Cycle Test Cafe",
                 "slug": "cycle-test-cafe",
-                "vertical": "cafe",
                 "ontology_binding": {
                     "ontology_id": "cafe",
                     "ontology_version": "v1",

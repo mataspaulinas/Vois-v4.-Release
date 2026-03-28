@@ -27,7 +27,6 @@ from app.models.domain import (
 )
 from app.services.ontology import get_ontology_repository
 from app.services.ontology_bindings import (
-    compatibility_binding_for_vertical,
     hydrate_assessment_identity,
     hydrate_engine_run_identity,
     hydrate_plan_identity,
@@ -74,7 +73,6 @@ def import_phase0_fixture(db: Session, *, fixture_dir: Path) -> ImportedFixtureB
         organization_id=org.id,
         name=venue_name,
         slug=venue_slug,
-        vertical=_vertical_from_fixture(venue_context),
         concept=venue_context.get("type"),
         location=venue_context.get("location"),
         size_note=_stringify_if_needed(venue_context.get("team_size")),
@@ -94,7 +92,7 @@ def import_phase0_fixture(db: Session, *, fixture_dir: Path) -> ImportedFixtureB
     db.add(user)
     db.flush()
     repository = get_ontology_repository()
-    ontology_id, ontology_version = compatibility_binding_for_vertical(venue.vertical)
+    ontology_id, ontology_version = _binding_from_fixture(venue_context)
     set_venue_binding(
         db,
         venue,
@@ -300,9 +298,12 @@ def _create_import_thread(
     )
 
 
-def _vertical_from_fixture(venue_context: dict) -> str:
+def _binding_from_fixture(venue_context: dict) -> tuple[str, str]:
+    """Infer an explicit ontology binding for dev-only fixture imports."""
     venue_type = str(venue_context.get("type", "")).lower()
-    return "cafe" if "cafe" in venue_type else "restaurant"
+    if "cafe" in venue_type:
+        return ("cafe", "v1")
+    return ("restaurant-legacy", "v8")
 
 
 def _signal_state_map(fixture_input: dict) -> dict:

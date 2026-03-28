@@ -22,7 +22,7 @@ type SidebarProps = {
   portfolioSummary: PortfolioSummaryResponse | null;
 };
 
-const venueViews: VenueSubview[] = ["overview", "assessment", "history", "plan", "report", "console"];
+const venueViews: VenueSubview[] = ["overview", "assessment", "signals", "plan", "report", "history", "console"];
 const referenceViews: ReferenceView[] = ["blocks", "tools", "signals"];
 
 export function Sidebar({
@@ -73,7 +73,7 @@ export function Sidebar({
         </>
       ) : null}
 
-      {activeTopLevel === "venue" && activeVenueName ? (
+      {activeTopLevel === "venue" && activeVenueName && (authRole === "owner" || authRole === "manager" || authRole === "developer") ? (
         <div className="venue-nav">
           <div className="sidebar-section-label">{activeVenueName}</div>
           {venueViews.map((view) => (

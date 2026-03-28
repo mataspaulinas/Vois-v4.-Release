@@ -21,7 +21,16 @@ from app.services.ontology_bindings import set_venue_binding
 DEMO_PASSWORD = "ois-demo-2026"
 
 
-def ensure_seed_data(session: Session) -> None:
+def seed_dev_workspace(session: Session) -> None:
+    """Seed a developer-only demo workspace.
+
+    This is NOT called during normal boot. It is only used by:
+    - ``python -m app.scripts.seed_dev_workspace``
+    - ``tests/conftest.py`` (test fixtures)
+
+    Normal runtime boots empty-by-default. The first authenticated
+    owner claims and creates the first organization in-product.
+    """
     organization = session.scalar(select(Organization).where(Organization.slug == "ois-demo"))
     if organization is None:
         organization = Organization(
@@ -36,7 +45,6 @@ def ensure_seed_data(session: Session) -> None:
             organization_id=organization.id,
             name="Rosehip Bistro",
             slug="rosehip-bistro",
-            vertical=None,
             status=VenueStatus.ACTIVE,
             concept="Plant-forward neighborhood bistro",
             location="Vilnius",
@@ -144,6 +152,10 @@ def ensure_seed_data(session: Session) -> None:
         ),
     )
     session.commit()
+
+
+# Backwards-compatible alias used by tests and legacy callers.
+ensure_seed_data = seed_dev_workspace
 
 
 def _ensure_seed_user(

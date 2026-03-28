@@ -187,7 +187,7 @@ function parseRouteStorage(value: string): ShellRoute | undefined {
 }
 
 function isVenueSubview(value: string | undefined): value is VenueSubview {
-  return value === "overview" || value === "assessment" || value === "history" || value === "plan" || value === "report" || value === "console";
+  return value === "overview" || value === "assessment" || value === "signals" || value === "plan" || value === "report" || value === "history" || value === "console";
 }
 
 function isReferenceView(value: string | undefined): value is ReferenceView {

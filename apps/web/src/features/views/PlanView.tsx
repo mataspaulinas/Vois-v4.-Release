@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SectionCard } from "../../components/SectionCard";
-import { PlanExecutionSummary, PlanRecord, PlanTaskUpdatePayload, ProgressEntryRecord } from "../../lib/api";
+import { PlanExecutionSummary, PlanRecord, PlanTaskUpdatePayload, ProgressEntryRecord, TaskCommentRecord, fetchTaskComments, createTaskComment } from "../../lib/api";
 
 const ALL_STATUSES = ["not_started", "in_progress", "completed", "blocked", "on_hold", "deferred"];
 
@@ -14,6 +14,7 @@ type PlanViewProps = {
   progressDetail: string;
   savingProgress: boolean;
   updatingTaskId: string | null;
+  venueId: string | null;
   onProgressSummaryChange: (value: string) => void;
   onProgressDetailChange: (value: string) => void;
   onCreateProgressEntry: () => void;
@@ -40,10 +41,39 @@ export function PlanView({
   onUpdateTaskStatus,
   onUpdateTask,
   formatTimestamp,
+  venueId,
   onOpenReport,
   onOpenHistory,
 }: PlanViewProps) {
   const [expandedTaskId, setExpandedTaskId] = useState<string | null>(null);
+  const [taskComments, setTaskComments] = useState<TaskCommentRecord[]>([]);
+  const [loadingComments, setLoadingComments] = useState(false);
+  const [commentDraft, setCommentDraft] = useState("");
+  const [submittingComment, setSubmittingComment] = useState(false);
+
+  // Load comments when task is expanded
+  useEffect(() => {
+    if (!expandedTaskId) {
+      setTaskComments([]);
+      return;
+    }
+    setLoadingComments(true);
+    fetchTaskComments(expandedTaskId)
+      .then(setTaskComments)
+      .catch(() => setTaskComments([]))
+      .finally(() => setLoadingComments(false));
+  }, [expandedTaskId]);
+
+  async function handleSubmitComment() {
+    if (!expandedTaskId || !venueId || !commentDraft.trim()) return;
+    setSubmittingComment(true);
+    try {
+      const comment = await createTaskComment(expandedTaskId, venueId, commentDraft.trim());
+      setTaskComments((prev) => [...prev, comment]);
+      setCommentDraft("");
+    } catch { /* silently fail */ }
+    setSubmittingComment(false);
+  }
   const blockedTaskMap = new Map(
     (executionSummary?.blocked_tasks ?? []).map((task) => [task.task_id, task.blocking_dependency_ids])
   );
@@ -88,6 +118,37 @@ export function PlanView({
           </div>
         ) : plan ? (
           <>
+            {/* Completion progress bar */}
+            <div style={{ marginBottom: "var(--spacing-md, 16px)" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: "var(--text-sm, 13px)", marginBottom: 4 }}>
+                <span style={{ fontWeight: 600 }}>Execution progress</span>
+                <span>{Math.round(executionSummary?.completion_percentage ?? 0)}% complete</span>
+              </div>
+              <div style={{ height: 6, borderRadius: 3, background: "var(--surface-2, #f0f0f0)", overflow: "hidden" }}>
+                <div style={{
+                  height: "100%",
+                  width: `${Math.round(executionSummary?.completion_percentage ?? 0)}%`,
+                  background: (executionSummary?.completion_percentage ?? 0) >= 80 ? "var(--success, #16a34a)" : "var(--ois-coral, #3b82f6)",
+                  borderRadius: 3,
+                  transition: "width 0.3s ease",
+                }} />
+              </div>
+            </div>
+
+            {/* Provenance strip */}
+            {plan && (
+              <div className="focus-card" style={{ marginBottom: "var(--spacing-md, 16px)", fontSize: "var(--text-sm, 13px)" }}>
+                <p className="section-eyebrow">Provenance</p>
+                <div className="dependency-list">
+                  <span>Plan: {plan.status}</span>
+                  <span>Load: {plan.load_classification ?? "unknown"}</span>
+                  <span>{plan.tasks.length} tasks</span>
+                  <span>{totalDependencyCount} dependencies</span>
+                  {plan.ontology_id && <span>Ontology: {plan.ontology_id}@{plan.ontology_version}</span>}
+                </div>
+              </div>
+            )}
+
             <div className="highlight-grid">
               <div className="focus-card focus-card-primary">
                 <p className="section-eyebrow">Execution stance</p>
@@ -339,6 +400,52 @@ export function PlanView({
                                 disabled={updatingTaskId === task.id || isExecutionLocked}
                                 onSave={(notes) => onUpdateTask(task.id, { notes })}
                               />
+
+                              {/* Task comments */}
+                              <div style={{ marginTop: "var(--space-3)", borderTop: "1px solid var(--border)", paddingTop: "var(--space-3)" }}>
+                                <label style={{ fontWeight: "bold", display: "block", marginBottom: "var(--space-2)", fontSize: "var(--text-sm)" }}>
+                                  Comments ({taskComments.length})
+                                </label>
+                                {loadingComments ? (
+                                  <p style={{ fontSize: "var(--text-sm)", opacity: 0.5 }}>Loading comments...</p>
+                                ) : (
+                                  <div className="thread-list compact-list">
+                                    {taskComments.map((comment) => (
+                                      <div className="history-card compact-card" key={comment.id}>
+                                        <div className="thread-row">
+                                          <span>{comment.author_name ?? "System"}</span>
+                                          <em>{formatTimestamp(comment.created_at)}</em>
+                                        </div>
+                                        <p className="history-note">{comment.body}</p>
+                                      </div>
+                                    ))}
+                                    {!taskComments.length && !loadingComments && (
+                                      <p style={{ fontSize: "var(--text-sm)", opacity: 0.5 }}>No comments on this task yet.</p>
+                                    )}
+                                  </div>
+                                )}
+                                {venueId && !isExecutionLocked && (
+                                  <div style={{ display: "flex", gap: "var(--space-2)", marginTop: "var(--space-2)" }}>
+                                    <input
+                                      type="text"
+                                      className="progress-input"
+                                      value={commentDraft}
+                                      onChange={(e) => setCommentDraft(e.target.value)}
+                                      placeholder="Add a comment..."
+                                      style={{ flex: 1, fontSize: "var(--text-sm)" }}
+                                      onKeyDown={(e) => { if (e.key === "Enter" && !submittingComment) handleSubmitComment(); }}
+                                    />
+                                    <button
+                                      className="btn btn-secondary"
+                                      style={{ fontSize: "var(--text-sm)" }}
+                                      onClick={handleSubmitComment}
+                                      disabled={submittingComment || !commentDraft.trim()}
+                                    >
+                                      {submittingComment ? "..." : "Comment"}
+                                    </button>
+                                  </div>
+                                )}
+                              </div>
                             </div>
                           )}
                         </article>

@@ -10,13 +10,6 @@ from app.schemas.domain import VenueOntologyBindingRead
 from app.services.ontology import OntologyRepository
 
 
-def compatibility_binding_for_vertical(vertical: str | None) -> tuple[str, str]:
-    normalized = vertical or "restaurant"
-    if normalized == "cafe":
-        return ("cafe", "v1")
-    return ("restaurant-legacy", "v8")
-
-
 def get_venue_binding(db: Session, venue_id: str) -> VenueOntologyBinding | None:
     return db.get(VenueOntologyBinding, venue_id)
 
@@ -159,7 +152,12 @@ def backfill_identity_from_venue(db: Session, repository: OntologyRepository) ->
     venues = {venue.id: venue for venue in db.scalars(select(Venue)).all()}
     for venue in venues.values():
         if db.get(VenueOntologyBinding, venue.id) is None:
-            ontology_id, ontology_version = compatibility_binding_for_vertical(venue.vertical)
+            identity = _binding_identity_from_artifacts(db, venue.id)
+            if identity is None:
+                raise InvalidOntologyMountError(
+                    f"Venue {venue.id} has no ontology binding and no persisted ontology identity to reconstruct one"
+                )
+            ontology_id, ontology_version = identity
             set_venue_binding(
                 db,
                 venue,
@@ -190,15 +188,15 @@ def backfill_identity_from_venue(db: Session, repository: OntologyRepository) ->
             continue
         if engine_run.ontology_id and engine_run.manifest_digest:
             continue
+        binding = require_venue_binding(db, venue)
         compatibility_version = (
             engine_run.ontology_version
             if engine_run.ontology_version and engine_run.ontology_version.startswith("v")
             else None
         )
-        fallback_id, fallback_version = compatibility_binding_for_vertical(venue.vertical)
         mount = repository.load_mount(
-            fallback_id,
-            compatibility_version or fallback_version,
+            binding.ontology_id,
+            compatibility_version or binding.ontology_version,
             allow_invalid=True,
         )
         hydrate_engine_run_identity(
@@ -222,3 +220,43 @@ def backfill_identity_from_venue(db: Session, repository: OntologyRepository) ->
             adapter_id=engine_run.adapter_id,
             manifest_digest=engine_run.manifest_digest,
         )
+
+
+def _binding_identity_from_artifacts(db: Session, venue_id: str) -> tuple[str, str] | None:
+    assessment = db.scalar(
+        select(Assessment)
+        .where(
+            Assessment.venue_id == venue_id,
+            Assessment.ontology_id.is_not(None),
+            Assessment.ontology_version.is_not(None),
+        )
+        .order_by(Assessment.created_at.desc())
+    )
+    if assessment is not None:
+        return assessment.ontology_id, assessment.ontology_version
+
+    engine_run = db.scalar(
+        select(EngineRun)
+        .where(
+            EngineRun.venue_id == venue_id,
+            EngineRun.ontology_id.is_not(None),
+            EngineRun.ontology_version.is_not(None),
+        )
+        .order_by(EngineRun.created_at.desc())
+    )
+    if engine_run is not None:
+        return engine_run.ontology_id, engine_run.ontology_version
+
+    plan = db.scalar(
+        select(OperationalPlan)
+        .where(
+            OperationalPlan.venue_id == venue_id,
+            OperationalPlan.ontology_id.is_not(None),
+            OperationalPlan.ontology_version.is_not(None),
+        )
+        .order_by(OperationalPlan.created_at.desc())
+    )
+    if plan is not None:
+        return plan.ontology_id, plan.ontology_version
+
+    return None

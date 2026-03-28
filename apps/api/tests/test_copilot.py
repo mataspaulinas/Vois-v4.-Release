@@ -331,7 +331,6 @@ def test_portfolio_copilot_names_repeating_system_patterns():
                 "organization_id": organization_id,
                 "name": "North Branch",
                 "slug": "north-branch",
-                "vertical": "restaurant",
                 "ontology_binding": {
                     "ontology_id": "restaurant-legacy",
                     "ontology_version": "v8",

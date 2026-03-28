@@ -145,6 +145,9 @@ export function HistoryView({
               <div className="dependency-list">
                 <span>{assessment.selected_signal_count} signals</span>
                 <span>{assessment.plan_task_count} plan tasks</span>
+                {assessment.ontology_id && (
+                  <span style={{ opacity: 0.6 }}>{assessment.ontology_id}@{assessment.ontology_version}</span>
+                )}
                 {assessment.active_signal_names.map((name) => (
                   <span key={name}>{name}</span>
                 ))}

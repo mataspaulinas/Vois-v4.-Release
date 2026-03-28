@@ -24,6 +24,7 @@ type VenueOverviewViewProps = {
   auditEntries: AuditEntryRecord[];
   formatTimestamp: (isoTimestamp: string) => string;
   onOpenAssessment: () => void;
+  onOpenSignals: () => void;
   onOpenReport: () => void;
   onOpenPlan: () => void;
 };
@@ -41,6 +42,7 @@ export function VenueOverviewView({
   auditEntries,
   formatTimestamp,
   onOpenAssessment,
+  onOpenSignals,
   onOpenReport,
   onOpenPlan,
 }: VenueOverviewViewProps) {
@@ -102,6 +104,9 @@ export function VenueOverviewView({
             <>
               <button className="btn btn-secondary" onClick={onOpenAssessment}>
                 Assessment
+              </button>
+              <button className="btn btn-secondary" onClick={onOpenSignals}>
+                Signals
               </button>
               <button className="btn btn-secondary" onClick={onOpenReport}>
                 Report

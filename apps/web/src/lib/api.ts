@@ -5,7 +5,6 @@ export type Venue = {
   organization_id: string;
   name: string;
   slug: string;
-  vertical: string | null;
   status: string;
   concept: string | null;
   location: string | null;
@@ -209,7 +208,6 @@ export type VenueCreatePayload = {
   organization_id: string;
   name: string;
   slug: string;
-  vertical?: string | null;
   ontology_binding: {
     ontology_id: string;
     ontology_version: string;
@@ -230,7 +228,6 @@ export type OwnerClaimPayload = {
   first_venue?: {
     name: string;
     slug: string;
-    vertical?: string | null;
     ontology_binding: {
       ontology_id: string;
       ontology_version: string;
@@ -526,6 +523,8 @@ export type AssessmentHistoryItem = {
   engine_run_id: string | null;
   plan_load_classification: string | null;
   plan_task_count: number;
+  ontology_id: string | null;
+  ontology_version: string | null;
 };
 
 export type SubActionItem = {
@@ -591,6 +590,17 @@ export type PlanExecutionSummary = {
     status: string;
     blocking_dependency_ids: string[];
   }>;
+};
+
+export type TaskCommentRecord = {
+  id: string;
+  task_id: string;
+  venue_id: string;
+  author_user_id: string | null;
+  author_name: string | null;
+  body: string;
+  visibility: string;
+  created_at: string;
 };
 
 export type ProgressEntryRecord = {
@@ -1298,6 +1308,26 @@ export async function updatePlanTask(taskId: string, payload: PlanTaskUpdatePayl
   });
   if (!response.ok) {
     throw new Error(await readErrorMessage(response, "Failed to update task"));
+  }
+  return response.json();
+}
+
+export async function fetchTaskComments(taskId: string): Promise<TaskCommentRecord[]> {
+  const response = await apiFetch(`/api/v1/plans/tasks/${taskId}/comments`);
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to load comments"));
+  }
+  return response.json();
+}
+
+export async function createTaskComment(taskId: string, venueId: string, body: string): Promise<TaskCommentRecord> {
+  const response = await apiFetch(`/api/v1/plans/tasks/${taskId}/comments`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ venue_id: venueId, body }),
+  });
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to create comment"));
   }
   return response.json();
 }

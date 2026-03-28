@@ -1,0 +1,280 @@
+Proceed only if the previous slice is at least honest and stable enough to build on.
+
+If the prior slice is still not closed, do not force implementation.
+Instead:
+- finish the remaining blockers
+- or produce a blocking report and stop
+
+If the prior slice is sufficiently stable, execute the next real slice:
+
+Wave 1 — Serious Workflow Spine Restoration
+
+Active product root:
+C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release
+
+Authoritative planning docs:
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\docs\product\Feature Migration\README.md
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\docs\product\Feature Migration\FEATURE_MIGRATION_STRATEGY.md
+
+Authoritative constitutions and system docs:
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\CONTRIBUTOR_CONSTITUTION.md
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\docs\architecture\OIS_CORE_ONTOLOGY_CONSTITUTION.md
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\docs\architecture\REAL_AUTHORIZATION_MATRIX.md
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\docs\architecture\VOIS_VISUAL_RESET_CONSTITUTION.md
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\docs\product\TECHNICAL_SPECIFICATION.md
+
+Donor/reference boundary:
+Everything outside:
+C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release
+is donor/reference/archive material unless explicitly used for migration analysis.
+
+Do not treat the old surrounding OIS_Cafe_v2 folders as runtime authority.
+They are donor sources only.
+
+Scope of this wave:
+Restore the serious venue workflow spine only:
+1. Venue workspace shell
+2. Assessment UX richness
+3. Signals Review
+
+Goal:
+Make VOIS feel like a real venue operating workspace again while preserving the current cleaner architecture.
+
+What must be restored from the donor app conceptually:
+- a coherent venue-level operating sequence
+- strong workspace continuity inside a selected venue
+- guided assessment flow
+- intake quality support
+- staged assessment behavior
+- visible post-AI signal review
+- reviewed-signal correction flow
+- active/reviewed signal summaries
+- useful filtering and mapping visibility at the review layer
+
+What must not be restored literally:
+- old route names by habit
+- old shared-shell structure
+- old JS file organization
+- old donor API shapes unless already compatible
+- café-hardcoded assumptions in core
+- old persistence shortcuts
+- old monolithic implementation style
+
+Non-negotiable preservation rules:
+- preserve empty-by-default runtime
+- preserve first-owner claim/setup posture
+- preserve Firebase auth direction and backend auth authority
+- preserve role-native shells
+- preserve venue ontology binding
+- preserve mounted ontology behavior
+- preserve active vs draft truth discipline
+- preserve historical ontology identity
+- preserve the Core / Ontology split
+- do not let developer chrome leak into real role shells
+- do not let AI/copilot become hidden truth mutation
+
+Inspect at minimum before editing:
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\apps\web\src\App.tsx
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\apps\web\src\lib\api.ts
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\apps\web\src\features\shell\*
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\apps\web\src\features\views\*
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\apps\api\app\api\routers\assessments.py
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\apps\api\app\api\routers\intake.py
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\apps\api\app\api\routers\engine.py
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\apps\api\app\services\assessment_runtime.py
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\apps\api\app\services\intake.py
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\apps\api\app\services\ontology.py
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\apps\api\app\services\ai_runtime.py
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\apps\api\app\models\domain.py
+- C:\Users\matas\Documents\00\OIS_Cafe_v2\VOIS v4.release\apps\api\app\schemas\domain.py
+
+Use donor/reference material only as analysis input:
+- the old OIS_Cafe_v2 app notes
+- the Feature Migration raw notes
+- any old venue workflow/signal-review references you need to understand capability depth
+
+Required method:
+STEP 1 — Audit current VOIS in the three scoped areas:
+- venue shell
+- assessment flow
+- signals review
+
+STEP 2 — Audit donor capability in OIS_Cafe_v2 for those same areas.
+
+STEP 3 — Produce a strict gap map:
+- what already exists
+- what is partial
+- what is missing
+- what current VOIS already does better and must be preserved
+
+STEP 4 — Implement only the minimum serious restoration needed to make these areas materially stronger and more coherent.
+
+STEP 5 — Verify:
+- venue-local workflow coherence
+- assessment guidance clarity
+- reviewed-signal truth clarity
+- no duplicate truth introduced
+- no ontology leakage into core
+- no role-shell regression
+
+Acceptance criteria:
+- the venue workspace feels like an operational sequence, not a loose page set
+- assessment is guided and not thin
+- signal review is explicit, reviewable, and useful
+- downstream trust is stronger
+- no old architecture is revived
+- no café-specific assumptions leak into universal core behavior
+
+Important product interpretation rules:
+- Overview should remain situational, not a duplicate dashboard
+- Assessment should teach the operator how to provide good input
+- Signals Review should embody: “the machine proposes, the human reviews”
+- Reviewed signals should become the authoritative interpreted signal set for the assessment cycle
+- This wave is about operational seriousness, not visual reinvention
+
+Visual rule for this wave:
+Do not perform the full visual reset here.
+You may make small structural UI changes necessary to support the restored workflow, but do not turn this into a styling project.
+
+Required final output format:
+1. Current-state audit
+2. Donor capability summary
+3. Gap statement
+4. What was changed
+5. Files changed
+6. Checks/tests run
+7. What was intentionally deferred
+8. Remaining risks
+9. Closure verdict:
+- CLOSED
+- IMPLEMENTED BUT NOT STABILIZED
+- PARTIAL
+- BLOCKED
+
+Extra instruction:
+Preserve VOIS v4.release as the clean machine, and use OIS_Cafe_v2 only as a donor of product richness, never as implementation authority.
+
+AUTONOMOUS EXECUTION CHARTER
+
+You are authorized to operate as an autonomous overnight implementation agent on this project.
+
+This is a continuous job, not a check-in-driven session.
+
+Default operating mode:
+- proceed without asking for confirmation
+- make reasonable decisions independently
+- choose the safest sensible path when multiple valid paths exist
+- continue working through subtasks until the scoped project is complete, you hit a true external blocker, or you exhaust context/tokens
+
+You have explicit permission to:
+- inspect the full repo
+- read any project docs and constitutions
+- edit code, docs, configs, scripts, tests, and migrations
+- add, rename, move, or delete files when required by the plan
+- install dependencies
+- run builds, tests, linters, typechecks, migrations, local servers, and local tooling
+- create helper scripts
+- restructure implementation details to satisfy the constitutions
+- commit progress in coherent checkpoints
+- continue through multiple implementation slices if they are clearly downstream of the active plan
+- use donor/reference material for analysis when needed
+
+You should NOT stop to ask for confirmation for:
+- small design decisions
+- naming choices
+- file organization choices
+- refactors needed to complete the approved plan
+- package installation
+- migration creation
+- test execution
+- local environment setup
+- launcher script creation
+- fixing follow-on regressions caused by your own changes
+- choosing the next obvious step in the approved roadmap
+
+Decision rule:
+If a choice is reversible, local, and low-risk, decide yourself and proceed.
+If a choice has one clearly safer path, choose it and proceed.
+If multiple paths are valid, prefer the one that:
+1. preserves constitutions and current architecture
+2. reduces legacy drift
+3. improves role clarity
+4. preserves truth boundaries
+5. minimizes future cleanup
+
+Non-negotiable project laws:
+- VOIS v4.release is the active product root and architectural authority
+- surrounding OIS_Cafe_v2 material is donor/reference only unless explicitly used for migration analysis
+- do not revive demo-seeded runtime assumptions in normal boot
+- do not reintroduce cafe/restaurant defaults into universal core runtime
+- do not weaken venue ontology binding or historical ontology identity
+- do not weaken active vs draft truth
+- do not bypass backend authorization
+- do not let frontend become the security authority
+- do not let developer/debug chrome leak into real role shells
+- do not let copilot become a hidden truth-mutator
+- do not copy donor architecture literally
+
+Required persistence behavior:
+- do not stop after “analysis complete”
+- do not stop after “I found the problem”
+- do not stop after one fix if follow-up fixes are obviously required
+- carry work through implementation, verification, and stabilization as far as possible in the same session
+- if one part is blocked, continue with all other non-blocked parts of the scoped work
+
+When you encounter blockers:
+1. try to resolve them yourself
+2. try an alternative approach
+3. narrow scope only if necessary
+4. continue with adjacent useful work if the main path is temporarily blocked
+5. only stop entirely for a true blocker
+
+A true blocker means one of these:
+- missing external credentials or secrets that are genuinely required and not present
+- hard environment/tool permission barrier you cannot work around
+- action would risk destructive data loss outside the repo/workspace
+- action would affect external production systems, billing, or irreversible third-party state
+- the constitutions conflict in a way that cannot be resolved from the repo
+
+If a true blocker happens:
+- do not ask a casual confirmation question and wait
+- instead, finish every other useful part of the scoped work
+- then leave a precise blocker report with:
+  - what you completed
+  - exact blocker
+  - exact command or system that failed
+  - exact next action needed from the user
+
+Checkpointing rule:
+- make coherent progress commits when a slice becomes stable enough to save
+- do not wait until the entire overnight effort is perfect before checkpointing
+- commit messages should describe real completed slices
+
+Session continuity rule:
+- treat the user as away
+- do not rely on mid-session replies
+- continue until:
+  - the approved scope is complete, or
+  - you hit a true blocker, or
+  - you are nearing context/token exhaustion
+
+If nearing context/token exhaustion:
+- do not waste remaining space on repetition
+- leave a concise handoff note that includes:
+  1. what is complete
+  2. what remains
+  3. exact files changed
+  4. exact blockers if any
+  5. the single best next step
+
+Tone and behavior:
+- be decisive
+- be disciplined
+- be honest
+- do not overstate completeness
+- do not pause by default
+- keep going unless there is a real reason to stop
+
+Summary rule:
+This project is explicitly authorized for continuous autonomous execution.
+Proceed until the work is done, you hit a true blocker, or tokens run out.

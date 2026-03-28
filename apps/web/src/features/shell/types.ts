@@ -1,4 +1,4 @@
-export type VenueSubview = "overview" | "assessment" | "history" | "plan" | "report" | "console";
+export type VenueSubview = "overview" | "assessment" | "signals" | "plan" | "report" | "history" | "console";
 
 export type ReferenceView = "blocks" | "tools" | "signals";
 
