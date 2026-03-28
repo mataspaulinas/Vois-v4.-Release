@@ -1,0 +1,83 @@
+{
+  "identification": {
+    "tool_id": "T004-04",
+    "tool_name": "Quarterly Cold Chain Trend Review",
+    "block_id": "B004"
+  },
+  "tool_design": {
+    "format": "template",
+    "role_in_intervention": "Quarterly deep-dive review that turns monthly signals into strategic decisions.",
+    "adaptation_variables": [
+      "quarter_length",
+      "seasonal_context",
+      "ownership_structure"
+    ],
+    "usage_moment": "Quarterly management review",
+    "expected_output": "Completed trend review with major patterns, decisions, and next-quarter priorities",
+    "linked_blocks": [
+      "B004",
+      "B001",
+      "B002",
+      "B003"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The review repeats monthly commentary instead of identifying real quarter-on-quarter patterns.",
+        "what_can_go_wrong": "The venue misses structural trends because the review stays too short-term.",
+        "early_signals": [
+          "Quarterly notes look identical to monthly reports",
+          "No trend or comparison language appears in the review"
+        ],
+        "prevention": [
+          "Compare one quarter against the last, not just this month against target",
+          "Keep a dedicated trend and decisions section"
+        ],
+        "mitigation": [
+          "Re-run the review around top recurring patterns",
+          "Use the workbook and scorecard as explicit source documents"
+        ],
+        "if_occurs_next_signals": [
+          "short_termism_in_review"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B002",
+          "B003"
+        ]
+      },
+      {
+        "warning": "The review identifies patterns but avoids a decision on investment, retraining, or control change.",
+        "what_can_go_wrong": "The same problems become known but tolerated.",
+        "early_signals": [
+          "A top trend is listed with no next-quarter action",
+          "Quarterly priorities stay generic"
+        ],
+        "prevention": [
+          "Require a decision line for every major trend",
+          "Separate observation from action in the template"
+        ],
+        "mitigation": [
+          "Escalate the unresolved issue to owner review",
+          "Create a short decision memo tied to the scorecard or monthly report"
+        ],
+        "if_occurs_next_signals": [
+          "strategic_followthrough_failure"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B002",
+          "B003"
+        ]
+      }
+    ]
+  },
+  "content": "# Quarterly Cold Chain Trend Review\n\n**Tool ID:** T004-04  \n**Block:** B004 (Cold Chain Excellence Dashboard)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L3  \n**Format:** Template  \n**Role:** Owner / Manager  \n**Time Required:** 20-30 minutes quarterly  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this review to step back from the week-to-week noise and decide what the quarter actually taught you about cold-chain control.\n\n---\n## Review Header\n\n| Field | Entry |\n|---|---|\n| Quarter | |\n| Venue | |\n| Reviewed by | |\n| Date | |\n\n---\n## 1. Quarter Summary\n\n| Area | What Improved | What Worsened | Decision |\n|---|---|---|---|\n| Daily monitoring | | | |\n| Delivery / suppliers | | | |\n| Excursions | | | |\n| Equipment health | | | |\n\n---\n## 2. Top Recurring Patterns\n\n| Pattern | Evidence | Likely Driver | Action Next Quarter |\n|---|---|---|---|\n| | | People / Process / Equipment / Supplier | |\n| | | People / Process / Equipment / Supplier | |\n| | | People / Process / Equipment / Supplier | |\n\n---\n## 3. Supplier Benchmark\n\n| Supplier | Quarter Rating | Main Concern | Decision |\n|---|---|---|---|\n| | Green / Amber / Red | | Monitor / Warn / Escalate |\n| | Green / Amber / Red | | Monitor / Warn / Escalate |\n| | Green / Amber / Red | | Monitor / Warn / Escalate |\n\n---\n## 4. Investment / Retraining Decisions\n\n| Decision Area | What We Are Choosing | Owner | Due Date |\n|---|---|---|---|\n| Equipment | | | |\n| Supplier control | | | |\n| Team retraining | | | |\n| Process change | | | |\n\n---\n## 5. Next Quarter Priorities\n\n1. ________________________________________________\n2. ________________________________________________\n3. ________________________________________________\n\n---\n## Connected Resources\n\n**Use with:**\n- T004-01 - Cold Chain Dashboard Workbook\n- T004-02 - Monthly Cold Chain Management Report\n- T004-03 - Equipment Health Scorecard & Replacement Trigger\n- T004-05 - Staff-Facing Cold Chain Scoreboard\n\n---\n\n*Tool Version 2.0 - the quarterly lens that turns recurring noise into a deliberate next move.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T004-04_quarterly_cold_chain_trend_review.md",
+    "migration_method": "manual_enrichment"
+  }
+}

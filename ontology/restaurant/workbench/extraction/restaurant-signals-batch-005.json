@@ -1,0 +1,329 @@
+{
+  "vertical": "restaurant",
+  "signals": [
+    {
+      "id": "sig_service_or_job_cycle_delay",
+      "name": "Service cycle delay is visible in live flow",
+      "description": "The service cycle is stretching beyond the venue's intended rhythm, creating visible lag between order, production, handoff, and guest delivery.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: service or job cycle delay expressed through restaurant service flow",
+      "status": "review",
+      "domain": "service_delivery",
+      "module": "floor_execution",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "guests wait materially longer than the house rhythm suggests",
+        "orders or requests sit too long between steps",
+        "the live cycle stalls even when demand is not extreme"
+      ],
+      "source_types": [
+        "service observation",
+        "guest complaint",
+        "manager notes"
+      ],
+      "temporal_behavior": "throughput-sensitive",
+      "likely_co_signals": [
+        "sig_service_delay",
+        "sig_work_pace_breaks_under_load"
+      ],
+      "adapter_aliases": [
+        "service cycle slowing down",
+        "flow is taking too long"
+      ]
+    },
+    {
+      "id": "sig_ownership_confusion_during_flow",
+      "name": "Ownership is confused during live flow",
+      "description": "The team hesitates, re-asks, or duplicates effort because ownership of the next move is not obvious in the moment.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: ownership confusion during flow expressed through restaurant live service",
+      "status": "review",
+      "domain": "leadership",
+      "module": "role_clarity",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "team members ask who owns the next step",
+        "two people assume the same work or no one assumes it",
+        "flow pauses while ownership is clarified"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "post-shift review"
+      ],
+      "temporal_behavior": "event-driven",
+      "likely_co_signals": [
+        "sig_staff_confusion",
+        "sig_work_dies_between_roles"
+      ],
+      "adapter_aliases": [
+        "nobody clearly owns it",
+        "ownership confusion on shift"
+      ]
+    },
+    {
+      "id": "sig_complaint_handled_defensively",
+      "name": "Complaint is handled defensively",
+      "description": "A guest complaint is met with explanation, blame-shifting, or resistance instead of calm acknowledgment and structured recovery.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: complaint handled defensively expressed through restaurant guest recovery behavior",
+      "status": "review",
+      "domain": "guest_experience",
+      "module": "service_recovery",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "staff explain the problem instead of owning the recovery",
+        "guest feedback is met with friction or defensiveness",
+        "recovery language escalates tension instead of stabilizing it"
+      ],
+      "source_types": [
+        "guest complaint",
+        "manager notes",
+        "service observation"
+      ],
+      "temporal_behavior": "event-driven",
+      "likely_co_signals": [
+        "sig_issue_resolution_slow_or_unclear",
+        "sig_guest_complaints"
+      ],
+      "adapter_aliases": [
+        "defensive complaint handling",
+        "guest complaint met with pushback"
+      ]
+    },
+    {
+      "id": "sig_manager_absent_from_critical_moment",
+      "name": "Manager is absent from the critical moment",
+      "description": "A live pressure point arrives and the person expected to stabilize it is not visibly present, directing, or deciding.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: manager absent from critical moment expressed through restaurant peak pressure leadership",
+      "status": "review",
+      "domain": "leadership",
+      "module": "management_presence",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "rush or escalation happens without visible manager intervention",
+        "the floor looks leaderless during a pressure moment",
+        "decisions wait because the manager is not present"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "post-shift review"
+      ],
+      "temporal_behavior": "event-driven",
+      "likely_co_signals": [
+        "sig_no_live_direction_or_reset",
+        "sig_peak_period_undercovered"
+      ],
+      "adapter_aliases": [
+        "manager missing in the moment",
+        "critical rush with no manager presence"
+      ]
+    },
+    {
+      "id": "sig_equipment_or_asset_breaks_flow",
+      "name": "Equipment or asset failure breaks the flow",
+      "description": "A piece of equipment, workstation, or physical asset interrupts the operating rhythm enough to change timing, routing, or output quality.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: equipment or asset breaks flow expressed through restaurant live operations",
+      "status": "review",
+      "domain": "operations",
+      "module": "equipment_reliability",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "equipment failure forces a routing or pacing change",
+        "station output drops because an asset is unreliable",
+        "service timing shifts around a broken or degraded asset"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "maintenance note"
+      ],
+      "temporal_behavior": "event-driven",
+      "likely_co_signals": [
+        "sig_tool_or_system_unavailable",
+        "sig_workaround_is_normalized"
+      ],
+      "adapter_aliases": [
+        "equipment failure breaks service",
+        "asset reliability hit the flow"
+      ]
+    },
+    {
+      "id": "sig_workaround_has_become_normal",
+      "name": "Workaround has become normal",
+      "description": "The team has normalized a workaround as part of everyday operation instead of treating it as temporary friction to remove.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: workaround has become normal expressed through restaurant operating habits",
+      "status": "review",
+      "domain": "operations",
+      "module": "workaround_management",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "staff describe a workaround as just how the venue works",
+        "temporary fixes have become the stable process",
+        "known friction is absorbed culturally instead of corrected"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "team huddle"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_workaround_is_normalized",
+        "sig_tool_or_system_unavailable"
+      ],
+      "adapter_aliases": [
+        "the workaround became standard",
+        "temporary fix is now the process"
+      ]
+    },
+    {
+      "id": "sig_waste_loss_or_leakage_unexplained",
+      "name": "Waste, loss, or leakage is unexplained",
+      "description": "The venue is seeing avoidable loss, comp, or waste movement without a clean explanation, containment rule, or review cadence.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: waste, loss, or leakage unexplained expressed through restaurant commercial controls",
+      "status": "review",
+      "domain": "financial_controls",
+      "module": "waste_management",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "waste or shrink increases without explanation",
+        "void or comp movement is visible but not understood",
+        "loss shows up without review or ownership"
+      ],
+      "source_types": [
+        "waste review",
+        "manager notes",
+        "financial review"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_voids_rising",
+        "sig_waste_spike"
+      ],
+      "adapter_aliases": [
+        "unexplained waste movement",
+        "loss without explanation"
+      ]
+    }
+  ],
+  "signal_failure_map": [
+    {
+      "source_id": "sig_service_or_job_cycle_delay",
+      "target_id": "fm_host_flow_breakdown",
+      "weight": 0.79,
+      "owner": "execution-program",
+      "source_ref": "visible service-cycle delay in restaurant flow usually reveals live coordination and pacing breakdowns in the guest-facing cycle",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_service_or_job_cycle_delay",
+      "target_id": "fm_bar_workflow_breakdown",
+      "weight": 0.68,
+      "owner": "execution-program",
+      "source_ref": "cycle delay frequently shows up when bar or beverage throughput is the hidden pacing constraint",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_ownership_confusion_during_flow",
+      "target_id": "fm_role_ownership_blur",
+      "weight": 0.93,
+      "owner": "execution-program",
+      "source_ref": "unclear ownership during live service is the clearest operating signature of blurred role ownership",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_ownership_confusion_during_flow",
+      "target_id": "fm_pass_communication_gap",
+      "weight": 0.71,
+      "owner": "execution-program",
+      "source_ref": "ownership confusion often rides on weak handoffs and pass communication under pressure",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_complaint_handled_defensively",
+      "target_id": "fm_guest_recovery_breakdown",
+      "weight": 0.95,
+      "owner": "execution-program",
+      "source_ref": "defensive complaint handling is a direct expression of guest recovery breakdown",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_complaint_handled_defensively",
+      "target_id": "fm_manager_presence_gap",
+      "weight": 0.62,
+      "owner": "execution-program",
+      "source_ref": "when recovery turns defensive, weak manager intervention often allows the moment to deteriorate",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_manager_absent_from_critical_moment",
+      "target_id": "fm_manager_presence_gap",
+      "weight": 0.96,
+      "owner": "execution-program",
+      "source_ref": "absence from a critical operating moment is the clearest live signal of a manager presence gap",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_manager_absent_from_critical_moment",
+      "target_id": "fm_briefing_absence",
+      "weight": 0.64,
+      "owner": "execution-program",
+      "source_ref": "a manager who is absent in the moment often also failed to pre-brief and frame the shift for that pressure window",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_equipment_or_asset_breaks_flow",
+      "target_id": "fm_equipment_reliability_gap",
+      "weight": 0.94,
+      "owner": "execution-program",
+      "source_ref": "when an asset failure visibly disrupts service rhythm, equipment reliability is the direct failure mode",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_equipment_or_asset_breaks_flow",
+      "target_id": "fm_tooling_friction",
+      "weight": 0.69,
+      "owner": "execution-program",
+      "source_ref": "asset failure also creates day-to-day tooling friction that the team starts absorbing operationally",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_workaround_has_become_normal",
+      "target_id": "fm_tooling_friction",
+      "weight": 0.88,
+      "owner": "execution-program",
+      "source_ref": "a workaround becoming the normal process means tooling or system friction has been culturally absorbed",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_workaround_has_become_normal",
+      "target_id": "fm_controls_gap",
+      "weight": 0.65,
+      "owner": "execution-program",
+      "source_ref": "when workarounds normalize, control routines are also failing to escalate and remove them",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_waste_loss_or_leakage_unexplained",
+      "target_id": "fm_controls_gap",
+      "weight": 0.9,
+      "owner": "execution-program",
+      "source_ref": "unexplained waste or leakage is a direct signal that commercial control loops are not holding",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_waste_loss_or_leakage_unexplained",
+      "target_id": "fm_inventory_accuracy_gap",
+      "weight": 0.72,
+      "owner": "execution-program",
+      "source_ref": "loss without explanation often sits on top of weak stock and count accuracy as well as weak review",
+      "status": "review"
+    }
+  ]
+}

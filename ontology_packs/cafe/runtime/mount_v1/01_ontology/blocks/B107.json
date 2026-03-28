@@ -1,0 +1,157 @@
+{
+  "block_id": "B107",
+  "name": "Supply Partnership Excellence",
+  "version": "v1.0",
+  "domain": "D06_supply_chain",
+  "module": "M06: Supply Chain & Supplier Relations",
+  "state": "enriched",
+  "purpose": "Elevates key supplier relationships from transactional purchasing into genuine strategic partnerships that deliver mutual value — preferential pricing, product exclusivity, co-marketing, innovation collaboration, and long-term supply security. This capstone block transforms the supply chain from a cost centre into a competitive advantage.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Identify which suppliers are candidates for strategic partnership based on performance, alignment, and mutual benefit potential",
+      "Develop partnership frameworks that go beyond price to include training, marketing, product development, and exclusivity",
+      "Create formal partnership agreements that protect both parties and define expectations clearly",
+      "Build a supplier innovation pipeline where partners bring new products, ideas, and market insights to the cafe",
+      "Establish a supply chain governance structure for cafes operating or planning multiple sites"
+    ],
+    "secondary_objectives": [
+      "Position the cafe as a 'valued account' that suppliers prioritise during shortages and disruptions",
+      "Leverage supplier partnerships for customer-facing marketing and brand storytelling",
+      "Create a supply chain that supports sustainable and ethical sourcing objectives"
+    ]
+  },
+  "why_this_matters": "The difference between a supplier and a partner is the difference between a transaction and a relationship. A supplier delivers what you order. A partner calls to tell you they have a stunning new single-origin coffee before it is available to anyone else. A partner holds stock for you during shortages because they value the relationship. A partner invests in training your team because your success is their success. In the UK cafe market, the most consistently excellent operations share a common trait: they have deep, genuine partnerships with a small number of key suppliers. These partnerships take years to build but deliver compound returns that transactional purchasing never can. A strategic partner roaster provides barista training worth £2,000 per year, exclusive access to competition-grade coffees, marketing collaboration that drives footfall, and pricing stability through volatile green coffee markets. A strategic partner baker co-develops seasonal pastries that differentiate the cafe's offering, provides merchandising support, and offers sale-or-return terms that reduce waste risk. These benefits are invisible on a simple price-per-unit comparison but represent enormous competitive advantage. Supply Partnership Excellence is the capstone that brings together the roaster relationship (B104), backup contingency (B105), and performance assessment (B106) into a unified supply chain strategy. It is relevant primarily for established cafes with stable operations and clear growth ambitions, and it is essential for any cafe planning multi-site expansion.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Review all current supplier relationships using the data from B106 (Supplier Performance Assessment) and identify which suppliers have partnership potential. Look for: consistently high scorecard ratings (4.0+), alignment with the cafe's values (sustainability, quality, locality), willingness to invest in the relationship beyond basic supply, and strategic importance (coffee and milk being the obvious candidates). For the top 2-3 supplier relationships, document the current scope of the relationship: what do they provide beyond product? Training? Equipment? Marketing? Exclusivity? Flexibility? Week 2: For each potential partner, create a Partnership Value Map — a simple document showing what the cafe provides to the supplier (consistent volume, prompt payment, brand association, customer exposure) and what the supplier provides to the cafe (quality product, training, equipment, marketing, innovation). Identify gaps in mutual value: what could each party offer that they currently do not? This map becomes the basis for a partnership conversation.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Schedule a partnership development meeting with each potential strategic partner. The agenda should cover: reviewing the current relationship, sharing the cafe's growth plans and vision, exploring areas for deeper collaboration (joint marketing, exclusive products, training programmes, events), discussing pricing structures that reward commitment (volume discounts, annual contracts with price locks), and agreeing on a formal partnership framework. Draft Partnership Agreements for the top 1-2 suppliers that formalise: supply terms, pricing and review mechanisms, training and support commitments, exclusivity provisions (if any), marketing collaboration, dispute resolution, and termination provisions. These do not need to be legal contracts for small cafes — a clear written agreement signed by both parties is sufficient. Begin executing partnership activities: schedule the first joint event, arrange the first training session, launch the first co-branded marketing initiative.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Supply partnerships should be actively managed as strategic assets. Conduct bi-annual partnership reviews with each strategic partner: reviewing performance, celebrating achievements, planning the next period's collaboration, and addressing any challenges openly. Build a Supplier Innovation Pipeline: ask partners to share new products, industry trends, and ideas for the cafe's menu development — the best suppliers want to be involved in their customers' innovation. For multi-site cafes or those planning expansion, establish a supply chain governance framework: centralised ordering, standardised quality specifications, consistent partnership terms across all sites, and a named supply chain manager. Explore sustainability partnerships: joint initiatives for waste reduction, carbon footprint measurement, ethical sourcing certification (Rainforest Alliance, Fairtrade, B Corp), and community projects. Share partnership success stories with customers through social media, in-store displays, and menu descriptions — customers increasingly value transparency about where their food and coffee comes from. Review the entire supply partnership strategy annually, aligned with the cafe's business plan."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Review B106 scorecard data to identify suppliers with partnership potential (4.0+ scores)",
+        "Document the current scope of each key supplier relationship beyond basic supply",
+        "Create a Partnership Value Map for the top 2-3 supplier relationships",
+        "Identify gaps in mutual value that could strengthen each relationship",
+        "Prepare for partnership development conversations with key suppliers",
+        "Assess alignment of supplier values with the cafe's brand and sustainability goals",
+        "Gather growth plans and vision documents to share with potential partners"
+      ],
+      "responsible": "Cafe Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Schedule partnership development meetings with top 2-3 supplier candidates",
+        "Draft Partnership Agreements covering supply, training, marketing, and exclusivity terms",
+        "Begin executing partnership activities: joint events, training, co-marketing",
+        "Establish a structured quarterly touchpoint with each strategic partner",
+        "Create a shared calendar of partnership activities and milestones",
+        "Track the financial value of partnership benefits (training, equipment, marketing) separately",
+        "Communicate partnership developments to the team for buy-in and engagement"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct bi-annual formal partnership reviews with strategic suppliers",
+        "Build a Supplier Innovation Pipeline for menu development input",
+        "Establish supply chain governance for multi-site or expansion scenarios",
+        "Explore joint sustainability initiatives with key partners",
+        "Review the full supply partnership strategy annually with business plan alignment"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Partnership Value Maps for key suppliers",
+    "Partnership Agreement templates",
+    "Partnership Activity Calendar",
+    "Bi-annual Partnership Review report",
+    "Supplier Innovation Pipeline log"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T107-01",
+        "tool_name": "Partnership Value Map Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Visual template mapping the value each party brings to the relationship and identifying gaps where deeper collaboration could create mutual benefit."
+      },
+      {
+        "tool_id": "T107-02",
+        "tool_name": "Partnership Agreement Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Written agreement framework covering supply terms, pricing, training, marketing collaboration, exclusivity, dispute resolution, and termination. Signed by both parties."
+      },
+      {
+        "tool_id": "T107-03",
+        "tool_name": "Partnership Review Agenda",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Structured agenda for bi-annual partnership review meetings: performance review, achievement celebration, next-period planning, challenge resolution, and innovation pipeline discussion."
+      },
+      {
+        "tool_id": "T107-04",
+        "tool_name": "Supplier Innovation Pipeline Tracker",
+        "level": "L3",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Log tracking new product ideas, industry trends, and innovation suggestions brought by supplier partners, with evaluation status and implementation decisions."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Partnership language is used but the relationship remains transactional — words without substance",
+    "Exclusivity commitments lock the cafe into a single supplier without adequate quality or pricing protections",
+    "Partnership benefits are not tracked financially, making it impossible to quantify the return on relationship investment",
+    "Over-reliance on personal chemistry rather than formal frameworks means partnerships collapse when individuals change roles"
+  ],
+  "kpis": [
+    "At least 2 strategic supplier partnerships formalised with written agreements within 12 months",
+    "Partnership benefits (training, equipment, marketing) valued and tracked at a minimum £2,000 per year combined",
+    "Bi-annual partnership reviews completed for all strategic suppliers",
+    "At least 2 supplier-sourced innovations (new products, processes, or ideas) evaluated per year"
+  ],
+  "dependencies": ["B104", "B105", "B106"],
+  "constraints": [
+    "Strategic partnerships require owner-level engagement — they cannot be delegated to junior staff",
+    "Partnership agreements should be reviewed by a solicitor if they include exclusivity or significant financial commitments",
+    "Not all suppliers are suitable for strategic partnership — some are best managed as efficient transactional relationships"
+  ],
+  "time_load": {
+    "L1": "3 hours (value mapping, relationship assessment, meeting preparation)",
+    "L2": "8 hours (partnership meetings, agreement drafting, activity launch)",
+    "L3": "4 hours/year (bi-annual reviews, strategy update, innovation pipeline management)"
+  },
+  "review_protocol": "Quarterly informal partnership check-in by owner. Bi-annual formal partnership review with each strategic supplier. Annual supply chain strategy review aligned with business plan.",
+  "meta": {
+    "summary_for_humans": "This capstone block transforms the best supplier relationships from transactional purchasing into genuine strategic partnerships delivering training, exclusivity, co-marketing, and innovation. It is built on the foundation of B104, B105, and B106, and is essential for cafes with growth ambitions.",
+    "implementation_risks": [
+      "Partnership requires reciprocity — the cafe must offer value (prompt payment, volume commitment, brand exposure) not just demand concessions",
+      "Smaller cafes may lack the volume to attract strategic partner interest from larger suppliers — focus on local, smaller suppliers where the cafe represents meaningful business",
+      "Partnership agreements that include exclusivity need careful consideration to avoid over-dependence on a single source"
+    ],
+    "notes_for_engine": "This is a capstone block — activate only after B104, B105, and B106 are showing stable performance. Flag as high-value for cafes showing strong growth trajectory or planning multi-site expansion.",
+    "tags": ["supply_chain", "partnership", "strategy", "innovation", "collaboration", "sustainability", "growth", "capstone"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

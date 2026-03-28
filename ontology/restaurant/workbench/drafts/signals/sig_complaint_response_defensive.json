@@ -1,0 +1,28 @@
+{
+  "id": "sig_complaint_response_defensive",
+  "name": "Complaint response turns defensive",
+  "description": "Service failures trigger defensiveness, excuse-making, or inconsistent recovery instead of calm ownership and containment.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: recovery quality is visible in the first response to a guest-facing failure",
+  "updated_at": "2026-03-14T00:41:10.240473Z",
+  "domain": "guest_experience",
+  "module": "guest_recovery_protocol",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "review_text",
+    "mystery_guest"
+  ],
+  "source_types": [
+    "complaint_log",
+    "audit_notes"
+  ],
+  "temporal_behavior": "episodic",
+  "likely_co_signals": [
+    "sig_guest_complaints"
+  ],
+  "adapter_aliases": [
+    "defensive_recovery",
+    "poor_complaint_handling"
+  ]
+}

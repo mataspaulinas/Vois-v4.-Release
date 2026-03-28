@@ -1,0 +1,31 @@
+{
+  "id": "sig_waste_loss_or_leakage_unexplained",
+  "name": "Waste, loss, or leakage is unexplained",
+  "description": "The venue is seeing avoidable loss, comp, or waste movement without a clean explanation, containment rule, or review cadence.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: waste, loss, or leakage unexplained expressed through restaurant commercial controls",
+  "updated_at": "2026-03-15T17:17:16.786529Z",
+  "domain": "financial_controls",
+  "module": "waste_management",
+  "indicator_type": "lagging",
+  "evidence_types": [
+    "waste or shrink increases without explanation",
+    "void or comp movement is visible but not understood",
+    "loss shows up without review or ownership"
+  ],
+  "source_types": [
+    "waste review",
+    "manager notes",
+    "financial review"
+  ],
+  "temporal_behavior": "recurring",
+  "likely_co_signals": [
+    "sig_voids_rising",
+    "sig_waste_spike"
+  ],
+  "adapter_aliases": [
+    "unexplained waste movement",
+    "loss without explanation"
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "block_id": "B158",
+  "name": "Sales Data Dashboard",
+  "version": "v1.0",
+  "domain": "D10_technology_systems",
+  "module": "M10: Digital Tools & Customer Data",
+  "state": "enriched",
+  "purpose": "Transforms raw POS sales data into a visual, actionable dashboard that the cafe owner and manager review daily. This block bridges the gap between having data and actually using it, creating a simple set of metrics that drive better decisions about menu, staffing, promotions, and operational priorities.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define the 8-12 key metrics that matter most for cafe performance and present them in a single-page dashboard",
+      "Automate data collection so the dashboard updates daily without manual input",
+      "Establish a daily and weekly review rhythm so dashboard insights translate into actions",
+      "Create comparison baselines (week-on-week, month-on-month, year-on-year) so trends are visible at a glance",
+      "Train the owner and manager to interpret dashboard data and formulate action plans from it"
+    ],
+    "secondary_objectives": [
+      "Identify underperforming menu items, day-parts, and days of the week for targeted improvement",
+      "Detect revenue trends early so problems can be addressed before they become critical",
+      "Provide evidence for decisions that are currently made on gut feeling (pricing, promotions, staffing)",
+      "Build confidence in using data as a management tool, creating the foundation for B160 Data-Driven Culture"
+    ]
+  },
+  "why_this_matters": "Most independent cafe owners know their total daily takings. Very few know their average transaction value, their sales mix by category, their best and worst trading hours, or how this week compares to the same week last year. This data almost certainly exists in their POS system but it sits in reports that nobody reads, in formats that require effort to interpret, or behind menu clicks that nobody has time to navigate during a busy shift. The result is decisions made on instinct rather than evidence. The owner feels like lunches are slow but cannot quantify whether food revenue has declined 5% or 25% over the past quarter. A new cake supplier was introduced three months ago but nobody has checked whether cake sales have actually increased or whether the higher cost is being absorbed without additional revenue. A dashboard solves this by making the critical numbers visible, simple, and unavoidable. Research consistently shows that businesses which review key metrics daily outperform those that review monthly or not at all. The act of seeing the numbers creates accountability and curiosity. When the owner notices that Wednesday average transaction value has dropped from 6.80 to 5.20 pounds over three weeks, they ask why. That question leads to investigation, which leads to action, which leads to improvement. Without the dashboard, the trend continues unnoticed until it appears as a vague sense that revenue is down.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Define the core dashboard metrics. For most cafes, the essential metrics are: daily total revenue, transaction count, average transaction value, revenue by category (hot drinks, cold drinks, food, cakes, retail), revenue by hour (to identify peak and quiet periods), comparison to the same day last week, and week-to-date versus last week-to-date. These 8 metrics provide a complete daily health check in under 2 minutes of review time. Week 2: Build the dashboard using the simplest available method. Options in order of preference: (1) Use the POS system's built-in dashboard if it provides these metrics clearly. (2) Export POS data to a Google Sheet or Excel spreadsheet with simple charts. (3) Use a lightweight dashboard tool like Google Data Studio, Klipfolio, or a POS-specific analytics add-on. The dashboard must update daily with minimal or no manual input. If the POS cannot automate data export, the simplest reliable method is a daily 5-minute manual entry into a tracking spreadsheet. Begin the daily review habit immediately: the owner or manager checks the dashboard every morning as the first task of the day.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Expand the dashboard to include: week-on-week and month-on-month trend lines for revenue and transaction count, category mix percentages (are hot drinks growing as a share of revenue or shrinking?), top 10 and bottom 10 selling products, average items per transaction (a measure of upselling effectiveness), labour cost as a percentage of revenue (if staff cost data is available), and weather correlation (simple notes on whether rain or sunshine affected trade). Establish a Weekly Review Meeting (15-20 minutes) where the owner and manager review dashboard trends and agree on 2-3 actions for the coming week. Document these actions and review their outcomes the following week. Create a Monthly Performance Summary that aggregates dashboard data into a one-page report covering: total revenue versus target, key trends, best and worst performing categories, and actions taken with results. This summary builds an institutional memory of what works.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Develop predictive capability: use historical data to forecast expected daily revenue based on day of week, time of year, and weather, then compare actual performance against forecast to identify genuine under or over-performance. Share selected dashboard insights with the team during weekly briefings, making everyone aware of how the business is performing and how their efforts contribute. Create a Dashboard-to-Action Protocol: for each metric that moves outside its expected range, define the investigation steps and potential responses. For example, if average transaction value drops below a threshold, investigate whether upselling has declined, whether a high-value product has been removed, or whether a discount is being over-applied. Integrate dashboard data with CRM insights (B159) to connect sales trends with customer behaviour patterns. Review and refine the dashboard metrics annually to ensure they remain relevant as the business evolves."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Define the 8 core dashboard metrics: revenue, transactions, ATV, category split, hourly split, day comparisons",
+        "Build an initial dashboard using POS built-in reporting or a simple spreadsheet",
+        "Automate data collection where possible or establish a 5-minute daily manual entry routine",
+        "Begin daily morning dashboard review as a non-negotiable management habit",
+        "Set up comparison baselines using available historical data",
+        "Display the dashboard in a location visible to the manager (office screen, printed daily, phone app)"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Expand dashboard with trend lines, category mix percentages, and product-level rankings",
+        "Establish a Weekly Review Meeting (15-20 minutes) to discuss dashboard insights and agree actions",
+        "Create a Monthly Performance Summary template aggregating dashboard data",
+        "Add labour cost percentage if staff cost data is accessible",
+        "Document weekly actions and track their outcomes in subsequent reviews",
+        "Train the manager to independently interpret dashboard data and propose actions"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Develop revenue forecasting based on historical patterns (day, season, weather)",
+        "Share selected dashboard insights with the whole team during weekly briefings",
+        "Create a Dashboard-to-Action Protocol defining responses to metric movements",
+        "Integrate dashboard data with CRM insights for deeper customer behaviour analysis",
+        "Review and refine dashboard metrics annually for continued relevance"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Daily Sales Dashboard (automated or semi-automated with 8 core metrics)",
+    "Weekly Review Meeting agenda template",
+    "Monthly Performance Summary template",
+    "Dashboard-to-Action Protocol (metric thresholds and response steps)",
+    "Revenue Forecasting Model (historical pattern-based)"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T158-01",
+        "tool_name": "Daily Sales Dashboard",
+        "level": "L1",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Single-page visual dashboard showing 8 core metrics: daily revenue, transaction count, average transaction value, revenue by category, revenue by hour, day-on-day comparison, week-to-date total, and week-on-week trend. Updates daily with minimal manual input."
+      },
+      {
+        "tool_id": "T158-02",
+        "tool_name": "Weekly Review Meeting Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Structured 15-20 minute meeting agenda covering: review of last week's actions, dashboard trend analysis, identification of 2-3 priorities for the coming week, and documentation of agreed actions with owners and deadlines."
+      },
+      {
+        "tool_id": "T158-03",
+        "tool_name": "Monthly Performance Summary",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "One-page monthly report aggregating dashboard data: total revenue versus target, transaction and ATV trends, category performance analysis, best and worst products, actions taken with measured outcomes, and priorities for the coming month."
+      },
+      {
+        "tool_id": "T158-04",
+        "tool_name": "Dashboard-to-Action Protocol",
+        "level": "L3",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Decision framework defining threshold triggers for each dashboard metric and the corresponding investigation steps and response actions. Transforms data observation into systematic business improvement."
+      },
+      {
+        "tool_id": "T158-05",
+        "tool_name": "Revenue Forecasting Spreadsheet",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Historical pattern-based forecasting model that predicts expected daily revenue based on day of week, month, and seasonal trends. Enables comparison of actual versus expected performance to identify genuine variances."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Dashboard is built but the daily review habit never forms, so data generates no insight or action",
+    "Too many metrics are included, overwhelming the viewer and obscuring the critical signals",
+    "Data is inaccurate because the POS is not properly configured (see B155), making the dashboard misleading",
+    "Weekly review meetings are cancelled during busy periods and never re-established, breaking the feedback loop"
+  ],
+  "kpis": [
+    "Dashboard reviewed by owner or manager at least 5 out of 7 days per week",
+    "Weekly Review Meeting held at least 48 out of 52 weeks per year",
+    "At least 2 data-informed actions taken per week based on dashboard insights",
+    "Monthly Performance Summary completed within 5 working days of month end"
+  ],
+  "dependencies": ["B155"],
+  "constraints": [
+    "Dashboard accuracy depends entirely on POS data quality, requiring B155 to be implemented first",
+    "Automated data collection requires the POS system to support data export or API access",
+    "Historical comparison requires at least 4 weeks of clean data before meaningful trends emerge",
+    "The daily review habit requires discipline and must be treated as a non-negotiable management task"
+  ],
+  "time_load": {
+    "L1": "5 hours (metric definition, initial dashboard build, data connection setup)",
+    "L2": "8 hours (dashboard expansion, meeting setup, monthly summary template, training)",
+    "L3": "30 minutes/day (daily review) + 2 hours/month (weekly meetings, monthly summary, forecast updates)"
+  },
+  "review_protocol": "Dashboard reviewed daily by owner or manager. Weekly Review Meeting held consistently with documented actions. Monthly Performance Summary produced within 5 working days of month end. Dashboard metrics and design reviewed quarterly for relevance. Data accuracy spot-checked monthly against POS source reports.",
+  "meta": {
+    "summary_for_humans": "This block transforms raw POS data into a daily visual dashboard that drives better decisions. It defines the key metrics, builds the dashboard, establishes daily and weekly review habits, and creates protocols for turning data insights into business actions.",
+    "implementation_risks": [
+      "The biggest risk is not building the dashboard but forming the daily review habit, which requires sustained discipline",
+      "POS data quality issues in B155 will undermine dashboard accuracy and trust",
+      "Over-engineering the dashboard with too many metrics can be as harmful as having no dashboard at all"
+    ],
+    "notes_for_engine": "Activate alongside or shortly after B155 POS optimisation. This block depends on clean POS data. Prioritise for any cafe where the owner cannot quickly state their average transaction value, best-selling product, or week-on-week revenue trend.",
+    "tags": ["dashboard", "sales_data", "analytics", "metrics", "reporting", "KPIs", "decision_making", "performance"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

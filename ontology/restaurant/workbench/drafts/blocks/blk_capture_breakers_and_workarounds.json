@@ -1,0 +1,46 @@
+{
+  "id": "blk_capture_breakers_and_workarounds",
+  "name": "Capture breakers and workarounds",
+  "description": "Create a simple reliability board for recurring equipment failures, missing tools, and normalized workarounds so the venue can assign fixes before the next shift absorbs them again.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: reliability improves when hidden workarounds and repeated breakers become visible and owned",
+  "updated_at": "2026-03-14T00:41:10.325432Z",
+  "effort_hours": 2.0,
+  "dependencies": [
+    "blk_opening_line_readiness_check"
+  ],
+  "tool_ids": [
+    "tool_breaker_and_workaround_log"
+  ],
+  "response_pattern_ids": [
+    "rp_reliability_restore",
+    "rp_role_visibility_reset"
+  ],
+  "entry_conditions": [
+    "The venue is repeatedly improvising around missing tools, broken equipment, or unreliable systems.",
+    "Someone can own each breaker and decide whether it is fixed, replaced, or escalated."
+  ],
+  "contraindications": [
+    "Do not log breakers without assigning a real fix owner and deadline.",
+    "Do not normalize workarounds by documenting them unless the underlying issue is also escalated."
+  ],
+  "owner_role": "venue_manager",
+  "expected_time_to_effect_days": 2,
+  "proof_of_completion": [
+    "A visible breaker and workaround log exists with owner, status, and next action.",
+    "Recurring tool or equipment issues are reviewed before the next service cycle.",
+    "At least one normalized workaround has been removed or escalated through the log."
+  ],
+  "successor_block_ids": [],
+  "service_module_ids": [
+    "tools_and_asset_reliability",
+    "readiness_and_setup",
+    "learning_and_improvement"
+  ],
+  "failure_family_ids": [
+    "tool_or_resource_friction",
+    "asset_reliability_failure",
+    "learning_failure"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "identification": {
+    "tool_id": "T003-02",
+    "tool_name": "Excursion Incident Report Form",
+    "block_id": "B003"
+  },
+  "tool_design": {
+    "format": "template",
+    "role_in_intervention": "Formal incident record for every genuine excursion or stock-safety event.",
+    "adaptation_variables": [
+      "unit_list",
+      "stock_categories",
+      "reporting_expectations"
+    ],
+    "usage_moment": "During or immediately after a real excursion event",
+    "expected_output": "Completed incident report with timeline, stock decisions, and follow-up actions",
+    "linked_blocks": [
+      "B003",
+      "B004"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The form is completed too late.",
+        "what_can_go_wrong": "Evidence and sequence are lost during the incident.",
+        "early_signals": [
+          "Details are reconstructed from memory",
+          "No owner or timing is captured"
+        ],
+        "prevention": [
+          "Make completion part of incident closure",
+          "Keep the form close to the manager"
+        ],
+        "mitigation": [
+          "Reconstruct immediately while fresh",
+          "Coach one live completion"
+        ],
+        "if_occurs_next_signals": [
+          "late_documentation_risk"
+        ],
+        "possible_successor_blocks": [
+          "B003",
+          "B004"
+        ]
+      },
+      {
+        "warning": "Fields are completed vaguely.",
+        "what_can_go_wrong": "The record cannot support due diligence or follow-up.",
+        "early_signals": [
+          "Generic words like handled appear",
+          "Stock decisions have no basis noted"
+        ],
+        "prevention": [
+          "Show a worked example",
+          "Highlight minimum specific fields"
+        ],
+        "mitigation": [
+          "Rewrite weak entries while fresh",
+          "Add manager review"
+        ],
+        "if_occurs_next_signals": [
+          "low_signal_documentation"
+        ],
+        "possible_successor_blocks": [
+          "B003",
+          "B004"
+        ]
+      }
+    ]
+  },
+  "content": "# Excursion Incident Report Form\n\n**Tool ID:** T003-02  \n**Block:** B003 (Temperature Excursion Response)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L2  \n**Format:** Template  \n**Role:** Manager / Duty Lead  \n**Time Required:** 10-15 minutes  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this form for every genuine excursion event, equipment failure, or stock safety decision that goes beyond a simple corrected reading.\n\nThis is the evidence document for:\n- what happened\n- what stock was affected\n- what decisions were made\n- who was informed\n- what needs follow-up after the incident\n\n---\n## Incident Header\n\n| Field | Details |\n|---|---|\n| Date | |\n| Time discovered | |\n| Unit affected | |\n| Found by | |\n| Manager handling | |\n| Engineer called? | Yes / No |\n\n---\n## Reading And Timeline\n\n| Item | Details |\n|---|---|\n| Air temperature found | |\n| Product temperature(s) found | |\n| Estimated start time of excursion | |\n| Estimated duration | |\n| Cause suspected | Door / Power / Overloading / Equipment fault / Unknown |\n| Unit recovered by | |\n\n---\n## Stock Assessment\n\n| Product Group | Temp Found | Decision | Quantity / Cost | Notes |\n|---|---|---|---|---|\n| Milk / dairy | | Keep / Use soon / Discard | | |\n| Ready-to-eat fillings | | Keep / Use soon / Discard | | |\n| Desserts / pastries | | Keep / Use soon / Discard | | |\n| Frozen stock | | Keep / Transfer / Discard | | |\n\n---\n## Immediate Actions Taken\n\n<ul>\n  <li><input type=\"checkbox\"> Door checks and simple-cause checks completed</li>\n  <li><input type=\"checkbox\"> Stock isolated or transferred</li>\n  <li><input type=\"checkbox\"> Engineer or owner contacted if needed</li>\n  <li><input type=\"checkbox\"> [T003-03] used for stock decision</li>\n  <li><input type=\"checkbox\"> Team briefed not to use affected unit or stock</li>\n</ul>\n\n### Action Notes\n__________________________________________________  \n__________________________________________________  \n__________________________________________________\n\n---\n## Business Impact\n\n| Item | Details |\n|---|---|\n| Stock discarded value | |\n| Service disruption | Low / Medium / High |\n| Alternative storage used | |\n| Customer impact | None / Potential / Actual |\n\n---\n## Follow-Up Actions\n\n| Action | Owner | Due Date | Status |\n|---|---|---|---|\n| Repair / maintenance | | | Open / Closed |\n| Staff retraining | | | Open / Closed |\n| SOP / process update | | | Open / Closed |\n| Trend tracker updated | | | Open / Closed |\n\n---\n## Sign-Off\n\n**Completed by:** ____________________  \n**Reviewed by:** ____________________  \n**Date closed:** ____________________\n\n---\n## Connected Resources\n\n**Use with:**\n- T003-01 - Temperature Excursion Response Card\n- T003-03 - Time-Temperature Stock Assessment Matrix\n- T003-04 - Excursion Trend Tracker & Root Cause Log\n- T003-05 - Temperature Excursion SOP & Drill Guide\n\n---\n\n*Tool Version 2.0 - the record that proves the response was controlled, not improvised.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T003-02_excursion_incident_report_form.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

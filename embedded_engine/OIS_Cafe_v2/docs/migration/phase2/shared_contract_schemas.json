@@ -1,0 +1,8057 @@
+{
+  "OrganizationContract": {
+    "fields": [
+      "id",
+      "name",
+      "slug",
+      "data_residency"
+    ],
+    "json_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "slug": {
+          "title": "Slug",
+          "type": "string"
+        },
+        "data_residency": {
+          "title": "Data Residency",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "slug",
+        "data_residency"
+      ],
+      "title": "OrganizationContract",
+      "type": "object"
+    }
+  },
+  "WorkspaceContract": {
+    "fields": [
+      "id",
+      "organization_id",
+      "name",
+      "slug",
+      "vertical",
+      "venue_ids"
+    ],
+    "json_schema": {
+      "$defs": {
+        "Vertical": {
+          "enum": [
+            "restaurant",
+            "cafe",
+            "hospitality"
+          ],
+          "title": "Vertical",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "organization_id": {
+          "title": "Organization Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "slug": {
+          "title": "Slug",
+          "type": "string"
+        },
+        "vertical": {
+          "$ref": "#/$defs/Vertical"
+        },
+        "venue_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Venue Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "organization_id",
+        "name",
+        "slug",
+        "vertical"
+      ],
+      "title": "WorkspaceContract",
+      "type": "object"
+    }
+  },
+  "VenueContextContract": {
+    "fields": [
+      "venue_name",
+      "venue_type",
+      "team_size",
+      "location",
+      "stage",
+      "concept"
+    ],
+    "json_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "venue_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Venue Name"
+        },
+        "venue_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Venue Type"
+        },
+        "team_size": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Team Size"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "stage": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stage"
+        },
+        "concept": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Concept"
+        }
+      },
+      "title": "VenueContextContract",
+      "type": "object"
+    }
+  },
+  "VenueProjectContract": {
+    "fields": [
+      "id",
+      "organization_id",
+      "slug",
+      "name",
+      "vertical",
+      "status",
+      "stage",
+      "concept",
+      "location",
+      "team_size",
+      "capacity_profile",
+      "workflow_stage",
+      "health_state",
+      "owner_user_id",
+      "primary_consultant_user_id",
+      "next_review_at",
+      "created_at",
+      "updated_at"
+    ],
+    "json_schema": {
+      "$defs": {
+        "VenueStatus": {
+          "enum": [
+            "active",
+            "monitoring",
+            "paused",
+            "critical",
+            "archived"
+          ],
+          "title": "VenueStatus",
+          "type": "string"
+        },
+        "Vertical": {
+          "enum": [
+            "restaurant",
+            "cafe",
+            "hospitality"
+          ],
+          "title": "Vertical",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "organization_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Organization Id"
+        },
+        "slug": {
+          "title": "Slug",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "vertical": {
+          "$ref": "#/$defs/Vertical",
+          "default": "cafe"
+        },
+        "status": {
+          "$ref": "#/$defs/VenueStatus",
+          "default": "active"
+        },
+        "stage": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stage"
+        },
+        "concept": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Concept"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "team_size": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Team Size"
+        },
+        "capacity_profile": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Capacity Profile",
+          "type": "object"
+        },
+        "workflow_stage": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Workflow Stage"
+        },
+        "health_state": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Health State"
+        },
+        "owner_user_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Owner User Id"
+        },
+        "primary_consultant_user_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Primary Consultant User Id"
+        },
+        "next_review_at": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Next Review At"
+        },
+        "created_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created At"
+        },
+        "updated_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Updated At"
+        }
+      },
+      "required": [
+        "id",
+        "slug",
+        "name"
+      ],
+      "title": "VenueProjectContract",
+      "type": "object"
+    }
+  },
+  "AssessmentSignalState": {
+    "fields": [
+      "active",
+      "notes",
+      "confidence",
+      "value"
+    ],
+    "json_schema": {
+      "$defs": {
+        "ConfidenceBand": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ],
+          "title": "ConfidenceBand",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "active": {
+          "default": true,
+          "title": "Active",
+          "type": "boolean"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ConfidenceBand"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "AssessmentSignalState",
+      "type": "object"
+    }
+  },
+  "AssessmentDraftContract": {
+    "fields": [
+      "id",
+      "venue_id",
+      "assessment_type",
+      "assessment_date",
+      "created_by",
+      "notes",
+      "selected_signal_ids",
+      "signal_states",
+      "raw_input_text",
+      "ontology_version",
+      "management_hours_available",
+      "weekly_effort_budget",
+      "venue_context",
+      "created_at"
+    ],
+    "json_schema": {
+      "$defs": {
+        "AssessmentKind": {
+          "enum": [
+            "full_diagnostic",
+            "follow-up",
+            "weekly_pulse",
+            "preopening",
+            "manual_composite"
+          ],
+          "title": "AssessmentKind",
+          "type": "string"
+        },
+        "AssessmentSignalState": {
+          "additionalProperties": false,
+          "properties": {
+            "active": {
+              "default": true,
+              "title": "Active",
+              "type": "boolean"
+            },
+            "notes": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Notes"
+            },
+            "confidence": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/ConfidenceBand"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Value"
+            }
+          },
+          "title": "AssessmentSignalState",
+          "type": "object"
+        },
+        "ConfidenceBand": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ],
+          "title": "ConfidenceBand",
+          "type": "string"
+        },
+        "VenueContextContract": {
+          "additionalProperties": false,
+          "properties": {
+            "venue_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Venue Name"
+            },
+            "venue_type": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Venue Type"
+            },
+            "team_size": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Team Size"
+            },
+            "location": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Location"
+            },
+            "stage": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Stage"
+            },
+            "concept": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Concept"
+            }
+          },
+          "title": "VenueContextContract",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "venue_id": {
+          "title": "Venue Id",
+          "type": "string"
+        },
+        "assessment_type": {
+          "$ref": "#/$defs/AssessmentKind"
+        },
+        "assessment_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assessment Date"
+        },
+        "created_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created By"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "selected_signal_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Selected Signal Ids",
+          "type": "array"
+        },
+        "signal_states": {
+          "additionalProperties": {
+            "$ref": "#/$defs/AssessmentSignalState"
+          },
+          "title": "Signal States",
+          "type": "object"
+        },
+        "raw_input_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Input Text"
+        },
+        "ontology_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ontology Version"
+        },
+        "management_hours_available": {
+          "default": 8.0,
+          "minimum": 0,
+          "title": "Management Hours Available",
+          "type": "number"
+        },
+        "weekly_effort_budget": {
+          "default": 8.0,
+          "minimum": 0,
+          "title": "Weekly Effort Budget",
+          "type": "number"
+        },
+        "venue_context": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/VenueContextContract"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "created_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created At"
+        }
+      },
+      "required": [
+        "venue_id",
+        "assessment_type"
+      ],
+      "title": "AssessmentDraftContract",
+      "type": "object"
+    }
+  },
+  "AssessmentRunRequestContract": {
+    "fields": [
+      "venue_id",
+      "assessment_type",
+      "assessment_date",
+      "created_by",
+      "notes",
+      "selected_signal_ids",
+      "signal_states",
+      "raw_input_text",
+      "ontology_version",
+      "management_hours_available",
+      "weekly_effort_budget",
+      "venue_context",
+      "triage_enabled",
+      "triage_intensity"
+    ],
+    "json_schema": {
+      "$defs": {
+        "AssessmentKind": {
+          "enum": [
+            "full_diagnostic",
+            "follow-up",
+            "weekly_pulse",
+            "preopening",
+            "manual_composite"
+          ],
+          "title": "AssessmentKind",
+          "type": "string"
+        },
+        "AssessmentSignalState": {
+          "additionalProperties": false,
+          "properties": {
+            "active": {
+              "default": true,
+              "title": "Active",
+              "type": "boolean"
+            },
+            "notes": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Notes"
+            },
+            "confidence": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/ConfidenceBand"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Value"
+            }
+          },
+          "title": "AssessmentSignalState",
+          "type": "object"
+        },
+        "ConfidenceBand": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ],
+          "title": "ConfidenceBand",
+          "type": "string"
+        },
+        "VenueContextContract": {
+          "additionalProperties": false,
+          "properties": {
+            "venue_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Venue Name"
+            },
+            "venue_type": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Venue Type"
+            },
+            "team_size": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Team Size"
+            },
+            "location": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Location"
+            },
+            "stage": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Stage"
+            },
+            "concept": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Concept"
+            }
+          },
+          "title": "VenueContextContract",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "venue_id": {
+          "title": "Venue Id",
+          "type": "string"
+        },
+        "assessment_type": {
+          "$ref": "#/$defs/AssessmentKind"
+        },
+        "assessment_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assessment Date"
+        },
+        "created_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created By"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "selected_signal_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Selected Signal Ids",
+          "type": "array"
+        },
+        "signal_states": {
+          "additionalProperties": {
+            "$ref": "#/$defs/AssessmentSignalState"
+          },
+          "title": "Signal States",
+          "type": "object"
+        },
+        "raw_input_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Input Text"
+        },
+        "ontology_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ontology Version"
+        },
+        "management_hours_available": {
+          "default": 8.0,
+          "minimum": 0,
+          "title": "Management Hours Available",
+          "type": "number"
+        },
+        "weekly_effort_budget": {
+          "default": 8.0,
+          "minimum": 0,
+          "title": "Weekly Effort Budget",
+          "type": "number"
+        },
+        "venue_context": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/VenueContextContract"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "triage_enabled": {
+          "default": false,
+          "title": "Triage Enabled",
+          "type": "boolean"
+        },
+        "triage_intensity": {
+          "default": "balanced",
+          "title": "Triage Intensity",
+          "type": "string"
+        }
+      },
+      "required": [
+        "venue_id",
+        "assessment_type"
+      ],
+      "title": "AssessmentRunRequestContract",
+      "type": "object"
+    }
+  },
+  "SignalContract": {
+    "fields": [
+      "signal_id",
+      "signal_name",
+      "domain_id",
+      "severity",
+      "timestamp",
+      "source_type",
+      "venue_id",
+      "notes",
+      "description",
+      "value",
+      "score",
+      "evidence_snippet",
+      "match_reasons"
+    ],
+    "json_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "signal_id": {
+          "title": "Signal Id",
+          "type": "string"
+        },
+        "signal_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Signal Name"
+        },
+        "domain_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Domain Id"
+        },
+        "severity": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Severity"
+        },
+        "timestamp": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timestamp"
+        },
+        "source_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Type"
+        },
+        "venue_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Venue Id"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Score"
+        },
+        "evidence_snippet": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evidence Snippet"
+        },
+        "match_reasons": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Match Reasons",
+          "type": "array"
+        }
+      },
+      "required": [
+        "signal_id"
+      ],
+      "title": "SignalContract",
+      "type": "object"
+    }
+  },
+  "FailureModeContract": {
+    "fields": [
+      "failure_mode_id",
+      "title",
+      "description",
+      "severity",
+      "score",
+      "domain_id",
+      "module_id",
+      "signal_ids"
+    ],
+    "json_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "failure_mode_id": {
+          "title": "Failure Mode Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "severity": {
+          "title": "Severity",
+          "type": "string"
+        },
+        "score": {
+          "title": "Score",
+          "type": "number"
+        },
+        "domain_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Domain Id"
+        },
+        "module_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Module Id"
+        },
+        "signal_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Signal Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "failure_mode_id",
+        "title",
+        "description",
+        "severity",
+        "score"
+      ],
+      "title": "FailureModeContract",
+      "type": "object"
+    }
+  },
+  "ResponsePatternTriggerContract": {
+    "fields": [
+      "failure_mode_id",
+      "fm_title",
+      "fm_score",
+      "link_priority"
+    ],
+    "json_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "failure_mode_id": {
+          "title": "Failure Mode Id",
+          "type": "string"
+        },
+        "fm_title": {
+          "title": "Fm Title",
+          "type": "string"
+        },
+        "fm_score": {
+          "title": "Fm Score",
+          "type": "number"
+        },
+        "link_priority": {
+          "title": "Link Priority",
+          "type": "string"
+        }
+      },
+      "required": [
+        "failure_mode_id",
+        "fm_title",
+        "fm_score",
+        "link_priority"
+      ],
+      "title": "ResponsePatternTriggerContract",
+      "type": "object"
+    }
+  },
+  "ResponsePatternContract": {
+    "fields": [
+      "response_pattern_id",
+      "rp_name",
+      "domain",
+      "severity",
+      "priority_score",
+      "description",
+      "triggering_fms",
+      "l1_focus",
+      "l2_focus",
+      "l3_focus"
+    ],
+    "json_schema": {
+      "$defs": {
+        "ResponsePatternTriggerContract": {
+          "additionalProperties": false,
+          "properties": {
+            "failure_mode_id": {
+              "title": "Failure Mode Id",
+              "type": "string"
+            },
+            "fm_title": {
+              "title": "Fm Title",
+              "type": "string"
+            },
+            "fm_score": {
+              "title": "Fm Score",
+              "type": "number"
+            },
+            "link_priority": {
+              "title": "Link Priority",
+              "type": "string"
+            }
+          },
+          "required": [
+            "failure_mode_id",
+            "fm_title",
+            "fm_score",
+            "link_priority"
+          ],
+          "title": "ResponsePatternTriggerContract",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "response_pattern_id": {
+          "title": "Response Pattern Id",
+          "type": "string"
+        },
+        "rp_name": {
+          "title": "Rp Name",
+          "type": "string"
+        },
+        "domain": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Domain"
+        },
+        "severity": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Severity"
+        },
+        "priority_score": {
+          "title": "Priority Score",
+          "type": "number"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "triggering_fms": {
+          "items": {
+            "$ref": "#/$defs/ResponsePatternTriggerContract"
+          },
+          "title": "Triggering Fms",
+          "type": "array"
+        },
+        "l1_focus": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "L1 Focus"
+        },
+        "l2_focus": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "L2 Focus"
+        },
+        "l3_focus": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "L3 Focus"
+        }
+      },
+      "required": [
+        "response_pattern_id",
+        "rp_name",
+        "priority_score"
+      ],
+      "title": "ResponsePatternContract",
+      "type": "object"
+    }
+  },
+  "BlockActivationLevelsContract": {
+    "fields": [
+      "L1",
+      "L2",
+      "L3"
+    ],
+    "json_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "L1": {
+          "items": {
+            "type": "string"
+          },
+          "title": "L1",
+          "type": "array"
+        },
+        "L2": {
+          "items": {
+            "type": "string"
+          },
+          "title": "L2",
+          "type": "array"
+        },
+        "L3": {
+          "items": {
+            "type": "string"
+          },
+          "title": "L3",
+          "type": "array"
+        }
+      },
+      "title": "BlockActivationLevelsContract",
+      "type": "object"
+    }
+  },
+  "BlockActivationContract": {
+    "fields": [
+      "response_pattern_id",
+      "rp_name",
+      "priority_score",
+      "activated_items"
+    ],
+    "json_schema": {
+      "$defs": {
+        "BlockActivationLevelsContract": {
+          "additionalProperties": false,
+          "properties": {
+            "L1": {
+              "items": {
+                "type": "string"
+              },
+              "title": "L1",
+              "type": "array"
+            },
+            "L2": {
+              "items": {
+                "type": "string"
+              },
+              "title": "L2",
+              "type": "array"
+            },
+            "L3": {
+              "items": {
+                "type": "string"
+              },
+              "title": "L3",
+              "type": "array"
+            }
+          },
+          "title": "BlockActivationLevelsContract",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "response_pattern_id": {
+          "title": "Response Pattern Id",
+          "type": "string"
+        },
+        "rp_name": {
+          "title": "Rp Name",
+          "type": "string"
+        },
+        "priority_score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Priority Score"
+        },
+        "activated_items": {
+          "$ref": "#/$defs/BlockActivationLevelsContract"
+        }
+      },
+      "required": [
+        "response_pattern_id",
+        "rp_name",
+        "activated_items"
+      ],
+      "title": "BlockActivationContract",
+      "type": "object"
+    }
+  },
+  "TaskDependencyContract": {
+    "fields": [
+      "predecessor_task_id",
+      "successor_task_id",
+      "dependency_kind",
+      "note"
+    ],
+    "json_schema": {
+      "$defs": {
+        "DependencyKind": {
+          "enum": [
+            "finish_to_start",
+            "soft_prerequisite",
+            "parallel_support"
+          ],
+          "title": "DependencyKind",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "predecessor_task_id": {
+          "title": "Predecessor Task Id",
+          "type": "string"
+        },
+        "successor_task_id": {
+          "title": "Successor Task Id",
+          "type": "string"
+        },
+        "dependency_kind": {
+          "$ref": "#/$defs/DependencyKind",
+          "default": "finish_to_start"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "predecessor_task_id",
+        "successor_task_id"
+      ],
+      "title": "TaskDependencyContract",
+      "type": "object"
+    }
+  },
+  "TaskCommentContract": {
+    "fields": [
+      "id",
+      "task_id",
+      "venue_id",
+      "author_user_id",
+      "author_name",
+      "body",
+      "visibility",
+      "created_at"
+    ],
+    "json_schema": {
+      "$defs": {
+        "CommentVisibility": {
+          "enum": [
+            "internal",
+            "shared",
+            "owner"
+          ],
+          "title": "CommentVisibility",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "task_id": {
+          "title": "Task Id",
+          "type": "string"
+        },
+        "venue_id": {
+          "title": "Venue Id",
+          "type": "string"
+        },
+        "author_user_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Author User Id"
+        },
+        "author_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Author Name"
+        },
+        "body": {
+          "title": "Body",
+          "type": "string"
+        },
+        "visibility": {
+          "$ref": "#/$defs/CommentVisibility",
+          "default": "internal"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "task_id",
+        "venue_id",
+        "body",
+        "created_at"
+      ],
+      "title": "TaskCommentContract",
+      "type": "object"
+    }
+  },
+  "TaskEventContract": {
+    "fields": [
+      "id",
+      "task_id",
+      "event_type",
+      "status",
+      "actor_user_id",
+      "actor_name",
+      "note",
+      "created_at"
+    ],
+    "json_schema": {
+      "$defs": {
+        "TaskEventType": {
+          "enum": [
+            "status_changed",
+            "comment_added",
+            "deliverable_checked",
+            "sub_action_checked",
+            "follow_up_created",
+            "escalated",
+            "note_captured"
+          ],
+          "title": "TaskEventType",
+          "type": "string"
+        },
+        "TaskStatus": {
+          "enum": [
+            "not_started",
+            "in_progress",
+            "completed",
+            "blocked",
+            "on_hold",
+            "deferred"
+          ],
+          "title": "TaskStatus",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "task_id": {
+          "title": "Task Id",
+          "type": "string"
+        },
+        "event_type": {
+          "$ref": "#/$defs/TaskEventType"
+        },
+        "status": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TaskStatus"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "actor_user_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Actor User Id"
+        },
+        "actor_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Actor Name"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "task_id",
+        "event_type",
+        "created_at"
+      ],
+      "title": "TaskEventContract",
+      "type": "object"
+    }
+  },
+  "SubActionContract": {
+    "fields": [
+      "id",
+      "text",
+      "completed",
+      "completed_at"
+    ],
+    "json_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "completed": {
+          "default": false,
+          "title": "Completed",
+          "type": "boolean"
+        },
+        "completed_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Completed At"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "SubActionContract",
+      "type": "object"
+    }
+  },
+  "DeliverableItemContract": {
+    "fields": [
+      "name",
+      "completed",
+      "completed_at"
+    ],
+    "json_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "completed": {
+          "default": false,
+          "title": "Completed",
+          "type": "boolean"
+        },
+        "completed_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Completed At"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "DeliverableItemContract",
+      "type": "object"
+    }
+  },
+  "DeliverableProofContract": {
+    "fields": [
+      "id",
+      "task_id",
+      "deliverable_name",
+      "proof_kind",
+      "file_asset_id",
+      "source_url",
+      "note",
+      "created_at",
+      "verified_at"
+    ],
+    "json_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "task_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Task Id"
+        },
+        "deliverable_name": {
+          "title": "Deliverable Name",
+          "type": "string"
+        },
+        "proof_kind": {
+          "title": "Proof Kind",
+          "type": "string"
+        },
+        "file_asset_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "File Asset Id"
+        },
+        "source_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Url"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "verified_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verified At"
+        }
+      },
+      "required": [
+        "id",
+        "deliverable_name",
+        "proof_kind",
+        "created_at"
+      ],
+      "title": "DeliverableProofContract",
+      "type": "object"
+    }
+  },
+  "TaskContract": {
+    "fields": [
+      "id",
+      "block_id",
+      "title",
+      "status",
+      "order_index",
+      "layer",
+      "timeline_label",
+      "priority",
+      "effort_hours",
+      "rationale",
+      "description",
+      "notes",
+      "source_response_pattern_id",
+      "source_response_pattern_name",
+      "module_id",
+      "dependency_ids",
+      "depends_on_modules",
+      "trace",
+      "sub_actions",
+      "deliverables",
+      "comments",
+      "events",
+      "assigned_to",
+      "assignee_user_id",
+      "assignee_name",
+      "due_at",
+      "created_at",
+      "started_at",
+      "completed_at",
+      "updated_at",
+      "updated_by",
+      "review_required",
+      "verification",
+      "expected_output",
+      "flags"
+    ],
+    "json_schema": {
+      "$defs": {
+        "CommentVisibility": {
+          "enum": [
+            "internal",
+            "shared",
+            "owner"
+          ],
+          "title": "CommentVisibility",
+          "type": "string"
+        },
+        "DeliverableItemContract": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string"
+            },
+            "completed": {
+              "default": false,
+              "title": "Completed",
+              "type": "boolean"
+            },
+            "completed_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Completed At"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "title": "DeliverableItemContract",
+          "type": "object"
+        },
+        "SubActionContract": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Id"
+            },
+            "text": {
+              "title": "Text",
+              "type": "string"
+            },
+            "completed": {
+              "default": false,
+              "title": "Completed",
+              "type": "boolean"
+            },
+            "completed_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Completed At"
+            }
+          },
+          "required": [
+            "text"
+          ],
+          "title": "SubActionContract",
+          "type": "object"
+        },
+        "TaskCommentContract": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "task_id": {
+              "title": "Task Id",
+              "type": "string"
+            },
+            "venue_id": {
+              "title": "Venue Id",
+              "type": "string"
+            },
+            "author_user_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Author User Id"
+            },
+            "author_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Author Name"
+            },
+            "body": {
+              "title": "Body",
+              "type": "string"
+            },
+            "visibility": {
+              "$ref": "#/$defs/CommentVisibility",
+              "default": "internal"
+            },
+            "created_at": {
+              "format": "date-time",
+              "title": "Created At",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "task_id",
+            "venue_id",
+            "body",
+            "created_at"
+          ],
+          "title": "TaskCommentContract",
+          "type": "object"
+        },
+        "TaskEventContract": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "task_id": {
+              "title": "Task Id",
+              "type": "string"
+            },
+            "event_type": {
+              "$ref": "#/$defs/TaskEventType"
+            },
+            "status": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TaskStatus"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "actor_user_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Actor User Id"
+            },
+            "actor_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Actor Name"
+            },
+            "note": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Note"
+            },
+            "created_at": {
+              "format": "date-time",
+              "title": "Created At",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "task_id",
+            "event_type",
+            "created_at"
+          ],
+          "title": "TaskEventContract",
+          "type": "object"
+        },
+        "TaskEventType": {
+          "enum": [
+            "status_changed",
+            "comment_added",
+            "deliverable_checked",
+            "sub_action_checked",
+            "follow_up_created",
+            "escalated",
+            "note_captured"
+          ],
+          "title": "TaskEventType",
+          "type": "string"
+        },
+        "TaskStatus": {
+          "enum": [
+            "not_started",
+            "in_progress",
+            "completed",
+            "blocked",
+            "on_hold",
+            "deferred"
+          ],
+          "title": "TaskStatus",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "block_id": {
+          "title": "Block Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/TaskStatus",
+          "default": "not_started"
+        },
+        "order_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Order Index"
+        },
+        "layer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Layer"
+        },
+        "timeline_label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timeline Label"
+        },
+        "priority": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Priority"
+        },
+        "effort_hours": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Effort Hours"
+        },
+        "rationale": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rationale"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "source_response_pattern_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Response Pattern Id"
+        },
+        "source_response_pattern_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Response Pattern Name"
+        },
+        "module_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Module Id"
+        },
+        "dependency_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Dependency Ids",
+          "type": "array"
+        },
+        "depends_on_modules": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Depends On Modules",
+          "type": "array"
+        },
+        "trace": {
+          "additionalProperties": true,
+          "title": "Trace",
+          "type": "object"
+        },
+        "sub_actions": {
+          "items": {
+            "$ref": "#/$defs/SubActionContract"
+          },
+          "title": "Sub Actions",
+          "type": "array"
+        },
+        "deliverables": {
+          "items": {
+            "$ref": "#/$defs/DeliverableItemContract"
+          },
+          "title": "Deliverables",
+          "type": "array"
+        },
+        "comments": {
+          "items": {
+            "$ref": "#/$defs/TaskCommentContract"
+          },
+          "title": "Comments",
+          "type": "array"
+        },
+        "events": {
+          "items": {
+            "$ref": "#/$defs/TaskEventContract"
+          },
+          "title": "Events",
+          "type": "array"
+        },
+        "assigned_to": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assigned To"
+        },
+        "assignee_user_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assignee User Id"
+        },
+        "assignee_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assignee Name"
+        },
+        "due_at": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Due At"
+        },
+        "created_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created At"
+        },
+        "started_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Started At"
+        },
+        "completed_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Completed At"
+        },
+        "updated_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Updated At"
+        },
+        "updated_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Updated By"
+        },
+        "review_required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Review Required"
+        },
+        "verification": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verification"
+        },
+        "expected_output": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expected Output"
+        },
+        "flags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Flags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "block_id",
+        "title"
+      ],
+      "title": "TaskContract",
+      "type": "object"
+    }
+  },
+  "GeneratedPlanTaskContract": {
+    "fields": [
+      "task_id",
+      "item_id",
+      "item_type",
+      "title",
+      "source_rp",
+      "rp_name",
+      "module_id",
+      "timeline",
+      "priority",
+      "description",
+      "depends_on_modules",
+      "trace"
+    ],
+    "json_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "task_id": {
+          "title": "Task Id",
+          "type": "string"
+        },
+        "item_id": {
+          "title": "Item Id",
+          "type": "string"
+        },
+        "item_type": {
+          "title": "Item Type",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "source_rp": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Rp"
+        },
+        "rp_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rp Name"
+        },
+        "module_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Module Id"
+        },
+        "timeline": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timeline"
+        },
+        "priority": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Priority"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "depends_on_modules": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Depends On Modules",
+          "type": "array"
+        },
+        "trace": {
+          "additionalProperties": true,
+          "title": "Trace",
+          "type": "object"
+        }
+      },
+      "required": [
+        "task_id",
+        "item_id",
+        "item_type",
+        "title"
+      ],
+      "title": "GeneratedPlanTaskContract",
+      "type": "object"
+    }
+  },
+  "GeneratedPlanContract": {
+    "fields": [
+      "L1_tasks",
+      "L2_tasks",
+      "L3_tasks"
+    ],
+    "json_schema": {
+      "$defs": {
+        "GeneratedPlanTaskContract": {
+          "additionalProperties": false,
+          "properties": {
+            "task_id": {
+              "title": "Task Id",
+              "type": "string"
+            },
+            "item_id": {
+              "title": "Item Id",
+              "type": "string"
+            },
+            "item_type": {
+              "title": "Item Type",
+              "type": "string"
+            },
+            "title": {
+              "title": "Title",
+              "type": "string"
+            },
+            "source_rp": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Source Rp"
+            },
+            "rp_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Rp Name"
+            },
+            "module_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Module Id"
+            },
+            "timeline": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Timeline"
+            },
+            "priority": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Priority"
+            },
+            "description": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Description"
+            },
+            "depends_on_modules": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Depends On Modules",
+              "type": "array"
+            },
+            "trace": {
+              "additionalProperties": true,
+              "title": "Trace",
+              "type": "object"
+            }
+          },
+          "required": [
+            "task_id",
+            "item_id",
+            "item_type",
+            "title"
+          ],
+          "title": "GeneratedPlanTaskContract",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "L1_tasks": {
+          "items": {
+            "$ref": "#/$defs/GeneratedPlanTaskContract"
+          },
+          "title": "L1 Tasks",
+          "type": "array"
+        },
+        "L2_tasks": {
+          "items": {
+            "$ref": "#/$defs/GeneratedPlanTaskContract"
+          },
+          "title": "L2 Tasks",
+          "type": "array"
+        },
+        "L3_tasks": {
+          "items": {
+            "$ref": "#/$defs/GeneratedPlanTaskContract"
+          },
+          "title": "L3 Tasks",
+          "type": "array"
+        }
+      },
+      "title": "GeneratedPlanContract",
+      "type": "object"
+    }
+  },
+  "PlanContract": {
+    "fields": [
+      "id",
+      "venue_id",
+      "engine_run_id",
+      "title",
+      "summary",
+      "total_effort_hours",
+      "status",
+      "load_classification",
+      "source_assessment",
+      "version",
+      "previous_versions",
+      "owner_user_id",
+      "reviewer_user_id",
+      "approval_requested_at",
+      "approved_at",
+      "approved_by_user_id",
+      "confidence",
+      "strengths",
+      "summary_snapshot",
+      "dependency_notes",
+      "tasks",
+      "created_at",
+      "updated_at"
+    ],
+    "json_schema": {
+      "$defs": {
+        "CommentVisibility": {
+          "enum": [
+            "internal",
+            "shared",
+            "owner"
+          ],
+          "title": "CommentVisibility",
+          "type": "string"
+        },
+        "DeliverableItemContract": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string"
+            },
+            "completed": {
+              "default": false,
+              "title": "Completed",
+              "type": "boolean"
+            },
+            "completed_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Completed At"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "title": "DeliverableItemContract",
+          "type": "object"
+        },
+        "PlanStatus": {
+          "enum": [
+            "draft",
+            "active",
+            "archived"
+          ],
+          "title": "PlanStatus",
+          "type": "string"
+        },
+        "SubActionContract": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Id"
+            },
+            "text": {
+              "title": "Text",
+              "type": "string"
+            },
+            "completed": {
+              "default": false,
+              "title": "Completed",
+              "type": "boolean"
+            },
+            "completed_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Completed At"
+            }
+          },
+          "required": [
+            "text"
+          ],
+          "title": "SubActionContract",
+          "type": "object"
+        },
+        "TaskCommentContract": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "task_id": {
+              "title": "Task Id",
+              "type": "string"
+            },
+            "venue_id": {
+              "title": "Venue Id",
+              "type": "string"
+            },
+            "author_user_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Author User Id"
+            },
+            "author_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Author Name"
+            },
+            "body": {
+              "title": "Body",
+              "type": "string"
+            },
+            "visibility": {
+              "$ref": "#/$defs/CommentVisibility",
+              "default": "internal"
+            },
+            "created_at": {
+              "format": "date-time",
+              "title": "Created At",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "task_id",
+            "venue_id",
+            "body",
+            "created_at"
+          ],
+          "title": "TaskCommentContract",
+          "type": "object"
+        },
+        "TaskContract": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "block_id": {
+              "title": "Block Id",
+              "type": "string"
+            },
+            "title": {
+              "title": "Title",
+              "type": "string"
+            },
+            "status": {
+              "$ref": "#/$defs/TaskStatus",
+              "default": "not_started"
+            },
+            "order_index": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Order Index"
+            },
+            "layer": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Layer"
+            },
+            "timeline_label": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Timeline Label"
+            },
+            "priority": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Priority"
+            },
+            "effort_hours": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Effort Hours"
+            },
+            "rationale": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Rationale"
+            },
+            "description": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Description"
+            },
+            "notes": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Notes"
+            },
+            "source_response_pattern_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Source Response Pattern Id"
+            },
+            "source_response_pattern_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Source Response Pattern Name"
+            },
+            "module_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Module Id"
+            },
+            "dependency_ids": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Dependency Ids",
+              "type": "array"
+            },
+            "depends_on_modules": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Depends On Modules",
+              "type": "array"
+            },
+            "trace": {
+              "additionalProperties": true,
+              "title": "Trace",
+              "type": "object"
+            },
+            "sub_actions": {
+              "items": {
+                "$ref": "#/$defs/SubActionContract"
+              },
+              "title": "Sub Actions",
+              "type": "array"
+            },
+            "deliverables": {
+              "items": {
+                "$ref": "#/$defs/DeliverableItemContract"
+              },
+              "title": "Deliverables",
+              "type": "array"
+            },
+            "comments": {
+              "items": {
+                "$ref": "#/$defs/TaskCommentContract"
+              },
+              "title": "Comments",
+              "type": "array"
+            },
+            "events": {
+              "items": {
+                "$ref": "#/$defs/TaskEventContract"
+              },
+              "title": "Events",
+              "type": "array"
+            },
+            "assigned_to": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Assigned To"
+            },
+            "assignee_user_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Assignee User Id"
+            },
+            "assignee_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Assignee Name"
+            },
+            "due_at": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Due At"
+            },
+            "created_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Created At"
+            },
+            "started_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Started At"
+            },
+            "completed_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Completed At"
+            },
+            "updated_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Updated At"
+            },
+            "updated_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Updated By"
+            },
+            "review_required": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Review Required"
+            },
+            "verification": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Verification"
+            },
+            "expected_output": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Expected Output"
+            },
+            "flags": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Flags",
+              "type": "array"
+            }
+          },
+          "required": [
+            "id",
+            "block_id",
+            "title"
+          ],
+          "title": "TaskContract",
+          "type": "object"
+        },
+        "TaskEventContract": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "task_id": {
+              "title": "Task Id",
+              "type": "string"
+            },
+            "event_type": {
+              "$ref": "#/$defs/TaskEventType"
+            },
+            "status": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TaskStatus"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "actor_user_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Actor User Id"
+            },
+            "actor_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Actor Name"
+            },
+            "note": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Note"
+            },
+            "created_at": {
+              "format": "date-time",
+              "title": "Created At",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "task_id",
+            "event_type",
+            "created_at"
+          ],
+          "title": "TaskEventContract",
+          "type": "object"
+        },
+        "TaskEventType": {
+          "enum": [
+            "status_changed",
+            "comment_added",
+            "deliverable_checked",
+            "sub_action_checked",
+            "follow_up_created",
+            "escalated",
+            "note_captured"
+          ],
+          "title": "TaskEventType",
+          "type": "string"
+        },
+        "TaskStatus": {
+          "enum": [
+            "not_started",
+            "in_progress",
+            "completed",
+            "blocked",
+            "on_hold",
+            "deferred"
+          ],
+          "title": "TaskStatus",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "venue_id": {
+          "title": "Venue Id",
+          "type": "string"
+        },
+        "engine_run_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Engine Run Id"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "total_effort_hours": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Total Effort Hours"
+        },
+        "status": {
+          "$ref": "#/$defs/PlanStatus",
+          "default": "draft"
+        },
+        "load_classification": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Load Classification"
+        },
+        "source_assessment": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Assessment"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        },
+        "previous_versions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Previous Versions",
+          "type": "array"
+        },
+        "owner_user_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Owner User Id"
+        },
+        "reviewer_user_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewer User Id"
+        },
+        "approval_requested_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Approval Requested At"
+        },
+        "approved_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Approved At"
+        },
+        "approved_by_user_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Approved By User Id"
+        },
+        "confidence": {
+          "additionalProperties": true,
+          "title": "Confidence",
+          "type": "object"
+        },
+        "strengths": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Strengths",
+          "type": "array"
+        },
+        "summary_snapshot": {
+          "additionalProperties": true,
+          "title": "Summary Snapshot",
+          "type": "object"
+        },
+        "dependency_notes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Dependency Notes",
+          "type": "array"
+        },
+        "tasks": {
+          "items": {
+            "$ref": "#/$defs/TaskContract"
+          },
+          "title": "Tasks",
+          "type": "array"
+        },
+        "created_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created At"
+        },
+        "updated_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Updated At"
+        }
+      },
+      "required": [
+        "id",
+        "venue_id",
+        "title",
+        "summary"
+      ],
+      "title": "PlanContract",
+      "type": "object"
+    }
+  },
+  "ReportContract": {
+    "fields": [
+      "id",
+      "engine_run_id",
+      "venue_id",
+      "report_kind",
+      "report_type",
+      "summary",
+      "markdown",
+      "diagnostic_spine",
+      "investigation_threads",
+      "verification_briefs",
+      "created_at"
+    ],
+    "json_schema": {
+      "$defs": {
+        "ReportKind": {
+          "enum": [
+            "diagnostic",
+            "ai",
+            "execution"
+          ],
+          "title": "ReportKind",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "engine_run_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Engine Run Id"
+        },
+        "venue_id": {
+          "title": "Venue Id",
+          "type": "string"
+        },
+        "report_kind": {
+          "$ref": "#/$defs/ReportKind"
+        },
+        "report_type": {
+          "title": "Report Type",
+          "type": "string"
+        },
+        "summary": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Summary"
+        },
+        "markdown": {
+          "title": "Markdown",
+          "type": "string"
+        },
+        "diagnostic_spine": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Diagnostic Spine",
+          "type": "array"
+        },
+        "investigation_threads": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Investigation Threads",
+          "type": "array"
+        },
+        "verification_briefs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Verification Briefs",
+          "type": "array"
+        },
+        "created_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created At"
+        }
+      },
+      "required": [
+        "venue_id",
+        "report_kind",
+        "report_type",
+        "markdown"
+      ],
+      "title": "ReportContract",
+      "type": "object"
+    }
+  },
+  "DiagnosticResultContract": {
+    "fields": [
+      "engine_run_id",
+      "assessment_id",
+      "venue_id",
+      "ontology_version",
+      "load_classification",
+      "normalized_signals",
+      "failure_modes",
+      "response_patterns",
+      "block_activations",
+      "constrained_block_activations",
+      "constraint_report",
+      "generated_plan",
+      "plan",
+      "report"
+    ],
+    "json_schema": {
+      "$defs": {
+        "BlockActivationContract": {
+          "additionalProperties": false,
+          "properties": {
+            "response_pattern_id": {
+              "title": "Response Pattern Id",
+              "type": "string"
+            },
+            "rp_name": {
+              "title": "Rp Name",
+              "type": "string"
+            },
+            "priority_score": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Priority Score"
+            },
+            "activated_items": {
+              "$ref": "#/$defs/BlockActivationLevelsContract"
+            }
+          },
+          "required": [
+            "response_pattern_id",
+            "rp_name",
+            "activated_items"
+          ],
+          "title": "BlockActivationContract",
+          "type": "object"
+        },
+        "BlockActivationLevelsContract": {
+          "additionalProperties": false,
+          "properties": {
+            "L1": {
+              "items": {
+                "type": "string"
+              },
+              "title": "L1",
+              "type": "array"
+            },
+            "L2": {
+              "items": {
+                "type": "string"
+              },
+              "title": "L2",
+              "type": "array"
+            },
+            "L3": {
+              "items": {
+                "type": "string"
+              },
+              "title": "L3",
+              "type": "array"
+            }
+          },
+          "title": "BlockActivationLevelsContract",
+          "type": "object"
+        },
+        "CommentVisibility": {
+          "enum": [
+            "internal",
+            "shared",
+            "owner"
+          ],
+          "title": "CommentVisibility",
+          "type": "string"
+        },
+        "DeliverableItemContract": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string"
+            },
+            "completed": {
+              "default": false,
+              "title": "Completed",
+              "type": "boolean"
+            },
+            "completed_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Completed At"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "title": "DeliverableItemContract",
+          "type": "object"
+        },
+        "FailureModeContract": {
+          "additionalProperties": false,
+          "properties": {
+            "failure_mode_id": {
+              "title": "Failure Mode Id",
+              "type": "string"
+            },
+            "title": {
+              "title": "Title",
+              "type": "string"
+            },
+            "description": {
+              "title": "Description",
+              "type": "string"
+            },
+            "severity": {
+              "title": "Severity",
+              "type": "string"
+            },
+            "score": {
+              "title": "Score",
+              "type": "number"
+            },
+            "domain_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Domain Id"
+            },
+            "module_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Module Id"
+            },
+            "signal_ids": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Signal Ids",
+              "type": "array"
+            }
+          },
+          "required": [
+            "failure_mode_id",
+            "title",
+            "description",
+            "severity",
+            "score"
+          ],
+          "title": "FailureModeContract",
+          "type": "object"
+        },
+        "GeneratedPlanContract": {
+          "additionalProperties": false,
+          "properties": {
+            "L1_tasks": {
+              "items": {
+                "$ref": "#/$defs/GeneratedPlanTaskContract"
+              },
+              "title": "L1 Tasks",
+              "type": "array"
+            },
+            "L2_tasks": {
+              "items": {
+                "$ref": "#/$defs/GeneratedPlanTaskContract"
+              },
+              "title": "L2 Tasks",
+              "type": "array"
+            },
+            "L3_tasks": {
+              "items": {
+                "$ref": "#/$defs/GeneratedPlanTaskContract"
+              },
+              "title": "L3 Tasks",
+              "type": "array"
+            }
+          },
+          "title": "GeneratedPlanContract",
+          "type": "object"
+        },
+        "GeneratedPlanTaskContract": {
+          "additionalProperties": false,
+          "properties": {
+            "task_id": {
+              "title": "Task Id",
+              "type": "string"
+            },
+            "item_id": {
+              "title": "Item Id",
+              "type": "string"
+            },
+            "item_type": {
+              "title": "Item Type",
+              "type": "string"
+            },
+            "title": {
+              "title": "Title",
+              "type": "string"
+            },
+            "source_rp": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Source Rp"
+            },
+            "rp_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Rp Name"
+            },
+            "module_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Module Id"
+            },
+            "timeline": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Timeline"
+            },
+            "priority": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Priority"
+            },
+            "description": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Description"
+            },
+            "depends_on_modules": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Depends On Modules",
+              "type": "array"
+            },
+            "trace": {
+              "additionalProperties": true,
+              "title": "Trace",
+              "type": "object"
+            }
+          },
+          "required": [
+            "task_id",
+            "item_id",
+            "item_type",
+            "title"
+          ],
+          "title": "GeneratedPlanTaskContract",
+          "type": "object"
+        },
+        "PlanContract": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "venue_id": {
+              "title": "Venue Id",
+              "type": "string"
+            },
+            "engine_run_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Engine Run Id"
+            },
+            "title": {
+              "title": "Title",
+              "type": "string"
+            },
+            "summary": {
+              "title": "Summary",
+              "type": "string"
+            },
+            "total_effort_hours": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Total Effort Hours"
+            },
+            "status": {
+              "$ref": "#/$defs/PlanStatus",
+              "default": "draft"
+            },
+            "load_classification": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Load Classification"
+            },
+            "source_assessment": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Source Assessment"
+            },
+            "version": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Version"
+            },
+            "previous_versions": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Previous Versions",
+              "type": "array"
+            },
+            "owner_user_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Owner User Id"
+            },
+            "reviewer_user_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Reviewer User Id"
+            },
+            "approval_requested_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Approval Requested At"
+            },
+            "approved_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Approved At"
+            },
+            "approved_by_user_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Approved By User Id"
+            },
+            "confidence": {
+              "additionalProperties": true,
+              "title": "Confidence",
+              "type": "object"
+            },
+            "strengths": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Strengths",
+              "type": "array"
+            },
+            "summary_snapshot": {
+              "additionalProperties": true,
+              "title": "Summary Snapshot",
+              "type": "object"
+            },
+            "dependency_notes": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Dependency Notes",
+              "type": "array"
+            },
+            "tasks": {
+              "items": {
+                "$ref": "#/$defs/TaskContract"
+              },
+              "title": "Tasks",
+              "type": "array"
+            },
+            "created_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Created At"
+            },
+            "updated_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Updated At"
+            }
+          },
+          "required": [
+            "id",
+            "venue_id",
+            "title",
+            "summary"
+          ],
+          "title": "PlanContract",
+          "type": "object"
+        },
+        "PlanStatus": {
+          "enum": [
+            "draft",
+            "active",
+            "archived"
+          ],
+          "title": "PlanStatus",
+          "type": "string"
+        },
+        "ReportContract": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Id"
+            },
+            "engine_run_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Engine Run Id"
+            },
+            "venue_id": {
+              "title": "Venue Id",
+              "type": "string"
+            },
+            "report_kind": {
+              "$ref": "#/$defs/ReportKind"
+            },
+            "report_type": {
+              "title": "Report Type",
+              "type": "string"
+            },
+            "summary": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Summary"
+            },
+            "markdown": {
+              "title": "Markdown",
+              "type": "string"
+            },
+            "diagnostic_spine": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Diagnostic Spine",
+              "type": "array"
+            },
+            "investigation_threads": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Investigation Threads",
+              "type": "array"
+            },
+            "verification_briefs": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Verification Briefs",
+              "type": "array"
+            },
+            "created_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Created At"
+            }
+          },
+          "required": [
+            "venue_id",
+            "report_kind",
+            "report_type",
+            "markdown"
+          ],
+          "title": "ReportContract",
+          "type": "object"
+        },
+        "ReportKind": {
+          "enum": [
+            "diagnostic",
+            "ai",
+            "execution"
+          ],
+          "title": "ReportKind",
+          "type": "string"
+        },
+        "ResponsePatternContract": {
+          "additionalProperties": false,
+          "properties": {
+            "response_pattern_id": {
+              "title": "Response Pattern Id",
+              "type": "string"
+            },
+            "rp_name": {
+              "title": "Rp Name",
+              "type": "string"
+            },
+            "domain": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Domain"
+            },
+            "severity": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Severity"
+            },
+            "priority_score": {
+              "title": "Priority Score",
+              "type": "number"
+            },
+            "description": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Description"
+            },
+            "triggering_fms": {
+              "items": {
+                "$ref": "#/$defs/ResponsePatternTriggerContract"
+              },
+              "title": "Triggering Fms",
+              "type": "array"
+            },
+            "l1_focus": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "L1 Focus"
+            },
+            "l2_focus": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "L2 Focus"
+            },
+            "l3_focus": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "L3 Focus"
+            }
+          },
+          "required": [
+            "response_pattern_id",
+            "rp_name",
+            "priority_score"
+          ],
+          "title": "ResponsePatternContract",
+          "type": "object"
+        },
+        "ResponsePatternTriggerContract": {
+          "additionalProperties": false,
+          "properties": {
+            "failure_mode_id": {
+              "title": "Failure Mode Id",
+              "type": "string"
+            },
+            "fm_title": {
+              "title": "Fm Title",
+              "type": "string"
+            },
+            "fm_score": {
+              "title": "Fm Score",
+              "type": "number"
+            },
+            "link_priority": {
+              "title": "Link Priority",
+              "type": "string"
+            }
+          },
+          "required": [
+            "failure_mode_id",
+            "fm_title",
+            "fm_score",
+            "link_priority"
+          ],
+          "title": "ResponsePatternTriggerContract",
+          "type": "object"
+        },
+        "SignalContract": {
+          "additionalProperties": false,
+          "properties": {
+            "signal_id": {
+              "title": "Signal Id",
+              "type": "string"
+            },
+            "signal_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Signal Name"
+            },
+            "domain_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Domain Id"
+            },
+            "severity": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Severity"
+            },
+            "timestamp": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Timestamp"
+            },
+            "source_type": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Source Type"
+            },
+            "venue_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Venue Id"
+            },
+            "notes": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Notes"
+            },
+            "description": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Description"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Value"
+            },
+            "score": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Score"
+            },
+            "evidence_snippet": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Evidence Snippet"
+            },
+            "match_reasons": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Match Reasons",
+              "type": "array"
+            }
+          },
+          "required": [
+            "signal_id"
+          ],
+          "title": "SignalContract",
+          "type": "object"
+        },
+        "SubActionContract": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Id"
+            },
+            "text": {
+              "title": "Text",
+              "type": "string"
+            },
+            "completed": {
+              "default": false,
+              "title": "Completed",
+              "type": "boolean"
+            },
+            "completed_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Completed At"
+            }
+          },
+          "required": [
+            "text"
+          ],
+          "title": "SubActionContract",
+          "type": "object"
+        },
+        "TaskCommentContract": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "task_id": {
+              "title": "Task Id",
+              "type": "string"
+            },
+            "venue_id": {
+              "title": "Venue Id",
+              "type": "string"
+            },
+            "author_user_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Author User Id"
+            },
+            "author_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Author Name"
+            },
+            "body": {
+              "title": "Body",
+              "type": "string"
+            },
+            "visibility": {
+              "$ref": "#/$defs/CommentVisibility",
+              "default": "internal"
+            },
+            "created_at": {
+              "format": "date-time",
+              "title": "Created At",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "task_id",
+            "venue_id",
+            "body",
+            "created_at"
+          ],
+          "title": "TaskCommentContract",
+          "type": "object"
+        },
+        "TaskContract": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "block_id": {
+              "title": "Block Id",
+              "type": "string"
+            },
+            "title": {
+              "title": "Title",
+              "type": "string"
+            },
+            "status": {
+              "$ref": "#/$defs/TaskStatus",
+              "default": "not_started"
+            },
+            "order_index": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Order Index"
+            },
+            "layer": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Layer"
+            },
+            "timeline_label": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Timeline Label"
+            },
+            "priority": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Priority"
+            },
+            "effort_hours": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Effort Hours"
+            },
+            "rationale": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Rationale"
+            },
+            "description": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Description"
+            },
+            "notes": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Notes"
+            },
+            "source_response_pattern_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Source Response Pattern Id"
+            },
+            "source_response_pattern_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Source Response Pattern Name"
+            },
+            "module_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Module Id"
+            },
+            "dependency_ids": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Dependency Ids",
+              "type": "array"
+            },
+            "depends_on_modules": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Depends On Modules",
+              "type": "array"
+            },
+            "trace": {
+              "additionalProperties": true,
+              "title": "Trace",
+              "type": "object"
+            },
+            "sub_actions": {
+              "items": {
+                "$ref": "#/$defs/SubActionContract"
+              },
+              "title": "Sub Actions",
+              "type": "array"
+            },
+            "deliverables": {
+              "items": {
+                "$ref": "#/$defs/DeliverableItemContract"
+              },
+              "title": "Deliverables",
+              "type": "array"
+            },
+            "comments": {
+              "items": {
+                "$ref": "#/$defs/TaskCommentContract"
+              },
+              "title": "Comments",
+              "type": "array"
+            },
+            "events": {
+              "items": {
+                "$ref": "#/$defs/TaskEventContract"
+              },
+              "title": "Events",
+              "type": "array"
+            },
+            "assigned_to": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Assigned To"
+            },
+            "assignee_user_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Assignee User Id"
+            },
+            "assignee_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Assignee Name"
+            },
+            "due_at": {
+              "anyOf": [
+                {
+                  "format": "date",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Due At"
+            },
+            "created_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Created At"
+            },
+            "started_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Started At"
+            },
+            "completed_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Completed At"
+            },
+            "updated_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Updated At"
+            },
+            "updated_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Updated By"
+            },
+            "review_required": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Review Required"
+            },
+            "verification": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Verification"
+            },
+            "expected_output": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Expected Output"
+            },
+            "flags": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Flags",
+              "type": "array"
+            }
+          },
+          "required": [
+            "id",
+            "block_id",
+            "title"
+          ],
+          "title": "TaskContract",
+          "type": "object"
+        },
+        "TaskEventContract": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "task_id": {
+              "title": "Task Id",
+              "type": "string"
+            },
+            "event_type": {
+              "$ref": "#/$defs/TaskEventType"
+            },
+            "status": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TaskStatus"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "actor_user_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Actor User Id"
+            },
+            "actor_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Actor Name"
+            },
+            "note": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Note"
+            },
+            "created_at": {
+              "format": "date-time",
+              "title": "Created At",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "task_id",
+            "event_type",
+            "created_at"
+          ],
+          "title": "TaskEventContract",
+          "type": "object"
+        },
+        "TaskEventType": {
+          "enum": [
+            "status_changed",
+            "comment_added",
+            "deliverable_checked",
+            "sub_action_checked",
+            "follow_up_created",
+            "escalated",
+            "note_captured"
+          ],
+          "title": "TaskEventType",
+          "type": "string"
+        },
+        "TaskStatus": {
+          "enum": [
+            "not_started",
+            "in_progress",
+            "completed",
+            "blocked",
+            "on_hold",
+            "deferred"
+          ],
+          "title": "TaskStatus",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "engine_run_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Engine Run Id"
+        },
+        "assessment_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assessment Id"
+        },
+        "venue_id": {
+          "title": "Venue Id",
+          "type": "string"
+        },
+        "ontology_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ontology Version"
+        },
+        "load_classification": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Load Classification"
+        },
+        "normalized_signals": {
+          "items": {
+            "$ref": "#/$defs/SignalContract"
+          },
+          "title": "Normalized Signals",
+          "type": "array"
+        },
+        "failure_modes": {
+          "items": {
+            "$ref": "#/$defs/FailureModeContract"
+          },
+          "title": "Failure Modes",
+          "type": "array"
+        },
+        "response_patterns": {
+          "items": {
+            "$ref": "#/$defs/ResponsePatternContract"
+          },
+          "title": "Response Patterns",
+          "type": "array"
+        },
+        "block_activations": {
+          "items": {
+            "$ref": "#/$defs/BlockActivationContract"
+          },
+          "title": "Block Activations",
+          "type": "array"
+        },
+        "constrained_block_activations": {
+          "items": {
+            "$ref": "#/$defs/BlockActivationContract"
+          },
+          "title": "Constrained Block Activations",
+          "type": "array"
+        },
+        "constraint_report": {
+          "additionalProperties": true,
+          "title": "Constraint Report",
+          "type": "object"
+        },
+        "generated_plan": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/GeneratedPlanContract"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "plan": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PlanContract"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "report": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReportContract"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "venue_id"
+      ],
+      "title": "DiagnosticResultContract",
+      "type": "object"
+    }
+  },
+  "ProgressEntryContract": {
+    "fields": [
+      "id",
+      "venue_id",
+      "created_by",
+      "entry_type",
+      "summary",
+      "detail",
+      "status",
+      "created_at"
+    ],
+    "json_schema": {
+      "$defs": {
+        "ProgressEntryType": {
+          "enum": [
+            "note",
+            "update",
+            "milestone",
+            "risk",
+            "decision"
+          ],
+          "title": "ProgressEntryType",
+          "type": "string"
+        },
+        "VenueStatus": {
+          "enum": [
+            "active",
+            "monitoring",
+            "paused",
+            "critical",
+            "archived"
+          ],
+          "title": "VenueStatus",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "venue_id": {
+          "title": "Venue Id",
+          "type": "string"
+        },
+        "created_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created By"
+        },
+        "entry_type": {
+          "$ref": "#/$defs/ProgressEntryType"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "detail": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Detail"
+        },
+        "status": {
+          "$ref": "#/$defs/VenueStatus",
+          "default": "active"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "venue_id",
+        "entry_type",
+        "summary",
+        "created_at"
+      ],
+      "title": "ProgressEntryContract",
+      "type": "object"
+    }
+  },
+  "ObservationContract": {
+    "fields": [
+      "id",
+      "venue_id",
+      "related_task_id",
+      "author_user_id",
+      "observation_type",
+      "title",
+      "detail",
+      "source",
+      "created_at",
+      "evidence_file_asset_id"
+    ],
+    "json_schema": {
+      "$defs": {
+        "ObservationType": {
+          "enum": [
+            "audit_note",
+            "customer_feedback",
+            "staff_feedback",
+            "consultant_observation",
+            "operational_incident"
+          ],
+          "title": "ObservationType",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "venue_id": {
+          "title": "Venue Id",
+          "type": "string"
+        },
+        "related_task_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Related Task Id"
+        },
+        "author_user_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Author User Id"
+        },
+        "observation_type": {
+          "$ref": "#/$defs/ObservationType"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "detail": {
+          "title": "Detail",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "evidence_file_asset_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evidence File Asset Id"
+        }
+      },
+      "required": [
+        "id",
+        "venue_id",
+        "observation_type",
+        "title",
+        "detail",
+        "source",
+        "created_at"
+      ],
+      "title": "ObservationContract",
+      "type": "object"
+    }
+  },
+  "HelpRequestContract": {
+    "fields": [
+      "id",
+      "venue_id",
+      "requester_user_id",
+      "channel",
+      "title",
+      "prompt",
+      "status",
+      "linked_thread_id",
+      "created_at",
+      "resolved_at"
+    ],
+    "json_schema": {
+      "$defs": {
+        "HelpRequestStatus": {
+          "enum": [
+            "open",
+            "answered",
+            "closed"
+          ],
+          "title": "HelpRequestStatus",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "venue_id": {
+          "title": "Venue Id",
+          "type": "string"
+        },
+        "requester_user_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Requester User Id"
+        },
+        "channel": {
+          "title": "Channel",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "prompt": {
+          "title": "Prompt",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/HelpRequestStatus",
+          "default": "open"
+        },
+        "linked_thread_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Linked Thread Id"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "resolved_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Resolved At"
+        }
+      },
+      "required": [
+        "id",
+        "venue_id",
+        "channel",
+        "title",
+        "prompt",
+        "created_at"
+      ],
+      "title": "HelpRequestContract",
+      "type": "object"
+    }
+  },
+  "FollowUpContract": {
+    "fields": [
+      "id",
+      "venue_id",
+      "task_id",
+      "assigned_to",
+      "created_by",
+      "title",
+      "status",
+      "due_at",
+      "acknowledged_at",
+      "completed_at",
+      "escalated_at",
+      "notes",
+      "created_at",
+      "is_overdue"
+    ],
+    "json_schema": {
+      "$defs": {
+        "FollowUpStatus": {
+          "enum": [
+            "pending",
+            "acknowledged",
+            "completed",
+            "overdue",
+            "escalated"
+          ],
+          "title": "FollowUpStatus",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "venue_id": {
+          "title": "Venue Id",
+          "type": "string"
+        },
+        "task_id": {
+          "title": "Task Id",
+          "type": "string"
+        },
+        "assigned_to": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assigned To"
+        },
+        "created_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created By"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/FollowUpStatus",
+          "default": "pending"
+        },
+        "due_at": {
+          "format": "date-time",
+          "title": "Due At",
+          "type": "string"
+        },
+        "acknowledged_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Acknowledged At"
+        },
+        "completed_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Completed At"
+        },
+        "escalated_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Escalated At"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "is_overdue": {
+          "default": false,
+          "title": "Is Overdue",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "venue_id",
+        "task_id",
+        "title",
+        "due_at",
+        "created_at"
+      ],
+      "title": "FollowUpContract",
+      "type": "object"
+    }
+  },
+  "EscalationContract": {
+    "fields": [
+      "id",
+      "venue_id",
+      "follow_up_id",
+      "task_id",
+      "created_by",
+      "escalated_to",
+      "severity",
+      "status",
+      "reason",
+      "resolution_notes",
+      "created_at",
+      "resolved_at"
+    ],
+    "json_schema": {
+      "$defs": {
+        "EscalationSeverity": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ],
+          "title": "EscalationSeverity",
+          "type": "string"
+        },
+        "EscalationStatus": {
+          "enum": [
+            "open",
+            "acknowledged",
+            "resolved"
+          ],
+          "title": "EscalationStatus",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "venue_id": {
+          "title": "Venue Id",
+          "type": "string"
+        },
+        "follow_up_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Follow Up Id"
+        },
+        "task_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Task Id"
+        },
+        "created_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created By"
+        },
+        "escalated_to": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Escalated To"
+        },
+        "severity": {
+          "$ref": "#/$defs/EscalationSeverity",
+          "default": "medium"
+        },
+        "status": {
+          "$ref": "#/$defs/EscalationStatus",
+          "default": "open"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "resolution_notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Resolution Notes"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "resolved_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Resolved At"
+        }
+      },
+      "required": [
+        "id",
+        "venue_id",
+        "reason",
+        "created_at"
+      ],
+      "title": "EscalationContract",
+      "type": "object"
+    }
+  },
+  "NotificationSubscriptionContract": {
+    "fields": [
+      "endpoint",
+      "p256dh_key",
+      "auth_key",
+      "user_id",
+      "channel",
+      "created_at"
+    ],
+    "json_schema": {
+      "$defs": {
+        "NotificationChannel": {
+          "enum": [
+            "web_push",
+            "email",
+            "in_app",
+            "sms"
+          ],
+          "title": "NotificationChannel",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "endpoint": {
+          "title": "Endpoint",
+          "type": "string"
+        },
+        "p256dh_key": {
+          "title": "P256Dh Key",
+          "type": "string"
+        },
+        "auth_key": {
+          "title": "Auth Key",
+          "type": "string"
+        },
+        "user_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "User Id"
+        },
+        "channel": {
+          "$ref": "#/$defs/NotificationChannel",
+          "default": "web_push"
+        },
+        "created_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created At"
+        }
+      },
+      "required": [
+        "endpoint",
+        "p256dh_key",
+        "auth_key"
+      ],
+      "title": "NotificationSubscriptionContract",
+      "type": "object"
+    }
+  },
+  "NotificationEventContract": {
+    "fields": [
+      "id",
+      "organization_id",
+      "venue_id",
+      "user_id",
+      "channel",
+      "level",
+      "title",
+      "body",
+      "entity_type",
+      "entity_id",
+      "sent_at",
+      "read_at",
+      "acknowledged_at"
+    ],
+    "json_schema": {
+      "$defs": {
+        "NotificationChannel": {
+          "enum": [
+            "web_push",
+            "email",
+            "in_app",
+            "sms"
+          ],
+          "title": "NotificationChannel",
+          "type": "string"
+        },
+        "NotificationLevel": {
+          "enum": [
+            "info",
+            "warning",
+            "critical"
+          ],
+          "title": "NotificationLevel",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "organization_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Organization Id"
+        },
+        "venue_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Venue Id"
+        },
+        "user_id": {
+          "title": "User Id",
+          "type": "string"
+        },
+        "channel": {
+          "$ref": "#/$defs/NotificationChannel"
+        },
+        "level": {
+          "$ref": "#/$defs/NotificationLevel"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "body": {
+          "title": "Body",
+          "type": "string"
+        },
+        "entity_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Entity Type"
+        },
+        "entity_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Entity Id"
+        },
+        "sent_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sent At"
+        },
+        "read_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Read At"
+        },
+        "acknowledged_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Acknowledged At"
+        }
+      },
+      "required": [
+        "id",
+        "user_id",
+        "channel",
+        "level",
+        "title",
+        "body"
+      ],
+      "title": "NotificationEventContract",
+      "type": "object"
+    }
+  },
+  "ChatReferenceContract": {
+    "fields": [
+      "type",
+      "label",
+      "id",
+      "payload"
+    ],
+    "json_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "payload": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Payload"
+        }
+      },
+      "required": [
+        "type",
+        "label"
+      ],
+      "title": "ChatReferenceContract",
+      "type": "object"
+    }
+  },
+  "ChatAttachmentContract": {
+    "fields": [
+      "file_asset_id",
+      "file_name",
+      "content_type",
+      "url",
+      "content_base64"
+    ],
+    "json_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "file_asset_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "File Asset Id"
+        },
+        "file_name": {
+          "title": "File Name",
+          "type": "string"
+        },
+        "content_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Content Type"
+        },
+        "url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Url"
+        },
+        "content_base64": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Content Base64"
+        }
+      },
+      "required": [
+        "file_name"
+      ],
+      "title": "ChatAttachmentContract",
+      "type": "object"
+    }
+  },
+  "ChatMessageContract": {
+    "fields": [
+      "id",
+      "thread_id",
+      "created_by",
+      "author_role",
+      "source_mode",
+      "content",
+      "references",
+      "attachments",
+      "created_at"
+    ],
+    "json_schema": {
+      "$defs": {
+        "ChatAttachmentContract": {
+          "additionalProperties": false,
+          "properties": {
+            "file_asset_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "File Asset Id"
+            },
+            "file_name": {
+              "title": "File Name",
+              "type": "string"
+            },
+            "content_type": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Content Type"
+            },
+            "url": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Url"
+            },
+            "content_base64": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Content Base64"
+            }
+          },
+          "required": [
+            "file_name"
+          ],
+          "title": "ChatAttachmentContract",
+          "type": "object"
+        },
+        "ChatReferenceContract": {
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "title": "Type",
+              "type": "string"
+            },
+            "label": {
+              "title": "Label",
+              "type": "string"
+            },
+            "id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Id"
+            },
+            "payload": {
+              "anyOf": [
+                {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Payload"
+            }
+          },
+          "required": [
+            "type",
+            "label"
+          ],
+          "title": "ChatReferenceContract",
+          "type": "object"
+        },
+        "MessageAuthorRole": {
+          "enum": [
+            "user",
+            "assistant",
+            "system"
+          ],
+          "title": "MessageAuthorRole",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "thread_id": {
+          "title": "Thread Id",
+          "type": "string"
+        },
+        "created_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created By"
+        },
+        "author_role": {
+          "$ref": "#/$defs/MessageAuthorRole"
+        },
+        "source_mode": {
+          "title": "Source Mode",
+          "type": "string"
+        },
+        "content": {
+          "title": "Content",
+          "type": "string"
+        },
+        "references": {
+          "items": {
+            "$ref": "#/$defs/ChatReferenceContract"
+          },
+          "title": "References",
+          "type": "array"
+        },
+        "attachments": {
+          "items": {
+            "$ref": "#/$defs/ChatAttachmentContract"
+          },
+          "title": "Attachments",
+          "type": "array"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "thread_id",
+        "author_role",
+        "source_mode",
+        "content",
+        "created_at"
+      ],
+      "title": "ChatMessageContract",
+      "type": "object"
+    }
+  },
+  "ChatThreadContract": {
+    "fields": [
+      "id",
+      "organization_id",
+      "venue_id",
+      "title",
+      "scope",
+      "archived",
+      "message_count",
+      "latest_message_at",
+      "created_at",
+      "messages"
+    ],
+    "json_schema": {
+      "$defs": {
+        "ChatAttachmentContract": {
+          "additionalProperties": false,
+          "properties": {
+            "file_asset_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "File Asset Id"
+            },
+            "file_name": {
+              "title": "File Name",
+              "type": "string"
+            },
+            "content_type": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Content Type"
+            },
+            "url": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Url"
+            },
+            "content_base64": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Content Base64"
+            }
+          },
+          "required": [
+            "file_name"
+          ],
+          "title": "ChatAttachmentContract",
+          "type": "object"
+        },
+        "ChatMessageContract": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "title": "Id",
+              "type": "string"
+            },
+            "thread_id": {
+              "title": "Thread Id",
+              "type": "string"
+            },
+            "created_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Created By"
+            },
+            "author_role": {
+              "$ref": "#/$defs/MessageAuthorRole"
+            },
+            "source_mode": {
+              "title": "Source Mode",
+              "type": "string"
+            },
+            "content": {
+              "title": "Content",
+              "type": "string"
+            },
+            "references": {
+              "items": {
+                "$ref": "#/$defs/ChatReferenceContract"
+              },
+              "title": "References",
+              "type": "array"
+            },
+            "attachments": {
+              "items": {
+                "$ref": "#/$defs/ChatAttachmentContract"
+              },
+              "title": "Attachments",
+              "type": "array"
+            },
+            "created_at": {
+              "format": "date-time",
+              "title": "Created At",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "thread_id",
+            "author_role",
+            "source_mode",
+            "content",
+            "created_at"
+          ],
+          "title": "ChatMessageContract",
+          "type": "object"
+        },
+        "ChatReferenceContract": {
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "title": "Type",
+              "type": "string"
+            },
+            "label": {
+              "title": "Label",
+              "type": "string"
+            },
+            "id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Id"
+            },
+            "payload": {
+              "anyOf": [
+                {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Payload"
+            }
+          },
+          "required": [
+            "type",
+            "label"
+          ],
+          "title": "ChatReferenceContract",
+          "type": "object"
+        },
+        "MessageAuthorRole": {
+          "enum": [
+            "user",
+            "assistant",
+            "system"
+          ],
+          "title": "MessageAuthorRole",
+          "type": "string"
+        },
+        "ThreadScope": {
+          "enum": [
+            "global",
+            "venue",
+            "task",
+            "help_request"
+          ],
+          "title": "ThreadScope",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "organization_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Organization Id"
+        },
+        "venue_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Venue Id"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/ThreadScope"
+        },
+        "archived": {
+          "default": false,
+          "title": "Archived",
+          "type": "boolean"
+        },
+        "message_count": {
+          "default": 0,
+          "title": "Message Count",
+          "type": "integer"
+        },
+        "latest_message_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Latest Message At"
+        },
+        "created_at": {
+          "format": "date-time",
+          "title": "Created At",
+          "type": "string"
+        },
+        "messages": {
+          "items": {
+            "$ref": "#/$defs/ChatMessageContract"
+          },
+          "title": "Messages",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "scope",
+        "created_at"
+      ],
+      "title": "ChatThreadContract",
+      "type": "object"
+    }
+  },
+  "KnowledgeReferenceContract": {
+    "fields": [
+      "id",
+      "entity_kind",
+      "title",
+      "description",
+      "source_ref",
+      "linked_entity_ids",
+      "uri",
+      "updated_at"
+    ],
+    "json_schema": {
+      "$defs": {
+        "KnowledgeEntityKind": {
+          "enum": [
+            "signal",
+            "failure_mode",
+            "response_pattern",
+            "block",
+            "tool",
+            "help_article",
+            "reference"
+          ],
+          "title": "KnowledgeEntityKind",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "entity_kind": {
+          "$ref": "#/$defs/KnowledgeEntityKind"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "source_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Ref"
+        },
+        "linked_entity_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Linked Entity Ids",
+          "type": "array"
+        },
+        "uri": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Uri"
+        },
+        "updated_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Updated At"
+        }
+      },
+      "required": [
+        "id",
+        "entity_kind",
+        "title"
+      ],
+      "title": "KnowledgeReferenceContract",
+      "type": "object"
+    }
+  },
+  "AITraceContract": {
+    "fields": [
+      "function",
+      "provider",
+      "model",
+      "prompt_version",
+      "invoked_at",
+      "organization_id",
+      "venue_id",
+      "thread_id",
+      "ontology_version",
+      "context_sources",
+      "evidence_refs",
+      "confidence",
+      "mutation_summary",
+      "user_confirmation_required",
+      "user_confirmation_status"
+    ],
+    "json_schema": {
+      "$defs": {
+        "AIContextSource": {
+          "enum": [
+            "raw_text_input",
+            "signal_library",
+            "ontology",
+            "venue_state",
+            "thread_history",
+            "file_uploads",
+            "plan_state",
+            "execution_history"
+          ],
+          "title": "AIContextSource",
+          "type": "string"
+        },
+        "AIFunction": {
+          "enum": [
+            "signal_intake",
+            "report_generation",
+            "venue_copilot",
+            "portfolio_copilot",
+            "proactive_greeting",
+            "signal_update_suggestion"
+          ],
+          "title": "AIFunction",
+          "type": "string"
+        },
+        "ConfidenceBand": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ],
+          "title": "ConfidenceBand",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "function": {
+          "$ref": "#/$defs/AIFunction"
+        },
+        "provider": {
+          "title": "Provider",
+          "type": "string"
+        },
+        "model": {
+          "title": "Model",
+          "type": "string"
+        },
+        "prompt_version": {
+          "title": "Prompt Version",
+          "type": "string"
+        },
+        "invoked_at": {
+          "format": "date-time",
+          "title": "Invoked At",
+          "type": "string"
+        },
+        "organization_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Organization Id"
+        },
+        "venue_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Venue Id"
+        },
+        "thread_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Thread Id"
+        },
+        "ontology_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ontology Version"
+        },
+        "context_sources": {
+          "items": {
+            "$ref": "#/$defs/AIContextSource"
+          },
+          "title": "Context Sources",
+          "type": "array"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ConfidenceBand"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "mutation_summary": {
+          "additionalProperties": true,
+          "title": "Mutation Summary",
+          "type": "object"
+        },
+        "user_confirmation_required": {
+          "default": false,
+          "title": "User Confirmation Required",
+          "type": "boolean"
+        },
+        "user_confirmation_status": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "User Confirmation Status"
+        }
+      },
+      "required": [
+        "function",
+        "provider",
+        "model",
+        "prompt_version",
+        "invoked_at"
+      ],
+      "title": "AITraceContract",
+      "type": "object"
+    }
+  },
+  "AIIntakeSnapshotContract": {
+    "fields": [
+      "raw_input_text",
+      "raw_input_length",
+      "extraction_summary",
+      "confidence_distribution",
+      "unmapped_observations",
+      "active_signal_ids",
+      "venue_context",
+      "provider",
+      "model",
+      "prompt_version"
+    ],
+    "json_schema": {
+      "$defs": {
+        "VenueContextContract": {
+          "additionalProperties": false,
+          "properties": {
+            "venue_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Venue Name"
+            },
+            "venue_type": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Venue Type"
+            },
+            "team_size": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Team Size"
+            },
+            "location": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Location"
+            },
+            "stage": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Stage"
+            },
+            "concept": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Concept"
+            }
+          },
+          "title": "VenueContextContract",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "raw_input_text": {
+          "title": "Raw Input Text",
+          "type": "string"
+        },
+        "raw_input_length": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Input Length"
+        },
+        "extraction_summary": {
+          "additionalProperties": true,
+          "title": "Extraction Summary",
+          "type": "object"
+        },
+        "confidence_distribution": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Confidence Distribution",
+          "type": "object"
+        },
+        "unmapped_observations": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Unmapped Observations",
+          "type": "array"
+        },
+        "active_signal_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Active Signal Ids",
+          "type": "array"
+        },
+        "venue_context": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/VenueContextContract"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "provider": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Provider"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "prompt_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prompt Version"
+        }
+      },
+      "required": [
+        "raw_input_text"
+      ],
+      "title": "AIIntakeSnapshotContract",
+      "type": "object"
+    }
+  },
+  "TaskMutationRequestContract": {
+    "fields": [
+      "status",
+      "notes",
+      "sub_action_completions",
+      "deliverable_completions"
+    ],
+    "json_schema": {
+      "$defs": {
+        "TaskStatus": {
+          "enum": [
+            "not_started",
+            "in_progress",
+            "completed",
+            "blocked",
+            "on_hold",
+            "deferred"
+          ],
+          "title": "TaskStatus",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TaskStatus"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "sub_action_completions": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "boolean"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sub Action Completions"
+        },
+        "deliverable_completions": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "boolean"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Deliverable Completions"
+        }
+      },
+      "title": "TaskMutationRequestContract",
+      "type": "object"
+    }
+  },
+  "CommentCreateRequestContract": {
+    "fields": [
+      "task_id",
+      "venue_id",
+      "body",
+      "visibility"
+    ],
+    "json_schema": {
+      "$defs": {
+        "CommentVisibility": {
+          "enum": [
+            "internal",
+            "shared",
+            "owner"
+          ],
+          "title": "CommentVisibility",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "task_id": {
+          "title": "Task Id",
+          "type": "string"
+        },
+        "venue_id": {
+          "title": "Venue Id",
+          "type": "string"
+        },
+        "body": {
+          "minLength": 1,
+          "title": "Body",
+          "type": "string"
+        },
+        "visibility": {
+          "$ref": "#/$defs/CommentVisibility",
+          "default": "internal"
+        }
+      },
+      "required": [
+        "task_id",
+        "venue_id",
+        "body"
+      ],
+      "title": "CommentCreateRequestContract",
+      "type": "object"
+    }
+  },
+  "ProgressCreateRequestContract": {
+    "fields": [
+      "venue_id",
+      "entry_type",
+      "summary",
+      "detail",
+      "status"
+    ],
+    "json_schema": {
+      "$defs": {
+        "ProgressEntryType": {
+          "enum": [
+            "note",
+            "update",
+            "milestone",
+            "risk",
+            "decision"
+          ],
+          "title": "ProgressEntryType",
+          "type": "string"
+        },
+        "VenueStatus": {
+          "enum": [
+            "active",
+            "monitoring",
+            "paused",
+            "critical",
+            "archived"
+          ],
+          "title": "VenueStatus",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "venue_id": {
+          "title": "Venue Id",
+          "type": "string"
+        },
+        "entry_type": {
+          "$ref": "#/$defs/ProgressEntryType"
+        },
+        "summary": {
+          "minLength": 1,
+          "title": "Summary",
+          "type": "string"
+        },
+        "detail": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Detail"
+        },
+        "status": {
+          "$ref": "#/$defs/VenueStatus",
+          "default": "active"
+        }
+      },
+      "required": [
+        "venue_id",
+        "entry_type",
+        "summary"
+      ],
+      "title": "ProgressCreateRequestContract",
+      "type": "object"
+    }
+  },
+  "FollowUpCreateRequestContract": {
+    "fields": [
+      "venue_id",
+      "task_id",
+      "assigned_to",
+      "title",
+      "due_at",
+      "notes"
+    ],
+    "json_schema": {
+      "additionalProperties": false,
+      "properties": {
+        "venue_id": {
+          "title": "Venue Id",
+          "type": "string"
+        },
+        "task_id": {
+          "title": "Task Id",
+          "type": "string"
+        },
+        "assigned_to": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assigned To"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "due_at": {
+          "format": "date-time",
+          "title": "Due At",
+          "type": "string"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "venue_id",
+        "task_id",
+        "title",
+        "due_at"
+      ],
+      "title": "FollowUpCreateRequestContract",
+      "type": "object"
+    }
+  },
+  "EscalationCreateRequestContract": {
+    "fields": [
+      "venue_id",
+      "follow_up_id",
+      "task_id",
+      "escalated_to",
+      "severity",
+      "reason"
+    ],
+    "json_schema": {
+      "$defs": {
+        "EscalationSeverity": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ],
+          "title": "EscalationSeverity",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "venue_id": {
+          "title": "Venue Id",
+          "type": "string"
+        },
+        "follow_up_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Follow Up Id"
+        },
+        "task_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Task Id"
+        },
+        "escalated_to": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Escalated To"
+        },
+        "severity": {
+          "$ref": "#/$defs/EscalationSeverity",
+          "default": "medium"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "venue_id",
+        "reason"
+      ],
+      "title": "EscalationCreateRequestContract",
+      "type": "object"
+    }
+  },
+  "ChatMessageCreateRequestContract": {
+    "fields": [
+      "content",
+      "created_by",
+      "attachments"
+    ],
+    "json_schema": {
+      "$defs": {
+        "ChatAttachmentContract": {
+          "additionalProperties": false,
+          "properties": {
+            "file_asset_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "File Asset Id"
+            },
+            "file_name": {
+              "title": "File Name",
+              "type": "string"
+            },
+            "content_type": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Content Type"
+            },
+            "url": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Url"
+            },
+            "content_base64": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Content Base64"
+            }
+          },
+          "required": [
+            "file_name"
+          ],
+          "title": "ChatAttachmentContract",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "content": {
+          "minLength": 1,
+          "title": "Content",
+          "type": "string"
+        },
+        "created_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Created By"
+        },
+        "attachments": {
+          "items": {
+            "$ref": "#/$defs/ChatAttachmentContract"
+          },
+          "title": "Attachments",
+          "type": "array"
+        }
+      },
+      "required": [
+        "content"
+      ],
+      "title": "ChatMessageCreateRequestContract",
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "legacy_payload": "project.json",
+    "sample_path": "C:\\Users\\matas\\Documents\\00\\OIS_Cafe_v2\\docs\\migration\\phase0\\fixtures\\F004_existing_active_plan_kaunas\\source_snapshots\\project.json",
+    "target_contract": "VenueProjectContract",
+    "fit": "partial_fit_with_acceptable_adaptation",
+    "notes": "Legacy venue/project shape carries rich venue lifecycle context but omits organization/workspace ids in fixture snapshots."
+  },
+  {
+    "legacy_payload": "assessment.json",
+    "sample_path": "C:\\Users\\matas\\Documents\\00\\OIS_Cafe_v2\\docs\\migration\\phase0\\fixtures\\F004_existing_active_plan_kaunas\\source_snapshots\\assessment.json",
+    "target_contract": "AssessmentDraftContract",
+    "fit": "partial_fit_with_acceptable_adaptation",
+    "notes": "Legacy assessment uses timestamp and signals keys rather than created_at and signal_states."
+  },
+  {
+    "legacy_payload": "fixture_input.json",
+    "sample_path": "C:\\Users\\matas\\Documents\\00\\OIS_Cafe_v2\\docs\\migration\\phase0\\fixtures\\F006_complex_klaipeda_multi_surface\\fixture_input.json",
+    "target_contract": "AssessmentRunRequestContract",
+    "fit": "partial_fit_with_acceptable_adaptation",
+    "notes": "Legacy engine input fits the request seam after renaming signals to signal_states and preserving venue context and triage fields."
+  },
+  {
+    "legacy_payload": "golden_normalized_signals.json",
+    "sample_path": "C:\\Users\\matas\\Documents\\00\\OIS_Cafe_v2\\docs\\migration\\phase0\\fixtures\\F002_degraded_pegasas\\golden_normalized_signals.json",
+    "target_contract": "SignalContract",
+    "fit": "full_fit",
+    "notes": "Normalized signal payload is directly represented in the frozen contract."
+  },
+  {
+    "legacy_payload": "golden_failure_modes.json",
+    "sample_path": "C:\\Users\\matas\\Documents\\00\\OIS_Cafe_v2\\docs\\migration\\phase0\\fixtures\\F002_degraded_pegasas\\golden_failure_modes.json",
+    "target_contract": "FailureModeContract",
+    "fit": "full_fit",
+    "notes": "Legacy failure-mode payload maps directly including score and contributing signal ids."
+  },
+  {
+    "legacy_payload": "golden_response_patterns.json",
+    "sample_path": "C:\\Users\\matas\\Documents\\00\\OIS_Cafe_v2\\docs\\migration\\phase0\\fixtures\\F002_degraded_pegasas\\golden_response_patterns.json",
+    "target_contract": "ResponsePatternContract",
+    "fit": "full_fit",
+    "notes": "Legacy response-pattern payload maps directly including trigger links and focus text."
+  },
+  {
+    "legacy_payload": "golden_activation_context.json",
+    "sample_path": "C:\\Users\\matas\\Documents\\00\\OIS_Cafe_v2\\docs\\migration\\phase0\\fixtures\\F002_degraded_pegasas\\golden_activation_context.json",
+    "target_contract": "BlockActivationContract",
+    "fit": "full_fit",
+    "notes": "Legacy activation context already carries response-pattern ids, priority, and block activations by layer."
+  },
+  {
+    "legacy_payload": "golden_action_plan.json",
+    "sample_path": "C:\\Users\\matas\\Documents\\00\\OIS_Cafe_v2\\docs\\migration\\phase0\\fixtures\\F002_degraded_pegasas\\golden_action_plan.json",
+    "target_contract": "GeneratedPlanContract",
+    "fit": "full_fit",
+    "notes": "Legacy generated plan is frozen as a layered engine output rather than flattened into persisted tasks."
+  },
+  {
+    "legacy_payload": "operational_plan.json",
+    "sample_path": "C:\\Users\\matas\\Documents\\00\\OIS_Cafe_v2\\docs\\migration\\phase0\\fixtures\\F004_existing_active_plan_kaunas\\source_snapshots\\operational_plan.json",
+    "target_contract": "PlanContract",
+    "fit": "partial_fit_with_acceptable_adaptation",
+    "notes": "Persisted plan shape fits after flattening legacy status history into task events and retaining summary/confidence metadata in summary_snapshot."
+  },
+  {
+    "legacy_payload": "progress/entries.json",
+    "sample_path": "C:\\Users\\matas\\Documents\\00\\OIS_Cafe_v2\\docs\\migration\\phase0\\fixtures\\F004_existing_active_plan_kaunas\\source_snapshots\\progress\\entries.json",
+    "target_contract": "ProgressEntryContract",
+    "fit": "partial_fit_with_acceptable_adaptation",
+    "notes": "Legacy progress feed maps only if entry_type is preserved; current platform drops that distinction."
+  },
+  {
+    "legacy_payload": "chat_history/t_*.json",
+    "sample_path": "C:\\Users\\matas\\Documents\\00\\OIS_Cafe_v2\\docs\\migration\\phase0\\fixtures\\F004_existing_active_plan_kaunas\\source_snapshots\\chat_history\\t_48f81c67cfc2.json",
+    "target_contract": "ChatThreadContract",
+    "fit": "partial_fit_with_acceptable_adaptation",
+    "notes": "Legacy thread files fit after carrying thread scope/type into the frozen chat contract and keeping attachments/references explicit."
+  },
+  {
+    "legacy_payload": "ai_extraction_snapshot.json",
+    "sample_path": "C:\\Users\\matas\\Documents\\00\\OIS_Cafe_v2\\docs\\migration\\phase0\\fixtures\\F005_ambiguous_ai_preopening_muzos2\\ai_extraction_snapshot.json",
+    "target_contract": "AIIntakeSnapshotContract",
+    "fit": "full_fit",
+    "notes": "Legacy AI extraction snapshot is preserved explicitly rather than collapsed into a thin signal list."
+  },
+  {
+    "legacy_payload": "golden_report.md",
+    "sample_path": "C:\\Users\\matas\\Documents\\00\\OIS_Cafe_v2\\docs\\migration\\phase0\\fixtures\\F002_degraded_pegasas\\golden_report.md",
+    "target_contract": "ReportContract",
+    "fit": "partial_fit_with_acceptable_adaptation",
+    "notes": "Markdown report fits the report seam, but current platform splits markdown from structured summary/report data."
+  }
+]

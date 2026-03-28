@@ -1,0 +1,19 @@
+{
+  "block_id": "B218",
+  "name": "Digital Payment Integration",
+  "version": "v1.0",
+  "domain": "D10_technology_systems",
+  "module": "M10: Digital Tools & Customer Data",
+  "state": "enriched",
+  "purpose": "Ensures the cafe supports all prevalent local digital payment methods including mobile banking apps, digital wallets, contactless payments, and QR-based transactions. Integrates payment systems with POS and tax reporting.",
+  "tools": [
+    "T218-01",
+    "T218-02"
+  ],
+  "signals": [
+    "S220"
+  ],
+  "failure_modes": [
+    "FM116"
+  ]
+}

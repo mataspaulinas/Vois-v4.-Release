@@ -1,0 +1,157 @@
+{
+  "block_id": "B150",
+  "name": "Lighting, Music & Ambiance",
+  "version": "v1.0",
+  "domain": "D09_physical_environment",
+  "module": "M09: Cafe Design & Atmosphere",
+  "state": "enriched",
+  "purpose": "Creates and manages the sensory atmosphere of the cafe — lighting, music, temperature, and scent — so that the environment emotionally supports the brand positioning, enhances the customer experience, and influences behaviour in ways that benefit the business. This block recognises that atmosphere is not a background detail but a primary product that customers are paying for.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Design a lighting scheme that creates the desired atmosphere, flatters the space and products, and adapts to time of day",
+      "Establish a curated music programme that reinforces the brand identity and enhances the customer experience without being intrusive",
+      "Manage temperature so that the cafe is comfortable in all seasons without being a significant energy cost",
+      "Consider scent as part of the sensory environment — freshly ground coffee is the most powerful aroma marketing tool available",
+      "Create a consistent sensory experience that customers associate with the cafe and that differentiates it from competitors"
+    ],
+    "secondary_objectives": [
+      "Use lighting and music to influence customer behaviour: brighter lighting and faster tempo encourage quicker turnover during peak periods, while warmer lighting and slower music encourage lingering during quiet times",
+      "Ensure that the sensory environment is appropriate for the time of day: energising in the morning, focused at midday, relaxing in the afternoon",
+      "Reduce energy costs by using efficient lighting (LED) and smart temperature controls",
+      "Create a sensory experience that photographs well — lighting affects photo quality more than any other environmental factor"
+    ]
+  },
+  "why_this_matters": "Customers do not just buy coffee — they buy the experience of drinking coffee in a particular place. Atmosphere is the container for that experience. Research in environmental psychology consistently shows that ambient factors — lighting, music, temperature, and scent — significantly influence customer behaviour, mood, and spending. A study published in the Journal of Business Research found that appropriate music increased customer spending by up to 9.1% in dining environments. Similar research shows that warm lighting increases dwell time and perceived comfort, while cooler lighting creates a more energetic, productive atmosphere. The challenge for cafes is that these atmospheric needs change throughout the day. At 7am, a commuter wants bright, energetic lighting and upbeat background music that complements their morning coffee ritual. At 2pm, a remote worker wants comfortable ambient light that does not cause screen glare and unobtrusive background music that supports concentration. At 5pm, an evening customer wants warm, intimate lighting and music that creates a relaxed social atmosphere. A cafe that maintains the same fluorescent lighting and random Spotify playlist from 7am to 6pm is serving no customer well. Scent is uniquely powerful in a cafe context. The aroma of freshly ground coffee is one of the most universally pleasant smells and serves as both atmospheric element and marketing tool. Customers walking past a cafe catch the scent and are drawn in. Customers inside are continuously reminded of the product's freshness. If the cafe's grinder is positioned where the aroma reaches the door, it is working as a silent salesperson. Temperature seems obvious but is frequently mismanaged. A cafe that is too cold in winter or suffocatingly warm in summer drives customers away regardless of how good the coffee is.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Audit the current sensory environment. Sit in the cafe at three different times (morning, midday, evening if open) and assess: Lighting — is it appropriate for the time of day? Is it flattering or harsh? Are there dark spots or glare? Can customers read menus comfortably? Do phone photos look good in this light? Music — what is playing, at what volume, and who chose it? Is it appropriate for the brand? Is the volume comfortable for conversation? Can customers hear it in the toilet (a sign it is too loud)? Temperature — is the cafe comfortable? Are there draughts? Is there adequate heating and cooling? Scent — what does the cafe smell like on entry? Is it coffee (ideal), cleaning products (poor), cooking odours (depends on the cafe), or nothing (missed opportunity)? Week 2: Make the easiest improvements. For lighting: replace any harsh fluorescent tubes with warm white LED bulbs (2700K-3000K colour temperature) — this single change transforms atmosphere more than any other. Add table lamps or pendant lights to create pools of warm light rather than uniform ceiling illumination. For music: create a branded playlist on Spotify or Apple Music that is on-brand and appropriate for the cafe's personality. Set the volume so that it creates atmosphere without competing with conversation — customers should be able to talk normally across a table. For temperature: check that heating and cooling systems are working correctly and set to appropriate levels. For scent: ensure the coffee grinder is positioned where the aroma reaches the customer area, and avoid using heavily scented cleaning products during trading hours.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Lighting Plan for the cafe. Layer the lighting: ambient (overall room illumination), task (counter, till, menu boards), and accent (feature wall, display cabinet, table centres). Use dimmable fixtures wherever possible so that lighting can be adjusted throughout the day — brighter in the morning, gradually dimming through the afternoon. Ensure that lighting flatters both the space and the food — warm lighting makes food look more appetising. If the cafe trades in the evening, invest in atmospheric lighting that creates a completely different feel from daytime: candles (real or LED), fairy lights, or warm spotlights. Create a Music Programme with different playlists for different parts of the day: morning energy (upbeat but not aggressive), midday focus (ambient, instrumental, or lounge), and afternoon relaxation (mellow, acoustic, conversational). Define volume levels for each daypart — many POS systems or smart speakers allow scheduling. Ensure the cafe holds the appropriate music licence: PPL PRS (formerly PRS for Music and PPL) licences are legally required for playing music in a commercial premises. Costs depend on venue size and type. Address temperature systematically: service the heating and cooling system, check for draughts around doors and windows (draught excluders are cheap and effective), and consider a programmable thermostat that adjusts temperature by time of day.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The sensory environment should now be as intentionally managed as the coffee programme or the food menu. Develop seasonal ambiance plans: winter should feel warmer, cosier, and more enveloping (lower lighting, warmer tones, richer music), while summer should feel lighter, brighter, and more open (more natural light, open windows, lighter playlists). Monitor the energy cost of lighting and temperature management: LED lighting uses 75% less energy than incandescent, and smart thermostats can reduce heating costs by 10-15%. These savings compound annually. Track the correlation between ambiance adjustments and customer behaviour: does slower music on weekday afternoons increase dwell time and spend? Does brighter lighting on Saturday morning increase table turnover? Use these insights to fine-tune the environment for commercial benefit. Consider engaging a lighting designer for a one-off consultation if the cafe is planning a refurbishment — professional lighting design is one of the highest-value investments in hospitality. Develop staff awareness of ambiance: team members should notice and adjust lighting, music volume, and temperature throughout the day without being asked. This sensory awareness is a mark of a team that cares about the total customer experience."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Audit the sensory environment at three different times of day: lighting, music, temperature, and scent",
+        "Replace harsh fluorescent lighting with warm white LED bulbs (2700K-3000K)",
+        "Add supplementary lighting (table lamps, pendants) to create warm pools of light",
+        "Create a branded music playlist appropriate to the cafe's personality",
+        "Set music volume so it creates atmosphere without competing with conversation",
+        "Ensure the coffee grinder aroma reaches the customer area and entrance"
+      ],
+      "responsible": "Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a layered Lighting Plan with ambient, task, and accent lighting",
+        "Install dimmable fixtures to allow lighting adjustment throughout the day",
+        "Create a Music Programme with different playlists for different dayparts",
+        "Verify the cafe holds current PPL PRS music licences",
+        "Service heating and cooling systems and address draughts",
+        "Install a programmable thermostat for time-of-day temperature control"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Develop seasonal ambiance plans refreshed quarterly",
+        "Monitor energy cost of lighting and temperature management",
+        "Track correlation between ambiance adjustments and customer behaviour",
+        "Consider a professional lighting design consultation for refurbishment",
+        "Build sensory awareness into staff culture so adjustments happen naturally",
+        "Review music licensing and playlist freshness annually"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Sensory Environment Audit Report",
+    "Lighting Plan (ambient, task, accent layers)",
+    "Music Programme with daypart playlists",
+    "Temperature Management Protocol",
+    "Seasonal Ambiance Planning Guide"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T150-01",
+        "tool_name": "Sensory Environment Audit Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "A structured checklist for auditing the cafe's sensory environment across four dimensions: lighting (type, colour temperature, brightness, dark spots), music (genre, volume, appropriateness), temperature (comfort, consistency, draughts), and scent (coffee aroma, cleaning, cooking)."
+      },
+      {
+        "tool_id": "T150-02",
+        "tool_name": "Music Programme Schedule",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "A schedule defining the music playlist and volume level for each daypart (morning, midday, afternoon, evening if applicable). Includes playlist names, genre guidelines, volume settings, and notes on when to adjust."
+      },
+      {
+        "tool_id": "T150-03",
+        "tool_name": "Lighting Plan Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A plan documenting the cafe's lighting design: fixture types and locations, bulb specifications (wattage, colour temperature), dimmer settings by time of day, and accent lighting positions. Includes a simple floor plan with lighting zones marked."
+      },
+      {
+        "tool_id": "T150-04",
+        "tool_name": "Seasonal Ambiance Planner",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "A quarterly planning template for seasonal ambiance adjustments covering lighting changes (intensity, warmth), music playlist updates, temperature settings, and any seasonal sensory additions (candles in winter, open windows in summer, seasonal decorations)."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Lighting is left at the same setting all day, missing the opportunity to create different atmospheres for different dayparts",
+    "Music is left to individual staff preference, resulting in jarring genre changes or inappropriate volume that some customers find offensive",
+    "The cafe is too cold in winter or too hot in summer because the heating and cooling system is poorly maintained or improperly set",
+    "Strong cleaning product smells during trading hours overpower the coffee aroma and create an institutional rather than welcoming atmosphere"
+  ],
+  "kpis": [
+    "Lighting adjusted at least twice during the trading day (morning bright, afternoon warm)",
+    "Music playlist running during all trading hours with appropriate volume verified daily",
+    "Zero customer complaints about temperature, lighting, or noise per month",
+    "Sensory environment audit completed quarterly with scores improving or maintained"
+  ],
+  "dependencies": ["B149"],
+  "constraints": [
+    "Electrical work for new lighting fixtures must be done by a qualified electrician",
+    "PPL PRS music licences are a legal requirement and must be kept current",
+    "The building's heating and cooling infrastructure may limit temperature control options"
+  ],
+  "time_load": {
+    "L1": "4 hours (sensory audit, bulb replacement, playlist creation, volume setting)",
+    "L2": "6 hours (lighting plan, dimmer installation, music programme, thermostat setup)",
+    "L3": "1 hour/quarter (seasonal ambiance planning, energy review, playlist refresh)"
+  },
+  "review_protocol": "Daily music and lighting check by opening team member. Weekly volume and temperature spot-check. Quarterly sensory environment audit. Seasonal ambiance plan update. Annual lighting fixture and music licence review.",
+  "meta": {
+    "summary_for_humans": "This block creates and manages the cafe's sensory atmosphere — lighting, music, temperature, and scent — as intentional elements that enhance the customer experience, support the brand, and influence behaviour. It covers lighting design, music programming, temperature management, and seasonal ambiance planning.",
+    "implementation_risks": [
+      "Lighting changes may require electrical work and associated cost",
+      "Music taste is subjective and what the owner likes may not suit the customer base",
+      "Temperature management in older buildings with poor insulation can be expensive and difficult"
+    ],
+    "notes_for_engine": "Activate when signals indicate atmospheric issues: harsh lighting, inappropriate music, temperature complaints, or when customers describe the cafe as lacking atmosphere or feeling clinical. Connects to B149 (Seating Layout) as both shape the physical experience. Also relevant for cafes extending into evening trading where atmospheric transformation is essential.",
+    "tags": ["environment", "ambiance", "lighting", "music", "temperature", "scent", "sensory", "atmosphere", "design"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "blk_manager_floor_walk",
+  "name": "Run manager floor walk",
+  "description": "Run a timed manager walk during critical windows to catch developing pressure, coach live execution, and trigger escalation before the floor drifts into unmanaged chaos.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: leadership rhythm should place attention where risk is building, not where it is comfortable",
+  "updated_at": "2026-03-14T00:24:42.989086Z",
+  "effort_hours": 1.5,
+  "dependencies": [
+    "blk_manager_peak_window_plan"
+  ],
+  "tool_ids": [
+    "tool_floor_walk_sheet"
+  ],
+  "response_pattern_ids": [
+    "rp_manager_presence_reset"
+  ],
+  "entry_conditions": [
+    "Managers disappear into admin or static positions while service risk builds on the floor.",
+    "The venue has clear peak windows where visible management attention changes outcomes."
+  ],
+  "contraindications": [
+    "Do not turn the floor walk into passive observation with no intervention logic.",
+    "Do not schedule the walk if the manager has no authority to coach or escalate live issues."
+  ],
+  "owner_role": "venue_manager",
+  "expected_time_to_effect_days": 1,
+  "proof_of_completion": [
+    "Managers have a timed floor walk cadence for critical windows.",
+    "The walk includes observation targets, coaching prompts, and escalation checks.",
+    "At least one real service shows the manager redirecting attention based on the walk."
+  ],
+  "successor_block_ids": [],
+  "service_module_ids": [
+    "leadership_and_management_rhythm",
+    "live_execution",
+    "recovery_and_exception_handling"
+  ],
+  "failure_family_ids": [
+    "leadership_rhythm_failure",
+    "accountability_failure",
+    "standards_drift"
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "block_id": "B128",
+  "name": "Delivery Commission Analysis",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Ensures the cafe understands the true cost of third-party delivery platforms (Deliveroo, Uber Eats, Just Eat) and makes evidence-based decisions about whether delivery generates genuine profit or merely creates revenue that costs more than it earns. This block brings financial rigour to a channel that many cafes adopt without understanding its economics.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Calculate the true net margin on delivery orders after accounting for all costs: platform commission, packaging, additional labour, and food cost adjustments",
+      "Compare delivery channel profitability against dine-in and takeaway channels on a like-for-like basis",
+      "Determine the break-even point for delivery operations and whether current volumes justify the channel",
+      "Negotiate improved commission rates or terms with delivery platforms based on volume data",
+      "Make an informed strategic decision about which platforms to use, which to exit, and what role delivery plays in the business"
+    ],
+    "secondary_objectives": [
+      "Identify which menu items are profitable for delivery and which are loss-makers when commission is factored in",
+      "Understand the impact of delivery on kitchen capacity and whether delivery orders displace higher-margin dine-in customers",
+      "Evaluate whether delivery acts as a genuine customer acquisition channel or merely cannibalises existing customers",
+      "Build a data-driven case for adjusting delivery menu pricing upward to recover commission costs"
+    ]
+  },
+  "why_this_matters": "Third-party delivery platforms have transformed UK cafe trading since 2018, but the economics are brutal. Deliveroo charges 25-35% commission on each order, Uber Eats 15-30%, and Just Eat 14-25% depending on the service level. On a 12 pound delivery order with a food cost of 35%, a cafe paying 30% commission retains 35% (4.20 pounds) after commission and food cost — but has not yet accounted for packaging (typically 0.50-1.00 per order), the additional labour required to process delivery orders, or the energy cost of keeping the kitchen running for a lower-margin channel. When all costs are properly allocated, many cafes discover that delivery orders generate a net margin of 5-10% compared to 15-25% for dine-in orders. Some discover they are actively losing money on every delivery. Yet operators continue offering delivery because the revenue looks good on the top line, because customers expect it, or because they fear losing visibility if they leave the platforms. This is a classic case of vanity metrics over financial reality. The decision to offer delivery is not inherently wrong — for some cafes, delivery provides genuine incremental revenue, keeps the kitchen productive during quiet periods, and introduces the cafe to customers who later visit in person. But this decision must be made with clear financial data, not assumptions. The cafe needs to know exactly what delivery is costing, whether it is genuinely incremental, and whether the same kitchen capacity could be used more profitably for other purposes.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Pull delivery reports from each platform you use for the last 3 months. Most platforms provide detailed sales reports showing gross order value, commission charged, and net payment. Create a simple spreadsheet tracking monthly delivery revenue, commission paid, and net revenue received from each platform. Calculate the effective commission rate (commission divided by gross revenue) — this may differ from the headline rate due to promotions, service fees, or tiered pricing. Week 2: Calculate the true cost of a delivery order. Take your average delivery order value and subtract: platform commission, estimated food cost (use menu item costs from B056), packaging cost per order, and an estimate of additional labour cost per order (typically 3-5 minutes of staff time at their full hourly rate including oncosts). The result is the true net margin per delivery order. Compare this against your average dine-in and takeaway margin per order. If delivery margin is negative or below 5%, this is a red flag requiring immediate attention. Document the findings clearly — many owners are shocked when they see the actual numbers.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Analyse delivery profitability at the product level. Not all menu items perform equally on delivery: a 4.50 pound flat white at 30% commission leaves almost nothing after costs, while a 14 pound brunch platter may still generate acceptable margin. Identify which items are profitable for delivery and which are loss-makers. This analysis feeds directly into B129 (Delivery-Only Menu Engineering). Review delivery volume patterns: what times of day and days of the week generate most delivery orders? Is delivery displacing dine-in capacity during peak periods, or filling quiet gaps? If delivery orders compete with dine-in customers for kitchen capacity during the Saturday morning rush, they may be actively reducing total profitability. Contact your platform account managers and negotiate improved terms. Platforms are more willing to negotiate than most operators realise, especially for established cafes with good reviews and consistent order volumes. Ask for reduced commission rates, marketing credits, or removal of penalty clauses. Track delivery customer behaviour: do delivery customers ever convert to dine-in? Most platforms restrict access to customer data, but you can track this indirectly through loyalty programmes or delivery-exclusive offers with dine-in vouchers.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Delivery channel management should now be a strategic discipline, not a passive acceptance of platform terms. Review delivery performance monthly as part of the financial review cycle (B123). Track delivery as a separate profit centre with its own revenue, costs, and margin — do not merge it with dine-in figures or it becomes invisible. Develop a platform strategy: you do not need to be on every platform. Some cafes find that being on one platform with negotiated terms is more profitable than being on three at standard rates. Consider whether delivery at certain times should be paused to protect dine-in capacity during peak periods — most platforms allow you to control availability hours. Evaluate the marketing value of platform presence: even if individual order margins are thin, the visibility on Deliveroo or Uber Eats may introduce new customers who later visit in person. Quantify this value rather than assuming it. Review annually whether delivery remains strategically appropriate for the business, factoring in the growth of direct ordering channels (B130)."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Pull delivery sales reports from each platform for the last 3 months",
+        "Calculate effective commission rate for each platform",
+        "Calculate the true net margin per delivery order including commission, food cost, packaging, and labour",
+        "Compare delivery margin against dine-in and takeaway margins",
+        "Flag any platform or product category where delivery margin is negative or below 5%",
+        "Document findings in a clear summary for business decision-making"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Analyse delivery profitability at the product level to identify profitable and loss-making items",
+        "Map delivery order volume by time of day and day of week against dine-in patterns",
+        "Contact platform account managers to negotiate improved commission rates",
+        "Assess whether delivery orders displace higher-margin dine-in customers during peak periods",
+        "Track delivery customer conversion to dine-in through indirect measurement",
+        "Consider adjusting delivery menu pricing upward to recover commission costs"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track delivery as a separate profit centre with its own P&L",
+        "Review delivery performance monthly as part of the financial review cycle",
+        "Develop a platform strategy selecting optimal platforms and negotiating terms",
+        "Control delivery availability hours to protect dine-in capacity during peaks",
+        "Evaluate delivery marketing value and customer acquisition contribution annually",
+        "Integrate delivery strategy with direct ordering channel development (B130)"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Delivery Platform Cost Analysis (per-platform breakdown)",
+    "True Delivery Margin Calculator (per-order profitability)",
+    "Product-Level Delivery Profitability Matrix",
+    "Platform Negotiation Brief template",
+    "Monthly Delivery Channel P&L Template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T128-01",
+        "tool_name": "Delivery Platform Cost Analysis",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Monthly spreadsheet tracking gross delivery revenue, commission paid, net revenue, packaging costs, and estimated additional labour cost for each delivery platform, calculating the true effective commission rate and net margin."
+      },
+      {
+        "tool_id": "T128-02",
+        "tool_name": "True Delivery Margin Calculator",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "A per-order calculator showing the true profitability of a delivery order after all costs: platform commission, food cost, packaging, and labour allocation. Compares against dine-in and takeaway margins."
+      },
+      {
+        "tool_id": "T128-03",
+        "tool_name": "Product-Level Delivery Profitability Matrix",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Analyses each menu item's profitability when sold via delivery, accounting for platform commission and packaging. Identifies items that should be promoted, repriced, or removed from the delivery menu."
+      },
+      {
+        "tool_id": "T128-04",
+        "tool_name": "Platform Negotiation Brief",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A structured document for preparing delivery platform commission negotiations, including current volumes, order values, review ratings, comparable rates, and specific terms being requested."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Delivery revenue is celebrated on the top line while the true cost is never calculated, masking losses",
+    "Commission rates are accepted as fixed and non-negotiable when platforms often have flexibility for good operators",
+    "Delivery orders during peak periods displace higher-margin dine-in customers without anyone recognising the trade-off",
+    "The cafe stays on multiple platforms out of fear of missing orders, paying duplicate fixed costs without proportional incremental revenue"
+  ],
+  "kpis": [
+    "True net margin per delivery order calculated and tracked monthly",
+    "Delivery channel profitability reviewed as a separate profit centre each month",
+    "Platform commission rates negotiated or reviewed at least annually",
+    "Delivery margin per order above 8% after all costs, or strategic justification documented for continuing below this threshold"
+  ],
+  "dependencies": ["B101", "B122"],
+  "constraints": [
+    "Platform contracts may include minimum commitment periods or exclusivity clauses that limit immediate changes",
+    "Removing unprofitable delivery items may reduce order frequency and affect platform ranking algorithms",
+    "Customer expectations around delivery availability must be managed carefully to avoid negative reviews"
+  ],
+  "time_load": {
+    "L1": "4 hours (pulling reports, building analysis, calculating true margins)",
+    "L2": "6 hours (product-level analysis, platform negotiation preparation, volume pattern mapping)",
+    "L3": "2 hours/month (monthly delivery P&L review, strategy refinement)"
+  },
+  "review_protocol": "Monthly delivery channel P&L review. Quarterly product-level profitability assessment. Annual platform strategy review and commission negotiation. Immediate review if delivery volume changes significantly or platform terms are altered.",
+  "meta": {
+    "summary_for_humans": "This block forces a hard look at whether delivery platforms are actually making or losing money for the cafe. It calculates true per-order margins after commission, packaging, and labour, and provides the data needed to negotiate better terms or exit unprofitable platforms.",
+    "implementation_risks": [
+      "Owners may resist the analysis if they suspect delivery is unprofitable but depend on the revenue psychologically",
+      "Platform algorithms may penalise cafes that reduce menu items or availability, creating a fear of making changes",
+      "Exiting a platform may be complicated by contract terms or customer expectations"
+    ],
+    "notes_for_engine": "Activate when signals indicate the cafe uses delivery platforms but has never calculated true delivery margin, when delivery revenue is significant but profitability is unclear, or when the owner mentions feeling trapped by platform commissions. This block is a prerequisite for B129 (Delivery-Only Menu Engineering) and B130 (Direct Ordering Channel).",
+    "tags": ["finance", "delivery", "commission", "platform", "Deliveroo", "Uber_Eats", "Just_Eat", "margin", "profitability"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

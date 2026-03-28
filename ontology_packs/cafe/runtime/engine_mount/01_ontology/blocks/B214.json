@@ -1,0 +1,21 @@
+{
+  "block_id": "B214",
+  "name": "Employment Contracts & Labour Code Compliance",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M16: Regulatory Governance & Risk Management",
+  "state": "enriched",
+  "purpose": "Ensures all employment contracts comply with national labour code requirements including minimum wage, maximum working hours, leave entitlements (annual, maternity, paternity, parental), probation periods, and termination procedures.",
+  "tools": [
+    "T214-01",
+    "T214-02",
+    "T214-03",
+    "T214-04"
+  ],
+  "signals": [
+    "S216"
+  ],
+  "failure_modes": [
+    "FM112"
+  ]
+}

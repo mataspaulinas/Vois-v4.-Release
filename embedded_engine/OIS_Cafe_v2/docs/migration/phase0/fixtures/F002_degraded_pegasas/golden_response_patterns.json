@@ -1,0 +1,362 @@
+[
+  {
+    "response_pattern_id": "RP024",
+    "rp_name": "Peak Staffing & Rush Management",
+    "domain": "D05",
+    "severity": "medium-critical",
+    "priority_score": 2.0,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM040",
+        "fm_title": "Morning rush and peak management failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM042",
+        "fm_title": "Ticket time and service speed failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Review your staffing levels against your transaction data for the past four weeks. Are you adequately staffed during peak hours (typically 7-10am and 12-2pm)? If ticket times exceed 5 minutes during peak you are either understaffed or your workflow is broken. Observe your team during the next morning rush and identify every point of delay or confusion.",
+    "l2_focus": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+    "l3_focus": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+    "description": "Peak Staffing & Rush Management"
+  },
+  {
+    "response_pattern_id": "RP051",
+    "rp_name": "Values Alignment & Standards Culture",
+    "domain": "D12",
+    "severity": "medium-critical",
+    "priority_score": 2.0,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM092",
+        "fm_title": "Values articulation and alignment failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM093",
+        "fm_title": "Standards consistency and culture failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Can every team member articulate your cafe's values and standards? Ask them today. If responses are vague or inconsistent your values exist in your head but not in your culture. Check whether you have a staff handbook that documents expectations standards and policies. If not the gap between your intentions and your team's understanding is growing daily.",
+    "l2_focus": "Define and document your cafe's core values in clear specific terms that guide daily behaviour. Create a staff handbook covering values standards policies and procedures. Implement a values-based onboarding process where new starters learn what matters to your cafe not just what tasks to perform. Address any toxic dynamics or cultural issues directly — they will not resolve themselves.",
+    "l3_focus": "Build a culture where your values are lived not laminated. Your standards should be maintained through shared commitment not surveillance. Celebrate team members who embody your values and address those who do not. Your culture is what happens when you are not watching — make it strong enough to sustain itself.",
+    "description": "Values Alignment & Standards Culture"
+  },
+  {
+    "response_pattern_id": "RP026",
+    "rp_name": "Daily Routines & Shift Handover",
+    "domain": "D05",
+    "severity": "medium-critical",
+    "priority_score": 1.6,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM039",
+        "fm_title": "Opening and closing routine failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM045",
+        "fm_title": "Shift handover and communication failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Do you have written opening and closing checklists? If not create them today covering every task from unlocking the door and switching on equipment to cashing up and setting the alarm. Check whether shift handovers include a structured information transfer — what happened during the shift what needs attention and what is prepared for tomorrow.",
+    "l2_focus": "Develop comprehensive opening mid-shift and closing checklists with sign-off requirements. Create a shift handover protocol including a written handover note template. Implement a daily reconciliation process covering cash stock levels waste and any incidents. Train all shift-capable team members on the full opening and closing procedure. Conduct quarterly reviews of your routines to ensure they remain current.",
+    "l3_focus": "Your daily routines should run like clockwork. Every shift should start and end consistently regardless of who is working. Build a culture where checklists are respected not resented. Your operational rhythm should be so reliable that you can identify anomalies immediately when something is not right.",
+    "description": "Daily Routines & Shift Handover"
+  },
+  {
+    "response_pattern_id": "RP006",
+    "rp_name": "Queue Management & Service Speed",
+    "domain": "D02",
+    "severity": "medium-critical",
+    "priority_score": 1.0,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM011",
+        "fm_title": "Queue management and wait time failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Measure your peak queue times this week. Time how long customers wait from joining the queue to receiving their order during morning rush (7-10am) and lunchtime peak. If any customer waits more than 5 minutes to order or more than 8 minutes for a coffee something is wrong. Identify the bottleneck immediately — is it the till the espresso machine the food prep or the team capacity?",
+    "l2_focus": "Design a peak period workflow that assigns specific roles: dedicated till operator barista food runner and floor support. Create a peak staffing model based on transaction data showing exactly how many team members you need for each hour of the day. Implement a queue management communication strategy where team members acknowledge waiting customers and provide time estimates.",
+    "l3_focus": "Build a service speed culture where the team takes pride in fast smooth service without sacrificing quality. Track average service times daily and display them to the team. Study your workflow during peak and continuously optimise. Your morning rush should feel energised and efficient not chaotic. Customers should never feel ignored even when you are busy.",
+    "description": "Queue Management & Service Speed"
+  },
+  {
+    "response_pattern_id": "RP020",
+    "rp_name": "Team Communication & Meetings",
+    "domain": "D04",
+    "severity": "medium-critical",
+    "priority_score": 1.0,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM032",
+        "fm_title": "Team communication and meeting failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Are you holding daily team briefings before each shift? If not start tomorrow. A 5-minute huddle covering the day's targets any specials or changes and any issues from yesterday transforms team alignment. Check whether you have a weekly team meeting — if not schedule one. Communication gaps create errors waste and frustration.",
+    "l2_focus": "Implement a structured communication framework: daily pre-shift briefings weekly team meetings and monthly all-hands sessions. Create agenda templates for each format. Establish a digital communication channel (WhatsApp group or similar) for operational updates. Develop a rota publication policy ensuring at least two weeks advance notice. Track meeting attendance and action completion.",
+    "l3_focus": "Build a communication culture where information flows freely and everyone feels heard. Your team should understand the cafe's goals challenges and successes. Use meetings as opportunities for recognition and skill sharing not just task allocation. Excellent communication is the foundation of team performance.",
+    "description": "Team Communication & Meetings"
+  },
+  {
+    "response_pattern_id": "RP053",
+    "rp_name": "Operational Rhythm & Daily Discipline",
+    "domain": "D05",
+    "severity": "medium-critical",
+    "priority_score": 1.0,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM097",
+        "fm_title": "Operational discipline and daily routine failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Review your daily operational discipline. Are prep lists being used? Is the waste log completed every day? Is the maintenance log up to date? Are daily targets communicated to the team? If any of these basic disciplines have lapsed recommit to them this week. Operational discipline is the foundation everything else is built on.",
+    "l2_focus": "Create a comprehensive daily discipline framework covering prep lists waste logs maintenance logs cash reconciliation temperature checks and target tracking. Implement an operational rhythm dashboard that gives you a daily snapshot of compliance. Train all shift-capable team members on the full discipline framework. Conduct weekly discipline audits and address gaps immediately.",
+    "l3_focus": "Operational discipline should be invisible because it is automatic. Your daily routines should be so embedded that they happen without thinking. Build a culture where discipline is respected and lapses are noticed by the team not just by management. Your operational rhythm should be the heartbeat of your cafe.",
+    "description": "Operational Rhythm & Daily Discipline"
+  },
+  {
+    "response_pattern_id": "RP034",
+    "rp_name": "Revenue Growth & Pricing Strategy",
+    "domain": "D07",
+    "severity": "medium-critical",
+    "priority_score": 0.93,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM059",
+        "fm_title": "Revenue per hour and sales productivity failure",
+        "fm_score": 0.93,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Pull your revenue per hour data for the past four weeks. Identify your most and least productive hours. Is your average transaction value (ATV) growing or stagnant? When did you last review your prices? If it has been more than 12 months your prices are almost certainly too low given ingredient and wage inflation. Compare your prices to three local competitors this week.",
+    "l2_focus": "Implement a structured pricing review process conducted every 6-12 months. Develop an upselling programme training baristas to suggest add-ons naturally — extra shot cake with coffee larger size. Track ATV daily and set improvement targets. Create revenue targets for each shift and share them with the team. Analyse your highest-margin items and position them prominently.",
+    "l3_focus": "Build a revenue growth culture where the team understands the connection between their service and the cafe's financial health. Your pricing should reflect your value not just your costs. Develop premium offerings that increase ATV without alienating core customers. Track revenue per hour as your primary productivity metric.",
+    "description": "Revenue Growth & Pricing Strategy"
+  },
+  {
+    "response_pattern_id": "RP002",
+    "rp_name": "Allergen Management & PPDS Compliance",
+    "domain": "D01",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM002",
+        "fm_title": "Allergen management and PPDS compliance failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Audit your allergen information immediately. Every menu item must have the 14 declarable allergens documented and available to customers on request. If you sell any pre-packed for direct sale items check Natasha's Law PPDS compliance now — every wrapped sandwich cake or salad must carry a full ingredient list with allergens emphasised. Fix any gaps today.",
+    "l2_focus": "Create an allergen matrix covering every item on your menu including specials and seasonal items. Implement a system for updating allergen information when recipes or suppliers change. Train every team member to handle allergen enquiries confidently and to escalate when uncertain. Develop a customer allergen dialogue script and ensure it is used consistently.",
+    "l3_focus": "Establish allergen management as a non-negotiable part of your food safety culture. Conduct quarterly allergen audits including mystery customer tests. Your allergen processes should be thorough enough that a customer with a severe allergy feels genuinely safe eating with you. Track allergen near-misses and use them to strengthen your system.",
+    "description": "Allergen Management & PPDS Compliance"
+  },
+  {
+    "response_pattern_id": "RP007",
+    "rp_name": "Order Accuracy & Service Quality",
+    "domain": "D02",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM012",
+        "fm_title": "Order accuracy and fulfilment failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Track order accuracy for the next five days. Record every wrong drink incorrect food order or missed modification. If errors exceed 5% of orders the problem is systemic not individual. Check whether your ordering process has clear handoff points between taking the order making the drink and presenting it to the customer. Ensure customer names or order numbers are used consistently.",
+    "l2_focus": "Implement a standardised order-taking process with clear call-out protocols between the till and the bar. Create a drink modifier checklist covering milk alternatives syrups temperature preferences and dietary requirements. Develop a quality check step before handoff where the barista confirms the drink matches the order. Train all team members on your greeting standard and customer interaction expectations.",
+    "l3_focus": "Create a service culture where every customer interaction feels personal and attentive. Track order accuracy as a key metric and celebrate perfect days. Develop your team's ability to remember regular customers and their preferences. Your service quality should be a primary reason customers choose your cafe over alternatives.",
+    "description": "Order Accuracy & Service Quality"
+  },
+  {
+    "response_pattern_id": "RP017",
+    "rp_name": "Dietary Inclusivity & Alternative Options",
+    "domain": "D03",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM028",
+        "fm_title": "Dietary inclusivity and alternative options failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Audit your menu for dietary inclusivity today. Can a vegan customer get a satisfying meal and drink? Can a gluten-free customer eat safely? Can a dairy-free customer have their coffee made well? If any dietary group is underserved or feels like an afterthought that is a revenue and reputation gap. Check that your alternative milk range covers at least oat soy and almond.",
+    "l2_focus": "Develop a comprehensive dietary options strategy covering vegan vegetarian gluten-free dairy-free and other common dietary requirements. Ensure your menu clearly labels dietary suitability. Train your team to discuss dietary options knowledgeably and enthusiastically. Create dedicated dietary menus or sections that feel considered not token.",
+    "l3_focus": "Position dietary inclusivity as a strength not an accommodation. Develop signature vegan and gluten-free items that are genuinely excellent not compromises. Market your dietary options proactively and ensure your online presence reflects your inclusivity. Your cafe should be a destination for dietary-restricted customers not just tolerable.",
+    "description": "Dietary Inclusivity & Alternative Options"
+  },
+  {
+    "response_pattern_id": "RP023",
+    "rp_name": "Owner Role & Leadership Development",
+    "domain": "D04",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM037",
+        "fm_title": "Owner overwork and delegation failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "If you are the owner and you are working every shift making every decision and handling every problem you are the bottleneck. Block out two hours of protected management time this week — away from the bar away from customers — for planning and strategic thinking. Identify the three tasks you do that someone else could be trained to do and start delegating them.",
+    "l2_focus": "Define your role as owner clearly distinguishing between working IN the business and working ON it. Create a delegation plan transferring operational tasks to trained team members. Develop your leadership skills through training coaching or peer groups. Establish protected management time as a non-negotiable weekly commitment. Build a leadership pipeline by developing your shift leads.",
+    "l3_focus": "Evolve from operator to leader. Your cafe should run smoothly when you are not there — if it cannot your systems and team are not strong enough. Invest in your own development as a business leader. Build a leadership team that shares your vision and can make decisions autonomously. Your wellbeing and sustainability as an owner is critical to the business.",
+    "description": "Owner Role & Leadership Development"
+  },
+  {
+    "response_pattern_id": "RP025",
+    "rp_name": "Workflow Layout & Station Design",
+    "domain": "D05",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM041",
+        "fm_title": "Workflow layout and station design failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Stand behind your counter during a busy period and watch the workflow. Where do people collide? Where do they wait? Where do they walk unnecessarily? Map the physical journey of a cup from order to handoff and count the steps. If your barista is taking more than three steps to complete a drink your layout needs attention. Check that all frequently used items are within arm's reach.",
+    "l2_focus": "Conduct a formal workflow audit mapping movement patterns during peak service. Redesign station layouts to minimise movement and eliminate crossover. Implement the 3-step rule: every item needed for a drink should be within three steps of the espresso machine. Ensure equipment placement supports a logical left-to-right workflow. Address equipment reliability issues that cause workflow disruption.",
+    "l3_focus": "Optimise your workspace like a kitchen brigade — every station designed for efficiency and every tool placed for speed. Review and refine your layout seasonally as your menu and service patterns evolve. Invest in equipment and layout changes that measurably improve throughput. Your workflow should be smooth enough that a new team member can follow it intuitively.",
+    "description": "Workflow Layout & Station Design"
+  },
+  {
+    "response_pattern_id": "RP050",
+    "rp_name": "Revenue Diversification & Expansion",
+    "domain": "D11",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM088",
+        "fm_title": "Revenue diversification failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Identify revenue opportunities you are not currently pursuing. Could you offer catering for local offices? Sell retail coffee beans or merchandise? Develop an evening trade? Host events? Launch a subscription model? List five potential revenue streams and assess each for feasibility and margin. Start with the one that requires the least investment.",
+    "l2_focus": "Develop a revenue diversification plan evaluating each opportunity against investment required margin potential and operational impact. Create a pilot programme for your most promising new revenue stream. Assess expansion readiness — do your systems team and finances support a second location? If considering expansion ensure your first site runs independently before opening a second.",
+    "l3_focus": "Build a diversified revenue model that reduces dependence on walk-in coffee sales. Each new revenue stream should be tested with a minimum viable approach before full commitment. If pursuing expansion create a site-opening playbook that captures everything you have learned. Growth should be strategic not opportunistic.",
+    "description": "Revenue Diversification & Expansion"
+  },
+  {
+    "response_pattern_id": "RP004",
+    "rp_name": "HACCP & Food Safety Management System",
+    "domain": "D01",
+    "severity": "medium-critical",
+    "priority_score": 0.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM007",
+        "fm_title": "Food safety management system (HACCP) failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Check whether you have a documented HACCP-based food safety management system. If you are using Safer Food Better Business or an equivalent it must be current and actively used not filed away. Identify your critical control points — cooking temperatures cooling times hot holding — and confirm they are being monitored and recorded. Any gaps must be addressed this week.",
+    "l2_focus": "Build or update your HACCP system to cover all food processes in your cafe from goods receipt through storage preparation cooking display and service. Document each critical control point with target parameters monitoring frequency corrective actions and responsible person. Train all kitchen and food preparation staff on the HACCP system and their specific responsibilities within it.",
+    "l3_focus": "Your food safety management system should be a living document that evolves with your menu and operations. Conduct internal food safety audits quarterly and use findings to update procedures. Maintain supplier due diligence records and traceability systems. Aim for consistent EHO rating of 5 and use food safety excellence as a customer trust signal.",
+    "description": "HACCP & Food Safety Management System"
+  },
+  {
+    "response_pattern_id": "RP014",
+    "rp_name": "Food Quality & Menu Innovation",
+    "domain": "D03",
+    "severity": "medium-critical",
+    "priority_score": 0.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM024",
+        "fm_title": "Menu stagnation and innovation failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Taste every food item on your menu this week with fresh eyes. Is the quality consistent day to day? Are portion sizes uniform? Check your bakery and food supplier delivery quality — are you accepting items that do not meet your standards? Identify your three best-selling and three worst-selling items. Any item that is not selling or not meeting quality standards should be flagged for removal or replacement.",
+    "l2_focus": "Develop a structured menu review process conducted quarterly. Track food item sales performance cost margins and customer feedback. Create a seasonal menu calendar that introduces new items and retires underperformers. Establish food quality standards with your suppliers including reject criteria. Conduct food supplier quality assessments annually and maintain at least two backup suppliers for key items.",
+    "l3_focus": "Build a menu that tells your cafe's story and evolves with the seasons. Develop signature items that customers cannot get elsewhere. Create a food development programme that tests new items systematically before full launch. Your menu should balance commercial performance with creative expression and dietary inclusivity.",
+    "description": "Food Quality & Menu Innovation"
+  },
+  {
+    "response_pattern_id": "RP022",
+    "rp_name": "Key Person Risk & Cross-Training",
+    "domain": "D04",
+    "severity": "medium-critical",
+    "priority_score": 0.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM034",
+        "fm_title": "Key person dependency and cover failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Identify your key person dependencies today. Who is the only person who can do the banking the ordering the espresso machine maintenance or the rota? What happens if they are ill for two weeks or resign? If the answer is chaos you have a critical vulnerability. Start documenting their knowledge this week.",
+    "l2_focus": "Implement a cross-training programme ensuring at least two people can perform every critical function. Create a skills coverage matrix showing who can cover what and identifying gaps. Develop an absence cover protocol with emergency contact procedures and minimum staffing requirements. Document all key processes in a simple operations manual accessible to the whole team.",
+    "l3_focus": "Build organisational resilience through deep cross-training and knowledge sharing. No single person's departure should threaten your cafe's operation. Create a knowledge capture system where processes are documented and regularly updated. Your team's collective capability should exceed any individual's contribution.",
+    "description": "Key Person Risk & Cross-Training"
+  },
+  {
+    "response_pattern_id": "RP018",
+    "rp_name": "Staff Retention & Engagement",
+    "domain": "D04",
+    "severity": "medium-critical",
+    "priority_score": 0.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM036",
+        "fm_title": "Team morale and wellbeing failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Check your staff turnover rate for the past 12 months. If you have lost more than 30% of your team something is systemically wrong. Conduct informal one-to-one conversations with every team member this week to understand their satisfaction engagement and concerns. Identify your flight risks — who is most likely to leave next and why?",
+    "l2_focus": "Develop a staff retention strategy addressing the top three reasons baristas leave: pay progression opportunity and work-life balance. Implement a structured engagement programme including regular one-to-ones team social events and recognition. Create a compensation review process benchmarked against local hospitality market rates. Conduct exit interviews for every leaver and analyse the data for patterns.",
+    "l3_focus": "Build a workplace culture where people want to stay and grow. Your cafe should be known locally as a great place to work. Track engagement alongside turnover and invest in the relationship between the two. The best cafes retain their baristas for years not months — aim for that standard.",
+    "description": "Staff Retention & Engagement"
+  },
+  {
+    "response_pattern_id": "RP036",
+    "rp_name": "Cost Structure & Payroll Control",
+    "domain": "D07",
+    "severity": "medium-critical",
+    "priority_score": 0.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM064",
+        "fm_title": "Payroll cost management failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Calculate your payroll percentage — total staff costs divided by revenue. For cafes this should be between 30-40%. If it is above 40% you are either overstaffed during quiet periods or your revenue is too low. Review your cost structure: rent utilities insurance supplies. Identify your top three cost-reduction opportunities without compromising quality.",
+    "l2_focus": "Implement a labour scheduling system that matches staffing levels to demand patterns. Create a cost structure dashboard tracking rent payroll cost-of-goods and utilities as percentages of revenue. Develop a payroll optimisation strategy using flexible scheduling split shifts and cross-training. Review all fixed costs annually and negotiate where possible.",
+    "l3_focus": "Master your cost structure so that margin is protected without sacrificing the customer or team experience. Your payroll model should be responsive to demand while providing team members with stable predictable hours. Build a cost-conscious culture where waste in any form is identified and addressed.",
+    "description": "Cost Structure & Payroll Control"
+  }
+]

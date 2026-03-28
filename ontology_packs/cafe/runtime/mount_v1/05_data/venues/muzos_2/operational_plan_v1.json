@@ -1,0 +1,1570 @@
+{
+  "plan_id": "plan_20260325_001",
+  "venue_slug": "muzos_2",
+  "venue_name": "muzos 2",
+  "created_at": "2026-03-25T22:32:29.403257",
+  "updated_at": "2026-03-25T22:54:24.934275",
+  "last_updated_by": "u_consultant",
+  "source_assessment": "",
+  "assessment_date": "2026-03-25",
+  "version": 1,
+  "previous_versions": [],
+  "plan_state": "in_review",
+  "owner_user_id": "u_consultant",
+  "reviewer_user_id": "u_portfolio",
+  "approval_requested_at": "2026-03-25T22:54:24.934263",
+  "approved_at": "",
+  "approved_by_user_id": "",
+  "confidence": {
+    "state": "PROVISIONAL",
+    "note": "This plan is based on partial data. Some areas may need verification before L2 implementation.",
+    "signal_count": 46,
+    "domain_coverage": 13
+  },
+  "strengths": [
+    "Team culture and rhythm",
+    "Guest experience",
+    "Financial controls",
+    "Leadership alignment",
+    "Compliance and safety",
+    "Market positioning",
+    "Brand and marketing",
+    "Operational systems",
+    "Strategic clarity",
+    "Team stability",
+    "Technology adoption"
+  ],
+  "dependency_notes": [
+    "**Regulatory Governance & Risk Management** must precede **Food Safety & Hygiene Compliance** — Regulatory governance underpins food safety compliance"
+  ],
+  "summary": {
+    "total_tasks": 13,
+    "by_layer": {
+      "L1": 3,
+      "L2": 6,
+      "L3": 4
+    },
+    "by_status": {
+      "completed": 13
+    },
+    "by_priority": {
+      "high": 9,
+      "standard": 4
+    },
+    "overdue_tasks": 0,
+    "domains_covered": [],
+    "response_patterns_active": [
+      "RP005",
+      "RP054"
+    ]
+  },
+  "tasks": [
+    {
+      "task_id": "L1_001",
+      "item_id": "B183",
+      "item_type": "block",
+      "title": "Health & Safety Risk Assessment",
+      "description": "Conduct an immediate regulatory compliance check. Is your health and safety risk assessment current? Are fire extinguishers inspected and fire exits clear? Do you have employers liability insurance displayed? Are your gas and electrical safety certificates current? Check your food business registration and any premises licence requirements. Fix any compliance gaps this week.",
+      "source_rp": "RP054",
+      "rp_name": "Regulatory Compliance & Risk Management",
+      "module_id": "M16",
+      "module_name": "M16",
+      "domain": "",
+      "layer": "L1",
+      "timeline_label": "Days 1–30",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP054",
+        "rp_name": "Regulatory Compliance & Risk Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM098",
+            "fm_title": "Regulatory compliance and risk management failure"
+          },
+          {
+            "fm_id": "FM099",
+            "fm_title": "Health and safety risk assessment failure"
+          },
+          {
+            "fm_id": "FM100",
+            "fm_title": "Fire safety and emergency preparedness failure"
+          },
+          {
+            "fm_id": "FM101",
+            "fm_title": "Licensing and employment law compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S167",
+          "S190",
+          "S191",
+          "S193",
+          "S194",
+          "S195"
+        ]
+      },
+      "status": "completed",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:32:29.403257",
+          "by": "system"
+        },
+        {
+          "status": "ready",
+          "at": "2026-03-25T22:50:31.078655",
+          "by": "Lead Consultant"
+        },
+        {
+          "status": "completed",
+          "at": "2026-03-25T22:50:34.938008",
+          "by": "Lead Consultant"
+        }
+      ],
+      "assigned_to": "Cafe Owner, Manager",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-03-28",
+      "started_at": null,
+      "completed_at": "2026-03-25T22:50:34.938008",
+      "updated_at": "2026-03-25T22:50:42.752845",
+      "updated_by": "u_consultant",
+      "review_required": false,
+      "sub_actions": [
+        {
+          "action_id": "L1_001_A01",
+          "text": "Download or create a risk assessment template suitable for cafe environments",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:37.573880"
+        },
+        {
+          "action_id": "L1_001_A02",
+          "text": "Conduct a full hazard identification walk-through of every area of the premises",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:37.824493"
+        },
+        {
+          "action_id": "L1_001_A03",
+          "text": "Rate each identified hazard for likelihood and severity",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:37.992582"
+        },
+        {
+          "action_id": "L1_001_A04",
+          "text": "Document control measures for every medium and high risk with assigned responsibility",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:38.684922"
+        },
+        {
+          "action_id": "L1_001_A05",
+          "text": "Brief all staff on key risks and control measures in a team meeting",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:38.923203"
+        },
+        {
+          "action_id": "L1_001_A06",
+          "text": "File the completed risk assessment and set an annual review date",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:39.003725"
+        },
+        {
+          "action_id": "L1_001_A07",
+          "text": "Ensure the accident book (BI 510) is available and all staff know where it is",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:39.962984"
+        }
+      ],
+      "deliverables": [
+        {
+          "name": "Comprehensive Risk Assessment document (cafe-specific template)",
+          "completed": true,
+          "completed_at": "2026-03-25T22:50:40.704885"
+        },
+        {
+          "name": "Health and Safety SOP library",
+          "completed": true,
+          "completed_at": "2026-03-25T22:50:41.343273"
+        },
+        {
+          "name": "Near-Miss Reporting Form",
+          "completed": true,
+          "completed_at": "2026-03-25T22:50:41.872842"
+        },
+        {
+          "name": "COSHH Register template",
+          "completed": true,
+          "completed_at": "2026-03-25T22:50:42.497980"
+        },
+        {
+          "name": "Quarterly Risk Review template",
+          "completed": true,
+          "completed_at": "2026-03-25T22:50:42.752834"
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L1_002",
+      "item_id": "B184",
+      "item_type": "block",
+      "title": "Fire Safety & Emergency Procedures",
+      "description": "Conduct an immediate regulatory compliance check. Is your health and safety risk assessment current? Are fire extinguishers inspected and fire exits clear? Do you have employers liability insurance displayed? Are your gas and electrical safety certificates current? Check your food business registration and any premises licence requirements. Fix any compliance gaps this week.",
+      "source_rp": "RP054",
+      "rp_name": "Regulatory Compliance & Risk Management",
+      "module_id": "M16",
+      "module_name": "M16",
+      "domain": "",
+      "layer": "L1",
+      "timeline_label": "Days 1–30",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP054",
+        "rp_name": "Regulatory Compliance & Risk Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM098",
+            "fm_title": "Regulatory compliance and risk management failure"
+          },
+          {
+            "fm_id": "FM099",
+            "fm_title": "Health and safety risk assessment failure"
+          },
+          {
+            "fm_id": "FM100",
+            "fm_title": "Fire safety and emergency preparedness failure"
+          },
+          {
+            "fm_id": "FM101",
+            "fm_title": "Licensing and employment law compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S167",
+          "S190",
+          "S191",
+          "S193",
+          "S194",
+          "S195"
+        ]
+      },
+      "status": "completed",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:32:29.403257",
+          "by": "system"
+        },
+        {
+          "status": "completed",
+          "at": "2026-03-25T22:53:30.118424",
+          "by": "Lead Consultant"
+        }
+      ],
+      "assigned_to": "Cafe Owner",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-03-28",
+      "started_at": null,
+      "completed_at": "2026-03-25T22:53:30.118424",
+      "updated_at": "2026-03-25T22:53:30.118424",
+      "updated_by": "u_consultant",
+      "review_required": false,
+      "sub_actions": [
+        {
+          "action_id": "L1_002_A01",
+          "text": "Obtain a fire risk assessment template and begin the premises walk-through",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:43.826522"
+        },
+        {
+          "action_id": "L1_002_A02",
+          "text": "Verify all fire safety equipment is present, functional, and correctly positioned",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:44.787286"
+        },
+        {
+          "action_id": "L1_002_A03",
+          "text": "Install any missing fire extinguishers, fire blankets, or emergency signage",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:45.041102"
+        },
+        {
+          "action_id": "L1_002_A04",
+          "text": "Draft emergency evacuation procedures with roles and assembly point",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:45.479429"
+        },
+        {
+          "action_id": "L1_002_A05",
+          "text": "Post evacuation procedure and floor plan in visible locations",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:46.151231"
+        },
+        {
+          "action_id": "L1_002_A06",
+          "text": "Brief all staff on evacuation procedure and conduct an escape route walk-through",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:47.502402"
+        },
+        {
+          "action_id": "L1_002_A07",
+          "text": "Ensure all escape routes are clear and unobstructed",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:46.841914"
+        }
+      ],
+      "deliverables": [
+        {
+          "name": "Fire Risk Assessment document (cafe-specific template)",
+          "completed": true,
+          "completed_at": "2026-03-25T22:50:48.409163"
+        },
+        {
+          "name": "Emergency Evacuation Procedure and floor plan",
+          "completed": true,
+          "completed_at": "2026-03-25T22:50:49.125225"
+        },
+        {
+          "name": "Fire Safety Log Book template",
+          "completed": true,
+          "completed_at": "2026-03-25T22:50:49.388492"
+        },
+        {
+          "name": "Staff Fire Safety Training Record",
+          "completed": true,
+          "completed_at": "2026-03-25T22:50:50.929761"
+        },
+        {
+          "name": "Fire Drill Record and Debrief template",
+          "completed": true,
+          "completed_at": "2026-03-25T22:50:50.324512"
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L1_003",
+      "item_id": "B185",
+      "item_type": "block",
+      "title": "Licensing & Employment Law Audit",
+      "description": "Conduct an immediate regulatory compliance check. Is your health and safety risk assessment current? Are fire extinguishers inspected and fire exits clear? Do you have employers liability insurance displayed? Are your gas and electrical safety certificates current? Check your food business registration and any premises licence requirements. Fix any compliance gaps this week.",
+      "source_rp": "RP054",
+      "rp_name": "Regulatory Compliance & Risk Management",
+      "module_id": "M16",
+      "module_name": "M16",
+      "domain": "",
+      "layer": "L1",
+      "timeline_label": "Days 1–30",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP054",
+        "rp_name": "Regulatory Compliance & Risk Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM098",
+            "fm_title": "Regulatory compliance and risk management failure"
+          },
+          {
+            "fm_id": "FM099",
+            "fm_title": "Health and safety risk assessment failure"
+          },
+          {
+            "fm_id": "FM100",
+            "fm_title": "Fire safety and emergency preparedness failure"
+          },
+          {
+            "fm_id": "FM101",
+            "fm_title": "Licensing and employment law compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S167",
+          "S190",
+          "S191",
+          "S193",
+          "S194",
+          "S195"
+        ]
+      },
+      "status": "completed",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:32:29.403257",
+          "by": "system"
+        },
+        {
+          "status": "completed",
+          "at": "2026-03-25T22:50:59.361350",
+          "by": "Lead Consultant"
+        }
+      ],
+      "assigned_to": "Cafe Owner",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-03-28",
+      "started_at": null,
+      "completed_at": "2026-03-25T22:50:59.361350",
+      "updated_at": "2026-03-25T22:50:59.361350",
+      "updated_by": "u_consultant",
+      "review_required": false,
+      "sub_actions": [
+        {
+          "action_id": "L1_003_A01",
+          "text": "Complete a licensing audit checklist covering all required licences and registrations",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:53.383951"
+        },
+        {
+          "action_id": "L1_003_A02",
+          "text": "Verify food business registration status with the local authority",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:54.142573"
+        },
+        {
+          "action_id": "L1_003_A03",
+          "text": "Confirm PPL PRS music licence is in place if any music is played",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:54.890284"
+        },
+        {
+          "action_id": "L1_003_A04",
+          "text": "Check that employer liability insurance is current and displayed",
+          "source": "execution_framework.L1_setup",
+          "checked": true,
+          "checked_at": "2026-03-25T22:50:55.663892"
+        },
+        {
+          "action_id": "L1_003_A05",
+          "text": "Review every employee file for written contract, right-to-work check, and pension enrolment",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_003_A06",
+          "text": "Verify NMW/NLW rates are correct for all staff",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_003_A07",
+          "text": "Flag and prioritise any compliance gaps for immediate resolution",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        }
+      ],
+      "deliverables": [
+        {
+          "name": "Licensing & Compliance Audit Checklist",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Compliance Calendar with renewal dates and deadlines",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Template Employment Contract (cafe-specific)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Employee Onboarding Compliance Checklist",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Central Compliance File structure guide",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_001",
+      "item_id": "B183",
+      "item_type": "block",
+      "title": "Health & Safety Risk Assessment",
+      "description": "Build a regulatory compliance calendar covering all required inspections certifications and renewals. Create a risk register identifying operational health and safety and financial risks with mitigation plans. Implement an incident reporting system for accidents near-misses and safety concerns. Develop emergency procedures covering fire medical emergency equipment failure and supply disruption. Ensure employment law compliance including contracts right-to-work checks and pension auto-enrolment.",
+      "source_rp": "RP054",
+      "rp_name": "Regulatory Compliance & Risk Management",
+      "module_id": "M16",
+      "module_name": "M16",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP054",
+        "rp_name": "Regulatory Compliance & Risk Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM098",
+            "fm_title": "Regulatory compliance and risk management failure"
+          },
+          {
+            "fm_id": "FM099",
+            "fm_title": "Health and safety risk assessment failure"
+          },
+          {
+            "fm_id": "FM100",
+            "fm_title": "Fire safety and emergency preparedness failure"
+          },
+          {
+            "fm_id": "FM101",
+            "fm_title": "Licensing and employment law compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S167",
+          "S190",
+          "S191",
+          "S193",
+          "S194",
+          "S195"
+        ]
+      },
+      "status": "completed",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:32:29.403257",
+          "by": "system"
+        },
+        {
+          "status": "completed",
+          "at": "2026-03-25T22:51:02.348444",
+          "by": "Lead Consultant"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-15",
+      "started_at": null,
+      "completed_at": "2026-03-25T22:51:02.348444",
+      "updated_at": "2026-03-25T22:51:06.436802",
+      "updated_by": "u_consultant",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Comprehensive Risk Assessment document (cafe-specific template)",
+          "completed": true,
+          "completed_at": "2026-03-25T22:51:03.603966"
+        },
+        {
+          "name": "Health and Safety SOP library",
+          "completed": true,
+          "completed_at": "2026-03-25T22:51:05.542892"
+        },
+        {
+          "name": "Near-Miss Reporting Form",
+          "completed": true,
+          "completed_at": "2026-03-25T22:51:05.278432"
+        },
+        {
+          "name": "COSHH Register template",
+          "completed": true,
+          "completed_at": "2026-03-25T22:51:05.758388"
+        },
+        {
+          "name": "Quarterly Risk Review template",
+          "completed": true,
+          "completed_at": "2026-03-25T22:51:06.436793"
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_002",
+      "item_id": "B184",
+      "item_type": "block",
+      "title": "Fire Safety & Emergency Procedures",
+      "description": "Build a regulatory compliance calendar covering all required inspections certifications and renewals. Create a risk register identifying operational health and safety and financial risks with mitigation plans. Implement an incident reporting system for accidents near-misses and safety concerns. Develop emergency procedures covering fire medical emergency equipment failure and supply disruption. Ensure employment law compliance including contracts right-to-work checks and pension auto-enrolment.",
+      "source_rp": "RP054",
+      "rp_name": "Regulatory Compliance & Risk Management",
+      "module_id": "M16",
+      "module_name": "M16",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP054",
+        "rp_name": "Regulatory Compliance & Risk Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM098",
+            "fm_title": "Regulatory compliance and risk management failure"
+          },
+          {
+            "fm_id": "FM099",
+            "fm_title": "Health and safety risk assessment failure"
+          },
+          {
+            "fm_id": "FM100",
+            "fm_title": "Fire safety and emergency preparedness failure"
+          },
+          {
+            "fm_id": "FM101",
+            "fm_title": "Licensing and employment law compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S167",
+          "S190",
+          "S191",
+          "S193",
+          "S194",
+          "S195"
+        ]
+      },
+      "status": "completed",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:32:29.403257",
+          "by": "system"
+        },
+        {
+          "status": "completed",
+          "at": "2026-03-25T22:51:09.024642",
+          "by": "Lead Consultant"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-15",
+      "started_at": null,
+      "completed_at": "2026-03-25T22:51:09.024642",
+      "updated_at": "2026-03-25T22:51:49.986696",
+      "updated_by": "u_consultant",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Fire Risk Assessment document (cafe-specific template)",
+          "completed": true,
+          "completed_at": "2026-03-25T22:51:48.653511"
+        },
+        {
+          "name": "Emergency Evacuation Procedure and floor plan",
+          "completed": true,
+          "completed_at": "2026-03-25T22:51:48.912816"
+        },
+        {
+          "name": "Fire Safety Log Book template",
+          "completed": true,
+          "completed_at": "2026-03-25T22:51:49.087776"
+        },
+        {
+          "name": "Staff Fire Safety Training Record",
+          "completed": true,
+          "completed_at": "2026-03-25T22:51:49.733806"
+        },
+        {
+          "name": "Fire Drill Record and Debrief template",
+          "completed": true,
+          "completed_at": "2026-03-25T22:51:49.986686"
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_003",
+      "item_id": "B185",
+      "item_type": "block",
+      "title": "Licensing & Employment Law Audit",
+      "description": "Build a regulatory compliance calendar covering all required inspections certifications and renewals. Create a risk register identifying operational health and safety and financial risks with mitigation plans. Implement an incident reporting system for accidents near-misses and safety concerns. Develop emergency procedures covering fire medical emergency equipment failure and supply disruption. Ensure employment law compliance including contracts right-to-work checks and pension auto-enrolment.",
+      "source_rp": "RP054",
+      "rp_name": "Regulatory Compliance & Risk Management",
+      "module_id": "M16",
+      "module_name": "M16",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP054",
+        "rp_name": "Regulatory Compliance & Risk Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM098",
+            "fm_title": "Regulatory compliance and risk management failure"
+          },
+          {
+            "fm_id": "FM099",
+            "fm_title": "Health and safety risk assessment failure"
+          },
+          {
+            "fm_id": "FM100",
+            "fm_title": "Fire safety and emergency preparedness failure"
+          },
+          {
+            "fm_id": "FM101",
+            "fm_title": "Licensing and employment law compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S167",
+          "S190",
+          "S191",
+          "S193",
+          "S194",
+          "S195"
+        ]
+      },
+      "status": "completed",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:32:29.403257",
+          "by": "system"
+        },
+        {
+          "status": "completed",
+          "at": "2026-03-25T22:51:29.026716",
+          "by": "Lead Consultant"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-15",
+      "started_at": null,
+      "completed_at": "2026-03-25T22:51:29.026716",
+      "updated_at": "2026-03-25T22:51:29.026716",
+      "updated_by": "u_consultant",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Licensing & Compliance Audit Checklist",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Compliance Calendar with renewal dates and deadlines",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Template Employment Contract (cafe-specific)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Employee Onboarding Compliance Checklist",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Central Compliance File structure guide",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_004",
+      "item_id": "B186",
+      "item_type": "block",
+      "title": "Regulatory Excellence & Compliance Culture",
+      "description": "Build a regulatory compliance calendar covering all required inspections certifications and renewals. Create a risk register identifying operational health and safety and financial risks with mitigation plans. Implement an incident reporting system for accidents near-misses and safety concerns. Develop emergency procedures covering fire medical emergency equipment failure and supply disruption. Ensure employment law compliance including contracts right-to-work checks and pension auto-enrolment.",
+      "source_rp": "RP054",
+      "rp_name": "Regulatory Compliance & Risk Management",
+      "module_id": "M16",
+      "module_name": "M16",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP054",
+        "rp_name": "Regulatory Compliance & Risk Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM098",
+            "fm_title": "Regulatory compliance and risk management failure"
+          },
+          {
+            "fm_id": "FM099",
+            "fm_title": "Health and safety risk assessment failure"
+          },
+          {
+            "fm_id": "FM100",
+            "fm_title": "Fire safety and emergency preparedness failure"
+          },
+          {
+            "fm_id": "FM101",
+            "fm_title": "Licensing and employment law compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S167",
+          "S190",
+          "S191",
+          "S193",
+          "S194",
+          "S195"
+        ]
+      },
+      "status": "completed",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:32:29.403257",
+          "by": "system"
+        },
+        {
+          "status": "completed",
+          "at": "2026-03-25T22:51:31.226548",
+          "by": "Lead Consultant"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-15",
+      "started_at": null,
+      "completed_at": "2026-03-25T22:51:31.226548",
+      "updated_at": "2026-03-25T22:51:31.226548",
+      "updated_by": "u_consultant",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Compliance Status Summary (single-page dashboard)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Unified Compliance Folder structure guide",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Monthly Self-Audit Checklist",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Regulatory Visit Preparation Protocol",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Annual Compliance Strategy Review template",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_005",
+      "item_id": "B017",
+      "item_type": "block",
+      "title": "Internal Food Safety Self-Assessment",
+      "description": "Create a food safety training matrix showing every team member's certification status expiry date and next renewal. Schedule refresher training before certificates expire. Develop an internal food safety induction that covers your specific procedures not just generic training. Conduct a mock EHO inspection quarterly using the official scoring criteria.",
+      "source_rp": "RP005",
+      "rp_name": "Food Safety Training & EHO Readiness",
+      "module_id": "M01",
+      "module_name": "M01",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "high",
+      "depends_on_modules": [
+        "M16"
+      ],
+      "trace": {
+        "rp_id": "RP005",
+        "rp_name": "Food Safety Training & EHO Readiness",
+        "failure_modes": [
+          {
+            "fm_id": "FM009",
+            "fm_title": "Food safety training and certification failure"
+          },
+          {
+            "fm_id": "FM010",
+            "fm_title": "EHO readiness and audit compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S005",
+          "S007",
+          "S008",
+          "S018",
+          "S065"
+        ]
+      },
+      "status": "completed",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:32:29.403257",
+          "by": "system"
+        },
+        {
+          "status": "completed",
+          "at": "2026-03-25T22:51:36.852190",
+          "by": "Lead Consultant"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-15",
+      "started_at": null,
+      "completed_at": "2026-03-25T22:51:36.852190",
+      "updated_at": "2026-03-25T22:51:36.852190",
+      "updated_by": "u_consultant",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Internal Food Safety Audit Checklist (FHRS-aligned)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Quarterly Comprehensive Audit Form",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Self-Assessment Action Plan Template",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Self-Assessment SOP document",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Predicted FHRS Rating Tracker",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_006",
+      "item_id": "B018",
+      "item_type": "block",
+      "title": "EHO Inspection Readiness",
+      "description": "Create a food safety training matrix showing every team member's certification status expiry date and next renewal. Schedule refresher training before certificates expire. Develop an internal food safety induction that covers your specific procedures not just generic training. Conduct a mock EHO inspection quarterly using the official scoring criteria.",
+      "source_rp": "RP005",
+      "rp_name": "Food Safety Training & EHO Readiness",
+      "module_id": "M01",
+      "module_name": "M01",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "high",
+      "depends_on_modules": [
+        "M16"
+      ],
+      "trace": {
+        "rp_id": "RP005",
+        "rp_name": "Food Safety Training & EHO Readiness",
+        "failure_modes": [
+          {
+            "fm_id": "FM009",
+            "fm_title": "Food safety training and certification failure"
+          },
+          {
+            "fm_id": "FM010",
+            "fm_title": "EHO readiness and audit compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S005",
+          "S007",
+          "S008",
+          "S018",
+          "S065"
+        ]
+      },
+      "status": "completed",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:32:29.403257",
+          "by": "system"
+        },
+        {
+          "status": "completed",
+          "at": "2026-03-25T22:51:39.910898",
+          "by": "Lead Consultant"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-15",
+      "started_at": null,
+      "completed_at": "2026-03-25T22:51:39.910898",
+      "updated_at": "2026-03-25T22:51:39.910898",
+      "updated_by": "u_consultant",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "EHO Inspection Quick-Ready Checklist",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "EHO Inspection SOP",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Document Locator Sheet",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Post-Inspection Action Plan Template",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Staff EHO Inspection Briefing Guide",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L3_001",
+      "item_id": "B183",
+      "item_type": "block",
+      "title": "Health & Safety Risk Assessment",
+      "description": "Regulatory compliance should be effortless because your systems make it automatic. Build a compliance culture where everyone understands the importance of safety and legal requirements. Review your risk register quarterly and update as your operation evolves. Your regulatory house should be in order at all times not just before inspections.",
+      "source_rp": "RP054",
+      "rp_name": "Regulatory Compliance & Risk Management",
+      "module_id": "M16",
+      "module_name": "M16",
+      "domain": "",
+      "layer": "L3",
+      "timeline_label": "Days 61–90",
+      "priority": "standard",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP054",
+        "rp_name": "Regulatory Compliance & Risk Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM098",
+            "fm_title": "Regulatory compliance and risk management failure"
+          },
+          {
+            "fm_id": "FM099",
+            "fm_title": "Health and safety risk assessment failure"
+          },
+          {
+            "fm_id": "FM100",
+            "fm_title": "Fire safety and emergency preparedness failure"
+          },
+          {
+            "fm_id": "FM101",
+            "fm_title": "Licensing and employment law compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S167",
+          "S190",
+          "S191",
+          "S193",
+          "S194",
+          "S195"
+        ]
+      },
+      "status": "completed",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:32:29.403257",
+          "by": "system"
+        },
+        {
+          "status": "completed",
+          "at": "2026-03-25T22:52:18.869801",
+          "by": "Lead Consultant"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-06-23",
+      "started_at": null,
+      "completed_at": "2026-03-25T22:52:18.869801",
+      "updated_at": "2026-03-25T22:52:18.869801",
+      "updated_by": "u_consultant",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Comprehensive Risk Assessment document (cafe-specific template)",
+          "completed": true,
+          "completed_at": "2026-03-25T22:52:14.923280"
+        },
+        {
+          "name": "Health and Safety SOP library",
+          "completed": true,
+          "completed_at": "2026-03-25T22:52:15.268446"
+        },
+        {
+          "name": "Near-Miss Reporting Form",
+          "completed": true,
+          "completed_at": "2026-03-25T22:52:15.308330"
+        },
+        {
+          "name": "COSHH Register template",
+          "completed": true,
+          "completed_at": "2026-03-25T22:52:15.996722"
+        },
+        {
+          "name": "Quarterly Risk Review template",
+          "completed": true,
+          "completed_at": "2026-03-25T22:52:16.255474"
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L3_002",
+      "item_id": "B186",
+      "item_type": "block",
+      "title": "Regulatory Excellence & Compliance Culture",
+      "description": "Regulatory compliance should be effortless because your systems make it automatic. Build a compliance culture where everyone understands the importance of safety and legal requirements. Review your risk register quarterly and update as your operation evolves. Your regulatory house should be in order at all times not just before inspections.",
+      "source_rp": "RP054",
+      "rp_name": "Regulatory Compliance & Risk Management",
+      "module_id": "M16",
+      "module_name": "M16",
+      "domain": "",
+      "layer": "L3",
+      "timeline_label": "Days 61–90",
+      "priority": "standard",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP054",
+        "rp_name": "Regulatory Compliance & Risk Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM098",
+            "fm_title": "Regulatory compliance and risk management failure"
+          },
+          {
+            "fm_id": "FM099",
+            "fm_title": "Health and safety risk assessment failure"
+          },
+          {
+            "fm_id": "FM100",
+            "fm_title": "Fire safety and emergency preparedness failure"
+          },
+          {
+            "fm_id": "FM101",
+            "fm_title": "Licensing and employment law compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S167",
+          "S190",
+          "S191",
+          "S193",
+          "S194",
+          "S195"
+        ]
+      },
+      "status": "completed",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:32:29.403257",
+          "by": "system"
+        },
+        {
+          "status": "completed",
+          "at": "2026-03-25T22:52:29.870999",
+          "by": "Lead Consultant"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-06-23",
+      "started_at": null,
+      "completed_at": "2026-03-25T22:52:29.870999",
+      "updated_at": "2026-03-25T22:52:52.251498",
+      "updated_by": "u_consultant",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Compliance Status Summary (single-page dashboard)",
+          "completed": true,
+          "completed_at": "2026-03-25T22:52:48.068073"
+        },
+        {
+          "name": "Unified Compliance Folder structure guide",
+          "completed": true,
+          "completed_at": "2026-03-25T22:52:49.863312"
+        },
+        {
+          "name": "Monthly Self-Audit Checklist",
+          "completed": true,
+          "completed_at": "2026-03-25T22:52:51.140349"
+        },
+        {
+          "name": "Regulatory Visit Preparation Protocol",
+          "completed": true,
+          "completed_at": "2026-03-25T22:52:51.987288"
+        },
+        {
+          "name": "Annual Compliance Strategy Review template",
+          "completed": true,
+          "completed_at": "2026-03-25T22:52:52.251489"
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L3_003",
+      "item_id": "B017",
+      "item_type": "block",
+      "title": "Internal Food Safety Self-Assessment",
+      "description": "Embed food safety training into your cafe's identity. Every new starter should complete food safety induction before handling food. Build an internal food safety champion role with responsibility for standards compliance and continuous improvement. Your EHO readiness should be permanent not a last-minute preparation exercise.",
+      "source_rp": "RP005",
+      "rp_name": "Food Safety Training & EHO Readiness",
+      "module_id": "M01",
+      "module_name": "M01",
+      "domain": "",
+      "layer": "L3",
+      "timeline_label": "Days 61–90",
+      "priority": "standard",
+      "depends_on_modules": [
+        "M16"
+      ],
+      "trace": {
+        "rp_id": "RP005",
+        "rp_name": "Food Safety Training & EHO Readiness",
+        "failure_modes": [
+          {
+            "fm_id": "FM009",
+            "fm_title": "Food safety training and certification failure"
+          },
+          {
+            "fm_id": "FM010",
+            "fm_title": "EHO readiness and audit compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S005",
+          "S007",
+          "S008",
+          "S018",
+          "S065"
+        ]
+      },
+      "status": "completed",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:32:29.403257",
+          "by": "system"
+        },
+        {
+          "status": "completed",
+          "at": "2026-03-25T22:52:59.373615",
+          "by": "Lead Consultant"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-06-23",
+      "started_at": null,
+      "completed_at": "2026-03-25T22:52:59.373615",
+      "updated_at": "2026-03-25T22:53:07.465272",
+      "updated_by": "u_consultant",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Internal Food Safety Audit Checklist (FHRS-aligned)",
+          "completed": true,
+          "completed_at": "2026-03-25T22:53:05.125386"
+        },
+        {
+          "name": "Quarterly Comprehensive Audit Form",
+          "completed": true,
+          "completed_at": "2026-03-25T22:53:05.538501"
+        },
+        {
+          "name": "Self-Assessment Action Plan Template",
+          "completed": true,
+          "completed_at": "2026-03-25T22:53:06.699119"
+        },
+        {
+          "name": "Self-Assessment SOP document",
+          "completed": true,
+          "completed_at": "2026-03-25T22:53:06.962814"
+        },
+        {
+          "name": "Predicted FHRS Rating Tracker",
+          "completed": true,
+          "completed_at": "2026-03-25T22:53:07.465262"
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L3_004",
+      "item_id": "B020",
+      "item_type": "block",
+      "title": "Food Safety Excellence Programme",
+      "description": "Embed food safety training into your cafe's identity. Every new starter should complete food safety induction before handling food. Build an internal food safety champion role with responsibility for standards compliance and continuous improvement. Your EHO readiness should be permanent not a last-minute preparation exercise.",
+      "source_rp": "RP005",
+      "rp_name": "Food Safety Training & EHO Readiness",
+      "module_id": "M01",
+      "module_name": "M01",
+      "domain": "",
+      "layer": "L3",
+      "timeline_label": "Days 61–90",
+      "priority": "standard",
+      "depends_on_modules": [
+        "M16"
+      ],
+      "trace": {
+        "rp_id": "RP005",
+        "rp_name": "Food Safety Training & EHO Readiness",
+        "failure_modes": [
+          {
+            "fm_id": "FM009",
+            "fm_title": "Food safety training and certification failure"
+          },
+          {
+            "fm_id": "FM010",
+            "fm_title": "EHO readiness and audit compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S005",
+          "S007",
+          "S008",
+          "S018",
+          "S065"
+        ]
+      },
+      "status": "completed",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:32:29.403257",
+          "by": "system"
+        },
+        {
+          "status": "completed",
+          "at": "2026-03-25T22:53:13.907908",
+          "by": "Lead Consultant"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-06-23",
+      "started_at": null,
+      "completed_at": "2026-03-25T22:53:13.907908",
+      "updated_at": "2026-03-25T22:53:19.249519",
+      "updated_by": "u_consultant",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Baseline Food Safety Assessment (all blocks rated)",
+          "completed": true,
+          "completed_at": "2026-03-25T22:53:16.933059"
+        },
+        {
+          "name": "Food Safety Excellence Roadmap",
+          "completed": true,
+          "completed_at": "2026-03-25T22:53:17.721242"
+        },
+        {
+          "name": "Monthly Food Safety Performance Dashboard",
+          "completed": true,
+          "completed_at": "2026-03-25T22:53:17.980322"
+        },
+        {
+          "name": "Continuous Improvement Log",
+          "completed": true,
+          "completed_at": "2026-03-25T22:53:18.441071"
+        },
+        {
+          "name": "Annual Strategic Food Safety Review document",
+          "completed": true,
+          "completed_at": "2026-03-25T22:53:19.249510"
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    }
+  ],
+  "owner_user_name": "Lead Consultant",
+  "reviewer_user_name": "Portfolio Lead"
+}

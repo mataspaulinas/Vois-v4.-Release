@@ -1,0 +1,22 @@
+{
+  "id": "tool_complexity_trim_matrix",
+  "name": "Complexity trim matrix",
+  "description": "Decision matrix for identifying which menu or service elements create disproportionate execution drag relative to value and should be simplified first.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: complexity should be trimmed with explicit tradeoff logic, not instinct alone",
+  "updated_at": "2026-03-14T00:41:10.359747Z",
+  "category": "strategy",
+  "format": "decision_matrix",
+  "usage_moment": "Use when the current offer is creating repeated instability and leadership is reviewing simplification options.",
+  "expected_output": "A ranked view of high-complexity, low-defensibility offer elements with proposed simplification actions.",
+  "adaptation_variables": [
+    "menu_scope",
+    "station_load",
+    "margin_signal",
+    "guest_value"
+  ],
+  "block_ids": [
+    "blk_offer_complexity_trim"
+  ]
+}

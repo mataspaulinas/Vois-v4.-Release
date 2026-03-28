@@ -1,0 +1,108 @@
+{
+  "phase": 4,
+  "title": "Legacy Bridge Integration / API Cutover",
+  "api_route_path": [
+    "POST /api/v1/assessments",
+    "POST /api/v1/assessments/{assessment_id}/runs",
+    "GET /api/v1/engine/runs/{engine_run_id}",
+    "GET /api/v1/engine/runs/latest",
+    "GET /api/v1/engine/runs",
+    "POST /api/v1/engine/run-legacy"
+  ],
+  "fixtures": [
+    {
+      "fixture_id": "F001_normal_followup_warsaw",
+      "api_vs_direct_legacy_diffs": [],
+      "api_vs_phase0_goldens_diffs": [
+        "golden_normalized_signals.json",
+        "golden_report.md"
+      ],
+      "phase0_diff_classification": "blocking",
+      "direct_legacy_report_type": "template",
+      "persisted_report_type": "template",
+      "plan_task_count": 20,
+      "failure_mode_count": 2,
+      "response_pattern_count": 2
+    },
+    {
+      "fixture_id": "F002_degraded_pegasas",
+      "api_vs_direct_legacy_diffs": [],
+      "api_vs_phase0_goldens_diffs": [
+        "golden_normalized_signals.json",
+        "golden_failure_modes.json",
+        "golden_action_plan.json",
+        "golden_report.md"
+      ],
+      "phase0_diff_classification": "blocking",
+      "direct_legacy_report_type": "template",
+      "persisted_report_type": "template",
+      "plan_task_count": 164,
+      "failure_mode_count": 21,
+      "response_pattern_count": 18
+    },
+    {
+      "fixture_id": "F003_conflicting_capacity_vs_cost",
+      "api_vs_direct_legacy_diffs": [],
+      "api_vs_phase0_goldens_diffs": [
+        "golden_normalized_signals.json",
+        "golden_action_plan.json",
+        "golden_report.md"
+      ],
+      "phase0_diff_classification": "blocking",
+      "direct_legacy_report_type": "template",
+      "persisted_report_type": "template",
+      "plan_task_count": 63,
+      "failure_mode_count": 9,
+      "response_pattern_count": 7
+    },
+    {
+      "fixture_id": "F004_existing_active_plan_kaunas",
+      "api_vs_direct_legacy_diffs": [],
+      "api_vs_phase0_goldens_diffs": [
+        "golden_normalized_signals.json",
+        "golden_action_plan.json",
+        "golden_report.md"
+      ],
+      "phase0_diff_classification": "blocking",
+      "direct_legacy_report_type": "template",
+      "persisted_report_type": "template",
+      "plan_task_count": 54,
+      "failure_mode_count": 7,
+      "response_pattern_count": 6
+    },
+    {
+      "fixture_id": "F005_ambiguous_ai_preopening_muzos2",
+      "api_vs_direct_legacy_diffs": [],
+      "api_vs_phase0_goldens_diffs": [
+        "golden_normalized_signals.json",
+        "golden_failure_modes.json",
+        "golden_action_plan.json",
+        "golden_report.md"
+      ],
+      "phase0_diff_classification": "blocking",
+      "direct_legacy_report_type": "template",
+      "persisted_report_type": "template",
+      "plan_task_count": 213,
+      "failure_mode_count": 42,
+      "response_pattern_count": 25
+    },
+    {
+      "fixture_id": "F006_complex_klaipeda_multi_surface",
+      "api_vs_direct_legacy_diffs": [],
+      "api_vs_phase0_goldens_diffs": [
+        "golden_normalized_signals.json",
+        "golden_failure_modes.json",
+        "golden_action_plan.json",
+        "golden_report.md"
+      ],
+      "phase0_diff_classification": "blocking",
+      "direct_legacy_report_type": "template",
+      "persisted_report_type": "template",
+      "plan_task_count": 188,
+      "failure_mode_count": 24,
+      "response_pattern_count": 21
+    }
+  ],
+  "api_vs_direct_legacy_clean": true,
+  "api_vs_phase0_goldens_clean": false
+}

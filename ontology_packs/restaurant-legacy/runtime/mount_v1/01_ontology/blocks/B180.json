@@ -1,0 +1,166 @@
+{
+  "block_id": "B180",
+  "name": "Machine Maintenance Log",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M14: Operational Rhythm & Daily Discipline",
+  "state": "enriched",
+  "purpose": "Establishes a daily equipment maintenance logging system that tracks the condition, cleaning, and servicing of all critical cafe machinery — espresso machines, grinders, dishwashers, refrigeration units, ovens, and blenders. This block prevents costly breakdowns, extends equipment lifespan, and ensures every drink and dish is produced by properly maintained machinery.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a daily maintenance checklist for every critical piece of equipment in the cafe, covering cleaning, inspection, and basic operational checks",
+      "Establish a scheduled maintenance calendar for periodic tasks — weekly deep cleans, monthly descaling, quarterly engineer servicing",
+      "Build an equipment fault log that captures early warning signs before they become catastrophic failures",
+      "Define clear ownership of maintenance tasks so every team member knows their daily responsibilities",
+      "Create a maintenance history record for each piece of equipment to inform replacement decisions and warranty claims"
+    ],
+    "secondary_objectives": [
+      "Reduce emergency engineer callouts by catching problems early through systematic daily checks",
+      "Maintain consistent drink and food quality by ensuring equipment performs to specification",
+      "Support food hygiene compliance — poorly maintained equipment is a common EHO finding that can lower ratings"
+    ]
+  },
+  "why_this_matters": "A commercial espresso machine is the beating heart of a cafe, and a quality two-group machine costs between 5,000 and 15,000 pounds. A commercial grinder runs between 800 and 3,000 pounds. A glasswasher or dishwasher between 1,500 and 4,000 pounds. For a small independent cafe, this equipment represents a significant capital investment — often the largest after the lease and fit-out. Yet the maintenance regime for these critical assets is frequently limited to whatever the staff remember to do when things look dirty. The consequences of poor maintenance are both immediate and cumulative. Immediately: a blocked group head produces bitter, under-extracted espresso that drives customers to the competitor around the corner. A grinder with worn burrs produces inconsistent particle sizes that no amount of barista skill can compensate for. A dishwasher running at the wrong temperature fails to sanitise cups and plates, creating a food safety risk. Cumulatively: limescale builds silently inside boilers and pipes, gradually reducing efficiency until an expensive descaling or component replacement is needed. Gaskets harden and fail. Steam wands block. Refrigerant levels drop. Each of these failures is preventable with basic daily maintenance and periodic servicing, yet they collectively account for thousands of pounds in avoidable repair costs and lost trading days across the UK cafe sector each year. An emergency espresso machine callout on a Saturday morning — if you can even get an engineer — costs 200 to 400 pounds before parts, and the lost revenue from reduced service while the machine is down can easily match that. A daily maintenance log that takes ten minutes to complete is the cheapest insurance policy in hospitality.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Conduct an equipment audit. Walk through the cafe and list every piece of powered equipment: espresso machine (make, model, age, last service date), grinder(s), milk fridge, main fridge, freezer, dishwasher or glasswasher, oven, microwave, blender, ice machine, water filtration system, and any other mechanical equipment. For each item, note its current condition, any known issues, and the manufacturer's recommended maintenance schedule (check the manual or the manufacturer's website). If you cannot find the service history, assume maintenance is overdue and schedule a baseline service. Week 2: Create a Daily Equipment Maintenance Checklist covering every piece of equipment. For the espresso machine: backflush group heads with cleaning powder at close, purge steam wands after every use and deep clean daily, check drip tray and drain, wipe down exterior, and check pressure gauge readings against normal range. For grinders: purge three seconds of beans at opening, brush out the burr chamber weekly, check grind consistency, and note any unusual sounds. For the dishwasher: check water temperature at start of service, clean filters daily, check detergent and rinse aid levels, and run a sanitisation cycle. For fridges and freezers: check temperatures twice daily (link to B001), clean door seals weekly, and note any unusual noises or frost build-up. Print the checklist on a single A4 sheet, laminate it or use a wipe-clean pocket, and mount it near the main equipment area. The closing team completes and signs the checklist daily. Any faults or concerns are flagged immediately to the manager.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Expand from the daily checklist to a comprehensive maintenance management system. Create an Equipment Register — a reference document for each piece of equipment recording: make, model, serial number, purchase date, supplier, warranty expiry, service contract details, engineer contact, and a log of all maintenance and repairs. This is invaluable when equipment fails and you need to contact the right engineer or claim on a warranty. Build a Scheduled Maintenance Calendar covering periodic tasks that go beyond daily cleaning. Weekly: deep clean espresso machine shower screens and group head gaskets, descale steam wands, deep clean grinder burr chambers. Monthly: run a full descaling cycle on the espresso machine (or per manufacturer recommendation based on water hardness), deep clean the dishwasher including door seals and spray arms, check and clean the ice machine, inspect water filter and replace if needed. Quarterly: schedule a professional engineer service for the espresso machine and grinder, including burr wear assessment. Annually: full boiler inspection, electrical safety check, grinder burr replacement if wear exceeds manufacturer tolerance. Implement an Equipment Fault Log — a simple notebook or form kept near the equipment where any team member can note an issue: 'Group 2 running slow,' 'Grinder making clicking noise,' 'Fridge door not sealing properly.' Review this log daily. Faults caught early cost tens of pounds to fix; faults ignored until failure cost hundreds. Link maintenance completion to shift handover — the closing team confirms on the handover note (from B179) that all maintenance tasks are complete.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Maintenance logging is now an embedded operational discipline, not a chore to be reminded about. Track equipment uptime and reliability — how many days since the last unplanned breakdown for each piece of equipment? Celebrate milestones: 'Espresso machine — 180 days without a fault.' This gamification builds pride in equipment care. Analyse the Equipment Fault Log quarterly to identify recurring issues — if the grinder is flagged repeatedly for the same noise, it may need replacement rather than repeated repair. Use this data to build a capital replacement plan: knowing that your grinder is three years into a typical five-year lifespan allows you to budget for replacement rather than being forced into an emergency purchase. Build relationships with your equipment suppliers and engineers. A cafe that maintains its equipment well and can show detailed maintenance logs gets better service, faster response times, and more favourable warranty treatment than one that calls only when things break. Introduce basic equipment training for all staff — every barista should understand the fundamentals of how the espresso machine works (not just how to operate it), why backflushing matters, what limescale does to a boiler, and how to recognise early warning signs. This understanding transforms maintenance from a compliance task into a craft skill. Review the maintenance schedule annually against manufacturer updates, equipment age, and fault log patterns."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Conduct a complete equipment audit listing every powered device with make, model, age, and condition",
+        "Locate or request manufacturer maintenance schedules for all critical equipment",
+        "Create a Daily Equipment Maintenance Checklist covering all machines",
+        "Print, laminate, and mount the checklist near the main equipment area",
+        "Implement daily sign-off by the closing team with immediate fault flagging",
+        "Schedule a baseline professional service for any equipment with unknown maintenance history"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create an Equipment Register with full details for every piece of machinery",
+        "Build a Scheduled Maintenance Calendar covering weekly, monthly, quarterly, and annual tasks",
+        "Implement an Equipment Fault Log accessible to all staff near the main equipment",
+        "Review the fault log daily and action any flagged issues within 48 hours",
+        "Link maintenance completion to the daily shift handover process",
+        "Ensure all engineer contact details and warranty information are easily accessible",
+        "Train all staff on the daily maintenance checklist and fault reporting procedure"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track equipment uptime and celebrate reliability milestones",
+        "Analyse the fault log quarterly to identify recurring issues and inform replacement planning",
+        "Build a capital equipment replacement plan based on age, condition, and fault history",
+        "Develop relationships with equipment suppliers and engineers for priority service",
+        "Introduce basic equipment training for all baristas covering maintenance fundamentals",
+        "Review the maintenance schedule annually against manufacturer updates and fault patterns"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Daily Equipment Maintenance Checklist (laminated, mountable)",
+    "Equipment Register with full details for every machine",
+    "Scheduled Maintenance Calendar (weekly, monthly, quarterly, annual)",
+    "Equipment Fault Log template",
+    "Capital Equipment Replacement Plan template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T180-01",
+        "tool_name": "Daily Equipment Maintenance Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Head Barista",
+        "description": "Single A4 checklist covering daily maintenance tasks for every critical piece of cafe equipment — espresso machine, grinder, dishwasher, fridges, and ancillary machines. Includes task description, responsible role, and daily sign-off space."
+      },
+      {
+        "tool_id": "T180-02",
+        "tool_name": "Equipment Register",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Master reference document for each piece of equipment recording make, model, serial number, purchase date, supplier, warranty expiry, service contract details, engineer contact information, and a rolling log of all maintenance and repair history."
+      },
+      {
+        "tool_id": "T180-03",
+        "tool_name": "Scheduled Maintenance Calendar",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Calendar-format schedule covering all periodic maintenance tasks across all equipment: weekly deep cleans, monthly descaling, quarterly professional servicing, and annual inspections. Includes task owner, estimated time, and completion sign-off."
+      },
+      {
+        "tool_id": "T180-04",
+        "tool_name": "Equipment Fault Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "All Staff",
+        "description": "Simple fault reporting form kept near main equipment where any team member can log an issue: equipment name, date, fault description, severity (minor/moderate/urgent), and resolution notes. Reviewed daily by the manager."
+      },
+      {
+        "tool_id": "T180-05",
+        "tool_name": "Capital Equipment Replacement Planner",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Long-term planning tool tracking each piece of equipment by age, expected lifespan, current condition, fault frequency, and estimated replacement cost. Generates a rolling three-year capital expenditure forecast to prevent emergency purchases."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Daily checklist is signed off without tasks actually being completed — the 'phantom tick' problem where paperwork compliance masks operational neglect",
+    "Fault log entries are recorded but never reviewed or actioned, training the team that reporting issues is pointless",
+    "Scheduled maintenance is deferred repeatedly during busy periods ('we will do the descale next week') until cumulative neglect causes a preventable breakdown",
+    "Maintenance is treated as solely the manager's responsibility rather than shared across the team, creating a bottleneck and single point of failure"
+  ],
+  "kpis": [
+    "100% of daily maintenance checklists completed and signed off every trading day",
+    "Zero unplanned equipment breakdowns lasting more than 4 hours per quarter",
+    "All scheduled maintenance tasks completed within one week of their due date",
+    "Equipment fault log entries actioned within 48 hours of being reported",
+    "Professional engineer servicing completed on schedule for all equipment with active service plans"
+  ],
+  "dependencies": ["B152"],
+  "constraints": [
+    "Daily maintenance must fit within existing staffing — tasks that add 30 minutes to closing without additional labour budget will not be sustained",
+    "Descaling and deep cleaning require specific products recommended by the equipment manufacturer — using incorrect chemicals can void warranties and damage machines",
+    "Professional servicing requires booking engineers in advance — do not assume same-day availability, especially during peak periods"
+  ],
+  "time_load": {
+    "L1": "3 hours (equipment audit, checklist creation, initial training) plus 10 minutes/day ongoing",
+    "L2": "6 hours (register creation, calendar setup, fault log implementation, staff training)",
+    "L3": "2 hours/quarter (fault analysis, replacement planning, schedule review)"
+  },
+  "review_protocol": "Daily review of completed maintenance checklist by shift manager. Weekly review of the equipment fault log and action status. Monthly check of the scheduled maintenance calendar for upcoming tasks. Quarterly analysis of fault log patterns and equipment reliability. Annual review of the entire maintenance system, equipment register accuracy, and capital replacement forecast.",
+  "meta": {
+    "summary_for_humans": "This block creates a daily equipment maintenance logging system covering every critical machine in the cafe — from espresso machines and grinders to fridges and dishwashers. It includes the daily checklist, a full equipment register, a scheduled maintenance calendar, a fault log, and a long-term replacement planner. The goal is to prevent breakdowns, maintain quality, and protect the cafe's capital investment.",
+    "implementation_risks": [
+      "Staff may view equipment maintenance as boring housekeeping rather than a critical operational discipline — linking maintenance to drink quality and equipment longevity helps reframe it",
+      "The initial equipment audit may reveal overdue maintenance and deferred servicing that requires immediate investment to bring up to standard",
+      "Paper-based logging systems can be lost or damaged — consider a digital backup for the equipment register and fault log"
+    ],
+    "notes_for_engine": "Activate when signals indicate equipment breakdowns, inconsistent drink quality, rising repair costs, EHO findings related to equipment cleanliness, or staff complaints about faulty machinery. This block pairs with B001 (temperature monitoring) for refrigeration and B152 (equipment) for broader asset management.",
+    "tags": ["maintenance", "equipment", "espresso_machine", "grinder", "daily_discipline", "operations", "preventive_maintenance", "fault_log", "asset_management"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "vertical": "restaurant",
+  "signal_failure_map": [
+    {
+      "source_id": "sig_table_turn_stall",
+      "target_id": "fm_host_flow_breakdown",
+      "weight": 0.9,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: service flow and seat release",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_table_turn_stall",
+      "target_id": "fm_deployment_misalignment",
+      "weight": 0.6,
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: teams can stall without balanced coverage",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_waitlist_mismatch",
+      "target_id": "fm_host_flow_breakdown",
+      "weight": 1.0,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: operator trust requires accurate host execution",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_reservation_pacing_breakdown",
+      "target_id": "fm_host_flow_breakdown",
+      "weight": 0.9,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: pacing logic should be explicit",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_reservation_pacing_breakdown",
+      "target_id": "fm_deployment_misalignment",
+      "weight": 0.5,
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: reservation pressure exposes weak deployment",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_section_imbalance",
+      "target_id": "fm_deployment_misalignment",
+      "weight": 1.0,
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: labor misfit causes execution drag",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_section_imbalance",
+      "target_id": "fm_manager_presence_gap",
+      "weight": 0.4,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: leadership placement shapes section performance",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_expo_calls_missing",
+      "target_id": "fm_pass_communication_gap",
+      "weight": 0.9,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: handoff language should not be implicit",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_expo_calls_missing",
+      "target_id": "fm_shift_readiness_gap",
+      "weight": 0.4,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: pre-service readiness affects in-service communication",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_86_surprise",
+      "target_id": "fm_inventory_accuracy_gap",
+      "weight": 0.9,
+      "owner": "recovery-team",
+      "source_ref": "compass-market-analysis: stock trust is part of the diagnostic layer",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_86_surprise",
+      "target_id": "fm_shift_readiness_gap",
+      "weight": 0.5,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: readiness should reveal depletion risk before service",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_opening_checklist_drift",
+      "target_id": "fm_open_close_control_gap",
+      "weight": 0.8,
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: recurring open failures reflect a control gap",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_opening_checklist_drift",
+      "target_id": "fm_shift_readiness_gap",
+      "weight": 0.6,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: line readiness belongs in the opening system",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_closing_reset_failures",
+      "target_id": "fm_open_close_control_gap",
+      "weight": 1.0,
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: close quality shapes next-day execution",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_bar_ticket_delay",
+      "target_id": "fm_bar_workflow_breakdown",
+      "weight": 0.9,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: not every bottleneck is a kitchen prep issue",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_bar_ticket_delay",
+      "target_id": "fm_pass_communication_gap",
+      "weight": 0.6,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: pass-to-bar coordination needs a shared rule set",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_count_variance",
+      "target_id": "fm_inventory_accuracy_gap",
+      "weight": 1.0,
+      "owner": "recovery-team",
+      "source_ref": "compass-market-analysis: operators lose trust when counts are unstable",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_count_variance",
+      "target_id": "fm_controls_gap",
+      "weight": 0.5,
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: missing control loops amplify loss",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_line_check_missing",
+      "target_id": "fm_shift_readiness_gap",
+      "weight": 1.0,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: line readiness is a direct leading signal",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_manager_floor_absence",
+      "target_id": "fm_manager_presence_gap",
+      "weight": 1.0,
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: management bandwidth is a critical constraint",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_manager_floor_absence",
+      "target_id": "fm_briefing_absence",
+      "weight": 0.5,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: absence of live presence often mirrors rhythm issues",
+      "status": "review"
+    }
+  ]
+}

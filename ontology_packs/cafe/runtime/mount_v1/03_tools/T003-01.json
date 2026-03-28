@@ -1,0 +1,79 @@
+{
+  "identification": {
+    "tool_id": "T003-01",
+    "tool_name": "Temperature Excursion Response Card",
+    "block_id": "B003"
+  },
+  "tool_design": {
+    "format": "checklist",
+    "role_in_intervention": "Fast-response card for the first minutes of a temperature excursion.",
+    "adaptation_variables": [
+      "unit_names",
+      "contact_numbers",
+      "backup_storage_location"
+    ],
+    "usage_moment": "Immediately when a unit is out of safe range",
+    "expected_output": "Immediate action taken, manager notified, and next-step handoff started",
+    "linked_blocks": [
+      "B003",
+      "B001"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Completed after the live incident moment.",
+        "what_can_go_wrong": "The tool becomes paperwork and the incident loses control.",
+        "early_signals": [
+          "Card is read only after the manager arrives",
+          "No tiny record is completed"
+        ],
+        "prevention": [
+          "Mount it at the unit",
+          "Assign live first-finder ownership"
+        ],
+        "mitigation": [
+          "Re-drill the first steps",
+          "Require same-shift review"
+        ],
+        "if_occurs_next_signals": [
+          "late_incident_activation"
+        ],
+        "possible_successor_blocks": [
+          "B003",
+          "B001"
+        ]
+      },
+      {
+        "warning": "Users cannot explain the trigger threshold.",
+        "what_can_go_wrong": "Response starts too late or not at all.",
+        "early_signals": [
+          "People debate whether the reading counts",
+          "Unsafe stock stays in service while deciding"
+        ],
+        "prevention": [
+          "Train the threshold explicitly",
+          "Keep the trigger table visible"
+        ],
+        "mitigation": [
+          "Rebrief immediately after any hesitation",
+          "Run a short scenario drill"
+        ],
+        "if_occurs_next_signals": [
+          "trigger_confusion"
+        ],
+        "possible_successor_blocks": [
+          "B003",
+          "B001"
+        ]
+      }
+    ]
+  },
+  "content": "# Temperature Excursion Response Card\n\n**Tool ID:** T003-01  \n**Block:** B003 (Temperature Excursion Response)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L1  \n**Format:** Checklist  \n**Role:** All Staff  \n**Time Required:** 1-3 minutes to use in the moment  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this card the moment a fridge or freezer is out of safe range.\n\nThis is the fast-response tool for the first minutes of an excursion. It is designed to stop panic, protect stock, and make sure the right person is called early.\n\n---\n## Trigger Thresholds\n\n| Unit | Trigger |\n|---|---|\n| Fridge | `8C` or above |\n| Freezer | `-12C` or warmer |\n| Any unit | Switched off, door open, obvious fault, or unsafe product temperature |\n\n---\n## Immediate 5-Step Response\n\n<ul>\n  <li><input type=\"checkbox\"> Confirm the reading with the probe or display again.</li>\n  <li><input type=\"checkbox\"> Check simple causes: door, plug, switch, airflow, overload.</li>\n  <li><input type=\"checkbox\"> Keep the door shut as much as possible.</li>\n  <li><input type=\"checkbox\"> Notify the manager or duty lead immediately.</li>\n  <li><input type=\"checkbox\"> Open [T003-02] if the issue is real or the stock may be affected.</li>\n</ul>\n\n---\n## Do This Next\n\n| Situation | Action |\n|---|---|\n| Simple cause found and unit recovers | Record what happened and recheck |\n| Unit still out of range | Probe high-risk food and use [T003-03] |\n| Stock may be unsafe | Isolate affected stock and label `DO NOT USE` |\n| Equipment fault suspected | Call engineer / manager and prepare stock transfer |\n\n---\n## Emergency Contacts\n\n| Contact | Number |\n|---|---|\n| Duty manager | ____________________ |\n| Owner | ____________________ |\n| Refrigeration engineer | ____________________ |\n| Back-up storage location | ____________________ |\n\n---\n## Tiny Record\n\n**Date / time:** ____________________  \n**Unit:** ____________________  \n**Reading:** ____________________  \n**Manager told:** ____________________\n\n---\n## Red Rules\n\n- Do not guess how long food has been warm.\n- Do not keep opening the door to \"check again\".\n- Do not serve affected stock until a manager decision is made.\n- Do not rely on smell or appearance to judge safety.\n\n---\n## Connected Resources\n\n**Use next:**\n- T003-02 - Excursion Incident Report Form\n- T003-03 - Time-Temperature Stock Assessment Matrix\n- T003-05 - Temperature Excursion SOP & Drill Guide\n\n---\n\n*Tool Version 2.0 - designed to live on the fridge door and work under stress.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T003-01_temperature_excursion_response_card.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

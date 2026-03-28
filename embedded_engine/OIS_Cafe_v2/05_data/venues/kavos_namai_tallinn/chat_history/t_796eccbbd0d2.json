@@ -1,0 +1,24 @@
+{
+  "id": "t_796eccbbd0d2",
+  "title": "Setting up our assessment schedule",
+  "type": "venue",
+  "venue_slug": "kavos_namai_tallinn",
+  "created": "2026-02-23T16:16:39.239400",
+  "updated": "2026-02-23T18:08:46.239400",
+  "messages": [
+    {
+      "id": "m_c1a6e3c2",
+      "role": "user",
+      "content": "We just got onboarded. How often should we be doing assessments?",
+      "timestamp": "2026-02-23T16:16:39.239400",
+      "attachments": []
+    },
+    {
+      "id": "m_a8803c9c",
+      "role": "assistant",
+      "content": "For a newly onboarded venue in operational stage with light signal load, here's the recommended cadence:\n\n**First month:** Assessment every 2 weeks\n- You need to establish a baseline and catch any issues that weren't visible in the initial assessment\n- Early assessments also help build the habit with your team\n\n**Months 2-3:** Monthly assessments\n- Once the baseline is stable and L1 tasks are moving, monthly is sufficient\n- Each assessment should compare against the previous one — are signals resolving, persisting, or new ones appearing?\n\n**After month 3:** Shift to quarterly unless something triggers an ad-hoc assessment\n- Triggers: staff turnover, menu change, regulatory visit, customer complaint pattern, new signal detected\n\n**What each assessment should cover:**\n1. Signal check: walk the venue, observe operations, talk to staff\n2. Task progress review: what's been completed since last assessment?\n3. New observations: anything changed? Better or worse?\n4. Update the plan: adjust priorities based on what you see\n\nYour next assessment is due around mid-February. I'd suggest scheduling it now so it doesn't drift.",
+      "timestamp": "2026-02-23T16:16:46.239400",
+      "attachments": []
+    }
+  ]
+}

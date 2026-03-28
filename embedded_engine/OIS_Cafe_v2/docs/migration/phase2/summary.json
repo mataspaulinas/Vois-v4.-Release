@@ -1,0 +1,52 @@
+{
+  "contract_count": 45,
+  "shared_python_vs_typescript_clean": true,
+  "current_platform_aligned_contracts": [
+    "FollowUpContract",
+    "EscalationContract",
+    "ChatThreadContract"
+  ],
+  "current_platform_mismatched_or_missing_contracts": [
+    "VenueProjectContract",
+    "AssessmentDraftContract",
+    "AssessmentRunRequestContract",
+    "SignalContract",
+    "FailureModeContract",
+    "ResponsePatternContract",
+    "BlockActivationContract",
+    "GeneratedPlanContract",
+    "PlanContract",
+    "TaskContract",
+    "TaskDependencyContract",
+    "TaskEventContract",
+    "TaskCommentContract",
+    "ProgressEntryContract",
+    "ObservationContract",
+    "HelpRequestContract",
+    "ReportContract",
+    "DiagnosticResultContract",
+    "NotificationSubscriptionContract",
+    "NotificationEventContract",
+    "ChatMessageContract",
+    "KnowledgeReferenceContract",
+    "AITraceContract",
+    "AIIntakeSnapshotContract"
+  ],
+  "legacy_full_fit_contracts": [
+    "SignalContract",
+    "FailureModeContract",
+    "ResponsePatternContract",
+    "BlockActivationContract",
+    "GeneratedPlanContract",
+    "AIIntakeSnapshotContract"
+  ],
+  "legacy_partial_fit_contracts": [
+    "VenueProjectContract",
+    "AssessmentDraftContract",
+    "AssessmentRunRequestContract",
+    "PlanContract",
+    "ProgressEntryContract",
+    "ChatThreadContract",
+    "ReportContract"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "blk_opening_line_readiness_check",
+  "name": "Run opening line readiness check",
+  "description": "Install a structured line-opening check across product, equipment, station setup, 86 risk, and immediate blockers so service does not begin on hidden fragility.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: restore readiness before live execution compounds preventable instability",
+  "updated_at": "2026-03-14T00:24:43.017708Z",
+  "effort_hours": 2.0,
+  "dependencies": [],
+  "tool_ids": [
+    "tool_line_readiness_check"
+  ],
+  "response_pattern_ids": [
+    "rp_open_close_reset",
+    "rp_pass_communication_reset"
+  ],
+  "entry_conditions": [
+    "The line starts service with missing prep, unclear 86s, or surprise equipment issues.",
+    "Someone with authority can stop the open long enough to resolve red conditions."
+  ],
+  "contraindications": [
+    "Do not convert this into a box-ticking ritual without stop/go rules.",
+    "Do not open the line while critical blockers remain unresolved but undocumented."
+  ],
+  "owner_role": "kitchen_manager",
+  "expected_time_to_effect_days": 1,
+  "proof_of_completion": [
+    "A visible readiness check exists for station setup, product, equipment, and 86 risk.",
+    "Red conditions have explicit escalation and open-delay logic.",
+    "The line has completed the check before at least one live service start."
+  ],
+  "successor_block_ids": [
+    "blk_daily_86_board"
+  ],
+  "service_module_ids": [
+    "readiness_and_setup",
+    "tools_and_asset_reliability",
+    "live_execution"
+  ],
+  "failure_family_ids": [
+    "readiness_failure",
+    "asset_reliability_failure",
+    "tool_or_resource_friction"
+  ]
+}

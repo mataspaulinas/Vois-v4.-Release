@@ -1,0 +1,31 @@
+{
+  "id": "sig_workaround_has_become_normal",
+  "name": "Workaround has become normal",
+  "description": "The team has normalized a workaround as part of everyday operation instead of treating it as temporary friction to remove.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: workaround has become normal expressed through restaurant operating habits",
+  "updated_at": "2026-03-15T17:17:16.787889Z",
+  "domain": "operations",
+  "module": "workaround_management",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "staff describe a workaround as just how the venue works",
+    "temporary fixes have become the stable process",
+    "known friction is absorbed culturally instead of corrected"
+  ],
+  "source_types": [
+    "service observation",
+    "manager notes",
+    "team huddle"
+  ],
+  "temporal_behavior": "recurring",
+  "likely_co_signals": [
+    "sig_workaround_is_normalized",
+    "sig_tool_or_system_unavailable"
+  ],
+  "adapter_aliases": [
+    "the workaround became standard",
+    "temporary fix is now the process"
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "block_id": "B202",
+  "name": "Bakery Partnership Assessment",
+  "version": "v1.0",
+  "domain": "D06_supply_chain",
+  "module": "M06: Supply Chain & Supplier Relations",
+  "state": "enriched",
+  "purpose": "Provides a structured framework for evaluating, selecting, onboarding, and managing bakery partnerships that supply pastries, cakes, bread, and baked goods to the cafe. This block ensures that bakery partners deliver consistent quality, reliable logistics, competitive pricing, and food safety compliance while aligning with the cafe's brand positioning and customer expectations.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define the cafe's bakery requirements: product range, quality standards, delivery schedule, and volume",
+      "Evaluate potential bakery partners against a structured scorecard covering quality, reliability, price, and values",
+      "Establish contractual terms including pricing, delivery windows, minimum orders, returns policy, and exclusivity",
+      "Implement quality control processes for incoming bakery deliveries including inspection and feedback protocols",
+      "Build a long-term partnership dynamic with regular reviews, co-development opportunities, and mutual growth"
+    ],
+    "secondary_objectives": [
+      "Reduce food waste through accurate demand forecasting shared with the bakery partner",
+      "Develop exclusive or co-branded products that differentiate the cafe from competitors",
+      "Ensure allergen information is complete, accurate, and legally compliant for all bakery items",
+      "Maintain a backup bakery relationship for business continuity in case the primary partner fails"
+    ]
+  },
+  "why_this_matters": "For most cafes, baked goods represent 20-35% of total revenue and are the primary food offering alongside coffee. The quality of a croissant or a slice of cake communicates as much about the cafe's standards as the coffee does — a stale pastry next to a perfectly extracted espresso creates a jarring disconnect that undermines the entire experience. Yet bakery partnerships are frequently managed informally: the owner knows someone who bakes, orders are placed by text message, deliveries arrive whenever convenient, and quality assessment consists of an occasional taste. This informality creates vulnerability. A bakery partner that delivers inconsistently — sometimes at 6am, sometimes at 9am after the morning rush has peaked — costs the cafe sales every late morning. One that varies portion sizes or recipe quality forces the cafe to absorb customer complaints about products it did not make. One without proper allergen documentation exposes the cafe to serious legal liability under UK food labelling regulations (Natasha's Law requires full ingredient labelling on all pre-packaged for direct sale food). The stakes are high: a single allergen incident can result in prosecution, closure, and civil liability. A structured bakery partnership assessment process protects the business commercially, legally, and reputationally while building a collaborative relationship that benefits both parties.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Define bakery requirements. List every baked product currently sold or planned: croissants, pain au chocolat, sourdough bread, banana bread, brownies, cookies, seasonal cakes, savoury pastries. For each product, define: required quality standard (artisan, mid-range, or basic), daily quantity needed (weekday versus weekend), required delivery time (must arrive before 7am for a cafe opening at 7:30am), shelf life expectation, and price ceiling. Assess whether the cafe needs a single full-range bakery partner or multiple specialists (e.g., one for viennoiserie, one for cakes, one for bread). Week 2: If switching or adding a bakery partner, identify candidates through local bakery directories, trade recommendations, social media research, and wholesale bakery platforms. Request samples from 2-3 shortlisted bakeries. Conduct a structured tasting session with the team: score each product on appearance, texture, flavour, freshness, and portion size. Document scores on a Bakery Partner Evaluation Scorecard. For the current partner, conduct the same evaluation to establish a baseline. Request allergen documentation, food safety certificates (minimum Level 2 HACCP), and liability insurance details from every candidate.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Formalise the partnership. Agree terms in writing covering: product list with specifications, pricing per unit (review frequency — typically annually with quarterly adjustment for ingredient cost changes), delivery schedule (days of week, time window, late delivery penalties), minimum order quantities and lead times for changes, returns and credit policy for damaged or substandard deliveries, allergen and labelling responsibilities, and exclusivity terms if applicable. Create an Incoming Delivery Inspection Checklist: every delivery should be checked against the order (correct items, correct quantities), inspected for quality (visual check, temperature for chilled items), and signed off. Any issues should be photographed and reported to the bakery immediately using a standardised Delivery Issue Report. Establish a weekly order planning process: review the previous week's sales data by product, adjust the coming week's order to match demand, and communicate changes to the bakery by the agreed cut-off day. Track bakery-related food waste separately — products unsold and discarded at end of day — and use this data to fine-tune ordering.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Move the bakery relationship from supplier-customer to genuine partnership. Schedule quarterly review meetings to discuss: quality trends, delivery performance, sales data, new product development ideas, and seasonal planning. Share sales data with the bakery — they benefit from understanding which products sell best and can adjust production accordingly. Co-develop exclusive products: a signature cookie or pastry that carries the cafe's name, developed jointly with the bakery and available nowhere else. This creates a compelling point of difference. Conduct annual partner reviews using the original evaluation scorecard to ensure standards are maintained and to benchmark against alternative suppliers. Develop a contingency plan: identify a backup bakery partner who could supply at short notice if the primary partner has a production failure, equipment breakdown, or staffing crisis. Test the backup relationship annually with a small trial order. Explore seasonal collaboration — Easter hot cross buns, Christmas stollen, summer fruit tarts — planned jointly three months in advance."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Define bakery product requirements: range, quality standard, quantity, delivery time, and price ceiling",
+        "Evaluate the current bakery partner against a structured scorecard or identify 2-3 new candidates",
+        "Request and taste samples from shortlisted bakeries, scoring on quality criteria",
+        "Collect allergen documentation, food safety certificates, and insurance details from partners",
+        "Select the preferred partner based on scorecard results and conduct initial negotiations",
+        "Agree delivery schedule that ensures products arrive before the cafe opens",
+        "Confirm allergen information for every product and update menu labelling accordingly"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Formalise partnership terms in a written agreement covering pricing, delivery, returns, and allergens",
+        "Create an Incoming Delivery Inspection Checklist for daily use",
+        "Establish a standardised Delivery Issue Report process with photo documentation",
+        "Implement a weekly order planning process based on sales data and demand forecasting",
+        "Track bakery product waste separately to inform ordering adjustments",
+        "Set up a cost tracking system to monitor bakery spend against revenue",
+        "Schedule the first quarterly partnership review meeting"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Hold quarterly review meetings with the bakery partner covering quality, performance, and planning",
+        "Co-develop exclusive products that differentiate the cafe",
+        "Share sales data with the partner to enable mutual demand planning",
+        "Conduct annual partner evaluation against the original scorecard and benchmark alternatives",
+        "Establish a backup bakery partner for business continuity",
+        "Plan seasonal product collaborations at least three months in advance"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Bakery Partner Evaluation Scorecard",
+    "Bakery Partnership Agreement template",
+    "Incoming Delivery Inspection Checklist",
+    "Delivery Issue Report template",
+    "Quarterly Partner Review agenda and minutes template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T202-01",
+        "tool_name": "Bakery Partner Evaluation Scorecard",
+        "level": "L1",
+        "format": "scorecard",
+        "owner_role": "Owner",
+        "description": "Structured evaluation matrix scoring bakery candidates across product quality, range, pricing, delivery reliability, food safety credentials, allergen documentation, insurance, and brand alignment."
+      },
+      {
+        "tool_id": "T202-02",
+        "tool_name": "Incoming Delivery Inspection Checklist",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Daily checklist for inspecting bakery deliveries: order accuracy, quantity verification, visual quality check, temperature check for chilled items, packaging integrity, and sign-off with issue flagging."
+      },
+      {
+        "tool_id": "T202-03",
+        "tool_name": "Delivery Issue Report",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Standardised report for documenting delivery problems: issue type (late, missing items, quality failure, damaged goods), photo evidence, immediate action taken, and credit or replacement requested."
+      },
+      {
+        "tool_id": "T202-04",
+        "tool_name": "Weekly Bakery Order Planner",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Planning template matching previous week's sales data to upcoming order quantities, with adjustments for weather, events, and seasonal factors. Reduces over-ordering and minimises waste."
+      },
+      {
+        "tool_id": "T202-05",
+        "tool_name": "Quarterly Partnership Review Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Agenda and minutes template for quarterly bakery partner reviews: quality performance, delivery metrics, pricing review, new product pipeline, seasonal planning, and any issues requiring resolution."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Bakery deliveries arrive after the morning rush, meaning the cafe has no pastries during its highest-footfall period",
+    "Allergen documentation is incomplete or outdated, exposing the cafe to legal liability under Natasha's Law",
+    "Quality inconsistency goes unchallenged because there is no inspection process — customers experience variable product quality",
+    "Over-reliance on a single bakery partner with no contingency means any supply disruption leaves the cafe with empty display cases"
+  ],
+  "kpis": [
+    "Bakery deliveries arriving within the agreed time window on at least 95% of occasions",
+    "Delivery quality issues flagged and resolved within 24 hours in 100% of cases",
+    "Bakery product waste rate below 10% of total bakery order value",
+    "Full allergen documentation on file and up-to-date for 100% of bakery products at all times"
+  ],
+  "dependencies": ["B109"],
+  "constraints": [
+    "Allergen documentation and labelling compliance under Natasha's Law is non-negotiable and legally required",
+    "Delivery timing is critical — a bakery that cannot deliver before opening time is unsuitable regardless of product quality",
+    "Switching bakery partners mid-contract may have financial or relationship implications that need managing"
+  ],
+  "time_load": {
+    "L1": "6 hours (requirements definition, candidate sourcing, tasting sessions, initial negotiation)",
+    "L2": "8 hours (agreement formalisation, checklist creation, order planning system, waste tracking setup)",
+    "L3": "2 hours/quarter (review meetings, performance analysis, co-development planning)"
+  },
+  "review_protocol": "Daily delivery inspection at point of receipt. Weekly order planning review against sales data. Monthly waste and cost analysis. Quarterly formal partnership review meeting. Annual full evaluation and benchmark against alternatives.",
+  "meta": {
+    "summary_for_humans": "This block provides a structured approach to evaluating, selecting, and managing bakery partnerships. It covers tasting evaluations, contractual terms, delivery inspection, allergen compliance, and ongoing partnership development to ensure consistently excellent baked goods.",
+    "implementation_risks": [
+      "Changing bakery partners can temporarily disrupt supply — plan a transition period with overlapping orders",
+      "Small artisan bakeries may struggle with the formality of written agreements — frame them as mutual protection, not bureaucracy",
+      "Allergen compliance responsibility ultimately sits with the cafe regardless of what the bakery provides — always verify"
+    ],
+    "notes_for_engine": "Activate when signals indicate bakery quality complaints, delivery reliability issues, allergen compliance gaps, or excessive bakery waste. Pairs with B109 (food supplier management) and food safety blocks.",
+    "tags": ["bakery", "partnership", "supply_chain", "food_quality", "allergens", "delivery", "procurement", "food_safety"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

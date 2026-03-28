@@ -1,0 +1,167 @@
+{
+  "block_id": "B091",
+  "name": "Workflow Excellence",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Establishes a continuous improvement framework for the cafe's entire operational workflow, synthesising insights from layout audits, station design, peak analysis, and team feedback into an ongoing programme of incremental refinement that drives the operation towards excellence.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Integrate workflow improvements from B085-B090 into a cohesive, continuously evolving operational system",
+      "Establish a regular cadence of workflow review, experimentation, and improvement across all operational areas",
+      "Create a team culture where everyone is empowered to identify and suggest workflow improvements",
+      "Track the cumulative impact of workflow improvements on speed, quality, cost, and customer experience",
+      "Benchmark operational workflow against the best specialty coffee and hospitality venues"
+    ],
+    "secondary_objectives": [
+      "Prevent workflow improvements from being one-off projects that decay over time",
+      "Build institutional memory of what has been tried, what worked, and what did not",
+      "Develop a competitive advantage through operational excellence that is difficult for competitors to replicate"
+    ]
+  },
+  "why_this_matters": "Operational excellence is not a destination — it is a discipline. The best cafes in the world are not perfect; they are relentlessly improving. Every week, they find one more small way to make service faster, drinks better, waste lower, or the team's experience smoother. Over months and years, these small improvements compound into a significant competitive advantage that customers can feel even if they cannot articulate it. The cafe just works. Orders arrive quickly. Drinks taste consistently excellent. The team moves with purpose and coordination. The experience feels effortless, which is the hallmark of deeply refined operations. Without a continuous improvement framework, the opposite happens. Workflow improvements made during an initial push gradually decay as habits slip, new staff are not trained on the refined processes, and small compromises accumulate. Within six months, the operation drifts back towards the same inefficiencies that existed before the improvement effort. This is the 'entropy problem' — without deliberate energy applied to maintaining and improving systems, they naturally degrade. Workflow excellence solves the entropy problem by making improvement a permanent part of the operating rhythm. It is the synthesis block that connects all operational improvements — staffing model, rush workflow, preparation, peak analysis, layout, and station design — into a single, self-reinforcing system. When the team understands that their input drives real change, when improvements are tracked and celebrated, and when the next improvement is always being planned, the cafe develops an operational culture that is genuinely difficult to replicate.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Establish the principle of continuous improvement by asking the team one simple question in the next briefing: 'What is one thing we could do differently next week that would make the operation smoother?' Capture every response on a whiteboard or shared document. Vote on the most impactful suggestion and commit to trialling it for one week. This immediate action demonstrates that improvement is everyone's responsibility and that management is genuinely open to ideas from the floor. Week 2: Trial the selected improvement and measure its impact — even informally. Did the change make things faster, easier, or better? Discuss the results in the next briefing. If it worked, adopt it permanently and document it. If it did not work, acknowledge the experiment, explain why it did not succeed, and try the next suggestion. This builds a fail-safe experimentation culture where the team learns that not every idea will work, but every idea is valued. Start a simple Improvement Log — a list of every improvement attempted, the outcome, and whether it was adopted or abandoned.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Workflow Excellence Framework that formalises the improvement cycle: Observe (identify an opportunity), Hypothesise (propose a change), Test (trial it for one to two weeks), Measure (compare before and after data), Decide (adopt, modify, or abandon), Document (update SOPs and standards). Build this cycle into the weekly management routine — every week, there should be at least one active experiment running. Create a Workflow Improvement Board in the staff area — a physical or digital board showing current experiments, recent improvements adopted, and a pipeline of ideas waiting to be tested. This visibility keeps improvement top of mind and gives the team ownership. Establish a monthly Workflow Review meeting (30 minutes) where the manager reviews all improvements attempted, their outcomes, and selects the next experiments. Link this review to peak performance data (B088), layout audit findings (B089), and team feedback (B076). Ensure all permanent improvements are documented: update the relevant SOPs, workflow maps, station standards, and checklists so that new starters and cross-trainees learn the improved way, not the old way.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The cafe has now developed a genuine culture of continuous improvement — the team proactively identifies opportunities, experiments are a normal part of operations, and the Improvement Log is a growing record of incremental gains. Quantify the cumulative impact: calculate the total time saved, waste reduced, revenue gained, and customer satisfaction improved from all adopted workflow improvements over the past year. Share this with the team — when people see that 52 small weekly improvements have collectively saved 200 hours of wasted motion and prevented £3,000 of waste, the power of continuous improvement becomes visceral. Benchmark against best-in-class operations: visit leading specialty coffee venues, attend SCA events, and read case studies of operationally excellent hospitality businesses. Bring ideas back and add them to the improvement pipeline. Introduce a quarterly Workflow Excellence Award for the team member whose improvement idea had the greatest positive impact. Consider applying for industry recognition — SCA awards, local business awards, or hospitality excellence programmes — using the documented improvement journey as evidence."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Ask the team for one improvement suggestion in the next briefing",
+        "Select the most impactful suggestion and commit to a one-week trial",
+        "Measure the impact of the trial — even informally",
+        "Discuss results in the following briefing and decide to adopt or abandon",
+        "Start an Improvement Log recording every idea, trial, and outcome",
+        "Repeat the cycle weekly, building the habit of continuous improvement",
+        "Celebrate the first adopted improvement to reinforce the culture"
+      ],
+      "responsible": "Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a Workflow Excellence Framework with a formal improvement cycle",
+        "Build a Workflow Improvement Board in the staff area for visibility",
+        "Establish a monthly Workflow Review meeting reviewing all experiments and outcomes",
+        "Link workflow reviews to peak performance data and layout audit findings",
+        "Ensure all permanent improvements are documented in updated SOPs and standards",
+        "Maintain the Improvement Log as a growing institutional record",
+        "Train the team on the Observe-Hypothesise-Test-Measure-Decide-Document cycle"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Quantify and share the cumulative impact of all workflow improvements",
+        "Benchmark against best-in-class specialty coffee and hospitality operations",
+        "Introduce a quarterly Workflow Excellence Award for the best improvement idea",
+        "Visit leading venues and attend industry events for inspiration",
+        "Consider applying for industry recognition using the improvement journey as evidence",
+        "Ensure the improvement culture survives leadership changes through documentation and team ownership"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Workflow Excellence Framework document (improvement cycle methodology)",
+    "Improvement Log (running record of all ideas, trials, and outcomes)",
+    "Workflow Improvement Board design (physical or digital)",
+    "Monthly Workflow Review meeting agenda",
+    "Annual Workflow Excellence Impact Report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T091-01",
+        "tool_name": "Workflow Improvement Suggestion Card",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "All Staff",
+        "description": "Simple card for any team member to submit a workflow improvement idea: what they observed, what they suggest changing, what impact they expect, and any risks. Can be submitted physically or digitally."
+      },
+      {
+        "tool_id": "T091-02",
+        "tool_name": "Improvement Log",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Running log of every workflow improvement idea submitted, trialled, and decided upon, with columns for idea description, submitter, trial dates, measured impact, decision (adopt/modify/abandon), and SOP update status."
+      },
+      {
+        "tool_id": "T091-03",
+        "tool_name": "Workflow Improvement Board Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Visual board design with three columns — Ideas Pipeline, Currently Testing, Recently Adopted — making the improvement cycle visible and engaging for the entire team."
+      },
+      {
+        "tool_id": "T091-04",
+        "tool_name": "Monthly Workflow Review Agenda",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "30-minute meeting agenda covering: review of current experiments, outcomes of completed trials, update to SOPs for adopted changes, selection of next experiments, and pipeline review."
+      },
+      {
+        "tool_id": "T091-05",
+        "tool_name": "Annual Workflow Excellence Impact Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Comprehensive annual report quantifying the cumulative impact of all workflow improvements: time saved, waste reduced, revenue gained, customer satisfaction improved, and team engagement change."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Improvement ideas are solicited but never trialled, teaching the team that suggestions are ignored",
+    "The improvement cycle runs for a few weeks but then stops because daily operations feel more urgent",
+    "Improvements are adopted but not documented in SOPs, so they are lost when new staff join or habits drift",
+    "The manager drives all improvement ideas without genuine team involvement, missing the most practical insights"
+  ],
+  "kpis": [
+    "At least one workflow improvement experiment active every week",
+    "At least two improvements permanently adopted per month",
+    "Improvement Log maintained and updated within one week of every trial completion",
+    "Monthly Workflow Review meeting held at least 10 months per year",
+    "Cumulative measurable impact of improvements tracked and shared quarterly"
+  ],
+  "dependencies": ["B089", "B090"],
+  "constraints": [
+    "Continuous improvement requires a minimum level of operational stability — it is difficult to improve when basic systems are not yet functional",
+    "The improvement cycle must be genuinely open to failure — experiments that do not work are as valuable as those that do",
+    "Documentation of improvements must keep pace with adoption to prevent knowledge loss"
+  ],
+  "time_load": {
+    "L1": "1 hour/week (suggestion gathering, trial management, briefing discussions)",
+    "L2": "2 hours/month (workflow review meeting, SOP updates, board maintenance)",
+    "L3": "4 hours/year (annual impact report, benchmarking, award programme)"
+  },
+  "review_protocol": "Weekly: active experiment status checked and results discussed in briefing. Monthly: formal Workflow Review meeting conducted. Quarterly: cumulative impact assessed and shared with the team. Annually: comprehensive Workflow Excellence Impact Report produced and improvement culture assessed.",
+  "meta": {
+    "summary_for_humans": "This block creates a continuous improvement framework for the cafe's entire operational workflow, ensuring that small, incremental improvements are identified, tested, adopted, and documented week after week — building towards operational excellence over time.",
+    "implementation_risks": [
+      "Continuous improvement requires sustained energy and attention — it is easy to let the cycle lapse during busy periods",
+      "The manager must genuinely welcome ideas from all levels, including ideas that challenge current practice",
+      "Over-engineered improvement processes can become bureaucratic — keep the cycle simple and fast"
+    ],
+    "notes_for_engine": "This is a synthesis and sustainability block. Activate after B089 and B090 are at least L1-implemented. Also activate when the venue demonstrates readiness for continuous improvement culture based on stable operations and engaged team.",
+    "tags": ["continuous_improvement", "workflow", "excellence", "kaizen", "experimentation", "operations", "efficiency", "culture", "innovation"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

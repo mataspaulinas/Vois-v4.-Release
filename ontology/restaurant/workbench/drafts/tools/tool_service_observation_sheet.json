@@ -1,0 +1,22 @@
+{
+  "id": "tool_service_observation_sheet",
+  "name": "Service observation sheet",
+  "description": "Timestamped worksheet for capturing service touchpoints, delay points, unclear handoffs, and visible recovery failures during live observation.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: evidence-first workflow redesign starts with observation, not memory",
+  "updated_at": "2026-03-14T00:24:43.085092Z",
+  "category": "observation",
+  "format": "worksheet",
+  "usage_moment": "Use during a representative live service before redesigning workflow or role ownership.",
+  "expected_output": "A marked-up service map with timestamps, handoff friction notes, and three highest-risk failure moments.",
+  "adaptation_variables": [
+    "service_format",
+    "peak_window",
+    "venue_layout",
+    "team_structure"
+  ],
+  "block_ids": [
+    "blk_map_service_steps"
+  ]
+}

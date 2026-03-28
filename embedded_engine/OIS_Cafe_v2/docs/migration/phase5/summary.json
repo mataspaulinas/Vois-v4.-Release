@@ -1,0 +1,46 @@
+{
+  "phase": 5,
+  "title": "Enforce V1 Workflow Discipline in CODEX UI",
+  "flow_a": {
+    "plan_status_after_run": "draft",
+    "draft_ready_task_count_before_activation": 3,
+    "draft_task_mutation_before_activation": "Draft plan note before approval.",
+    "activated_status": "active",
+    "task_status_after_activation": "in_progress",
+    "task_note_persisted_after_refresh": "Draft plan note before approval.",
+    "activation_audit_delta": 1,
+    "activation_progress_delta": 1
+  },
+  "flow_b": {
+    "second_activation_status": "active",
+    "second_activation_audit_delta": 0,
+    "second_activation_progress_delta": 0
+  },
+  "flow_c": {
+    "original_active_plan_id": "d5560a8a-0317-4d11-99df-be962b0d6c8c",
+    "rerun_plan_id": "07d9a078-4503-41e0-8961-dec2ac00182d",
+    "rerun_plan_status": "draft",
+    "original_plan_status_after_rerun": "active",
+    "latest_plan_endpoint_id_after_rerun": "07d9a078-4503-41e0-8961-dec2ac00182d",
+    "latest_execution_summary_plan_id_after_rerun": "07d9a078-4503-41e0-8961-dec2ac00182d"
+  },
+  "flow_d": {
+    "draft_plan_status": "draft",
+    "draft_status_update_result": "in_progress",
+    "draft_notes_update_result": "Draft task mutated after rerun."
+  },
+  "cross_venue_next_action_check": {
+    "secondary_venue_in_progress_actions": [
+      "be329246-1fb1-49f8-9f68-81883f2244eb",
+      "1719c96b-a591-4b6a-8162-0f38236343a8"
+    ]
+  },
+  "observations": {
+    "new_plan_default_status_is_draft": true,
+    "draft_plan_has_executable_summary_before_activation": true,
+    "duplicate_activation_is_idempotent": true,
+    "rerun_latest_endpoint_switches_to_draft": true,
+    "draft_task_mutation_allowed": true,
+    "cross_venue_next_action_leak": true
+  }
+}

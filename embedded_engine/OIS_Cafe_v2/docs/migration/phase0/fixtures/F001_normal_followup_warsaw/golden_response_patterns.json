@@ -1,0 +1,40 @@
+[
+  {
+    "response_pattern_id": "RP015",
+    "rp_name": "Recipe Standards & Portion Control",
+    "domain": "D03",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM025",
+        "fm_title": "Recipe standardisation and portion control failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Check whether you have written recipe cards for every drink and food item on your menu. If a new barista started tomorrow could they make every drink to your standard without asking? Verify that portion sizes are consistent — weigh a few items and compare to your intended standard. Inconsistent portions erode margins and customer trust.",
+    "l2_focus": "Create a comprehensive recipe card system covering every drink and food item on your menu. Include exact measurements pour weights ingredient lists and visual references. Implement a portion control system with scales scoops and measures at every station. Train all team members on recipe standards and conduct quarterly consistency audits. Track cost per serve for your top 20 items.",
+    "l3_focus": "Standardisation should not kill creativity but it must ensure consistency. Your recipe system should be thorough enough that any trained barista can produce your drinks to standard while still allowing skilled baristas to express their craft. Update recipe cards whenever ingredients or methods change and review them quarterly.",
+    "description": "Recipe Standards & Portion Control"
+  },
+  {
+    "response_pattern_id": "RP019",
+    "rp_name": "Onboarding & Barista Training",
+    "domain": "D04",
+    "severity": "medium-critical",
+    "priority_score": 0.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM031",
+        "fm_title": "Barista skills and craft development failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Review your current induction process. Does a new starter receive a structured first week covering food safety coffee training till operation and customer service standards? Or are they thrown in and expected to learn on the job? If there is no written induction plan create one this week. Ensure every new starter is paired with an experienced barista for their first five shifts.",
+    "l2_focus": "Build a structured barista training programme with clear milestones and assessment criteria. Create a training manual covering all core skills from espresso extraction to food preparation to customer interaction. Implement a mentorship system where experienced baristas guide new starters. Develop a barista certification system with levels that link to pay progression.",
+    "l3_focus": "Create a learning culture where continuous skill development is valued and supported. Offer advanced training opportunities including external courses competitions and supplier-led sessions. Your training programme should be thorough enough that your baristas could work at any specialty cafe. Make training investment a retention tool and a recruitment attraction.",
+    "description": "Onboarding & Barista Training"
+  }
+]

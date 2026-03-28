@@ -1,0 +1,168 @@
+{
+  "block_id": "B205",
+  "name": "Coffee Van Operations",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Addresses the unique operational logistics of running a mobile coffee van, covering vehicle maintenance, location strategy, event booking, licensing, self-contained water and power systems, setup and teardown routines, and the mobile-specific challenges that differentiate van operations from any fixed-site format.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish a complete mobile setup and teardown procedure that gets the van operational in minimum time",
+      "Develop a location strategy covering regular pitches, events, markets, and private bookings",
+      "Manage self-contained utilities: water tank capacity, generator or battery power, waste water disposal",
+      "Maintain vehicle roadworthiness, equipment function, and food safety compliance while mobile",
+      "Build a booking and scheduling system for events, markets, and corporate engagements"
+    ],
+    "secondary_objectives": [
+      "Maximise revenue by optimising the weekly location schedule based on footfall data and profit per pitch",
+      "Ensure all mobile trading licences, street trading consents, and event permits are current and compliant",
+      "Create a distinctive mobile brand presence that is recognisable across multiple locations",
+      "Develop contingency plans for vehicle breakdown, generator failure, and adverse weather"
+    ]
+  },
+  "why_this_matters": "A coffee van is a business on wheels — it combines every challenge of running a cafe with the additional complexity of transport, self-contained utilities, location variability, and regulatory compliance across multiple local authorities. The appeal is obvious: low fixed costs, the ability to go where customers are, and the flexibility to trade at events, markets, office parks, and festivals. But the failure rate for coffee vans is high because operators underestimate the logistics. A van that runs out of fresh water at 10am has to close. A generator that fails during a music festival means zero revenue from an event that cost hundreds of pounds in pitch fees. A vehicle that breaks down on the motorway en route to a wedding booking creates a reputational disaster. Street trading licences vary by council — a pitch that is legal in one borough may require a different consent in the next. Water tank capacity determines how many drinks can be served before refilling, and grey water tanks must be disposed of legally, not dumped in a car park drain. The espresso machine, grinder, and fridge must survive vehicle vibration and temperature extremes during transport, requiring shock-mounting and thermal management. Event bookings require contracts, deposits, and precise logistical planning: arrival time, power access, water availability, waste disposal, and load-in restrictions. Each of these operational details, if managed well, creates a smooth and profitable mobile business. If managed badly, any one of them can ruin a trading day. This block provides the comprehensive operational framework that separates professional mobile coffee operators from hobbyists with a van.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create a comprehensive Van Setup Checklist covering every step from arrival at a location to first drink served. This typically includes: park and level the vehicle, deploy the serving hatch and canopy, connect to mains power or start the generator (allowing 5 minutes warm-up before loading equipment), check fresh water tank level and top up if needed, check grey water tank is empty, start the espresso machine (20-30 minutes heat-up for most machines), load fresh milk into the fridge, set out cups and lids, stock food items, set up the till or card reader, display the menu board, and perform a test shot before opening. Time this entire sequence — aim to have the van operational within 30-45 minutes of arrival. Create a parallel Teardown Checklist in reverse order, including grey water secured for disposal, equipment powered down, perishables stored safely, van secured, and departure. Week 2: Audit all licences and permits. Street trading requires consent from each local authority where you trade — check which councils cover your regular pitches and confirm all consents are valid and renewed before expiry. For events and markets, confirm whether the organiser's licence covers your trading or if you need your own Temporary Event Notice. Verify vehicle insurance covers commercial mobile food trading, not just standard vehicle use. Confirm your food business is registered with the local authority where the van is stored (home address counts) as required under EU-retained food hygiene regulations. Check gas safety certificates if the van uses LPG, and electrical safety certificates for the generator and all equipment.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Location Strategy Document. Categorise locations into: regular pitches (weekly spots with predictable footfall and revenue), events and festivals (higher risk, higher reward — pitch fees range from £50 to £500+, but a good event can generate a full week's revenue in a day), markets (weekly or monthly, lower pitch fees, community-building), and private bookings (weddings, corporate events, parties — premium pricing with deposits). For each regular pitch, track: revenue, footfall, weather impact, and net profit after pitch fees and travel costs. Build a weekly schedule that maximises revenue while managing travel time and fatigue. Create a Booking Management System for events and private work: enquiry form, quote template, booking confirmation with deposit, event logistics checklist (power, water, access, timings), and post-event invoice. Establish a Vehicle Maintenance Schedule covering: MOT renewal, service intervals, tyre condition, generator servicing, water system sanitisation (monthly flush with food-safe sanitiser), gas safety inspection (annually for LPG), and a pre-journey vehicle check routine. Develop a Water Management Protocol: calculate drinks-per-litre to know exactly how many serves the fresh water tank allows, set a minimum water level trigger for refilling, and identify refill points near regular pitches.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The coffee van should now operate as a polished mobile brand. Build a location performance database tracking revenue, profit, weather, and customer count for every pitch and event — over 6-12 months, this reveals which locations are genuinely profitable and which are vanity bookings. Use social media to announce daily locations, building a following that tracks the van's movements. Develop a loyalty programme suited to mobile: a stamp card or app that works across all locations. Invest in van aesthetics — the vehicle is the brand, so its appearance matters enormously. Professional signage, lighting, and a clean, well-maintained exterior create premium perception. Explore multi-van expansion if demand warrants — the operational systems developed should be replicable across additional vehicles. Establish relationships with event organisers and wedding planners who can provide regular premium bookings. Conduct annual reviews of all licences, insurance, and vehicle compliance to ensure nothing lapses. Build a network with other mobile food traders for mutual support, backup, and referrals."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create a comprehensive Van Setup Checklist from arrival to first drink served",
+        "Create a matching Teardown Checklist covering shutdown, waste, and departure",
+        "Time the setup and teardown procedures, aiming for 30-45 minutes each",
+        "Audit all licences: street trading consents, food business registration, gas and electrical certificates",
+        "Verify vehicle insurance covers commercial mobile food trading",
+        "Confirm fresh water and grey water tank capacities and calculate drinks-per-fill",
+        "Perform a full vehicle and equipment safety check"
+      ],
+      "responsible": "Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Location Strategy Document categorising regular pitches, events, markets, and bookings",
+        "Track revenue and profit per location to identify the most profitable pitches",
+        "Create a Booking Management System with enquiry form, quote, confirmation, and invoice templates",
+        "Establish a Vehicle Maintenance Schedule covering MOT, servicing, and equipment checks",
+        "Develop a Water Management Protocol with drinks-per-litre calculations and refill planning",
+        "Build a weekly trading schedule maximising revenue and minimising dead travel time",
+        "Create an Event Logistics Checklist for private and festival bookings"
+      ],
+      "responsible": "Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Build a location performance database tracking profitability across all pitches over 12 months",
+        "Use social media to announce daily locations and build a mobile following",
+        "Invest in van branding, signage, and appearance as the primary marketing asset",
+        "Develop relationships with event organisers and wedding planners for premium bookings",
+        "Explore multi-van expansion using replicable operational systems",
+        "Conduct annual compliance reviews of all licences, insurance, and vehicle roadworthiness"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Van Setup and Teardown Checklists",
+    "Location Strategy Document",
+    "Booking Management System (templates and process)",
+    "Vehicle Maintenance Schedule",
+    "Water Management Protocol"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T205-01",
+        "tool_name": "Van Setup and Teardown Checklists",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Step-by-step laminated checklists for van deployment and pack-down: vehicle positioning, utility connections, equipment startup sequence, stock staging, and reverse for teardown including waste disposal."
+      },
+      {
+        "tool_id": "T205-02",
+        "tool_name": "Location Performance Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Per-location log recording each trading day: revenue, pitch fee, travel cost, fuel, drinks served, weather conditions, and calculated net profit. Used to rank locations and optimise the weekly schedule."
+      },
+      {
+        "tool_id": "T205-03",
+        "tool_name": "Event Booking Management Kit",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Complete booking workflow: enquiry response template, quote calculator (per-head or flat fee), booking confirmation with deposit terms, event logistics checklist (power, water, access), and post-event invoice."
+      },
+      {
+        "tool_id": "T205-04",
+        "tool_name": "Vehicle and Equipment Maintenance Schedule",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Annual maintenance calendar tracking MOT, service intervals, generator maintenance, water tank sanitisation, gas safety inspection, tyre checks, and pre-journey vehicle condition checks."
+      },
+      {
+        "tool_id": "T205-05",
+        "tool_name": "Licence and Compliance Register",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Register of all licences, permits, and certificates with issue dates, expiry dates, renewal reminders, and responsible authority contact details. Covers street trading consents, food registration, insurance, gas, and electrical safety."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Fresh water runs out mid-service because drinks-per-litre was not calculated, forcing an early close and lost revenue",
+    "Street trading consent lapses and the operator is fined or moved on by council enforcement officers",
+    "Generator failure at an event with no mains power backup means zero service capability for the entire booking",
+    "Vehicle breakdown en route to a paid event booking creates both immediate revenue loss and long-term reputational damage"
+  ],
+  "kpis": [
+    "Setup time from arrival to first drink served consistently under 40 minutes",
+    "Zero licence or compliance lapses across all trading locations in any 12-month period",
+    "Average revenue per trading day exceeding breakeven by at least 50% across all locations",
+    "Vehicle and equipment downtime below 3% of scheduled trading days per year"
+  ],
+  "dependencies": ["B204"],
+  "constraints": [
+    "Fresh water and grey water tank capacities impose a hard ceiling on drinks per fill — larger tanks add weight and reduce fuel efficiency",
+    "Generator noise and emissions may be restricted at certain locations, requiring battery or mains alternatives",
+    "Each local authority has different street trading consent requirements, fees, and application timelines",
+    "Vehicle weight limits (3.5 tonnes for standard licence) constrain equipment and water capacity"
+  ],
+  "time_load": {
+    "L1": "6 hours (checklist creation, licence audit, vehicle and equipment check, water capacity calculation)",
+    "L2": "12 hours (location strategy, booking system, maintenance schedule, water protocol, tracking setup)",
+    "L3": "3 hours/month (performance analysis, schedule optimisation, compliance review, relationship building)"
+  },
+  "review_protocol": "Pre-journey vehicle check before every trading day. Weekly location revenue review. Monthly water system sanitisation and equipment maintenance check. Quarterly licence and compliance register review. Annual full vehicle service and strategy review.",
+  "meta": {
+    "summary_for_humans": "This block covers everything specific to mobile coffee van operations: vehicle management, self-contained water and power, location strategy, event bookings, licensing, and the logistical discipline that separates professional mobile operators from unreliable ones.",
+    "implementation_risks": [
+      "Vehicle breakdowns can be mitigated but never eliminated — always have a recovery plan and customer notification process",
+      "Pitch fee costs can erode margins if location profitability is not tracked rigorously",
+      "Event bookings require deposits and contracts — verbal agreements lead to no-shows and disputes"
+    ],
+    "notes_for_engine": "Activate only for coffee_van venue type. Extends B204 (Kiosk Operations) with mobile-specific logistics. Critical dependency for any mobile trading operation.",
+    "tags": ["coffee_van", "mobile", "vehicle", "logistics", "licensing", "events", "location_strategy", "self_contained"]
+  },
+  "applicability": {
+    "venue_types": ["coffee_van"],
+    "team_size_min": 1,
+    "team_size_max": 4
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

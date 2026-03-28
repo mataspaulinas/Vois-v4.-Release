@@ -1,0 +1,79 @@
+{
+  "identification": {
+    "tool_id": "T004-03",
+    "tool_name": "Equipment Health Scorecard & Replacement Trigger",
+    "block_id": "B004"
+  },
+  "tool_design": {
+    "format": "scorecard",
+    "role_in_intervention": "Per-unit decision tool for whether equipment should be watched, repaired, or replaced.",
+    "adaptation_variables": [
+      "unit_count",
+      "maintenance_budget",
+      "replacement_threshold"
+    ],
+    "usage_moment": "Monthly and quarterly equipment review",
+    "expected_output": "Scored unit-by-unit health record with replacement decision",
+    "linked_blocks": [
+      "B004",
+      "B001",
+      "B003"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Units are scored from gut feeling instead of the actual trend data.",
+        "what_can_go_wrong": "Repair and replacement money gets directed to the wrong problem.",
+        "early_signals": [
+          "A manager says a unit is fine despite repeated warnings or excursions",
+          "Scores do not line up with the dashboard history"
+        ],
+        "prevention": [
+          "Score each unit from workbook evidence, not memory",
+          "Keep the scoring dimensions explicit and simple"
+        ],
+        "mitigation": [
+          "Re-score the unit from current data",
+          "Escalate disputed decisions to owner review"
+        ],
+        "if_occurs_next_signals": [
+          "misdirected_equipment_decision"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B003"
+        ]
+      },
+      {
+        "warning": "The scorecard shows replacement triggers but the decision is repeatedly deferred without rationale.",
+        "what_can_go_wrong": "The venue keeps nursing weak units until they create a bigger failure.",
+        "early_signals": [
+          "The same unit is marked watch or repair for several cycles in a row",
+          "Excursion costs are rising faster than maintenance action"
+        ],
+        "prevention": [
+          "Make the decision column mandatory",
+          "Carry unresolved equipment items into the monthly report"
+        ],
+        "mitigation": [
+          "Run an owner review on any repeated red unit",
+          "Document the reason for deferral and next trigger point"
+        ],
+        "if_occurs_next_signals": [
+          "deferred_replacement_risk"
+        ],
+        "possible_successor_blocks": [
+          "B003"
+        ]
+      }
+    ]
+  },
+  "content": "# Equipment Health Scorecard & Replacement Trigger\n\n**Tool ID:** T004-03  \n**Block:** B004 (Cold Chain Excellence Dashboard)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L3  \n**Format:** Scorecard  \n**Role:** Manager / Owner  \n**Time Required:** 15 minutes per review cycle  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this scorecard to decide whether each cold unit is healthy, drifting, or becoming an investment problem.\n\nThis tool prevents vague thinking like: \"that fridge has always been a bit temperamental.\"\n\n---\n## Scoring Model\n\nScore each unit from `0-2` on each line.\n\n| Dimension | 2 = Strong | 1 = Watch | 0 = Weak |\n|---|---|---|---|\n| Temperature stability | Stable and in range | Borderline drift appears | Frequent high readings or triggers |\n| Excursion history | None this quarter | One minor issue | Repeated or severe issues |\n| Maintenance pattern | No repeat issues | Some repeat service need | Chronic or unresolved fault |\n| Business impact | Low impact if lost briefly | Medium disruption | High disruption or high stock loss |\n| Confidence in recovery | Reliable | Uncertain | Low confidence |\n\n**Total interpretation:**\n- `8-10` = Healthy\n- `5-7` = Watch / repair soon\n- `0-4` = Replacement or major intervention review\n\n---\n## Unit Scorecard\n\n| Unit | Stability | Excursion History | Maintenance Pattern | Business Impact | Recovery Confidence | Total | Decision |\n|---|---|---|---|---|---|---|---|\n| Milk fridge | | | | | | | Watch / Repair / Replace |\n| Prep fridge | | | | | | | Watch / Repair / Replace |\n| Display fridge | | | | | | | Watch / Repair / Replace |\n| Main freezer | | | | | | | Watch / Repair / Replace |\n| Other | | | | | | | Watch / Repair / Replace |\n\n---\n## Replacement Trigger Notes\n\n| Unit | Why This Decision Was Chosen | Next Trigger / Deadline |\n|---|---|---|\n| | | |\n| | | |\n| | | |\n\n---\n## Good Prompts During Review\n\n- Is this unit drifting before failure or just noisy on paper?\n- How much management attention is this unit consuming?\n- Has stock loss or disruption already justified replacement?\n- If this unit fails on the busiest day, what happens operationally?\n\n---\n## Connected Resources\n\n**Use with:**\n- T004-01 - Cold Chain Dashboard Workbook\n- T004-02 - Monthly Cold Chain Management Report\n- T004-04 - Quarterly Cold Chain Trend Review\n\n---\n\n*Tool Version 2.0 - the point where cold-chain data turns into investment decisions.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T004-03_equipment_health_scorecard_and_replacement_trigger.md",
+    "migration_method": "manual_enrichment"
+  }
+}

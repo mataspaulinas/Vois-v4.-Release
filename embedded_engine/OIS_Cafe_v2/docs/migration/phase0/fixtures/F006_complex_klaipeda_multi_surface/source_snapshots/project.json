@@ -1,0 +1,119 @@
+{
+  "venue_id": "kavos_namai_klaipeda",
+  "venue_name": "Klaipeda",
+  "type": "independent_cafe",
+  "stage": "new",
+  "team_size": 4,
+  "location": "Klaipeda, Old Town, Lithuania",
+  "concept": "Seaside cafe near the ferry terminal. Seasonal tourist traffic, stripped-back menu focused on filter coffee and open sandwiches. Small team, owner-operated.",
+  "team_profile": {},
+  "capacity_profile": {
+    "leadership_strength": "low",
+    "volatility": "high"
+  },
+  "status": "active",
+  "created": "2026-01-19T16:16:39.239400",
+  "last_assessment": "2026-03-21T10:33:00.538338",
+  "current_signals": {
+    "S002": {
+      "active": true,
+      "notes": "Allergen records incomplete — staff cannot confirm dietary info without checking kitchen",
+      "confidence": "high",
+      "value": null
+    },
+    "S010": {
+      "active": true,
+      "notes": "Temperature logs missing or incomplete for fridges",
+      "confidence": "high",
+      "value": null
+    },
+    "S019": {
+      "active": true,
+      "notes": "Queue wait times exceed 5 minutes during peak hours",
+      "confidence": "high",
+      "value": null
+    },
+    "S030": {
+      "active": true,
+      "notes": "Menu pricing does not reflect actual COGS",
+      "confidence": "medium",
+      "value": null
+    },
+    "S045": {
+      "active": true,
+      "notes": "No waste tracking system in place",
+      "confidence": "medium",
+      "value": null
+    },
+    "S051": {
+      "active": true,
+      "notes": "No FOH reference materials visible at counter or service points",
+      "confidence": "medium",
+      "value": null
+    },
+    "S063": {
+      "active": true,
+      "notes": "Role confusion during busy periods — staff unsure of task ownership",
+      "confidence": "medium",
+      "value": null
+    },
+    "S070": {
+      "active": true,
+      "notes": "Single person handling all service functions during peak — visible stress and delays",
+      "confidence": "critical",
+      "value": null
+    },
+    "S071": {
+      "active": true,
+      "notes": "No structured pre-shift briefing observed",
+      "confidence": "medium",
+      "value": null
+    },
+    "S073": {
+      "active": true,
+      "notes": "Counter layout creates bottlenecks during multi-task service",
+      "confidence": "medium",
+      "value": null
+    },
+    "S080": {
+      "active": true,
+      "notes": "Tables remain uncleared 6-10 minutes after guests leave",
+      "confidence": "high",
+      "value": null
+    },
+    "S083": {
+      "active": true,
+      "notes": "Staffing levels not calibrated to observed peak demand",
+      "confidence": "high",
+      "value": null
+    },
+    "S133": {
+      "active": true,
+      "notes": "FOH cleanliness inconsistent during service periods",
+      "confidence": "medium",
+      "value": null
+    },
+    "S160": {
+      "active": true,
+      "notes": "Revenue appears heavily concentrated in morning period",
+      "confidence": "medium",
+      "value": null
+    },
+    "S166": {
+      "active": true,
+      "notes": "Team not aligned on roles, responsibilities, or service standards",
+      "confidence": "high",
+      "value": null
+    }
+  },
+  "workflow_stage": "signals_review",
+  "owner_user_id": "u_portfolio",
+  "primary_consultant_user_id": "u_consultant",
+  "last_updated_by": "u_consultant",
+  "last_activity_at": "2026-03-21T10:33:00.538338",
+  "health_state": "critical",
+  "next_review_at": "2026-04-20",
+  "owner_user_name": "Portfolio Lead",
+  "primary_consultant_user_name": "Lead Consultant",
+  "brand": "kavos_namai"
+}

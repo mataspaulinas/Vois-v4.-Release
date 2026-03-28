@@ -1,0 +1,157 @@
+{
+  "block_id": "B104",
+  "name": "Coffee Roaster Relationship",
+  "version": "v1.0",
+  "domain": "D06_supply_chain",
+  "module": "M06: Supply Chain & Supplier Relations",
+  "state": "enriched",
+  "purpose": "Establishes and manages the strategic relationship with the cafe's coffee roaster — the single most important supplier partnership in any specialty or independent cafe. This block covers roaster selection, contract negotiation, quality alignment, training support, and the ongoing partnership that determines the quality of every coffee served.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define the cafe's coffee identity (origin preferences, roast profile, flavour priorities) as the foundation for roaster selection",
+      "Evaluate roaster partners on quality, consistency, support, price, and alignment with the cafe's values",
+      "Negotiate supply terms that balance cost control with quality access (pricing, delivery frequency, minimum orders)",
+      "Establish a quality feedback loop between the cafe and the roaster for continuous improvement",
+      "Secure roaster-provided training, equipment support, and marketing collaboration"
+    ],
+    "secondary_objectives": [
+      "Build a partnership that provides early access to seasonal and limited-edition coffees",
+      "Negotiate equipment loan or leasing arrangements where available (common with UK roasters)",
+      "Use the roaster relationship as a marketing asset — customers care about where their coffee comes from"
+    ]
+  },
+  "why_this_matters": "Coffee is the defining product of a cafe, and the roaster is the defining supplier. Unlike most food and beverage suppliers who provide commodity inputs, the coffee roaster shapes the cafe's identity, quality ceiling, and competitive positioning. Choosing the wrong roaster — or managing the relationship poorly — is like a restaurant hiring the wrong head chef. Every cup suffers. In the UK specialty coffee market, the roaster relationship typically extends far beyond simple bean supply. Good roasters provide barista training, dial-in support for new coffees, equipment maintenance advice, marketing materials, and sometimes equipment on loan or lease. These value-added services are worth thousands of pounds annually and should be factored into the total value of the relationship, not just the per-kilogram price. The typical UK cafe uses 15-30kg of coffee per week, spending £200-£500 weekly or £10,000-£26,000 annually on beans alone. At coffee cost percentages of 20-28%, this is the second-largest cost line after labour. Yet many cafe owners choose their roaster based on a single cupping session and never revisit the decision, even as their needs evolve, prices increase, or quality drifts. A strategic roaster relationship includes regular quality reviews, transparent pricing conversations, supply security planning, and mutual commitment to the cafe's success. The best roaster relationships feel like partnerships, not transactions.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: If the cafe already has a roaster, document the current relationship: who is the roaster, what coffees are supplied (house espresso blend, single origins, filter, decaf), current price per kilogram, delivery schedule, minimum order quantity, payment terms, and any additional services provided (training, equipment, marketing). Calculate the current coffee cost percentage: (total coffee bean spend / total coffee revenue) x 100. UK cafe benchmark is 20-28% — if the cafe is outside this range, investigate why. If the cafe does not have a roaster or is considering switching, create a Roaster Evaluation Criteria list covering: roast quality and consistency, price per kilogram, delivery reliability, minimum orders, training provision, equipment support, sustainability credentials, and cultural fit. Request samples from 3-5 roasters and conduct a blind tasting with the barista team. Week 2: For existing roasters, schedule an annual review meeting (even if the relationship is long-standing) to discuss: current pricing, upcoming coffee releases, quality feedback, training needs, equipment support, and any issues from either side. For new roaster selection, narrow the shortlist to 2 roasters and run a 2-week trial with each, tracking customer feedback, barista satisfaction, and waste rates (poorly roasted coffee generates more waste).",
+    "L2": "SYSTEM BUILD (2-8 weeks). Establish a formal roaster partnership framework. Create a Coffee Supply Agreement covering: pricing (fixed or variable, review frequency), delivery schedule and lead times, minimum order quantities, quality standards (roast date freshness, defect tolerance), training commitment (how many barista training sessions per year), equipment support terms, and termination notice period. Implement a monthly coffee quality check: cup every delivery, record scores, and share feedback with the roaster. Track coffee cost percentage weekly alongside sales data to identify drift. Build a relationship calendar: quarterly catch-ups with the roaster's account manager, an annual visit to the roastery (many UK roasters encourage this), and bi-annual menu development sessions where the roaster recommends new coffees aligned with seasonal trends. Negotiate a pricing structure that rewards volume: if the cafe commits to a minimum monthly order, the per-kilogram rate should reflect this. Discuss equipment loan or lease options — many UK specialty roasters offer grinder loans or espresso machine placement deals in exchange for exclusivity.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The roaster relationship should be a genuine strategic partnership that drives the cafe's coffee programme forward. Collaborate on exclusive blends or single-origin selections tailored to the cafe's customer base. Co-host customer events: cuppings, meet-the-roaster evenings, origin story talks. Explore joint marketing: the roaster promotes the cafe on their social media and website, and the cafe prominently credits the roaster in-store and online. Benchmark the roaster's pricing against market rates annually — transparency strengthens the relationship rather than undermining it. Plan for succession: what happens if the roaster has supply issues, discontinues a key coffee, or goes out of business? This feeds into B105 (Backup Supplier Contingency). Review the entire roaster relationship annually against the original evaluation criteria, ensuring it still delivers the quality, value, and partnership the cafe needs."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Document current roaster relationship: coffees, pricing, delivery, services",
+        "Calculate current coffee cost percentage and benchmark against 20-28% target",
+        "Create a Roaster Evaluation Criteria list if selecting or reviewing roasters",
+        "Request samples from 3-5 potential roasters and conduct blind tastings",
+        "Schedule an annual review meeting with the current roaster",
+        "Record roast dates on every delivery to monitor freshness",
+        "Identify any gaps in the current relationship (training, equipment, marketing support)"
+      ],
+      "responsible": "Cafe Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a formal Coffee Supply Agreement covering all key terms",
+        "Implement monthly coffee quality checks with scored cupping and roaster feedback",
+        "Track coffee cost percentage weekly alongside sales data",
+        "Build a relationship calendar: quarterly catch-ups, annual roastery visit, menu development sessions",
+        "Negotiate volume-based pricing and explore equipment loan options",
+        "Establish a coffee menu development process with roaster input",
+        "Document all roaster communications and agreements in a supplier file"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Collaborate on exclusive blends or single-origin selections for the cafe",
+        "Co-host customer events: cuppings, roaster visits, origin story evenings",
+        "Explore joint marketing opportunities with the roaster",
+        "Benchmark roaster pricing annually against market rates",
+        "Review the full roaster relationship annually against evaluation criteria"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Roaster Evaluation Criteria checklist",
+    "Coffee Supply Agreement template",
+    "Monthly Coffee Quality Check log",
+    "Coffee Cost Percentage tracker",
+    "Annual Roaster Relationship Review report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T104-01",
+        "tool_name": "Roaster Evaluation Scorecard",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Scoring template for evaluating roaster partners across quality, consistency, price, delivery reliability, training support, equipment, sustainability, and cultural fit. Used during selection and annual review."
+      },
+      {
+        "tool_id": "T104-02",
+        "tool_name": "Coffee Supply Agreement Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Formal agreement template covering pricing, delivery, quality standards, training commitment, equipment terms, exclusivity (if any), and termination provisions."
+      },
+      {
+        "tool_id": "T104-03",
+        "tool_name": "Monthly Coffee Quality Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Head Barista",
+        "description": "Monthly quality tracking log where each coffee delivery is cupped and scored, with notes on consistency, freshness (roast date), and any deviations from expected flavour profile."
+      },
+      {
+        "tool_id": "T104-04",
+        "tool_name": "Roaster Relationship Calendar",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Annual calendar of roaster touchpoints: quarterly account meetings, annual roastery visit, bi-annual menu development sessions, training sessions, and collaborative events."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Roaster is chosen on price alone without assessing quality, consistency, or support — leading to poor coffee and no partnership value",
+    "The roaster relationship is never reviewed, and pricing creeps upward or quality drifts downward without anyone noticing",
+    "Over-reliance on a single roaster without backup planning creates critical supply risk (see B105)",
+    "Roaster training and support opportunities are not utilised, leaving free value on the table"
+  ],
+  "kpis": [
+    "Coffee cost percentage maintained within 20-28% consistently",
+    "Monthly cupping scores stable or improving (no downward quality drift)",
+    "All coffee deliveries received within 7 days of roast date",
+    "At least 2 barista training sessions provided by the roaster per year"
+  ],
+  "dependencies": ["B105"],
+  "constraints": [
+    "Exclusivity agreements with roasters must be carefully reviewed — they limit backup options",
+    "Coffee cost percentage targets must account for the cafe's positioning (specialty cafes may accept higher costs for premium quality)",
+    "Roaster relationships require personal investment — this is an owner-level responsibility, not delegable to junior staff"
+  ],
+  "time_load": {
+    "L1": "4 hours (audit, tasting, evaluation, initial meeting)",
+    "L2": "6 hours (agreement drafting, quality system setup, calendar planning)",
+    "L3": "2 hours/quarter (reviews, events, pricing benchmarking)"
+  },
+  "review_protocol": "Weekly coffee cost percentage check by manager. Monthly quality cupping and roaster feedback. Quarterly account review meeting with roaster. Annual comprehensive relationship review and market benchmarking.",
+  "meta": {
+    "summary_for_humans": "This block manages the cafe's most important supplier relationship — the coffee roaster. It covers selection, contract terms, quality monitoring, training access, and the strategic partnership that determines the quality of every coffee served. The roaster relationship is an owner-level responsibility with significant financial and quality implications.",
+    "implementation_risks": [
+      "Switching roasters disrupts barista routines and customer expectations — plan transitions carefully with a 4-week overlap",
+      "Exclusivity deals may offer better pricing but create dangerous supply dependency",
+      "Small cafes may lack the volume to negotiate aggressively — focus on the total value of the relationship, not just price"
+    ],
+    "notes_for_engine": "Activate as a priority for any new cafe onboarding. Flag as urgent if signals indicate coffee quality complaints, rising coffee cost percentage, or supply disruptions from the current roaster.",
+    "tags": ["supply_chain", "coffee", "roaster", "partnership", "quality", "sourcing", "cost_management", "training"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

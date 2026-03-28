@@ -1,0 +1,165 @@
+{
+  "block_id": "B018",
+  "name": "EHO Inspection Readiness",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Prepares the cafe for unannounced Environmental Health Officer inspections by ensuring all documentation, processes, and physical standards are maintained at inspection-ready levels every day. This block provides specific guidance on what EHOs assess, how to interact with inspectors, and what to do after an inspection.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Ensure the cafe is inspection-ready every day, not just when an inspection is anticipated",
+      "Train the manager and key staff on what to expect during an EHO inspection and how to interact professionally",
+      "Create a pre-inspection checklist that can be used for rapid spot-checks",
+      "Establish post-inspection procedures for responding to findings, improvement notices, or enforcement action",
+      "Understand the Food Hygiene Rating scheme scoring to maximise the cafe's rating"
+    ],
+    "secondary_objectives": [
+      "Reduce inspection anxiety among staff and management",
+      "Build a positive working relationship with the local Environmental Health team",
+      "Use inspection outcomes as improvement opportunities rather than threats"
+    ]
+  },
+  "why_this_matters": "EHO inspections are unannounced — the inspector arrives without prior arrangement and expects full access to the premises, documentation, and staff. Under the Food Safety Act 1990, an authorised officer has the power to enter food premises at any reasonable time, inspect food, take samples, examine records, and take photographs. Obstruction of an inspector is a criminal offence. The inspection determines the Food Hygiene Rating, which is published on the FSA website and displayed at the premises. In Wales, display is legally mandatory; in England, most cafes display voluntarily as customers increasingly expect it. A rating of 4 or below signals to customers that something is not right. A rating of 0, 1, or 2 can trigger an immediate revisit and may result in formal enforcement action: an improvement notice (requiring specific actions within a set timeframe), a hygiene emergency prohibition notice (immediate closure), or prosecution. For independent cafes, a poor rating can be devastating — local media often report low ratings, social media amplifies the damage, and customers switch to competitors. The irony is that most EHO inspectors are not looking to catch businesses out. They want to find well-managed premises with good food safety practices. The inspection is an opportunity to demonstrate professionalism and receive expert feedback. Cafes that treat inspectors as allies rather than adversaries typically fare better and build constructive ongoing relationships with their local authority.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create an EHO Inspection Quick-Ready Checklist — a one-page checklist the manager can run through in 10 minutes to confirm the cafe is inspection-ready right now. The checklist should cover: Is the SFBB diary up to date with recent 4-weekly reviews? Are temperature logs for the past week complete? Are cleaning records for the past week signed off? Are all fridges at correct temperature right now? Is the kitchen clean and tidy with no obvious hazards? Are handwashing facilities stocked and accessible? Are all food items in date and properly stored? Is the allergen matrix accessible? Are staff wearing clean uniforms and hair coverings? Can you locate every key document within 2 minutes? Practise this checklist immediately — run it now and fix anything that fails. This is not a future exercise; it is a present-tense readiness check. Week 2: Brief the manager and at least one other senior team member on how an EHO inspection works. The inspector will typically: show their identification and explain the purpose of the visit, ask to see the food safety management system (SFBB diary), walk through the premises examining food storage, preparation, and service areas, check temperatures using their own probe thermometer, ask staff questions about food safety practices, examine documentation, and provide verbal feedback during and at the end of the visit. The key rules for staff: be polite and cooperative, answer questions honestly (never guess), and if unsure, say 'Let me find out for you' and ask the manager.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop an EHO Inspection SOP covering: who handles the inspection (the manager or designated deputy), where key documents are located, staff behaviour expectations during inspection, and post-inspection procedures. Create a document locator sheet — a single page listing every key document with its exact location, so anyone can find any document within seconds during an inspection. Establish a post-inspection response procedure: after every inspection, the manager reviews the inspector's findings, creates an action plan for any issues raised, implements the actions within the timeframe specified, and documents the completion. If an improvement notice is issued, the response must be within the legal timeframe (specified on the notice). Request a re-rating inspection once all improvements are complete if the initial rating was below 5. Build a relationship with the local Environmental Health team: note the inspector's name, follow up on any guidance they provide, and treat them as a resource for improving food safety. By Week 8, the cafe should have an inspection SOP, a document locator, and a tested quick-ready checklist.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The ultimate goal is that an EHO inspection is a non-event — the cafe is always ready, and the inspection confirms what the team already knows. Conduct monthly quick-ready checklist runs as a standard management practice. After each official inspection, hold a team debrief: what went well, what was raised, and what did we learn? Track Food Hygiene Rating history and celebrate maintaining a 5 rating. If the rating drops, treat the improvement plan as a priority project with weekly progress reviews until the issues are resolved. Consider inviting the EHO team to provide training or guidance to the team — some local authorities offer free food safety workshops. Monitor the FSA website for the cafe's current published rating and ensure it is accurate."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create an EHO Inspection Quick-Ready Checklist and run it immediately",
+        "Fix any failures identified by the readiness check within 24 hours",
+        "Brief the manager and senior team on how an EHO inspection works",
+        "Instruct all staff on how to interact with inspectors: be polite, honest, and cooperative",
+        "Verify that every key document can be located within 2 minutes",
+        "Ensure the SFBB diary is up to date with recent 4-weekly reviews",
+        "Confirm all daily records (temperatures, cleaning) are current and filed"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop an EHO Inspection SOP covering roles, document locations, and post-inspection procedures",
+        "Create a document locator sheet listing every key document with its exact location",
+        "Establish a post-inspection response procedure with action plans and timelines",
+        "Build a relationship with the local Environmental Health team",
+        "Train the manager on the FHRS scoring criteria to understand how ratings are determined",
+        "Prepare the team for common EHO questions about food safety practices",
+        "File inspection reports and response actions in the food safety folder"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct monthly quick-ready checklist runs as standard practice",
+        "Hold team debriefs after every official EHO inspection",
+        "Track Food Hygiene Rating history and celebrate sustained 5 rating",
+        "Consider inviting EHO team to provide staff training or guidance",
+        "Monitor the FSA website for the cafe's published rating accuracy"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "EHO Inspection Quick-Ready Checklist",
+    "EHO Inspection SOP",
+    "Document Locator Sheet",
+    "Post-Inspection Action Plan Template",
+    "Staff EHO Inspection Briefing Guide"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T018-01",
+        "tool_name": "EHO Inspection Quick-Ready Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "One-page rapid readiness checklist the manager can run through in 10 minutes to confirm the cafe is inspection-ready: documentation, temperatures, cleaning, storage, hygiene, and staff standards."
+      },
+      {
+        "tool_id": "T018-02",
+        "tool_name": "Document Locator Sheet",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Single-page reference listing every key food safety document with its exact location in the cafe, enabling any team member to locate any document within seconds during an inspection."
+      },
+      {
+        "tool_id": "T018-03",
+        "tool_name": "EHO Inspection SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering who handles the inspection, staff behaviour expectations, document retrieval, and post-inspection response procedures."
+      },
+      {
+        "tool_id": "T018-04",
+        "tool_name": "Post-Inspection Action Plan Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Template for documenting EHO findings, required actions, responsible persons, deadlines, and completion evidence. Used after every inspection to ensure all issues are resolved."
+      },
+      {
+        "tool_id": "T018-05",
+        "tool_name": "FHRS Rating History Tracker",
+        "level": "L3",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Tracker recording every EHO inspection date, score breakdown (food handling, structure, management), overall rating, key findings, and actions taken. Used to monitor rating trends."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The cafe treats EHO inspections as one-off events rather than maintaining daily readiness",
+    "Staff panic during an inspection and give evasive or inaccurate answers to inspector questions",
+    "Post-inspection actions are not completed within the required timeframe, risking escalation",
+    "The manager is absent when an inspector arrives and no one else knows where documents are or how to handle the visit"
+  ],
+  "kpis": [
+    "Quick-ready checklist achieves 100% pass rate when run at any random time",
+    "Food Hygiene Rating maintained at 5 at every inspection",
+    "All post-inspection actions completed within the timeframe specified by the inspector",
+    "Any key food safety document locatable within 2 minutes by any senior team member"
+  ],
+  "dependencies": ["B016", "B017"],
+  "constraints": [
+    "EHO inspections are unannounced — the cafe must be ready at all times, not just when warned",
+    "Obstruction of an EHO inspector is a criminal offence — full cooperation is required",
+    "Post-inspection improvement notices have legally binding deadlines that must be met"
+  ],
+  "time_load": {
+    "L1": "3 hours (checklist creation, first readiness check, staff briefing)",
+    "L2": "5 hours (SOP drafting, document locator creation, team training)",
+    "L3": "1 hour/month (monthly readiness checks, post-inspection reviews)"
+  },
+  "review_protocol": "Monthly quick-ready checklist run. Post-inspection debrief and action plan within 24 hours of any EHO visit. Quarterly review of inspection readiness as part of self-assessment (B017). Annual review of EHO Inspection SOP and document locator.",
+  "meta": {
+    "summary_for_humans": "This block ensures the cafe is ready for an unannounced EHO inspection at any moment — documents accessible, standards maintained, staff briefed on how to interact with inspectors, and clear procedures for responding to inspection findings.",
+    "implementation_risks": [
+      "Readiness can slip when no inspection has occurred for a long time — monthly checks prevent complacency",
+      "Staff changes mean inspection briefings must be part of onboarding",
+      "Poor inspection outcomes are demoralising — frame them as improvement opportunities"
+    ],
+    "notes_for_engine": "Activate for all cafes. Flag as urgent if an EHO inspection is imminent or has just occurred with findings, if the current FHRS rating is below 5, or if the cafe is newly opening and has not yet been inspected.",
+    "tags": ["food_safety", "EHO", "inspection", "FHRS", "compliance", "readiness", "management", "enforcement"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

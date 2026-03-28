@@ -1,0 +1,22 @@
+{
+  "id": "tool_post_shift_learning_review",
+  "name": "Post-shift learning review",
+  "description": "Short review template for repeated issues, what actually happened, what changes next, and who owns the follow-up before the next service cycle begins.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: learning loops need a short, repeatable review surface tied to action",
+  "updated_at": "2026-03-14T00:41:10.361702Z",
+  "category": "learning",
+  "format": "review_template",
+  "usage_moment": "Use after service when repeated or high-cost breakdowns deserve same-day learning closure.",
+  "expected_output": "A concise review with issue, cause hypothesis, next change, and named owner.",
+  "adaptation_variables": [
+    "review_scope",
+    "issue_type",
+    "owner_roles",
+    "next_shift_timing"
+  ],
+  "block_ids": [
+    "blk_post_shift_learning_review"
+  ]
+}

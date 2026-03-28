@@ -1,0 +1,165 @@
+{
+  "block_id": "B030",
+  "name": "Loyalty Programme Design",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Guides the design and implementation of a customer loyalty or rewards programme that incentivises repeat visits, increases average spend, and strengthens the emotional connection between customers and the cafe. This block covers programme design, economics, launch, and ongoing management.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Design a loyalty programme that fits the cafe's brand, budget, and customer demographic",
+      "Calculate the economics: what does the programme cost to run and what additional revenue does it generate?",
+      "Choose the right format: stamp card, digital app, points system, subscription, or tiered rewards",
+      "Launch the programme with staff training and customer awareness",
+      "Monitor and refine the programme based on participation rates and impact on visit frequency"
+    ],
+    "secondary_objectives": [
+      "Generate customer data that improves understanding of buying behaviour",
+      "Create marketing opportunities through programme communications",
+      "Build emotional loyalty — customers who feel part of something, not just collecting stamps"
+    ]
+  },
+  "why_this_matters": "A well-designed loyalty programme can increase visit frequency by 20-35% among participants, according to research from the Loyalty Academy. For a UK independent cafe, even a simple stamp card programme can shift a customer from visiting twice a week to three times, representing a 50% increase in that customer's revenue. However, poorly designed programmes are worse than no programme at all — they either cost more to run than they generate (giving away too much), fail to change behaviour (rewards too distant or uninspiring), or create negative experiences (complicated rules, expired stamps, forgotten cards). The UK cafe market is increasingly competitive, with chains like Costa, Starbucks, and Greggs all operating sophisticated digital loyalty programmes. Independent cafes cannot match these on technology spend, but they can outperform on personalisation, authenticity, and the emotional connection that comes from being part of a local community. A loyalty programme for an independent cafe should feel like a genuine 'thank you,' not a corporate data-harvesting exercise. The programme design must balance three tensions: cost (the reward must be affordable for the business), motivational impact (the reward must be desirable enough to change behaviour), and simplicity (the programme must be easy to understand, join, and use). A programme that gets these three elements right becomes a powerful driver of retention and revenue. A programme that gets any of them wrong becomes an expensive liability.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Decide on the programme format. For most independent cafes, a simple stamp card is the most effective starting point: buy 9 coffees, get the 10th free. The stamp card is low-cost (printed cards cost pennies each), easy to understand, requires no technology, and has high participation because there is no signup barrier. Design the card with the cafe's branding — it is a marketing tool as well as a loyalty tool. Key decisions: how many stamps to earn a reward (8-10 is standard for drinks), what the reward is (free drink of any size/type, or a free item up to a certain value), and whether food and other items can earn stamps. Calculate the economics: if the average drink costs £3.50 and the free drink costs the cafe approximately £1.00 in ingredients, the effective discount per stamped drink is about £0.11 (£1.00 divided by 9 purchases). This is a very affordable marketing cost per transaction. Week 2: Print the loyalty cards and brief the team. Every till operator should offer the card to every customer: 'Would you like a loyalty card? Buy 9 coffees and your 10th is on us.' The card should be offered proactively, not just when customers ask. Train staff on how to stamp cards (use a unique stamp or hole punch that cannot be easily replicated). Begin tracking participation: how many cards are being issued, how many stamps are being given, and how many free drinks are being redeemed. Set up a simple redemption tracking system — even a tally sheet will do initially.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Analyse the programme's early performance: what percentage of customers take a card? What percentage of cards are being actively used (stamps accumulating)? What is the redemption rate (free drinks being claimed)? If participation is low, investigate: are staff offering the card consistently? Is the reward motivating enough? Is the card being forgotten or lost? Consider moving to a digital loyalty system. Apps like Stamp Me, LoyalZoo, or Square Loyalty eliminate the lost-card problem, provide automatic tracking, and generate customer data. They typically cost £20-50 per month. Evaluate whether the data value justifies the cost. Design programme enhancements: bonus stamp days (double stamps on Tuesdays to boost a quiet day), birthday rewards (a free drink or cake slice on the customer's birthday if they share their birthday month), and new product trials (early access to new menu items for loyalty members). Create a Loyalty Programme SOP covering: how to offer the card, stamping procedure, redemption process, handling lost cards, and programme rules. Monitor programme economics monthly: how many free items have been redeemed, what is the cost, and is there evidence that the programme is driving additional visits? By Week 8, the programme should be running smoothly with measurable participation data.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Evolve the programme based on data and customer feedback. Consider introducing tiers for the most loyal customers: after 100 stamps (about 10 completed cards), a customer could earn 'Gold' status with additional perks like a free birthday drink, early access to seasonal specials, or a small discount on food. Track the programme's impact on visit frequency using return visit data (B029): are loyalty members visiting more often than non-members? Calculate the programme's return on investment: additional revenue generated minus the cost of rewards given away. Review the programme annually: is it still motivating? Has participation plateaued? Would a refresh (new card design, improved reward, special promotion) reinvigorate it? Listen to customer feedback about the programme and adapt accordingly. Share programme success metrics with the team: 'We have 340 active loyalty members and they visit 50% more often than non-members — our loyalty programme is working.'"
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Choose a loyalty programme format (stamp card recommended for initial launch)",
+        "Calculate programme economics: cost of reward versus marketing value per transaction",
+        "Design and print branded loyalty cards",
+        "Brief all till operators to offer the card proactively to every customer",
+        "Train staff on stamping procedure and redemption process",
+        "Begin tracking card issuance, stamp activity, and redemptions",
+        "Set up a simple redemption tracking system (tally sheet or POS integration)"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Analyse participation rates, active card usage, and redemption frequency",
+        "Evaluate digital loyalty systems for enhanced tracking and customer convenience",
+        "Design programme enhancements: bonus stamp days, birthday rewards, new product trials",
+        "Create a Loyalty Programme SOP covering all procedures and rules",
+        "Monitor programme economics monthly: redemption costs versus revenue impact",
+        "Address any participation barriers identified through analysis",
+        "Integrate loyalty data with return visit tracking (B029)"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce tier levels for the most loyal customers with enhanced rewards",
+        "Calculate programme ROI: additional revenue generated versus reward costs",
+        "Review and refresh the programme annually based on data and feedback",
+        "Track loyalty member visit frequency versus non-member frequency",
+        "Share programme success metrics with the team"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Loyalty Programme Design Document (format, rules, economics)",
+    "Branded Loyalty Card (printed or digital setup)",
+    "Loyalty Programme SOP",
+    "Programme Participation Tracking Report",
+    "Monthly Programme Economics Report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T030-01",
+        "tool_name": "Loyalty Programme Economics Calculator",
+        "level": "L1",
+        "format": "calculator",
+        "owner_role": "Owner",
+        "description": "Calculator for determining programme cost per transaction, break-even visit frequency, and ROI based on stamp count, reward value, and estimated participation rate."
+      },
+      {
+        "tool_id": "T030-02",
+        "tool_name": "Loyalty Programme SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering: how to offer and issue cards, stamping/scanning procedure, redemption rules, handling lost cards, programme rules, and staff FAQs."
+      },
+      {
+        "tool_id": "T030-03",
+        "tool_name": "Programme Participation Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Dashboard tracking active members, new sign-ups, stamp accumulation rate, redemptions, lapsed cards, and participation rate as a percentage of total customers."
+      },
+      {
+        "tool_id": "T030-04",
+        "tool_name": "Loyalty Programme Evaluation Template",
+        "level": "L3",
+        "format": "assessment",
+        "owner_role": "Owner",
+        "description": "Annual evaluation template assessing programme effectiveness: participation trends, impact on visit frequency, cost versus revenue, customer feedback, and recommendations for enhancement."
+      },
+      {
+        "tool_id": "T030-05",
+        "tool_name": "Digital Loyalty System Comparison Matrix",
+        "level": "L2",
+        "format": "matrix",
+        "owner_role": "Owner",
+        "description": "Comparison matrix for evaluating digital loyalty platforms: features, monthly cost, POS integration, customer experience, data capabilities, and suitability for independent cafes."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Staff do not offer the loyalty card proactively, so participation remains low",
+    "The reward is not motivating enough (too many stamps required or reward too small) to change behaviour",
+    "Programme economics are not monitored, and the cost of rewards exceeds the additional revenue generated",
+    "Physical cards are frequently lost, causing customer frustration and diluting programme value"
+  ],
+  "kpis": [
+    "At least 40% of regular customers actively participating in the loyalty programme",
+    "Loyalty members visiting at least 20% more frequently than non-members",
+    "Programme cost per transaction below 5% of average transaction value",
+    "Loyalty card offered to every customer at every transaction"
+  ],
+  "dependencies": ["B029"],
+  "constraints": [
+    "Programme cost must be sustainable — the reward should be affordable for the business",
+    "Programme rules must be simple enough to explain in one sentence",
+    "Staff must offer the programme proactively — passive availability is not sufficient"
+  ],
+  "time_load": {
+    "L1": "4 hours (design, economics calculation, card printing, staff briefing)",
+    "L2": "6 hours (SOP development, participation analysis, digital system evaluation)",
+    "L3": "2 hours/quarter (performance review, programme enhancement, ROI calculation)"
+  },
+  "review_protocol": "Weekly participation check: cards issued, stamps given, redemptions made. Monthly programme economics review. Quarterly performance assessment against visit frequency targets. Annual programme review and refresh.",
+  "meta": {
+    "summary_for_humans": "This block guides the design and launch of a customer loyalty programme — from choosing the right format (stamp cards, digital app) and calculating the economics, through to launch, staff training, and ongoing performance monitoring.",
+    "implementation_risks": [
+      "Poorly designed programmes can cost more than they generate — calculate the economics before launch",
+      "Digital systems add ongoing costs — stamp cards are virtually free but lack data",
+      "Programme fatigue is real — plan for annual refreshes to maintain interest"
+    ],
+    "notes_for_engine": "Activate for all cafes looking to improve retention. Flag as important if signals indicate declining visit frequency, customer churn, or competitor loyalty programmes gaining traction.",
+    "tags": ["customer_experience", "loyalty", "retention", "rewards", "programme", "stamps", "revenue", "marketing"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

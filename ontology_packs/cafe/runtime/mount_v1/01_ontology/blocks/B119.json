@@ -1,0 +1,157 @@
+{
+  "block_id": "B119",
+  "name": "Revenue Per Hour Tracking",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Implements revenue-per-hour tracking across every trading hour, revealing which time slots generate strong returns and which are underperforming. This metric is the foundation for labour scheduling, promotional targeting, and operational decisions about trading hours.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Track revenue by hour for every trading day, building a detailed picture of the cafe's earning pattern",
+      "Identify peak earning hours, shoulder periods, and underperforming time slots",
+      "Calculate revenue per labour hour (revenue divided by staff hours worked) to measure labour efficiency",
+      "Use hourly revenue data to inform staffing schedules — more staff during profitable hours, fewer during quiet ones",
+      "Identify promotional and operational opportunities to boost revenue during underperforming time slots"
+    ],
+    "secondary_objectives": [
+      "Evaluate whether the cafe's current opening hours are financially justified",
+      "Support decisions about extending or reducing trading hours based on marginal revenue data",
+      "Create a historical revenue pattern database that improves planning accuracy over time"
+    ]
+  },
+  "why_this_matters": "Not all trading hours are created equal. In a typical UK cafe, revenue distribution across the day follows a predictable pattern: a strong morning peak (8:00-10:00am, driven by commuter coffee and breakfast), a mid-morning plateau (10:00-12:00pm, moderate but steady), a lunch spike (12:00-2:00pm, food-driven), an afternoon fade (2:00-5:00pm, gradual decline), and sometimes an evening uplift (5:00-7:00pm if the cafe serves evening food or alcohol). The revenue per hour during the morning peak might be £250-£400, while the afternoon fade might generate £80-£120. Yet many cafes staff both periods identically, paying the same labour cost for dramatically different revenue returns. Revenue per hour tracking reveals these patterns with precision. A cafe generating £400 per hour during the morning rush with 4 staff members (£100 revenue per labour hour) is performing well. The same cafe generating £100 per hour during the 3-4pm slot with 3 staff members (£33 revenue per labour hour) is likely losing money on that hour once rent, utilities, and other fixed costs are allocated. This data empowers the owner to make evidence-based decisions: should the cafe open an hour later and close an hour earlier? Should the afternoon team be reduced to 2 people? Should the cafe run a 3-5pm promotion (happy hour, afternoon tea offer) to boost the weakest slot? Without hourly revenue data, these decisions are guesses. With it, they are calculations. For a cafe spending 30-35% of revenue on labour — the standard UK benchmark — optimising labour deployment against hourly revenue can save £500-£1,500 per month.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Most modern EPOS/till systems can generate hourly revenue reports. Check whether the cafe's till system has this capability and, if so, run a report for the most recent full week. If the till system cannot produce hourly data, implement a manual approach: record the till reading at the start and end of each hour during a representative week (this is tedious but only needs to be done once manually to establish the pattern). Create a simple table showing: each trading hour, the revenue generated, and the number of staff working during that hour. Calculate Revenue Per Hour (total revenue in that hour) and Revenue Per Labour Hour (revenue divided by number of staff working). Week 2: Plot the data on a simple chart — revenue per hour on the Y-axis, time of day on the X-axis. The pattern will be immediately visible: peaks, plateaux, and troughs. Identify the three highest-revenue hours and the three lowest-revenue hours. For the three lowest, calculate whether the revenue covers the direct labour cost for those hours. If an hour generates £80 in revenue and the staff cost for that hour is £35, the gross margin before overheads is £45 — potentially viable. If the revenue is £40 against £35 labour cost, that hour is barely breaking even.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Collect hourly revenue data for a minimum of 4 weeks to establish reliable day-of-week patterns. Create a Revenue Heat Map — a grid showing days of the week across the top and hours down the side, with each cell colour-coded by revenue intensity (green for strong, amber for moderate, red for weak). This heat map becomes the master reference for labour scheduling and promotional targeting. Develop a Labour Schedule Template that aligns staff deployment to the revenue pattern: maximum staffing during peak hours, graduated reduction through shoulder periods, and minimum viable staffing during troughs. Calculate the cafe's Labour Cost Percentage by hour: (Staff Cost for that hour / Revenue for that hour) x 100. Target: below 30% during peak hours, below 40% during shoulder periods. Any hour consistently above 50% labour cost needs intervention — either boost revenue or reduce staff. Design targeted promotions for low-revenue time slots: a mid-afternoon offer (3-5pm 20% off pastries), a student deal during quiet periods, or a loyalty stamp double-point hour. Track the impact of these promotions on hourly revenue to assess effectiveness.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Revenue per hour should be a KPI that the management team monitors weekly. Build 12 months of hourly data to identify seasonal patterns: summer evenings may justify extended hours, while dark winter afternoons may justify earlier closing. Implement dynamic scheduling: adjust next week's staff rota based on last week's actual hourly revenue data, rather than using a fixed template. Calculate the Revenue Per Seat Per Hour (linking to B098 and B099) for a complete picture of space and time utilisation. Explore hourly pricing or promotional strategies used by other sectors: early-bird pricing for the first hour of trading, evening menu pricing if the cafe extends hours, or time-limited offers driven by real-time revenue data. Use revenue per hour data to evaluate strategic decisions: should the cafe open on Sundays? Is the evening service covering its costs? Would a 7am opening capture sufficient commuter trade to justify the earlier staff start? Review the Revenue Heat Map quarterly and adjust operational decisions accordingly."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Check whether the EPOS system can generate hourly revenue reports",
+        "Generate or manually collect hourly revenue data for one full representative week",
+        "Create a simple table: hour, revenue, staff count, revenue per hour, revenue per labour hour",
+        "Plot the revenue-per-hour data on a chart to visualise the daily pattern",
+        "Identify the 3 highest and 3 lowest revenue hours",
+        "Calculate whether the lowest revenue hours cover their direct labour cost",
+        "Share the hourly revenue pattern with the management team"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Collect hourly revenue data for 4+ weeks to establish day-of-week patterns",
+        "Create a Revenue Heat Map colour-coded by revenue intensity",
+        "Develop a Labour Schedule Template aligned to the revenue pattern",
+        "Calculate Labour Cost Percentage by hour and flag any hour above 50%",
+        "Design targeted promotions for low-revenue time slots",
+        "Track promotional impact on hourly revenue",
+        "Review and optimise the labour schedule weekly based on actual data"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Build 12 months of hourly data for seasonal pattern identification",
+        "Implement dynamic scheduling adjusting next week's rota based on last week's data",
+        "Calculate Revenue Per Seat Per Hour linking to capacity management",
+        "Evaluate strategic trading hours decisions using hourly data",
+        "Review the Revenue Heat Map quarterly and adjust operations accordingly"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Hourly Revenue Data tracker (weekly)",
+    "Revenue Heat Map (days x hours)",
+    "Revenue Per Labour Hour analysis",
+    "Labour Schedule Template aligned to revenue pattern",
+    "Promotional Effectiveness report for low-revenue time slots"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T119-01",
+        "tool_name": "Hourly Revenue Tracker",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Weekly spreadsheet recording revenue generated in each trading hour alongside staff count, calculating revenue per hour and revenue per labour hour for every time slot."
+      },
+      {
+        "tool_id": "T119-02",
+        "tool_name": "Revenue Heat Map",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Visual grid showing days of the week and trading hours, colour-coded by revenue intensity. Identifies peak, shoulder, and trough periods at a glance for scheduling and promotional decisions."
+      },
+      {
+        "tool_id": "T119-03",
+        "tool_name": "Labour Cost Percentage by Hour Calculator",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Calculator showing staff cost per hour against revenue per hour for each time slot, highlighting hours where labour cost percentage exceeds viable thresholds."
+      },
+      {
+        "tool_id": "T119-04",
+        "tool_name": "Low-Revenue Slot Promotion Planner",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Planning template for designing promotions targeting specific low-revenue time slots: offer design, cost, expected uplift, measurement period, and ROI calculation."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Hourly data is collected but never used to adjust staffing or promotional activity, wasting the insight",
+    "Labour scheduling remains fixed regardless of revenue patterns, over-staffing quiet periods and under-staffing peaks",
+    "Promotions for quiet periods are launched without measurement, so their effectiveness is never known",
+    "Decisions about trading hours are based on tradition ('we've always opened at 7am') rather than revenue data"
+  ],
+  "kpis": [
+    "Revenue per labour hour above £80 during peak periods",
+    "Labour cost percentage below 30% during peak hours and below 40% overall",
+    "No trading hour consistently below breakeven without a documented strategic justification",
+    "Low-revenue time slot promotions generating at least 20% revenue uplift when active"
+  ],
+  "dependencies": ["B118"],
+  "constraints": [
+    "Hourly revenue tracking requires an EPOS system capable of time-stamped reporting — manual tracking is a temporary workaround",
+    "Reducing staff during quiet periods must not compromise food safety, security, or basic service standards",
+    "Changing trading hours affects staff contracts and customer expectations — plan changes with adequate notice"
+  ],
+  "time_load": {
+    "L1": "2 hours (data extraction, initial analysis, chart creation)",
+    "L2": "4 hours (4-week data collection, heat map build, labour scheduling, promotional design)",
+    "L3": "1 hour/month (trend review, dynamic scheduling adjustments, seasonal analysis)"
+  },
+  "review_protocol": "Weekly revenue per hour review by manager. Monthly labour cost percentage by hour review. Quarterly Revenue Heat Map review and seasonal adjustment. Annual trading hours evaluation.",
+  "meta": {
+    "summary_for_humans": "This block tracks revenue by hour across every trading day, revealing peak and trough periods that should drive staffing, promotional, and operational decisions. It answers the critical questions: which hours make money, which hours lose money, and what can we do about it?",
+    "implementation_risks": [
+      "If the till system cannot produce hourly data, manual collection is tedious and likely to be abandoned — invest in an EPOS that supports hourly reporting",
+      "Reducing staff during quiet hours risks being caught short if an unexpected rush occurs — maintain minimum service levels",
+      "Staff may resist schedule changes driven by revenue data if they perceive it as reducing their hours — communicate transparently"
+    ],
+    "notes_for_engine": "Activate after B118 (Menu Pricing Strategy) is established. Flag as urgent if signals indicate high labour cost percentage, unknown hourly revenue patterns, or debates about trading hours without data.",
+    "tags": ["financial", "revenue", "hourly_tracking", "labour_cost", "scheduling", "promotions", "peak_management", "efficiency"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

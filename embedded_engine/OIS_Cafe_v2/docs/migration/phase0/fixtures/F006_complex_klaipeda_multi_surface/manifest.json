@@ -1,0 +1,74 @@
+{
+  "fixture_id": "F006_complex_klaipeda_multi_surface",
+  "category": "richer operational complexity",
+  "label": "Klaipeda complex multi-surface case",
+  "description": "Operationally active venue with broader signal mix plus plan, progress, chat, and signal history surfaces.",
+  "kind": "assessment_snapshot",
+  "source": {
+    "venue_slug": "kavos_namai_klaipeda",
+    "assessment_file": "2026-03-21_001.json"
+  },
+  "source_paths": [
+    "project.json",
+    "operational_plan.json",
+    "signal_history.json",
+    "progress/entries.json",
+    "chat_history/_index.json",
+    "assessment.json",
+    "chat_history/t_3457d6daac1a.json",
+    "chat_history/t_3bea15d8e724.json"
+  ],
+  "assessment_type": "weekly_pulse",
+  "active_signal_count": 15,
+  "active_signal_ids": [
+    "S002",
+    "S010",
+    "S019",
+    "S030",
+    "S045",
+    "S051",
+    "S063",
+    "S070",
+    "S071",
+    "S073",
+    "S080",
+    "S083",
+    "S133",
+    "S160",
+    "S166"
+  ],
+  "summary": {
+    "signals": 15,
+    "failure_modes": 24,
+    "response_patterns": 21,
+    "raw_activation_items": 188,
+    "constrained_activation_items": 188,
+    "plan_load": "TRIAGE",
+    "report_type": "ai",
+    "top_signal_ids": [
+      "S002",
+      "S010",
+      "S019",
+      "S030",
+      "S045",
+      "S051",
+      "S063",
+      "S070",
+      "S071",
+      "S073"
+    ]
+  },
+  "output_files": [
+    "fixture_input.json",
+    "golden_normalized_signals.json",
+    "golden_failure_modes.json",
+    "golden_response_patterns.json",
+    "golden_activation_set_raw.json",
+    "golden_activation_context.json",
+    "golden_activation_set_constrained.json",
+    "golden_constraint_report.json",
+    "golden_action_plan.json",
+    "golden_report.md",
+    "golden_summary.json"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "sig_required_inputs_missing_at_start",
+  "name": "Required inputs are missing at start",
+  "description": "Service starts without key prep, product, information, or setup inputs being ready when the team needs them.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: readiness failure visible through restaurant opening and line preparation",
+  "updated_at": "2026-03-14T12:48:22.241151Z",
+  "domain": "kitchen_operations",
+  "module": "shift_readiness",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "missing mise en place",
+    "missing station items",
+    "missing setup information"
+  ],
+  "source_types": [
+    "opening check",
+    "line check",
+    "manager notes"
+  ],
+  "temporal_behavior": "start-of-shift",
+  "likely_co_signals": [
+    "sig_line_check_missing",
+    "sig_prep_inconsistency"
+  ],
+  "adapter_aliases": [
+    "missing start inputs",
+    "not ready at open"
+  ]
+}

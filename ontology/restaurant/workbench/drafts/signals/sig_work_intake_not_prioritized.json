@@ -1,0 +1,31 @@
+{
+  "id": "sig_work_intake_not_prioritized",
+  "name": "Work intake is not prioritized in flow",
+  "description": "Tickets, guest asks, and exception work enter the operation without a clear priority rule, so the team fights over what matters first.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: intake and demand priority failure expressed through restaurant live flow",
+  "updated_at": "2026-03-15T15:59:27.067999Z",
+  "domain": "kitchen_operations",
+  "module": "production_flow",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "tickets worked in the wrong order",
+    "urgent work mixed with routine work without triage",
+    "team members disagree on what should move first"
+  ],
+  "source_types": [
+    "service observation",
+    "manager notes",
+    "post-shift review"
+  ],
+  "temporal_behavior": "throughput-sensitive",
+  "likely_co_signals": [
+    "sig_ticket_bottleneck",
+    "sig_service_delay"
+  ],
+  "adapter_aliases": [
+    "priority fight on shift",
+    "work enters without order"
+  ]
+}

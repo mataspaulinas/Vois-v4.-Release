@@ -1,0 +1,22 @@
+{
+  "id": "tool_floor_walk_sheet",
+  "name": "Floor walk sheet",
+  "description": "Timed observation sheet for live coaching, escalation checks, guest-flow pressure, and the moments where a manager should intervene rather than watch passively.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: management presence should be guided by real risk signals, not vague attentiveness",
+  "updated_at": "2026-03-14T00:24:43.050946Z",
+  "category": "leadership",
+  "format": "observation_sheet",
+  "usage_moment": "Use during critical service windows while the manager is moving the floor deliberately.",
+  "expected_output": "A short record of observed pressure points, coaching actions, escalation events, and follow-up needs.",
+  "adaptation_variables": [
+    "peak_window",
+    "service_nodes",
+    "guest_flow_profile",
+    "manager_capacity"
+  ],
+  "block_ids": [
+    "blk_manager_floor_walk"
+  ]
+}

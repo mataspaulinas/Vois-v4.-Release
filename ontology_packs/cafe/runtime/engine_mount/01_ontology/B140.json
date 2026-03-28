@@ -1,0 +1,157 @@
+{
+  "block_id": "B140",
+  "name": "Brand Identity & Style Guide",
+  "version": "v1.0",
+  "domain": "D08_marketing_brand",
+  "module": "M08: Brand Visibility & Customer Acquisition",
+  "state": "enriched",
+  "purpose": "Documents and formalises the cafe's brand identity — name, logo, colour palette, typography, tone of voice, and visual style — into a cohesive style guide that ensures consistency across every customer touchpoint, from the shop front sign to the Instagram feed to the coffee cup sleeve.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define the cafe's brand identity elements: logo usage, colour palette, typography, and imagery style",
+      "Establish a tone of voice guide that defines how the cafe communicates in writing — menus, social media, signage, email",
+      "Create a simple, practical style guide document that any team member or external supplier can follow",
+      "Audit existing touchpoints for brand consistency and identify misalignments to correct",
+      "Ensure that the brand identity is distinctive, memorable, and reflective of the cafe's values and target customer"
+    ],
+    "secondary_objectives": [
+      "Protect the brand identity by providing clear guidelines that prevent well-intentioned but off-brand creative decisions",
+      "Reduce the cost and time of creating new marketing materials by providing templates and guidelines upfront",
+      "Enable the cafe to work with external designers, printers, and social media managers effectively by giving them a clear brief",
+      "Create a brand foundation that supports future growth: new locations, merchandise, or packaging"
+    ]
+  },
+  "why_this_matters": "Brand identity is the sum of every visual and verbal impression a customer receives from the cafe. When these impressions are consistent — the same colours, fonts, and tone on the menu, the Instagram page, the takeaway cup, and the shop sign — the cafe feels professional, intentional, and trustworthy. When they are inconsistent — the menu uses one font, the Instagram another, the shop sign a third, and the takeaway cups are generic white — the cafe feels disorganised, amateurish, and forgettable. Consistency builds recognition. A customer who follows the cafe on Instagram should recognise the same brand when they see the shop front. A customer who receives a loyalty card should see the same identity on the menu. This consistency does not happen by accident — it requires documentation and discipline. Most independent cafes never create a style guide because it feels like a corporate exercise irrelevant to a small business. But a style guide need not be a 40-page document. For an independent cafe, a 2-3 page reference sheet covering logo usage, primary and secondary colours (with hex codes), the one or two fonts used, and a paragraph on tone of voice is sufficient. This simple document prevents the gradual brand drift that occurs when different people make different creative decisions over months and years. It also saves money: when the cafe needs new menus printed, new signage made, or new social media templates created, the style guide ensures the result is on-brand first time, avoiding expensive rework.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Document the cafe's existing brand elements. Even if they were never formally defined, the cafe already has a brand: a name, probably a logo (even if informal), colours used on signage and interiors, fonts used on the menu, and a general feeling or personality. Write these down. Find the original logo files if they exist — vector formats (AI, EPS, SVG) are needed for print and signage. If only a low-resolution JPEG exists, note that a vector version needs to be created. Record the exact colours used: identify the hex codes using a colour picker tool or by matching to a Pantone reference. Note the fonts currently used on the menu, signage, and any printed materials. Week 2: Draft a one-page Brand Identity Summary covering: logo (how it should appear on light and dark backgrounds, minimum size, clear space around it), primary colours (2-3 colours with hex codes), secondary colours if any, primary font (for headings and signage), secondary font (for body text), and a sentence describing the brand personality (e.g., 'Warm, welcoming, and unpretentious' or 'Modern, clean, and quality-focused'). This summary becomes the reference for all future creative decisions.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Expand the Brand Identity Summary into a full Style Guide. Add: tone of voice guidelines (how the cafe writes — casual or formal, humorous or serious, chatty or concise, with examples for menus, social media captions, and signage), photography style (referencing the Visual Style Guide from B138), menu design template, social media post template, business card design, and any other frequently used formats. Conduct a Brand Consistency Audit (linking to B142): walk through every customer touchpoint and check whether the brand identity is applied consistently. Common areas of inconsistency include: the website uses different colours from the physical signage, menus printed at different times use different fonts, takeaway packaging has no branding, social media templates do not match the physical brand, and staff uniforms do not reflect the brand colours. For each inconsistency, create an action plan to align it with the style guide. Work with a designer to create branded templates for frequently needed materials: social media posts, A-frame board specials, in-store posters, and email headers. These templates allow the team to update content without design skills while maintaining brand consistency.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The style guide should be the automatic reference for any visual or verbal communication from the cafe. Any new marketing material, signage, packaging, or digital content should be checked against the style guide before production. Share the guide with all external suppliers: printers, signwriters, web developers, and social media managers. Review the brand identity annually: does it still reflect who the cafe is and who it wants to attract? Brands can evolve, but evolution should be intentional, not accidental. If the cafe considers rebranding or refreshing the brand, the existing style guide provides a clear baseline for what is changing and why. Develop branded merchandise if the brand identity is strong enough to support it: reusable coffee cups, tote bags, or gift cards. These extend the brand beyond the physical premises and create additional revenue. Ensure that brand guidelines are part of new staff induction so that every team member understands the brand they represent."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Document existing brand elements: logo, colours, fonts, and personality",
+        "Locate original logo files in vector format or commission a vector version",
+        "Record exact hex codes for all brand colours",
+        "Identify the fonts used across menus, signage, and printed materials",
+        "Draft a one-page Brand Identity Summary covering logo, colours, fonts, and brand personality",
+        "Share the summary with key team members and any external suppliers"
+      ],
+      "responsible": "Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Expand the Brand Identity Summary into a full Style Guide including tone of voice and templates",
+        "Conduct a Brand Consistency Audit across all customer touchpoints",
+        "Create action plans to align any inconsistent touchpoints with the style guide",
+        "Commission branded templates for social media, menus, signage, and promotions",
+        "Ensure all external suppliers receive and follow the style guide",
+        "Add brand guidelines to the staff handbook"
+      ],
+      "responsible": "Owner, Designer"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Make the style guide the automatic reference for all creative decisions",
+        "Review the brand identity annually for relevance and evolution",
+        "Develop branded merchandise if the identity supports it",
+        "Include brand guidelines in new staff induction",
+        "Maintain a brand assets folder accessible to all team members and suppliers",
+        "Evaluate brand refresh needs at each lease or business milestone"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Brand Identity Summary (one-page reference)",
+    "Full Brand Style Guide (logo, colours, fonts, tone of voice, templates)",
+    "Branded Template Library (social media, menus, signage, promotions)",
+    "Brand Assets Folder (logo files, colour swatches, font files)",
+    "Tone of Voice Guide"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T140-01",
+        "tool_name": "Brand Identity Summary Sheet",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A one-page reference document showing the cafe's logo (with usage rules), primary and secondary colours (with hex codes), fonts, and a one-sentence brand personality description. Designed for quick reference by team and suppliers."
+      },
+      {
+        "tool_id": "T140-02",
+        "tool_name": "Brand Style Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Owner",
+        "description": "A comprehensive brand guide covering logo usage, colour palette, typography, photography style, tone of voice, and design templates. Includes examples of correct and incorrect usage for each element."
+      },
+      {
+        "tool_id": "T140-03",
+        "tool_name": "Tone of Voice Guide",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A guide defining how the cafe communicates in writing: personality traits (e.g., friendly, knowledgeable, relaxed), vocabulary preferences, example sentences for different contexts (menu, social media, signage, email), and things to avoid."
+      },
+      {
+        "tool_id": "T140-04",
+        "tool_name": "Brand Assets Package",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A digital folder containing all brand assets in usable formats: logo in vector (SVG, EPS) and raster (PNG, JPEG) formats on various backgrounds, colour swatches, and font files. Ready to share with any supplier or designer."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The style guide is created but never shared with the people who make creative decisions, so brand drift continues",
+    "The guide is so detailed and prescriptive that it becomes impractical for a small team to follow",
+    "Brand identity was defined by the original designer and no longer reflects the cafe's evolved personality or market position",
+    "Different team members have different ideas about the brand, and the guide does not resolve these differences because it was never discussed collectively"
+  ],
+  "kpis": [
+    "Brand Style Guide completed and shared with all relevant team members and suppliers",
+    "Brand consistency audit passed with fewer than 3 misalignment issues across all touchpoints",
+    "All new marketing materials checked against the style guide before production",
+    "Brand identity reviewed and confirmed (or updated) annually"
+  ],
+  "dependencies": ["B142"],
+  "constraints": [
+    "Rebranding or significant brand changes require budget for signage, packaging, menu, and digital asset updates",
+    "Professional design support may be needed for creating a high-quality style guide and templates",
+    "Brand identity changes must be communicated to customers gradually to avoid confusion"
+  ],
+  "time_load": {
+    "L1": "4 hours (documenting existing brand elements, creating Brand Identity Summary)",
+    "L2": "8-12 hours (full style guide development, consistency audit, template creation)",
+    "L3": "2 hours/year (annual brand review and guide update)"
+  },
+  "review_protocol": "Quarterly check that new materials comply with the style guide. Annual brand identity review. Immediate update to the guide when brand elements change. New supplier onboarding includes style guide briefing.",
+  "meta": {
+    "summary_for_humans": "This block documents the cafe's brand identity into a practical style guide covering logo, colours, fonts, tone of voice, and templates. It ensures consistency across every touchpoint and provides the foundation for all marketing and communication activities.",
+    "implementation_risks": [
+      "Defining brand identity can be an emotional exercise for owners who have strong personal attachment to their creative choices",
+      "The process may reveal that the current brand identity is weak or inconsistent, requiring investment to fix",
+      "Style guides created without designer input can set unachievable standards or miss important technical specifications"
+    ],
+    "notes_for_engine": "This block is foundational for all marketing activities in D08. Activate when the cafe has no documented brand guidelines, when visual inconsistency is visible across touchpoints, or when the cafe is planning a marketing push and needs consistent materials. Lower priority for very new cafes that are still evolving their identity.",
+    "tags": ["marketing", "brand", "identity", "style_guide", "logo", "colours", "typography", "tone_of_voice", "consistency"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

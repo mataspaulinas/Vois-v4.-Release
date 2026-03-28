@@ -1,0 +1,186 @@
+{
+  "block_id": "B184",
+  "name": "Fire Safety & Emergency Procedures",
+  "version": "v1.0",
+  "domain": "D12_culture_identity",
+  "module": "M16: Regulatory Governance & Risk Management",
+  "state": "enriched",
+  "purpose": "Ensures full compliance with the Regulatory Reform (Fire Safety) Order 2005 by establishing a documented fire risk assessment, emergency evacuation procedures, staff training, and equipment maintenance schedules. This block protects lives, preserves the premises, and prevents the catastrophic business impact of a fire incident or enforcement action.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Complete a fire risk assessment specific to the cafe premises identifying all ignition sources, fuel sources, and people at risk",
+      "Establish clear emergency evacuation procedures with designated assembly points and roles",
+      "Ensure all fire safety equipment (extinguishers, blankets, alarms, emergency lighting) is in place, tested, and maintained",
+      "Train all staff on fire prevention, evacuation procedures, and use of fire-fighting equipment",
+      "Maintain a fire safety log book documenting all tests, drills, and maintenance activities"
+    ],
+    "secondary_objectives": [
+      "Satisfy requirements for premises licence conditions relating to fire safety",
+      "Reduce insurance premiums through demonstrable fire risk management",
+      "Build staff confidence in emergency response through regular drills",
+      "Coordinate with the local fire and rescue service on compliance requirements"
+    ]
+  },
+  "why_this_matters": "The Regulatory Reform (Fire Safety) Order 2005 places full responsibility for fire safety on the responsible person — in most cafes, this is the owner or operator. Failure to comply is a criminal offence carrying penalties of unlimited fines and up to two years in prison. Following the Grenfell Tower tragedy and subsequent Fire Safety Act 2021, enforcement has tightened significantly. A cafe presents multiple fire risks: gas cookers and ovens, electrical equipment (grinders, dishwashers, EPOS systems), overloaded sockets, flammable cleaning chemicals, paper and cardboard storage, and extraction systems that accumulate grease. Beyond the risk to life, a fire can destroy a business entirely — even a small fire causing smoke damage can close a cafe for weeks or months, and insurance may not cover the full loss if fire safety obligations were not met. The fire risk assessment is the cornerstone document that demonstrates compliance.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0–2 weeks). Week 1: Obtain a fire risk assessment template appropriate for small commercial premises or use T184-01. Walk through the premises identifying: all ignition sources (ovens, grills, toasters, electrical equipment, smoking areas), all fuel sources (paper, cardboard, cooking oils, cleaning chemicals, soft furnishings), and all people at risk. Check that fire alarm system or manual call points, fire extinguishers (minimum one water or foam, one CO2, plus a fire blanket in any cooking area), emergency lighting, illuminated fire exit signs, and clear escape routes are all in place and functional. Week 2: Draft emergency evacuation procedures: who raises the alarm, who calls 999, who checks toilets and back areas, where the assembly point is, who takes the roll call. Post the evacuation procedure and floor plan showing exits and extinguisher locations. Brief all staff and conduct a walk-through of escape routes.",
+    "L2": "SYSTEM BUILD (2–8 weeks). Complete the full fire risk assessment document and file it on the premises. Establish a fire safety log book recording: weekly fire alarm tests, monthly emergency lighting checks, annual fire extinguisher servicing, six-monthly fire drill records, and any fire safety issues identified and resolved. Train all staff on fire extinguisher use. Register for a free business fire safety visit from the local fire and rescue service. Review PAT testing compliance and EICR validity. Ensure extraction systems and filters are cleaned regularly to prevent grease accumulation.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Conduct fire drills at least every six months, varying the scenario. Debrief after each drill and document learnings. Install additional fire prevention measures where appropriate: automatic fire suppression in extraction hoods, heat detectors in kitchen areas, linked fire alarm systems. Review the fire risk assessment annually or whenever there is a significant change. Ensure fire safety is part of every new staff induction from day one."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Obtain a fire risk assessment template and begin the premises walk-through",
+        "Verify all fire safety equipment is present, functional, and correctly positioned",
+        "Install any missing fire extinguishers, fire blankets, or emergency signage",
+        "Draft emergency evacuation procedures with roles and assembly point",
+        "Post evacuation procedure and floor plan in visible locations",
+        "Brief all staff on evacuation procedure and conduct an escape route walk-through",
+        "Ensure all escape routes are clear and unobstructed"
+      ],
+      "responsible": "Cafe Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Complete and file the full fire risk assessment document",
+        "Establish a fire safety log book with weekly, monthly, and annual check schedules",
+        "Train all staff on fire extinguisher use and fire prevention",
+        "Arrange annual fire extinguisher servicing with a certified provider",
+        "Register for a local fire and rescue service business fire safety visit",
+        "Verify PAT testing and EICR compliance for all electrical systems",
+        "Schedule regular extraction system and filter cleaning"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct fire drills at least every six months with varied scenarios and debriefs",
+        "Evaluate additional fire prevention technology (suppression systems, linked alarms)",
+        "Review the fire risk assessment annually and after any significant change",
+        "Integrate fire safety into all new staff induction programmes",
+        "Maintain ongoing relationship with local fire and rescue service",
+        "Review business interruption insurance for fire-related closure coverage"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Fire Risk Assessment document (cafe-specific template)",
+    "Emergency Evacuation Procedure and floor plan",
+    "Fire Safety Log Book template",
+    "Staff Fire Safety Training Record",
+    "Fire Drill Record and Debrief template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T184-01",
+        "tool_name": "Cafe Fire Risk Assessment Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Comprehensive fire risk assessment template pre-populated with common cafe fire hazards, covering ignition sources, fuel sources, people at risk, existing controls, and additional measures needed. Aligned with Regulatory Reform (Fire Safety) Order 2005 requirements."
+      },
+      {
+        "tool_id": "T184-02",
+        "tool_name": "Emergency Evacuation Procedure Template",
+        "level": "L1",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Clear A4 evacuation procedure document defining roles (fire warden, caller, sweep), evacuation route, assembly point, and re-entry protocol. Includes a customisable floor plan showing exits and equipment locations."
+      },
+      {
+        "tool_id": "T184-03",
+        "tool_name": "Fire Safety Log Book",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Structured log book recording weekly alarm tests, monthly emergency lighting checks, annual extinguisher servicing, fire drill records, and any fire safety issues. Provides an auditable compliance trail."
+      },
+      {
+        "tool_id": "T184-04",
+        "tool_name": "Staff Fire Safety Training Record",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Individual training record documenting each staff member's fire safety induction, extinguisher training, evacuation drill participation, and refresher dates."
+      },
+      {
+        "tool_id": "T184-05",
+        "tool_name": "Fire Drill Record and Debrief Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Template for recording fire drill date, scenario, evacuation time, issues identified, and corrective actions. Includes a debrief section for capturing lessons learned."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Fire risk assessment is never completed, leaving the cafe in breach of the law from day one of trading",
+    "Fire safety equipment is installed but never tested or serviced, giving false assurance",
+    "Escape routes become blocked by deliveries, furniture, or stored items without anyone noticing",
+    "Staff have never practised an evacuation and freeze or make dangerous decisions during a real emergency"
+  ],
+  "kpis": [
+    "Fire risk assessment completed, documented, and reviewed at least annually",
+    "Fire alarm tested weekly with 100% compliance recorded in the log book",
+    "Fire drills conducted at least every six months with documented debriefs",
+    "All fire safety equipment serviced annually by a certified provider"
+  ],
+  "dependencies": [
+    "B183"
+  ],
+  "constraints": [
+    "Fire risk assessment must be in writing if the business has 5 or more employees",
+    "Fire extinguishers must be serviced annually by a competent person to BS 5306",
+    "The Regulatory Reform (Fire Safety) Order 2005 makes the responsible person criminally liable for non-compliance"
+  ],
+  "time_load": {
+    "L1": "3 hours (walk-through, equipment check, evacuation procedure, staff briefing)",
+    "L2": "5 hours (full FRA completion, log book setup, training, servicing arrangement)",
+    "L3": "2 hours/six months (drills, reviews, updates)"
+  },
+  "review_protocol": "Weekly fire alarm test. Monthly emergency lighting check. Six-monthly fire drill with debrief. Annual full review of fire risk assessment. Immediate review after any fire incident, near-miss, or significant change to premises.",
+  "meta": {
+    "summary_for_humans": "This block ensures full fire safety compliance including a documented fire risk assessment, emergency evacuation procedures, equipment maintenance, staff training, and regular drills.",
+    "implementation_risks": [
+      "Owners of small cafes may assume fire safety rules only apply to larger premises — they apply to all",
+      "Professional fire risk assessment may be needed if the premises is complex",
+      "Fire safety equipment costs can surprise small operators — budget accordingly"
+    ],
+    "notes_for_engine": "Activate alongside B183 (health and safety risk assessment). Flag urgently if signals indicate no fire risk assessment, overdue equipment servicing, or upcoming fire service inspection.",
+    "tags": [
+      "fire_safety",
+      "emergency",
+      "evacuation",
+      "compliance",
+      "regulatory",
+      "risk_assessment",
+      "fire_risk"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "independent_cafe",
+      "specialty_coffee",
+      "chain_cafe",
+      "franchise_cafe",
+      "drive_through",
+      "kiosk",
+      "coffee_van",
+      "bakery_cafe"
+    ],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

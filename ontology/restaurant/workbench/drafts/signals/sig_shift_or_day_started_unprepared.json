@@ -1,0 +1,31 @@
+{
+  "id": "sig_shift_or_day_started_unprepared",
+  "name": "Shift or day starts unprepared",
+  "description": "The venue begins service without the minimum coordination, setup, and readiness needed to absorb normal pressure.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: shift starts unprepared expressed through restaurant readiness failures",
+  "updated_at": "2026-03-15T14:29:28.479763Z",
+  "domain": "operations",
+  "module": "shift_readiness",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "opening begins behind",
+    "service starts without coordinated readiness",
+    "team enters the shift chasing basics"
+  ],
+  "source_types": [
+    "opening review",
+    "manager notes",
+    "service observation"
+  ],
+  "temporal_behavior": "opening-bound",
+  "likely_co_signals": [
+    "sig_opening_checklist_drift",
+    "sig_required_inputs_missing_at_start"
+  ],
+  "adapter_aliases": [
+    "day started behind",
+    "shift opened unprepared"
+  ]
+}

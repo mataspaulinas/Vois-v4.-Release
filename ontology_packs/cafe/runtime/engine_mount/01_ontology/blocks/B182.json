@@ -1,0 +1,189 @@
+{
+  "block_id": "B182",
+  "name": "Operational Rhythm Dashboard",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M14: Operational Rhythm & Daily Discipline",
+  "state": "enriched",
+  "purpose": "Creates a single-view operational dashboard that consolidates daily KPIs — revenue, labour cost, waste, speed of service, customer count, and compliance checks — into a real-time pulse of cafe performance. This block ensures the manager never has to guess how the day is going and can intervene before small problems become expensive ones.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Design a single-page dashboard consolidating the five to eight most critical daily operational KPIs",
+      "Establish a daily rhythm of dashboard review at opening, mid-shift, and close",
+      "Create visual thresholds (green/amber/red) so any team member can instantly see performance status",
+      "Link dashboard metrics to source data from sales, labour, waste, and compliance systems",
+      "Enable week-on-week and month-on-month trend comparison from a single view"
+    ],
+    "secondary_objectives": [
+      "Reduce the time managers spend compiling data from multiple sources",
+      "Provide a structured agenda for daily team briefings",
+      "Create transparency across the team by making performance visible to all",
+      "Support data-driven decision-making at shift level rather than only at monthly review"
+    ]
+  },
+  "why_this_matters": "Most cafe managers operate in a data vacuum. They know roughly how busy it feels but rarely have real-time access to the numbers that determine profitability. By the time the accountant delivers monthly figures, the opportunity to correct course has long passed. An operational rhythm dashboard changes this fundamentally. It takes the metrics that matter most — revenue against target, labour cost as a percentage of revenue, waste cost, average transaction value, speed of service, and compliance check completion — and presents them in a single, glanceable format reviewable in under two minutes. Research from UK Hospitality consistently shows that operators who review KPIs daily outperform those who review monthly by 8–15% in net profit margin. The reason is simple: daily visibility enables daily correction. If labour is running at 38% of revenue by midday, the manager can adjust staffing. If average transaction value is below target, the team can be prompted to upsell. Without a dashboard, these signals are invisible until month-end accounts arrive — and by then, thousands of pounds in margin have already been lost. The dashboard also serves a cultural purpose: it tells the team that performance matters, that it is being measured, and that everyone contributes to the numbers.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0–2 weeks). Week 1: Identify the five core metrics to track daily: (1) total revenue, (2) customer count, (3) average transaction value, (4) labour cost as percentage of revenue, and (5) waste cost. For each metric, define a target based on current performance or industry benchmarks. Create a simple A3 whiteboard or printed sheet with these five metrics in large format, mounted in the staff area. At the end of each trading day, the closing manager fills in the actual figures alongside the targets, using green/amber/red markers to indicate status. Week 2: Add two further metrics: (6) compliance check completion rate and (7) speed of service. Begin a daily 5-minute manager review at close: look at the dashboard, note any red metrics, and write one action for tomorrow.",
+    "L2": "SYSTEM BUILD (2–8 weeks). Transition from a manual whiteboard to a structured daily report. Create a spreadsheet or digital template that auto-calculates percentages, variances, and week-on-week comparisons. Configure EPOS daily sales reports to feed directly into the dashboard. Add labour scheduling integration for real-time labour cost calculation. Introduce a morning briefing ritual (5 minutes at opening): review yesterday's dashboard with the opening team, highlight one win and one improvement area. Create a weekly summary that rolls up daily dashboards into a single page showing 7-day trends. Train shift supervisors to read and interpret the dashboard independently.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Invest in a digital dashboard solution — either a hospitality platform (Trail, Nory, Bizimply) or a custom Google Sheets/Power BI dashboard on a back-office tablet. Integrate all data sources: EPOS for sales, scheduling software for labour, waste log for waste, and compliance checklists for operational standards. Add predictive elements based on historical data, day of week, weather, and local events. Introduce gamification with weekly awards for the best-performing shift across all metrics. Conduct monthly deep-dive reviews using dashboard data. Share a simplified dashboard version with the full team monthly."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Identify the five core daily metrics and define targets for each",
+        "Create a large-format A3 dashboard template for the staff area",
+        "Assign end-of-day dashboard completion to the closing manager",
+        "Implement green/amber/red visual coding for each metric",
+        "Begin a daily 5-minute close-of-day manager review",
+        "Add compliance completion rate and speed of service as additional metrics",
+        "Start a daily action diary noting one improvement for the following day"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build a digital spreadsheet template with auto-calculated percentages and variances",
+        "Configure EPOS daily sales reports to feed into the dashboard",
+        "Integrate labour scheduling data for real-time labour cost percentage",
+        "Establish a 5-minute morning briefing using yesterday's dashboard",
+        "Create a weekly summary rolling up seven daily dashboards",
+        "Train shift supervisors to read and interpret the dashboard independently",
+        "Set monthly target review and adjustment protocol"
+      ],
+      "responsible": "Manager, Shift Supervisor"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Implement a digital dashboard solution on a back-office tablet",
+        "Integrate all data sources: EPOS, scheduling, waste logs, compliance checklists",
+        "Add predictive revenue targets based on historical patterns and external factors",
+        "Introduce gamification with weekly shift performance awards",
+        "Conduct monthly deep-dive reviews using dashboard trend data",
+        "Share simplified dashboard summaries with the full team monthly"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Daily Operational Dashboard template (A3 printable and digital versions)",
+    "Weekly KPI Summary Report template",
+    "Dashboard Metrics Definition Guide",
+    "Morning Briefing Protocol document",
+    "Monthly Target Review template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T182-01",
+        "tool_name": "Daily Operational Dashboard Template",
+        "level": "L1",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "A3 printable template displaying seven core KPIs with targets, actuals, variance, and green/amber/red status indicators. Completed daily by the closing manager."
+      },
+      {
+        "tool_id": "T182-02",
+        "tool_name": "Dashboard Metrics Definition Guide",
+        "level": "L1",
+        "format": "reference",
+        "owner_role": "Manager",
+        "description": "Reference document defining each dashboard metric, its calculation method, data source, target-setting rationale, and threshold definitions for green/amber/red status."
+      },
+      {
+        "tool_id": "T182-03",
+        "tool_name": "Weekly KPI Summary Report",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Weekly roll-up of daily dashboards showing 7-day trends, week-on-week comparisons, and highlight commentary on significant variances."
+      },
+      {
+        "tool_id": "T182-04",
+        "tool_name": "Morning Briefing Protocol",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Shift Supervisor",
+        "description": "Structured 5-minute morning briefing format using yesterday's dashboard: one win to celebrate, one metric to focus on, and one action for today."
+      },
+      {
+        "tool_id": "T182-05",
+        "tool_name": "Monthly Target Review Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Monthly review template for assessing and adjusting dashboard targets based on actual performance trends, seasonality, and growth plans."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Dashboard becomes a data dump with too many metrics, overwhelming the manager and losing its glanceability",
+    "Closing manager fills in the dashboard but nobody reviews it, making it a compliance exercise without impact",
+    "Targets are set once and never adjusted, becoming irrelevant as the business evolves seasonally",
+    "Dashboard data is inaccurate because source data (EPOS, labour, waste) is not properly maintained"
+  ],
+  "kpis": [
+    "Dashboard completed daily with 100% consistency across all trading days",
+    "Morning briefing conducted at least 5 days per week using dashboard data",
+    "All red-flagged metrics have a documented corrective action within 24 hours",
+    "Week-on-week improvement in at least one core metric each month"
+  ],
+  "dependencies": [
+    "B179",
+    "B180",
+    "B181"
+  ],
+  "constraints": [
+    "Requires EPOS or till system capable of generating daily sales summaries",
+    "Labour cost calculation requires accurate hourly rates and hours worked data",
+    "Dashboard must be updated daily to maintain its value as a management tool"
+  ],
+  "time_load": {
+    "L1": "2 hours (metric selection, template design, staff briefing)",
+    "L2": "6 hours (digital template build, EPOS integration, training)",
+    "L3": "1 hour/month (target reviews, system refinement)"
+  },
+  "review_protocol": "Daily review of dashboard at close by manager. Morning briefing review with opening team. Weekly summary compiled and reviewed by manager. Monthly target review and adjustment by owner. Quarterly review of dashboard design and metric relevance.",
+  "meta": {
+    "summary_for_humans": "This block creates a single-view daily dashboard consolidating revenue, labour, waste, speed of service, and compliance metrics with visual thresholds, enabling managers to spot problems and act within hours rather than waiting for month-end.",
+    "implementation_risks": [
+      "Over-engineering the dashboard with too many metrics reduces its usability",
+      "Without a daily review ritual, the dashboard becomes wallpaper that nobody reads",
+      "Inaccurate source data undermines trust in the entire dashboard"
+    ],
+    "notes_for_engine": "Activate after B179, B180, and B181 are established. This block is the aggregation layer that makes individual operational metrics actionable. Flag if signals indicate reactive rather than proactive management style.",
+    "tags": [
+      "dashboard",
+      "KPIs",
+      "daily_discipline",
+      "operations",
+      "revenue",
+      "labour_cost",
+      "management",
+      "performance"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "independent_cafe",
+      "specialty_coffee",
+      "chain_cafe",
+      "franchise_cafe",
+      "drive_through",
+      "kiosk",
+      "coffee_van",
+      "bakery_cafe"
+    ],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

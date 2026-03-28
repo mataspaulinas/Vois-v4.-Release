@@ -1,0 +1,641 @@
+{
+  "l1_blocks": [
+    {
+      "block_id": "B085",
+      "title": "Peak Staffing Model",
+      "source_rp": "RP024",
+      "layer": "L1",
+      "rp_priority": 1.5,
+      "description": "Creates a data-driven staffing model that matches team deployment to customer demand patterns throughout the day, ensuring the right number of people with the right skills are on the floor at the right times — particularly during peak trading periods.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B086",
+      "title": "Morning Rush Workflow",
+      "source_rp": "RP024",
+      "layer": "L1",
+      "rp_priority": 1.5,
+      "description": "Designs and optimises the workflow for the morning rush period — typically 7:30 to 9:30am — defining roles, positions, task sequences, and communication protocols that enable the team to serve the maximum number of customers at speed without sacrificing drink quality or customer experience.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B087",
+      "title": "Pre-Rush Mise-en-Place",
+      "source_rp": "RP024",
+      "layer": "L1",
+      "rp_priority": 1.5,
+      "description": "Establishes a comprehensive pre-rush preparation protocol — the cafe equivalent of culinary mise en place — ensuring that every supply, tool, and station element is in position and ready before peak service begins, so the team can focus entirely on speed and quality during the rush.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B118",
+      "title": "Menu Pricing Strategy",
+      "source_rp": "RP034",
+      "layer": "L1",
+      "rp_priority": 1.5,
+      "description": "Develops a strategic, data-driven approach to menu pricing that balances cost coverage, competitive positioning, customer value perception, and profit maximisation. This block replaces the common practice of pricing by copying competitors with a structured methodology grounded in the cafe's own cost data.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B119",
+      "title": "Revenue Per Hour Tracking",
+      "source_rp": "RP034",
+      "layer": "L1",
+      "rp_priority": 1.5,
+      "description": "Implements revenue-per-hour tracking across every trading hour, revealing which time slots generate strong returns and which are underperforming. This metric is the foundation for labour scheduling, promotional targeting, and operational decisions about trading hours.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B120",
+      "title": "Upselling & Add-On Training",
+      "source_rp": "RP034",
+      "layer": "L1",
+      "rp_priority": 1.5,
+      "description": "Trains the team to suggest complementary items naturally and confidently — turning a single-item transaction into a multi-item sale without being pushy, scripted, or annoying. This block increases average transaction value through genuine hospitality rather than hard selling.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B125",
+      "title": "Payroll Cost Optimisation",
+      "source_rp": "RP036",
+      "layer": "L1",
+      "rp_priority": 1.0,
+      "description": "Ensures that payroll — typically the single largest cost in a cafe business — is managed strategically to achieve the right balance between service quality and financial sustainability. This block connects labour scheduling decisions to revenue data so that staffing levels are driven by evidence rather than habit.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B126",
+      "title": "Occupancy Cost Strategy",
+      "source_rp": "RP036",
+      "layer": "L1",
+      "rp_priority": 1.0,
+      "description": "Provides a structured approach to managing rent, rates, and property-related costs — typically the second largest cost after payroll — ensuring the cafe is not overpaying for its premises and is maximising the revenue potential of every square foot it occupies.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B021",
+      "title": "Peak Queue Management",
+      "source_rp": "RP006",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Provides systems and strategies for managing customer queues during peak periods — morning rush, lunchtime, and weekend surges — to minimise wait times, prevent walkaways, and maintain service quality under pressure. This block turns the queue from a pain point into a managed, positive experience.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B022",
+      "title": "Order-Taking Speed Protocol",
+      "source_rp": "RP006",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Streamlines the order-taking process to minimise the time between a customer reaching the till and their order being entered into the system, without sacrificing warmth, accuracy, or the opportunity to upsell. This block focuses on the till interaction as the primary bottleneck in cafe throughput.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B023",
+      "title": "Queue Communication Experience",
+      "source_rp": "RP006",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Transforms the waiting experience for customers in the queue by proactively communicating wait times, maintaining visual progress, and creating small positive moments that reduce perceived wait time. This block ensures that even when customers wait, they feel informed, valued, and engaged.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B179",
+      "title": "Daily Prep List Protocol",
+      "source_rp": "RP053",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Establishes a structured daily preparation list system that ensures every shift begins with a complete, prioritised checklist of prep tasks — from food preparation and ingredient restocking to station setup and mise en place. This block eliminates the guesswork and memory dependence that causes prep failures, rushed mornings, and service breakdowns during peak hours.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B180",
+      "title": "Machine Maintenance Log",
+      "source_rp": "RP053",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Establishes a daily equipment maintenance logging system that tracks the condition, cleaning, and servicing of all critical cafe machinery — espresso machines, grinders, dishwashers, refrigeration units, ovens, and blenders. This block prevents costly breakdowns, extends equipment lifespan, and ensures every drink and dish is produced by properly maintained machinery.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B181",
+      "title": "Waste Log & Reconciliation",
+      "source_rp": "RP053",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Establishes a disciplined daily waste logging system that captures every item discarded — from expired pastries and spoilt milk to over-extracted shots and dropped cups — then reconciles waste costs against revenue to reveal hidden profit leaks. This block transforms waste from an invisible cost into a measurable, manageable, and continuously improvable metric.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B074",
+      "title": "Daily Team Briefing Protocol",
+      "source_rp": "RP020",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured pre-shift team briefing — a daily five-to-ten-minute huddle that aligns the team on priorities, shares critical information, surfaces concerns, and sets the tone for the shift ahead.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B075",
+      "title": "Weekly Team Meeting Structure",
+      "source_rp": "RP020",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured weekly team meeting that goes beyond daily briefings to address operational review, problem-solving, training, and team development in a dedicated 30-to-45-minute session that keeps the team engaged and the business improving.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B122",
+      "title": "Weekly Financial Review",
+      "source_rp": "RP035",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured weekly financial review process that gives the cafe owner a clear, timely picture of profitability, cash flow, and cost performance. Transforms financial management from reactive guesswork into a disciplined weekly rhythm.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B123",
+      "title": "Annual Budget & Forecast",
+      "source_rp": "RP035",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured annual budgeting and forecasting process so the cafe operates with clear financial targets, understands seasonal revenue patterns, and can make proactive decisions rather than reacting to cash shortfalls. This block transforms financial management from guesswork into a disciplined planning cycle.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    }
+  ],
+  "l1_tools": [],
+  "l2_blocks": [
+    {
+      "block_id": "B085",
+      "title": "Peak Staffing Model",
+      "source_rp": "RP024",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Creates a data-driven staffing model that matches team deployment to customer demand patterns throughout the day, ensuring the right number of people with the right skills are on the floor at the right times — particularly during peak trading periods.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B086",
+      "title": "Morning Rush Workflow",
+      "source_rp": "RP024",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Designs and optimises the workflow for the morning rush period — typically 7:30 to 9:30am — defining roles, positions, task sequences, and communication protocols that enable the team to serve the maximum number of customers at speed without sacrificing drink quality or customer experience.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B087",
+      "title": "Pre-Rush Mise-en-Place",
+      "source_rp": "RP024",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Establishes a comprehensive pre-rush preparation protocol — the cafe equivalent of culinary mise en place — ensuring that every supply, tool, and station element is in position and ready before peak service begins, so the team can focus entirely on speed and quality during the rush.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B088",
+      "title": "Peak Performance Analysis",
+      "source_rp": "RP024",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Establishes a structured approach to measuring, analysing, and improving peak period performance using data from transactions, service times, waste, customer feedback, and team observations to drive continuous workflow optimisation.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B203",
+      "title": "Drive-Through Workflow",
+      "source_rp": "RP024",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Designs and optimises the complete drive-through workflow from order point to window handoff, ensuring speed of service, order accuracy, and a positive customer experience within the unique constraints of vehicle-based service. This block addresses lane management, communication systems, menu board design, staffing positions, and performance metrics specific to drive-through cafe operations.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B204",
+      "title": "Kiosk Operations",
+      "source_rp": "RP024",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Establishes the operational framework for running a coffee kiosk or compact format venue, addressing the unique challenges of limited space, reduced equipment, minimal staff, and high-footfall locations. This block covers workflow design within tight footprints, condensed menu strategies, efficient stock management, and the operational discipline required when there is no back-of-house to fall back on.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B205",
+      "title": "Coffee Van Operations",
+      "source_rp": "RP024",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Addresses the unique operational logistics of running a mobile coffee van, covering vehicle maintenance, location strategy, event booking, licensing, self-contained water and power systems, setup and teardown routines, and the mobile-specific challenges that differentiate van operations from any fixed-site format.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B118",
+      "title": "Menu Pricing Strategy",
+      "source_rp": "RP034",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Develops a strategic, data-driven approach to menu pricing that balances cost coverage, competitive positioning, customer value perception, and profit maximisation. This block replaces the common practice of pricing by copying competitors with a structured methodology grounded in the cafe's own cost data.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B119",
+      "title": "Revenue Per Hour Tracking",
+      "source_rp": "RP034",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Implements revenue-per-hour tracking across every trading hour, revealing which time slots generate strong returns and which are underperforming. This metric is the foundation for labour scheduling, promotional targeting, and operational decisions about trading hours.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B120",
+      "title": "Upselling & Add-On Training",
+      "source_rp": "RP034",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Trains the team to suggest complementary items naturally and confidently — turning a single-item transaction into a multi-item sale without being pushy, scripted, or annoying. This block increases average transaction value through genuine hospitality rather than hard selling.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B121",
+      "title": "Revenue Growth Strategy",
+      "source_rp": "RP034",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Establishes a structured, data-driven approach to growing cafe revenue beyond incremental gains. Ensures the business identifies, tests, and scales new revenue streams while protecting the core proposition that customers value.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B125",
+      "title": "Payroll Cost Optimisation",
+      "source_rp": "RP036",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Ensures that payroll — typically the single largest cost in a cafe business — is managed strategically to achieve the right balance between service quality and financial sustainability. This block connects labour scheduling decisions to revenue data so that staffing levels are driven by evidence rather than habit.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B126",
+      "title": "Occupancy Cost Strategy",
+      "source_rp": "RP036",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Provides a structured approach to managing rent, rates, and property-related costs — typically the second largest cost after payroll — ensuring the cafe is not overpaying for its premises and is maximising the revenue potential of every square foot it occupies.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B127",
+      "title": "Cost Structure Excellence",
+      "source_rp": "RP036",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Provides a holistic view of the cafe's entire cost base and establishes a continuous improvement approach to cost management. This block synthesises payroll optimisation (B125), occupancy strategy (B126), and all other cost lines into an integrated cost structure that is benchmarked, monitored, and actively refined.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B021",
+      "title": "Peak Queue Management",
+      "source_rp": "RP006",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Provides systems and strategies for managing customer queues during peak periods — morning rush, lunchtime, and weekend surges — to minimise wait times, prevent walkaways, and maintain service quality under pressure. This block turns the queue from a pain point into a managed, positive experience.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B022",
+      "title": "Order-Taking Speed Protocol",
+      "source_rp": "RP006",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Streamlines the order-taking process to minimise the time between a customer reaching the till and their order being entered into the system, without sacrificing warmth, accuracy, or the opportunity to upsell. This block focuses on the till interaction as the primary bottleneck in cafe throughput.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B023",
+      "title": "Queue Communication Experience",
+      "source_rp": "RP006",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Transforms the waiting experience for customers in the queue by proactively communicating wait times, maintaining visual progress, and creating small positive moments that reduce perceived wait time. This block ensures that even when customers wait, they feel informed, valued, and engaged.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B024",
+      "title": "Throughput Optimisation System",
+      "source_rp": "RP006",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Creates a systematic approach to measuring, analysing, and improving the cafe's customer throughput — the number of customers served per hour — through workflow analysis, bottleneck identification, and operational refinement. This block treats throughput as a measurable, improvable metric rather than a fixed characteristic.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B179",
+      "title": "Daily Prep List Protocol",
+      "source_rp": "RP053",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Establishes a structured daily preparation list system that ensures every shift begins with a complete, prioritised checklist of prep tasks — from food preparation and ingredient restocking to station setup and mise en place. This block eliminates the guesswork and memory dependence that causes prep failures, rushed mornings, and service breakdowns during peak hours.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B180",
+      "title": "Machine Maintenance Log",
+      "source_rp": "RP053",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Establishes a daily equipment maintenance logging system that tracks the condition, cleaning, and servicing of all critical cafe machinery — espresso machines, grinders, dishwashers, refrigeration units, ovens, and blenders. This block prevents costly breakdowns, extends equipment lifespan, and ensures every drink and dish is produced by properly maintained machinery.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B181",
+      "title": "Waste Log & Reconciliation",
+      "source_rp": "RP053",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Establishes a disciplined daily waste logging system that captures every item discarded — from expired pastries and spoilt milk to over-extracted shots and dropped cups — then reconciles waste costs against revenue to reveal hidden profit leaks. This block transforms waste from an invisible cost into a measurable, manageable, and continuously improvable metric.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B182",
+      "title": "Operational Rhythm Dashboard",
+      "source_rp": "RP053",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Creates a single-view operational dashboard that consolidates daily KPIs — revenue, labour cost, waste, speed of service, customer count, and compliance checks — into a real-time pulse of cafe performance. This block ensures the manager never has to guess how the day is going and can intervene before small problems become expensive ones.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B074",
+      "title": "Daily Team Briefing Protocol",
+      "source_rp": "RP020",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured pre-shift team briefing — a daily five-to-ten-minute huddle that aligns the team on priorities, shares critical information, surfaces concerns, and sets the tone for the shift ahead.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B075",
+      "title": "Weekly Team Meeting Structure",
+      "source_rp": "RP020",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured weekly team meeting that goes beyond daily briefings to address operational review, problem-solving, training, and team development in a dedicated 30-to-45-minute session that keeps the team engaged and the business improving.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B076",
+      "title": "Communication Culture & Feedback",
+      "source_rp": "RP020",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Builds an open, psychologically safe communication culture where feedback flows freely in all directions — upward, downward, and peer-to-peer — ensuring issues are raised early, good work is recognised, and the team operates with transparency and mutual respect.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B122",
+      "title": "Weekly Financial Review",
+      "source_rp": "RP035",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured weekly financial review process that gives the cafe owner a clear, timely picture of profitability, cash flow, and cost performance. Transforms financial management from reactive guesswork into a disciplined weekly rhythm.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B123",
+      "title": "Annual Budget & Forecast",
+      "source_rp": "RP035",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured annual budgeting and forecasting process so the cafe operates with clear financial targets, understands seasonal revenue patterns, and can make proactive decisions rather than reacting to cash shortfalls. This block transforms financial management from guesswork into a disciplined planning cycle.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B124",
+      "title": "Financial Literacy Programme",
+      "source_rp": "RP035",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Builds financial understanding across the cafe team so that every staff member — from barista to shift lead — understands how their daily actions affect revenue, costs, and profitability. This block moves financial awareness beyond the owner's spreadsheet and into the operational culture of the business.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    }
+  ],
+  "l2_tools": [],
+  "l3_blocks": [
+    {
+      "block_id": "B085",
+      "title": "Peak Staffing Model",
+      "source_rp": "RP024",
+      "layer": "L3",
+      "rp_priority": 1.5,
+      "description": "Creates a data-driven staffing model that matches team deployment to customer demand patterns throughout the day, ensuring the right number of people with the right skills are on the floor at the right times — particularly during peak trading periods.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B088",
+      "title": "Peak Performance Analysis",
+      "source_rp": "RP024",
+      "layer": "L3",
+      "rp_priority": 1.5,
+      "description": "Establishes a structured approach to measuring, analysing, and improving peak period performance using data from transactions, service times, waste, customer feedback, and team observations to drive continuous workflow optimisation.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B203",
+      "title": "Drive-Through Workflow",
+      "source_rp": "RP024",
+      "layer": "L3",
+      "rp_priority": 1.5,
+      "description": "Designs and optimises the complete drive-through workflow from order point to window handoff, ensuring speed of service, order accuracy, and a positive customer experience within the unique constraints of vehicle-based service. This block addresses lane management, communication systems, menu board design, staffing positions, and performance metrics specific to drive-through cafe operations.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B204",
+      "title": "Kiosk Operations",
+      "source_rp": "RP024",
+      "layer": "L3",
+      "rp_priority": 1.5,
+      "description": "Establishes the operational framework for running a coffee kiosk or compact format venue, addressing the unique challenges of limited space, reduced equipment, minimal staff, and high-footfall locations. This block covers workflow design within tight footprints, condensed menu strategies, efficient stock management, and the operational discipline required when there is no back-of-house to fall back on.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B205",
+      "title": "Coffee Van Operations",
+      "source_rp": "RP024",
+      "layer": "L3",
+      "rp_priority": 1.5,
+      "description": "Addresses the unique operational logistics of running a mobile coffee van, covering vehicle maintenance, location strategy, event booking, licensing, self-contained water and power systems, setup and teardown routines, and the mobile-specific challenges that differentiate van operations from any fixed-site format.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B118",
+      "title": "Menu Pricing Strategy",
+      "source_rp": "RP034",
+      "layer": "L3",
+      "rp_priority": 1.5,
+      "description": "Develops a strategic, data-driven approach to menu pricing that balances cost coverage, competitive positioning, customer value perception, and profit maximisation. This block replaces the common practice of pricing by copying competitors with a structured methodology grounded in the cafe's own cost data.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B121",
+      "title": "Revenue Growth Strategy",
+      "source_rp": "RP034",
+      "layer": "L3",
+      "rp_priority": 1.5,
+      "description": "Establishes a structured, data-driven approach to growing cafe revenue beyond incremental gains. Ensures the business identifies, tests, and scales new revenue streams while protecting the core proposition that customers value.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B125",
+      "title": "Payroll Cost Optimisation",
+      "source_rp": "RP036",
+      "layer": "L3",
+      "rp_priority": 1.0,
+      "description": "Ensures that payroll — typically the single largest cost in a cafe business — is managed strategically to achieve the right balance between service quality and financial sustainability. This block connects labour scheduling decisions to revenue data so that staffing levels are driven by evidence rather than habit.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B127",
+      "title": "Cost Structure Excellence",
+      "source_rp": "RP036",
+      "layer": "L3",
+      "rp_priority": 1.0,
+      "description": "Provides a holistic view of the cafe's entire cost base and establishes a continuous improvement approach to cost management. This block synthesises payroll optimisation (B125), occupancy strategy (B126), and all other cost lines into an integrated cost structure that is benchmarked, monitored, and actively refined.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B021",
+      "title": "Peak Queue Management",
+      "source_rp": "RP006",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Provides systems and strategies for managing customer queues during peak periods — morning rush, lunchtime, and weekend surges — to minimise wait times, prevent walkaways, and maintain service quality under pressure. This block turns the queue from a pain point into a managed, positive experience.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B024",
+      "title": "Throughput Optimisation System",
+      "source_rp": "RP006",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Creates a systematic approach to measuring, analysing, and improving the cafe's customer throughput — the number of customers served per hour — through workflow analysis, bottleneck identification, and operational refinement. This block treats throughput as a measurable, improvable metric rather than a fixed characteristic.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B179",
+      "title": "Daily Prep List Protocol",
+      "source_rp": "RP053",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Establishes a structured daily preparation list system that ensures every shift begins with a complete, prioritised checklist of prep tasks — from food preparation and ingredient restocking to station setup and mise en place. This block eliminates the guesswork and memory dependence that causes prep failures, rushed mornings, and service breakdowns during peak hours.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B182",
+      "title": "Operational Rhythm Dashboard",
+      "source_rp": "RP053",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Creates a single-view operational dashboard that consolidates daily KPIs — revenue, labour cost, waste, speed of service, customer count, and compliance checks — into a real-time pulse of cafe performance. This block ensures the manager never has to guess how the day is going and can intervene before small problems become expensive ones.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B074",
+      "title": "Daily Team Briefing Protocol",
+      "source_rp": "RP020",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured pre-shift team briefing — a daily five-to-ten-minute huddle that aligns the team on priorities, shares critical information, surfaces concerns, and sets the tone for the shift ahead.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B076",
+      "title": "Communication Culture & Feedback",
+      "source_rp": "RP020",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Builds an open, psychologically safe communication culture where feedback flows freely in all directions — upward, downward, and peer-to-peer — ensuring issues are raised early, good work is recognised, and the team operates with transparency and mutual respect.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B122",
+      "title": "Weekly Financial Review",
+      "source_rp": "RP035",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured weekly financial review process that gives the cafe owner a clear, timely picture of profitability, cash flow, and cost performance. Transforms financial management from reactive guesswork into a disciplined weekly rhythm.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B124",
+      "title": "Financial Literacy Programme",
+      "source_rp": "RP035",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Builds financial understanding across the cafe team so that every staff member — from barista to shift lead — understands how their daily actions affect revenue, costs, and profitability. This block moves financial awareness beyond the owner's spreadsheet and into the operational culture of the business.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    }
+  ],
+  "l3_tools": []
+}

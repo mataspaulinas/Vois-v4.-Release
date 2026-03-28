@@ -1,0 +1,157 @@
+{
+  "block_id": "B114",
+  "name": "Packaging Cost Optimisation",
+  "version": "v1.0",
+  "domain": "D06_supply_chain",
+  "module": "M06: Supply Chain & Supplier Relations",
+  "state": "enriched",
+  "purpose": "Analyses and optimises the cost of all packaging — cups, lids, sleeves, bags, boxes, napkins, cutlery, and delivery containers — ensuring the cafe minimises this significant cost line without compromising quality, customer experience, or sustainability commitments.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Audit every packaging item the cafe uses, recording unit cost, volume used per week, and annual spend",
+      "Identify the largest packaging cost drivers and evaluate alternatives that reduce cost without reducing quality",
+      "Calculate packaging cost per transaction for dine-in, takeaway, and delivery channels separately",
+      "Negotiate volume-based pricing with packaging suppliers for the highest-volume items",
+      "Balance cost optimisation with sustainability goals — cheaper packaging is not always better packaging"
+    ],
+    "secondary_objectives": [
+      "Reduce packaging waste through right-sizing (using the correct size cup, not defaulting to the largest)",
+      "Explore reusable cup schemes and customer-owned cup incentives to reduce takeaway packaging volume",
+      "Ensure compliance with UK packaging waste regulations where applicable"
+    ]
+  },
+  "why_this_matters": "Packaging is the invisible cost that bleeds cafes silently. A typical UK cafe spends £200-£500 per month on packaging alone — cups, lids, sleeves, paper bags, napkins, food boxes, delivery containers, and cutlery. This spend is rarely tracked, rarely optimised, and rarely questioned. Yet packaging cost directly reduces GP% on every takeaway and delivery transaction. A 12oz takeaway flat white in a double-wall cup (£0.12) with a sip-through lid (£0.04) and a napkin (£0.02) costs £0.18 in packaging per drink. If 60% of the cafe's 200 daily drinks are takeaway, that is 120 cups at £0.18 each — £21.60 per day, £648 per month, £7,776 per year. And that is just cups. Delivery packaging is even more expensive: insulated food boxes, leak-proof containers, branded bags, and cutlery packs can add £0.80-£1.50 per delivery order. For a cafe doing 30 delivery orders per day, that is £24-£45 daily in packaging alone. The optimisation opportunity is significant. Switching from double-wall cups to single-wall with a recycled kraft sleeve saves £0.04 per cup — £1,750 per year on a cafe doing 120 takeaways daily. Negotiating a 10% bulk discount on the most-used cup size saves another £500-£800 per year. Offering a 20p discount for customers bringing their own cup (increasingly common in UK cafes) reduces both cost and waste. These are not transformational changes — they are small, evidence-based decisions that compound into meaningful savings.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Conduct a complete packaging audit. List every packaging item the cafe uses: takeaway hot cups (by size — 8oz, 12oz, 16oz), cold cups, lids, sleeves, paper bags (small and large), food boxes/deli containers, sandwich wraps, napkins, stirrers, wooden cutlery, delivery bags, and any branded items. For each, record: supplier, unit price, weekly usage, and annual cost (unit price x weekly usage x 52). Calculate the total annual packaging spend and packaging cost as a percentage of total revenue. Most cafes will find packaging accounts for 2-4% of revenue. Week 2: Identify the top 5 packaging items by annual cost — these are where optimisation effort will deliver the most return. For each, research at least one alternative: a different supplier, a different material, a different size, or a different brand. Request samples and quotes. Check current cup sizes against actual usage: if 70% of drinks sold are 12oz but the cafe also stocks 8oz and 16oz cups, consider whether all three sizes are necessary — reducing to two sizes simplifies stock management and may unlock volume discounts on the remaining sizes.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Calculate the packaging cost per transaction for each service channel: Dine-In (plates, cutlery — essentially zero additional packaging cost for most items), Takeaway (cup, lid, sleeve, bag, napkin), and Delivery (all takeaway packaging plus food containers, delivery bag, labels). This channel-specific costing reveals the true cost of each channel and feeds into delivery pricing decisions (B103). Negotiate volume-based pricing with the top 2-3 packaging suppliers. UK packaging suppliers like Biopak, Vegware, and Dart commonly offer tiered pricing for committed volumes. If the cafe uses 5,000 cups per month, negotiate pricing at that volume rather than buying in small batches. Implement a reusable cup incentive: offer a 20-30p discount for customers bringing their own cup. Track uptake — even a 10% adoption rate reduces cup purchases significantly. Review cup sizing policy: ensure staff ask customers what size they want rather than defaulting to the largest size, and price size upgrades to cover the packaging and ingredient cost increment.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Packaging cost and sustainability should be continuously improved. Track packaging cost monthly as a line item on the P&L, giving it the same visibility as food and coffee costs. Evaluate sustainable packaging alternatives annually — compostable cups, plant-based plastics, recycled materials — balancing environmental benefits against cost premiums. Explore partnerships with reusable cup schemes (e.g., Clubzeroco, CupClub) if available in the cafe's area. Calculate and communicate the cafe's packaging waste footprint: how many cups per year? How many end up in landfill versus recycling? This data supports sustainability marketing and customer engagement. Negotiate annual packaging supply agreements that lock in pricing and provide delivery reliability. Review the entire packaging strategy annually, considering new products, pricing changes, regulatory developments (such as potential UK single-use plastic levies), and sustainability targets."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Conduct a complete packaging audit: every item, unit cost, weekly usage, annual spend",
+        "Calculate total annual packaging spend and packaging cost as % of revenue",
+        "Identify the top 5 packaging items by annual cost",
+        "Research at least one alternative for each high-cost item (different supplier, material, or size)",
+        "Request samples and quotes from alternative packaging suppliers",
+        "Review cup size range — can it be simplified without affecting customer choice?",
+        "Calculate packaging cost per transaction for takeaway and delivery channels"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Calculate packaging cost per transaction by channel (dine-in, takeaway, delivery)",
+        "Negotiate volume-based pricing with top 2-3 packaging suppliers",
+        "Implement a reusable cup incentive (20-30p discount) and track uptake",
+        "Ensure staff ask for cup size rather than defaulting to largest",
+        "Add packaging cost as a tracked line item in weekly cost reporting",
+        "Include packaging in par-level management and mid-service stock checks",
+        "Build packaging costs into delivery menu pricing calculations (B103)"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track packaging cost monthly on the P&L with the same rigour as food and coffee costs",
+        "Evaluate sustainable packaging alternatives annually",
+        "Explore reusable cup scheme partnerships",
+        "Calculate and communicate the cafe's packaging waste footprint",
+        "Negotiate annual packaging supply agreements for price stability"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Packaging Audit Report with annual cost analysis",
+    "Packaging Cost Per Transaction by channel",
+    "Packaging Supplier Comparison (quotes and samples)",
+    "Reusable Cup Scheme implementation plan",
+    "Annual Packaging Strategy Review"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T114-01",
+        "tool_name": "Packaging Audit Spreadsheet",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Comprehensive audit spreadsheet listing every packaging item with supplier, unit cost, weekly volume, annual spend, and percentage of total packaging budget."
+      },
+      {
+        "tool_id": "T114-02",
+        "tool_name": "Packaging Cost Per Transaction Calculator",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Calculator showing the total packaging cost per transaction for each service channel (dine-in, takeaway, delivery), itemising every component."
+      },
+      {
+        "tool_id": "T114-03",
+        "tool_name": "Packaging Supplier Comparison Matrix",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Side-by-side comparison of packaging suppliers for the top 5 highest-cost items: unit price at various volumes, quality assessment, delivery terms, and sustainability credentials."
+      },
+      {
+        "tool_id": "T114-04",
+        "tool_name": "Monthly Packaging Cost Tracker",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly tracking of packaging spend as a line item, with trends, percentage of revenue, reusable cup uptake, and comparison to budget and prior year."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Packaging costs are never tracked separately, remaining invisible within general purchases",
+    "Cheapest-possible packaging is selected without considering impact on customer experience and brand perception",
+    "Reusable cup discounts are offered but never promoted or tracked, delivering no measurable impact",
+    "Sustainability claims about packaging are made without verification, creating greenwashing risk"
+  ],
+  "kpis": [
+    "Packaging cost maintained below 3% of total revenue",
+    "Top 5 packaging items re-quoted and price-compared at least annually",
+    "Reusable cup uptake rate tracked and targeted at minimum 10% of takeaway transactions",
+    "Packaging spend reduced by 10% within 12 months of optimisation implementation"
+  ],
+  "dependencies": ["B111"],
+  "constraints": [
+    "Packaging quality cannot be reduced to a point where it damages customer experience or brand perception",
+    "Sustainable packaging typically costs 10-30% more — the premium must be justified by customer expectations or regulatory requirements",
+    "Cup size reduction affects customer perception of value — any changes must be tested carefully"
+  ],
+  "time_load": {
+    "L1": "3 hours (audit, costing, alternative research)",
+    "L2": "4 hours (supplier negotiation, reusable cup setup, channel costing)",
+    "L3": "1 hour/quarter (tracking review, supplier comparison, sustainability assessment)"
+  },
+  "review_protocol": "Monthly packaging cost review as P&L line item. Quarterly supplier pricing comparison. Annual full packaging strategy review including sustainability assessment.",
+  "meta": {
+    "summary_for_humans": "This block audits and optimises all packaging costs — cups, lids, bags, boxes, delivery containers — which silently consume 2-4% of revenue. It covers supplier negotiation, channel-specific costing, reusable cup schemes, and sustainability, turning an invisible cost into a managed, optimised spend.",
+    "implementation_risks": [
+      "Staff may default to the largest cup size if not trained to ask — this wastes both packaging and ingredients",
+      "Bulk buying packaging to get better prices requires storage space that small cafes may lack",
+      "Switching packaging brands changes the customer's tactile experience — test before committing to large orders"
+    ],
+    "notes_for_engine": "Activate after B111 (Menu Item Costing Calculator) is complete. Flag as urgent if signals indicate packaging costs above 4% of revenue, delivery packaging complaints, or no visibility of packaging spend.",
+    "tags": ["supply_chain", "packaging", "cost_optimisation", "sustainability", "cups", "delivery", "waste_reduction", "GP_percentage"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

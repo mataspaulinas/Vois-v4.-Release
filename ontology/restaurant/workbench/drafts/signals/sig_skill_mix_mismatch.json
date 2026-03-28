@@ -1,0 +1,31 @@
+{
+  "id": "sig_skill_mix_mismatch",
+  "name": "Skill mix is mismatched to the work",
+  "description": "The people present are not the right combination of capability and confidence for the pressure or complexity of the shift.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: capability mismatch expressed through restaurant shift deployment",
+  "updated_at": "2026-03-15T14:29:28.483418Z",
+  "domain": "workforce",
+  "module": "deployment",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "experienced coverage too thin for the shift",
+    "novice-heavy floor under pressure",
+    "complex station left to underprepared staff"
+  ],
+  "source_types": [
+    "schedule review",
+    "manager notes",
+    "service observation"
+  ],
+  "temporal_behavior": "shift-bound",
+  "likely_co_signals": [
+    "sig_new_staff_depend_on_memory",
+    "sig_staff_confusion"
+  ],
+  "adapter_aliases": [
+    "wrong mix on shift",
+    "capability mismatch"
+  ]
+}

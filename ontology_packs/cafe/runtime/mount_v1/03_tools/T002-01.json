@@ -1,0 +1,82 @@
+{
+  "identification": {
+    "tool_id": "T002-01",
+    "tool_name": "Delivery Acceptance Checklist",
+    "block_id": "B002"
+  },
+  "tool_design": {
+    "format": "checklist",
+    "role_in_intervention": "Front-door decision tool for accepting, rejecting, or flagging a chilled or frozen delivery.",
+    "adaptation_variables": [
+      "supplier_list",
+      "delivery_profile",
+      "put_away_capacity"
+    ],
+    "usage_moment": "At every chilled or frozen delivery",
+    "expected_output": "Completed receiving checklist with acceptance decision and any rejection notes",
+    "linked_blocks": [
+      "B002",
+      "B001",
+      "B003"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Completed after the task instead of during it.",
+        "what_can_go_wrong": "Paperwork replaces control.",
+        "early_signals": [
+          "Forms filled late",
+          "Issues ticked without notes"
+        ],
+        "prevention": [
+          "Keep at point of use",
+          "Assign a live owner"
+        ],
+        "mitigation": [
+          "Reset routine",
+          "Use same-day review"
+        ],
+        "if_occurs_next_signals": [
+          "retrospective_completion_risk"
+        ],
+        "possible_successor_blocks": [
+          "B002",
+          "B001",
+          "B003"
+        ]
+      },
+      {
+        "warning": "Treated as a tick-box without understanding thresholds.",
+        "what_can_go_wrong": "Boxes are ticked while risk remains.",
+        "early_signals": [
+          "User cannot explain rule",
+          "Borderline issues have no action"
+        ],
+        "prevention": [
+          "Train the why",
+          "Use a live example"
+        ],
+        "mitigation": [
+          "Re-demo in context",
+          "Pair with trained lead"
+        ],
+        "if_occurs_next_signals": [
+          "surface_compliance_without_control"
+        ],
+        "possible_successor_blocks": [
+          "B002",
+          "B001",
+          "B003"
+        ]
+      }
+    ]
+  },
+  "content": "# Delivery Acceptance Checklist\n\n**Tool ID:** T002-01  \n**Block:** B002 (Cold Chain Management SOP)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L1  \n**Format:** Checklist  \n**Role:** Delivery Receiver / Shift Lead / Any trained food handler  \n**Time Required:** 5-10 minutes per delivery  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this checklist every time chilled or frozen goods cross from the supplier into your control.\n\nThis tool protects the front door of the cold chain. It helps the team decide, in the moment:\n- what to check before signing\n- what temperatures are acceptable\n- when to reject, quarantine, or flag stock\n- how to record supplier issues properly\n- how to get accepted stock into refrigeration fast\n\n**Rule:** Check first, sign last.\n\n---\n## Safe Delivery Standards\n\n| Item Type | Accept Normally At | Borderline Zone | Reject At |\n|---|---|---|---|\n| Chilled goods | `0-5C` | `5.1-7.9C` with manager judgement and immediate refrigeration | `8C` or above |\n| Frozen goods | `-18C` or below | `-17.9C` to `-15.1C` if product condition is solid and manager agrees | `-15C` or warmer |\n| Use-by life | In date with workable shelf life | Short life only if agreed before arrival | Out of date or unusably short |\n\n---\n## Before Unloading\n\n<ul>\n  <li><input type=\"checkbox\"> Probe thermometer is clean and ready.</li>\n  <li><input type=\"checkbox\"> Receiving area is clear enough to inspect goods safely.</li>\n  <li><input type=\"checkbox\"> I know where accepted chilled stock will be put away immediately.</li>\n  <li><input type=\"checkbox\"> I will not sign until temperature and quality checks are complete.</li>\n</ul>\n\n---\n## Delivery Record\n\n**Date:** ____________________  \n**Supplier:** ____________________  \n**Driver / vehicle:** ____________________  \n**Arrival time:** ____________________  \n**Checked by:** ____________________\n\n| Check Area | Standard | Pass / Fail | Notes |\n|---|---|---|---|\n| Vehicle or crate condition | Clean, cold, no obvious contamination | | |\n| Packaging integrity | No leaks, swelling, broken seals, crushed cartons | | |\n| Date coding | Correct use-by / best-before life | | |\n| Product match | Correct items and quantities delivered | | |\n| Raw / ready-to-eat separation | No contamination risk during transport | | |\n| Allergen / spec changes | Flagged if recipe or supplier spec changed | | |\n\n---\n## Probe Check Table\n\nProbe at least two chilled items and one frozen item when applicable.\n\n| Product Probed | Product Type | Safe Limit | Reading | Decision | Notes |\n|---|---|---|---|---|---|\n| | Chilled | Below `8C` | | Accept / Borderline / Reject | |\n| | Chilled | Below `8C` | | Accept / Borderline / Reject | |\n| | Frozen | Below `-15C` | | Accept / Borderline / Reject | |\n\n---\n## Acceptance Decision\n\n<ul>\n  <li><input type=\"checkbox\"> Accepted in full</li>\n  <li><input type=\"checkbox\"> Accepted with issue noted</li>\n  <li><input type=\"checkbox\"> Part-rejected</li>\n  <li><input type=\"checkbox\"> Fully rejected</li>\n</ul>\n\n**If accepted:**\n- All chilled and frozen stock must be put away within **15 minutes**.\n- Use [T002-05] immediately for any cold-hold or decanted items prepared from this delivery later in the shift.\n\n**If rejected or borderline:**\n- Notify the manager\n- Record the issue in [T002-03]\n- Keep photos or supplier evidence if useful\n\n---\n## Rejection / Borderline Record\n\n| Field | Details |\n|---|---|\n| Product affected | |\n| Quantity affected | |\n| Reason for rejection or concern | Temperature / Damage / Date / Contamination / Spec issue / Other |\n| Temperature recorded | |\n| Driver informed? | Yes / No |\n| Credit or replacement requested? | Yes / No |\n| Manager notified at | |\n\n---\n## Put-Away Confirmation\n\n| Check | Complete? | Notes |\n|---|---|---|\n| Chilled goods refrigerated within 15 minutes | Yes / No | |\n| Frozen goods transferred without thaw risk | Yes / No | |\n| FIFO applied | Yes / No | |\n| Opened / decanted items labelled later if needed | Yes / No | |\n\n**Receiver sign-off:** ____________________  \n**Manager sign-off if issue found:** ____________________\n\n---\n## Common Mistakes To Avoid\n\n- Signing while the driver is still unloading.\n- Probing only the coldest-looking item instead of a realistic sample.\n- Accepting warm milk because service is about to start.\n- Forgetting to record borderline deliveries that later become a supplier pattern.\n- Leaving accepted goods on the floor while another job takes over.\n\n---\n## Connected Resources\n\n**Used with:**\n- T002-02 - Cold Chain SOP & Fridge Layout Guide\n- T002-03 - Supplier Temperature Incident Log & Escalation Record\n- T002-05 - Cold-Hold & Date Label Pack\n\n**Related blocks:**\n- B001 - Daily Temperature Monitoring\n- B003 - Temperature Excursion Response\n\n---\n\n*Tool Version 2.0 - the cold chain starts at the back door, not inside the fridge.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T002-01_delivery_acceptance_checklist.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

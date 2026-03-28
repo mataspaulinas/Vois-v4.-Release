@@ -1,0 +1,165 @@
+{
+  "block_id": "B029",
+  "name": "Return Visit Tracking",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Creates systems for measuring how frequently customers return to the cafe, identifying retention patterns, and understanding what drives repeat visits versus one-time visits. This block provides the data foundation for all customer retention and loyalty initiatives.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish methods for measuring customer return frequency without requiring formal loyalty programme membership",
+      "Calculate key retention metrics: return rate, visit frequency, and customer churn",
+      "Identify patterns in return behaviour: which customer segments return most, what times, what they order",
+      "Understand the drivers of return visits and the barriers that prevent them",
+      "Create a data baseline against which loyalty programme effectiveness (B030) can be measured"
+    ],
+    "secondary_objectives": [
+      "Quantify the revenue contribution of repeat customers versus first-time visitors",
+      "Identify customers at risk of churning so proactive retention measures can be deployed",
+      "Build management understanding that customer retention is as important as customer acquisition"
+    ]
+  },
+  "why_this_matters": "Customer retention is the most undervalued metric in cafe management. The cost of acquiring a new customer — through marketing, promotions, or location foot traffic — is estimated at 5-7 times the cost of retaining an existing one. For UK independent cafes, where marketing budgets are typically minimal, repeat customers are the lifeblood of the business. Industry research suggests that a typical profitable cafe generates 60-70% of its revenue from repeat customers who visit 2-5 times per week. A regular who spends £4 per visit and comes 4 times a week represents £832 in annual revenue from a single customer. Losing that regular — through a poor experience, a competitor opening nearby, or a change in routine — is a significant revenue loss that is often invisible because no one is tracking it. Most independent cafes have no formal system for measuring return visits. The owner might notice familiar faces, but without data, they cannot answer basic questions: What percentage of our customers are regulars? How often does the average regular visit? Has our return rate changed this month compared to last month? Are we losing regulars to the new cafe that opened around the corner? Without this data, retention efforts are based on gut feeling rather than evidence. Return visit tracking does not require sophisticated technology or intrusive data collection. Simple methods — loyalty stamps, POS customer identification, or even tally counting of recognised faces — can provide enough data to make informed retention decisions. The insight matters more than the precision of the method.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Start with the simplest possible tracking method. If the cafe uses a loyalty card (even a simple stamp card), count how many cards are in active circulation and how quickly stamps accumulate — this gives a proxy for visit frequency. If no loyalty system exists, use the manual recognition method: during one typical week, the manager or head barista keeps a simple tally of customers they recognise as having visited before. Record the count each day alongside total transaction numbers from the POS. This gives a rough 'repeat customer ratio' — the percentage of daily customers who are recognised returnees. While imprecise, it establishes a baseline. For cafes with POS systems that track customer data (e.g., Square, SumUp with customer profiles, or any system with a loyalty integration), pull a report showing unique customers and visit frequency over the past 3 months. Week 2: Calculate three basic metrics. Return Rate: what percentage of customers who visited this week have visited before? Visit Frequency: among repeat customers, how many times per week/month do they visit? Revenue Concentration: what percentage of total revenue comes from repeat customers (estimated)? Share these numbers with the team: 'Did you know that about 65% of our daily customers are people who have been here before? Those regulars generate most of our revenue. Keeping them happy is our number one priority.'",
+    "L2": "SYSTEM BUILD (2-8 weeks). Implement a more robust tracking method. Options range from low-tech to high-tech: a loyalty stamp card programme where each card is numbered (enabling tracking), POS customer profiles where staff enter a customer name or phone number, a simple app-based loyalty system (e.g., Stamp Me, LoyalZoo, Square Loyalty), or even a daily tally sheet. Choose the method that fits the cafe's style and budget. Whichever method is chosen, begin tracking: new customers versus returning customers each day, visit frequency distribution (how many customers visit once a week, 2-3 times, daily), and any identifiable lapsed customers (regulars who stop appearing). Create a monthly Customer Retention Report showing: total unique customers, new versus returning ratio, average visit frequency, estimated customer churn (regulars who have not visited in 4+ weeks), and revenue per customer segment. Establish a customer feedback loop: when a regular has not been seen for a while, ask other regulars or check if there has been a schedule change. Sometimes a simple 'We have not seen you in a while — everything okay?' on their next visit is the most powerful retention tool available.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Return visit tracking should inform strategic decisions about the menu, service, opening hours, and marketing. Conduct quarterly retention analysis: is the return rate stable, improving, or declining? What external factors might be influencing it (new competitor, seasonal changes, local events)? Calculate Customer Lifetime Value (link to B032) using return visit data: how much is an average regular worth to the cafe over a year? This number makes the case for investing in retention. Monitor the impact of any changes (new menu items, price increases, staff changes) on return visit rates — this is the most honest measure of whether a change is working. Share retention insights with the team and make them feel ownership of the metric: 'Our return rate went up 3% this month — our regulars are happier than ever.'"
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Choose a tracking method appropriate to the cafe: loyalty cards, POS data, or manual tally",
+        "During one typical week, count recognised returning customers alongside total transactions",
+        "If POS supports customer profiles, pull a 3-month report on unique customers and visit frequency",
+        "Calculate baseline metrics: return rate, visit frequency, and revenue concentration",
+        "Share the baseline numbers with the team to build awareness of retention importance",
+        "Begin daily tracking of new versus returning customer ratio",
+        "Note any regulars who seem to have stopped visiting"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Implement a more robust customer tracking method (loyalty app, POS profiles, or numbered cards)",
+        "Create a monthly Customer Retention Report with key metrics",
+        "Track visit frequency distribution: daily, 2-3 times weekly, weekly, occasional",
+        "Identify and monitor lapsed customers who have not visited in 4+ weeks",
+        "Establish a proactive outreach approach for lapsed regulars",
+        "Calculate new versus returning customer ratio weekly",
+        "Link retention data to loyalty programme design (B030)"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly retention analysis with trend review",
+        "Calculate Customer Lifetime Value using return visit data",
+        "Monitor the impact of menu, pricing, or service changes on return rates",
+        "Share retention insights with the team and celebrate improvements",
+        "Integrate retention data into strategic business decisions"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Return Visit Tracking Method (chosen and implemented)",
+    "Baseline Retention Metrics Report",
+    "Monthly Customer Retention Report",
+    "Lapsed Customer Watchlist",
+    "Quarterly Retention Analysis"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T029-01",
+        "tool_name": "Daily Return Customer Tally Sheet",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Head Barista",
+        "description": "Simple daily tally sheet for counting recognised returning customers alongside total transaction numbers, giving a daily return rate estimate."
+      },
+      {
+        "tool_id": "T029-02",
+        "tool_name": "Monthly Customer Retention Report Template",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Monthly report template showing: total unique customers, new versus returning ratio, visit frequency distribution, lapsed customer count, estimated churn, and revenue concentration."
+      },
+      {
+        "tool_id": "T029-03",
+        "tool_name": "Lapsed Customer Watchlist",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "List of identified regular customers who have not visited in 4+ weeks, with last visit date, usual order, and any known reasons for absence."
+      },
+      {
+        "tool_id": "T029-04",
+        "tool_name": "Customer Retention Calculator",
+        "level": "L2",
+        "format": "calculator",
+        "owner_role": "Manager",
+        "description": "Calculator for key retention metrics: return rate, average visit frequency, estimated customer lifetime value, and churn rate based on visit data."
+      },
+      {
+        "tool_id": "T029-05",
+        "tool_name": "Quarterly Retention Analysis Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Template for quarterly retention deep-dive: trend analysis, external factor assessment, impact of business changes on retention, and strategic recommendations."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Tracking method is too intrusive, making customers feel surveilled rather than valued",
+    "Data is collected but never analysed, providing no insight despite the effort",
+    "Staff do not participate in tracking because they see it as management admin rather than their concern",
+    "Lapsed customers are identified but no proactive retention action is taken"
+  ],
+  "kpis": [
+    "Return customer rate tracked and reported monthly",
+    "Return rate maintained at or above 60% of daily customers",
+    "Lapsed customer watchlist reviewed weekly with proactive outreach where possible",
+    "Quarterly retention analysis completed with actionable insights"
+  ],
+  "dependencies": ["B030"],
+  "constraints": [
+    "Tracking methods must respect customer privacy — no invasive data collection",
+    "Staff time for tracking must be minimal — the system should not slow down service",
+    "Imprecise data is better than no data — perfection is not required at any level"
+  ],
+  "time_load": {
+    "L1": "3 hours (method selection, baseline measurement, team briefing)",
+    "L2": "5 hours (tracking system implementation, report template creation, analysis setup)",
+    "L3": "2 hours/quarter (quarterly analysis, strategy review, CLV calculation)"
+  },
+  "review_protocol": "Daily return customer count noted. Weekly new-versus-returning ratio reviewed. Monthly Customer Retention Report produced. Quarterly retention deep-dive analysis with strategic implications.",
+  "meta": {
+    "summary_for_humans": "This block creates systems for measuring how often customers return, identifying who the regulars are, spotting when regulars stop coming, and understanding the revenue importance of retention. It provides the data foundation for all loyalty and retention initiatives.",
+    "implementation_risks": [
+      "Low-tech tracking methods give imprecise data — accept this and focus on trends, not absolute numbers",
+      "Customer privacy concerns must be respected — tracking should feel like recognition, not surveillance",
+      "The team must understand why retention matters — share the revenue impact to build buy-in"
+    ],
+    "notes_for_engine": "Activate for all cafes. Flag as urgent if signals indicate declining footfall, loss of regulars, new competitor opening nearby, or customer complaints suggesting retention risk.",
+    "tags": ["customer_experience", "retention", "return_visits", "loyalty", "measurement", "regulars", "churn", "revenue"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

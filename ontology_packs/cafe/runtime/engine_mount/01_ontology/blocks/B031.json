@@ -1,0 +1,165 @@
+{
+  "block_id": "B031",
+  "name": "Regular Customer Recognition",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Creates systems and practices for recognising and personally engaging regular customers — remembering names, usual orders, and personal details — to build genuine relationships that transform transactional visits into emotional loyalty. This block is the human-powered retention engine that no competitor can replicate.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Train staff to recognise, greet by name, and remember the usual orders of the cafe's top 20-50 regular customers",
+      "Create systems for sharing customer knowledge across the team so recognition is not dependent on one person",
+      "Develop natural ways to learn and use customer names without being intrusive",
+      "Build personal connections that make customers feel genuinely known and valued",
+      "Extend recognition to include small personal touches: remembering a birthday, asking about a holiday, congratulating a milestone"
+    ],
+    "secondary_objectives": [
+      "Create emotional switching costs — customers stay because they have a relationship, not just a habit",
+      "Generate positive word-of-mouth from customers who feel personally recognised",
+      "Differentiate the cafe from chains where customers are anonymous transactions"
+    ]
+  },
+  "why_this_matters": "The single most powerful customer retention tool in an independent cafe is not a loyalty card, a discount, or a special offer — it is being recognised. When a customer walks in and the barista says 'Morning, Sarah — your usual oat flat white?', something profound happens: the customer feels seen, valued, and connected. This moment cannot be replicated by any chain cafe, any app, or any marketing campaign. It is uniquely human and uniquely powerful. Research from the Harvard Business Review shows that customers who feel an emotional connection to a business are 52% more valuable than those who are merely satisfied. In the UK cafe context, where independent cafes compete against well-resourced chains with superior locations and marketing budgets, personal recognition is the great equaliser. A regular who is recognised by name and order is far less likely to be lured away by a competitor's promotion or a new cafe opening nearby. The relationship creates what marketers call 'emotional switching costs' — the customer would feel genuine loss if they stopped coming, not just inconvenience. For many customers, their local cafe is a third place — neither home nor work — where they feel they belong. Personal recognition is what transforms a coffee shop into a third place. However, recognition must be genuine. UK customers have a finely tuned sense of authenticity — they can immediately tell the difference between a barista who genuinely remembers them and one who has been told to pretend. The systems in this block support genuine recognition without creating performative fakery.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Identify the cafe's regular customers. Ask the team: who do you see every day or multiple times per week? Create a simple 'Regulars List' — the names (or descriptions, if names are not yet known) of the top 20 most frequent customers. For each, note what you know: their usual order, any personal details (first name, where they work nearby, whether they have children), and who on the team knows them best. This is knowledge that already exists in the team's collective memory — the task is to make it explicit and shareable. Week 2: For regulars whose names are not yet known, train staff on natural ways to learn names. The most effective technique is the loyalty card method: 'Can I pop your name on the card?' or 'What name for the order?' Once you have a name, use it — not in every sentence (that feels forced), but once during the interaction: 'Here you go, David — enjoy.' When a regular arrives, the person who recognises them should acknowledge them immediately: 'Morning, Sarah — the usual?' If the regular's usual order is not known by the person on the till, they ask: 'What can I get you today?' and when the regular states their order, the till operator mentally notes it for next time. This is a gradual, natural process — the aim is for most of the top 20 regulars to be greeted by name within a month.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a shared Regulars Knowledge Sheet — a simple document (kept behind the counter, not visible to customers) listing each regular's name, usual order, personal details known, and any preferences or notes. This ensures that recognition is not dependent on one team member — if the head barista is off sick, another team member can still greet Sarah and offer her usual oat flat white. Update the sheet as new regulars emerge and new information is learned. Train the entire team on customer recognition as a skill. Key principles: learn names naturally (never force it), use names sparingly (once per visit is enough), remember details people volunteer (if a customer mentions a holiday, ask about it next time), and never assume (if a regular usually orders a flat white but has not ordered yet today, offer it as a suggestion, not an assumption — 'The usual today, or fancying something different?'). Establish a 'customer intelligence' sharing practice: during the pre-shift huddle, team members share anything notable about regulars — 'Tom mentioned he is on holiday next week, so we will not see him until the week after' or 'Anna started ordering decaf — she might have changed preference.' By Week 8, at least 30 regulars should be recognised by name by at least two team members.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Customer recognition should be a defining characteristic of the cafe's culture — the thing that regulars mention when recommending the cafe to friends. Expand the Regulars Knowledge Sheet to the top 50 customers. Introduce personal touches for the most loyal regulars: a birthday acknowledgement (a small cake or free drink), a 'welcome back' after a holiday, or a 'we missed you' when a regular returns after an absence. These touches must feel natural and genuine — never performative. Track recognition as a team metric: can every team member name at least 20 regulars and their usual orders? Conduct quarterly recognition reviews. Share stories of exceptional customer recognition moments at team meetings — these stories reinforce the culture and inspire the team. Consider a small 'regulars appreciation' event once a year: an after-hours tasting, a preview of a new menu, or simply a morning where regulars get a complimentary pastry. This deepens the emotional connection and generates significant goodwill."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Ask the team to identify the top 20 most frequent regular customers",
+        "Create a Regulars List with names (or descriptions), usual orders, and known details",
+        "Train staff on natural name-learning techniques: loyalty cards, order names",
+        "Begin using customers' names during interactions — once per visit, naturally",
+        "Acknowledge regulars immediately when they arrive: 'Morning, [name]!'",
+        "Start noting usual orders for regulars to enable proactive suggestions",
+        "Share the Regulars List with all front-of-house team members"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a shared Regulars Knowledge Sheet behind the counter",
+        "Train all team members on customer recognition as a professional skill",
+        "Establish a pre-shift customer intelligence sharing practice",
+        "Update the knowledge sheet regularly as new details are learned",
+        "Ensure at least two team members can recognise each regular by name",
+        "Practice the 'usual or something different?' suggestion approach",
+        "Integrate customer recognition into new starter training"
+      ],
+      "responsible": "Manager, Front-of-House Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Expand recognition to the top 50 regular customers",
+        "Introduce personal touches for the most loyal regulars: birthdays, milestones",
+        "Track team recognition capability: can everyone name 20+ regulars?",
+        "Share exceptional recognition stories at team meetings",
+        "Consider an annual regulars appreciation event"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Top 20 Regulars List (initial identification)",
+    "Regulars Knowledge Sheet (shared team reference)",
+    "Customer Recognition Training Guide",
+    "Pre-Shift Customer Intelligence Protocol",
+    "Quarterly Recognition Capability Assessment"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T031-01",
+        "tool_name": "Regulars Knowledge Sheet",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Front-of-House Lead",
+        "description": "Behind-the-counter reference listing each regular customer: name, usual order, personal details known, preferences, and notes. Updated regularly and shared across the team."
+      },
+      {
+        "tool_id": "T031-02",
+        "tool_name": "Customer Recognition Training Guide",
+        "level": "L2",
+        "format": "guide",
+        "owner_role": "Manager",
+        "description": "Training guide covering natural name-learning techniques, appropriate use of personal details, the 'usual or something different?' approach, and avoiding performative recognition."
+      },
+      {
+        "tool_id": "T031-03",
+        "tool_name": "Pre-Shift Customer Intelligence Protocol",
+        "level": "L2",
+        "format": "protocol",
+        "owner_role": "Shift Manager",
+        "description": "Brief protocol for the pre-shift huddle: team members share any notable customer information — holidays, preferences changes, milestones — to enable personalised service."
+      },
+      {
+        "tool_id": "T031-04",
+        "tool_name": "Quarterly Recognition Capability Assessment",
+        "level": "L3",
+        "format": "assessment",
+        "owner_role": "Manager",
+        "description": "Assessment testing each team member's ability to name regular customers and their usual orders. Tracks team recognition capability and identifies training needs."
+      },
+      {
+        "tool_id": "T031-05",
+        "tool_name": "Regulars Appreciation Event Planner",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Planning template for annual regulars appreciation events: format options, budget, invitation list, menu, timing, and event logistics."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Recognition feels performative or forced, making customers uncomfortable rather than valued",
+    "Knowledge is concentrated in one team member who leaves, taking all customer relationships with them",
+    "Staff use customer names excessively, making the interaction feel scripted and unnatural",
+    "Personal details are noted inappropriately or shared in ways that feel intrusive to the customer"
+  ],
+  "kpis": [
+    "At least 20 regular customers greeted by name by two or more team members",
+    "Top 50 regulars documented on the Regulars Knowledge Sheet within 8 weeks",
+    "Customer feedback mentions personal service or being recognised at least monthly",
+    "All new starters briefed on the top 10 regulars within their first week"
+  ],
+  "dependencies": ["B029", "B030"],
+  "constraints": [
+    "Recognition must be genuine and natural — never scripted, forced, or performative",
+    "Customer privacy must be respected — only note details customers have voluntarily shared",
+    "The Regulars Knowledge Sheet must never be visible to customers"
+  ],
+  "time_load": {
+    "L1": "3 hours (regulars identification, list creation, initial training)",
+    "L2": "4 hours (knowledge sheet build, training programme, intelligence sharing setup)",
+    "L3": "2 hours/quarter (capability assessment, event planning, sheet updates)"
+  },
+  "review_protocol": "Daily pre-shift customer intelligence sharing. Weekly update of the Regulars Knowledge Sheet. Monthly review of new regulars to add. Quarterly recognition capability assessment.",
+  "meta": {
+    "summary_for_humans": "This block builds the cafe's ability to recognise regular customers by name, remember their orders, and create genuine personal connections. It uses shared knowledge systems so recognition is team-wide, not dependent on one person, and it trains staff to make recognition feel natural, not performative.",
+    "implementation_risks": [
+      "British customers value subtlety — over-familiar recognition can feel creepy rather than caring",
+      "High staff turnover is the biggest threat — knowledge systems must survive personnel changes",
+      "The line between recognition and intrusion is real — respect it absolutely"
+    ],
+    "notes_for_engine": "Activate for all cafes with a regular customer base. Flag as important if signals indicate customers feeling anonymous, declining return rates, or competitor cafes offering more personal service.",
+    "tags": ["customer_experience", "recognition", "regulars", "names", "personal_service", "relationships", "retention", "loyalty"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

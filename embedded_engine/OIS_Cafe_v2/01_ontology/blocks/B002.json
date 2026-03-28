@@ -1,0 +1,303 @@
+{
+  "block_id": "B002",
+  "name": "Cold Chain Management SOP",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Establishes end-to-end cold chain procedures from delivery acceptance through to storage and cold-hold service. This block ensures that chilled and frozen products never enter the temperature danger zone (8-63°C) at any point within the cafe's control.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define delivery acceptance criteria including temperature checks on arrival",
+      "Establish storage protocols for chilled and frozen goods with correct placement and rotation",
+      "Create cold-hold procedures for items displayed at ambient temperature for limited periods",
+      "Document the entire cold chain pathway so every staff member understands the flow",
+      "Ensure compliance with SFBB Chilling section requirements"
+    ],
+    "secondary_objectives": [
+      "Reduce food waste from improper storage and stock rotation failures",
+      "Strengthen supplier accountability through documented delivery temperature records",
+      "Improve stock management and FIFO discipline"
+    ]
+  },
+  "why_this_matters": "The cold chain is the unbroken series of refrigerated steps that keeps perishable food safe from the moment it leaves the supplier to the moment it reaches the customer. In a cafe environment, the chain typically involves delivery van to backdoor, backdoor to fridge, fridge to preparation area, and potentially preparation area to display counter. Every break in this chain creates a window for bacterial growth. Under the Food Safety Act 1990 and EU-retained Regulation (EC) 852/2004, food businesses bear legal responsibility for maintaining safe temperatures from the point of delivery onwards. The SFBB pack specifically addresses chilling as one of the 4 Cs, and EHO inspectors routinely check delivery records, fridge organisation, and use-by date management. For cafes that serve milk-based drinks, sandwiches, salads, and cream-filled pastries, the stakes are particularly high: Listeria, Salmonella, and E. coli can multiply rapidly in dairy and ready-to-eat foods stored above safe temperatures. Systematic cold chain failures including accepting deliveries without temperature checks and storing raw items above ready-to-eat foods are among the most common reasons for poor EHO scores. This block prevents such failures by creating a documented, trained, and audited cold chain system that covers every stage from the delivery driver to the customer's plate.",
+  "block_design": {
+    "intervention_type": "bounded_operating_intervention",
+    "purpose": "Establishes end-to-end cold chain procedures from delivery acceptance through to storage and cold-hold service. This block ensures that chilled and frozen products never enter the temperature danger zone (8-63°C) at any point within the cafe's control.",
+    "failure_modes_addressed": [
+      "FM001"
+    ],
+    "response_patterns_addressed": [
+      "RP001"
+    ],
+    "primary_execution_module": "M01",
+    "entry_conditions": [
+      "The venue is receiving chilled or frozen deliveries.",
+      "Food is being stored, opened, decanted, or displayed under cold-chain rules.",
+      "Delivery, storage, and date-labelling behaviour needs standardization across shifts."
+    ],
+    "prerequisites": [
+      "B001 monitoring is active enough to confirm unit temperatures.",
+      "Receiving staff have access to a probe thermometer and acceptance tool.",
+      "There is enough refrigeration capacity to put stock away within the required window."
+    ],
+    "contraindications": [
+      "Do not use this block as the sole response when a live excursion is already underway; use B003.",
+      "Do not accept chilled deliveries if there is no immediate compliant storage available.",
+      "Do not assume shelf labels alone create control if staff have not been trained on the hierarchy."
+    ],
+    "owner_role": "Manager with execution by delivery receivers and shift leads",
+    "effort_load": {
+      "setup": "4-8 hours",
+      "weekly": "20-30 minutes for storage audit and supplier review",
+      "monthly": "20 minutes for pattern review and escalation decisions"
+    },
+    "expected_time_to_effect": {
+      "first_visible_effect": "Within the first week",
+      "stabilisation_window": "2-8 weeks"
+    },
+    "proof_of_completion": [
+      "Every chilled or frozen delivery is checked before signing.",
+      "Fridges have a defined hierarchy and opened or decanted stock is labelled.",
+      "Supplier issues and weekly storage audits are being recorded."
+    ],
+    "proof_of_effectiveness": [
+      "Unsafe deliveries are rejected or escalated instead of quietly absorbed.",
+      "Fridge audits show sustained FIFO and date-labelling compliance.",
+      "Cold-hold display items have visible out-times and discard times."
+    ],
+    "successor_triggers": [
+      {
+        "trigger": "Accepted stock later becomes unsafe or a storage breakdown turns into a live incident.",
+        "next_block_id": "B003"
+      },
+      {
+        "trigger": "Stable receiving, storage, and supplier data is ready for dashboard aggregation.",
+        "next_block_id": "B004"
+      }
+    ],
+    "linked_tools": [
+      "T002-01",
+      "T002-02",
+      "T002-03",
+      "T002-04",
+      "T002-05"
+    ]
+  },
+  "implementation_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Drivers pressure staff to sign before checks are complete.",
+        "what_can_go_wrong": "Unsafe stock enters the venue and supplier accountability is lost at the point of handover.",
+        "early_signals": [
+          "Delivery notes are signed before probe readings exist.",
+          "Staff describe checking after unloading as normal.",
+          "Borderline deliveries are remembered verbally but not logged."
+        ],
+        "prevention": [
+          "Train staff on a strict check-first-sign-last rule.",
+          "Keep the receiving checklist and probe at the back door.",
+          "Use a standard phrase for drivers when checks take a few minutes."
+        ],
+        "mitigation": [
+          "Log the incident in T002-03 and re-brief the team immediately.",
+          "Escalate repeated pressure to the supplier.",
+          "Spot-check receiving practice over the next week."
+        ],
+        "if_occurs_next_signals": [
+          "unsafe_delivery_acceptance",
+          "supplier_control_failure"
+        ],
+        "possible_successor_blocks": [
+          "B004"
+        ]
+      },
+      {
+        "warning": "Fridge organisation and date labels slip back after the first reset.",
+        "what_can_go_wrong": "The SOP exists but real storage discipline collapses during busy periods.",
+        "early_signals": [
+          "Opened dairy or fillings return to the fridge unlabeled.",
+          "FIFO is replaced by whatever fits nearest the front.",
+          "Cold-hold items appear in display with no time label."
+        ],
+        "prevention": [
+          "Run the weekly audit using T002-04.",
+          "Keep label stock and pens at point of use.",
+          "Make one shift lead accountable for weekly storage discipline."
+        ],
+        "mitigation": [
+          "Do a full fridge reset and remove ambiguous stock.",
+          "Retrain the team on hierarchy and label rules.",
+          "Increase audit frequency until the standard holds again."
+        ],
+        "if_occurs_next_signals": [
+          "storage_discipline_failure",
+          "unknown_shelf_life_risk"
+        ],
+        "possible_successor_blocks": [
+          "B004"
+        ]
+      }
+    ]
+  },
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Map the cold chain pathway in your cafe. Trace the journey of a carton of milk from the delivery driver's hands to the customer's latte. Identify every point where temperature control could be lost: the back door area, the walk from door to fridge, the barista station, the display counter. On Day 1, create a simple Delivery Acceptance Checklist: when a delivery arrives, the receiving staff member must check the delivery vehicle temperature (ask the driver), probe-check at least two chilled items (target: below 5°C, reject above 8°C), visually inspect for damage, check use-by dates, and sign the delivery note. Refuse any delivery where chilled goods arrive above 8°C and document the rejection. Week 1 also requires organising every fridge: raw items on the bottom shelf, ready-to-eat items above, dairy together, and nothing blocking the air vents. Label shelves clearly. Week 2: Introduce a put-away rule — all chilled deliveries must be in the fridge within 15 minutes of arrival, no exceptions. During service, milk must be returned to refrigeration within 30 minutes of being taken out. Train all staff on the 4-hour rule: any chilled food left at ambient temperature for more than 4 hours must be discarded. The manager should do a daily walk-through of all fridges checking organisation, date labels, and stock rotation. By end of Week 2, every delivery should have a completed acceptance checklist and every fridge should be organised to the new standard.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Draft a comprehensive Cold Chain Management SOP covering: delivery acceptance procedures, fridge organisation standards, stock rotation (FIFO), cold-hold protocols for display items, and the maximum time food can be out of refrigeration. Include photographs of correctly organised fridges as visual references. Create a Supplier Temperature Incident Log — every time a delivery is rejected or arrives at borderline temperatures, log it. After three incidents from the same supplier, escalate to a formal conversation. Establish a fridge organisation audit conducted weekly by the shift manager: check that shelves are labelled, FIFO is being followed, nothing is past its use-by date, and temperatures are within range. Introduce date-labelling for all decanted or opened items — once a product is opened or transferred from its original packaging, it must be labelled with the contents, date opened, and use-by date (typically 48 hours for high-risk items). Train all staff on these procedures with a practical demonstration. Begin logging delivery temperatures in a spreadsheet that allows trend analysis. Create a cold-hold protocol for display items: sandwiches on the counter must have a maximum display time (typically 4 hours), must be time-labelled, and must be discarded at the end of the period.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Cold chain management should be second nature. Introduce quarterly supplier reviews where you share delivery temperature data with each supplier and discuss any concerns. Implement a cold chain champion role that rotates monthly among staff — this person has extra responsibility for checking deliveries and fridge organisation that week. Run biannual cold chain scenario drills: the main fridge has failed at 6am, what do you do? Staff should be able to answer without hesitation. Display a cold chain compliance dashboard in the staff area showing delivery acceptance rates, fridge audit scores, and days since last temperature incident. Consider investing in fridge door sensors that alert when a door is left open for more than 2 minutes. Review and benchmark against industry best practice."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Map the complete cold chain pathway from delivery to customer for all chilled products",
+        "Create and print a Delivery Acceptance Checklist for receiving staff",
+        "Reorganise all fridges with clear shelf labels and correct storage hierarchy",
+        "Implement the 15-minute put-away rule for all chilled deliveries",
+        "Train all staff on the 4-hour ambient rule for chilled foods",
+        "Begin daily fridge walk-throughs by the manager"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Issue the Cold Chain SOP & Fridge Layout Guide using T002-02 with a site-specific fridge hierarchy",
+        "Use T002-01 at every chilled or frozen delivery with a strict check-first-sign-last rule",
+        "Log supplier issues, borderlines, and rejections in T002-03 and escalate repeat patterns formally",
+        "Run T002-04 weekly to verify shelf hierarchy, FIFO, date labels, and cold-hold control",
+        "Use T002-05 for all cold-hold display items and opened or decanted high-risk stock",
+        "Train all staff practically on put-away within 15 minutes and date-labelling discipline",
+        "Retain delivery, audit, and supplier records together for inspection evidence"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Run quarterly supplier reviews using the evidence captured in T002-03",
+        "Rotate a cold chain champion who spot-checks label discipline and fridge organisation between audits",
+        "Run cold chain failure drills using the SOP so staff can respond under pressure",
+        "Share recurring cold-hold and supplier themes with the team in briefings so the standards stay visible",
+        "Feed stable B002 data into B004 when the dashboard layer is active"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Delivery Acceptance Checklist",
+    "Cold Chain SOP & Fridge Layout Guide",
+    "Supplier Temperature Incident Log & Escalation Record",
+    "Weekly Fridge Organisation & Date Labelling Audit",
+    "Cold-Hold & Date Label Pack"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T002-01",
+        "tool_name": "Delivery Acceptance Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "Front-door receiving checklist covering transport condition, probe checks, acceptance decision, rejection notes, and 15-minute put-away confirmation."
+      },
+      {
+        "tool_id": "T002-02",
+        "tool_name": "Cold Chain SOP & Fridge Layout Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Venue cold-chain standard covering delivery, fridge hierarchy, FIFO, date labels, cold-hold limits, and team sign-off."
+      },
+      {
+        "tool_id": "T002-03",
+        "tool_name": "Supplier Temperature Incident Log & Escalation Record",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Supplier issue log that captures warm, damaged, or short-dated deliveries and records escalation after repeat incidents."
+      },
+      {
+        "tool_id": "T002-04",
+        "tool_name": "Weekly Fridge Organisation & Date Labelling Audit",
+        "level": "L2",
+        "format": "audit",
+        "owner_role": "Shift Manager",
+        "description": "Weekly scored audit of fridge hierarchy, FIFO, date labels, cold-hold labels, and overall storage discipline."
+      },
+      {
+        "tool_id": "T002-05",
+        "tool_name": "Cold-Hold & Date Label Pack",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "All Staff",
+        "description": "Printable label pack for cold-hold display times, opened packs, and decanted items so shelf life is visible at point of use."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Deliveries are accepted without temperature checks, allowing already-compromised stock into the cold chain",
+    "Fridge organisation reverts to chaos within weeks as staff place items wherever space allows",
+    "Opened or decanted items are not date-labelled, leading to unknown shelf life and potential use of expired products",
+    "Cold-hold display items are left out beyond safe time limits during busy service periods"
+  ],
+  "kpis": [
+    "100% of deliveries checked and logged with temperature readings on arrival",
+    "Zero chilled deliveries accepted above 8°C without documented corrective action",
+    "Weekly fridge audit score of 90% or above consistently",
+    "All opened/decanted items labelled with date and use-by at 100% compliance"
+  ],
+  "dependencies": [
+    "B001"
+  ],
+  "constraints": [
+    "Requires a calibrated probe thermometer available at the delivery acceptance point",
+    "Staff receiving deliveries must be trained on acceptance criteria before handling goods alone",
+    "Sufficient refrigeration capacity must exist to store all chilled goods properly"
+  ],
+  "time_load": {
+    "L1": "4 hours",
+    "L2": "8 hours",
+    "L3": "3 hours/month"
+  },
+  "review_protocol": "Daily visual check of fridge organisation by shift manager. Weekly fridge audit with documented scoring. Monthly delivery temperature trend review. Quarterly supplier performance review. Annual SOP update.",
+  "meta": {
+    "summary_for_humans": "This block creates a complete cold chain system from delivery acceptance to customer service, ensuring chilled and frozen products are never exposed to unsafe temperatures. It covers delivery checks, fridge organisation, date labelling, and cold-hold procedures.",
+    "implementation_risks": [
+      "Delivery drivers may resist temperature checks — prepare a polite but firm script for staff",
+      "Fridge reorganisation requires buy-in from all staff, not just the manager",
+      "Cold-hold time tracking is easily forgotten during peak service periods"
+    ],
+    "notes_for_engine": "Activate alongside B001. Flag if signals indicate delivery acceptance issues, fridge organisation problems, or missing use-by date labels.",
+    "tags": [
+      "food_safety",
+      "cold_chain",
+      "delivery",
+      "storage",
+      "SFBB",
+      "FIFO",
+      "refrigeration",
+      "supplier_management"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "independent_cafe",
+      "specialty_coffee",
+      "chain_cafe",
+      "franchise_cafe",
+      "drive_through",
+      "kiosk",
+      "coffee_van",
+      "bakery_cafe"
+    ],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

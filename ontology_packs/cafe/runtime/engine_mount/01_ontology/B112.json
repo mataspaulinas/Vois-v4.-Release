@@ -1,0 +1,157 @@
+{
+  "block_id": "B112",
+  "name": "Food Cost % Tracking",
+  "version": "v1.0",
+  "domain": "D06_supply_chain",
+  "module": "M06: Supply Chain & Supplier Relations",
+  "state": "enriched",
+  "purpose": "Implements weekly food cost percentage monitoring — the most important financial health indicator for the food side of a cafe's operation — tracking actual food costs against revenue to ensure the cafe maintains its target GP% on all food items and identifies cost drift before it erodes profitability.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Calculate actual food cost percentage weekly: (Food Purchases + Opening Stock - Closing Stock) / Food Revenue x 100",
+      "Establish a target food cost percentage range (25-35%) appropriate to the cafe's positioning",
+      "Identify the drivers of food cost variance: supplier price increases, portion creep, waste, theft, or sales mix shift",
+      "Create a weekly food cost review rhythm that catches problems within 7 days rather than at month-end",
+      "Link food cost tracking to menu item costing (B111) so that theoretical and actual costs can be compared"
+    ],
+    "secondary_objectives": [
+      "Build financial literacy among the team by sharing food cost data and explaining its significance",
+      "Enable rapid pricing or portioning adjustments when food costs move outside target range",
+      "Support monthly P&L accuracy by providing reliable weekly food cost data"
+    ]
+  },
+  "why_this_matters": "Food cost percentage is the pulse of a cafe's food profitability. If the cafe's food revenue is £2,000 per week and food purchases total £600, the food cost percentage is 30%. If that drifts to 38% — an increase that can happen gradually through supplier price increases, portion creep, and waste — the cafe loses £160 per week in GP, or £8,320 per year. That £8,320 is often the difference between a profitable cafe and a struggling one. The insidious nature of food cost drift is that it happens slowly: a supplier increases prices by 3% without notice, the team starts putting slightly more cheese on sandwiches, a new menu item is introduced without proper costing, and waste increases because par levels have not been adjusted. Each change is small, but they compound. Without weekly monitoring, the owner discovers the problem only when the quarterly accounts arrive — by which time thousands of pounds have been lost. Weekly food cost tracking creates an early warning system. A single week with food costs at 36% instead of the target 30% triggers an immediate investigation: what changed? Supplier prices? Menu mix? Waste? Volume? The weekly cadence means problems are caught within days, not months. For UK cafes, the benchmark food cost percentage is 25-35%, depending on the type of food served: simple sandwiches and pastries sit at the lower end, while complex cooked dishes with expensive ingredients sit at the higher end. The cafe's target should be set based on its specific menu and positioning.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Set up a simple food cost tracking system. This requires three data points each week: total food purchases (all invoices and cash-and-carry receipts for food items — exclude coffee, drinks, packaging, and cleaning supplies), food revenue (total food sales from the till, separate from drink sales — most EPOS systems can split these), and ideally a stock adjustment (opening stock value minus closing stock value, though this can be simplified initially). For the first 2 weeks, simply collect the data: file every food invoice, record food revenue daily from the till, and calculate: Food Cost % = Total Food Purchases / Food Revenue x 100. If the cafe's till does not separate food and drink sales, estimate the split using the menu mix (e.g., if 35% of transactions include a food item with an average food spend of £5, food revenue = number of food transactions x £5). Week 2: Calculate the food cost percentage for Week 1 and compare it against the target range (25-35%). If it is above 35%, the cafe is over-spending on food relative to what it earns. If it is below 25%, either the pricing is very strong or the food is being under-portioned. Record the figure and begin building a weekly trend.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Refine the food cost calculation to include stock adjustment: Food Cost % = (Opening Stock + Purchases - Closing Stock) / Food Revenue x 100. This is more accurate because it accounts for stock changes rather than just purchase timing. Conduct a brief stock count of food items at the same time each week (Sunday evening or Monday morning works well for most cafes). This does not need to be a full inventory count — value the key items (bread, fillings, dairy, pastries) and estimate the rest. Create a Weekly Food Cost Report that the manager completes every Monday: food revenue for the previous week, food purchases, stock adjustment, calculated food cost %, comparison to target, and variance commentary ('food cost was 33% this week vs 30% target due to a price increase from the bakery supplier and higher waste on Thursday'). Track the 4-week rolling average to smooth out weekly fluctuations and identify true trends. Compare actual food cost percentage against the theoretical food cost from B111 (Menu Item Costing) — the gap between theoretical and actual reveals waste, portioning inconsistency, or unrecorded costs.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Food cost percentage should be a number the entire team understands and cares about. Display the weekly food cost percentage (or a simplified version: 'This week: 29% — on target') in the staff area. Set a monthly team target for food cost percentage and celebrate when it is achieved. Implement a variance investigation protocol: any week where food cost exceeds target by more than 3 percentage points triggers a formal investigation covering supplier pricing, waste levels, portioning, and sales mix. Link food cost tracking to the waste log (B097) so that waste data and cost data tell a coherent story. Use food cost trend data in annual pricing reviews (B118) and menu development. Review and refine the food cost target annually based on menu changes, supplier agreements, and competitive positioning."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Set up a filing system for all food purchase invoices and receipts",
+        "Identify how to extract food revenue from the till system (separate from drink sales)",
+        "Calculate food cost percentage for the first full week of data",
+        "Compare result against the 25-35% benchmark and note the gap",
+        "Begin recording weekly food cost data in a simple tracker",
+        "If till system cannot split food/drink, estimate the split from menu mix data",
+        "Brief the manager on the weekly food cost calculation and reporting responsibility"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Implement weekly stock counts for key food items to refine cost calculation",
+        "Create a Weekly Food Cost Report template with variance commentary",
+        "Track the 4-week rolling average to identify true trends",
+        "Compare actual vs theoretical food cost from B111 to identify the gap",
+        "Investigate and document the drivers of any significant food cost variance",
+        "Link food cost data to waste tracking (B097) for coherent analysis",
+        "Present food cost trends in monthly management meetings"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Display weekly food cost percentage in the staff area",
+        "Set monthly team targets for food cost percentage",
+        "Implement a formal variance investigation protocol for overages above 3 points",
+        "Use food cost trend data in annual pricing reviews",
+        "Review and refine the food cost target annually"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Weekly Food Cost Report template",
+    "Food Cost Percentage trend tracker",
+    "4-Week Rolling Average chart",
+    "Variance Investigation template",
+    "Actual vs Theoretical Cost Comparison"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T112-01",
+        "tool_name": "Weekly Food Cost Report",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Weekly report template: food revenue, food purchases, stock adjustment, calculated food cost %, target comparison, variance commentary, and actions required."
+      },
+      {
+        "tool_id": "T112-02",
+        "tool_name": "Food Cost Trend Tracker",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Spreadsheet tracking weekly food cost percentage over time with 4-week rolling average, target line, and visual chart. Highlights weeks outside the target range for investigation."
+      },
+      {
+        "tool_id": "T112-03",
+        "tool_name": "Actual vs Theoretical Cost Comparison",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Comparison template showing theoretical food cost (from B111 menu item costing) against actual food cost, calculating the variance percentage and identifying likely causes."
+      },
+      {
+        "tool_id": "T112-04",
+        "tool_name": "Food Cost Variance Investigation Sheet",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Formal investigation template used when food cost exceeds target by more than 3 points: supplier pricing check, waste analysis, portioning audit, sales mix review, and corrective actions."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Food cost percentage is calculated monthly or quarterly rather than weekly, catching problems too late",
+    "Food purchases are not accurately separated from other costs (coffee, drinks, cleaning), producing unreliable data",
+    "Stock adjustments are not included, making food cost data volatile and misleading due to purchase timing",
+    "Food cost data is collected but never reviewed or acted upon, making the tracking system a waste of time"
+  ],
+  "kpis": [
+    "Food cost percentage maintained within the 25-35% target range on a 4-week rolling average",
+    "Weekly food cost report completed every Monday without exception",
+    "Variance investigations completed within 48 hours for any week exceeding target by 3+ points",
+    "Actual vs theoretical food cost gap below 5 percentage points"
+  ],
+  "dependencies": ["B111"],
+  "constraints": [
+    "Accurate food cost tracking requires till systems that can separate food and drink revenue",
+    "Weekly stock counts add time but are essential for data accuracy — simplify to key items if full counts are impractical",
+    "Purchase invoice filing must be disciplined — missing invoices make food cost data unreliable"
+  ],
+  "time_load": {
+    "L1": "1 hour/week (invoice collection, calculation, recording)",
+    "L2": "2 hours/week (stock count, report completion, variance analysis)",
+    "L3": "1 hour/month (trend review, investigation, target refinement)"
+  },
+  "review_protocol": "Weekly food cost report by manager. Monthly trend review in management meeting. Quarterly target assessment. Annual food cost target review aligned with pricing strategy.",
+  "meta": {
+    "summary_for_humans": "This block implements weekly food cost percentage tracking — calculating actual food costs against food revenue to maintain the 25-35% target. It catches cost drift within days rather than months, preventing the slow margin erosion that damages so many independent cafes.",
+    "implementation_risks": [
+      "Separating food and drink purchases on invoices from mixed suppliers (e.g., cash-and-carry runs) requires discipline",
+      "If the till cannot split food and drink revenue, food cost calculations will be approximate until the system is configured",
+      "Weekly stock counts can feel burdensome — keep them focused on the top 20 highest-value food items"
+    ],
+    "notes_for_engine": "Activate after B111 (Menu Item Costing Calculator) is complete. Flag as urgent if signals indicate unknown food costs, GP% significantly below expectations, or food cost percentage above 35% persistently.",
+    "tags": ["supply_chain", "food_cost", "GP_percentage", "weekly_tracking", "profitability", "margin", "financial_control"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

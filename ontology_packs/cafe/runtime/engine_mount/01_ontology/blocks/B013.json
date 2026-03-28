@@ -1,0 +1,165 @@
+{
+  "block_id": "B013",
+  "name": "HACCP Food Safety System",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Documents the cafe's Hazard Analysis and Critical Control Points (HACCP) system, identifying every food safety hazard in the operation, assessing risk, and defining the critical control points where monitoring prevents unsafe food from reaching customers. This block is a legal requirement and the foundation of the entire food safety management system.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Conduct a full hazard analysis covering biological, chemical, and physical hazards at every stage of the food operation",
+      "Identify Critical Control Points (CCPs) where control is essential to prevent or reduce hazards to acceptable levels",
+      "Define critical limits, monitoring procedures, and corrective actions for each CCP",
+      "Create HACCP documentation that satisfies EHO inspection requirements and demonstrates due diligence",
+      "Establish a review process to keep the HACCP plan current as the menu, suppliers, or processes change"
+    ],
+    "secondary_objectives": [
+      "Use the HACCP framework to identify and eliminate food safety risks before they cause harm",
+      "Provide a structured approach to food safety that goes beyond the SFBB pack for larger or more complex operations",
+      "Build management confidence in the cafe's food safety controls"
+    ]
+  },
+  "why_this_matters": "HACCP is a legal requirement for all food businesses in the UK under EU-retained Regulation (EC) 852/2004, Article 5. The regulation requires food business operators to put in place, implement, and maintain a permanent procedure based on HACCP principles. For most small cafes, the Food Standards Agency's Safer Food Better Business (SFBB) pack serves as a simplified HACCP system, and EHOs will accept this for straightforward operations. However, cafes with more complex menus, those that cook from raw, or those aiming for best-in-class food safety should develop a more detailed HACCP plan. HACCP was originally developed by NASA to ensure the safety of food for astronauts — it is a systematic, science-based approach to identifying and controlling food safety hazards. The seven HACCP principles are: conduct a hazard analysis, determine CCPs, establish critical limits, establish monitoring procedures, establish corrective actions, establish verification procedures, and establish documentation. In a cafe context, typical CCPs include cooking temperatures (food must reach 75°C core temperature), chilling (food must cool to 8°C within 90 minutes), and hot holding (food must stay above 63°C). Without a documented HACCP plan, a cafe cannot demonstrate due diligence — the legal defence that shows the business took all reasonable precautions to prevent food safety failures. If a customer becomes ill and the business cannot produce its HACCP documentation, the owner faces personal criminal liability under the Food Safety Act 1990.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: If the cafe currently relies on the SFBB pack, review it to ensure all sections are completed, up to date, and reflect current operations. The SFBB pack is a valid HACCP-based system for simple cafe operations. Verify that the following SFBB sections are filled in: cross-contamination, cleaning, chilling, cooking, management, and the 4-weekly review diary. If the SFBB pack is incomplete, complete it immediately — this is the minimum legal requirement. For cafes with more complex operations (cooking from raw, hot food service, multi-site), begin a formal hazard analysis. List every food process step from delivery through storage, preparation, cooking, cooling, display, and service. At each step, identify potential biological hazards (bacteria, viruses), chemical hazards (cleaning chemicals, allergens), and physical hazards (glass, metal, plastic, hair). Week 2: Assess each hazard for severity and likelihood. Determine which steps are Critical Control Points — points where a control measure is essential to prevent unsafe food. For most cafes, CCPs include: delivery (checking temperatures), chilled storage (maintaining below 8°C), cooking (reaching 75°C core), cooling (reaching 8°C within 90 minutes), hot holding (maintaining above 63°C), and reheating (reaching 82°C in Scotland, 75°C in England). For each CCP, define the critical limit, how it will be monitored, and what corrective action will be taken if the limit is breached.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Document the complete HACCP plan in a formal document separate from (or in addition to) the SFBB pack. The document should include: a description of the food business, a process flow diagram showing every step from delivery to service, a hazard analysis table listing every hazard identified at each step, a CCP determination table, and individual CCP monitoring sheets. For each CCP, create a monitoring record — this is where daily CCP checks are logged. Link these to existing blocks: temperature monitoring (B001) covers the chilled storage CCP, cooking temperature checks cover the cooking CCP. Establish verification procedures: how does the business confirm that the HACCP system is working? This includes reviewing monitoring records, calibrating equipment, and conducting periodic food safety checks. Train the manager and any staff who monitor CCPs on HACCP principles — they must understand why they are checking, not just what number to write down. Create a HACCP review schedule: the plan must be reviewed whenever the menu changes, a new supplier is introduced, equipment is changed, a food safety incident occurs, or at minimum annually. By Week 8, the cafe should have a documented HACCP plan that covers every process, identifies all CCPs, and has monitoring and corrective action procedures in place.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The HACCP plan should be a living document, not a file that sits on a shelf. Conduct an annual comprehensive HACCP review involving the owner, manager, and kitchen lead. Walk through every process step and ask: has anything changed? Are the CCPs still valid? Are the critical limits still correct? Are the monitoring procedures working? Review corrective action records — have there been trends that suggest a systemic issue? Consider engaging a food safety consultant to independently review the HACCP plan every two years. Share HACCP principles with the wider team — even staff who do not monitor CCPs should understand how the system protects customers. Integrate HACCP documentation into the food safety record-keeping system (B016) so all records are centralised and easily accessible for EHO inspection."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Review and complete the SFBB pack if used as the primary HACCP system",
+        "List every food process step from delivery through to service",
+        "Identify biological, chemical, and physical hazards at each step",
+        "Determine which steps are Critical Control Points (CCPs)",
+        "Define critical limits, monitoring procedures, and corrective actions for each CCP",
+        "Begin recording CCP monitoring checks from Day 1",
+        "Ensure existing monitoring (temperature logs, cooking checks) is linked to the HACCP framework"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Document the complete HACCP plan with process flow diagram and hazard analysis tables",
+        "Create individual CCP monitoring record sheets",
+        "Establish verification procedures to confirm the HACCP system is working",
+        "Train the manager and CCP monitoring staff on HACCP principles",
+        "Create a HACCP review schedule triggered by menu changes, new suppliers, or incidents",
+        "Link HACCP documentation to existing blocks (B001 temperature, B005 allergens)",
+        "File the complete HACCP plan in the food safety documentation folder"
+      ],
+      "responsible": "Manager, Kitchen Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct an annual comprehensive HACCP review with owner involvement",
+        "Review corrective action trends to identify systemic issues",
+        "Consider biennial independent food safety consultant review",
+        "Share HACCP principles with the wider team for general awareness",
+        "Integrate HACCP into the centralised food safety record-keeping system (B016)"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "HACCP Plan Document (hazard analysis, CCP determination, process flow)",
+    "CCP Monitoring Record Sheets",
+    "Process Flow Diagram",
+    "HACCP Review Schedule",
+    "Corrective Action Log linked to CCPs"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T013-01",
+        "tool_name": "Hazard Analysis Worksheet",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Structured worksheet for analysing biological, chemical, and physical hazards at each process step, including severity, likelihood, and control measures."
+      },
+      {
+        "tool_id": "T013-02",
+        "tool_name": "CCP Determination Matrix",
+        "level": "L2",
+        "format": "matrix",
+        "owner_role": "Manager",
+        "description": "Decision matrix for determining whether a control point is a CCP, using the Codex Alimentarius decision tree approach. Documents critical limits and monitoring requirements."
+      },
+      {
+        "tool_id": "T013-03",
+        "tool_name": "CCP Monitoring Record Sheet",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Kitchen Lead",
+        "description": "Daily monitoring record for each CCP, capturing the measurement, critical limit, actual result, corrective action if needed, and staff initials."
+      },
+      {
+        "tool_id": "T013-04",
+        "tool_name": "Process Flow Diagram Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Template for creating a visual process flow diagram showing every step from ingredient delivery through storage, preparation, cooking, cooling, display, and service."
+      },
+      {
+        "tool_id": "T013-05",
+        "tool_name": "Annual HACCP Review Checklist",
+        "level": "L3",
+        "format": "audit",
+        "owner_role": "Owner",
+        "description": "Comprehensive checklist for the annual HACCP review, covering plan accuracy, CCP validity, monitoring effectiveness, corrective action trends, and documentation completeness."
+      }
+    ]
+  },
+  "failure_modes": [
+    "HACCP plan is created but never reviewed or updated, becoming out of date as the menu and processes change",
+    "CCPs are identified but monitoring is inconsistent, leaving gaps in the safety net",
+    "Staff monitor CCPs without understanding the significance, treating it as a tick-box exercise",
+    "The HACCP plan is overly complex for a simple cafe operation, leading to confusion and non-compliance"
+  ],
+  "kpis": [
+    "HACCP plan fully documented and available for EHO inspection at all times",
+    "100% of CCP monitoring checks completed on schedule every operating day",
+    "Zero CCP breaches without documented corrective action",
+    "HACCP plan reviewed and updated within 7 days of any menu, supplier, or process change"
+  ],
+  "dependencies": ["B001", "B005", "B009"],
+  "constraints": [
+    "HACCP is a legal requirement — all food businesses must have a documented food safety management system",
+    "The SFBB pack is acceptable for simple cafe operations but more complex operations need a formal HACCP plan",
+    "HACCP documentation must be retained for a minimum of 12 months and be available for EHO inspection"
+  ],
+  "time_load": {
+    "L1": "8 hours (SFBB review/completion, initial hazard analysis, CCP identification)",
+    "L2": "16 hours (full HACCP plan documentation, process flow, monitoring setup, staff training)",
+    "L3": "4 hours/year (annual review, consultant engagement, trend analysis)"
+  },
+  "review_protocol": "Daily CCP monitoring record review by shift manager. Monthly HACCP compliance check. Review triggered by any menu change, new supplier, equipment change, or food safety incident. Annual comprehensive HACCP review with owner involvement.",
+  "meta": {
+    "summary_for_humans": "This block establishes the cafe's HACCP food safety system — a systematic analysis of every food safety hazard in the operation, identification of critical control points, and documented monitoring procedures. It is a legal requirement and the foundation upon which all other food safety blocks build.",
+    "implementation_risks": [
+      "HACCP can feel academic and overwhelming for small cafe owners — start with the SFBB pack and build up",
+      "Over-identifying CCPs creates unnecessary monitoring burden — focus on genuinely critical points",
+      "The plan must be proportionate to the complexity of the operation"
+    ],
+    "notes_for_engine": "Core foundation block — activate for all cafes. Flag as urgent if no HACCP/SFBB documentation exists, if EHO requests documentation, or if a food safety incident occurs. Links to B001, B005, B009 as prerequisite blocks.",
+    "tags": ["food_safety", "HACCP", "hazard_analysis", "CCP", "compliance", "SFBB", "EHO", "legal_requirement"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

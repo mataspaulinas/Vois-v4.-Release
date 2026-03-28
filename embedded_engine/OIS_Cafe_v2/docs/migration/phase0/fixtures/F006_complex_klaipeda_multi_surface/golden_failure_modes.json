@@ -1,0 +1,296 @@
+[
+  {
+    "failure_mode_id": "FM042",
+    "score": 1.0,
+    "domain_id": "D05",
+    "module_id": "",
+    "signal_ids": [
+      "S073",
+      "S070",
+      "S019"
+    ],
+    "title": "Ticket time and service speed failure",
+    "severity": "high",
+    "description": "Ticket time and service speed failure"
+  },
+  {
+    "failure_mode_id": "FM077",
+    "score": 1.0,
+    "domain_id": "D09",
+    "module_id": "",
+    "signal_ids": [
+      "S133",
+      "S030"
+    ],
+    "title": "Cleanliness and hygiene presentation failure",
+    "severity": "high",
+    "description": "Cleanliness and hygiene presentation failure"
+  },
+  {
+    "failure_mode_id": "FM025",
+    "score": 1.0,
+    "domain_id": "D03",
+    "module_id": "",
+    "signal_ids": [
+      "S045",
+      "S051"
+    ],
+    "title": "Recipe standardisation and portion control failure",
+    "severity": "medium",
+    "description": "Recipe standardisation and portion control failure"
+  },
+  {
+    "failure_mode_id": "FM031",
+    "score": 1.0,
+    "domain_id": "D04",
+    "module_id": "",
+    "signal_ids": [
+      "S063",
+      "S051"
+    ],
+    "title": "Barista skills and craft development failure",
+    "severity": "high",
+    "description": "Barista skills and craft development failure"
+  },
+  {
+    "failure_mode_id": "FM040",
+    "score": 1.0,
+    "domain_id": "D05",
+    "module_id": "",
+    "signal_ids": [
+      "S083",
+      "S070"
+    ],
+    "title": "Morning rush and peak management failure",
+    "severity": "high",
+    "description": "Morning rush and peak management failure"
+  },
+  {
+    "failure_mode_id": "FM002",
+    "score": 0.8,
+    "domain_id": "D01",
+    "module_id": "",
+    "signal_ids": [
+      "S002"
+    ],
+    "title": "Allergen management and PPDS compliance failure",
+    "severity": "high",
+    "description": "Allergen management and PPDS compliance failure"
+  },
+  {
+    "failure_mode_id": "FM008",
+    "score": 0.8,
+    "domain_id": "D01",
+    "module_id": "",
+    "signal_ids": [
+      "S010"
+    ],
+    "title": "Food storage and date management failure",
+    "severity": "high",
+    "description": "Food storage and date management failure"
+  },
+  {
+    "failure_mode_id": "FM011",
+    "score": 0.8,
+    "domain_id": "D02",
+    "module_id": "",
+    "signal_ids": [
+      "S019"
+    ],
+    "title": "Queue management and wait time failure",
+    "severity": "high",
+    "description": "Queue management and wait time failure"
+  },
+  {
+    "failure_mode_id": "FM097",
+    "score": 0.8,
+    "domain_id": "D05",
+    "module_id": "M14",
+    "signal_ids": [
+      "S071"
+    ],
+    "title": "Operational discipline and daily routine failure",
+    "severity": "high",
+    "description": "Operational discipline and daily routine failure"
+  },
+  {
+    "failure_mode_id": "FM041",
+    "score": 0.8,
+    "domain_id": "D05",
+    "module_id": "",
+    "signal_ids": [
+      "S073"
+    ],
+    "title": "Workflow layout and station design failure",
+    "severity": "medium",
+    "description": "Workflow layout and station design failure"
+  },
+  {
+    "failure_mode_id": "FM046",
+    "score": 0.8,
+    "domain_id": "D05",
+    "module_id": "",
+    "signal_ids": [
+      "S080"
+    ],
+    "title": "Seating management and turnover failure",
+    "severity": "medium",
+    "description": "Seating management and turnover failure"
+  },
+  {
+    "failure_mode_id": "FM088",
+    "score": 0.8,
+    "domain_id": "D11",
+    "module_id": "",
+    "signal_ids": [
+      "S160"
+    ],
+    "title": "Revenue diversification failure",
+    "severity": "medium",
+    "description": "Revenue diversification failure"
+  },
+  {
+    "failure_mode_id": "FM093",
+    "score": 0.8,
+    "domain_id": "D12",
+    "module_id": "",
+    "signal_ids": [
+      "S166"
+    ],
+    "title": "Standards consistency and culture failure",
+    "severity": "medium",
+    "description": "Standards consistency and culture failure"
+  },
+  {
+    "failure_mode_id": "FM007",
+    "score": 0.7,
+    "domain_id": "D01",
+    "module_id": "",
+    "signal_ids": [
+      "S002"
+    ],
+    "title": "Food safety management system (HACCP) failure",
+    "severity": "high",
+    "description": "Food safety management system HACCP failure"
+  },
+  {
+    "failure_mode_id": "FM001",
+    "score": 0.7,
+    "domain_id": "D01",
+    "module_id": "",
+    "signal_ids": [
+      "S010"
+    ],
+    "title": "Temperature monitoring and cold chain failure",
+    "severity": "high",
+    "description": "Temperature monitoring and cold chain failure"
+  },
+  {
+    "failure_mode_id": "FM015",
+    "score": 0.7,
+    "domain_id": "D02",
+    "module_id": "",
+    "signal_ids": [
+      "S030"
+    ],
+    "title": "Customer retention and return visit failure",
+    "severity": "high",
+    "description": "Customer retention and return visit failure"
+  },
+  {
+    "failure_mode_id": "FM053",
+    "score": 0.7,
+    "domain_id": "D06",
+    "module_id": "",
+    "signal_ids": [
+      "S045"
+    ],
+    "title": "Food cost percentage control failure",
+    "severity": "high",
+    "description": "Food cost percentage control failure"
+  },
+  {
+    "failure_mode_id": "FM034",
+    "score": 0.7,
+    "domain_id": "D04",
+    "module_id": "",
+    "signal_ids": [
+      "S063"
+    ],
+    "title": "Key person dependency and cover failure",
+    "severity": "high",
+    "description": "Key person dependency and cover failure"
+  },
+  {
+    "failure_mode_id": "FM032",
+    "score": 0.7,
+    "domain_id": "D04",
+    "module_id": "",
+    "signal_ids": [
+      "S071"
+    ],
+    "title": "Team communication and meeting failure",
+    "severity": "medium",
+    "description": "Team communication and meeting failure"
+  },
+  {
+    "failure_mode_id": "FM078",
+    "score": 0.7,
+    "domain_id": "D09",
+    "module_id": "",
+    "signal_ids": [
+      "S080"
+    ],
+    "title": "Seating layout and comfort failure",
+    "severity": "medium",
+    "description": "Seating layout and comfort failure"
+  },
+  {
+    "failure_mode_id": "FM064",
+    "score": 0.7,
+    "domain_id": "D07",
+    "module_id": "",
+    "signal_ids": [
+      "S083"
+    ],
+    "title": "Payroll cost management failure",
+    "severity": "high",
+    "description": "Payroll cost management failure"
+  },
+  {
+    "failure_mode_id": "FM010",
+    "score": 0.7,
+    "domain_id": "D01",
+    "module_id": "",
+    "signal_ids": [
+      "S133"
+    ],
+    "title": "EHO readiness and audit compliance failure",
+    "severity": "high",
+    "description": "EHO readiness and audit compliance failure"
+  },
+  {
+    "failure_mode_id": "FM059",
+    "score": 0.7,
+    "domain_id": "D07",
+    "module_id": "",
+    "signal_ids": [
+      "S160"
+    ],
+    "title": "Revenue per hour and sales productivity failure",
+    "severity": "high",
+    "description": "Revenue per hour and sales productivity failure"
+  },
+  {
+    "failure_mode_id": "FM092",
+    "score": 0.7,
+    "domain_id": "D12",
+    "module_id": "",
+    "signal_ids": [
+      "S166"
+    ],
+    "title": "Values articulation and alignment failure",
+    "severity": "medium",
+    "description": "Values articulation and alignment failure"
+  }
+]

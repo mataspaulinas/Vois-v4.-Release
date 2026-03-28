@@ -1,0 +1,157 @@
+{
+  "block_id": "B109",
+  "name": "Bakery & Food Supplier Management",
+  "version": "v1.0",
+  "domain": "D06_supply_chain",
+  "module": "M06: Supply Chain & Supplier Relations",
+  "state": "enriched",
+  "purpose": "Manages the relationships with bakery, pastry, and food ingredient suppliers to ensure the cafe's food offering is consistently high quality, reliably supplied, competitively priced, and aligned with the cafe's brand positioning — whether that is artisan sourdough or reliable daily basics.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Evaluate bakery and food suppliers on product quality, freshness, consistency, delivery reliability, and pricing",
+      "Define quality specifications for key food items so that supplier expectations are explicit, not assumed",
+      "Negotiate terms that support the cafe's food cost targets (25-35% food cost percentage)",
+      "Manage the balance between bought-in food (pastries, cakes, bread) and in-house preparation",
+      "Establish sale-or-return or credit arrangements where possible to reduce waste risk on perishables"
+    ],
+    "secondary_objectives": [
+      "Build a food supplier portfolio that enables seasonal menu changes and specials",
+      "Reduce food waste from over-ordering or poor quality by improving supplier coordination",
+      "Use food provenance as a marketing differentiator — local bakeries, artisan producers, farm-direct ingredients"
+    ]
+  },
+  "why_this_matters": "Food revenue in UK cafes has grown significantly as consumers increasingly expect more than just coffee. A well-run cafe now generates 30-50% of its revenue from food — sandwiches, toasties, salads, soups, pastries, cakes, and breakfast items. Yet many cafe owners who obsess over coffee sourcing treat their food supply chain as an afterthought, ordering from the first bakery that knocked on the door and re-ordering the same items weekly without reviewing quality, pricing, or demand alignment. The consequences are significant. A pastry supplier delivering croissants that have been frozen and reheated tastes fundamentally different from one delivering fresh-baked that morning — customers notice, even if they cannot articulate why. A bread supplier whose sourdough varies in quality from delivery to delivery creates inconsistency in the cafe's signature sandwich. A food ingredient supplier whose prices have crept up 15% over two years has eroded the cafe's GP% without the owner realising. Food supplier management is complicated by the perishable nature of the product: over-order and the excess is waste; under-order and the menu runs short. Unlike coffee beans with a 4-6 week shelf life, pastries and sandwiches are one-day products. This makes accurate ordering, reliable delivery, and waste management interdependent challenges that require active supplier management rather than passive reordering.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Audit all bakery and food suppliers. For each, document: what they supply, delivery frequency, minimum orders, pricing per item, payment terms, and quality consistency. Categorise food supply into three types: Bought-In Complete (items delivered ready to sell — croissants, muffins, whole cakes), Bought-In Ingredients (items used to make food in-house — bread, cheese, meats, vegetables), and In-House Made (items the cafe produces from scratch — sandwiches, soups, salads). For each bought-in item, assess: does the quality match the cafe's brand? Is the pricing delivering a food cost percentage of 25-35%? Is the delivery reliable? Are there freshness concerns? Identify the top 3 issues with current food supply — these might be quality inconsistency, pricing creep, limited range, or inflexibility around order quantities. Week 2: For any identified issues, research alternative suppliers. In most UK towns, there are multiple options for bakery supply (wholesale bakeries, artisan bakeries, frozen pastry suppliers like Bridor or Coup de Pates) and food ingredients (local wholesalers, Booker, Bidfood, specialist suppliers). Request samples and conduct a quality comparison. Calculate the food cost percentage for the cafe's top 10 food items and compare against the 25-35% target.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Food Supplier Scorecard using the B106 framework with food-specific criteria: product freshness on delivery, consistency batch-to-batch, visual presentation quality, shelf life remaining on delivery, and flexibility to adjust order quantities at short notice. Negotiate food supply terms: target sale-or-return on perishable items where possible (some bakery suppliers offer this), credit for damaged or sub-standard deliveries, and volume discounts for committed weekly orders. Create food quality specifications for key items — a written document defining what the cafe expects: 'Croissants: butter-based, minimum 22% butter content, delivered within 4 hours of baking, golden colour, flaky layers, no freezer burn.' Share specifications with suppliers so expectations are explicit. Implement a daily food quality check: when deliveries arrive, check items against specifications and record any deviations. Build a food supplier diversification plan: avoid relying on a single supplier for all food items. Different suppliers may excel in different areas — one bakery for pastries, another for bread, a local producer for cakes.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Food supplier management should drive menu innovation and competitive differentiation. Collaborate with bakery suppliers on seasonal specials — hot cross buns in spring, mince pies at Christmas, fruit tarts in summer. Explore direct relationships with local producers (farm shops, cheese makers, charcuterie producers) for provenance-led menu items that command premium pricing. Conduct quarterly food supplier reviews using scorecard data, and rotate the supplier portfolio to maintain quality and competitive pricing. Implement a monthly new product tasting session where suppliers present new items for potential inclusion on the menu. Track food GP% by supplier to identify which relationships deliver the best margin. Review the entire food supply strategy bi-annually, aligned with menu development plans and seasonal calendar."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Audit all bakery and food suppliers: items, pricing, delivery, quality",
+        "Categorise food supply into Bought-In Complete, Bought-In Ingredients, and In-House Made",
+        "Calculate food cost percentage for top 10 food items against 25-35% target",
+        "Identify top 3 issues with current food supply and research alternatives",
+        "Request samples from alternative suppliers and conduct quality comparison",
+        "Assess whether current bakery products match the cafe's brand positioning",
+        "Review delivery reliability and freshness for all food suppliers"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Food Supplier Scorecard with food-specific quality criteria",
+        "Negotiate sale-or-return, credit, and volume discount terms",
+        "Create written food quality specifications for all key bought-in items",
+        "Implement daily food quality checks on delivery against specifications",
+        "Build a supplier diversification plan across food categories",
+        "Train team to conduct and record delivery quality inspections",
+        "Track food GP% by supplier and by item monthly"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Collaborate with bakery suppliers on seasonal specials",
+        "Explore local producer relationships for provenance-led menu items",
+        "Conduct quarterly food supplier reviews with scorecard data",
+        "Implement monthly new product tasting sessions with suppliers",
+        "Review full food supply strategy bi-annually with menu planning"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Food Supplier Audit Report",
+    "Food Quality Specifications document",
+    "Food Supplier Scorecard (quarterly)",
+    "Food Cost Percentage analysis by item and supplier",
+    "Seasonal Food Collaboration calendar"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T109-01",
+        "tool_name": "Food Supplier Audit Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Audit template for evaluating all bakery and food suppliers: items supplied, pricing, delivery schedule, quality assessment, food cost percentage, and improvement recommendations."
+      },
+      {
+        "tool_id": "T109-02",
+        "tool_name": "Food Quality Specification Sheet",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Written quality specifications for key bought-in food items defining expected standards: appearance, freshness, ingredient requirements, packaging, and delivery conditions."
+      },
+      {
+        "tool_id": "T109-03",
+        "tool_name": "Daily Delivery Quality Check",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Shift Lead",
+        "description": "Daily checklist for inspecting food deliveries against quality specifications: freshness, temperature, appearance, quantity accuracy, and packaging integrity. Non-conformances are logged."
+      },
+      {
+        "tool_id": "T109-04",
+        "tool_name": "Food Supplier Diversification Plan",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Strategic plan showing primary and alternative suppliers for each food category, with quality scores, pricing, and recommendations for portfolio optimisation."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Food suppliers are never quality-checked, and gradual quality decline goes unnoticed until customers stop ordering food",
+    "Over-reliance on a single bakery supplier creates critical risk — if they close for holidays or fail, the cafe has no food offering",
+    "Food cost percentage drifts above 35% because pricing is accepted without negotiation or monitoring",
+    "Food quality specifications are never communicated to suppliers, so expectations are misaligned and disappointment is inevitable"
+  ],
+  "kpis": [
+    "Food cost percentage maintained within 25-35% across all food items",
+    "Daily delivery quality check pass rate above 95%",
+    "Food supplier scorecard scores above 3.5 for all active suppliers",
+    "Zero days where food menu is significantly reduced due to supplier failure per quarter"
+  ],
+  "dependencies": ["B106"],
+  "constraints": [
+    "Perishable food deliveries must arrive before trading hours with adequate remaining shelf life",
+    "Food quality specifications must be realistic and achievable for the cafe's price point — artisan quality at commodity prices is not sustainable",
+    "Seasonal menu changes require at least 4 weeks lead time for supplier coordination"
+  ],
+  "time_load": {
+    "L1": "3 hours (audit, quality assessment, supplier research, sample testing)",
+    "L2": "5 hours (scorecard setup, specifications drafting, negotiation, quality check training)",
+    "L3": "2 hours/quarter (reviews, tastings, seasonal planning)"
+  },
+  "review_protocol": "Daily delivery quality check by receiving team. Weekly food cost percentage review by manager. Quarterly food supplier scorecard and review meeting. Bi-annual food supply strategy review with menu planning.",
+  "meta": {
+    "summary_for_humans": "This block manages bakery, pastry, and food ingredient suppliers to ensure the cafe's food offering is high quality, reliably supplied, and financially sustainable. It covers supplier evaluation, quality specifications, delivery inspection, food cost management, and seasonal collaboration.",
+    "implementation_risks": [
+      "Bakery suppliers with early morning deliveries may have limited flexibility on delivery timing or minimum orders",
+      "Switching food suppliers changes the taste profile of menu items — transition carefully and communicate changes to regulars",
+      "Sale-or-return terms are valuable but not universally available — negotiate early and be prepared to accept partial terms"
+    ],
+    "notes_for_engine": "Activate after B106 is operational. Flag as urgent if signals indicate food quality complaints, food cost percentage above 35%, bakery supplier reliability issues, or limited food menu availability.",
+    "tags": ["supply_chain", "food", "bakery", "pastry", "ingredients", "quality", "food_cost", "supplier_management"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

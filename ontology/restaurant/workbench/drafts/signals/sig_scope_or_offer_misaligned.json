@@ -1,0 +1,31 @@
+{
+  "id": "sig_scope_or_offer_misaligned",
+  "name": "Scope or offer is misaligned to execution reality",
+  "description": "The live offer asks the team to deliver more complexity, variation, or customization than the current operation can execute reliably.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: scope or offer misalignment expressed through restaurant menu and service complexity",
+  "updated_at": "2026-03-15T15:59:27.066228Z",
+  "domain": "service_delivery",
+  "module": "production_flow",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "offer complexity slows the core flow",
+    "modifier load overwhelms the line or bar",
+    "low-frequency items repeatedly disrupt execution"
+  ],
+  "source_types": [
+    "service observation",
+    "menu review",
+    "manager notes"
+  ],
+  "temporal_behavior": "recurring",
+  "likely_co_signals": [
+    "sig_ticket_bottleneck",
+    "sig_output_quality_inconsistent"
+  ],
+  "adapter_aliases": [
+    "menu scope too heavy",
+    "offer outpaces execution"
+  ]
+}

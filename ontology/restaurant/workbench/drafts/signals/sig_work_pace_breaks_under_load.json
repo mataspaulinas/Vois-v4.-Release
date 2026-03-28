@@ -1,0 +1,31 @@
+{
+  "id": "sig_work_pace_breaks_under_load",
+  "name": "Work pace breaks under load",
+  "description": "The venue can move acceptably at low pressure, but once load rises the pace becomes visibly unstable and backlog forms quickly.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: work pace breaks under load expressed through restaurant floor execution",
+  "updated_at": "2026-03-15T14:29:28.486647Z",
+  "domain": "service_quality",
+  "module": "floor_execution",
+  "indicator_type": "lagging",
+  "evidence_types": [
+    "pace collapses in the rush",
+    "throughput drops sharply under pressure",
+    "backlog expands once covers rise"
+  ],
+  "source_types": [
+    "service observation",
+    "manager notes",
+    "shift review"
+  ],
+  "temporal_behavior": "peak-sensitive",
+  "likely_co_signals": [
+    "sig_service_delay",
+    "sig_ticket_bottleneck"
+  ],
+  "adapter_aliases": [
+    "pace collapse",
+    "load breaks the flow"
+  ]
+}

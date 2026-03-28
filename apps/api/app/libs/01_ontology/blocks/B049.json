@@ -1,0 +1,167 @@
+{
+  "block_id": "B049",
+  "name": "Water Quality Excellence",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Elevates water management from basic filtration and testing into a strategic quality discipline, integrating water chemistry optimisation with espresso extraction, equipment longevity, and broader beverage quality. This capstone block builds upon B047 (filtration and testing) and B048 (machine maintenance) to create a comprehensive water quality programme.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Optimise water mineral content specifically for the cafe's coffee and brewing equipment",
+      "Establish advanced water testing protocols that go beyond basic TDS and hardness",
+      "Build a data-driven understanding of how water quality affects espresso extraction flavour",
+      "Create a proactive maintenance cycle where water quality data drives equipment care",
+      "Position water quality expertise as part of the cafe's craft identity"
+    ],
+    "secondary_objectives": [
+      "Collaborate with the coffee roaster on water-adjusted recipes for optimal extraction",
+      "Ensure all beverages benefit from optimised water — tea, filter coffee, and drinking water",
+      "Reduce long-term equipment costs through precision water management",
+      "Contribute to industry knowledge by sharing water quality approaches with peers"
+    ]
+  },
+  "why_this_matters": "Water quality is the most underestimated variable in coffee. A cafe can invest thousands in a premium espresso machine, source championship-winning beans, train baristas to SCA standards, and still serve mediocre coffee because the water is wrong. The minerals dissolved in water do not merely carry flavour — they actively participate in extraction chemistry. Magnesium ions are particularly effective at bonding with flavour compounds in coffee, while calcium contributes to body and mouthfeel. Bicarbonate acts as a buffer that can mute acidity. The balance between these minerals determines whether a coffee tastes bright and complex or flat and chalky. Water that is excellent for one coffee may be suboptimal for another — a fruity, acidic Ethiopian Yirgacheffe may perform best with slightly different mineral content than a chocolatey Brazilian blend. This is the frontier of cafe quality: understanding water not just as an input to protect the machine (B047) or a variable to control (B048), but as an active ingredient to optimise. In the UK, the enormous variation in mains water across regions means that two cafes using the same beans and the same machine can produce radically different espresso simply because of their water. The cafes that recognise this and take water seriously gain a genuine quality advantage that competitors cannot replicate without the same knowledge and investment. Water quality excellence is where science meets craft.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Confirm that B047 and B048 are fully established and functioning. Review the water quality baseline data collected in B047 — do you have a complete picture of your mains water composition? If not, commission a comprehensive water analysis from a specialist laboratory (e.g., through your filter supplier or a service like Colourimetry). This should cover: total hardness, calcium, magnesium, sodium, potassium, bicarbonate, chloride, sulphate, TDS, pH, and total alkalinity. This costs approximately £30-50 and provides the foundation for all optimisation work. Week 2: Compare your water analysis results against three reference standards: the SCA recommended water specification, your filter manufacturer's recommended input, and your espresso machine manufacturer's water requirements. Identify any mismatches. For example: your filter may be reducing hardness to a level that protects the machine but strips too many minerals for optimal extraction. Or your water may have high bicarbonate levels that buffer acidity excessively, making espresso taste flat. Document these findings and share them with your coffee roaster — they may have specific recommendations based on experience with similar water profiles.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Water Quality Excellence Plan that moves beyond filtration maintenance into active water optimisation. This may involve: adjusting the bypass setting on your filter to allow more or fewer minerals through, switching to a filter system with remineralisation capability (e.g., BWT Bestmax Premium with magnesium mineralisation), or installing a blending valve to mix filtered and unfiltered water to a target TDS. Work with your filter supplier or a water quality specialist to determine the optimal approach for your specific water profile and coffee. Establish a monthly advanced testing protocol: test TDS, hardness, and pH from three points — the mains inlet, the filter outlet, and the machine's group head. Compare results to verify the filter is performing as expected and the machine is not introducing contamination. Create a water quality database that tracks all test results over time. Plot trends monthly. Seasonal variations in UK mains water are common — water companies adjust blending and treatment throughout the year, and rainfall patterns affect source water mineral content. Understanding these patterns allows proactive filter adjustments. Conduct extraction comparison experiments: brew the same coffee with your current water and with bottled water at a known mineral content (e.g., Ashbeck or Tesco Ashbeck, which has a relatively neutral mineral profile). Taste the difference. This demonstrates to the team how much water matters and builds buy-in for the optimisation programme.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Water quality should now be integrated into the cafe's craft identity. Share your water quality journey with customers through menu notes, social media, or in-venue signage — 'We test and optimise our water for every cup' is a powerful quality message. Collaborate with your roaster on water-specific recipe development: adjust espresso recipes based on seasonal water changes. Explore advanced concepts: brewing water recipes for filter coffee using mineral concentrates (e.g., Third Wave Water, Barista Hustle water recipes), adjustable bypass filtration for different brewing methods, and correlating water mineral data with extraction percentage and sensory scores. Attend or organise industry events focused on water quality — this is a growing area of specialty coffee knowledge. Consider publishing your water quality approach as a case study or blog post — it positions the cafe as a thought leader. Annually review your entire water management system: mains water analysis, filter performance, machine condition, and coffee quality correlation."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Confirm B047 and B048 are fully established and producing consistent data",
+        "Commission a comprehensive laboratory water analysis of the mains supply",
+        "Compare results against SCA, filter manufacturer, and machine manufacturer specifications",
+        "Identify any mismatches between current water profile and optimal coffee extraction",
+        "Share water analysis results with the coffee roaster for their input",
+        "Document findings in the Water Quality Record",
+        "Set a water optimisation objective based on the analysis"
+      ],
+      "responsible": "Owner, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Water Quality Excellence Plan with specific optimisation steps",
+        "Work with filter supplier or specialist to optimise mineral content",
+        "Establish monthly advanced testing from three sample points",
+        "Create a water quality database tracking all test results over time",
+        "Conduct extraction comparison experiments to demonstrate water's impact",
+        "Train the team on the relationship between water quality and coffee flavour",
+        "Review and potentially upgrade the filtration system for optimisation capability"
+      ],
+      "responsible": "Owner, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Communicate your water quality commitment to customers through marketing and signage",
+        "Collaborate with the roaster on water-specific recipe adjustments",
+        "Explore advanced brewing water recipes for filter coffee methods",
+        "Attend or organise industry water quality education events",
+        "Annually review the complete water management system",
+        "Position water quality expertise as part of the cafe's craft identity"
+      ],
+      "responsible": "Owner, Head Barista"
+    }
+  },
+  "deliverables": [
+    "Comprehensive Water Analysis Report (laboratory results)",
+    "Water Quality Excellence Plan",
+    "Water Quality Database (ongoing test results tracker)",
+    "Water-Coffee Correlation Analysis",
+    "Annual Water Management Review report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T049-01",
+        "tool_name": "Comprehensive Water Analysis Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Template for recording comprehensive laboratory water analysis results: mineral composition, hardness, alkalinity, TDS, pH, and comparison against SCA and manufacturer specifications."
+      },
+      {
+        "tool_id": "T049-02",
+        "tool_name": "Water Quality Excellence Plan",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Strategic plan documenting the cafe's water profile, optimisation objectives, filtration adjustments needed, testing protocols, and timeline for achieving target water quality."
+      },
+      {
+        "tool_id": "T049-03",
+        "tool_name": "Monthly Advanced Water Test Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Head Barista",
+        "description": "Monthly testing log recording TDS, hardness, and pH from three sample points (mains inlet, filter outlet, group head) with trend analysis and seasonal variation notes."
+      },
+      {
+        "tool_id": "T049-04",
+        "tool_name": "Water-Extraction Correlation Tracker",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Head Barista",
+        "description": "Advanced tracker correlating water mineral data with espresso extraction percentages, sensory scores, and dial-in difficulty. Used to understand and optimise the water-coffee relationship."
+      },
+      {
+        "tool_id": "T049-05",
+        "tool_name": "Annual Water Management Review",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Annual comprehensive review of the water management system: mains water trends, filter performance, machine condition, coffee quality correlation, costs, and strategic recommendations."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Water optimisation is pursued without solid foundations in B047 and B048, creating complexity without benefit",
+    "Over-engineering water chemistry for marginal gains while neglecting more impactful quality factors",
+    "Expensive filtration upgrades are installed without understanding whether they actually improve the coffee in the cup",
+    "Seasonal mains water changes are not tracked, causing optimised settings to drift out of specification"
+  ],
+  "kpis": [
+    "Water mineral content within SCA optimal range at every monthly test",
+    "Extraction percentage consistently within 18-22% target range (where refractometry is available)",
+    "Zero scale-related machine issues per year",
+    "Sensory quality scores for espresso show measurable improvement after water optimisation"
+  ],
+  "dependencies": ["B047", "B048"],
+  "constraints": [
+    "Advanced water optimisation requires investment in filtration equipment and potentially specialist consultation",
+    "Water chemistry changes should be evaluated through tasting, not just measurement — numbers without flavour context are meaningless",
+    "Any filtration changes must maintain equipment protection — never sacrifice machine longevity for marginal flavour gains"
+  ],
+  "time_load": {
+    "L1": "3 hours (laboratory analysis commissioning, data analysis, roaster consultation)",
+    "L2": "8 hours (excellence plan development, filtration optimisation, testing protocol setup, training)",
+    "L3": "2 hours/month (advanced testing, correlation analysis, seasonal adjustments)"
+  },
+  "review_protocol": "Monthly advanced water testing from three sample points. Quarterly correlation analysis between water data and coffee quality metrics. Annual comprehensive water management review. Filtration system reviewed whenever mains water composition changes significantly.",
+  "meta": {
+    "summary_for_humans": "This capstone block elevates water management from basic filtration into a strategic quality discipline. It covers advanced testing, mineral optimisation for espresso extraction, seasonal variation tracking, and positions water quality expertise as part of the cafe's craft identity.",
+    "implementation_risks": [
+      "The scientific complexity of water chemistry can be overwhelming — keep the focus on practical taste outcomes",
+      "Expensive filtration upgrades may not be justified for cafes serving commodity blends",
+      "Water optimisation is a diminishing-returns activity — the first improvements are dramatic, later ones incremental"
+    ],
+    "notes_for_engine": "Only activate after B047 and B048 are established at L2. This is an advanced maturity block suited to cafes with a quality-focused positioning. Signals: strong foundation blocks, specialty coffee offering, owner interest in craft development, equipment investment indicates quality commitment.",
+    "tags": ["coffee_quality", "water", "optimisation", "minerals", "extraction", "SCA", "chemistry", "filtration", "craft", "excellence"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

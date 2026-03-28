@@ -1,0 +1,165 @@
+{
+  "block_id": "B025",
+  "name": "Order Accuracy Checklist",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Establishes a systematic double-check process to ensure every drink and food order matches exactly what the customer requested, catching errors before they reach the customer. This block reduces remakes, waste, complaints, and the hidden cost of getting orders wrong.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Implement a read-back confirmation at the point of order to catch errors before preparation begins",
+      "Create a clear order communication system between the till and the bar to prevent miscommunication",
+      "Establish a pre-handoff quality check to verify the drink matches the ticket before giving it to the customer",
+      "Reduce order error rates to below 2% of all orders served",
+      "Document common error patterns to address root causes rather than just individual mistakes"
+    ],
+    "secondary_objectives": [
+      "Reduce drink remakes and the associated waste of milk, coffee, and cups",
+      "Decrease customer complaints related to incorrect orders",
+      "Build customer confidence that their specific requirements will be honoured"
+    ]
+  },
+  "why_this_matters": "Order errors are one of the most common and costly problems in cafe operations. An incorrect order wastes ingredients (milk, coffee beans, syrups, food items), wastes time (the drink must be remade, delaying all subsequent orders), and damages the customer relationship — a customer who receives the wrong drink may not complain but they remember, and it erodes trust. For customers with allergies or dietary requirements, an incorrect order can be dangerous: giving full-fat milk instead of oat milk to a dairy-intolerant customer, or including a nut syrup when the customer specified nut-free, can cause illness or a severe allergic reaction. Industry data from the Specialty Coffee Association suggests that the average cafe error rate is between 3-5% of orders, meaning that for every 100 drinks served, 3-5 are wrong. For a cafe serving 200 drinks per day, that is 6-10 incorrect orders daily. Each remade drink costs approximately £1.50-2.00 in wasted ingredients and labour, representing a hidden cost of £50-100 per week. Beyond the financial cost, order accuracy is a fundamental marker of professionalism. Customers who regularly receive exactly what they ordered develop trust and loyalty; customers who frequently experience errors look for alternatives. In an era of social media, a single photograph of a wrong order with a frustrated caption can reach hundreds of potential customers. Getting the order right every time is not a nice-to-have; it is a basic operational expectation that many cafes fail to meet consistently.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Implement the Read-Back Rule: after every order, the till operator reads the order back to the customer before entering payment. This takes 5-10 seconds and catches the majority of errors before they enter the system. The read-back should include every detail: 'So that is a large oat milk flat white with an extra shot, and a blueberry muffin, is that right?' Any modifications, allergen requirements, or special requests must be included in the read-back. Train every till operator on the read-back technique — practise it during quiet periods. Week 2: Review how orders are communicated from the till to the bar. In many cafes, the POS prints a ticket or displays on a screen. Check that the ticket/display includes all relevant details: drink type, size, milk type, modifications, customer name or order number, and any allergen flags. If the POS is not capturing modifications clearly, adjust the system or supplement with verbal communication. If the cafe uses verbal-only communication (calling out orders without tickets), this is the most error-prone method — implement a ticket or screen system as soon as possible. Establish a basic pre-handoff check: before calling the customer's name, the barista glances at the ticket and confirms the drink matches. Is it the right milk? The right size? Any modifications included? Start tracking errors: for one week, record every order that is returned or remade, noting what went wrong and why.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop an Order Accuracy SOP covering: the read-back procedure, ticket/screen communication standards, barista pre-handoff verification, and error handling (what to do when a mistake is identified). Analyse the error tracking data from L1: what are the most common error types? Common patterns include: wrong milk (especially alternative milks), wrong size, missing modifications (extra shot, decaf, syrup), and wrong food item. For each common error type, identify the root cause and implement a fix. For wrong milk errors, consider colour-coded cup marking or POS alerts for alternative milks. For modification errors, ensure the POS captures modifiers prominently, not in small print. Create a drink marking system: when the barista starts preparing a drink, they mark the cup or place the ticket with it so the order identity travels with the drink throughout preparation. This prevents mix-ups when multiple similar drinks are being made simultaneously. Implement a weekly error review: the manager reviews all recorded errors, identifies patterns, and discusses them with the team. Focus on systems fixes, not blaming individuals. By Week 8, the error rate should be measurably below the baseline.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Order accuracy should be a point of pride — the team should feel uncomfortable about any incorrect order. Track the error rate monthly and display it in the staff area with a target of below 2%. Celebrate error-free days or weeks. Conduct quarterly accuracy audits: during a normal service, a team member checks 20 random orders against their tickets to verify accuracy. Review the order communication system annually — has POS technology improved? Could digital order displays replace paper tickets? Would a customer-facing order confirmation screen reduce errors? Share error trend data with the team and involve them in problem-solving. Integrate accuracy with the drink handoff quality check (B027) for a comprehensive final quality gate."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Implement the Read-Back Rule for every order at the till",
+        "Train all till operators on the read-back technique",
+        "Review how orders are communicated from till to bar (ticket, screen, or verbal)",
+        "Ensure POS captures all modifications, milk types, and allergen flags clearly",
+        "Establish a basic pre-handoff check: barista verifies drink matches ticket",
+        "Track every error for one week: what was wrong, why, and how it was resolved",
+        "Address any POS limitations that prevent clear order communication"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop an Order Accuracy SOP covering read-back, communication, verification, and error handling",
+        "Analyse error tracking data to identify common error types and root causes",
+        "Implement targeted fixes for the most common errors (wrong milk, missing modifiers)",
+        "Create a drink marking system so order identity travels with the drink",
+        "Establish a weekly error review by the manager with team discussion",
+        "Set up a permanent error tracking system (POS reports or manual log)",
+        "Train all baristas on pre-handoff verification procedures"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track error rate monthly and display in the staff area with a below-2% target",
+        "Celebrate error-free days or weeks with team recognition",
+        "Conduct quarterly accuracy audits on random order samples",
+        "Review order communication technology annually for improvements",
+        "Integrate accuracy with drink handoff quality check (B027)"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Read-Back Rule Reference Card (till point display)",
+    "Order Accuracy SOP",
+    "Error Tracking Log template",
+    "Drink Marking System Guide",
+    "Monthly Error Rate Report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T025-01",
+        "tool_name": "Read-Back Rule Reference Card",
+        "level": "L1",
+        "format": "guide",
+        "owner_role": "Front-of-House Staff",
+        "description": "Laminated card at each till reminding staff to read back every order in full, including drink type, size, milk, modifications, food items, and allergen flags."
+      },
+      {
+        "tool_id": "T025-02",
+        "tool_name": "Order Error Tracking Log",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Log for recording every order error: date, time, what was ordered, what was made, error type (wrong milk, wrong size, missing modifier), root cause, and resolution."
+      },
+      {
+        "tool_id": "T025-03",
+        "tool_name": "Order Accuracy SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering the complete order accuracy system: read-back, ticket communication, drink marking, pre-handoff check, error handling, and weekly review."
+      },
+      {
+        "tool_id": "T025-04",
+        "tool_name": "Drink Marking System Guide",
+        "level": "L2",
+        "format": "guide",
+        "owner_role": "Head Barista",
+        "description": "Guide for marking drinks during preparation so order identity is maintained: cup marking conventions, ticket placement, and colour-coding for alternative milks."
+      },
+      {
+        "tool_id": "T025-05",
+        "tool_name": "Quarterly Order Accuracy Audit",
+        "level": "L3",
+        "format": "audit",
+        "owner_role": "Manager",
+        "description": "Quarterly audit sampling 20 random orders, verifying each against its ticket for accuracy of drink type, size, milk, modifications, and presentation."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Read-back is skipped during peak periods to save time, allowing errors to enter the system unchecked",
+    "POS tickets do not clearly display modifications, so baristas miss or misread them",
+    "Multiple similar drinks are made simultaneously without marking, leading to mix-ups at handoff",
+    "Error tracking is seen as punitive, so staff hide mistakes rather than reporting and learning from them"
+  ],
+  "kpis": [
+    "Order error rate below 2% of all orders served",
+    "Read-back confirmation performed on 100% of orders",
+    "Zero allergen-related order errors",
+    "Error rate trending downwards month-on-month towards target"
+  ],
+  "dependencies": ["B026"],
+  "constraints": [
+    "Read-back must include allergen-relevant details — this is a food safety as well as accuracy requirement",
+    "Error tracking must be non-punitive to encourage honest reporting",
+    "POS system must be capable of capturing and displaying all order modifications clearly"
+  ],
+  "time_load": {
+    "L1": "3 hours (read-back implementation, POS review, error tracking setup)",
+    "L2": "6 hours (SOP development, error analysis, marking system, training)",
+    "L3": "2 hours/quarter (audits, trend analysis, system reviews)"
+  },
+  "review_protocol": "Daily error review by shift manager. Weekly error pattern analysis. Monthly error rate calculation and target comparison. Quarterly accuracy audit of random orders.",
+  "meta": {
+    "summary_for_humans": "This block ensures every order is correct through a read-back confirmation, clear till-to-bar communication, drink marking during preparation, and pre-handoff verification. It tracks errors to identify patterns and reduce the error rate below 2%.",
+    "implementation_risks": [
+      "Read-back adds seconds to each order — but prevents costly remakes and customer frustration",
+      "Staff may resist error tracking if it feels like surveillance — frame it as team improvement data",
+      "POS system limitations may require workarounds until a system upgrade is feasible"
+    ],
+    "notes_for_engine": "Activate for all cafes. Flag as urgent if signals indicate frequent order errors, customer complaints about wrong drinks, high remake rates, or allergen-related order mistakes.",
+    "tags": ["customer_experience", "order_accuracy", "quality", "read_back", "errors", "POS", "drink_making", "service"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

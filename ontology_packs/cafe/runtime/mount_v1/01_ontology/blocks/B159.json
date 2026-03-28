@@ -1,0 +1,167 @@
+{
+  "block_id": "B159",
+  "name": "Customer Data & CRM",
+  "version": "v1.0",
+  "domain": "D10_technology_systems",
+  "module": "M10: Digital Tools & Customer Data",
+  "state": "enriched",
+  "purpose": "Establishes a customer relationship management approach that captures, organises, and activates customer data to drive repeat visits, increase spend, and build genuine loyalty. This block ensures the cafe knows who its customers are, how they behave, and how to communicate with them in a way that feels personal rather than transactional.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Build a customer database through ethical, GDPR-compliant data collection from POS transactions, loyalty programmes, Wi-Fi sign-ups, and online orders",
+      "Segment customers by visit frequency, spend level, and product preferences to enable targeted communication",
+      "Implement an email or SMS marketing system for regular, valuable communication with the customer base",
+      "Create a loyalty programme that genuinely rewards repeat custom and drives measurable increases in visit frequency",
+      "Track customer retention and lifetime value as core business metrics"
+    ],
+    "secondary_objectives": [
+      "Reduce dependency on social media algorithms for customer communication by building a direct contact list",
+      "Identify at-risk customers (previously regular visitors who have stopped coming) for win-back campaigns",
+      "Personalise the customer experience by recognising regulars and their preferences",
+      "Generate customer insights that inform menu development, trading hours, and service improvements"
+    ]
+  },
+  "why_this_matters": "An independent cafe lives and dies on repeat custom. Industry data consistently shows that acquiring a new customer costs 5-7 times more than retaining an existing one, and that regular customers spend 30-50% more per visit than occasional visitors. Yet most cafes have no systematic way of communicating with their customers outside of social media, where organic reach has declined to 2-5% of followers. A cafe with 2,000 Instagram followers is reaching approximately 40-100 people per post. The same cafe with a 500-person email list can reach all 500 with every message. The difference in marketing effectiveness is dramatic. Beyond marketing, customer data reveals patterns that are invisible without it. Which customers have stopped visiting? What is the average time between visits for your best customers? Do customers who try your food menu become more frequent visitors? These insights are commercially valuable and impossible to obtain through instinct alone. However, customer data must be handled responsibly. The UK GDPR and the Privacy and Electronic Communications Regulations (PECR) set clear rules about how personal data can be collected, stored, and used for marketing. Getting this wrong risks fines of up to 17.5 million pounds or 4% of annual turnover, whichever is greater, plus severe reputational damage. This block builds CRM capability on a foundation of ethical, compliant data practice.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Audit what customer data you already have. Check your POS system, online ordering platform, Wi-Fi login records, loyalty cards, email enquiries, catering enquiries, and social media followers. You likely have more data than you realise, though it may be scattered across platforms. Identify what data is accessible, what format it is in, and whether consent was obtained for marketing use. Choose a starting point for building your customer list. The easiest compliant methods are: a simple sign-up card or tablet at the till offering a reason to join (10% off first order, birthday coffee, advance notice of events), Wi-Fi login requiring an email address with marketing opt-in, or online ordering registration. Set up a basic email marketing platform (Mailchimp, Brevo, or similar) with a free or low-cost tier. Week 2: Begin active customer data collection. Train staff to mention the sign-up offer to every customer. Set a target of collecting 20 email addresses per week as a starting point. Send a welcome email to new sign-ups within 24 hours confirming their subscription and delivering any promised incentive. Ensure your sign-up process includes a clear GDPR-compliant consent statement and easy opt-out mechanism.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Build a CRM approach (this does not require expensive software; a well-managed email marketing platform with tagging is sufficient for most cafes). Segment your customer list by: source (how they joined), visit frequency (if trackable through loyalty or POS data), and preferences (coffee lover, food customer, event attendee). Create a regular email communication schedule: one email per week or fortnight is the sweet spot for most cafes. Content should be 80% value (behind-the-scenes stories, new menu items, barista tips, event announcements) and 20% promotional (offers, loyalty rewards, seasonal specials). Design and implement a loyalty programme if one does not already exist. Options range from simple stamp cards (low cost, low data) to digital loyalty via POS integration (higher cost, rich data). Digital loyalty through the POS is strongly preferred because it captures purchase data linked to individual customers, enabling genuine personalisation. Set up basic customer lifecycle tracking: how many new sign-ups per month, how many active customers (visited or engaged in last 30 days), how many lapsed (no activity in 60+ days). Create a win-back campaign for lapsed customers offering a compelling reason to return.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Develop customer lifetime value (CLV) tracking: calculate how much the average customer spends over their entire relationship with the cafe, and use this to inform acquisition cost decisions. Implement automated email sequences: welcome series for new sign-ups, birthday rewards, lapsed customer win-back, and post-visit thank you (if visit tracking is available). Analyse customer segments to identify your most valuable customer profiles, then use these insights to inform marketing, menu development, and service priorities. Integrate CRM data with sales dashboard data (B158) to connect customer behaviour patterns with revenue trends. Build a Voice of Customer programme: systematically collect and analyse customer feedback through surveys, reviews, and direct conversation. Share customer insights with the team to reinforce the connection between service quality and customer loyalty. Review and refine CRM strategy quarterly, testing different communication approaches, loyalty incentives, and data collection methods to optimise engagement and retention."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Audit existing customer data across all platforms (POS, online orders, Wi-Fi, social media)",
+        "Set up a basic email marketing platform (Mailchimp, Brevo, or similar)",
+        "Create a customer sign-up mechanism with a compelling incentive and GDPR-compliant consent",
+        "Train staff to mention the sign-up offer to every customer",
+        "Set a target of collecting 20 new email addresses per week",
+        "Send welcome emails to new sign-ups within 24 hours"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Segment the customer list by source, frequency, and preferences",
+        "Create a regular email communication schedule with 80/20 value-to-promotion ratio",
+        "Design and implement a loyalty programme (digital POS-integrated preferred)",
+        "Set up customer lifecycle tracking: new sign-ups, active customers, lapsed customers",
+        "Create a win-back email campaign for lapsed customers",
+        "Document CRM procedures including data handling, consent management, and opt-out processing",
+        "Integrate loyalty data with POS for personalised customer insights"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Develop customer lifetime value tracking and reporting",
+        "Implement automated email sequences (welcome, birthday, win-back, post-visit)",
+        "Analyse customer segments to identify most valuable profiles",
+        "Integrate CRM data with sales dashboard for deeper insight",
+        "Build a Voice of Customer programme for systematic feedback collection",
+        "Review and refine CRM strategy quarterly"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Customer Data Audit Report",
+    "Email Marketing Platform setup and configuration",
+    "Customer Sign-Up Process (with GDPR-compliant consent mechanism)",
+    "Email Communication Calendar and content templates",
+    "Loyalty Programme design and implementation plan"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T159-01",
+        "tool_name": "Customer Data Audit Template",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Systematic audit of all existing customer data sources: POS records, online ordering, Wi-Fi logins, loyalty programmes, social media, and email enquiries. Records data format, volume, consent status, and accessibility for each source."
+      },
+      {
+        "tool_id": "T159-02",
+        "tool_name": "Customer Sign-Up Kit",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Complete sign-up package including: counter card design, tablet sign-up form, GDPR consent wording, staff talking points, welcome email template, and sign-up incentive details. Everything needed to start collecting customer data compliantly."
+      },
+      {
+        "tool_id": "T159-03",
+        "tool_name": "Email Communication Calendar",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "12-month email marketing calendar specifying: send frequency, content themes, seasonal campaigns, promotional offers, and performance targets. Includes content templates for common email types to reduce production time."
+      },
+      {
+        "tool_id": "T159-04",
+        "tool_name": "Customer Lifecycle Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly tracking of customer lifecycle metrics: new sign-ups, active customers (engaged in last 30 days), at-risk (30-60 days inactive), lapsed (60+ days inactive), and win-back success rate. Visualises the health of the customer base."
+      },
+      {
+        "tool_id": "T159-05",
+        "tool_name": "Loyalty Programme Performance Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly report tracking loyalty programme metrics: total members, active participation rate, average visits per member, redemption rate, incremental revenue attributed to loyalty, and programme cost. Measures whether the loyalty programme is genuinely driving retention."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Customer data is collected but never used for communication, wasting the effort of collection and the trust of customers who signed up expecting value",
+    "Email marketing is over-promotional, causing high unsubscribe rates and damaging the cafe brand",
+    "GDPR compliance is ignored, exposing the business to regulatory action and reputational harm",
+    "Loyalty programme rewards are too generous, eroding margins without measurably increasing visit frequency"
+  ],
+  "kpis": [
+    "Customer email list growing by minimum 20 new sign-ups per week",
+    "Email open rate maintained above 25% (industry average for restaurants is 20%)",
+    "Customer retention rate (percentage of customers returning within 60 days) tracked and improving",
+    "Loyalty programme active participation rate above 30% of enrolled members"
+  ],
+  "dependencies": ["B158"],
+  "constraints": [
+    "All customer data collection and marketing must comply with UK GDPR and PECR regulations",
+    "Email marketing frequency must balance engagement with list fatigue (maximum weekly for most cafes)",
+    "Loyalty programme costs must be modelled to ensure they are commercially sustainable",
+    "Staff must be trained on data handling responsibilities and the importance of consent"
+  ],
+  "time_load": {
+    "L1": "5 hours (data audit, platform setup, sign-up mechanism creation, staff training)",
+    "L2": "12 hours (segmentation, communication calendar, loyalty programme design, lifecycle tracking)",
+    "L3": "4 hours/month (email creation and sending, performance review, strategy refinement)"
+  },
+  "review_protocol": "Email list growth and sign-up rate reviewed weekly. Email campaign performance (open rate, click rate, unsubscribe rate) reviewed after each send. Customer lifecycle metrics reviewed monthly. Loyalty programme performance assessed quarterly. GDPR compliance audit conducted annually. Full CRM strategy review conducted every 6 months.",
+  "meta": {
+    "summary_for_humans": "This block builds a customer relationship management capability from the ground up: collecting customer data compliantly, establishing regular communication through email marketing, implementing a loyalty programme, and tracking customer lifecycle metrics. It transforms anonymous transactions into known, manageable customer relationships.",
+    "implementation_risks": [
+      "GDPR compliance requirements may feel daunting and delay implementation if not simplified and demystified",
+      "Building an email list takes sustained effort over months and early results may feel disappointing",
+      "Digital loyalty programmes require POS integration that may involve additional subscription costs"
+    ],
+    "notes_for_engine": "Activate when signals indicate the cafe has no direct communication channel with customers, relies entirely on social media for marketing, or has no visibility of customer retention patterns. Depends on B158 for sales data integration.",
+    "tags": ["CRM", "customer_data", "loyalty", "email_marketing", "retention", "GDPR", "segmentation", "lifetime_value"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

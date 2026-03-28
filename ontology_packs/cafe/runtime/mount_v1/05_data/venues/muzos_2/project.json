@@ -1,0 +1,59 @@
+{
+  "venue_id": "muzos_2",
+  "venue_name": "muzos 2",
+  "type": "independent_cafe",
+  "stage": "preopening",
+  "workflow_stage": "plan_in_review",
+  "team_size": 8,
+  "location": "kalvarija",
+  "concept": "",
+  "team_profile": {
+    "foh_size": 3,
+    "boh_size": 5,
+    "key_roles": [
+      "2 owners. head chef",
+      "admin"
+    ]
+  },
+  "capacity_profile": {
+    "leadership_strength": "low",
+    "volatility": "low"
+  },
+  "status": "active",
+  "created": "2026-03-25T21:58:40.144254",
+  "last_activity_at": "2026-03-25T23:40:08.078295",
+  "last_updated_by": "u_consultant",
+  "last_assessment": "2026-03-25T22:59:21.553831",
+  "current_signals": {
+    "S056": {
+      "active": true,
+      "notes": "Direct evidence of communication breakdown at leadership level that prevents team communication structures from being established. No comprehensive meeting has occurred despite repeated attempts. Pattern documented since January. 'You agreed to meet that evening. Rolandas postponed to the next day. Next day — nothing.' This is worsened in the sense that it is now blocking pre-opening critical path items.",
+      "confidence": "high",
+      "value": null
+    },
+    "S154": {
+      "active": true,
+      "notes": "Business plan or strategic direction is implicitly undermined by the communication failure. Salary ranges unresolved since January, garden measurements since February, DSS contract since late February — these are foundational pre-opening decisions that remain open. The venue cannot execute a coherent opening strategy without owner decision-making engagement. Severity elevated: this is not a missing document problem, it is an owner disengagement problem at the most critical pre-opening phase.",
+      "confidence": "high",
+      "value": null
+    },
+    "S187": {
+      "active": true,
+      "notes": "NEW ACTIVATION — not in previous signal set but directly evidenced. 'Nearly losing Andrius — a real chef candidate, gone because nobody replied to his email for a week.' A qualified chef candidate was lost due to management non-response. With a March 24 visit scheduled with two chef candidates, the same risk is live and unmitigated. Severity: CRITICAL at pre-opening stage — losing key kitchen talent before opening is existential.",
+      "confidence": "high",
+      "value": null
+    },
+    "S166": {
+      "active": true,
+      "notes": "Standards alignment is impossible when management is not engaging with the consultant or with each other. 'Dozen-plus open items' unresolved. The consultant explicitly 'connected it to their future role as team leaders' — indicating that Simona and Rolandas are not demonstrating the leadership behaviours required to align a team. This is worsened: the pattern is now documented across multiple months.",
+      "confidence": "",
+      "value": null
+    }
+  },
+  "owner_user_id": "u_portfolio",
+  "primary_consultant_user_id": "u_consultant",
+  "health_state": "at_risk",
+  "next_review_at": "2026-04-24",
+  "owner_user_name": "Portfolio Lead",
+  "primary_consultant_user_name": "Lead Consultant"
+}

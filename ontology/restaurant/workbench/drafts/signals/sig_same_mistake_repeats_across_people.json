@@ -1,0 +1,31 @@
+{
+  "id": "sig_same_mistake_repeats_across_people",
+  "name": "Same mistake repeats across people",
+  "description": "The same operational miss shows up across different team members, suggesting the issue lives in the system rather than in one person.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: repeated mistakes across people expressed through restaurant training and learning failure",
+  "updated_at": "2026-03-15T14:29:28.478824Z",
+  "domain": "training",
+  "module": "training_execution",
+  "indicator_type": "lagging",
+  "evidence_types": [
+    "same miss from multiple staff",
+    "error pattern travels across the team",
+    "different people repeat the same avoidable failure"
+  ],
+  "source_types": [
+    "manager notes",
+    "post-shift review",
+    "service observation"
+  ],
+  "temporal_behavior": "recurring",
+  "likely_co_signals": [
+    "sig_same_issue_repeats_without_review",
+    "sig_training_not_translated_to_execution"
+  ],
+  "adapter_aliases": [
+    "same miss across staff",
+    "systemic repeat mistake"
+  ]
+}

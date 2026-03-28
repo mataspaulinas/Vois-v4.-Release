@@ -1,0 +1,83 @@
+{
+  "identification": {
+    "tool_id": "T004-02",
+    "tool_name": "Monthly Cold Chain Management Report",
+    "block_id": "B004"
+  },
+  "tool_design": {
+    "format": "template",
+    "role_in_intervention": "Monthly owner-facing and inspection-ready summary of cold-chain control.",
+    "adaptation_variables": [
+      "reporting_period",
+      "site_size",
+      "owner_reporting_style"
+    ],
+    "usage_moment": "At month-end review",
+    "expected_output": "Completed monthly report with KPI summary, major risks, and actions",
+    "linked_blocks": [
+      "B004",
+      "B001",
+      "B002",
+      "B003"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The report is assembled as a narrative afterthought instead of from current dashboard data.",
+        "what_can_go_wrong": "The summary becomes subjective and stops being reliable evidence.",
+        "early_signals": [
+          "Numbers in the report do not match the workbook",
+          "Sections are filled with vague narrative and no actual metrics"
+        ],
+        "prevention": [
+          "Complete the report directly from T004-01 each month",
+          "Keep the KPI section mandatory"
+        ],
+        "mitigation": [
+          "Rebuild the report from source data",
+          "Strip it back to facts and actions if narrative quality is low"
+        ],
+        "if_occurs_next_signals": [
+          "low_signal_reporting"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B002",
+          "B003"
+        ]
+      },
+      {
+        "warning": "The report is filed but not used to make decisions or communicate risk upward.",
+        "what_can_go_wrong": "The team produces a clean monthly pack while the same weak spots persist.",
+        "early_signals": [
+          "The same monthly concern appears repeatedly with no owner shift",
+          "Actions from the previous report remain open with no explanation"
+        ],
+        "prevention": [
+          "Require sign-off and action review inside the report",
+          "Carry forward only unresolved actions with a named owner"
+        ],
+        "mitigation": [
+          "Run a short owner-manager review using the report as the agenda",
+          "Escalate repeated unresolved themes into the relevant lower block"
+        ],
+        "if_occurs_next_signals": [
+          "monthly_governance_failure"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B002",
+          "B003"
+        ]
+      }
+    ]
+  },
+  "content": "# Monthly Cold Chain Management Report\n\n**Tool ID:** T004-02  \n**Block:** B004 (Cold Chain Excellence Dashboard)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L3  \n**Format:** Template  \n**Role:** Owner / Manager  \n**Time Required:** 15-20 minutes monthly  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this report to convert the dashboard into a monthly management and evidence pack.\n\nIt should answer three things clearly:\n- Did we control the cold chain this month?\n- Where were the main risks or failures?\n- What are we doing next?\n\n---\n## Report Header\n\n| Field | Entry |\n|---|---|\n| Venue | |\n| Reporting month | |\n| Prepared by | |\n| Reviewed by | |\n| Review date | |\n\n---\n## 1. Executive Summary\n\n**Overall month status:** Green / Amber / Red\n\n**One-sentence summary:**\n__________________________________________________\n\n**Top three points:**\n1. ________________________________________________\n2. ________________________________________________\n3. ________________________________________________\n\n---\n## 2. KPI Snapshot\n\n| KPI | Target | Actual | Commentary |\n|---|---|---|---|\n| Daily temp check completion | `100%` | | |\n| Delivery acceptance completion | `100%` | | |\n| Average fridge audit score | `90%+` | | |\n| Excursion count | `0` | | |\n| Stock loss from temp failures | `0` | | |\n\n---\n## 3. Significant Events This Month\n\n| Area | What Happened | Impact | Follow-Up |\n|---|---|---|---|\n| Excursions | | | |\n| Suppliers | | | |\n| Storage discipline | | | |\n| Equipment | | | |\n\n---\n## 4. Equipment And Investment View\n\n| Unit | Current Status | Decision | Reason |\n|---|---|---|---|\n| Milk fridge | | Watch / Repair / Replace | |\n| Prep fridge | | Watch / Repair / Replace | |\n| Display fridge | | Watch / Repair / Replace | |\n| Main freezer | | Watch / Repair / Replace | |\n\n---\n## 5. Actions For Next Month\n\n| Action | Owner | Due Date | Priority |\n|---|---|---|---|\n| | | | High / Medium / Low |\n| | | | High / Medium / Low |\n| | | | High / Medium / Low |\n\n---\n## 6. Evidence Filed\n\n<ul>\n  <li><input type=\"checkbox\"> Dashboard workbook reviewed</li>\n  <li><input type=\"checkbox\"> Key incident reports filed</li>\n  <li><input type=\"checkbox\"> Supplier issues reviewed</li>\n  <li><input type=\"checkbox\"> Monthly report filed with compliance records</li>\n</ul>\n\n---\n## Connected Resources\n\n**Built from:**\n- T004-01 - Cold Chain Dashboard Workbook\n- T004-03 - Equipment Health Scorecard & Replacement Trigger\n- T004-04 - Quarterly Cold Chain Trend Review\n\n---\n\n*Tool Version 2.0 - the monthly pack that proves management is paying attention.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T004-02_monthly_cold_chain_management_report.md",
+    "migration_method": "manual_enrichment"
+  }
+}

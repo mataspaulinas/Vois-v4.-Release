@@ -1,0 +1,165 @@
+{
+  "block_id": "B034",
+  "name": "Feedback Collection System",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Creates a multi-channel system for gathering customer feedback — through in-person conversations, feedback cards, online reviews, social media, and structured surveys — to build a continuous understanding of what customers love, what frustrates them, and what they wish was different.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish at least three feedback channels appropriate to the cafe's customer base",
+      "Create a structured process for collecting, recording, and analysing feedback",
+      "Proactively seek feedback rather than passively waiting for it",
+      "Use feedback data to drive specific, measurable improvements in the cafe's operations",
+      "Close the feedback loop: when feedback leads to a change, tell customers about it"
+    ],
+    "secondary_objectives": [
+      "Increase the volume of positive online reviews through proactive encouragement",
+      "Identify emerging issues before they become entrenched problems",
+      "Build a customer-listening culture where staff see feedback as information, not criticism"
+    ]
+  },
+  "why_this_matters": "Customer feedback is the most underused strategic resource available to independent cafes. Most cafes receive feedback reactively — a complaint here, a Google review there — and respond to each instance individually without looking for patterns. This is like treating symptoms without diagnosing the disease. A systematic feedback collection system transforms random data points into actionable intelligence. The UK cafe customer is increasingly vocal — but not always in person. Research from BrightLocal shows that 77% of UK consumers regularly read online reviews before visiting a local business, and 49% trust online reviews as much as personal recommendations. A cafe's Google and TripAdvisor ratings directly influence footfall, particularly from new customers. Yet most independent cafes do nothing to proactively encourage positive reviews, manage negative ones, or use review content as operational feedback. Beyond online reviews, the most valuable feedback often comes from direct conversation. A regular who mentions that the music has been louder lately, or that they miss the sourdough bread that was removed from the menu, is providing precisely the kind of granular, actionable insight that no survey can capture. But this conversational feedback is typically not recorded, not shared across the team, and not acted upon. A feedback collection system captures all forms of feedback — formal and informal, positive and negative, online and in-person — into a single stream that can be analysed for patterns and translated into improvements. The cafe that listens best, wins.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Set up the three basic feedback channels. Channel 1 — Google Reviews: claim the cafe's Google Business Profile if not already done, ensure the information is accurate (address, hours, photos), and create a simple way to encourage reviews. Print small cards or table talkers with a QR code linking to the Google review page and the message: 'Enjoyed your visit? We would love a review.' Place them on tables and at the till. Channel 2 — In-Person Feedback: train the team to ask one simple feedback question when clearing tables or during quiet moments: 'How was everything today?' This is not a formal survey — it is a genuine conversation opener. When a customer responds, the team member listens, thanks them, and notes anything significant in the shift log. Channel 3 — Complaint and Compliment Log: the complaint log from B033 is one half; add a compliment log section for positive feedback, so the cafe captures both what is going wrong and what is going right. Week 2: Begin monitoring online reviews. Set up Google Alerts for the cafe name so you are notified of new mentions. Check Google, TripAdvisor, Facebook, and Instagram weekly for reviews and comments. Respond to every review — positive and negative — within 48 hours. For positive reviews: a genuine thank you. For negative reviews: a professional, empathetic response that acknowledges the concern, explains what has been done, and invites the customer to return. Never be defensive in public responses — this is visible to every potential customer.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a centralised Feedback Register that captures all feedback from all channels in one place: date, source (Google, in-person, feedback card, social media), nature (compliment, complaint, suggestion), detail, and action taken. This unified view enables pattern analysis that is impossible when feedback is scattered across platforms. Introduce feedback cards — simple cards left on tables or at the counter with 3-4 questions: 'What did you enjoy most today?', 'Is there anything we could improve?', 'Would you recommend us?', and space for free-form comments. Keep cards short — response rates drop dramatically with longer surveys. Analyse the Feedback Register monthly: what themes are emerging? Are the same issues appearing across multiple channels? Are compliments clustering around specific staff members, products, or times of day? This analysis should produce 2-3 actionable insights each month. Create a Feedback Response SOP covering: how to respond to online reviews (positive and negative), how to record in-person feedback, how to process feedback cards, and how feedback is shared with the team. Establish a monthly 'Voice of the Customer' team update: share the best feedback, the most common improvement suggestions, and any changes made as a result of feedback. By Week 8, the feedback system should be producing regular insights that drive operational improvements.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Feedback should be a continuous conversation between the cafe and its customers. Consider implementing a quarterly Net Promoter Score (NPS) survey: 'On a scale of 0-10, how likely are you to recommend us to a friend?' NPS provides a simple, comparable metric that tracks overall customer satisfaction over time. Close the feedback loop visibly: when feedback leads to a change (a new menu item, improved opening hours, a fixed problem), tell customers about it. A chalk board message saying 'You asked, we listened: we now open at 7am on Saturdays' demonstrates that feedback is valued and acted upon. Track online review ratings monthly — is the average star rating improving? What is the response rate to reviews? Are negative reviews being addressed? Set a target for online review volume: encourage a specific number of reviews per month to build the cafe's online reputation. Analyse feedback seasonally: do customer priorities shift with the seasons? Are summer complaints different from winter ones? Use this intelligence to anticipate and address issues proactively."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Claim and optimise the cafe's Google Business Profile",
+        "Print QR code cards or table talkers linking to the Google review page",
+        "Train staff to ask 'How was everything today?' during natural conversation moments",
+        "Add a compliment section to the existing complaint log",
+        "Set up weekly monitoring of Google, TripAdvisor, Facebook, and Instagram",
+        "Respond to every online review — positive and negative — within 48 hours",
+        "Begin noting customer feedback in the daily shift log"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a centralised Feedback Register capturing all feedback from all channels",
+        "Design and distribute simple feedback cards with 3-4 questions",
+        "Analyse the Feedback Register monthly for themes and patterns",
+        "Create a Feedback Response SOP covering online and in-person channels",
+        "Establish a monthly 'Voice of the Customer' team update",
+        "Identify and implement 2-3 improvements from feedback each month",
+        "Track online review ratings and response rates monthly"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Implement quarterly NPS surveys to track overall satisfaction",
+        "Close the feedback loop visibly: 'You asked, we listened' communications",
+        "Set monthly targets for online review volume",
+        "Analyse feedback seasonally to anticipate changing customer needs",
+        "Share feedback insights with the team and celebrate improvements"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Google Business Profile (claimed and optimised)",
+    "Review Encouragement Cards/Table Talkers (with QR code)",
+    "Centralised Feedback Register",
+    "Customer Feedback Cards (printable)",
+    "Monthly Feedback Analysis Report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T034-01",
+        "tool_name": "Review Encouragement Card",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Small card or table talker with a QR code linking to the Google review page and a brief, friendly prompt to leave a review. Placed on tables and at the till."
+      },
+      {
+        "tool_id": "T034-02",
+        "tool_name": "Centralised Feedback Register",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Unified log capturing all customer feedback from all channels: date, source, type (compliment/complaint/suggestion), detail, action taken, and follow-up status."
+      },
+      {
+        "tool_id": "T034-03",
+        "tool_name": "Feedback Response SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering how to respond to online reviews, how to record in-person feedback, how to process feedback cards, and how to share insights with the team."
+      },
+      {
+        "tool_id": "T034-04",
+        "tool_name": "Monthly Feedback Analysis Report",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Monthly report summarising all feedback by channel and type, identifying top themes, tracking star rating trends, and listing actionable improvements with implementation status."
+      },
+      {
+        "tool_id": "T034-05",
+        "tool_name": "Quarterly NPS Survey Template",
+        "level": "L3",
+        "format": "assessment",
+        "owner_role": "Owner",
+        "description": "Simple quarterly survey template centred on the Net Promoter Score question (0-10 recommendation likelihood) plus 2-3 follow-up questions, designed for quick in-cafe or digital completion."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Feedback is collected but never analysed, creating a data graveyard rather than actionable intelligence",
+    "Online reviews go unmonitored and unanswered, creating a poor impression for potential customers",
+    "The feedback system is biased towards complaints, missing the positive feedback that reinforces good practices",
+    "Staff view feedback requests as an imposition on customers rather than an invitation to be heard"
+  ],
+  "kpis": [
+    "At least 10 new Google reviews per month with an average rating of 4.5+ stars",
+    "Centralised Feedback Register updated weekly with feedback from at least 3 channels",
+    "At least 2 operational improvements per month directly driven by customer feedback",
+    "100% of online reviews responded to within 48 hours"
+  ],
+  "dependencies": ["B033"],
+  "constraints": [
+    "Online review encouragement must never cross into review manipulation or fake reviews",
+    "Feedback cards must be short — maximum 4 questions to maintain response rates",
+    "All feedback channels must be monitored at least weekly"
+  ],
+  "time_load": {
+    "L1": "4 hours (Google profile setup, card design/printing, staff training, review monitoring)",
+    "L2": "6 hours (register creation, analysis system setup, SOP development, feedback card design)",
+    "L3": "3 hours/quarter (NPS survey, seasonal analysis, feedback loop communications)"
+  },
+  "review_protocol": "Daily in-person feedback noted in shift log. Weekly online review monitoring and response. Monthly feedback analysis and improvement identification. Quarterly NPS survey and comprehensive feedback review.",
+  "meta": {
+    "summary_for_humans": "This block creates a multi-channel system for collecting customer feedback — through conversations, feedback cards, online reviews, and surveys — and turns that feedback into a continuous stream of actionable improvements. It monitors online reviews, responds promptly, and closes the loop by telling customers when their feedback leads to change.",
+    "implementation_risks": [
+      "Negative reviews can feel personal and demoralising — train the team to see them as improvement opportunities",
+      "Feedback fatigue is real — do not over-survey customers or they will stop responding",
+      "Analysis is the critical step — collecting feedback without analysing it is worse than not collecting at all"
+    ],
+    "notes_for_engine": "Activate for all cafes. Flag as urgent if signals indicate low or declining online review ratings, no feedback collection system in place, or customer complaints about not being heard.",
+    "tags": ["customer_experience", "feedback", "reviews", "Google", "NPS", "surveys", "listening", "improvement"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

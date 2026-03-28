@@ -1,0 +1,31 @@
+{
+  "id": "sig_work_dies_between_roles",
+  "name": "Work dies between roles",
+  "description": "A guest need or operating task stalls because everyone assumes someone else picked it up.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: role-boundary coordination failure in restaurant flow",
+  "updated_at": "2026-03-14T12:48:22.242555Z",
+  "domain": "service_delivery",
+  "module": "pass_communication",
+  "indicator_type": "lagging",
+  "evidence_types": [
+    "stalled follow-through",
+    "orphaned task",
+    "guest need dropped between roles"
+  ],
+  "source_types": [
+    "service observation",
+    "manager notes",
+    "guest complaint"
+  ],
+  "temporal_behavior": "flow-recurring",
+  "likely_co_signals": [
+    "sig_handoff_requires_reclarification",
+    "sig_ownership_confusion_in_service"
+  ],
+  "adapter_aliases": [
+    "dropped between people",
+    "dies in the gap"
+  ]
+}

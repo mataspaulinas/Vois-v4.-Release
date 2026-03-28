@@ -1,0 +1,166 @@
+{
+  "block_id": "B161",
+  "name": "GDPR & Data Protection",
+  "version": "v1.0",
+  "domain": "D10_technology_systems",
+  "module": "M10: Digital Tools & Customer Data",
+  "state": "enriched",
+  "purpose": "Ensures the cafe complies with UK GDPR, the Data Protection Act 2018, and the Privacy and Electronic Communications Regulations (PECR) across all personal data processing activities. This block makes data protection manageable for a small hospitality business without requiring legal expertise, covering customer data, staff data, CCTV, marketing, and third-party data sharing.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Conduct a data mapping exercise to identify all personal data the cafe collects, stores, processes, and shares",
+      "Create a privacy notice that is clear, accurate, and accessible to customers and staff",
+      "Establish lawful bases for all data processing activities, particularly marketing consent under PECR",
+      "Implement practical data security measures proportionate to a small hospitality business",
+      "Create procedures for handling data subject access requests, data breaches, and data deletion requests"
+    ],
+    "secondary_objectives": [
+      "Register with the Information Commissioner's Office (ICO) if required (most businesses processing personal data must register, current fee is 40 pounds per year for small organisations)",
+      "Ensure all third-party platforms (POS, CRM, email marketing, Wi-Fi) have appropriate data processing agreements in place",
+      "Train all staff on their data protection responsibilities relevant to their role",
+      "Build customer trust by demonstrating transparent and respectful data handling"
+    ]
+  },
+  "why_this_matters": "Every cafe processes personal data, even those that think they do not. Customer names on loyalty cards, staff employment records, CCTV footage, email marketing lists, Wi-Fi login data, online ordering details, and even handwritten catering enquiry notes all constitute personal data under UK GDPR. The regulation applies to every business, regardless of size, and non-compliance can result in fines of up to 17.5 million pounds or 4% of global annual turnover, whichever is higher. For a small cafe, the realistic risk is not a multi-million pound fine but an ICO investigation triggered by a customer complaint about unwanted marketing, a data breach involving leaked customer details, or an employee dispute involving personnel records. Even a minor investigation is time-consuming, stressful, and potentially damaging to reputation. The practical requirements for a small cafe are not onerous. The ICO itself states that compliance should be proportionate to the size and nature of the business. A cafe does not need a Data Protection Officer (DPO) or a 50-page privacy policy. It needs: a clear understanding of what data it collects and why, proper consent for marketing, secure storage of personal data, a privacy notice, and basic procedures for handling requests and breaches. Most cafes can achieve full compliance in a matter of weeks with the right guidance. The reputational benefit is significant. Customers increasingly care about how their data is used. A cafe that visibly respects customer privacy builds trust that translates into loyalty.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Conduct a Personal Data Mapping exercise. Go through every part of the business and identify where personal data is collected, stored, and used. Common areas: customer email lists, loyalty programme data, online ordering accounts, Wi-Fi login records, CCTV footage, staff employment records (including right-to-work documents, payroll data, and emergency contacts), catering enquiries, social media interactions, and website analytics. For each data type, record: what data is collected, why it is collected, where it is stored, who has access, how long it is kept, and whether it is shared with third parties. Week 2: Check ICO registration. Visit ico.org.uk and use the self-assessment tool to determine whether you need to register. Most businesses processing personal data must register and pay the annual fee (40 pounds for micro-organisations, 60 pounds for small, 2,900 pounds for large). If unregistered, complete registration immediately as failure to register is itself an offence. Review and update your privacy notice (or create one if it does not exist). The privacy notice must explain: who you are, what data you collect, why you collect it, the lawful basis for processing, who you share data with, how long you keep data, and individuals rights. The ICO provides template privacy notices specifically for small businesses.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Review marketing consent for your entire customer contact list. Under PECR, marketing emails require specific, informed, freely given consent (a pre-ticked box does not count). If your current list was not collected with proper consent, you have two options: re-consent the list by sending a clear opt-in request, or stop marketing to non-consented contacts. Going forward, all sign-up mechanisms must include clear consent language and a genuine opt-in action. Implement a Data Retention Policy defining how long each type of data is kept. Suggested minimums: marketing data retained while consent is active plus 12 months after last engagement, CCTV footage retained for 30 days maximum (unless required for an incident investigation), staff records retained for 6 years after employment ends (for tax and legal purposes), financial transaction data retained for 6 years (HMRC requirement). Set up a Subject Access Request (SAR) procedure: you have 30 calendar days to respond to a request from any individual asking what data you hold about them. Create a Data Breach Response Plan: define what constitutes a breach, who assesses severity, when to notify the ICO (within 72 hours for breaches posing risk to individuals), and when to notify affected individuals. Train all staff on core data protection principles: what personal data is, why it matters, what they can and cannot do with customer and staff data, and who to report concerns to.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Conduct an annual Data Protection Audit reviewing: all data processing activities, consent mechanisms, data retention compliance, third-party data sharing agreements, staff training records, and any SARs or breaches handled during the year. Review and update Data Processing Agreements (DPAs) with all third-party platforms that process personal data on your behalf (POS provider, email marketing platform, cloud storage, payroll provider). Under UK GDPR, you are responsible for ensuring these processors handle data appropriately. Implement privacy by design: when introducing any new system, process, or service that involves personal data, assess data protection implications before implementation. Build data protection awareness into the cafe culture: staff should naturally consider data protection when handling customer information, not because they fear fines but because they understand it is the right thing to do. Stay informed about regulatory changes through the ICO website and newsletter."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Conduct a Personal Data Mapping exercise across all business areas",
+        "Check and complete ICO registration if required",
+        "Create or update the privacy notice using ICO template guidance",
+        "Display the privacy notice on the website and make it available in-cafe on request",
+        "Review marketing consent for the existing customer contact list",
+        "Secure all physical personal data (lock filing cabinets, restrict access to staff records)"
+      ],
+      "responsible": "Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Implement a Data Retention Policy with defined timescales for each data type",
+        "Re-consent the marketing list if existing consent is inadequate",
+        "Create a Subject Access Request (SAR) response procedure",
+        "Create a Data Breach Response Plan with notification timelines",
+        "Train all staff on core data protection responsibilities",
+        "Review Data Processing Agreements with all third-party platforms",
+        "Update all customer-facing sign-up forms with compliant consent mechanisms"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct an annual Data Protection Audit covering all processing activities",
+        "Review and renew Data Processing Agreements with third-party providers",
+        "Implement privacy by design for all new systems and processes",
+        "Include data protection in staff onboarding training",
+        "Stay informed about regulatory changes through ICO updates"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Personal Data Map (all data types, purposes, storage, and sharing)",
+    "Privacy Notice (customer-facing, ICO-compliant)",
+    "Data Retention Policy",
+    "Data Breach Response Plan",
+    "Staff Data Protection Training materials"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T161-01",
+        "tool_name": "Personal Data Mapping Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Structured template for documenting all personal data processing: data type, source, purpose, lawful basis, storage location, access controls, retention period, third-party sharing, and data subject category (customer, staff, supplier)."
+      },
+      {
+        "tool_id": "T161-02",
+        "tool_name": "Cafe Privacy Notice Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Plain-English privacy notice template tailored for independent cafes, covering all required UK GDPR disclosures: identity, data collected, purposes, lawful bases, recipients, retention, rights, and complaint procedures. Ready for customisation and publication."
+      },
+      {
+        "tool_id": "T161-03",
+        "tool_name": "Data Breach Response Plan",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Owner",
+        "description": "Step-by-step procedure for handling personal data breaches: identification, containment, assessment of severity, ICO notification (within 72 hours if required), individual notification, documentation, and post-incident review."
+      },
+      {
+        "tool_id": "T161-04",
+        "tool_name": "Data Protection Staff Training Guide",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Concise training materials covering: what personal data is, staff responsibilities when handling data, marketing consent rules, CCTV awareness, reporting concerns, and practical dos and don'ts. Designed for a 20-minute training session."
+      },
+      {
+        "tool_id": "T161-05",
+        "tool_name": "Annual Data Protection Audit Checklist",
+        "level": "L3",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Comprehensive annual checklist reviewing: ICO registration status, privacy notice accuracy, consent mechanisms, data retention compliance, third-party agreements, staff training records, breach log, SAR log, and CCTV signage."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Personal data mapping is never conducted, leaving the cafe unaware of what data it processes and whether processing is lawful",
+    "Marketing emails are sent to customers who never gave valid consent, risking ICO complaints and fines",
+    "Data breach occurs (e.g. stolen laptop with customer records) and no response plan exists, causing delayed or absent notification to the ICO",
+    "CCTV footage is retained indefinitely or shared inappropriately, violating data protection principles"
+  ],
+  "kpis": [
+    "ICO registration current and fees paid annually",
+    "Privacy notice published and reviewed at least annually for accuracy",
+    "100% of marketing contacts have documented, valid consent",
+    "All staff complete data protection training within 4 weeks of starting"
+  ],
+  "dependencies": ["B159"],
+  "constraints": [
+    "UK GDPR compliance is a legal requirement, not optional, and applies regardless of business size",
+    "Marketing consent under PECR requires specific, informed, freely given opt-in and cannot be assumed",
+    "ICO registration must be renewed annually and failure to register is a criminal offence",
+    "Data retention periods vary by data type and legal requirement (e.g. HMRC requires 6 years for financial records)"
+  ],
+  "time_load": {
+    "L1": "5 hours (data mapping, ICO registration check, privacy notice creation)",
+    "L2": "8 hours (retention policy, breach plan, consent review, staff training)",
+    "L3": "3 hours/year (annual audit, agreement reviews, regulatory updates)"
+  },
+  "review_protocol": "Privacy notice reviewed annually and updated whenever data processing activities change. Data retention compliance spot-checked quarterly. Staff data protection training refreshed annually. Data breach response plan tested annually with a tabletop exercise. Full Data Protection Audit conducted annually.",
+  "meta": {
+    "summary_for_humans": "This block ensures the cafe complies with UK GDPR and data protection law across all personal data activities including customer data, staff records, CCTV, and marketing. It provides practical, proportionate guidance with templates for data mapping, privacy notices, breach response, and staff training.",
+    "implementation_risks": [
+      "Data protection law can feel intimidating, causing paralysis rather than proportionate action",
+      "Existing marketing lists may not have valid consent, requiring difficult re-consent or list reduction",
+      "Third-party platforms may not have adequate Data Processing Agreements in place"
+    ],
+    "notes_for_engine": "Activate whenever B159 Customer Data and CRM is active, as CRM activities directly create data protection obligations. Also activate if signals indicate CCTV in use without signage, marketing without consent, or customer data stored insecurely.",
+    "tags": ["GDPR", "data_protection", "privacy", "compliance", "ICO", "consent", "PECR", "data_breach"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "block_id": "B011",
+  "name": "Cleaning Schedule Protocol",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Establishes a comprehensive daily, weekly, and monthly cleaning schedule covering every surface, piece of equipment, and area in the cafe, with clear task assignments, sign-off procedures, and chemical usage guidance. This block ensures the cafe meets the 'Cleaning' pillar of the SFBB 4 Cs framework.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define every cleaning task in the cafe with frequency (daily, weekly, monthly, quarterly), method, chemicals, and responsible person",
+      "Create a sign-off system so every task has a verified completion record",
+      "Ensure cleaning chemicals are food-safe, correctly diluted, and stored safely",
+      "Establish clean-as-you-go practices alongside scheduled deep cleaning",
+      "Provide an auditable cleaning record that satisfies EHO inspection requirements"
+    ],
+    "secondary_objectives": [
+      "Reduce pest attraction by maintaining consistently clean premises",
+      "Extend equipment lifespan through regular cleaning and maintenance",
+      "Create a visibly clean environment that builds customer confidence"
+    ]
+  },
+  "why_this_matters": "Cleaning is one of the four pillars of the FSA's Safer Food Better Business framework and is scrutinised at every EHO inspection. Under EU-retained Regulation (EC) 852/2004, food premises must be kept clean and maintained in good repair and condition. The Food Hygiene Rating scheme scores premises on hygienic food handling, structural compliance, and confidence in management — cleaning directly impacts all three. An Environmental Health Officer will check not just that surfaces look clean, but that there is a documented cleaning schedule demonstrating systematic, consistent cleaning practices. A cafe that cleans reactively — only when things look dirty — will inevitably miss hidden contamination. Grease builds up behind equipment, milk residue accumulates in steam wand tips, and bacteria colonise grouting between tiles. These are the areas EHOs specifically target because they reveal whether cleaning is genuine or cosmetic. Poor cleaning creates ideal conditions for pest infestations — mice and cockroaches are attracted to food residue, and their presence triggers immediate enforcement action. In the worst cases, a Hygiene Emergency Prohibition Notice can force immediate closure. Beyond compliance, customers form instant judgements about food safety based on visible cleanliness. A dirty counter, sticky table, or grimy toilet will drive customers away faster than any other single factor. The cleaning schedule is not a bureaucratic exercise — it is the systematic foundation that keeps the cafe safe, compliant, and welcoming.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Walk through every area of the cafe and list every surface, piece of equipment, and zone that requires cleaning. Break this into areas: front-of-house (tables, chairs, counter, display cabinets, floor, windows, toilets), bar area (espresso machine exterior, grinder, steam wands, milk jugs, syrups station, POS area), kitchen (prep surfaces, chopping boards, sinks, oven, microwave, fridge interiors, extractor hood), storage (dry store shelves, walk-in fridge, freezer), and external (signage, outdoor seating, entrance, bins). For each item, define: what is cleaned, how it is cleaned (method and chemicals), how often (after each use, daily, weekly, monthly), and who is responsible. Create a master cleaning schedule document. For daily tasks, print a daily cleaning checklist with space for initials and date — this is what EHOs want to see. Assign cleaning tasks to specific shifts: opening team handles morning setup cleaning, closing team handles end-of-day deep clean, and everyone practises clean-as-you-go during service. Week 2: Review the chemical products used for cleaning. All chemicals must be food-safe where they contact food surfaces. Check that sanitiser is bactericidal and meets BS EN standards. Ensure chemicals are stored separately from food in a locked or designated cupboard. Create a COSHH (Control of Substances Hazardous to Health) file listing every chemical used, its safety data sheet, and correct dilution rates.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Cleaning SOP document that covers every cleaning task in detail: what, how, with what chemicals, at what dilution, how often, by whom, and how completion is verified. Include a separate section for equipment-specific cleaning — espresso machine group heads, grinder burrs, dishwasher filters, ice machine, and blender components all need specific procedures. Implement a weekly deep-clean schedule covering tasks not done daily: fridge interior wipes, oven cleaning, extractor hood filter washing, drain cleaning, and wall washing behind equipment. Create a monthly schedule for tasks done less frequently: ceiling vents, light fittings, behind-fridge areas, and storage room reorganisation. Assign a cleaning inspection to the closing manager each day — they verify that all daily tasks are completed to standard before anyone leaves. Introduce a weekly cleaning audit where the manager rates each area on a 1-5 scale and records the scores. Track scores over time to identify areas that consistently underperform. By Week 8, the cafe should have a complete cleaning SOP, daily/weekly/monthly schedules with sign-off, a COSHH file, and at least 6 weeks of auditable cleaning records.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Cleaning should be embedded as a shared responsibility, not a chore assigned to the most junior person. Conduct quarterly deep-clean events where the whole team participates — this builds ownership and catches areas that routine cleaning misses. Consider introducing ATP swab testing to objectively measure surface cleanliness and provide staff with immediate feedback. Review cleaning product effectiveness annually — are there better, more environmentally friendly products available? Track cleaning audit scores monthly and set improvement targets. Display cleaning standards visually in the staff area and celebrate teams that consistently achieve high scores. Integrate cleaning protocols into the broader hygiene culture programme (B012)."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Walk through every area and list every surface, equipment, and zone requiring cleaning",
+        "Define cleaning method, chemicals, frequency, and responsible person for each item",
+        "Create and print daily cleaning checklists with sign-off columns",
+        "Assign cleaning tasks to opening, service, and closing shifts",
+        "Review all cleaning chemicals for food safety compliance",
+        "Create a COSHH file with safety data sheets for every chemical",
+        "Ensure chemicals are stored separately from food in a designated cupboard"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft a comprehensive Cleaning SOP with detailed procedures for every task",
+        "Implement weekly and monthly deep-clean schedules with sign-off sheets",
+        "Create equipment-specific cleaning procedures for espresso machines, grinders, and kitchen equipment",
+        "Establish daily closing inspection by the shift manager",
+        "Introduce weekly cleaning audits with area-by-area scoring",
+        "Track audit scores over time to identify underperforming areas",
+        "File all cleaning records, COSHH data, and SOPs in the food safety folder"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly whole-team deep-clean events",
+        "Introduce ATP swab testing for objective cleanliness measurement",
+        "Review cleaning product effectiveness and environmental impact annually",
+        "Display cleaning audit scores and celebrate high-performing teams",
+        "Integrate cleaning standards into the hygiene culture programme (B012)"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Master Cleaning Schedule (daily, weekly, monthly tasks)",
+    "Daily Cleaning Checklist with sign-off (printable A4)",
+    "Cleaning SOP document",
+    "COSHH Chemical Register and Safety Data Sheet file",
+    "Weekly Cleaning Audit Scorecard"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T011-01",
+        "tool_name": "Daily Cleaning Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "Printable A4 daily checklist listing every cleaning task by shift (opening, service, closing) with columns for task, method, initials, time, and manager sign-off."
+      },
+      {
+        "tool_id": "T011-02",
+        "tool_name": "Master Cleaning Schedule",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Comprehensive schedule listing every cleaning task in the cafe with frequency (daily/weekly/monthly/quarterly), method, chemicals, dilution rate, responsible role, and verification method."
+      },
+      {
+        "tool_id": "T011-03",
+        "tool_name": "Cleaning SOP Document",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering cleaning methods, chemical usage, dilution rates, equipment-specific procedures, and safety precautions for every cleaning task."
+      },
+      {
+        "tool_id": "T011-04",
+        "tool_name": "Weekly Cleaning Audit Scorecard",
+        "level": "L2",
+        "format": "scorecard",
+        "owner_role": "Manager",
+        "description": "Area-by-area scoring template (1-5 scale) for weekly cleaning audits covering front-of-house, bar, kitchen, storage, and facilities with trend tracking."
+      },
+      {
+        "tool_id": "T011-05",
+        "tool_name": "COSHH Chemical Register",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Register listing every cleaning chemical used on premises with product name, hazard classification, correct dilution rate, safety precautions, first aid measures, and storage requirements."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Cleaning checklists are signed off without tasks actually being completed properly",
+    "Chemical dilution rates are ignored, resulting in either ineffective cleaning or dangerous concentration levels",
+    "Deep-clean tasks on the weekly/monthly schedule are repeatedly postponed during busy periods",
+    "New or temporary staff are not shown the cleaning schedule and miss tasks or use wrong products"
+  ],
+  "kpis": [
+    "100% of daily cleaning checklist tasks completed and signed off every operating day",
+    "Weekly cleaning audit scores averaging 4 or above (out of 5) across all areas",
+    "Zero EHO cleaning-related findings at inspection",
+    "COSHH register complete and up to date with safety data sheets for every chemical on premises"
+  ],
+  "dependencies": ["B009"],
+  "constraints": [
+    "All cleaning chemicals must be food-safe where they contact food preparation surfaces",
+    "COSHH safety data sheets must be available on-site for every chemical product used",
+    "Cleaning records must be retained for a minimum of 12 months for EHO inspection"
+  ],
+  "time_load": {
+    "L1": "6 hours (area audit, schedule creation, chemical review, COSHH file setup)",
+    "L2": "8 hours (SOP drafting, audit system setup, equipment procedures, training)",
+    "L3": "3 hours/month (audits, deep-clean events, product reviews)"
+  },
+  "review_protocol": "Daily closing inspection by shift manager. Weekly cleaning audit with scored assessment. Monthly review of audit trends and deep-clean schedule compliance. Quarterly whole-team deep-clean event. Annual review of cleaning products and SOP updates.",
+  "meta": {
+    "summary_for_humans": "This block creates a complete cleaning system covering every task, surface, and piece of equipment in the cafe, with daily checklists, proper chemical management, and regular audits. It provides the documented cleaning records EHOs require and keeps the cafe visibly and genuinely clean.",
+    "implementation_risks": [
+      "Cleaning checklists become a box-ticking exercise — manager observation is essential",
+      "Chemical costs can be reduced by buying in bulk but storage safety must be maintained",
+      "High staff turnover requires continuous training on cleaning procedures"
+    ],
+    "notes_for_engine": "Activate for all cafes. Flag as urgent if signals indicate dirty premises, missing cleaning records, EHO cleaning concerns, or pest issues. Foundation block for B009 (Handwashing) and B012 (Hygiene Culture).",
+    "tags": ["food_safety", "cleaning", "hygiene", "SFBB", "EHO", "COSHH", "daily_check", "compliance"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

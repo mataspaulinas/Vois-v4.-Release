@@ -1,0 +1,165 @@
+{
+  "block_id": "B027",
+  "name": "Drink Handoff Quality Check",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Establishes the final quality gate before a drink reaches the customer — a systematic visual and verbal check at the point of handoff that verifies drink quality, accuracy, and presentation. This block ensures every drink that leaves the bar meets the cafe's standard.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a standardised pre-handoff quality check that the barista performs before every drink is served",
+      "Define visual quality standards: latte art, foam consistency, cup cleanliness, correct lid and sleeve",
+      "Establish a verbal handoff that confirms the drink with the customer and invites feedback",
+      "Catch any quality issues — incorrect temperature, poor extraction, wrong milk — before they reach the customer",
+      "Make the handoff moment a positive final impression that completes the cafe experience"
+    ],
+    "secondary_objectives": [
+      "Reduce drink returns and remakes by catching issues at the last stage",
+      "Build customer confidence through consistently high presentation standards",
+      "Create a memorable handoff moment that differentiates the cafe from competitors"
+    ]
+  },
+  "why_this_matters": "The drink handoff is the last touchpoint before the customer experiences the product — it is the cafe's final chance to get it right. A drink that has been perfectly extracted and steamed can still fail at handoff: served in a dirty cup, with milk splashed on the outside, with the wrong lid, or without the modification the customer requested. Research in hospitality shows that the final moment of a service encounter disproportionately influences overall satisfaction — a concept known as the 'peak-end rule.' The handoff is the 'end' of the cafe interaction, and customers remember it vividly. A confident, clean handoff with the barista saying 'Here is your oat milk flat white — enjoy!' leaves the customer with a positive final impression. A hasty handoff where the drink is slid across the counter without eye contact or confirmation leaves a forgettable or negative impression. For specialty coffee shops, the visual presentation of the drink is part of the product itself. Latte art, a clean cup exterior, and a neatly fitted lid communicate craftsmanship and care. For all cafes, the handoff is also the final accuracy checkpoint — the last opportunity to verify that the drink matches what was ordered before the customer takes a sip and discovers a problem. In an age where customers photograph their drinks for social media, visual presentation at handoff has a direct marketing impact that extends far beyond the individual customer.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Define the cafe's drink handoff standard with a simple 5-point pre-handoff check. Before any drink is handed to the customer, the barista checks: 1. Correct drink — does it match the ticket? 2. Visual quality — is the foam/crema acceptable? Is there latte art where expected? 3. Cup cleanliness — is the outside of the cup clean and dry? No milk splashes, no drips? 4. Correct accessories — right lid, sleeve for hot takeaway, napkin if needed? 5. Temperature — does the cup feel appropriately hot (or cold for iced drinks)? Print the 5-point check as a small card and post it at the drink handoff area. Train every barista: before you call the customer's name, pause for 2 seconds and run the check mentally. If anything fails, fix it before handoff — wipe the cup, add the sleeve, or remake if the drink quality is not up to standard. Week 2: Introduce the verbal handoff. When handing the drink to the customer, the barista makes eye contact and confirms: 'Your large oat milk flat white — enjoy your morning!' This serves two purposes: it confirms the drink is correct (giving the customer a chance to flag if not), and it ends the interaction on a warm, personal note. Practise the verbal handoff during quiet periods. Observe each barista's handoff technique and provide coaching.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Drink Handoff Quality SOP covering: the 5-point check, visual quality standards for each drink category (espresso, filter, iced, food plating), verbal handoff expectations, and what to do when a quality issue is identified at handoff. Define visual standards with reference images: what does a good flat white look like? What is acceptable latte art versus unacceptable? What is the minimum crema standard for an espresso? Display these standards near the bar. Create a handoff quality tracking system: the manager observes 10 handoffs per week and scores them against the 5-point check. Track scores over time. Integrate the handoff check with order accuracy (B025): the handoff is the final accuracy verification, and the barista should treat it as such. Establish a 'no shame remake' culture: if a barista is not happy with a drink at the handoff check, they remake it without question. The cost of a remade drink is far less than the cost of serving a substandard product. By Week 8, the 5-point check should be automatic for every barista and visible in consistently high presentation standards.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Drink handoff quality should be a source of professional pride for every barista. Conduct quarterly handoff quality audits assessing visual standards, verbal delivery, and customer response. Track customer comments about drink presentation and share positive feedback with the baristas responsible. Review visual standards seasonally — are they still appropriate as the menu changes? Set up an internal 'best handoff' recognition: celebrate particularly beautiful drinks or exceptional customer interactions at handoff. Consider the handoff environment: is the collection area clean, well-lit, and appealing? Does it have space for the customer to add sugar or take a napkin without fumbling? The handoff area is the last physical space the customer experiences — it should reflect the cafe's standards."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Define the 5-point pre-handoff quality check",
+        "Print and post the 5-point check card at the drink handoff area",
+        "Train every barista to pause and run the check before each handoff",
+        "Introduce the verbal handoff: eye contact, drink confirmation, warm close",
+        "Observe each barista's handoff technique and provide coaching",
+        "Establish the 'no shame remake' rule: substandard drinks are remade without question",
+        "Practise the complete handoff during quiet periods"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Drink Handoff Quality SOP covering checks, standards, and procedures",
+        "Define visual quality standards with reference images for each drink category",
+        "Create a weekly handoff quality observation tracker (10 handoffs per week scored)",
+        "Integrate handoff check with order accuracy system (B025)",
+        "Train baristas on drink presentation standards for takeaway and dine-in",
+        "Display visual standards near the bar for constant reference",
+        "Track handoff quality scores over time and identify training needs"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly handoff quality audits",
+        "Track and share positive customer feedback about drink presentation",
+        "Review visual standards seasonally as the menu evolves",
+        "Set up internal 'best handoff' recognition and celebration",
+        "Review the handoff area environment for cleanliness and customer experience"
+      ],
+      "responsible": "Owner, Head Barista"
+    }
+  },
+  "deliverables": [
+    "5-Point Pre-Handoff Quality Check Card",
+    "Drink Handoff Quality SOP",
+    "Visual Quality Standards Reference (with images)",
+    "Weekly Handoff Quality Observation Tracker",
+    "Quarterly Handoff Quality Audit Report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T027-01",
+        "tool_name": "5-Point Pre-Handoff Check Card",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Barista",
+        "description": "Small laminated card posted at the drink handoff area listing the 5 checks: correct drink, visual quality, cup cleanliness, correct accessories, and temperature."
+      },
+      {
+        "tool_id": "T027-02",
+        "tool_name": "Visual Quality Standards Reference",
+        "level": "L2",
+        "format": "guide",
+        "owner_role": "Head Barista",
+        "description": "Reference guide with photographs showing acceptable and unacceptable visual standards for each drink category: espresso crema, latte art, foam texture, iced drink presentation, and food plating."
+      },
+      {
+        "tool_id": "T027-03",
+        "tool_name": "Drink Handoff Quality SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Head Barista",
+        "description": "Standard Operating Procedure covering the complete handoff process: 5-point check, verbal confirmation, visual standards, remake policy, and handoff area maintenance."
+      },
+      {
+        "tool_id": "T027-04",
+        "tool_name": "Weekly Handoff Observation Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Weekly tracker for scoring 10 observed drink handoffs against the 5-point check: each handoff scored for accuracy, visual quality, cup cleanliness, accessories, and verbal delivery."
+      },
+      {
+        "tool_id": "T027-05",
+        "tool_name": "Quarterly Handoff Quality Audit",
+        "level": "L3",
+        "format": "audit",
+        "owner_role": "Owner",
+        "description": "Comprehensive quarterly audit of drink handoff quality: visual standards compliance, verbal handoff delivery, customer response observation, and handoff area condition."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Baristas skip the pre-handoff check during peak periods, serving substandard drinks under time pressure",
+    "Visual standards are defined but not enforced, so quality varies significantly between baristas",
+    "The verbal handoff becomes robotic and loses its personal warmth",
+    "The 'no shame remake' culture is not established, so baristas serve drinks they know are below standard rather than waste stock"
+  ],
+  "kpis": [
+    "Weekly handoff observation scores averaging 4.5 out of 5 across all baristas",
+    "Drink return/remake rate below 1% of drinks served",
+    "100% of drinks pass the 5-point check before handoff",
+    "Customer feedback mentions drink presentation positively at least monthly"
+  ],
+  "dependencies": ["B025", "B039"],
+  "constraints": [
+    "The 5-point check must not add more than 3 seconds to the handoff process",
+    "Visual standards must be defined with reference images, not just written descriptions",
+    "The remake policy must be genuinely supported by management — no blame for quality-driven remakes"
+  ],
+  "time_load": {
+    "L1": "2 hours (standard definition, card creation, initial barista training)",
+    "L2": "5 hours (SOP development, visual standards creation, observation system setup)",
+    "L3": "1 hour/quarter (audits, standards review, recognition programme)"
+  },
+  "review_protocol": "Daily visual observation by head barista during service. Weekly formal observation of 10 handoffs scored. Monthly review of handoff quality trends. Quarterly comprehensive handoff audit.",
+  "meta": {
+    "summary_for_humans": "This block establishes the final quality gate before a drink reaches the customer: a 5-point visual and accuracy check, followed by a confident verbal handoff. It catches errors and quality issues at the last moment and ensures every drink leaves the bar looking and tasting as intended.",
+    "implementation_risks": [
+      "The check must be fast enough not to slow service — practice makes it automatic",
+      "Visual standards need to be realistic for the team's skill level — raise them gradually",
+      "Solo barista operations face challenges — the barista is both maker and presenter"
+    ],
+    "notes_for_engine": "Activate for all cafes. Flag as urgent if signals indicate frequent drink returns, poor presentation complaints, or inconsistent drink quality. Links to B025 (Order Accuracy) as the final accuracy checkpoint.",
+    "tags": ["customer_experience", "drink_quality", "handoff", "presentation", "barista", "quality_check", "service", "latte_art"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

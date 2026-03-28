@@ -1,0 +1,157 @@
+{
+  "block_id": "B117",
+  "name": "Inventory Excellence & Loss Prevention",
+  "version": "v1.0",
+  "domain": "D06_supply_chain",
+  "module": "M06: Supply Chain & Supplier Relations",
+  "state": "enriched",
+  "purpose": "Achieves best-in-class inventory management by integrating stock counting (B115), FIFO rotation (B116), variance analysis, loss prevention, and continuous improvement into a unified system that minimises loss, maximises accuracy, and protects the cafe's margin from all forms of stock shrinkage.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Integrate stock counting and FIFO into a single inventory management framework with unified reporting",
+      "Implement a comprehensive loss prevention programme covering waste, theft, portioning errors, and recording inaccuracies",
+      "Achieve stock accuracy above 98% through systematic counting, variance investigation, and process improvement",
+      "Build an inventory management culture where every team member understands that stock is money on shelves",
+      "Create management reporting that connects inventory performance directly to financial outcomes (GP%, waste cost, shrinkage)"
+    ],
+    "secondary_objectives": [
+      "Position the cafe for scalable inventory management if expanding to multiple sites",
+      "Evaluate inventory management technology (apps, scanners, integrated EPOS) for cost-effective adoption",
+      "Benchmark inventory performance against UK hospitality industry standards"
+    ]
+  },
+  "why_this_matters": "Stock shrinkage — the gap between what a cafe should have and what it actually has — comes from four sources: waste (food expiring, drinks spilled, damaged goods), portioning errors (staff using more ingredients than the recipe specifies), theft (internal pilferage, rider or customer theft), and recording errors (deliveries not checked, items not invoiced, stock transfers not recorded). In UK hospitality, industry-average shrinkage runs at 4-8% of cost of goods, meaning a cafe spending £3,000 per week on supplies loses £120-£240 weekly — £6,240-£12,480 annually — to shrinkage. Most of this loss is avoidable. Inventory Excellence brings together the systems from B115 (counting) and B116 (rotation) with variance analysis and loss prevention to systematically reduce shrinkage. It is the capstone of the supply chain inventory management sequence, and it transforms stock management from a defensive activity (preventing loss) into a strategic capability (optimising cash, reducing waste, improving margin). The cafe that can demonstrate stock accuracy above 98%, shrinkage below 2%, and waste below 3% has a significant competitive advantage — lower costs, better GP%, and more reliable financial reporting. For cafes considering external investment, franchise agreements, or multi-site expansion, inventory excellence is not optional — it is a prerequisite for demonstrating operational maturity and financial control.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: This block assumes B115 (Inventory Count System) and B116 (FIFO & Stock Rotation) are already operational. The immediate action is to connect these systems. Create a Weekly Inventory Summary that brings together: count data from B115 (what do we have?), rotation compliance from B116 (is it in date order?), waste data from B097 (what was thrown away?), and purchase data from invoices (what did we buy?). This summary allows the manager to see the full picture in one place. Calculate total shrinkage: (Expected Stock based on purchases minus sales) vs (Actual Stock from count). Express shrinkage as a percentage of total stock value. If shrinkage exceeds 5%, investigate immediately. Week 2: Conduct a loss source analysis: review the past 2 weeks of waste logs, count variances, and any known incidents to categorise shrinkage by source: waste (expired, damaged, over-produced), portioning (recipe compliance gaps), recording (delivery errors, missed invoices), and unknown (the concerning category that often includes theft). Address the largest source first with targeted action.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Implement a structured Variance Investigation Protocol: for any count variance exceeding 5% on a single item or 2% of total stock value, a formal investigation is triggered covering potential causes, evidence gathering, corrective actions, and follow-up. Create a Shrinkage Dashboard — a weekly visual showing total shrinkage by source, trend over time, and comparison to target (below 3%). Introduce loss prevention measures proportionate to the risk: secure high-value items (premium coffee beans, premium spirits if applicable) in locked or controlled-access storage; ensure delivery checking is rigorous (count items against the delivery note before signing); implement staff food and drink policies that are clear and fair (a free shift drink and meal is standard in UK hospitality — make it explicit rather than ambiguous). Establish portioning standards for all recipes (linking to B111) and conduct weekly portioning spot-checks: weigh 5 random portions during service and compare to the standard. Calculate the financial impact of shrinkage monthly and present it in management meetings as a specific £ figure — 'we lost £350 to shrinkage last month' is more motivating than '2.5% variance.'",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Inventory excellence should be a visible organisational priority, not a behind-the-scenes management concern. Set an annual shrinkage target (below 2% for best-in-class) and track progress visually in the staff area. Recognise and reward periods of low shrinkage. Implement continuous improvement cycles: each quarter, identify the single largest remaining source of shrinkage and design a targeted intervention. Evaluate inventory management technology appropriate to the cafe's scale: barcode scanning for count speed, EPOS-integrated stock management for real-time visibility, or a dedicated inventory app (e.g., MarketMan, Lightspeed Restaurant). Benchmark the cafe's inventory performance against industry data and comparable operations. For multi-site cafes, standardise inventory procedures and reporting across all locations. Review the entire inventory management system annually, celebrating progress and setting new improvement targets."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Ensure B115 (counting) and B116 (FIFO) are operational and producing consistent data",
+        "Create a Weekly Inventory Summary combining count, rotation, waste, and purchase data",
+        "Calculate total stock shrinkage and express as a percentage of stock value",
+        "Conduct a loss source analysis: waste, portioning, recording, unknown",
+        "Investigate immediately if total shrinkage exceeds 5%",
+        "Address the largest shrinkage source with targeted action",
+        "Brief the team on the importance of stock accuracy and loss prevention"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Implement a formal Variance Investigation Protocol for significant discrepancies",
+        "Create a Shrinkage Dashboard showing total shrinkage by source and trend",
+        "Introduce proportionate loss prevention measures (secure storage, delivery checking)",
+        "Establish clear staff food and drink policies to remove ambiguity",
+        "Implement portioning standards and weekly spot-checks",
+        "Calculate the financial impact of shrinkage monthly in specific £ figures",
+        "Present shrinkage data in monthly management meetings"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Set an annual shrinkage target below 2% and track visually for the team",
+        "Implement quarterly continuous improvement cycles targeting the largest shrinkage source",
+        "Evaluate inventory management technology appropriate to scale",
+        "Benchmark inventory performance against industry standards",
+        "Review the entire inventory management system annually"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Weekly Inventory Summary report",
+    "Shrinkage Dashboard (weekly visual)",
+    "Variance Investigation Protocol document",
+    "Loss Prevention Measures guide",
+    "Annual Inventory Performance Review"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T117-01",
+        "tool_name": "Weekly Inventory Summary",
+        "level": "L1",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Combined weekly view showing stock count data, rotation compliance, waste, purchases, and calculated shrinkage with source breakdown."
+      },
+      {
+        "tool_id": "T117-02",
+        "tool_name": "Variance Investigation Protocol",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Formal procedure for investigating stock variances above threshold: triggers, investigation steps, evidence gathering, root cause analysis, corrective actions, and follow-up."
+      },
+      {
+        "tool_id": "T117-03",
+        "tool_name": "Shrinkage Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Visual weekly dashboard showing total shrinkage value and percentage, breakdown by source (waste, portioning, recording, unknown), trend over time, and comparison to target."
+      },
+      {
+        "tool_id": "T117-04",
+        "tool_name": "Portioning Spot-Check Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Shift Lead",
+        "description": "Weekly log of 5 random portion weight checks during service: item, recipe weight, actual weight, variance, and cost impact. Used to identify and correct portioning drift."
+      }
+    ]
+  },
+  "failure_modes": [
+    "B115 and B116 data is collected but never integrated into a unified shrinkage picture, limiting insight",
+    "Loss prevention measures are implemented too aggressively, creating a culture of suspicion rather than accountability",
+    "Unknown shrinkage is ignored rather than investigated because the causes are uncomfortable to confront",
+    "Financial impact of shrinkage is expressed only as percentages rather than pounds, failing to motivate action"
+  ],
+  "kpis": [
+    "Total stock shrinkage below 3% of stock value (targeting 2% for excellence)",
+    "Stock accuracy above 98% based on count variance analysis",
+    "Zero expired items found in storage during routine or audit checks",
+    "Portioning spot-checks within 5% of recipe weights 95% of the time"
+  ],
+  "dependencies": ["B115", "B116"],
+  "constraints": [
+    "Loss prevention measures must be proportionate and respectful — creating a culture of trust is more effective than surveillance",
+    "Staff food and drink policies must be fair, clear, and consistently applied to prevent resentment",
+    "Inventory technology investment must be justified by the cafe's scale — a simple spreadsheet may outperform an expensive app for small operations"
+  ],
+  "time_load": {
+    "L1": "2 hours (integration setup, loss source analysis, team briefing)",
+    "L2": "4 hours (investigation protocol, dashboard build, prevention measures, portioning standards)",
+    "L3": "2 hours/quarter (improvement cycles, technology evaluation, performance benchmarking)"
+  },
+  "review_protocol": "Weekly inventory summary review by manager. Monthly shrinkage financial impact review in management meeting. Quarterly continuous improvement cycle. Annual full inventory management system review.",
+  "meta": {
+    "summary_for_humans": "This capstone block integrates stock counting, FIFO rotation, variance analysis, and loss prevention into a unified inventory management system targeting shrinkage below 2-3%. It transforms inventory from a defensive activity into a strategic capability that directly protects and improves GP%.",
+    "implementation_risks": [
+      "Over-zealous loss prevention can damage team morale and culture — balance accountability with trust",
+      "Attributing shrinkage to theft without evidence is dangerous — always investigate thoroughly before drawing conclusions",
+      "Small cafes may find the full system disproportionate — scale the tools to the operation and focus on the highest-value items"
+    ],
+    "notes_for_engine": "This is a capstone block — activate only after B115 and B116 are showing stable performance. Flag as high-value if signals indicate high shrinkage, unexplained stock losses, or GP% significantly below theoretical calculations.",
+    "tags": ["supply_chain", "inventory", "loss_prevention", "shrinkage", "stock_accuracy", "variance", "financial_control", "capstone"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

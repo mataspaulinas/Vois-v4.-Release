@@ -1,0 +1,31 @@
+{
+  "id": "sig_follow_through_missing",
+  "name": "Follow-through is missing",
+  "description": "The venue discusses the right action, but the reset, check-back, or accountability loop does not actually land afterward.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: missing follow-through expressed through restaurant management rhythm",
+  "updated_at": "2026-03-15T14:29:28.475547Z",
+  "domain": "leadership",
+  "module": "management_follow_through",
+  "indicator_type": "lagging",
+  "evidence_types": [
+    "agreed reset not checked later",
+    "manager direction given without follow-through",
+    "actions named but not closed"
+  ],
+  "source_types": [
+    "manager notes",
+    "post-shift review",
+    "service observation"
+  ],
+  "temporal_behavior": "recurring",
+  "likely_co_signals": [
+    "sig_no_postmortem_after_breakdown",
+    "sig_improvement_not_standardized"
+  ],
+  "adapter_aliases": [
+    "no follow-through",
+    "direction without closure"
+  ]
+}

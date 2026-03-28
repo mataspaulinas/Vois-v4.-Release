@@ -1,0 +1,166 @@
+{
+  "block_id": "B167",
+  "name": "Strategic Planning & Annual Review",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M11: Expansion & Market Positioning",
+  "state": "enriched",
+  "purpose": "Establishes an annual strategic planning cycle that forces the cafe owner to step back from daily operations, review the year honestly, set priorities for the next 12 months, and create accountability for execution. This block prevents the drift that occurs when cafes run on autopilot, repeating the same patterns year after year without deliberate improvement.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a structured Annual Review process covering financial performance, operational achievements, customer trends, team development, and competitive changes",
+      "Facilitate an Annual Planning session that produces 3-5 clear strategic priorities with measurable targets for the coming year",
+      "Establish a quarterly check-in rhythm to track progress against annual priorities and make course corrections",
+      "Document lessons learned from the previous year to avoid repeating mistakes and build institutional knowledge",
+      "Align the annual plan with the business plan (B164) and update financial projections accordingly"
+    ],
+    "secondary_objectives": [
+      "Create a forcing function that prevents the owner from being consumed by operational firefighting without ever addressing strategic issues",
+      "Build a library of annual reviews that tracks the cafe's evolution and provides context for long-term decisions",
+      "Involve key team members in the planning process to build ownership and commitment to priorities",
+      "Identify seasonal patterns and plan proactively for known challenges and opportunities"
+    ]
+  },
+  "why_this_matters": "Without an annual review and planning cycle, cafes exist in a perpetual present tense. January feels the same as the previous January. The same seasonal challenges catch the owner off guard. The same complaints remain unresolved. Revenue may grow slowly through inflation and occasional price increases, but genuine strategic progress is rare. The annual review serves two critical functions. First, it provides honest accountability. It is very easy to feel busy and productive while actually making no strategic progress. An annual review forces the question: what did we actually achieve this year versus what we planned? The answers are often illuminating and uncomfortable. Second, annual planning creates intentionality. When the owner decides in January that this year's three priorities are improving food margins, developing a catering service, and training a deputy manager, every subsequent decision can be evaluated against these priorities. Without stated priorities, every decision is evaluated in isolation, often based on whatever feels most urgent rather than what is most important. The most successful independent cafes treat their annual planning as seriously as any corporate strategy session. They set aside a full day, review data thoroughly, think honestly about what worked and what did not, and emerge with a clear plan. The least successful cafes never pause to reflect, perpetually chasing the next day's trade without a destination in mind.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Schedule the Annual Review and Planning Day. Block out a full day (or two half-days) in the calendar, ideally in January or early February. This is non-negotiable time away from the cafe floor. If you have a business partner or senior manager, they should attend. Prepare by gathering: full-year financial data (total revenue, monthly breakdown, profit and loss), POS data (transaction counts, average transaction values, category sales), customer data (email list growth, loyalty programme stats, online reviews summary), team data (turnover rate, training completed, any significant people events), and competitor observations from the year. Week 2: Conduct a simple Year in Review exercise before the planning day. Write down: 3 things that went well this year, 3 things that went poorly, 3 things you learned, and 1 thing you wish you had done differently. Ask your manager and any senior team members to do the same. These reflections provide raw material for the planning day discussion.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Conduct the Annual Review and Planning Day using a structured agenda. Morning session (Review): (1) Financial review: revenue versus target, profit versus target, key cost variances, cash position. (2) Operational review: what processes improved, what quality issues persisted, what customer feedback themes emerged. (3) Team review: retention, development, capability gaps. (4) Market review: competitor changes, customer behaviour shifts, emerging trends. (5) Honest reflection: what did we get right, what did we get wrong, and what are we going to stop doing. Afternoon session (Planning): (1) Set 3-5 strategic priorities for the year. Each priority must have: a clear description, a measurable target, a responsible owner, quarterly milestones, and resource requirements. (2) Create a month-by-month priority calendar showing when major initiatives will be actioned (avoid loading everything into Q1). (3) Set the annual financial target with monthly and quarterly milestones. (4) Identify the top 3 risks for the coming year and define mitigation actions. (5) Agree the quarterly review dates and protect them in the calendar now. Document all outcomes in an Annual Plan Summary (2-3 pages maximum) and share with the management team within one week.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Conduct Quarterly Check-Ins (90 minutes) to review progress against the annual plan. Format: review each strategic priority against quarterly milestones, celebrate progress, diagnose blockers, agree corrective actions, and confirm priorities for the next quarter. Adjust priorities if the market or business context has changed materially, but do so deliberately rather than by drift. Build an Annual Review Archive: store each year's review and plan in a consistent format. Over 3-5 years, this archive becomes invaluable for understanding long-term trends, identifying recurring patterns, and measuring genuine strategic progress. Involve the broader team in annual planning as the cafe matures. Start with management team input and evolve to include team surveys or workshops that gather ideas from everyone. Staff who contribute to the plan feel greater ownership of the outcomes. Consider hosting an annual Away Day that combines the strategic review with team-building and celebration. This signals that strategic thinking is valued and that the team's contribution to the business is recognised."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Schedule the Annual Review and Planning Day in the calendar (full day or two half-days)",
+        "Gather full-year financial, POS, customer, and team data for review",
+        "Complete the Year in Review exercise (3 positives, 3 negatives, 3 learnings, 1 regret)",
+        "Ask the manager and senior team members to complete the same reflection exercise",
+        "Identify who should attend the planning day (owner, partner, senior manager)",
+        "Book an appropriate venue away from the cafe floor to prevent interruptions"
+      ],
+      "responsible": "Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Conduct the Annual Review (morning session) covering finances, operations, team, and market",
+        "Facilitate the Annual Planning (afternoon session) setting 3-5 strategic priorities with targets",
+        "Create a month-by-month priority calendar for the year",
+        "Set the annual financial target with quarterly milestones",
+        "Document outcomes in an Annual Plan Summary (2-3 pages) and share within one week",
+        "Schedule quarterly check-in dates and protect them in the calendar",
+        "Identify top 3 risks for the year with mitigation actions"
+      ],
+      "responsible": "Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct 90-minute Quarterly Check-Ins against the annual plan",
+        "Build an Annual Review Archive for long-term trend tracking",
+        "Involve the broader team in annual planning through surveys or workshops",
+        "Consider hosting an annual Away Day combining strategy and team-building",
+        "Review and refine the planning process itself based on what works"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Year in Review reflections (owner and team perspectives)",
+    "Annual Review and Planning Day agenda",
+    "Annual Plan Summary (2-3 pages with 3-5 priorities, targets, and milestones)",
+    "Month-by-month priority calendar",
+    "Quarterly Check-In agenda template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T167-01",
+        "tool_name": "Year in Review Reflection Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Simple reflection template capturing: 3 things that went well, 3 things that went poorly, 3 things learned, 1 thing to do differently. Completed by owner and key team members before the planning day to provide raw material for discussion."
+      },
+      {
+        "tool_id": "T167-02",
+        "tool_name": "Annual Planning Day Agenda",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Structured full-day agenda covering: morning review session (finances, operations, team, market, honest reflections) and afternoon planning session (priority setting, target definition, calendar planning, risk identification). Includes timing and facilitation guidance."
+      },
+      {
+        "tool_id": "T167-03",
+        "tool_name": "Annual Plan Summary Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "2-3 page document template capturing: strategic priorities with measurable targets, quarterly milestones, financial targets, top risks with mitigations, and key dates. Designed for clarity and actionability, not length."
+      },
+      {
+        "tool_id": "T167-04",
+        "tool_name": "Quarterly Check-In Agenda",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "90-minute structured agenda for quarterly progress reviews: priority-by-priority milestone review, celebration of progress, blocker diagnosis, corrective actions, and next quarter priorities. Keeps strategic thinking alive between annual planning events."
+      },
+      {
+        "tool_id": "T167-05",
+        "tool_name": "Strategic Priority Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Simple tracking sheet for each strategic priority showing: priority description, measurable target, quarterly milestones, current status (on track/at risk/behind), actions required, and responsible owner. Updated monthly and reviewed quarterly."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The planning day is scheduled but repeatedly postponed due to operational demands, never actually happening",
+    "Too many priorities are set (more than 5), dispersing focus and ensuring none receive adequate attention",
+    "The plan is produced but quarterly check-ins do not happen, so priorities drift and accountability disappears",
+    "The review looks only at financials without honestly examining operational failures, team issues, or customer experience decline"
+  ],
+  "kpis": [
+    "Annual Review and Planning Day conducted every year without exception",
+    "3-5 strategic priorities set with measurable targets and quarterly milestones",
+    "Quarterly Check-Ins conducted at least 3 out of 4 quarters per year",
+    "Annual Plan Summary documented and shared with management team within one week of planning day"
+  ],
+  "dependencies": ["B164"],
+  "constraints": [
+    "The planning day requires the owner to step away from operations for a full day, which demands planning and delegation",
+    "Honest annual review requires data, which depends on B155 and B158 being in place",
+    "Quarterly check-ins must be protected from cancellation during busy periods to maintain strategic rhythm",
+    "The planning process is only valuable if the owner genuinely engages with honest reflection rather than going through the motions"
+  ],
+  "time_load": {
+    "L1": "3 hours (scheduling, data gathering, reflection exercises)",
+    "L2": "8 hours (full planning day) + 2 hours (documentation and communication)",
+    "L3": "6 hours/year (quarterly check-ins at 90 minutes each)"
+  },
+  "review_protocol": "Annual Review and Planning Day conducted once per year, typically in January or February. Annual Plan Summary shared within one week. Quarterly Check-Ins conducted in April, July, and October. Strategic Priority Tracker updated monthly by owner. Planning process itself reviewed and refined annually based on what worked and what did not.",
+  "meta": {
+    "summary_for_humans": "This block establishes an annual strategic planning cycle with a structured planning day, documented priorities, and quarterly check-ins. It prevents the drift that occurs when cafes run on autopilot and creates the accountability needed to turn strategic intentions into measurable results.",
+    "implementation_risks": [
+      "The biggest risk is that the planning day is perpetually postponed in favour of operational urgency",
+      "Setting too many priorities is almost as harmful as setting none, as it disperses focus",
+      "Without quarterly follow-up, even a brilliant annual plan will be forgotten by March"
+    ],
+    "notes_for_engine": "Activate annually in Q4 or early Q1. This block supports the execution rhythm for B164 Business Plan. Also activate when signals indicate strategic drift, lack of clear priorities, or owner feeling overwhelmed without direction.",
+    "tags": ["annual_review", "strategic_planning", "priorities", "targets", "quarterly_review", "accountability", "reflection", "leadership"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

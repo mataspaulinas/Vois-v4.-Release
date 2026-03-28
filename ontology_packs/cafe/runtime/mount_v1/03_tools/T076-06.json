@@ -1,0 +1,76 @@
+{
+  "identification": {
+    "tool_id": "T076-06",
+    "tool_name": "Monthly 1:1 Conversation Template",
+    "block_id": "B076"
+  },
+  "tool_design": {
+    "format": "template",
+    "role_in_intervention": "Monthly conversation frame that turns one-to-ones into a consistent management habit.",
+    "adaptation_variables": [
+      "staff_tenure",
+      "manager_role",
+      "meeting_frequency"
+    ],
+    "usage_moment": "During scheduled one-to-ones",
+    "expected_output": "Completed one-to-one record with themes, actions, and review date",
+    "linked_blocks": [
+      "B076"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The template is used once as a workshop artifact and then forgotten.",
+        "what_can_go_wrong": "The intervention loses its operating rhythm.",
+        "early_signals": [
+          "The template is completed but never revisited",
+          "Actions or notes stay blank after rollout"
+        ],
+        "prevention": [
+          "Anchor it to a cadence",
+          "Assign ownership"
+        ],
+        "mitigation": [
+          "Restart with a live example",
+          "Tighten follow-through review"
+        ],
+        "if_occurs_next_signals": [
+          "cadence_failure"
+        ],
+        "possible_successor_blocks": [
+          "B076"
+        ]
+      },
+      {
+        "warning": "Fields are completed vaguely.",
+        "what_can_go_wrong": "The output exists but does not drive action.",
+        "early_signals": [
+          "Generic phrases dominate",
+          "No owner or due date captured"
+        ],
+        "prevention": [
+          "Show a worked example",
+          "Highlight the minimum specific fields"
+        ],
+        "mitigation": [
+          "Rewrite recent weak entries",
+          "Add first-use review"
+        ],
+        "if_occurs_next_signals": [
+          "low_signal_documentation"
+        ],
+        "possible_successor_blocks": [
+          "B076"
+        ]
+      }
+    ]
+  },
+  "content": "# Monthly 1:1 Conversation Template\n\n**Tool ID:** T076-06  \n**Block:** B076 (Communication Culture & Feedback)  \n**Domain:** Team & Talent (D04_team_talent)  \n**Level:** L2  \n**Format:** Template  \n**Role:** Manager / Owner  \n**Time Required:** 20-30 minutes per conversation  \n**Version:** 1.0\n\n---\n## What This Tool Is For\n\nThis tool gives managers a repeatable structure for one-to-one conversations that are not just performance reviews and not just casual chats.\n\nUse it to understand:\n- what is going well\n- what is frustrating the person\n- where communication is breaking down\n- what support they need\n- what should happen before the next 1:1\n\n---\n## Before The 1:1\n\n<ul>\n  <li><input type=\"checkbox\"> Choose a quiet, private time.</li>\n  <li><input type=\"checkbox\"> Review any previous notes or agreed actions.</li>\n  <li><input type=\"checkbox\"> Bring one positive observation and one question, not a speech.</li>\n  <li><input type=\"checkbox\"> Be ready to listen more than you talk.</li>\n</ul>\n\n---\n## 1:1 Record\n\n**Team member:** ____________________  \n**Manager:** ____________________  \n**Date:** ____________________  \n**Next review date:** ____________________\n\n### 1. Check-in\n\n| Prompt | Notes |\n|---|---|\n| How has the last month felt? | |\n| What has gone well? | |\n| What has been harder than it should be? | |\n\n### 2. Communication and feedback\n\n| Prompt | Notes |\n|---|---|\n| Do you feel informed enough to do your job well? | |\n| Is there anything people are not saying directly enough? | |\n| Have you received helpful feedback recently? | |\n| Is there anything you have hesitated to raise? | |\n\n### 3. Support needed\n\n| Area | Notes |\n|---|---|\n| Training | |\n| Confidence | |\n| Team relationships | |\n| Rota / workload | |\n| Manager support | |\n\n### 4. Agreed next steps\n\n| Action | Owner | Due |\n|---|---|---|\n| | | |\n| | | |\n| | | |\n\n### 5. Manager reflection\n\n- What theme is repeating? ______________________________________\n- What should I follow up? ______________________________________\n- Does anything need escalation? ______________________________________\n\n---\n## Good Prompts To Use\n\n- \"What's making work easier right now?\"\n- \"Where are you getting stuck?\"\n- \"What have I not seen clearly enough?\"\n- \"Is there anything the team is avoiding saying out loud?\"\n- \"What would make next month run better for you?\"\n\n---\n## Common Mistakes\n\n- Turning the whole 1:1 into manager talk.\n- Only speaking when there is a problem.\n- Recording nothing and trusting memory.\n- Asking for honesty, then reacting defensively.\n- Leaving with no actions or no date.\n\n---\n## Connected Resources\n\n**Used alongside:**\n- T076-04 - Difficult Conversations Guide\n- T076-07 - Suggestions & Response Tracker\n\n**Parent block:** B076 - Communication Culture & Feedback\n\n---\n\n*Tool Version 1.0 - built to create a steady rhythm of honest manager-team conversation.*\n",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T076-06_monthly_1_1_conversation_template.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

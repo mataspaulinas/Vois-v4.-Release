@@ -1,0 +1,555 @@
+{
+  "vertical": "restaurant",
+  "signals": [
+    {
+      "id": "sig_promised_time_missed",
+      "name": "Promised time is missed",
+      "description": "A quoted pickup, seating, delivery, or service time is missed badly enough to break guest trust.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: promise and expectation failure surfacing in restaurant operations",
+      "status": "review",
+      "domain": "guest_experience",
+      "module": "host_flow",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "quoted wait versus actual wait",
+        "broken ready-time promise",
+        "guest complaint about timing"
+      ],
+      "source_types": [
+        "service observation",
+        "guest complaint",
+        "manager notes"
+      ],
+      "temporal_behavior": "peak-sensitive",
+      "likely_co_signals": [
+        "sig_waitlist_mismatch",
+        "sig_service_delay"
+      ],
+      "adapter_aliases": [
+        "broken promise",
+        "missed quote"
+      ]
+    },
+    {
+      "id": "sig_peak_period_undercovered",
+      "name": "Peak period is undercovered",
+      "description": "The venue enters a known rush without enough capable coverage in the critical roles that carry flow.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: demand-capacity mismatch expressed through restaurant peak coverage",
+      "status": "review",
+      "domain": "workforce",
+      "module": "deployment",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "thin floor coverage",
+        "uncovered rush role",
+        "peak window labor mismatch"
+      ],
+      "source_types": [
+        "schedule review",
+        "service observation",
+        "manager notes"
+      ],
+      "temporal_behavior": "peak-window recurring",
+      "likely_co_signals": [
+        "sig_section_imbalance",
+        "sig_service_delay"
+      ],
+      "adapter_aliases": [
+        "rush understaffed",
+        "peak coverage gap"
+      ]
+    },
+    {
+      "id": "sig_required_inputs_missing_at_start",
+      "name": "Required inputs are missing at start",
+      "description": "Service starts without key prep, product, information, or setup inputs being ready when the team needs them.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: readiness failure visible through restaurant opening and line preparation",
+      "status": "review",
+      "domain": "kitchen_operations",
+      "module": "shift_readiness",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "missing mise en place",
+        "missing station items",
+        "missing setup information"
+      ],
+      "source_types": [
+        "opening check",
+        "line check",
+        "manager notes"
+      ],
+      "temporal_behavior": "start-of-shift",
+      "likely_co_signals": [
+        "sig_line_check_missing",
+        "sig_prep_inconsistency"
+      ],
+      "adapter_aliases": [
+        "missing start inputs",
+        "not ready at open"
+      ]
+    },
+    {
+      "id": "sig_handoff_requires_reclarification",
+      "name": "Handoff requires re-clarification",
+      "description": "A task or guest need has to be restated because the first handoff did not carry enough clarity to move forward cleanly.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: handoff failure expressed through restaurant pass and floor communication",
+      "status": "review",
+      "domain": "service_delivery",
+      "module": "pass_communication",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "repeated clarifying question",
+        "handoff restatement",
+        "double-check before action"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes"
+      ],
+      "temporal_behavior": "flow-recurring",
+      "likely_co_signals": [
+        "sig_expo_calls_missing",
+        "sig_ownership_confusion_in_service"
+      ],
+      "adapter_aliases": [
+        "needs repeating",
+        "handoff unclear"
+      ]
+    },
+    {
+      "id": "sig_work_dies_between_roles",
+      "name": "Work dies between roles",
+      "description": "A guest need or operating task stalls because everyone assumes someone else picked it up.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: role-boundary coordination failure in restaurant flow",
+      "status": "review",
+      "domain": "service_delivery",
+      "module": "pass_communication",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "stalled follow-through",
+        "orphaned task",
+        "guest need dropped between roles"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "guest complaint"
+      ],
+      "temporal_behavior": "flow-recurring",
+      "likely_co_signals": [
+        "sig_handoff_requires_reclarification",
+        "sig_ownership_confusion_in_service"
+      ],
+      "adapter_aliases": [
+        "dropped between people",
+        "dies in the gap"
+      ]
+    },
+    {
+      "id": "sig_output_quality_inconsistent",
+      "name": "Output quality is inconsistent",
+      "description": "The same menu item, service touchpoint, or guest interaction varies too much depending on who handled it or how busy the venue is.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: standards drift and capability variance in restaurant execution",
+      "status": "review",
+      "domain": "service_delivery",
+      "module": "floor_execution",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "plate-to-plate variance",
+        "service-step inconsistency",
+        "guest experience inconsistency"
+      ],
+      "source_types": [
+        "quality observation",
+        "guest complaint",
+        "manager notes"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_standard_steps_skipped",
+        "sig_staff_confusion"
+      ],
+      "adapter_aliases": [
+        "quality varies",
+        "not the same every time"
+      ]
+    },
+    {
+      "id": "sig_issue_resolution_slow_or_unclear",
+      "name": "Issue resolution is slow or unclear",
+      "description": "A guest issue or service exception is noticed, but the recovery path is hesitant, slow, or ambiguous.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: exception recovery weakness expressed through restaurant guest recovery",
+      "status": "review",
+      "domain": "guest_experience",
+      "module": "service_recovery",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "slow recovery response",
+        "unclear owner during issue",
+        "guest waits for resolution"
+      ],
+      "source_types": [
+        "guest complaint",
+        "manager notes",
+        "service observation"
+      ],
+      "temporal_behavior": "event-driven",
+      "likely_co_signals": [
+        "sig_guest_complaints",
+        "sig_complaint_response_defensive"
+      ],
+      "adapter_aliases": [
+        "slow recovery",
+        "unclear issue response"
+      ]
+    },
+    {
+      "id": "sig_new_staff_depend_on_memory",
+      "name": "New staff depend on memory and verbal instruction",
+      "description": "Newer team members rely on remembering scattered verbal guidance because repeatable training structure is missing.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: capability gap visible through memory-based onboarding",
+      "status": "review",
+      "domain": "workforce",
+      "module": "role_clarity",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "asks same basics repeatedly",
+        "verbal-only coaching",
+        "no stable training artifact"
+      ],
+      "source_types": [
+        "manager notes",
+        "training observation"
+      ],
+      "temporal_behavior": "new-hire recurring",
+      "likely_co_signals": [
+        "sig_staff_confusion",
+        "sig_standard_steps_skipped"
+      ],
+      "adapter_aliases": [
+        "memory-based onboarding",
+        "new hires guessing"
+      ]
+    },
+    {
+      "id": "sig_no_live_direction_or_reset",
+      "name": "No live direction or reset occurs",
+      "description": "The shift visibly drifts under pressure and nobody steps in to reset pace, roles, or priorities in the moment.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: leadership rhythm failure expressed in live restaurant service",
+      "status": "review",
+      "domain": "leadership_rhythm",
+      "module": "floor_presence",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "no live reset",
+        "drift without intervention",
+        "leaders watching but not directing"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes"
+      ],
+      "temporal_behavior": "peak-sensitive",
+      "likely_co_signals": [
+        "sig_manager_floor_absence",
+        "sig_section_imbalance"
+      ],
+      "adapter_aliases": [
+        "no reset happened",
+        "nobody redirected the shift"
+      ]
+    },
+    {
+      "id": "sig_key_operating_metric_not_reviewed",
+      "name": "Key operating metric is not reviewed",
+      "description": "The venue is not regularly looking at the metric that would reveal the current control problem before it becomes visible on the floor.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: control-loop weakness visible through missing metric review",
+      "status": "review",
+      "domain": "financial_controls",
+      "module": "loss_prevention",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "missing KPI review",
+        "no operating metric check",
+        "surprised by preventable drift"
+      ],
+      "source_types": [
+        "manager notes",
+        "metric review",
+        "closing review"
+      ],
+      "temporal_behavior": "cadence-based",
+      "likely_co_signals": [
+        "sig_count_variance",
+        "sig_voids_rising"
+      ],
+      "adapter_aliases": [
+        "no KPI review",
+        "not checking the numbers"
+      ]
+    },
+    {
+      "id": "sig_no_postmortem_after_breakdown",
+      "name": "No postmortem follows a breakdown",
+      "description": "The team survives a bad shift or incident, but there is no structured review to convert the pain into a system correction.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: learning failure visible through missing post-breakdown review",
+      "status": "review",
+      "domain": "leadership_rhythm",
+      "module": "communication_cadence",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "bad shift passes without review",
+        "no after-action discussion",
+        "same breakdown treated as bad luck"
+      ],
+      "source_types": [
+        "manager notes",
+        "post-shift review"
+      ],
+      "temporal_behavior": "event-driven",
+      "likely_co_signals": [
+        "sig_same_issue_repeats_without_review",
+        "sig_guest_complaints"
+      ],
+      "adapter_aliases": [
+        "no debrief",
+        "no after-action review"
+      ]
+    },
+    {
+      "id": "sig_improvement_not_standardized",
+      "name": "Improvement is not standardized",
+      "description": "The team finds a better way once, but it never becomes the normal way of operating across shifts or people.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: learning failure visible through failure to standardize wins",
+      "status": "review",
+      "domain": "service_delivery",
+      "module": "role_clarity",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "one-off improvement",
+        "fix depends on one person",
+        "better method not codified"
+      ],
+      "source_types": [
+        "manager notes",
+        "post-shift review",
+        "training observation"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_same_issue_repeats_without_review",
+        "sig_standard_steps_skipped"
+      ],
+      "adapter_aliases": [
+        "fix never stuck",
+        "improvement stayed local"
+      ]
+    }
+  ],
+  "signal_failure_map": [
+    {
+      "source_id": "sig_promised_time_missed",
+      "target_id": "fm_host_flow_breakdown",
+      "weight": 0.9,
+      "owner": "execution-program",
+      "source_ref": "expectation-setting failure expressed through missed restaurant promises",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_promised_time_missed",
+      "target_id": "fm_deployment_misalignment",
+      "weight": 0.7,
+      "owner": "execution-program",
+      "source_ref": "missed timing promises often emerge from load and deployment mismatch",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_peak_period_undercovered",
+      "target_id": "fm_deployment_misalignment",
+      "weight": 0.95,
+      "owner": "execution-program",
+      "source_ref": "peak undercoverage is the clearest restaurant form of deployment mismatch",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_peak_period_undercovered",
+      "target_id": "fm_manager_presence_gap",
+      "weight": 0.62,
+      "owner": "execution-program",
+      "source_ref": "weak live labor adjustment often travels with weak manager presence",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_required_inputs_missing_at_start",
+      "target_id": "fm_shift_readiness_gap",
+      "weight": 0.9,
+      "owner": "execution-program",
+      "source_ref": "missing required inputs at start is a direct readiness failure signal",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_required_inputs_missing_at_start",
+      "target_id": "fm_tooling_friction",
+      "weight": 0.68,
+      "owner": "execution-program",
+      "source_ref": "missing inputs at start often come from tooling or resource friction",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_handoff_requires_reclarification",
+      "target_id": "fm_pass_communication_gap",
+      "weight": 0.92,
+      "owner": "execution-program",
+      "source_ref": "re-clarified handoffs directly signal pass and role-boundary communication failure",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_handoff_requires_reclarification",
+      "target_id": "fm_role_ownership_blur",
+      "weight": 0.71,
+      "owner": "execution-program",
+      "source_ref": "repeated clarifying questions usually coexist with blurred ownership",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_work_dies_between_roles",
+      "target_id": "fm_pass_communication_gap",
+      "weight": 0.9,
+      "owner": "execution-program",
+      "source_ref": "work dying in the gap is a direct expression of pass communication failure",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_work_dies_between_roles",
+      "target_id": "fm_role_ownership_blur",
+      "weight": 0.78,
+      "owner": "execution-program",
+      "source_ref": "orphaned work strongly indicates unclear role ownership",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_output_quality_inconsistent",
+      "target_id": "fm_service_standard_drift",
+      "weight": 0.9,
+      "owner": "execution-program",
+      "source_ref": "quality inconsistency is one of the clearest outputs of service standard drift",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_output_quality_inconsistent",
+      "target_id": "fm_training_gap",
+      "weight": 0.78,
+      "owner": "execution-program",
+      "source_ref": "variation across people usually signals training weakness as well as standards drift",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_issue_resolution_slow_or_unclear",
+      "target_id": "fm_guest_recovery_breakdown",
+      "weight": 0.9,
+      "owner": "execution-program",
+      "source_ref": "slow, unclear issue handling is a direct recovery-system failure signal",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_issue_resolution_slow_or_unclear",
+      "target_id": "fm_manager_presence_gap",
+      "weight": 0.63,
+      "owner": "execution-program",
+      "source_ref": "unclear recovery often worsens when no manager steps in decisively",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_new_staff_depend_on_memory",
+      "target_id": "fm_training_gap",
+      "weight": 0.92,
+      "owner": "execution-program",
+      "source_ref": "memory-based onboarding is a strong direct training-gap signal",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_new_staff_depend_on_memory",
+      "target_id": "fm_service_standard_drift",
+      "weight": 0.64,
+      "owner": "execution-program",
+      "source_ref": "when onboarding lives in memory, standards quickly drift between people",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_no_live_direction_or_reset",
+      "target_id": "fm_manager_presence_gap",
+      "weight": 0.88,
+      "owner": "execution-program",
+      "source_ref": "missing live reset is a direct signal of weak manager presence in flow",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_no_live_direction_or_reset",
+      "target_id": "fm_briefing_absence",
+      "weight": 0.72,
+      "owner": "execution-program",
+      "source_ref": "leadership rhythm gaps often appear as no live direction before and during pressure",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_key_operating_metric_not_reviewed",
+      "target_id": "fm_controls_gap",
+      "weight": 0.9,
+      "owner": "execution-program",
+      "source_ref": "not reviewing the right operating metric is a direct control-loop failure signal",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_key_operating_metric_not_reviewed",
+      "target_id": "fm_learning_loop_absence",
+      "weight": 0.66,
+      "owner": "execution-program",
+      "source_ref": "missing metric review also weakens the venue's learning cadence",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_no_postmortem_after_breakdown",
+      "target_id": "fm_learning_loop_absence",
+      "weight": 0.92,
+      "owner": "execution-program",
+      "source_ref": "missing postmortem is one of the clearest learning-loop failure signals",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_no_postmortem_after_breakdown",
+      "target_id": "fm_manager_presence_gap",
+      "weight": 0.58,
+      "owner": "execution-program",
+      "source_ref": "lack of debrief often signals a broader leadership follow-through gap",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_improvement_not_standardized",
+      "target_id": "fm_learning_loop_absence",
+      "weight": 0.84,
+      "owner": "execution-program",
+      "source_ref": "improvements that never stick reflect a weak learning loop",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_improvement_not_standardized",
+      "target_id": "fm_service_standard_drift",
+      "weight": 0.74,
+      "owner": "execution-program",
+      "source_ref": "when improvements are not standardized, drift returns quickly",
+      "status": "review"
+    }
+  ]
+}

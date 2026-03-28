@@ -1,0 +1,157 @@
+{
+  "block_id": "B132",
+  "name": "End-of-Day Reconciliation",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Establishes a disciplined end-of-day reconciliation process that verifies all revenue taken during the trading day matches what is recorded in the POS system, held in cash, and deposited via card payments. This block ensures the cafe knows exactly how much money it earned each day and can identify discrepancies before they compound.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a standardised end-of-day closing procedure that reconciles POS reports against physical cash and card payment records",
+      "Identify and investigate any discrepancies between expected and actual revenue on the same day they occur",
+      "Generate a daily trading summary that feeds into weekly and monthly financial reporting",
+      "Establish a closing routine that can be completed in 15-20 minutes by any trained team member",
+      "Build a historical dataset of daily trading performance for forecasting and trend analysis"
+    ],
+    "secondary_objectives": [
+      "Detect patterns in discrepancies that may indicate systematic errors, training gaps, or dishonesty",
+      "Provide daily revenue data that supports labour scheduling, stock ordering, and cash flow management",
+      "Create an audit trail that satisfies HMRC record-keeping requirements and supports VAT returns",
+      "Enable the owner to monitor daily trading remotely without needing to be physically present at close"
+    ]
+  },
+  "why_this_matters": "A cafe that does not reconcile its till at the end of every trading day does not truly know its financial position. The POS system records what should have been collected, the cash count reveals what was actually received in cash, and the card terminal report shows what was processed electronically. When these three figures agree, the cafe can be confident that the day's trading is accurately captured. When they do not agree, something has gone wrong — and the sooner it is identified, the easier it is to resolve. Without daily reconciliation, errors compound. A till that is consistently 5 pounds short per day loses 1,825 pounds per year — a significant sum for an independent cafe operating on thin margins. This loss may be due to incorrect change-giving, unrecorded transactions, staff discounts not properly logged, or theft. Without reconciliation, the owner has no way to know. The end-of-day process also generates the daily trading data that powers every other financial management activity in the business. Revenue forecasting (B123), labour cost analysis (B125), and cost structure management (B127) all depend on accurate daily revenue figures. If the foundation data is wrong, every subsequent analysis is unreliable. HMRC expects food businesses to maintain daily records of takings as part of their record-keeping obligations. A cafe that cannot produce accurate daily sales records is at risk during a tax enquiry. The end-of-day reconciliation process is the mechanism that ensures these records exist and are reliable.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Establish a standard end-of-day closing checklist. The closing team member should: run the POS end-of-day report (sometimes called a Z-read), run the card terminal settlement report, count the physical cash in the till using the Cash Count Sheet from B131, separate the float from the takings, and compare the three figures. The expected relationship is: POS total revenue should equal cash counted (minus float) plus card terminal total, within a small tolerance. Define an acceptable tolerance — for most cafes, plus or minus 3 pounds is reasonable for honest counting errors. Anything beyond this tolerance requires a note on the reconciliation sheet explaining the discrepancy. Week 2: Create a Daily Reconciliation Sheet that captures: date, POS total revenue, POS cash revenue, POS card revenue, cash counted (minus float), card terminal total, any discrepancy, and the closing team member's signature. The manager should review reconciliation sheets daily — either in person or via a photo sent to a management WhatsApp group. Store reconciliation sheets in a dedicated folder alongside daily POS reports. By the end of Week 2, every trading day should have a completed reconciliation sheet.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Expand the reconciliation process to capture additional detail: revenue by category (hot drinks, cold drinks, food, retail), transaction count, average transaction value, and any voids or refunds processed during the day. Voids and refunds are a common source of discrepancy and potential manipulation — track them separately and investigate any day where void or refund activity is unusually high. Create a weekly reconciliation summary that aggregates daily figures and compares against budget targets (from B123). This summary should take no more than 15 minutes to prepare each Monday and provides the data for the weekly labour cost review and operational planning. Introduce a digital reconciliation process if the POS system supports automated end-of-day reporting — many modern POS systems (Square, Lightspeed, Epos Now) can email end-of-day reports automatically, which can be cross-referenced against the manual cash count. Set up a discrepancy investigation procedure: when a discrepancy exceeds the tolerance threshold, the manager reviews the POS transaction log for that day looking for voids, no-sales, and unusual transactions. Findings are recorded on the Discrepancy Investigation Log.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). End-of-day reconciliation should be an ingrained habit that every closing team member completes automatically and accurately. Track reconciliation compliance: is the sheet completed every day, and are discrepancies within tolerance? Celebrate consistency — a team that achieves 30 consecutive days of clean reconciliations is demonstrating operational excellence. Automate where possible: integrate POS data with cloud accounting software so that daily revenue flows directly into the accounts without manual entry. Use the daily data for advanced analysis: day-of-week revenue patterns, seasonal trends, the impact of promotions, and the correlation between weather and trading. This data becomes increasingly powerful as it accumulates over months and years. Consider implementing CCTV over the till area — not as a surveillance measure but as a factual reference if a discrepancy investigation requires review of a specific transaction. Ensure this is disclosed to staff in accordance with ICO guidance. Share daily trading summaries with the team (revenue target achieved or not) to maintain the financial awareness built in B124."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Establish the end-of-day closing checklist: POS Z-read, card settlement, cash count, reconciliation",
+        "Create a Daily Reconciliation Sheet template with all required fields",
+        "Define acceptable discrepancy tolerance (recommended: plus or minus 3 pounds)",
+        "Train all closing staff on the reconciliation procedure",
+        "Implement daily manager review of reconciliation sheets",
+        "Set up a filing system for daily reconciliation records and POS reports"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Expand reconciliation to capture revenue by category, transaction count, and average transaction value",
+        "Track voids and refunds separately and investigate unusual activity",
+        "Create a weekly reconciliation summary comparing daily figures against budget",
+        "Introduce digital reconciliation using automated POS end-of-day reports",
+        "Establish a discrepancy investigation procedure with documented findings",
+        "Link daily reconciliation data to the monthly financial review process"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track reconciliation compliance and celebrate consistency",
+        "Integrate POS data with cloud accounting software for automated record-keeping",
+        "Use accumulated daily data for trend analysis, forecasting, and operational insights",
+        "Share daily revenue summaries with the team to maintain financial awareness",
+        "Review reconciliation procedures annually and adapt for POS or payment system changes",
+        "Ensure reconciliation records meet HMRC record-keeping requirements"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Daily Reconciliation Sheet template",
+    "End-of-Day Closing Checklist",
+    "Weekly Reconciliation Summary template",
+    "Discrepancy Investigation Log",
+    "Void and Refund Monitoring Report template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T132-01",
+        "tool_name": "Daily Reconciliation Sheet",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "A daily form capturing POS total revenue, cash counted, card terminal total, discrepancy amount, and closing team member signature. Designed to be completed in under 10 minutes at close of trade."
+      },
+      {
+        "tool_id": "T132-02",
+        "tool_name": "End-of-Day Closing Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "A step-by-step checklist for the entire closing procedure including POS Z-read, card terminal settlement, cash count, reconciliation, safe storage, and securing the premises."
+      },
+      {
+        "tool_id": "T132-03",
+        "tool_name": "Weekly Reconciliation Summary",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "A weekly aggregation of daily reconciliation data showing total revenue, revenue by category, cash vs card split, total discrepancies, and comparison against weekly budget target."
+      },
+      {
+        "tool_id": "T132-04",
+        "tool_name": "Discrepancy Investigation Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "A log for recording and investigating discrepancies that exceed the tolerance threshold. Captures date, amount, POS transaction review findings, possible causes, actions taken, and resolution."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Reconciliation is skipped on busy nights because staff want to leave quickly, creating gaps in the financial record",
+    "Discrepancies within tolerance are consistently in the same direction (always short), indicating a systematic problem being masked by the threshold",
+    "The POS Z-read is run but no one compares it against the cash count, making the reconciliation exercise meaningless",
+    "Reconciliation sheets are completed but never reviewed by management, removing any accountability for accuracy"
+  ],
+  "kpis": [
+    "Daily reconciliation completed every trading day with zero missed days per month",
+    "Cash discrepancy within tolerance on at least 95% of trading days",
+    "Weekly reconciliation summary prepared by Monday morning each week",
+    "All discrepancies exceeding tolerance investigated and documented within 24 hours"
+  ],
+  "dependencies": ["B131"],
+  "constraints": [
+    "Requires a POS system capable of generating end-of-day Z-reads with revenue breakdowns",
+    "Card terminal must produce a settlement report that can be compared against POS card revenue",
+    "At least one staff member per closing shift must be trained and authorised to complete the reconciliation"
+  ],
+  "time_load": {
+    "L1": "15-20 minutes/day (end-of-day reconciliation at close of trade)",
+    "L2": "30 minutes/week (weekly summary preparation, discrepancy review)",
+    "L3": "1 hour/month (trend analysis, compliance review, process refinement)"
+  },
+  "review_protocol": "Daily reconciliation completed at close of every trading day. Daily manager review of reconciliation sheet. Weekly summary prepared Monday morning. Monthly trend analysis of discrepancies and revenue patterns. Quarterly reconciliation procedure compliance audit.",
+  "meta": {
+    "summary_for_humans": "This block establishes a daily end-of-day reconciliation process that verifies POS records match actual cash and card payments, identifies discrepancies immediately, and generates the daily trading data that powers all other financial management activities.",
+    "implementation_risks": [
+      "Staff may rush the reconciliation to finish their shift, leading to inaccurate counts",
+      "Persistent small discrepancies may be dismissed as rounding errors when they actually indicate a problem",
+      "The manager may not review reconciliation sheets consistently, undermining the entire control framework"
+    ],
+    "notes_for_engine": "This block works in tandem with B131 (Cash Handling Protocol). Together they form the daily financial control framework. Activate when signals indicate the cafe does not reconcile daily, when cash shortages are reported, or when the owner cannot state daily revenue with confidence. High priority for any cafe without a daily reconciliation routine.",
+    "tags": ["finance", "reconciliation", "daily", "till", "cash", "card", "POS", "audit", "compliance"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

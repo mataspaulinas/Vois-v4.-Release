@@ -1,0 +1,21 @@
+{
+  "block_id": "B221",
+  "name": "GDPR & Data Protection Compliance",
+  "version": "v1.0",
+  "domain": "D10_technology_systems",
+  "module": "M16: Regulatory Governance & Risk Management",
+  "state": "enriched",
+  "purpose": "Ensures GDPR compliance for customer and employee data including data processing registers, consent management, breach notification procedures, data subject rights handling, and compliance with national data protection authority requirements.",
+  "tools": [
+    "T221-01",
+    "T221-02",
+    "T221-03",
+    "T221-04"
+  ],
+  "signals": [
+    "S188"
+  ],
+  "failure_modes": [
+    "FM098"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "identification": {
+    "tool_id": "T002-04",
+    "tool_name": "Weekly Fridge Organisation & Date Labelling Audit",
+    "block_id": "B002"
+  },
+  "tool_design": {
+    "format": "audit",
+    "role_in_intervention": "Weekly reality check on whether cold-chain storage discipline is holding between deliveries.",
+    "adaptation_variables": [
+      "fridge_count",
+      "audit_scope",
+      "photo_evidence_norm"
+    ],
+    "usage_moment": "Weekly storage and labelling review",
+    "expected_output": "Scored audit with corrective actions and owners",
+    "linked_blocks": [
+      "B002",
+      "B004"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Scoring becomes inconsistent across auditors or weeks.",
+        "what_can_go_wrong": "Trend comparisons become weak.",
+        "early_signals": [
+          "Scores change sharply without clear evidence",
+          "Different reviewers interpret the same finding differently"
+        ],
+        "prevention": [
+          "Use a simple rubric",
+          "Calibrate the first few audits together"
+        ],
+        "mitigation": [
+          "Re-score with a shared standard",
+          "Keep note or photo evidence"
+        ],
+        "if_occurs_next_signals": [
+          "audit_reliability_risk"
+        ],
+        "possible_successor_blocks": [
+          "B002",
+          "B004"
+        ]
+      },
+      {
+        "warning": "Audit findings do not turn into visible action.",
+        "what_can_go_wrong": "The venue spots weakness but does not fix it.",
+        "early_signals": [
+          "Same failed points recur",
+          "Action columns stay blank"
+        ],
+        "prevention": [
+          "Add owners and dates",
+          "Review actions at the next audit"
+        ],
+        "mitigation": [
+          "Escalate repeated findings",
+          "Narrow scope if closure is failing"
+        ],
+        "if_occurs_next_signals": [
+          "finding_followthrough_failure"
+        ],
+        "possible_successor_blocks": [
+          "B002",
+          "B004"
+        ]
+      }
+    ]
+  },
+  "content": "# Weekly Fridge Organisation & Date Labelling Audit\n\n**Tool ID:** T002-04  \n**Block:** B002 (Cold Chain Management SOP)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L2  \n**Format:** Audit  \n**Role:** Shift Manager / Manager  \n**Time Required:** 20-30 minutes weekly  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this audit once a week to test whether the cold chain rules are still visible in the fridges and not just written in the SOP.\n\nThis is the discipline tool for:\n- shelf hierarchy\n- FIFO\n- date labels\n- cold-hold time control\n- stock condition\n- airflow and cleanliness\n\n---\n## Scoring Guide\n\n| Score | Meaning |\n|---|---|\n| `2` | Fully compliant |\n| `1` | Partly compliant / small fix needed |\n| `0` | Non-compliant / immediate action needed |\n\n**Target:** `90%+` overall.\n\n---\n## Audit Header\n\n**Date:** ____________________  \n**Auditor:** ____________________  \n**Areas checked:** ____________________\n\n---\n## Audit Table\n\n| Check Point | Score (`0-2`) | Evidence / Notes | Action Required |\n|---|---|---|---|\n| Shelf labels are visible and correct | | | |\n| Raw items are stored below ready-to-eat items | | | |\n| Opened high-risk items have date labels | | | |\n| Decanted items have contents, date, and use-by | | | |\n| FIFO is being followed | | | |\n| No out-of-date stock found | | | |\n| Cold-hold display items are time-labelled | | | |\n| Fridges are not overloaded and vents are clear | | | |\n| Spillages / crumbs / contamination cleaned | | | |\n| Doors, seals, and general condition look sound | | | |\n\n**Total score:** __________ / 20  \n**Compliance %:** __________\n\n---\n## Priority Fixes\n\n| Priority | Finding | Owner | Due | Closed? |\n|---|---|---|---|---|\n| High / Medium / Low | | | | Yes / No |\n| High / Medium / Low | | | | Yes / No |\n| High / Medium / Low | | | | Yes / No |\n\n---\n## Photo / Evidence Record\n\n| Area | Photo Taken? | What It Showed |\n|---|---|---|\n| Main fridge | Yes / No | |\n| Display fridge | Yes / No | |\n| Back-up fridge / walk-in | Yes / No | |\n| Freezer area | Yes / No | |\n\n---\n## Fast Interpretation\n\n| Result | Meaning | Next Step |\n|---|---|---|\n| `18-20` | Strong control | Keep standard visible and close minor issues |\n| `14-17` | Slipping discipline | Coach team and repeat spot-check midweek |\n| `13 or below` | System weakness | Retrain, re-set layout, and review with manager |\n\n---\n## Connected Resources\n\n**Used with:**\n- T002-02 - Cold Chain SOP & Fridge Layout Guide\n- T002-03 - Supplier Temperature Incident Log & Escalation Record\n- T002-05 - Cold-Hold & Date Label Pack\n\n**Related blocks:**\n- B001 - Daily Temperature Monitoring\n- B004 - Cold Chain Excellence Dashboard\n\n---\n\n*Tool Version 2.0 - the weekly proof that the cold chain still exists in real life.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T002-04_weekly_fridge_organisation_and_date_labelling_audit.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "phase": "phase6",
+  "date": "2026-03-27",
+  "verdict": "PHASE 6 IMPLEMENTED BUT NOT STABILIZED",
+  "role_defaults": {
+    "owner": "command",
+    "manager": "today",
+    "pocket": "shift"
+  },
+  "tests": {
+    "frontend_build": {
+      "status": "passed",
+      "command": "npm --prefix apps/web run build",
+      "detail": "vite production build passed"
+    },
+    "frontend_test": {
+      "status": "passed",
+      "command": "npm --prefix apps/web run test",
+      "detail": "11 tests passed"
+    },
+    "backend_workflows": {
+      "status": "passed",
+      "command": "python -m pytest tests/test_manager_workflow.py tests/test_pocket_workflow.py tests/test_phase6_integration.py -q",
+      "detail": "covered by the full green backend suite"
+    }
+  },
+  "findings": [
+    {
+      "id": "P6-001",
+      "severity": "resolved",
+      "title": "Graph no longer competes with Plan",
+      "detail": "Manager graph route and nav entry were removed; dependency context now lives inside Plan."
+    },
+    {
+      "id": "P6-002",
+      "severity": "resolved",
+      "title": "Pocket Help is now first-class and persisted",
+      "detail": "Help requests are stored canonically and linked to dedicated help-request copilot threads."
+    },
+    {
+      "id": "P6-003",
+      "severity": "improved",
+      "title": "Execution-facing role surfaces are more active-plan anchored",
+      "detail": "Manager, pocket, and owner execution-facing surfaces now prefer active truth rather than latest-generated truth."
+    },
+    {
+      "id": "P6-004",
+      "severity": "remaining",
+      "title": "Pocket task drill-in is still indirect",
+      "detail": "My Shift task clicks still do not open a task-native work context."
+    },
+    {
+      "id": "P6-005",
+      "severity": "remaining",
+      "title": "Phase 5 closure still needs a refreshed audit",
+      "detail": "Role depth improved, but Phase 6 should not be marked closed until the workflow-truth audit is rerun formally."
+    }
+  ],
+  "files_needing_changes": [
+    "C:\\Users\\matas\\Documents\\00\\CODEX-VOIS-claude-debug-api-500-error-HACD2\\apps\\web\\src\\App.tsx",
+    "C:\\Users\\matas\\Documents\\00\\CODEX-VOIS-claude-debug-api-500-error-HACD2\\apps\\web\\src\\features\\pocket\\MyShift.tsx",
+    "C:\\Users\\matas\\Documents\\00\\CODEX-VOIS-claude-debug-api-500-error-HACD2\\apps\\web\\src\\features\\views\\PlanView.tsx"
+  ]
+}

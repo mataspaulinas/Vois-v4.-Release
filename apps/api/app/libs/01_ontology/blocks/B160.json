@@ -1,0 +1,164 @@
+{
+  "block_id": "B160",
+  "name": "Data-Driven Culture",
+  "version": "v1.0",
+  "domain": "D10_technology_systems",
+  "module": "M10: Digital Tools & Customer Data",
+  "state": "enriched",
+  "purpose": "Embeds a culture where decisions at every level of the cafe are informed by data rather than assumption. This block moves beyond dashboards and reports to ensure that baristas, supervisors, and managers all understand, value, and use data in their daily work, creating a team that naturally asks 'what do the numbers say?' before making changes.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Make key performance data visible and accessible to all team members, not just the owner and manager",
+      "Train staff at every level to understand basic business metrics and how their actions influence them",
+      "Establish decision-making protocols that require data review before significant operational changes",
+      "Create feedback loops so the team sees the measurable impact of their actions and improvements",
+      "Build a culture of curiosity where staff feel empowered to ask questions about performance data"
+    ],
+    "secondary_objectives": [
+      "Reduce resistance to change by providing evidence for why changes are being made",
+      "Identify improvement opportunities that emerge from the team's direct observation combined with data patterns",
+      "Increase staff engagement by connecting their daily work to meaningful business outcomes",
+      "Create a competitive advantage through superior operational intelligence compared to instinct-driven competitors"
+    ]
+  },
+  "why_this_matters": "Having data is not the same as using data, and using data is not the same as being data-driven. Many cafes that implement dashboards (B158) still make most decisions based on the owner's gut feeling, the manager's preferences, or whichever staff member complains loudest. Data sits in reports that only one person reads, insights generate no action, and the team does not understand why numbers matter. A data-driven culture means that when a barista notices the afternoon is quiet, they check whether Tuesday afternoons are always quiet or whether today is unusual. When the manager considers adding a new menu item, they review which similar items have performed well and poorly. When the owner thinks about extending opening hours, they look at the last-hour revenue data before committing. This is not about turning baristas into analysts. It is about creating a shared language of evidence that helps everyone make better decisions. Research shows that data-driven organisations are 23 times more likely to acquire customers and 6 times more likely to retain them, according to McKinsey. For a cafe, this translates into faster identification of what works, quicker elimination of what does not, and a team that feels ownership because they can see the impact of their efforts. The alternative is a cafe where the same problems recur because nobody tracks whether solutions work, good ideas are rejected because the owner cannot see evidence for them, and staff feel disconnected from the business because they never see the results of their daily work.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Start sharing one key number with the team every day. The simplest starting point is yesterday's total revenue or average transaction value, displayed on a whiteboard in the staff area with a comparison to the same day last week. This single act of transparency begins shifting the culture. Do not overwhelm staff with multiple metrics; one number, consistently shared, is more powerful than ten numbers shared sporadically. Frame the number in context: 'Yesterday we served 184 customers with an average spend of 5.60 pounds, up from 5.30 last week. Great upselling, team.' Week 2: During team briefings or shift handovers, start asking data-informed questions. Instead of 'How was the morning?', ask 'We did 95 transactions this morning versus 110 last Monday. Any ideas why?' This models data-curious behaviour without formal training. Encourage staff to share observations that could be verified with data: 'I think the new pastries are outselling the muffins' becomes a question to check against the POS data. Celebrate when staff raise data-related questions or observations.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Team Metrics Board in the staff area showing 3-5 simple metrics updated daily or weekly. Good candidates: daily revenue target versus actual, average transaction value, customer count, a 'goal of the week' metric (e.g. upsell rate, loyalty sign-ups), and a fun metric (e.g. most popular drink this week). Run a Data Literacy Workshop (30-60 minutes) for all staff covering: what the key metrics mean, how their daily actions influence each metric, how to read the Team Metrics Board, and practical examples of data-informed decisions. Create a Monthly 'Data Win' recognition: publicly acknowledge instances where a team member used data to make a better decision, identify a problem, or suggest an improvement. Establish a data review step in key decision-making processes: before changing the menu, adjusting prices, modifying staffing levels, or launching a promotion, the relevant data must be reviewed and documented. This does not slow decisions down; it prevents expensive mistakes.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Embed data literacy into the onboarding process for new staff: include a session on understanding key metrics and the Team Metrics Board during their first week. Create an Experiment Framework: when the team has an idea for improvement, set it up as a simple experiment with a baseline measurement, a defined change, a measurement period, and a success criterion. For example, 'If we move the cake display closer to the till, will cake sales increase by 10% over two weeks?' This teaches the team to think in terms of evidence and impact. Develop a Quarterly Business Review (QBR) where the full team spends 30 minutes reviewing the quarter's data, celebrating wins, discussing challenges, and contributing ideas for the next quarter. This builds collective ownership. Share financial context appropriate to the team's level: revenue trends, cost pressures, and how profitability works in a cafe. Staff who understand the economics of the business make better decisions about waste, efficiency, and customer service."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Start sharing one key daily metric with the team via a whiteboard in the staff area",
+        "Frame the daily number with context and comparison to encourage understanding",
+        "Begin asking data-informed questions during team briefings and shift handovers",
+        "Encourage and celebrate staff observations that reference performance patterns",
+        "Model data-curious behaviour by verifying team observations against POS data"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a Team Metrics Board showing 3-5 simple metrics updated daily or weekly",
+        "Run a Data Literacy Workshop for all staff (30-60 minutes)",
+        "Establish a Monthly Data Win recognition for staff using data in their decisions",
+        "Embed a data review step into key decision-making processes (menu, pricing, staffing, promotions)",
+        "Create simple data reference cards explaining what each metric means and how staff influence it",
+        "Document examples of data-informed decisions and their outcomes for training purposes"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Include data literacy in the onboarding process for all new staff",
+        "Create an Experiment Framework for testing improvement ideas with measurable outcomes",
+        "Establish a Quarterly Business Review involving the full team",
+        "Share appropriate financial context to build team understanding of cafe economics",
+        "Review and update the Team Metrics Board quarterly to keep it relevant and engaging"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Team Metrics Board (staff-facing daily display of 3-5 key metrics)",
+    "Data Literacy Workshop materials (30-60 minute training session)",
+    "Data Win Recognition programme",
+    "Experiment Framework template for testing improvement ideas",
+    "Quarterly Business Review agenda and format"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T160-01",
+        "tool_name": "Team Metrics Board Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Design template for a staff-facing metrics display showing daily revenue versus target, average transaction value, customer count, weekly goal metric, and a fun engagement metric. Includes guidance on updating frequency and framing numbers with context."
+      },
+      {
+        "tool_id": "T160-02",
+        "tool_name": "Data Literacy Workshop Pack",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Complete training materials for a 30-60 minute staff workshop covering: what key metrics mean, how daily actions influence metrics, how to read the Team Metrics Board, and practical examples of data-informed decisions relevant to cafe operations."
+      },
+      {
+        "tool_id": "T160-03",
+        "tool_name": "Experiment Framework Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Simple one-page template for setting up improvement experiments: hypothesis statement, baseline measurement, proposed change, measurement period, success criterion, actual result, and decision (adopt, modify, or abandon)."
+      },
+      {
+        "tool_id": "T160-04",
+        "tool_name": "Data Win Recognition Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Monthly log documenting instances where team members used data to make better decisions, identify problems, or suggest improvements. Used for public recognition and to build a library of data-informed decision examples for training."
+      },
+      {
+        "tool_id": "T160-05",
+        "tool_name": "Quarterly Business Review Agenda",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Structured 30-minute agenda for quarterly all-team reviews covering: quarter performance summary, key wins and challenges, team-contributed ideas, upcoming priorities, and Q&A. Designed to be accessible and engaging for all staff levels."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Data sharing becomes top-down lecturing rather than genuine team engagement, creating cynicism rather than curiosity",
+    "Metrics are used punitively (blaming staff for poor numbers) rather than constructively, destroying trust in data transparency",
+    "Too many metrics are shared too quickly, overwhelming staff and making the initiative feel like extra work rather than empowerment",
+    "The Experiment Framework becomes bureaucratic, discouraging staff from suggesting improvements"
+  ],
+  "kpis": [
+    "Daily metric shared with the team at least 5 out of 7 days per week",
+    "At least one staff-initiated data observation or question per week",
+    "Data Literacy Workshop completed by 100% of staff within 3 months of implementation",
+    "At least one data-informed experiment conducted per quarter"
+  ],
+  "dependencies": ["B158", "B159"],
+  "constraints": [
+    "Requires B158 dashboard to be operational so there is reliable data to share with the team",
+    "Staff must feel psychologically safe to engage with data without fear of blame for poor numbers",
+    "Data sharing must be balanced with commercial sensitivity: not all financial data should be shared with all staff",
+    "Building a data-driven culture takes 6-12 months of consistent effort and cannot be rushed"
+  ],
+  "time_load": {
+    "L1": "2 hours (setting up whiteboard routine, adjusting briefing approach)",
+    "L2": "6 hours (Team Metrics Board creation, workshop preparation and delivery, recognition setup)",
+    "L3": "3 hours/quarter (Quarterly Business Review, experiment support, onboarding updates)"
+  },
+  "review_protocol": "Team Metrics Board updated daily by manager. Staff engagement with data observed and noted weekly by manager. Data Win Recognition reviewed monthly. Experiment Framework usage reviewed quarterly. Full data-driven culture assessment conducted every 6 months through staff survey or conversation.",
+  "meta": {
+    "summary_for_humans": "This block moves beyond dashboards and reports to embed a genuine data-driven culture where all team members understand, value, and use data in their daily work. It starts with sharing one number per day and builds to team-wide data literacy, structured experiments, and quarterly business reviews.",
+    "implementation_risks": [
+      "Using data punitively will destroy trust faster than any other management mistake",
+      "Owner or manager must genuinely believe in data-driven decision-making; staff will detect hypocrisy instantly",
+      "Cultural change is slow and requires patient, consistent effort over many months"
+    ],
+    "notes_for_engine": "Activate after B158 and B159 are operational. This block is about culture change, not technology implementation. Prioritise if signals indicate decisions are made on instinct alone, staff are disconnected from business performance, or the owner has data but does not use it.",
+    "tags": ["data_culture", "decision_making", "team_engagement", "metrics", "transparency", "data_literacy", "experiments", "culture"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 2,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

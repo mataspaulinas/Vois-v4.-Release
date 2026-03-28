@@ -1,0 +1,211 @@
+{
+  "l1_blocks": [
+    {
+      "block_id": "B054",
+      "title": "Drink Recipe Cards",
+      "source_rp": "RP015",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Creates standardised recipe documentation for every drink on the menu, ensuring consistency of preparation, taste, and presentation regardless of which barista is making the drink. This block defines the recipe card format, covers espresso-based drinks, teas, hot chocolates, specialty drinks, and cold beverages.",
+      "domain": "D03_coffee_product",
+      "module": "M03: Coffee Craft & Menu Excellence"
+    },
+    {
+      "block_id": "B055",
+      "title": "Portion Control System",
+      "source_rp": "RP015",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Establishes consistent portioning for all food and drink items to ensure customers receive the same quantity every time, costs are predictable and controllable, waste is minimised, and the cafe's pricing accurately reflects what is being served.",
+      "domain": "D03_coffee_product",
+      "module": "M03: Coffee Craft & Menu Excellence"
+    },
+    {
+      "block_id": "B067",
+      "title": "New Starter Induction",
+      "source_rp": "RP019",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Defines a structured first-week induction programme for all new starters, covering essential orientation, health and safety basics, team introductions, and role-specific fundamentals so that every new team member feels welcome, informed, and safe from day one.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B068",
+      "title": "Barista Training & Certification",
+      "source_rp": "RP019",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured barista training programme covering coffee craft fundamentals through to advanced skills, aligned to SCA certification standards where appropriate, ensuring every team member can consistently produce excellent coffee and confidently explain the product to customers.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B069",
+      "title": "Probation Review Framework",
+      "source_rp": "RP019",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured probation review process with formal check-ins at 30, 60, and 90 days, ensuring new starters receive clear feedback, documented performance assessment, and a fair decision on confirmation of employment — while protecting the business from retaining poor fits.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    }
+  ],
+  "l1_tools": [],
+  "l2_blocks": [
+    {
+      "block_id": "B054",
+      "title": "Drink Recipe Cards",
+      "source_rp": "RP015",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Creates standardised recipe documentation for every drink on the menu, ensuring consistency of preparation, taste, and presentation regardless of which barista is making the drink. This block defines the recipe card format, covers espresso-based drinks, teas, hot chocolates, specialty drinks, and cold beverages.",
+      "domain": "D03_coffee_product",
+      "module": "M03: Coffee Craft & Menu Excellence"
+    },
+    {
+      "block_id": "B055",
+      "title": "Portion Control System",
+      "source_rp": "RP015",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Establishes consistent portioning for all food and drink items to ensure customers receive the same quantity every time, costs are predictable and controllable, waste is minimised, and the cafe's pricing accurately reflects what is being served.",
+      "domain": "D03_coffee_product",
+      "module": "M03: Coffee Craft & Menu Excellence"
+    },
+    {
+      "block_id": "B056",
+      "title": "Menu Engineering & Optimisation",
+      "source_rp": "RP015",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Applies menu engineering principles to optimise the cafe's menu for profitability, customer satisfaction, and operational efficiency. This block covers menu design, pricing strategy, item categorisation by popularity and margin, menu board layout, and data-driven decision-making about what to keep, promote, rework, or remove.",
+      "domain": "D03_coffee_product",
+      "module": "M03: Coffee Craft & Menu Excellence"
+    },
+    {
+      "block_id": "B067",
+      "title": "New Starter Induction",
+      "source_rp": "RP019",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Defines a structured first-week induction programme for all new starters, covering essential orientation, health and safety basics, team introductions, and role-specific fundamentals so that every new team member feels welcome, informed, and safe from day one.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B068",
+      "title": "Barista Training & Certification",
+      "source_rp": "RP019",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured barista training programme covering coffee craft fundamentals through to advanced skills, aligned to SCA certification standards where appropriate, ensuring every team member can consistently produce excellent coffee and confidently explain the product to customers.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B069",
+      "title": "Probation Review Framework",
+      "source_rp": "RP019",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured probation review process with formal check-ins at 30, 60, and 90 days, ensuring new starters receive clear feedback, documented performance assessment, and a fair decision on confirmation of employment — while protecting the business from retaining poor fits.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B070",
+      "title": "Onboarding Excellence",
+      "source_rp": "RP019",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Provides a holistic assessment and continuous improvement framework for the entire onboarding journey — from pre-start engagement through induction, training, and probation — ensuring all elements work together to deliver a best-in-class new starter experience that accelerates competence and maximises retention.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B197",
+      "title": "Coffee Education & Training Curriculum",
+      "source_rp": "RP019",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Builds an advanced coffee education and training curriculum that takes baristas beyond basic espresso skills into the science, craft, and culture of specialty coffee. This block creates a structured learning pathway covering green coffee, roasting principles, sensory calibration, brewing theory, milk science, and origin knowledge — transforming staff from drink-makers into coffee professionals.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B206",
+      "title": "Barista Competition Programme",
+      "source_rp": "RP019",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Creates a structured programme that uses barista competitions — both internal and external — as a development tool for advancing technical skills, building team motivation, raising the cafe's industry profile, and creating a culture of excellence. This block covers internal throwdowns, preparation for regional and national SCA competitions, budgeting for competition entry, and leveraging competition success for marketing and recruitment.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    }
+  ],
+  "l2_tools": [],
+  "l3_blocks": [
+    {
+      "block_id": "B054",
+      "title": "Drink Recipe Cards",
+      "source_rp": "RP015",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Creates standardised recipe documentation for every drink on the menu, ensuring consistency of preparation, taste, and presentation regardless of which barista is making the drink. This block defines the recipe card format, covers espresso-based drinks, teas, hot chocolates, specialty drinks, and cold beverages.",
+      "domain": "D03_coffee_product",
+      "module": "M03: Coffee Craft & Menu Excellence"
+    },
+    {
+      "block_id": "B056",
+      "title": "Menu Engineering & Optimisation",
+      "source_rp": "RP015",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Applies menu engineering principles to optimise the cafe's menu for profitability, customer satisfaction, and operational efficiency. This block covers menu design, pricing strategy, item categorisation by popularity and margin, menu board layout, and data-driven decision-making about what to keep, promote, rework, or remove.",
+      "domain": "D03_coffee_product",
+      "module": "M03: Coffee Craft & Menu Excellence"
+    },
+    {
+      "block_id": "B067",
+      "title": "New Starter Induction",
+      "source_rp": "RP019",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Defines a structured first-week induction programme for all new starters, covering essential orientation, health and safety basics, team introductions, and role-specific fundamentals so that every new team member feels welcome, informed, and safe from day one.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B070",
+      "title": "Onboarding Excellence",
+      "source_rp": "RP019",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Provides a holistic assessment and continuous improvement framework for the entire onboarding journey — from pre-start engagement through induction, training, and probation — ensuring all elements work together to deliver a best-in-class new starter experience that accelerates competence and maximises retention.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B197",
+      "title": "Coffee Education & Training Curriculum",
+      "source_rp": "RP019",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Builds an advanced coffee education and training curriculum that takes baristas beyond basic espresso skills into the science, craft, and culture of specialty coffee. This block creates a structured learning pathway covering green coffee, roasting principles, sensory calibration, brewing theory, milk science, and origin knowledge — transforming staff from drink-makers into coffee professionals.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B206",
+      "title": "Barista Competition Programme",
+      "source_rp": "RP019",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Creates a structured programme that uses barista competitions — both internal and external — as a development tool for advancing technical skills, building team motivation, raising the cafe's industry profile, and creating a culture of excellence. This block covers internal throwdowns, preparation for regional and national SCA competitions, budgeting for competition entry, and leveraging competition success for marketing and recruitment.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    }
+  ],
+  "l3_tools": []
+}

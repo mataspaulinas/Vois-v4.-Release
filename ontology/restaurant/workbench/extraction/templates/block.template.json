@@ -1,0 +1,24 @@
+{
+  "id": "<block_id>",
+  "name": "<block name>",
+  "description": "<atomic intervention>",
+  "owner": "<owner>",
+  "source_ref": "<citation>",
+  "status": "draft",
+  "effort_hours": 0.0,
+  "dependencies": [],
+  "tool_ids": [],
+  "response_pattern_ids": [],
+  "entry_conditions": [],
+  "contraindications": [],
+  "owner_role": "<owner role>",
+  "expected_time_to_effect_days": 0,
+  "proof_of_completion": [],
+  "successor_block_ids": [],
+  "service_module_ids": [
+    "<core_service_module_id>"
+  ],
+  "failure_family_ids": [
+    "<core_failure_family_id>"
+  ]
+}

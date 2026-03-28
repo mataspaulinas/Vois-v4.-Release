@@ -1,0 +1,31 @@
+{
+  "id": "sig_promised_time_missed",
+  "name": "Promised time is missed",
+  "description": "A quoted pickup, seating, delivery, or service time is missed badly enough to break guest trust.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: promise and expectation failure surfacing in restaurant operations",
+  "updated_at": "2026-03-14T12:48:22.240132Z",
+  "domain": "guest_experience",
+  "module": "host_flow",
+  "indicator_type": "lagging",
+  "evidence_types": [
+    "quoted wait versus actual wait",
+    "broken ready-time promise",
+    "guest complaint about timing"
+  ],
+  "source_types": [
+    "service observation",
+    "guest complaint",
+    "manager notes"
+  ],
+  "temporal_behavior": "peak-sensitive",
+  "likely_co_signals": [
+    "sig_waitlist_mismatch",
+    "sig_service_delay"
+  ],
+  "adapter_aliases": [
+    "broken promise",
+    "missed quote"
+  ]
+}

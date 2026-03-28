@@ -1,0 +1,159 @@
+{
+  "block_id": "B125",
+  "name": "Payroll Cost Optimisation",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Ensures that payroll — typically the single largest cost in a cafe business — is managed strategically to achieve the right balance between service quality and financial sustainability. This block connects labour scheduling decisions to revenue data so that staffing levels are driven by evidence rather than habit.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish payroll as a percentage of revenue as a core management KPI, with a target range appropriate to the venue type",
+      "Analyse labour cost at the shift level to identify overstaffing during quiet periods and understaffing during peaks",
+      "Align rota planning with revenue forecasts from B123 to ensure staffing matches expected demand",
+      "Identify opportunities to reduce payroll cost without cutting service quality — through better scheduling, cross-training, and productivity improvement",
+      "Ensure compliance with UK employment law including National Minimum Wage, auto-enrolment pensions, and working time regulations"
+    ],
+    "secondary_objectives": [
+      "Reduce reliance on expensive agency or last-minute casual staff through better forward planning",
+      "Develop a staffing model that flexes with seasonal demand rather than maintaining a fixed cost base year-round",
+      "Create transparency around labour cost so that shift leaders understand the financial implications of their scheduling decisions",
+      "Build a business case for investment in equipment or technology that can reduce labour requirements"
+    ]
+  },
+  "why_this_matters": "Labour is the largest controllable cost in any cafe, typically accounting for 28-38% of revenue in UK independent cafes. Unlike rent (fixed) or ingredients (variable but proportional), labour cost can be actively managed through smarter scheduling, cross-training, and productivity improvements. Yet most independent cafe owners schedule staff based on habit — the same people work the same shifts regardless of whether Monday is half as busy as Saturday. The result is chronic overstaffing on quiet days and desperate understaffing on busy ones. A cafe turning over 6,000 pounds per week with labour at 38% rather than 32% is spending an extra 360 pounds per week — nearly 19,000 pounds per year — on wages that are not generating proportional revenue. That 19,000 pounds is often the difference between a profitable business and one that barely breaks even. The National Living Wage increased again in April 2025 and further increases are expected, making payroll optimisation not a luxury but a survival skill. Employer National Insurance contributions, auto-enrolment pension costs, and holiday accrual add approximately 15-20% on top of gross wages, meaning the true cost of an employee earning 12 pounds per hour is closer to 14 pounds. Cafe owners who only think in terms of hourly rate significantly underestimate their true labour cost. This block does not advocate cutting staff to the bone — that destroys service quality, increases turnover, and ultimately costs more. It advocates spending labour pounds intelligently: the right people, in the right roles, at the right times.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Calculate the cafe's current payroll cost as a percentage of revenue. Include gross wages, employer NI, pension contributions, and any benefits. Pull this from the last 3 months of payroll records and compare against till revenue for the same period. Most POS systems can provide hourly and daily revenue breakdowns. Map current staffing against revenue by day of week: create a simple table showing each day's average revenue and total labour cost (hours worked multiplied by average hourly cost including oncosts). Identify the days where labour percentage is highest — these are the overstaffing opportunities. Week 2: Set a target labour percentage based on your venue type. For most independent cafes, 30-35% is a reasonable target; specialty coffee shops with higher average spend can sometimes achieve 25-30%. Compare your current position against this target and calculate the weekly saving if you close the gap. Review the current rota with fresh eyes: Are there shifts where two people are working but one could manage? Are staff starting 30 minutes before opening when 15 minutes would suffice? Are closing shifts dragging on longer than necessary? Make one or two conservative scheduling adjustments this week and measure the impact.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Build a labour scheduling model that maps staffing levels to expected revenue by hour. Use your POS data to create an hourly revenue profile for each day of the week — this reveals exactly when you need more hands and when you are paying for idle time. Develop shift templates that flex based on the day: a Monday might need two staff from opening to close, while a Saturday needs three from 8am to 12pm and two from 12pm to close. Introduce a weekly labour cost review: every Monday, the manager calculates last week's total labour cost against revenue and compares to the target percentage. If labour is consistently over target, investigate whether the issue is scheduling, productivity, or revenue shortfall. Cross-train staff so that the same person can work the till, make coffee, and prepare food — this flexibility allows you to run leaner shifts because each person can cover more roles. Review overtime patterns: if staff regularly work over their contracted hours, this may indicate poor scheduling rather than genuine demand. Implement a rota approval process where the manager must sign off the weekly rota after checking it against the revenue forecast and labour budget.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Labour cost management should now be an integrated part of operational decision-making. Shift leaders should understand the labour cost of their shift and be empowered to make real-time adjustments — sending someone home early on a quiet afternoon with their agreement, or calling in extra support when unexpected demand hits. Track labour productivity metrics: revenue per labour hour is the key measure, calculated as total revenue divided by total labour hours. A well-run UK cafe should target 35-50 pounds per labour hour depending on average transaction value and speed of service. Benchmark quarterly against industry data and your own historical performance. Evaluate technology investments that reduce labour requirements: self-service ordering kiosks, automated milk steamers, batch brew systems, or dishwashers that free up a person from manual washing. Calculate the payback period by comparing the investment cost against the labour hours saved. Review the staffing model seasonally: summer may require more staff for outdoor seating and longer trading hours, while January may warrant reduced hours or temporary role consolidation."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Calculate current payroll cost as a percentage of revenue for the last 3 months",
+        "Include all oncosts: employer NI, pension, holiday accrual in the calculation",
+        "Map daily revenue against daily labour cost for each day of the week",
+        "Set a target labour percentage appropriate to the venue type",
+        "Identify the two or three shifts with the highest labour percentage",
+        "Make one or two conservative scheduling adjustments and measure impact",
+        "Review start and finish times for unnecessary early arrivals or late departures"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build an hourly revenue profile for each day of the week using POS data",
+        "Create flexible shift templates that match staffing to expected demand patterns",
+        "Introduce a weekly labour cost review every Monday morning",
+        "Cross-train staff across till, coffee, and food preparation roles",
+        "Implement a rota approval process checking against revenue forecast and labour budget",
+        "Review and reduce overtime patterns through better forward scheduling",
+        "Calculate true hourly cost per employee including all oncosts"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track revenue per labour hour as a core weekly KPI",
+        "Empower shift leaders to make real-time staffing adjustments based on demand",
+        "Evaluate technology investments for labour hour reduction and calculate payback periods",
+        "Benchmark labour productivity quarterly against industry data",
+        "Review the staffing model seasonally and adjust for trading pattern changes",
+        "Integrate labour cost analysis into annual budget planning cycle"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Labour Cost Analysis Spreadsheet (daily and weekly breakdown)",
+    "Flexible Shift Template Library (by day type)",
+    "Weekly Labour Cost Review Template",
+    "Revenue Per Labour Hour Tracker",
+    "Technology Investment Payback Calculator"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T125-01",
+        "tool_name": "Labour Cost Analysis Spreadsheet",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Weekly spreadsheet tracking total labour cost against revenue by day, calculating labour percentage and identifying overstaffed and understaffed periods. Includes oncost calculations for true hourly cost."
+      },
+      {
+        "tool_id": "T125-02",
+        "tool_name": "Flexible Shift Template Library",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "A set of shift templates for different day types (quiet weekday, busy weekday, Saturday, Sunday) specifying staffing levels by hour, roles required, and expected revenue. Used as the basis for weekly rota building."
+      },
+      {
+        "tool_id": "T125-03",
+        "tool_name": "Revenue Per Labour Hour Dashboard",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Weekly and monthly tracker showing revenue per labour hour trend, benchmarked against target and industry averages. Highlights shifts or days with unusually low productivity for investigation."
+      },
+      {
+        "tool_id": "T125-04",
+        "tool_name": "Technology Investment Payback Calculator",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A simple calculator for evaluating equipment or technology investments that reduce labour hours. Compares purchase cost against monthly labour savings to determine payback period in months."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Labour cost is cut too aggressively, leading to poor service, stressed staff, higher turnover, and ultimately higher costs",
+    "Scheduling remains habit-based despite having revenue data available, because changing rotas causes staff complaints",
+    "Oncosts are ignored in calculations, underestimating true labour cost by 15-20% and giving a false sense of control",
+    "Revenue per labour hour improves but only because staff are burning out, creating an unsustainable short-term gain"
+  ],
+  "kpis": [
+    "Payroll cost (including oncosts) maintained within target percentage range for the venue type",
+    "Revenue per labour hour tracked weekly and trending upward or stable",
+    "Weekly rota built against revenue forecast with labour cost pre-approved before the week starts",
+    "Zero unplanned overtime exceeding 5% of total scheduled hours in any given week"
+  ],
+  "dependencies": ["B085", "B122"],
+  "constraints": [
+    "All scheduling must comply with UK employment law including National Minimum Wage, Working Time Regulations, and rest break requirements",
+    "Staff contracts and agreed hours must be respected — optimisation cannot involve unilateral reduction of contracted hours",
+    "Payroll changes should be communicated transparently to avoid damaging team morale and trust"
+  ],
+  "time_load": {
+    "L1": "4 hours (data gathering, initial analysis, first scheduling adjustments)",
+    "L2": "3 hours/week (rota building against revenue forecast, weekly labour review)",
+    "L3": "2 hours/month (productivity benchmarking, technology evaluation, seasonal model review)"
+  },
+  "review_protocol": "Weekly labour cost review every Monday. Monthly payroll percentage trend analysis. Quarterly review of revenue per labour hour against targets and industry benchmarks. Annual review of staffing model against business plan and seasonal patterns.",
+  "meta": {
+    "summary_for_humans": "This block ensures payroll — the cafe's biggest controllable cost — is managed strategically by linking staffing levels to revenue data, setting target labour percentages, and building flexible rotas that match demand rather than habit.",
+    "implementation_risks": [
+      "Staff may resist schedule changes, particularly if they lose preferred shifts or hours",
+      "Cutting labour too quickly can damage service quality and create a vicious cycle of declining revenue",
+      "Owner-operators often undercount their own labour cost, distorting the true picture"
+    ],
+    "notes_for_engine": "Activate when signals indicate labour cost is above 35% of revenue, when the owner reports difficulty making payroll, or when rotas appear to be built without reference to trading patterns. This block connects directly to B085 (scheduling) and B122 (financial tracking). Handle sensitively — labour cost is ultimately about people's livelihoods.",
+    "tags": ["finance", "payroll", "labour", "scheduling", "optimisation", "productivity", "wages", "efficiency"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

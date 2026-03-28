@@ -1,0 +1,30 @@
+{
+  "id": "sig_same_issue_repeats_without_review",
+  "name": "Same issue repeats without review",
+  "description": "The venue keeps reliving the same preventable problem because it is discussed informally but never closed through review and operating change.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: repeated unreviewed issues are direct evidence of a missing learning loop",
+  "updated_at": "2026-03-14T00:41:10.246305Z",
+  "domain": "leadership_rhythm",
+  "module": "post_shift_review",
+  "indicator_type": "lagging",
+  "evidence_types": [
+    "manager_notes",
+    "incident_log"
+  ],
+  "source_types": [
+    "audit_notes",
+    "progress_log"
+  ],
+  "temporal_behavior": "recurring",
+  "likely_co_signals": [
+    "sig_guest_complaints",
+    "sig_voids_rising",
+    "sig_waste_spike"
+  ],
+  "adapter_aliases": [
+    "repeat_issue_no_review",
+    "same_problem_again"
+  ]
+}

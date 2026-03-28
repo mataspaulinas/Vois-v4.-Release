@@ -1,0 +1,1023 @@
+{
+  "shared_python_vs_typescript": [
+    {
+      "contract": "OrganizationContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "WorkspaceContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "VenueContextContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "VenueProjectContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "AssessmentSignalState",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "AssessmentDraftContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "AssessmentRunRequestContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "SignalContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "FailureModeContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "ResponsePatternTriggerContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "ResponsePatternContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "BlockActivationLevelsContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "BlockActivationContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "TaskDependencyContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "TaskCommentContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "TaskEventContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "SubActionContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "DeliverableItemContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "DeliverableProofContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "TaskContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "GeneratedPlanTaskContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "GeneratedPlanContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "PlanContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "ReportContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "DiagnosticResultContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "ProgressEntryContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "ObservationContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "HelpRequestContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "FollowUpContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "EscalationContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "NotificationSubscriptionContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "NotificationEventContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "ChatReferenceContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "ChatAttachmentContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "ChatMessageContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "ChatThreadContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "KnowledgeReferenceContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "AITraceContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "AIIntakeSnapshotContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "TaskMutationRequestContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "CommentCreateRequestContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "ProgressCreateRequestContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "FollowUpCreateRequestContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "EscalationCreateRequestContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    },
+    {
+      "contract": "ChatMessageCreateRequestContract",
+      "status": "match",
+      "python_only": [],
+      "typescript_only": []
+    }
+  ],
+  "current_platform_alignment": [
+    {
+      "contract": "VenueProjectContract",
+      "overall_status": "mismatch",
+      "backend": {
+        "mapped_to": "VenueRead",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "health_state",
+            "next_review_at",
+            "owner_user_id",
+            "primary_consultant_user_id",
+            "stage",
+            "team_size",
+            "workflow_stage"
+          ],
+          "extra_in_current": [
+            "size_note"
+          ]
+        }
+      },
+      "frontend": {
+        "mapped_to": "Venue",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "health_state",
+            "next_review_at",
+            "owner_user_id",
+            "primary_consultant_user_id",
+            "stage",
+            "team_size",
+            "workflow_stage"
+          ],
+          "extra_in_current": [
+            "size_note"
+          ]
+        }
+      }
+    },
+    {
+      "contract": "AssessmentDraftContract",
+      "overall_status": "mismatch",
+      "backend": {
+        "mapped_to": "AssessmentRead",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "assessment_date",
+            "assessment_type",
+            "ontology_version",
+            "raw_input_text",
+            "venue_context"
+          ],
+          "extra_in_current": []
+        }
+      },
+      "frontend": {
+        "mapped_to": "AssessmentRecord",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "assessment_date",
+            "assessment_type",
+            "ontology_version",
+            "raw_input_text",
+            "venue_context"
+          ],
+          "extra_in_current": []
+        }
+      }
+    },
+    {
+      "contract": "AssessmentRunRequestContract",
+      "overall_status": "missing_or_partial",
+      "backend": {
+        "mapped_to": "AssessmentRunRequest",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "assessment_date",
+            "assessment_type",
+            "raw_input_text",
+            "triage_enabled",
+            "triage_intensity",
+            "venue_context"
+          ],
+          "extra_in_current": []
+        }
+      },
+      "frontend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      }
+    },
+    {
+      "contract": "SignalContract",
+      "overall_status": "missing_or_partial",
+      "backend": {
+        "mapped_to": "IntakeSignalMatch",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "description",
+            "domain_id",
+            "notes",
+            "severity",
+            "source_type",
+            "timestamp",
+            "value",
+            "venue_id"
+          ],
+          "extra_in_current": [
+            "confidence"
+          ]
+        }
+      },
+      "frontend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      }
+    },
+    {
+      "contract": "FailureModeContract",
+      "overall_status": "missing_or_partial",
+      "backend": {
+        "mapped_to": "DiagnosticFinding",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "description",
+            "domain_id",
+            "failure_mode_id",
+            "module_id",
+            "severity",
+            "signal_ids",
+            "title"
+          ],
+          "extra_in_current": [
+            "id",
+            "name"
+          ]
+        }
+      },
+      "frontend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      }
+    },
+    {
+      "contract": "ResponsePatternContract",
+      "overall_status": "missing_or_partial",
+      "backend": {
+        "mapped_to": "DiagnosticFinding",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "description",
+            "domain",
+            "l1_focus",
+            "l2_focus",
+            "l3_focus",
+            "priority_score",
+            "response_pattern_id",
+            "rp_name",
+            "severity",
+            "triggering_fms"
+          ],
+          "extra_in_current": [
+            "id",
+            "name",
+            "score"
+          ]
+        }
+      },
+      "frontend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      }
+    },
+    {
+      "contract": "BlockActivationContract",
+      "overall_status": "missing_or_partial",
+      "backend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      },
+      "frontend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      }
+    },
+    {
+      "contract": "GeneratedPlanContract",
+      "overall_status": "missing_or_partial",
+      "backend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      },
+      "frontend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      }
+    },
+    {
+      "contract": "PlanContract",
+      "overall_status": "mismatch",
+      "backend": {
+        "mapped_to": "PlanRead",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "approval_requested_at",
+            "approved_at",
+            "approved_by_user_id",
+            "confidence",
+            "dependency_notes",
+            "owner_user_id",
+            "previous_versions",
+            "reviewer_user_id",
+            "source_assessment",
+            "strengths",
+            "summary_snapshot",
+            "updated_at",
+            "version"
+          ],
+          "extra_in_current": []
+        }
+      },
+      "frontend": {
+        "mapped_to": "PlanRecord",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "approval_requested_at",
+            "approved_at",
+            "approved_by_user_id",
+            "confidence",
+            "dependency_notes",
+            "owner_user_id",
+            "previous_versions",
+            "reviewer_user_id",
+            "source_assessment",
+            "strengths",
+            "summary_snapshot",
+            "updated_at",
+            "version"
+          ],
+          "extra_in_current": []
+        }
+      }
+    },
+    {
+      "contract": "TaskContract",
+      "overall_status": "mismatch",
+      "backend": {
+        "mapped_to": "PlanTaskRead",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "assigned_to",
+            "assignee_name",
+            "assignee_user_id",
+            "comments",
+            "completed_at",
+            "dependency_ids",
+            "depends_on_modules",
+            "description",
+            "due_at",
+            "events",
+            "expected_output",
+            "flags",
+            "layer",
+            "module_id",
+            "priority",
+            "review_required",
+            "source_response_pattern_id",
+            "source_response_pattern_name",
+            "started_at",
+            "timeline_label",
+            "updated_at",
+            "updated_by",
+            "verification"
+          ],
+          "extra_in_current": [
+            "dependencies",
+            "plan_id"
+          ]
+        }
+      },
+      "frontend": {
+        "mapped_to": "PlanTaskRecord",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "assigned_to",
+            "assignee_name",
+            "assignee_user_id",
+            "comments",
+            "completed_at",
+            "dependency_ids",
+            "depends_on_modules",
+            "description",
+            "due_at",
+            "events",
+            "expected_output",
+            "flags",
+            "layer",
+            "module_id",
+            "priority",
+            "review_required",
+            "source_response_pattern_id",
+            "source_response_pattern_name",
+            "started_at",
+            "timeline_label",
+            "updated_at",
+            "updated_by",
+            "verification"
+          ],
+          "extra_in_current": [
+            "dependencies",
+            "plan_id"
+          ]
+        }
+      }
+    },
+    {
+      "contract": "TaskDependencyContract",
+      "overall_status": "missing_or_partial",
+      "backend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      },
+      "frontend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      }
+    },
+    {
+      "contract": "TaskEventContract",
+      "overall_status": "missing_or_partial",
+      "backend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      },
+      "frontend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      }
+    },
+    {
+      "contract": "TaskCommentContract",
+      "overall_status": "missing_or_partial",
+      "backend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      },
+      "frontend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      }
+    },
+    {
+      "contract": "ProgressEntryContract",
+      "overall_status": "mismatch",
+      "backend": {
+        "mapped_to": "ProgressEntryRead",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "entry_type"
+          ],
+          "extra_in_current": []
+        }
+      },
+      "frontend": {
+        "mapped_to": "ProgressEntryRecord",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "entry_type"
+          ],
+          "extra_in_current": []
+        }
+      }
+    },
+    {
+      "contract": "ObservationContract",
+      "overall_status": "mismatch",
+      "backend": {
+        "mapped_to": "EvidenceRead",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "author_user_id",
+            "detail",
+            "evidence_file_asset_id",
+            "observation_type",
+            "related_task_id",
+            "source"
+          ],
+          "extra_in_current": [
+            "created_by",
+            "description",
+            "evidence_type",
+            "file_asset_id",
+            "follow_up_id",
+            "task_id"
+          ]
+        }
+      },
+      "frontend": {
+        "mapped_to": "EvidenceRecord",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "author_user_id",
+            "detail",
+            "evidence_file_asset_id",
+            "observation_type",
+            "related_task_id",
+            "source"
+          ],
+          "extra_in_current": [
+            "created_by",
+            "description",
+            "evidence_type",
+            "file_asset_id",
+            "follow_up_id",
+            "task_id"
+          ]
+        }
+      }
+    },
+    {
+      "contract": "HelpRequestContract",
+      "overall_status": "missing_or_partial",
+      "backend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      },
+      "frontend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      }
+    },
+    {
+      "contract": "FollowUpContract",
+      "overall_status": "aligned",
+      "backend": {
+        "mapped_to": "FollowUpRead",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [],
+          "extra_in_current": []
+        }
+      },
+      "frontend": {
+        "mapped_to": "FollowUpRecord",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [],
+          "extra_in_current": []
+        }
+      }
+    },
+    {
+      "contract": "EscalationContract",
+      "overall_status": "aligned",
+      "backend": {
+        "mapped_to": "EscalationRead",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [],
+          "extra_in_current": []
+        }
+      },
+      "frontend": {
+        "mapped_to": "EscalationRecord",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [],
+          "extra_in_current": []
+        }
+      }
+    },
+    {
+      "contract": "ReportContract",
+      "overall_status": "missing_or_partial",
+      "backend": {
+        "mapped_to": "EngineReportOutput",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "created_at",
+            "engine_run_id",
+            "id",
+            "markdown",
+            "report_kind",
+            "report_type",
+            "venue_id"
+          ],
+          "extra_in_current": []
+        }
+      },
+      "frontend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      }
+    },
+    {
+      "contract": "DiagnosticResultContract",
+      "overall_status": "mismatch",
+      "backend": {
+        "mapped_to": "EngineRunOutput",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "block_activations",
+            "constrained_block_activations",
+            "constraint_report",
+            "generated_plan",
+            "normalized_signals",
+            "plan"
+          ],
+          "extra_in_current": [
+            "active_signals",
+            "plan_id",
+            "plan_tasks"
+          ]
+        }
+      },
+      "frontend": {
+        "mapped_to": "EngineRunResponse",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "block_activations",
+            "constrained_block_activations",
+            "constraint_report",
+            "generated_plan",
+            "normalized_signals",
+            "plan"
+          ],
+          "extra_in_current": [
+            "active_signals",
+            "plan_id",
+            "plan_tasks"
+          ]
+        }
+      }
+    },
+    {
+      "contract": "NotificationSubscriptionContract",
+      "overall_status": "missing_or_partial",
+      "backend": {
+        "mapped_to": "PushSubscriptionRequest",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "channel",
+            "created_at",
+            "user_id"
+          ],
+          "extra_in_current": []
+        }
+      },
+      "frontend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      }
+    },
+    {
+      "contract": "NotificationEventContract",
+      "overall_status": "missing_or_partial",
+      "backend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      },
+      "frontend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      }
+    },
+    {
+      "contract": "ChatMessageContract",
+      "overall_status": "mismatch",
+      "backend": {
+        "mapped_to": "CopilotMessageRead",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "attachments"
+          ],
+          "extra_in_current": []
+        }
+      },
+      "frontend": {
+        "mapped_to": "CopilotMessageRecord",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "attachments"
+          ],
+          "extra_in_current": []
+        }
+      }
+    },
+    {
+      "contract": "ChatThreadContract",
+      "overall_status": "aligned",
+      "backend": {
+        "mapped_to": "CopilotThreadDetail",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [],
+          "extra_in_current": []
+        }
+      },
+      "frontend": {
+        "mapped_to": "CopilotThreadDetail",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [],
+          "extra_in_current": []
+        }
+      }
+    },
+    {
+      "contract": "KnowledgeReferenceContract",
+      "overall_status": "mismatch",
+      "backend": {
+        "mapped_to": "OntologyEntityBase",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "entity_kind",
+            "linked_entity_ids",
+            "title",
+            "uri"
+          ],
+          "extra_in_current": [
+            "name",
+            "owner",
+            "status"
+          ]
+        }
+      },
+      "frontend": {
+        "mapped_to": "OntologyEntityRecord",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "entity_kind",
+            "linked_entity_ids",
+            "title",
+            "uri"
+          ],
+          "extra_in_current": [
+            "name",
+            "owner",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "contract": "AITraceContract",
+      "overall_status": "missing_or_partial",
+      "backend": {
+        "mapped_to": "AIInvocationAudit",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "context_sources"
+          ],
+          "extra_in_current": []
+        }
+      },
+      "frontend": {
+        "mapped_to": null,
+        "status": "not_mapped",
+        "field_comparison": null
+      }
+    },
+    {
+      "contract": "AIIntakeSnapshotContract",
+      "overall_status": "mismatch",
+      "backend": {
+        "mapped_to": "IntakePreviewResponse",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "active_signal_ids",
+            "confidence_distribution",
+            "extraction_summary",
+            "raw_input_length",
+            "raw_input_text"
+          ],
+          "extra_in_current": [
+            "detected_signals",
+            "ontology_version",
+            "quantitative_evidence",
+            "vertical"
+          ]
+        }
+      },
+      "frontend": {
+        "mapped_to": "IntakePreviewResponse",
+        "status": "present",
+        "field_comparison": {
+          "missing_from_current": [
+            "active_signal_ids",
+            "confidence_distribution",
+            "extraction_summary",
+            "raw_input_length",
+            "raw_input_text"
+          ],
+          "extra_in_current": [
+            "detected_signals",
+            "ontology_version",
+            "quantitative_evidence",
+            "vertical"
+          ]
+        }
+      }
+    }
+  ]
+}

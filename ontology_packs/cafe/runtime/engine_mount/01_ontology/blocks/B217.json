@@ -1,0 +1,20 @@
+{
+  "block_id": "B217",
+  "name": "Tourist & Local Customer Segmentation",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M11: Expansion & Market Positioning",
+  "state": "enriched",
+  "purpose": "Manages the dual challenge of serving tourist visitors and local regulars, with differentiated service approaches, multilingual communication, payment method support, and marketing strategies for each segment.",
+  "tools": [
+    "T217-01",
+    "T217-02",
+    "T217-03"
+  ],
+  "signals": [
+    "S219"
+  ],
+  "failure_modes": [
+    "FM115"
+  ]
+}

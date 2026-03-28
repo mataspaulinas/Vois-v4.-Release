@@ -1,0 +1,182 @@
+{
+  "block_id": "B192",
+  "name": "Franchise Compliance Audit",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M15: Multi-Site & Chain Management",
+  "state": "enriched",
+  "purpose": "Establishes a structured audit framework for monitoring franchise partner compliance with brand standards, operational procedures, financial reporting obligations, and contractual requirements. This block protects the brand, supports franchisees, and ensures the franchise model delivers consistent quality for customers and sustainable returns for both franchisor and franchisee.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define franchise compliance standards covering brand, operations, financial reporting, and legal obligations",
+      "Create a quarterly franchise audit programme with standardised scoring",
+      "Establish a tiered response framework for non-compliance: support, warning, remediation, and ultimately contract review",
+      "Build a constructive relationship with franchisees that positions audits as support rather than surveillance",
+      "Maintain documentation that protects the franchisor in the event of disputes or contract termination"
+    ],
+    "secondary_objectives": [
+      "Identify franchisees who need additional support before performance deteriorates to critical levels",
+      "Share best practices from high-performing franchisees across the network",
+      "Ensure franchisee financial reporting supports accurate royalty and fee calculations",
+      "Verify that franchisees maintain all required licences, insurance, and regulatory compliance"
+    ]
+  },
+  "why_this_matters": "A franchise model is only as strong as its weakest franchisee. Every location carrying the brand name makes a promise to the customer, and a single poorly operated franchise can damage the reputation of the entire network. The British Franchise Association reports that clear compliance frameworks are a hallmark of successful franchise systems. Without structured auditing, franchisors have no objective way to measure whether partners are meeting their contractual obligations. Compliance audits cover four key areas: brand standards (is the customer experience consistent?), operational procedures (are SOPs being followed?), financial reporting (are royalties correctly calculated and paid?), and legal compliance (are licences, insurance, and employment law requirements met?). The audit must be balanced between rigour and relationship — franchisees who feel surveilled rather than supported will disengage, but franchisees who are never held accountable will drift from standards.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0–2 weeks). Week 1: Compile all franchise agreement requirements into a single compliance reference document. Extract every obligation the franchisee has agreed to: brand standards, operating hours, approved suppliers, financial reporting deadlines, insurance requirements, training obligations, and premises maintenance standards. Week 2: Create a franchise compliance audit scorecard using T192-01, organised into the four key areas. Define scoring criteria: what constitutes full compliance, partial compliance, and non-compliance for each item. Share the scorecard with all franchisees in advance so expectations are transparent.",
+    "L2": "SYSTEM BUILD (2–8 weeks). Establish a quarterly audit cycle where every franchise location receives a formal compliance audit. Combine the audit with a brand audit (B187) to avoid audit fatigue. Create a tiered response framework: Tier 1 (minor non-compliance) = noted with corrective action deadline; Tier 2 (significant non-compliance) = formal warning with 30-day remediation plan; Tier 3 (critical non-compliance) = franchise agreement review meeting. Develop a franchisee support programme that provides additional training, mentoring, or operational assistance for struggling partners. Build a franchise performance dashboard tracking compliance scores, financial performance, and customer metrics across all franchise locations.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Conduct annual franchise relationship reviews combining compliance data with financial performance and franchisee satisfaction. Create a franchisee advisory council where top-performing partners contribute to brand development and SOP improvement. Benchmark franchise performance against company-owned sites. Engage external auditors for annual independent franchise compliance reviews. Review and update the franchise agreement compliance requirements annually to reflect evolving standards."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Compile all franchise agreement obligations into a single reference document",
+        "Create a franchise compliance audit scorecard covering brand, operations, finance, and legal",
+        "Define scoring criteria for full, partial, and non-compliance",
+        "Share the scorecard with all franchisees for transparency",
+        "Schedule the first quarterly audit cycle",
+        "Assign audit responsibilities to area managers or a dedicated compliance team",
+        "Establish a secure system for storing audit records"
+      ],
+      "responsible": "Franchise Director, Operations Director"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Implement a quarterly franchise audit cycle",
+        "Create a tiered response framework for non-compliance",
+        "Develop a franchisee support programme for struggling partners",
+        "Build a franchise performance dashboard",
+        "Train auditors on consistent scoring methodology",
+        "Create a formal warning and remediation plan template",
+        "Integrate franchise audits with brand audits to reduce audit fatigue"
+      ],
+      "responsible": "Franchise Director, Area Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct annual franchise relationship reviews",
+        "Establish a franchisee advisory council",
+        "Benchmark franchise performance against company-owned sites",
+        "Engage external auditors for annual independent reviews",
+        "Review and update compliance requirements annually",
+        "Share best practices from top-performing franchisees across the network"
+      ],
+      "responsible": "Franchise Director, CEO"
+    }
+  },
+  "deliverables": [
+    "Franchise Compliance Reference Document",
+    "Franchise Compliance Audit Scorecard",
+    "Tiered Non-Compliance Response Framework",
+    "Franchise Performance Dashboard",
+    "Annual Franchise Relationship Review template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T192-01",
+        "tool_name": "Franchise Compliance Audit Scorecard",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Franchise Director",
+        "description": "Comprehensive scorecard covering all franchise agreement obligations organised into brand, operations, financial, and legal categories with clear scoring criteria for each item."
+      },
+      {
+        "tool_id": "T192-02",
+        "tool_name": "Franchise Non-Compliance Response Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Franchise Director",
+        "description": "Template for documenting non-compliance findings, assigned tier level, required corrective actions, deadlines, and escalation pathway if issues are not resolved."
+      },
+      {
+        "tool_id": "T192-03",
+        "tool_name": "Franchise Performance Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Franchise Director",
+        "description": "Dashboard tracking compliance scores, financial performance, customer metrics, and trend data across all franchise locations."
+      },
+      {
+        "tool_id": "T192-04",
+        "tool_name": "Franchisee Support Plan Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Area Manager",
+        "description": "Structured support plan for franchisees who need additional assistance: areas of concern, support actions (training, mentoring, operational assistance), milestones, and review dates."
+      },
+      {
+        "tool_id": "T192-05",
+        "tool_name": "Annual Franchise Relationship Review Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Franchise Director",
+        "description": "Annual review template combining compliance data, financial performance, customer metrics, and franchisee satisfaction into a comprehensive relationship assessment."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Audits are conducted inconsistently, with some franchisees receiving more scrutiny than others",
+    "Non-compliance is identified but never escalated, creating a culture of tolerance for poor standards",
+    "The audit process is so adversarial that it damages the franchisor-franchisee relationship",
+    "Financial compliance checks are superficial, allowing inaccurate royalty calculations to persist"
+  ],
+  "kpis": [
+    "All franchise locations audited at least quarterly with scores documented",
+    "Average franchise compliance score above 85% across the network",
+    "Non-compliance remediation plans completed within agreed timescales in 90% of cases",
+    "Franchise partner satisfaction with support above 7 out of 10 in annual survey"
+  ],
+  "dependencies": [
+    "B187",
+    "B188"
+  ],
+  "constraints": [
+    "Franchise agreement must clearly define audit rights and access for the franchisor",
+    "Audit findings must be documented and stored securely for potential legal proceedings",
+    "Franchisee data protection rights must be respected in audit processes"
+  ],
+  "time_load": {
+    "L1": "6 hours (compliance document compilation, scorecard creation)",
+    "L2": "4 hours/quarter per franchise location (audit, reporting, follow-up)",
+    "L3": "8 hours/year (annual reviews, advisory council, external audit coordination)"
+  },
+  "review_protocol": "Quarterly franchise compliance audits at every location. Monthly review of remediation plan progress for non-compliant sites. Annual franchise relationship review with each partner. Annual review of compliance standards and scorecard.",
+  "meta": {
+    "summary_for_humans": "This block establishes a structured audit framework for franchise compliance covering brand standards, operations, financial reporting, and legal obligations, with a tiered response system for non-compliance.",
+    "implementation_risks": [
+      "Overly aggressive auditing can alienate franchisees and damage the relationship",
+      "Under-resourced audit programmes produce superficial assessments that miss real issues",
+      "Franchise agreements that do not clearly define audit rights limit the franchisor's ability to enforce compliance"
+    ],
+    "notes_for_engine": "Chain-only block, specifically for franchise operations. Depends on B187 (brand audits) and B188 (SOP library). Activate when a franchise model is in operation or being planned.",
+    "tags": [
+      "franchise",
+      "compliance",
+      "audit",
+      "brand_standards",
+      "multi_site",
+      "chain",
+      "governance",
+      "franchise_management"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "chain_cafe",
+      "franchise_cafe"
+    ],
+    "team_size_min": 5,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

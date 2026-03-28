@@ -1,0 +1,167 @@
+{
+  "block_id": "B050",
+  "name": "Food Prep Standards & Consistency",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Establishes standardised food preparation procedures that ensure every dish and food item is prepared consistently, safely, and to the cafe's quality standard regardless of who is in the kitchen. This block covers prep workflows, recipe adherence, presentation standards, and the documentation needed to maintain consistency across staff and shifts.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Document all food preparation procedures in written prep guides with step-by-step instructions",
+      "Define quality standards for each food item including appearance, portion size, and plating",
+      "Establish daily and weekly prep schedules that ensure ingredients are ready before service",
+      "Train all kitchen and food-handling staff to follow prep guides precisely",
+      "Create a quality check system so food leaving the kitchen meets the standard every time"
+    ],
+    "secondary_objectives": [
+      "Reduce food waste from preparation errors and inconsistent portioning",
+      "Enable new staff to achieve competency quickly through clear documentation",
+      "Maintain food safety standards during preparation (linked to D01 food safety blocks)",
+      "Support menu costing accuracy by ensuring recipes are followed as specified"
+    ]
+  },
+  "why_this_matters": "Food quality is the second pillar of a cafe's reputation after coffee. Customers who visit for great coffee will leave if the food is inconsistent, and customers who come for food will not return if their favourite sandwich tastes different every time. Consistency is the hardest thing to achieve in a cafe kitchen because, unlike an espresso shot that follows a measurable recipe, food preparation involves subjective judgement — how much filling is 'enough', how thick should the avocado be sliced, how golden is 'golden brown'? Without documented standards, every member of the kitchen team interprets the menu differently. The toastie made by the morning kitchen porter will be materially different from the one made by the afternoon barista. Regulars notice this immediately, and inconsistency erodes the trust that brings them back. In a UK cafe context, where food margins are often tight (typically 65-70% gross margin on food), preparation waste from over-portioning, incorrect technique, or failed batches directly impacts profitability. A chef who uses 20% more butter than the recipe specifies is not being generous — they are destroying the cafe's margins. Equally, a staff member who under-portions creates a customer complaint. Documented prep standards solve both problems by defining exactly what 'correct' looks like. They also serve as training tools, reducing the time new staff need to become productive, and as quality defence during busy periods when the temptation is to cut corners.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: List every food item currently on the menu. For each item, write down the preparation method as the most experienced kitchen person currently does it. This does not need to be formal — handwritten notes are fine at this stage. Include: ingredients, quantities, preparation steps, cooking times and temperatures, assembly order, and presentation description. Photograph each finished dish from above as a visual reference. Focus first on the five best-selling food items — these are the ones where consistency matters most because customers order them repeatedly. Create simple prep cards (A5 laminated cards) for these top five items and post them in the kitchen. Each card should show: item name, ingredients with exact quantities, step-by-step preparation, cooking parameters, and a reference photo of the finished plate. Week 2: Observe all kitchen staff preparing the top five items and compare their output to the prep card. Note any deviations — are they using different quantities, different techniques, or different presentation? Address deviations immediately through demonstration rather than criticism: show how the prep card method produces the best result, and explain why consistency matters. Establish a daily prep schedule: a checklist of items that must be prepared before service begins (e.g., soup heated, sandwich fillings portioned, salads dressed, cakes sliced and plated). Post this schedule in the kitchen.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a complete Prep Standards Manual covering every food item on the menu. Each entry should include: ingredient list with exact weights and measures, step-by-step preparation instructions, cooking times and temperatures, assembly and plating instructions with photos, portion size specifications, allergen information, shelf life once prepared, and storage requirements. Create a daily and weekly prep schedule template that accounts for anticipated demand (busier on Saturdays, quieter on Tuesdays) and adjusts batch sizes accordingly. Train all kitchen staff through the manual — each person should prepare every item on the menu at least once under supervision, with their output compared to the standard. Introduce a 'pass' check: before any food item leaves the kitchen, it passes a visual quality check against the prep card photo. During busy service, this is a quick glance; during training, it is a detailed comparison. Begin tracking food costs versus theoretical cost (what the prep cards specify) — any gap indicates either portioning errors, waste, or theft. This data from B055 portion control feeds directly into this block. Establish a recipe change process: no food item preparation should be changed without updating the prep card, retraining the team, and recalculating the cost. Ad hoc changes create inconsistency.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Food prep consistency should now be ingrained in kitchen culture. Introduce quarterly menu reviews where each item is prepared, tasted, and assessed against the original standard — has quality drifted? Are there opportunities to improve? Conduct blind taste tests where the owner or manager tastes the same dish prepared by different staff members and assesses consistency. Share food cost variance data with the kitchen team so they understand the financial impact of their portioning. Develop advanced prep skills: introduce batch cooking techniques that maintain quality and efficiency, cross-training so every kitchen staff member can prepare every item, and mise en place discipline. Create a customer feedback loop: track food-specific complaints and compliments and connect them to specific prep practices. Celebrate consistency wins — when a mystery customer rates the food highly, share it with the team."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "List every food item on the menu with current preparation method",
+        "Create prep cards for the five best-selling food items with photos",
+        "Post prep cards in the kitchen at eye level",
+        "Observe all kitchen staff preparing top five items and address deviations",
+        "Establish a daily prep schedule checklist for pre-service preparation",
+        "Photograph each finished dish as a visual quality reference",
+        "Brief the team on why consistency matters for customer retention and profitability"
+      ],
+      "responsible": "Manager, Kitchen"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a complete Prep Standards Manual covering every menu item",
+        "Create daily and weekly prep schedule templates adjusted for demand patterns",
+        "Train all kitchen staff through the manual with supervised preparation of every item",
+        "Introduce the 'pass' quality check before food leaves the kitchen",
+        "Begin tracking food costs against theoretical recipe cost",
+        "Establish a recipe change process requiring prep card updates and team retraining",
+        "Link allergen information to every prep card"
+      ],
+      "responsible": "Manager, Kitchen"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly menu reviews assessing quality drift",
+        "Introduce blind consistency taste tests across kitchen staff",
+        "Share food cost variance data with the kitchen team",
+        "Develop advanced batch cooking and mise en place skills",
+        "Create a customer feedback loop connecting food comments to prep practices",
+        "Cross-train all kitchen staff on every menu item"
+      ],
+      "responsible": "Manager, Kitchen, Owner"
+    }
+  },
+  "deliverables": [
+    "Prep Standards Manual covering all menu items",
+    "Top Five Items Prep Cards (A5, laminated, with photos)",
+    "Daily Prep Schedule Checklist",
+    "Weekly Prep Planning Template",
+    "Food Quality Pass Check guidelines"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T050-01",
+        "tool_name": "Food Item Prep Card",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Kitchen",
+        "description": "A5 laminated card for each food item showing ingredients, exact quantities, step-by-step preparation, cooking parameters, plating instructions, reference photo, and allergen information."
+      },
+      {
+        "tool_id": "T050-02",
+        "tool_name": "Daily Prep Schedule Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Kitchen",
+        "description": "Daily checklist of all items to be prepared before service, with quantities adjusted for anticipated demand. Signed off by the kitchen opener when prep is complete."
+      },
+      {
+        "tool_id": "T050-03",
+        "tool_name": "Prep Standards Manual",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Complete manual documenting preparation procedures for every food item on the menu, including recipes, photos, allergen data, storage requirements, and shelf life information."
+      },
+      {
+        "tool_id": "T050-04",
+        "tool_name": "Food Quality Pass Check Sheet",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Kitchen",
+        "description": "Quick-reference checklist for the visual quality check before food leaves the kitchen: correct portion, proper presentation, correct temperature, and matches the prep card reference photo."
+      },
+      {
+        "tool_id": "T050-05",
+        "tool_name": "Food Cost Variance Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly report comparing actual food costs against theoretical costs based on prep card recipes and sales volume. Highlights variance by item and identifies portioning, waste, or procurement issues."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Prep cards are created but not followed — staff revert to their own methods under time pressure",
+    "The prep manual becomes outdated as the menu changes but documentation is not updated",
+    "Quality checks are skipped during peak service when speed takes priority",
+    "New staff are shown the ropes verbally rather than trained through the documented standards"
+  ],
+  "kpis": [
+    "100% of menu items have documented prep cards with photos and allergen information",
+    "Food cost variance below 5% of theoretical cost",
+    "Zero food quality complaints attributable to preparation inconsistency per week",
+    "All kitchen staff demonstrate competency on every menu item within their first month"
+  ],
+  "dependencies": ["B055"],
+  "constraints": [
+    "Prep cards must be updated immediately when recipes or suppliers change",
+    "Kitchen staff must be involved in creating prep cards — top-down imposition creates resistance",
+    "Allergen information on prep cards must be verified against supplier data sheets"
+  ],
+  "time_load": {
+    "L1": "6 hours (menu listing, top five prep card creation, photography, team observation)",
+    "L2": "15 hours (full manual development, training sessions, system setup)",
+    "L3": "3 hours/month (reviews, consistency tests, cost analysis)"
+  },
+  "review_protocol": "Daily completion of prep schedule checklist. Weekly observation of prep card adherence by manager. Monthly food cost variance analysis. Quarterly menu review with consistency assessment. Prep cards updated immediately when any recipe changes.",
+  "meta": {
+    "summary_for_humans": "This block establishes standardised food preparation procedures ensuring every dish is made consistently, safely, and to the cafe's quality standard. It covers prep cards with photos, daily prep schedules, staff training through documentation, and quality checks before food leaves the kitchen.",
+    "implementation_risks": [
+      "Creating prep cards is time-consuming — prioritise the highest-volume items first",
+      "Kitchen staff may feel micromanaged if prep standards are imposed rather than collaboratively developed",
+      "Photography of food standards requires decent lighting and presentation skills"
+    ],
+    "notes_for_engine": "Activate for any cafe serving food. This is a foundational block — without prep consistency, menu costing (B056), waste tracking (B057), and food excellence (B053) cannot function reliably. Flag if signals indicate food quality complaints, cost overruns, or new kitchen staff without documented training materials.",
+    "tags": ["food_quality", "preparation", "consistency", "recipes", "kitchen", "standards", "training", "cost_control"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "blk_define_wait_quote_rules",
+  "name": "Define wait quote rules",
+  "description": "Define the decision rules for quoting waits, protecting buffer, tightening promises, and escalating when seating readiness slips.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: constrain promises so the front door stops selling false timing",
+  "updated_at": "2026-03-14T00:24:42.975735Z",
+  "effort_hours": 2.0,
+  "dependencies": [],
+  "tool_ids": [
+    "tool_wait_quote_guide"
+  ],
+  "response_pattern_ids": [
+    "rp_host_pacing_reset"
+  ],
+  "entry_conditions": [
+    "Guests are surprised by quoted waits or seating timing.",
+    "Hosts currently rely on feel rather than an explicit quoting logic."
+  ],
+  "contraindications": [
+    "Do not define rules using ideal table-turn assumptions that the venue does not actually achieve.",
+    "Do not create a rule set that only the strongest host can interpret."
+  ],
+  "owner_role": "venue_manager",
+  "expected_time_to_effect_days": 1,
+  "proof_of_completion": [
+    "Quote ranges, buffers, release rules, and escalation triggers are written in plain language.",
+    "Hosts can explain when to widen, hold, or reset promised waits.",
+    "The quote guide has been used live in at least one pressured service period."
+  ],
+  "successor_block_ids": [
+    "blk_host_reservation_huddle"
+  ],
+  "service_module_ids": [
+    "intake_and_demand",
+    "promise_and_expectations"
+  ],
+  "failure_family_ids": [
+    "expectation_setting_failure",
+    "workflow_design_failure",
+    "demand_capacity_mismatch"
+  ]
+}

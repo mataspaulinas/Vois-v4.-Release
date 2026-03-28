@@ -1,0 +1,165 @@
+{
+  "block_id": "B033",
+  "name": "Complaint Resolution Protocol",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Provides a structured, empathetic protocol for handling customer complaints and service failures, turning negative experiences into opportunities for service recovery that can actually strengthen customer loyalty. This block ensures complaints are resolved consistently, professionally, and in a way that retains the customer.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a step-by-step complaint resolution protocol that any staff member can follow confidently",
+      "Empower front-line staff to resolve common complaints immediately without needing manager approval",
+      "Establish a service recovery toolkit: replacements, refunds, complimentary items, and genuine apology",
+      "Document complaints to identify patterns and address root causes rather than just symptoms",
+      "Train the team to view complaints as gifts — valuable feedback that most unhappy customers never give"
+    ],
+    "secondary_objectives": [
+      "Achieve the 'service recovery paradox' — customers who have a complaint well-resolved become more loyal than those who never had a problem",
+      "Reduce negative online reviews by resolving issues before the customer leaves",
+      "Build a culture where complaints are welcomed rather than feared"
+    ]
+  },
+  "why_this_matters": "Research consistently shows that for every customer who complains, 26 others leave without saying anything. A complaint is not a problem — it is an opportunity. The customer who complains is giving the cafe a chance to fix the issue and retain their loyalty. The customers who leave silently are the real problem — they take their revenue to a competitor and often tell friends and social media about their bad experience without ever giving the cafe a chance to respond. The concept of the 'service recovery paradox' is well-documented in hospitality research: a customer whose complaint is resolved quickly and generously often becomes more loyal than a customer who never had a problem. This is because the resolution demonstrates that the cafe genuinely cares — it is easy to provide good service when everything goes right, but how a business responds when things go wrong reveals its true character. For UK cafes, common complaints include: cold drinks, wrong orders, slow service, rude staff, dirty tables, and billing errors. Each of these is a fixable problem if handled correctly, but a relationship-ending problem if handled poorly. A defensive response ('It was not that cold'), a dismissive response ('Sorry, we are really busy'), or a slow response (asking the customer to wait while a manager is found) all escalate rather than resolve the complaint. The cost of complaint resolution is trivially small compared to the value of the customer relationship. A replacement drink costs the cafe approximately £1.00-1.50 in ingredients. A complimentary pastry costs even less. Yet this tiny investment protects a customer relationship that may be worth thousands of pounds over time (see B032 CLV).",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Teach every team member the LAST framework for complaint resolution. LAST stands for: Listen (let the customer explain the problem without interrupting, show you are taking them seriously), Apologise (a genuine, specific apology — 'I am really sorry your coffee was not hot enough, that is not the standard we aim for'), Solve (fix the problem immediately — replace the drink, offer an alternative, provide a refund or complimentary item), and Thank ('Thank you for letting us know — it helps us get better'). Print the LAST framework on a card and post it near the till and in the kitchen. Role-play three common complaint scenarios with every team member: a cold drink, a wrong order, and a long wait. Practise until the response feels natural. Empower every team member to replace a drink or offer a complimentary item without seeking manager approval. The empowerment threshold can be limited — perhaps up to £5 in value — but the point is that the front-line team can act immediately. Speed of resolution is the biggest factor in whether a complaint strengthens or damages the relationship. Week 2: Create a simple Complaint Log — a notebook or form where every complaint is recorded: date, time, what happened, what the customer said, how it was resolved, and by whom. This is not about blame — it is about learning. Review the log daily to ensure all complaints were resolved appropriately.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Complaint Resolution SOP covering: the LAST framework, empowerment thresholds (what staff can resolve without manager approval), escalation procedures (when to involve the manager), and post-complaint follow-up. Create a Service Recovery Toolkit defining the resolution options available for each complaint type: wrong drink (immediate replacement plus complimentary item), cold drink (replacement and apology), slow service (acknowledgement and complimentary item), billing error (correction and apology), rude staff (manager apology, investigation, complimentary item). Analyse the Complaint Log monthly: what are the most common complaints? Are they concentrated at particular times, with particular staff, or around particular menu items? For each recurring complaint, implement a root cause fix: if cold drinks are common, check cup temperature and espresso machine calibration; if wrong orders are frequent, strengthen order accuracy (B025). Train the team on handling difficult complainers: customers who are angry, unreasonable, or aggressive. Key principles: stay calm, do not take it personally, de-escalate with empathy, and if a customer becomes abusive, the manager takes over. Establish a follow-up practice for serious complaints: if a customer had a particularly poor experience, consider a personal follow-up (a brief note or email) to confirm the issue has been addressed and invite them back. By Week 8, every team member should handle complaints confidently using the LAST framework.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Complaints should be seen as the most valuable form of customer feedback. Track the service recovery rate: what percentage of complainers return? If the LAST framework is working, the majority should. Conduct quarterly complaint trend analysis and present findings to the team. Connect complaint data with online reviews: are the same issues appearing in both channels? If so, the root cause fix is not working. Set a complaint resolution target: 100% of complaints resolved within the customer's visit, with zero complaints requiring manager intervention for basic issues. Share stories of exceptional complaint resolution at team meetings — when a team member turned an angry customer into a loyal advocate, that is worth celebrating. Review the empowerment threshold annually: can it be increased? Can the team be trusted to resolve higher-value issues without approval? Greater empowerment means faster resolution and better outcomes."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Teach every team member the LAST framework: Listen, Apologise, Solve, Thank",
+        "Print and post the LAST framework near the till and in the kitchen",
+        "Role-play three common complaint scenarios with every team member",
+        "Empower all staff to replace drinks or offer complimentary items up to a defined threshold",
+        "Create a Complaint Log for recording every complaint and resolution",
+        "Review the Complaint Log daily to ensure appropriate resolution",
+        "Brief the team: complaints are gifts, not threats"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Complaint Resolution SOP covering the LAST framework and escalation procedures",
+        "Create a Service Recovery Toolkit defining resolution options by complaint type",
+        "Analyse the Complaint Log monthly to identify patterns and root causes",
+        "Implement root cause fixes for recurring complaints",
+        "Train staff on handling difficult or aggressive complainers",
+        "Establish a follow-up practice for serious complaints",
+        "Track resolution effectiveness: are complainers returning?"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track the service recovery rate: percentage of complainers who return",
+        "Conduct quarterly complaint trend analysis",
+        "Connect complaint data with online review themes",
+        "Share exceptional complaint resolution stories at team meetings",
+        "Review and increase empowerment thresholds annually"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "LAST Framework Reference Card (laminated, posted at service points)",
+    "Complaint Resolution SOP",
+    "Service Recovery Toolkit (resolution options by complaint type)",
+    "Complaint Log template",
+    "Monthly Complaint Analysis Report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T033-01",
+        "tool_name": "LAST Framework Reference Card",
+        "level": "L1",
+        "format": "guide",
+        "owner_role": "All Staff",
+        "description": "Laminated card posted at service points showing the LAST framework: Listen, Apologise, Solve, Thank — with brief guidance for each step."
+      },
+      {
+        "tool_id": "T033-02",
+        "tool_name": "Complaint Log",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Daily log for recording every customer complaint: date, time, nature of complaint, customer's words, resolution offered, staff member who resolved it, and customer's response."
+      },
+      {
+        "tool_id": "T033-03",
+        "tool_name": "Complaint Resolution SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering the LAST framework, empowerment thresholds, escalation procedures, difficult customer handling, follow-up practices, and documentation."
+      },
+      {
+        "tool_id": "T033-04",
+        "tool_name": "Service Recovery Toolkit",
+        "level": "L2",
+        "format": "guide",
+        "owner_role": "Manager",
+        "description": "Guide defining specific resolution options for each complaint type: replacements, refunds, complimentary items, apology approaches, and follow-up actions."
+      },
+      {
+        "tool_id": "T033-05",
+        "tool_name": "Quarterly Complaint Trend Analysis",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Quarterly analysis of complaint patterns: volume, categories, time distribution, root causes, resolution effectiveness, recovery rate, and comparison with online review themes."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Staff become defensive when confronted with a complaint, escalating the situation rather than resolving it",
+    "The empowerment threshold is set too low, so staff have to wait for a manager while the customer's frustration grows",
+    "Complaints are logged but patterns are not analysed, so root causes persist",
+    "The LAST framework is trained once but not practised, so staff revert to instinctive (often defensive) responses under pressure"
+  ],
+  "kpis": [
+    "100% of complaints resolved within the customer's visit",
+    "Complaint resolution satisfaction rate above 90% (based on customer response at resolution)",
+    "Service recovery rate: at least 70% of complainers return within 4 weeks",
+    "Monthly complaint volume trending downwards as root causes are addressed"
+  ],
+  "dependencies": ["B034"],
+  "constraints": [
+    "Staff empowerment thresholds must be defined clearly so team members know what they can offer",
+    "The Complaint Log must be non-punitive — if staff fear blame, they will not log complaints",
+    "The LAST framework must be regularly practised, not just read once"
+  ],
+  "time_load": {
+    "L1": "3 hours (framework training, role-plays, log setup, empowerment briefing)",
+    "L2": "5 hours (SOP development, toolkit creation, pattern analysis, difficult customer training)",
+    "L3": "2 hours/quarter (trend analysis, recovery rate tracking, empowerment review)"
+  },
+  "review_protocol": "Daily Complaint Log review by shift manager. Weekly complaint pattern check. Monthly complaint trend analysis. Quarterly comprehensive complaint review with root cause assessment.",
+  "meta": {
+    "summary_for_humans": "This block provides a structured LAST framework (Listen, Apologise, Solve, Thank) for handling customer complaints, empowers staff to resolve issues immediately, and tracks complaints to identify and fix root causes. It turns complaints from threats into retention opportunities.",
+    "implementation_risks": [
+      "Staff may fear complaints even with training — regular role-play builds confidence",
+      "Without empowerment, staff are stuck waiting for managers, which worsens the customer's experience",
+      "Complaint logging only works in a no-blame culture — leadership must model this consistently"
+    ],
+    "notes_for_engine": "Activate for all cafes. Flag as urgent if signals indicate unresolved complaints, negative online reviews, customer confrontations, or staff who are defensive about feedback.",
+    "tags": ["customer_experience", "complaints", "service_recovery", "LAST", "resolution", "empowerment", "feedback", "retention"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

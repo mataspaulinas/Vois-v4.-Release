@@ -1,0 +1,111 @@
+[
+  {
+    "failure_mode_id": "FM064",
+    "score": 1.0,
+    "domain_id": "D07",
+    "module_id": "",
+    "signal_ids": [
+      "S083",
+      "S104"
+    ],
+    "title": "Payroll cost management failure",
+    "severity": "high",
+    "description": "Payroll cost management failure"
+  },
+  {
+    "failure_mode_id": "FM011",
+    "score": 0.8,
+    "domain_id": "D02",
+    "module_id": "",
+    "signal_ids": [
+      "S019"
+    ],
+    "title": "Queue management and wait time failure",
+    "severity": "high",
+    "description": "Queue management and wait time failure"
+  },
+  {
+    "failure_mode_id": "FM097",
+    "score": 0.8,
+    "domain_id": "D05",
+    "module_id": "M14",
+    "signal_ids": [
+      "S071"
+    ],
+    "title": "Operational discipline and daily routine failure",
+    "severity": "high",
+    "description": "Operational discipline and daily routine failure"
+  },
+  {
+    "failure_mode_id": "FM040",
+    "score": 0.8,
+    "domain_id": "D05",
+    "module_id": "",
+    "signal_ids": [
+      "S083"
+    ],
+    "title": "Morning rush and peak management failure",
+    "severity": "high",
+    "description": "Morning rush and peak management failure"
+  },
+  {
+    "failure_mode_id": "FM059",
+    "score": 0.8,
+    "domain_id": "D07",
+    "module_id": "",
+    "signal_ids": [
+      "S099"
+    ],
+    "title": "Revenue per hour and sales productivity failure",
+    "severity": "high",
+    "description": "Revenue per hour and sales productivity failure"
+  },
+  {
+    "failure_mode_id": "FM042",
+    "score": 0.7,
+    "domain_id": "D05",
+    "module_id": "",
+    "signal_ids": [
+      "S019"
+    ],
+    "title": "Ticket time and service speed failure",
+    "severity": "high",
+    "description": "Ticket time and service speed failure"
+  },
+  {
+    "failure_mode_id": "FM032",
+    "score": 0.7,
+    "domain_id": "D04",
+    "module_id": "",
+    "signal_ids": [
+      "S071"
+    ],
+    "title": "Team communication and meeting failure",
+    "severity": "medium",
+    "description": "Team communication and meeting failure"
+  },
+  {
+    "failure_mode_id": "FM060",
+    "score": 0.7,
+    "domain_id": "D07",
+    "module_id": "",
+    "signal_ids": [
+      "S099"
+    ],
+    "title": "Average transaction value growth failure",
+    "severity": "medium",
+    "description": "Average transaction value growth failure"
+  },
+  {
+    "failure_mode_id": "FM065",
+    "score": 0.7,
+    "domain_id": "D07",
+    "module_id": "",
+    "signal_ids": [
+      "S104"
+    ],
+    "title": "Cash flow and budgeting failure",
+    "severity": "high",
+    "description": "Cash flow and budgeting failure"
+  }
+]

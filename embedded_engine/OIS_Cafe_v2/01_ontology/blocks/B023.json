@@ -1,0 +1,165 @@
+{
+  "block_id": "B023",
+  "name": "Queue Communication Experience",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Transforms the waiting experience for customers in the queue by proactively communicating wait times, maintaining visual progress, and creating small positive moments that reduce perceived wait time. This block ensures that even when customers wait, they feel informed, valued, and engaged.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Reduce perceived wait time through proactive communication and acknowledgement",
+      "Ensure every customer in the queue receives eye contact and verbal acknowledgement within 30 seconds",
+      "Provide visible indicators of queue progress so customers can gauge their wait",
+      "Create small positive moments during the wait — menu suggestions, daily specials, friendly conversation",
+      "Train staff to read queue mood and intervene when frustration is building"
+    ],
+    "secondary_objectives": [
+      "Convert waiting time into browsing time by presenting the menu and daily offerings",
+      "Reduce complaints and negative reviews related to waiting",
+      "Differentiate the cafe from competitors through superior queue experience"
+    ]
+  },
+  "why_this_matters": "Psychological research consistently shows that perceived wait time matters more than actual wait time. A customer who waits 5 minutes while being ignored will perceive the wait as much longer than a customer who waits 7 minutes but is acknowledged, informed, and engaged. The single most important factor in queue satisfaction is the initial acknowledgement — being seen and recognised. In UK cafes, staff focused on making drinks or processing orders often fail to acknowledge customers who are waiting, creating a frustrating experience where the customer feels invisible. The second most important factor is communication — knowing how long the wait will be and seeing progress. A queue that does not visibly move, or where there is no indication of when service will happen, creates anxiety and frustration that disproportionately affects the customer's overall experience. Studies by the Service Research Center suggest that unexplained waits feel 36% longer than explained ones. For cafes, the queue is often the customer's first impression of the business. A well-managed queue signals competence and care; a chaotic or silent queue signals disorganisation. Given that many UK cafe customers are grabbing coffee before work, their emotional state in the queue colours their perception of the entire brand. A few simple communication practices can transform the queue from a negative experience into a neutral or even positive one.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Establish the 30-Second Acknowledgement Rule: every customer who joins the queue must receive eye contact and a verbal acknowledgement within 30 seconds of arrival. This can be as simple as the barista looking up, making eye contact, and saying 'Hi, I will be with you in just a moment.' This single practice has the greatest impact on perceived wait time of any queue management technique. Assign the acknowledgement responsibility to the person on the till — even if they are in the middle of processing an order, they can pause for 2 seconds to look up and acknowledge. If the queue extends beyond the till operator's line of sight, any team member who spots a waiting customer gives the acknowledgement. Post a reminder at the till: 'Look up. Make eye contact. Acknowledge.' Week 2: Introduce the Queue Information Practice: when more than 3 people are waiting, the till operator or a floor staff member provides a brief update: 'We have got about a 3-minute wait right now — it is moving quickly.' This sets expectations and reduces anxiety. Train staff to read queue body language — customers checking their watches, sighing, looking at their phones impatiently, or edging towards the door are showing frustration. When these signals appear, proactive communication is essential: 'Thank you for your patience — we are working as fast as we can and you are next.' Begin noting on the daily log any instances where queue communication was particularly good or where it was missed, to build awareness.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Queue Communication SOP that codifies the acknowledgement rule, information practice, and frustration intervention techniques. Include specific phrases staff can use — not a rigid script, but a bank of natural-sounding options they can draw from. Create a 'queue experience' training module covering: the psychology of waiting, the 30-second rule, reading body language, providing time estimates, and recovering from queue frustration. Train all front-of-house staff. Consider physical queue improvements: Is the queue layout clear? Do customers know where to stand? Is there a menu board visible from every point in the queue? Can you add a daily specials board or pastry display along the queue path to give customers something engaging to look at while waiting? Implement a 'queue greeter' role during peak periods: one team member stands at the entrance of the queue, acknowledges arriving customers, answers menu questions, and takes allergen information in advance. This dramatically improves the queue experience and reduces order-taking time when the customer reaches the till. Track customer feedback specifically related to waiting — look for mentions of queue experience in Google reviews, feedback cards, or social media. By Week 8, the 30-second acknowledgement rule should be automatic for all staff.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Queue communication should be so ingrained that it happens without conscious thought. Conduct quarterly mystery shopper queue assessments: someone joins the queue and evaluates the experience against the SOP — acknowledgement time, communication quality, staff demeanour, and overall impression. Review queue feedback trends quarterly. Explore technology solutions: a queue position display, estimated wait time screen, or a buzzer/text system for longer waits. Experiment with queue entertainment — a chalk board with trivia, a book swap shelf, or curated playlist that is noticeable from the queue area. Share positive customer feedback about the queue experience with the team — when a Google review mentions 'friendly staff even though it was busy,' that is a direct result of this block."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Establish the 30-Second Acknowledgement Rule for every customer",
+        "Post a reminder at the till: 'Look up. Make eye contact. Acknowledge.'",
+        "Assign acknowledgement responsibility to the till operator and backup team",
+        "Introduce the Queue Information Practice when more than 3 people are waiting",
+        "Train staff to read queue frustration signals: watch-checking, sighing, edging out",
+        "Practise proactive communication phrases during quiet periods",
+        "Note queue communication successes and misses in the daily log"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Queue Communication SOP with phrases and techniques",
+        "Create a queue experience training module covering psychology and body language",
+        "Review and improve physical queue layout, menu visibility, and browsing opportunities",
+        "Implement a queue greeter role during peak periods",
+        "Track customer feedback specifically related to queue and waiting experience",
+        "Train all front-of-house staff on queue communication techniques",
+        "Test and refine queue communication approaches based on customer response"
+      ],
+      "responsible": "Manager, Front-of-House Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly mystery shopper queue experience assessments",
+        "Review queue-related customer feedback trends quarterly",
+        "Explore technology solutions: wait time displays, buzzer systems",
+        "Experiment with queue entertainment and engagement features",
+        "Share positive queue experience feedback with the team"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "30-Second Acknowledgement Rule (staff reference card)",
+    "Queue Communication SOP",
+    "Queue Communication Phrase Bank",
+    "Queue Experience Training Module",
+    "Quarterly Queue Mystery Shopper Report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T023-01",
+        "tool_name": "30-Second Acknowledgement Rule Card",
+        "level": "L1",
+        "format": "guide",
+        "owner_role": "Front-of-House Staff",
+        "description": "Small laminated card posted at each till and visible to all front-of-house staff, reminding them to acknowledge every queuing customer within 30 seconds with eye contact and words."
+      },
+      {
+        "tool_id": "T023-02",
+        "tool_name": "Queue Communication Phrase Bank",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Front-of-House Staff",
+        "description": "Bank of natural-sounding phrases for queue acknowledgement, time estimates, and frustration recovery, giving staff options to sound genuine rather than scripted."
+      },
+      {
+        "tool_id": "T023-03",
+        "tool_name": "Queue Communication SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering the 30-second rule, information practice, body language reading, frustration intervention, queue greeter role, and physical queue management."
+      },
+      {
+        "tool_id": "T023-04",
+        "tool_name": "Queue Experience Training Module",
+        "level": "L2",
+        "format": "guide",
+        "owner_role": "Manager",
+        "description": "Training module covering the psychology of waiting, practical communication techniques, body language recognition, and role-play exercises for queue scenarios."
+      },
+      {
+        "tool_id": "T023-05",
+        "tool_name": "Queue Mystery Shopper Assessment",
+        "level": "L3",
+        "format": "scorecard",
+        "owner_role": "Owner",
+        "description": "Scorecard for quarterly mystery shopper queue assessments: acknowledgement timing, communication quality, staff demeanour, queue layout, and overall experience rating."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Staff are so focused on drink preparation that they never look up to acknowledge waiting customers",
+    "Time estimates are given inaccurately (promising 2 minutes when it will be 5), damaging trust when expectations are not met",
+    "Queue communication is maintained during quiet periods but breaks down during the rush when it matters most",
+    "The queue greeter role is only assigned when the manager is present, creating inconsistent experiences"
+  ],
+  "kpis": [
+    "100% of queuing customers acknowledged within 30 seconds of arrival",
+    "Queue communication information provided when more than 3 customers are waiting",
+    "Customer feedback mentioning positive queue experience at least monthly",
+    "Mystery shopper queue scores averaging 4 out of 5 or above"
+  ],
+  "dependencies": ["B021"],
+  "constraints": [
+    "The 30-second rule requires at least one team member with visibility of the queue at all times",
+    "Time estimates must be honest — overestimate rather than underestimate to avoid disappointment",
+    "Queue communication must not slow down actual service"
+  ],
+  "time_load": {
+    "L1": "2 hours (rule introduction, reminder cards, initial practice)",
+    "L2": "5 hours (SOP development, training module, queue layout review, greeter role setup)",
+    "L3": "1 hour/quarter (mystery shopper assessments, feedback review)"
+  },
+  "review_protocol": "Daily observation by shift manager during peak periods. Weekly review of queue communication log entries. Monthly customer feedback analysis for queue mentions. Quarterly mystery shopper queue assessment.",
+  "meta": {
+    "summary_for_humans": "This block transforms the queue from a frustrating wait into a managed experience through a 30-second acknowledgement rule, proactive time updates, body language reading, and queue greeter deployment during peak periods. It reduces perceived wait time and builds customer goodwill.",
+    "implementation_risks": [
+      "The 30-second rule is simple to state but hard to maintain during intense rushes",
+      "Staff may feel self-conscious about queue communication — role-play builds confidence",
+      "Queue improvements require the whole team to buy in — one person ignoring the queue undermines everyone's efforts"
+    ],
+    "notes_for_engine": "Activate alongside B021 (Queue Management). Flag as urgent if signals indicate customer complaints about being ignored while waiting, negative reviews mentioning queues, or staff who are head-down during rushes.",
+    "tags": ["customer_experience", "queue", "communication", "acknowledgement", "waiting", "perception", "front_of_house", "service"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

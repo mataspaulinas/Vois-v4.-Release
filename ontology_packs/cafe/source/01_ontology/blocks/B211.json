@@ -1,0 +1,22 @@
+{
+  "block_id": "B211",
+  "name": "VAT & Electronic Tax Reporting",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M16: Regulatory Governance & Risk Management",
+  "state": "enriched",
+  "purpose": "Establishes systematic compliance with monthly VAT declarations (i.SAF) and electronic tax reporting obligations to the national tax authority. Ensures POS integration with tax reporting systems, maintains audit trails, and prevents penalties from late or incorrect filing.",
+  "tools": [
+    "T211-01",
+    "T211-02",
+    "T211-03",
+    "T211-04"
+  ],
+  "signals": [
+    "S211",
+    "S212"
+  ],
+  "failure_modes": [
+    "FM109"
+  ]
+}

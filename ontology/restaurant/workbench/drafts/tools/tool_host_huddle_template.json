@@ -1,0 +1,22 @@
+{
+  "id": "tool_host_huddle_template",
+  "name": "Host huddle template",
+  "description": "Short huddle template for reviewing reservation waves, quote logic, arrival pressure, and escalation rules before the front door gets stressed.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: local operating rhythm at intake should shape promises, not just react to them",
+  "updated_at": "2026-03-14T00:24:43.054823Z",
+  "category": "communication",
+  "format": "huddle_template",
+  "usage_moment": "Use 10 to 15 minutes before peak arrivals or any major reservation wave.",
+  "expected_output": "A brief pacing huddle with quote decisions, pressure notes, and a named escalation owner.",
+  "adaptation_variables": [
+    "reservation_volume",
+    "walk_in_mix",
+    "table_turn_assumption",
+    "hosting_model"
+  ],
+  "block_ids": [
+    "blk_host_reservation_huddle"
+  ]
+}

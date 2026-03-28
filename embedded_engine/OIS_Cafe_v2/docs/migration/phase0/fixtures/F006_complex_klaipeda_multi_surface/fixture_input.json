@@ -1,0 +1,165 @@
+{
+  "venue_id": "kavos_namai_klaipeda",
+  "assessment_type": "weekly_pulse",
+  "assessment_date": "2026-03-21",
+  "signals": {
+    "S002": {
+      "active": true,
+      "notes": "Allergen records incomplete — staff cannot confirm dietary info without checking kitchen",
+      "confidence": "high",
+      "value": null
+    },
+    "S010": {
+      "active": true,
+      "notes": "Temperature logs missing or incomplete for fridges",
+      "confidence": "high",
+      "value": null
+    },
+    "S019": {
+      "active": true,
+      "notes": "Queue wait times exceed 5 minutes during peak hours",
+      "confidence": "high",
+      "value": null
+    },
+    "S030": {
+      "active": true,
+      "notes": "Menu pricing does not reflect actual COGS",
+      "confidence": "medium",
+      "value": null
+    },
+    "S045": {
+      "active": true,
+      "notes": "No waste tracking system in place",
+      "confidence": "medium",
+      "value": null
+    },
+    "S051": {
+      "active": true,
+      "notes": "No FOH reference materials visible at counter or service points",
+      "confidence": "medium",
+      "value": null
+    },
+    "S063": {
+      "active": true,
+      "notes": "Role confusion during busy periods — staff unsure of task ownership",
+      "confidence": "medium",
+      "value": null
+    },
+    "S070": {
+      "active": true,
+      "notes": "Single person handling all service functions during peak — visible stress and delays",
+      "confidence": "critical",
+      "value": null
+    },
+    "S071": {
+      "active": true,
+      "notes": "No structured pre-shift briefing observed",
+      "confidence": "medium",
+      "value": null
+    },
+    "S073": {
+      "active": true,
+      "notes": "Counter layout creates bottlenecks during multi-task service",
+      "confidence": "medium",
+      "value": null
+    },
+    "S080": {
+      "active": true,
+      "notes": "Tables remain uncleared 6-10 minutes after guests leave",
+      "confidence": "high",
+      "value": null
+    },
+    "S083": {
+      "active": true,
+      "notes": "Staffing levels not calibrated to observed peak demand",
+      "confidence": "high",
+      "value": null
+    },
+    "S133": {
+      "active": true,
+      "notes": "FOH cleanliness inconsistent during service periods",
+      "confidence": "medium",
+      "value": null
+    },
+    "S160": {
+      "active": true,
+      "notes": "Revenue appears heavily concentrated in morning period",
+      "confidence": "medium",
+      "value": null
+    },
+    "S166": {
+      "active": true,
+      "notes": "Team not aligned on roles, responsibilities, or service standards",
+      "confidence": "high",
+      "value": null
+    }
+  },
+  "venue_context": {
+    "venue_name": "Klaipeda",
+    "type": "independent_cafe",
+    "team_size": 4,
+    "location": "Klaipeda, Old Town, Lithuania",
+    "stage": "new"
+  },
+  "triage_enabled": false,
+  "triage_intensity": "balanced",
+  "raw_input_text": "Back-of-house (color mixing, stock, sterilization, maintenance): Handled loosely by owners/stylists (no dedicated BOH staff). Product stock (natural cosmetics from site) organized but no routines—mixing areas sometimes cluttered post-rush, sterilization basic (UV/disposables, but no logs), equipment (dryers, sinks) shows wear after 3 years (looks like 10, per details). No standards for checks/upkeep, leading to gradual decay.\nFOH / Front-of-house snapshot\nReception + floor: No dedicated admin/receptionist (can't afford, per ops). Owners + tenants rotate duties loosely. Equipped solidly (mirrors, chairs, lighting, product displays). But undermanaged:\n\nNo full-time front desk → phones/emails/bookings handled ad-hoc, occasional delays (5–10 min waits for check-in).\nStations sometimes left with clippings/tools 4–7 min after clients.\nRetail program undeveloped (products from site available, but no push—displays dusty, no sales training).\nMinor gaps: “What’s the wait time?” → “Let me check with everyone” (no central schedule visibility). Social media/marketing absent (no strategy, content planning, brandbook/values unclear).\nScattered reviews/FB comments echo light frictions: “Amazing color but booking was confusing”, “Talents great, but salon could be tidier”, “Love the products but nobody explained them”.",
+  "extraction_summary": {
+    "coverage_gaps": [
+      "No financial data provided — revenue, costs, margins, payroll percentage entirely unknown",
+      "No information on food safety or hygiene rating (EHO equivalent for Lithuania)",
+      "Staff turnover rate and tenure not mentioned",
+      "No detail on booking volume, capacity utilisation, or appointment fill rate",
+      "Employment contracts and legal compliance for tenant stylists not addressed",
+      "No information on pricing strategy or whether prices have been reviewed",
+      "Customer retention and repeat visit rate not discussed",
+      "No detail on supplier relationships for cosmetics products",
+      "Insurance and liability coverage not mentioned",
+      "No information on whether any formal training or certification exists for stylists"
+    ],
+    "text_quality": "moderate",
+    "text_type": "audit_notes"
+  },
+  "confidence_distribution": {
+    "high": 16,
+    "low": 4,
+    "medium": 24
+  },
+  "unmapped_observations": [
+    {
+      "evidence": "Owners + tenants rotate duties loosely. No dedicated BOH staff. Handled loosely by owners/stylists.",
+      "observation": "Tenant-based staffing model creating accountability vacuum — no single person responsible for standards",
+      "suggested_domain": "operations"
+    },
+    {
+      "evidence": "'What's the wait time?' → 'Let me check with everyone' (no central schedule visibility). 'Booking was confusing' (customer review). Phones/emails/bookings handled ad-hoc.",
+      "observation": "Booking system absent or non-functional — no central schedule visibility causing customer-facing confusion",
+      "suggested_domain": "technology"
+    },
+    {
+      "evidence": "Retail program undeveloped (products from site available, but no push — displays dusty, no sales training). Customer review: 'Love the products but nobody explained them.'",
+      "observation": "Retail cosmetics programme present but entirely passive — products stocked but not sold",
+      "suggested_domain": "financial"
+    },
+    {
+      "evidence": "Sterilization basic (UV/disposables, but no logs).",
+      "observation": "Sterilization logs absent in a personal care/beauty context — this is a regulatory compliance risk, not merely an operational gap",
+      "suggested_domain": "legal"
+    },
+    {
+      "evidence": "Equipment (dryers, sinks) shows wear after 3 years (looks like 10, per details). No standards for checks/upkeep, leading to gradual decay.",
+      "observation": "Accelerated physical decay of premises and equipment relative to age — suggests systemic maintenance neglect with compounding cost risk",
+      "suggested_domain": "operations"
+    },
+    {
+      "evidence": "'Amazing color but booking was confusing.' 'Talents great, but salon could be tidier.' 'Love the products but nobody explained them.'",
+      "observation": "Customer experience quality is stylist-dependent, not system-dependent — positive reviews praise individual talent, negative reviews cite systemic failures",
+      "suggested_domain": "customer"
+    },
+    {
+      "evidence": "No dedicated admin/receptionist (can't afford, per ops).",
+      "observation": "Affordability constraint explicitly cited as reason for operational gaps — owner acknowledges structural resource limitation",
+      "suggested_domain": "financial"
+    }
+  ]
+}

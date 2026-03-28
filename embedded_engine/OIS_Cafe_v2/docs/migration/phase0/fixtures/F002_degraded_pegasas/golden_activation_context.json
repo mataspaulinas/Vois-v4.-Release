@@ -1,0 +1,400 @@
+[
+  {
+    "response_pattern_id": "RP024",
+    "rp_name": "Peak Staffing & Rush Management",
+    "priority_score": 2.0,
+    "activated_items": {
+      "L1": [
+        "B085",
+        "B086",
+        "B087"
+      ],
+      "L2": [
+        "B085",
+        "B086",
+        "B087",
+        "B088",
+        "B203",
+        "B204",
+        "B205"
+      ],
+      "L3": [
+        "B085",
+        "B088",
+        "B203",
+        "B204",
+        "B205"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP051",
+    "rp_name": "Values Alignment & Standards Culture",
+    "priority_score": 2.0,
+    "activated_items": {
+      "L1": [
+        "B172",
+        "B173",
+        "B174"
+      ],
+      "L2": [
+        "B172",
+        "B173",
+        "B174",
+        "B175"
+      ],
+      "L3": [
+        "B172",
+        "B175"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP026",
+    "rp_name": "Daily Routines & Shift Handover",
+    "priority_score": 1.6,
+    "activated_items": {
+      "L1": [
+        "B092",
+        "B093",
+        "B094"
+      ],
+      "L2": [
+        "B092",
+        "B093",
+        "B094"
+      ],
+      "L3": [
+        "B092",
+        "B094"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP006",
+    "rp_name": "Queue Management & Service Speed",
+    "priority_score": 1.0,
+    "activated_items": {
+      "L1": [
+        "B021",
+        "B022",
+        "B023"
+      ],
+      "L2": [
+        "B021",
+        "B022",
+        "B023",
+        "B024"
+      ],
+      "L3": [
+        "B021",
+        "B024"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP020",
+    "rp_name": "Team Communication & Meetings",
+    "priority_score": 1.0,
+    "activated_items": {
+      "L1": [
+        "B074",
+        "B075"
+      ],
+      "L2": [
+        "B074",
+        "B075",
+        "B076"
+      ],
+      "L3": [
+        "B074",
+        "B076"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP053",
+    "rp_name": "Operational Rhythm & Daily Discipline",
+    "priority_score": 1.0,
+    "activated_items": {
+      "L1": [
+        "B179",
+        "B180",
+        "B181"
+      ],
+      "L2": [
+        "B179",
+        "B180",
+        "B181",
+        "B182"
+      ],
+      "L3": [
+        "B179",
+        "B182"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP034",
+    "rp_name": "Revenue Growth & Pricing Strategy",
+    "priority_score": 0.93,
+    "activated_items": {
+      "L1": [
+        "B118",
+        "B119",
+        "B120"
+      ],
+      "L2": [
+        "B118",
+        "B119",
+        "B120",
+        "B121"
+      ],
+      "L3": [
+        "B118",
+        "B121"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP002",
+    "rp_name": "Allergen Management & PPDS Compliance",
+    "priority_score": 0.8,
+    "activated_items": {
+      "L1": [
+        "B005",
+        "B006",
+        "B007"
+      ],
+      "L2": [
+        "B005",
+        "B006",
+        "B007",
+        "B008"
+      ],
+      "L3": [
+        "B005",
+        "B008"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP007",
+    "rp_name": "Order Accuracy & Service Quality",
+    "priority_score": 0.8,
+    "activated_items": {
+      "L1": [
+        "B025",
+        "B026",
+        "B027"
+      ],
+      "L2": [
+        "B025",
+        "B026",
+        "B027",
+        "B028"
+      ],
+      "L3": [
+        "B025",
+        "B028"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP017",
+    "rp_name": "Dietary Inclusivity & Alternative Options",
+    "priority_score": 0.8,
+    "activated_items": {
+      "L1": [
+        "B060",
+        "B061"
+      ],
+      "L2": [
+        "B060",
+        "B061",
+        "B062"
+      ],
+      "L3": [
+        "B060",
+        "B062"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP023",
+    "rp_name": "Owner Role & Leadership Development",
+    "priority_score": 0.8,
+    "activated_items": {
+      "L1": [
+        "B081",
+        "B082",
+        "B083"
+      ],
+      "L2": [
+        "B081",
+        "B082",
+        "B083",
+        "B084"
+      ],
+      "L3": [
+        "B081",
+        "B084"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP025",
+    "rp_name": "Workflow Layout & Station Design",
+    "priority_score": 0.8,
+    "activated_items": {
+      "L1": [
+        "B089",
+        "B090"
+      ],
+      "L2": [
+        "B089",
+        "B090",
+        "B091"
+      ],
+      "L3": [
+        "B089",
+        "B091"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP050",
+    "rp_name": "Revenue Diversification & Expansion",
+    "priority_score": 0.8,
+    "activated_items": {
+      "L1": [
+        "B168",
+        "B169"
+      ],
+      "L2": [
+        "B168",
+        "B169",
+        "B170",
+        "B171",
+        "B208"
+      ],
+      "L3": [
+        "B168",
+        "B171",
+        "B208"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP004",
+    "rp_name": "HACCP & Food Safety Management System",
+    "priority_score": 0.7,
+    "activated_items": {
+      "L1": [
+        "B013",
+        "B014",
+        "B015"
+      ],
+      "L2": [
+        "B013",
+        "B014",
+        "B015",
+        "B016"
+      ],
+      "L3": [
+        "B013",
+        "B016"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP014",
+    "rp_name": "Food Quality & Menu Innovation",
+    "priority_score": 0.7,
+    "activated_items": {
+      "L1": [
+        "B050",
+        "B051",
+        "B052"
+      ],
+      "L2": [
+        "B050",
+        "B051",
+        "B052",
+        "B053",
+        "B199",
+        "B201"
+      ],
+      "L3": [
+        "B050",
+        "B053",
+        "B199",
+        "B201"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP022",
+    "rp_name": "Key Person Risk & Cross-Training",
+    "priority_score": 0.7,
+    "activated_items": {
+      "L1": [
+        "B077",
+        "B078",
+        "B079"
+      ],
+      "L2": [
+        "B077",
+        "B078",
+        "B079",
+        "B080"
+      ],
+      "L3": [
+        "B077",
+        "B080"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP018",
+    "rp_name": "Staff Retention & Engagement",
+    "priority_score": 0.7,
+    "activated_items": {
+      "L1": [
+        "B063",
+        "B064",
+        "B065"
+      ],
+      "L2": [
+        "B063",
+        "B064",
+        "B065",
+        "B066"
+      ],
+      "L3": [
+        "B063",
+        "B066"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP036",
+    "rp_name": "Cost Structure & Payroll Control",
+    "priority_score": 0.7,
+    "activated_items": {
+      "L1": [
+        "B125",
+        "B126"
+      ],
+      "L2": [
+        "B125",
+        "B126",
+        "B127"
+      ],
+      "L3": [
+        "B125",
+        "B127"
+      ]
+    }
+  }
+]

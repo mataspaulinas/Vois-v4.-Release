@@ -1,0 +1,20 @@
+{
+  "id": "<signal_id>",
+  "name": "<signal name>",
+  "description": "<what the evidence shows operationally>",
+  "owner": "<owner>",
+  "source_ref": "<citation>",
+  "status": "draft",
+  "domain": "<adapter_domain_alias>",
+  "module": "<adapter_module_alias>",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "observation"
+  ],
+  "source_types": [
+    "consultant_note"
+  ],
+  "temporal_behavior": "<persistent|spike|cyclical>",
+  "likely_co_signals": [],
+  "adapter_aliases": []
+}

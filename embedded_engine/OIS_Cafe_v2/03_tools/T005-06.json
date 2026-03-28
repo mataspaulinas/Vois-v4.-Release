@@ -1,0 +1,80 @@
+{
+  "identification": {
+    "tool_id": "T005-06",
+    "tool_name": "Quarterly Allergen Source-of-Truth Audit",
+    "block_id": "B005"
+  },
+  "tool_design": {
+    "format": "audit",
+    "role_in_intervention": "Quarterly audit that tests whether the live allergen source-of-truth still matches real menu items, supplier evidence, and customer-facing materials.",
+    "adaptation_variables": [
+      "menu_size",
+      "site_complexity",
+      "specials_frequency",
+      "auditor_role"
+    ],
+    "usage_moment": "Quarterly, after significant menu change, or after any allergen near-miss",
+    "expected_output": "Completed scored audit with sampled item trace, findings, corrective actions, and recheck dates",
+    "linked_blocks": [
+      "B005",
+      "B006",
+      "B007",
+      "B008"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The audit becomes a box-tick review of paperwork rather than a check of live reality.",
+        "what_can_go_wrong": "The venue audits the files while real service has already drifted.",
+        "early_signals": [
+          "No live menu items are sampled during the audit",
+          "The audit reads documents but never checks current stock or service copies"
+        ],
+        "prevention": [
+          "Trace sample items from sale point to evidence source every quarter",
+          "Include specials, bought-in products, and one service point in the sample"
+        ],
+        "mitigation": [
+          "Re-run the audit with live item tracing",
+          "Prioritise corrective action on the sampled gaps before broad paperwork cleanup"
+        ],
+        "if_occurs_next_signals": [
+          "paperwork_only_audit"
+        ],
+        "possible_successor_blocks": [
+          "B008"
+        ]
+      },
+      {
+        "warning": "Findings are documented but not converted into source updates and follow-up dates.",
+        "what_can_go_wrong": "The same gaps recur every quarter and the audit loses value.",
+        "early_signals": [
+          "Past findings appear again with no closure note",
+          "Corrective actions have no owner or date"
+        ],
+        "prevention": [
+          "Require named ownership and due dates on every material finding",
+          "Review the prior audit before starting the new one"
+        ],
+        "mitigation": [
+          "Escalate repeat findings into B008 programme review",
+          "Set a short recheck date for unresolved high-risk items"
+        ],
+        "if_occurs_next_signals": [
+          "repeat_allergen_audit_failures"
+        ],
+        "possible_successor_blocks": [
+          "B008"
+        ]
+      }
+    ]
+  },
+  "content": "# Quarterly Allergen Source-of-Truth Audit\n\n**Tool ID:** T005-06  \n**Block:** B005 (Allergen Identification & Labelling)  \n**Format:** Audit  \n**Primary Role:** Owner  \n**Use Moment:** Quarterly and after significant allergen changes or near-misses  \n**Output:** Scored audit with corrective actions and recheck dates\n\n---\n\n## What This Tool Does\n\nThis audit checks whether the allergen source-of-truth still matches live reality. It should test the chain from menu item to evidence, not just whether documents exist.\n\nSample at least:\n- 2 permanent menu items\n- 1 bought-in bakery or packaged item\n- 1 special or seasonal item if active\n- 1 modifier, topping, syrup, or garnish\n\n---\n\n## Audit Header\n\n| Field | Complete Here |\n|---|---|\n| Audit date | |\n| Auditor | |\n| Venue | |\n| Matrix version audited | |\n| Previous audit date | |\n| Previous open findings reviewed? | Yes / No |\n\n---\n\n## Sample Item Trace\n\n| Sampled Item | Seen Live in Service? | Matrix Row Current? | Declaration Sheet Found? | Supplier Evidence Found? | Customer Pack Matches? | Result |\n|---|---|---|---|---|---|---|\n| | Yes / No | Yes / No | Yes / No | Yes / No / N/A | Yes / No | Pass / Fail |\n| | Yes / No | Yes / No | Yes / No | Yes / No / N/A | Yes / No | Pass / Fail |\n| | Yes / No | Yes / No | Yes / No | Yes / No / N/A | Yes / No | Pass / Fail |\n| | Yes / No | Yes / No | Yes / No | Yes / No / N/A | Yes / No | Pass / Fail |\n| | Yes / No | Yes / No | Yes / No | Yes / No / N/A | Yes / No | Pass / Fail |\n\n---\n\n## System Scores\n\n| Area | Score 1-5 | Evidence / Finding |\n|---|---|---|\n| Master matrix completeness | | |\n| Recipe declaration quality | | |\n| Supplier evidence currency | | |\n| Change-control compliance | | |\n| Customer-facing pack accuracy | | |\n| Version control and document replacement | | |\n\n**Scoring guide:** `5 = Strong and current` | `3 = Meets minimum but weak` | `1 = Unsafe or unreliable`\n\n---\n\n## Corrective Actions\n\n| Finding | Risk Level | Action Required | Owner | Due Date | Recheck Date |\n|---|---|---|---|---|---|\n| | High / Medium / Low | | | | |\n| | High / Medium / Low | | | | |\n| | High / Medium / Low | | | | |\n| | High / Medium / Low | | | | |\n\n---\n\n## Trigger Escalation If\n\n<input type=\"checkbox\" disabled /> A live item cannot be traced to evidence  \n<input type=\"checkbox\" disabled /> A bought-in product is in service with no current declaration  \n<input type=\"checkbox\" disabled /> Customer-facing sheets do not match the current matrix  \n<input type=\"checkbox\" disabled /> Repeat findings remain open from the prior quarter\n\n---\n\n## Common Failure Patterns\n\n### 1. Auditing paperwork instead of service reality\nPhysically check a live menu item, the stock in use, and the copy available to staff.\n\n### 2. Sampling only easy or stable items\nUse at least one high-change or bought-in item every quarter.\n\n### 3. Closing the audit without recheck dates\nA finding without a recheck date is usually just a note, not a correction plan.\n",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T005-06_quarterly_allergen_source_of_truth_audit.md",
+    "migration_method": "manual_enrichment"
+  }
+}

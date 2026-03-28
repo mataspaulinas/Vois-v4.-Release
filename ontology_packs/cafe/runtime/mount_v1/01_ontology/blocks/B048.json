@@ -1,0 +1,167 @@
+{
+  "block_id": "B048",
+  "name": "Machine Maintenance & Backflushing",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Defines the daily, weekly, and scheduled maintenance routines for the espresso machine, including backflushing, group head cleaning, steam wand care, drip tray management, and planned professional servicing. Proper machine maintenance protects a cafe's most expensive asset, ensures consistent coffee quality, and prevents costly breakdowns during service.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish a daily closing routine that includes backflushing with detergent and cleaning all group heads",
+      "Define weekly deep-cleaning tasks for shower screens, portafilter baskets, and steam wands",
+      "Create a professional service schedule based on manufacturer recommendations and usage intensity",
+      "Train all baristas on basic machine care as part of their daily responsibilities",
+      "Maintain a machine service log for warranty purposes and performance tracking"
+    ],
+    "secondary_objectives": [
+      "Extend machine lifespan and protect the capital investment",
+      "Prevent mid-service breakdowns that disrupt operations and disappoint customers",
+      "Maintain consistent water temperature and pressure for reliable extraction",
+      "Ensure the machine presents well — a clean machine signals quality to observant customers"
+    ]
+  },
+  "why_this_matters": "A commercial espresso machine is typically the single most expensive piece of equipment in a cafe, costing anywhere from £3,000 for a basic two-group machine to over £15,000 for a premium multi-boiler. It operates under extreme conditions: boiler temperatures exceeding 120 degrees Celsius, brewing pressures of 9 bar, and continuous thermal cycling throughout a long trading day. Without proper maintenance, these conditions degrade the machine rapidly. Coffee oils accumulate in the group heads, shower screens, and portafilter baskets. These oils turn rancid within hours, adding a bitter, stale taint to every shot pulled through a dirty group. Backflushing — the process of forcing detergent and water backwards through the group head — is the daily cleaning method that removes this build-up. A cafe that does not backflush daily is serving coffee through a film of rancid oil, and the flavour impact is significant even if the barista has dialled in perfectly. Beyond flavour, neglected maintenance causes mechanical failures. Scale in the boiler (addressed by B047), coffee grounds in the drain lines, worn group gaskets, and corroded solenoid valves all stem from inadequate routine care. An emergency callout for a machine breakdown during Saturday morning service costs a minimum of £150-300 for the technician, plus the revenue lost while the machine is down. A planned annual service costs a similar amount but prevents the emergency. The maths is unambiguous: maintenance is cheaper than repair, and prevention is cheaper than cure.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Establish the daily backflushing routine. At close of business every day, the closing barista must backflush each group head with espresso machine cleaning detergent (e.g., Cafetto Espresso Clean, Puly Caff). Process: insert a blind (solid) filter basket into the portafilter, add approximately half a teaspoon of detergent, lock into the group head, and run the pump for 10 seconds. Stop the pump for 10 seconds. Repeat this cycle five times. Remove the portafilter, run the pump again to rinse the group, then repeat the entire process once more without detergent (water only) to flush out any residual cleaner. Do this for every group head. After backflushing, remove the shower screens and portafilter baskets and soak them in a solution of hot water and cleaning detergent for 10 minutes, then scrub with a small brush and rinse thoroughly. Wipe the steam wand thoroughly with a damp cloth and purge. Clean the drip tray and rinse the waste container. Wipe all external surfaces. Total time: approximately 15-20 minutes for a two-group machine. Add backflushing to the closing checklist so it cannot be skipped. Week 2: Verify every closing barista can perform the backflushing routine correctly by observing them. Check that the correct detergent is being used (never use washing-up liquid or non-espresso cleaning products). Ensure blind filter baskets and cleaning brushes are in good condition. Log each backflush on the closing checklist with the barista's initials.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Machine Maintenance SOP covering: daily backflushing procedure, daily steam wand cleaning, weekly shower screen and gasket inspection, weekly descaling of the steam wand tip (soak in milk residue remover), monthly inspection of group gaskets (replace if coffee seeps around the portafilter), and the annual professional service checklist. Define the professional service schedule: most manufacturers recommend a full service every 12 months or every 1,000 operating hours, whichever comes first. A professional service should include: boiler descaling, gasket replacement, solenoid valve inspection, pressure calibration, electrical safety check, and group head rebuild. Identify a reliable local espresso machine technician and establish a service agreement — many offer annual service contracts that include priority callout. Create a Machine Service Log: a document that records every maintenance activity, parts replaced, professional service reports, and any issues observed. This log is essential for warranty claims and provides a history that informs future maintenance decisions. Keep the log physically near the machine or digitally in a shared location. Budget for maintenance: set aside approximately 5-10% of the machine's value annually for parts, consumables, and professional servicing. This prevents maintenance being deferred due to unexpected costs.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Machine maintenance should be treated with the same importance as espresso preparation — the machine is the tool that makes everything possible. Conduct quarterly machine health assessments: check boiler pressure stability, group head temperature consistency across groups, pump pressure accuracy, and flow rate. Track these metrics over time to spot degradation before it causes problems. Build a direct relationship with the machine manufacturer's technical support for complex issues. Train the head barista and manager on basic troubleshooting: what to do when a group head is not reaching temperature, when the pump sounds different, when steam pressure drops. Create a troubleshooting decision tree so common issues can be diagnosed quickly. When the machine reaches the end of its economic life (typically 10-15 years with good maintenance), plan the replacement proactively rather than waiting for a catastrophic failure during service."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Establish the daily backflushing routine as part of every closing shift",
+        "Ensure appropriate espresso machine cleaning detergent is stocked",
+        "Verify blind filter baskets and cleaning brushes are available and in good condition",
+        "Demonstrate the backflushing procedure to all closing baristas",
+        "Add backflushing and machine cleaning to the closing checklist",
+        "Establish daily steam wand cleaning (wipe after every use, deep clean at close)",
+        "Log each backflush with barista initials on the closing checklist"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft a Machine Maintenance SOP covering daily, weekly, monthly, and annual tasks",
+        "Define and schedule the annual professional service",
+        "Identify and engage a reliable espresso machine technician",
+        "Create a Machine Service Log and file it near the machine",
+        "Budget 5-10% of machine value annually for maintenance costs",
+        "Train all staff on daily care and the head barista on weekly inspections",
+        "Establish a maintenance parts and consumables inventory"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly machine health assessments (pressure, temperature, flow rate)",
+        "Track machine performance metrics over time to spot degradation trends",
+        "Build a relationship with the machine manufacturer's technical support",
+        "Train the head barista and manager on basic troubleshooting",
+        "Create a troubleshooting decision tree for common issues",
+        "Plan proactive machine replacement before end-of-life catastrophic failure"
+      ],
+      "responsible": "Owner, Head Barista"
+    }
+  },
+  "deliverables": [
+    "Machine Maintenance SOP document",
+    "Daily Backflushing Procedure Card (posted at machine)",
+    "Machine Service Log template",
+    "Annual Professional Service Checklist",
+    "Troubleshooting Decision Tree"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T048-01",
+        "tool_name": "Daily Backflushing Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Barista",
+        "description": "Step-by-step closing checklist for backflushing each group head, cleaning shower screens and baskets, steam wand care, drip tray cleaning, and external wipe-down. Signed off by the closing barista."
+      },
+      {
+        "tool_id": "T048-02",
+        "tool_name": "Machine Service Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Ongoing log recording all machine maintenance: daily backflushes, weekly inspections, gasket replacements, professional services, parts replaced, and any issues observed or reported."
+      },
+      {
+        "tool_id": "T048-03",
+        "tool_name": "Machine Maintenance SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Comprehensive Standard Operating Procedure covering daily backflushing, weekly deep cleaning, monthly gasket inspection, and annual professional service requirements with step-by-step procedures for each."
+      },
+      {
+        "tool_id": "T048-04",
+        "tool_name": "Machine Troubleshooting Decision Tree",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "Visual decision tree for diagnosing common machine issues: low pressure, temperature inconsistency, leaking group, poor steam, and unusual sounds. Guides the user from symptom to likely cause and appropriate action."
+      },
+      {
+        "tool_id": "T048-05",
+        "tool_name": "Quarterly Machine Health Assessment",
+        "level": "L3",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Quarterly assessment measuring boiler pressure stability, group head temperature consistency, pump pressure accuracy, flow rate, steam pressure, and visual condition. Tracks trends over time to predict maintenance needs."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Backflushing is skipped on busy nights or when the closing barista is rushing, allowing rancid oil build-up in the group heads",
+    "Incorrect cleaning products are used — washing-up liquid or bleach — which can damage seals and contaminate the machine",
+    "Professional servicing is deferred to save money, leading to preventable breakdowns that cost far more to repair",
+    "The service log is not maintained, making it impossible to track maintenance history or support warranty claims"
+  ],
+  "kpis": [
+    "100% of trading days end with backflushing completed and logged",
+    "Professional service completed within 30 days of its scheduled date",
+    "Zero unplanned machine breakdowns per quarter",
+    "Group gaskets replaced proactively before they leak (based on inspection schedule)"
+  ],
+  "dependencies": ["B047"],
+  "constraints": [
+    "Only espresso-specific cleaning detergent may be used — generic cleaning products can damage the machine",
+    "Professional servicing requires the machine to be out of service for 2-4 hours — schedule on a quiet day or outside trading hours",
+    "Machine warranty may be voided if maintenance records cannot be demonstrated"
+  ],
+  "time_load": {
+    "L1": "2 hours (procedure demonstration, checklist creation, initial supplies purchase)",
+    "L2": "5 hours (SOP drafting, technician engagement, service log creation, training)",
+    "L3": "2 hours/quarter (health assessments, troubleshooting training, replacement planning)"
+  },
+  "review_protocol": "Daily verification of backflushing completion on closing checklist. Weekly inspection of shower screens and gaskets by head barista. Monthly review of service log by manager. Quarterly machine health assessment. Annual professional service.",
+  "meta": {
+    "summary_for_humans": "This block defines the complete espresso machine maintenance programme: daily backflushing, weekly deep cleaning, scheduled professional servicing, and proactive health monitoring. It protects the cafe's most expensive asset, ensures consistent coffee quality, and prevents costly mid-service breakdowns.",
+    "implementation_risks": [
+      "Closing staff may view backflushing as an optional task to skip when tired or running late",
+      "Machine maintenance costs may be seen as unnecessary by owners until a breakdown occurs",
+      "DIY repairs by untrained staff can cause more damage than the original issue"
+    ],
+    "notes_for_engine": "Activate immediately for any cafe with an espresso machine. This is a non-negotiable operational block. Flag if signals indicate machine reliability issues, inconsistent shot quality despite good barista technique, or if the cafe has no service contract in place.",
+    "tags": ["coffee_quality", "equipment", "maintenance", "backflushing", "cleaning", "espresso_machine", "professional_service", "asset_protection"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

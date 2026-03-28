@@ -1,0 +1,31 @@
+{
+  "id": "sig_opening_or_reset_incomplete",
+  "name": "Opening or reset is incomplete",
+  "description": "A venue reset starts, but key steps remain half-done, leaving the next service window exposed to avoidable misses.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: opening or reset incomplete expressed through restaurant open-close discipline",
+  "updated_at": "2026-03-15T15:59:27.064239Z",
+  "domain": "operations",
+  "module": "open_close_controls",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "reset begins but is not closed cleanly",
+    "stations reopen half-restocked or half-checked",
+    "handoff into the next period happens with unfinished basics"
+  ],
+  "source_types": [
+    "opening review",
+    "closing review",
+    "manager notes"
+  ],
+  "temporal_behavior": "shift-bound",
+  "likely_co_signals": [
+    "sig_opening_checklist_drift",
+    "sig_closing_reset_failures"
+  ],
+  "adapter_aliases": [
+    "reset left half-done",
+    "open-close incomplete"
+  ]
+}

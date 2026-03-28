@@ -1,0 +1,22 @@
+{
+  "id": "tool_standard_work_observation_sheet",
+  "name": "Standard work observation sheet",
+  "description": "Short observation sheet for tracking whether critical service standards are actually being executed, coached, and reinforced in live service.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: standardization depends on visible observation, not memory of training",
+  "updated_at": "2026-03-14T00:41:10.364163Z",
+  "category": "quality",
+  "format": "observation_sheet",
+  "usage_moment": "Use during live service when checking a small set of critical standards and coaching misses.",
+  "expected_output": "A short record of observed standards, misses, coaching actions, and repeated drift patterns.",
+  "adaptation_variables": [
+    "critical_standards",
+    "service_period",
+    "role_set",
+    "coach"
+  ],
+  "block_ids": [
+    "blk_standard_work_observation_loop"
+  ]
+}

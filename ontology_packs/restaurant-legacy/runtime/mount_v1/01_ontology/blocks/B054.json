@@ -1,0 +1,167 @@
+{
+  "block_id": "B054",
+  "name": "Drink Recipe Cards",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Creates standardised recipe documentation for every drink on the menu, ensuring consistency of preparation, taste, and presentation regardless of which barista is making the drink. This block defines the recipe card format, covers espresso-based drinks, teas, hot chocolates, specialty drinks, and cold beverages.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Document every drink on the menu with precise recipes including measurements, techniques, and presentation",
+      "Ensure recipe cards are accessible and visible at the preparation station during service",
+      "Standardise drink sizes, ratios, and ingredient quantities across all staff",
+      "Create a recipe change process that keeps documentation current when the menu evolves",
+      "Use recipe cards as the primary training tool for new barista onboarding"
+    ],
+    "secondary_objectives": [
+      "Enable accurate drink costing by defining exact ingredient quantities",
+      "Reduce customer complaints about drinks tasting different between visits",
+      "Support allergen compliance by documenting every ingredient in every drink",
+      "Create a foundation for portion control (B055) and menu engineering (B056)"
+    ]
+  },
+  "why_this_matters": "Every drink on the menu is a promise to the customer. When someone orders a large oat milk latte, they expect a specific experience — a certain volume, a certain coffee-to-milk ratio, a certain sweetness, a certain temperature. If that experience changes depending on who makes the drink, the promise is broken. Recipe cards are the mechanism that ensures the promise is kept. In a UK cafe serving a typical menu of 20-30 drink options across sizes, the number of recipe variations is substantial. A flat white in a small cup uses different espresso and milk quantities than a latte in a large cup. A mocha requires chocolate in a specific quantity to balance the espresso without overwhelming it. An iced latte uses different proportions than its hot equivalent because ice displaces volume. Without documented recipes, each barista develops their own interpretation of every drink, creating invisible inconsistency that customers feel but cannot name. They simply think: 'My coffee tasted different today.' Recipe cards also serve critical business functions. Accurate costing requires knowing exactly how much of each ingredient goes into each drink — if the recipe says 18g of espresso but one barista uses 20g, the cost model is wrong. Allergen compliance under Natasha's Law requires knowing every ingredient in every drink; recipe cards provide that documentation. Training efficiency improves dramatically when new starters can reference a card rather than relying on memory of a verbal explanation from a busy colleague.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create a master drink list showing every drink available, in every size, including all variations (dairy, oat, soy, iced, decaf). For each drink, document the recipe as the head barista currently makes it. Start with the core espresso menu: espresso, double espresso, macchiato, cortado, flat white, cappuccino, latte, americano, and long black. For each, specify: espresso dose and shots (single or double), milk volume and type, cup size, water volume (for americano/long black), any additions (chocolate for mocha, syrup for flavoured drinks), preparation sequence, and serving temperature. Use metric measurements throughout — grams for coffee and chocolate, millilitres for milk and water. Week 2: Produce the recipe cards. Format: A5 laminated cards, one per drink (or one per drink category if closely related). Each card shows: drink name, available sizes, espresso recipe (dose/yield/time from B039), milk or water quantity, any syrups or additions with exact measurements (e.g., '20ml vanilla syrup' not 'one pump' — pumps are unreliable), preparation steps in order, serving vessel, garnish or topping, and a reference photo. Post the cards at the espresso station in a visible card holder or clip ring. Walk the entire team through the cards, making each drink together and comparing the result to the card specification.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Expand the recipe cards to cover the complete drink menu: teas (with steeping times and temperatures), hot chocolates (with chocolate type and quantity), specialty drinks (matcha, chai, turmeric lattes with exact ingredient lists), cold drinks (iced lattes, cold brew, frappes with ice quantities), and any seasonal or signature drinks. Create a Recipe Card SOP that covers the process for creating, approving, updating, and retiring recipe cards. Any recipe change — whether adjusting the espresso dose, switching syrup brands, or changing a cup size — must trigger an update to the relevant recipe card and a team briefing. Introduce recipe accuracy checks: the manager or head barista periodically watches a barista make a drink and compares their method to the recipe card. Any deviations are corrected immediately. Add allergen information to every recipe card — list all allergens present in the drink as prepared (e.g., a mocha contains milk and may contain soy depending on the chocolate used). This supports compliance with Food Information Regulations 2014. Calculate the cost per drink from the recipe card quantities and current ingredient prices. This data feeds into B056 menu engineering. Build a digital recipe card archive that can be printed when cards are damaged or updated, and that new starters can study before their first shift.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Recipe cards should be living documents that evolve as the cafe's drink programme develops. Conduct quarterly recipe reviews: taste every drink on the menu as prepared to the card specification and assess whether the recipe is still optimal. Are there improvements to be made? Has customer taste shifted? Has a new ingredient become available? Involve the team in recipe development — when testing a new drink, create the recipe card as part of the development process, not as an afterthought. Use recipe card compliance data to identify training needs: if the same barista consistently deviates from the flat white recipe, they need targeted coaching. Share recipe card insights with the coffee roaster — they may recommend recipe adjustments when they change the blend or introduce a new coffee."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create a master drink list of every drink in every size with all variations",
+        "Document recipes for the core espresso menu as the head barista currently makes them",
+        "Produce A5 laminated recipe cards for core espresso drinks with photos",
+        "Post recipe cards at the espresso station in a visible location",
+        "Walk the full team through the cards, making each drink together",
+        "Ensure all measurements are precise (grams, millilitres) not approximate",
+        "Verify recipe cards match what customers currently expect and enjoy"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Expand recipe cards to cover the complete drink menu including teas, chocolates, and specialty drinks",
+        "Create a Recipe Card SOP covering creation, approval, updating, and retirement",
+        "Add allergen information to every recipe card",
+        "Introduce periodic recipe accuracy checks during service",
+        "Calculate cost per drink from recipe card quantities",
+        "Build a digital recipe card archive for reprinting and onboarding",
+        "Link recipe cards to B055 portion control and B056 menu engineering"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly recipe reviews tasting all drinks against card specifications",
+        "Involve the team in recipe development for new and seasonal drinks",
+        "Use recipe compliance data to identify individual training needs",
+        "Share recipe insights with the coffee roaster for recipe collaboration",
+        "Update recipe cards proactively when ingredients or suppliers change",
+        "Archive retired recipes for potential seasonal returns"
+      ],
+      "responsible": "Head Barista, Manager"
+    }
+  },
+  "deliverables": [
+    "Complete set of Drink Recipe Cards (A5, laminated, with photos)",
+    "Master Drink List with all sizes and variations",
+    "Recipe Card SOP document",
+    "Digital Recipe Card Archive",
+    "Drink Cost Calculation Spreadsheet"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T054-01",
+        "tool_name": "Drink Recipe Card Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "A5 template for creating drink recipe cards: drink name, sizes, espresso specification, milk/water quantities, additions with measurements, preparation sequence, serving vessel, garnish, allergens, and reference photo."
+      },
+      {
+        "tool_id": "T054-02",
+        "tool_name": "Master Drink List",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Head Barista",
+        "description": "Complete list of every drink available in every size and variation (milk type, iced, decaf). Used as the index for recipe cards and for menu board accuracy verification."
+      },
+      {
+        "tool_id": "T054-03",
+        "tool_name": "Recipe Card SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure for recipe card management: creation process, approval workflow, update triggers, team briefing requirements, and retirement protocol for discontinued drinks."
+      },
+      {
+        "tool_id": "T054-04",
+        "tool_name": "Recipe Accuracy Check Sheet",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Head Barista",
+        "description": "Observation checklist for verifying barista adherence to recipe cards during service: correct dose, correct milk quantity, correct additions, correct preparation sequence, and correct presentation."
+      },
+      {
+        "tool_id": "T054-05",
+        "tool_name": "Drink Cost Calculator",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Spreadsheet calculating the cost per drink based on recipe card quantities and current ingredient prices. Used for pricing decisions, menu engineering, and margin analysis."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Recipe cards are created but ignored — baristas revert to their own methods and the cards gather dust",
+    "Cards become outdated as recipes change informally without documentation updates",
+    "Measurements are too vague ('a splash of milk', 'one pump of syrup') to ensure real consistency",
+    "Recipe cards exist only in digital format and are not accessible during busy service"
+  ],
+  "kpis": [
+    "100% of drinks on the menu have a current, accurate recipe card",
+    "Recipe accuracy checks show at least 90% adherence across all baristas",
+    "Zero customer complaints about drink inconsistency per week",
+    "All recipe cards include complete allergen information"
+  ],
+  "dependencies": ["B039", "B043"],
+  "constraints": [
+    "Recipe cards must use precise measurements — approximate terms are not acceptable",
+    "Physical cards must be laminated and posted at the station — digital-only is insufficient during service",
+    "Any recipe change must trigger an immediate card update, team briefing, and cost recalculation"
+  ],
+  "time_load": {
+    "L1": "6 hours (drink listing, recipe documentation, card production, team walk-through)",
+    "L2": "8 hours (complete menu expansion, SOP creation, allergen documentation, cost calculations)",
+    "L3": "2 hours/quarter (recipe reviews, updates, team development sessions)"
+  },
+  "review_protocol": "Weekly spot-checks of recipe adherence during service. Monthly review of recipe cards for accuracy and completeness. Quarterly recipe review tasting all drinks. Cards updated immediately when any ingredient, supplier, or recipe changes.",
+  "meta": {
+    "summary_for_humans": "This block creates standardised recipe documentation for every drink on the menu, ensuring consistent preparation regardless of which barista makes the drink. It covers precise measurements, allergen documentation, preparation sequences, and the processes for maintaining recipe cards as the menu evolves.",
+    "implementation_risks": [
+      "Creating recipe cards for a large menu is time-consuming — prioritise highest-volume drinks first",
+      "Baristas with strong personal styles may resist standardisation",
+      "Recipe cards are useless if not visible and accessible during service"
+    ],
+    "notes_for_engine": "Activate for any cafe serving a multi-drink menu. Foundation block for B055 portion control and B056 menu engineering. Flag if signals indicate drink inconsistency complaints, training difficulties for new staff, or inability to calculate accurate drink costs.",
+    "tags": ["coffee_quality", "recipes", "consistency", "standardisation", "allergens", "costing", "training", "documentation"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

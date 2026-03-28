@@ -1,0 +1,181 @@
+{
+  "block_id": "B190",
+  "name": "New Site Opening Playbook",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M15: Multi-Site & Chain Management",
+  "state": "enriched",
+  "purpose": "Provides a comprehensive, step-by-step playbook for opening new cafe locations — from site identification and lease negotiation through fit-out, recruitment, training, and launch. This block ensures every new opening follows a proven process, minimises risk, hits target timelines, and delivers a first-day experience that matches the brand standard.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a phased project plan covering every stage of a new site opening from 12 weeks pre-launch to 4 weeks post-launch",
+      "Define critical path activities, dependencies, and decision gates at each phase",
+      "Establish checklists for legal, regulatory, fit-out, equipment, recruitment, training, and marketing readiness",
+      "Build a launch week protocol that ensures the site opens at full operational standard",
+      "Create a post-opening support framework for the first 90 days of trading"
+    ],
+    "secondary_objectives": [
+      "Reduce time from lease signing to opening by codifying the process",
+      "Minimise costly mistakes and delays through documented lessons from previous openings",
+      "Ensure regulatory compliance from day one (food registration, fire safety, licensing)",
+      "Accelerate team readiness through structured pre-opening training programmes"
+    ]
+  },
+  "why_this_matters": "Opening a new cafe site is one of the highest-risk activities in the hospitality business. It involves significant capital investment (typically £50,000–£250,000 for a UK cafe fit-out), multiple parallel workstreams (legal, construction, recruitment, training, marketing), and a hard deadline — the opening date. Without a structured playbook, critical activities are missed, timelines slip, costs overrun, and the first day of trading becomes chaotic rather than celebratory. Every unsuccessful opening damages the brand and wastes capital that could have been deployed elsewhere. A well-executed playbook draws on the accumulated knowledge of previous openings, encoding what worked, what failed, and what was nearly forgotten into a reusable process. It ensures that food business registration is submitted 28 days before opening (a legal requirement), that fire safety equipment is installed and tested before staff arrive, that the team is trained on SOPs before the first customer walks in, and that the marketing launch creates maximum awareness in the local area.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0–2 weeks). Week 1: Create a master project timeline for new site openings, broken into phases: Phase 1 (12–8 weeks pre-launch) — legal, lease, planning permissions, food business registration; Phase 2 (8–4 weeks) — fit-out, equipment procurement, utility connections; Phase 3 (4–2 weeks) — recruitment, staff training, SOP distribution; Phase 4 (2 weeks to launch) — soft launch, snagging, final compliance checks; Phase 5 (launch week and first 4 weeks) — opening event, daily reviews, post-opening support. Week 2: For each phase, list every task, assign ownership, and define completion criteria. Identify the critical path — the sequence of tasks that determines the earliest possible opening date.",
+    "L2": "SYSTEM BUILD (2–8 weeks). Develop detailed checklists for each phase using T190-02. Create a pre-opening compliance checklist covering: food business registration, fire risk assessment, health and safety risk assessment, licensing (alcohol if applicable, music), insurance, EICR, gas safety certificate, water hygiene risk assessment, and employer liability insurance. Build a recruitment timeline ensuring the site manager is hired at least 6 weeks before opening and the full team at least 3 weeks before. Design a pre-opening training programme covering SOPs, brand standards, equipment operation, and local area knowledge. Plan the marketing launch: local press, social media, community engagement, and a soft opening for friends, family, and local influencers.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). After each new opening, conduct a lessons-learned review within 30 days, documenting what went well, what went badly, and what to change for the next opening. Update the playbook accordingly. Create a post-opening support protocol: the area manager or a senior team member should be present daily for the first two weeks and visit at least twice weekly for weeks 3–8. Track new site performance against established site benchmarks using B189. Build a library of opening templates that can be customised for different site types and sizes."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create a master project timeline broken into five phases",
+        "List every task for each phase with ownership and completion criteria",
+        "Identify the critical path determining the opening date",
+        "Define decision gates between phases",
+        "Create a budget template for new site opening costs",
+        "Build a risk register for common opening risks and mitigations",
+        "Assign a project lead for each new site opening"
+      ],
+      "responsible": "Operations Director, CEO"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop detailed phase checklists for legal, fit-out, recruitment, training, and marketing",
+        "Create a pre-opening compliance checklist covering all regulatory requirements",
+        "Build a recruitment timeline and job description library for site teams",
+        "Design a pre-opening training programme aligned with the SOP library",
+        "Plan a marketing launch template for new site openings",
+        "Create a soft opening protocol for testing operations before full launch",
+        "Develop a snagging list template for fit-out quality assurance"
+      ],
+      "responsible": "Operations Director, Marketing Manager, HR"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct a lessons-learned review within 30 days of each opening",
+        "Update the playbook after every opening based on lessons learned",
+        "Create a post-opening support protocol for the first 90 days",
+        "Track new site performance against established site benchmarks",
+        "Build a library of reusable opening templates for different site types",
+        "Review and refine the playbook annually"
+      ],
+      "responsible": "Operations Director, CEO"
+    }
+  },
+  "deliverables": [
+    "New Site Opening Master Timeline",
+    "Phase Checklists (legal, fit-out, recruitment, training, marketing)",
+    "Pre-Opening Compliance Checklist",
+    "Pre-Opening Training Programme outline",
+    "Post-Opening Lessons Learned template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T190-01",
+        "tool_name": "New Site Opening Master Timeline",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Operations Director",
+        "description": "Gantt-style project timeline showing all five phases of a new site opening, with task dependencies, milestones, decision gates, and critical path highlighted."
+      },
+      {
+        "tool_id": "T190-02",
+        "tool_name": "Phase Checklists",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Project Lead",
+        "description": "Detailed checklists for each opening phase covering every task, responsible person, due date, and completion status. Ensures nothing is missed during the opening process."
+      },
+      {
+        "tool_id": "T190-03",
+        "tool_name": "Pre-Opening Compliance Checklist",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Operations Director",
+        "description": "Comprehensive compliance checklist covering all regulatory requirements that must be met before opening day: food registration, fire safety, H&S, licensing, insurance, and certificates."
+      },
+      {
+        "tool_id": "T190-04",
+        "tool_name": "New Site Budget Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Finance Director",
+        "description": "Detailed budget template covering all new site opening costs: lease, fit-out, equipment, recruitment, training, marketing, and working capital, with contingency allowances."
+      },
+      {
+        "tool_id": "T190-05",
+        "tool_name": "Post-Opening Lessons Learned Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Operations Director",
+        "description": "Structured template for the 30-day post-opening review: what went well, what went badly, what to change, timeline adherence, budget variance, and recommended playbook updates."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Food business registration is submitted late, forcing a delayed opening or illegal trading",
+    "Recruitment starts too late and the site opens with an undertrained team",
+    "Fit-out overruns absorb the contingency budget, leaving no marketing budget for launch",
+    "No post-opening support plan is in place and the new site struggles through its critical first weeks alone"
+  ],
+  "kpis": [
+    "New sites open within 5 working days of target date",
+    "Pre-opening compliance checklist 100% complete before first trading day",
+    "New site reaches 80% of revenue target within first 8 weeks",
+    "Post-opening lessons learned review completed within 30 days of opening"
+  ],
+  "dependencies": [
+    "B166"
+  ],
+  "constraints": [
+    "Food business registration requires minimum 28 days notice to the local authority",
+    "Lease negotiations and planning permissions can introduce significant timeline uncertainty",
+    "Recruitment timelines depend on local labour market conditions"
+  ],
+  "time_load": {
+    "L1": "8 hours (playbook creation, timeline development)",
+    "L2": "40+ hours per site opening (execution of all phases)",
+    "L3": "4 hours per opening (lessons learned review and playbook update)"
+  },
+  "review_protocol": "Post-opening lessons learned review within 30 days. Quarterly performance review of new sites against benchmarks. Annual playbook review and update based on accumulated experience.",
+  "meta": {
+    "summary_for_humans": "This block provides a comprehensive playbook for opening new cafe locations, covering every phase from site identification through fit-out, recruitment, training, and launch to post-opening support.",
+    "implementation_risks": [
+      "First-time playbook creation requires significant investment — it pays dividends from the second opening onwards",
+      "Every site is different — the playbook must be flexible enough to accommodate local variations",
+      "Underestimating fit-out timelines is the most common cause of delayed openings"
+    ],
+    "notes_for_engine": "Chain-only block. Activate when a multi-site operator begins planning a new location. Depends on B166 (growth strategy). Links to B188 (SOPs) for training content and B189 (benchmarking) for performance targets.",
+    "tags": [
+      "new_site",
+      "opening",
+      "playbook",
+      "project_management",
+      "multi_site",
+      "chain",
+      "growth",
+      "fit_out"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "chain_cafe",
+      "franchise_cafe"
+    ],
+    "team_size_min": 5,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

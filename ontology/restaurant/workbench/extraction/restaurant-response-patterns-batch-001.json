@@ -1,0 +1,68 @@
+{
+  "vertical": "restaurant",
+  "response_patterns": [
+    {
+      "id": "rp_host_pacing_reset",
+      "name": "Host pacing reset",
+      "description": "Standardize wait quoting, seating release logic, and reservation pacing.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: response pattern activation from front-of-house signals",
+      "status": "review",
+      "focus": "guest_flow"
+    },
+    {
+      "id": "rp_deployment_reset",
+      "name": "Deployment reset",
+      "description": "Realign sectioning, peak deployment, and manager coverage to true venue demand.",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: capacity-aware plans instead of generic advice",
+      "status": "review",
+      "focus": "labor_alignment"
+    },
+    {
+      "id": "rp_pass_communication_reset",
+      "name": "Pass communication reset",
+      "description": "Install shared timing language and pickup discipline across the pass.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: response patterns should be transparent and teachable",
+      "status": "review",
+      "focus": "production_communication"
+    },
+    {
+      "id": "rp_open_close_reset",
+      "name": "Open-close reset",
+      "description": "Turn opening and closing into an enforced operational control loop.",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: repeatable systems beat heroics",
+      "status": "review",
+      "focus": "operational_hygiene"
+    },
+    {
+      "id": "rp_inventory_accuracy_reset",
+      "name": "Inventory accuracy reset",
+      "description": "Tighten count cadence, 86 logic, and depletion updates so stock is trustworthy in service.",
+      "owner": "recovery-team",
+      "source_ref": "compass-market-analysis: structured operational intelligence beats dashboards",
+      "status": "review",
+      "focus": "inventory_controls"
+    },
+    {
+      "id": "rp_manager_presence_reset",
+      "name": "Manager presence reset",
+      "description": "Install a visible floor presence and live coaching rhythm during peak windows.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: role-based intelligence and welcome briefs",
+      "status": "review",
+      "focus": "management_presence"
+    },
+    {
+      "id": "rp_bar_execution_reset",
+      "name": "Bar execution reset",
+      "description": "Stabilize bar priority rules, setup, and handoff with the service floor.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: system response should narrow to executable interventions",
+      "status": "review",
+      "focus": "beverage_flow"
+    }
+  ]
+}

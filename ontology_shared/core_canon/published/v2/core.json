@@ -1,0 +1,840 @@
+{
+  "meta": {
+    "version": "v2",
+    "owner": "OIS core architecture",
+    "released_at": "2026-03-14T00:00:00Z"
+  },
+  "service_modules": [
+    {
+      "id": "intake_and_demand",
+      "name": "Intake and demand shaping",
+      "description": "How work enters the system, how demand is interpreted, and how incoming load is shaped before delivery begins."
+    },
+    {
+      "id": "promise_and_expectations",
+      "name": "Promise and expectation setting",
+      "description": "How the business sets timing, scope, readiness, and client expectations before and during service."
+    },
+    {
+      "id": "capacity_and_deployment",
+      "name": "Capacity and deployment",
+      "description": "How labor, attention, time, and coverage are allocated to fit the actual work pattern."
+    },
+    {
+      "id": "readiness_and_setup",
+      "name": "Readiness and setup",
+      "description": "How people, stations, materials, and environments are prepared before live execution starts."
+    },
+    {
+      "id": "live_execution",
+      "name": "Live execution",
+      "description": "How work is performed in the moment under pressure, variation, interruptions, and real customer impact."
+    },
+    {
+      "id": "handoffs_and_coordination",
+      "name": "Handoffs and coordination",
+      "description": "How information, timing, ownership, and responsibility move across roles, nodes, or teams."
+    },
+    {
+      "id": "quality_and_standards",
+      "name": "Quality and standards",
+      "description": "How the system maintains standard work, consistency, visible quality, and adherence under load."
+    },
+    {
+      "id": "recovery_and_exception_handling",
+      "name": "Recovery and exception handling",
+      "description": "How the business detects, absorbs, escalates, and recovers when delivery or expectations break."
+    },
+    {
+      "id": "team_capability_and_training",
+      "name": "Team capability and training",
+      "description": "How people are prepared, reinforced, coached, and kept execution-ready over time."
+    },
+    {
+      "id": "leadership_and_management_rhythm",
+      "name": "Leadership and management rhythm",
+      "description": "How leaders create direction, presence, review cadence, escalation structure, and follow-through."
+    },
+    {
+      "id": "tools_and_asset_reliability",
+      "name": "Tools and asset reliability",
+      "description": "How the business ensures that tools, systems, equipment, and supporting assets are available and dependable."
+    },
+    {
+      "id": "commercial_and_control_loops",
+      "name": "Commercial and control loops",
+      "description": "How the business monitors losses, stock, waste, margin, leakage, and recurring operational drift."
+    },
+    {
+      "id": "learning_and_improvement",
+      "name": "Learning and improvement",
+      "description": "How the system reflects on outcomes, updates standards, and compounds operational learning."
+    }
+  ],
+  "failure_families": [
+    {
+      "id": "demand_capacity_mismatch",
+      "name": "Demand-capacity mismatch",
+      "description": "The incoming load, timing, or complexity exceeds the coverage, skill, or deployment available."
+    },
+    {
+      "id": "expectation_setting_failure",
+      "name": "Expectation-setting failure",
+      "description": "The business promises timing, scope, or experience it cannot reliably deliver in the current operating state."
+    },
+    {
+      "id": "readiness_failure",
+      "name": "Readiness failure",
+      "description": "Teams or environments enter live work without the needed setup, preparation, or preconditions."
+    },
+    {
+      "id": "role_clarity_failure",
+      "name": "Role clarity failure",
+      "description": "Ownership, responsibilities, escalation paths, or role boundaries are not explicit enough."
+    },
+    {
+      "id": "workflow_design_failure",
+      "name": "Workflow design failure",
+      "description": "The operating sequence itself is poorly designed, too brittle, or too dependent on heroic effort."
+    },
+    {
+      "id": "handoff_failure",
+      "name": "Handoff failure",
+      "description": "Information, timing, or responsibility transfer breaks between people, stages, or service nodes."
+    },
+    {
+      "id": "standards_drift",
+      "name": "Standards drift",
+      "description": "Daily execution no longer matches the intended standard, especially under pressure or variation."
+    },
+    {
+      "id": "capability_gap",
+      "name": "Capability gap",
+      "description": "The team lacks the skill, practice, or reinforcement to execute reliably."
+    },
+    {
+      "id": "leadership_rhythm_failure",
+      "name": "Leadership rhythm failure",
+      "description": "Managers are not creating enough cadence, presence, review, direction, or escalation structure."
+    },
+    {
+      "id": "control_loop_failure",
+      "name": "Control-loop failure",
+      "description": "The business is not measuring, reviewing, or correcting recurring operational loss or drift."
+    },
+    {
+      "id": "tool_or_resource_friction",
+      "name": "Tool or resource friction",
+      "description": "Teams are slowed or destabilized by missing, unreliable, ill-fitted, or poorly managed tools and resources."
+    },
+    {
+      "id": "asset_reliability_failure",
+      "name": "Asset reliability failure",
+      "description": "Critical equipment, systems, or operational assets cannot be relied on at the moment they are needed."
+    },
+    {
+      "id": "exception_recovery_failure",
+      "name": "Exception recovery failure",
+      "description": "The organization handles disruptions, complaints, or breakdowns reactively instead of recovering cleanly."
+    },
+    {
+      "id": "commercial_discipline_failure",
+      "name": "Commercial discipline failure",
+      "description": "Pricing, mix, waste, stock, time use, or margin discipline is too weak to protect performance."
+    },
+    {
+      "id": "accountability_failure",
+      "name": "Accountability failure",
+      "description": "Work is not owned, checked, followed through, or closed with enough discipline."
+    },
+    {
+      "id": "learning_failure",
+      "name": "Learning failure",
+      "description": "The same issues repeat because the system does not convert outcomes into updated behavior or standards."
+    }
+  ],
+  "response_logics": [
+    {
+      "id": "stabilize_visibility",
+      "name": "Stabilize visibility",
+      "description": "Make the live operating state visible fast enough that the team stops flying blind."
+    },
+    {
+      "id": "constrain_promises_and_reset_expectations",
+      "name": "Constrain promises and reset expectations",
+      "description": "Pull promises back inside real delivery capability and make expectations explicit again."
+    },
+    {
+      "id": "align_roles_and_coverage",
+      "name": "Align roles and coverage",
+      "description": "Reset ownership, deployment, and coverage so the work has an executable operating shape."
+    },
+    {
+      "id": "restore_readiness",
+      "name": "Restore readiness",
+      "description": "Re-establish the preconditions, preparation, and setup needed before live work continues."
+    },
+    {
+      "id": "redesign_workflow",
+      "name": "Redesign workflow",
+      "description": "Change the operating sequence itself so the work becomes more robust, less fragile, and easier to execute."
+    },
+    {
+      "id": "strengthen_handoffs",
+      "name": "Strengthen handoffs",
+      "description": "Improve transfer points so information and responsibility move cleanly between roles and stages."
+    },
+    {
+      "id": "standardize_execution",
+      "name": "Standardize execution",
+      "description": "Reduce unwanted variation by making the standard explicit, visible, and repeatable."
+    },
+    {
+      "id": "install_operating_rhythm",
+      "name": "Install operating rhythm",
+      "description": "Create repeatable cadence, managerial routines, and follow-through structure."
+    },
+    {
+      "id": "tighten_control_loops",
+      "name": "Tighten control loops",
+      "description": "Measure, review, and correct the recurring leaks or deviations that keep reappearing."
+    },
+    {
+      "id": "build_capability",
+      "name": "Build capability",
+      "description": "Raise execution quality through training, coaching, rehearsal, and reinforcement."
+    },
+    {
+      "id": "remove_friction_and_restore_reliability",
+      "name": "Remove friction and restore reliability",
+      "description": "Remove the equipment, system, or resource frictions that keep degrading execution."
+    },
+    {
+      "id": "reduce_operational_complexity",
+      "name": "Reduce operational complexity",
+      "description": "Simplify the offer, flow, or decision surface so the system can perform reliably."
+    },
+    {
+      "id": "strengthen_recovery",
+      "name": "Strengthen recovery",
+      "description": "Give the team a cleaner way to detect, own, escalate, and recover when things go wrong."
+    },
+    {
+      "id": "verify_and_learn",
+      "name": "Verify and learn",
+      "description": "Confirm whether the intervention worked and turn execution outcomes into updated operating truth."
+    }
+  ],
+  "signal_archetypes": [
+    {
+      "id": "sig_demand_spike_unabsorbed",
+      "name": "Demand spike goes unabsorbed",
+      "module_id": "intake_and_demand",
+      "signal_type": "demand_variation",
+      "description": "Incoming work volume surges faster than the operation can absorb it cleanly.",
+      "evidence_examples": [
+        "Orders, arrivals, bookings, or requests bunch into a short window.",
+        "Queues expand sharply and the team cannot stabilize flow fast enough."
+      ],
+      "likely_failure_family_ids": ["demand_capacity_mismatch", "workflow_design_failure"]
+    },
+    {
+      "id": "sig_last_minute_volume_shift",
+      "name": "Last-minute volume shift hits the operation",
+      "module_id": "intake_and_demand",
+      "signal_type": "demand_variation",
+      "description": "The shape of incoming work changes abruptly and the system cannot adapt in time.",
+      "evidence_examples": [
+        "Late waves, cancellations, walk-ins, or urgent requests distort the expected flow.",
+        "The team is surprised by the timing or concentration of work."
+      ],
+      "likely_failure_family_ids": ["demand_capacity_mismatch", "expectation_setting_failure"]
+    },
+    {
+      "id": "sig_work_intake_not_prioritized",
+      "name": "Work intake is not prioritized",
+      "module_id": "intake_and_demand",
+      "signal_type": "triage_breakdown",
+      "description": "Incoming work is accepted or handled without enough prioritization, triage, or shaping.",
+      "evidence_examples": [
+        "Everything is treated as equally urgent.",
+        "There is no clear intake rule for what gets handled first."
+      ],
+      "likely_failure_family_ids": ["workflow_design_failure", "leadership_rhythm_failure"]
+    },
+    {
+      "id": "sig_promised_time_missed",
+      "name": "Promised time is missed",
+      "module_id": "promise_and_expectations",
+      "signal_type": "promise_break",
+      "description": "The business commits to timing that actual delivery fails to meet.",
+      "evidence_examples": [
+        "Quoted wait times, delivery times, or completion times slip materially.",
+        "Customers are surprised because the stated timeline was not real."
+      ],
+      "likely_failure_family_ids": ["expectation_setting_failure", "demand_capacity_mismatch"]
+    },
+    {
+      "id": "sig_scope_or_offer_misaligned",
+      "name": "Scope or offer is misaligned to reality",
+      "module_id": "promise_and_expectations",
+      "signal_type": "promise_break",
+      "description": "The operation is selling or agreeing to something the current system cannot deliver reliably.",
+      "evidence_examples": [
+        "The offer is too broad, too complex, or too custom for the current operating strength.",
+        "Teams repeatedly say yes to work that the backend cannot support."
+      ],
+      "likely_failure_family_ids": ["expectation_setting_failure", "commercial_discipline_failure"]
+    },
+    {
+      "id": "sig_customer_expectation_surprise",
+      "name": "Customer expectation surprise appears",
+      "module_id": "promise_and_expectations",
+      "signal_type": "expectation_gap",
+      "description": "Customers react as if the delivered experience differed meaningfully from what they thought they were buying.",
+      "evidence_examples": [
+        "Complaints indicate surprise about timing, process, price, or service shape.",
+        "Frontline teams spend time re-explaining what should have been clear earlier."
+      ],
+      "likely_failure_family_ids": ["expectation_setting_failure", "handoff_failure"]
+    },
+    {
+      "id": "sig_peak_period_undercovered",
+      "name": "Peak period is undercovered",
+      "module_id": "capacity_and_deployment",
+      "signal_type": "coverage_gap",
+      "description": "The system enters a busy period with too little coverage for the work pattern.",
+      "evidence_examples": [
+        "Critical moments consistently feel short-staffed or unsupported.",
+        "Backlogs form because there is not enough coverage where the work is happening."
+      ],
+      "likely_failure_family_ids": ["demand_capacity_mismatch", "leadership_rhythm_failure"]
+    },
+    {
+      "id": "sig_skill_mix_mismatch",
+      "name": "Skill mix is mismatched to the work",
+      "module_id": "capacity_and_deployment",
+      "signal_type": "capability_misalignment",
+      "description": "The people available do not match the type or complexity of work landing in that period.",
+      "evidence_examples": [
+        "Too many inexperienced people are handling the hardest moments.",
+        "The right people are present but not deployed into the right roles."
+      ],
+      "likely_failure_family_ids": ["capability_gap", "demand_capacity_mismatch"]
+    },
+    {
+      "id": "sig_critical_role_left_uncovered",
+      "name": "Critical role is left uncovered",
+      "module_id": "capacity_and_deployment",
+      "signal_type": "coverage_gap",
+      "description": "A role essential to stable delivery is absent, split, or left ambiguous.",
+      "evidence_examples": [
+        "No one clearly owns a key node or handoff point.",
+        "A high-leverage role is pulled away without replacement."
+      ],
+      "likely_failure_family_ids": ["role_clarity_failure", "demand_capacity_mismatch"]
+    },
+    {
+      "id": "sig_shift_or_day_started_unprepared",
+      "name": "Shift or day starts unprepared",
+      "module_id": "readiness_and_setup",
+      "signal_type": "readiness_gap",
+      "description": "Live work begins before the team or environment is actually ready.",
+      "evidence_examples": [
+        "The day opens without a completed setup, briefing, or readiness check.",
+        "Teams start serving or delivering while still assembling basics."
+      ],
+      "likely_failure_family_ids": ["readiness_failure", "leadership_rhythm_failure"]
+    },
+    {
+      "id": "sig_required_inputs_missing_at_start",
+      "name": "Required inputs are missing at start",
+      "module_id": "readiness_and_setup",
+      "signal_type": "resource_gap",
+      "description": "Essential information, materials, tools, or prep inputs are absent when work begins.",
+      "evidence_examples": [
+        "Teams have to stop and search for things they should already have.",
+        "The work begins before prerequisites are in place."
+      ],
+      "likely_failure_family_ids": ["readiness_failure", "tool_or_resource_friction"]
+    },
+    {
+      "id": "sig_opening_or_reset_incomplete",
+      "name": "Opening or reset is incomplete",
+      "module_id": "readiness_and_setup",
+      "signal_type": "reset_breakdown",
+      "description": "The environment is not fully reset between cycles, shifts, or days.",
+      "evidence_examples": [
+        "The next team inherits unresolved prep, mess, stock gaps, or unclear status.",
+        "Opening or closing routines are inconsistently completed."
+      ],
+      "likely_failure_family_ids": ["readiness_failure", "control_loop_failure"]
+    },
+    {
+      "id": "sig_service_or_job_cycle_delay",
+      "name": "Service or job cycle delay appears",
+      "module_id": "live_execution",
+      "signal_type": "cycle_time_delay",
+      "description": "The core delivery cycle slows beyond what the customer or downstream system can absorb.",
+      "evidence_examples": [
+        "Tickets, appointments, jobs, or task cycles take materially longer than expected.",
+        "Delivery speed visibly drops under real demand."
+      ],
+      "likely_failure_family_ids": ["demand_capacity_mismatch", "workflow_design_failure"]
+    },
+    {
+      "id": "sig_rework_or_repeat_work_observed",
+      "name": "Rework or repeat work is observed",
+      "module_id": "live_execution",
+      "signal_type": "rework",
+      "description": "The operation is doing the same work twice because the first pass did not hold.",
+      "evidence_examples": [
+        "Corrections, remakes, re-cleans, or duplicate touches happen in normal flow.",
+        "Teams re-enter the same task because it was not truly finished the first time."
+      ],
+      "likely_failure_family_ids": ["standards_drift", "workflow_design_failure"]
+    },
+    {
+      "id": "sig_work_pace_breaks_under_load",
+      "name": "Work pace breaks under load",
+      "module_id": "live_execution",
+      "signal_type": "load_instability",
+      "description": "Execution becomes unstable or fragmented when demand or complexity rises.",
+      "evidence_examples": [
+        "Teams can cope when quiet but lose coherence when busy.",
+        "Throughput collapses disproportionately during the peak period."
+      ],
+      "likely_failure_family_ids": ["demand_capacity_mismatch", "workflow_design_failure"]
+    },
+    {
+      "id": "sig_handoff_requires_reclarification",
+      "name": "Handoff requires re-clarification",
+      "module_id": "handoffs_and_coordination",
+      "signal_type": "handoff_breakdown",
+      "description": "Transferred work repeatedly needs clarification because the first handoff was incomplete or unclear.",
+      "evidence_examples": [
+        "People have to ask again what is needed, who owns it, or what changed.",
+        "Work slows because the next role does not receive a usable handoff."
+      ],
+      "likely_failure_family_ids": ["handoff_failure", "role_clarity_failure"]
+    },
+    {
+      "id": "sig_ownership_confusion_during_flow",
+      "name": "Ownership confusion appears during flow",
+      "module_id": "handoffs_and_coordination",
+      "signal_type": "ownership_confusion",
+      "description": "People are unsure who owns the next action or who should intervene at a critical moment.",
+      "evidence_examples": [
+        "Multiple people assume someone else owns the next step.",
+        "A task sits because responsibility is ambiguous."
+      ],
+      "likely_failure_family_ids": ["role_clarity_failure", "handoff_failure"]
+    },
+    {
+      "id": "sig_work_dies_between_roles",
+      "name": "Work dies between roles",
+      "module_id": "handoffs_and_coordination",
+      "signal_type": "handoff_breakdown",
+      "description": "A piece of work loses momentum or disappears when it passes from one role to another.",
+      "evidence_examples": [
+        "Tasks stall at boundaries between teams or stages.",
+        "Important details are lost when ownership changes hands."
+      ],
+      "likely_failure_family_ids": ["handoff_failure", "accountability_failure"]
+    },
+    {
+      "id": "sig_output_quality_inconsistent",
+      "name": "Output quality is inconsistent",
+      "module_id": "quality_and_standards",
+      "signal_type": "quality_variation",
+      "description": "Customers or managers experience uneven output quality for similar work.",
+      "evidence_examples": [
+        "Results differ too much by person, shift, site, or moment.",
+        "Good outcomes are possible but not reliably repeated."
+      ],
+      "likely_failure_family_ids": ["standards_drift", "capability_gap"]
+    },
+    {
+      "id": "sig_standard_steps_skipped",
+      "name": "Standard steps are skipped",
+      "module_id": "quality_and_standards",
+      "signal_type": "standards_breach",
+      "description": "Teams omit required standard steps in normal operation, especially under pressure.",
+      "evidence_examples": [
+        "Critical checks or sequence steps are bypassed.",
+        "The expected standard exists on paper but not in live flow."
+      ],
+      "likely_failure_family_ids": ["standards_drift", "accountability_failure"]
+    },
+    {
+      "id": "sig_checker_or_qc_absent",
+      "name": "Checker or quality control is absent",
+      "module_id": "quality_and_standards",
+      "signal_type": "quality_control_gap",
+      "description": "No reliable mechanism exists to catch quality drift before it reaches the customer or downstream team.",
+      "evidence_examples": [
+        "Work leaves a stage without verification.",
+        "Defects are discovered only after the fact."
+      ],
+      "likely_failure_family_ids": ["standards_drift", "control_loop_failure"]
+    },
+    {
+      "id": "sig_issue_resolution_slow_or_unclear",
+      "name": "Issue resolution is slow or unclear",
+      "module_id": "recovery_and_exception_handling",
+      "signal_type": "recovery_gap",
+      "description": "When something goes wrong, the path to resolution is too slow, too vague, or too improvisational.",
+      "evidence_examples": [
+        "Teams hesitate or escalate too late when problems happen.",
+        "Recovery depends on who happens to be present."
+      ],
+      "likely_failure_family_ids": ["exception_recovery_failure", "leadership_rhythm_failure"]
+    },
+    {
+      "id": "sig_complaint_handled_defensively",
+      "name": "Complaint is handled defensively",
+      "module_id": "recovery_and_exception_handling",
+      "signal_type": "recovery_gap",
+      "description": "Customer-facing recovery creates friction because the response is defensive, fragmented, or impersonal.",
+      "evidence_examples": [
+        "The team explains instead of recovering.",
+        "Customers feel resisted before they feel helped."
+      ],
+      "likely_failure_family_ids": ["exception_recovery_failure", "capability_gap"]
+    },
+    {
+      "id": "sig_exception_repeats_without_containment",
+      "name": "Exception repeats without containment",
+      "module_id": "recovery_and_exception_handling",
+      "signal_type": "repeat_exception",
+      "description": "A known exception keeps recurring because the system never contains the underlying pattern.",
+      "evidence_examples": [
+        "The same complaint or disruption happens again within a short period.",
+        "Recovery resolves the moment but not the repeatability."
+      ],
+      "likely_failure_family_ids": ["exception_recovery_failure", "learning_failure"]
+    },
+    {
+      "id": "sig_new_staff_depend_on_memory",
+      "name": "New staff depend on memory and verbal instruction",
+      "module_id": "team_capability_and_training",
+      "signal_type": "training_gap",
+      "description": "New or less experienced team members rely on memory, guessing, or ad hoc explanation instead of structured support.",
+      "evidence_examples": [
+        "People keep asking basic operational questions live.",
+        "Onboarding depends on whoever is nearby rather than an explicit method."
+      ],
+      "likely_failure_family_ids": ["capability_gap", "standards_drift"]
+    },
+    {
+      "id": "sig_same_mistake_repeats_across_people",
+      "name": "Same mistake repeats across people",
+      "module_id": "team_capability_and_training",
+      "signal_type": "training_gap",
+      "description": "Different people reproduce the same error pattern, suggesting the issue is systemic rather than individual.",
+      "evidence_examples": [
+        "Multiple staff make the same mistake across shifts.",
+        "The problem survives staff changes."
+      ],
+      "likely_failure_family_ids": ["capability_gap", "learning_failure"]
+    },
+    {
+      "id": "sig_training_not_translated_to_execution",
+      "name": "Training is not translating into execution",
+      "module_id": "team_capability_and_training",
+      "signal_type": "training_gap",
+      "description": "People have been told or shown what to do, but live behavior still does not reflect the standard.",
+      "evidence_examples": [
+        "The team can explain the standard but does not hold it under pressure.",
+        "Training happened once, but reinforcement is missing."
+      ],
+      "likely_failure_family_ids": ["capability_gap", "leadership_rhythm_failure"]
+    },
+    {
+      "id": "sig_manager_absent_from_critical_moment",
+      "name": "Manager is absent from a critical moment",
+      "module_id": "leadership_and_management_rhythm",
+      "signal_type": "leadership_gap",
+      "description": "The operation reaches a high-risk moment without visible managerial presence or direction.",
+      "evidence_examples": [
+        "Pressure rises and no leader is actively steering the moment.",
+        "Escalations happen after the damage instead of during the buildup."
+      ],
+      "likely_failure_family_ids": ["leadership_rhythm_failure", "demand_capacity_mismatch"]
+    },
+    {
+      "id": "sig_no_live_direction_or_reset",
+      "name": "No live direction or reset occurs",
+      "module_id": "leadership_and_management_rhythm",
+      "signal_type": "leadership_gap",
+      "description": "The team stays in drift because no one stops, resets, or reorients execution in the moment.",
+      "evidence_examples": [
+        "Problems continue accumulating without a clear operational reset.",
+        "The team feels left to self-manage through a deteriorating situation."
+      ],
+      "likely_failure_family_ids": ["leadership_rhythm_failure", "accountability_failure"]
+    },
+    {
+      "id": "sig_follow_through_missing",
+      "name": "Follow-through is missing",
+      "module_id": "leadership_and_management_rhythm",
+      "signal_type": "follow_through_gap",
+      "description": "Managers or leaders name issues but do not reliably close them.",
+      "evidence_examples": [
+        "Problems are discussed repeatedly but still open.",
+        "Agreements exist without disciplined follow-up."
+      ],
+      "likely_failure_family_ids": ["leadership_rhythm_failure", "accountability_failure"]
+    },
+    {
+      "id": "sig_tool_or_system_unavailable",
+      "name": "Tool or system is unavailable when needed",
+      "module_id": "tools_and_asset_reliability",
+      "signal_type": "tooling_gap",
+      "description": "A critical system, tool, or operational support element is missing at the moment of use.",
+      "evidence_examples": [
+        "Teams stop to find access, logins, materials, or forms.",
+        "Execution waits because a supposedly basic tool is not ready."
+      ],
+      "likely_failure_family_ids": ["tool_or_resource_friction", "readiness_failure"]
+    },
+    {
+      "id": "sig_equipment_or_asset_breaks_flow",
+      "name": "Equipment or asset breaks the flow",
+      "module_id": "tools_and_asset_reliability",
+      "signal_type": "asset_reliability_gap",
+      "description": "An unreliable physical or digital asset interrupts the operating sequence.",
+      "evidence_examples": [
+        "Equipment failure or system instability creates live delay.",
+        "A key asset becomes a bottleneck or failure point."
+      ],
+      "likely_failure_family_ids": ["asset_reliability_failure", "tool_or_resource_friction"]
+    },
+    {
+      "id": "sig_workaround_has_become_normal",
+      "name": "Workaround has become normal",
+      "module_id": "tools_and_asset_reliability",
+      "signal_type": "workaround_normalization",
+      "description": "Teams routinely compensate for broken tools, missing supports, or unreliable assets through informal workarounds.",
+      "evidence_examples": [
+        "People describe hacks as standard practice.",
+        "The operation functions by compensating around a known weakness."
+      ],
+      "likely_failure_family_ids": ["tool_or_resource_friction", "asset_reliability_failure"]
+    },
+    {
+      "id": "sig_stock_or_input_inaccuracy",
+      "name": "Stock or input accuracy is weak",
+      "module_id": "commercial_and_control_loops",
+      "signal_type": "control_gap",
+      "description": "The business does not have a reliable view of what inputs, stock, or resources are actually available.",
+      "evidence_examples": [
+        "Teams discover shortages or mismatches live.",
+        "Counts, availability, or records repeatedly differ from reality."
+      ],
+      "likely_failure_family_ids": ["control_loop_failure", "commercial_discipline_failure"]
+    },
+    {
+      "id": "sig_waste_loss_or_leakage_unexplained",
+      "name": "Waste, loss, or leakage is unexplained",
+      "module_id": "commercial_and_control_loops",
+      "signal_type": "control_gap",
+      "description": "Operational loss is visible, but the business cannot explain, localize, or correct it cleanly.",
+      "evidence_examples": [
+        "Margin leakage, waste, shrinkage, or rework is known but not controlled.",
+        "Losses are discussed as normal rather than investigated."
+      ],
+      "likely_failure_family_ids": ["commercial_discipline_failure", "control_loop_failure"]
+    },
+    {
+      "id": "sig_key_operating_metric_not_reviewed",
+      "name": "Key operating metric is not reviewed",
+      "module_id": "commercial_and_control_loops",
+      "signal_type": "control_gap",
+      "description": "A critical operating measure exists but is not reviewed with enough discipline to drive correction.",
+      "evidence_examples": [
+        "Teams collect numbers without acting on them.",
+        "Leaders do not regularly review the metrics that would reveal the problem."
+      ],
+      "likely_failure_family_ids": ["control_loop_failure", "leadership_rhythm_failure"]
+    },
+    {
+      "id": "sig_problem_discussed_not_closed",
+      "name": "Problem is discussed but not closed",
+      "module_id": "learning_and_improvement",
+      "signal_type": "learning_gap",
+      "description": "The organization talks about a recurring issue without resolving it into an updated operating truth.",
+      "evidence_examples": [
+        "The same issue appears in repeated conversations.",
+        "Awareness exists, but closure and system change do not."
+      ],
+      "likely_failure_family_ids": ["learning_failure", "accountability_failure"]
+    },
+    {
+      "id": "sig_no_postmortem_after_breakdown",
+      "name": "No postmortem follows a breakdown",
+      "module_id": "learning_and_improvement",
+      "signal_type": "learning_gap",
+      "description": "A meaningful failure happens and the business does not review it deeply enough to learn.",
+      "evidence_examples": [
+        "Breakdowns are survived and forgotten.",
+        "No structured reflection happens after a serious service miss."
+      ],
+      "likely_failure_family_ids": ["learning_failure", "leadership_rhythm_failure"]
+    },
+    {
+      "id": "sig_improvement_not_standardized",
+      "name": "Improvement is not standardized",
+      "module_id": "learning_and_improvement",
+      "signal_type": "learning_gap",
+      "description": "Something improved locally, but the gain was never turned into repeatable operating practice.",
+      "evidence_examples": [
+        "One person or shift fixed it, but the fix did not travel.",
+        "Better behavior remains informal instead of becoming standard."
+      ],
+      "likely_failure_family_ids": ["learning_failure", "standards_drift"]
+    }
+  ],
+  "signal_failure_hypotheses": [
+    { "signal_id": "sig_demand_spike_unabsorbed", "failure_family_id": "demand_capacity_mismatch", "weight": 0.95, "rationale": "A spike the system cannot absorb is the clearest sign that incoming load exceeds available coverage or sequence capacity." },
+    { "signal_id": "sig_demand_spike_unabsorbed", "failure_family_id": "workflow_design_failure", "weight": 0.64, "rationale": "If spikes collapse the flow immediately, the operating sequence itself is likely too brittle or poorly buffered." },
+    { "signal_id": "sig_last_minute_volume_shift", "failure_family_id": "demand_capacity_mismatch", "weight": 0.82, "rationale": "Late demand shape changes often expose a system that cannot reallocate capacity fast enough." },
+    { "signal_id": "sig_last_minute_volume_shift", "failure_family_id": "expectation_setting_failure", "weight": 0.58, "rationale": "Sudden shifts become more damaging when the business keeps promising as if the original shape still applies." },
+    { "signal_id": "sig_work_intake_not_prioritized", "failure_family_id": "workflow_design_failure", "weight": 0.84, "rationale": "Weak triage means the intake flow itself is not designed to shape work into an executable sequence." },
+    { "signal_id": "sig_work_intake_not_prioritized", "failure_family_id": "leadership_rhythm_failure", "weight": 0.52, "rationale": "Prioritization often breaks when leaders are not creating enough live review and decision cadence." },
+
+    { "signal_id": "sig_promised_time_missed", "failure_family_id": "expectation_setting_failure", "weight": 0.9, "rationale": "Missing promised timing means the promise was not set inside real delivery capability." },
+    { "signal_id": "sig_promised_time_missed", "failure_family_id": "demand_capacity_mismatch", "weight": 0.66, "rationale": "Timing promises are especially vulnerable when deployed capacity cannot absorb the actual load." },
+    { "signal_id": "sig_scope_or_offer_misaligned", "failure_family_id": "expectation_setting_failure", "weight": 0.88, "rationale": "Offer misalignment directly reflects a promise surface that is detached from operational reality." },
+    { "signal_id": "sig_scope_or_offer_misaligned", "failure_family_id": "commercial_discipline_failure", "weight": 0.6, "rationale": "Over-broad or overly custom offers often reflect weak discipline around what the business should really sell." },
+    { "signal_id": "sig_customer_expectation_surprise", "failure_family_id": "expectation_setting_failure", "weight": 0.86, "rationale": "Customer surprise is the cleanest sign that expectations were not formed or reset correctly." },
+    { "signal_id": "sig_customer_expectation_surprise", "failure_family_id": "handoff_failure", "weight": 0.47, "rationale": "Expectation gaps also appear when important context is lost between booking, front line, and delivery." },
+
+    { "signal_id": "sig_peak_period_undercovered", "failure_family_id": "demand_capacity_mismatch", "weight": 0.93, "rationale": "Visible undercoverage at the peak is a direct expression of supply-demand mismatch." },
+    { "signal_id": "sig_peak_period_undercovered", "failure_family_id": "leadership_rhythm_failure", "weight": 0.49, "rationale": "Weak deployment review and forecasting cadence often leaves the peak moment exposed." },
+    { "signal_id": "sig_skill_mix_mismatch", "failure_family_id": "capability_gap", "weight": 0.78, "rationale": "If the available team lacks the right skill mix, the system is carrying a real execution capability gap." },
+    { "signal_id": "sig_skill_mix_mismatch", "failure_family_id": "demand_capacity_mismatch", "weight": 0.68, "rationale": "A coverage plan can fail even with enough bodies if the deployed skill profile does not fit the work." },
+    { "signal_id": "sig_critical_role_left_uncovered", "failure_family_id": "role_clarity_failure", "weight": 0.74, "rationale": "Uncovered critical roles usually mean ownership boundaries were not designed or protected clearly enough." },
+    { "signal_id": "sig_critical_role_left_uncovered", "failure_family_id": "demand_capacity_mismatch", "weight": 0.63, "rationale": "Critical roles also go uncovered when overall deployment is too thin for the work shape." },
+
+    { "signal_id": "sig_shift_or_day_started_unprepared", "failure_family_id": "readiness_failure", "weight": 0.94, "rationale": "Starting work unprepared is the most direct form of readiness failure." },
+    { "signal_id": "sig_shift_or_day_started_unprepared", "failure_family_id": "leadership_rhythm_failure", "weight": 0.56, "rationale": "Readiness gaps persist when leaders do not enforce briefings, resets, and opening discipline." },
+    { "signal_id": "sig_required_inputs_missing_at_start", "failure_family_id": "readiness_failure", "weight": 0.82, "rationale": "Missing prerequisites at the start show the system entered live work before setup was complete." },
+    { "signal_id": "sig_required_inputs_missing_at_start", "failure_family_id": "tool_or_resource_friction", "weight": 0.69, "rationale": "If inputs are habitually unavailable, the operation is also carrying friction in its support resources." },
+    { "signal_id": "sig_opening_or_reset_incomplete", "failure_family_id": "readiness_failure", "weight": 0.85, "rationale": "Incomplete reset breaks the transition into the next cycle before work even begins." },
+    { "signal_id": "sig_opening_or_reset_incomplete", "failure_family_id": "control_loop_failure", "weight": 0.57, "rationale": "If resets keep failing, the business likely lacks a review loop that checks and corrects that routine." },
+
+    { "signal_id": "sig_service_or_job_cycle_delay", "failure_family_id": "demand_capacity_mismatch", "weight": 0.79, "rationale": "Cycle delay is often what customers see first when demand outstrips delivery capacity." },
+    { "signal_id": "sig_service_or_job_cycle_delay", "failure_family_id": "workflow_design_failure", "weight": 0.74, "rationale": "Persistent delay also suggests the sequence or handoff shape of the work is structurally weak." },
+    { "signal_id": "sig_rework_or_repeat_work_observed", "failure_family_id": "standards_drift", "weight": 0.73, "rationale": "Repeat work is a strong sign that the intended standard is not holding on first pass." },
+    { "signal_id": "sig_rework_or_repeat_work_observed", "failure_family_id": "workflow_design_failure", "weight": 0.68, "rationale": "Rework can also mean the workflow itself is forcing duplicate touches or avoidable loops." },
+    { "signal_id": "sig_work_pace_breaks_under_load", "failure_family_id": "demand_capacity_mismatch", "weight": 0.83, "rationale": "If pace collapses under load, the system cannot carry that level of demand with current deployment." },
+    { "signal_id": "sig_work_pace_breaks_under_load", "failure_family_id": "workflow_design_failure", "weight": 0.71, "rationale": "Load-sensitive breakdowns also indicate fragile sequencing and weak operational buffering." },
+
+    { "signal_id": "sig_handoff_requires_reclarification", "failure_family_id": "handoff_failure", "weight": 0.93, "rationale": "Repeated clarification is a direct sign that the first transfer was incomplete or unusable." },
+    { "signal_id": "sig_handoff_requires_reclarification", "failure_family_id": "role_clarity_failure", "weight": 0.51, "rationale": "Handoffs become muddy when role boundaries and responsibility lines are not explicit." },
+    { "signal_id": "sig_ownership_confusion_during_flow", "failure_family_id": "role_clarity_failure", "weight": 0.88, "rationale": "Live confusion about who owns the next action points straight at weak role clarity." },
+    { "signal_id": "sig_ownership_confusion_during_flow", "failure_family_id": "handoff_failure", "weight": 0.67, "rationale": "Ownership confusion often appears at the exact moment responsibility should transfer cleanly." },
+    { "signal_id": "sig_work_dies_between_roles", "failure_family_id": "handoff_failure", "weight": 0.9, "rationale": "When work dies at boundaries, the transfer mechanism itself is failing." },
+    { "signal_id": "sig_work_dies_between_roles", "failure_family_id": "accountability_failure", "weight": 0.58, "rationale": "Dropped work also reflects weak follow-through once ownership is supposed to pass." },
+
+    { "signal_id": "sig_output_quality_inconsistent", "failure_family_id": "standards_drift", "weight": 0.84, "rationale": "Inconsistent output strongly suggests the operating standard is not holding across people and moments." },
+    { "signal_id": "sig_output_quality_inconsistent", "failure_family_id": "capability_gap", "weight": 0.61, "rationale": "Variation also grows when the team cannot execute the standard with enough skill." },
+    { "signal_id": "sig_standard_steps_skipped", "failure_family_id": "standards_drift", "weight": 0.9, "rationale": "Skipping required steps is one of the clearest forms of drift from standard work." },
+    { "signal_id": "sig_standard_steps_skipped", "failure_family_id": "accountability_failure", "weight": 0.55, "rationale": "Steps continue getting skipped when no one is truly checking and holding the line." },
+    { "signal_id": "sig_checker_or_qc_absent", "failure_family_id": "standards_drift", "weight": 0.66, "rationale": "Without a check step, quality drift reaches the customer or downstream team too easily." },
+    { "signal_id": "sig_checker_or_qc_absent", "failure_family_id": "control_loop_failure", "weight": 0.63, "rationale": "Missing verification also reflects a weak control loop around quality and defects." },
+
+    { "signal_id": "sig_issue_resolution_slow_or_unclear", "failure_family_id": "exception_recovery_failure", "weight": 0.9, "rationale": "Slow or vague recovery shows the business does not have a clean exception-handling method." },
+    { "signal_id": "sig_issue_resolution_slow_or_unclear", "failure_family_id": "leadership_rhythm_failure", "weight": 0.48, "rationale": "Recovery weakens further when leaders are not visibly steering or escalating the issue." },
+    { "signal_id": "sig_complaint_handled_defensively", "failure_family_id": "exception_recovery_failure", "weight": 0.82, "rationale": "Defensive complaint handling is a frontline sign of poor recovery design." },
+    { "signal_id": "sig_complaint_handled_defensively", "failure_family_id": "capability_gap", "weight": 0.54, "rationale": "It also often indicates the team lacks coached recovery behavior under pressure." },
+    { "signal_id": "sig_exception_repeats_without_containment", "failure_family_id": "exception_recovery_failure", "weight": 0.74, "rationale": "Recurring unresolved exceptions show the recovery pattern is not containing the issue." },
+    { "signal_id": "sig_exception_repeats_without_containment", "failure_family_id": "learning_failure", "weight": 0.7, "rationale": "If the same disruption repeats, the system is not learning from previous breakdowns." },
+
+    { "signal_id": "sig_new_staff_depend_on_memory", "failure_family_id": "capability_gap", "weight": 0.86, "rationale": "Memory-based onboarding is a strong sign that the team lacks structured execution capability." },
+    { "signal_id": "sig_new_staff_depend_on_memory", "failure_family_id": "standards_drift", "weight": 0.5, "rationale": "When standards are not externalized, they drift person by person." },
+    { "signal_id": "sig_same_mistake_repeats_across_people", "failure_family_id": "capability_gap", "weight": 0.72, "rationale": "The same repeated mistake across multiple people suggests a systemic skill and reinforcement gap." },
+    { "signal_id": "sig_same_mistake_repeats_across_people", "failure_family_id": "learning_failure", "weight": 0.69, "rationale": "If the pattern repeats broadly, the system is also failing to convert mistakes into corrected practice." },
+    { "signal_id": "sig_training_not_translated_to_execution", "failure_family_id": "capability_gap", "weight": 0.8, "rationale": "Training that does not survive into live execution is still a capability problem." },
+    { "signal_id": "sig_training_not_translated_to_execution", "failure_family_id": "leadership_rhythm_failure", "weight": 0.56, "rationale": "Translation from training to execution usually needs managerial reinforcement and review cadence." },
+
+    { "signal_id": "sig_manager_absent_from_critical_moment", "failure_family_id": "leadership_rhythm_failure", "weight": 0.92, "rationale": "Absent leadership at the critical moment directly reflects a broken management rhythm." },
+    { "signal_id": "sig_manager_absent_from_critical_moment", "failure_family_id": "demand_capacity_mismatch", "weight": 0.44, "rationale": "Peak absence becomes more damaging when the underlying load already exceeds system stability." },
+    { "signal_id": "sig_no_live_direction_or_reset", "failure_family_id": "leadership_rhythm_failure", "weight": 0.9, "rationale": "If nobody resets the moment, the system lacks real-time leadership cadence." },
+    { "signal_id": "sig_no_live_direction_or_reset", "failure_family_id": "accountability_failure", "weight": 0.53, "rationale": "Drift persists because no one is clearly holding the next correction step." },
+    { "signal_id": "sig_follow_through_missing", "failure_family_id": "leadership_rhythm_failure", "weight": 0.72, "rationale": "Poor follow-through is a classic sign that review and closure rhythms are weak." },
+    { "signal_id": "sig_follow_through_missing", "failure_family_id": "accountability_failure", "weight": 0.78, "rationale": "Open loops persist because the system is not truly owning completion." },
+
+    { "signal_id": "sig_tool_or_system_unavailable", "failure_family_id": "tool_or_resource_friction", "weight": 0.87, "rationale": "If a needed tool is not there at the moment of use, operational friction is already harming execution." },
+    { "signal_id": "sig_tool_or_system_unavailable", "failure_family_id": "readiness_failure", "weight": 0.55, "rationale": "Unavailability at start or handoff also reflects incomplete preparation before live work." },
+    { "signal_id": "sig_equipment_or_asset_breaks_flow", "failure_family_id": "asset_reliability_failure", "weight": 0.91, "rationale": "An asset that breaks flow is directly failing its reliability role in the system." },
+    { "signal_id": "sig_equipment_or_asset_breaks_flow", "failure_family_id": "tool_or_resource_friction", "weight": 0.58, "rationale": "Unreliable assets also create daily execution friction even before outright failure." },
+    { "signal_id": "sig_workaround_has_become_normal", "failure_family_id": "tool_or_resource_friction", "weight": 0.82, "rationale": "Normalizing workarounds means teams are repeatedly compensating around structural friction." },
+    { "signal_id": "sig_workaround_has_become_normal", "failure_family_id": "asset_reliability_failure", "weight": 0.62, "rationale": "Workarounds often grow around assets or systems that cannot be trusted to hold." },
+
+    { "signal_id": "sig_stock_or_input_inaccuracy", "failure_family_id": "control_loop_failure", "weight": 0.79, "rationale": "Weak stock accuracy reflects a broken loop for measuring, reviewing, and correcting reality." },
+    { "signal_id": "sig_stock_or_input_inaccuracy", "failure_family_id": "commercial_discipline_failure", "weight": 0.72, "rationale": "Stock inaccuracies also signal weak operational discipline around loss, waste, and availability." },
+    { "signal_id": "sig_waste_loss_or_leakage_unexplained", "failure_family_id": "commercial_discipline_failure", "weight": 0.84, "rationale": "Visible unexplained leakage is a direct sign that commercial discipline is not protecting the business." },
+    { "signal_id": "sig_waste_loss_or_leakage_unexplained", "failure_family_id": "control_loop_failure", "weight": 0.68, "rationale": "If leakage is seen but not localized, the control loop is also too weak." },
+    { "signal_id": "sig_key_operating_metric_not_reviewed", "failure_family_id": "control_loop_failure", "weight": 0.89, "rationale": "Not reviewing a key metric means the business cannot correct itself from the signals it already has." },
+    { "signal_id": "sig_key_operating_metric_not_reviewed", "failure_family_id": "leadership_rhythm_failure", "weight": 0.52, "rationale": "Metrics are usually ignored when leaders do not create a review rhythm that forces attention." },
+
+    { "signal_id": "sig_problem_discussed_not_closed", "failure_family_id": "learning_failure", "weight": 0.75, "rationale": "Repeated discussion without closure means the system is not converting awareness into learning." },
+    { "signal_id": "sig_problem_discussed_not_closed", "failure_family_id": "accountability_failure", "weight": 0.71, "rationale": "Open loops also reflect weak ownership and completion discipline." },
+    { "signal_id": "sig_no_postmortem_after_breakdown", "failure_family_id": "learning_failure", "weight": 0.9, "rationale": "Skipping review after a breakdown is a direct failure to learn from execution reality." },
+    { "signal_id": "sig_no_postmortem_after_breakdown", "failure_family_id": "leadership_rhythm_failure", "weight": 0.46, "rationale": "Postmortems usually do not happen when leadership has not built a review ritual." },
+    { "signal_id": "sig_improvement_not_standardized", "failure_family_id": "learning_failure", "weight": 0.84, "rationale": "If a gain never becomes standard, the organization is failing to store and spread learning." },
+    { "signal_id": "sig_improvement_not_standardized", "failure_family_id": "standards_drift", "weight": 0.53, "rationale": "Improvements that stay informal leave the standard vulnerable to drift back." }
+  ],
+  "failure_response_hypotheses": [
+    { "failure_family_id": "demand_capacity_mismatch", "response_logic_id": "align_roles_and_coverage", "weight": 0.93, "rationale": "Load mismatch is first corrected by reshaping coverage and deployment around actual demand." },
+    { "failure_family_id": "demand_capacity_mismatch", "response_logic_id": "stabilize_visibility", "weight": 0.64, "rationale": "The team needs live visibility before it can steer a load problem intelligently." },
+    { "failure_family_id": "demand_capacity_mismatch", "response_logic_id": "reduce_operational_complexity", "weight": 0.55, "rationale": "When demand cannot be absorbed, narrowing the decision or offer surface can restore stability." },
+
+    { "failure_family_id": "expectation_setting_failure", "response_logic_id": "constrain_promises_and_reset_expectations", "weight": 0.95, "rationale": "Expectation failures must first be corrected by bringing promises back inside real delivery capability." },
+    { "failure_family_id": "expectation_setting_failure", "response_logic_id": "stabilize_visibility", "weight": 0.48, "rationale": "Clear visibility into actual timing and flow helps reset promises honestly." },
+
+    { "failure_family_id": "readiness_failure", "response_logic_id": "restore_readiness", "weight": 0.95, "rationale": "Readiness failures are best corrected by rebuilding preconditions before live work continues." },
+    { "failure_family_id": "readiness_failure", "response_logic_id": "install_operating_rhythm", "weight": 0.58, "rationale": "Readiness improves when resets, openings, and briefings become disciplined routines." },
+
+    { "failure_family_id": "role_clarity_failure", "response_logic_id": "align_roles_and_coverage", "weight": 0.86, "rationale": "Role confusion is primarily corrected by making ownership and boundaries explicit in the operating shape." },
+    { "failure_family_id": "role_clarity_failure", "response_logic_id": "strengthen_handoffs", "weight": 0.52, "rationale": "Role clarity often has to be reinforced at the boundary where work passes to the next owner." },
+
+    { "failure_family_id": "workflow_design_failure", "response_logic_id": "redesign_workflow", "weight": 0.95, "rationale": "If the sequence itself is weak, the workflow must be redesigned rather than merely pushed harder." },
+    { "failure_family_id": "workflow_design_failure", "response_logic_id": "reduce_operational_complexity", "weight": 0.63, "rationale": "Over-complex flows often need simplification before redesign can hold." },
+
+    { "failure_family_id": "handoff_failure", "response_logic_id": "strengthen_handoffs", "weight": 0.96, "rationale": "Broken transfers are directly corrected by hardening the handoff itself." },
+    { "failure_family_id": "handoff_failure", "response_logic_id": "stabilize_visibility", "weight": 0.43, "rationale": "Teams often need shared visibility so the next owner can see what is actually being passed." },
+
+    { "failure_family_id": "standards_drift", "response_logic_id": "standardize_execution", "weight": 0.94, "rationale": "Drift is best corrected by making the expected standard visible, teachable, and repeatable again." },
+    { "failure_family_id": "standards_drift", "response_logic_id": "verify_and_learn", "weight": 0.49, "rationale": "Standards need verification loops or they decay back into variation." },
+
+    { "failure_family_id": "capability_gap", "response_logic_id": "build_capability", "weight": 0.95, "rationale": "Skill and execution gaps require coaching, training, reinforcement, and rehearsal." },
+    { "failure_family_id": "capability_gap", "response_logic_id": "standardize_execution", "weight": 0.44, "rationale": "People learn faster when the standard is explicit and externally supported." },
+
+    { "failure_family_id": "leadership_rhythm_failure", "response_logic_id": "install_operating_rhythm", "weight": 0.96, "rationale": "Weak leadership cadence is directly addressed by creating repeatable review and reset rhythm." },
+    { "failure_family_id": "leadership_rhythm_failure", "response_logic_id": "stabilize_visibility", "weight": 0.46, "rationale": "Leaders need a visible operating state before they can direct the moment well." },
+
+    { "failure_family_id": "control_loop_failure", "response_logic_id": "tighten_control_loops", "weight": 0.97, "rationale": "Control-loop failure should be corrected by restoring measurement, review, and corrective action." },
+    { "failure_family_id": "control_loop_failure", "response_logic_id": "verify_and_learn", "weight": 0.41, "rationale": "Control loops improve further when the team verifies whether corrections actually changed the outcome." },
+
+    { "failure_family_id": "tool_or_resource_friction", "response_logic_id": "remove_friction_and_restore_reliability", "weight": 0.94, "rationale": "Execution friction caused by missing supports should be corrected by restoring dependable tools and inputs." },
+    { "failure_family_id": "tool_or_resource_friction", "response_logic_id": "restore_readiness", "weight": 0.45, "rationale": "Some friction is really a readiness issue because basic supports were not in place before work began." },
+
+    { "failure_family_id": "asset_reliability_failure", "response_logic_id": "remove_friction_and_restore_reliability", "weight": 0.95, "rationale": "Broken or unreliable assets require direct reliability restoration, not just team effort." },
+    { "failure_family_id": "asset_reliability_failure", "response_logic_id": "reduce_operational_complexity", "weight": 0.32, "rationale": "In the short term, the operation may need to simplify around an unreliable asset." },
+
+    { "failure_family_id": "exception_recovery_failure", "response_logic_id": "strengthen_recovery", "weight": 0.96, "rationale": "Recovery failures should first be corrected by designing clearer ownership and response patterns for exceptions." },
+    { "failure_family_id": "exception_recovery_failure", "response_logic_id": "install_operating_rhythm", "weight": 0.34, "rationale": "Recovery gets stronger when escalation and review rhythm are visible and repeatable." },
+
+    { "failure_family_id": "commercial_discipline_failure", "response_logic_id": "tighten_control_loops", "weight": 0.78, "rationale": "Commercial leakage usually needs disciplined measurement and review to become controllable." },
+    { "failure_family_id": "commercial_discipline_failure", "response_logic_id": "reduce_operational_complexity", "weight": 0.57, "rationale": "Complex offers and complex execution often create the commercial leaks in the first place." },
+
+    { "failure_family_id": "accountability_failure", "response_logic_id": "install_operating_rhythm", "weight": 0.69, "rationale": "Accountability strengthens when follow-through and review become structured rhythms rather than intentions." },
+    { "failure_family_id": "accountability_failure", "response_logic_id": "align_roles_and_coverage", "weight": 0.61, "rationale": "People own work better when the operating shape makes ownership unambiguous." },
+
+    { "failure_family_id": "learning_failure", "response_logic_id": "verify_and_learn", "weight": 0.97, "rationale": "Learning failure is directly addressed by verifying outcomes and storing the lesson in the operating system." },
+    { "failure_family_id": "learning_failure", "response_logic_id": "standardize_execution", "weight": 0.39, "rationale": "Learning only compounds when improvements are translated into repeatable standard work." }
+  ]
+}

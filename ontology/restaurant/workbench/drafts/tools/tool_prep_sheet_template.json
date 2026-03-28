@@ -1,0 +1,22 @@
+{
+  "id": "tool_prep_sheet_template",
+  "name": "Prep sheet template",
+  "description": "Role-based prep tracker with quantities, cutoffs, owner names, and completion visibility for the items that protect service readiness.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: readiness improves when prep becomes explicit, visible, and reviewable",
+  "updated_at": "2026-03-14T00:24:43.064785Z",
+  "category": "kitchen",
+  "format": "tracker",
+  "usage_moment": "Use before service and during prep handovers to verify readiness against explicit ownership.",
+  "expected_output": "A prep tracker showing what is done, what is not, who owns it, and what cutoff or quantity applies.",
+  "adaptation_variables": [
+    "menu_daypart",
+    "prep_lines",
+    "par_levels",
+    "owner_roles"
+  ],
+  "block_ids": [
+    "blk_standardize_prep_sheet"
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "block_id": "B124",
+  "name": "Financial Literacy Programme",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Builds financial understanding across the cafe team so that every staff member — from barista to shift lead — understands how their daily actions affect revenue, costs, and profitability. This block moves financial awareness beyond the owner's spreadsheet and into the operational culture of the business.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Train shift leaders and senior staff to understand basic P&L concepts: revenue, cost of goods, gross margin, labour cost, and net profit",
+      "Connect daily operational behaviours to financial outcomes so staff understand why waste control, upselling, and efficiency matter",
+      "Create a shared financial language within the team so that targets and performance discussions are understood by everyone",
+      "Establish regular financial communication rhythms that keep the team informed without overwhelming them",
+      "Develop at least two team members (beyond the owner) who can interpret basic financial reports"
+    ],
+    "secondary_objectives": [
+      "Reduce owner isolation by creating a team that shares responsibility for financial performance",
+      "Improve staff retention by demonstrating that the business is well-managed and sustainable",
+      "Enable more effective delegation of cost-sensitive decisions such as ordering and wastage management",
+      "Prepare future shift leaders and managers for financial responsibilities"
+    ]
+  },
+  "why_this_matters": "In most independent cafes, the owner carries the full weight of financial understanding alone. Staff make dozens of decisions daily that affect profitability — over-dosing coffee, discarding usable food, giving away extra shots, failing to upsell, leaving lights and equipment running — without any understanding of the financial impact. A barista who wastes 200g of coffee per shift does not know that this costs the business over 1,500 pounds per year. A kitchen team member who bins slightly bruised fruit rather than using it in a smoothie does not connect this to the cafe's food cost percentage. Financial literacy is not about turning baristas into accountants. It is about ensuring that every team member understands three things: how the cafe makes money, where the money goes, and how their behaviour directly affects whether the business thrives or struggles. UK hospitality has some of the tightest margins of any sector, with net profit for cafes typically between 5-12%. In that narrow band, a team that understands and cares about financial performance can easily contribute 2-3 percentage points of margin improvement through better waste control, more consistent upselling, and smarter operational decisions. Research by UK Hospitality consistently shows that businesses with financially literate teams outperform those where financial knowledge is concentrated in the owner alone.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: The owner or manager prepares a simple one-page financial overview of the cafe — not the full P&L, but the key numbers that matter: average daily revenue, what percentage goes to ingredients, what percentage goes to wages, what is left as profit, and what that profit needs to cover (rent, bills, equipment, owner's income). Express these in terms staff can relate to: 'For every pound a customer spends, roughly 30p goes to ingredients, 35p goes to wages, 25p goes to rent and bills, and only 10p is actual profit.' Week 2: Hold a 30-minute team meeting to share these numbers. Use a visual format — a simple pie chart or a pound coin divided into segments works well. Explain that the cafe is not a charity and not a gold mine: it is a tight-margin business where small daily decisions add up. Give three concrete examples relevant to your cafe: what a wasted flat white actually costs, what happens to profit if every customer buys a pastry with their coffee, and how an extra hour of unnecessary staffing affects the weekly wage bill. Invite questions and make it clear this is about shared understanding, not blame.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Financial Awareness Training Module that all new starters complete within their first month. This should cover: how the cafe earns revenue, the difference between revenue and profit, what COGS means in practice (linking to recipe costing from B056), why labour scheduling matters (linking to B085), and three things every team member can do to protect margins. Create a visible daily revenue target board — this can be a whiteboard near the till area showing today's target, yesterday's actual, and the week-to-date position. Train shift leaders to do a basic shift cost calculation: revenue taken during their shift minus estimated ingredient cost and wage cost for those hours. This does not need to be precise — it needs to be directional so they develop an intuition for whether a shift was financially productive. Introduce a monthly team financial update: 5 minutes at the start of a team meeting sharing how the cafe performed against budget, what went well, and one area for improvement. Keep it positive and solutions-focused.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Financial awareness should now be embedded in daily operations. Shift leaders should naturally reference financial targets when making decisions: 'We are 80 pounds behind target today, let us focus on upselling pastries this afternoon.' Introduce a simple incentive or recognition programme linked to financial targets — this could be as simple as celebrating when the team hits the weekly revenue target or achieves a new low on waste percentage. Develop a Financial Champion role: a team member (not the owner) who takes responsibility for tracking daily revenue, monitoring waste, and presenting the monthly numbers to the team. This is a development opportunity that also reduces the owner's burden. Consider sharing a simplified quarterly P&L with senior staff, showing them how the numbers flow from daily revenue through to profit. Benchmark the team's financial literacy by periodically asking questions: What is our average transaction value? What does a flat white cost us to make? What is our busiest day of the week? A financially literate team is an operationally excellent team."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Prepare a one-page financial overview expressing the cafe's cost structure in simple terms",
+        "Create a visual representation of where each pound of revenue goes",
+        "Hold a 30-minute team meeting to share the financial overview and take questions",
+        "Provide three concrete examples of how daily behaviours affect profitability",
+        "Ensure the conversation is framed positively — shared understanding, not blame",
+        "Document the key financial facts on a reference card for the team noticeboard"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Financial Awareness Training Module for new starter induction",
+        "Install a daily revenue target board visible to the team",
+        "Train shift leaders to estimate basic shift-level profitability",
+        "Introduce a 5-minute monthly financial update at team meetings",
+        "Link financial awareness training to recipe costing (B056) and labour scheduling (B085)",
+        "Create a glossary of financial terms relevant to cafe operations for the team handbook"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Establish a Financial Champion role within the team",
+        "Introduce recognition or incentives linked to financial target achievement",
+        "Share simplified quarterly P&L summaries with senior staff",
+        "Conduct periodic financial literacy checks with the team",
+        "Integrate financial awareness into performance reviews and development conversations",
+        "Celebrate financial wins publicly to reinforce the connection between effort and results"
+      ],
+      "responsible": "Owner, Manager, Financial Champion"
+    }
+  },
+  "deliverables": [
+    "One-Page Cafe Financial Overview (visual cost breakdown)",
+    "Financial Awareness Training Module for new starters",
+    "Daily Revenue Target Board template",
+    "Monthly Team Financial Update slide template",
+    "Financial Glossary for cafe teams"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T124-01",
+        "tool_name": "Cafe Financial Overview Sheet",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A one-page visual document showing how each pound of revenue is allocated across ingredients, wages, overheads, and profit. Designed to be shared with the whole team in plain language."
+      },
+      {
+        "tool_id": "T124-02",
+        "tool_name": "Financial Awareness Training Module",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "A structured training module covering revenue, COGS, labour cost, and profit concepts in cafe-specific terms. Includes worked examples and three actionable behaviours every team member can adopt."
+      },
+      {
+        "tool_id": "T124-03",
+        "tool_name": "Daily Revenue Target Board Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "A whiteboard or printed template showing daily revenue target, yesterday's actual, week-to-date position, and a motivational target for the team. Updated daily by the shift leader."
+      },
+      {
+        "tool_id": "T124-04",
+        "tool_name": "Monthly Financial Update Presentation",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "A simple 3-slide template for monthly team financial updates: how the month went vs budget, one thing that went well, and one area for improvement. Designed to be delivered in 5 minutes."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Financial information is shared in a blaming or fear-inducing way, causing staff to disengage rather than take ownership",
+    "Owner shares headline numbers but not the context, leaving staff confused about what they can actually influence",
+    "Financial literacy training happens once and is never reinforced, fading from team consciousness within weeks",
+    "Revenue targets are posted but never updated or discussed, becoming invisible wallpaper"
+  ],
+  "kpis": [
+    "All shift leaders can explain the cafe's approximate cost structure within 10% accuracy",
+    "Daily revenue target board updated every trading day",
+    "Monthly financial update delivered to the team within 2 weeks of month-end",
+    "At least two team members beyond the owner can interpret a basic monthly financial summary"
+  ],
+  "dependencies": ["B122", "B123"],
+  "constraints": [
+    "Owner must be willing to share financial information with the team at an appropriate level of detail",
+    "Financial communication must be adapted to the team's level — avoid jargon and accounting terminology",
+    "Sensitive information such as owner's salary or exact profit figures can be kept confidential while still sharing the overall picture"
+  ],
+  "time_load": {
+    "L1": "3 hours (preparing overview, running team meeting)",
+    "L2": "6 hours (developing training module, setting up target board, training shift leaders)",
+    "L3": "1 hour/month (preparing updates, coaching Financial Champion)"
+  },
+  "review_protocol": "Monthly check that revenue target board is being updated daily. Quarterly review of team financial literacy through informal questioning. Annual refresh of the Financial Awareness Training Module with updated figures. New starter induction reviewed each time to ensure financial module is being delivered.",
+  "meta": {
+    "summary_for_humans": "This block builds financial understanding across the whole cafe team, from simple cost-per-cup awareness for baristas to shift-level profitability analysis for shift leaders. It ensures financial responsibility is shared, not siloed with the owner.",
+    "implementation_risks": [
+      "Some owners are reluctant to share financial information with staff, fearing it will be misused or cause anxiety",
+      "Staff may feel that financial targets are pressure tactics rather than shared goals if communication is poorly handled",
+      "In very small teams (1-2 people), this block may be less relevant as the owner is the team"
+    ],
+    "notes_for_engine": "This block depends on B122 (financial tracking) and B123 (budget) being in place. Without actual numbers to share, financial literacy is theoretical. Activate once the cafe has at least basic financial data available. Particularly valuable when signals indicate staff waste, poor upselling, or owner burnout from carrying all financial responsibility alone.",
+    "tags": ["finance", "training", "team", "literacy", "culture", "revenue_target", "awareness", "empowerment"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

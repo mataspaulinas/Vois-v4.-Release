@@ -1,0 +1,157 @@
+{
+  "block_id": "B116",
+  "name": "FIFO & Stock Rotation",
+  "version": "v1.0",
+  "domain": "D06_supply_chain",
+  "module": "M06: Supply Chain & Supplier Relations",
+  "state": "enriched",
+  "purpose": "Implements First-In-First-Out (FIFO) stock rotation across all storage areas, ensuring the oldest stock is always used first to minimise waste from expiry, maintain freshness, and comply with food safety regulations.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Train all staff on FIFO principles: new stock goes to the back, old stock comes to the front",
+      "Implement a date labelling system for all perishable items received and opened",
+      "Organise all storage areas (fridges, freezers, dry store) to physically support FIFO rotation",
+      "Establish a daily check for items approaching use-by or best-before dates",
+      "Reduce food waste from expired stock to near zero through disciplined rotation"
+    ],
+    "secondary_objectives": [
+      "Improve food quality by ensuring customers always receive the freshest available product",
+      "Comply with food safety regulations requiring proper stock rotation and date control",
+      "Support accurate stock counting (B115) by maintaining organised, clearly labelled storage"
+    ]
+  },
+  "why_this_matters": "FIFO is one of the simplest concepts in stock management and one of the most frequently violated. The principle is straightforward: the first items to arrive should be the first items used. New deliveries go behind or beneath existing stock so that older items are naturally pulled forward. When FIFO is not followed, the consequences are predictable and expensive: milk delivered on Monday gets pushed to the back of the fridge when Wednesday's delivery arrives, and by Thursday the Monday milk is approaching its use-by date — if not past it. Sandwich fillings opened on Tuesday are buried behind fresh containers and discovered a week later, unusable. Pastries delivered first thing this morning sit behind yesterday's leftover pastries, and the stale ones get sold first (or both get stale). In a UK cafe, food waste from poor rotation typically represents 3-8% of food purchases. For a cafe spending £1,500 per week on food, that is £45-£120 per week, or £2,340-£6,240 per year, thrown in the bin because nobody rotated the stock properly. Beyond waste, poor rotation is a food safety issue. The Food Standards Agency's SFBB guidance explicitly requires proper stock rotation, and an Environmental Health Officer finding expired items in the fridge during an inspection will mark the cafe down on its Food Hygiene Rating. The fix is not complicated — it requires training, labelling, storage organisation, and daily checking — but it requires consistency. FIFO only works when every team member follows it every time.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Implement a universal date labelling system. Purchase a roll of food-safe day-dot labels or use a label maker. From Day 1, every perishable item that enters the cafe must be labelled with either the delivery date (for items with printed use-by dates) or the date opened/prepared (for items decanted from bulk packaging). Establish a simple colour-coded day-dot system: Monday = blue, Tuesday = orange, Wednesday = green, etc. This makes it visually instant to see how old something is. Brief all staff on the FIFO principle with a practical demonstration: take them to the fridge, show them how to move old stock forward and place new deliveries behind. Make it a clear rule: 'If you put new stock in front of old stock, you are creating waste.' Week 2: Reorganise all storage areas to support FIFO physically. In the fridge, items with the nearest use-by dates should be at the front and top. In the dry store, older boxes should be in front. Use shelf-edge labels showing what goes where so that anyone restocking places items in the correct position. Conduct a 'first-thing' daily check: each morning, the opening team member does a 2-minute walk of all storage areas, pulling forward any items approaching their use-by date and flagging anything that has expired for disposal.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a FIFO and Stock Rotation SOP covering: date labelling standards, rotation procedure for each storage area, daily check requirements, disposal procedure for expired items, and team responsibilities. Define use-by and best-before handling rules clearly for the team: use-by dates are legal deadlines and food must not be sold past them; best-before dates indicate quality and items may be used past them with manager approval if quality is acceptable. Implement a waste reduction system for items approaching use-by: items within 24 hours of expiry should be flagged for discounting (if food waste reduction is part of the cafe's approach), staff meals, or donation to a local food redistribution charity (e.g., Too Good To Go, OLIO). Track expired waste separately from other waste categories to measure how well FIFO is working. Integrate FIFO discipline into staff performance conversations — poor rotation is not a minor issue, it is a food safety and financial matter.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). FIFO should be invisible — so deeply embedded in the team's habits that it happens automatically without thought. Conduct quarterly FIFO audits: the manager checks all storage areas unannounced and records whether rotation is correct. Any area with old stock behind new stock triggers a team refresher. Set a target of zero expired items found in any storage area at any time. Track the cost of expired waste monthly and display the trend in the staff area — the team should see waste declining as FIFO discipline improves. Consider investing in storage solutions that physically enforce FIFO: gravity-feed shelving for bottles, first-in-first-out can dispensers, and labelled rotation bins. Review the FIFO system annually, adjusting labelling methods, storage layouts, and procedures as the menu and supplier arrangements evolve."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Purchase food-safe day-dot labels or a label maker",
+        "Implement universal date labelling for all perishable items from Day 1",
+        "Brief all staff on FIFO with a practical demonstration at the fridge",
+        "Reorganise all storage areas: oldest stock to front, newest to back",
+        "Place shelf-edge labels showing correct positions for each product",
+        "Establish a 2-minute daily morning check of all storage for date compliance",
+        "Remove and dispose of any expired items found during the first reorganisation"
+      ],
+      "responsible": "Manager, All Staff"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a FIFO and Stock Rotation SOP with clear procedures",
+        "Define use-by vs best-before handling rules for the team",
+        "Implement a waste reduction system for items approaching expiry (discount, staff meals, donation)",
+        "Track expired waste separately from other waste categories",
+        "Integrate FIFO discipline into staff performance conversations",
+        "Register with Too Good To Go or OLIO for food redistribution",
+        "Train all new starters on FIFO as part of induction"
+      ],
+      "responsible": "Manager, Shift Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly unannounced FIFO audits of all storage areas",
+        "Set a target of zero expired items found at any time",
+        "Track expired waste cost monthly and display trends for the team",
+        "Invest in storage solutions that physically enforce FIFO rotation",
+        "Review the FIFO system annually for labelling, layout, and procedure updates"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "FIFO and Stock Rotation SOP",
+    "Date Labelling Standards guide",
+    "Storage Layout Guide with FIFO positions",
+    "Daily Rotation Check sheet",
+    "Quarterly FIFO Audit report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T116-01",
+        "tool_name": "Date Labelling Standards Card",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "Laminated reference card showing the date labelling system: which labels to use, what to write, where to place labels, and the colour-coded day-dot system. Posted in each storage area."
+      },
+      {
+        "tool_id": "T116-02",
+        "tool_name": "FIFO and Stock Rotation SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering rotation principles, labelling requirements, storage organisation, daily check procedures, expired item handling, and team responsibilities."
+      },
+      {
+        "tool_id": "T116-03",
+        "tool_name": "Daily Rotation Check Sheet",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Shift Lead",
+        "description": "Simple daily checklist for the opening team to verify FIFO compliance in each storage area, flag items approaching use-by dates, and record any expired items removed."
+      },
+      {
+        "tool_id": "T116-04",
+        "tool_name": "Quarterly FIFO Audit Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Audit template for quarterly unannounced FIFO checks: each storage area assessed for correct rotation, labelling compliance, expired items present, and overall organisation score."
+      }
+    ]
+  },
+  "failure_modes": [
+    "New deliveries are placed in front of existing stock because it is faster, undermining FIFO completely",
+    "Date labels are not applied consistently, making it impossible to determine which items are oldest",
+    "Daily rotation checks are skipped during busy periods, allowing expired items to remain in storage",
+    "FIFO is followed in the main fridge but ignored in secondary storage areas (bar fridge, under-counter, dry store)"
+  ],
+  "kpis": [
+    "Zero expired items found in any storage area during routine or audit checks",
+    "Date labels present on 100% of perishable items in storage",
+    "Daily rotation check completed every trading day",
+    "Food waste from expired stock below 1% of total food purchases"
+  ],
+  "dependencies": ["B115"],
+  "constraints": [
+    "FIFO requires adequate storage space for rotation — overcrowded fridges make proper rotation physically difficult",
+    "All staff must be trained on FIFO, not just the manager — rotation breaks down at the person who does not understand or care",
+    "Date labelling supplies (day-dots, labels) must be kept in stock and accessible at all times"
+  ],
+  "time_load": {
+    "L1": "2 hours (setup, labelling system, storage reorganisation, staff briefing)",
+    "L2": "2 hours (SOP creation, waste tracking setup, food redistribution registration)",
+    "L3": "30 minutes/quarter (FIFO audits, trend review, system refinement)"
+  },
+  "review_protocol": "Daily rotation check by opening team. Weekly expired waste review by manager. Quarterly FIFO audit by manager. Annual FIFO system review and storage layout assessment.",
+  "meta": {
+    "summary_for_humans": "This block implements First-In-First-Out stock rotation with date labelling, storage organisation, daily checks, and audit procedures. It is the most effective single intervention for reducing food waste from expiry and maintaining food safety compliance.",
+    "implementation_risks": [
+      "Busy periods tempt staff to dump new deliveries on top of old stock — reinforce FIFO as non-negotiable",
+      "Day-dot labels can fall off in damp fridge environments — use fridge-safe adhesive labels",
+      "New starters who have not been trained on FIFO will break the system — include it in every induction"
+    ],
+    "notes_for_engine": "Activate alongside B115 (Inventory Count System) as a pair. Flag as urgent if signals indicate food waste from expiry, EHO observations about date labelling, or items found past use-by dates in storage.",
+    "tags": ["supply_chain", "FIFO", "stock_rotation", "food_waste", "date_labelling", "food_safety", "storage", "compliance"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "tool_waste_log",
+  "name": "Waste log",
+  "description": "Daily log for waste incidents, likely causes, and the next correction so recurring prep loss becomes visible enough to fix.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: loss visibility should feed learning and action, not passive record-keeping",
+  "updated_at": "2026-03-14T00:24:43.106631Z",
+  "category": "controls",
+  "format": "log",
+  "usage_moment": "Use at end of day or after meaningful waste events to support a short loss review.",
+  "expected_output": "A dated waste record with cause notes, pattern tags, and the next corrective action.",
+  "adaptation_variables": [
+    "waste_categories",
+    "shift_structure",
+    "prep_model",
+    "review_owner"
+  ],
+  "block_ids": [
+    "blk_daily_waste_review"
+  ]
+}

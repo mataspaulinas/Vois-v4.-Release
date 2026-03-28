@@ -1,0 +1,31 @@
+{
+  "id": "sig_tool_or_system_unavailable",
+  "name": "Tool or system is unavailable when needed",
+  "description": "A device, system, or basic tool the venue relies on is missing, offline, dead, or otherwise unavailable during live work.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: tool or system unavailable expressed through restaurant live service friction",
+  "updated_at": "2026-03-15T14:29:28.484703Z",
+  "domain": "equipment",
+  "module": "equipment_reliability",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "POS or printer unavailable",
+    "service tool missing at moment of use",
+    "system outage or device dead during shift"
+  ],
+  "source_types": [
+    "service observation",
+    "manager notes",
+    "incident log"
+  ],
+  "temporal_behavior": "incident-driven",
+  "likely_co_signals": [
+    "sig_workaround_is_normalized",
+    "sig_equipment_breaks_service_flow"
+  ],
+  "adapter_aliases": [
+    "tool unavailable",
+    "system down on shift"
+  ]
+}

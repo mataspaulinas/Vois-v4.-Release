@@ -1,0 +1,30 @@
+{
+  "id": "sig_no_postmortem_after_breakdown",
+  "name": "No postmortem follows a breakdown",
+  "description": "The team survives a bad shift or incident, but there is no structured review to convert the pain into a system correction.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: learning failure visible through missing post-breakdown review",
+  "updated_at": "2026-03-14T12:48:22.233423Z",
+  "domain": "leadership_rhythm",
+  "module": "communication_cadence",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "bad shift passes without review",
+    "no after-action discussion",
+    "same breakdown treated as bad luck"
+  ],
+  "source_types": [
+    "manager notes",
+    "post-shift review"
+  ],
+  "temporal_behavior": "event-driven",
+  "likely_co_signals": [
+    "sig_same_issue_repeats_without_review",
+    "sig_guest_complaints"
+  ],
+  "adapter_aliases": [
+    "no debrief",
+    "no after-action review"
+  ]
+}

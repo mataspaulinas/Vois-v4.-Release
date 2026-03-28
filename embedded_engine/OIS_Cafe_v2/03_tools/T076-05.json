@@ -1,0 +1,82 @@
+{
+  "identification": {
+    "tool_id": "T076-05",
+    "tool_name": "Communication Culture Survey & Scorecard",
+    "block_id": "B076"
+  },
+  "tool_design": {
+    "format": "audit",
+    "role_in_intervention": "Structured measurement layer for whether communication culture is actually improving.",
+    "adaptation_variables": [
+      "survey_cadence",
+      "team_size",
+      "anonymity_method"
+    ],
+    "usage_moment": "Periodic communication culture review",
+    "expected_output": "Scored survey results with action priorities",
+    "linked_blocks": [
+      "B076",
+      "B074",
+      "B075"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Scoring or survey interpretation is inconsistent.",
+        "what_can_go_wrong": "Trend comparisons become weak and trust falls.",
+        "early_signals": [
+          "Sharp score shifts without explanation",
+          "Different reviewers read the same result differently"
+        ],
+        "prevention": [
+          "Use a simple interpretation frame",
+          "Keep evidence notes"
+        ],
+        "mitigation": [
+          "Re-score or re-interpret together",
+          "Keep action logic visible"
+        ],
+        "if_occurs_next_signals": [
+          "audit_reliability_risk"
+        ],
+        "possible_successor_blocks": [
+          "B076",
+          "B074",
+          "B075"
+        ]
+      },
+      {
+        "warning": "Survey or audit findings do not turn into visible action.",
+        "what_can_go_wrong": "The team sees measurement without change.",
+        "early_signals": [
+          "The same weak scores recur",
+          "Action register stays vague or empty"
+        ],
+        "prevention": [
+          "Assign owners and dates",
+          "Review actions openly"
+        ],
+        "mitigation": [
+          "Escalate repeated weak areas",
+          "Reduce scope until follow-through improves"
+        ],
+        "if_occurs_next_signals": [
+          "finding_followthrough_failure"
+        ],
+        "possible_successor_blocks": [
+          "B076",
+          "B074",
+          "B075"
+        ]
+      }
+    ]
+  },
+  "content": "# Communication Culture Survey & Scorecard\n\n**Tool ID:** T076-05  \n**Block:** B076 (Communication Culture & Feedback)  \n**Domain:** Team & Talent (D04_team_talent)  \n**Level:** L3  \n**Format:** Audit  \n**Role:** Owner / Manager  \n**Time Required:** 20 minutes to run, 20 minutes to review, 15 minutes to action  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nThis is the periodic check on whether the communication culture is actually improving or just being talked about.\n\nUse it to measure:\n- psychological safety\n- trust in management communication\n- quality of feedback\n- clarity of handovers and updates\n- whether concerns are raised early\n\nRun it quarterly in fast-moving teams or at least annually in stable teams.\n\n---\n## Survey Instructions\n\nAsk the team to score each statement from 1 to 5.\n\n**Scale**\n- 1 = strongly disagree\n- 2 = disagree\n- 3 = mixed / unsure\n- 4 = agree\n- 5 = strongly agree\n\nKeep it anonymous where possible.\n\n---\n## Survey Questions\n\n| # | Statement | Score 1-5 |\n|---|---|---|\n| 1 | I feel safe to raise a concern here. | |\n| 2 | If I make a mistake, it is handled fairly. | |\n| 3 | Important information usually reaches me in time. | |\n| 4 | Daily briefings and handovers help me do my job well. | |\n| 5 | Feedback here is usually specific and useful. | |\n| 6 | Managers deal with issues early rather than letting them build. | |\n| 7 | I can disagree respectfully without fear of backlash. | |\n| 8 | Team conflict is addressed, not ignored. | |\n| 9 | Good communication is recognised here, not just mistakes. | |\n| 10 | I trust management to respond if I raise something important. | |\n\n**Optional open questions**\n- What helps communication here?\n- What gets in the way?\n- What should we change in the next 30 days?\n\n---\n## Scorecard\n\n| Area | Questions | Average Score | Status |\n|---|---|---|---|\n| Psychological safety | 1, 2, 7 | | Red / Amber / Green |\n| Information flow | 3, 4 | | Red / Amber / Green |\n| Feedback quality | 5, 9 | | Red / Amber / Green |\n| Management trust | 6, 10 | | Red / Amber / Green |\n| Conflict handling | 8 | | Red / Amber / Green |\n\n**Overall average:** ____________________\n\n**Interpretation**\n- **4.2-5.0** = strong and stable\n- **3.5-4.1** = functional but fragile\n- **2.8-3.4** = inconsistent and risky\n- **below 2.8** = urgent attention needed\n\n---\n## Action Register\n\n| Finding | Action | Owner | Due Date | Status |\n|---|---|---|---|---|\n| | | | | Open / In progress / Closed |\n| | | | | Open / In progress / Closed |\n| | | | | Open / In progress / Closed |\n\n---\n## What To Do With The Results\n\n<ul>\n  <li><input type=\"checkbox\"> Share the headline results with the team.</li>\n  <li><input type=\"checkbox\"> Pick no more than three actions for the next cycle.</li>\n  <li><input type=\"checkbox\"> Assign owners and dates immediately.</li>\n  <li><input type=\"checkbox\"> Re-test the weakest area next quarter.</li>\n</ul>\n\nDo not run a survey if you are not prepared to respond visibly.\n\n---\n## Common Mistakes\n\n- Running the survey too often and taking no action.\n- Making it anonymous in theory but not in practice.\n- Hiding weak scores from the team.\n- Collecting comments but never grouping themes.\n- Trying to solve five weak areas at once.\n\n---\n## Connected Resources\n\n**Used alongside:**\n- T076-02 - Communication Charter Workshop Template\n- T076-03 - Conflict Resolution Pathway & Case Log\n- T076-04 - Difficult Conversations Guide\n\n**Parent block:** B076 - Communication Culture & Feedback\n\n---\n\n*Tool Version 2.0 - built to turn soft culture talk into visible signals and actions.*\n",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T076-05_communication_culture_survey_and_scorecard.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

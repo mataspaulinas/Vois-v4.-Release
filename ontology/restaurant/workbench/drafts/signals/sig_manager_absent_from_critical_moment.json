@@ -1,0 +1,31 @@
+{
+  "id": "sig_manager_absent_from_critical_moment",
+  "name": "Manager is absent from the critical moment",
+  "description": "A live pressure point arrives and the person expected to stabilize it is not visibly present, directing, or deciding.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: manager absent from critical moment expressed through restaurant peak pressure leadership",
+  "updated_at": "2026-03-15T17:17:16.781568Z",
+  "domain": "leadership",
+  "module": "management_presence",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "rush or escalation happens without visible manager intervention",
+    "the floor looks leaderless during a pressure moment",
+    "decisions wait because the manager is not present"
+  ],
+  "source_types": [
+    "service observation",
+    "manager notes",
+    "post-shift review"
+  ],
+  "temporal_behavior": "event-driven",
+  "likely_co_signals": [
+    "sig_no_live_direction_or_reset",
+    "sig_peak_period_undercovered"
+  ],
+  "adapter_aliases": [
+    "manager missing in the moment",
+    "critical rush with no manager presence"
+  ]
+}

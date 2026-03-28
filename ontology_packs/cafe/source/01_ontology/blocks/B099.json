@@ -1,0 +1,157 @@
+{
+  "block_id": "B099",
+  "name": "Peak Capacity Management",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Creates a systematic approach to managing the cafe at maximum capacity — coordinating queue management, seating allocation, service speed, kitchen throughput, and team deployment to ensure that peak periods generate maximum revenue without collapsing into chaos.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Identify the cafe's true maximum capacity across all service channels (dine-in, takeaway, delivery)",
+      "Design a peak-period operating model with defined roles, positions, and service sequences",
+      "Implement queue management that keeps customers engaged and reduces perceived wait times",
+      "Coordinate kitchen and bar throughput so that neither bottleneck constrains the other",
+      "Deploy staff optimally during peak periods based on demand data rather than guesswork"
+    ],
+    "secondary_objectives": [
+      "Reduce customer walkaway rates during the busiest trading hours",
+      "Maintain service quality and drink/food standards under peak pressure",
+      "Build team confidence and resilience through structured peak-period routines"
+    ]
+  },
+  "why_this_matters": "Peak periods define a cafe's financial viability. In a typical UK high-street cafe, 60-70% of daily revenue is generated in just 4-5 hours — the morning rush (7:30-10:00am) and the lunch window (12:00-2:00pm). How well a cafe performs during these compressed windows determines whether it is profitable or struggling. The challenge is that peak periods are inherently stressful: orders stack up, the queue grows, customers become impatient, staff rush and make mistakes, drink quality drops, food takes longer, and the atmosphere shifts from welcoming to frantic. Without a structured peak management system, each busy period feels like a crisis rather than an expected and manageable event. The difference between a cafe that handles 80 customers per hour smoothly and one that descends into visible chaos at 50 customers per hour is not talent or luck — it is preparation, positioning, and protocol. Peak capacity management treats the rush as a planned operational mode with its own rules, roles, and rhythms. Staff know their positions, the service sequence is optimised for speed, the queue is managed rather than ignored, and the kitchen operates to a throughput plan rather than reacting to individual orders. Cafes that master peak management consistently capture 15-25% more revenue during their busiest hours than those that do not, simply by serving more customers without losing quality or turning people away.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Define the cafe's peak periods precisely by reviewing till data or, if no data exists, observing footfall patterns over a full week. Record the time each peak starts and ends, the approximate number of customers per 15-minute interval, and the current service speed (time from order to delivery). Identify the primary bottleneck during peak: is it the queue (too many people waiting to order), the espresso machine (drinks taking too long), the kitchen (food orders backing up), or the till (payment processing too slow)? Address the bottleneck first. Assign clear peak-period positions: during the rush, Person A is on espresso, Person B is on till, Person C is on food prep, Person D is on floor/clearing. Nobody moves from their position during peak. Create a 'peak mode' signal — a verbal call or visible sign — that tells the team the rush is starting and everyone should be in position. Week 2: Implement queue management basics: ensure the queue has a clear path that does not block the door, place a menu board visible from the queue so customers can decide before they reach the till, and train the till operator to acknowledge arriving customers even when serving someone else ('I'll be right with you'). If the queue regularly extends outside, consider a queue barrier or an A-board directing flow.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Peak Period Operating Manual — a one-page document that defines: peak period times, team positions, service sequence, quality non-negotiables (e.g., 'we never skip latte art, even in the rush'), and escalation triggers (e.g., 'if the queue reaches 10 people, call the manager to open a second till'). Implement a peak-period staffing model based on demand data: schedule your strongest barista and fastest food preparer for peak shifts, and ensure minimum staffing levels are met (never run a peak with fewer than X people). Introduce a peak-period drinks menu that streamlines preparation without reducing customer choice — pre-batch filter coffee, pre-portion milk for common sizes, and keep the most popular syrups within arm's reach. Track peak-period performance metrics weekly: customers served per hour, average transaction time, walkaway count, and quality checks (spot-checking drink quality during the rush). Link seating turnover strategy (B098) to peak management so that table availability and service speed are coordinated.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Peak periods should feel like a well-rehearsed performance, not a scramble. Introduce pre-peak briefings: a 2-minute team huddle before each rush covering expected volume, any specials or shortages, and position assignments. Implement real-time capacity monitoring — track how many customers are in the cafe and how many are in the queue, using this data to make in-the-moment decisions about tempo and staffing. Develop contingency plans for extreme peaks (bank holidays, local events, competitor closures): what happens when demand exceeds normal capacity by 30%? Create a peak performance scorecard that tracks key metrics over time and sets improvement targets each quarter. Consider physical improvements that increase peak throughput: a second till point, a dedicated takeaway collection area, or a prep station positioned for peak-period efficiency. Review and update the peak operating model seasonally as demand patterns shift."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Map peak periods precisely using till data or direct observation",
+        "Identify the primary service bottleneck during each peak window",
+        "Assign clear fixed positions for each team member during peak periods",
+        "Create a 'peak mode' signal to trigger the team into peak positions",
+        "Implement basic queue management: clear path, visible menu, verbal acknowledgement",
+        "Ensure no team member moves from their peak position during the rush",
+        "Record customer counts and walkaway observations during peak for one week"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a one-page Peak Period Operating Manual",
+        "Build a peak-period staffing model based on demand data",
+        "Streamline the peak-period menu preparation (batch coffee, pre-portion milk)",
+        "Track weekly peak metrics: customers/hour, transaction time, walkaways, quality",
+        "Implement escalation triggers for extreme queue lengths",
+        "Link seating turnover (B098) to peak management coordination",
+        "Schedule strongest performers for peak shifts consistently"
+      ],
+      "responsible": "Manager, Shift Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce 2-minute pre-peak team briefings before each rush",
+        "Implement real-time capacity monitoring during peak periods",
+        "Develop contingency plans for extreme peak events",
+        "Create a peak performance scorecard with quarterly improvement targets",
+        "Review and update the peak operating model seasonally"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Peak Period Map (times, volumes, bottleneck analysis)",
+    "Peak Period Operating Manual (one-page reference)",
+    "Peak Staffing Model with minimum levels",
+    "Weekly Peak Performance Metrics report",
+    "Extreme Peak Contingency Plan"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T099-01",
+        "tool_name": "Peak Period Observation Sheet",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Data collection sheet for recording customer volumes by 15-minute intervals, queue lengths, service times, and walkaway counts during peak periods over a representative week."
+      },
+      {
+        "tool_id": "T099-02",
+        "tool_name": "Peak Period Operating Manual",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "One-page reference document defining peak period times, team positions, service sequence, quality non-negotiables, and escalation triggers. Laminated and posted in the staff area."
+      },
+      {
+        "tool_id": "T099-03",
+        "tool_name": "Peak Staffing Model Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Staffing model that maps required team members and their positions to expected demand levels during each peak period, ensuring minimum coverage is always met."
+      },
+      {
+        "tool_id": "T099-04",
+        "tool_name": "Peak Performance Scorecard",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly scorecard tracking peak-period customers served per hour, average transaction time, walkaway rate, quality check scores, and revenue-per-peak-hour trends."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Staff abandon their assigned peak positions to help elsewhere, creating gaps in the service chain",
+    "Queue management is neglected because the team is focused on making drinks, leading to walkaways and frustration",
+    "Quality standards drop during peak as staff rush to clear the queue — poorly made drinks cost more in returns and reputation than slightly longer waits",
+    "Peak staffing is not consistently maintained due to absence, holiday, or labour budget constraints"
+  ],
+  "kpis": [
+    "Customers served per peak hour increased by 20% within 8 weeks",
+    "Average order-to-delivery time under 4 minutes during peak periods",
+    "Walkaway rate during peak periods below 5%",
+    "Drink and food quality spot-checks passing at 95% during peak service"
+  ],
+  "dependencies": ["B098"],
+  "constraints": [
+    "Peak capacity must not exceed fire safety occupancy limits at any time",
+    "Quality standards must be maintained during peak — speed cannot compromise food safety or drink quality",
+    "Peak staffing models must account for staff breaks, ensuring nobody works a full peak period without a rest"
+  ],
+  "time_load": {
+    "L1": "3 hours (observation, position assignment, queue setup, staff briefing)",
+    "L2": "5 hours (operating manual, staffing model, metric tracking, menu streamlining)",
+    "L3": "2 hours/month (scorecard review, contingency updates, seasonal adjustments)"
+  },
+  "review_protocol": "Daily peak period debrief between shift lead and manager (2 minutes). Weekly peak metrics review by manager. Monthly peak performance scorecard in management meeting. Quarterly peak operating model review and seasonal adjustment.",
+  "meta": {
+    "summary_for_humans": "This block creates a structured approach to managing the cafe at maximum capacity — assigning positions, managing queues, coordinating kitchen and bar throughput, and deploying staff optimally. It transforms peak periods from stressful chaos into a planned, repeatable operational mode.",
+    "implementation_risks": [
+      "Staff may resist fixed positions during peak if they are used to a more flexible, informal approach",
+      "Over-optimising for speed can erode the cafe's welcoming atmosphere — balance efficiency with hospitality",
+      "Peak management is only as strong as the weakest link — if one team member is absent or underperforming, the system breaks down"
+    ],
+    "notes_for_engine": "Activate alongside B098 (Seating Turnover Strategy) as a pair. Flag as urgent if signals indicate long queue times, high walkaway rates, customer complaints about speed, or revenue-per-hour significantly below potential during peak periods.",
+    "tags": ["operations", "peak_management", "capacity", "queue_management", "staffing", "throughput", "revenue_optimisation"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

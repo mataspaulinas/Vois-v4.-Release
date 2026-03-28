@@ -1,0 +1,79 @@
+{
+  "identification": {
+    "tool_id": "T003-04",
+    "tool_name": "Excursion Trend Tracker & Root Cause Log",
+    "block_id": "B003"
+  },
+  "tool_design": {
+    "format": "tracker",
+    "role_in_intervention": "Quarterly prevention log linking incidents to root causes and investment decisions.",
+    "adaptation_variables": [
+      "review_window",
+      "cost_thresholds",
+      "maintenance_policy"
+    ],
+    "usage_moment": "After each incident and during quarterly review",
+    "expected_output": "Trend log with root cause classification and preventive action ownership",
+    "linked_blocks": [
+      "B003",
+      "B004"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Entries are logged late or inconsistently.",
+        "what_can_go_wrong": "Trends and root causes stay hidden.",
+        "early_signals": [
+          "Large gaps",
+          "Incidents are discussed verbally only"
+        ],
+        "prevention": [
+          "Tie updates to incident closure",
+          "Keep one owner"
+        ],
+        "mitigation": [
+          "Reconstruct recent entries",
+          "Increase review cadence"
+        ],
+        "if_occurs_next_signals": [
+          "pattern_visibility_failure"
+        ],
+        "possible_successor_blocks": [
+          "B003",
+          "B004"
+        ]
+      },
+      {
+        "warning": "Tracker is updated but no prevention action follows.",
+        "what_can_go_wrong": "The same unit or cause keeps recurring.",
+        "early_signals": [
+          "Same unit repeats",
+          "Root cause actions stay open"
+        ],
+        "prevention": [
+          "Review trends quarterly",
+          "Assign preventive action owners"
+        ],
+        "mitigation": [
+          "Escalate repeated causes",
+          "Force closure review"
+        ],
+        "if_occurs_next_signals": [
+          "closed_loop_failure"
+        ],
+        "possible_successor_blocks": [
+          "B003",
+          "B004"
+        ]
+      }
+    ]
+  },
+  "content": "# Excursion Trend Tracker & Root Cause Log\n\n**Tool ID:** T003-04  \n**Block:** B003 (Temperature Excursion Response)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L3  \n**Format:** Tracker  \n**Role:** Owner / Manager  \n**Time Required:** 5 minutes per incident, 15 minutes quarterly review  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this tracker to turn single excursions into prevention work.\n\nThis is where you look for:\n- repeat failures by unit\n- recurring causes like door habits or overload\n- waste cost trends\n- whether training, repair, or replacement is the right next step\n\n---\n## Incident Trend Table\n\n| Date | Unit | Peak Temp | Estimated Duration | Cause | Stock Loss Value | Incident Report Ref | Root Cause Category |\n|---|---|---|---|---|---|---|---|\n| | | | | | | | People / Process / Equipment / Power / Unknown |\n| | | | | | | | People / Process / Equipment / Power / Unknown |\n| | | | | | | | People / Process / Equipment / Power / Unknown |\n| | | | | | | | People / Process / Equipment / Power / Unknown |\n\n---\n## Root Cause Review\n\n| Incident Ref | What Actually Drove It? | Preventive Action | Owner | Due Date | Closed? |\n|---|---|---|---|---|---|\n| | | | | | Yes / No |\n| | | | | | Yes / No |\n| | | | | | Yes / No |\n\n---\n## Quarterly Questions\n\n- Is one fridge or freezer responsible for most incidents?\n- Are incidents concentrated around delivery, opening, or close?\n- Are we seeing avoidable people/process errors more than equipment faults?\n- What has the stock loss cost actually been this quarter?\n- Should a unit be repaired, replaced, or monitored more tightly?\n\n---\n## Escalation Thresholds\n\n| Pattern | Response |\n|---|---|\n| Same unit appears twice in a quarter | Maintenance review |\n| Same people/process cause repeats | Retraining and SOP review |\n| Stock loss cost becomes material | Owner review and investment decision |\n| Overnight or multi-unit failure | Full contingency review |\n\n---\n## Connected Resources\n\n**Built from:**\n- T003-02 - Excursion Incident Report Form\n- T003-05 - Temperature Excursion SOP & Drill Guide\n\n**Related blocks:**\n- B004 - Cold Chain Excellence Dashboard\n\n---\n\n*Tool Version 2.0 - the log that turns incident data into prevention decisions.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T003-04_excursion_trend_tracker_and_root_cause_log.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

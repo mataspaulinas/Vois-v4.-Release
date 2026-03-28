@@ -1,0 +1,43 @@
+{
+  "venue_id": "kavos_namai_kaunas",
+  "assessment_type": "follow-up",
+  "assessment_date": "2026-03-02",
+  "signals": {
+    "S019": {
+      "active": true,
+      "notes": "Occasional wait times approaching threshold during Saturday morning peak",
+      "confidence": "medium",
+      "value": null
+    },
+    "S070": {
+      "active": true,
+      "notes": "Understaffing observed on one shift pattern only",
+      "confidence": "medium",
+      "value": null
+    },
+    "S080": {
+      "active": true,
+      "notes": "Table clearing occasionally delayed but within acceptable range",
+      "confidence": "low",
+      "value": null
+    },
+    "S071": {
+      "active": true,
+      "notes": "Pre-shift briefings happen but content is informal and not documented",
+      "confidence": "medium",
+      "value": null
+    }
+  },
+  "venue_context": {
+    "venue_name": "Kavos Namai Kaunas",
+    "type": "independent_cafe",
+    "team_size": 6,
+    "location": "Kaunas, Laisves Aleja, Lithuania"
+  },
+  "triage_enabled": false,
+  "triage_intensity": "balanced",
+  "raw_input_text": "",
+  "extraction_summary": {},
+  "confidence_distribution": {},
+  "unmapped_observations": []
+}

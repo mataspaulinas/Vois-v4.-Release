@@ -1,0 +1,82 @@
+{
+  "identification": {
+    "tool_id": "T001-01",
+    "tool_name": "Daily Temperature Log & Check Sheet",
+    "block_id": "B001"
+  },
+  "tool_design": {
+    "format": "checklist",
+    "role_in_intervention": "Primary daily execution record for the twice-daily temperature check.",
+    "adaptation_variables": [
+      "venue_type",
+      "number_of_cold_units",
+      "check_windows"
+    ],
+    "usage_moment": "At opening and mid-shift",
+    "expected_output": "Completed daily log with readings, action notes, and manager sign-off",
+    "linked_blocks": [
+      "B001",
+      "B002",
+      "B003"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Completed after the task instead of during it.",
+        "what_can_go_wrong": "Paperwork replaces control.",
+        "early_signals": [
+          "Forms filled late",
+          "Issues ticked without notes"
+        ],
+        "prevention": [
+          "Keep at point of use",
+          "Assign a live owner"
+        ],
+        "mitigation": [
+          "Reset routine",
+          "Use same-day review"
+        ],
+        "if_occurs_next_signals": [
+          "retrospective_completion_risk"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B002",
+          "B003"
+        ]
+      },
+      {
+        "warning": "Treated as a tick-box without understanding thresholds.",
+        "what_can_go_wrong": "Boxes are ticked while risk remains.",
+        "early_signals": [
+          "User cannot explain rule",
+          "Borderline issues have no action"
+        ],
+        "prevention": [
+          "Train the why",
+          "Use a live example"
+        ],
+        "mitigation": [
+          "Re-demo in context",
+          "Pair with trained lead"
+        ],
+        "if_occurs_next_signals": [
+          "surface_compliance_without_control"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B002",
+          "B003"
+        ]
+      }
+    ]
+  },
+  "content": "# Daily Temperature Log & Check Sheet\n\n**Tool ID:** T001-01  \n**Block:** B001 (Daily Temperature Monitoring)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L1  \n**Format:** Checklist  \n**Role:** Opening Lead / Afternoon Shift Lead / Any trained food handler  \n**Time Required:** 5-10 minutes per round  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this sheet to complete and prove the two temperature rounds that protect your cold chain every day.\n\nThis is the evidence layer for `B001`. It should show, at a glance:\n- every fridge and freezer that matters\n- the reading taken at opening and mid-shift\n- who completed the check\n- what was done if a reading drifted high\n- whether the manager reviewed the day\n\nIf this sheet is patchy, late, guessed, or filled in from memory, the whole food safety story weakens.\n\n---\n## Safe Ranges That Apply To This Sheet\n\n| Unit Type | Normal Working Range | Investigate At | Unsafe Trigger |\n|---|---|---|---|\n| Chilled fridge | `1-5C` | Above `5C` | `8C` or above |\n| Freezer | `-18C` or below | Above `-15C` | `-12C` or above |\n| Built-in digital display | Use as a guide only | Cross-check with probe | Probe result decides |\n\n**Rule:** If the reading is outside range, do not leave the row blank and move on. Record the reading, act, and note what happened.\n\n---\n## Pre-Check Setup\n\n<ul>\n  <li><input type=\"checkbox\"> Probe thermometer is clean, sanitised, and switched on.</li>\n  <li><input type=\"checkbox\"> Probe calibration is current. If not, check [T001-02].</li>\n  <li><input type=\"checkbox\"> I know which product or water pot I am probing in each unit.</li>\n  <li><input type=\"checkbox\"> I have this sheet, a pen, and access to all cold units.</li>\n  <li><input type=\"checkbox\"> If a unit fails, I will log the action immediately instead of \"fixing it later\".</li>\n</ul>\n\n---\n## Printable Daily Log\n\n**Date:** ____________________  \n**Day:** ____________________  \n**Venue:** ____________________\n\n| Unit Name | Product / Check Point | Safe Range | Opening Time | Opening Temp | Initials | Afternoon Time | Afternoon Temp | Initials | Action / Notes |\n|---|---|---|---|---|---|---|---|---|---|\n| Milk fridge | Middle milk carton / water pot | `1-5C` | | | | | | | |\n| Sandwich / prep fridge | Front top shelf product | `1-5C` | | | | | | | |\n| Grab-and-go display fridge | Warmest front-facing item | `1-5C` | | | | | | | |\n| Back-up fridge / walk-in | Middle shelf product | `1-5C` | | | | | | | |\n| Main freezer | Centre product / pack | `-18C` or below | | | | | | | |\n| Second freezer (if used) | Centre product / pack | `-18C` or below | | | | | | | |\n| Other cold unit | ____________________ | ____________________ | | | | | | | |\n\n---\n## If A Reading Is High\n\n### Chilled units\n| Reading | What To Do Right Now |\n|---|---|\n| `5.1-7.9C` | Check door, airflow, stock loading, and whether the unit was recently opened. Recheck within 30 minutes and note action. |\n| `8C` or above | Inform the manager immediately, protect high-risk stock, and complete [T001-03]. Use [T003-02] if it becomes a true excursion event. |\n\n### Frozen units\n| Reading | What To Do Right Now |\n|---|---|\n| `-14.9C` to `-12.1C` | Check door seal, frost build-up, and recent loading. Recheck and log action. |\n| `-12C` or warmer | Escalate immediately, keep door shut as much as possible, and complete [T001-03]. |\n\n---\n## End-Of-Day Review\n\n<ul>\n  <li><input type=\"checkbox\"> Both temperature rounds were completed.</li>\n  <li><input type=\"checkbox\"> Any high readings were explained and logged.</li>\n  <li><input type=\"checkbox\"> Any linked corrective record in [T001-03] has been completed.</li>\n  <li><input type=\"checkbox\"> Manager reviewed the sheet before filing.</li>\n</ul>\n\n**Completed by:** ____________________  \n**Manager countersign:** ____________________  \n**Filed in SFBB / food safety folder:** ____________________\n\n---\n## Common Mistakes To Avoid\n\n- Do not write a \"normal\" reading because the fridge usually runs fine.\n- Do not probe the air if your method is meant to check product temperature.\n- Do not skip the afternoon round because service got busy.\n- Do not leave \"action taken\" blank when a reading drifted high.\n- Do not use built-in displays as the only evidence when the SOP requires a probe reading.\n\n---\n## Connected Resources\n\n**Used with:**\n- T001-02 - Probe Calibration Record & Accuracy Tracker\n- T001-03 - Temperature Excursion Trigger Log\n- T001-04 - Monthly Temperature Compliance Dashboard\n- T001-05 - Temperature Monitoring SOP & Team Sign-Off\n\n**Related blocks:**\n- B002 - Cold Chain Management SOP\n- B003 - Temperature Excursion Response\n\n---\n\n*Tool Version 2.0 - built to survive a busy shift and an unannounced inspection.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T001-01_daily_temperature_log_and_check_sheet.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

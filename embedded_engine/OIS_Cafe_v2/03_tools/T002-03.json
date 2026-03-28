@@ -1,0 +1,79 @@
+{
+  "identification": {
+    "tool_id": "T002-03",
+    "tool_name": "Supplier Temperature Incident Log & Escalation Record",
+    "block_id": "B002"
+  },
+  "tool_design": {
+    "format": "tracker",
+    "role_in_intervention": "Supplier accountability log that turns repeated delivery problems into evidence and escalation.",
+    "adaptation_variables": [
+      "supplier_list",
+      "incident_window",
+      "escalation_policy"
+    ],
+    "usage_moment": "Whenever a delivery arrives warm, damaged, short-dated, or out of spec",
+    "expected_output": "Supplier incident entry with escalation status and follow-up record",
+    "linked_blocks": [
+      "B002",
+      "B004"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Entries are logged late or inconsistently.",
+        "what_can_go_wrong": "Patterns cannot be reviewed or escalated.",
+        "early_signals": [
+          "Large gaps",
+          "Incidents remembered verbally"
+        ],
+        "prevention": [
+          "Tie updates to review routine",
+          "Keep ownership explicit"
+        ],
+        "mitigation": [
+          "Reconstruct while fresh",
+          "Increase review cadence"
+        ],
+        "if_occurs_next_signals": [
+          "pattern_visibility_failure"
+        ],
+        "possible_successor_blocks": [
+          "B002",
+          "B004"
+        ]
+      },
+      {
+        "warning": "Tracker is updated but never used to decide action.",
+        "what_can_go_wrong": "Information is stored but not acted on.",
+        "early_signals": [
+          "Same issue repeats",
+          "Review notes stay blank"
+        ],
+        "prevention": [
+          "Review on a fixed cadence",
+          "Link repeats to escalation"
+        ],
+        "mitigation": [
+          "Add a short review",
+          "Assign closure owner"
+        ],
+        "if_occurs_next_signals": [
+          "closed_loop_failure"
+        ],
+        "possible_successor_blocks": [
+          "B002",
+          "B004"
+        ]
+      }
+    ]
+  },
+  "content": "# Supplier Temperature Incident Log & Escalation Record\n\n**Tool ID:** T002-03  \n**Block:** B002 (Cold Chain Management SOP)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L2  \n**Format:** Tracker  \n**Role:** Manager  \n**Time Required:** 5-8 minutes per issue  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this tracker every time a supplier delivery arrives warm, damaged, incorrectly dated, contaminated, or otherwise below standard.\n\nThis tool turns one-off delivery frustrations into usable supplier evidence.\n\nTrack it so you can answer:\n- which supplier is drifting\n- what type of issue keeps happening\n- whether the problem was temperature, quality, or spec related\n- when the supplier was warned or escalated\n- when it is time to change behaviour, terms, or supplier\n\n---\n## Incident Entry\n\n| Field | Details |\n|---|---|\n| Date | |\n| Supplier | |\n| Delivery note / invoice ref | |\n| Product affected | |\n| Issue type | Warm / Frozen thaw risk / Damaged / Short-dated / Wrong item / Contamination / Other |\n| Temperature found | |\n| Accepted, part-rejected, or rejected | |\n| Evidence kept | Photo / Driver note / Email / None |\n| Logged by | |\n\n### What Happened?\n__________________________________________________  \n__________________________________________________\n\n### Immediate Action Taken\n__________________________________________________  \n__________________________________________________\n\n---\n## Supplier Pattern Tracker\n\n| Supplier | Incident Date | Issue Type | Credit Requested? | Supplier Response | Incident Count In Last 90 Days | Status |\n|---|---|---|---|---|---|---|\n| | | | Yes / No | | | Monitor / Warning / Escalate |\n| | | | Yes / No | | | Monitor / Warning / Escalate |\n| | | | Yes / No | | | Monitor / Warning / Escalate |\n| | | | Yes / No | | | Monitor / Warning / Escalate |\n\n---\n## Escalation Rules\n\n| Incident Pattern | Response |\n|---|---|\n| First issue | Log it and monitor |\n| Second similar issue in 90 days | Speak to supplier rep and record the conversation |\n| Third issue in 90 days | Escalate formally, request corrective action, consider alternate supplier |\n| Any severe contamination or unsafe stock | Escalate immediately, regardless of count |\n\n---\n## Supplier Conversation Record\n\n| Date | Contact Name | What Was Raised | What They Agreed | Follow-Up Date |\n|---|---|---|---|---|\n| | | | | |\n| | | | | |\n| | | | | |\n\n---\n## Monthly Review Prompts\n\n- Which supplier has the most avoidable incidents?\n- Are warm deliveries concentrated on one route, day, or product?\n- Are we accepting borderline stock too often because we are under-stocked?\n- Has the supplier responded properly to earlier warnings?\n- Should this pattern feed into the broader dashboard in `B004`?\n\n---\n## Connected Resources\n\n**Built from / linked to:**\n- T002-01 - Delivery Acceptance Checklist\n- T002-04 - Weekly Fridge Organisation & Date Labelling Audit\n- T002-05 - Cold-Hold & Date Label Pack\n\n**Related blocks:**\n- B004 - Cold Chain Excellence Dashboard\n\n---\n\n*Tool Version 2.0 - because supplier problems should become evidence, not anecdotes.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T002-03_supplier_temperature_incident_log_and_escalation_record.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

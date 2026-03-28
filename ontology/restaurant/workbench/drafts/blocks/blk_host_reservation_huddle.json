@@ -1,0 +1,46 @@
+{
+  "id": "blk_host_reservation_huddle",
+  "name": "Run host reservation huddle",
+  "description": "Run a short pre-peak huddle for the host position to align pacing, quoted waits, reservation releases, and escalation when arrival pressure changes shape.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: constrain promises through local operating rhythm at the front door",
+  "updated_at": "2026-03-14T00:24:42.979558Z",
+  "effort_hours": 1.5,
+  "dependencies": [
+    "blk_build_arrival_pacing_board"
+  ],
+  "tool_ids": [
+    "tool_host_huddle_template"
+  ],
+  "response_pattern_ids": [
+    "rp_host_pacing_reset",
+    "rp_manager_presence_reset"
+  ],
+  "entry_conditions": [
+    "Quoted waits or reservation releases regularly drift away from real seating readiness.",
+    "The venue has identifiable arrival waves or pressure windows that can be planned for."
+  ],
+  "contraindications": [
+    "Do not run the huddle without current pacing information or authority to change the release plan.",
+    "Do not use a host huddle to mask broken floor-turn or bussing fundamentals."
+  ],
+  "owner_role": "host_lead",
+  "expected_time_to_effect_days": 1,
+  "proof_of_completion": [
+    "Peak arrival windows have a named huddle moment and owner.",
+    "The host team reviews quote logic, reservation pacing, pressure points, and escalation rules before the wave hits.",
+    "The venue can show how quote or release decisions changed during at least one real peak."
+  ],
+  "successor_block_ids": [],
+  "service_module_ids": [
+    "intake_and_demand",
+    "promise_and_expectations",
+    "leadership_and_management_rhythm"
+  ],
+  "failure_family_ids": [
+    "expectation_setting_failure",
+    "leadership_rhythm_failure",
+    "demand_capacity_mismatch"
+  ]
+}

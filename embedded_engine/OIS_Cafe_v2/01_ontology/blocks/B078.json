@@ -1,0 +1,167 @@
+{
+  "block_id": "B078",
+  "name": "Cross-Training Programme",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Establishes a systematic cross-training programme that develops every team member's ability to work competently across multiple stations and roles, eliminating single-person dependencies, enabling flexible scheduling, and building a resilient team that can adapt to any shift configuration.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Ensure every team member is competent at a minimum of two operational stations beyond their primary role",
+      "Prioritise cross-training based on key person risk assessment findings from B077",
+      "Create a structured cross-training schedule that delivers skill development without disrupting daily service",
+      "Assess and document cross-training competency using the skills matrix from B073",
+      "Build a team where any combination of available staff can deliver an acceptable standard of service"
+    ],
+    "secondary_objectives": [
+      "Increase job variety and reduce monotony, improving engagement and retention",
+      "Enable more flexible rota building by expanding the pool of staff who can cover each station",
+      "Develop team empathy by helping staff understand the challenges of other roles"
+    ]
+  },
+  "why_this_matters": "In a typical independent cafe, operational knowledge concentrates around individuals: the head barista runs the coffee station, the kitchen hand does all the food prep, the manager handles cash-ups, and the owner deals with suppliers. This specialisation feels efficient in normal conditions but creates extreme fragility. When the head barista calls in sick on a Saturday morning, suddenly nobody can calibrate the grinder. When the kitchen hand is on holiday, nobody knows the soup recipe. The cafe either closes a station, drops quality dramatically, or the owner comes in on their day off — again. Cross-training is the antidote to this fragility. By systematically training team members to work across multiple stations, the cafe builds operational resilience that can absorb shocks — illness, holidays, resignations — without service quality collapsing. Cross-training also has powerful secondary benefits. Staff who understand multiple roles develop greater empathy for colleagues, communicate better during rushes, and spot bottlenecks that single-station workers miss. A barista who has worked the till understands the pressure of a queue. A till operator who has made coffee understands why complex orders take longer. This mutual understanding reduces friction and improves teamwork. From a career development perspective, cross-training is the practical mechanism that enables the career progression framework in B071. You cannot promote someone to shift lead if they only know one station. Cross-training builds the breadth of competence that senior roles require.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Review the skills matrix from B073 and the key person risk register from B077. Identify the three highest-priority cross-training needs — these are typically the functions where only one person is competent. For each priority, select one team member to begin cross-training based on interest, aptitude, and scheduling availability. Create simple cross-training pairs: the current expert trains the selected learner during quieter periods of their regular shifts. Week 2: Begin cross-training with observation first — the learner shadows the expert for at least two full shifts, watching and asking questions without being expected to perform. Then transition to guided practice where the learner performs the tasks with the expert supervising and coaching. Keep a simple log of cross-training sessions: date, what was covered, competency level reached. For the first fortnight, focus on one skill per cross-training pair to avoid overwhelming the learner. Ensure cross-training does not compromise service quality — pair training with quieter periods, not peak rushes.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a formal Cross-Training Plan for each team member identifying their primary station, their first cross-training target, and their second cross-training target. Align these targets with the key person risks (B077) and the career progression requirements (B071). Create a Cross-Training Schedule that allocates specific shifts or time blocks for training, protected from reassignment to cover gaps. Build a Cross-Training Assessment Checklist for each station — a list of specific tasks the learner must demonstrate competently before being signed off. Assessments should be practical (demonstrate the task) not theoretical (describe the task). Update the skills matrix (B073) after each competency sign-off so that rota planning reflects current capability. Establish a target: within eight weeks, every team member should be competent at their primary station plus at least one additional station. For teams of five or more, aim for no critical function having fewer than three competent performers.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Cross-training becomes embedded in the operating culture — new starters are automatically scheduled for cross-training as part of their onboarding journey (B070). Introduce 'rotation shifts' where team members intentionally work a different station for a whole shift to maintain and deepen their cross-training competence. Track cross-training coverage as a key operational metric: what percentage of critical functions have three or more competent performers? Celebrate cross-training achievements on the Wall of Wins and in team briefings. Link cross-training completion to career progression milestones — Senior Barista candidates must demonstrate competence at three or more stations, Shift Leads at all stations. Conduct an annual resilience test: can every possible two-person shift combination deliver acceptable service across all stations? Where gaps exist, prioritise them for the next cross-training cycle. Use cross-training feedback to improve SOPs — learners often spot unclear or missing steps in procedures because they are following them for the first time."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Review the skills matrix (B073) and key person risk register (B077) for priority gaps",
+        "Identify the three highest-priority cross-training needs",
+        "Select one team member for each priority based on interest, aptitude, and availability",
+        "Create cross-training pairs (expert + learner) and schedule initial shadow shifts",
+        "Begin with observation-only shifts before transitioning to guided practice",
+        "Keep a simple log of cross-training sessions, content, and competency progress",
+        "Ensure cross-training is scheduled during quieter periods to protect service quality"
+      ],
+      "responsible": "Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a formal Cross-Training Plan for each team member with primary and secondary targets",
+        "Create a Cross-Training Schedule with protected time blocks in the rota",
+        "Build a Cross-Training Assessment Checklist for each station",
+        "Update the skills matrix after each competency sign-off",
+        "Set targets: every team member competent at primary plus one additional station within eight weeks",
+        "Ensure no critical function has fewer than three competent performers for teams of five or more",
+        "Link cross-training completion to career progression criteria from B071"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Integrate cross-training into the onboarding journey for all new starters",
+        "Introduce rotation shifts for maintaining and deepening cross-training competence",
+        "Track cross-training coverage as a key operational metric",
+        "Conduct annual resilience tests for all two-person shift combinations",
+        "Use cross-training feedback to improve station SOPs",
+        "Celebrate cross-training achievements in briefings and on the Wall of Wins"
+      ],
+      "responsible": "Manager, Owner"
+    }
+  },
+  "deliverables": [
+    "Cross-Training Plan per team member (primary, first target, second target)",
+    "Cross-Training Schedule with protected time blocks",
+    "Station Assessment Checklist for each operational area",
+    "Cross-Training Session Log template",
+    "Cross-Training Coverage Report (for rota planning)"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T078-01",
+        "tool_name": "Individual Cross-Training Plan",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Per-person plan identifying primary station, first and second cross-training targets, assigned trainer, scheduled sessions, and target competency dates."
+      },
+      {
+        "tool_id": "T078-02",
+        "tool_name": "Station Assessment Checklist",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Head Barista",
+        "description": "Practical assessment checklist for each station listing specific tasks the learner must demonstrate competently before being signed off as independently capable."
+      },
+      {
+        "tool_id": "T078-03",
+        "tool_name": "Cross-Training Schedule Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Monthly schedule template showing protected cross-training time blocks for each pair, ensuring training is planned rather than ad hoc and does not conflict with peak service periods."
+      },
+      {
+        "tool_id": "T078-04",
+        "tool_name": "Cross-Training Session Log",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Shift Lead",
+        "description": "Simple log recording each cross-training session with date, trainer, learner, station, tasks covered, competency level reached, and notes for next session."
+      },
+      {
+        "tool_id": "T078-05",
+        "tool_name": "Cross-Training Coverage Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Quarterly report showing coverage levels for all critical functions, percentage of team with multi-station competency, resilience test results, and priority gaps for the next training cycle."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Cross-training is planned but never scheduled because daily operations consume all available time",
+    "Training is rushed to tick a box, resulting in superficial competence that fails under real operational pressure",
+    "The expert trainer is a poor teacher, making the learning experience frustrating and ineffective",
+    "Cross-trained skills decay because they are never practised after the initial training period"
+  ],
+  "kpis": [
+    "100% of team members competent at their primary station plus at least one additional station",
+    "Zero critical functions with single-person dependency (minimum two competent performers per function)",
+    "Cross-training sessions delivered as scheduled at least 80% of the time",
+    "All cross-training competency sign-offs based on practical demonstration, not self-assessment",
+    "Skills matrix updated within one week of every competency sign-off"
+  ],
+  "dependencies": ["B077"],
+  "constraints": [
+    "Cross-training requires protected time that reduces productive capacity during training shifts",
+    "Not every team member will have the aptitude or interest for every station — prioritise critical gaps",
+    "Training quality depends on the trainer — invest in teaching skills for designated trainers"
+  ],
+  "time_load": {
+    "L1": "4 hours (planning, pairing, initial sessions)",
+    "L2": "10 hours (schedule build, assessment checklists, first round of sign-offs)",
+    "L3": "2 hours/month (rotation shifts, coverage tracking, SOP improvement from feedback)"
+  },
+  "review_protocol": "Weekly: cross-training sessions delivered as scheduled. Monthly: skills matrix updated with latest sign-offs and coverage levels reviewed. Quarterly: Cross-Training Coverage Report produced and priority gaps identified. Annually: full resilience test of all shift combinations.",
+  "meta": {
+    "summary_for_humans": "This block creates a systematic cross-training programme ensuring every team member can work competently across multiple stations, eliminating single-person dependencies and building operational resilience.",
+    "implementation_risks": [
+      "Protecting training time during busy periods requires genuine commitment from the owner",
+      "Poor-quality cross-training creates false confidence — assessments must be rigorous",
+      "Cross-trained skills need regular practice or they decay within months"
+    ],
+    "notes_for_engine": "Activate immediately when B077 identifies critical single-person dependencies. Also activate when rota fragility signals appear (shifts cancelled due to skill gaps, owner covering too many shifts). Feeds skills data back to B073.",
+    "tags": ["cross_training", "resilience", "multi_skilled", "flexibility", "stations", "skills", "redundancy", "scheduling"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "block_id": "B133",
+  "name": "Review Monitoring & Response",
+  "version": "v1.0",
+  "domain": "D08_marketing_brand",
+  "module": "M08: Brand Visibility & Customer Acquisition",
+  "state": "enriched",
+  "purpose": "Establishes a systematic process for monitoring online reviews across all platforms (Google, TripAdvisor, Facebook, Yelp, delivery apps) and responding to every review — positive and negative — within a defined timeframe. This block treats online reviews as real-time customer feedback that requires active management rather than passive observation.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Set up monitoring so that no review goes unnoticed on any platform where the cafe is listed",
+      "Define response protocols with templates for positive, mixed, and negative reviews",
+      "Respond to every review within 24 hours for negative reviews and 48 hours for positive reviews",
+      "Extract actionable operational insights from review themes to drive genuine improvement",
+      "Train designated team members to draft appropriate, on-brand responses"
+    ],
+    "secondary_objectives": [
+      "Build a reputation for responsiveness that encourages more customers to leave reviews",
+      "De-escalate negative reviews before they cause lasting reputational damage",
+      "Identify recurring complaints that indicate systemic operational issues rather than one-off incidents",
+      "Use positive review content as social proof in marketing materials (with appropriate attribution)"
+    ]
+  },
+  "why_this_matters": "Online reviews are the most powerful form of word-of-mouth marketing in the modern cafe landscape. Research by BrightLocal shows that 87% of consumers read online reviews for local businesses, and 79% trust online reviews as much as personal recommendations. For a cafe, a Google rating of 4.5 stars versus 4.0 stars can mean a 10-20% difference in foot traffic from search-driven customers. But it is not just the star rating that matters — potential customers read the reviews themselves and, critically, they read the business's responses. A cafe that responds thoughtfully to a negative review demonstrates that it cares about customer experience and is willing to address problems. A cafe that ignores negative reviews — or worse, responds defensively — signals that it does not value feedback. The Google algorithm also factors in review recency and business responsiveness when ranking local search results, meaning that active review management directly affects how prominently the cafe appears in local searches. Beyond the marketing impact, reviews are an invaluable source of operational intelligence. A cafe receiving multiple reviews mentioning slow service on Saturday mornings has a staffing or workflow problem. A cafe where three different reviewers mention that the toilets are unclean has a facilities management failure. Reviews surface issues that the owner may not see because customers are telling each other rather than complaining directly to staff. Monitoring reviews is monitoring your business through your customers' eyes.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Identify every platform where your cafe has a listing and could receive reviews. At minimum this includes Google Business Profile, TripAdvisor, Facebook, and any delivery platforms you use (Deliveroo, Uber Eats, Just Eat). Check each platform and note how many reviews you have, your average rating, and when you last received a review. Set up Google Alerts for your cafe name and enable email notifications on each platform so you are notified when a new review is posted. If you use Google Business Profile (B134), enable review notifications in the GBP app. Week 2: Read through all reviews from the last 6 months and categorise them: Positive (4-5 stars), Mixed (3 stars), Negative (1-2 stars). For each negative or mixed review, note the specific complaint (slow service, cold food, rude staff, cleanliness, etc.). Look for patterns — are the same issues mentioned multiple times? Respond to every review from the last 30 days that has not yet received a response. For positive reviews, thank the customer personally and mention something specific from their review. For negative reviews, apologise sincerely, acknowledge the specific issue, explain what you are doing about it, and invite the customer to return or contact you directly. Never argue, blame the customer, or make excuses.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Review Response SOP with template responses for different review types. Templates should not be copied verbatim — they should be personalised for each review — but they provide a structure and tone guide. Positive review template: thank the customer by name, reference a specific detail from their review, invite them back. Negative review template: apologise, acknowledge the issue, explain the corrective action, offer to make it right, provide contact details. Mixed review template: thank them for the positive elements, address the criticism constructively, demonstrate that you are listening. Assign review monitoring and response as a specific role responsibility — typically the manager, with the owner as backup. Define response timeframes: negative reviews within 24 hours (ideally same day), positive reviews within 48 hours. Set up a review tracking spreadsheet logging date, platform, rating, key themes, response status, and any operational actions triggered. Conduct a monthly review analysis meeting: review all feedback from the past month, identify the top three positive themes to reinforce and the top three negative themes to address. Feed these into operational improvement plans in the relevant blocks. Track your ratings trend on each platform — are they improving, stable, or declining?",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Review management should be deeply embedded in the operational culture. The team should know that customer feedback matters and that reviews are discussed and acted upon. Share positive reviews with the team weekly — read out a great review at the team meeting, celebrate when a staff member is mentioned by name. When a negative review highlights a genuine issue, use it as a constructive learning opportunity rather than a blame session. Develop a review escalation process: standard negative reviews are handled by the manager, but reviews alleging food safety issues, discrimination, or serious misconduct are escalated to the owner immediately and may require legal or insurance notification. Monitor competitor reviews to understand how your cafe compares in customer perception — what do their customers praise that yours do not, and vice versa? Use review sentiment analysis to track customer perception over time: are customers increasingly mentioning your coffee quality (positive signal) or has there been a recent spike in complaints about service speed (early warning)? Consider using review management software (e.g., Reputation.com, ReviewTrackers) if the volume of reviews justifies the subscription cost."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Identify all platforms where the cafe has listings and can receive reviews",
+        "Enable notifications on all platforms so new reviews are immediately flagged",
+        "Read all reviews from the last 6 months and categorise as positive, mixed, or negative",
+        "Identify recurring complaint themes from negative reviews",
+        "Respond to all unanswered reviews from the last 30 days following best-practice guidelines",
+        "Note current average rating on each platform as the baseline for improvement"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a Review Response SOP with template structures for positive, mixed, and negative reviews",
+        "Assign review monitoring and response as a defined role responsibility with response timeframes",
+        "Set up a review tracking spreadsheet logging reviews, themes, responses, and actions",
+        "Conduct a monthly review analysis meeting identifying top positive and negative themes",
+        "Feed review insights into operational improvement plans in relevant blocks",
+        "Track ratings trends on each platform monthly"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Share positive reviews with the team weekly to celebrate and reinforce",
+        "Use negative reviews constructively for team learning without blame",
+        "Develop a review escalation process for serious allegations",
+        "Monitor competitor reviews to benchmark customer perception",
+        "Track review sentiment trends over time as an early warning system",
+        "Evaluate review management software if volume justifies the investment"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Review Response SOP with template structures",
+    "Review Tracking Spreadsheet",
+    "Monthly Review Analysis Report template",
+    "Review Escalation Procedure",
+    "Platform Notification Setup Guide"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T133-01",
+        "tool_name": "Review Tracking Spreadsheet",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "A spreadsheet logging every review received across all platforms: date, platform, rating, key themes, response status, response date, and any operational actions triggered. Used for monthly analysis and trend tracking."
+      },
+      {
+        "tool_id": "T133-02",
+        "tool_name": "Review Response SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard operating procedure defining the approach, tone, and structure for responding to positive, mixed, and negative reviews. Includes template structures, response timeframes, escalation triggers, and examples of good and poor responses."
+      },
+      {
+        "tool_id": "T133-03",
+        "tool_name": "Monthly Review Analysis Report",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "A monthly report summarising total reviews received, average rating by platform, top three positive themes, top three negative themes, response compliance rate, and recommended operational actions."
+      },
+      {
+        "tool_id": "T133-04",
+        "tool_name": "Review Escalation Procedure",
+        "level": "L3",
+        "format": "SOP",
+        "owner_role": "Owner",
+        "description": "A procedure for handling reviews that allege serious issues such as food poisoning, discrimination, or misconduct. Defines when to escalate to the owner, when to involve insurers or solicitors, and how to respond publicly."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Reviews are monitored but never responded to, giving customers the impression that the cafe does not care about feedback",
+    "Negative reviews receive defensive or argumentative responses that make the situation worse publicly",
+    "Review insights are noted but never acted upon, missing the operational intelligence that reviews provide",
+    "Only Google reviews are monitored while negative reviews accumulate unnoticed on TripAdvisor or delivery platforms"
+  ],
+  "kpis": [
+    "All negative reviews responded to within 24 hours",
+    "All positive reviews responded to within 48 hours",
+    "Review response rate of 100% across all monitored platforms",
+    "Average Google rating maintained at 4.3 or above, with an improving or stable trend"
+  ],
+  "dependencies": ["B134"],
+  "constraints": [
+    "Responses must be professional, empathetic, and on-brand regardless of how unfair or inaccurate the review may seem",
+    "Platform terms of service must be respected — reporting fake reviews is legitimate but attempting to have genuine negative reviews removed is not",
+    "GDPR must be considered when referencing customer details in public responses"
+  ],
+  "time_load": {
+    "L1": "4 hours (platform audit, notification setup, initial response catch-up)",
+    "L2": "3 hours/week (monitoring, responding, and tracking reviews)",
+    "L3": "2 hours/month (monthly analysis, competitor monitoring, sentiment tracking)"
+  },
+  "review_protocol": "Daily check for new reviews across all platforms. Weekly review of response compliance. Monthly review analysis meeting identifying trends and operational actions. Quarterly assessment of rating trends and review management effectiveness.",
+  "meta": {
+    "summary_for_humans": "This block establishes systematic monitoring and response for online reviews across Google, TripAdvisor, Facebook, and delivery platforms. Every review gets a thoughtful response within 24-48 hours, and review themes are analysed monthly to drive operational improvements.",
+    "implementation_risks": [
+      "The emotional toll of reading negative reviews can discourage consistent monitoring",
+      "Staff may take negative reviews personally if they are shared without proper framing",
+      "Responding to reviews while angry or defensive can cause more reputational damage than the original review"
+    ],
+    "notes_for_engine": "This block is a core component of D08 and connects directly to B134 (Google Business Profile) and B135 (Review Generation). Activate when signals indicate poor online ratings, unresponded reviews, or when the cafe appears to be unaware of what customers are saying online. High priority if Google rating is below 4.0 or declining.",
+    "tags": ["marketing", "reviews", "reputation", "Google", "TripAdvisor", "response", "feedback", "monitoring"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

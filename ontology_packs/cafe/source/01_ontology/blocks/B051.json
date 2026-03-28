@@ -1,0 +1,167 @@
+{
+  "block_id": "B051",
+  "name": "Seasonal Menu Development",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Creates a structured approach to developing and rotating seasonal menu offerings that keep the cafe's food and drink menu fresh, align with ingredient availability and quality, generate customer excitement, and provide regular opportunities for social media content and marketing.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish a seasonal menu calendar with planned rotations at least quarterly",
+      "Develop a process for creating, testing, and launching new seasonal items",
+      "Align seasonal offerings with ingredient availability, quality, and cost-effectiveness",
+      "Create marketing and communication plans around each seasonal menu change",
+      "Balance seasonal innovation with the stability of core menu items that regulars depend on"
+    ],
+    "secondary_objectives": [
+      "Use seasonal changes to test potential permanent menu additions",
+      "Create urgency and scarcity that drives footfall — 'try it before it goes'",
+      "Develop kitchen and barista creativity through structured recipe development",
+      "Align seasonal offerings with local events, holidays, and cultural moments"
+    ]
+  },
+  "why_this_matters": "A static menu is a stagnating menu. Customers — particularly regulars who visit multiple times per week — crave variety and novelty alongside the comforting reliability of their usual order. Seasonal menus serve both needs: the core menu remains stable while seasonal additions provide excitement and reason to visit. In the UK, the cafe market benefits enormously from clear seasonal rhythms: warming soups and spiced drinks in autumn, hearty stews and hot chocolates in winter, fresh salads and iced drinks in spring, and cold brews and light bites in summer. These are not arbitrary — they align with ingredient quality, customer mood, and spending patterns. British asparagus is exceptional in May but unavailable by July; forced Yorkshire rhubarb peaks in January; summer berries reach their best in June and July. Seasonality connects the cafe to the agricultural calendar in a way that customers increasingly value. Beyond ingredients, seasonal menus create marketing opportunities. Each new item is content: a new Instagram post, a newsletter announcement, a reason for lapsed customers to return. The psychology of scarcity also plays a role — a drink available only in October creates urgency that a permanent menu item never will. The pumpkin spice phenomenon demonstrates this at scale, but independent cafes can create their own seasonal moments without copying chains. Seasonal menus also provide a structured way to innovate: they are time-limited experiments that, if successful, can join the permanent menu, and if not, disappear gracefully without the cost of a full menu change.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create a seasonal menu calendar for the next 12 months. Divide the year into four seasons (or six bi-monthly periods if you want more frequent changes) and brainstorm at least three food items and three drink items for each season. Start with what is obvious: a spiced latte for autumn, a summer iced drink, a Christmas special, a spring fresh salad. Ask the team for ideas — the barista who creates an incredible cold brew recipe or the kitchen worker who makes an outstanding soup at home should be encouraged to contribute. Week 2: Select the items for the upcoming season and begin recipe development. For each item, create a prep card (B050) that includes: ingredients with costed quantities, preparation method, presentation standard with photo, and shelf life. Test each item internally — the team should taste and provide feedback. Calculate the cost per portion and set a price that achieves at least the cafe's target food margin (typically 65-70% gross margin for food, 75-80% for drinks). Plan the launch: date, signage, social media content, and any staff training needed to prepare and describe the new items.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Seasonal Menu Development SOP that standardises the process: ideation (8 weeks before launch), recipe development and testing (6 weeks before), costing and pricing (4 weeks before), staff training (2 weeks before), marketing preparation (2 weeks before), and launch. Create a recipe development template that guides the creator through flavour development, allergen assessment, supplier sourcing, cost calculation, and presentation design. Establish a tasting panel process: before any seasonal item launches, it must be approved by a panel of at least three people including the owner or manager, a kitchen or barista team member, and ideally a trusted regular or external taster. The panel evaluates on taste, visual appeal, value for money, and operational feasibility (can it be prepared consistently during busy service?). Build a seasonal menu performance tracker: for each seasonal item, record sales per day, customer feedback, social media engagement, waste generated, and gross margin achieved. This data informs future seasonal decisions — if the summer cold brew sold three times more than the spring matcha special, invest more in cold drinks next summer. Establish supplier relationships that support seasonality: local farm shops, farmers' markets, and specialist producers who can provide seasonal ingredients with short lead times.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Seasonal menu development should become one of the most creative and energising parts of the cafe's operation. Involve the whole team in brainstorming and recipe development — not just the kitchen. Baristas, front-of-house staff, and even regulars can contribute ideas. Create an annual 'menu innovation day' where the team develops and presents new concepts. Build collaborative seasonal menus with local partners: a bread from the local bakery for autumn, a jam from a local producer for summer, or a beer pairing with a local brewery for winter evenings. Use seasonal data from previous years to predict demand and optimise ordering — second-year seasonal items should waste less and sell more because you have data to guide production quantities. Develop a 'greatest hits' system: the most successful seasonal items return in future years, building customer anticipation. Connect seasonal menus to your sustainability story — using local, seasonal ingredients reduces food miles and supports the local economy."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create a 12-month seasonal menu calendar with at least three food and three drink items per season",
+        "Brainstorm seasonal ideas with the full team",
+        "Select and develop recipes for the upcoming season's items",
+        "Create prep cards with costs for each seasonal item",
+        "Conduct internal tasting and feedback sessions",
+        "Calculate portion costs and set prices achieving target margins",
+        "Plan the launch: date, signage, social media content, and staff training"
+      ],
+      "responsible": "Owner, Manager, Head Barista, Kitchen"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Seasonal Menu Development SOP with an 8-week launch timeline",
+        "Create a recipe development template covering flavour, allergens, cost, and presentation",
+        "Establish a tasting panel approval process for all new seasonal items",
+        "Build a seasonal menu performance tracker (sales, feedback, waste, margin)",
+        "Develop supplier relationships supporting seasonal ingredient sourcing",
+        "Create marketing templates for seasonal menu launches",
+        "Document successful seasonal recipes for potential future rotation"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Host an annual menu innovation day with the full team",
+        "Build collaborative seasonal menus with local producers and partners",
+        "Use previous year's data to predict demand and optimise ordering",
+        "Develop a 'greatest hits' system for recurring seasonal favourites",
+        "Connect seasonal menus to sustainability and local sourcing messaging",
+        "Share seasonal performance data with the team to inform future creativity"
+      ],
+      "responsible": "Owner, Manager, Head Barista"
+    }
+  },
+  "deliverables": [
+    "12-Month Seasonal Menu Calendar",
+    "Seasonal Menu Development SOP",
+    "Recipe Development Template",
+    "Seasonal Item Performance Tracker",
+    "Seasonal Launch Marketing Checklist"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T051-01",
+        "tool_name": "Seasonal Menu Calendar",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "12-month visual calendar showing planned seasonal items for each period, key ingredient availability windows, launch dates, and marketing milestones. Updated annually and reviewed quarterly."
+      },
+      {
+        "tool_id": "T051-02",
+        "tool_name": "Recipe Development Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Kitchen",
+        "description": "Structured template guiding seasonal recipe development: flavour profile, ingredient list with costs, preparation method, allergen assessment, presentation design, and tasting panel evaluation criteria."
+      },
+      {
+        "tool_id": "T051-03",
+        "tool_name": "Tasting Panel Score Sheet",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Evaluation form for the tasting panel to assess new seasonal items on: taste, visual appeal, value perception, operational feasibility, allergen clarity, and overall recommendation to launch."
+      },
+      {
+        "tool_id": "T051-04",
+        "tool_name": "Seasonal Item Performance Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Tracker recording daily sales, customer feedback, social media engagement, waste volumes, and gross margin for each seasonal item throughout its availability period."
+      },
+      {
+        "tool_id": "T051-05",
+        "tool_name": "Annual Seasonal Menu Review",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Annual review comparing all seasonal items' performance: sales ranking, profitability, customer response, waste efficiency, and recommendations for next year's calendar including 'greatest hits' returns."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Seasonal items are conceived too late and launched unprepared, with inadequate training and marketing",
+    "The seasonal menu overwhelms the kitchen, reducing quality of both seasonal and core items during peak service",
+    "Cost calculation is skipped and seasonal items are priced intuitively, resulting in poor margins",
+    "Seasonal items linger on the menu past their season, becoming stale rather than exciting"
+  ],
+  "kpis": [
+    "At least three new seasonal items launched per quarter",
+    "Seasonal items achieve a gross margin at or above the cafe's target (65-70% food, 75-80% drinks)",
+    "At least one seasonal item generates measurable social media engagement per quarter",
+    "Seasonal items contribute at least 10% of total food and drink revenue"
+  ],
+  "dependencies": ["B050", "B056"],
+  "constraints": [
+    "Seasonal development requires lead time — the 8-week timeline must be respected to avoid rushed launches",
+    "New seasonal items must have full allergen assessment before launch",
+    "Kitchen capacity must be considered — seasonal items that require significantly more prep time need to justify the effort"
+  ],
+  "time_load": {
+    "L1": "6 hours (calendar creation, brainstorming, initial recipe development, testing)",
+    "L2": "10 hours (SOP development, tasting panel process, tracker setup, marketing preparation)",
+    "L3": "4 hours/quarter (innovation day, data analysis, supplier engagement, annual review)"
+  },
+  "review_protocol": "Weekly sales tracking of seasonal items during their availability. End-of-season performance review for each seasonal item. Quarterly calendar review and upcoming season planning. Annual comprehensive seasonal menu review.",
+  "meta": {
+    "summary_for_humans": "This block creates a structured approach to seasonal menu development, ensuring the cafe regularly introduces fresh, well-tested, properly costed offerings that excite customers and generate marketing content. It covers the full lifecycle from ideation through launch to performance review.",
+    "implementation_risks": [
+      "Seasonal ambition may exceed kitchen capacity, creating quality problems across the entire menu",
+      "Seasonal items with short shelf lives can generate significant waste if demand is overestimated",
+      "Over-rotation of the menu can confuse regular customers who value stability"
+    ],
+    "notes_for_engine": "Activate after B050 prep standards are established — seasonal items need the same documentation rigour as permanent ones. Signals: static menu, declining footfall, customer feedback requesting more variety, social media content running dry.",
+    "tags": ["food_quality", "seasonal", "menu", "innovation", "marketing", "recipe_development", "local_sourcing", "creativity"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

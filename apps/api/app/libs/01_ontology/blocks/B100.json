@@ -1,0 +1,158 @@
+{
+  "block_id": "B100",
+  "name": "Seating Experience Optimisation",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Balances the tension between maximising seating turnover for revenue and providing a comfortable, welcoming experience that encourages return visits. This capstone block integrates turnover strategy (B098) and capacity management (B099) into a holistic seating philosophy that serves both the business and the customer.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define the cafe's seating philosophy — where it sits on the spectrum from fast-casual to lounge",
+      "Design seating zones that cater to different customer needs: quick coffee, working lunch, social gathering, remote working",
+      "Optimise furniture selection for both comfort and turnover — different seat types drive different dwell times",
+      "Create a seating layout that maximises covers while maintaining comfortable spacing and flow",
+      "Develop policies for peak versus off-peak seating management that flex with demand"
+    ],
+    "secondary_objectives": [
+      "Improve customer satisfaction scores related to seating comfort and availability",
+      "Reduce conflict with laptop workers and long-stay customers through proactive policy design",
+      "Increase average spend per visit by creating seating environments that encourage food ordering alongside drinks"
+    ]
+  },
+  "why_this_matters": "Seating is the most tangible expression of a cafe's brand and values. A cafe filled with hard wooden stools and narrow ledges is saying 'drink and go.' A cafe with deep sofas and power sockets everywhere is saying 'stay all day.' Neither extreme is ideal for a business trying to balance revenue, atmosphere, and customer satisfaction. The most successful UK cafes design their seating intentionally, creating zones that serve different customer missions: a quick two-top near the door for the commuter grabbing a flat white, a comfortable booth for the mum meeting a friend for an hour, a communal table for the remote worker who needs space, and a cosy corner for the couple on a weekend brunch date. Each zone has different furniture, different proximity to power, and subtly different service expectations. This is not interior design for its own sake — it is revenue engineering. A cafe that converts even 10% of its takeaway-only customers to dine-in customers who also order food has increased average transaction value by 40-60%. A cafe that resolves the laptop worker problem — people occupying a four-top for three hours while buying a single Americano — without alienating those customers has recaptured significant peak-period revenue. Seating Experience Optimisation brings together the operational work from B098 and B099 with customer experience design to create a seating strategy that is commercially smart, operationally efficient, and genuinely hospitable.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Audit every seat in the cafe. For each table, record: table size (2-top, 4-top, communal), furniture type (stool, chair, bench, sofa), proximity to power sockets, visibility from the counter, natural light, and current average dwell time (use data from B098). Create a simple floor plan marking each table position. Observe customer behaviour for a full week: which tables are chosen first? Which are avoided? Where do laptop workers sit? Where do groups cluster? Where do single customers go? This observation reveals the cafe's natural seating zones — areas that customers have organically designated for different uses. Week 2: Based on observations, sketch a rough zoning plan: Quick Zone (near the door, higher stools or counter seating, no power sockets — for takeaway-to-dine-in converts and quick visits), Social Zone (comfortable chairs around standard tables — for friends, meetings, and meals), and Focus Zone (if space permits, quieter area with power access — for remote workers and students). Assess whether the current furniture arrangement supports these zones or works against them. Make any quick-win changes: move power strips away from high-turnover areas, swap a low sofa out of a prime window spot for a two-top that will turn over faster.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a formal Seating Strategy Document that defines the cafe's zoning plan, furniture specifications for each zone, and management policies for peak versus off-peak. Create a laptop and remote working policy — many successful UK cafes now implement a 'one drink per hour' minimum, limit WiFi to 90 minutes during peak, or designate specific tables as laptop-friendly only during off-peak hours. Communicate this policy with signage that is friendly and clear, not hostile. Analyse revenue data by seating zone to understand which areas generate the most revenue per square foot — this data should inform any future furniture purchases or layout changes. Implement seasonal seating adjustments: outdoor seating for summer (council licence required in most UK local authorities), festive table decorations in December, lighter tablecloths in spring. Design the service flow so staff naturally move through all seating zones during peak, ensuring no area is neglected. Consider accessibility requirements under the Equality Act 2010 — wheelchair access to tables, space for pushchairs, hearing loop awareness.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Seating experience should be continuously refined based on customer feedback and revenue data. Conduct a bi-annual customer survey specifically about seating — comfort, availability, atmosphere, noise levels. Test different furniture arrangements for 2-4 weeks and measure the impact on revenue per seat per hour, customer satisfaction, and dwell time. Explore innovative seating concepts: a standing coffee bar for ultra-quick service during morning peak, a bookable private area for small group meetings, or a seasonal outdoor terrace with its own service flow. Integrate seating data into the broader business planning: when considering menu changes, promotions, or events, assess the seating implications. Build the seating experience into the cafe's brand narrative — 'a seat for every mood' — so that regular customers know exactly where they will sit depending on what they need that day. Review the entire seating strategy annually alongside any planned refurbishment or equipment investment."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Audit every seat: table size, furniture type, power access, light, average dwell time",
+        "Create a floor plan marking all table positions and current characteristics",
+        "Observe customer seating behaviour for one full week to identify natural zones",
+        "Sketch a preliminary zoning plan: Quick Zone, Social Zone, Focus Zone",
+        "Make quick-win furniture and power socket adjustments to support zones",
+        "Move high-turnover seating near the entrance and door",
+        "Position comfortable seating away from the highest-traffic areas"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a formal Seating Strategy Document with zoning and furniture specifications",
+        "Create and communicate a laptop and remote working policy",
+        "Analyse revenue by seating zone to identify highest-value areas",
+        "Implement seasonal seating adjustments (outdoor, festive, etc.)",
+        "Ensure service flow covers all seating zones during peak periods",
+        "Review accessibility compliance under the Equality Act 2010",
+        "Design signage that communicates seating policies warmly and clearly"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct bi-annual customer surveys specifically about seating experience",
+        "Test different furniture arrangements and measure revenue impact over 2-4 weeks",
+        "Explore innovative seating concepts (standing bar, bookable areas, terraces)",
+        "Integrate seating data into broader business planning and menu decisions",
+        "Review the entire seating strategy annually alongside refurbishment plans"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Seating Audit Report with floor plan",
+    "Seating Strategy Document with zoning plan",
+    "Laptop and Remote Working Policy",
+    "Revenue Per Seating Zone analysis",
+    "Customer Seating Satisfaction Survey template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T100-01",
+        "tool_name": "Seating Audit Worksheet",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Table-by-table audit template recording table number, size, furniture type, power access, natural light, average dwell time, and observed customer preference patterns."
+      },
+      {
+        "tool_id": "T100-02",
+        "tool_name": "Seating Zone Strategy Document",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Owner",
+        "description": "Formal document defining the cafe's seating zones, furniture specifications, peak/off-peak policies, laptop worker guidelines, and accessibility provisions."
+      },
+      {
+        "tool_id": "T100-03",
+        "tool_name": "Revenue Per Zone Tracker",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Monthly analysis of revenue generated per seating zone, revenue per square foot, and dwell time by zone. Identifies highest-performing areas and underperforming sections."
+      },
+      {
+        "tool_id": "T100-04",
+        "tool_name": "Customer Seating Survey",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Bi-annual customer survey template covering seating comfort, availability during peak, atmosphere, noise levels, and overall satisfaction with the cafe's seating experience."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Zoning is designed on paper but never communicated to staff, so they seat customers randomly without regard to zone purpose",
+    "Laptop worker policy is implemented too aggressively, alienating a loyal customer segment and generating negative reviews",
+    "Furniture is chosen for aesthetics rather than function, resulting in seats that look great but discourage the desired dwell time",
+    "Accessibility requirements are overlooked, creating legal risk and excluding customers with disabilities or mobility needs"
+  ],
+  "kpis": [
+    "Revenue per seat per hour improved by 10% within 12 weeks of zoning implementation",
+    "Customer seating satisfaction score of 4.0 or above out of 5.0 in bi-annual surveys",
+    "Peak-period table availability improved — walkaway rate reduced by 30%",
+    "Average dine-in spend per customer increased by 15% through zoning and experience design"
+  ],
+  "dependencies": ["B098", "B099"],
+  "constraints": [
+    "Seating layout must comply with fire safety occupancy limits and emergency exit access",
+    "All seating must meet accessibility requirements under the Equality Act 2010",
+    "Outdoor seating requires a pavement licence from the local authority (Licensing Act or Business and Planning Act provisions)",
+    "Furniture changes must be budgeted and phased — avoid trying to redesign the entire cafe at once"
+  ],
+  "time_load": {
+    "L1": "3 hours (audit, observation, quick-win adjustments)",
+    "L2": "6 hours (strategy document, policy creation, zone implementation, signage)",
+    "L3": "3 hours/half-year (surveys, furniture testing, strategy review)"
+  },
+  "review_protocol": "Weekly observation of zone effectiveness during peak by manager. Monthly revenue-per-zone review. Bi-annual customer seating satisfaction survey. Annual full seating strategy review aligned with business planning.",
+  "meta": {
+    "summary_for_humans": "This capstone block balances turnover and comfort by designing seating zones, furniture choices, and management policies that serve different customer needs. It integrates the work from B098 and B099 into a cohesive seating philosophy that maximises revenue while maintaining a genuinely welcoming atmosphere.",
+    "implementation_risks": [
+      "Seating redesigns can be expensive — prioritise changes that deliver the highest revenue impact per pound spent",
+      "Staff may struggle to enforce seating policies (e.g., laptop limits) if the rationale is not clearly explained",
+      "Customer habits take time to shift — a new zoning plan may take 4-6 weeks to become established behaviour"
+    ],
+    "notes_for_engine": "This is a capstone block — activate after B098 and B099 are operational. Flag as high-value if signals indicate customer complaints about seating, revenue per square foot significantly below benchmarks, or conflict with laptop workers.",
+    "tags": ["operations", "seating", "experience", "zoning", "furniture", "accessibility", "customer_satisfaction", "capstone"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

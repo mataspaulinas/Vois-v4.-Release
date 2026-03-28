@@ -1,0 +1,156 @@
+{
+  "block_id": "B142",
+  "name": "Brand Consistency Audit",
+  "version": "v1.0",
+  "domain": "D08_marketing_brand",
+  "module": "M08: Brand Visibility & Customer Acquisition",
+  "state": "enriched",
+  "purpose": "Provides a systematic process for auditing brand consistency across every customer touchpoint — physical, digital, and experiential — ensuring that the cafe presents a unified, professional identity wherever and however a customer encounters it.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Map every customer touchpoint where the brand is expressed or experienced",
+      "Assess each touchpoint against the brand style guide (B140) for consistency in visual identity and tone",
+      "Identify and prioritise brand inconsistencies for correction",
+      "Create a recurring audit cycle that catches brand drift before it accumulates",
+      "Ensure that brand consistency extends beyond visuals to include the experiential brand — service style, atmosphere, and quality standards"
+    ],
+    "secondary_objectives": [
+      "Build awareness within the team about what brand consistency means and why it matters",
+      "Identify touchpoints that are missing brand expression entirely (e.g., unbranded packaging, generic email templates)",
+      "Create a touchpoint inventory that serves as a checklist for brand management",
+      "Evaluate whether the brand experience is consistent at different times of day, days of the week, and with different staff"
+    ]
+  },
+  "why_this_matters": "Brand consistency is what separates a professional business from an amateur one in the customer's mind. Every inconsistency — a different font on the menu than the signage, an Instagram account with a different colour palette from the interior, an A-frame board hand-written in a style that clashes with the branded menus — chips away at the perception of quality and intentionality. Customers may not consciously notice individual inconsistencies, but they register the cumulative effect: the cafe either feels like a well-run, carefully designed space or it does not. Research by Lucidpress found that consistent brand presentation across all platforms increases revenue by up to 23%. In a competitive cafe market where customers have abundant choice, the cafe that looks and feels like a coherent brand wins trust faster than the one that looks pieced together. Brand consistency auditing extends beyond visual identity. It includes the experiential brand: Is the service quality the same on a Tuesday morning as a Saturday afternoon? Does the coffee taste the same whoever makes it? Is the music, lighting, and atmosphere consistent with the brand positioning? A cafe that positions itself as a relaxing retreat but plays loud pop music during peak hours has an experiential brand inconsistency that undermines everything the visual brand communicates.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create a Touchpoint Inventory — a comprehensive list of every place where the brand is expressed or experienced. Physical touchpoints: exterior signage, window displays, A-frame board, entrance, interior decor, menu boards, printed menus, takeaway cups and packaging, loyalty cards, staff uniforms or aprons, till area, toilet signage, and business cards. Digital touchpoints: website, Google Business Profile, Instagram, Facebook, TripAdvisor listing, delivery platform pages, email signatures, and any digital communications. Experiential touchpoints: greeting style, ordering process, service speed, coffee quality, food presentation, music, lighting, cleanliness, and farewell. Week 2: Walk through each touchpoint with the Brand Identity Summary from B140 in hand. For each one, score it: Consistent (matches the brand guide), Partially Consistent (some elements match, others do not), or Inconsistent (significantly off-brand). Take photos of each physical touchpoint for documentation. Record digital touchpoint screenshots. Note experiential observations at different times and days.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Prioritise the inconsistencies found. High priority: any customer-facing touchpoint that directly contradicts the brand identity (wrong logo, wrong colours, wrong name). Medium priority: touchpoints that are partially consistent but could be improved (unbranded packaging, inconsistent A-frame style). Low priority: minor variations that most customers would not notice. Create a Brand Alignment Action Plan with specific tasks, responsible persons, budgets, and deadlines for each correction. Some fixes are free (updating the Instagram bio, correcting a font on the website), others require modest investment (new branded cups, reprinted menus, updated signage). Implement the high-priority fixes first. Develop a 'brand moment' for each stage of the customer journey: arrival (signage, entrance), ordering (menu, staff greeting), waiting (interior, music), receiving (presentation, cup branding), and departure (farewell, loyalty card). Each moment should reinforce the same brand identity. Train all staff on what the brand stands for and how it should be expressed through their interactions — brand consistency is not just about logos and colours, it is about the human experience.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Establish a quarterly Brand Consistency Audit as a recurring calendar item. Each quarter, one person (owner, manager, or even a trusted regular) walks through the full touchpoint inventory and scores consistency. Results are compared against the previous quarter to track improvement and catch any new inconsistencies introduced. Develop 'brand eyes' within the team — encourage staff to flag anything that looks off-brand: a new supplier has provided different takeaway cups, a temporary sign uses the wrong font, or the cleaning product display visible to customers does not match the aesthetic. Build brand consistency into the decision-making process: when choosing new suppliers, packaging, or equipment, evaluate options for brand alignment alongside cost and functionality. Consider engaging a mystery shopper service or asking a trusted contact to conduct an independent brand audit for an objective perspective."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create a comprehensive Touchpoint Inventory listing every physical, digital, and experiential brand expression",
+        "Walk through each touchpoint with the Brand Identity Summary and score consistency",
+        "Photograph physical touchpoints and screenshot digital ones for documentation",
+        "Observe experiential touchpoints at different times and days",
+        "Compile findings into a Brand Consistency Report highlighting gaps"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Prioritise inconsistencies as high, medium, or low priority",
+        "Create a Brand Alignment Action Plan with tasks, owners, budgets, and deadlines",
+        "Implement high-priority fixes first, progressing through the priority list",
+        "Design brand moments for each stage of the customer journey",
+        "Train staff on brand expression through service interactions",
+        "Update all digital platforms with consistent brand elements"
+      ],
+      "responsible": "Owner, Manager, Designer"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Establish a quarterly Brand Consistency Audit cycle",
+        "Develop brand awareness within the team so staff flag off-brand elements",
+        "Integrate brand alignment criteria into supplier and equipment decisions",
+        "Commission an independent brand audit annually for objective assessment",
+        "Compare quarterly audit results to track improvement trends",
+        "Update the touchpoint inventory whenever the business adds new channels or materials"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Touchpoint Inventory (comprehensive list of all brand expressions)",
+    "Brand Consistency Audit Report with scoring and evidence",
+    "Brand Alignment Action Plan with priorities and timelines",
+    "Customer Journey Brand Moments Map",
+    "Quarterly Audit Comparison Tracker"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T142-01",
+        "tool_name": "Touchpoint Inventory Template",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "A comprehensive checklist of all customer touchpoints where brand is expressed, organised by category (physical, digital, experiential). Used as the basis for the brand consistency audit."
+      },
+      {
+        "tool_id": "T142-02",
+        "tool_name": "Brand Consistency Audit Scorecard",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "A scoring template for assessing each touchpoint against the brand style guide, with columns for touchpoint name, current status, consistency score, photographic evidence, and corrective action needed."
+      },
+      {
+        "tool_id": "T142-03",
+        "tool_name": "Brand Alignment Action Plan",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A prioritised action plan for correcting brand inconsistencies, with columns for touchpoint, issue, priority, corrective action, responsible person, budget required, deadline, and completion status."
+      },
+      {
+        "tool_id": "T142-04",
+        "tool_name": "Customer Journey Brand Moments Map",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A visual map of the customer journey showing each brand moment from arrival to departure, the intended brand expression at each stage, and the elements that create that expression (signage, service, music, presentation)."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The audit identifies problems but the action plan is never executed due to cost or inertia",
+    "The audit focuses only on visual elements and misses experiential inconsistencies in service, quality, and atmosphere",
+    "Brand consistency is treated as a one-off project rather than an ongoing discipline, so new inconsistencies accumulate unnoticed",
+    "Staff see brand consistency as the owner's concern and do not feel any responsibility for maintaining it"
+  ],
+  "kpis": [
+    "Quarterly brand consistency audit completed with documented findings and actions",
+    "Brand consistency score improving each quarter toward 90%+ across all touchpoints",
+    "All high-priority inconsistencies resolved within 30 days of identification",
+    "Staff can articulate the cafe's brand values and how they express them in service"
+  ],
+  "dependencies": ["B140"],
+  "constraints": [
+    "Correcting some inconsistencies requires budget for new signage, packaging, or printed materials",
+    "Landlord restrictions may limit the ability to change external signage or branding",
+    "Franchise or chain cafes may have brand guidelines imposed centrally that limit local flexibility"
+  ],
+  "time_load": {
+    "L1": "3 hours (touchpoint inventory, initial audit walkthrough, report)",
+    "L2": "6 hours (action plan creation, priority fix implementation, staff training)",
+    "L3": "2 hours/quarter (quarterly audit, comparison, action plan update)"
+  },
+  "review_protocol": "Quarterly brand consistency audit. Monthly check of recently changed or added touchpoints. Annual comprehensive audit with external perspective. Immediate review when any major touchpoint changes (new signage, menu redesign, website update).",
+  "meta": {
+    "summary_for_humans": "This block provides a systematic audit process for checking brand consistency across every customer touchpoint — physical, digital, and experiential. It identifies misalignments, prioritises corrections, and establishes a recurring audit cycle to prevent brand drift.",
+    "implementation_risks": [
+      "Auditing can reveal an uncomfortable number of inconsistencies, which may feel overwhelming to address",
+      "Experiential brand consistency depends on staff behaviour, which is harder to control than visual elements",
+      "Perfect consistency can feel sterile if taken too far — some organic, human variation is part of an independent cafe's charm"
+    ],
+    "notes_for_engine": "This block works in tandem with B140 (Brand Identity & Style Guide). Activate once the style guide exists, or activate both together. Particularly valuable when signals indicate a visually disjointed customer experience or when the cafe feels 'unprofessional' without a clear reason why.",
+    "tags": ["marketing", "brand", "consistency", "audit", "touchpoints", "customer_journey", "quality", "identity"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

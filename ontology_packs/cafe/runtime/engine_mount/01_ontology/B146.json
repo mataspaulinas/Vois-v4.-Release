@@ -1,0 +1,157 @@
+{
+  "block_id": "B146",
+  "name": "Front-of-House Cleanliness",
+  "version": "v1.0",
+  "domain": "D09_physical_environment",
+  "module": "M09: Cafe Design & Atmosphere",
+  "state": "enriched",
+  "purpose": "Establishes rigorous, systematic cleaning standards for all customer-facing areas of the cafe, ensuring that every surface, fixture, and piece of furniture a customer can see or touch meets a standard of cleanliness that reinforces the cafe's quality positioning and satisfies food safety regulations.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define cleaning standards for every front-of-house area: tables, chairs, floors, counters, display cabinets, toilets, and all customer-accessible surfaces",
+      "Create a cleaning schedule that assigns specific tasks to specific times and staff members",
+      "Establish a 'clean as you go' culture where cleanliness is maintained continuously, not in periodic blitzes",
+      "Ensure toilet facilities are checked and cleaned at regular intervals throughout the trading day",
+      "Meet or exceed the cleanliness standards required for a Food Hygiene Rating of 5"
+    ],
+    "secondary_objectives": [
+      "Reduce customer complaints related to cleanliness and improve online review sentiment on this topic",
+      "Create cleaning procedures that are efficient and do not disrupt the customer experience",
+      "Select cleaning products that are effective, food-safe, and environmentally responsible",
+      "Build cleaning into shift routines so that high standards are maintained regardless of which staff are working"
+    ]
+  },
+  "why_this_matters": "Cleanliness is the hygiene factor of hospitality — customers do not notice when a cafe is clean, but they immediately notice when it is not. A single dirty table, a grimy coffee machine, sticky floors, or an unkempt toilet can undo every positive impression created by excellent coffee, friendly service, and beautiful interior design. Cleanliness is also the issue most frequently mentioned in negative online reviews after service and food quality. A TripAdvisor review mentioning dirty toilets or crumbs on tables causes disproportionate reputational damage because cleanliness is a proxy for overall management quality in the customer's mind — if they cannot keep the tables clean, what is the kitchen like? From a regulatory perspective, cleanliness is a core component of the Food Hygiene Rating. Under the Food Safety Act 1990 and Regulation (EC) No 852/2004, food premises must be kept clean and maintained in good repair and condition. Environmental Health Officers assess the cleanliness of food preparation areas, serving areas, and customer facilities during inspections. A rating below 5 (Very Good) is publicly displayed and increasingly checked by customers before visiting. Cleanliness is also a workforce issue. Staff who work in a clean, well-maintained environment take more pride in their work, treat equipment with more care, and deliver better customer experiences. A dirty cafe demoralises the team and signals that management does not care about standards.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Conduct a front-of-house cleanliness audit. Walk through every customer-facing area with critical eyes and note every cleanliness issue, no matter how minor. Check: tables (surfaces, edges, legs), chairs (seats, backs, underneath), floors (visible dirt, stains, corners), counter area (surfaces, display cabinet glass, menu boards), coffee machine and grinder (external surfaces, drip trays), condiment station (bottles, holders, surrounding area), windows (glass, frames, sills), toilets (bowl, seat, floor, mirror, sink, soap dispenser, hand dryer, bins), and any other customer-accessible areas. Take photos for documentation. Week 2: Create a Front-of-House Cleaning Schedule. Divide tasks into frequencies: Continuous (table clearing and wiping between customers), Hourly (toilet check, condiment station tidy, floor sweep of main areas), During Quiet Periods (deep table and chair wipe, counter polish, window spot-clean), At Close (full floor mop, toilet deep clean, display cabinet clean, equipment exterior wipe), Weekly (window full clean, skirting boards, light fittings, under furniture), and Monthly (deep clean of all upholstery, extraction of chair cushions, wall marks removal). Assign each task to a specific role or shift position so responsibility is clear.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Cleaning SOP document covering products used, dilution ratios, techniques, and safety requirements for each task. All cleaning products used in a food environment must be food-safe — check compliance with BS EN standards. Train all staff on the cleaning SOP, with particular attention to cross-contamination risks: cloths used for tables must not be used for toilets, colour-coded cloths prevent this (e.g., blue for food areas, red for toilets). Introduce a Toilet Check Log: a sheet posted inside the toilet area where staff initial every hour to confirm a check has been completed. This is visible to customers and signals that cleanliness is actively managed. Establish a deep cleaning rota for tasks that are done weekly or monthly. These are the tasks that get forgotten when there is no schedule: behind equipment, underneath furniture, air vents, extractor hoods, and storage cupboards accessible to the public. Conduct a weekly cleanliness walk-through where the manager inspects front-of-house against the cleaning standards and notes any issues. This 10-minute walk-through prevents gradual standard drift.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Cleanliness should be an ingrained cultural value, not a checklist exercise. Every team member should instinctively notice and address cleanliness issues — a spill is mopped immediately, a dirty table is wiped as soon as it is vacated, a toilet issue is resolved without being asked. Introduce a 'Ready for inspection at all times' mindset: the cafe should be presentable for an EHO visit at any moment of any day, not just after the morning clean. Track cleanliness-related mentions in online reviews — aim for zero negative mentions per month. Invest in cleaning equipment that makes tasks easier and more effective: a quality mop system (not a string mop and bucket), appropriate microfibre cloths, a handheld vacuum for upholstery, and commercial-grade sanitiser. Evaluate professional deep cleaning services for periodic intensive cleans — quarterly professional deep cleans of floors, upholstery, and kitchen extraction can maintain standards that in-house cleaning cannot reach. Consider installing features that support cleanliness: easy-wipe surfaces, darker grout colours that hide staining, and hard-wearing floor finishes."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Conduct a comprehensive front-of-house cleanliness audit with photos",
+        "Create a Front-of-House Cleaning Schedule with tasks assigned by frequency and role",
+        "Address any critical cleanliness issues identified in the audit immediately",
+        "Ensure adequate cleaning products and equipment are available and accessible",
+        "Brief all staff on the new cleaning schedule and expectations",
+        "Install a Toilet Check Log in the customer toilet area"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a Cleaning SOP covering products, techniques, and safety requirements",
+        "Implement colour-coded cleaning cloths to prevent cross-contamination",
+        "Train all staff on the Cleaning SOP with emphasis on food safety compliance",
+        "Establish a weekly and monthly deep cleaning rota",
+        "Introduce a weekly manager cleanliness walk-through inspection",
+        "Review cleaning product effectiveness and environmental impact"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Develop a 'ready for inspection at all times' team mindset",
+        "Track cleanliness mentions in online reviews and aim for zero negatives",
+        "Invest in quality cleaning equipment that improves efficiency and results",
+        "Evaluate professional deep cleaning services for quarterly intensive cleans",
+        "Consider surfaces and finishes that support easier cleaning when refurbishing",
+        "Celebrate cleanliness standards as a point of team pride"
+      ],
+      "responsible": "Manager, Owner"
+    }
+  },
+  "deliverables": [
+    "Front-of-House Cleanliness Audit Report",
+    "Front-of-House Cleaning Schedule (by frequency and role)",
+    "Cleaning SOP document",
+    "Toilet Check Log (hourly sign-off sheet)",
+    "Weekly Manager Inspection Checklist"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T146-01",
+        "tool_name": "Front-of-House Cleaning Schedule",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "A comprehensive cleaning schedule organised by frequency (continuous, hourly, quiet periods, close, weekly, monthly) with specific tasks, responsible roles, and sign-off columns for accountability."
+      },
+      {
+        "tool_id": "T146-02",
+        "tool_name": "Toilet Check Log",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "An hourly log sheet posted inside the toilet area where staff initial after completing a check and tidy. Covers cleanliness, supplies (soap, paper, hand dryer), and any issues requiring maintenance."
+      },
+      {
+        "tool_id": "T146-03",
+        "tool_name": "Cleaning SOP Document",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard operating procedure covering all front-of-house cleaning tasks: products used (with COSHH compliance), dilution ratios, techniques, colour-coded cloth system, safety requirements, and quality standards."
+      },
+      {
+        "tool_id": "T146-04",
+        "tool_name": "Weekly Manager Cleanliness Inspection Checklist",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "A structured checklist for the manager's weekly walk-through covering every front-of-house area, scoring each on a 1-5 cleanliness scale and noting any issues requiring attention."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Cleaning schedule exists on paper but is not followed, with tasks skipped during busy periods",
+    "Toilet checks are initialled without actually being done, creating a false record of cleanliness",
+    "Cleaning standards are maintained only when the manager is present and slip on their days off",
+    "Deep cleaning tasks are perpetually postponed, leading to accumulation of grime in areas not covered by daily cleaning"
+  ],
+  "kpis": [
+    "Toilet check log completed every hour during trading with zero gaps per week",
+    "Zero cleanliness-related negative comments in online reviews per month",
+    "Weekly manager inspection scoring 4 out of 5 or above across all areas",
+    "Food Hygiene Rating maintained at 5 with cleanliness scoring maximum marks"
+  ],
+  "dependencies": ["B011", "B145"],
+  "constraints": [
+    "Cleaning products used in food environments must be food-safe and COSHH compliant",
+    "Cleaning activities must not disrupt the customer experience — visible cleaning during service should be discrete and non-intrusive",
+    "Staff must be trained on safe handling and storage of cleaning chemicals"
+  ],
+  "time_load": {
+    "L1": "3 hours (initial audit, schedule creation, team briefing)",
+    "L2": "30 minutes/shift (ongoing cleaning tasks embedded in shift routine)",
+    "L3": "30 minutes/week (manager inspection, review follow-up)"
+  },
+  "review_protocol": "Hourly toilet check log verification. Daily end-of-day cleaning completion check. Weekly manager cleanliness walk-through. Monthly deep cleaning rota compliance check. Quarterly cleaning product and equipment review.",
+  "meta": {
+    "summary_for_humans": "This block establishes rigorous cleaning standards for all customer-facing areas, from tables and floors to toilets and display cabinets. It creates cleaning schedules, SOPs, hourly toilet checks, and weekly management inspections to ensure consistent, regulation-exceeding cleanliness.",
+    "implementation_risks": [
+      "Staff may view cleaning as beneath them, particularly in specialty coffee environments where barista craft is prioritised",
+      "Cleaning standards can slip rapidly when the cafe is busy and understaffed",
+      "Over-cleaning with strong-smelling products can negatively impact the customer experience"
+    ],
+    "notes_for_engine": "This is a foundational block for D09 and connects to food safety (B011). Activate when signals indicate cleanliness complaints in reviews, when Food Hygiene Rating is below 5, or when the cafe shows visible signs of cleaning neglect. High priority for any cafe preparing for an EHO inspection.",
+    "tags": ["environment", "cleanliness", "cleaning", "toilets", "hygiene", "FOH", "maintenance", "standards"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

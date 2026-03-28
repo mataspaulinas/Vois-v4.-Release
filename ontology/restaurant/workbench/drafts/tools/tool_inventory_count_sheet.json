@@ -1,0 +1,22 @@
+{
+  "id": "tool_inventory_count_sheet",
+  "name": "Inventory count sheet",
+  "description": "High-risk count sheet that focuses on the lines most likely to cause service disruption, margin leakage, or false 86 decisions.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: tighter control loops begin with a narrow, trusted counting surface",
+  "updated_at": "2026-03-14T00:24:43.057294Z",
+  "category": "inventory",
+  "format": "count_sheet",
+  "usage_moment": "Use on the defined cadence for high-risk lines before count truth feeds service and control decisions.",
+  "expected_output": "A variance-reviewed count record with follow-up actions and any resulting 86 or replenishment decisions.",
+  "adaptation_variables": [
+    "sku_risk_set",
+    "count_cadence",
+    "variance_threshold",
+    "storage_locations"
+  ],
+  "block_ids": [
+    "blk_inventory_count_cycle"
+  ]
+}

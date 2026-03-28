@@ -1,0 +1,79 @@
+{
+  "identification": {
+    "tool_id": "T001-04",
+    "tool_name": "Monthly Temperature Compliance Dashboard",
+    "block_id": "B001"
+  },
+  "tool_design": {
+    "format": "dashboard",
+    "role_in_intervention": "Management review layer for whether the daily monitoring system is holding.",
+    "adaptation_variables": [
+      "unit_list",
+      "review_cadence",
+      "management_kpis"
+    ],
+    "usage_moment": "Monthly management review",
+    "expected_output": "Completed monthly compliance scorecard with actions and maintenance flags",
+    "linked_blocks": [
+      "B001",
+      "B004"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Dashboard data becomes stale.",
+        "what_can_go_wrong": "Management visibility is misleading.",
+        "early_signals": [
+          "Metrics lag",
+          "Users stop trusting numbers"
+        ],
+        "prevention": [
+          "Define update cadence",
+          "Keep feeder tools current"
+        ],
+        "mitigation": [
+          "Reset from source records",
+          "Reduce metric set"
+        ],
+        "if_occurs_next_signals": [
+          "stale_management_visibility"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B004"
+        ]
+      },
+      {
+        "warning": "Dashboard is reviewed passively.",
+        "what_can_go_wrong": "Display replaces governance.",
+        "early_signals": [
+          "Same amber/red items recur",
+          "No action register movement"
+        ],
+        "prevention": [
+          "Require an action or no-action decision",
+          "Keep owners visible"
+        ],
+        "mitigation": [
+          "Focused review on repeated reds",
+          "Escalate unresolved trends"
+        ],
+        "if_occurs_next_signals": [
+          "analysis_without_intervention"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B004"
+        ]
+      }
+    ]
+  },
+  "content": "# Monthly Temperature Compliance Dashboard\n\n**Tool ID:** T001-04  \n**Block:** B001 (Daily Temperature Monitoring)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L3  \n**Format:** Dashboard  \n**Role:** Owner / Manager  \n**Time Required:** 15-20 minutes monthly  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this dashboard to turn daily sheets into a management picture.\n\n`B001` is not complete when checks are merely filled in. It becomes a real system when leadership can see:\n- completion rate\n- missed checks\n- recurring unit drift\n- calibration compliance\n- number of triggered corrective records\n- whether the team is inspection-ready right now\n\n---\n## Monthly Scorecard\n\n**Month:** ____________________  \n**Reviewer:** ____________________\n\n| KPI | Target | Actual | Status | Notes |\n|---|---|---|---|---|\n| Scheduled daily checks completed | `100%` | | Green / Amber / Red | |\n| Missed checks closed same day | `100%` | | Green / Amber / Red | |\n| Probe calibration completed on time | `100%` | | Green / Amber / Red | |\n| Out-of-range events logged properly | `100%` | | Green / Amber / Red | |\n| Units with repeat warning trends | `0` | | Green / Amber / Red | |\n\n---\n## By-Unit Trend Review\n\n| Unit | Avg Opening Temp | Avg Afternoon Temp | High Reading Count | Trigger Log Opened? | Maintenance Flag |\n|---|---|---|---|---|---|\n| Milk fridge | | | | Yes / No | Yes / No |\n| Prep fridge | | | | Yes / No | Yes / No |\n| Display fridge | | | | Yes / No | Yes / No |\n| Back-up fridge / walk-in | | | | Yes / No | Yes / No |\n| Main freezer | | | | Yes / No | Yes / No |\n| Other | | | | Yes / No | Yes / No |\n\n---\n## Compliance Snapshot\n\n| Area Reviewed | Result | Action Needed |\n|---|---|---|\n| Daily sheets filed correctly | Pass / Fail | |\n| Manager countersign present | Pass / Fail | |\n| Calibration tracker up to date | Pass / Fail | |\n| Trigger logs complete where needed | Pass / Fail | |\n| Team knows safe limits when asked | Pass / Fail | |\n\n---\n## Action Register\n\n| Priority | Action | Owner | Due Date | Status |\n|---|---|---|---|---|\n| High / Medium / Low | | | | Open / Closed |\n| High / Medium / Low | | | | Open / Closed |\n| High / Medium / Low | | | | Open / Closed |\n| High / Medium / Low | | | | Open / Closed |\n\n---\n## Manager Review Prompts\n\n- Which unit is drifting before failure?\n- Are afternoon checks weaker than opening checks?\n- Is one shift or day more likely to miss records?\n- Are staff logging actions properly when numbers go high?\n- Does any repeated issue actually belong in maintenance, training, or cold chain redesign?\n\n---\n## Share With The Team\n\nPost a simplified monthly message in the staff area:\n- compliance rate\n- days since last missed check\n- any unit to watch\n- one improvement action for the next month\n\nThat keeps temperature monitoring visible without drowning the team in paperwork.\n\n---\n## Connected Resources\n\n**Built from:**\n- T001-01 - Daily Temperature Log & Check Sheet\n- T001-02 - Probe Calibration Record & Accuracy Tracker\n- T001-03 - Temperature Excursion Trigger Log\n\n**Supports:**\n- T001-05 - Temperature Monitoring SOP & Team Sign-Off\n- B003 - Temperature Excursion Response\n\n---\n\n*Tool Version 2.0 - the manager view that turns checks into control.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T001-04_monthly_temperature_compliance_dashboard.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

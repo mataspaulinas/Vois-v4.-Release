@@ -1,0 +1,157 @@
+{
+  "block_id": "B152",
+  "name": "Equipment Maintenance Schedule",
+  "version": "v1.0",
+  "domain": "D09_physical_environment",
+  "module": "M09: Cafe Design & Atmosphere",
+  "state": "enriched",
+  "purpose": "Creates a structured, proactive maintenance programme for all cafe equipment, from espresso machines and grinders to fridges, dishwashers, and HVAC systems. Prevents costly breakdowns, ensures food safety compliance, and extends equipment lifespan through planned preventive maintenance.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a complete equipment register listing every piece of equipment with model, serial number, warranty status, and service history",
+      "Establish daily, weekly, monthly, and annual maintenance task schedules for each piece of equipment",
+      "Build relationships with reliable service engineers and negotiate maintenance contracts where cost-effective",
+      "Implement a maintenance logging system that creates an auditable trail of all work completed",
+      "Define escalation protocols so staff know when to attempt a fix versus when to call a professional"
+    ],
+    "secondary_objectives": [
+      "Reduce unplanned equipment downtime by at least 50% within six months",
+      "Ensure all equipment-related food safety obligations are met for EHO inspections",
+      "Extend average equipment lifespan by 20-30% through consistent preventive care"
+    ]
+  },
+  "why_this_matters": "Equipment failure in a cafe is not an inconvenience — it is a revenue emergency. When the espresso machine breaks down during a Saturday morning rush, you do not just lose the repair cost; you lose every coffee sale for the duration of the outage, you damage customer trust, and you stress your team. A single day without a working espresso machine can cost a busy cafe between 500 and 2000 pounds in lost revenue, yet the preventive maintenance that would have avoided the failure might cost 50 pounds per month.\n\nThe UK cafe sector is particularly vulnerable to equipment neglect because most independent operators are owner-managed, time-poor, and focused on the day-to-day demands of service. Maintenance gets deferred until something breaks. This reactive approach is invariably more expensive: emergency call-out fees from engineers are typically double or triple the cost of scheduled servicing, parts ordered urgently carry premium pricing, and the revenue lost during downtime is never recovered.\n\nBeyond the financial impact, equipment maintenance has direct food safety implications. Poorly maintained fridges that drift above safe temperatures, dishwashers that fail to reach sanitisation temperatures, and extraction systems that do not ventilate properly are all matters that Environmental Health Officers will examine during inspections. Non-compliance can result in improvement notices, closure orders, or public scores on the Food Hygiene Rating Scheme that damage reputation permanently. Proactive maintenance is not optional — it is a fundamental operational discipline.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks): Start by creating a complete equipment register. Walk through the entire cafe and list every piece of equipment: espresso machine, grinder(s), fridge(s), freezer(s), dishwasher, oven, microwave, blender, ice machine, HVAC system, extractor fans, water filtration system, and any other powered equipment. For each item, record the make, model, serial number, purchase date, warranty expiry date, and the contact details of the supplier or service provider. Check whether any equipment is currently overdue for servicing — many operators discover that their espresso machine has not been professionally serviced for over a year, or that their fridge temperature logs have gaps. Gather all existing manuals (or download them from manufacturer websites) and create a single reference folder. Establish the daily maintenance tasks that staff should already be doing: backflushing the espresso machine, cleaning the grinder, checking fridge temperatures, cleaning the dishwasher filter, and wiping down all surfaces. Create a simple daily checklist that can be printed and pinned in the back of house. Assign ownership — one person per shift is responsible for confirming daily maintenance is complete. This is about establishing visibility before investing in anything new.",
+    "L2": "SYSTEM BUILD (2-8 weeks): With the equipment register complete and daily tasks established, build out the full preventive maintenance schedule. For each piece of equipment, define the weekly, monthly, quarterly, and annual maintenance tasks based on manufacturer recommendations and industry best practice. The espresso machine needs weekly deep cleaning, monthly group head gasket checks, and annual professional servicing. Grinders need weekly hopper cleaning and burr inspection, with burr replacement scheduled based on throughput (typically every 500-1000kg of coffee). Fridges need monthly condenser coil cleaning and door seal inspection. Dishwashers need weekly descaling and monthly rinse-aid and detergent system checks. Create a master maintenance calendar — a wall-mounted or digital calendar that shows what is due each week. Research and contact at least three equipment service companies for each major piece of equipment. Negotiate annual service contracts where cost-effective — many espresso machine service companies offer annual contracts that include parts and labour at a significant discount to ad-hoc call-outs. Establish a maintenance budget line item, typically 3-5% of equipment value per year. Set up a simple digital logging system (even a shared Google Sheet works) where staff record completed maintenance tasks with dates and any issues noted. This creates the audit trail that EHO inspectors expect and that protects you legally.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks): Maintenance becomes an embedded operational discipline rather than an administrative burden. Staff understand that equipment care is part of their role, not a chore imposed by management. The daily checklist is completed without prompting, and team members proactively flag potential issues before they become failures — a strange noise from the grinder, a fridge that seems to be working harder than usual, a dishwasher that is not cleaning as effectively. Implement a quarterly equipment health review where you assess each piece of equipment's condition, review maintenance logs for patterns, and update the replacement timeline. Use maintenance data to inform purchasing decisions — when a fridge requires three repairs in six months, the data supports the capital expenditure for a replacement. Build relationships with service engineers who know your equipment and can provide faster, more effective support. The maintenance programme feeds into the Equipment Lifecycle Planning block (B154), ensuring that replacement budgets are informed by real condition data rather than guesswork."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Equipment Maintenance Actions",
+      "actions": [
+        "Create a complete equipment register listing every piece of powered equipment in the cafe",
+        "Record make, model, serial number, purchase date, and warranty status for each item",
+        "Gather or download manuals for all equipment into a single reference location",
+        "Identify any equipment currently overdue for professional servicing and schedule immediately",
+        "Establish daily maintenance checklist covering backflushing, cleaning, and temperature checks",
+        "Assign daily maintenance ownership — one named person per shift responsible for completion",
+        "Start a simple maintenance log (paper or digital) to record all tasks completed"
+      ],
+      "responsible": "Owner / Manager"
+    },
+    "L2_build": {
+      "title": "Preventive Maintenance System Build",
+      "actions": [
+        "Define weekly, monthly, quarterly, and annual maintenance tasks for each piece of equipment",
+        "Create a master maintenance calendar showing all scheduled tasks across the year",
+        "Research and contact service companies for each major equipment category",
+        "Negotiate annual service contracts for espresso machine, grinder, and refrigeration",
+        "Establish a maintenance budget line item (3-5% of equipment value per year)",
+        "Set up a digital maintenance logging system with date, task, staff member, and notes fields",
+        "Train all staff on their maintenance responsibilities and escalation procedures"
+      ],
+      "responsible": "Owner / Manager"
+    },
+    "L3_embed": {
+      "title": "Maintenance Culture Embedding",
+      "actions": [
+        "Implement quarterly equipment health reviews assessing condition and maintenance log patterns",
+        "Use maintenance data to inform equipment replacement decisions and budget planning",
+        "Build long-term relationships with preferred service engineers for priority response",
+        "Integrate maintenance performance into team accountability and shift handover processes",
+        "Connect maintenance data to Equipment Lifecycle Planning (B154) for strategic capital planning"
+      ],
+      "responsible": "Manager / Team leads"
+    }
+  },
+  "deliverables": [
+    "Complete equipment register with all equipment details and warranty information",
+    "Daily, weekly, and monthly maintenance checklists for all equipment categories",
+    "Master annual maintenance calendar with all scheduled tasks and service visits",
+    "Digital maintenance log system with audit trail capability",
+    "Service contract summary showing all contracted maintenance providers and schedules"
+  ],
+  "embedded_tools": ["T152-01", "T152-02", "T152-03", "T152-04"],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T152-01",
+        "tool_name": "Equipment Register Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner / Manager",
+        "description": "A comprehensive register template capturing equipment details including make, model, serial number, purchase date, warranty expiry, supplier, service contact, and current condition rating for every piece of cafe equipment."
+      },
+      {
+        "tool_id": "T152-02",
+        "tool_name": "Daily Equipment Maintenance Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Shift Lead / Barista",
+        "description": "A printable daily checklist covering all daily maintenance tasks including espresso machine backflushing, grinder cleaning, fridge temperature recording, dishwasher filter cleaning, and general equipment inspection."
+      },
+      {
+        "tool_id": "T152-03",
+        "tool_name": "Annual Maintenance Calendar",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "A twelve-month calendar view showing all scheduled maintenance tasks — daily, weekly, monthly, quarterly, and annual — for every piece of equipment, with completion tracking and overdue alerts."
+      },
+      {
+        "tool_id": "T152-04",
+        "tool_name": "Equipment Health Review Template",
+        "level": "L3",
+        "format": "assessment",
+        "owner_role": "Owner / Manager",
+        "description": "A quarterly assessment template for reviewing each piece of equipment's condition, maintenance history, repair frequency, and remaining useful life to inform replacement planning and budget allocation."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Creating checklists but not enforcing completion — the maintenance schedule exists on paper but is not followed in practice",
+    "Deferring professional servicing to save money, leading to catastrophic failures that cost far more than preventive maintenance",
+    "Failing to log maintenance activities, leaving no audit trail for EHO inspections or warranty claims",
+    "Over-reliance on a single staff member for maintenance knowledge — when they leave, the system collapses"
+  ],
+  "kpis": [
+    "Unplanned equipment downtime reduced by 50% within 6 months of L2 implementation",
+    "Daily maintenance checklist completion rate reaches 95% or higher",
+    "Zero EHO non-compliance findings related to equipment maintenance at next inspection",
+    "Emergency repair call-outs reduced by 60% within 12 months"
+  ],
+  "dependencies": ["B153"],
+  "constraints": [
+    "Service contract costs vary significantly by region — London rates may be 40-60% higher than provincial areas",
+    "Some specialist equipment (e.g., La Marzocca, Synesso) requires manufacturer-approved engineers, limiting service options",
+    "Staff turnover means maintenance training must be continuously repeated for new team members"
+  ],
+  "time_load": {
+    "L1": "4-6 hours",
+    "L2": "10-15 hours",
+    "L3": "2-3 hours/month"
+  },
+  "review_protocol": "Daily checklist verification; monthly maintenance calendar review; quarterly equipment health assessment",
+  "meta": {
+    "summary_for_humans": "A proactive equipment maintenance programme that prevents costly breakdowns, ensures food safety compliance, and extends the life of every piece of cafe equipment. Transforms maintenance from a reactive emergency response into a structured daily discipline.",
+    "implementation_risks": [
+      "Staff perceiving maintenance tasks as additional burden rather than core responsibility",
+      "Initial setup time competing with day-to-day operational demands",
+      "Difficulty finding reliable, affordable service engineers in some locations"
+    ],
+    "notes_for_engine": "Activate when signals indicate equipment failures, inconsistent coffee quality that may stem from equipment issues, EHO inspection concerns, or high repair costs. Cross-reference with B153 (Espresso Machine Service) and B154 (Equipment Lifecycle Planning).",
+    "tags": ["equipment", "maintenance", "preventive", "servicing", "food_safety", "EHO", "reliability", "operations"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

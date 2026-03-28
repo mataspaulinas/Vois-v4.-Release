@@ -1,0 +1,29 @@
+{
+  "id": "sig_standard_steps_skipped",
+  "name": "Standard steps skipped",
+  "description": "Critical service or prep steps are being skipped often enough that output consistency depends on who is working.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: standards drift is visible when basic steps stop being reliably repeated",
+  "updated_at": "2026-03-14T00:41:10.248595Z",
+  "domain": "service_delivery",
+  "module": "standard_execution",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "live_observation",
+    "quality_check"
+  ],
+  "source_types": [
+    "audit_notes",
+    "manager_walk"
+  ],
+  "temporal_behavior": "recurring",
+  "likely_co_signals": [
+    "sig_prep_inconsistency",
+    "sig_guest_complaints"
+  ],
+  "adapter_aliases": [
+    "steps_skipped",
+    "standard_not_followed"
+  ]
+}

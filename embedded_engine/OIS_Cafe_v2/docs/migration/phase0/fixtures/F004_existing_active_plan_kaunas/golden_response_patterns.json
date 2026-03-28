@@ -1,0 +1,122 @@
+[
+  {
+    "response_pattern_id": "RP024",
+    "rp_name": "Peak Staffing & Rush Management",
+    "domain": "D05",
+    "severity": "medium-critical",
+    "priority_score": 1.73,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM040",
+        "fm_title": "Morning rush and peak management failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM042",
+        "fm_title": "Ticket time and service speed failure",
+        "fm_score": 0.93,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Review your staffing levels against your transaction data for the past four weeks. Are you adequately staffed during peak hours (typically 7-10am and 12-2pm)? If ticket times exceed 5 minutes during peak you are either understaffed or your workflow is broken. Observe your team during the next morning rush and identify every point of delay or confusion.",
+    "l2_focus": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+    "l3_focus": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+    "description": "Peak Staffing & Rush Management"
+  },
+  {
+    "response_pattern_id": "RP006",
+    "rp_name": "Queue Management & Service Speed",
+    "domain": "D02",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM011",
+        "fm_title": "Queue management and wait time failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Measure your peak queue times this week. Time how long customers wait from joining the queue to receiving their order during morning rush (7-10am) and lunchtime peak. If any customer waits more than 5 minutes to order or more than 8 minutes for a coffee something is wrong. Identify the bottleneck immediately — is it the till the espresso machine the food prep or the team capacity?",
+    "l2_focus": "Design a peak period workflow that assigns specific roles: dedicated till operator barista food runner and floor support. Create a peak staffing model based on transaction data showing exactly how many team members you need for each hour of the day. Implement a queue management communication strategy where team members acknowledge waiting customers and provide time estimates.",
+    "l3_focus": "Build a service speed culture where the team takes pride in fast smooth service without sacrificing quality. Track average service times daily and display them to the team. Study your workflow during peak and continuously optimise. Your morning rush should feel energised and efficient not chaotic. Customers should never feel ignored even when you are busy.",
+    "description": "Queue Management & Service Speed"
+  },
+  {
+    "response_pattern_id": "RP028",
+    "rp_name": "Seating & Capacity Management",
+    "domain": "D05",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM046",
+        "fm_title": "Seating management and turnover failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Observe your seating area during peak periods. Are customers struggling to find seats? Are tables occupied by single customers with laptops during your busiest lunch hour? Count your covers and compare to your transaction data — are you turning tables or are they static? If seating is a bottleneck during peak it is costing you revenue.",
+    "l2_focus": "Develop a seating strategy that balances dine-in comfort with turnover efficiency. Create different zones — quick coffee seats community tables laptop-friendly areas and group seating. Implement a table-clearing protocol that maintains flow without rushing customers. Consider a peak-period policy for laptop users. Optimise your outdoor seating area if you have one.",
+    "l3_focus": "Design your seating experience to support your brand and your revenue goals. Your layout should encourage the behaviour you want — quick visits during peak comfortable lingering during quiet periods. Review seating data seasonally and adjust layouts accordingly. Your seating should be a competitive advantage not an afterthought.",
+    "description": "Seating & Capacity Management"
+  },
+  {
+    "response_pattern_id": "RP053",
+    "rp_name": "Operational Rhythm & Daily Discipline",
+    "domain": "D05",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM097",
+        "fm_title": "Operational discipline and daily routine failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Review your daily operational discipline. Are prep lists being used? Is the waste log completed every day? Is the maintenance log up to date? Are daily targets communicated to the team? If any of these basic disciplines have lapsed recommit to them this week. Operational discipline is the foundation everything else is built on.",
+    "l2_focus": "Create a comprehensive daily discipline framework covering prep lists waste logs maintenance logs cash reconciliation temperature checks and target tracking. Implement an operational rhythm dashboard that gives you a daily snapshot of compliance. Train all shift-capable team members on the full discipline framework. Conduct weekly discipline audits and address gaps immediately.",
+    "l3_focus": "Operational discipline should be invisible because it is automatic. Your daily routines should be so embedded that they happen without thinking. Build a culture where discipline is respected and lapses are noticed by the team not just by management. Your operational rhythm should be the heartbeat of your cafe.",
+    "description": "Operational Rhythm & Daily Discipline"
+  },
+  {
+    "response_pattern_id": "RP020",
+    "rp_name": "Team Communication & Meetings",
+    "domain": "D04",
+    "severity": "medium-critical",
+    "priority_score": 0.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM032",
+        "fm_title": "Team communication and meeting failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Are you holding daily team briefings before each shift? If not start tomorrow. A 5-minute huddle covering the day's targets any specials or changes and any issues from yesterday transforms team alignment. Check whether you have a weekly team meeting — if not schedule one. Communication gaps create errors waste and frustration.",
+    "l2_focus": "Implement a structured communication framework: daily pre-shift briefings weekly team meetings and monthly all-hands sessions. Create agenda templates for each format. Establish a digital communication channel (WhatsApp group or similar) for operational updates. Develop a rota publication policy ensuring at least two weeks advance notice. Track meeting attendance and action completion.",
+    "l3_focus": "Build a communication culture where information flows freely and everyone feels heard. Your team should understand the cafe's goals challenges and successes. Use meetings as opportunities for recognition and skill sharing not just task allocation. Excellent communication is the foundation of team performance.",
+    "description": "Team Communication & Meetings"
+  },
+  {
+    "response_pattern_id": "RP044",
+    "rp_name": "Interior Design & Atmosphere",
+    "domain": "D09",
+    "severity": "medium-critical",
+    "priority_score": 0.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM078",
+        "fm_title": "Seating layout and comfort failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Assess your cafe atmosphere critically. Is the lighting appropriate for the time of day? Is the temperature comfortable? Is the music at the right volume and genre? Sit in every seating position and experience the cafe from the customer's perspective. Identify the three things that most detract from the atmosphere and prioritise fixing them.",
+    "l2_focus": "Conduct a comprehensive atmosphere audit covering lighting sound temperature scent and visual design. Create a music and ambiance programme with playlists curated for different times of day. Optimise your seating layout for both comfort and capacity. Review your interior design with fresh eyes and invest in updates where the space looks tired or dated. Consider seasonal atmosphere changes.",
+    "l3_focus": "Design an atmosphere that becomes a signature part of your cafe experience. Your space should have a distinct personality that customers associate with your brand. Invest in lighting and sound design that creates genuine warmth. Your cafe should be a place people want to spend time in not just grab a coffee from.",
+    "description": "Interior Design & Atmosphere"
+  }
+]

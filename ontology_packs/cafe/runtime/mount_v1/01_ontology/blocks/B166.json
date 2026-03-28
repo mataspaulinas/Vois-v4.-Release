@@ -1,0 +1,166 @@
+{
+  "block_id": "B166",
+  "name": "Expansion Readiness Assessment",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M11: Expansion & Market Positioning",
+  "state": "enriched",
+  "purpose": "Provides a rigorous framework for assessing whether a cafe is genuinely ready to expand, whether through a second location, a larger premises, or a significant scaling of operations. This block prevents premature expansion, which is the single most common cause of independent cafe failure after the first year.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create an expansion readiness scorecard covering financial health, operational maturity, management depth, and market opportunity",
+      "Define clear financial thresholds that must be met before expansion is considered viable",
+      "Assess whether current operations can be replicated or scaled without the owner's daily presence",
+      "Evaluate management team depth and identify capability gaps that would prevent successful expansion",
+      "Model the financial impact of expansion including capital requirements, cash flow impact, and break-even timeline"
+    ],
+    "secondary_objectives": [
+      "Prevent premature expansion by providing an objective assessment framework that counters emotional enthusiasm",
+      "Identify which expansion model is most appropriate: second location, larger premises, franchise, licensing, or central kitchen",
+      "Build the systems and documentation needed to replicate operations before committing to expansion",
+      "Create a staged expansion plan that manages risk through incremental investment rather than all-or-nothing commitment"
+    ]
+  },
+  "why_this_matters": "Expansion is the most exciting and the most dangerous decision an independent cafe owner can make. The emotional pull is strong: the current cafe is busy, customers are loyal, revenue is growing, and a second location feels like the natural next step. But the reality of expansion is far more complex and risky than running a single successful cafe. The most common expansion failure mode is this: the owner opens a second location, splits their time between two sites, and watches both deteriorate. The original cafe loses the magic of the owner's presence. The new site never reaches profitability because it was undercapitalised, poorly located, or inadequately staffed. Cash flow from the profitable first site is consumed propping up the struggling second. Within 12-18 months, the owner is working twice as many hours, earning less money, and facing the agonising decision of whether to close the new site at significant financial loss. This scenario is preventable with honest readiness assessment. The questions are straightforward: Can the first site operate profitably without the owner present for at least 4 weeks? Does the business have sufficient cash reserves or borrowing capacity to fund 12-18 months of expansion costs? Is there a proven management team that can run a site independently? Has the market opportunity for the second site been rigorously validated? If the answer to any of these is no, the business is not ready to expand, regardless of how attractive the opportunity appears.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Complete the Expansion Readiness Scorecard. This is a brutally honest self-assessment across five dimensions: (1) Financial Health: Is the existing cafe generating consistent profit (not just revenue)? What are the cash reserves? What is the debt position? Could the business survive 6 months of the new site losing money? (2) Operational Maturity: Are all key processes documented? Could the cafe run for 4 weeks without the owner present? Are quality standards maintained consistently regardless of who is working? (3) Management Depth: Is there at least one manager who can independently run the existing site? Are there potential managers for the new site? (4) Systems and Documentation: Does a complete operations manual exist? Are recipes standardised? Are supplier relationships transferable? (5) Market Validation: Has the expansion opportunity been researched with the same rigour as B165? Is there evidence of demand, not just assumption? Week 2: Score each dimension honestly (1-5) and calculate the overall readiness score. A score below 3 in any single dimension is a block on expansion. Identify the gaps and create an action plan to address them before any expansion commitment is made.",
+    "L2": "SYSTEM BUILD (2-8 weeks). For cafes scoring 4+ across all dimensions, proceed to detailed expansion planning. Create an Expansion Financial Model covering: total capital requirement (fit-out, equipment, stock, deposits, legal fees, working capital), funding sources (savings, loans, investors), monthly cash flow projection for the new site for 24 months (with realistic ramp-up: most new cafe sites take 6-12 months to reach profitability), impact on existing site cash flow during the expansion period, and break-even analysis. Apply a stress test: what happens if the new site achieves only 60% of projected revenue for the first 12 months? Can the business survive? Evaluate expansion models: (1) Company-owned second site: highest investment, highest control, highest risk. (2) Larger premises: relocation rather than duplication, moderate risk. (3) Central kitchen serving multiple outlets or wholesale accounts: lower customer-facing risk but operational complexity. (4) Franchise or licensing model: lower capital requirement but requires extremely mature systems and brand. Develop a Site Selection Criteria document if pursuing a new location: minimum footfall requirements, demographic fit, lease terms, fit-out budget, proximity to existing site, and competitive landscape.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Create a Pre-Expansion Checklist: a sequential list of milestones that must be achieved before signing any lease or commitment. Typical milestones include: operations manual complete and tested, management team trained and proven through owner absence, financial model stress-tested and approved by accountant, legal advice on lease terms obtained, planning permissions and licensing confirmed, and funding secured with 20% contingency. Build an Expansion Timeline: most successful cafe expansions take 6-12 months from decision to opening. Rushing increases risk dramatically. Establish an Expansion Monitoring Framework for post-opening: weekly KPIs for the new site, weekly comparison of existing site performance (watching for deterioration), monthly financial review against projections, and clear decision points for corrective action or managed exit if the expansion is not meeting minimum performance thresholds."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Complete the Expansion Readiness Scorecard across all 5 dimensions",
+        "Score each dimension honestly (1-5) and identify any blocking scores below 3",
+        "Create an action plan to address readiness gaps before committing to expansion",
+        "Assess whether the existing cafe can operate profitably without the owner for 4 weeks",
+        "Review current financial position: profit consistency, cash reserves, and debt levels",
+        "Discuss expansion ambitions honestly with any business partners or key stakeholders"
+      ],
+      "responsible": "Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create an Expansion Financial Model with 24-month cash flow projection",
+        "Apply stress testing at 60% revenue scenario to validate financial resilience",
+        "Evaluate expansion models (second site, relocation, central kitchen, franchise) for best fit",
+        "Develop Site Selection Criteria if pursuing a new location",
+        "Obtain professional financial advice on the expansion plan",
+        "Research funding options and terms (bank loans, Start Up Loans, investors)",
+        "Investigate legal requirements for the expansion model (lease, licensing, planning)"
+      ],
+      "responsible": "Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Create a Pre-Expansion Checklist with sequential milestones",
+        "Build an Expansion Timeline with realistic 6-12 month opening horizon",
+        "Establish an Expansion Monitoring Framework for post-opening KPI tracking",
+        "Define clear performance thresholds and decision points for corrective action",
+        "Plan for management succession at the original site during expansion"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Expansion Readiness Scorecard (5-dimension self-assessment)",
+    "Expansion Financial Model with 24-month projections and stress testing",
+    "Site Selection Criteria document (if applicable)",
+    "Pre-Expansion Milestone Checklist",
+    "Expansion Monitoring Framework for post-opening tracking"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T166-01",
+        "tool_name": "Expansion Readiness Scorecard",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "5-dimension self-assessment covering financial health, operational maturity, management depth, systems documentation, and market validation. Each dimension scored 1-5 with any score below 3 flagged as a blocking issue. Provides an objective readiness assessment."
+      },
+      {
+        "tool_id": "T166-02",
+        "tool_name": "Expansion Financial Model",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Comprehensive financial model covering: capital requirements, funding sources, 24-month cash flow projection for new site, impact on existing site, break-even analysis, and stress test at 60% revenue scenario. Designed for professional review."
+      },
+      {
+        "tool_id": "T166-03",
+        "tool_name": "Site Selection Criteria Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Structured evaluation framework for assessing potential expansion locations: footfall data, demographic analysis, competition density, lease terms, fit-out costs, licensing requirements, and proximity to existing operations."
+      },
+      {
+        "tool_id": "T166-04",
+        "tool_name": "Pre-Expansion Milestone Checklist",
+        "level": "L3",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Sequential checklist of milestones that must be completed before committing to expansion: operations manual, management readiness, financial approval, legal review, planning permissions, funding secured, and contingency confirmed."
+      },
+      {
+        "tool_id": "T166-05",
+        "tool_name": "Post-Opening Monitoring Dashboard",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Weekly KPI tracker for the new site covering: revenue versus projection, customer count, average transaction value, staff costs, cash flow, and comparison of existing site performance. Includes escalation triggers and decision points."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Emotional enthusiasm overrides objective readiness assessment, leading to premature expansion commitment",
+    "Financial modelling is optimistic, underestimating capital requirements and overestimating revenue ramp-up speed",
+    "The owner becomes split between two sites, causing quality and culture deterioration at both locations",
+    "No exit plan exists, so an underperforming expansion drains the profitable original site until both are at risk"
+  ],
+  "kpis": [
+    "Expansion Readiness Scorecard completed with honest assessment before any expansion commitment",
+    "All 5 dimensions scoring 4+ before proceeding to detailed expansion planning",
+    "Financial model stress-tested and reviewed by a professional accountant",
+    "Pre-Expansion Milestone Checklist 100% complete before signing any lease or contract"
+  ],
+  "dependencies": ["B164", "B165"],
+  "constraints": [
+    "Expansion readiness cannot be rushed; addressing gaps in operational maturity or management depth takes months, not weeks",
+    "Financial modelling requires honest assumptions and professional review to prevent dangerous overestimation",
+    "Lease commitments for second sites are typically 5-10 years, making this a high-stakes, difficult-to-reverse decision",
+    "Expansion while the existing business has unresolved operational issues will amplify those issues across two sites"
+  ],
+  "time_load": {
+    "L1": "6 hours (readiness scorecard, gap analysis, action planning)",
+    "L2": "20 hours (financial modelling, site evaluation, legal research, professional consultations)",
+    "L3": "8 hours (milestone checklist, timeline creation, monitoring framework setup)"
+  },
+  "review_protocol": "Readiness scorecard reassessed quarterly until all dimensions score 4+. Financial model reviewed and updated monthly during active expansion planning. Site selection criteria applied rigorously to every potential location. Post-opening monitoring conducted weekly for the first 6 months, then monthly. Full expansion strategy reviewed annually.",
+  "meta": {
+    "summary_for_humans": "This block provides a rigorous framework for assessing whether the cafe is genuinely ready to expand. It covers financial health, operational maturity, management depth, and market validation through a scored assessment, financial modelling with stress testing, and pre-commitment milestone tracking.",
+    "implementation_risks": [
+      "The readiness scorecard may reveal uncomfortable truths that the owner does not want to hear",
+      "External pressure (landlord offers, competitor moves) can create urgency that undermines disciplined assessment",
+      "Professional advice (accountant, solicitor) adds cost but is essential for decisions of this magnitude"
+    ],
+    "notes_for_engine": "Activate when signals indicate the owner is actively considering expansion, has been offered a second site, or is experiencing capacity constraints that suggest the current site has outgrown its potential. Always pair with B164 and B165.",
+    "tags": ["expansion", "growth", "readiness", "financial_modelling", "second_site", "risk_assessment", "scaling", "management_depth"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "bakery_cafe"],
+    "team_size_min": 3,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

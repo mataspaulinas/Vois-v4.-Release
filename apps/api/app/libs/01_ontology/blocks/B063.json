@@ -1,0 +1,156 @@
+{
+  "block_id": "B063",
+  "name": "Exit Interview & Turnover Analysis",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Establishes a structured exit interview process and turnover analysis framework that transforms staff departures from lost knowledge into actionable intelligence. Ensures every leaver provides insight that helps reduce future turnover and improve working conditions.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a consistent exit interview process that captures honest, actionable feedback from every departing team member",
+      "Build a turnover data tracking system that identifies patterns across roles, tenure lengths, managers, and seasons",
+      "Establish root cause analysis capability to distinguish between unavoidable turnover and preventable departures",
+      "Generate quarterly turnover reports that inform retention strategy and operational decisions",
+      "Create a safe space for departing staff to share feedback they may not have felt comfortable raising during employment"
+    ],
+    "secondary_objectives": [
+      "Maintain positive relationships with departing staff who may return or refer future candidates",
+      "Identify management or cultural issues that current staff may not feel safe raising",
+      "Build an evidence base that justifies investment in retention initiatives to owners and stakeholders"
+    ]
+  },
+  "why_this_matters": "UK hospitality turnover rates consistently exceed 30% annually, with some cafe operations experiencing rates above 70%. Each departure costs between £1,500 and £4,000 when you factor in recruitment advertising, interview time, training investment, reduced productivity during the learning curve, and the impact on remaining team morale. Yet most cafe owners have no systematic understanding of why people leave. Without exit data, you are guessing at causes and throwing retention solutions at problems you have not diagnosed. The departing team member holds uniquely valuable information: they know what frustrated them, what they wished was different, and often what the team is not telling you. But this information has an expiry date — once they walk out the door without being asked, it is lost. Exit interviews conducted well reveal patterns that surprise owners: it is rarely just about pay. Common cafe-specific drivers include unpredictable scheduling, lack of progression, feeling undervalued, poor equipment, difficult customers without management support, and owner micromanagement. Turnover analysis turns individual departures into trend data. When you can see that most leavers go within the first 90 days, or that one shift pattern has higher attrition, or that departures spike after summer, you can intervene with precision rather than guesswork. This block provides the structured approach to capture and analyse this intelligence.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Design your exit interview template. Keep it structured but conversational — you want honest answers, not defensive ones. Core questions should cover: reason for leaving, what they enjoyed most, what they would change, how they felt about management, whether they felt valued, and whether they would recommend working here to a friend. The last question is your Net Promoter Score equivalent for employer brand. Decide who conducts exit interviews. It should not be the departing person's direct manager, as this inhibits honesty. The owner or a senior manager from a different area is ideal. If you are a very small team where the owner is the only manager, consider using a written form completed anonymously and posted to a sealed box or emailed to a separate address. Create a simple tracking spreadsheet immediately. For each leaver, record: name, role, start date, leave date, tenure length, stated reason for leaving, exit interview themes, and whether the departure was avoidable. This creates your baseline data. Review your last 12 months of departures from memory or records. Even without formal exit data, note what you know about why each person left. This retrospective exercise often reveals patterns you have not consciously recognised. Set the expectation that exit interviews are now standard practice. Every departing team member should be offered an exit interview during their notice period, ideally in their final week when they are most relaxed and least concerned about consequences. Make it clear that participation is voluntary but valued.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Build your turnover analysis framework. Create a dashboard or structured report that tracks: overall turnover rate (leavers divided by average headcount), average tenure, turnover by role, turnover by tenure band (0-3 months, 3-6 months, 6-12 months, 12+ months), cost of turnover, and top cited reasons for leaving. This data should be updated monthly and reviewed quarterly. Develop a categorisation system for departure reasons that allows trend analysis. Categories might include: pay/benefits, career progression, scheduling/flexibility, management relationship, workload, relocation, returning to education, better opportunity elsewhere, personal circumstances, and terminated. Each leaver should be assigned a primary and secondary category. Create a follow-up mechanism. Contact former team members 4-6 weeks after departure with a brief survey — distance often increases honesty. Ask whether their new role has met expectations, what they miss about working at your cafe, and what advice they would give you. This reveals whether your issues are real or whether the grass just seemed greener. Establish quarterly turnover review meetings where you analyse the data, identify trends, and translate findings into specific retention actions. Each meeting should produce at least two concrete changes based on exit data. Build your cost-of-turnover calculation so you can attach a financial figure to your turnover rate. This makes the business case for retention investment tangible: if turnover costs you £15,000 per year and a retention initiative costs £3,000, the return on investment is clear.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Embed exit intelligence into your management culture. Every retention decision should be data-informed rather than assumption-driven. Share anonymised turnover themes with your team to demonstrate that feedback drives change — this builds trust and encourages current staff to raise issues before they become reasons to leave. Benchmark your turnover rate against industry data and set progressive improvement targets. Track your 'regrettable turnover rate' separately — departures you wish you could have prevented versus natural attrition. Develop predictive indicators: what early signs correlate with future departure in your data? Reduced shift availability, declining engagement, or increased absence often predict exit. Use these signals to trigger retention conversations before a resignation letter arrives. Build an alumni network: former team members who left on good terms are your best future recruitment pipeline and brand ambassadors."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Design exit interview template with structured questions covering all key areas",
+        "Determine who will conduct exit interviews to ensure independence from direct management",
+        "Create turnover tracking spreadsheet with fields for dates, tenure, reasons, and themes",
+        "Retrospectively document last 12 months of departures and known reasons",
+        "Communicate to team that exit interviews are now standard practice for all departures",
+        "Schedule exit interviews for any team members currently in notice period"
+      ],
+      "responsible": "Owner/Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build turnover analysis dashboard tracking rate, tenure, role breakdown, and cost",
+        "Develop standardised departure reason categorisation system for trend analysis",
+        "Create 4-6 week post-departure follow-up survey mechanism",
+        "Establish quarterly turnover review meeting cadence with action-oriented agenda",
+        "Calculate and document cost-of-turnover model specific to your cafe",
+        "Build library of exit interview insights organised by theme for pattern identification",
+        "Create reporting template for quarterly turnover analysis presentation"
+      ],
+      "responsible": "Owner/Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Share anonymised turnover themes with team to demonstrate feedback-driven change",
+        "Benchmark turnover rate against industry data and set improvement targets",
+        "Develop predictive departure indicators from historical exit data",
+        "Build alumni network of former team members for rehiring and referral pipeline",
+        "Integrate turnover intelligence into all retention and management decisions"
+      ],
+      "responsible": "Owner/Manager"
+    }
+  },
+  "deliverables": [
+    "Exit interview template and process document",
+    "Turnover tracking spreadsheet with 12-month retrospective data",
+    "Quarterly turnover analysis report template",
+    "Cost-of-turnover calculation model",
+    "Post-departure follow-up survey"
+  ],
+  "embedded_tools": ["T063-01", "T063-02", "T063-03", "T063-04"],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T063-01",
+        "tool_name": "Exit Interview Question Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner/Manager",
+        "description": "Structured exit interview form with core questions covering reasons for leaving, management experience, development opportunities, and employer recommendation likelihood."
+      },
+      {
+        "tool_id": "T063-02",
+        "tool_name": "Turnover Tracking & Analysis Spreadsheet",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Owner/Manager",
+        "description": "Comprehensive tracking tool recording every departure with dates, tenure, categorised reasons, interview themes, and avoidability assessment for trend analysis."
+      },
+      {
+        "tool_id": "T063-03",
+        "tool_name": "Cost of Turnover Calculator",
+        "level": "L2",
+        "format": "calculator",
+        "owner_role": "Owner/Manager",
+        "description": "Calculator that quantifies the true cost of each departure including recruitment, training, productivity loss, and team impact to build the business case for retention investment."
+      },
+      {
+        "tool_id": "T063-04",
+        "tool_name": "Quarterly Turnover Report Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner/Manager",
+        "description": "Structured quarterly report template presenting turnover data, trend analysis, root cause themes, cost impact, and recommended retention actions."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Exit interviews conducted by the leaver's direct manager, producing polite but useless feedback",
+    "Collecting exit data but never analysing it, creating a record with no actionable insight",
+    "Making exit interviews feel interrogative rather than conversational, causing departing staff to withhold genuine feedback",
+    "Focusing only on the stated reason for leaving while missing underlying systemic patterns across multiple departures"
+  ],
+  "kpis": [
+    "Exit interview completion rate of 85%+ for all voluntary departures",
+    "Turnover analysis report produced quarterly with minimum two actionable recommendations",
+    "Regrettable turnover rate reducing by 10% year-on-year",
+    "Cost of turnover calculated and tracked with accuracy within £200 per departure"
+  ],
+  "dependencies": ["B064"],
+  "constraints": [
+    "Very small teams (1-3 people) may lack the independence needed for honest exit interviews, requiring alternative anonymous methods",
+    "GDPR requirements mean exit interview data must be stored securely and departing staff must consent to data retention",
+    "Exit interview insights are retrospective — they help prevent future turnover but cannot recover the current departure"
+  ],
+  "time_load": {
+    "L1": "4-6 hours",
+    "L2": "10-15 hours",
+    "L3": "2-3 hours/month"
+  },
+  "review_protocol": "Exit interview conducted for every departure; monthly update of turnover tracker; quarterly turnover analysis review with action planning",
+  "meta": {
+    "summary_for_humans": "A framework for conducting meaningful exit interviews and analysing turnover patterns to understand why staff leave and what you can do to prevent future departures. Turns individual departures into actionable intelligence that drives retention improvements.",
+    "implementation_risks": [
+      "Owner defensiveness when exit feedback highlights management issues",
+      "Data collection without analysis creating false sense of action",
+      "Departing staff giving socially acceptable rather than truthful reasons"
+    ],
+    "notes_for_engine": "Activate when turnover signals are detected, when multiple departures occur in short succession, or when retention strategy needs evidence base. Core dependency for B064 retention strategy.",
+    "tags": ["exit-interviews", "turnover-analysis", "staff-retention", "workforce-data", "employee-feedback", "cost-of-turnover", "HR-analytics", "team-management"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 2,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

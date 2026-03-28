@@ -1,0 +1,44 @@
+{
+  "id": "blk_post_shift_learning_review",
+  "name": "Run post-shift learning review",
+  "description": "Run a short post-shift review of repeated breakdowns, what actually happened, and what changes before the next cycle so problems stop coming back unchallenged.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: learning compounds only when incidents are turned into changed operating truth quickly",
+  "updated_at": "2026-03-14T00:41:10.332621Z",
+  "effort_hours": 1.5,
+  "dependencies": [
+    "blk_install_pre_shift_brief"
+  ],
+  "tool_ids": [
+    "tool_post_shift_learning_review"
+  ],
+  "response_pattern_ids": [
+    "rp_learning_loop_reset"
+  ],
+  "entry_conditions": [
+    "The same preventable issue is recurring and the venue can review it while details are still fresh.",
+    "A leader is willing to close the loop with explicit next actions rather than a vague debrief."
+  ],
+  "contraindications": [
+    "Do not turn the review into emotional venting with no operating change.",
+    "Do not review every issue every night; focus on repeated or high-cost breakdowns."
+  ],
+  "owner_role": "venue_manager",
+  "expected_time_to_effect_days": 1,
+  "proof_of_completion": [
+    "A short post-shift review record exists with issue, cause, and next change.",
+    "At least one repeated issue has a named owner and explicit follow-up before the next shift.",
+    "The review distinguishes noise from recurring systemic problems."
+  ],
+  "successor_block_ids": [],
+  "service_module_ids": [
+    "learning_and_improvement",
+    "leadership_and_management_rhythm",
+    "commercial_and_control_loops"
+  ],
+  "failure_family_ids": [
+    "learning_failure",
+    "accountability_failure"
+  ]
+}

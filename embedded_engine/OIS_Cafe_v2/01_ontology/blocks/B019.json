@@ -1,0 +1,165 @@
+{
+  "block_id": "B019",
+  "name": "Food Safety Training Plan",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Creates a structured food safety training programme ensuring all staff achieve Level 2 Food Hygiene certification and receive ongoing refresher training on allergens, HACCP, cleaning, and personal hygiene. This block ensures competency is documented, maintained, and demonstrable to EHO inspectors.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Ensure all food-handling staff hold a valid Level 2 Food Hygiene certificate within 3 months of starting",
+      "Create an induction food safety training programme for new starters covering essential knowledge from Day 1",
+      "Establish ongoing refresher training to maintain and update food safety knowledge",
+      "Document all training in individual records that satisfy EHO inspection requirements",
+      "Develop in-house training capability so the cafe is not dependent on external providers alone"
+    ],
+    "secondary_objectives": [
+      "Build a team that understands why food safety matters, not just what the rules are",
+      "Reduce food safety incidents through better-trained, more competent staff",
+      "Support the EHO confidence in management score by demonstrating a structured training programme"
+    ]
+  },
+  "why_this_matters": "The Food Standards Agency recommends that all food handlers receive food safety training appropriate to their role. While there is no legal requirement for a specific qualification, the industry standard is the Level 2 Award in Food Safety in Catering, and EHO inspectors expect food handlers to hold this certificate or an equivalent. The qualification covers the four Cs (cleaning, cooking, chilling, cross-contamination), personal hygiene, food safety hazards, legal requirements, and HACCP principles. It typically takes 6-8 hours to complete and can be done online or in a classroom for approximately £20-30 per person. Critically, training is not a one-off event. Food safety knowledge decays over time, staff may develop bad habits, regulations change, and new hazards emerge. The FSA recommends refresher training at least every three years. In practice, the best cafes provide ongoing food safety training as part of regular team development. During an EHO inspection, the inspector will ask about staff training and may test staff knowledge by asking direct questions such as 'What temperature should this fridge be running at?' or 'What are the 14 allergens?' Staff who cannot answer confidently indicate a training gap that will count against the cafe's management confidence score. A structured training plan with documented records demonstrates proactive management and supports the due diligence defence. Conversely, a cafe with no training records and staff who cannot answer basic food safety questions is vulnerable to enforcement action.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Audit current training status — for every team member, determine whether they hold a Level 2 Food Hygiene certificate or equivalent. Record the certificate details (awarding body, date achieved, certificate number) in a training tracker. For anyone without certification, enrol them in a Level 2 Food Safety in Catering course immediately. Online courses from providers such as Highfield, Chartered Institute of Environmental Health (CIEH), or Food Safety Direct typically cost £20-30 and can be completed in a single day. Set a deadline: all food-handling staff must have their certificate within 3 months. Create a new starter food safety induction checklist covering the essential knowledge every team member needs from Day 1, before they handle any food: handwashing procedure, uniform standards, illness reporting duty, allergen awareness basics, temperature checking procedure, and who to ask if unsure about anything. Week 2: Deliver the induction training to any team member who has not received it. Use the existing blocks as the curriculum — B009 (Handwashing), B010 (Cross-Contamination), B005 (Allergens), B001 (Temperature Monitoring). Record the completion of induction training in individual training files.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a comprehensive Food Safety Training Plan document that maps out all training requirements by role: what every team member needs to know, what additional knowledge is needed for kitchen staff, baristas, and managers, and what qualifications are required at each level. Create a training calendar for the year ahead, scheduling: Level 2 course completion deadlines for anyone not yet certified, monthly 15-minute team training sessions on specific topics (rotating through allergens, temperature control, cleaning, cross-contamination, personal hygiene), and annual refresher training for all staff. Develop a set of short training modules that the manager can deliver in-house: simple presentations, demonstrations, or quizzes on key food safety topics. This reduces dependence on external training providers and makes ongoing training practical and affordable. Create individual training records for every team member documenting: induction training completed, Level 2 certificate details, refresher training attended, specific competencies assessed, and any additional training (e.g., allergen management, HACCP). Implement competency assessments: after training, test understanding with simple questions or practical demonstrations. Record the results. By Week 8, every team member should have an individual training record, and a training calendar should be in place for the next 12 months.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Food safety training should be a continuous thread running through the cafe's operations, not a series of isolated events. Integrate food safety topics into daily huddles and team meetings. Consider the Level 3 Food Safety qualification for the manager — this provides deeper knowledge of HACCP, food safety management, and supervision. Explore Allergen Awareness specialist training for the Allergen Champion. Conduct annual training needs analysis: are there gaps in knowledge? Are new regulations requiring updated training? Has the menu changed in ways that require new training? Track training completion rates and share them with the team — aim for 100% compliance with the training calendar. Review training effectiveness: after a training session, does practice actually improve? Use self-assessments (B017) and audits to measure the real-world impact of training."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Audit every team member's current food safety training and certification status",
+        "Enrol all uncertified food-handling staff in a Level 2 Food Hygiene course",
+        "Set a 3-month deadline for all staff to achieve Level 2 certification",
+        "Create a new starter food safety induction checklist",
+        "Deliver induction training to any team member who has not received it",
+        "Record all training in individual training files",
+        "Ensure at least one person on every shift has completed Level 2 training"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Food Safety Training Plan document mapping requirements by role",
+        "Create a 12-month training calendar with monthly topic sessions",
+        "Develop in-house training modules the manager can deliver without external support",
+        "Create individual training records for every team member",
+        "Implement competency assessments after each training session",
+        "Schedule annual refresher training for all staff",
+        "File all training records and certificates in the food safety folder"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Integrate food safety topics into daily huddles and team meetings",
+        "Consider Level 3 Food Safety qualification for the manager",
+        "Conduct annual training needs analysis to identify gaps",
+        "Track training completion rates and share with the team",
+        "Review training effectiveness through audit and assessment results"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Staff Training Status Tracker (current certifications)",
+    "New Starter Food Safety Induction Checklist",
+    "Food Safety Training Plan document (by role)",
+    "12-Month Training Calendar",
+    "Individual Staff Training Records"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T019-01",
+        "tool_name": "Staff Training Status Tracker",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Central tracker listing every team member with their Level 2 certification status, certificate details, expiry/refresh date, induction completion, and any additional training completed."
+      },
+      {
+        "tool_id": "T019-02",
+        "tool_name": "New Starter Food Safety Induction Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Checklist of essential food safety knowledge every new starter must receive before handling food: handwashing, uniform, illness reporting, allergens, temperatures, and escalation procedures."
+      },
+      {
+        "tool_id": "T019-03",
+        "tool_name": "Monthly Team Training Session Guide",
+        "level": "L2",
+        "format": "guide",
+        "owner_role": "Manager",
+        "description": "Set of 12 short (15-minute) training modules covering key food safety topics on a rotating monthly basis, designed for the manager to deliver in-house with simple quizzes."
+      },
+      {
+        "tool_id": "T019-04",
+        "tool_name": "Food Safety Competency Assessment",
+        "level": "L2",
+        "format": "assessment",
+        "owner_role": "Manager",
+        "description": "Short assessment template for testing staff food safety knowledge after training, covering temperature limits, allergens, handwashing triggers, cross-contamination prevention, and escalation procedures."
+      },
+      {
+        "tool_id": "T019-05",
+        "tool_name": "Annual Training Needs Analysis Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Template for conducting an annual review of food safety training needs: identifying knowledge gaps, regulatory changes, menu-driven requirements, and individual development opportunities."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Staff complete Level 2 training but retain nothing because it was treated as a tick-box exercise",
+    "Training records are not maintained, leaving no evidence of competency for EHO inspection",
+    "Ongoing training is scheduled but repeatedly cancelled due to operational pressures",
+    "New starters begin handling food before completing induction training"
+  ],
+  "kpis": [
+    "100% of food-handling staff hold a valid Level 2 Food Hygiene certificate",
+    "All new starters complete food safety induction before handling food unsupervised",
+    "Monthly team training sessions delivered on schedule (12 per year minimum)",
+    "Competency assessment pass rate above 90% across all staff"
+  ],
+  "dependencies": ["B017"],
+  "constraints": [
+    "Level 2 Food Hygiene certification is the industry standard expected by EHO inspectors",
+    "Training records must be retained for the duration of employment plus 12 months",
+    "New starters must receive food safety induction before they handle food unsupervised"
+  ],
+  "time_load": {
+    "L1": "6 hours (training audit, enrolment, induction delivery)",
+    "L2": "10 hours (training plan development, module creation, calendar setup)",
+    "L3": "2 hours/month (monthly training sessions, record updates, needs analysis)"
+  },
+  "review_protocol": "Weekly check of new starter induction completion. Monthly training session delivery and record update. Quarterly review of training tracker and certification status. Annual training needs analysis and calendar planning for the next year.",
+  "meta": {
+    "summary_for_humans": "This block ensures every team member is properly trained in food safety, from Day 1 induction through Level 2 certification to ongoing monthly refresher sessions. It creates documented training records that demonstrate competency to EHO inspectors.",
+    "implementation_risks": [
+      "Online Level 2 courses vary in quality — choose accredited providers (CIEH, Highfield, RSPH)",
+      "Training costs are modest but must be budgeted for, especially with high staff turnover",
+      "The manager must be competent to deliver in-house training — consider Level 3 qualification"
+    ],
+    "notes_for_engine": "Activate for all cafes. Flag as urgent if signals indicate untrained staff handling food, missing training records, EHO findings on staff knowledge, or new starters without induction training.",
+    "tags": ["food_safety", "training", "Level_2", "certification", "induction", "competency", "EHO", "compliance"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "block_id": "B203",
+  "name": "Drive-Through Workflow",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Designs and optimises the complete drive-through workflow from order point to window handoff, ensuring speed of service, order accuracy, and a positive customer experience within the unique constraints of vehicle-based service. This block addresses lane management, communication systems, menu board design, staffing positions, and performance metrics specific to drive-through cafe operations.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Map and optimise the end-to-end drive-through journey: approach, order, payment, collection, and departure",
+      "Define staffing positions and role responsibilities for each station in the drive-through workflow",
+      "Establish target service times and order accuracy standards with real-time monitoring",
+      "Design effective menu board presentation that enables fast, confident ordering from vehicles",
+      "Implement communication systems between order point, preparation area, and handoff window"
+    ],
+    "secondary_objectives": [
+      "Reduce queue abandonment by managing visible queue length and perceived wait times",
+      "Maximise average transaction value through effective upselling at the order point",
+      "Minimise order errors that are costlier to correct in drive-through than dine-in (no easy re-serve)",
+      "Ensure drive-through operations do not compromise quality standards or food safety"
+    ]
+  },
+  "why_this_matters": "Drive-through cafes operate under fundamentally different pressures from sit-in venues. The customer is in a vehicle, often in a hurry, with limited patience for delays. The average drive-through customer expects their order within 3-4 minutes of reaching the order point — exceed this consistently and they will switch to a competitor. Unlike a dine-in customer who can be engaged with ambience and conversation while waiting, a drive-through customer experiences wait time as pure frustration compounded by the inability to leave the queue once committed. Every car in the queue is visible to approaching traffic — a long queue can either signal popularity (positive) or slowness (negative), and the tipping point between these perceptions is surprisingly thin. Order accuracy is more critical in drive-through than any other format because errors are discovered after departure, meaning the customer cannot easily return for correction. A wrong order in drive-through creates a disproportionately negative experience and often a permanent customer loss. The operational choreography is complex: someone takes the order (either through a speaker system or at a window), someone makes the drinks, someone assembles the food, someone processes payment, and someone hands out the order — all potentially happening simultaneously for multiple cars. Without clear role definition, communication protocols, and workflow design, this choreography breaks down during peak periods, resulting in bottlenecks, errors, and frustrated customers. Drive-through coffee has grown substantially in the UK market, driven by commuter convenience and post-pandemic habits, making it essential that operations are optimised for this format.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Map the current drive-through workflow. Stand at each station and observe during a peak hour — document every step from the moment a car enters the lane to departure. Note: where do bottlenecks occur? Is it at order-taking, payment, preparation, or handoff? Time 20 consecutive transactions from order to departure and calculate the average. Identify the constraint — the single slowest step that determines the maximum throughput. In most drive-through cafes, the constraint is either espresso preparation time (limiting drinks output) or a combined order-and-payment window (doubling the time each car spends stationary). Week 2: Address the primary bottleneck. If espresso preparation is the constraint, consider pre-batching common orders during peak (having flat whites ready to pour), adding a second grinder, or simplifying the peak-hour menu. If a single window handles both ordering and payment, evaluate whether a speaker-based pre-order system could separate these functions. Establish clear role assignments: during peak, each station should have a dedicated person — order taker, barista, food assembler, payment handler, and window runner. During quieter periods, roles can be combined. Create a simple Drive-Through Position Guide listing each role, its responsibilities, and the handoff points between roles. Post it visibly in the preparation area.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Install or upgrade communication systems. A reliable headset system between the order point and preparation area is essential — the barista must hear the order in real time and begin preparation before the car reaches the window. If headsets are not feasible, a screen-based order relay system works, but adds latency. Design (or redesign) the drive-through menu board for speed: the most popular items should be the largest and most visible, with clear pricing. Limit visible options to 15-20 items maximum — a cluttered menu board slows ordering decisions. Use numbering or meal-deal groupings to simplify verbal ordering. Establish standard service time targets: order-to-handoff of 3 minutes for a single drink, 4 minutes for a multi-item order. Track times using a simple stopwatch log or, if available, a timer system integrated with the POS. Create a Drive-Through Performance Log capturing: transactions per hour, average service time, order accuracy rate (track errors through customer complaints and window corrections), and queue length at 15-minute intervals during peak. Develop an upselling script for the order point — concise, natural prompts that add value: 'Would you like a pastry with that?' or 'We have a special today on iced lattes.' Train order takers to upsell without slowing throughput.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Drive-through operations should now run with the precision of a production line during peak and the warmth of personal service during quieter periods. Introduce a pre-ordering capability — a mobile app or phone-ahead system where customers place and pay for orders before arriving, reducing window time to a simple handoff. Analyse performance data weekly: identify which days and hours have the longest service times, correlate with staffing levels, and adjust rotas to match demand patterns. Test peak-hour menu simplification — offering a reduced menu of the 10 fastest-to-prepare items during the busiest 90 minutes can dramatically increase throughput. Implement mystery shopper visits specifically for the drive-through experience — time, accuracy, friendliness, product quality, and presentation assessed from the customer's perspective. Explore dual-lane configurations if physical space and volume warrant it. Celebrate and reward the team for hitting service time and accuracy targets — drive-through excellence is a team sport. Share performance dashboards weekly so everyone understands how the operation is performing."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Map the complete drive-through workflow from lane entry to departure",
+        "Time 20 consecutive transactions to establish a baseline average service time",
+        "Identify the primary bottleneck in the workflow",
+        "Address the bottleneck with an immediate operational adjustment",
+        "Define and assign drive-through station roles for peak periods",
+        "Create a Drive-Through Position Guide and post it visibly",
+        "Brief all staff on role responsibilities and handoff protocols"
+      ],
+      "responsible": "Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Install or upgrade headset or screen-based communication between order point and preparation area",
+        "Redesign the menu board for clarity, speed, and upselling effectiveness",
+        "Establish target service times (3 minutes single drink, 4 minutes multi-item)",
+        "Create a Drive-Through Performance Log tracking service time, accuracy, and throughput",
+        "Develop and train order-takers on upselling scripts that do not slow service",
+        "Implement a queue monitoring system to manage peak period capacity",
+        "Review and adjust role assignments based on performance data"
+      ],
+      "responsible": "Manager, Shift Leads"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce pre-ordering capability via mobile app or phone-ahead system",
+        "Analyse weekly performance data and adjust rotas to match demand patterns",
+        "Test peak-hour menu simplification to increase throughput during the busiest periods",
+        "Implement mystery shopper assessments for drive-through experience quality",
+        "Share weekly performance dashboards with the entire team",
+        "Celebrate service time and accuracy achievements to reinforce operational excellence"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Drive-Through Workflow Map (visual process diagram)",
+    "Drive-Through Position Guide",
+    "Drive-Through Performance Log",
+    "Menu Board Design Brief",
+    "Upselling Script for order takers"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T203-01",
+        "tool_name": "Drive-Through Workflow Map",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Visual process diagram showing every step in the drive-through journey: approach, order point, payment, preparation, assembly, handoff, and departure, with role assignments and timing targets at each stage."
+      },
+      {
+        "tool_id": "T203-02",
+        "tool_name": "Drive-Through Position Guide",
+        "level": "L1",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Role-by-role guide for each drive-through station: order taker, barista, food assembler, payment handler, and window runner. Covers responsibilities, communication protocols, and peak-period escalation."
+      },
+      {
+        "tool_id": "T203-03",
+        "tool_name": "Drive-Through Performance Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Shift Lead",
+        "description": "Hourly tracker capturing transactions per hour, average service time, order errors, queue length at peak intervals, and upsell success rate. Feeds into weekly performance review."
+      },
+      {
+        "tool_id": "T203-04",
+        "tool_name": "Menu Board Design Brief",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Design specification for the drive-through menu board: item hierarchy, pricing layout, font sizes for vehicle-distance readability, meal deal groupings, and seasonal special placement."
+      },
+      {
+        "tool_id": "T203-05",
+        "tool_name": "Drive-Through Mystery Shopper Checklist",
+        "level": "L3",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Assessment form for mystery shopper visits scoring: queue wait time, greeting quality, order accuracy, service time, product quality and temperature, presentation, upsell attempt, and farewell interaction."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Peak-hour bottleneck goes unaddressed, causing queue times to exceed customer tolerance and driving cars away",
+    "Communication breakdown between order point and preparation area leads to wrong drinks being made and wasted",
+    "Staff roles are not clearly defined, resulting in confusion and duplicated effort during busy periods",
+    "Menu board is cluttered or poorly lit, slowing ordering decisions and increasing time per car at the order point"
+  ],
+  "kpis": [
+    "Average order-to-handoff time of 3 minutes or less for single-drink orders",
+    "Order accuracy rate of 98% or above measured through error tracking",
+    "Peak-hour throughput of at least 30 transactions per hour with full staffing",
+    "Queue abandonment rate below 5% during peak periods"
+  ],
+  "dependencies": ["B086"],
+  "constraints": [
+    "Drive-through layout is physically fixed — workflow optimisation must work within existing lane and window configuration",
+    "Headset or communication systems require investment and staff training to use effectively in a noisy environment",
+    "Menu board changes require signage production which has lead time and cost implications"
+  ],
+  "time_load": {
+    "L1": "4 hours (workflow observation, timing study, bottleneck analysis, position guide creation)",
+    "L2": "10 hours (communication system setup, menu board redesign, performance tracking, upsell training)",
+    "L3": "3 hours/month (data analysis, rota optimisation, mystery shopper review, team performance meetings)"
+  },
+  "review_protocol": "Daily service time spot-check by shift lead. Weekly performance log review by manager. Monthly throughput and accuracy analysis. Quarterly mystery shopper assessment and workflow optimisation review.",
+  "meta": {
+    "summary_for_humans": "This block optimises every aspect of the drive-through experience — from order point to handoff window. It covers workflow mapping, role definition, communication systems, menu board design, and performance tracking to deliver fast, accurate, friendly service from a vehicle lane.",
+    "implementation_risks": [
+      "Physical lane constraints limit workflow redesign options — focus on process and people improvements first",
+      "Headset systems require maintenance and battery management — always have backup communication methods",
+      "Speed targets must not compromise quality or food safety — never sacrifice drink standards for throughput"
+    ],
+    "notes_for_engine": "Activate only for drive_through venue type. Core operational block for this format. Signals: long queue times, order accuracy complaints, low throughput during peak, or staff confusion about roles.",
+    "tags": ["drive_through", "workflow", "speed_of_service", "operations", "peak_management", "order_accuracy", "throughput", "queue_management"]
+  },
+  "applicability": {
+    "venue_types": ["drive_through"],
+    "team_size_min": 3,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

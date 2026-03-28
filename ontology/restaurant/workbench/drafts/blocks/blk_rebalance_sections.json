@@ -1,0 +1,43 @@
+{
+  "id": "blk_rebalance_sections",
+  "name": "Rebalance sections",
+  "description": "Redraw section boundaries, support roles, and workload assumptions around the actual cover flow so the peak period stops collapsing into uneven pressure.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: align roles and coverage to the true demand pattern instead of legacy sectioning",
+  "updated_at": "2026-03-14T00:24:43.019082Z",
+  "effort_hours": 3.0,
+  "dependencies": [],
+  "tool_ids": [
+    "tool_section_deployment_board"
+  ],
+  "response_pattern_ids": [
+    "rp_deployment_reset"
+  ],
+  "entry_conditions": [
+    "Sections overload unevenly while other capacity sits underused.",
+    "The team can identify the venue's real peak windows, service mix, and pressure points."
+  ],
+  "contraindications": [
+    "Do not redraw sections without evidence from actual cover flow and support demands.",
+    "Do not use static fairness logic when the venue's traffic pattern is structurally uneven."
+  ],
+  "owner_role": "venue_manager",
+  "expected_time_to_effect_days": 2,
+  "proof_of_completion": [
+    "Section map reflects actual guest flow and support load, not habit.",
+    "Primary and support assignments are visible before the peak window starts.",
+    "Rebalance triggers are defined for overload moments."
+  ],
+  "successor_block_ids": [
+    "blk_manager_peak_window_plan"
+  ],
+  "service_module_ids": [
+    "capacity_and_deployment",
+    "live_execution"
+  ],
+  "failure_family_ids": [
+    "demand_capacity_mismatch",
+    "role_clarity_failure"
+  ]
+}

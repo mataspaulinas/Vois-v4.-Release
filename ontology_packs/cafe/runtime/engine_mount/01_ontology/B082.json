@@ -1,0 +1,167 @@
+{
+  "block_id": "B082",
+  "name": "Protected Management Time",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M13: Leadership & Team Culture",
+  "state": "enriched",
+  "purpose": "Establishes dedicated, protected off-floor time for the owner and manager to focus on strategic activities, business administration, and team development — ensuring that management work is not permanently squeezed into the gaps between making coffee and serving customers.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Schedule recurring blocks of protected management time in the weekly rota where the owner or manager is off the shop floor",
+      "Define what management time should be used for — a structured agenda rather than open-ended admin",
+      "Ensure the team can operate independently during management time periods, supported by cross-training and delegation",
+      "Track how management time is actually spent to ensure it drives business improvement rather than catching up on emails",
+      "Build the cultural expectation that management time is non-negotiable, not a luxury to be sacrificed when busy"
+    ],
+    "secondary_objectives": [
+      "Reduce the accumulation of administrative backlog that creates weekend and evening catch-up work for the owner",
+      "Create space for the owner to think strategically about menu development, marketing, and business growth",
+      "Enable the completion of compliance tasks (accounts, health and safety reviews, staff records) during working hours"
+    ]
+  },
+  "why_this_matters": "Independent cafe owners face a paradox: the activities that keep the business running day to day — making coffee, serving customers, cleaning — are visibly urgent but not strategically important. The activities that determine whether the business thrives in the long term — financial planning, marketing strategy, menu development, team development, supplier negotiation — are strategically important but never feel urgent enough to do during a busy shift. The result is that strategic work never happens, or happens at 10pm on a Sunday night when the owner is exhausted. This is not a time management failure — it is a structural one. If the rota does not include dedicated off-floor time for management work, that work has no home. It becomes the owner's personal burden, completed in their own time at the expense of their rest, relationships, and wellbeing. Protected management time is the structural solution. By scheduling specific blocks — typically two to four hours, two to three times per week — where the owner or manager is scheduled off the floor with the team covering operations, management work gets done during working hours. This requires two preconditions: the team must be capable of operating independently (addressed by B078 cross-training and B081 delegation), and the owner must resist the temptation to jump back on the bar when it gets busy. The financial argument is compelling. An owner who spends four hours per week on strategic work — reviewing margins, negotiating supplier terms, planning marketing, developing the team — will generate more business value than four additional hours on the espresso machine.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Identify the best times for management time based on trading patterns. For most cafes, the quietest periods are mid-morning (after the commuter rush, before the lunch crowd) or early afternoon. Start with just two hours per week in one block. Schedule it in the rota as formally as any other shift — write 'OFFICE' or 'MANAGEMENT TIME' on the rota next to the owner's name so the team sees it and plans accordingly. During the first management time block, create a Management Time Agenda covering three categories: (1) Must Do — compliance, accounts, payroll, urgent admin. (2) Should Do — team reviews, supplier calls, menu planning. (3) Want To Do — marketing, business development, creative projects. Week 2: Increase to two blocks of two hours per week. Begin by tackling the 'Must Do' items to clear the admin backlog, then progressively shift towards 'Should Do' and 'Want To Do' as the backlog clears. Establish a physical management workspace — even if it is just a corner table after the lunch rush or a shared desk in the storeroom. Having a designated space reinforces that this is real work time, not a break.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Build management time into the rota as a permanent, recurring fixture. For a full-time owner, target six to eight hours per week of off-floor management time. Create a Weekly Management Planner that pre-allocates management time to specific tasks on a recurring basis: Monday morning for financial review and payroll, Wednesday afternoon for team development and one-to-ones, Friday morning for supplier management and stock review. This structure prevents management time becoming an unstructured admin catch-up. Ensure the team has everything they need to operate without the owner during these periods — the delegation matrix from B081, the escalation protocol, and cross-trained coverage from B078. Create a Management Time Log where the owner records what they accomplished in each session — this builds accountability and demonstrates the value of the time investment. Review the log monthly to identify whether management time is being used effectively or slipping back into operational tasks. Train the team to respect management time boundaries — the owner should only be interrupted for genuine escalations, not routine questions that can wait or be resolved independently.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Management time is now a non-negotiable part of the operating rhythm. Track the correlation between management time usage and business outcomes — does the cafe perform better in months when management time is fully utilised compared to months when it is sacrificed? Extend protected management time to the next level of leadership: shift leads should have one to two hours per week of off-floor time for rota planning, training preparation, and team communication. Introduce quarterly strategic planning sessions — a full half-day off-site where the owner reviews the business plan, assesses progress against goals, and sets priorities for the next quarter. Create an annual strategic retreat — a full day away from the cafe dedicated to big-picture thinking about the business's direction, values, and growth plans. Benchmark management time allocation against business coaching recommendations and industry best practice."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Identify the best times for management time based on trading patterns",
+        "Schedule an initial two-hour management time block in the weekly rota",
+        "Create a Management Time Agenda with Must Do, Should Do, and Want To Do categories",
+        "Establish a physical management workspace, even if basic",
+        "Communicate to the team that management time is scheduled work, not a break",
+        "Increase to two blocks per week by Week 2",
+        "Begin clearing the admin backlog during initial management time sessions"
+      ],
+      "responsible": "Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build management time into the rota as a permanent recurring fixture (six to eight hours per week)",
+        "Create a Weekly Management Planner pre-allocating time to specific recurring tasks",
+        "Ensure delegation and cross-training support the team operating independently during management time",
+        "Create a Management Time Log tracking activities and outputs per session",
+        "Review the log monthly to assess whether time is used strategically or operationally",
+        "Train the team on escalation boundaries during management time",
+        "Set expectations that management time is only interrupted for genuine escalations"
+      ],
+      "responsible": "Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track correlation between management time usage and business performance metrics",
+        "Extend protected management time to shift leads (one to two hours per week)",
+        "Introduce quarterly strategic planning half-days off-site",
+        "Create an annual strategic retreat for big-picture business planning",
+        "Benchmark management time allocation against industry best practice",
+        "Review and refine the Weekly Management Planner based on evolving business priorities"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Management Time rota entry template",
+    "Management Time Agenda framework (Must Do, Should Do, Want To Do)",
+    "Weekly Management Planner with recurring task allocations",
+    "Management Time Log template",
+    "Quarterly Strategic Planning session agenda"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T082-01",
+        "tool_name": "Management Time Agenda Framework",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Three-category agenda template (Must Do, Should Do, Want To Do) for structuring management time sessions with space to list specific tasks and prioritise by urgency and strategic value."
+      },
+      {
+        "tool_id": "T082-02",
+        "tool_name": "Weekly Management Planner",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Recurring weekly planner pre-allocating management time blocks to specific activities: financial review, team development, supplier management, marketing, compliance, and strategic planning."
+      },
+      {
+        "tool_id": "T082-03",
+        "tool_name": "Management Time Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Session-by-session log recording date, duration, planned activities, actual activities completed, and outcomes. Reviewed monthly to assess effectiveness and identify drift towards operational tasks."
+      },
+      {
+        "tool_id": "T082-04",
+        "tool_name": "Quarterly Strategic Planning Agenda",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Half-day agenda for quarterly off-site strategic planning covering business plan review, financial performance assessment, goal progress, priority setting for the next quarter, and strategic risk review."
+      },
+      {
+        "tool_id": "T082-05",
+        "tool_name": "Management Time Impact Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Quarterly report tracking total management time hours used, strategic versus operational task split, key outcomes achieved, and correlation with business performance indicators."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Management time is scheduled but consistently sacrificed when the cafe is busy, sending the message that it is optional",
+    "The owner uses management time for low-value admin (emails, social media browsing) rather than strategic work",
+    "The team interrupts management time for routine questions, eroding the protected nature of the time",
+    "Management time is not scheduled in the rota, so it only happens when the owner remembers — which is rarely"
+  ],
+  "kpis": [
+    "At least 80% of scheduled management time blocks completed as planned",
+    "Owner spending at least 60% of management time on strategic rather than administrative tasks",
+    "Management Time Log completed for every session",
+    "Team able to operate independently during management time with no more than one escalation per session",
+    "Owner total working hours reducing quarter on quarter towards a sustainable target"
+  ],
+  "dependencies": ["B081"],
+  "constraints": [
+    "Management time requires adequate team coverage — the team must be cross-trained and delegated to per B078 and B081",
+    "The physical space for management work may be limited in small cafe venues",
+    "Management time must be paid working time if the manager is an employee, budgeted into labour costs"
+  ],
+  "time_load": {
+    "L1": "1 hour (scheduling, agenda creation, workspace setup)",
+    "L2": "2 hours (planner build, log setup, team briefing on boundaries)",
+    "L3": "8 hours/quarter (strategic planning sessions, annual retreat, impact review)"
+  },
+  "review_protocol": "Weekly: management time block completed as scheduled. Monthly: Management Time Log reviewed for effectiveness and strategic balance. Quarterly: impact report produced linking management time to business outcomes. Annually: management time allocation reviewed against business evolution and owner workload.",
+  "meta": {
+    "summary_for_humans": "This block ensures the owner and manager have dedicated, protected off-floor time each week for strategic work, administration, and team development — preventing management tasks from being permanently squeezed out by daily operations.",
+    "implementation_risks": [
+      "The owner must genuinely step away from the bar during management time, which requires trust in the team",
+      "Management time feels unproductive initially if the owner is used to the visible output of making drinks and serving customers",
+      "Without a structured agenda, management time easily drifts into low-value tasks"
+    ],
+    "notes_for_engine": "Activate when signals indicate owner working excessive hours, admin backlog accumulating, strategic activities being neglected, or burnout risk. Depends on B081 delegation being in progress.",
+    "tags": ["management_time", "protected_time", "strategic", "off_floor", "admin", "planning", "owner", "productivity"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

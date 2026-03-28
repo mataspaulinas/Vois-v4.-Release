@@ -1,0 +1,86 @@
+{
+  "phase": 3,
+  "title": "Persistence Migration / Canonical Truth",
+  "verdict": "PHASE 3 IMPLEMENTED BUT NOT STABILIZED",
+  "canonical_tables": [
+    "organizations",
+    "users",
+    "venues",
+    "assessments",
+    "engine_runs",
+    "operational_plans",
+    "plan_tasks",
+    "task_dependencies",
+    "task_events",
+    "task_comments",
+    "progress_entries",
+    "follow_ups",
+    "escalations",
+    "evidence",
+    "deliverable_proofs",
+    "notification_events",
+    "copilot_threads",
+    "copilot_messages",
+    "file_assets",
+    "push_subscriptions"
+  ],
+  "snapshot_artifacts": [
+    "assessments.raw_input_text",
+    "assessments.raw_intake_payload",
+    "assessments.venue_context_json",
+    "engine_runs.normalized_signals_json",
+    "engine_runs.diagnostic_snapshot_json",
+    "engine_runs.plan_snapshot_json",
+    "engine_runs.report_markdown",
+    "engine_runs.report_type",
+    "engine_runs.ai_trace_json",
+    "operational_plans.snapshot_json"
+  ],
+  "migration_integrity": {
+    "sqlite_zero_to_head": "pass",
+    "sqlite_20260318_0030_to_head": "pass",
+    "alembic_check_after_head": "fail"
+  },
+  "fixture_persistence": {
+    "fixtures_verified": [
+      "F004_existing_active_plan_kaunas",
+      "F005_ambiguous_ai_preopening_muzos2"
+    ],
+    "checks": [
+      "assessment metadata reload",
+      "raw intake payload retention",
+      "AI trace retention",
+      "normalized signal retention",
+      "diagnostic snapshot retention",
+      "plan snapshot retention",
+      "markdown report retention",
+      "task count preservation",
+      "dependency edge creation",
+      "copilot attachment metadata retention"
+    ]
+  },
+  "state_integrity": {
+    "task_status_events": "pass",
+    "progress_entry_type": "pass",
+    "task_comments": "pass",
+    "follow_up_to_escalation": "pass",
+    "deliverable_proof_persistence": "pass",
+    "notification_event_persistence": "pass",
+    "task_comment_api_round_trip": "pass"
+  },
+  "targeted_tests": {
+    "passed": [
+      "tests/test_phase3_persistence_migration.py",
+      "tests/test_assessments.py",
+      "tests/test_copilot.py",
+      "tests/test_engine_history.py",
+      "tests/test_ecl_cycle.py"
+    ]
+  },
+  "remaining_risks": [
+    "users.venue_id foreign key drift on SQLite",
+    "copilot_threads.scope enum/type drift on SQLite",
+    "task_events.status enum/type drift on SQLite",
+    "task events, dependency edges, deliverable proofs, and notification events are not all exposed through stable API surfaces yet"
+  ]
+}

@@ -1,0 +1,87 @@
+[
+  {
+    "failure_mode_id": "FM042",
+    "score": 0.93,
+    "domain_id": "D05",
+    "module_id": "",
+    "signal_ids": [
+      "S070",
+      "S019"
+    ],
+    "title": "Ticket time and service speed failure",
+    "severity": "high",
+    "description": "Ticket time and service speed failure"
+  },
+  {
+    "failure_mode_id": "FM011",
+    "score": 0.8,
+    "domain_id": "D02",
+    "module_id": "",
+    "signal_ids": [
+      "S019"
+    ],
+    "title": "Queue management and wait time failure",
+    "severity": "high",
+    "description": "Queue management and wait time failure"
+  },
+  {
+    "failure_mode_id": "FM040",
+    "score": 0.8,
+    "domain_id": "D05",
+    "module_id": "",
+    "signal_ids": [
+      "S070"
+    ],
+    "title": "Morning rush and peak management failure",
+    "severity": "high",
+    "description": "Morning rush and peak management failure"
+  },
+  {
+    "failure_mode_id": "FM097",
+    "score": 0.8,
+    "domain_id": "D05",
+    "module_id": "M14",
+    "signal_ids": [
+      "S071"
+    ],
+    "title": "Operational discipline and daily routine failure",
+    "severity": "high",
+    "description": "Operational discipline and daily routine failure"
+  },
+  {
+    "failure_mode_id": "FM046",
+    "score": 0.8,
+    "domain_id": "D05",
+    "module_id": "",
+    "signal_ids": [
+      "S080"
+    ],
+    "title": "Seating management and turnover failure",
+    "severity": "medium",
+    "description": "Seating management and turnover failure"
+  },
+  {
+    "failure_mode_id": "FM032",
+    "score": 0.7,
+    "domain_id": "D04",
+    "module_id": "",
+    "signal_ids": [
+      "S071"
+    ],
+    "title": "Team communication and meeting failure",
+    "severity": "medium",
+    "description": "Team communication and meeting failure"
+  },
+  {
+    "failure_mode_id": "FM078",
+    "score": 0.7,
+    "domain_id": "D09",
+    "module_id": "",
+    "signal_ids": [
+      "S080"
+    ],
+    "title": "Seating layout and comfort failure",
+    "severity": "medium",
+    "description": "Seating layout and comfort failure"
+  }
+]

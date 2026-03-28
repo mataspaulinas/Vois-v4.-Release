@@ -1,0 +1,188 @@
+{
+  "block_id": "B186",
+  "name": "Regulatory Excellence & Compliance Culture",
+  "version": "v1.0",
+  "domain": "D12_culture_identity",
+  "module": "M16: Regulatory Governance & Risk Management",
+  "state": "enriched",
+  "purpose": "Elevates compliance from a reactive obligation into a proactive competitive advantage by embedding a culture where every team member understands, owns, and champions regulatory standards. This block builds the systems, habits, and mindset that make compliance the default rather than the exception, and positions the cafe as a benchmark for regulatory excellence.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Build a compliance culture where regulatory adherence is seen as a point of pride rather than a burden",
+      "Create a unified compliance management system integrating health and safety, fire safety, food safety, licensing, and employment law",
+      "Establish a compliance champion role within the team for day-to-day regulatory oversight",
+      "Develop a self-audit programme that identifies compliance gaps before external inspectors do",
+      "Track and celebrate compliance achievements to reinforce positive behaviours"
+    ],
+    "secondary_objectives": [
+      "Reduce the stress and cost of regulatory inspections through proactive preparation",
+      "Build customer and community trust by publicly demonstrating compliance excellence",
+      "Create a compliance knowledge base that survives staff turnover",
+      "Position the cafe as an employer of choice by demonstrating genuine care for legal and ethical standards"
+    ]
+  },
+  "why_this_matters": "Compliance is typically the least exciting topic in cafe management — until something goes wrong. A failed EHO inspection, a fire service enforcement notice, an HMRC wage audit, or a personal injury claim can each individually threaten the survival of a small business. When multiple compliance gaps exist simultaneously, the cumulative risk is severe. But compliance excellence is not just about avoiding disaster — it is a genuine competitive advantage. A cafe that consistently achieves a 5-star food hygiene rating, passes fire inspections without issues, and treats its staff lawfully and fairly enjoys benefits beyond legal protection. Customers increasingly check food hygiene ratings. Staff prefer to work in safe, fairly-treated environments. Insurance premiums are lower for well-managed premises. This block sits at the apex of the regulatory governance module, bringing together B183, B184, and B185 into a cohesive culture of excellence.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0–2 weeks). Week 1: Conduct a compliance baseline assessment. Using the outputs from B183, B184, and B185, create a single-page compliance status summary showing the status of health and safety risk assessment, fire risk assessment, food safety documentation, all licences, and employment law compliance. Colour-code each area green, amber, or red. Week 2: Appoint a compliance champion — the owner, manager, or a senior team member who takes responsibility for maintaining compliance records, tracking renewal dates, and being the first point of contact when a regulatory body visits. Brief the team on the concept of compliance culture. Post the compliance status summary in the staff area.",
+    "L2": "SYSTEM BUILD (2–8 weeks). Create a unified compliance folder containing all documentation from B183, B184, and B185 in a structured format. Develop a monthly self-audit checklist that the compliance champion completes. Establish a compliance calendar integrating all renewal dates, review dates, and periodic obligations. Create a regulatory visit preparation protocol. Build compliance topics into regular team meetings. Document any compliance failures or near-misses and the corrective actions taken.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Conduct quarterly self-audits with the owner or an external adviser reviewing results. Celebrate compliance milestones: consecutive 5-star food hygiene ratings, clean fire inspections, zero HSE notices. Share compliance achievements with customers where appropriate. Build a compliance knowledge base accessible during induction. Benchmark compliance performance against industry standards. Consider obtaining voluntary certifications signalling commitment to excellence. Conduct an annual compliance strategy review."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Conduct a compliance baseline assessment across all regulatory areas",
+        "Create a single-page compliance status summary with colour-coded ratings",
+        "Appoint a compliance champion with clear responsibilities",
+        "Brief the team on compliance culture and its importance",
+        "Post the compliance status summary in the staff area",
+        "Identify the three most urgent compliance gaps and create a resolution plan",
+        "Ensure the compliance folder location is known to all managers"
+      ],
+      "responsible": "Cafe Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a unified compliance folder with structured sections for each regulatory area",
+        "Develop a monthly self-audit checklist for the compliance champion",
+        "Build an integrated compliance calendar with all renewal and review dates",
+        "Create a regulatory visit preparation protocol",
+        "Integrate compliance topics into regular team meetings",
+        "Document all compliance failures, near-misses, and corrective actions",
+        "Train the compliance champion on all regulatory areas"
+      ],
+      "responsible": "Owner, Manager, Compliance Champion"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly self-audits with owner or external adviser review",
+        "Celebrate and publicise compliance milestones with the team and customers",
+        "Build a compliance knowledge base accessible during induction",
+        "Benchmark compliance performance against industry standards",
+        "Consider voluntary certifications that demonstrate commitment to excellence",
+        "Conduct an annual compliance strategy review setting improvement targets"
+      ],
+      "responsible": "Owner, Compliance Champion"
+    }
+  },
+  "deliverables": [
+    "Compliance Status Summary (single-page dashboard)",
+    "Unified Compliance Folder structure guide",
+    "Monthly Self-Audit Checklist",
+    "Regulatory Visit Preparation Protocol",
+    "Annual Compliance Strategy Review template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T186-01",
+        "tool_name": "Compliance Status Summary Dashboard",
+        "level": "L1",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Single-page visual summary showing compliance status across all regulatory areas with green/amber/red ratings and key dates."
+      },
+      {
+        "tool_id": "T186-02",
+        "tool_name": "Compliance Champion Role Description",
+        "level": "L1",
+        "format": "reference",
+        "owner_role": "Owner",
+        "description": "Role description for the compliance champion including responsibilities, time allocation, authority level, and reporting requirements."
+      },
+      {
+        "tool_id": "T186-03",
+        "tool_name": "Regulatory Visit Preparation Protocol",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Step-by-step protocol for when a regulatory inspector arrives: greeting procedure, documentation to present, areas to show, questions to expect, and post-visit follow-up actions."
+      },
+      {
+        "tool_id": "T186-04",
+        "tool_name": "Monthly Self-Audit Checklist",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Compliance Champion",
+        "description": "Comprehensive monthly checklist covering critical compliance items across all regulatory areas, completed by the compliance champion and reviewed by the owner."
+      },
+      {
+        "tool_id": "T186-05",
+        "tool_name": "Annual Compliance Strategy Review Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Annual review template covering compliance performance, audit results, inspection outcomes, gaps addressed, and improvement targets for the coming year."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Compliance is seen as the owner's problem alone, with no team engagement or shared responsibility",
+    "The compliance champion role is appointed but not supported with time, training, or authority",
+    "Self-audits become tick-box exercises that do not identify genuine gaps",
+    "Compliance documentation exists but is not kept current, creating a false sense of security"
+  ],
+  "kpis": [
+    "Compliance status summary shows all areas green for at least 10 months per year",
+    "Monthly self-audit completed every month without exception",
+    "Zero enforcement notices, improvement orders, or prosecution across all regulatory areas",
+    "All regulatory inspections passed at the highest achievable standard"
+  ],
+  "dependencies": [
+    "B183",
+    "B184",
+    "B185"
+  ],
+  "constraints": [
+    "Compliance champion must have adequate time allocated (minimum 2 hours per month)",
+    "The unified compliance folder must be accessible on the premises at all times",
+    "Self-audit results must be acted upon — documenting a gap without resolving it is worse than not documenting it"
+  ],
+  "time_load": {
+    "L1": "3 hours (baseline assessment, champion appointment, team briefing)",
+    "L2": "6 hours (folder creation, calendar build, protocols, training)",
+    "L3": "3 hours/quarter (self-audits, reviews, strategy updates)"
+  },
+  "review_protocol": "Monthly self-audit by compliance champion. Quarterly review of self-audit results by owner. Annual full compliance strategy review. Immediate review after any regulatory inspection or enforcement action.",
+  "meta": {
+    "summary_for_humans": "This block elevates compliance from a reactive obligation into a proactive culture of excellence, unifying health and safety, fire, food safety, licensing, and employment law into a single managed system with a dedicated compliance champion.",
+    "implementation_risks": [
+      "Without genuine owner commitment, compliance culture initiatives will be perceived as lip service",
+      "The compliance champion needs real authority and time allocation to be effective",
+      "Over-documenting can create bureaucracy that alienates small teams — keep systems proportionate"
+    ],
+    "notes_for_engine": "Activate after B183, B184, and B185 are substantially complete. This is the capstone block for the regulatory governance module. Flag if signals indicate multiple concurrent compliance gaps.",
+    "tags": [
+      "compliance",
+      "culture",
+      "regulatory",
+      "governance",
+      "self_audit",
+      "compliance_champion",
+      "excellence"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "independent_cafe",
+      "specialty_coffee",
+      "chain_cafe",
+      "franchise_cafe",
+      "drive_through",
+      "kiosk",
+      "coffee_van",
+      "bakery_cafe"
+    ],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

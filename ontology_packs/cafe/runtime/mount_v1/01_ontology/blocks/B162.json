@@ -1,0 +1,166 @@
+{
+  "block_id": "B162",
+  "name": "IT Infrastructure & Backup",
+  "version": "v1.0",
+  "domain": "D10_technology_systems",
+  "module": "M10: Digital Tools & Customer Data",
+  "state": "enriched",
+  "purpose": "Ensures the cafe has reliable, secure, and resilient IT infrastructure covering Wi-Fi connectivity, network hardware, cloud services, data backup, and disaster recovery. This block prevents the operational paralysis that occurs when internet goes down, the POS cannot process cards, or years of business data is lost to a hardware failure.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Audit the cafe's current IT infrastructure including internet connection, router, Wi-Fi, network cabling, and connected devices",
+      "Ensure business-critical systems (POS, card payments, online ordering) have contingency plans for internet outages",
+      "Implement automated backup for all critical business data including POS records, financial data, staff records, and customer databases",
+      "Establish a customer Wi-Fi service that is secure, reliable, and separated from the business network",
+      "Create a disaster recovery plan covering equipment failure, data loss, and extended outage scenarios"
+    ],
+    "secondary_objectives": [
+      "Optimise Wi-Fi coverage and speed for customer experience and positive reviews",
+      "Reduce dependency on single points of failure in the technology stack",
+      "Establish relationships with IT support providers for when issues exceed in-house capability",
+      "Plan for connectivity upgrades as the business adds more technology systems"
+    ]
+  },
+  "why_this_matters": "Modern cafes depend on internet connectivity for almost every aspect of operation: POS and card payments (typically 70-85% of transactions are now cashless), online ordering, music streaming, CCTV cloud storage, staff scheduling, email, social media, and customer Wi-Fi. When the internet goes down, most of these functions stop immediately. A cafe that cannot process card payments during a Saturday morning rush faces angry customers, lost revenue, and potential reputational damage. Yet most independent cafes run their entire operation on a single domestic-grade broadband connection with a consumer router, no backup connectivity, and no separation between business systems and customer Wi-Fi. Customer Wi-Fi also presents a business opportunity and a risk. Good Wi-Fi attracts remote workers and longer-staying customers who buy more per visit. Poor or absent Wi-Fi is increasingly mentioned in negative reviews. However, unsecured or unseparated Wi-Fi can expose business systems to security risks, and unmanaged bandwidth can slow business-critical systems to unusable speeds. Data backup is the silent catastrophe waiting to happen. If the cafe's laptop dies (containing years of financial records, supplier contacts, staff documents, and recipes), how quickly can the business recover? Cloud-based systems mitigate this for POS and accounting data, but many cafes store critical information on local devices with no backup whatsoever.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Audit the current IT setup. Document: internet provider and plan (speed, data allowance, contract end date), router model and age, Wi-Fi coverage quality across the cafe, all devices connected to the network (POS terminals, printers, tablets, personal devices, CCTV, music system), and any known connectivity issues. Test actual internet speed versus advertised speed using a speed test at different times of day. Check whether customer Wi-Fi and business systems share the same network (if yes, this is a security risk that must be addressed). Week 2: Assess business continuity during internet outages. Can the POS process payments offline? (Most modern POS systems have offline mode but it must be configured and tested.) Is there a mobile phone with data that can serve as a backup hotspot? Do staff know what to do when the internet goes down? Create a simple Internet Outage Response Card posted near the POS covering: how to switch to offline mode, how to enable the backup hotspot, how to communicate with customers about card payment issues, and who to call (ISP, POS support). Test the offline payment process during a quiet period.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Separate the network into business and customer segments. Most modern routers support guest networks; if not, consider a dedicated access point for customer Wi-Fi. The business network should be password-protected with a strong password that is not shared with customers or displayed publicly. Customer Wi-Fi should have its own password (changed monthly) or use a captive portal for login. Set bandwidth limits on customer Wi-Fi to protect business system performance. Implement a data backup strategy. Identify all critical data: POS transaction history, financial records and accounts, staff records, customer database, supplier contacts, recipes and procedures, and any other irreplaceable business information. For cloud-based systems (POS, accounting, email), verify that the provider's backup and data export capabilities are adequate. For locally stored data, set up automated cloud backup using a service like Google Drive, OneDrive, or Backblaze. Test data restoration to confirm backups actually work. Evaluate your internet connection for business suitability. If on a domestic broadband plan, consider upgrading to a business plan which typically offers: guaranteed minimum speeds, priority fault repair, a static IP address (useful for CCTV and some POS configurations), and a service level agreement. Consider a backup connectivity option: a 4G/5G mobile broadband router that activates automatically when the primary connection fails.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Create a full Disaster Recovery Plan covering scenarios: extended internet outage (more than 4 hours), POS system failure, total power loss, data loss from hardware failure, and cyber incident. For each scenario, define: immediate response steps, communication plan (staff, customers, suppliers), workaround procedures, recovery steps, and responsible individuals. Test the disaster recovery plan annually with a tabletop exercise. Review and upgrade IT infrastructure annually: assess whether current internet speed meets growing demands, evaluate router and access point age and performance, review backup integrity and restoration speed, and consider emerging technology needs. Build a relationship with a local IT support provider who understands small business and hospitality needs. Having a trusted contact for when issues exceed your capability is invaluable and much cheaper than emergency callouts to unknown providers. Monitor network security: change all default passwords on network equipment, keep router firmware updated, review connected devices quarterly, and remove access for former staff promptly."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Audit current IT infrastructure: internet plan, router, Wi-Fi coverage, connected devices",
+        "Test internet speed at different times of day and compare to advertised speed",
+        "Check whether customer Wi-Fi and business systems share the same network",
+        "Test POS offline payment capability and configure if not already enabled",
+        "Create an Internet Outage Response Card and post near the POS",
+        "Identify a mobile phone or device that can serve as emergency backup connectivity"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Separate the network into business and customer segments with appropriate security",
+        "Set bandwidth limits on customer Wi-Fi to protect business system performance",
+        "Identify all critical business data and implement automated cloud backup",
+        "Test data backup restoration to confirm recoverability",
+        "Evaluate internet plan and consider upgrading to a business-grade connection",
+        "Research and potentially implement a backup connectivity solution (4G/5G failover)",
+        "Change all default passwords on network equipment and update router firmware"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Create a comprehensive Disaster Recovery Plan covering all critical failure scenarios",
+        "Test the disaster recovery plan annually with a tabletop exercise",
+        "Review and upgrade IT infrastructure annually for speed, security, and capacity",
+        "Build a relationship with a trusted local IT support provider",
+        "Monitor network security quarterly: review connected devices, update firmware, audit access"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "IT Infrastructure Audit report",
+    "Internet Outage Response Card (wall-mounted near POS)",
+    "Network Separation configuration (business and customer segments)",
+    "Data Backup Strategy document with automated backup configuration",
+    "Disaster Recovery Plan covering all critical failure scenarios"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T162-01",
+        "tool_name": "IT Infrastructure Audit Template",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Comprehensive audit template covering: internet provider details, speed test results, router specifications, Wi-Fi coverage map, all connected devices, network configuration, known issues, and contract/warranty dates."
+      },
+      {
+        "tool_id": "T162-02",
+        "tool_name": "Internet Outage Response Card",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Laminated quick-reference card posted near the POS with step-by-step instructions for: switching POS to offline mode, activating backup connectivity, communicating with customers, and contacting support providers."
+      },
+      {
+        "tool_id": "T162-03",
+        "tool_name": "Data Backup Inventory and Schedule",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Document listing all critical business data, where it is stored, backup method (cloud provider auto-backup vs manual vs automated script), backup frequency, last verified restoration date, and responsible person."
+      },
+      {
+        "tool_id": "T162-04",
+        "tool_name": "Disaster Recovery Plan",
+        "level": "L3",
+        "format": "SOP",
+        "owner_role": "Owner",
+        "description": "Comprehensive plan covering 5 critical failure scenarios (internet outage, POS failure, power loss, data loss, cyber incident) with immediate response steps, communication procedures, workaround solutions, recovery timelines, and responsible individuals."
+      },
+      {
+        "tool_id": "T162-05",
+        "tool_name": "Network Security Review Checklist",
+        "level": "L3",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Quarterly security checklist covering: password audit for all network equipment, firmware update status, connected device review, guest Wi-Fi password rotation, former staff access removal, and unusual activity check."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Internet outage during peak trading hours with no offline POS capability and no backup connectivity, forcing cash-only operation and losing card-paying customers",
+    "Customer Wi-Fi sharing the business network, allowing a compromised device to access business systems including POS and financial data",
+    "Critical business data stored only on a single local device with no backup, lost permanently when the device fails or is stolen",
+    "No disaster recovery plan, resulting in chaotic improvised responses to infrastructure failures"
+  ],
+  "kpis": [
+    "Internet uptime above 99.5% (less than 44 hours downtime per year)",
+    "Business and customer networks fully separated with independent security credentials",
+    "All critical business data backed up automatically with last restoration test within 6 months",
+    "Disaster recovery plan documented, tested annually, and known to all management team members"
+  ],
+  "dependencies": ["B155"],
+  "constraints": [
+    "Internet speed and reliability are limited by the physical infrastructure in the cafe's location",
+    "Network separation requires a router or access point that supports guest network or VLAN functionality",
+    "Business-grade internet plans cost more than domestic plans (typically 30-60 pounds versus 20-40 pounds per month)",
+    "Backup connectivity solutions (4G/5G failover) incur additional monthly costs of 15-30 pounds"
+  ],
+  "time_load": {
+    "L1": "4 hours (infrastructure audit, speed testing, outage card creation, offline POS testing)",
+    "L2": "8 hours (network separation, backup setup and testing, internet plan evaluation)",
+    "L3": "4 hours/year (disaster recovery plan creation and annual testing, infrastructure review)"
+  },
+  "review_protocol": "Internet speed and reliability monitored monthly. Backup integrity verified quarterly by testing restoration of one data set. Network security checklist completed quarterly. Router firmware checked for updates every 3 months. Disaster recovery plan reviewed and tabletop-tested annually. IT infrastructure fully audited annually.",
+  "meta": {
+    "summary_for_humans": "This block ensures the cafe has reliable, secure IT infrastructure with separated networks, automated data backup, offline payment capability, and a disaster recovery plan. It prevents the operational paralysis that occurs when internet fails, data is lost, or systems go down during trading.",
+    "implementation_risks": [
+      "Network separation may require purchasing a new router or access point if current hardware does not support it",
+      "Data backup is often neglected because there is no immediate visible benefit until data loss actually occurs",
+      "Disaster recovery planning feels abstract until a real incident occurs, making it difficult to prioritise"
+    ],
+    "notes_for_engine": "Activate when signals indicate connectivity issues, card payment failures, unsecured Wi-Fi configuration, or absence of data backup. This is a foundational infrastructure block that supports all other D10 technology blocks.",
+    "tags": ["IT_infrastructure", "Wi-Fi", "backup", "disaster_recovery", "network_security", "connectivity", "business_continuity", "resilience"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

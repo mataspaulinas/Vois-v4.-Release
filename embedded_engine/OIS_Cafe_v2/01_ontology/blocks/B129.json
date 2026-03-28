@@ -1,0 +1,157 @@
+{
+  "block_id": "B129",
+  "name": "Delivery-Only Menu Engineering",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Designs a delivery-specific menu that is engineered for profitability within the commission-heavy delivery platform model. Rather than simply listing the dine-in menu on delivery apps, this block creates a curated delivery offering where every item has been assessed for margin viability, travel durability, and operational efficiency.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a delivery menu that is distinct from the dine-in menu, optimised for items that travel well and maintain margin after commission",
+      "Price delivery menu items to recover or partially offset platform commission without deterring customers",
+      "Engineer delivery bundles and meal deals that increase average order value and improve per-order profitability",
+      "Remove or reformulate items that are loss-makers on delivery or arrive in poor condition",
+      "Reduce kitchen complexity during delivery peaks by limiting the delivery menu to operationally efficient items"
+    ],
+    "secondary_objectives": [
+      "Develop delivery-exclusive items that cannot be compared to dine-in pricing, supporting higher price points",
+      "Design packaging requirements into the menu selection so that every delivery item has appropriate, cost-effective packaging",
+      "Improve delivery review scores by only offering items that genuinely work for delivery",
+      "Create a menu architecture on delivery platforms that guides customers toward higher-margin items"
+    ]
+  },
+  "why_this_matters": "Most cafes make the fundamental mistake of uploading their entire dine-in menu onto delivery platforms without modification. This creates multiple problems. First, many items do not travel well — a carefully plated eggs Benedict becomes a soggy mess after 20 minutes in a delivery bag, generating poor reviews and refund requests. Second, items that are marginally profitable in-house become loss-makers when 25-35% commission is deducted. A 4.50 pound flat white with a 30% food cost leaves 3.15 pounds in-house but only 1.80 pounds after a 30% delivery commission — barely covering the cup, lid, and labour to make it. Third, the full dine-in menu creates unnecessary kitchen complexity during delivery-heavy periods, slowing both delivery and dine-in service. Smart delivery operators design a separate delivery menu from the ground up. This menu features items with higher inherent margins, items that travel well and arrive looking appetising, items that can be prepared quickly and consistently, and items that are packaged cost-effectively. Pricing is typically 10-20% higher than dine-in to offset commission — and customer research consistently shows that delivery customers expect and accept higher prices because they are paying for convenience. The best delivery menus also include bundles and meal deals that increase average order value from 12-15 pounds to 18-22 pounds per order. Since many delivery costs are fixed per order (packaging, labour time, commission minimum), increasing order value dramatically improves per-order profitability.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Review your current delivery menu. List every item currently available on delivery platforms and, using the analysis from B128, mark each item as Profitable (margin above 10% after all delivery costs), Marginal (margin 0-10%), or Loss-Making (negative margin). Separately assess each item's delivery suitability: does it travel well, does it arrive looking good, does it require expensive packaging, and does it generate complaints or refund requests? Items that are both loss-making and poor travellers should be removed from the delivery menu immediately. Week 2: Design a streamlined delivery menu using only items that are both profitable and delivery-suitable. Adjust pricing upward by 10-15% compared to dine-in — most delivery platforms allow different pricing for delivery versus collection. Create two or three bundle deals (e.g., coffee plus pastry, sandwich plus drink plus snack) at price points that increase average order value while maintaining margin. Review and update the delivery menu on each platform, removing poor performers and adding bundles.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop delivery-exclusive items that cannot be directly compared to your dine-in prices. These might include branded meal boxes, signature bundles, or items available only for delivery. These exclusive items allow you to set delivery-appropriate prices without customers feeling overcharged compared to dine-in. Engineer items specifically for delivery durability: wraps travel better than open sandwiches, grain bowls travel better than plated salads, and cold brew travels better than hot pour-over. Work with packaging suppliers to find the right packaging for each delivery item — packaging that maintains food quality and temperature while being cost-effective and environmentally responsible. Optimise menu positioning on the delivery platforms: featured images, item descriptions, and menu category order all influence what customers select. Promote higher-margin items with professional photography and compelling descriptions. Test menu changes systematically — modify one element at a time (pricing, menu composition, bundles) and measure the impact on order volume, average order value, and overall delivery profitability over a 2-4 week period.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The delivery menu should be a living document, reviewed quarterly against profitability data. Track delivery customer ratings and refund rates by item to identify ongoing quality issues. Develop seasonal delivery menus that reflect ingredient availability and customer preferences — warm soups and stews in winter, cold salads and iced drinks in summer. Monitor competitor delivery menus and pricing on the same platforms to ensure your offering remains competitive and well-positioned. Consider limited-time delivery specials that create urgency and drive trial. Use platform analytics to understand customer ordering patterns: when do they order, what do they search for, what do they add to basket but not purchase? Use these insights to refine the menu continuously. Integrate delivery menu planning with overall menu engineering (B056) to ensure consistency in brand quality while optimising for channel-specific requirements."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Review current delivery menu and categorise every item as Profitable, Marginal, or Loss-Making",
+        "Assess each item's delivery suitability: travel quality, packaging needs, complaint rate",
+        "Remove items that are both loss-making and poor travellers",
+        "Adjust delivery pricing upward by 10-15% compared to dine-in",
+        "Create two or three bundle deals to increase average order value",
+        "Update delivery menus on all platforms with the streamlined offering"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop delivery-exclusive items that support higher price points without direct dine-in comparison",
+        "Engineer menu items specifically for delivery durability and presentation on arrival",
+        "Work with packaging suppliers to optimise cost and quality for each delivery item",
+        "Optimise menu positioning, photography, and descriptions on delivery platforms",
+        "Test menu changes systematically over 2-4 week periods and measure impact",
+        "Track delivery refund rates and customer ratings by menu item"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Review delivery menu profitability quarterly and adjust based on data",
+        "Develop seasonal delivery menus reflecting ingredient availability and customer preferences",
+        "Monitor competitor delivery menus and pricing on the same platforms",
+        "Use platform analytics to understand customer ordering patterns and optimise accordingly",
+        "Integrate delivery menu planning with overall menu engineering processes",
+        "Test limited-time delivery specials to drive trial and measure customer response"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Delivery Menu Profitability Assessment (item-by-item analysis)",
+    "Streamlined Delivery Menu with pricing strategy",
+    "Bundle and Meal Deal Design Sheet",
+    "Delivery Item Specification Cards (including packaging requirements)",
+    "Quarterly Delivery Menu Review Template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T129-01",
+        "tool_name": "Delivery Menu Item Assessment Matrix",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "A matrix assessing every potential delivery menu item across four dimensions: margin after commission, travel durability, packaging cost, and customer satisfaction. Items are scored and ranked to determine inclusion on the delivery menu."
+      },
+      {
+        "tool_id": "T129-02",
+        "tool_name": "Delivery Bundle Builder",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "A worksheet for designing delivery bundles and meal deals, calculating the combined margin, packaging requirements, and target price point that increases average order value while maintaining profitability."
+      },
+      {
+        "tool_id": "T129-03",
+        "tool_name": "Delivery Item Specification Card",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "A card for each delivery menu item specifying preparation method, packaging type, sealing instructions, maximum hold time, and any modifications needed versus the dine-in version to ensure delivery quality."
+      },
+      {
+        "tool_id": "T129-04",
+        "tool_name": "Quarterly Delivery Menu Review Template",
+        "level": "L3",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "A structured quarterly review examining each delivery menu item's sales volume, margin, customer rating, and refund rate. Includes prompts for seasonal adjustments, new item testing, and competitor monitoring."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The delivery menu is a carbon copy of the dine-in menu, including items that travel poorly and lose money after commission",
+    "Delivery pricing remains identical to dine-in despite the 25-35% commission burden, destroying margins",
+    "Bundle deals are designed for appeal rather than profitability, actually worsening margins through discounting",
+    "Menu changes are made reactively based on complaints rather than proactively based on profitability data"
+  ],
+  "kpis": [
+    "Every item on the delivery menu has a positive margin after all delivery costs",
+    "Average delivery order value increased by at least 15% through bundles and menu design",
+    "Delivery refund and complaint rate below 3% of orders",
+    "Delivery menu reviewed and updated at least quarterly based on profitability data"
+  ],
+  "dependencies": ["B056", "B128"],
+  "constraints": [
+    "Platform terms may restrict the degree of pricing differentiation between delivery and collection",
+    "Delivery menu changes require updating across all active platforms, which can be time-consuming",
+    "Customer expectations set by the dine-in experience must be managed when the delivery menu is different"
+  ],
+  "time_load": {
+    "L1": "6 hours (menu assessment, pricing adjustments, bundle design, platform updates)",
+    "L2": "8 hours (delivery-exclusive item development, packaging optimisation, platform positioning)",
+    "L3": "3 hours/quarter (quarterly menu review, competitor monitoring, analytics review)"
+  },
+  "review_protocol": "Quarterly delivery menu profitability review. Monthly check of delivery customer ratings and refund rates by item. Seasonal menu updates aligned with ingredient availability. Immediate review if delivery profitability drops below target or new competitors enter the market.",
+  "meta": {
+    "summary_for_humans": "This block creates a delivery-specific menu engineered for profitability within the commission-heavy delivery platform model. It removes loss-making items, adjusts pricing, develops bundles to increase order value, and ensures every delivery item travels well and arrives in good condition.",
+    "implementation_risks": [
+      "Reducing the delivery menu size may temporarily reduce order volume as regular delivery customers adjust",
+      "Price increases on delivery may meet initial resistance, though data shows delivery customers are generally less price-sensitive",
+      "Delivery-exclusive items require additional recipe development and testing investment"
+    ],
+    "notes_for_engine": "This block depends on B128 (Delivery Commission Analysis) for the profitability data and B056 (menu engineering) for recipe costing. Activate once B128 has been completed and delivery margins are understood. Particularly urgent when signals indicate high delivery volume but poor delivery margins, high refund rates, or customer complaints about delivery food quality.",
+    "tags": ["finance", "delivery", "menu", "engineering", "pricing", "bundles", "packaging", "profitability"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

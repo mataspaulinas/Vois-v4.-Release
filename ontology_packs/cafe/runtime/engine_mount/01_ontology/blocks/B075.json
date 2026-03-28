@@ -1,0 +1,167 @@
+{
+  "block_id": "B075",
+  "name": "Weekly Team Meeting Structure",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Establishes a structured weekly team meeting that goes beyond daily briefings to address operational review, problem-solving, training, and team development in a dedicated 30-to-45-minute session that keeps the team engaged and the business improving.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a consistent weekly meeting format with a clear agenda covering performance, operations, and people",
+      "Provide a forum for the team to contribute ideas, raise systemic issues, and participate in problem-solving",
+      "Review the previous week's performance against key metrics and set priorities for the week ahead",
+      "Allocate time for team training or skill development within the meeting structure",
+      "Build a culture of transparency where business performance and challenges are shared openly with the team"
+    ],
+    "secondary_objectives": [
+      "Reduce the reliance on ad-hoc corridor conversations for important decisions",
+      "Create meeting minutes that document decisions and actions for accountability",
+      "Develop team members' meeting participation and presentation skills"
+    ]
+  },
+  "why_this_matters": "Daily briefings handle the immediate — today's specials, today's staffing, today's priorities. But they cannot address the systemic — why did waste increase last week, how should we handle the new competitor opening nearby, what training does the team need for the new menu launch. Without a weekly meeting, these bigger questions either go unaddressed or are discussed in fragments between the owner and individual staff members, creating an inconsistent picture where some people know what is happening and others do not. A weekly team meeting provides the structured space for these conversations. It is the venue's operating rhythm — the heartbeat of the business. In well-run cafes, the weekly meeting is where problems are solved before they escalate, where good ideas are surfaced and trialled, where the team hears how the business is performing and what that means for them. The meeting is also a critical engagement tool. Gallup's extensive workplace research consistently shows that employees who feel their opinions count are significantly more engaged. A weekly meeting where the team is genuinely asked for input — not just lectured at — builds the sense of ownership and involvement that drives discretionary effort. For the owner or manager, the meeting provides a single, predictable forum for communicating important updates, reducing the need for multiple individual conversations that consume far more time in aggregate. It also creates accountability: when actions are agreed in the meeting and reviewed the following week, things get done.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Schedule a weekly team meeting at a consistent time — typically early morning before opening on a quieter day, or after closing. Choose a time when the maximum number of team members can attend. For the first meeting, keep it simple: 30 minutes with three sections. (1) Wins — what went well last week, celebrate specific achievements. (2) Challenges — what did not go well, what can we learn. (3) This week — key priorities, events, changes. Use a whiteboard or flip chart to capture key points visibly. End with a clear action list: who is doing what by when. Week 2: Refine the format based on what worked. Was 30 minutes enough? Did the team engage or was it a monologue? Add a fourth section: 'Your ideas' — ask the team for one suggestion to improve any aspect of the operation. Commit to trying at least one idea and reporting back the following week. This builds trust that the meeting is a genuine forum, not theatre.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a formal Weekly Meeting Agenda Template with timed sections: (1) Review of last week's actions (5 mins). (2) Performance snapshot — covers and revenue, waste, customer feedback highlights (5 mins). (3) Operational update — rota, stock, equipment, upcoming events (5 mins). (4) Training or development slot — a short skill session or discussion topic (10 mins). (5) Team input — ideas, concerns, suggestions (10 mins). (6) Actions and close (5 mins). Total: 40 minutes. Create a Meeting Minutes template capturing date, attendees, key discussion points, decisions made, and action items with owners and deadlines. Circulate minutes to all staff within 24 hours, including those who could not attend. Assign a meeting chair role that rotates between senior team members — this develops their facilitation skills and reduces the meeting feeling like a management broadcast. Establish a follow-up discipline: every meeting opens with a review of the previous week's action items, creating accountability.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Introduce a monthly 'deep dive' meeting that replaces one weekly meeting per month with a longer session (60-90 minutes) focused on a single strategic topic — menu development, customer experience improvement, financial performance, or team development planning. Invite the team to present on topics they are passionate about — a barista who attended a coffee event, a team member who visited a competitor with interesting ideas, a kitchen hand who has been experimenting with a new recipe. Track meeting effectiveness: are actions being completed, is attendance consistent, does the team find the meetings valuable? Survey quarterly. Share business performance data progressively — start with customer feedback and waste data, then introduce revenue and margin information as trust builds. Transparency about business performance helps the team understand the context for decisions and builds a sense of shared ownership."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Schedule a weekly team meeting at a consistent time on a quieter day",
+        "Run the first meeting with a simple three-section format: Wins, Challenges, This Week",
+        "Use a whiteboard or flip chart to capture key points visibly",
+        "End each meeting with a clear action list with owners and deadlines",
+        "Add a 'Your ideas' section from Week 2 and commit to trialling suggestions",
+        "Invite feedback on the format after the first two meetings",
+        "Ensure meeting notes reach team members who could not attend"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a formal Weekly Meeting Agenda Template with timed sections",
+        "Create a Meeting Minutes template with decisions and action items",
+        "Circulate minutes to all staff within 24 hours of each meeting",
+        "Introduce a rotating meeting chair role for senior team members",
+        "Establish a follow-up discipline reviewing previous week's actions at every meeting",
+        "Include a training or development slot in every meeting agenda",
+        "Link meeting content to daily briefing themes for consistency"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce a monthly deep-dive meeting on a single strategic topic",
+        "Invite team members to present on topics they are passionate about",
+        "Survey quarterly on meeting effectiveness and value",
+        "Share progressively detailed business performance data with the team",
+        "Track action completion rates from meeting minutes",
+        "Celebrate ideas from meetings that are implemented and make a difference"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Weekly Meeting Agenda Template (timed, six sections)",
+    "Meeting Minutes Template with actions and owners",
+    "Meeting Chair Rotation Guide",
+    "Monthly Deep-Dive Meeting format guide",
+    "Meeting Effectiveness Survey template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T075-01",
+        "tool_name": "Weekly Meeting Agenda Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Timed 40-minute agenda covering action review, performance snapshot, operational update, training slot, team input, and actions close. Printable A4 format with space for notes."
+      },
+      {
+        "tool_id": "T075-02",
+        "tool_name": "Meeting Minutes Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Shift Lead",
+        "description": "Structured minutes template capturing date, attendees, absentees, key discussion points, decisions made, action items with owners and deadlines, and next meeting date."
+      },
+      {
+        "tool_id": "T075-03",
+        "tool_name": "Meeting Chair Rotation Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Guide for team members rotating into the meeting chair role, covering preparation checklist, facilitation tips, time management, handling dominant voices, and encouraging quieter contributors."
+      },
+      {
+        "tool_id": "T075-04",
+        "tool_name": "Action Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Rolling tracker of all actions agreed in weekly meetings, with owner, deadline, status, and completion date. Reviewed at the start of each meeting to maintain accountability."
+      },
+      {
+        "tool_id": "T075-05",
+        "tool_name": "Meeting Effectiveness Survey",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Quarterly anonymous survey asking team members to rate the usefulness of weekly meetings, quality of information shared, opportunity to contribute, and suggestions for improvement."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Meetings are scheduled but frequently cancelled due to being too busy, destroying the operating rhythm",
+    "The meeting becomes a manager monologue with no team input, reducing engagement and missing valuable ideas",
+    "Actions are agreed but never followed up, making the meeting feel performative and pointless",
+    "Only some team members attend regularly, creating an information divide between those who were present and those who were not"
+  ],
+  "kpis": [
+    "Weekly meeting held on at least 90% of scheduled weeks per quarter",
+    "Average attendance above 75% of team members per meeting",
+    "Meeting minutes circulated within 24 hours of every meeting",
+    "At least 80% of actions completed by their agreed deadline",
+    "Team feedback on meeting value averaging 4 out of 5 or above quarterly"
+  ],
+  "dependencies": ["B074"],
+  "constraints": [
+    "Meeting time must be paid — scheduling meetings outside working hours without pay is not compliant with NMW regulations",
+    "The meeting requires a space away from the shop floor, which may be challenging in small venues",
+    "Team members who cannot attend must receive minutes and have a mechanism to contribute asynchronously"
+  ],
+  "time_load": {
+    "L1": "45 minutes/week (30-minute meeting plus preparation)",
+    "L2": "60 minutes/week (40-minute meeting plus preparation and minutes)",
+    "L3": "90 minutes/month additional (deep-dive meeting, surveys, analysis)"
+  },
+  "review_protocol": "Weekly: meeting held, minutes circulated, actions tracked. Monthly: review action completion rates and identify any overdue items. Quarterly: team survey on meeting effectiveness. Six-monthly: review meeting format against team feedback and adjust.",
+  "meta": {
+    "summary_for_humans": "This block creates a structured weekly team meeting covering performance review, operational updates, training, and team input in a 30-to-45-minute session that keeps the business improving and the team engaged.",
+    "implementation_risks": [
+      "Finding a time when most of the team can attend is challenging with variable shift patterns",
+      "The meeting can drift into complaint sessions without skilled facilitation",
+      "Over-formalising the meeting with excessive structure can make it feel corporate and inauthentic for small teams"
+    ],
+    "notes_for_engine": "Activate for venues with three or more staff. Builds on B074 daily briefings and feeds into B076 communication culture. Essential for venues with active improvement initiatives across multiple blocks.",
+    "tags": ["meeting", "weekly", "team", "agenda", "minutes", "actions", "communication", "engagement", "performance"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

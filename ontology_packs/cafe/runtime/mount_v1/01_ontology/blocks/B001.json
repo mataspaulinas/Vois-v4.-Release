@@ -1,0 +1,305 @@
+{
+  "block_id": "B001",
+  "name": "Daily Temperature Monitoring",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Ensures all refrigeration and freezer units are checked at least twice daily, with temperatures logged and any excursions flagged immediately. This block forms the backbone of cold chain compliance and is the single most inspected element during EHO visits.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish a twice-daily temperature checking routine for all refrigeration units",
+      "Create a documented log that satisfies SFBB and EHO inspection requirements",
+      "Define clear escalation thresholds so staff know exactly when a reading is unsafe",
+      "Ensure probe thermometers are calibrated and readings are accurate",
+      "Provide an auditable trail that demonstrates ongoing due diligence"
+    ],
+    "secondary_objectives": [
+      "Identify failing equipment early through trend analysis of temperature logs",
+      "Reduce food waste by catching temperature drift before stock is compromised",
+      "Build staff confidence in food safety fundamentals"
+    ]
+  },
+  "why_this_matters": "Temperature monitoring is the single most critical daily food safety task in any cafe. Under EU-retained Regulation (EC) 852/2004 and the Food Safety Act 1990, food businesses must demonstrate that potentially hazardous foods are stored at safe temperatures — below 8°C for chilled goods (with best practice at 5°C or below) and below -18°C for frozen items. The Food Standards Agency's Safer Food Better Business (SFBB) pack specifically requires documented temperature checks as part of the 4 Cs (Cleaning, Cooking, Chilling, Cross-contamination). When an Environmental Health Officer (EHO) visits, temperature logs are typically the first document requested. A cafe without consistent records risks a Food Hygiene Rating of 3 or below, which is publicly displayed on the Food Standards Agency website and at the premises entrance. In practical terms, a fridge running at 10°C rather than 5°C can allow Listeria monocytogenes to multiply rapidly in sandwich fillings, milk, and cream-based products — all staple cafe items. A single temperature excursion that goes undetected could result in customer illness, a local authority investigation, forced closure under a Hygiene Emergency Prohibition Notice, and devastating reputational damage. For a small independent cafe, one food poisoning incident linked to poor temperature control can mean the end of the business. Daily monitoring is not bureaucracy — it is the minimum standard of care.",
+  "block_design": {
+    "intervention_type": "bounded_operating_intervention",
+    "purpose": "Ensures all refrigeration and freezer units are checked at least twice daily, with temperatures logged and any excursions flagged immediately. This block forms the backbone of cold chain compliance and is the single most inspected element during EHO visits.",
+    "failure_modes_addressed": [
+      "FM001"
+    ],
+    "response_patterns_addressed": [
+      "RP001"
+    ],
+    "primary_execution_module": "M01",
+    "entry_conditions": [
+      "The venue stores chilled or frozen food daily.",
+      "Cold units need inspection-ready evidence of control.",
+      "Checks must happen at opening and mid-shift."
+    ],
+    "prerequisites": [
+      "A working probe thermometer is on site.",
+      "Cold units are named or identifiable.",
+      "Opening and afternoon ownership is assigned."
+    ],
+    "contraindications": [
+      "Do not use this block instead of B003 during a live excursion.",
+      "Do not run it with an uncalibrated probe.",
+      "Do not rely only on fridge displays when probe checks are required."
+    ],
+    "owner_role": "Manager with execution by opening and afternoon shift leads",
+    "effort_load": {
+      "setup": "3 hours",
+      "weekly": "20-30 minutes of review",
+      "monthly": "15-20 minutes for trend review"
+    },
+    "expected_time_to_effect": {
+      "first_visible_effect": "Within 1-3 days",
+      "stabilisation_window": "2-8 weeks"
+    },
+    "proof_of_completion": [
+      "Every cold unit appears on the daily log.",
+      "Two checks per day are completed and countersigned.",
+      "Calibration and trigger records are filed with the daily sheets."
+    ],
+    "proof_of_effectiveness": [
+      "Scheduled checks are completed on time.",
+      "Warm-unit drift is spotted before failure.",
+      "Inspection-ready records can be produced immediately."
+    ],
+    "successor_triggers": [
+      {
+        "trigger": "Recurring trigger events or unsafe readings show a live cold-chain failure.",
+        "next_block_id": "B003"
+      },
+      {
+        "trigger": "Stable daily data is ready for aggregated dashboard review.",
+        "next_block_id": "B004"
+      }
+    ],
+    "linked_tools": [
+      "T001-01",
+      "T001-02",
+      "T001-03",
+      "T001-04",
+      "T001-05"
+    ]
+  },
+  "implementation_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Daily checks are completed retrospectively instead of in real time.",
+        "what_can_go_wrong": "The block looks implemented on paper while unsafe storage conditions go unchecked.",
+        "early_signals": [
+          "A full day of entries appears in one sitting.",
+          "Missing checks are discovered only at close.",
+          "Borderline readings have no action notes."
+        ],
+        "prevention": [
+          "Tie checks to fixed shift moments.",
+          "Keep the log and probe at point of use.",
+          "Require same-day manager countersign."
+        ],
+        "mitigation": [
+          "Reset the routine immediately.",
+          "Increase spot-checking for two weeks.",
+          "Record gaps honestly instead of backfilling."
+        ],
+        "if_occurs_next_signals": [
+          "false_compliance_risk",
+          "evidence_integrity_risk"
+        ],
+        "possible_successor_blocks": [
+          "B004"
+        ]
+      },
+      {
+        "warning": "Probe accuracy drifts but staff continue to trust the readings.",
+        "what_can_go_wrong": "Unsafe temperatures may be masked by bad instrumentation.",
+        "early_signals": [
+          "Devices disagree visibly.",
+          "One unit swings implausibly between normal and extreme values.",
+          "Calibration checks are late or skipped."
+        ],
+        "prevention": [
+          "Run monthly calibration with T001-02.",
+          "Keep a back-up probe.",
+          "Treat dropped devices as untrusted until retested."
+        ],
+        "mitigation": [
+          "Remove the failed probe from service.",
+          "Use the back-up and re-check affected units.",
+          "Review recent readings if drift may have hidden an issue."
+        ],
+        "if_occurs_next_signals": [
+          "instrument_reliability_risk",
+          "hidden_temperature_noncompliance"
+        ],
+        "possible_successor_blocks": [
+          "B003"
+        ]
+      }
+    ]
+  },
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Purchase a calibrated digital probe thermometer (budget £15-30) and print a simple temperature log sheet with columns for date, time, unit name, temperature reading, initials, and corrective action. Identify every refrigeration unit in the cafe — typically the main under-counter fridge, display fridge, milk fridge behind the bar, and any chest or upright freezer. Label each unit clearly with a name tag (e.g., 'Fridge 1 — Sandwich Prep', 'Fridge 2 — Milk Station'). On Day 1, the cafe manager should demonstrate the checking procedure to all staff: open the unit, place the probe thermometer in the warmest part (usually the front or top shelf), wait 30 seconds for a stable reading, and record it on the log. Checks must happen at opening and again mid-afternoon. If any reading exceeds 8°C for fridges or -15°C for freezers, the staff member must immediately inform the manager and follow the excursion response in B003. Week 2: The manager reviews every log entry daily, countersigning the sheet. Any gaps in logging are addressed the same day — not the next morning. By the end of Week 2, every staff member should have completed at least two supervised temperature checks and the log should have 14 consecutive days of complete entries. Post the log sheet on a clipboard near the main fridge so it is visible and accessible. If the cafe has a digital fridge with a built-in display, cross-check the display reading against the probe thermometer at least once per week to detect sensor drift.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Move from paper logs to a structured tracking system. Create a Temperature Monitoring SOP document that covers: which units to check, acceptable ranges, probe calibration procedure (ice-water test monthly), escalation steps, and who is responsible on each shift. Train all staff to Level 2 Food Hygiene standard if not already certified — this is a legal requirement for food handlers and temperature monitoring is a core competency tested. Introduce a weekly calibration check: fill a cup with crushed ice and water, insert the probe, and confirm it reads between -1°C and 1°C. Record the calibration on the log. Begin tracking temperature trends — if Fridge 2 consistently reads 6-7°C while others read 3-4°C, schedule a maintenance inspection before it fails. Set up a corrective action log linked to the main temperature log: when an excursion is detected, record what happened, what was done, what food was affected, and whether any stock was discarded. This corrective action log is critical evidence for EHO visits. Establish a monthly review meeting (15 minutes) where the manager reviews all temperature logs, identifies any recurring issues, and updates the SOP if needed. By Week 8, the cafe should have a complete, auditable temperature monitoring system with SOP, training records, calibration logs, corrective action records, and at least 6 weeks of continuous data.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Temperature monitoring should now be an automatic habit, not a chore. Introduce a visual dashboard near the staff area showing the current week's compliance rate (target: 100% of checks completed on time). Celebrate streaks — 30 consecutive days with no missed checks earns team recognition. Conduct quarterly internal audits where the manager or owner spot-checks logs, verifies probe calibration, and tests staff knowledge by asking them to explain excursion procedures. Consider investing in wireless temperature monitoring sensors (e.g., Therma, Clever Logger) that send alerts to a phone when temperatures drift — this is especially valuable overnight when the cafe is closed. Share anonymised temperature trend data with the team monthly so they understand how their diligence protects the business. Integrate temperature monitoring into the daily opening checklist so it cannot be forgotten. Review and update the SOP annually or whenever equipment changes."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Purchase a calibrated digital probe thermometer and backup batteries",
+        "Print temperature log sheets and attach to clipboards near each fridge/freezer area",
+        "Label every refrigeration unit with a clear name and acceptable temperature range",
+        "Demonstrate the checking procedure to all staff during a team briefing",
+        "Assign temperature checking to the opening and afternoon shift leads",
+        "Begin twice-daily logging from Day 1 with manager countersigning daily",
+        "Post a simple excursion response card (what to do if temp is too high) on each fridge"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Issue the Temperature Monitoring SOP & Team Sign-Off using T001-05 with a completed venue unit register",
+        "Run monthly probe checks and replacements through T001-02",
+        "Open T001-03 for every true temperature trigger and recurring warning trend",
+        "Review daily sheets for gaps, late entries, and repeated warm units before filing",
+        "Use T001-04 in the monthly management review to spot drift before equipment fails",
+        "Link repeat trigger events into maintenance, training, or B003 escalation as needed",
+        "Retain all temperature records together in the SFBB or food safety compliance file"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Publish a visible monthly compliance score from T001-04 so the team sees whether the standard is holding",
+        "Spot recurring unit drift and approve repair or replacement before a full excursion occurs",
+        "Use monthly dashboard trends to test whether opening and afternoon checks are equally reliable",
+        "Include temperature monitoring performance in quarterly internal food safety audits",
+        "Review and refresh the SOP whenever equipment, check windows, or inspection expectations change"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Daily Temperature Log & Check Sheet",
+    "Probe Calibration Record & Accuracy Tracker",
+    "Temperature Excursion Trigger Log",
+    "Monthly Temperature Compliance Dashboard",
+    "Temperature Monitoring SOP & Team Sign-Off"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T001-01",
+        "tool_name": "Daily Temperature Log & Check Sheet",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "Printable twice-daily log with clear safe ranges, unit-by-unit readings, action notes, and manager sign-off for the daily cold-chain check."
+      },
+      {
+        "tool_id": "T001-02",
+        "tool_name": "Probe Calibration Record & Accuracy Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Monthly ice-water calibration record that tracks probe variance, failures, replacement actions, and next due date so daily readings stay trustworthy."
+      },
+      {
+        "tool_id": "T001-03",
+        "tool_name": "Temperature Excursion Trigger Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Immediate corrective record opened when a unit breaches safe limits or shows repeated warning drift, capturing the first response and whether B003 escalation was triggered."
+      },
+      {
+        "tool_id": "T001-04",
+        "tool_name": "Monthly Temperature Compliance Dashboard",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly scorecard showing completion rate, repeat unit drift, calibration compliance, and corrective-action patterns for management review."
+      },
+      {
+        "tool_id": "T001-05",
+        "tool_name": "Temperature Monitoring SOP & Team Sign-Off",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Venue-specific SOP with unit register, checking method, trigger thresholds, record-retention rules, and staff briefing sign-off."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Logs are completed retrospectively or fabricated, giving false assurance while actual temperatures go unchecked",
+    "Probe thermometer drifts out of calibration, producing inaccurate readings that mask dangerous temperatures",
+    "Staff treat temperature checking as a tick-box exercise without understanding why it matters or what to do when readings are abnormal",
+    "Manager fails to review logs regularly, allowing gaps and excursions to accumulate unnoticed until an EHO visit"
+  ],
+  "kpis": [
+    "100% of scheduled temperature checks completed on time (zero missed checks per week)",
+    "Zero temperature excursions lasting more than 2 hours without corrective action",
+    "Probe calibration completed monthly with variance within ±1°C",
+    "Food Hygiene Rating maintained at 5 (Very Good) at every EHO inspection"
+  ],
+  "dependencies": [
+    "B002",
+    "B003"
+  ],
+  "constraints": [
+    "Requires at least one calibrated probe thermometer available on-site at all times",
+    "All food-handling staff must hold or be working towards Level 2 Food Hygiene certification",
+    "Log sheets must be retained for a minimum of 12 months for EHO inspection purposes"
+  ],
+  "time_load": {
+    "L1": "3 hours (initial setup, training, first week supervision)",
+    "L2": "6 hours (SOP drafting, calibration setup, staff training sessions)",
+    "L3": "2 hours/month (reviews, audits, dashboard updates)"
+  },
+  "review_protocol": "Daily review of log entries by shift manager. Weekly trend check by manager. Monthly formal review in management meeting. Quarterly internal audit of entire temperature monitoring system. Full SOP review annually or when equipment changes.",
+  "meta": {
+    "summary_for_humans": "This block establishes twice-daily temperature checks for all fridges and freezers, with proper logging, probe calibration, and escalation procedures. It is the most fundamental food safety task and the first thing an EHO inspector will ask to see.",
+    "implementation_risks": [
+      "Staff may see temperature logging as tedious and skip checks during busy periods",
+      "Paper logs can be lost or damaged — consider digitising early",
+      "Equipment failure outside operating hours can go undetected without wireless monitoring"
+    ],
+    "notes_for_engine": "Activate this block immediately for any new cafe onboarding. Flag as urgent if signals indicate missing or incomplete temperature logs, failed EHO inspection, or Food Hygiene Rating below 4.",
+    "tags": [
+      "food_safety",
+      "temperature",
+      "SFBB",
+      "EHO",
+      "compliance",
+      "daily_check",
+      "refrigeration",
+      "HACCP"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "independent_cafe",
+      "specialty_coffee",
+      "chain_cafe",
+      "franchise_cafe",
+      "drive_through",
+      "kiosk",
+      "coffee_van",
+      "bakery_cafe"
+    ],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "sig_checker_or_qc_absent",
+  "name": "Checker or QC step is absent",
+  "description": "No one is visibly checking quality, completeness, or readiness before work reaches the guest or the next role.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: quality-check absence expressed through restaurant live execution",
+  "updated_at": "2026-03-15T15:59:27.059635Z",
+  "domain": "service_quality",
+  "module": "standard_execution",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "no final check before handoff or send",
+    "quality escapes because nobody checks",
+    "readiness or completeness left to chance"
+  ],
+  "source_types": [
+    "service observation",
+    "quality observation",
+    "manager notes"
+  ],
+  "temporal_behavior": "recurring",
+  "likely_co_signals": [
+    "sig_output_quality_inconsistent",
+    "sig_standard_steps_skipped"
+  ],
+  "adapter_aliases": [
+    "no QC step",
+    "nobody checks before send"
+  ]
+}

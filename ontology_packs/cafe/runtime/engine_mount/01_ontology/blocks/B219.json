@@ -1,0 +1,20 @@
+{
+  "block_id": "B219",
+  "name": "Alcohol Licensing & Compliance",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M16: Regulatory Governance & Risk Management",
+  "state": "enriched",
+  "purpose": "Manages alcohol licensing requirements including operating hour restrictions, product type limitations, distance regulations, age verification procedures, and record-keeping obligations for cafes that serve alcoholic beverages.",
+  "tools": [
+    "T219-01",
+    "T219-02",
+    "T219-03"
+  ],
+  "signals": [
+    "S215"
+  ],
+  "failure_modes": [
+    "FM118"
+  ]
+}

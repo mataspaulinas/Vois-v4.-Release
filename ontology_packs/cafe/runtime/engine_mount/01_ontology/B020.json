@@ -1,0 +1,165 @@
+{
+  "block_id": "B020",
+  "name": "Food Safety Excellence Programme",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Elevates the cafe's food safety from compliance to best-in-class excellence by integrating hygiene culture, comprehensive documentation, and continuous training into a unified programme that positions food safety as a genuine competitive advantage and point of pride.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Integrate all food safety blocks (B001-B019) into a cohesive, continuously improving excellence programme",
+      "Achieve and maintain a Food Hygiene Rating of 5 with maximum confidence in management scores",
+      "Position food safety excellence as a visible part of the cafe's brand and customer promise",
+      "Establish a cycle of plan-do-check-act that drives measurable year-on-year improvement",
+      "Pursue external recognition or accreditation that validates the cafe's food safety standards"
+    ],
+    "secondary_objectives": [
+      "Differentiate the cafe from competitors through demonstrably superior food safety practices",
+      "Reduce insurance premiums through evidence of robust food safety management",
+      "Create a food safety legacy that sustains standards regardless of individual staff changes"
+    ]
+  },
+  "why_this_matters": "Most cafes aim for compliance — doing enough to pass an EHO inspection and maintain an acceptable Food Hygiene Rating. The Food Safety Excellence Programme goes further, positioning food safety as a genuine competitive advantage and a source of team pride. In a market where consumers are increasingly conscious of food safety (driven by high-profile allergen deaths, social media amplification of hygiene failures, and the ability to check ratings online before visiting), a cafe that visibly and genuinely excels at food safety builds stronger customer trust, loyalty, and advocacy. The programme brings together the individual blocks of Module M01 — from temperature monitoring and allergen management to cleaning, training, and self-assessment — into an integrated system with clear ownership, regular review, and continuous improvement. It moves the cafe from a reactive posture (fixing problems after they are found) to a proactive one (preventing problems before they arise and continuously raising standards). Excellence is not about perfection on paper; it is about a team that genuinely cares about food safety, understands why it matters, and takes collective responsibility for maintaining the highest standards every day. The programme also builds resilience — when key staff leave, the systems, documentation, and culture ensure that standards are maintained. This is particularly valuable for independent cafes where the departure of one knowledgeable person can leave a dangerous gap in food safety competence.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Conduct a comprehensive baseline assessment across all food safety blocks. For each block (B001 through B019), rate the current implementation status: Not Started, In Progress, Implemented, or Embedded. This gives a clear picture of the cafe's current food safety maturity. Create a Food Safety Excellence Roadmap — a prioritised plan showing which blocks need attention first, what the implementation order should be, and target completion dates. The roadmap should be realistic: trying to implement everything simultaneously is counterproductive. Focus first on any Red-rated gaps from the allergen prevention assessment (B008) and any areas that would cause an immediate EHO finding. Week 2: Hold a team meeting to launch the Food Safety Excellence Programme. Share the vision: 'We are not just aiming to comply with food safety rules — we are aiming to be the best cafe in the area for food safety. This protects our customers, protects our business, and is something we can all be proud of.' Share the baseline assessment results (in summary form) and the roadmap. Ask for team input: what do they think needs to be improved first? What resources do they need? Create a visible Food Safety Excellence tracker in the staff area showing progress against the roadmap.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Appoint a Food Safety Lead (typically the manager) who has overall accountability for the excellence programme. This person reviews the roadmap weekly, ensures blocks are being implemented on schedule, and reports progress to the owner. Establish a monthly Food Safety Review meeting (30 minutes) with a standing agenda: roadmap progress, recent audit/self-assessment results, any incidents or near-misses, training updates, and one improvement idea from the team. Create a Food Safety Performance Dashboard that consolidates key metrics from across all blocks: temperature compliance rate, cleaning audit scores, training completion percentage, CCP monitoring compliance, allergen audit results, and overall predicted FHRS rating. Review this dashboard monthly. Develop a continuous improvement log where any team member can suggest food safety improvements. Review suggestions monthly and implement the best ones. By Week 8, the programme should have a clear governance structure (lead, reviews, dashboard) and demonstrable progress against the roadmap.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The excellence programme should be self-sustaining — not dependent on any single person's attention but embedded in how the cafe operates. Pursue external validation: apply for the Chartered Institute of Environmental Health's 'Scores on the Doors' Excellence Award, Allergy UK accreditation, or any local food safety recognition programmes. These provide independent confirmation that the cafe's standards are genuinely excellent. Conduct an annual strategic food safety review with the owner: are the systems working? Are standards improving year-on-year? What investment is needed? What regulatory changes are coming? Share the cafe's Food Hygiene Rating and food safety commitment visibly with customers — on the website, social media, and in the cafe itself. Make it a selling point, not just a compliance badge. Celebrate milestones: one year without a food safety incident, sustained FHRS 5 rating, 100% training completion. These celebrations reinforce the culture and remind the team that their daily diligence matters."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Conduct a comprehensive baseline assessment across all food safety blocks (B001-B019)",
+        "Create a Food Safety Excellence Roadmap with priorities and target dates",
+        "Hold a team launch meeting to share the vision and baseline results",
+        "Address any immediate Red-rated gaps or areas that would fail an EHO inspection",
+        "Create a visible Food Safety Excellence progress tracker in the staff area",
+        "Ask the team for input on priorities and resource needs",
+        "Begin implementing the highest-priority blocks immediately"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Appoint a Food Safety Lead with overall programme accountability",
+        "Establish a monthly Food Safety Review meeting with standing agenda",
+        "Create a Food Safety Performance Dashboard consolidating metrics from all blocks",
+        "Develop a continuous improvement log for team suggestions",
+        "Review roadmap progress weekly and adjust timelines as needed",
+        "Ensure all blocks are progressing according to the roadmap",
+        "Document programme governance, roles, and review processes"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Pursue external food safety recognition or accreditation",
+        "Conduct annual strategic food safety review with the owner",
+        "Share food safety achievements visibly with customers",
+        "Celebrate milestones: incident-free periods, sustained ratings, training completion",
+        "Review and refresh the programme annually to maintain momentum"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Baseline Food Safety Assessment (all blocks rated)",
+    "Food Safety Excellence Roadmap",
+    "Monthly Food Safety Performance Dashboard",
+    "Continuous Improvement Log",
+    "Annual Strategic Food Safety Review document"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T020-01",
+        "tool_name": "Food Safety Block Maturity Assessment",
+        "level": "L1",
+        "format": "assessment",
+        "owner_role": "Owner",
+        "description": "Comprehensive assessment tool rating the implementation status of every food safety block (B001-B019) on a four-point scale: Not Started, In Progress, Implemented, Embedded."
+      },
+      {
+        "tool_id": "T020-02",
+        "tool_name": "Food Safety Excellence Roadmap Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Prioritised roadmap template showing which blocks to implement in what order, target dates, dependencies, resource requirements, and progress tracking."
+      },
+      {
+        "tool_id": "T020-03",
+        "tool_name": "Monthly Food Safety Performance Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Consolidated dashboard pulling key metrics from all food safety blocks: temperature compliance, cleaning scores, training rates, CCP monitoring, allergen audit results, and predicted FHRS rating."
+      },
+      {
+        "tool_id": "T020-04",
+        "tool_name": "Continuous Improvement Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Log where any team member can submit food safety improvement suggestions, with fields for idea, submitter, review date, decision, implementation status, and impact assessment."
+      },
+      {
+        "tool_id": "T020-05",
+        "tool_name": "Annual Strategic Food Safety Review Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Template for the annual strategic review covering: year in review (achievements, incidents, rating history), current maturity, next year priorities, investment needs, and regulatory outlook."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The programme launches with enthusiasm but loses momentum after a few weeks without sustained leadership attention",
+    "Too many blocks are tackled simultaneously, overwhelming the team and producing superficial implementation",
+    "The programme becomes management-heavy with excessive meetings and paperwork, creating resentment rather than engagement",
+    "External accreditation is pursued for marketing purposes without genuine commitment to the underlying standards"
+  ],
+  "kpis": [
+    "All food safety blocks (B001-B019) rated as Implemented or Embedded within 12 months of programme launch",
+    "Food Hygiene Rating sustained at 5 with maximum confidence in management scores",
+    "Monthly Food Safety Review meetings held on schedule with actions tracked to completion",
+    "At least one external food safety recognition achieved within 18 months of programme launch"
+  ],
+  "dependencies": ["B012", "B016", "B019"],
+  "constraints": [
+    "Requires all prerequisite blocks (B001-B019) to be at least In Progress before the excellence programme has meaning",
+    "The Food Safety Lead must have sufficient authority and time allocation to drive the programme",
+    "Programme must be proportionate to the cafe's size — avoid over-engineering for a small operation"
+  ],
+  "time_load": {
+    "L1": "6 hours (baseline assessment, roadmap creation, team launch meeting)",
+    "L2": "4 hours/month (reviews, dashboard updates, improvement log management)",
+    "L3": "8 hours/year (annual strategic review, accreditation applications, milestone planning)"
+  },
+  "review_protocol": "Weekly roadmap progress check by Food Safety Lead. Monthly Food Safety Review meeting with dashboard review. Quarterly self-assessment (B017) integrated into the programme. Annual strategic food safety review with the owner.",
+  "meta": {
+    "summary_for_humans": "This block is the capstone of the food safety module — it integrates all other food safety blocks into a unified excellence programme with governance, performance tracking, continuous improvement, and external recognition. It moves the cafe from compliance to genuine food safety leadership.",
+    "implementation_risks": [
+      "Scope is ambitious — the roadmap must be realistic and sequenced appropriately",
+      "Small cafes may find the governance structure excessive — scale down but maintain the principles",
+      "Excellence requires sustained investment of time and attention, not just a launch event"
+    ],
+    "notes_for_engine": "Activate once B012, B016, and B019 are in place. This is the integration and elevation block for the entire food safety module. Flag as a development opportunity if the cafe has achieved basic compliance and is ready to move to the next level.",
+    "tags": ["food_safety", "excellence", "programme", "continuous_improvement", "FHRS", "culture", "accreditation", "strategy"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

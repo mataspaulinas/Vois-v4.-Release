@@ -1,0 +1,167 @@
+{
+  "block_id": "B088",
+  "name": "Peak Performance Analysis",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Establishes a structured approach to measuring, analysing, and improving peak period performance using data from transactions, service times, waste, customer feedback, and team observations to drive continuous workflow optimisation.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define the key performance metrics that measure peak period effectiveness: throughput, service time, quality, and customer satisfaction",
+      "Create a data collection system that captures peak performance metrics without disrupting service",
+      "Analyse peak data to identify patterns, trends, and root causes of underperformance",
+      "Translate analysis into specific, actionable improvements to staffing, workflow, and preparation",
+      "Track improvement over time to demonstrate the impact of operational investments"
+    ],
+    "secondary_objectives": [
+      "Identify the maximum capacity of the current setup to inform growth planning",
+      "Provide evidence for staffing decisions during peak periods",
+      "Build a culture of data-informed decision-making in daily operations"
+    ]
+  },
+  "why_this_matters": "Most cafe owners rely on instinct to assess how the morning rush went: 'It felt busy,' 'We seemed short-staffed,' 'I think we lost a few customers from the queue.' These impressions are valuable but insufficient. Without data, it is impossible to know whether this morning's rush was actually better or worse than last week, whether adding a third barista would pay for itself, or whether the new cup-marking system genuinely reduced errors. Peak performance analysis replaces instinct with evidence. By systematically measuring what happens during peak periods — how many drinks were made, how fast they were served, how many errors occurred, how much waste was generated, and how customers responded — the cafe gains the insight needed to make targeted improvements. The most powerful aspect of peak analysis is identifying the binding constraint — the single bottleneck that limits overall throughput. In one cafe it might be grinder speed, in another it might be till processing, in a third it might be the physical distance between the machine and the handoff point. Eliminating or reducing the binding constraint improves the entire system. Without analysis, owners often invest in the wrong improvement — adding a barista when the real bottleneck is the till, or upgrading the grinder when the real issue is the workflow layout. Peak analysis connects directly to the staffing model (B085), the rush workflow (B086), and the prep protocol (B087) by providing the feedback loop that tells the team whether their systems are working and where to focus next.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Define the four core peak performance metrics. (1) Throughput — total drinks and food items served during the peak period (from EPOS data). (2) Service speed — average time from order placement to handoff (requires manual timing of a sample). (3) Quality — number of drinks remade or complaints received during peak (tracked by the barista). (4) Queue — maximum queue length during peak and any observed walkaways (requires brief observation). Start collecting these four metrics daily during the morning rush. Use a simple tally sheet at the bar for remakes and a clipboard at the till for queue observations. Pull EPOS throughput data at the end of each rush. Week 2: After five days of data, review the numbers. Calculate the average for each metric and identify the day with the best and worst performance. Look for obvious patterns — was the worst day the one with only two staff, or the one where the grinder needed adjusting mid-rush? Discuss the findings with the team in the weekly meeting. Focus on one metric for improvement in the coming week — usually service speed or queue length is the most impactful starting point.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Peak Performance Dashboard that consolidates all four metrics on a single weekly view with trend lines. Add secondary metrics as data collection matures: revenue per labour hour during peak, average transaction value during peak versus non-peak, waste during peak (coffee, milk, food), and staff feedback on rush difficulty (a simple 1-5 rating from each team member after the rush). Conduct a binding constraint analysis: time each step of the drink production process (order taking, payment processing, espresso extraction, milk steaming, assembly, handoff) and identify which step takes the longest. This is the bottleneck. Then analyse what would be needed to speed up or eliminate that bottleneck — equipment upgrade, layout change, additional staff, or process simplification. Build a weekly peak performance review into the management routine: every Monday, the manager reviews last week's peak data, identifies one improvement action, implements it, and measures the impact the following week. This creates a continuous improvement cycle. Compare peak performance across different staffing configurations to identify the optimal team composition for each rush level.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Introduce advanced analytics: track performance by day of the week, by season, by weather condition, and by staffing configuration to build a predictive model of rush performance. Calculate the revenue impact of service speed improvements — if reducing average service time by 30 seconds prevents two customer walkaways per rush, what is the annual revenue gain? Use this to build the business case for operational investments. Benchmark peak performance against specialty coffee industry standards and other venues in the local area if data is available through owner networks. Share peak performance data with the team regularly — post the weekly dashboard in the staff area and celebrate improvements. Create a culture where the team views peak performance as a challenge to be mastered rather than a stressor to be endured. Conduct quarterly deep-dive analysis combining peak performance data with customer feedback, reviews, and financial data to identify systemic opportunities."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Define the four core peak performance metrics: throughput, service speed, quality, queue",
+        "Create a simple data collection system using tally sheets and EPOS reports",
+        "Collect peak metrics daily for the morning rush for one full week",
+        "Calculate averages and identify the best and worst performance days",
+        "Discuss findings with the team in the weekly meeting",
+        "Select one metric for focused improvement in the following week",
+        "Continue daily data collection to establish trend baselines"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a Peak Performance Dashboard consolidating all metrics on a weekly view",
+        "Add secondary metrics: revenue per labour hour, waste, staff difficulty rating",
+        "Conduct a binding constraint analysis timing each step of the drink production process",
+        "Build a weekly peak performance review into the management routine",
+        "Compare performance across different staffing configurations",
+        "Implement one improvement action per week and measure its impact",
+        "Create a log of all improvements attempted with measured outcomes"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce advanced analytics by day, season, weather, and staffing configuration",
+        "Calculate the revenue impact of service speed improvements",
+        "Benchmark peak performance against industry standards and local competitors",
+        "Share the weekly performance dashboard with the team in the staff area",
+        "Conduct quarterly deep-dive analysis combining operational and financial data",
+        "Celebrate peak performance improvements and team records publicly"
+      ],
+      "responsible": "Manager, Owner"
+    }
+  },
+  "deliverables": [
+    "Peak Performance Metrics Definition document",
+    "Daily Peak Data Collection Sheet (tally and observation template)",
+    "Weekly Peak Performance Dashboard",
+    "Binding Constraint Analysis template",
+    "Improvement Action Log with measured outcomes"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T088-01",
+        "tool_name": "Daily Peak Data Collection Sheet",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Shift Lead",
+        "description": "Simple A5 sheet for capturing four core peak metrics during or immediately after the morning rush: throughput count, service time samples, remakes tally, and maximum queue length with walkaway observations."
+      },
+      {
+        "tool_id": "T088-02",
+        "tool_name": "Weekly Peak Performance Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Consolidated weekly view of all peak metrics with trend lines, comparisons to previous weeks, staffing configuration notes, and space for improvement actions and their measured impact."
+      },
+      {
+        "tool_id": "T088-03",
+        "tool_name": "Binding Constraint Analysis Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Template for timing each step of the drink production process during peak service to identify the bottleneck step, with space for analysing potential solutions and their estimated impact."
+      },
+      {
+        "tool_id": "T088-04",
+        "tool_name": "Improvement Action Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Running log of all peak performance improvement actions attempted, with description, implementation date, measured before and after data, outcome assessment, and decision to continue or revert."
+      },
+      {
+        "tool_id": "T088-05",
+        "tool_name": "Quarterly Peak Performance Deep-Dive Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Comprehensive quarterly analysis combining peak operational data with financial metrics, customer feedback, and team satisfaction to identify systemic improvement opportunities and investment priorities."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Data is collected but never analysed, creating effort without insight",
+    "Analysis identifies the bottleneck but no action is taken to address it due to cost or inertia",
+    "Peak performance is measured but improvements are not sustained because the team reverts to old habits",
+    "The owner focuses on the wrong metric — tracking throughput when the real problem is quality degradation under pressure"
+  ],
+  "kpis": [
+    "Peak performance data collected on at least 90% of operating days",
+    "Weekly Peak Performance Dashboard reviewed every Monday",
+    "At least one improvement action implemented and measured per month",
+    "Average service time during peak improving quarter on quarter",
+    "Revenue per labour hour during peak periods improving or stable"
+  ],
+  "dependencies": ["B085", "B086", "B087"],
+  "constraints": [
+    "Data collection must not disrupt service — keep it simple and quick during peak periods",
+    "EPOS system must support hourly reporting for accurate throughput data",
+    "Service time measurement requires either manual timing or technology investment"
+  ],
+  "time_load": {
+    "L1": "2 hours (metric definition, collection setup, first week analysis)",
+    "L2": "4 hours (dashboard build, constraint analysis, weekly review setup)",
+    "L3": "3 hours/quarter (deep-dive analysis, benchmarking, strategic recommendations)"
+  },
+  "review_protocol": "Daily: peak data collected and filed. Weekly: Peak Performance Dashboard reviewed with one improvement action identified. Monthly: improvement action log reviewed for sustained impact. Quarterly: deep-dive analysis with comprehensive review of trends and investment priorities.",
+  "meta": {
+    "summary_for_humans": "This block creates a structured approach to measuring and improving peak period performance using data on throughput, service speed, quality, and queue management to drive continuous workflow optimisation.",
+    "implementation_risks": [
+      "Data collection during peak periods requires discipline without creating an additional burden on the team",
+      "Analysis without action is worse than no analysis — it creates cynicism about improvement efforts",
+      "Improvements must be measured over sufficient time to distinguish real gains from natural variation"
+    ],
+    "notes_for_engine": "Activate after B085, B086, and B087 are at least L1-implemented. This block provides the feedback loop that validates whether staffing, workflow, and preparation improvements are working.",
+    "tags": ["peak_performance", "analysis", "metrics", "throughput", "service_speed", "bottleneck", "continuous_improvement", "data", "KPI"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

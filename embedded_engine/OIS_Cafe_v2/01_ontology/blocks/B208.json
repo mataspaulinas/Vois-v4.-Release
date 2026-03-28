@@ -1,0 +1,167 @@
+{
+  "block_id": "B208",
+  "name": "Pop-Up & Market Operations",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M11: Expansion & Market Positioning",
+  "state": "enriched",
+  "purpose": "Provides the operational framework for extending the cafe's brand through pop-up events, farmers' markets, food markets, and temporary trading opportunities. This block covers site selection, equipment logistics, condensed menu planning, financial viability assessment, marketing integration, and the operational discipline required to deliver the cafe's standard of quality in a temporary setting.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Evaluate pop-up and market opportunities against clear financial viability criteria before committing",
+      "Develop a portable operations kit that enables consistent quality coffee service at temporary sites",
+      "Create condensed menus suited to pop-up speed, equipment constraints, and customer expectations",
+      "Integrate pop-up and market activity with the cafe's broader marketing and brand-building strategy",
+      "Build repeatable processes so pop-up operations can be deployed quickly without reinventing the wheel each time"
+    ],
+    "secondary_objectives": [
+      "Test new locations for potential permanent expansion through low-commitment pop-up trials",
+      "Reach new customer segments who may not visit the cafe's primary location",
+      "Generate additional revenue during periods when the main cafe is closed or quiet",
+      "Build community presence and brand recognition through visible participation in local events"
+    ]
+  },
+  "why_this_matters": "Pop-ups and markets are the most cost-effective way for a cafe to extend its brand reach without the commitment of a second permanent location. A market stall at a Saturday farmers' market reaches a different customer base — people who may live or work outside the cafe's catchment area but who, once impressed, will seek out the main site. A pop-up at a local festival, corporate campus, or community event puts the brand in front of hundreds or thousands of potential customers for a fraction of the cost of advertising. Beyond customer acquisition, pop-ups serve as low-risk testing grounds for new locations: before committing to a five-year lease in a new neighbourhood, trade there for a few Saturdays and measure demand. They also provide development opportunities for staff — running a pop-up requires initiative, problem-solving, and customer engagement in a way that a busy shift behind the bar does not. However, pop-ups and markets are not inherently profitable. Pitch fees vary from £30 for a small local market to £300+ for a prime festival spot. Equipment transport, staff time, preparation, and product costs must all be covered before any profit is made. A cafe that accepts every market invitation without financial assessment will find itself busy but unprofitable. Equally, quality standards must be maintained — a terrible espresso served from a shaky market stall damages the brand more than staying home. This block ensures that every pop-up opportunity is evaluated rigorously, planned thoroughly, executed to the cafe's standards, and reviewed honestly afterward.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Identify pop-up and market opportunities in the local area. Research: local farmers' markets (many have waiting lists, so enquire early), food markets, community fairs, seasonal events (Christmas markets, summer fetes), corporate campus events, and co-working space partnerships. For each, note: frequency (weekly, monthly, annual), pitch fee, expected footfall, timing, and logistics (power supply, water access, cover from weather). Create a Pop-Up Opportunity Tracker listing all identified opportunities with these details. Week 2: Assess readiness. What portable equipment does the cafe already own or could repurpose? At minimum, a pop-up coffee operation needs: a portable espresso machine (or a manual lever machine for lower-power settings), a grinder, a water supply (tank or mains access), milk fridge (cool box for short events), cups and lids, a card reader, and a table or counter. Evaluate whether existing equipment can be transported or if dedicated portable kit is needed. Calculate the breakeven point for a typical pop-up: pitch fee + staff cost + product cost + transport = minimum revenue needed. If a market stall costs £50 pitch fee, £80 in staff wages, and £30 in product costs, you need at least £160 in revenue (approximately 50-55 coffees at £3) just to break even.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Build a Pop-Up Operations Kit — a standardised, ready-to-deploy equipment set stored together so it can be loaded quickly. Include an equipment checklist, a condensed menu board, branded tablecloth or banner, price list, pre-printed signage, and a cash float. Create a Pop-Up Menu designed for speed and portability: espresso, flat white, latte, americano, hot chocolate, and 1-2 cold options. Food should be pre-packaged items that require no on-site preparation. Every item must be executable with the portable equipment and producible quickly — a pop-up queue that moves slowly drives customers away. Develop a Pop-Up Planning Checklist covering: opportunity assessment (financial viability, brand alignment, logistics), pre-event preparation (equipment check, stock ordering, staff scheduling), event-day operations (setup timing, service workflow, teardown), and post-event review (revenue, profit, customer count, lessons learned). Train at least two staff members beyond the owner on pop-up operations so the business does not depend on one person for every event. Establish a post-event review process: after every pop-up, record revenue, costs, profit or loss, customer feedback, and whether to repeat the opportunity.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Pop-ups should now be a strategic part of the business calendar, not ad hoc reactions to invitations. Build an annual pop-up calendar committing to regular events that have proven profitable, while allocating slots for trying new opportunities. Use pop-ups as a marketing channel: announce attendance on social media, distribute loyalty cards or discount codes that drive traffic back to the main cafe, and collect email addresses for the newsletter. Develop a distinctive pop-up brand presence — the stall should be instantly recognisable and as well-presented as the cafe itself. Consider branded uniforms, custom signage, and a consistent visual identity. Track the customer acquisition value of pop-ups: how many new cafe customers can be attributed to a market or event presence? Use unique discount codes to measure this. Explore higher-value pop-up opportunities: corporate office days (supplying coffee for a company's team day), wedding coffee bars, and private event catering. These command premium pricing and generate excellent brand exposure. Build relationships with market organisers and event planners who can offer priority booking and favourable pitch positions."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Research and list all local pop-up and market opportunities in the area",
+        "Create a Pop-Up Opportunity Tracker with fees, footfall, logistics, and timing",
+        "Assess existing portable equipment and identify any gaps for pop-up service",
+        "Calculate the financial breakeven point for a typical pop-up or market stall",
+        "Select one low-risk, low-cost market to trial as the first pop-up event",
+        "Design a condensed pop-up menu suited to portable equipment and fast service",
+        "Ensure adequate insurance coverage for off-site trading"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build a standardised Pop-Up Operations Kit with equipment, signage, and supplies stored together",
+        "Create a Pop-Up Planning Checklist covering assessment, preparation, execution, and review",
+        "Develop a branded pop-up presence: tablecloth, banner, menu board, and visual identity",
+        "Train at least two staff members on pop-up operations and equipment setup",
+        "Establish a post-event review process recording revenue, profit, and lessons learned",
+        "Create a Pop-Up Financial Log tracking costs and revenue per event",
+        "Build relationships with 2-3 regular market organisers"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Build an annual pop-up calendar committing to proven events and allocating trial slots",
+        "Use pop-ups as a customer acquisition channel with trackable discount codes",
+        "Develop higher-value pop-up opportunities: corporate days, weddings, private events",
+        "Track customer acquisition value from pop-ups using unique codes or survey data",
+        "Build priority booking relationships with event organisers",
+        "Integrate pop-up content into the cafe's social media and marketing strategy"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Pop-Up Opportunity Tracker",
+    "Pop-Up Operations Kit checklist",
+    "Pop-Up Planning Checklist (assess, prepare, execute, review)",
+    "Pop-Up Financial Log template",
+    "Post-Event Review template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T208-01",
+        "tool_name": "Pop-Up Opportunity Tracker",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Database of all identified pop-up and market opportunities: event name, frequency, pitch fee, expected footfall, logistics (power, water, cover), past performance, and priority ranking for the annual calendar."
+      },
+      {
+        "tool_id": "T208-02",
+        "tool_name": "Pop-Up Planning Checklist",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "End-to-end checklist covering opportunity assessment, pre-event preparation (equipment, stock, staff, transport), event-day setup and operations workflow, teardown, and post-event review triggers."
+      },
+      {
+        "tool_id": "T208-03",
+        "tool_name": "Pop-Up Operations Kit Inventory",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Complete inventory of portable equipment, supplies, and branding materials stored in the pop-up kit, with condition checks, replacement triggers, and pre-event verification checklist."
+      },
+      {
+        "tool_id": "T208-04",
+        "tool_name": "Pop-Up Financial Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Per-event financial tracker: pitch fee, staff cost, product cost, transport, revenue, profit or loss, drinks served, and revenue-per-hour. Aggregated annually to assess overall pop-up programme profitability."
+      },
+      {
+        "tool_id": "T208-05",
+        "tool_name": "Post-Event Review Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Structured review completed within 48 hours of each event: financial performance, operational lessons, customer feedback, equipment issues, and decision on whether to repeat the event."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Pop-ups are accepted without financial assessment, resulting in consistent losses that drain the main business",
+    "Equipment is not properly maintained between events, leading to machine failure at a critical moment during a paid engagement",
+    "Quality standards slip at pop-ups because portable equipment or time pressure leads to substandard drinks that damage the brand",
+    "Staff are unprepared for pop-up conditions (outdoor, weather-exposed, no facilities) and become demoralised or ineffective"
+  ],
+  "kpis": [
+    "Every pop-up event achieving at least breakeven, with 70% generating positive profit",
+    "Pop-up attendance driving measurable new customer acquisition (tracked via unique codes or surveys)",
+    "Pop-up equipment setup completed within 45 minutes at every event",
+    "Post-event review completed within 48 hours for 100% of events"
+  ],
+  "dependencies": ["B164", "B168"],
+  "constraints": [
+    "Portable espresso equipment may produce slightly different results than the cafe's main machine — recipes must be adapted and tested",
+    "Market and event bookings often require advance commitment, meaning cancellation costs if circumstances change",
+    "Pop-up trading may require additional insurance coverage and specific local authority consents"
+  ],
+  "time_load": {
+    "L1": "4 hours (opportunity research, equipment audit, breakeven calculation, first event selection)",
+    "L2": "8 hours (kit assembly, checklist creation, staff training, branding development)",
+    "L3": "3 hours/month (calendar management, financial tracking, relationship building, strategy review)"
+  },
+  "review_protocol": "Post-event review within 48 hours of every pop-up. Monthly pop-up programme review against financial targets. Quarterly assessment of annual calendar and opportunity pipeline. Annual full programme review and budget setting.",
+  "meta": {
+    "summary_for_humans": "This block provides everything needed to run pop-up coffee operations at markets, events, and temporary venues. It covers opportunity assessment, portable equipment logistics, condensed menus, financial tracking, and quality maintenance away from the main cafe.",
+    "implementation_risks": [
+      "Weather is the biggest uncontrollable risk for outdoor events — always have a wet-weather contingency",
+      "Pop-ups can distract from core cafe operations if they consume too much owner or manager time",
+      "Brand damage from a poor pop-up experience is disproportionate — never compromise quality for speed or convenience"
+    ],
+    "notes_for_engine": "Activate when signals indicate desire for brand expansion, new customer acquisition, testing new locations, or seasonal revenue opportunities. Pairs with B205 (Coffee Van Operations) for mobile-format synergies.",
+    "tags": ["pop_up", "market", "events", "brand_extension", "customer_acquisition", "portable", "expansion", "marketing"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

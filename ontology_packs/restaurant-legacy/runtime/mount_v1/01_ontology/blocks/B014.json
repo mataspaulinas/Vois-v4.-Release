@@ -1,0 +1,165 @@
+{
+  "block_id": "B014",
+  "name": "Critical Control Point Monitoring",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Provides the ongoing monitoring systems, corrective action procedures, and trend analysis for every Critical Control Point identified in the HACCP plan (B013). This block ensures that CCPs are not just identified on paper but actively monitored every day with clear escalation when limits are breached.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Implement real-time monitoring procedures for every CCP in the cafe's HACCP plan",
+      "Define clear corrective actions for each CCP when critical limits are breached",
+      "Create monitoring records that provide auditable evidence of ongoing CCP control",
+      "Establish trend analysis to identify CCPs that are drifting towards failure before they breach limits",
+      "Assign clear responsibility for CCP monitoring to specific roles on each shift"
+    ],
+    "secondary_objectives": [
+      "Reduce corrective action frequency by identifying and addressing root causes of CCP deviations",
+      "Build staff confidence in responding to CCP breaches with calm, documented procedures",
+      "Provide management with visibility of CCP performance across all shifts"
+    ]
+  },
+  "why_this_matters": "Identifying Critical Control Points in a HACCP plan is only half the task — the other half is monitoring them consistently and responding correctly when limits are breached. A CCP that is identified but not monitored provides no protection whatsoever. In the UK cafe context, the most common CCPs are cold storage temperatures (below 8°C, best practice below 5°C), cooking temperatures (core temperature of 75°C or above), cooling times (from 63°C to 8°C within 90 minutes), hot holding temperatures (above 63°C), and reheating temperatures (above 75°C, or 82°C in Scotland). Each of these CCPs has a critical limit — a measurable threshold that separates safe from unsafe. When that limit is breached, corrective action must be taken immediately, documented, and reviewed. An EHO inspector assessing confidence in management will look specifically for evidence of CCP monitoring: are checks being done? Are they being done at the right frequency? When a breach occurred, was the corrective action appropriate and timely? Was the affected food disposed of or made safe? Were the records completed? A cafe that can show weeks of consistent CCP monitoring with documented corrective actions demonstrates the highest level of food safety management. Conversely, gaps in monitoring records suggest that the HACCP system exists only on paper. CCP monitoring is the daily discipline that turns a food safety plan into actual food safety.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: For each CCP identified in the HACCP plan (B013), create a simple monitoring record sheet. At minimum, most cafes will have these CCPs: delivery temperature checks (verify chilled goods arrive below 8°C, frozen below -18°C), cold storage monitoring (twice-daily fridge/freezer temperature checks — link to B001), and cooking temperature checks (probe internal temperature of cooked food to confirm 75°C or above). For each CCP, the monitoring sheet should record: date, time, what was checked, the critical limit, the actual reading, whether it passed or failed, corrective action taken if it failed, and the initials of the person who did the check. Assign CCP monitoring responsibilities: delivery checks to whoever receives goods, temperature monitoring to opening and afternoon shift leads, cooking checks to the kitchen team. Week 2: Create a laminated corrective action guide for each CCP and post it in the relevant area. For example, near the fridge: 'If temperature exceeds 8°C: 1. Do not use food from this unit until investigated. 2. Check the door seal. 3. Check if the unit was left open. 4. Inform the manager. 5. If temperature exceeds 15°C, discard all high-risk food. 6. Record the incident on the corrective action log.' Practise one corrective action scenario with the team so they know the procedure is real, not theoretical.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Consolidate all CCP monitoring into a single daily food safety record — a document or digital form that captures every CCP check for the day in one place. This makes it easy for the manager to review all CCP performance at a glance and easy for EHOs to inspect. Develop detailed corrective action SOPs for each CCP breach type: temperature excursion, undercooked food, delayed cooling, hot holding failure, and suspect delivery. Each SOP should include: immediate action, assessment of affected food, decision on disposal or recovery, documentation requirements, root cause investigation, and preventive action. Implement a weekly CCP trend analysis: are any CCPs showing patterns that suggest drift towards failure? For example, if a fridge consistently reads 6-7°C (within limits but trending high), schedule maintenance before it fails. Create a monthly CCP performance summary for the manager showing compliance rates, breach frequency, corrective actions taken, and any recurring issues. Train all staff who monitor CCPs to understand what a critical limit means and why immediate action is essential — not just what number to write down, but what that number signifies.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). CCP monitoring should be automatic and precise, requiring no reminders or prompting. Conduct quarterly CCP verification audits: the manager independently checks a sample of CCP monitoring records against actual conditions. Are the recorded temperatures consistent with what the probe shows right now? Are corrective actions documented appropriately? Consider digital monitoring solutions such as Bluetooth temperature loggers that record continuously and alert staff when limits are approached. Analyse corrective action data annually: what are the most common CCP breaches? Can any be eliminated through equipment upgrades, process changes, or better training? Share CCP compliance rates with the team and celebrate sustained 100% compliance periods."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create monitoring record sheets for each CCP identified in the HACCP plan",
+        "Assign CCP monitoring responsibilities to specific roles on each shift",
+        "Begin daily CCP monitoring checks with documented results",
+        "Create laminated corrective action guides for each CCP location",
+        "Practise one corrective action scenario with the team",
+        "Ensure probe thermometers are available and calibrated for CCP checks",
+        "Review delivery checking procedures against CCP requirements"
+      ],
+      "responsible": "Manager, Kitchen Lead"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Consolidate all CCP monitoring into a single daily food safety record",
+        "Develop detailed corrective action SOPs for each CCP breach type",
+        "Implement weekly CCP trend analysis to detect drift towards failure",
+        "Create a monthly CCP performance summary report",
+        "Train all CCP monitoring staff on the significance of critical limits",
+        "Establish root cause investigation procedures for CCP breaches",
+        "File all monitoring records and corrective action logs in the food safety folder"
+      ],
+      "responsible": "Manager, Kitchen Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly CCP verification audits",
+        "Evaluate digital monitoring solutions for continuous CCP tracking",
+        "Analyse annual corrective action data to eliminate recurring breach causes",
+        "Share CCP compliance rates with the team and celebrate sustained performance",
+        "Review and refine monitoring procedures annually based on operational experience"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Daily CCP Monitoring Record (consolidated form)",
+    "CCP Corrective Action Guides (laminated, location-specific)",
+    "Corrective Action SOP for each CCP breach type",
+    "Monthly CCP Performance Summary report",
+    "Quarterly CCP Verification Audit form"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T014-01",
+        "tool_name": "Daily CCP Monitoring Record",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Shift Lead",
+        "description": "Consolidated daily form capturing every CCP check: date, time, CCP name, critical limit, actual reading, pass/fail, corrective action if needed, and initials."
+      },
+      {
+        "tool_id": "T014-02",
+        "tool_name": "CCP Corrective Action Guide",
+        "level": "L1",
+        "format": "guide",
+        "owner_role": "All Staff",
+        "description": "Laminated step-by-step guide posted at each CCP location, detailing immediate actions when a critical limit is breached, including assessment, food disposal decisions, and documentation."
+      },
+      {
+        "tool_id": "T014-03",
+        "tool_name": "CCP Corrective Action SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Detailed Standard Operating Procedure for each CCP breach type: temperature excursion, undercooked food, cooling failure, hot holding breach. Covers immediate action through root cause analysis."
+      },
+      {
+        "tool_id": "T014-04",
+        "tool_name": "Monthly CCP Performance Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Monthly summary showing CCP compliance rates, breach frequency and type, corrective actions taken, trend analysis, and any recurring issues requiring management attention."
+      },
+      {
+        "tool_id": "T014-05",
+        "tool_name": "Quarterly CCP Verification Audit",
+        "level": "L3",
+        "format": "audit",
+        "owner_role": "Owner",
+        "description": "Independent audit verifying that CCP monitoring records match actual conditions, corrective actions were appropriate, and the monitoring system is functioning as intended."
+      }
+    ]
+  },
+  "failure_modes": [
+    "CCP checks are recorded but not actually performed — fabricated records provide false assurance",
+    "Corrective actions are taken but not documented, leaving no auditable evidence for EHO inspection",
+    "Staff do not understand the significance of a CCP breach and delay corrective action",
+    "Trend analysis is not performed, so a gradually failing piece of equipment is not identified until a full CCP breach occurs"
+  ],
+  "kpis": [
+    "100% of scheduled CCP checks completed and documented every operating day",
+    "Corrective action initiated within 15 minutes of any CCP breach",
+    "All CCP breaches documented with root cause analysis completed within 24 hours",
+    "Monthly CCP compliance rate sustained above 98%"
+  ],
+  "dependencies": ["B013"],
+  "constraints": [
+    "Requires the HACCP plan (B013) to be in place with CCPs identified before monitoring can begin",
+    "Probe thermometers must be calibrated and available for all temperature-related CCP checks",
+    "Monitoring records must be retained for a minimum of 12 months"
+  ],
+  "time_load": {
+    "L1": "4 hours (monitoring sheet creation, corrective action guides, staff training)",
+    "L2": "8 hours (consolidated form development, SOP drafting, trend analysis setup)",
+    "L3": "2 hours/quarter (verification audits, data analysis, system refinement)"
+  },
+  "review_protocol": "Daily review of CCP monitoring records by shift manager. Weekly trend analysis of CCP data. Monthly CCP performance summary reviewed by manager. Quarterly verification audit by owner. Immediate review triggered by any CCP breach.",
+  "meta": {
+    "summary_for_humans": "This block ensures every Critical Control Point identified in the HACCP plan is actively monitored every day, with clear corrective actions when limits are breached and trend analysis to catch problems before they become failures. It turns the HACCP plan from a document into daily practice.",
+    "implementation_risks": [
+      "Monitoring fatigue — staff may become complacent with repetitive CCP checks over time",
+      "Equipment failure (e.g., probe thermometer) can prevent CCP monitoring — always have backups",
+      "Over-reliance on paper records — consider digital solutions for real-time CCP visibility"
+    ],
+    "notes_for_engine": "Activate immediately after B013 (HACCP plan) is in place. Flag as urgent if signals indicate missed CCP checks, undocumented corrective actions, or EHO concerns about monitoring frequency.",
+    "tags": ["food_safety", "HACCP", "CCP", "monitoring", "corrective_action", "compliance", "temperature", "daily_check"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

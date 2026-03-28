@@ -1,0 +1,79 @@
+{
+  "identification": {
+    "tool_id": "T001-03",
+    "tool_name": "Temperature Excursion Trigger Log",
+    "block_id": "B001"
+  },
+  "tool_design": {
+    "format": "tracker",
+    "role_in_intervention": "Bridge tool between routine monitoring and full excursion response.",
+    "adaptation_variables": [
+      "unit_list",
+      "stock_categories",
+      "escalation_thresholds"
+    ],
+    "usage_moment": "Immediately after a trigger reading or recurring warning trend",
+    "expected_output": "Logged trigger event with first response and escalation decision",
+    "linked_blocks": [
+      "B001",
+      "B003"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Entries are logged late or inconsistently.",
+        "what_can_go_wrong": "Patterns cannot be reviewed or escalated.",
+        "early_signals": [
+          "Large gaps",
+          "Incidents remembered verbally"
+        ],
+        "prevention": [
+          "Tie updates to review routine",
+          "Keep ownership explicit"
+        ],
+        "mitigation": [
+          "Reconstruct while fresh",
+          "Increase review cadence"
+        ],
+        "if_occurs_next_signals": [
+          "pattern_visibility_failure"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B003"
+        ]
+      },
+      {
+        "warning": "Tracker is updated but never used to decide action.",
+        "what_can_go_wrong": "Information is stored but not acted on.",
+        "early_signals": [
+          "Same issue repeats",
+          "Review notes stay blank"
+        ],
+        "prevention": [
+          "Review on a fixed cadence",
+          "Link repeats to escalation"
+        ],
+        "mitigation": [
+          "Add a short review",
+          "Assign closure owner"
+        ],
+        "if_occurs_next_signals": [
+          "closed_loop_failure"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B003"
+        ]
+      }
+    ]
+  },
+  "content": "# Temperature Excursion Trigger Log\n\n**Tool ID:** T001-03  \n**Block:** B001 (Daily Temperature Monitoring)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L2  \n**Format:** Tracker  \n**Role:** Shift Manager / Manager  \n**Time Required:** 5-12 minutes per event  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this the moment a daily monitoring check finds a unit outside its safe limit.\n\nThis is the bridge between routine monitoring in `B001` and full incident handling in `B003`.\n\nUse this log to capture:\n- what reading triggered concern\n- what immediate checks were done\n- whether food was still safe, moved, or discarded\n- whether the issue was minor drift or a true excursion event\n- whether a full incident report in `T003-02` was triggered\n\n---\n## Trigger Thresholds\n\n| Unit Type | Trigger Point | Immediate Response |\n|---|---|---|\n| Chilled fridge | `8C` or above | Protect stock, alert manager, record food temperatures, decide whether `B003` response is required |\n| Freezer | `-12C` or warmer | Keep door shut, assess stock, alert manager, record action |\n| Repeated warning trend | Same unit above normal range 3 times in 7 days | Log as an equipment warning even if food stayed safe |\n\n---\n## Immediate Action Checklist\n\n<ul>\n  <li><input type=\"checkbox\"> I recorded the actual reading from [T001-01].</li>\n  <li><input type=\"checkbox\"> I checked for simple causes first: door, plug, airflow, overload, frost.</li>\n  <li><input type=\"checkbox\"> I probed at least one high-risk product where relevant.</li>\n  <li><input type=\"checkbox\"> I notified the manager or duty lead.</li>\n  <li><input type=\"checkbox\"> I decided whether this stays a local corrective action or moves into [T003-02].</li>\n</ul>\n\n---\n## Trigger Log Form\n\n**Date:** ____________________  \n**Time discovered:** ____________________  \n**Found by:** ____________________\n\n| Field | Details |\n|---|---|\n| Unit name | |\n| Unit type | Fridge / Freezer / Display / Other |\n| Reading found | |\n| Safe range for that unit | |\n| Product checked | |\n| Product temperature | |\n| Likely cause seen at first check | Door open / Overloaded / Power / Fault / Unknown |\n| Manager notified at | |\n| Stock moved? | Yes / No |\n| Stock discarded? | Yes / No |\n| Unit back in range by | |\n| Full B003 incident report opened? | Yes / No |\n\n### Action Notes\n__________________________________________________  \n__________________________________________________  \n__________________________________________________\n\n### Stock Decision\n| Stock Category | Decision | Notes |\n|---|---|---|\n| Milk / dairy | Keep / Use soon / Discard | |\n| Ready-to-eat fillings | Keep / Use soon / Discard | |\n| Desserts / pastries | Keep / Use soon / Discard | |\n| Frozen stock | Keep / Transfer / Discard | |\n\n### Sign-Off\n**Closed by:** ____________________  \n**Date / time:** ____________________\n\n---\n## When To Escalate Into B003\n\nOpen the full excursion process if any of these are true:\n- chilled food reached `8C` or above and duration is unclear\n- freezer stock warmed to `-12C` or above\n- the unit did not recover after immediate checks\n- stock had to be discarded\n- the cause suggests equipment failure rather than a simple user error\n\n---\n## Pattern Watch\n\nIf the same unit appears in this log more than once in a month, raise it in [T001-04]. Repeated \"small\" drifts often show the story before a full breakdown happens.\n\n---\n## Connected Resources\n\n**Used with:**\n- T001-01 - Daily Temperature Log & Check Sheet\n- T001-04 - Monthly Temperature Compliance Dashboard\n- T001-05 - Temperature Monitoring SOP & Team Sign-Off\n- T003-02 - Excursion Incident Report Form\n\n**Related blocks:**\n- B003 - Temperature Excursion Response\n\n---\n\n*Tool Version 2.0 - small enough for the moment, serious enough for the record.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T001-03_temperature_excursion_trigger_log.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

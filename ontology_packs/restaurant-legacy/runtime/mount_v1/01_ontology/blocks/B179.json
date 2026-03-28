@@ -1,0 +1,165 @@
+{
+  "block_id": "B179",
+  "name": "Daily Prep List Protocol",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M14: Operational Rhythm & Daily Discipline",
+  "state": "enriched",
+  "purpose": "Establishes a structured daily preparation list system that ensures every shift begins with a complete, prioritised checklist of prep tasks — from food preparation and ingredient restocking to station setup and mise en place. This block eliminates the guesswork and memory dependence that causes prep failures, rushed mornings, and service breakdowns during peak hours.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a standardised daily prep list template that covers all preparation categories: food prep, beverage prep, station setup, stock replenishment, and display assembly",
+      "Establish a prep estimation system that links expected customer volume to preparation quantities, reducing both shortfalls and waste",
+      "Define clear ownership and timing for each prep task so staff know exactly what to do, in what order, and by when",
+      "Build a handover system between closing and opening shifts that communicates prep status, shortages, and priorities",
+      "Integrate the prep list with stock control to trigger reorders before shortages impact service"
+    ],
+    "secondary_objectives": [
+      "Reduce morning stress by transforming opening from a chaotic scramble into a calm, systematic process",
+      "Minimise food waste by preparing quantities matched to actual demand rather than habitual overproduction",
+      "Create accountability — when prep tasks are listed and assigned, nothing falls through the cracks"
+    ]
+  },
+  "why_this_matters": "The first hour of trade in any cafe is shaped almost entirely by what happened in the 60 to 90 minutes before the doors opened. A cafe that begins the day with fully prepped sandwich fillings, stocked milk fridges, calibrated grinders, clean display cases, and fresh pastries arranged attractively has already won half the battle. A cafe where the barista is still scrambling to cut lemons, the kitchen is realising the avocados were not delivered, and the display cabinet is half-empty at 8:30am is fighting an uphill battle for the rest of the day. In the UK cafe market, where the morning coffee rush between 7:30 and 9:30am can account for 40% or more of daily revenue, preparation failures during this window have outsized financial consequences. Every minute a customer waits because a sandwich filling is not ready, every apologetic 'we do not have that yet,' every display that looks sparse rather than abundant — these are lost sales and damaged perceptions that compound over time. The issue is rarely laziness. It is the absence of a system. Without a written prep list, preparation depends on individual memory, experience, and motivation. The experienced barista who has worked fifty Saturday mornings knows instinctively what to prep. The new starter covering their first Saturday does not. A documented prep list transfers that institutional knowledge from heads to paper, making every shift as well-prepared as the best one. It also creates a diagnostic tool: when something is not ready, you can trace it back to a specific missed step rather than a vague 'we were disorganised this morning.'",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Document your current prep routine by observing what actually happens during opening for five consecutive days. Stand back (or ask your best opener to narrate) and write down every single task that gets done before the cafe opens: what is prepped, in what order, how long each task takes, and who does it. Also note what does not get done — the tasks that get skipped on busy mornings or forgotten by less experienced staff. You will likely find that the current routine exists only in people's heads and varies significantly between individuals. Week 2: Create a Master Daily Prep List. Organise all tasks into categories: Food Prep (sandwich fillings, salad items, soup, baked goods assembly), Beverage Prep (milk fridge stocked, grinder calibrated, syrups filled, cold brew ready), Station Setup (till float counted, display cabinet arranged, condiment stations filled, outdoor furniture out), and Housekeeping Prep (floors checked, toilets stocked, bins emptied from overnight). For each task, note the estimated time, the person responsible (by role, not name), and the deadline (e.g., 'complete by 7:45am, 15 minutes before opening'). Print this list and laminate it or place it in a clear pocket on a clipboard. From Day 1, the opening team uses this list physically — ticking off each task as it is completed and signing off the completed list. The signed list is retained for one week as a reference. If tasks are consistently not completed on time, adjust either the start time, the task allocation, or the staffing level.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Evolve the static prep list into a dynamic system. Create day-specific variants — Monday prep is different from Saturday prep because customer volumes, menu specials, and delivery schedules differ. Build a simple Prep Quantity Guide linked to expected covers: if an average weekday serves 120 customers and 30% order a sandwich, you need 36 sandwich portions prepped. Adjust these quantities weekly based on actual sales data, not guesswork. Introduce a Closing-to-Opening Handover Note — a simple form completed by the closing shift that tells the opening team: what was prepped ahead, what ran out today (signalling higher prep quantities needed tomorrow), any equipment issues, and any deliveries expected in the morning. This prevents the opening team from duplicating work already done or being blindsided by shortages. Build the prep list into the stock control system — if the prep list calls for 2kg of cherry tomatoes and the closing team notes only 500g remaining, this triggers an automatic reorder or a morning market run. Train all staff who open the cafe to use the prep list independently, not just the manager. The test of a good system is whether a competent but relatively new team member can open the cafe alone on a Monday morning using only the prep list and the handover note. If they cannot, the documentation is not detailed enough. Conduct a weekly five-minute prep review: was the list completed on time every day? Were there any shortfalls that affected service? Adjust the list based on findings.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The prep list is now an embedded operational tool that the team owns and continuously improves. Introduce prep efficiency tracking — measure the time from staff arrival to 'prep complete' and work to reduce it without cutting corners. Celebrate teams that consistently achieve 'doors open, everything ready' and investigate mornings where prep overruns. Build seasonal prep list variants that automatically adjust for summer versus winter menus, holiday periods, and local events that affect footfall. Create a Prep Standards Photo Guide — a visual reference showing exactly what a fully prepped station looks like for each role (bar, kitchen, till, display). Photos remove ambiguity that words cannot fully resolve. Integrate the prep list with a digital task management system if the team is comfortable with technology — apps that allow ticking off tasks on a tablet can provide real-time visibility and historical data. Review the Master Prep List quarterly with the full team: are there tasks that should be added, removed, or resequenced? The people doing the prep every day are the best source of improvement ideas. Consider cross-training all team members on all prep categories so that illness or absence does not create a single-point-of-failure for any critical prep task."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Observe and document the current opening prep routine for five consecutive days",
+        "Create a Master Daily Prep List organised by category: food, beverage, station, housekeeping",
+        "Assign each task an estimated time, responsible role, and completion deadline",
+        "Print, laminate, and place the prep list on a clipboard at the main prep station",
+        "Implement daily sign-off — opening team ticks off tasks and signs the completed list",
+        "Retain completed lists for one week for reference and review"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create day-specific prep list variants for different trading patterns (weekday vs weekend)",
+        "Build a Prep Quantity Guide linking expected covers to preparation volumes",
+        "Implement a Closing-to-Opening Handover Note completed by the closing shift daily",
+        "Integrate prep list requirements with stock control to trigger reorders before shortages",
+        "Train all opening-capable staff to use the prep list independently",
+        "Conduct weekly five-minute prep reviews to identify shortfalls and adjust the list"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track prep efficiency — time from arrival to 'prep complete' — and work to optimise it",
+        "Build seasonal prep list variants for menu changes, holidays, and local events",
+        "Create a Prep Standards Photo Guide showing fully prepped stations for each role",
+        "Review the Master Prep List quarterly with team input for continuous improvement",
+        "Cross-train all team members on all prep categories to eliminate single points of failure",
+        "Consider digital task management for real-time visibility and historical tracking"
+      ],
+      "responsible": "Manager, Head Barista"
+    }
+  },
+  "deliverables": [
+    "Master Daily Prep List (laminated, clipboard-ready)",
+    "Day-Specific Prep List Variants (weekday, Saturday, Sunday)",
+    "Prep Quantity Guide linked to expected covers",
+    "Closing-to-Opening Handover Note template",
+    "Prep Standards Photo Guide"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T179-01",
+        "tool_name": "Master Daily Prep List",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Head Barista",
+        "description": "Comprehensive opening preparation checklist organised into four categories — food prep, beverage prep, station setup, housekeeping — with each task showing estimated time, responsible role, and completion deadline. Designed for lamination and daily sign-off."
+      },
+      {
+        "tool_id": "T179-02",
+        "tool_name": "Closing-to-Opening Handover Note",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Shift Leader",
+        "description": "End-of-day form completed by the closing shift communicating to the opening team: what was prepped ahead, what ran out, equipment issues, expected deliveries, and any other priorities. Ensures continuity between shifts."
+      },
+      {
+        "tool_id": "T179-03",
+        "tool_name": "Prep Quantity Guide",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Reference table linking expected daily covers to preparation quantities for all menu items requiring advance prep. Updated weekly based on actual sales data to reduce waste and prevent shortfalls."
+      },
+      {
+        "tool_id": "T179-04",
+        "tool_name": "Prep Standards Photo Guide",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Visual reference document with photographs showing exactly what a fully prepped station looks like for each role — bar, kitchen, display, till area. Removes ambiguity and provides a clear standard for new and experienced staff alike."
+      },
+      {
+        "tool_id": "T179-05",
+        "tool_name": "Weekly Prep Review Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Five-minute weekly review form tracking: was the prep list completed on time each day, were there any shortfalls that affected service, and what adjustments are needed for the following week. Drives continuous improvement of the prep system."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The prep list is created but treated as optional — staff revert to memory-based prep when busy or when the manager is not present, defeating the entire purpose",
+    "Prep quantities are set once and never adjusted, leading to chronic overproduction (waste) or underproduction (lost sales) as trading patterns change",
+    "The handover note between closing and opening shifts is not completed consistently, leaving the morning team to guess what was done the night before",
+    "The prep list becomes so detailed and lengthy that it overwhelms rather than guides, with staff ticking boxes mechanically without actually checking quality"
+  ],
+  "kpis": [
+    "100% of opening shifts use the prep list with signed completion before doors open",
+    "Zero service-impacting prep failures per week (no items unavailable due to missed preparation)",
+    "Closing-to-Opening Handover Note completed 100% of trading days",
+    "Prep completion time within 10% of target on 90%+ of opening shifts",
+    "Food waste from overproduction reduced by 20% within three months of implementing the Prep Quantity Guide"
+  ],
+  "dependencies": ["B092"],
+  "constraints": [
+    "Prep list must be realistic given the available staffing and time before opening — an overly ambitious list that cannot be completed creates frustration rather than order",
+    "Quantities must be adjusted for actual demand — using yesterday's sales data is better than using fixed numbers that ignore seasonality and day-of-week variation",
+    "The system must work for the least experienced opener, not just the most experienced — if it requires tacit knowledge to interpret, it is not documented well enough"
+  ],
+  "time_load": {
+    "L1": "4 hours (observation, list creation, printing, initial training)",
+    "L2": "1 hour/week (prep review, quantity adjustments, handover note review)",
+    "L3": "2 hours/quarter (seasonal variant updates, photo guide creation, system review with team)"
+  },
+  "review_protocol": "Daily visual check by manager that the prep list is being used and signed off. Weekly five-minute prep review assessing completion rates and service impacts. Monthly review of prep quantities against actual sales data. Quarterly full system review with the opening team to gather improvement suggestions and update the Master Prep List.",
+  "meta": {
+    "summary_for_humans": "This block creates a structured daily prep list system ensuring every opening shift is organised, complete, and ready for trade. It includes the master checklist, day-specific variants, a prep quantity guide, a closing-to-opening handover note, and a visual standards guide. The goal is to eliminate the chaotic morning scramble.",
+    "implementation_risks": [
+      "Staff may resist the structure as unnecessary bureaucracy if they are experienced and feel they know what to prep — framing it as quality assurance rather than control helps",
+      "The prep list can become stale if not updated regularly — seasonal menu changes, new products, and shifting demand patterns all require updates",
+      "Over-reliance on the list without thinking can miss unusual circumstances — a large group booking, a delivery failure, or a bank holiday demand spike"
+    ],
+    "notes_for_engine": "Activate when signals indicate chaotic openings, service failures due to missing prep, inconsistency between different openers, food waste from overproduction, or new staff struggling with morning routines. This is a foundational operations block that supports many downstream processes.",
+    "tags": ["prep_list", "daily_discipline", "opening", "operations", "mise_en_place", "handover", "stock_control", "waste_reduction"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

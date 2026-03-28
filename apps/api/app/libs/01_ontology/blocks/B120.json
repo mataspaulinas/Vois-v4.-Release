@@ -1,0 +1,157 @@
+{
+  "block_id": "B120",
+  "name": "Upselling & Add-On Training",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Trains the team to suggest complementary items naturally and confidently — turning a single-item transaction into a multi-item sale without being pushy, scripted, or annoying. This block increases average transaction value through genuine hospitality rather than hard selling.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Train all customer-facing staff on natural upselling techniques that feel helpful rather than salesy",
+      "Identify the highest-impact upsell and add-on opportunities based on the cafe's menu and customer behaviour",
+      "Create simple, memorable suggestion prompts that staff can use consistently without scripts",
+      "Track average transaction value as the key KPI for upselling effectiveness",
+      "Build a culture where suggesting an add-on is seen as great service, not aggressive selling"
+    ],
+    "secondary_objectives": [
+      "Increase food attachment rate — the percentage of drink-only transactions that also include a food item",
+      "Promote high-margin items through staff recommendations",
+      "Reduce waste on perishable items by proactively suggesting items that need to sell today"
+    ]
+  },
+  "why_this_matters": "The difference between a cafe that achieves a £4.50 average transaction value and one that achieves £6.50 is not the price of the coffee — it is the pastry, the extra shot, the sandwich at lunch, the second drink for the friend. A £2.00 increase in average transaction value across 200 daily customers is £400 additional revenue per day, £2,400 per week, £124,800 per year. At a 65% blended GP%, that is £81,120 of additional gross profit — more than enough to fund an additional team member, equipment upgrades, or a substantial salary increase for the owner. Yet most independent cafes leave this revenue on the table because staff are not trained, encouraged, or even aware that suggesting an add-on is a valuable part of their role. The common objection is that upselling feels 'pushy' or 'corporate.' This objection reflects a misunderstanding of what good upselling looks like. A barista who says 'Would you like to see our pastries? The almond croissants are just out of the oven' is not being pushy — they are being helpful. A team member who notices a customer ordering a flat white and says 'We've got a really good banana bread today — it goes brilliantly with a flat white' is sharing genuine enthusiasm, not reading a script. The best upselling does not feel like selling at all. It feels like a knowledgeable friend making a recommendation. In the UK market, customers are receptive to suggestions from cafe staff — they trust the barista's knowledge of what is good today, what pairs well, and what is fresh. The key is training staff to make suggestions that are natural, informed, and timed correctly — never after the customer has already paid, never with every single customer, and never with a scripted phrase that sounds rehearsed.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Calculate the cafe's current average transaction value (ATV): Total Revenue / Number of Transactions for a typical week. This is the baseline that all improvement will be measured against. Also calculate the food attachment rate: Number of Transactions Including a Food Item / Total Transactions x 100. Most UK cafes have a food attachment rate of 25-35% — the opportunity is in the 65-75% of transactions that are drink-only. Identify the top 5 natural upsell opportunities on the cafe's menu. These typically include: 'Would you like a pastry or cake with your coffee?' (the single most impactful add-on), 'Would you like that as a large?' (size upgrade — minimal cost increase for the cafe, meaningful revenue increase), 'Can I add an extra shot to that?' (espresso upsell, nearly pure profit), 'We have a great [seasonal item] today' (limited-time upsell using scarcity), and 'Would you like anything else — we've got [fresh item] just in?' (open-ended suggestion). Week 2: Brief the team on the upselling approach. Frame it explicitly as hospitality, not sales: 'Our job is to help customers discover things they will enjoy. If we have amazing banana bread and someone orders a coffee without knowing about it, we have missed an opportunity to make their visit better.' Give each team member one suggestion phrase they feel comfortable with and ask them to use it naturally during service. Do not script the words — let each person find their own authentic phrasing.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Track average transaction value weekly and share it with the team as a visible KPI — post it in the staff area. Set an improvement target: a 10% increase in ATV within 8 weeks is realistic and achievable. Train the team on timing: the best moment for a suggestion is while the drink is being made (the customer is standing, waiting, and looking at the display), not at the till when they are deciding, and not after they have paid. Train on reading the customer: a rushed commuter grabbing a takeaway does not want a pastry pitch; a relaxed customer sitting down with a friend is far more receptive. Create a 'Daily Feature' system: each morning, the manager or shift lead identifies one item to feature — this could be a pastry that came in particularly well, a cake that needs to sell today to avoid waste, or a seasonal special. The team knows what to suggest and has a genuine reason to suggest it. Track food attachment rate weekly alongside ATV and celebrate improvements. Introduce combo pricing for natural pairings: a coffee and pastry combo at £5.50 (saving £0.50-£1.00 versus buying separately) encourages the add-on while providing a specific price point for staff to mention.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Upselling should become an instinctive part of the team's service style — a habit, not a task. Implement team recognition for consistent suggestive selling: acknowledge the barista who regularly converts drink-only transactions into coffee-and-food sales. Conduct monthly 'what is working' sessions where the team shares their most effective suggestion techniques — peer learning is more powerful than manager instruction. Analyse upsell data by item: which suggestions convert best? Which items have the highest acceptance rate? Focus training on the highest-converting add-ons. Explore seasonal upsell campaigns: 'hot chocolate season' in October with marshmallows and cream as premium add-ons, 'iced drinks summer' with flavoured syrups, 'festive specials' in December with premium seasonal pastries. Track ATV and food attachment rate as strategic KPIs in monthly management meetings, linking upselling performance directly to revenue growth and GP% improvement. Review the upselling programme quarterly to keep it fresh, relevant, and engaging for the team."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Calculate current average transaction value (ATV) and food attachment rate as baselines",
+        "Identify the top 5 natural upsell opportunities on the cafe's menu",
+        "Brief the team on the upselling approach, framing it as hospitality not sales",
+        "Give each team member one authentic suggestion phrase to use during service",
+        "Ensure the pastry and food display is visible and appealing from the ordering point",
+        "Identify the most effective point in the customer journey for suggestions (during drink preparation)",
+        "Begin tracking ATV daily using till data"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Track ATV and food attachment rate weekly and display in the staff area",
+        "Set a 10% ATV improvement target over 8 weeks",
+        "Train the team on suggestion timing and customer-reading skills",
+        "Implement a 'Daily Feature' system highlighting one item to suggest each day",
+        "Create combo pricing for natural pairings (coffee + pastry, lunch combos)",
+        "Track food attachment rate alongside ATV and celebrate improvements",
+        "Conduct weekly team check-ins on what suggestions are working"
+      ],
+      "responsible": "Manager, Shift Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Implement team recognition for consistent and effective suggestive selling",
+        "Conduct monthly peer-learning sessions on effective suggestion techniques",
+        "Analyse upsell conversion data by item to focus on highest-converting add-ons",
+        "Design seasonal upsell campaigns aligned with menu changes and customer demand",
+        "Track ATV and food attachment rate as strategic KPIs in monthly management meetings"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Upselling Training Guide for staff",
+    "Average Transaction Value baseline and weekly tracker",
+    "Food Attachment Rate tracker",
+    "Daily Feature system guide",
+    "Combo Pricing menu with margins"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T120-01",
+        "tool_name": "Upselling Training Guide",
+        "level": "L1",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Training guide covering the philosophy of suggestive selling as hospitality, the top 5 upsell opportunities, timing guidance, customer-reading skills, and authentic phrasing examples."
+      },
+      {
+        "tool_id": "T120-02",
+        "tool_name": "ATV and Food Attachment Tracker",
+        "level": "L1",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Weekly tracker recording average transaction value and food attachment rate with trend chart, target line, and comparison to baseline. Displayed in the staff area."
+      },
+      {
+        "tool_id": "T120-03",
+        "tool_name": "Daily Feature Card",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Shift Lead",
+        "description": "Simple daily card identifying the featured item for suggestive selling, with a brief reason why (fresh, seasonal, needs selling, excellent today) and a suggested phrase."
+      },
+      {
+        "tool_id": "T120-04",
+        "tool_name": "Upsell Conversion Analysis",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly analysis showing which add-on items have the highest suggestion-to-sale conversion rate, the revenue impact of each upsell type, and recommendations for focusing training on the most effective opportunities."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Staff are given scripted phrases that sound robotic and insincere, annoying customers rather than delighting them",
+    "Upselling is pushed too aggressively during peak periods when customers want speed, not suggestions",
+    "Management focuses on upselling as a pressure metric, creating a stressful environment rather than a hospitable one",
+    "No tracking is implemented, so nobody knows whether upselling efforts are actually increasing transaction values"
+  ],
+  "kpis": [
+    "Average transaction value increased by 10% within 8 weeks of programme launch",
+    "Food attachment rate improved by at least 5 percentage points within 12 weeks",
+    "At least 50% of transactions during off-peak periods include a suggestive sell attempt",
+    "Customer satisfaction scores maintained at or above pre-implementation levels (upselling should not reduce satisfaction)"
+  ],
+  "dependencies": ["B118", "B119"],
+  "constraints": [
+    "Upselling must never feel aggressive, scripted, or annoying — the moment it does, it damages the cafe's brand",
+    "Staff must have genuine knowledge and enthusiasm for the items they suggest — training on the menu is essential",
+    "During extreme peak periods, speed of service takes priority over suggestive selling"
+  ],
+  "time_load": {
+    "L1": "2 hours (baseline calculation, opportunity identification, team briefing)",
+    "L2": "3 hours (training development, combo pricing, daily feature system, tracking setup)",
+    "L3": "1 hour/month (conversion analysis, peer learning sessions, seasonal campaign planning)"
+  },
+  "review_protocol": "Daily ATV check by manager. Weekly ATV and food attachment rate review with team. Monthly upselling effectiveness review in management meeting. Quarterly programme refresh with new training and seasonal campaigns.",
+  "meta": {
+    "summary_for_humans": "This block trains the team to suggest complementary items naturally — turning drink-only transactions into multi-item sales through genuine hospitality rather than hard selling. A £2.00 increase in average transaction value across 200 daily customers generates over £120,000 in additional annual revenue.",
+    "implementation_risks": [
+      "The line between helpful suggestion and annoying sales pitch is subjective — train for authenticity and monitor customer feedback",
+      "Staff who are introverted or uncomfortable with suggestive selling need extra support and alternative approaches",
+      "If the display case is empty or the featured item has run out, suggestions become embarrassing rather than helpful — link to stock management"
+    ],
+    "notes_for_engine": "Activate after B118 and B119 are established. Flag as urgent if signals indicate low average transaction value, food attachment rate below 25%, or significant untapped add-on opportunities on the menu.",
+    "tags": ["financial", "upselling", "add_on", "ATV", "food_attachment", "training", "revenue_growth", "customer_experience"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

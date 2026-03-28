@@ -1,0 +1,22 @@
+{
+  "id": "tool_training_checklist",
+  "name": "Training checklist",
+  "description": "Role-specific training checklist with live signoff points so new and existing team members can be coached against explicit service standards.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: capability grows when standards become observable and signoff-able",
+  "updated_at": "2026-03-14T00:24:43.099719Z",
+  "category": "training",
+  "format": "checklist",
+  "usage_moment": "Use during onboarding, refresh training, and manager coaching for service roles.",
+  "expected_output": "A signed checklist of critical behaviors, observations, and capability gaps by role.",
+  "adaptation_variables": [
+    "role_type",
+    "service_model",
+    "training_stage",
+    "coach_availability"
+  ],
+  "block_ids": [
+    "blk_build_floor_training"
+  ]
+}

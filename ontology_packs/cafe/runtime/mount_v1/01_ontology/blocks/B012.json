@@ -1,0 +1,165 @@
+{
+  "block_id": "B012",
+  "name": "Hygiene Culture System",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Embeds hygiene as a core cultural norm within the cafe team, moving beyond checklists and compliance into a shared identity where cleanliness and food safety are points of pride. This block transforms hygiene from something staff are told to do into something they choose to do because they understand its importance.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a team culture where hygiene standards are maintained because of shared values, not just compliance pressure",
+      "Establish visible leadership commitment to hygiene from the owner and manager downwards",
+      "Develop peer accountability systems where team members hold each other to high standards",
+      "Make hygiene performance visible, celebrated, and rewarded",
+      "Integrate hygiene excellence into the cafe's brand identity and customer promise"
+    ],
+    "secondary_objectives": [
+      "Reduce the need for constant managerial oversight of hygiene tasks",
+      "Lower staff turnover by creating a workplace that staff are proud of",
+      "Build customer trust and loyalty through consistently high visible cleanliness"
+    ]
+  },
+  "why_this_matters": "The most common reason cafes fail EHO inspections or suffer food safety incidents is not a lack of knowledge or equipment — it is a lack of culture. A cafe can have a perfect cleaning schedule, comprehensive SOPs, and all the right equipment, but if the team does not genuinely care about hygiene, standards will slip the moment the manager's back is turned. The Food Standards Agency's confidence in management scoring (one of three pillars of the Food Hygiene Rating) specifically assesses whether the business has a food safety culture — not just systems, but evidence that those systems are actively followed and continuously improved. Research by the Chartered Institute of Environmental Health shows that businesses with strong food safety cultures achieve consistently higher hygiene ratings and have fewer enforcement actions. Building a hygiene culture is about psychology, not paperwork. It requires visible leadership — if the owner wipes down a table or picks up litter, it signals that no one is above hygiene tasks. It requires positive reinforcement — celebrating good practices rather than only punishing failures. It requires transparency — making hygiene performance visible to the team so everyone can see the standards being met. And it requires peer accountability — creating an environment where team members feel comfortable reminding each other about handwashing, cleaning, or uniform standards without fear of conflict. A strong hygiene culture becomes self-reinforcing: new starters absorb the standards from their colleagues, and those who do not share the team's values self-select out.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: The owner or manager holds a team meeting dedicated entirely to hygiene culture. The message is simple: 'Hygiene is not just a rule here — it is who we are. Every one of us is responsible for keeping this cafe clean and safe, and I expect the same standard from myself as I do from you.' This is not a lecture — it is a conversation. Ask the team: What do you think good hygiene looks like? What gets in the way of keeping standards high? What would help you do better? Listen to the answers. Immediately after the meeting, the owner should visibly model the behaviour: wipe down a counter, pick up litter, check the toilet cleanliness. Actions speak louder than policies. Introduce a daily 'hygiene huddle' — a 60-second check at the start of each shift where the team quickly looks around and identifies one thing that needs attention right now. This creates a habit of proactive cleanliness rather than reactive cleaning. Week 2: Create a simple hygiene scoreboard visible in the staff area showing daily cleaning completion rates. Keep it positive — highlight days where 100% was achieved. Introduce a 'hygiene champion of the week' recognition for the team member who consistently demonstrates the highest standards. This does not need a prize — simple recognition in front of peers is powerful.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Hygiene Culture Charter — a short document (one page maximum) that articulates the cafe's hygiene values, signed by every team member. Frame it positively: 'We take pride in a spotless cafe because our customers trust us with their health.' Post it in the staff area. Integrate hygiene expectations into job descriptions, interview questions, and performance reviews. When hiring, ask candidates about their approach to cleanliness and food safety. During probation reviews, assess hygiene habits alongside other competencies. Create a peer observation programme where team members regularly observe each other's hygiene practices and provide constructive feedback. This must be framed collaboratively, not punitively — 'I noticed you washed your hands before and after that task, great job' is more effective than 'You forgot to wash your hands.' Establish monthly hygiene meetings (15 minutes) where the team reviews cleaning audit scores, discusses any incidents or near-misses, and agrees on improvement actions. Track participation and engagement. By Week 8, hygiene should be a regular topic of team conversation, not something that only comes up when there is a problem.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The test of a strong hygiene culture is what happens when no one is watching. Conduct quarterly anonymous staff surveys asking: Do you feel the cafe maintains high hygiene standards? Do you feel comfortable raising hygiene concerns? Are hygiene expectations clear and consistent? Use the results to identify areas for cultural improvement. Share the cafe's Food Hygiene Rating proudly — display it prominently and celebrate with the team when a 5 rating is maintained or achieved. Consider inviting a local EHO or food safety consultant to visit and provide feedback — external validation reinforces the team's efforts. Review hygiene culture annually: are standards being maintained as the team changes? Are new starters absorbing the culture quickly? Adjust the approach based on evidence and team feedback."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Hold a dedicated team meeting on hygiene culture — conversation, not lecture",
+        "Owner visibly models hygiene behaviour immediately after the meeting",
+        "Introduce a daily 60-second hygiene huddle at the start of each shift",
+        "Create a hygiene scoreboard in the staff area showing daily completion rates",
+        "Launch a 'hygiene champion of the week' recognition programme",
+        "Ask the team what barriers exist to maintaining high hygiene standards",
+        "Address any barrier identified by the team within 48 hours"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft and sign a Hygiene Culture Charter with the entire team",
+        "Integrate hygiene expectations into job descriptions and interview questions",
+        "Include hygiene habits in probation reviews and performance assessments",
+        "Create a peer observation programme for constructive hygiene feedback",
+        "Establish monthly 15-minute hygiene meetings to review scores and discuss improvements",
+        "Track engagement and participation in hygiene initiatives",
+        "Display the Hygiene Culture Charter in the staff area"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly anonymous staff surveys on hygiene culture",
+        "Display the Food Hygiene Rating prominently and celebrate the score",
+        "Consider external food safety consultant visits for independent feedback",
+        "Review hygiene culture annually and adjust approach based on evidence",
+        "Ensure new starters absorb the culture through buddy systems and mentoring"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Hygiene Culture Charter (one-page, team-signed)",
+    "Daily Hygiene Huddle Protocol",
+    "Hygiene Scoreboard template",
+    "Peer Observation Feedback Form",
+    "Quarterly Staff Hygiene Culture Survey"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T012-01",
+        "tool_name": "Hygiene Culture Charter",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "One-page document articulating the cafe's hygiene values and expectations, written in positive language and signed by every team member. Displayed in the staff area."
+      },
+      {
+        "tool_id": "T012-02",
+        "tool_name": "Daily Hygiene Huddle Protocol",
+        "level": "L1",
+        "format": "guide",
+        "owner_role": "Shift Manager",
+        "description": "60-second protocol for the start-of-shift hygiene check: team visually scans the environment, identifies one thing to address, and commits to maintaining standards through the shift."
+      },
+      {
+        "tool_id": "T012-03",
+        "tool_name": "Hygiene Scoreboard Template",
+        "level": "L1",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Visual display board for the staff area showing daily cleaning completion rates, weekly audit scores, and hygiene champion recognition. Designed to motivate through transparency."
+      },
+      {
+        "tool_id": "T012-04",
+        "tool_name": "Peer Observation Feedback Form",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "All Staff",
+        "description": "Structured form for peer observation of hygiene practices, focused on positive feedback and constructive suggestions rather than criticism. Used in the peer observation programme."
+      },
+      {
+        "tool_id": "T012-05",
+        "tool_name": "Quarterly Hygiene Culture Survey",
+        "level": "L3",
+        "format": "assessment",
+        "owner_role": "Owner",
+        "description": "Anonymous staff survey assessing perceptions of hygiene standards, comfort in raising concerns, clarity of expectations, and management commitment to hygiene culture."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Leadership fails to model hygiene behaviour, undermining the entire programme",
+    "Recognition programme feels forced or patronising, reducing engagement rather than building it",
+    "Peer observation becomes judgemental or cliquey, creating conflict rather than collaboration",
+    "Hygiene culture is treated as a one-off initiative rather than an ongoing commitment, and standards decay over time"
+  ],
+  "kpis": [
+    "Quarterly staff survey shows 80%+ agreement that hygiene standards are high and well-maintained",
+    "Daily hygiene huddle conducted at the start of every shift",
+    "Food Hygiene Rating maintained at 5 with EHO confidence in management scored at highest level",
+    "New starters demonstrate expected hygiene behaviours within their first week"
+  ],
+  "dependencies": ["B009", "B010", "B011"],
+  "constraints": [
+    "Requires genuine leadership commitment — this cannot be delegated to junior staff",
+    "Culture change takes time — expect 3-6 months before the culture is self-sustaining",
+    "Must avoid creating a blame culture — the approach must be positive and supportive"
+  ],
+  "time_load": {
+    "L1": "3 hours (team meeting, scoreboard setup, huddle launch)",
+    "L2": "6 hours (charter drafting, peer observation setup, integration into HR processes)",
+    "L3": "2 hours/quarter (surveys, culture reviews, recognition updates)"
+  },
+  "review_protocol": "Daily hygiene huddle at shift start. Weekly review of scoreboard and recognition. Monthly hygiene meeting with team. Quarterly anonymous culture survey. Annual comprehensive culture review and charter refresh.",
+  "meta": {
+    "summary_for_humans": "This block moves hygiene beyond checklists into a genuine team culture where cleanliness is a shared value. Through leadership modelling, peer accountability, recognition, and regular conversation, it makes hygiene something the team chooses to uphold rather than something they are forced to do.",
+    "implementation_risks": [
+      "If leadership does not genuinely participate, staff will see the programme as hypocritical",
+      "Culture change is slow — resist the temptation to abandon the approach after a few weeks",
+      "New starters can disrupt established culture — buddy systems help maintain standards"
+    ],
+    "notes_for_engine": "Activate after B009, B010, and B011 are in place. This block binds hygiene practices into culture. Flag as important if signals indicate staff apathy towards cleaning, inconsistent hygiene standards, or low EHO confidence in management scores.",
+    "tags": ["food_safety", "hygiene", "culture", "leadership", "team", "recognition", "EHO", "management"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

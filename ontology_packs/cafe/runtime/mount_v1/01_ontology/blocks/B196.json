@@ -1,0 +1,167 @@
+{
+  "block_id": "B196",
+  "name": "Reusable Cup Programme",
+  "version": "v1.0",
+  "domain": "D03_coffee_product_quality",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Designs and implements a reusable cup programme that genuinely reduces single-use cup waste through customer incentives, branded merchandise, deposit-return schemes, and operational workflows that make reusable cups the default rather than the exception. This block addresses the practical, financial, and behavioural challenges of shifting takeaway habits.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Launch a reusable cup incentive programme with clear, consistent discounts or loyalty rewards",
+      "Stock and merchandise branded reusable cups that customers want to own and carry",
+      "Establish operational workflows so staff can serve into customer-brought cups hygienically and efficiently",
+      "Implement a deposit-return or borrow scheme for customers who forget their cups",
+      "Track reusable cup adoption rates and disposable cup reduction as measurable KPIs"
+    ],
+    "secondary_objectives": [
+      "Generate ancillary revenue through branded cup sales with healthy margins",
+      "Strengthen brand identity through well-designed, desirable reusable merchandise",
+      "Reduce waste disposal costs as disposable cup volume decreases",
+      "Build community around shared environmental values and visible reusable cup culture"
+    ]
+  },
+  "why_this_matters": "The UK uses approximately 2.5 billion disposable coffee cups per year, and despite widespread recycling bin availability, the polyethylene lining in standard paper cups means fewer than 1 in 400 are actually recycled. The Environmental Audit Committee has repeatedly recommended a levy on disposable cups — the so-called latte levy — and while government action has been slow, public awareness has surged. Major chains have introduced reusable cup discounts, but uptake remains below 5% of transactions in most outlets. The problem is behavioural, not attitudinal: surveys consistently show that over 70% of consumers say they would use a reusable cup, but habit, forgetfulness, and inconvenience mean they rarely do. For independent cafes, this presents both a challenge and an opportunity. The challenge is that implementing a reusable programme requires operational changes — staff must be trained to handle customer cups hygienically, till systems need discount buttons, and stock management must account for branded cup inventory. The opportunity is that a well-executed reusable programme builds fierce customer loyalty, reduces waste costs, generates merchandise revenue, and positions the cafe as an environmental leader. A branded KeepCup or custom ceramic travel mug becomes a walking advertisement seen on commuter trains, office desks, and Instagram posts. The key insight is that reusable cup adoption is driven not by guilt but by incentive design, convenience, and social proof — seeing other customers using them normalises the behaviour. This block provides the complete framework from launch to culture shift.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Decide on the incentive structure. The two proven models are: (a) discount for bringing a reusable cup (typically 20-50p off), or (b) surcharge for disposable cups (typically 10-25p extra, framed as a 'cup charge' not a penalty). Research shows surcharges are 2-3x more effective at changing behaviour than equivalent discounts, but they require careful communication to avoid customer backlash. Choose the model that fits the cafe's brand — specialty cafes often prefer the discount approach as it feels rewarding rather than punitive. Programme the till system with a 'reusable cup' button that applies the discount or removes the surcharge. Week 2: Source branded reusable cups for sale. Options include KeepCup, Ecoffee Cup, Frank Green, or custom-branded ceramics from a local potter for a more artisanal feel. Price merchandise at a level that covers cost plus a 50-60% margin — a cup retailing at £12-15 with a cost of £5-7 is standard. Display cups prominently at the till point with clear signage explaining the discount programme. Train all staff on hygiene protocols for customer cups: the barista should not touch the rim, the cup should be visually inspected for cleanliness, and espresso can be poured directly from the machine without contact. Brief staff on how to explain the programme enthusiastically without being preachy.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Introduce a borrow scheme for customers who forget their cups — a deposit-return system where customers pay a £2-3 deposit for a house reusable cup, refunded when they return it on their next visit. Stock 20-30 borrow cups in a standard design (different from the retail cups) and track them with a simple tally system. Set up tracking: record the number of reusable cup transactions daily using the till data (the reusable cup button provides this automatically). Create a monthly report showing reusable cup percentage of total takeaway drinks. Set targets — a reasonable initial target is 15% of takeaway drinks in reusable cups within 3 months, rising to 25% within 6 months. Run a launch promotion: first reusable cup drink free, or buy a branded cup and get a free drink on the day. Promote through social media, in-store signage, and local press. Partner with nearby offices or co-working spaces to offer bulk reusable cup orders at a discount for their teams. Establish a cleaning SOP for returned borrow cups — they must be washed at 82°C or above in the commercial dishwasher before reuse, in line with food hygiene requirements.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Reusable cups should now be a visible part of the cafe's identity. Launch a loyalty programme specifically tied to reusable cup use — for example, every 10th reusable cup drink is free, tracked on a dedicated stamp card or digital loyalty app. Release seasonal or limited-edition branded cup designs to create collectibility and drive repeat purchases. Display a live counter (chalkboard or digital) showing the total number of disposable cups saved since the programme launched — this creates social proof and community pride. Conduct quarterly reviews of reusable cup data, analysing which days, times, and customer segments have highest adoption. Use insights to target promotional efforts. Explore a cup-share network with neighbouring businesses — a customer borrows a cup from your cafe and returns it to a partner cafe, or vice versa. Investigate closed-loop cup systems such as CupClub or Again where professionally sanitised cups circulate across multiple venues. Share results publicly in the quarterly sustainability report and on social media, celebrating milestones."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Decide on incentive model: discount for reusable or surcharge for disposable",
+        "Programme the till system with a reusable cup discount button",
+        "Source and stock branded reusable cups for retail sale at the counter",
+        "Create clear in-store signage explaining the programme and discount amount",
+        "Train all staff on hygiene protocols for serving into customer-brought cups",
+        "Brief staff on how to promote the programme positively and answer common questions",
+        "Display reusable cups prominently at the point of sale"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Launch a deposit-return borrow scheme with 20-30 house reusable cups",
+        "Set up till-based tracking of reusable cup transactions for monthly reporting",
+        "Set quarterly adoption targets starting at 15% of takeaway drinks",
+        "Run a launch promotion with free drink offers tied to reusable cup purchase",
+        "Establish a cleaning SOP for returned borrow cups meeting food hygiene standards",
+        "Partner with local offices or co-working spaces for bulk branded cup orders",
+        "Create monthly reusable cup adoption reports from till data"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Launch a reusable cup loyalty programme with dedicated rewards",
+        "Release seasonal or limited-edition branded cup designs",
+        "Display a live counter showing total disposable cups saved since launch",
+        "Conduct quarterly data reviews analysing adoption by segment, day, and time",
+        "Explore cup-share networks with neighbouring businesses",
+        "Share programme results publicly in sustainability reporting"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Reusable Cup Programme launch plan and signage pack",
+    "Borrow scheme deposit-return tracking sheet",
+    "Hygiene SOP for customer-brought and borrow cups",
+    "Monthly Reusable Cup Adoption Report template",
+    "Branded cup merchandise sourcing brief"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T196-01",
+        "tool_name": "Reusable Cup Programme Launch Planner",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Step-by-step launch plan covering incentive model selection, cup sourcing, till setup, signage design, staff training schedule, and promotional timeline for the first month."
+      },
+      {
+        "tool_id": "T196-02",
+        "tool_name": "Customer Cup Hygiene SOP",
+        "level": "L1",
+        "format": "SOP",
+        "owner_role": "Head Barista",
+        "description": "Standard operating procedure for accepting, inspecting, and serving into customer-brought reusable cups, including refusal criteria, handling protocols, and borrow cup sanitisation requirements."
+      },
+      {
+        "tool_id": "T196-03",
+        "tool_name": "Borrow Cup Deposit Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Log tracking borrow cup deposits issued and returns received, identifying unreturned cups, calculating loss rate, and flagging when stock needs replenishing."
+      },
+      {
+        "tool_id": "T196-04",
+        "tool_name": "Monthly Reusable Cup Adoption Report",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Monthly report pulling till data to show reusable cup transactions as a percentage of total takeaway drinks, with trend lines, day-of-week analysis, and progress against quarterly targets."
+      },
+      {
+        "tool_id": "T196-05",
+        "tool_name": "Cup Merchandise Sourcing Brief",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Procurement brief template for sourcing branded reusable cups, covering design specifications, supplier comparison, minimum order quantities, pricing, margin targets, and lead times."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Discount is too small to motivate behaviour change — a 10p discount on a £3.50 coffee is invisible, while a 50p discount creates noticeable savings",
+    "Staff fail to ask about reusable cups or apply discounts inconsistently, undermining customer trust in the programme",
+    "Borrow cups are not returned at acceptable rates, creating ongoing stock losses that erode the business case",
+    "Hygiene concerns are not addressed with clear protocols, leading to staff discomfort or customer complaints about cup handling"
+  ],
+  "kpis": [
+    "Reusable cup adoption reaching 15% of takeaway drinks within 3 months and 25% within 6 months",
+    "Branded cup merchandise generating positive margin with at least 20 units sold per month",
+    "Borrow cup return rate exceeding 80% within the deposit-return scheme",
+    "Measurable reduction in disposable cup purchasing costs quarter-on-quarter"
+  ],
+  "dependencies": ["B057"],
+  "constraints": [
+    "Hygiene protocols for customer cups must comply with food safety legislation — cups must be visually clean and handled without contact with the serving rim",
+    "Borrow scheme requires upfront capital for cup stock and a system to track deposits",
+    "Till system must support a reusable cup discount button or modifier for accurate tracking"
+  ],
+  "time_load": {
+    "L1": "4 hours (incentive design, till setup, cup sourcing, staff training)",
+    "L2": "6 hours (borrow scheme setup, tracking systems, promotional campaign)",
+    "L3": "2 hours/month (data review, merchandise refresh, programme optimisation)"
+  },
+  "review_protocol": "Weekly check of reusable cup transaction counts by shift lead. Monthly adoption report reviewed by manager. Quarterly programme review with target adjustment. Annual merchandise refresh and programme evolution.",
+  "meta": {
+    "summary_for_humans": "This block creates a complete reusable cup programme — from choosing the right incentive model and sourcing branded cups, to running a borrow scheme and tracking adoption. The goal is to make reusable cups the easy, rewarding default rather than a virtuous inconvenience.",
+    "implementation_risks": [
+      "Customer pushback on surcharge model requires careful framing as environmental contribution, not penalty",
+      "Branded cup design must be genuinely desirable — cheap-looking merchandise damages brand perception",
+      "Programme fatigue can set in after initial enthusiasm — seasonal refreshes and milestones maintain momentum"
+    ],
+    "notes_for_engine": "Activate when signals indicate high takeaway volume, customer sustainability interest, or excessive disposable cup costs. Pairs with B195 (Sustainability Strategy) as a practical implementation of broader environmental goals.",
+    "tags": ["reusable_cups", "sustainability", "waste_reduction", "merchandise", "customer_incentives", "takeaway", "environment"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,579 @@
+[
+  {
+    "response_pattern_id": "RP054",
+    "rp_name": "Regulatory Compliance & Risk Management",
+    "domain": "D01",
+    "severity": "medium-critical",
+    "priority_score": 7.399999999999999,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM098",
+        "fm_title": "Regulatory compliance and risk management failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM099",
+        "fm_title": "Health and safety risk assessment failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM100",
+        "fm_title": "Fire safety and emergency preparedness failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM101",
+        "fm_title": "Licensing and employment law compliance failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM110",
+        "fm_title": "Social insurance administration failure",
+        "fm_score": 0.85,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM111",
+        "fm_title": "Food business approval and licensing failure",
+        "fm_score": 0.85,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM112",
+        "fm_title": "Employment contract and labour law failure",
+        "fm_score": 0.85,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM118",
+        "fm_title": "Alcohol licensing compliance failure",
+        "fm_score": 0.85,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Conduct an immediate regulatory compliance check. Is your health and safety risk assessment current? Are fire extinguishers inspected and fire exits clear? Do you have employers liability insurance displayed? Are your gas and electrical safety certificates current? Check your food business registration and any premises licence requirements. Fix any compliance gaps this week.",
+    "l2_focus": "Build a regulatory compliance calendar covering all required inspections certifications and renewals. Create a risk register identifying operational health and safety and financial risks with mitigation plans. Implement an incident reporting system for accidents near-misses and safety concerns. Develop emergency procedures covering fire medical emergency equipment failure and supply disruption. Ensure employment law compliance including contracts right-to-work checks and pension auto-enrolment.",
+    "l3_focus": "Regulatory compliance should be effortless because your systems make it automatic. Build a compliance culture where everyone understands the importance of safety and legal requirements. Review your risk register quarterly and update as your operation evolves. Your regulatory house should be in order at all times not just before inspections.",
+    "description": "Regulatory Compliance & Risk Management"
+  },
+  {
+    "response_pattern_id": "RP035",
+    "rp_name": "Financial Review & Budgeting",
+    "domain": "D07",
+    "severity": "medium-critical",
+    "priority_score": 3.0,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM062",
+        "fm_title": "Financial review and reporting failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM065",
+        "fm_title": "Cash flow and budgeting failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM109",
+        "fm_title": "VAT and tax reporting compliance failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "When did you last review your financial performance in detail? If you cannot state your monthly revenue profit and cash position from memory you need better financial visibility. Pull your last three months of data and review trends. Check whether you have a budget or forecast for the year — if not you are flying blind.",
+    "l2_focus": "Establish a weekly financial review ritual covering revenue costs margins and cash position. Create an annual budget broken down by month with variance analysis. Implement a financial dashboard showing key metrics updated weekly. Develop financial literacy across your shift leads so they understand the impact of waste staffing and pricing decisions.",
+    "l3_focus": "Your financial management should give you confidence and control. Track financial KPIs monthly and review trends quarterly. Build a forecasting capability that predicts seasonal patterns and plans accordingly. Financial discipline should be embedded in daily decisions not confined to monthly reviews.",
+    "description": "Financial Review & Budgeting"
+  },
+  {
+    "response_pattern_id": "RP005",
+    "rp_name": "Food Safety Training & EHO Readiness",
+    "domain": "D01",
+    "severity": "medium-critical",
+    "priority_score": 2.0,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM009",
+        "fm_title": "Food safety training and certification failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM010",
+        "fm_title": "EHO readiness and audit compliance failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Check every team member's food safety certification status today. All food handlers must hold a minimum Level 2 Food Hygiene certificate. If any certificates have expired or were never obtained arrange training within the next 14 days. Review your most recent EHO inspection report and confirm all recommendations have been actioned.",
+    "l2_focus": "Create a food safety training matrix showing every team member's certification status expiry date and next renewal. Schedule refresher training before certificates expire. Develop an internal food safety induction that covers your specific procedures not just generic training. Conduct a mock EHO inspection quarterly using the official scoring criteria.",
+    "l3_focus": "Embed food safety training into your cafe's identity. Every new starter should complete food safety induction before handling food. Build an internal food safety champion role with responsibility for standards compliance and continuous improvement. Your EHO readiness should be permanent not a last-minute preparation exercise.",
+    "description": "Food Safety Training & EHO Readiness"
+  },
+  {
+    "response_pattern_id": "RP051",
+    "rp_name": "Values Alignment & Standards Culture",
+    "domain": "D12",
+    "severity": "medium-critical",
+    "priority_score": 2.0,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM092",
+        "fm_title": "Values articulation and alignment failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM093",
+        "fm_title": "Standards consistency and culture failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Can every team member articulate your cafe's values and standards? Ask them today. If responses are vague or inconsistent your values exist in your head but not in your culture. Check whether you have a staff handbook that documents expectations standards and policies. If not the gap between your intentions and your team's understanding is growing daily.",
+    "l2_focus": "Define and document your cafe's core values in clear specific terms that guide daily behaviour. Create a staff handbook covering values standards policies and procedures. Implement a values-based onboarding process where new starters learn what matters to your cafe not just what tasks to perform. Address any toxic dynamics or cultural issues directly — they will not resolve themselves.",
+    "l3_focus": "Build a culture where your values are lived not laminated. Your standards should be maintained through shared commitment not surveillance. Celebrate team members who embody your values and address those who do not. Your culture is what happens when you are not watching — make it strong enough to sustain itself.",
+    "description": "Values Alignment & Standards Culture"
+  },
+  {
+    "response_pattern_id": "RP041",
+    "rp_name": "Brand Identity & Customer Acquisition",
+    "domain": "D08",
+    "severity": "medium-critical",
+    "priority_score": 1.9300000000000002,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM072",
+        "fm_title": "Brand identity and consistency failure",
+        "fm_score": 0.93,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM073",
+        "fm_title": "Customer acquisition strategy failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Can you describe your cafe's brand identity in one sentence? If not neither can your customers. Check your visual identity: logo signage menu design packaging cups. Is it cohesive or does it look assembled from different eras? Review your customer acquisition — how do new customers find you? If you do not know ask them.",
+    "l2_focus": "Define your brand identity covering your story values visual style and tone of voice. Create a brand style guide ensuring consistency across all touchpoints from signage to social media to packaging. Develop a customer acquisition strategy identifying your top three channels and investing in them. Create a new customer welcome process that encourages return visits.",
+    "l3_focus": "Your brand should be distinctive enough that customers choose you for who you are not just what you sell. Build a brand that your team can articulate and embody. Invest in professional brand development if your current identity has grown organically and lost coherence. Your brand is your most valuable long-term asset.",
+    "description": "Brand Identity & Customer Acquisition"
+  },
+  {
+    "response_pattern_id": "RP047",
+    "rp_name": "Data Analytics & Customer CRM",
+    "domain": "D10",
+    "severity": "medium-critical",
+    "priority_score": 1.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM083",
+        "fm_title": "Data reporting and analytics failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM084",
+        "fm_title": "Customer data and CRM failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "What do you know about your customers beyond what you observe? Check whether your POS or loyalty system captures customer data. Review what reports you can generate from your existing systems — many cafe owners are sitting on useful data they never look at. Identify three questions about your business that data could answer.",
+    "l2_focus": "Implement a customer data capture strategy through your loyalty programme POS system or dedicated CRM. Create a weekly reporting dashboard showing sales trends customer visit frequency and product performance. Develop a customer segmentation approach identifying regulars occasional visitors and lapsed customers. Use data to personalise marketing and improve customer retention.",
+    "l3_focus": "Build a data-driven culture where decisions are informed by evidence not intuition alone. Your analytics capability should help you understand customer behaviour predict demand and optimise operations. Balance data collection with privacy — be transparent about what you collect and why. Use data to create a better customer experience not just to sell more.",
+    "description": "Data Analytics & Customer CRM"
+  },
+  {
+    "response_pattern_id": "RP018",
+    "rp_name": "Staff Retention & Engagement",
+    "domain": "D04",
+    "severity": "medium-critical",
+    "priority_score": 1.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM029",
+        "fm_title": "Staff turnover and retention failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM036",
+        "fm_title": "Team morale and wellbeing failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Check your staff turnover rate for the past 12 months. If you have lost more than 30% of your team something is systemically wrong. Conduct informal one-to-one conversations with every team member this week to understand their satisfaction engagement and concerns. Identify your flight risks — who is most likely to leave next and why?",
+    "l2_focus": "Develop a staff retention strategy addressing the top three reasons baristas leave: pay progression opportunity and work-life balance. Implement a structured engagement programme including regular one-to-ones team social events and recognition. Create a compensation review process benchmarked against local hospitality market rates. Conduct exit interviews for every leaver and analyse the data for patterns.",
+    "l3_focus": "Build a workplace culture where people want to stay and grow. Your cafe should be known locally as a great place to work. Track engagement alongside turnover and invest in the relationship between the two. The best cafes retain their baristas for years not months — aim for that standard.",
+    "description": "Staff Retention & Engagement"
+  },
+  {
+    "response_pattern_id": "RP019",
+    "rp_name": "Onboarding & Barista Training",
+    "domain": "D04",
+    "severity": "medium-critical",
+    "priority_score": 1.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM030",
+        "fm_title": "Onboarding and induction failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM031",
+        "fm_title": "Barista skills and craft development failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Review your current induction process. Does a new starter receive a structured first week covering food safety coffee training till operation and customer service standards? Or are they thrown in and expected to learn on the job? If there is no written induction plan create one this week. Ensure every new starter is paired with an experienced barista for their first five shifts.",
+    "l2_focus": "Build a structured barista training programme with clear milestones and assessment criteria. Create a training manual covering all core skills from espresso extraction to food preparation to customer interaction. Implement a mentorship system where experienced baristas guide new starters. Develop a barista certification system with levels that link to pay progression.",
+    "l3_focus": "Create a learning culture where continuous skill development is valued and supported. Offer advanced training opportunities including external courses competitions and supplier-led sessions. Your training programme should be thorough enough that your baristas could work at any specialty cafe. Make training investment a retention tool and a recruitment attraction.",
+    "description": "Onboarding & Barista Training"
+  },
+  {
+    "response_pattern_id": "RP039",
+    "rp_name": "Online Reviews & Reputation Management",
+    "domain": "D08",
+    "severity": "medium-critical",
+    "priority_score": 1.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM069",
+        "fm_title": "Online review and reputation failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM071",
+        "fm_title": "Google Business and local search failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Check your Google reviews rating right now. If it is below 4.3 stars you are losing potential customers before they walk through your door. Read your last 20 reviews — what patterns emerge? Check TripAdvisor and any other platform where you are listed. Are you responding to negative reviews? A negative review without a response is twice as damaging.",
+    "l2_focus": "Implement a review monitoring system checking Google TripAdvisor and social media daily. Create response templates for positive and negative reviews that feel personal not corporate. Develop a review generation strategy — ask satisfied customers to leave reviews at the right moment. Track your review score monthly and set improvement targets.",
+    "l3_focus": "Your online reputation should be actively managed not passively observed. Aim for a Google rating above 4.5 with a high volume of recent reviews. Use review data as customer insight to drive improvements. Respond to every review positive and negative within 24 hours. Your review profile should be a genuine competitive advantage.",
+    "description": "Online Reviews & Reputation Management"
+  },
+  {
+    "response_pattern_id": "RP049",
+    "rp_name": "Business Planning & Market Positioning",
+    "domain": "D11",
+    "severity": "medium-critical",
+    "priority_score": 1.6,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM086",
+        "fm_title": "Business planning and strategy failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM115",
+        "fm_title": "Tourist and local customer segmentation failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Do you have a current business plan? If it was written for your initial bank loan and never updated it is not serving you. Even a one-page plan covering your goals for the next 12 months your competitive position and your financial targets is better than nothing. Conduct a basic competitor analysis — visit your three nearest competitors this week and assess honestly how you compare.",
+    "l2_focus": "Create or update your business plan covering vision market position financial projections and growth strategy. Conduct a formal competitive analysis mapping your strengths and weaknesses against local competitors. Define your market positioning — who is your ideal customer and why should they choose you? Develop an annual strategic review process and succession plan for the business.",
+    "l3_focus": "Your business strategy should be a living document that guides decisions not a dusty file. Review and update quarterly. Build a clear competitive advantage that is difficult to replicate. Plan for the long term including succession and exit options. Your strategic clarity should give you confidence in every investment decision.",
+    "description": "Business Planning & Market Positioning"
+  },
+  {
+    "response_pattern_id": "RP004",
+    "rp_name": "HACCP & Food Safety Management System",
+    "domain": "D01",
+    "severity": "medium-critical",
+    "priority_score": 1.0,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM007",
+        "fm_title": "Food safety management system (HACCP) failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Check whether you have a documented HACCP-based food safety management system. If you are using Safer Food Better Business or an equivalent it must be current and actively used not filed away. Identify your critical control points — cooking temperatures cooling times hot holding — and confirm they are being monitored and recorded. Any gaps must be addressed this week.",
+    "l2_focus": "Build or update your HACCP system to cover all food processes in your cafe from goods receipt through storage preparation cooking display and service. Document each critical control point with target parameters monitoring frequency corrective actions and responsible person. Train all kitchen and food preparation staff on the HACCP system and their specific responsibilities within it.",
+    "l3_focus": "Your food safety management system should be a living document that evolves with your menu and operations. Conduct internal food safety audits quarterly and use findings to update procedures. Maintain supplier due diligence records and traceability systems. Aim for consistent EHO rating of 5 and use food safety excellence as a customer trust signal.",
+    "description": "HACCP & Food Safety Management System"
+  },
+  {
+    "response_pattern_id": "RP015",
+    "rp_name": "Recipe Standards & Portion Control",
+    "domain": "D03",
+    "severity": "medium-critical",
+    "priority_score": 1.0,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM025",
+        "fm_title": "Recipe standardisation and portion control failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Check whether you have written recipe cards for every drink and food item on your menu. If a new barista started tomorrow could they make every drink to your standard without asking? Verify that portion sizes are consistent — weigh a few items and compare to your intended standard. Inconsistent portions erode margins and customer trust.",
+    "l2_focus": "Create a comprehensive recipe card system covering every drink and food item on your menu. Include exact measurements pour weights ingredient lists and visual references. Implement a portion control system with scales scoops and measures at every station. Train all team members on recipe standards and conduct quarterly consistency audits. Track cost per serve for your top 20 items.",
+    "l3_focus": "Standardisation should not kill creativity but it must ensure consistency. Your recipe system should be thorough enough that any trained barista can produce your drinks to standard while still allowing skilled baristas to express their craft. Update recipe cards whenever ingredients or methods change and review them quarterly.",
+    "description": "Recipe Standards & Portion Control"
+  },
+  {
+    "response_pattern_id": "RP022",
+    "rp_name": "Key Person Risk & Cross-Training",
+    "domain": "D04",
+    "severity": "medium-critical",
+    "priority_score": 1.0,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM034",
+        "fm_title": "Key person dependency and cover failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Identify your key person dependencies today. Who is the only person who can do the banking the ordering the espresso machine maintenance or the rota? What happens if they are ill for two weeks or resign? If the answer is chaos you have a critical vulnerability. Start documenting their knowledge this week.",
+    "l2_focus": "Implement a cross-training programme ensuring at least two people can perform every critical function. Create a skills coverage matrix showing who can cover what and identifying gaps. Develop an absence cover protocol with emergency contact procedures and minimum staffing requirements. Document all key processes in a simple operations manual accessible to the whole team.",
+    "l3_focus": "Build organisational resilience through deep cross-training and knowledge sharing. No single person's departure should threaten your cafe's operation. Create a knowledge capture system where processes are documented and regularly updated. Your team's collective capability should exceed any individual's contribution.",
+    "description": "Key Person Risk & Cross-Training"
+  },
+  {
+    "response_pattern_id": "RP023",
+    "rp_name": "Owner Role & Leadership Development",
+    "domain": "D04",
+    "severity": "medium-critical",
+    "priority_score": 1.0,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM037",
+        "fm_title": "Owner overwork and delegation failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "If you are the owner and you are working every shift making every decision and handling every problem you are the bottleneck. Block out two hours of protected management time this week — away from the bar away from customers — for planning and strategic thinking. Identify the three tasks you do that someone else could be trained to do and start delegating them.",
+    "l2_focus": "Define your role as owner clearly distinguishing between working IN the business and working ON it. Create a delegation plan transferring operational tasks to trained team members. Develop your leadership skills through training coaching or peer groups. Establish protected management time as a non-negotiable weekly commitment. Build a leadership pipeline by developing your shift leads.",
+    "l3_focus": "Evolve from operator to leader. Your cafe should run smoothly when you are not there — if it cannot your systems and team are not strong enough. Invest in your own development as a business leader. Build a leadership team that shares your vision and can make decisions autonomously. Your wellbeing and sustainability as an owner is critical to the business.",
+    "description": "Owner Role & Leadership Development"
+  },
+  {
+    "response_pattern_id": "RP031",
+    "rp_name": "Food Cost & Coffee Cost Control",
+    "domain": "D06",
+    "severity": "medium-critical",
+    "priority_score": 1.0,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM053",
+        "fm_title": "Food cost percentage control failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Calculate your food cost percentage and coffee cost percentage for the past month. Food cost should be below 35% and coffee cost below 25% of revenue from those categories. If you do not know these numbers you cannot manage them. Pull your purchase invoices and your revenue data and calculate today. Any item costing more than 40% to produce needs immediate attention.",
+    "l2_focus": "Implement a menu item costing system showing the exact cost and margin for every item you sell. Create a monthly cost tracking dashboard comparing food cost percentage and coffee cost percentage against targets. Develop a pricing strategy that ensures sustainable margins. Negotiate supplier terms annually and benchmark prices against alternatives. Track packaging costs separately and set reduction targets.",
+    "l3_focus": "Master your unit economics. Every menu item should earn its place through margin contribution and customer appeal. Use cost data to drive menu engineering decisions. Build a culture of cost awareness across the team without compromising quality. Your cost management should be precise enough to detect a 1% variance week-on-week.",
+    "description": "Food Cost & Coffee Cost Control"
+  },
+  {
+    "response_pattern_id": "RP040",
+    "rp_name": "Social Media & Visual Branding",
+    "domain": "D08",
+    "severity": "medium-critical",
+    "priority_score": 1.0,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM070",
+        "fm_title": "Social media and visual presence failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Audit your Instagram and social media presence today. When did you last post? Is your content visually appealing? Does your feed reflect the actual experience of visiting your cafe? For independent cafes Instagram is often the primary discovery channel — if your presence is weak you are invisible to potential customers. Check that your profile bio hours and location are current.",
+    "l2_focus": "Develop a social media strategy with a content calendar covering at least three posts per week. Invest in photography — good lighting and composition transform social content. Create content categories: product shots behind-the-scenes team features customer stories and community events. Engage with local accounts and food influencers. Track follower growth and engagement rates monthly.",
+    "l3_focus": "Build a social media presence that authentically represents your cafe's personality and values. Your visual content should be distinctive and recognisable. Develop a visual brand style that is consistent across all platforms. Use social media to build community not just broadcast. Your Instagram should make people want to visit.",
+    "description": "Social Media & Visual Branding"
+  },
+  {
+    "response_pattern_id": "RP002",
+    "rp_name": "Allergen Management & PPDS Compliance",
+    "domain": "D01",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM002",
+        "fm_title": "Allergen management and PPDS compliance failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Audit your allergen information immediately. Every menu item must have the 14 declarable allergens documented and available to customers on request. If you sell any pre-packed for direct sale items check Natasha's Law PPDS compliance now — every wrapped sandwich cake or salad must carry a full ingredient list with allergens emphasised. Fix any gaps today.",
+    "l2_focus": "Create an allergen matrix covering every item on your menu including specials and seasonal items. Implement a system for updating allergen information when recipes or suppliers change. Train every team member to handle allergen enquiries confidently and to escalate when uncertain. Develop a customer allergen dialogue script and ensure it is used consistently.",
+    "l3_focus": "Establish allergen management as a non-negotiable part of your food safety culture. Conduct quarterly allergen audits including mystery customer tests. Your allergen processes should be thorough enough that a customer with a severe allergy feels genuinely safe eating with you. Track allergen near-misses and use them to strengthen your system.",
+    "description": "Allergen Management & PPDS Compliance"
+  },
+  {
+    "response_pattern_id": "RP003",
+    "rp_name": "Hygiene Handwashing & Cleaning Discipline",
+    "domain": "D01",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM005",
+        "fm_title": "Cleaning and sanitation programme failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Observe handwashing practice across your team today. Check that soap and paper towels are stocked at every handwash station and that sinks are accessible and not blocked by equipment. Review your cleaning schedule — if there is no written schedule or it is not being signed off confirm who is responsible for what and when. Address any visible hygiene issues in food preparation areas immediately.",
+    "l2_focus": "Develop a comprehensive cleaning schedule covering daily weekly and deep-clean tasks for every area of the cafe. Assign named responsibility for each task and implement a sign-off system. Install handwashing reminder signage and conduct observed handwashing assessments for all food handlers. Review personal hygiene standards including hair coverings aprons and jewellery policy.",
+    "l3_focus": "Build a hygiene culture where cleanliness is a source of team pride not a burden. Integrate pest control monitoring cleaning audits and personal hygiene standards into a single environmental hygiene programme. Conduct quarterly hygiene culture assessments and celebrate compliance. Your cafe should be visibly spotless at any moment of the day.",
+    "description": "Hygiene Handwashing & Cleaning Discipline"
+  },
+  {
+    "response_pattern_id": "RP020",
+    "rp_name": "Team Communication & Meetings",
+    "domain": "D04",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM032",
+        "fm_title": "Team communication and meeting failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Are you holding daily team briefings before each shift? If not start tomorrow. A 5-minute huddle covering the day's targets any specials or changes and any issues from yesterday transforms team alignment. Check whether you have a weekly team meeting — if not schedule one. Communication gaps create errors waste and frustration.",
+    "l2_focus": "Implement a structured communication framework: daily pre-shift briefings weekly team meetings and monthly all-hands sessions. Create agenda templates for each format. Establish a digital communication channel (WhatsApp group or similar) for operational updates. Develop a rota publication policy ensuring at least two weeks advance notice. Track meeting attendance and action completion.",
+    "l3_focus": "Build a communication culture where information flows freely and everyone feels heard. Your team should understand the cafe's goals challenges and successes. Use meetings as opportunities for recognition and skill sharing not just task allocation. Excellent communication is the foundation of team performance.",
+    "description": "Team Communication & Meetings"
+  },
+  {
+    "response_pattern_id": "RP026",
+    "rp_name": "Daily Routines & Shift Handover",
+    "domain": "D05",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM039",
+        "fm_title": "Opening and closing routine failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Do you have written opening and closing checklists? If not create them today covering every task from unlocking the door and switching on equipment to cashing up and setting the alarm. Check whether shift handovers include a structured information transfer — what happened during the shift what needs attention and what is prepared for tomorrow.",
+    "l2_focus": "Develop comprehensive opening mid-shift and closing checklists with sign-off requirements. Create a shift handover protocol including a written handover note template. Implement a daily reconciliation process covering cash stock levels waste and any incidents. Train all shift-capable team members on the full opening and closing procedure. Conduct quarterly reviews of your routines to ensure they remain current.",
+    "l3_focus": "Your daily routines should run like clockwork. Every shift should start and end consistently regardless of who is working. Build a culture where checklists are respected not resented. Your operational rhythm should be so reliable that you can identify anomalies immediately when something is not right.",
+    "description": "Daily Routines & Shift Handover"
+  },
+  {
+    "response_pattern_id": "RP042",
+    "rp_name": "Community Marketing & Local Engagement",
+    "domain": "D08",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM074",
+        "fm_title": "Community marketing and engagement failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "List every local connection your cafe has: schools businesses sports clubs community groups charities. If the list is short you are missing the most cost-effective marketing channel available to an independent cafe. Identify three local organisations you could partner with this month and make contact.",
+    "l2_focus": "Develop a community engagement strategy covering local partnerships event hosting charity support and neighbourhood marketing. Create a local marketing calendar aligned with community events school terms and seasonal moments. Host or sponsor at least one community event per quarter. Build relationships with local media bloggers and influencers.",
+    "l3_focus": "Position your cafe as a community hub not just a coffee shop. Your community engagement should be genuine and sustained not transactional. Build partnerships that create mutual value. The strongest independent cafes are woven into the fabric of their neighbourhood — aim for that level of connection.",
+    "description": "Community Marketing & Local Engagement"
+  },
+  {
+    "response_pattern_id": "RP043",
+    "rp_name": "Exterior Presentation & Cleanliness",
+    "domain": "D09",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM114",
+        "fm_title": "Seasonal terrace and outdoor operations failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Walk past your cafe from across the street. What does a potential customer see? Is your signage clear and inviting? Is the exterior clean — windows washed pavement swept A-board presentable? Step inside and look with fresh eyes: are surfaces clean tables cleared and floors spotless? First impressions are made in seconds and cannot be undone.",
+    "l2_focus": "Develop presentation standards for your exterior and front-of-house covering signage window displays A-boards lighting and cleanliness. Create a front-of-house cleaning checklist with hourly touch-points during service. Implement a deep-clean schedule for floors walls and fixtures. Ensure back-of-house organisation does not spill into customer areas. Maintain toilet facilities to hotel standard.",
+    "l3_focus": "Your cafe should look its best at every moment of every day. Cleanliness and presentation should be instinctive not instructed. Build a culture where every team member notices and corrects presentation issues without being asked. Your exterior should draw people in and your interior should make them want to stay.",
+    "description": "Exterior Presentation & Cleanliness"
+  },
+  {
+    "response_pattern_id": "RP034",
+    "rp_name": "Revenue Growth & Pricing Strategy",
+    "domain": "D07",
+    "severity": "medium-critical",
+    "priority_score": 0.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM061",
+        "fm_title": "Pricing strategy and review failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Pull your revenue per hour data for the past four weeks. Identify your most and least productive hours. Is your average transaction value (ATV) growing or stagnant? When did you last review your prices? If it has been more than 12 months your prices are almost certainly too low given ingredient and wage inflation. Compare your prices to three local competitors this week.",
+    "l2_focus": "Implement a structured pricing review process conducted every 6-12 months. Develop an upselling programme training baristas to suggest add-ons naturally — extra shot cake with coffee larger size. Track ATV daily and set improvement targets. Create revenue targets for each shift and share them with the team. Analyse your highest-margin items and position them prominently.",
+    "l3_focus": "Build a revenue growth culture where the team understands the connection between their service and the cafe's financial health. Your pricing should reflect your value not just your costs. Develop premium offerings that increase ATV without alienating core customers. Track revenue per hour as your primary productivity metric.",
+    "description": "Revenue Growth & Pricing Strategy"
+  },
+  {
+    "response_pattern_id": "RP046",
+    "rp_name": "POS & Digital Ordering",
+    "domain": "D10",
+    "severity": "medium-critical",
+    "priority_score": 0.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM082",
+        "fm_title": "Digital ordering and payment failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Review how you are using your POS system. Are you using it just as a till or are you leveraging its reporting capabilities? Check whether you can pull sales by product by hour and by team member. If you cannot your POS setup needs attention. Review whether digital ordering (app or website) would benefit your operation.",
+    "l2_focus": "Optimise your POS configuration to capture the data you need: product-level sales hourly revenue team member performance and payment method breakdown. Implement digital ordering if customer demand and operational capacity support it. Integrate your POS with your accounting system and inventory management. Train all team members to use the POS fully and accurately.",
+    "l3_focus": "Your technology should work for you not against you. Build a digital infrastructure that gives you real-time visibility of your cafe's performance. Evaluate new technology against clear ROI criteria. Your POS data should be the foundation of evidence-based decision making across all areas of the business.",
+    "description": "POS & Digital Ordering"
+  },
+  {
+    "response_pattern_id": "RP053",
+    "rp_name": "Operational Rhythm & Daily Discipline",
+    "domain": "D05",
+    "severity": "medium-critical",
+    "priority_score": 0.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM097",
+        "fm_title": "Operational discipline and daily routine failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Review your daily operational discipline. Are prep lists being used? Is the waste log completed every day? Is the maintenance log up to date? Are daily targets communicated to the team? If any of these basic disciplines have lapsed recommit to them this week. Operational discipline is the foundation everything else is built on.",
+    "l2_focus": "Create a comprehensive daily discipline framework covering prep lists waste logs maintenance logs cash reconciliation temperature checks and target tracking. Implement an operational rhythm dashboard that gives you a daily snapshot of compliance. Train all shift-capable team members on the full discipline framework. Conduct weekly discipline audits and address gaps immediately.",
+    "l3_focus": "Operational discipline should be invisible because it is automatic. Your daily routines should be so embedded that they happen without thinking. Build a culture where discipline is respected and lapses are noticed by the team not just by management. Your operational rhythm should be the heartbeat of your cafe.",
+    "description": "Operational Rhythm & Daily Discipline"
+  }
+]

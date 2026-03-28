@@ -1,0 +1,167 @@
+{
+  "block_id": "B074",
+  "name": "Daily Team Briefing Protocol",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Establishes a structured pre-shift team briefing — a daily five-to-ten-minute huddle that aligns the team on priorities, shares critical information, surfaces concerns, and sets the tone for the shift ahead.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a consistent daily briefing format that covers essential information in under ten minutes",
+      "Ensure every team member starting a shift knows the day's priorities, specials, shortages, and any unusual circumstances",
+      "Provide a structured moment for recognition, building a habit of celebrating positive contributions",
+      "Surface potential issues early — staffing gaps, equipment problems, large bookings — before they become crises during service",
+      "Build team cohesion by starting every shift with a shared moment of alignment and connection"
+    ],
+    "secondary_objectives": [
+      "Reduce errors caused by miscommunication or missing information during service",
+      "Create a daily touchpoint for food safety reminders (allergen specials, temperature issues)",
+      "Give junior staff a low-pressure opportunity to ask questions and contribute ideas"
+    ]
+  },
+  "why_this_matters": "The difference between a cafe that runs smoothly and one that lurches from crisis to crisis often comes down to the first five minutes of the shift. When staff arrive, clock in, and scatter to their stations without a word exchanged, information falls through the cracks. Nobody mentioned that the oat milk delivery did not arrive. Nobody communicated that a large party is booked for 11am. Nobody warned that the grinder was running hot yesterday. The result is avoidable problems during service — a customer told their favourite milk is unavailable mid-order, a rush of unexpected covers overwhelming a two-person floor, a grinder that fails because nobody flagged the warning signs. A daily team briefing eliminates this information vacuum. Military organisations call it 'situational awareness.' In hospitality, it is the difference between reactive firefighting and proactive service excellence. The briefing also serves critical food safety functions: reminding staff of the day's allergen-relevant specials, flagging any temperature excursions from the morning checks, and reinforcing key hygiene messages. Under the Food Information Regulations 2014, staff must be able to communicate allergen information accurately — a daily reminder of today's specials and their allergen profiles is a practical safeguard. Beyond the operational benefits, daily briefings build culture. Starting the shift with a 'thank you' to someone who went above and beyond yesterday costs nothing but creates a habit of recognition. Asking the team 'anything you need from me today?' signals that management is there to support, not just direct. Over weeks and months, this five-minute investment compounds into significantly stronger team cohesion and communication.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Introduce a daily pre-shift briefing at the start of the main opening shift. Keep it to five minutes maximum. Stand together — do not sit, as standing keeps it brief and energetic. Use a simple five-point structure: (1) Recognition — thank someone by name for something specific from yesterday. (2) Today's priorities — what is the single most important thing to get right today. (3) Need to know — any specials, shortages, deliveries, bookings, or allergen changes. (4) Any issues — does anyone need to flag a problem, concern, or request. (5) Let's go — a positive close. Write the five points on a card and give it to whoever is leading the briefing as a prompt. For the first week, the owner or manager leads every briefing to model the format and tone. Week 2: Begin rotating briefing leadership to shift leads and senior baristas, building their communication and leadership skills. The briefing leader reviews the day's specials, checks the booking diary, and reviews yesterday's close notes before the briefing. If any team member is absent, note it in the briefing so everyone knows the staffing picture. Gather informal feedback — is five minutes right, are the five points useful, what would people add or remove?",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Daily Briefing Sheet — a simple A5 template that the briefing leader completes before the huddle, ensuring nothing is missed. Include sections for: recognition item, today's specials with allergen flags, staffing for the shift, expected busy periods or bookings, any equipment issues, and a food safety reminder of the day. Keep a log of briefing sheets — they create a useful operational record and can be reviewed to spot recurring themes. Develop a Briefing Leader Guide for anyone who may run the briefing, covering the format, timing, tone, and how to handle common situations (team member raises a complaint, nobody has anything to say, briefing runs over). Link the daily briefing to the closing checklist (B092) — the person closing should leave a brief note for the opener highlighting anything the morning team needs to know, creating continuity between shifts. Establish an expectation that all staff attend the briefing before starting their station prep. Late arrivals receive a one-minute catch-up from the shift lead so they are not operating without key information.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The daily briefing becomes a cultural ritual — the team expects it, values it, and notices when it is skipped. Introduce rotating themes for the recognition element: Monday might focus on customer interaction, Tuesday on coffee quality, Wednesday on teamwork. Add a weekly 'idea of the week' slot where any team member can suggest a small improvement — and commit to trialling at least one suggestion per month. Track briefing consistency: are briefings happening every day, are they staying within time, and are briefing sheets being completed? Audit monthly. Use briefing themes to reinforce training priorities: if the team is working on latte art, include a 30-second latte art tip in Tuesday's briefing. Survey the team quarterly on the value of briefings — is the format working, is the information useful, do they feel heard?"
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Introduce a daily five-minute pre-shift briefing using the five-point structure",
+        "Create a briefing prompt card with the five points for the briefing leader",
+        "Owner or manager leads all briefings for the first week to model the format",
+        "Begin rotating briefing leadership to shift leads and senior baristas in Week 2",
+        "Ensure the briefing covers today's specials, allergens, staffing, and priorities",
+        "Start every briefing with a specific, named recognition of a team member",
+        "Gather informal feedback on the format after the first two weeks"
+      ],
+      "responsible": "Manager, Shift Lead"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a Daily Briefing Sheet template (A5, completed before each briefing)",
+        "Develop a Briefing Leader Guide covering format, timing, tone, and scenarios",
+        "Establish a briefing sheet log for operational record-keeping",
+        "Link the daily briefing to the closing checklist for shift-to-shift continuity",
+        "Set an expectation that all staff attend the briefing before starting station prep",
+        "Create a late-arrival catch-up protocol so nobody works without key information",
+        "Review briefing sheets weekly for recurring themes and unresolved issues"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce rotating recognition themes and a weekly idea-of-the-week slot",
+        "Track briefing consistency and completion of briefing sheets monthly",
+        "Use briefing themes to reinforce current training priorities",
+        "Survey the team quarterly on the value and format of daily briefings",
+        "Celebrate the briefing habit as part of the venue's identity and culture",
+        "Integrate briefing content with food safety, training, and operational blocks"
+      ],
+      "responsible": "Manager, Shift Lead"
+    }
+  },
+  "deliverables": [
+    "Five-Point Briefing Prompt Card",
+    "Daily Briefing Sheet template (A5)",
+    "Briefing Leader Guide",
+    "Shift Handover Note template (closing to opening link)",
+    "Briefing Consistency Tracker"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T074-01",
+        "tool_name": "Five-Point Briefing Prompt Card",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Shift Lead",
+        "description": "Laminated A5 card listing the five briefing points (Recognition, Priorities, Need to Know, Issues, Close) as a prompt for whoever is leading the daily huddle."
+      },
+      {
+        "tool_id": "T074-02",
+        "tool_name": "Daily Briefing Sheet",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Shift Lead",
+        "description": "Pre-briefing preparation template with sections for recognition item, specials and allergens, staffing, expected busy periods, equipment status, and food safety reminder. Completed before the briefing and filed for records."
+      },
+      {
+        "tool_id": "T074-03",
+        "tool_name": "Briefing Leader Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Guide for anyone leading the daily briefing covering the format, timing discipline (five to ten minutes), setting the right tone, handling complaints raised in the briefing, and managing quiet or disengaged groups."
+      },
+      {
+        "tool_id": "T074-04",
+        "tool_name": "Shift Handover Note",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Shift Lead",
+        "description": "Brief end-of-shift note left by the closing team for the opening team, highlighting anything the morning crew needs to know — equipment issues, stock shortages, incidents, or customer feedback."
+      },
+      {
+        "tool_id": "T074-05",
+        "tool_name": "Briefing Consistency Tracker",
+        "level": "L3",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Monthly tracker recording whether briefings occurred each day, who led them, whether briefing sheets were completed, and any themes emerging from the need-to-know or issues sections."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Briefings are skipped on busy days — precisely when they are most needed — because the team feels there is no time",
+    "The briefing becomes a monologue from the manager rather than a two-way exchange, disengaging the team",
+    "Recognition becomes formulaic or perfunctory, losing its motivational impact",
+    "Critical information shared in the briefing is not recorded, so team members who arrive after the briefing miss it"
+  ],
+  "kpis": [
+    "Daily briefing conducted on 95% or more of operating days",
+    "Briefing duration consistently between 5 and 10 minutes",
+    "100% of briefing sheets completed and filed when using the L2 template",
+    "Team feedback on briefing value averaging 4 out of 5 or above in quarterly survey",
+    "Reduction in service errors attributable to miscommunication after briefing implementation"
+  ],
+  "dependencies": ["B075"],
+  "constraints": [
+    "Briefings must be brief — exceeding ten minutes consistently will erode team buy-in",
+    "All team members starting the shift must be present, requiring scheduling discipline",
+    "Briefing leaders must be trained to maintain a positive, purposeful tone"
+  ],
+  "time_load": {
+    "L1": "1 hour (prompt card creation, format design, first-week delivery)",
+    "L2": "3 hours (briefing sheet, leader guide, handover note, filing system)",
+    "L3": "30 minutes/month (consistency tracking, survey, format refinement)"
+  },
+  "review_protocol": "Daily: briefing happens and sheet is completed. Weekly: manager reviews briefing sheets for recurring themes and unresolved issues. Monthly: consistency tracker reviewed and gaps addressed. Quarterly: team survey on briefing value and format.",
+  "meta": {
+    "summary_for_humans": "This block creates a five-to-ten-minute daily pre-shift briefing covering recognition, priorities, need-to-know information, and issues — ensuring every team member starts their shift aligned, informed, and connected.",
+    "implementation_risks": [
+      "The owner must model the briefing consistently to establish the habit — skipping it sends a message that it is optional",
+      "Very small teams (two people) may find a formal briefing feels awkward — adjust the format to a conversational check-in",
+      "Briefing leaders need coaching to keep the tone positive and the duration disciplined"
+    ],
+    "notes_for_engine": "Activate for any venue. This is a foundational communication block with no minimum team size. Links to B075 for weekly meetings and B076 for broader communication culture.",
+    "tags": ["briefing", "huddle", "communication", "daily", "pre_shift", "recognition", "alignment", "team", "information"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

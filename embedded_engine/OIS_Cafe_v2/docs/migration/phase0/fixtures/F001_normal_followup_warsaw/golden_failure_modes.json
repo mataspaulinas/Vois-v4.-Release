@@ -1,0 +1,26 @@
+[
+  {
+    "failure_mode_id": "FM025",
+    "score": 0.8,
+    "domain_id": "D03",
+    "module_id": "",
+    "signal_ids": [
+      "S051"
+    ],
+    "title": "Recipe standardisation and portion control failure",
+    "severity": "medium",
+    "description": "Recipe standardisation and portion control failure"
+  },
+  {
+    "failure_mode_id": "FM031",
+    "score": 0.7,
+    "domain_id": "D04",
+    "module_id": "",
+    "signal_ids": [
+      "S051"
+    ],
+    "title": "Barista skills and craft development failure",
+    "severity": "high",
+    "description": "Barista skills and craft development failure"
+  }
+]

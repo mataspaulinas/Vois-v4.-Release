@@ -1,0 +1,31 @@
+{
+  "id": "sig_stock_or_input_inaccuracy",
+  "name": "Stock or input information is inaccurate",
+  "description": "The count, availability, or readiness information the team is using does not match reality closely enough to make clean decisions.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: stock or input inaccuracy expressed through restaurant availability and count control",
+  "updated_at": "2026-03-15T15:59:27.067083Z",
+  "domain": "financial_controls",
+  "module": "inventory_accuracy",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "recorded stock does not match actual stock",
+    "team relies on availability information that proves wrong",
+    "count-based decisions fail because the inputs are inaccurate"
+  ],
+  "source_types": [
+    "count review",
+    "manager notes",
+    "service observation"
+  ],
+  "temporal_behavior": "recurring",
+  "likely_co_signals": [
+    "sig_86_surprise",
+    "sig_count_variance"
+  ],
+  "adapter_aliases": [
+    "inventory reality mismatch",
+    "bad input data on shift"
+  ]
+}

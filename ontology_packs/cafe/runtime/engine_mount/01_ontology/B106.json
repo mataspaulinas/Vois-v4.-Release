@@ -1,0 +1,157 @@
+{
+  "block_id": "B106",
+  "name": "Supplier Performance Assessment",
+  "version": "v1.0",
+  "domain": "D06_supply_chain",
+  "module": "M06: Supply Chain & Supplier Relations",
+  "state": "enriched",
+  "purpose": "Implements a structured scoring system for evaluating supplier performance across quality, reliability, pricing, communication, and service, ensuring supplier relationships are managed on evidence rather than habit or personal relationships.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define measurable performance criteria for all supplier categories",
+      "Create a quarterly Supplier Scorecard that rates each supplier objectively",
+      "Use scorecard data to drive improvement conversations, renegotiations, or supplier changes",
+      "Track supplier performance trends over time to identify deterioration before it becomes critical",
+      "Establish a formal supplier review meeting cadence"
+    ],
+    "secondary_objectives": [
+      "Build a data-driven negotiation position for contract renewals and pricing discussions",
+      "Identify high-performing suppliers for deeper partnership and preferred status",
+      "Create accountability for suppliers who may take a small independent cafe for granted"
+    ]
+  },
+  "why_this_matters": "Most independent cafe owners choose suppliers based on a recommendation, a tasting, or a sales pitch, and then never formally assess their performance again. Over time, delivery reliability may decline, quality may drift, prices may creep upward, and the service relationship may erode — but without a measurement framework, these changes happen so gradually that they go unnoticed until they become serious problems. A supplier who delivered perfectly 95% of the time when the account was new may have slipped to 85% two years later, costing the cafe £200 per month in emergency purchases and menu disruptions. A roaster whose beans were consistently scored at 85 points may have quietly shifted to cheaper green coffee, dropping to 80 without the cafe realising. A dairy supplier who used to resolve issues within hours now takes days. These declines are invisible without structured assessment. The Supplier Performance Assessment creates visibility by scoring each supplier quarterly across standardised criteria. It transforms vague feelings ('I think the bread has been less good lately') into documented evidence ('bread quality scored 3.2 out of 5 this quarter, down from 4.1 last quarter, with 3 delivery shorts and 2 quality complaints'). This evidence powers productive supplier conversations, supports switching decisions, and ensures the cafe's supply chain is actively managed rather than passively accepted.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Define 5 performance criteria applicable to all suppliers: Quality (product meets agreed standards consistently), Reliability (deliveries arrive on time, in full, with correct items), Pricing (competitive, transparent, no unexpected increases), Communication (responsive, proactive about issues, easy to contact), and Service (flexibility, willingness to resolve problems, value-added support). Create a simple scoring system: rate each criterion from 1 (poor) to 5 (excellent). List every active supplier and assign them an initial score based on current experience — this first score is subjective and serves as a baseline. Week 2: Begin tracking supplier performance incidents in real time. Create a simple Supplier Incident Log — a notebook or shared document where any team member can record: date, supplier name, what happened (late delivery, short delivery, quality issue, wrong items), and impact on the cafe. This log becomes the evidence base for future quarterly scoring. Communicate to the team that recording supplier issues is valuable and expected — many cafes miss this data because staff do not think to report problems that feel routine.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a formal Quarterly Supplier Scorecard template. For each supplier, score the 5 criteria using a blend of incident log data and qualitative assessment. Calculate an overall score (average of all criteria) and categorise: 4.0-5.0 = Excellent (maintain and reward), 3.0-3.9 = Acceptable (monitor, identify improvements), 2.0-2.9 = Concerning (formal improvement discussion required), Below 2.0 = Unacceptable (switch to backup or terminate). Schedule quarterly supplier review meetings — these can be phone calls — where the scorecard is shared with the supplier and improvement targets are agreed for any criteria scoring below 3.5. Track trends over time: is a supplier improving, stable, or declining? Trending data is more valuable than any single score. Integrate the scorecard with backup supplier planning (B105) so that declining suppliers trigger backup readiness escalation. Share scorecard summaries with the team so they understand how their incident reports drive real action.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Supplier assessment should be a natural part of business management, not a special exercise. Integrate scorecard data into annual contract negotiations — a supplier with consistently high scores deserves loyalty; a supplier with declining scores faces transparent consequences. Publish an internal 'Supplier of the Quarter' recognition to reinforce the importance of the assessment process. Use scorecard data to build a supplier portfolio strategy: primary, secondary, and potential suppliers for each category, with clear criteria for promotion and demotion. Benchmark supplier pricing annually against market rates, using assessment data to justify negotiations. Share anonymised performance trends with key suppliers to demonstrate the cafe's professionalism and build mutual respect. Review the scoring criteria annually to ensure they remain relevant and balanced."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Define 5 performance criteria: Quality, Reliability, Pricing, Communication, Service",
+        "Create a 1-5 scoring system for each criterion",
+        "List all active suppliers and assign baseline scores",
+        "Create a Supplier Incident Log accessible to all staff",
+        "Brief the team on the importance of recording supplier issues",
+        "Place the incident log in an accessible location (behind the till or on a shared device)",
+        "Review all incidents weekly to identify patterns"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a formal Quarterly Supplier Scorecard template",
+        "Score all suppliers at the end of the first full quarter of data collection",
+        "Schedule quarterly supplier review calls to share scorecards and agree improvements",
+        "Track score trends over time to identify improving and declining suppliers",
+        "Integrate scorecard data with backup supplier planning (B105)",
+        "Share scorecard summaries with the team",
+        "Establish consequence thresholds: scores below 2.0 trigger switching process"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Integrate scorecard data into annual contract negotiations",
+        "Recognise high-performing suppliers with internal 'Supplier of the Quarter' status",
+        "Build a supplier portfolio strategy with primary, secondary, and potential tiers",
+        "Benchmark supplier pricing annually against market rates",
+        "Review scoring criteria annually for relevance and balance"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Supplier Incident Log template",
+    "Quarterly Supplier Scorecard template",
+    "Supplier Performance Trend tracker",
+    "Supplier Review Meeting agenda template",
+    "Annual Supplier Portfolio Summary"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T106-01",
+        "tool_name": "Supplier Incident Log",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "All Staff",
+        "description": "Simple log for recording supplier performance incidents as they occur: date, supplier, issue description, impact on the cafe, and resolution. Used as evidence for quarterly scoring."
+      },
+      {
+        "tool_id": "T106-02",
+        "tool_name": "Quarterly Supplier Scorecard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Quarterly assessment template scoring each supplier across Quality, Reliability, Pricing, Communication, and Service on a 1-5 scale, with trend tracking and category classification."
+      },
+      {
+        "tool_id": "T106-03",
+        "tool_name": "Supplier Review Meeting Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Agenda template for quarterly supplier review meetings: scorecard presentation, improvement targets, pricing discussion, upcoming needs, and action items."
+      },
+      {
+        "tool_id": "T106-04",
+        "tool_name": "Supplier Portfolio Matrix",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Annual strategic view of all suppliers by category, showing primary/secondary/potential tiers, performance scores, contract terms, and recommendation for the year ahead."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Incident log is not used consistently, leaving the quarterly scorecard without data and based on recollection bias",
+    "Scorecards are completed but never shared with suppliers, removing the accountability that drives improvement",
+    "Personal relationships with supplier representatives override objective performance data in decision-making",
+    "Assessment becomes a box-ticking exercise rather than a genuine management tool driving real outcomes"
+  ],
+  "kpis": [
+    "All suppliers scored quarterly with documented evidence from the incident log",
+    "No supplier remains below 3.0 overall score for more than 2 consecutive quarters without action",
+    "Supplier review meetings conducted quarterly for all Critical category suppliers",
+    "At least one pricing improvement or service enhancement achieved per quarter through evidence-based negotiation"
+  ],
+  "dependencies": ["B104", "B105"],
+  "constraints": [
+    "Supplier assessment requires consistent data collection — the incident log must be maintained daily, not retrospectively",
+    "Small cafes with limited supplier options may have less leverage — focus on communication and improvement rather than threats",
+    "Scoring must be honest and fair — inflated scores undermine the entire system"
+  ],
+  "time_load": {
+    "L1": "1 hour (criteria definition, log setup, team briefing)",
+    "L2": "3 hours/quarter (scorecard completion, supplier meetings, trend analysis)",
+    "L3": "2 hours/year (portfolio review, criteria update, annual negotiations)"
+  },
+  "review_protocol": "Weekly incident log review by manager. Quarterly supplier scorecard completion and supplier meetings. Bi-annual supplier portfolio assessment. Annual scoring criteria review.",
+  "meta": {
+    "summary_for_humans": "This block creates a structured supplier scoring system so that every supplier is assessed quarterly on Quality, Reliability, Pricing, Communication, and Service. It replaces gut feeling with evidence-based management, powering better negotiation and preventing the slow decline in supplier performance that many cafes accept without realising.",
+    "implementation_risks": [
+      "Staff may feel awkward recording supplier issues if they have personal relationships with delivery drivers — emphasise that it is about the company, not the individual",
+      "Sharing scorecards with suppliers requires confidence — frame it as a professional partnership practice, not confrontation",
+      "Very small cafes with no alternative suppliers may find low scores frustrating rather than actionable — focus on improvement conversations"
+    ],
+    "notes_for_engine": "Activate after B104 and B105 are established. Flag as urgent if signals indicate declining supplier quality, increasing delivery failures, or unexplained cost increases without corresponding quality improvements.",
+    "tags": ["supply_chain", "supplier_assessment", "performance", "scorecard", "quality", "negotiation", "accountability"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

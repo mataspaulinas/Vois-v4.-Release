@@ -1,0 +1,29 @@
+{
+  "id": "sig_equipment_breaks_service_flow",
+  "name": "Equipment breaks service flow",
+  "description": "Equipment or critical assets fail at the moment they are needed and force the service flow into delay, improvisation, or degraded quality.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: asset reliability should be treated as a live operational signal, not maintenance background",
+  "updated_at": "2026-03-14T00:41:10.242234Z",
+  "domain": "kitchen_operations",
+  "module": "equipment_reliability",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "incident_log",
+    "live_observation"
+  ],
+  "source_types": [
+    "manager_notes",
+    "staff_report"
+  ],
+  "temporal_behavior": "episodic",
+  "likely_co_signals": [
+    "sig_ticket_bottleneck",
+    "sig_line_check_missing"
+  ],
+  "adapter_aliases": [
+    "equipment_failure",
+    "critical_asset_down"
+  ]
+}

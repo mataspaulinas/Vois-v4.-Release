@@ -1,0 +1,429 @@
+[
+  {
+    "file": "06_app\\static\\app-chrome.js",
+    "fetch_calls": []
+  },
+  {
+    "file": "06_app\\static\\app-foundation.js",
+    "fetch_calls": []
+  },
+  {
+    "file": "06_app\\static\\app-home.js",
+    "fetch_calls": [
+      {
+        "line_number": 193,
+        "expression": "`/api/tasks/due-soon?days=${dueDays}`);"
+      },
+      {
+        "line_number": 216,
+        "expression": "`/api/activity/recent?limit=${activityLimit}`);"
+      },
+      {
+        "line_number": 239,
+        "expression": "'/api/notifications/proactive');"
+      },
+      {
+        "line_number": 293,
+        "expression": "`/api/project/${slug}`);"
+      }
+    ]
+  },
+  {
+    "file": "06_app\\static\\app-kb.js",
+    "fetch_calls": [
+      {
+        "line_number": 105,
+        "expression": "'/api/kb/articles');"
+      },
+      {
+        "line_number": 428,
+        "expression": "`/api/kb/articles/${slug}`);"
+      }
+    ]
+  },
+  {
+    "file": "06_app\\static\\app-portfolio.js",
+    "fetch_calls": []
+  },
+  {
+    "file": "06_app\\static\\app-shell.js",
+    "fetch_calls": [
+      {
+        "line_number": 22,
+        "expression": "'/api/workspace/users');"
+      },
+      {
+        "line_number": 32,
+        "expression": "`/api/notifications?user_id=${encodeURIComponent(getActiveActorId())}`);"
+      },
+      {
+        "line_number": 52,
+        "expression": "'/api/projects' + statusParam)"
+      },
+      {
+        "line_number": 53,
+        "expression": "'/api/projects/stats')"
+      },
+      {
+        "line_number": 203,
+        "expression": "`/api/notifications/${notification.notification_id}/status`"
+      },
+      {
+        "line_number": 221,
+        "expression": "`/api/notifications/${notificationId}/status`"
+      }
+    ]
+  },
+  {
+    "file": "06_app\\static\\app-sigmap.js",
+    "fetch_calls": [
+      {
+        "line_number": 154,
+        "expression": "'/api/sigmap/portfolio-matrix');"
+      },
+      {
+        "line_number": 394,
+        "expression": "`/api/sigmap/signal-timeline/${slug}`);"
+      },
+      {
+        "line_number": 493,
+        "expression": "`/api/sigmap/trace?signals=${signalIds.join('"
+      },
+      {
+        "line_number": 600,
+        "expression": "`/api/project/${venueSlug}/plan/add-block`"
+      },
+      {
+        "line_number": 623,
+        "expression": "'/api/sigmap/flag-systemic'"
+      },
+      {
+        "line_number": 707,
+        "expression": "`/api/signal/${signalId}/affected-blocks`);"
+      },
+      {
+        "line_number": 732,
+        "expression": "`/api/sigmap/precursors/${signalId}`);"
+      }
+    ]
+  },
+  {
+    "file": "06_app\\static\\app.js",
+    "fetch_calls": [
+      {
+        "line_number": 728,
+        "expression": "`/api/project/${slug}/archive`"
+      },
+      {
+        "line_number": 742,
+        "expression": "`/api/project/${slug}/unarchive`"
+      },
+      {
+        "line_number": 762,
+        "expression": "`/api/project/${slug}/delete`"
+      },
+      {
+        "line_number": 825,
+        "expression": "'/api/brand/create'"
+      },
+      {
+        "line_number": 881,
+        "expression": "'/api/project/create'"
+      },
+      {
+        "line_number": 929,
+        "expression": "'/api/ai-intake'"
+      },
+      {
+        "line_number": 1063,
+        "expression": "'/api/project/create'"
+      },
+      {
+        "line_number": 1085,
+        "expression": "`/api/project/${slug}/update`"
+      },
+      {
+        "line_number": 1146,
+        "expression": "`/api/project/${slug}`);"
+      },
+      {
+        "line_number": 1580,
+        "expression": "'/api/ai-intake'"
+      },
+      {
+        "line_number": 1927,
+        "expression": "'/api/run'"
+      },
+      {
+        "line_number": 2021,
+        "expression": "`/api/project/${currentVenue.slug}/update`"
+      },
+      {
+        "line_number": 2053,
+        "expression": "`/api/project/${currentVenue.slug}/assessment`"
+      },
+      {
+        "line_number": 2071,
+        "expression": "`/api/project/${currentVenue.slug}`);"
+      },
+      {
+        "line_number": 2586,
+        "expression": "'/api/brands')).json(); } catch(e) {}"
+      },
+      {
+        "line_number": 2709,
+        "expression": "'/api/brand/create'"
+      },
+      {
+        "line_number": 2756,
+        "expression": "`/api/project/${encodeURIComponent(slug)}/delete`"
+      },
+      {
+        "line_number": 2790,
+        "expression": "`/api/project/${currentVenue.slug}/update`"
+      },
+      {
+        "line_number": 2798,
+        "expression": "`/api/project/${currentVenue.slug}`);"
+      },
+      {
+        "line_number": 2814,
+        "expression": "`/api/project/${currentVenue.slug}/update`"
+      },
+      {
+        "line_number": 2826,
+        "expression": "`/api/project/${currentVenue.slug}`);"
+      },
+      {
+        "line_number": 2836,
+        "expression": "`/api/project/${currentVenue.slug}/update`"
+      },
+      {
+        "line_number": 2873,
+        "expression": "`/api/project/${currentVenue.slug}/progress`"
+      },
+      {
+        "line_number": 2992,
+        "expression": "`/api/project/${currentVenue.slug}/assessment/${f1}`).then(r => r.json())"
+      },
+      {
+        "line_number": 2993,
+        "expression": "`/api/project/${currentVenue.slug}/assessment/${f2}`).then(r => r.json())"
+      },
+      {
+        "line_number": 3031,
+        "expression": "`/api/project/${currentVenue.slug}/assessment/${filename}`);"
+      },
+      {
+        "line_number": 3380,
+        "expression": "'/api/chat/threads/all');"
+      },
+      {
+        "line_number": 3562,
+        "expression": "'/api/chat/threads/bulk'"
+      },
+      {
+        "line_number": 3587,
+        "expression": "'/api/chat/threads/bulk'"
+      },
+      {
+        "line_number": 3615,
+        "expression": "'/api/chat/threads/archived');"
+      },
+      {
+        "line_number": 3624,
+        "expression": "'/api/chat/threads/bulk'"
+      },
+      {
+        "line_number": 3688,
+        "expression": "url"
+      },
+      {
+        "line_number": 3706,
+        "expression": "url);"
+      },
+      {
+        "line_number": 3809,
+        "expression": "'/api/chat/threads'"
+      },
+      {
+        "line_number": 3858,
+        "expression": "`/api/chat/thread/${_chatActiveThread.id}/message`"
+      },
+      {
+        "line_number": 3944,
+        "expression": "url);"
+      },
+      {
+        "line_number": 4002,
+        "expression": "`/api/chat/thread/${_chatActiveThread.id}`"
+      },
+      {
+        "line_number": 4052,
+        "expression": "`/api/chat/thread/${threadId}`"
+      },
+      {
+        "line_number": 4066,
+        "expression": "url"
+      },
+      {
+        "line_number": 4093,
+        "expression": "'/api/chat/upload'"
+      },
+      {
+        "line_number": 4272,
+        "expression": "'/api/chat/threads'"
+      },
+      {
+        "line_number": 4295,
+        "expression": "'/api/copilot/proactive'"
+      },
+      {
+        "line_number": 4316,
+        "expression": "`/api/chat/thread/${_chatActiveThread.id}`"
+      },
+      {
+        "line_number": 4412,
+        "expression": "`/api/project/${encodeURIComponent(slug)}/update`"
+      },
+      {
+        "line_number": 4699,
+        "expression": "`/api/block/${blockId}`);"
+      },
+      {
+        "line_number": 4955,
+        "expression": "`/api/block/${blockId}`)"
+      },
+      {
+        "line_number": 5887,
+        "expression": "'/api/blocks');"
+      },
+      {
+        "line_number": 6124,
+        "expression": "'/api/tools');"
+      },
+      {
+        "line_number": 6347,
+        "expression": "`/api/tool/${toolId}`)"
+      },
+      {
+        "line_number": 6564,
+        "expression": "`/api/tool/${toolId}`)"
+      },
+      {
+        "line_number": 6816,
+        "expression": "`/api/signal/${signalId}/mappings`)"
+      },
+      {
+        "line_number": 7543,
+        "expression": "`/api/project/${currentVenue.slug}/plan`);"
+      },
+      {
+        "line_number": 7772,
+        "expression": "`/api/project/${currentVenue.slug}/assessments`)"
+      },
+      {
+        "line_number": 7807,
+        "expression": "`/api/project/${currentVenue.slug}/timeline`)"
+      },
+      {
+        "line_number": 8430,
+        "expression": "`/api/project/${currentVenue.slug}/plan/task/${taskId}/status`"
+      },
+      {
+        "line_number": 8483,
+        "expression": "`/api/project/${currentVenue.slug}/plan/task/${taskId}/action/${actionId}/toggle`"
+      },
+      {
+        "line_number": 8520,
+        "expression": "`/api/project/${currentVenue.slug}/plan/task/${taskId}/deliverable/${idx}/toggle`"
+      },
+      {
+        "line_number": 8551,
+        "expression": "`/api/project/${currentVenue.slug}/plan/task/${taskId}/comment`"
+      },
+      {
+        "line_number": 8580,
+        "expression": "`/api/project/${currentVenue.slug}/plan/task/${taskId}/assign`"
+      },
+      {
+        "line_number": 8604,
+        "expression": "`/api/project/${currentVenue.slug}/plan/task/${taskId}/due-date`"
+      },
+      {
+        "line_number": 8625,
+        "expression": "`/api/project/${currentVenue.slug}/plan/review/request`"
+      },
+      {
+        "line_number": 8647,
+        "expression": "`/api/project/${currentVenue.slug}/plan/review/decision`"
+      },
+      {
+        "line_number": 8954,
+        "expression": "'/api/brands');"
+      },
+      {
+        "line_number": 8992,
+        "expression": "'/api/brand/create'"
+      },
+      {
+        "line_number": 9011,
+        "expression": "`/api/brand/${encodeURIComponent(slug)}/delete`"
+      },
+      {
+        "line_number": 9708,
+        "expression": "'/api/settings/api-key-status')"
+      },
+      {
+        "line_number": 9730,
+        "expression": "'/api/settings/engine')"
+      },
+      {
+        "line_number": 9764,
+        "expression": "'/api/settings/engine'"
+      },
+      {
+        "line_number": 9798,
+        "expression": "'/api/settings/api-key'"
+      },
+      {
+        "line_number": 10514,
+        "expression": "`/api/search?q=${encodeURIComponent(query)}`)"
+      }
+    ]
+  },
+  {
+    "file": "06_app\\static\\help-system.js",
+    "fetch_calls": [
+      {
+        "line_number": 47,
+        "expression": "p.api);"
+      },
+      {
+        "line_number": 52,
+        "expression": "p.fallback);"
+      },
+      {
+        "line_number": 762,
+        "expression": "'/api/help/manual').then(function (r) { return r.json(); }).then(function (list) {"
+      },
+      {
+        "line_number": 767,
+        "expression": "'/api/help/manual/' + encodeURIComponent(chapName));"
+      },
+      {
+        "line_number": 1163,
+        "expression": "'/api/project/create'"
+      }
+    ]
+  },
+  {
+    "file": "06_app\\static\\sidebar-v2.js",
+    "fetch_calls": [
+      {
+        "line_number": 56,
+        "expression": "'/api/brands');"
+      }
+    ]
+  }
+]

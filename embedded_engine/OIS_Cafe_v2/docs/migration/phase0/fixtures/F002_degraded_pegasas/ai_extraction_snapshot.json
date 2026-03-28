@@ -1,0 +1,71 @@
+{
+  "raw_input_text": "Quick Observation Notes: Kavinė Pegasas (Vilkaviškis town centre)\nDate: March 04, 2026\nAuditor: Matas Paulinas\nFormat: Quick 2-morning drop-in + light review scan (Google/TripAdvisor ~45 reviews avg 4.4/5, local FB comments 2025–2026)\nOverall snapshot\nSmall, friendly 40-seat café right on Vytauto street in the heart of Vilkaviškis: simple wooden décor, big windows, soft radio music, outdoor tables in summer. Menu is straightforward — good coffee, homemade cakes, sandwiches, daily soups, salads, pancakes. Prices very local-friendly. Atmosphere relaxed and unpretentious — the kind of place where grandmas meet for coffee and young mums sit with kids. Reviews mostly positive: “nice and cheap”, “friendly waitresses”, “good coffee and tasty food”, “perfect for lunch in town”, “cozy place to hang out”.\nBOH snapshot\nBack-of-house (tiny kitchen + prep area): 2 people max (one main cook + helper). Runs quietly and well — fresh prep every morning, consistent portions, clean stations, hot food comes out fast, no visible waste or mistakes. Coffee machine maintained properly, cakes baked on site and always fresh. Solid, no-drama execution.\nFOH snapshot\nFront-of-house: 2–3 people on shift (one on counter, one or two serving). Equipped fine (decent espresso machine, clean tables, nice cups). But lightly struggling with flow:\n\nNo clear shift leader → during 11–13 rush, tables stay with dirty dishes 6–10 minutes.\nOccasional mix-ups (“was that your order or hers?”).\nMinor gaps: “Is the soup vegetarian?” → “Umm… I think yes, let me ask quickly”.\nScattered recent reviews note: “Food great but waited for table to be cleared”, “Staff nice but a bit slow when busy”, “Love the place but could be smoother on weekends”.\n\nStaff count quick view\n\nBOH: 2 (stable, focused, low turnover).\nFOH: 2–3 per shift (adequate for a small town café, but no dedicated coordinator).\n\nOwner's take (overheard at the counter)\nOwner popped in briefly: “Everything is fine here, kitchen works great, people keep coming back, we’re a small town so it’s normal — no big problems.”\nOne-line diagnosis\nBOH is quietly reliable and consistent → FOH is running on light undermanagement and no extra rhythm during small rushes, turning a solid local spot into “nice but sometimes frustrating”.\nSuper simple anchors (next 4 weeks)\n\nAdd 1 extra pair of hands (even student 3 mornings a week) for the lunch rush.\n2-minute morning huddle: today’s specials, table-clear rule, who floats.\nLaminate a tiny “daily info” card at the counter (Wi-Fi, allergens, out-of-stocks).\nOwner does one quick mid-day walk-through to clear tables and coach lightly.\n\nIt’s a genuinely nice little café that locals love. Just needs the lightest touch of daily structure to stay comfortable and keep the good reviews coming.",
+  "raw_input_length": 2775,
+  "extraction_summary": {
+    "coverage_gaps": [
+      "Financial data entirely absent — no revenue, margins, food cost %, payroll %, or pricing review information",
+      "Food safety compliance not assessed — no allergen documentation, HACCP, temperature logs, or food hygiene rating referenced",
+      "Technology and POS systems not observed or mentioned",
+      "Staff contracts, employment compliance, and HR practices not covered",
+      "Supply chain and procurement not assessed",
+      "Marketing and brand strategy not assessed beyond review scan",
+      "Evening and weekend trade patterns not described in detail",
+      "No information on staff training, certifications, or onboarding",
+      "Risk and continuity factors (insurance, fire safety, electrical) not covered",
+      "Only two morning visits — afternoon and weekend service not directly observed"
+    ],
+    "text_quality": "moderate",
+    "text_type": "audit_notes"
+  },
+  "confidence_distribution": {
+    "high": 4,
+    "low": 2,
+    "medium": 11
+  },
+  "unmapped_observations": [
+    {
+      "evidence": "No clear shift leader → during 11–13 rush, tables stay with dirty dishes 6–10 minutes. Occasional mix-ups ('was that your order or hers?'). Auditor recommends '2-minute morning huddle: today's specials, table-clear rule, who floats'",
+      "observation": "No designated shift leader or FOH coordinator role exists, causing coordination failures during the lunch rush",
+      "suggested_domain": "operations"
+    },
+    {
+      "evidence": "'Is the soup vegetarian?' → 'Umm… I think yes, let me ask quickly'. Auditor recommends laminating a 'daily info' card at the counter covering allergens and out-of-stocks — implying no such resource currently exists",
+      "observation": "Staff cannot answer basic dietary/allergen questions confidently at point of service, and no counter-level information system exists",
+      "suggested_domain": "operations"
+    },
+    {
+      "evidence": "Owner: 'Everything is fine here, kitchen works great, people keep coming back, we're a small town so it's normal — no big problems.' Auditor simultaneously observes 6–10 minute table clearance delays, order mix-ups, and reviews noting slowness during busy periods",
+      "observation": "Owner has a blind spot regarding FOH operational friction — actively dismissing the problem that reviews and direct observation confirm",
+      "suggested_domain": "leadership"
+    },
+    {
+      "evidence": "Tables stay with dirty dishes 6–10 minutes during 11–13 rush. Reviews: 'Food great but waited for table to be cleared', 'Love the place but could be smoother on weekends'",
+      "observation": "Table clearance during peak service is a specific operational failure not fully captured by existing signals — it is distinct from queue wait times and reflects a floor management gap",
+      "suggested_domain": "operations"
+    },
+    {
+      "evidence": "~45 reviews total across Google/TripAdvisor and local Facebook comments. No loyalty programme, no marketing activity, no digital ordering referenced. Described as a local neighbourhood spot relying on repeat community custom.",
+      "observation": "Venue relies entirely on walk-in footfall from a small town centre location with no visible customer acquisition or retention mechanism",
+      "suggested_domain": "customer"
+    }
+  ],
+  "active_signal_ids": [
+    "S002",
+    "S019",
+    "S020",
+    "S046",
+    "S056",
+    "S061",
+    "S069",
+    "S070",
+    "S071",
+    "S073",
+    "S083",
+    "S160",
+    "S166",
+    "S169",
+    "S175",
+    "S178",
+    "S180"
+  ]
+}

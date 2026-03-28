@@ -1,0 +1,167 @@
+{
+  "block_id": "B067",
+  "name": "New Starter Induction",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Defines a structured first-week induction programme for all new starters, covering essential orientation, health and safety basics, team introductions, and role-specific fundamentals so that every new team member feels welcome, informed, and safe from day one.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Ensure every new starter completes a consistent induction covering venue layout, emergency procedures, and key policies",
+      "Provide a welcoming first-day experience that reduces anxiety and builds immediate belonging",
+      "Cover all legally required induction elements including health and safety, allergen awareness, and right-to-work documentation",
+      "Introduce the new starter to every team member and key operational areas within the first week",
+      "Set clear expectations for the first 30 days including learning milestones and support available"
+    ],
+    "secondary_objectives": [
+      "Reduce early turnover by ensuring new starters feel supported rather than overwhelmed",
+      "Shorten the time to productivity by providing structured rather than ad-hoc learning",
+      "Create a positive first impression that reinforces the hiring decision"
+    ]
+  },
+  "why_this_matters": "The first week in a new job shapes everything that follows. Research from the CIPD shows that up to 20% of staff turnover happens within the first 45 days of employment, and the primary reasons are feeling unsupported, unclear about expectations, or socially isolated. In a busy cafe environment, it is tempting to throw a new starter straight onto the floor with a brief tour and hope they pick things up — but this approach fails consistently. A barista who is not shown where the first aid kit is, how to use the fire extinguisher, or what to do if a customer reports an allergic reaction is both a safety risk and a legal liability. Under the Health and Safety at Work etc. Act 1974 and the Management of Health and Safety at Work Regulations 1999, employers have a duty to provide adequate information, instruction, training, and supervision to ensure employee safety. Allergen training is a legal requirement under the Food Information Regulations 2014 and Natasha's Law. Right-to-work checks must be completed before or on the first day of employment to avoid civil penalties of up to £45,000 per illegal worker under the Immigration, Asylum and Nationality Act 2006. Beyond compliance, a structured induction dramatically accelerates productivity. A new barista who spends their first three days following a clear induction plan — rather than standing awkwardly waiting to be told what to do — reaches competence two to three weeks faster than one left to figure things out alone.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create a one-page New Starter First Day Checklist covering: right-to-work document verification, employment contract signed, emergency contact collected, tour of venue (front of house, back of house, storage, fire exits, first aid, staff area), introduction to all on-shift team members, review of key policies (attendance, dress code, mobile phone use, food safety basics), location of SFBB diary and cleaning schedules, and allocation of locker/uniform. Prepare a welcome pack for each new starter: printed rota for their first two weeks, name of their designated buddy, key contact numbers, and a simple map of the venue showing stations, fire exits, and safety equipment. Week 2: For the first five shifts, assign a buddy — an experienced team member who shadows the new starter, answers questions, and provides real-time guidance. The buddy should be chosen for their patience and teaching ability, not just seniority. Each shift should end with a 10-minute debrief between the buddy and the new starter covering what went well, what was confusing, and what to focus on tomorrow. By the end of Week 1, the new starter should be able to independently navigate the venue, follow basic hygiene protocols, and handle simple customer interactions under supervision.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a comprehensive Induction Pack document covering all first-week content in a structured format that can be reused for every new hire. Include a signed acknowledgement page for health and safety induction, allergen awareness, fire evacuation procedure, and key policies — this creates the audit trail required for due diligence. Build an induction training schedule template that maps out learning objectives for each of the first five shifts, allocating time for observation, practice, and assessment. Create a buddy guide — a short document for designated buddies explaining their role, how to give constructive feedback, common new-starter anxieties, and when to escalate concerns to management. Establish a Day 5 check-in meeting between the new starter and their manager to review progress against the induction checklist, address any concerns, and confirm the training plan for weeks two to four. Integrate induction records into the staff file so that completion of each element is documented and retrievable for inspection or audit purposes.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Refine the induction programme based on feedback from recent new starters — conduct a short survey at the one-month mark asking what was most helpful, what was missing, and how welcomed they felt. Use this feedback to continuously improve the programme. Develop a pre-start engagement process: send new starters a welcome message, a brief introduction to the team, and practical information (parking, dress code, what to bring) before their first day so they arrive feeling prepared. Create video walkthroughs of key processes (how to open the till, how to use the espresso machine, allergen checking procedure) that new starters can review on their phone before or after shifts. Track time to competence as a metric — how many shifts until a new starter can work independently at each station? Use this data to identify whether induction improvements are accelerating readiness. Benchmark your induction process against best practice from organisations like the SCA or hospitality industry bodies."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create a New Starter First Day Checklist covering all essential induction elements",
+        "Prepare a welcome pack template with rota, buddy name, contacts, and venue map",
+        "Designate a buddy pool of experienced staff willing and able to mentor new starters",
+        "Ensure right-to-work document checking process is clear and compliant",
+        "Set up end-of-shift debrief routine between buddy and new starter for first five shifts",
+        "Verify that fire exit, first aid, and emergency information is current and visible",
+        "Schedule a Day 5 check-in meeting between manager and new starter"
+      ],
+      "responsible": "Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a comprehensive Induction Pack document with signed acknowledgements",
+        "Build an induction training schedule template mapping learning objectives per shift",
+        "Create a buddy guide for designated mentors",
+        "Integrate induction records into the staff file system",
+        "Establish a one-month feedback survey for new starters on the induction experience",
+        "Review and update the induction programme after every three new hires",
+        "Link induction completion to probation review milestones in B069"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Implement pre-start engagement with welcome messages and practical information",
+        "Develop video walkthroughs of key processes for self-directed learning",
+        "Track time to competence as a metric and use data to refine induction",
+        "Benchmark induction against SCA and hospitality industry best practice",
+        "Conduct annual review of entire induction programme with buddy and new-starter feedback"
+      ],
+      "responsible": "Manager, Owner"
+    }
+  },
+  "deliverables": [
+    "New Starter First Day Checklist (printable A4)",
+    "Welcome Pack template with venue map and key information",
+    "Induction Training Schedule template (five-shift plan)",
+    "Buddy Guide for designated mentors",
+    "Induction Record and Acknowledgement Form"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T067-01",
+        "tool_name": "New Starter First Day Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Comprehensive first-day checklist covering right-to-work verification, contract signing, venue tour, safety briefing, team introductions, policy review, and equipment allocation. Signed by new starter and manager."
+      },
+      {
+        "tool_id": "T067-02",
+        "tool_name": "Induction Training Schedule",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Five-shift training plan mapping specific learning objectives, observation tasks, practice activities, and buddy debriefs for each of the new starter's first five shifts."
+      },
+      {
+        "tool_id": "T067-03",
+        "tool_name": "Buddy Mentor Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Guide for designated buddies covering their role and responsibilities, how to give constructive feedback, common new-starter anxieties, and escalation triggers for management involvement."
+      },
+      {
+        "tool_id": "T067-04",
+        "tool_name": "Induction Record and Acknowledgement Form",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Formal record of all induction elements completed with signed acknowledgements for health and safety, allergen awareness, fire procedures, and key policies. Filed in the staff record."
+      },
+      {
+        "tool_id": "T067-05",
+        "tool_name": "New Starter Feedback Survey",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Short survey deployed at the one-month mark asking new starters to rate and comment on their induction experience, buddy support, information quality, and sense of welcome."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Induction is skipped or rushed because the cafe is busy, leaving new starters unsafe and overwhelmed",
+    "Right-to-work checks are not completed on or before the first day, creating significant legal exposure",
+    "Buddy is assigned but given no guidance or time, resulting in inconsistent mentoring quality",
+    "Health and safety induction is not documented, removing the employer's defence of due diligence in the event of an incident"
+  ],
+  "kpis": [
+    "100% of new starters complete the full induction checklist within their first five shifts",
+    "Right-to-work verification completed on or before Day 1 for every new hire",
+    "New starter turnover within first 45 days below 10%",
+    "New starter feedback survey scores averaging 4 out of 5 or above",
+    "Time to independent competence reducing quarter on quarter"
+  ],
+  "dependencies": ["B068"],
+  "constraints": [
+    "Right-to-work checks are a legal requirement before or on the first day of employment",
+    "Health and safety induction must comply with the Health and Safety at Work etc. Act 1974",
+    "Allergen awareness training is mandatory under the Food Information Regulations 2014",
+    "Induction records must be retained for the duration of employment plus a reasonable period"
+  ],
+  "time_load": {
+    "L1": "3 hours (checklist creation, welcome pack, buddy briefing)",
+    "L2": "6 hours (induction pack, training schedule, buddy guide, record system)",
+    "L3": "2 hours/quarter (feedback analysis, programme refinement, video creation)"
+  },
+  "review_protocol": "Review induction checklist after every new hire for completeness. Monthly review of buddy feedback and new-starter debrief notes. Quarterly analysis of new-starter feedback surveys. Six-monthly update of induction content to reflect operational changes. Annual full programme review.",
+  "meta": {
+    "summary_for_humans": "This block creates a structured first-week induction for every new starter covering safety, orientation, team introductions, and role basics, ensuring people feel welcome, informed, and safe from their very first shift.",
+    "implementation_risks": [
+      "Small cafes may struggle to allocate buddy time during busy periods",
+      "Induction quality varies if multiple managers run the process without a standard template",
+      "Documentation requirements can feel burdensome but are essential for legal compliance"
+    ],
+    "notes_for_engine": "Activate immediately for any new hire. Cross-reference with B068 for barista-specific training, B069 for probation framework, and B070 for onboarding excellence assessment.",
+    "tags": ["induction", "onboarding", "new_starter", "buddy", "health_safety", "right_to_work", "allergen", "first_day"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

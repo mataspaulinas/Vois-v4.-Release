@@ -1,0 +1,165 @@
+{
+  "block_id": "B026",
+  "name": "Customer Greeting Standard",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Defines the standard for the first 10 seconds of every customer interaction — the greeting, eye contact, warmth, and body language that sets the tone for the entire visit. This block ensures every customer feels welcomed, noticed, and valued from the moment they enter the cafe.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish a consistent greeting standard that every team member delivers naturally",
+      "Ensure eye contact and verbal acknowledgement occur within 10 seconds of a customer entering",
+      "Define greeting variations for different contexts: first-time visitors, regulars, busy periods, quiet times",
+      "Train staff on open body language, genuine smile, and welcoming tone of voice",
+      "Make the greeting feel authentic and personal, not scripted or robotic"
+    ],
+    "secondary_objectives": [
+      "Create a positive first impression that increases the likelihood of a purchase",
+      "Differentiate the cafe from chain competitors through genuine human warmth",
+      "Set a welcoming tone that encourages customers to linger, return, and recommend"
+    ]
+  },
+  "why_this_matters": "Research in hospitality psychology consistently demonstrates that the first 10 seconds of a customer interaction disproportionately influence their overall experience assessment. A customer who receives a warm, genuine greeting is significantly more likely to rate their entire visit positively, even if the drink takes slightly longer or the cafe is busy. Conversely, a customer who enters to silence, averted eyes, and disinterest has already started forming a negative impression before they have even ordered. For UK independent cafes competing against chain brands, the greeting is perhaps the single most powerful differentiator available. A chain cafe delivers a standardised, transactional interaction; an independent cafe can offer genuine human warmth. This is the competitive advantage that no amount of marketing budget can replicate. The greeting also has direct commercial impact. A customer who feels welcomed is more likely to order food in addition to coffee, to sit and have a second drink, and to return the next day. Studies by the Institute of Customer Service suggest that customers who experience a positive greeting spend 20-30% more per visit than those who do not. In a cafe context, that is the difference between a single takeaway coffee and a coffee plus pastry, or a quick stop versus a lingering brunch. The greeting standard is not about imposing a script — UK customers are famously uncomfortable with over-rehearsed, American-style greetings. It is about creating a genuine moment of human connection: I see you, I am glad you are here, and I am ready to help you.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Define the cafe's greeting standard. It should be simple, natural, and achievable: within 10 seconds of a customer entering, a team member makes eye contact and delivers a verbal greeting. The greeting should be warm but not over-the-top — British customers respond best to genuine, understated warmth. Examples: 'Morning! What can I get you?' or 'Hi there, welcome in' or simply 'Hello!' with a genuine smile and eye contact. The key elements are: eye contact (stop what you are doing and look up), a genuine smile (not forced), a verbal greeting (even if brief), and open body language (face the customer, do not turn away). Post a reminder at every service point: 'Every customer gets a greeting within 10 seconds.' Assign greeting responsibility: the person nearest the door or counter owns the greeting. If the till operator is in the middle of making a drink, the barista or floor staff greets instead. No customer should ever walk in to silence. Week 2: Observe and coach. The manager watches each team member's greeting during a normal shift and provides immediate, private feedback. Is the greeting happening within 10 seconds? Does it feel genuine? Is eye contact being made? Are there moments when customers enter unnoticed? Address any gaps through coaching, not criticism. Practise greetings during the pre-shift huddle — it takes 30 seconds and normalises the behaviour. Record in the shift notes whether the greeting standard was maintained throughout service.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Customer Greeting SOP that covers: the 10-second standard, greeting ownership, variations for different situations, and common challenges. Create a greeting variations guide: 'Good morning, lovely day today' for a sunny morning, 'Afternoon, what can we tempt you with?' for lunchtime, 'Evening, come in from the cold!' for a winter evening. The point is not to provide scripts to recite but to give staff confidence in finding their own natural words. Train staff on greeting regulars differently from first-time visitors: 'The usual today, Sarah?' makes a regular feel valued in a way that 'Hi, what can I get you?' cannot. Develop body language awareness training: uncrossed arms, turning to face the customer, putting down phones or tasks when someone approaches. Include the greeting standard in new starter induction — they should practise before their first shift. Integrate the greeting with the queue communication system (B023): when a customer joins a queue, the greeting adapts to acknowledgement ('Hi, I will be right with you'). By Week 8, the greeting should feel like a natural part of the cafe's character, not a task being performed.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The greeting should be so embedded that its absence feels wrong — a customer entering without being greeted should make every team member uncomfortable. Conduct quarterly mystery visitor assessments focused specifically on the greeting experience. Track customer feedback for mentions of friendliness, warmth, and welcome — these are direct indicators of greeting standard compliance. Share positive feedback with the team: 'A customer wrote on Google that she loves how friendly we are when she walks in — that is us doing our jobs brilliantly.' Review the greeting approach seasonally and adapt to the cafe's evolving character. Consider extending the greeting culture beyond the counter: if a team member is clearing tables and a customer enters, they greet too. Everyone owns the welcome."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Define the cafe's greeting standard: eye contact, smile, verbal greeting within 10 seconds",
+        "Post greeting reminders at every service point",
+        "Assign greeting responsibility: nearest team member to the door owns it",
+        "Brief all staff on the greeting standard in a team meeting",
+        "Manager observes and coaches each team member's greeting during a normal shift",
+        "Practise greetings during pre-shift huddles",
+        "Record greeting compliance in shift notes"
+      ],
+      "responsible": "Manager, Front-of-House Lead"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Customer Greeting SOP covering standard, variations, and challenges",
+        "Create a greeting variations guide for different times, seasons, and situations",
+        "Train staff on greeting regulars differently from first-time visitors",
+        "Develop body language awareness training for open, welcoming posture",
+        "Include greeting standards in new starter induction programme",
+        "Integrate greeting with queue acknowledgement system (B023)",
+        "Observe and refine greeting delivery based on customer response"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly mystery visitor greeting assessments",
+        "Track customer feedback for mentions of friendliness and welcome",
+        "Share positive greeting-related feedback with the team",
+        "Review and adapt the greeting approach seasonally",
+        "Extend greeting culture to all team members, not just counter staff"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Customer Greeting Standard (one-page reference)",
+    "Greeting Variations Guide",
+    "Customer Greeting SOP",
+    "Body Language Awareness Training Notes",
+    "Quarterly Mystery Visitor Greeting Scorecard"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T026-01",
+        "tool_name": "Greeting Standard Reference Card",
+        "level": "L1",
+        "format": "guide",
+        "owner_role": "All Staff",
+        "description": "Simple reference card posted at service points: 'Every customer gets eye contact, a smile, and a greeting within 10 seconds.' Includes examples of natural greeting phrases."
+      },
+      {
+        "tool_id": "T026-02",
+        "tool_name": "Greeting Coaching Observation Form",
+        "level": "L1",
+        "format": "assessment",
+        "owner_role": "Manager",
+        "description": "Form for the manager to record greeting observations for each staff member: timing, eye contact, smile, verbal greeting, body language, and naturalness."
+      },
+      {
+        "tool_id": "T026-03",
+        "tool_name": "Customer Greeting SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering the greeting standard, greeting ownership, situational variations, body language expectations, and integration with queue acknowledgement."
+      },
+      {
+        "tool_id": "T026-04",
+        "tool_name": "Greeting Variations Guide",
+        "level": "L2",
+        "format": "guide",
+        "owner_role": "Front-of-House Staff",
+        "description": "Guide offering natural greeting options for different contexts: time of day, weather, busy versus quiet periods, regulars versus new visitors, and seasonal variations."
+      },
+      {
+        "tool_id": "T026-05",
+        "tool_name": "Mystery Visitor Greeting Scorecard",
+        "level": "L3",
+        "format": "scorecard",
+        "owner_role": "Owner",
+        "description": "Scorecard for quarterly mystery visitor assessments focused on the greeting: timing, warmth, eye contact, body language, personalisation, and overall impression."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Staff become absorbed in tasks and do not notice customers entering — especially during drink preparation",
+    "The greeting feels forced or scripted, making customers uncomfortable rather than welcome",
+    "Greeting standard is maintained when the manager is present but drops when they are absent",
+    "New starters are not trained on the greeting standard before their first customer-facing shift"
+  ],
+  "kpis": [
+    "100% of entering customers receive a greeting within 10 seconds",
+    "Quarterly mystery visitor scores averaging 4 out of 5 or above for greeting quality",
+    "Customer feedback mentions friendliness or welcome at least monthly",
+    "All new starters practise the greeting before their first shift"
+  ],
+  "dependencies": ["B025"],
+  "constraints": [
+    "Greeting must feel genuine and natural — never forced, scripted, or performative",
+    "At least one team member must have line of sight to the entrance at all times during service",
+    "The greeting standard must work for the cafe's specific customer demographic and character"
+  ],
+  "time_load": {
+    "L1": "2 hours (standard definition, team briefing, coaching observations)",
+    "L2": "4 hours (SOP development, variations guide, body language training, induction integration)",
+    "L3": "1 hour/quarter (mystery visitor assessments, feedback analysis)"
+  },
+  "review_protocol": "Daily observation by shift manager. Weekly review of greeting consistency in shift notes. Monthly customer feedback analysis for warmth and welcome mentions. Quarterly mystery visitor greeting assessment.",
+  "meta": {
+    "summary_for_humans": "This block defines the first 10 seconds of every customer interaction: eye contact, a genuine smile, and a warm verbal greeting. It trains the team to make every customer feel welcomed and noticed, creating a positive first impression that shapes the entire visit.",
+    "implementation_risks": [
+      "Risk of over-scripting — British customers dislike performative greetings; keep it natural",
+      "Solo operators face a challenge: greeting while making drinks requires practice",
+      "Cultural sensitivity needed — some customers prefer a quieter, less assertive welcome"
+    ],
+    "notes_for_engine": "Activate for all cafes. Flag as urgent if signals indicate customer complaints about unfriendly staff, reviews mentioning being ignored, or mystery shopper failures on first impression.",
+    "tags": ["customer_experience", "greeting", "first_impression", "warmth", "service", "front_of_house", "culture", "loyalty"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "version": "v1",
+    "owner": "OIS core architecture",
+    "released_at": "2026-03-13T00:00:00Z"
+  },
+  "service_modules": [
+    {
+      "id": "intake_and_demand",
+      "name": "Intake and demand shaping",
+      "description": "How work arrives, is requested, and is shaped before delivery."
+    },
+    {
+      "id": "promise_and_expectations",
+      "name": "Promise and expectation setting",
+      "description": "How the business communicates timing, scope, readiness, and customer expectations."
+    },
+    {
+      "id": "capacity_and_deployment",
+      "name": "Capacity and deployment",
+      "description": "How people and coverage are allocated to match the real work pattern."
+    },
+    {
+      "id": "readiness_and_setup",
+      "name": "Readiness and setup",
+      "description": "How teams, stations, tools, and environments are prepared before live delivery."
+    },
+    {
+      "id": "live_execution",
+      "name": "Live execution",
+      "description": "How work is performed in the moment under time pressure and service variability."
+    },
+    {
+      "id": "handoffs_and_coordination",
+      "name": "Handoffs and coordination",
+      "description": "How information and responsibility move across roles, stations, or teams."
+    },
+    {
+      "id": "quality_and_standards",
+      "name": "Quality and standards",
+      "description": "How the system maintains consistency, standard work, and visible quality."
+    },
+    {
+      "id": "recovery_and_exception_handling",
+      "name": "Recovery and exception handling",
+      "description": "How the business responds when service, quality, or customer expectations break."
+    },
+    {
+      "id": "leadership_and_management_rhythm",
+      "name": "Leadership and management rhythm",
+      "description": "How managers create direction, presence, communication cadence, and escalation rhythm."
+    },
+    {
+      "id": "commercial_and_control_loops",
+      "name": "Commercial and control loops",
+      "description": "How the business closes the loop on waste, loss, stock, margin, and operational controls."
+    },
+    {
+      "id": "learning_and_improvement",
+      "name": "Learning and improvement",
+      "description": "How the business reflects, updates standards, and improves from execution reality."
+    }
+  ],
+  "failure_families": [
+    {
+      "id": "demand_capacity_mismatch",
+      "name": "Demand-capacity mismatch",
+      "description": "Workload, pacing, or complexity exceeds the deployed capacity."
+    },
+    {
+      "id": "readiness_failure",
+      "name": "Readiness failure",
+      "description": "The team enters delivery without being properly prepared."
+    },
+    {
+      "id": "role_clarity_failure",
+      "name": "Role clarity failure",
+      "description": "Ownership, responsibilities, or boundaries are not explicit enough."
+    },
+    {
+      "id": "handoff_failure",
+      "name": "Handoff failure",
+      "description": "Information, timing, or responsibility transfer breaks between people or nodes."
+    },
+    {
+      "id": "standards_drift",
+      "name": "Standards drift",
+      "description": "Operational execution no longer matches the intended standard."
+    },
+    {
+      "id": "capability_gap",
+      "name": "Capability gap",
+      "description": "The team lacks the skill, training, or reinforcement to execute reliably."
+    },
+    {
+      "id": "leadership_rhythm_failure",
+      "name": "Leadership rhythm failure",
+      "description": "Managerial cadence, visibility, or escalation structure is too weak."
+    },
+    {
+      "id": "control_loop_failure",
+      "name": "Control-loop failure",
+      "description": "The business does not measure, review, or correct recurring operational loss."
+    },
+    {
+      "id": "tool_or_resource_friction",
+      "name": "Tool or resource friction",
+      "description": "Teams are blocked by missing, unreliable, or poorly fitted tools and resources."
+    },
+    {
+      "id": "exception_recovery_failure",
+      "name": "Exception recovery failure",
+      "description": "The organization handles disruptions reactively instead of recovering cleanly."
+    },
+    {
+      "id": "accountability_failure",
+      "name": "Accountability failure",
+      "description": "Work is not owned, checked, or followed through consistently."
+    },
+    {
+      "id": "learning_failure",
+      "name": "Learning failure",
+      "description": "The same problems repeat because the system does not update itself from outcomes."
+    }
+  ],
+  "response_logics": [
+    {
+      "id": "stabilize_visibility",
+      "name": "Stabilize visibility",
+      "description": "Make the live state visible quickly so the team can stop flying blind."
+    },
+    {
+      "id": "align_roles_and_coverage",
+      "name": "Align roles and coverage",
+      "description": "Reset ownership, deployment, and coverage to fit the actual work pattern."
+    },
+    {
+      "id": "strengthen_handoffs",
+      "name": "Strengthen handoffs",
+      "description": "Improve transfer points so work moves cleanly between people and stages."
+    },
+    {
+      "id": "install_operating_rhythm",
+      "name": "Install operating rhythm",
+      "description": "Create repeatable cadence, routines, and managerial structure."
+    },
+    {
+      "id": "tighten_control_loops",
+      "name": "Tighten control loops",
+      "description": "Measure, review, and correct the leaks that keep recurring."
+    },
+    {
+      "id": "build_capability",
+      "name": "Build capability",
+      "description": "Increase team execution quality through training, coaching, and reinforcement."
+    },
+    {
+      "id": "reduce_operational_complexity",
+      "name": "Reduce operational complexity",
+      "description": "Lower the operational load or complexity so the system can perform reliably."
+    }
+  ]
+}

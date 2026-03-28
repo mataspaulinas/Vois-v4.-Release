@@ -1,0 +1,22 @@
+{
+  "id": "tool_bar_priority_board",
+  "name": "Bar priority board",
+  "description": "Visual lane that isolates the drinks most likely to block guest flow, table turns, or recovery moments if they sit in the general queue.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: priority surfaces should make blocking work unmistakably visible",
+  "updated_at": "2026-03-14T00:24:43.044104Z",
+  "category": "beverage",
+  "format": "priority_board",
+  "usage_moment": "Use during live bar service when certain tickets need protected handling to preserve table flow.",
+  "expected_output": "A short visible queue of table-critical drink tickets with explicit entry and clearing rules.",
+  "adaptation_variables": [
+    "bar_layout",
+    "ticket_volume",
+    "service_style",
+    "priority_definition"
+  ],
+  "block_ids": [
+    "blk_bar_ticket_priority_lane"
+  ]
+}

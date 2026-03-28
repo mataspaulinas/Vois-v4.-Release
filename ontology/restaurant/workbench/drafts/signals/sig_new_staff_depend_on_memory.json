@@ -1,0 +1,30 @@
+{
+  "id": "sig_new_staff_depend_on_memory",
+  "name": "New staff depend on memory and verbal instruction",
+  "description": "Newer team members rely on remembering scattered verbal guidance because repeatable training structure is missing.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: capability gap visible through memory-based onboarding",
+  "updated_at": "2026-03-14T12:48:22.225898Z",
+  "domain": "workforce",
+  "module": "role_clarity",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "asks same basics repeatedly",
+    "verbal-only coaching",
+    "no stable training artifact"
+  ],
+  "source_types": [
+    "manager notes",
+    "training observation"
+  ],
+  "temporal_behavior": "new-hire recurring",
+  "likely_co_signals": [
+    "sig_staff_confusion",
+    "sig_standard_steps_skipped"
+  ],
+  "adapter_aliases": [
+    "memory-based onboarding",
+    "new hires guessing"
+  ]
+}

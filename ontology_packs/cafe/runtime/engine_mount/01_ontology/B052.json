@@ -1,0 +1,167 @@
+{
+  "block_id": "B052",
+  "name": "Food Supplier Quality Assessment",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Establishes a systematic process for evaluating, selecting, monitoring, and managing food suppliers to ensure consistent ingredient quality, food safety compliance, reliable delivery, and fair pricing. This block protects the cafe from supply chain failures and ensures the raw materials match the quality standards defined in B050.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a supplier evaluation framework that assesses quality, reliability, food safety, and value",
+      "Establish a regular supplier review process to monitor ongoing performance",
+      "Ensure all suppliers can provide allergen information, traceability, and food safety documentation",
+      "Develop backup supplier relationships to mitigate supply chain disruption",
+      "Negotiate fair terms that balance quality and cost for the cafe's positioning"
+    ],
+    "secondary_objectives": [
+      "Build supplier relationships that deliver preferential treatment and early access to seasonal ingredients",
+      "Support local suppliers where quality and reliability meet standards",
+      "Reduce ingredient cost volatility through diversified sourcing and forward planning",
+      "Ensure supplier practices align with the cafe's values on sustainability and ethics"
+    ]
+  },
+  "why_this_matters": "A cafe's food quality is only as good as its ingredients, and ingredient quality is only as good as the supplier providing them. In the UK cafe sector, most operators source from a mix of national wholesalers (Brakes, Bidfood, Booker), local specialists (bakeries, dairy farms, greengrocers), and cash-and-carry visits. Without a structured assessment process, supplier choice is often based on habit, convenience, or price alone — none of which guarantees quality or safety. The risks are significant. A supplier delivering eggs that are close to their use-by date forces the cafe to rush through stock or waste it. A bakery supplier whose sourdough quality varies batch to batch makes the cafe's sandwiches inconsistent. A wholesaler whose delivery driver leaves chilled goods in the sun on the doorstep creates a food safety hazard. And a supplier who suddenly ceases trading — as happened to several small food businesses during the cost-of-living crisis — leaves the cafe scrambling for alternatives during service. Beyond risk management, supplier quality assessment is a quality lever. The cafe that sources the best free-range eggs, the most flavourful local butter, and the freshest seasonal vegetables produces food that is demonstrably superior to the competitor using budget wholesale ingredients. Customers taste the difference, even if they cannot articulate it. And in an era where provenance and traceability are valued by consumers, being able to say 'our eggs come from a farm in Hertfordshire' creates a marketing story that enhances the cafe's brand.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: List every current food and drink ingredient supplier. For each, record: supplier name, main products supplied, order frequency, typical delivery day, payment terms, and the name of your contact person. Assess each supplier on three basic criteria: (1) Quality — is the product consistently good? Do you ever reject deliveries or find substandard items? (2) Reliability — do they deliver on time, in full, and at the correct temperature? (3) Documentation — can they provide allergen information, traceability data, and food safety certifications on request? If any supplier cannot provide allergen information for their products, this is a legal compliance issue under the Food Information Regulations 2014 (Natasha's Law) and must be resolved immediately. Contact the supplier and request full allergen data sheets for every product supplied. Week 2: Identify your most critical suppliers — those providing ingredients that are difficult to substitute quickly (your bread supplier, your milk supplier, your coffee roaster). For each critical supplier, identify at least one backup alternative. You do not need to establish a trading relationship immediately, but you should know who you would call if your primary supplier fails. Test one backup: place a small trial order with an alternative supplier for one product line and compare quality, price, and reliability against your current supplier.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Supplier Assessment Scorecard that rates each supplier quarterly on: product quality (consistency, freshness, specification adherence), delivery reliability (on-time, in-full, correct temperature), documentation (allergen data, traceability, certifications), pricing (competitiveness, price stability, invoice accuracy), and relationship (communication, responsiveness, problem resolution). Score each dimension 1-5 and calculate an overall rating. Any supplier scoring below 3 overall should trigger a review conversation; below 2 should trigger a supplier search. Establish a goods-in quality check procedure: when deliveries arrive, check quantities against the order, inspect quality visually, verify temperature of chilled and frozen goods using a probe thermometer, and check use-by dates. Record any issues on a delivery discrepancy log and report to the supplier the same day. Build a Supplier Information File for each supplier: a folder (physical or digital) containing their contact details, product catalogue, allergen data sheets, food safety certificates, price lists, delivery schedules, and the assessment scorecard history. This file is essential for due diligence and EHO inspections. Begin annual formal supplier reviews: meet or call each key supplier once per year to discuss performance, pricing, product development, and any concerns.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Supplier management should be a strategic activity, not just an administrative one. Develop partnerships with your best suppliers: visit their premises, understand their production processes, and build personal relationships that go beyond ordering and invoicing. Strong supplier partnerships deliver benefits: advance notice of price increases, access to limited or seasonal products, priority fulfilment during shortages, and collaborative product development. Benchmark your suppliers annually against alternatives — even if you are satisfied, understanding the market prevents complacency and ensures you are not overpaying. Use supplier quality data to inform menu decisions: if your bread supplier is excellent but your cake supplier is inconsistent, consider making cakes in-house or finding a better supplier before expanding the cake menu. Share your quality standards with suppliers proactively — let them know what you expect and how you measure performance. Build a supply chain risk map identifying single-source dependencies and seasonal availability gaps."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "List all current food and drink ingredient suppliers with contact details and product information",
+        "Assess each supplier on quality, reliability, and documentation",
+        "Request allergen data sheets from any supplier who has not already provided them",
+        "Identify critical suppliers and determine at least one backup alternative for each",
+        "Place a trial order with one backup supplier to evaluate quality and service",
+        "Create a simple supplier contact list accessible to the manager and kitchen team",
+        "Resolve any allergen documentation gaps within 14 days"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a Supplier Assessment Scorecard for quarterly rating",
+        "Establish a goods-in quality check procedure for all deliveries",
+        "Create a delivery discrepancy log for reporting issues to suppliers",
+        "Build a Supplier Information File for each supplier",
+        "Begin annual formal supplier reviews with key suppliers",
+        "Train kitchen staff on goods-in checking procedures",
+        "Set trigger thresholds for supplier review and replacement"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Develop strategic partnerships with best-performing suppliers",
+        "Visit key supplier premises to understand their operations",
+        "Benchmark suppliers annually against market alternatives",
+        "Use supplier quality data to inform menu development decisions",
+        "Share quality standards proactively with all suppliers",
+        "Build a supply chain risk map identifying dependencies and gaps"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Supplier Register (complete list of all suppliers with contact and product details)",
+    "Supplier Assessment Scorecard template",
+    "Goods-In Quality Check Procedure",
+    "Delivery Discrepancy Log template",
+    "Supplier Information File structure"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T052-01",
+        "tool_name": "Supplier Register",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Complete register of all food and drink suppliers: contact details, products supplied, order and delivery schedule, payment terms, allergen documentation status, and backup alternatives."
+      },
+      {
+        "tool_id": "T052-02",
+        "tool_name": "Supplier Assessment Scorecard",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Quarterly assessment form rating each supplier on quality, reliability, documentation, pricing, and relationship. Calculates an overall score with trigger thresholds for review or replacement actions."
+      },
+      {
+        "tool_id": "T052-03",
+        "tool_name": "Goods-In Quality Check Sheet",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Kitchen",
+        "description": "Delivery check sheet for recording: order versus delivery comparison, visual quality assessment, temperature check of chilled/frozen goods, use-by date verification, and any discrepancies noted."
+      },
+      {
+        "tool_id": "T052-04",
+        "tool_name": "Delivery Discrepancy Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Log recording any delivery issues: short deliveries, quality problems, temperature failures, or incorrect items. Tracks supplier response and resolution for use in quarterly assessments."
+      },
+      {
+        "tool_id": "T052-05",
+        "tool_name": "Annual Supplier Review Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Structured template for annual supplier review meetings: performance summary, scorecard trends, pricing discussion, product development opportunities, and action items for the coming year."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Suppliers are chosen on price alone, resulting in poor quality ingredients that undermine the cafe's food standards",
+    "Goods-in checks are skipped during busy mornings, allowing substandard deliveries to enter the kitchen unchecked",
+    "No backup suppliers are identified, leaving the cafe vulnerable when a primary supplier fails",
+    "Allergen documentation is incomplete, exposing the cafe to legal risk under Natasha's Law"
+  ],
+  "kpis": [
+    "100% of suppliers provide complete allergen documentation for all products supplied",
+    "Average supplier scorecard rating above 3.5 out of 5 across all suppliers",
+    "Goods-in quality checks completed for at least 90% of deliveries",
+    "At least one backup supplier identified for every critical product category"
+  ],
+  "dependencies": ["B015"],
+  "constraints": [
+    "Allergen documentation compliance is a legal requirement — it cannot be deferred",
+    "Supplier changes for critical ingredients require a testing period before full switchover",
+    "Small independent cafes may have limited negotiating power with large wholesale suppliers"
+  ],
+  "time_load": {
+    "L1": "4 hours (supplier listing, basic assessment, allergen documentation requests, backup identification)",
+    "L2": "8 hours (scorecard creation, goods-in procedure, file setup, training)",
+    "L3": "2 hours/quarter (supplier reviews, benchmarking, partnership development)"
+  },
+  "review_protocol": "Goods-in quality check on every delivery. Monthly review of delivery discrepancy log. Quarterly supplier scorecard assessment. Annual formal review meeting with each key supplier. Immediate review triggered if a supplier scores below 2.",
+  "meta": {
+    "summary_for_humans": "This block creates a systematic approach to evaluating, selecting, and monitoring food suppliers. It covers quality assessment, delivery checking, allergen documentation compliance, backup supplier planning, and strategic supplier relationship development.",
+    "implementation_risks": [
+      "Switching suppliers based on scorecard data may disrupt supply if not managed with adequate transition time",
+      "Small suppliers may lack formal documentation despite providing excellent products — work with them to create it",
+      "Overemphasis on price negotiation can damage supplier relationships that deliver value in other ways"
+    ],
+    "notes_for_engine": "Activate for any cafe purchasing food ingredients from external suppliers. Links to B015 for general procurement and to B050 for food prep standards — ingredient quality directly determines prep output quality. Flag if signals indicate ingredient quality complaints, delivery problems, or missing allergen documentation.",
+    "tags": ["food_quality", "suppliers", "procurement", "quality_assessment", "allergens", "traceability", "supply_chain", "delivery"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

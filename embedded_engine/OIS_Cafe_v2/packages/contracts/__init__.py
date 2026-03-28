@@ -1,0 +1,2 @@
+"""Shared migration contracts package."""
+

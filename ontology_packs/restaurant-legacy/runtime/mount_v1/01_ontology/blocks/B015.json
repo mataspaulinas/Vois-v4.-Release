@@ -1,0 +1,165 @@
+{
+  "block_id": "B015",
+  "name": "Supplier Due Diligence",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Establishes a systematic process for verifying that all food and ingredient suppliers meet the cafe's food safety standards, hold appropriate certifications, and provide reliable allergen and traceability information. This block ensures the cafe's food safety chain is only as strong as its weakest supplier.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create an approved supplier list with documented food safety credentials for every supplier",
+      "Verify that each supplier holds appropriate food hygiene registration and certification",
+      "Obtain and file allergen information, specifications, and safety data for all supplied products",
+      "Establish delivery inspection procedures to verify product safety on arrival",
+      "Implement a supplier review process to maintain standards over time"
+    ],
+    "secondary_objectives": [
+      "Enable full traceability from supplier to customer for any food product sold",
+      "Reduce the risk of contaminated or mislabelled products entering the cafe's supply chain",
+      "Build relationships with suppliers based on shared food safety commitments"
+    ]
+  },
+  "why_this_matters": "The Food Safety Act 1990 establishes the 'due diligence' defence — a food business can defend itself against food safety prosecution by demonstrating that it took all reasonable precautions and exercised all due diligence to avoid the offence. Supplier due diligence is a critical component of this defence. If a cafe sells a sandwich containing an undeclared allergen because the bread supplier changed their recipe without notification, the cafe is legally liable — but if it can demonstrate that it had a system for checking supplier credentials and receiving formulation change notifications, this supports a due diligence defence. EU-retained Regulation (EC) 178/2002 (the General Food Law) requires food businesses to be able to identify their suppliers and to implement traceability systems — they must be able to trace any ingredient one step back (to the supplier) and one step forward (to the customer). For a cafe, this means knowing exactly where every ingredient comes from and being able to recall any product if a safety issue is identified. The 2013 horsemeat scandal demonstrated how supply chain failures can damage entire industries. While most cafes source from reputable wholesalers, even established suppliers can have lapses. A cafe that does not check its suppliers' food safety credentials, verify delivery temperatures, or maintain up-to-date product specifications is operating blind to supply chain risks. EHO inspectors increasingly ask to see evidence of supplier due diligence, particularly in relation to allergen information and traceability records.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: List every supplier the cafe uses — this includes food wholesalers, bakery suppliers, milk suppliers, coffee roasters, specialist ingredient suppliers, and any third-party providers of ready-made items like cakes or sandwiches. For each supplier, record: company name, contact details, what they supply, delivery frequency, and current documentation held. Request the following from each supplier: their food hygiene registration number, evidence of their food safety management system, allergen information for every product supplied, and confirmation of their traceability procedures. Most reputable suppliers will have this information readily available. Week 2: Create an Approved Supplier Register — a document listing every approved supplier with their credentials, documentation status, and last review date. Any supplier who cannot provide basic food safety documentation should be flagged for review — consider whether an alternative supplier with better documentation is available. Establish a delivery checking procedure: every delivery must be checked on arrival for temperature compliance (chilled goods below 8°C, frozen below -18°C), packaging integrity, use-by dates, and general condition. Reject any delivery that does not meet these standards and document the rejection.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Supplier Due Diligence SOP covering the complete supplier approval process: initial assessment, documentation requirements, ongoing monitoring, and review criteria. Create a supplier questionnaire that new suppliers must complete before being approved — this should cover their food safety management system, allergen controls, traceability procedures, recall procedures, and insurance. Establish a supplier specification file containing the product specification (ingredients, allergens, storage requirements, shelf life) for every product purchased. This is essential for PPDS labelling (B006) and allergen management (B005). Implement a supplier performance tracking system: record any delivery issues (temperature failures, damaged goods, incorrect products, short shelf life), and review supplier performance quarterly. Set up a formal communication channel with suppliers for formulation change notifications — request that all suppliers inform you in writing before any change to ingredients, allergens, or packaging. File this agreement and hold suppliers accountable. By Week 8, every supplier should be documented, approved, and actively monitored.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Conduct annual supplier reviews where you assess each supplier's ongoing food safety credentials, delivery performance, and responsiveness. Visit key suppliers where practical — seeing their premises gives you confidence in their operations and strengthens the relationship. Review the Approved Supplier Register annually: are all suppliers still meeting standards? Are there better alternatives? Has any supplier had enforcement action taken against them? Monitor food safety news and alerts from the FSA for any issues related to your suppliers or their products. Participate in any supplier food safety audit programmes offered by your wholesalers. Consider requesting third-party audit certificates (BRC, SALSA) from suppliers as a higher standard of assurance."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "List every supplier used by the cafe with contact details and products supplied",
+        "Request food safety documentation from each supplier: registration, allergen data, specifications",
+        "Create an Approved Supplier Register with documentation status for each supplier",
+        "Establish a delivery checking procedure: temperature, packaging, dates, condition",
+        "Reject and document any delivery failing to meet food safety standards",
+        "Flag suppliers unable to provide basic food safety documentation",
+        "Begin filing supplier documentation in a dedicated supplier folder"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft a Supplier Due Diligence SOP covering approval, monitoring, and review",
+        "Create a new supplier questionnaire covering food safety systems and allergen controls",
+        "Build a supplier specification file for every product purchased",
+        "Implement quarterly supplier performance tracking based on delivery issues",
+        "Establish formal written agreements for formulation change notifications",
+        "Link supplier allergen data to the cafe's allergen matrix (B005) and PPDS system (B006)",
+        "File all supplier documentation, specifications, and correspondence"
+      ],
+      "responsible": "Manager, Kitchen Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct annual supplier reviews assessing credentials, performance, and responsiveness",
+        "Visit key suppliers to observe their food safety practices",
+        "Monitor FSA food alerts and recall notices for supplier-related issues",
+        "Review the Approved Supplier Register annually for currency and quality",
+        "Consider requesting third-party audit certificates (BRC, SALSA) from key suppliers"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Approved Supplier Register",
+    "Supplier Due Diligence SOP",
+    "New Supplier Questionnaire",
+    "Delivery Inspection Checklist",
+    "Supplier Specification File (per product)"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T015-01",
+        "tool_name": "Approved Supplier Register",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Central register listing every approved supplier with company details, products supplied, food safety credentials, documentation held, approval date, and next review date."
+      },
+      {
+        "tool_id": "T015-02",
+        "tool_name": "Delivery Inspection Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Kitchen Lead",
+        "description": "Checklist for inspecting every delivery on arrival: temperature compliance, packaging integrity, use-by dates, product condition, correct quantities, and delivery documentation."
+      },
+      {
+        "tool_id": "T015-03",
+        "tool_name": "New Supplier Questionnaire",
+        "level": "L2",
+        "format": "assessment",
+        "owner_role": "Manager",
+        "description": "Assessment questionnaire for evaluating new suppliers before approval: food safety management system, allergen controls, traceability, recall procedures, and insurance details."
+      },
+      {
+        "tool_id": "T015-04",
+        "tool_name": "Supplier Due Diligence SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering supplier approval, documentation requirements, delivery inspection, performance monitoring, formulation change management, and annual review."
+      },
+      {
+        "tool_id": "T015-05",
+        "tool_name": "Quarterly Supplier Performance Review",
+        "level": "L3",
+        "format": "scorecard",
+        "owner_role": "Owner",
+        "description": "Quarterly scorecard assessing each supplier on delivery reliability, temperature compliance, documentation quality, responsiveness to queries, and overall food safety standards."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Cafe sources products from an unapproved supplier (e.g., a local baker without documentation) without checking credentials",
+    "Supplier changes a product formulation without notification, introducing an undeclared allergen",
+    "Delivery temperature checks are skipped during busy periods, allowing unsafe goods into the supply chain",
+    "Supplier documentation is obtained once but never reviewed or updated, becoming out of date"
+  ],
+  "kpis": [
+    "100% of suppliers listed on the Approved Supplier Register with current documentation",
+    "100% of deliveries checked on arrival with records retained",
+    "Zero products in use from unapproved or undocumented suppliers",
+    "All supplier documentation reviewed and confirmed current at least annually"
+  ],
+  "dependencies": ["B013"],
+  "constraints": [
+    "Every supplier must provide food hygiene registration and allergen information before being approved",
+    "Delivery inspection records must be retained for a minimum of 12 months",
+    "Any supplier unable to provide traceability information must be replaced"
+  ],
+  "time_load": {
+    "L1": "6 hours (supplier listing, documentation requests, delivery procedure setup)",
+    "L2": "10 hours (SOP drafting, questionnaire development, specification file build)",
+    "L3": "4 hours/year (annual reviews, supplier visits, register updates)"
+  },
+  "review_protocol": "Delivery inspection at every goods receipt. Monthly check of supplier documentation currency. Quarterly supplier performance review. Annual comprehensive supplier review including credential verification. Immediate review triggered by any supplier food safety issue or FSA recall notice.",
+  "meta": {
+    "summary_for_humans": "This block ensures every ingredient and product entering the cafe comes from a verified, documented supplier with proper food safety credentials. It covers supplier approval, delivery inspection, allergen data collection, and ongoing performance monitoring.",
+    "implementation_risks": [
+      "Small local suppliers (bakers, farmers) may lack formal documentation — work with them to develop it",
+      "Supplier relationship management requires ongoing effort, not just initial documentation",
+      "Delivery checks can feel burdensome but are essential — build them into the goods receipt routine"
+    ],
+    "notes_for_engine": "Activate for all cafes that purchase food from external suppliers. Flag as urgent if signals indicate unknown supplier credentials, delivery temperature failures, allergen data gaps, or traceability concerns.",
+    "tags": ["food_safety", "suppliers", "due_diligence", "traceability", "delivery", "HACCP", "compliance", "allergens"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

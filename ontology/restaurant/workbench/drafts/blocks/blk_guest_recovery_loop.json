@@ -1,0 +1,47 @@
+{
+  "id": "blk_guest_recovery_loop",
+  "name": "Create guest recovery loop",
+  "description": "Install a clear recovery script, ownership rule, and follow-up loop so service failures are absorbed cleanly and turned into corrected operating behavior.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: strengthen recovery and verify learning from repeated guest-facing failures",
+  "updated_at": "2026-03-14T00:24:42.977441Z",
+  "effort_hours": 3.0,
+  "dependencies": [
+    "blk_install_pre_shift_brief",
+    "blk_build_floor_training"
+  ],
+  "tool_ids": [
+    "tool_guest_recovery_script"
+  ],
+  "response_pattern_ids": [
+    "rp_service_flow_reset",
+    "rp_training_reset"
+  ],
+  "entry_conditions": [
+    "Complaints, defensive responses, or inconsistent goodwill decisions are recurring.",
+    "Leaders can review recovery quality and close the loop on repeated causes."
+  ],
+  "contraindications": [
+    "Do not launch the recovery loop if managers will not review how recoveries actually played out.",
+    "Do not confuse apology language with true containment, ownership, and recurrence prevention."
+  ],
+  "owner_role": "venue_manager",
+  "expected_time_to_effect_days": 2,
+  "proof_of_completion": [
+    "A common recovery sequence exists for acknowledge, own, resolve, and follow up.",
+    "Frontline teams know when to recover directly and when to escalate.",
+    "Recurring complaint themes are logged and reviewed for underlying fixes."
+  ],
+  "successor_block_ids": [],
+  "service_module_ids": [
+    "recovery_and_exception_handling",
+    "leadership_and_management_rhythm",
+    "learning_and_improvement"
+  ],
+  "failure_family_ids": [
+    "exception_recovery_failure",
+    "accountability_failure",
+    "learning_failure"
+  ]
+}

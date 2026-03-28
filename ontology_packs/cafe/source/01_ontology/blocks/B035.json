@@ -1,0 +1,167 @@
+{
+  "block_id": "B035",
+  "name": "Service Recovery Excellence",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Establishes a structured approach to turning negative customer experiences into loyalty-building opportunities. This block defines how staff should identify, respond to, and resolve complaints or service failures in a way that leaves the customer feeling valued and more likely to return than if the problem had never occurred.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a clear, tiered response framework for different types of service failures",
+      "Empower frontline staff to resolve issues immediately without requiring manager approval for standard remedies",
+      "Establish recovery response time targets for in-venue, online, and review platform complaints",
+      "Build a complaints log that captures root causes and enables systemic improvements",
+      "Define recovery gestures appropriate to the severity of the failure"
+    ],
+    "secondary_objectives": [
+      "Reduce negative online reviews by catching and resolving issues before customers leave",
+      "Increase customer lifetime value through effective recovery interactions",
+      "Build a culture where mistakes are seen as opportunities rather than threats",
+      "Use complaint data to identify recurring operational weaknesses"
+    ]
+  },
+  "why_this_matters": "Research consistently shows that customers who experience a well-handled service recovery become more loyal than those who never had a problem — the service recovery paradox. In a UK cafe context, where margins are tight and competition is fierce, every lost customer represents significant lifetime revenue. A regular who visits three times per week spending five pounds each time represents over seven hundred and eighty pounds per year; losing them to a single unresolved complaint is devastating. The rise of Google Reviews, TripAdvisor, and social media means that a poorly handled complaint no longer affects just one customer — it is broadcast to hundreds or thousands of potential visitors. A single one-star review detailing dismissive staff behaviour can suppress a cafe's rating for months and directly reduce footfall. Conversely, a response that demonstrates genuine care and swift resolution can turn a critic into an advocate. For independent cafes without the marketing budgets of chains, word-of-mouth reputation is the primary driver of new custom. Service recovery is not about grovelling or giving away free coffee — it is about demonstrating that the cafe takes its standards seriously and values every customer's experience. Staff who are trained and empowered to recover well feel more confident, more professional, and more invested in the cafe's success. Without a structured approach, recovery becomes inconsistent — one barista offers a free drink while another shrugs — and inconsistency breeds distrust.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Hold a 30-minute team briefing to introduce the concept of service recovery. Explain the service recovery paradox — that a well-handled complaint creates stronger loyalty than no complaint at all. Define the three tiers of service failure: Tier 1 (Minor — wrong drink, slow service, cold food), Tier 2 (Moderate — rude interaction, repeated errors, hygiene concern), Tier 3 (Serious — illness, injury, discrimination, allergen failure). For Tier 1 issues, empower all staff to act immediately without manager approval: apologise sincerely, remake the item, and offer a small gesture such as a complimentary biscuit or the next drink on the house. Provide a simple script: 'I'm really sorry about that. Let me put that right for you straight away.' Train staff never to make excuses or blame colleagues. For Tier 2 and 3 issues, the manager must be involved immediately. Create a simple A5 complaints card kept behind the counter where any complaint is logged: date, time, what happened, what was done, customer reaction. The owner or manager reviews these cards daily. Week 2: Role-play three common complaint scenarios with the team: a wrong drink order, a long wait time, and a customer finding a hair in their food. Practice the apology, the fix, and the follow-up. Observe how staff handle real situations and provide immediate private feedback. Ensure every team member knows they have authority to remake any drink or food item without asking permission. Post a recovery reminder card near the till listing the three tiers and the appropriate responses for each.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a formal Service Recovery SOP that documents every step: detection, acknowledgement, resolution, follow-up, and root cause logging. Create a digital complaints tracker (spreadsheet or simple database) that categorises complaints by type, severity, time of day, staff member on shift, and resolution offered. Begin weekly analysis of complaint data to identify patterns — if 40% of complaints relate to wait times between 12:00-13:00, that is a staffing or workflow issue, not an individual performance issue. Establish a 'recovery budget' — a small monthly allowance (typically £50-100 for a small cafe) that staff can draw upon for recovery gestures without seeking approval each time. Define escalation protocols: who handles social media complaints, who responds to Google Reviews, and within what timeframe (target: same-day response to all online reviews, positive or negative). Train the team on responding to online reviews using a template framework: thank the reviewer, acknowledge the issue, explain what has been done, invite them back. Draft template responses for the five most common complaint types but insist they are personalised, never copied verbatim. Introduce a 'customer save' recognition — when a staff member successfully recovers a situation and the customer leaves happy, acknowledge it in the next team meeting. By Week 8, the cafe should have a functioning complaints tracking system, written SOP, trained team, and at least 6 weeks of complaint data to analyse.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Service recovery should now be embedded in the cafe's DNA. Introduce monthly complaint analysis reviews where the team examines trends, celebrates successful recoveries, and discusses systemic fixes. Track the 'complaint-to-advocacy' rate — how many customers who complained subsequently left positive reviews or increased their visit frequency. Implement a 72-hour follow-up protocol for Tier 2 and 3 complaints: a personal message from the manager checking that the customer is satisfied with the resolution. Create a 'recovery stories' board in the staff area showcasing examples of brilliant recovery by team members. Conduct quarterly mystery customer exercises specifically designed to test recovery capability. Review and update recovery budgets and empowerment levels based on data. Share anonymised complaint data with the team monthly so everyone understands the most common pain points. Benchmark your Google Review response rate and sentiment against local competitors."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Hold a 30-minute team briefing introducing service recovery principles and the three-tier framework",
+        "Create and distribute A5 complaint logging cards behind the counter",
+        "Define and communicate Tier 1 empowerment — any staff member can remake and offer a gesture",
+        "Provide a simple recovery script card for common scenarios",
+        "Role-play three complaint scenarios with all team members",
+        "Begin daily review of any complaints logged",
+        "Post a recovery response quick-reference card near the till area"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft and approve a Service Recovery SOP covering detection through to root cause logging",
+        "Set up a digital complaints tracker with categorisation fields",
+        "Establish a monthly recovery budget and communicate it to the team",
+        "Define online review response protocols and assign responsibility",
+        "Create template frameworks for responding to the five most common complaint types",
+        "Introduce 'customer save' recognition in team meetings",
+        "Begin weekly complaint data analysis for pattern identification"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct monthly complaint trend analysis reviews with the full team",
+        "Implement 72-hour follow-up protocol for Tier 2 and 3 complaints",
+        "Launch quarterly mystery customer recovery exercises",
+        "Track complaint-to-advocacy conversion rate",
+        "Create a recovery stories recognition board in the staff area",
+        "Benchmark Google Review response rates against local competitors"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Service Recovery SOP document",
+    "Three-Tier Complaint Response Guide (A5 quick-reference card)",
+    "Complaints Tracking Spreadsheet template",
+    "Online Review Response Template Framework",
+    "Monthly Complaint Analysis Report template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T035-01",
+        "tool_name": "Complaint Logging Card",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "A5 card kept behind the counter for logging any customer complaint: date, time, nature of issue, tier classification, action taken, staff member, and customer reaction. Reviewed daily by manager."
+      },
+      {
+        "tool_id": "T035-02",
+        "tool_name": "Service Recovery SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Comprehensive Standard Operating Procedure covering the full recovery cycle: detection, acknowledgement, resolution, follow-up, root cause logging, and systemic improvement actions."
+      },
+      {
+        "tool_id": "T035-03",
+        "tool_name": "Complaints Tracking Dashboard",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Digital tracker categorising complaints by type, severity, time, shift, and resolution. Generates weekly summaries showing trends and recurring issues for management review."
+      },
+      {
+        "tool_id": "T035-04",
+        "tool_name": "Online Review Response Framework",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Template frameworks for responding to negative Google, TripAdvisor, and social media reviews. Includes tone guidelines, personalisation requirements, and response time targets."
+      },
+      {
+        "tool_id": "T035-05",
+        "tool_name": "Monthly Complaint Analysis Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly summary analysing complaint volumes, categories, resolution times, recovery budget spend, complaint-to-advocacy conversion rate, and online review sentiment trends."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Staff feel disempowered and escalate every minor issue to the manager, creating delays that worsen the customer's experience",
+    "Recovery gestures are inconsistent — one barista gives a free coffee while another offers nothing — undermining trust and perceived fairness",
+    "Complaints are logged but never analysed, so the same issues recur week after week without systemic fixes",
+    "Online reviews go unanswered for days or receive copy-paste responses that feel impersonal and dismissive"
+  ],
+  "kpis": [
+    "100% of in-venue complaints acknowledged within 60 seconds of being raised",
+    "Same-day response to all online reviews (positive and negative)",
+    "Complaint recurrence rate below 15% (same issue type month-on-month)",
+    "At least 50% of customers who complained return within 30 days"
+  ],
+  "dependencies": ["B033", "B034"],
+  "constraints": [
+    "Recovery budget must be agreed with the owner and reviewed monthly",
+    "All staff must be briefed on empowerment levels before the system goes live",
+    "Online review responses must be approved by the manager until templates are established"
+  ],
+  "time_load": {
+    "L1": "3 hours (team briefing, role-play, materials preparation)",
+    "L2": "8 hours (SOP drafting, tracker setup, template creation, training)",
+    "L3": "3 hours/month (analysis, follow-ups, mystery customer exercises)"
+  },
+  "review_protocol": "Daily review of complaint cards by shift manager. Weekly analysis of complaint data for patterns. Monthly formal review in management meeting covering volumes, trends, and systemic fixes. Quarterly mystery customer recovery exercise. Annual SOP review and update.",
+  "meta": {
+    "summary_for_humans": "This block builds a structured system for handling customer complaints and service failures, empowering staff to resolve issues immediately and turning negative experiences into loyalty-building moments. It covers in-venue recovery, online review management, and root cause analysis.",
+    "implementation_risks": [
+      "Staff may over-compensate with recovery gestures, eroding margins if budget is not controlled",
+      "Without genuine empowerment, the system becomes bureaucratic rather than responsive",
+      "Complaint logging may feel punitive to staff if not framed as a learning and improvement tool"
+    ],
+    "notes_for_engine": "Activate when signals indicate rising negative reviews, declining customer return rates, or staff reporting uncertainty about handling complaints. Pairs closely with B033 (customer feedback collection) and B034 (customer satisfaction monitoring).",
+    "tags": ["customer_experience", "service_recovery", "complaints", "reviews", "loyalty", "empowerment", "reputation"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

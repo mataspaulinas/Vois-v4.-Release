@@ -1,0 +1,521 @@
+{
+  "vertical": "restaurant",
+  "signals": [
+    {
+      "id": "sig_demand_spike_unabsorbed",
+      "name": "Demand spike goes unabsorbed",
+      "description": "A sudden rush or wave of covers hits the venue faster than the operation can absorb without visible service strain.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: demand-capacity mismatch expressed through restaurant rush absorption",
+      "status": "review",
+      "domain": "workforce",
+      "module": "deployment",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "rush wave overwhelms capacity",
+        "queue expands immediately after demand spike",
+        "service strain appears within minutes of surge"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "volume review"
+      ],
+      "temporal_behavior": "spike-sensitive",
+      "likely_co_signals": [
+        "sig_service_delay",
+        "sig_work_pace_breaks_under_load"
+      ],
+      "adapter_aliases": [
+        "rush hit too hard",
+        "volume spike unabsorbed"
+      ]
+    },
+    {
+      "id": "sig_last_minute_volume_shift",
+      "name": "Last-minute volume shift hits the floor",
+      "description": "Reservations, walk-ins, large parties, or timing changes bunch together late enough to disrupt pacing and reset the guest flow.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: last-minute volume shift expressed through restaurant arrival flow",
+      "status": "review",
+      "domain": "guest_experience",
+      "module": "reservation_flow",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "booking wave compresses unexpectedly",
+        "walk-in surge collides with reservations",
+        "late group timing reshapes floor pacing"
+      ],
+      "source_types": [
+        "reservation review",
+        "host notes",
+        "service observation"
+      ],
+      "temporal_behavior": "peak-sensitive",
+      "likely_co_signals": [
+        "sig_reservation_pacing_breakdown",
+        "sig_waitlist_mismatch"
+      ],
+      "adapter_aliases": [
+        "arrival wave shift",
+        "late volume spike"
+      ]
+    },
+    {
+      "id": "sig_skill_mix_mismatch",
+      "name": "Skill mix is mismatched to the work",
+      "description": "The people present are not the right combination of capability and confidence for the pressure or complexity of the shift.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: capability mismatch expressed through restaurant shift deployment",
+      "status": "review",
+      "domain": "workforce",
+      "module": "deployment",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "experienced coverage too thin for the shift",
+        "novice-heavy floor under pressure",
+        "complex station left to underprepared staff"
+      ],
+      "source_types": [
+        "schedule review",
+        "manager notes",
+        "service observation"
+      ],
+      "temporal_behavior": "shift-bound",
+      "likely_co_signals": [
+        "sig_new_staff_depend_on_memory",
+        "sig_staff_confusion"
+      ],
+      "adapter_aliases": [
+        "wrong mix on shift",
+        "capability mismatch"
+      ]
+    },
+    {
+      "id": "sig_critical_role_left_uncovered",
+      "name": "Critical role is left uncovered",
+      "description": "A role that protects flow or standards is missing entirely, forcing the rest of the venue to improvise around the gap.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: uncovered critical role expressed through restaurant service flow",
+      "status": "review",
+      "domain": "workforce",
+      "module": "deployment",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "no expo or floor lead in a pressured window",
+        "missing host, runner, or section owner",
+        "critical service role not assigned"
+      ],
+      "source_types": [
+        "schedule review",
+        "manager notes",
+        "service observation"
+      ],
+      "temporal_behavior": "shift-bound",
+      "likely_co_signals": [
+        "sig_ownership_confusion_in_service",
+        "sig_work_dies_between_roles"
+      ],
+      "adapter_aliases": [
+        "key role uncovered",
+        "nobody owns the critical role"
+      ]
+    },
+    {
+      "id": "sig_shift_or_day_started_unprepared",
+      "name": "Shift or day starts unprepared",
+      "description": "The venue begins service without the minimum coordination, setup, and readiness needed to absorb normal pressure.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: shift starts unprepared expressed through restaurant readiness failures",
+      "status": "review",
+      "domain": "operations",
+      "module": "shift_readiness",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "opening begins behind",
+        "service starts without coordinated readiness",
+        "team enters the shift chasing basics"
+      ],
+      "source_types": [
+        "opening review",
+        "manager notes",
+        "service observation"
+      ],
+      "temporal_behavior": "opening-bound",
+      "likely_co_signals": [
+        "sig_opening_checklist_drift",
+        "sig_required_inputs_missing_at_start"
+      ],
+      "adapter_aliases": [
+        "day started behind",
+        "shift opened unprepared"
+      ]
+    },
+    {
+      "id": "sig_rework_or_repeat_work_observed",
+      "name": "Rework or repeat work is observed",
+      "description": "The team is doing work twice, correcting preventable misses, or remaking steps that should have landed cleanly the first time.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: rework expressed through restaurant service and production execution",
+      "status": "review",
+      "domain": "service_quality",
+      "module": "standard_execution",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "re-fired or remade work",
+        "service steps repeated because first pass failed",
+        "preventable correction loops"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "guest complaint"
+      ],
+      "temporal_behavior": "throughput-sensitive",
+      "likely_co_signals": [
+        "sig_standard_steps_skipped",
+        "sig_output_quality_inconsistent"
+      ],
+      "adapter_aliases": [
+        "redo work",
+        "repeat work on shift"
+      ]
+    },
+    {
+      "id": "sig_work_pace_breaks_under_load",
+      "name": "Work pace breaks under load",
+      "description": "The venue can move acceptably at low pressure, but once load rises the pace becomes visibly unstable and backlog forms quickly.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: work pace breaks under load expressed through restaurant floor execution",
+      "status": "review",
+      "domain": "service_quality",
+      "module": "floor_execution",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "pace collapses in the rush",
+        "throughput drops sharply under pressure",
+        "backlog expands once covers rise"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "shift review"
+      ],
+      "temporal_behavior": "peak-sensitive",
+      "likely_co_signals": [
+        "sig_service_delay",
+        "sig_ticket_bottleneck"
+      ],
+      "adapter_aliases": [
+        "pace collapse",
+        "load breaks the flow"
+      ]
+    },
+    {
+      "id": "sig_same_mistake_repeats_across_people",
+      "name": "Same mistake repeats across people",
+      "description": "The same operational miss shows up across different team members, suggesting the issue lives in the system rather than in one person.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: repeated mistakes across people expressed through restaurant training and learning failure",
+      "status": "review",
+      "domain": "training",
+      "module": "training_execution",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "same miss from multiple staff",
+        "error pattern travels across the team",
+        "different people repeat the same avoidable failure"
+      ],
+      "source_types": [
+        "manager notes",
+        "post-shift review",
+        "service observation"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_same_issue_repeats_without_review",
+        "sig_training_not_translated_to_execution"
+      ],
+      "adapter_aliases": [
+        "same miss across staff",
+        "systemic repeat mistake"
+      ]
+    },
+    {
+      "id": "sig_training_not_translated_to_execution",
+      "name": "Training is not translating into execution",
+      "description": "The team has been shown the standard, but the expected behavior still does not appear reliably in live service.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: training not translating to execution expressed through restaurant standards drift",
+      "status": "review",
+      "domain": "training",
+      "module": "training_execution",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "trained behavior missing in live shift",
+        "coaching happened but standards still do not land",
+        "training exists without execution transfer"
+      ],
+      "source_types": [
+        "manager notes",
+        "training review",
+        "service observation"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_new_staff_depend_on_memory",
+        "sig_standard_steps_skipped"
+      ],
+      "adapter_aliases": [
+        "training not landing",
+        "coached but not executed"
+      ]
+    },
+    {
+      "id": "sig_follow_through_missing",
+      "name": "Follow-through is missing",
+      "description": "The venue discusses the right action, but the reset, check-back, or accountability loop does not actually land afterward.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: missing follow-through expressed through restaurant management rhythm",
+      "status": "review",
+      "domain": "leadership",
+      "module": "management_follow_through",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "agreed reset not checked later",
+        "manager direction given without follow-through",
+        "actions named but not closed"
+      ],
+      "source_types": [
+        "manager notes",
+        "post-shift review",
+        "service observation"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_no_postmortem_after_breakdown",
+        "sig_improvement_not_standardized"
+      ],
+      "adapter_aliases": [
+        "no follow-through",
+        "direction without closure"
+      ]
+    },
+    {
+      "id": "sig_tool_or_system_unavailable",
+      "name": "Tool or system is unavailable when needed",
+      "description": "A device, system, or basic tool the venue relies on is missing, offline, dead, or otherwise unavailable during live work.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: tool or system unavailable expressed through restaurant live service friction",
+      "status": "review",
+      "domain": "equipment",
+      "module": "equipment_reliability",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "POS or printer unavailable",
+        "service tool missing at moment of use",
+        "system outage or device dead during shift"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "incident log"
+      ],
+      "temporal_behavior": "incident-driven",
+      "likely_co_signals": [
+        "sig_workaround_is_normalized",
+        "sig_equipment_breaks_service_flow"
+      ],
+      "adapter_aliases": [
+        "tool unavailable",
+        "system down on shift"
+      ]
+    }
+  ],
+  "signal_failure_map": [
+    {
+      "source_id": "sig_demand_spike_unabsorbed",
+      "target_id": "fm_deployment_misalignment",
+      "weight": 0.95,
+      "owner": "execution-program",
+      "source_ref": "unabsorbed restaurant demand spikes are the clearest field signal of deployment mismatch",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_demand_spike_unabsorbed",
+      "target_id": "fm_manager_presence_gap",
+      "weight": 0.66,
+      "owner": "execution-program",
+      "source_ref": "weak live leadership often leaves a rush spike unabsorbed instead of actively reshaped",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_last_minute_volume_shift",
+      "target_id": "fm_host_flow_breakdown",
+      "weight": 0.84,
+      "owner": "execution-program",
+      "source_ref": "late arrival shifts usually surface first as broken host pacing and quote control",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_last_minute_volume_shift",
+      "target_id": "fm_deployment_misalignment",
+      "weight": 0.74,
+      "owner": "execution-program",
+      "source_ref": "compressed arrival waves also expose weak redeployment capacity in real time",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_skill_mix_mismatch",
+      "target_id": "fm_training_gap",
+      "weight": 0.88,
+      "owner": "execution-program",
+      "source_ref": "the wrong capability mix on shift is often a live training-depth problem, not only a headcount problem",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_skill_mix_mismatch",
+      "target_id": "fm_deployment_misalignment",
+      "weight": 0.81,
+      "owner": "execution-program",
+      "source_ref": "mismatched capability distribution is also a deployment-design failure",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_critical_role_left_uncovered",
+      "target_id": "fm_deployment_misalignment",
+      "weight": 0.93,
+      "owner": "execution-program",
+      "source_ref": "an uncovered critical role is a direct deployment failure in restaurant operations",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_critical_role_left_uncovered",
+      "target_id": "fm_role_ownership_blur",
+      "weight": 0.69,
+      "owner": "execution-program",
+      "source_ref": "when nobody covers a critical role, ownership boundaries are usually weak as well",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_shift_or_day_started_unprepared",
+      "target_id": "fm_shift_readiness_gap",
+      "weight": 0.95,
+      "owner": "execution-program",
+      "source_ref": "a day that starts unprepared is a direct restaurant readiness signal",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_shift_or_day_started_unprepared",
+      "target_id": "fm_briefing_absence",
+      "weight": 0.7,
+      "owner": "execution-program",
+      "source_ref": "restaurant day-start drift often travels with no real briefing reset",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_rework_or_repeat_work_observed",
+      "target_id": "fm_service_standard_drift",
+      "weight": 0.84,
+      "owner": "execution-program",
+      "source_ref": "rework usually means standard execution is not landing cleanly",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_rework_or_repeat_work_observed",
+      "target_id": "fm_undefined_workflow",
+      "weight": 0.76,
+      "owner": "execution-program",
+      "source_ref": "repeat work also signals that steps and handoffs are not designed clearly enough",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_work_pace_breaks_under_load",
+      "target_id": "fm_deployment_misalignment",
+      "weight": 0.87,
+      "owner": "execution-program",
+      "source_ref": "pace collapse under pressure is often the live signature of poor deployment fit",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_work_pace_breaks_under_load",
+      "target_id": "fm_undefined_workflow",
+      "weight": 0.72,
+      "owner": "execution-program",
+      "source_ref": "if pace collapses only under load, the workflow often lacks enough structure to scale",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_same_mistake_repeats_across_people",
+      "target_id": "fm_training_gap",
+      "weight": 0.92,
+      "owner": "execution-program",
+      "source_ref": "the same mistake across multiple staff points to capability transfer failure, not an isolated person problem",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_same_mistake_repeats_across_people",
+      "target_id": "fm_learning_loop_absence",
+      "weight": 0.84,
+      "owner": "execution-program",
+      "source_ref": "if the same miss keeps traveling through the team, the learning loop is not closing it",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_training_not_translated_to_execution",
+      "target_id": "fm_training_gap",
+      "weight": 0.95,
+      "owner": "execution-program",
+      "source_ref": "coaching without live execution transfer is the cleanest signal of a training gap",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_training_not_translated_to_execution",
+      "target_id": "fm_learning_loop_absence",
+      "weight": 0.67,
+      "owner": "execution-program",
+      "source_ref": "without a reinforcement loop, training rarely survives pressured service",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_training_not_translated_to_execution",
+      "target_id": "fm_service_standard_drift",
+      "weight": 0.58,
+      "owner": "execution-program",
+      "source_ref": "visible training transfer failure often expresses itself as standard drift on shift",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_follow_through_missing",
+      "target_id": "fm_learning_loop_absence",
+      "weight": 0.79,
+      "owner": "execution-program",
+      "source_ref": "when resets are discussed but not closed, the learning loop is failing operationally",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_follow_through_missing",
+      "target_id": "fm_manager_presence_gap",
+      "weight": 0.71,
+      "owner": "execution-program",
+      "source_ref": "missing follow-through also signals weak live managerial ownership of the reset",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_tool_or_system_unavailable",
+      "target_id": "fm_tooling_friction",
+      "weight": 0.95,
+      "owner": "execution-program",
+      "source_ref": "a missing or unavailable live tool is the clearest signal of tooling friction",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_tool_or_system_unavailable",
+      "target_id": "fm_equipment_reliability_gap",
+      "weight": 0.74,
+      "owner": "execution-program",
+      "source_ref": "if the unavailable tool is infrastructure the venue depends on, reliability weakness is also likely",
+      "status": "review"
+    }
+  ]
+}

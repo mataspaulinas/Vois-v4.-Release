@@ -1,0 +1,82 @@
+{
+  "identification": {
+    "tool_id": "T005-04",
+    "tool_name": "Recipe & Supplier Change Allergen Review Gate",
+    "block_id": "B005"
+  },
+  "tool_design": {
+    "format": "checklist",
+    "role_in_intervention": "Stop-the-line review gate that prevents recipe, ingredient, supplier, or special changes from reaching service without allergen review.",
+    "adaptation_variables": [
+      "change_frequency",
+      "menu_complexity",
+      "approval_roles",
+      "specials_volume"
+    ],
+    "usage_moment": "Before any recipe change, substitution, supplier swap, or new menu item reaches production or service",
+    "expected_output": "Completed change-review record with updated matrix status, notification record, and approval decision",
+    "linked_blocks": [
+      "B005",
+      "B006",
+      "B007"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Teams treat urgent substitutions as too small or too temporary to trigger review.",
+        "what_can_go_wrong": "Exactly the highest-pressure changes slip through with no allergen check.",
+        "early_signals": [
+          "Staff say a substitute is 'just for today'",
+          "The new item appears in stock or on the counter before the form exists"
+        ],
+        "prevention": [
+          "Define that every substitution and special triggers the gate",
+          "Give managers clear authority to block sale until review is complete"
+        ],
+        "mitigation": [
+          "Remove the item from sale until reviewed",
+          "Retroactively trace the change and reissue all affected service documents"
+        ],
+        "if_occurs_next_signals": [
+          "change_control_bypass"
+        ],
+        "possible_successor_blocks": [
+          "B006",
+          "B007",
+          "B008"
+        ]
+      },
+      {
+        "warning": "The matrix is updated but downstream users are not notified.",
+        "what_can_go_wrong": "Kitchen, counter, PPDS labels, and staff conversation aids start using different versions.",
+        "early_signals": [
+          "The form has no distribution record",
+          "A change is noted in the matrix but old counter sheets remain in place"
+        ],
+        "prevention": [
+          "Treat notification and replacement of old copies as part of completion",
+          "Keep a small distribution list on every change record"
+        ],
+        "mitigation": [
+          "Pull all live documents and reissue current versions",
+          "Brief the team before the next service starts"
+        ],
+        "if_occurs_next_signals": [
+          "downstream_update_failure"
+        ],
+        "possible_successor_blocks": [
+          "B006",
+          "B007"
+        ]
+      }
+    ]
+  },
+  "content": "# Recipe & Supplier Change Allergen Review Gate\n\n**Tool ID:** T005-04  \n**Block:** B005 (Allergen Identification & Labelling)  \n**Format:** Checklist  \n**Primary Role:** Manager  \n**Use Moment:** Before any change goes live  \n**Output:** Signed change decision with update and notification record\n\n---\n\n## Stop-The-Line Rule\n\nIf an ingredient, supplier, recipe, garnish, topping, syrup, bread, cake, or special changes, this review gate must be completed before sale.\n\nDo not assume:\n- the substitute is the same as the old product\n- the change is too small to matter\n- staff will remember the difference without updated documents\n\n---\n\n## Change Details\n\n| Field | Complete Here |\n|---|---|\n| Date | |\n| Change owner | |\n| Item or ingredient affected | |\n| Type of change | New item / Recipe change / Supplier swap / Temporary substitute / Special |\n| Reason for change | |\n| Planned go-live time | |\n| Current evidence available? | Yes / No |\n\n---\n\n## Review Checklist\n\n| Check | Complete | Notes |\n|---|---|---|\n| New ingredient or product declaration has been obtained | <input type=\"checkbox\" disabled /> | |\n| T005-02 declaration sheet updated or created | <input type=\"checkbox\" disabled /> | |\n| T005-01 matrix row updated | <input type=\"checkbox\" disabled /> | |\n| T005-03 supplier evidence register updated | <input type=\"checkbox\" disabled /> | |\n| T005-05 customer-facing pack updated if affected | <input type=\"checkbox\" disabled /> | |\n| B006 PPDS labels reviewed if affected | <input type=\"checkbox\" disabled /> | |\n| B007 counter/team reference updated if affected | <input type=\"checkbox\" disabled /> | |\n| Old copies removed from service points | <input type=\"checkbox\" disabled /> | |\n| Team briefed before next service | <input type=\"checkbox\" disabled /> | |\n\n---\n\n## Decision\n\n| Outcome | Mark One | Notes |\n|---|---|---|\n| Approved for service | <input type=\"checkbox\" disabled /> | |\n| Approved with conditions | <input type=\"checkbox\" disabled /> | |\n| Hold until evidence complete | <input type=\"checkbox\" disabled /> | |\n| Reject / remove item | <input type=\"checkbox\" disabled /> | |\n\n---\n\n## Distribution Record\n\n| Document / Team Updated | Completed By | Date / Time |\n|---|---|---|\n| Kitchen matrix copy | | |\n| Counter allergen pack | | |\n| PPDS labels if relevant | | |\n| Team briefing / shift notes | | |\n| Archived old versions | | |\n\n---\n\n## Escalate Instead of Approving If\n\n<input type=\"checkbox\" disabled /> Supplier evidence is incomplete or contradictory  \n<input type=\"checkbox\" disabled /> The product code differs from the declaration on file  \n<input type=\"checkbox\" disabled /> The item is already on sale but the records are not updated  \n<input type=\"checkbox\" disabled /> Cross-contact risk changes and the service wording is unclear\n\n---\n\n## Common Failure Patterns\n\n### 1. Emergency substitutions skip the gate\nThis tool matters most when pressure is high.\n\n### 2. Documents are updated but old copies remain in service\nCompletion includes replacement of live copies, not just admin updates.\n\n### 3. The team is informed verbally but nothing is recorded\nIf the change matters enough to brief, it matters enough to document.\n",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T005-04_recipe_and_supplier_change_allergen_review_gate.md",
+    "migration_method": "manual_enrichment"
+  }
+}

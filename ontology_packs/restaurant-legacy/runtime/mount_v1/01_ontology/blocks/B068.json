@@ -1,0 +1,167 @@
+{
+  "block_id": "B068",
+  "name": "Barista Training & Certification",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Establishes a structured barista training programme covering coffee craft fundamentals through to advanced skills, aligned to SCA certification standards where appropriate, ensuring every team member can consistently produce excellent coffee and confidently explain the product to customers.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define a tiered barista training curriculum from foundation (espresso basics, milk steaming) through to advanced (latte art, brewing methods, sensory skills)",
+      "Establish internal competency assessments so that progression is based on demonstrated skill, not just time served",
+      "Align training content with SCA Coffee Skills Programme modules where the venue aspires to specialty standards",
+      "Ensure all baristas can confidently discuss coffee origin, roast profile, and flavour notes with customers",
+      "Create a training schedule that delivers skill development without disrupting service operations"
+    ],
+    "secondary_objectives": [
+      "Build a culture of coffee excellence that attracts passionate baristas to the venue",
+      "Reduce coffee waste by improving extraction consistency and reducing shots pulled incorrectly",
+      "Enable the venue to justify premium pricing through demonstrably skilled preparation"
+    ]
+  },
+  "why_this_matters": "Coffee is the core product of any cafe, and the barista's skill is the single biggest variable in whether a customer receives an excellent drink or a mediocre one. The difference between a properly extracted espresso and a poorly pulled shot is enormous — yet many cafes offer no structured training beyond 'watch someone else and have a go.' In the specialty coffee sector, customer expectations are high and rising. A flat white made with badly steamed milk or an over-extracted espresso served without comment will drive discerning customers to competitors. The Specialty Coffee Association's Coffee Skills Programme provides an internationally recognised framework covering barista skills, brewing, sensory skills, green coffee, and roasting — and even if a cafe does not pursue formal SCA certification, the curriculum provides an excellent structure for internal training. Training also has direct financial impact. A barista who consistently dials in the grinder correctly wastes less coffee. One who understands milk texturing uses less milk per drink. One who can explain the single-origin filter offering upsells a higher-margin product. Across a year, these small improvements compound into thousands of pounds of saved cost and increased revenue. Beyond the product, training is one of the strongest retention tools available. Baristas who feel they are developing their craft stay longer. A cafe that invests in SCA certifications or internal skill badges signals that it takes both its coffee and its people seriously. In a sector where the best baristas can choose where they work, the venues that invest in development win the talent war.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Assess the current skill level of every barista using a simple practical test: pull three espresso shots, steam milk for a flat white, and make a pour-over or batch brew if applicable. Rate each person on extraction quality, milk texture, speed, cleanliness, and customer interaction. This gives a baseline. Create a Barista Skills Checklist covering the fundamentals every team member must master: espresso machine operation, grinder adjustment, dose and yield targets, milk steaming to appropriate temperature and texture, basic drink recipes for the full menu, till operation for coffee orders, and cleaning routines for the coffee station. Week 2: Pair each less-experienced barista with the strongest barista on shift for at least two supervised training sessions. Focus on the basics that have the biggest quality impact: consistent dose weight, appropriate extraction time (typically 25-32 seconds for espresso), and milk steamed to 60-65°C with a microfoam texture. Post the venue's espresso recipe card (dose, yield, time) next to the grinder so every barista pulls to the same standard. Ensure all baristas understand and can articulate the current coffee offering — what roaster, what blend or single origin, what flavour notes, and what brewing methods are available.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a three-tier internal barista training programme: Foundation (espresso basics, milk steaming, menu execution, hygiene), Intermediate (grinder calibration, latte art basics, filter brewing methods, sensory vocabulary), and Advanced (advanced latte art, cupping and sensory skills, guest coffee preparation, training others). Create a Barista Training Log that tracks each person's progress through the tiers with sign-off from a senior barista or manager upon completion of each module. Establish a weekly 30-minute training session — this could be a cupping of the current coffee, a latte art practice session, or a deep dive into a brewing variable. Protect this time in the rota. Investigate SCA certification options: the SCA Foundation Barista Skills course is typically a one-day course costing £150-250 and provides an internationally recognised credential. Consider certifying at least one senior barista who can then train others internally. Document standard operating procedures for all coffee preparation — espresso recipe, milk steaming protocol, filter brew ratios, cleaning and maintenance schedules for grinder and machine. These SOPs ensure consistency regardless of who is on shift.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Pursue SCA certification systematically — aim for at least two team members holding SCA Barista Skills Foundation, with one progressing to Intermediate. Use this as a recruitment differentiator and a quality benchmark. Introduce internal barista competitions — monthly latte art throwdowns or blind cupping challenges that make skill development fun and social. Establish a coffee education programme for the whole team, including non-barista staff, so that everyone can talk confidently about the coffee when customers ask. Bring in guest trainers — roasters, Q-graders, or experienced baristas from other venues — for quarterly masterclass sessions. Track coffee quality metrics alongside training: extraction yield, customer complaints about coffee, waste from remakes, and average time per drink. Correlate improvements in these metrics with training investment. Create a mentoring pathway where Advanced-tier baristas are responsible for training Foundation-tier starters, building leadership skills and succession planning simultaneously."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Assess current barista skill levels using a practical espresso and milk test",
+        "Create a Barista Skills Checklist covering all foundation competencies",
+        "Post the venue's espresso recipe card at the grinder station",
+        "Pair less-experienced baristas with senior baristas for supervised training",
+        "Ensure all baristas can articulate the current coffee offering to customers",
+        "Review and clean all coffee equipment to ensure it supports consistent extraction",
+        "Establish baseline waste data for coffee and milk to measure future improvements"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a three-tier barista training programme (Foundation, Intermediate, Advanced)",
+        "Create a Barista Training Log tracking individual progress and sign-offs",
+        "Establish weekly 30-minute protected training sessions in the rota",
+        "Document coffee preparation SOPs for espresso, milk, filter, and cleaning",
+        "Investigate and budget for SCA Foundation Barista Skills certification",
+        "Set up a cupping station for regular sensory training",
+        "Link training tier progression to pay bands in B065"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Pursue SCA certification for senior baristas",
+        "Launch monthly internal barista competitions (latte art, cupping)",
+        "Establish quarterly guest trainer masterclass sessions",
+        "Track coffee quality metrics and correlate with training investment",
+        "Build a mentoring pathway from Advanced to Foundation tier",
+        "Extend coffee education to all front-of-house staff"
+      ],
+      "responsible": "Head Barista, Owner"
+    }
+  },
+  "deliverables": [
+    "Barista Skills Checklist (Foundation competencies)",
+    "Three-Tier Barista Training Programme curriculum",
+    "Barista Training Log for individual progress tracking",
+    "Coffee Preparation SOP set (espresso, milk, filter, cleaning)",
+    "Espresso Recipe Card for grinder station"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T068-01",
+        "tool_name": "Barista Skills Assessment Form",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Head Barista",
+        "description": "Practical assessment form scoring espresso extraction, milk steaming, drink presentation, speed, cleanliness, and customer communication. Used for baseline assessment and tier progression sign-off."
+      },
+      {
+        "tool_id": "T068-02",
+        "tool_name": "Barista Training Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Individual training record tracking progress through Foundation, Intermediate, and Advanced tiers with module completion dates, assessor sign-offs, and notes on areas for development."
+      },
+      {
+        "tool_id": "T068-03",
+        "tool_name": "Coffee Preparation SOP Set",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Head Barista",
+        "description": "Standard operating procedures covering espresso recipe (dose, yield, time), milk steaming protocol (temperature, texture), filter brew ratios, equipment cleaning, and grinder maintenance schedules."
+      },
+      {
+        "tool_id": "T068-04",
+        "tool_name": "Weekly Training Session Planner",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "Template for planning weekly 30-minute training sessions including topic, learning objective, equipment needed, and follow-up practice tasks for participants."
+      },
+      {
+        "tool_id": "T068-05",
+        "tool_name": "Coffee Quality Metrics Tracker",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Monthly tracker capturing extraction consistency, coffee waste volume, milk waste, customer coffee complaints, average time per drink, and correlation with training activity."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Training is promised during recruitment but never delivered, causing disillusionment and turnover",
+    "Only the head barista receives training, creating a single point of failure for coffee quality",
+    "Training sessions are consistently cancelled due to being too busy, signalling that development is not a priority",
+    "SOPs exist but are not followed, resulting in drink quality varying wildly between baristas and shifts"
+  ],
+  "kpis": [
+    "100% of baristas achieve Foundation tier competency within their first 30 days",
+    "At least one team member holding SCA Foundation Barista Skills certification",
+    "Weekly training sessions completed at least 80% of scheduled weeks per quarter",
+    "Coffee waste (remade drinks and discarded shots) below 5% of total coffee used",
+    "Customer satisfaction scores for coffee quality at 4.5 out of 5 or above"
+  ],
+  "dependencies": ["B067"],
+  "constraints": [
+    "SCA certification courses require external providers and have associated costs (£150-250 for Foundation)",
+    "Training sessions require protected time in the rota which impacts labour scheduling",
+    "Coffee equipment must be properly maintained to support training — poorly maintained machines make consistent extraction impossible"
+  ],
+  "time_load": {
+    "L1": "4 hours (skills assessment, checklist creation, recipe card, initial training pairs)",
+    "L2": "12 hours (curriculum development, SOP writing, training log setup, SCA research)",
+    "L3": "2 hours/week (training sessions, competitions, quality tracking)"
+  },
+  "review_protocol": "Daily check of espresso recipe compliance by shift lead. Weekly training session delivery tracked by manager. Monthly review of training log progress for all baristas. Quarterly assessment of coffee quality metrics. Six-monthly review of training programme content against SCA standards and customer feedback.",
+  "meta": {
+    "summary_for_humans": "This block creates a structured barista training programme from foundation skills through to advanced craft, aligned with SCA standards, ensuring consistent coffee quality and providing meaningful development that retains talented baristas.",
+    "implementation_risks": [
+      "Head barista may resist structured training if they learned informally and see formal programmes as unnecessary",
+      "SCA certification costs may be difficult to justify for very small venues",
+      "Training quality depends on the trainer — investing in train-the-trainer skills is essential"
+    ],
+    "notes_for_engine": "Activate for any venue where coffee quality signals are weak, barista turnover is high, or the venue aspires to specialty positioning. Links to B067 for general induction context and feeds into B071 career progression.",
+    "tags": ["barista", "training", "SCA", "coffee_skills", "certification", "espresso", "latte_art", "sensory", "craft"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

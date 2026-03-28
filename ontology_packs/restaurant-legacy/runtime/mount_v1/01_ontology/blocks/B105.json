@@ -1,0 +1,157 @@
+{
+  "block_id": "B105",
+  "name": "Backup Supplier Contingency",
+  "version": "v1.0",
+  "domain": "D06_supply_chain",
+  "module": "M06: Supply Chain & Supplier Relations",
+  "state": "enriched",
+  "purpose": "Ensures the cafe has identified, vetted, and pre-approved backup suppliers for every critical stock category so that a primary supplier failure — delivery miss, quality issue, business closure, or supply chain disruption — never results in the cafe being unable to trade.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Identify all critical stock categories where a supply failure would force the cafe to close or significantly reduce its offering",
+      "Source and vet at least one backup supplier for each critical category",
+      "Establish pre-approved accounts with backup suppliers so ordering can happen immediately in an emergency",
+      "Create a Supplier Contingency Plan document accessible to the manager on duty",
+      "Test backup suppliers periodically to ensure quality and reliability before they are needed in a crisis"
+    ],
+    "secondary_objectives": [
+      "Use backup supplier pricing as leverage in negotiations with primary suppliers",
+      "Build a broader supplier network that provides options for menu development and innovation",
+      "Reduce the cafe's vulnerability to regional supply chain disruptions (severe weather, transport strikes, supplier insolvency)"
+    ]
+  },
+  "why_this_matters": "Supply chain disruptions are not rare events — they are inevitable. In the UK hospitality sector, supplier failures occur regularly: delivery lorries break down, dairy suppliers short-deliver during heat waves, bakery suppliers close for staff holidays, coffee roasters have equipment failures that delay roasting. The COVID-19 pandemic, the 2021 lorry driver shortage, and ongoing post-Brexit supply complications have demonstrated that even 'reliable' supply chains can fail without warning. For a cafe, the consequences of a supply failure are immediate and visible. If the milk delivery does not arrive by 7am, the cafe cannot make lattes, flat whites, cappuccinos, or hot chocolates — roughly 70% of its drink revenue is gone for the day. If the bread supplier fails, the entire lunch menu collapses. If the coffee roaster misses a delivery, the cafe serves stale beans or shuts entirely. A Supplier Contingency Plan removes the panic from these situations. When every critical category has a pre-approved backup, the manager on duty does not need to call the owner, search Google, or negotiate with an unknown supplier under pressure. They open the contingency folder, find the backup supplier contact and account details, and place an emergency order. The best contingency plans are never used — but when they are needed, they prevent a crisis from becoming a catastrophe. The cost of maintaining backup supplier relationships is negligible compared to the cost of a single day of lost trading.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: List every supplier the cafe currently uses and categorise them by criticality: Critical (failure means the cafe cannot trade normally — coffee, milk, bread, packaging), Important (failure reduces the menu significantly — sandwich fillings, pastries, syrups), and Convenient (failure is inconvenient but manageable — speciality ingredients, seasonal items). For each Critical supplier, answer: if this supplier failed to deliver tomorrow, what would we do? If the answer is 'I don't know' or 'we'd have to close,' a backup is needed immediately. Identify at least one backup supplier for each Critical category. For coffee beans, this might be a local roaster who can supply at short notice, or emergency stock from a specialty wholesaler. For milk, identify the nearest alternative dairy delivery service or a cash-and-carry with early morning opening. For bread, find a local bakery or wholesale bakery supplier. Week 2: Open accounts with each backup supplier — most UK food suppliers can set up accounts within 24-48 hours. Record all backup supplier details (contact person, phone number, email, account number, delivery lead time, minimum order, pricing) in a single Supplier Contingency Document. Print this document and keep it in the manager's folder and behind the till.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Expand backup coverage to all Important category suppliers. For each backup, record not just contact details but also: quality assessment (have you tested their products?), pricing comparison with the primary supplier, delivery schedule and minimum orders, and any known limitations. Place a test order with each backup supplier so that the account is live, the quality is verified, and the team has experience with their ordering process. Create a Contingency Action Card for each critical category — a single laminated card that says: 'If [primary supplier] fails, do this: 1. Call [backup] on [number], 2. Order [these items], 3. Expected delivery [timeframe], 4. Cost difference [amount], 5. Inform [owner/manager].' Post these cards in a visible location. Review backup supplier details quarterly to ensure contacts, pricing, and availability are still current. Include backup supplier testing in the annual supplier review cycle.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Supplier contingency should be embedded in the cafe's risk management culture. Conduct an annual Supplier Risk Assessment that evaluates each primary supplier's stability, reliability track record, and any early warning signs of future problems (financial difficulties, ownership changes, delivery deterioration). Maintain active relationships with backup suppliers through occasional small orders — this keeps accounts active and ensures the backup knows the cafe's needs. Use backup supplier pricing as a negotiation tool with primary suppliers ('your competitor can supply at £X per kilo'). Develop regional contingency awareness: if the cafe is in an area vulnerable to severe weather (flooding, snow), have contingency plans that account for delivery route disruptions. Review the entire Supplier Contingency Plan annually and update it whenever suppliers change."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "List all current suppliers and categorise by criticality (Critical, Important, Convenient)",
+        "Identify at least one backup supplier for every Critical category",
+        "Open accounts with all backup suppliers within the first 2 weeks",
+        "Record all backup supplier details in a single Supplier Contingency Document",
+        "Print the contingency document and place behind the till and in the manager's folder",
+        "Identify nearest cash-and-carry as emergency backup for multiple categories",
+        "Brief the management team on contingency procedures"
+      ],
+      "responsible": "Cafe Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Expand backup coverage to all Important category suppliers",
+        "Place test orders with each backup supplier to verify quality and process",
+        "Create laminated Contingency Action Cards for each critical category",
+        "Record quality assessments and pricing comparisons for all backups",
+        "Review backup supplier details quarterly for currency and accuracy",
+        "Include backup supplier testing in the annual supplier review cycle",
+        "Train shift leads on contingency procedures so they can act without the owner"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct annual Supplier Risk Assessments for all primary suppliers",
+        "Maintain active backup relationships through occasional small orders",
+        "Use backup pricing as a negotiation tool with primary suppliers",
+        "Develop regional contingency plans for weather and transport disruptions",
+        "Review the full Supplier Contingency Plan annually"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Supplier Criticality Matrix (Critical, Important, Convenient)",
+    "Supplier Contingency Document with all backup details",
+    "Contingency Action Cards (laminated, per category)",
+    "Backup Supplier Quality Assessment log",
+    "Annual Supplier Risk Assessment report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T105-01",
+        "tool_name": "Supplier Criticality Matrix",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Matrix categorising every supplier as Critical, Important, or Convenient based on the impact of their failure, with backup supplier details and current status for each."
+      },
+      {
+        "tool_id": "T105-02",
+        "tool_name": "Contingency Action Cards",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Shift Lead",
+        "description": "Laminated quick-reference cards for each critical supply category showing: who to call, what to order, expected delivery time, cost impact, and who to inform. Designed for use under pressure."
+      },
+      {
+        "tool_id": "T105-03",
+        "tool_name": "Backup Supplier Test Order Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Log recording test orders placed with backup suppliers: date, items ordered, quality assessment, delivery time, pricing, and any issues. Ensures backups are verified before they are needed."
+      },
+      {
+        "tool_id": "T105-04",
+        "tool_name": "Annual Supplier Risk Assessment",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Annual assessment evaluating each primary supplier's financial stability, delivery reliability trend, quality consistency, and any emerging risks that could trigger a switch to the backup."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Backup suppliers are identified on paper but accounts are never opened, making emergency ordering impossible under time pressure",
+    "Contingency document is outdated — contact details, pricing, or availability have changed since it was last reviewed",
+    "Backup supplier quality has never been tested, and the emergency switch reveals unacceptable quality differences",
+    "Only the owner knows the contingency plan — when they are unavailable, the team has no idea how to handle a supply failure"
+  ],
+  "kpis": [
+    "Backup suppliers identified and accounts opened for 100% of Critical category items",
+    "All backup suppliers test-ordered at least once per year",
+    "Contingency document reviewed and updated quarterly",
+    "Zero unplanned closures or menu reductions caused by primary supplier failures per year"
+  ],
+  "dependencies": ["B104"],
+  "constraints": [
+    "Backup supplier pricing may be higher than primary — budget for a 10-20% cost premium during contingency use",
+    "Some suppliers require minimum orders that may exceed emergency needs — identify flexible small-order options",
+    "Exclusivity agreements with primary suppliers may contractually restrict backup relationships — review before signing"
+  ],
+  "time_load": {
+    "L1": "3 hours (supplier listing, backup identification, account opening)",
+    "L2": "4 hours (test ordering, action card creation, quality assessment)",
+    "L3": "2 hours/year (risk assessment, contingency plan review)"
+  },
+  "review_protocol": "Quarterly review of backup supplier contact details and pricing by manager. Annual backup supplier test orders. Annual Supplier Risk Assessment by owner. Immediate review after any contingency activation.",
+  "meta": {
+    "summary_for_humans": "This block ensures the cafe has pre-approved backup suppliers for every critical stock category so that a primary supplier failure never forces the cafe to close or significantly reduce its offering. It covers identification, account setup, quality testing, and maintaining contingency readiness.",
+    "implementation_risks": [
+      "Opening backup accounts takes time and effort that feels unnecessary until a crisis hits — do it now, not later",
+      "Staff may not know contingency procedures exist if they are not trained — brief the full team, not just the owner",
+      "Backup supplier quality may differ from the primary, potentially disappointing regular customers during contingency use"
+    ],
+    "notes_for_engine": "Activate alongside B104 (Coffee Roaster Relationship) as a complementary block. Flag as urgent if signals indicate supply disruptions, supplier financial instability, or the cafe having zero backup options for critical categories.",
+    "tags": ["supply_chain", "contingency", "backup", "risk_management", "supplier", "resilience", "business_continuity"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

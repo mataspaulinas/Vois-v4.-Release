@@ -1,0 +1,167 @@
+{
+  "block_id": "B047",
+  "name": "Water Filtration & Testing",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Establishes water quality testing and filtration management as a fundamental component of coffee quality. This block covers water testing procedures, filter selection, maintenance schedules, and the relationship between water chemistry and espresso extraction, ensuring the cafe's water is optimised for both flavour and equipment protection.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Test incoming mains water to understand its mineral content, hardness, and pH",
+      "Select and install appropriate filtration for the cafe's water profile and equipment needs",
+      "Establish a filter replacement schedule based on capacity and water usage",
+      "Monitor water quality regularly to catch filter degradation before it affects coffee or equipment",
+      "Protect the espresso machine boiler and components from scale damage"
+    ],
+    "secondary_objectives": [
+      "Optimise water mineral content for the best possible espresso extraction flavour",
+      "Reduce equipment repair costs by preventing limescale build-up",
+      "Extend espresso machine lifespan through proper water management",
+      "Provide consistently good water for all beverages including tea, filter coffee, and drinking water"
+    ]
+  },
+  "why_this_matters": "Coffee is approximately 98% water. The quality of the water used to brew espresso has a profound impact on flavour, extraction, and the longevity of expensive equipment. In the UK, mains water quality varies enormously by region. London and the South East have notoriously hard water, with calcium carbonate levels frequently exceeding 300 parts per million (ppm). In contrast, areas of Scotland and Wales may have very soft water below 50 ppm. Neither extreme is ideal for coffee. The Specialty Coffee Association recommends water with a total dissolved solids (TDS) of 75-250 ppm, calcium hardness of 50-175 ppm CaCO3, and a pH between 6.5 and 7.5. Water that is too hard produces flat, chalky espresso and rapidly scales the boiler, heat exchangers, and group heads — scale build-up as thin as 1mm can reduce heating efficiency by up to 10% and eventually causes catastrophic machine failure. A boiler replacement on a commercial espresso machine can cost £1,500-3,000, and descaling services typically cost £300-500 per visit. Water that is too soft lacks the minerals needed for proper extraction, producing sour, thin coffee regardless of how well the barista dials in. A correctly specified and maintained water filter is therefore not an optional extra — it is essential infrastructure. Yet many cafe owners install a filter when the machine is set up and never think about it again until the machine breaks down or the coffee starts tasting wrong. Filter cartridges have finite capacity; once exhausted, they stop working and unfiltered water passes through unchecked.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Test your water. You need to know what is coming out of the mains before you can manage it. Purchase a basic water testing kit (available for approximately £15-30) or request a free water test from your filter supplier. Measure: total hardness (calcium carbonate, reported in ppm or mg/L), total dissolved solids (TDS), and pH. Record the results. Compare them to SCA recommendations: TDS 75-250 ppm, calcium hardness 50-175 ppm CaCO3, pH 6.5-7.5. If you are in a hard water area (above 200 ppm hardness), you almost certainly need a water filter, and it is likely already installed if your machine was professionally set up. Check: does the cafe have a water filter? Where is it located? When was the cartridge last changed? If there is no filter and water is hard, order one immediately — this is urgent for equipment protection. If a filter exists, check the cartridge age against the manufacturer's recommended lifespan (typically 6-12 months or a stated litre capacity). If it is overdue, replace the cartridge this week. Week 2: Establish a filter change schedule. Calculate your approximate daily water usage: a busy cafe using a dual-boiler espresso machine may use 100-200 litres per day through the filter. Cross-reference this with the cartridge capacity (stated in litres by the manufacturer) to calculate the expected replacement interval. Set a calendar reminder for the replacement date, with a warning two weeks before. Record the installation date and expected change date on a label stuck to the filter housing.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Water Quality SOP covering testing procedures, filter maintenance, cartridge replacement, and escalation when readings fall outside acceptable ranges. Invest in a TDS meter (approximately £15-30) for regular spot-checks — this allows any team member to quickly verify water quality without a full test kit. Test TDS weekly by filling a cup from the machine's hot water dispenser and measuring. If TDS changes significantly (more than 20% from baseline), investigate — the filter may be exhausted, bypassed, or the mains water composition may have changed (common after local pipe works). Engage your espresso machine technician to assess the current filter system and recommend any upgrades. For hard water areas, consider a two-stage system: a sediment pre-filter followed by a softening or carbon filter. For very hard water (above 300 ppm), a reverse osmosis system with remineralisation may be necessary, though this is a significant investment (£500-1,500 installed). Document the cafe's water profile and filter specifications in a Water Quality Record that is kept with the equipment files. This is valuable information for machine servicing, warranty claims, and when discussing coffee quality with your roaster. Train the manager and head barista on water testing procedures and filter change protocols — this should not be solely the owner's responsibility.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Water quality should be monitored as carefully as espresso quality. Establish monthly comprehensive water testing (not just TDS) covering hardness, alkalinity, pH, and chlorine levels. Track water quality data over time to identify seasonal variations — UK mains water composition can change seasonally as water companies adjust treatment and source blending. Share water quality data with your coffee roaster — some roasters tailor their roasting recommendations based on the cafe's water profile. Consider investing in advanced filtration that allows mineral content to be tuned — products like BWT Bestmax, EVERPURE Claris, or Pentair systems offer adjustable bypass settings that let you dial in the mineral content. Partner with your machine manufacturer or a water quality specialist for annual reviews of your filtration system. Monitor machine health indicators that correlate with water quality: boiler pressure stability, flow rate consistency, and heating element efficiency."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Test mains water for hardness, TDS, and pH using a basic test kit",
+        "Verify a water filter is installed and locate it",
+        "Check current filter cartridge age against manufacturer's recommended lifespan",
+        "Replace overdue filter cartridges immediately",
+        "Calculate water usage and establish a cartridge replacement schedule",
+        "Label the filter housing with installation date and next change date",
+        "Set calendar reminders for filter replacement"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft a Water Quality SOP covering testing, filter maintenance, and escalation procedures",
+        "Purchase a TDS meter for weekly spot-checks",
+        "Engage the espresso machine technician to assess and recommend filtration",
+        "Create a Water Quality Record document filed with equipment records",
+        "Train the manager and head barista on testing and filter change procedures",
+        "Evaluate whether the current filtration system matches the cafe's water profile",
+        "Establish a spare cartridge inventory to prevent replacement delays"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Establish monthly comprehensive water testing beyond basic TDS",
+        "Track water quality data over time to identify seasonal variations",
+        "Share water quality data with the coffee roaster for recipe collaboration",
+        "Evaluate advanced filtration with adjustable mineral content",
+        "Partner with a water quality specialist for annual reviews",
+        "Monitor machine health indicators correlated with water quality"
+      ],
+      "responsible": "Owner, Head Barista"
+    }
+  },
+  "deliverables": [
+    "Water Quality SOP document",
+    "Water Quality Record (baseline test results and ongoing data)",
+    "Filter Replacement Schedule with calendar reminders",
+    "Weekly TDS Testing Log template",
+    "Filter System Specification document"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T047-01",
+        "tool_name": "Water Quality Baseline Test Record",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Record of initial mains water testing: hardness, TDS, pH, and chlorine levels. Establishes the baseline against which filtered water and future tests are compared. Updated annually or when mains supply changes."
+      },
+      {
+        "tool_id": "T047-02",
+        "tool_name": "Filter Replacement Schedule",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Tracker showing filter installation date, expected replacement date based on calculated water usage, actual replacement dates, and cartridge model/supplier information."
+      },
+      {
+        "tool_id": "T047-03",
+        "tool_name": "Water Quality SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering weekly TDS testing, monthly comprehensive testing, filter replacement procedure, escalation when readings are out of range, and communication with the machine technician."
+      },
+      {
+        "tool_id": "T047-04",
+        "tool_name": "Weekly TDS Testing Log",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Head Barista",
+        "description": "Simple weekly log recording TDS readings from the machine's hot water output, compared against the baseline and SCA recommended range. Triggers investigation when readings deviate beyond 20%."
+      },
+      {
+        "tool_id": "T047-05",
+        "tool_name": "Annual Water Quality Review Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Annual report summarising water quality data trends, filter performance, equipment health correlation, costs, and recommendations for filtration system improvements or adjustments."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Filter cartridge is not replaced on schedule and exhausted cartridge allows unfiltered hard water through, causing rapid scale build-up",
+    "Water is never tested after initial filter installation, so degradation goes undetected until the machine breaks down",
+    "An unsuitable filter type is installed — softening when carbon is needed, or vice versa — providing false confidence",
+    "Spare cartridges are not kept in stock, causing delays during replacement that expose the machine to unfiltered water"
+  ],
+  "kpis": [
+    "Filter cartridges replaced within 7 days of their scheduled change date (zero overdue changes)",
+    "Weekly TDS readings within 20% of baseline (indicating filter is functioning)",
+    "Zero machine scale-related repair incidents per year",
+    "Water quality within SCA recommended ranges at every monthly test"
+  ],
+  "dependencies": ["B048"],
+  "constraints": [
+    "Water testing requires basic equipment (TDS meter, test strips or kit) kept on site",
+    "Filter replacement may require a technician for some plumbed-in systems",
+    "Mains water composition is beyond the cafe's control — filtration must adapt to what arrives"
+  ],
+  "time_load": {
+    "L1": "2 hours (initial testing, filter check, schedule setup)",
+    "L2": "4 hours (SOP drafting, technician consultation, training, record creation)",
+    "L3": "1 hour/month (comprehensive testing, data tracking, annual review contribution)"
+  },
+  "review_protocol": "Weekly TDS spot-check. Monthly comprehensive water quality test. Filter cartridge changed on schedule. Quarterly review of water quality data trends. Annual formal water quality review with filtration system assessment.",
+  "meta": {
+    "summary_for_humans": "This block establishes water quality testing and filtration management as a fundamental part of coffee quality. It covers testing procedures, filter selection, replacement scheduling, and the relationship between water chemistry and both espresso flavour and equipment longevity.",
+    "implementation_risks": [
+      "The importance of water quality is invisible — owners may resist investment because 'the water looks fine'",
+      "Incorrect filter specification can make water worse, not better — professional advice is valuable",
+      "Seasonal mains water variation may require filter adjustments that go unnoticed without regular testing"
+    ],
+    "notes_for_engine": "Activate immediately for any cafe serving espresso. Water quality is a silent quality killer — most owners are unaware of its impact. Flag if signals indicate frequent machine breakdowns, inconsistent espresso quality despite good dial-in, or if the cafe is in a known hard water area.",
+    "tags": ["coffee_quality", "water", "filtration", "testing", "equipment_protection", "scale", "TDS", "SCA", "maintenance"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

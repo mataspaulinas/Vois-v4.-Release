@@ -1,0 +1,47 @@
+{
+  "id": "blk_create_station_roles",
+  "name": "Create station role matrix",
+  "description": "Turn the mapped service flow into explicit primary ownership, backup ownership, and escalation paths at each station so work stops dying between roles.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: align roles and coverage after workflow reality is made explicit",
+  "updated_at": "2026-03-14T00:24:42.966438Z",
+  "effort_hours": 4.0,
+  "dependencies": [
+    "blk_map_service_steps"
+  ],
+  "tool_ids": [
+    "tool_station_role_matrix"
+  ],
+  "response_pattern_ids": [
+    "rp_service_flow_reset"
+  ],
+  "entry_conditions": [
+    "The venue has a current service map or another reliable view of the real operating flow.",
+    "Role ambiguity, double-handling, or stalled ownership is visible during service."
+  ],
+  "contraindications": [
+    "Do not assign roles before the actual flow and handoffs are understood.",
+    "Do not overcomplicate the matrix with edge cases that the team will not use live."
+  ],
+  "owner_role": "venue_manager",
+  "expected_time_to_effect_days": 3,
+  "proof_of_completion": [
+    "Every key station has named primary and backup ownership.",
+    "Escalation routes for blocked service moments are visible to the team.",
+    "The matrix has been briefed to the floor and validated in one live shift."
+  ],
+  "successor_block_ids": [
+    "blk_install_pre_shift_brief"
+  ],
+  "service_module_ids": [
+    "capacity_and_deployment",
+    "handoffs_and_coordination",
+    "quality_and_standards"
+  ],
+  "failure_family_ids": [
+    "role_clarity_failure",
+    "handoff_failure",
+    "workflow_design_failure"
+  ]
+}

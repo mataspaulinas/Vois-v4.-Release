@@ -1,0 +1,167 @@
+{
+  "block_id": "B086",
+  "name": "Morning Rush Workflow",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Designs and optimises the workflow for the morning rush period — typically 7:30 to 9:30am — defining roles, positions, task sequences, and communication protocols that enable the team to serve the maximum number of customers at speed without sacrificing drink quality or customer experience.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Map the current morning rush workflow identifying bottlenecks, wasted motion, and service delays",
+      "Define clear station assignments and roles for each team member during peak service",
+      "Establish a choreographed workflow where each person's movements complement rather than conflict with others",
+      "Set target service times for the morning rush — order to handoff within two to three minutes for standard drinks",
+      "Create contingency protocols for common rush disruptions (equipment failure, supply shortage, unexpected volume)"
+    ],
+    "secondary_objectives": [
+      "Reduce customer queue abandonment during the morning rush",
+      "Improve consistency of drink quality during high-volume periods",
+      "Minimise team stress by replacing reactive firefighting with rehearsed procedures"
+    ]
+  },
+  "why_this_matters": "The morning rush is the defining trading period for most UK cafes. In many venues, 40-60% of daily revenue is generated between 7:30am and 10:00am. How the team performs during these ninety minutes to two hours determines not just the day's financial outcome but the cafe's reputation. Customers during the morning rush are typically commuters and parents — time-poor, habitual, and unforgiving of delays. They want their coffee made correctly and quickly, every single day. A well-run morning rush is a beautiful piece of operational choreography: orders flow from customer to till to barista to handoff in a smooth, predictable sequence. The grinder is dialled in before the first customer arrives. Milk jugs are pre-positioned. The till operator calls drinks clearly. The barista works in a rhythm — dose, tamp, extract, steam, pour — that produces a flat white every 45 to 60 seconds. A poorly run morning rush is chaos: the queue snakes out the door while two baristas bump into each other reaching for the same milk jug, the grinder needs adjusting mid-service because nobody checked it during prep, and the customer waiting for an oat milk latte gets forgotten because nobody tracked the order. The difference is not talent — it is design. Morning rush performance is determined by preparation (B087), station layout (B089-B090), staffing levels (B085), and workflow design (this block). A well-designed workflow eliminates wasted motion, prevents collisions, manages the queue visually and verbally, and has contingencies for the inevitable moment when the decaf grinder jams or the milk delivery has not arrived.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Observe the current morning rush from start to finish without intervening. Stand in a position where you can see the entire service flow — till, espresso machine, milk station, food counter, and handoff point. Time three key intervals: (1) Queue join to order placed. (2) Order placed to drink started. (3) Drink started to handoff. Note every bottleneck: where do people wait, where do team members collide, where does the workflow stall? Identify the three biggest time-wasters. Common culprits: having to walk to the fridge for milk mid-service, searching for a cup size, the barista stopping to take a food order, or the till operator not calling drinks clearly enough for the barista to queue them. Week 2: Define clear rush roles. At minimum: (1) Till and Order — takes all orders, handles payments, calls drinks to the barista by cup marking or verbal queue. (2) Bar — makes all espresso-based drinks in sequence, steams milk, does not leave the machine. (3) Support — handles filter, tea, food, restocking, clearing tables, and any non-espresso tasks. If staffing permits, add (4) Runner/Floater — manages customer flow, delivers food, restocks, and covers any station that falls behind. Assign these roles before the rush begins during the daily briefing and do not change them mid-rush unless absolutely necessary.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Morning Rush Workflow SOP documenting every element: pre-rush preparation checklist (linked to B087), station assignments, communication protocols (how orders are called), drink sequencing (first in first out versus batch steaming), food service integration, and handoff procedure. Map the physical workflow on a floor plan — draw the path each role takes during service and identify any crossing points where team members' paths conflict. Redesign movements to eliminate unnecessary crossing, reaching, or walking. Establish a 'rush mode' communication protocol: during peak service, communication is brief, clear, and standardised. The till calls each drink with a consistent format — size, milk, drink type ('Large oat flat white, large regular latte, small Americano black'). The barista confirms receipt. No unnecessary conversation during peak flow. Introduce a drink queue management system: cup marking (writing the order on the cup) or a ticket system that sequences drinks and prevents orders being lost or forgotten. Time the morning rush workflow weekly — measure average order-to-handoff time and track improvement. Set a target of under three minutes for standard drinks and under four minutes for complex orders.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Conduct monthly rush drills — simulated high-volume scenarios where the team practises the workflow under controlled conditions, identifying weak points before they occur during live service. Analyse rush data for optimisation opportunities: which drink takes longest and can the recipe be simplified, which step in the workflow creates the most delays and can the layout be adjusted, what is the maximum throughput before quality degrades? Develop role-specific rush training: the barista practises sequential extraction and batch milk steaming for speed; the till operator practises order accuracy and clear calling; the support role practises anticipating restocking needs before they become urgent. Benchmark morning rush performance against specialty coffee industry targets — SCA guidance suggests 60-80 drinks per hour as achievable for a skilled two-person bar. Track and celebrate personal bests and team records to make the rush a source of pride rather than dread."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Observe one full morning rush without intervening, timing key service intervals",
+        "Identify the three biggest bottlenecks and time-wasters in the current workflow",
+        "Define clear rush roles: Till, Bar, Support, and Floater (if staffing allows)",
+        "Assign roles during the daily briefing before the rush begins",
+        "Ensure the barista does not leave the machine during peak service",
+        "Introduce consistent drink calling format between till and bar",
+        "Debrief after each morning rush for the first two weeks to identify improvements"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a Morning Rush Workflow SOP covering all elements of peak service",
+        "Map the physical workflow on a floor plan and eliminate conflicting movement paths",
+        "Establish a rush-mode communication protocol with standardised drink calling",
+        "Introduce a drink queue management system (cup marking or ticket system)",
+        "Time the morning rush weekly and track order-to-handoff averages",
+        "Set service time targets and share them with the team",
+        "Integrate the rush workflow with the pre-rush preparation from B087"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct monthly rush drills simulating high-volume scenarios",
+        "Analyse rush data for optimisation opportunities in workflow and layout",
+        "Develop role-specific rush training for barista speed, till accuracy, and support anticipation",
+        "Benchmark performance against SCA specialty coffee throughput targets",
+        "Track and celebrate rush performance records to build team pride",
+        "Review and refine the rush workflow quarterly based on data and team feedback"
+      ],
+      "responsible": "Head Barista, Manager"
+    }
+  },
+  "deliverables": [
+    "Morning Rush Workflow SOP (roles, positions, communication, sequencing)",
+    "Floor Plan Workflow Map showing movement paths for each role",
+    "Rush Communication Protocol card (standardised drink calling format)",
+    "Morning Rush Service Time Tracker",
+    "Rush Contingency Protocol for common disruptions"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T086-01",
+        "tool_name": "Morning Rush Observation Sheet",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Structured observation template for timing key service intervals during the morning rush: queue-to-order, order-to-start, start-to-handoff. Includes space for noting bottlenecks and wasted motion."
+      },
+      {
+        "tool_id": "T086-02",
+        "tool_name": "Morning Rush Workflow SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Head Barista",
+        "description": "Complete standard operating procedure for morning rush service covering station assignments, communication protocols, drink sequencing, food integration, restocking triggers, and contingency responses."
+      },
+      {
+        "tool_id": "T086-03",
+        "tool_name": "Rush Role Assignment Cards",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Shift Lead",
+        "description": "Laminated cards for each rush role (Till, Bar, Support, Floater) describing that role's responsibilities, position, communication duties, and what not to do during peak service."
+      },
+      {
+        "tool_id": "T086-04",
+        "tool_name": "Service Time Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Weekly tracker recording average order-to-handoff times during the morning rush, peak transaction count, queue length at peak, and customer wait feedback. Used to measure workflow improvement."
+      },
+      {
+        "tool_id": "T086-05",
+        "tool_name": "Rush Contingency Protocol",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Head Barista",
+        "description": "Pre-planned responses for common morning rush disruptions: grinder failure, milk shortage, espresso machine fault, till crash, and staff absence. Specifies immediate action, communication to customers, and escalation path."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Roles are not assigned before the rush, resulting in duplicated effort and gaps in service coverage",
+    "The barista leaves the machine to handle other tasks, breaking the extraction rhythm and creating a drink queue backlog",
+    "Communication between till and bar is unclear, leading to lost or incorrect orders",
+    "No contingency plan exists for equipment failure during peak service, causing complete service breakdown"
+  ],
+  "kpis": [
+    "Average order-to-handoff time below three minutes during morning rush for standard drinks",
+    "Morning rush revenue increasing or stable week on week (indicating queue abandonment is reducing)",
+    "Zero orders lost or made incorrectly due to communication failure during rush",
+    "Rush debrief conducted at least three times per week during L1 implementation",
+    "Peak throughput improving towards 60-80 drinks per hour for a two-person bar"
+  ],
+  "dependencies": ["B085", "B087"],
+  "constraints": [
+    "Rush workflow design must work within the existing physical layout — major renovation is an L3 consideration",
+    "Staff must be trained on rush roles before deployment — untrained staff in rush positions create more problems than they solve",
+    "Drink quality must be maintained during speed — rushing extraction or milk steaming to save time is not acceptable"
+  ],
+  "time_load": {
+    "L1": "3 hours (observation, role definition, initial deployment, first debriefs)",
+    "L2": "8 hours (SOP creation, floor plan mapping, communication protocol, timing setup)",
+    "L3": "2 hours/month (rush drills, data analysis, workflow refinement)"
+  },
+  "review_protocol": "Daily: post-rush debrief during initial implementation. Weekly: service time data reviewed. Monthly: rush drill conducted and workflow SOP updated if needed. Quarterly: comprehensive review of rush performance data and workflow optimisation opportunities.",
+  "meta": {
+    "summary_for_humans": "This block designs and optimises the morning rush workflow, defining clear roles, positions, communication protocols, and service sequences that enable the team to serve maximum customers at speed without sacrificing drink quality.",
+    "implementation_risks": [
+      "Staff may resist structured role assignments if they are used to working informally",
+      "The workflow will need adjustment as the team learns — initial versions are rarely perfect",
+      "Focus on speed must not come at the expense of customer interaction and warmth"
+    ],
+    "notes_for_engine": "Activate when signals indicate morning rush problems: long queues, customer complaints about wait times, staff stress during peaks, or revenue plateauing despite demand. Links to B085 for staffing and B087 for preparation.",
+    "tags": ["morning_rush", "workflow", "peak", "speed", "service", "roles", "throughput", "efficiency", "espresso", "barista"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,1347 @@
+{
+  "plan_id": "plan_20260325_002",
+  "venue_slug": "muzos_2",
+  "venue_name": "muzos 2",
+  "created_at": "2026-03-25T22:59:21.114883",
+  "updated_at": "2026-03-25T23:40:07.028735",
+  "last_updated_by": "u_consultant",
+  "source_assessment": "2026-03-25_001.json",
+  "assessment_date": "2026-03-25",
+  "version": 2,
+  "previous_versions": [
+    {
+      "version": 1,
+      "archived_file": "operational_plan_v1.json",
+      "archived_at": "2026-03-25T22:59:21.114883"
+    }
+  ],
+  "plan_state": "in_review",
+  "owner_user_id": "u_consultant",
+  "reviewer_user_id": "u_portfolio",
+  "approval_requested_at": "2026-03-25T23:40:07.028704",
+  "approved_at": "",
+  "approved_by_user_id": "",
+  "confidence": {
+    "state": "PROVISIONAL",
+    "note": "This plan is based on partial data. Some areas may need verification before L2 implementation.",
+    "signal_count": 4,
+    "domain_coverage": 4
+  },
+  "strengths": [
+    "Team culture and rhythm",
+    "Guest experience",
+    "Financial controls",
+    "Leadership alignment",
+    "Compliance and safety",
+    "Market positioning",
+    "Brand and marketing",
+    "Operational systems",
+    "Strategic clarity",
+    "Team stability",
+    "Technology adoption"
+  ],
+  "dependency_notes": [],
+  "summary": {
+    "total_tasks": 13,
+    "by_layer": {
+      "L1": 3,
+      "L2": 6,
+      "L3": 4
+    },
+    "by_status": {
+      "not_started": 13
+    },
+    "by_priority": {
+      "high": 5,
+      "medium": 4,
+      "standard": 4
+    },
+    "overdue_tasks": 0,
+    "domains_covered": [],
+    "response_patterns_active": [
+      "RP051",
+      "RP018"
+    ]
+  },
+  "tasks": [
+    {
+      "task_id": "L1_001",
+      "item_id": "B172",
+      "item_type": "block",
+      "title": "Cafe Values Definition",
+      "description": "Can every team member articulate your cafe's values and standards? Ask them today. If responses are vague or inconsistent your values exist in your head but not in your culture. Check whether you have a staff handbook that documents expectations standards and policies. If not the gap between your intentions and your team's understanding is growing daily.",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "module_name": "M12",
+      "domain": "",
+      "layer": "L1",
+      "timeline_label": "Days 1–30",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:59:21.114883",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "Owner",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-03-28",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-25T22:59:21.114883",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [
+        {
+          "action_id": "L1_001_A01",
+          "text": "Complete the Values Discovery exercise with honest written answers to the 6 core questions",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_001_A02",
+          "text": "Identify 3-5 core values from the patterns in the discovery answers",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_001_A03",
+          "text": "Write 3-5 specific behavioural examples for each value",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_001_A04",
+          "text": "Test the values by asking: would I fire someone who consistently violated this value? If not, it is not a core value",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_001_A05",
+          "text": "Share the draft values with your most trusted team member for a reality check",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_001_A06",
+          "text": "Refine the values based on feedback until they feel genuinely authentic",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        }
+      ],
+      "deliverables": [
+        {
+          "name": "Values Discovery exercise (written answers from owner)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Values Charter (single-page document with values, meanings, behaviours)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Values-Based Interview Questions for hiring",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Team Values Workshop agenda and materials",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Quarterly Values Health Check survey",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L1_002",
+      "item_id": "B173",
+      "item_type": "block",
+      "title": "Staff Handbook & Policies",
+      "description": "Can every team member articulate your cafe's values and standards? Ask them today. If responses are vague or inconsistent your values exist in your head but not in your culture. Check whether you have a staff handbook that documents expectations standards and policies. If not the gap between your intentions and your team's understanding is growing daily.",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "module_name": "M12",
+      "domain": "",
+      "layer": "L1",
+      "timeline_label": "Days 1–30",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:59:21.114883",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "Owner, Manager",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-03-28",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-25T22:59:21.114883",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [
+        {
+          "action_id": "L1_002_A01",
+          "text": "Audit all existing written employment documents and policy fragments",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_002_A02",
+          "text": "Draft Section 1 (Welcome and Company Overview) with owner's welcome message",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_002_A03",
+          "text": "Draft Section 2 (Employment Basics) covering pay, hours, probation, and notice periods",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_002_A04",
+          "text": "Create a handbook checklist tracking which sections are complete and which remain",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_002_A05",
+          "text": "Issue draft sections to all current staff with a timeline for completion",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_002_A06",
+          "text": "Ensure all staff have received a written statement of employment particulars as required by law",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        }
+      ],
+      "deliverables": [
+        {
+          "name": "Complete Staff Handbook document (all sections)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Handbook Acknowledgement Sign-off Sheet",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Quick-Reference Policy Card for the staff area",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Annual Handbook Review Checklist",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Handbook Section Drafting Checklist",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L1_003",
+      "item_id": "B174",
+      "item_type": "block",
+      "title": "Toxic Dynamics Intervention",
+      "description": "Can every team member articulate your cafe's values and standards? Ask them today. If responses are vague or inconsistent your values exist in your head but not in your culture. Check whether you have a staff handbook that documents expectations standards and policies. If not the gap between your intentions and your team's understanding is growing daily.",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "module_name": "M12",
+      "domain": "",
+      "layer": "L1",
+      "timeline_label": "Days 1–30",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:59:21.114883",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "Owner, Manager",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-03-28",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-25T22:59:21.114883",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [
+        {
+          "action_id": "L1_003_A01",
+          "text": "Define three to five specific unacceptable behaviours with concrete cafe-context examples",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_003_A02",
+          "text": "Post behavioural standards alongside team values in the staff area",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_003_A03",
+          "text": "Conduct an honest private assessment of any existing toxic dynamics in the current team",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_003_A04",
+          "text": "Categorise each identified dynamic by severity and determine appropriate response level",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_003_A05",
+          "text": "Address any dynamics causing active harm immediately using a direct private conversation",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_003_A06",
+          "text": "Brief all managers on the difference between performance issues and behavioural toxicity",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        }
+      ],
+      "deliverables": [
+        {
+          "name": "Toxic Behaviour Definition Guide with cafe-specific examples",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Confidential Reporting Channel setup documentation",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Stepped Intervention Protocol (4 stages)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Difficult Conversation Guide for managers",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Intervention Record Template",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_001",
+      "item_id": "B063",
+      "item_type": "block",
+      "title": "Exit Interview & Turnover Analysis",
+      "description": "Develop a staff retention strategy addressing the top three reasons baristas leave: pay progression opportunity and work-life balance. Implement a structured engagement programme including regular one-to-ones team social events and recognition. Create a compensation review process benchmarked against local hospitality market rates. Conduct exit interviews for every leaver and analyse the data for patterns.",
+      "source_rp": "RP018",
+      "rp_name": "Staff Retention & Engagement",
+      "module_id": "M04",
+      "module_name": "M04",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP018",
+        "rp_name": "Staff Retention & Engagement",
+        "failure_modes": [
+          {
+            "fm_id": "FM029",
+            "fm_title": "Staff turnover and retention failure"
+          },
+          {
+            "fm_id": "FM036",
+            "fm_title": "Team morale and wellbeing failure"
+          }
+        ],
+        "signal_ids": [
+          "S056",
+          "S187"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:59:21.114883",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-15",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-25T22:59:21.114883",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Exit interview template and process document",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Turnover tracking spreadsheet with 12-month retrospective data",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Quarterly turnover analysis report template",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Cost-of-turnover calculation model",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Post-departure follow-up survey",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_002",
+      "item_id": "B064",
+      "item_type": "block",
+      "title": "Retention Strategy & Engagement Plan",
+      "description": "Develop a staff retention strategy addressing the top three reasons baristas leave: pay progression opportunity and work-life balance. Implement a structured engagement programme including regular one-to-ones team social events and recognition. Create a compensation review process benchmarked against local hospitality market rates. Conduct exit interviews for every leaver and analyse the data for patterns.",
+      "source_rp": "RP018",
+      "rp_name": "Staff Retention & Engagement",
+      "module_id": "M04",
+      "module_name": "M04",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP018",
+        "rp_name": "Staff Retention & Engagement",
+        "failure_modes": [
+          {
+            "fm_id": "FM029",
+            "fm_title": "Staff turnover and retention failure"
+          },
+          {
+            "fm_id": "FM036",
+            "fm_title": "Team morale and wellbeing failure"
+          }
+        ],
+        "signal_ids": [
+          "S056",
+          "S187"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:59:21.114883",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-15",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-25T22:59:21.114883",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Staff Engagement Pulse Survey template (5-question and 3-question versions)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "One-to-One Meeting template with wellbeing and development prompts",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Total Rewards Map template",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Individual Stay Plan template",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Exit Interview form and analysis tracker",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_003",
+      "item_id": "B172",
+      "item_type": "block",
+      "title": "Cafe Values Definition",
+      "description": "Define and document your cafe's core values in clear specific terms that guide daily behaviour. Create a staff handbook covering values standards policies and procedures. Implement a values-based onboarding process where new starters learn what matters to your cafe not just what tasks to perform. Address any toxic dynamics or cultural issues directly — they will not resolve themselves.",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "module_name": "M12",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "medium",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:59:21.114883",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-15",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-25T22:59:21.114883",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Values Discovery exercise (written answers from owner)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Values Charter (single-page document with values, meanings, behaviours)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Values-Based Interview Questions for hiring",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Team Values Workshop agenda and materials",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Quarterly Values Health Check survey",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_004",
+      "item_id": "B173",
+      "item_type": "block",
+      "title": "Staff Handbook & Policies",
+      "description": "Define and document your cafe's core values in clear specific terms that guide daily behaviour. Create a staff handbook covering values standards policies and procedures. Implement a values-based onboarding process where new starters learn what matters to your cafe not just what tasks to perform. Address any toxic dynamics or cultural issues directly — they will not resolve themselves.",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "module_name": "M12",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "medium",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:59:21.114883",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-15",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-25T22:59:21.114883",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Complete Staff Handbook document (all sections)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Handbook Acknowledgement Sign-off Sheet",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Quick-Reference Policy Card for the staff area",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Annual Handbook Review Checklist",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Handbook Section Drafting Checklist",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_005",
+      "item_id": "B174",
+      "item_type": "block",
+      "title": "Toxic Dynamics Intervention",
+      "description": "Define and document your cafe's core values in clear specific terms that guide daily behaviour. Create a staff handbook covering values standards policies and procedures. Implement a values-based onboarding process where new starters learn what matters to your cafe not just what tasks to perform. Address any toxic dynamics or cultural issues directly — they will not resolve themselves.",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "module_name": "M12",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "medium",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:59:21.114883",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-15",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-25T22:59:21.114883",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Toxic Behaviour Definition Guide with cafe-specific examples",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Confidential Reporting Channel setup documentation",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Stepped Intervention Protocol (4 stages)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Difficult Conversation Guide for managers",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Intervention Record Template",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_006",
+      "item_id": "B175",
+      "item_type": "block",
+      "title": "Culture Excellence",
+      "description": "Define and document your cafe's core values in clear specific terms that guide daily behaviour. Create a staff handbook covering values standards policies and procedures. Implement a values-based onboarding process where new starters learn what matters to your cafe not just what tasks to perform. Address any toxic dynamics or cultural issues directly — they will not resolve themselves.",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "module_name": "M12",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "medium",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:59:21.114883",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-15",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-25T22:59:21.114883",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Culture Baseline Interview Guide",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Culture Aspiration Statement (finalised with team input)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Quarterly Culture Scorecard template",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Culture Champion Rotation Schedule and Initiative Guide",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Culture Onboarding Module outline",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L3_001",
+      "item_id": "B172",
+      "item_type": "block",
+      "title": "Cafe Values Definition",
+      "description": "Build a culture where your values are lived not laminated. Your standards should be maintained through shared commitment not surveillance. Celebrate team members who embody your values and address those who do not. Your culture is what happens when you are not watching — make it strong enough to sustain itself.",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "module_name": "M12",
+      "domain": "",
+      "layer": "L3",
+      "timeline_label": "Days 61–90",
+      "priority": "standard",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:59:21.114883",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-06-23",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-25T22:59:21.114883",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Values Discovery exercise (written answers from owner)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Values Charter (single-page document with values, meanings, behaviours)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Values-Based Interview Questions for hiring",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Team Values Workshop agenda and materials",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Quarterly Values Health Check survey",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L3_002",
+      "item_id": "B175",
+      "item_type": "block",
+      "title": "Culture Excellence",
+      "description": "Build a culture where your values are lived not laminated. Your standards should be maintained through shared commitment not surveillance. Celebrate team members who embody your values and address those who do not. Your culture is what happens when you are not watching — make it strong enough to sustain itself.",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "module_name": "M12",
+      "domain": "",
+      "layer": "L3",
+      "timeline_label": "Days 61–90",
+      "priority": "standard",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:59:21.114883",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-06-23",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-25T22:59:21.114883",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Culture Baseline Interview Guide",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Culture Aspiration Statement (finalised with team input)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Quarterly Culture Scorecard template",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Culture Champion Rotation Schedule and Initiative Guide",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Culture Onboarding Module outline",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L3_003",
+      "item_id": "B063",
+      "item_type": "block",
+      "title": "Exit Interview & Turnover Analysis",
+      "description": "Build a workplace culture where people want to stay and grow. Your cafe should be known locally as a great place to work. Track engagement alongside turnover and invest in the relationship between the two. The best cafes retain their baristas for years not months — aim for that standard.",
+      "source_rp": "RP018",
+      "rp_name": "Staff Retention & Engagement",
+      "module_id": "M04",
+      "module_name": "M04",
+      "domain": "",
+      "layer": "L3",
+      "timeline_label": "Days 61–90",
+      "priority": "standard",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP018",
+        "rp_name": "Staff Retention & Engagement",
+        "failure_modes": [
+          {
+            "fm_id": "FM029",
+            "fm_title": "Staff turnover and retention failure"
+          },
+          {
+            "fm_id": "FM036",
+            "fm_title": "Team morale and wellbeing failure"
+          }
+        ],
+        "signal_ids": [
+          "S056",
+          "S187"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:59:21.114883",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-06-23",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-25T22:59:21.114883",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Exit interview template and process document",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Turnover tracking spreadsheet with 12-month retrospective data",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Quarterly turnover analysis report template",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Cost-of-turnover calculation model",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Post-departure follow-up survey",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L3_004",
+      "item_id": "B066",
+      "item_type": "block",
+      "title": "Retention Culture Programme",
+      "description": "Build a workplace culture where people want to stay and grow. Your cafe should be known locally as a great place to work. Track engagement alongside turnover and invest in the relationship between the two. The best cafes retain their baristas for years not months — aim for that standard.",
+      "source_rp": "RP018",
+      "rp_name": "Staff Retention & Engagement",
+      "module_id": "M04",
+      "module_name": "M04",
+      "domain": "",
+      "layer": "L3",
+      "timeline_label": "Days 61–90",
+      "priority": "standard",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP018",
+        "rp_name": "Staff Retention & Engagement",
+        "failure_modes": [
+          {
+            "fm_id": "FM029",
+            "fm_title": "Staff turnover and retention failure"
+          },
+          {
+            "fm_id": "FM036",
+            "fm_title": "Team morale and wellbeing failure"
+          }
+        ],
+        "signal_ids": [
+          "S056",
+          "S187"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-25T22:59:21.114883",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-06-23",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-25T22:59:21.114883",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Team Pulse Survey template (anonymous, five to seven questions)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Retention Dashboard with turnover, tenure, and cost tracking",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Recognition Programme guidelines and Wall of Wins setup",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Stay Interview question framework",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Annual Engagement Survey template",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    }
+  ],
+  "owner_user_name": "Lead Consultant",
+  "reviewer_user_name": "Portfolio Lead"
+}

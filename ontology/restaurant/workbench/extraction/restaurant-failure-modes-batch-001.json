@@ -1,0 +1,77 @@
+{
+  "vertical": "restaurant",
+  "failure_modes": [
+    {
+      "id": "fm_host_flow_breakdown",
+      "name": "Host flow breakdown",
+      "description": "Seating, quoting, and reservation release logic are not standardized.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: signal to root-cause visibility for front-of-house",
+      "status": "review",
+      "domain": "service_delivery"
+    },
+    {
+      "id": "fm_deployment_misalignment",
+      "name": "Deployment misalignment",
+      "description": "Sectioning and role deployment do not match the real demand pattern.",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: initiative fatigue from constant firefighting",
+      "status": "review",
+      "domain": "workforce"
+    },
+    {
+      "id": "fm_pass_communication_gap",
+      "name": "Pass communication gap",
+      "description": "The kitchen pass lacks shared timing language and pickup discipline.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: handoff clarity across venue systems",
+      "status": "review",
+      "domain": "kitchen_operations"
+    },
+    {
+      "id": "fm_open_close_control_gap",
+      "name": "Open-close control gap",
+      "description": "Opening and closing routines are not enforced as a repeatable control system.",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: recurring drag from unmanaged resets",
+      "status": "review",
+      "domain": "leadership_rhythm"
+    },
+    {
+      "id": "fm_inventory_accuracy_gap",
+      "name": "Inventory accuracy gap",
+      "description": "Inventory counts, depletion, and item status updates are unreliable.",
+      "owner": "recovery-team",
+      "source_ref": "compass-market-analysis: control-loop moat for OIS",
+      "status": "review",
+      "domain": "financial_controls"
+    },
+    {
+      "id": "fm_bar_workflow_breakdown",
+      "name": "Bar workflow breakdown",
+      "description": "Bar station sequencing, setup, or priority rules do not support service demand.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: venue bottleneck examples",
+      "status": "review",
+      "domain": "beverage_execution"
+    },
+    {
+      "id": "fm_shift_readiness_gap",
+      "name": "Shift readiness gap",
+      "description": "The team enters service without validating readiness across the critical stations.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: operational health depends on pre-service discipline",
+      "status": "review",
+      "domain": "kitchen_operations"
+    },
+    {
+      "id": "fm_manager_presence_gap",
+      "name": "Manager presence gap",
+      "description": "Managers are not deployed where live coaching and escalation are needed.",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: leadership attention is a hard constraint",
+      "status": "review",
+      "domain": "leadership_rhythm"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "block_id": "B065",
+  "name": "Compensation Benchmarking",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Establishes a structured approach to benchmarking pay rates, tips distribution, and benefits against the local cafe and hospitality market, ensuring the venue attracts and retains quality staff without overspending relative to revenue.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Map current hourly rates for all roles against local hospitality market comparators",
+      "Audit the total compensation package including tips, staff drinks, meals, and non-cash benefits",
+      "Establish a pay review cycle aligned to National Living Wage updates and market movement",
+      "Create transparent pay bands so staff understand progression and earning potential",
+      "Benchmark benefits such as pension auto-enrolment, holiday entitlement, and sick pay against sector norms"
+    ],
+    "secondary_objectives": [
+      "Identify where non-monetary benefits can offset pay gaps without increasing wage bills",
+      "Reduce recruitment costs by offering competitive packages that lower turnover",
+      "Ensure compliance with National Minimum Wage, National Living Wage, and tips legislation"
+    ]
+  },
+  "why_this_matters": "In the UK cafe sector, staff costs typically represent 30-40% of revenue, making compensation the single largest controllable expense. Yet many independent cafe owners set pay rates based on gut feeling or simply match the National Living Wage floor, without understanding where they sit relative to local competitors. This creates two risks. Underpaying leads to constant turnover — a barista who can earn 50p more per hour at the cafe down the road will leave, and replacing them costs between £1,500 and £3,000 in recruitment, training, and lost productivity. Overpaying without a structured framework erodes margins and creates internal inequities when newer staff are hired at higher rates than loyal team members. Since April 2024, the Employment (Allocation of Tips) Act 2023 requires all tips to be passed to workers fairly, making tips policy a compliance matter as well as a cultural one. Pension auto-enrolment under The Pensions Act 2008 is mandatory, and holiday entitlement under the Working Time Regulations 1998 must be calculated correctly — including for variable-hours staff. Compensation benchmarking is not about paying the most; it is about paying intelligently, understanding the full value of the package offered, and being able to articulate that value to current and prospective staff. A cafe that can clearly show its total compensation proposition — hourly rate plus tips plus free drinks plus development opportunities — will always outperform a competitor offering a marginally higher base rate with nothing else.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: List every role in the cafe with current hourly rates, contracted hours, and any additional payments (tips, bonuses, overtime premiums). Check all rates against the current National Living Wage and National Minimum Wage bands — ensure full compliance as the absolute baseline. Gather three to five local comparator rates by checking job adverts on Indeed, Caterer.com, and local cafe social media posts. Record these in a simple spreadsheet alongside your own rates. Week 2: Document the full compensation package beyond hourly pay — staff drinks allowance, shift meals, uniform provision, pension contributions, holiday days above statutory minimum, training opportunities, and any discounts. Calculate a 'total compensation value' per hour for each role. Share this information with the team in a briefing, framing it as transparency about what the venue offers. Identify any immediate compliance gaps — staff being paid below minimum wage thresholds, incorrect holiday calculations for zero-hours workers, or tips not being distributed in line with the new Tips Act. Fix any compliance issues within the first fortnight as these carry legal risk.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create formal pay bands for each role tier: barista (entry), senior barista, shift lead, supervisor, and manager. Each band should have a minimum, midpoint, and maximum rate, with clear criteria for moving between them linked to B071 Career Progression. Draft a Tips Policy document that complies with the Employment (Allocation of Tips) Act 2023, specifying how tips are collected, pooled (if applicable), allocated, and distributed, with the required written policy available to all staff. Establish an annual pay review cycle — ideally timed to April when National Living Wage changes take effect. Build a compensation review template that captures market data, internal equity analysis, and budget impact modelling. Review pension auto-enrolment contributions — the legal minimum is 3% employer contribution, but consider whether a modest increase aids retention. Audit holiday entitlement calculations, particularly for irregular-hours staff, ensuring compliance with the Working Time Regulations 1998. By Week 8, the cafe should have documented pay bands, a compliant tips policy, and a structured annual review process.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Conduct a full market benchmarking exercise every six months, expanding beyond local competitors to include regional specialty coffee benchmarks and hospitality sector reports from UK Hospitality or the British Institute of Innkeeping. Introduce a total reward statement — an annual document for each team member showing their total compensation value including base pay, tips, pension, holiday value, training investment, and perks. Use this in retention conversations and during recruitment to demonstrate the full package. Consider introducing profit-sharing or bonus schemes linked to venue performance, reinforcing the connection between team effort and business success. Track compensation-related turnover separately — when exit interviews cite pay as a reason for leaving, analyse whether the issue is absolute pay level or perceived unfairness. Benchmark not just rates but structures: are competitors offering guaranteed hours, flexible scheduling, or wellbeing benefits that your venue does not? Integrate compensation data into workforce planning so that budget forecasts accurately reflect planned pay increases, new hires, and statutory uplifts."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "List all roles with current hourly rates and verify National Living Wage compliance",
+        "Gather three to five local competitor pay rates from job advertisements",
+        "Document all non-cash benefits and calculate total compensation value per role",
+        "Verify tips distribution compliance with the Employment (Allocation of Tips) Act 2023",
+        "Check holiday entitlement calculations for all staff including variable-hours workers",
+        "Brief the team on the full compensation package the venue offers",
+        "Fix any immediate compliance gaps in pay, holiday, or pension"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create formal pay bands with minimum, midpoint, and maximum for each role tier",
+        "Draft and publish a compliant written Tips Policy",
+        "Establish an annual pay review cycle aligned to April NLW changes",
+        "Build a compensation review template capturing market data and budget impact",
+        "Audit pension auto-enrolment contributions and consider uplift for retention",
+        "Review holiday pay calculations in light of current case law",
+        "Document all compensation policies in the staff handbook"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct six-monthly market benchmarking using sector reports and local data",
+        "Introduce annual total reward statements for each team member",
+        "Explore performance-linked bonuses or profit-sharing schemes",
+        "Track compensation-related turnover as a distinct metric",
+        "Integrate compensation forecasting into annual business budgeting"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Compensation Benchmarking Spreadsheet with local comparators",
+    "Total Compensation Value Calculator per role",
+    "Written Tips Policy (Employment (Allocation of Tips) Act 2023 compliant)",
+    "Pay Band Structure document with progression criteria",
+    "Annual Total Reward Statement template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T065-01",
+        "tool_name": "Local Market Pay Benchmarking Spreadsheet",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Spreadsheet capturing current venue pay rates alongside three to five local competitors per role, with columns for hourly rate, tips estimate, benefits value, and total compensation comparison."
+      },
+      {
+        "tool_id": "T065-02",
+        "tool_name": "Total Compensation Value Calculator",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Per-role calculator that converts all compensation elements — base pay, tips, pension, holiday, meals, drinks, training — into a single total hourly value for transparent communication."
+      },
+      {
+        "tool_id": "T065-03",
+        "tool_name": "Tips Policy Template",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Owner",
+        "description": "Written tips policy compliant with the Employment (Allocation of Tips) Act 2023, covering collection method, pooling rules, allocation formula, distribution schedule, and record-keeping requirements."
+      },
+      {
+        "tool_id": "T065-04",
+        "tool_name": "Pay Band Structure Document",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Defines pay bands for each role tier with minimum, midpoint, and maximum rates, progression criteria, and review triggers. Links to career progression framework."
+      },
+      {
+        "tool_id": "T065-05",
+        "tool_name": "Annual Total Reward Statement",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Individual annual statement for each team member showing the full monetary value of their compensation package including base pay, tips, pension contributions, holiday value, training investment, and perks."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Owner sets pay rates without market data, resulting in either overpaying relative to revenue or underpaying relative to competitors and losing staff",
+    "Tips policy is not documented or does not comply with the 2023 Act, exposing the business to tribunal claims",
+    "Pay bands exist on paper but are not applied consistently, creating internal equity grievances",
+    "Holiday pay is miscalculated for variable-hours staff, resulting in underpayment and potential enforcement action"
+  ],
+  "kpis": [
+    "All roles paid at or above the local market median for comparable positions",
+    "100% compliance with National Living Wage, tips legislation, and pension auto-enrolment",
+    "Written tips policy in place and acknowledged by all staff",
+    "Annual pay review completed within 30 days of NLW change each April",
+    "Turnover attributable to compensation below 15% of total voluntary leavers"
+  ],
+  "dependencies": ["B064"],
+  "constraints": [
+    "Pay rates must meet or exceed National Living Wage and National Minimum Wage thresholds at all times",
+    "Tips policy must comply with the Employment (Allocation of Tips) Act 2023",
+    "Pension auto-enrolment obligations under The Pensions Act 2008 must be met",
+    "Holiday entitlement must comply with the Working Time Regulations 1998"
+  ],
+  "time_load": {
+    "L1": "4 hours (market research, compliance audit, team briefing)",
+    "L2": "8 hours (pay bands, tips policy, review cycle setup)",
+    "L3": "3 hours/quarter (benchmarking updates, reward statements, trend analysis)"
+  },
+  "review_protocol": "Monthly spot-check of pay compliance against NLW thresholds. Quarterly review of tips distribution records. Six-monthly market benchmarking exercise. Annual full compensation review aligned to April NLW changes. Immediate review triggered by staff turnover citing pay.",
+  "meta": {
+    "summary_for_humans": "This block ensures the cafe pays competitively and compliantly by benchmarking against the local market, creating transparent pay bands, and maintaining a total compensation perspective that includes tips, benefits, and development opportunities.",
+    "implementation_risks": [
+      "Market data may be difficult to gather for independent cafes with no published pay rates",
+      "Formalising pay bands may reveal uncomfortable internal inequities requiring immediate correction",
+      "Tips legislation is relatively new and enforcement patterns are still emerging"
+    ],
+    "notes_for_engine": "Activate when signals indicate high turnover, difficulty recruiting, pay complaints, or tips disputes. Cross-reference with B064 for workforce planning context and B066 for retention strategy.",
+    "tags": ["compensation", "pay", "benchmarking", "tips", "NLW", "pension", "benefits", "retention", "compliance"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "t_48a2bb646897",
+  "title": "The owner wants to pivot to co-working — is that viable?",
+  "type": "venue",
+  "venue_slug": "kavos_namai_riga",
+  "created": "2026-01-27T16:16:39.239400",
+  "updated": "2026-01-27T16:42:07.239400",
+  "messages": [
+    {
+      "id": "m_48289902",
+      "role": "user",
+      "content": "Our afternoon foot traffic is basically zero. The owner wants to convert half the space to co-working desks. Good idea or disaster?",
+      "timestamp": "2026-01-27T16:16:39.239400",
+      "attachments": []
+    },
+    {
+      "id": "m_f2756359",
+      "role": "assistant",
+      "content": "It's a reasonable idea for a struggling venue in a business district, but the execution risk is high given your current operational state. Let me be direct:\n\n**Arguments for:**\n- Your afternoon dead zone (S160) means you're paying rent on unused space for 5+ hours daily\n- Business district location = potential co-working demand\n- Revenue diversification reduces morning-dependency\n- Co-working customers buy coffee all day — higher per-seat revenue\n\n**Arguments against:**\n- You have 15 active signals and only 8 tasks completed. Your basics aren't working yet. Adding a new business model on top of broken operations is adding complexity to chaos.\n- Co-working requires investment: power outlets at every seat, reliable Wi-Fi (you already have S026 — Wi-Fi issues), comfortable seating, potentially a booking system.\n- You have 3 staff. Co-working means longer operating hours or different shift patterns. Where does the labor come from?\n- It changes your customer mix — cafe regulars and co-workers have different needs and noise tolerance.\n\n**My recommendation:**\nDon't pivot yet. Instead:\n1. Fix the L1 issues first (2-3 weeks)\n2. Trial 'afternoon quiet hours' — market the space as laptop-friendly from 14:00-18:00 with no changes except a sign and stable Wi-Fi\n3. If that brings people in, THEN invest in the co-working setup based on actual demand, not hope\n\nThe owner's instinct isn't wrong — the space IS underused. But the timing is wrong. Stabilize, then experiment.",
+      "timestamp": "2026-01-27T16:16:48.239400",
+      "attachments": []
+    },
+    {
+      "id": "m_dae0023a",
+      "role": "user",
+      "content": "Makes sense. The Wi-Fi is actually the biggest complaint in our reviews. What should we do about that first?",
+      "timestamp": "2026-01-27T16:28:48.239400",
+      "attachments": []
+    },
+    {
+      "id": "m_d07368bb",
+      "role": "assistant",
+      "content": "Fix the Wi-Fi before anything else — it's a prerequisite for both the cafe experience and any co-working ambition.\n\n**Diagnosis first:**\n- Is it speed? (Too slow for video calls / streaming)\n- Is it reliability? (Drops connection periodically)\n- Is it access? (Password not posted, staff forget to share it)\n\nIf you don't know, download a speed test app and run it at different times of day from different spots in the venue. You need minimum 50 Mbps down for a space that might have 10-15 connected devices.\n\n**Quick fixes (same day):**\n1. Print the Wi-Fi name and password on a table card or chalk board. No customer should ever have to ask.\n2. Restart the router. Seriously — if it hasn't been restarted in months, this alone can help.\n3. Check if the router is hidden behind the espresso machine or in a metal cabinet. Move it to a central, elevated position.\n\n**If speed is the problem (this week):**\n- Call your ISP and check your plan. Business district = fibre should be available. 100 Mbps plan costs maybe 25-30 EUR/month.\n- If you're on a consumer plan, switch to a business one. Better SLA, usually better speed.\n\n**If reliability is the problem:**\n- Consider a mesh Wi-Fi system (2-3 units, ~100 EUR) instead of a single router. Covers the whole space consistently.\n\nThis resolves S026 and becomes the foundation for any co-working play later. Do it this week.",
+      "timestamp": "2026-01-27T16:29:07.239400",
+      "attachments": []
+    }
+  ]
+}

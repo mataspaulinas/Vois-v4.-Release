@@ -1,0 +1,68 @@
+{
+  "phase": 8,
+  "title": "Platform Hardening / Production Readiness",
+  "audited_at": "2026-03-27",
+  "verdict": "PHASE 8 FAILED CLOSURE",
+  "backend_tests": {
+    "command": "python -m pytest -q",
+    "passed": 72,
+    "failed": 1,
+    "failure_ids": [
+      "tests/test_persistence.py::test_round_trip_persistence"
+    ],
+    "failure_summary": "SQLite schema created by Base.metadata.create_all(...) is missing assessments.assessment_type while the current Assessment model expects it."
+  },
+  "frontend": {
+    "tests": {
+      "command": "npm run test",
+      "status": "passed",
+      "test_files": 4,
+      "tests": 10
+    },
+    "build": {
+      "command": "npm run build",
+      "status": "passed"
+    },
+    "lint": {
+      "status": "not_configured"
+    }
+  },
+  "migrations": {
+    "zero_to_head": {
+      "status": "passed",
+      "head": "20260327_0031"
+    },
+    "check_after_head": {
+      "status": "failed",
+      "drift": [
+        "copilot_threads.scope type drift",
+        "task_events.status type drift",
+        "users.venue_id foreign key drift"
+      ]
+    }
+  },
+  "boot": {
+    "status": "passed",
+    "runtime": "sqlite",
+    "health_status_code": 200,
+    "health_payload": {
+      "status": "ok"
+    }
+  },
+  "environment_findings": [
+    "apps/api/.env points to PostgreSQL but also enables AUTO_CREATE_SCHEMA=True",
+    "compose.yaml includes postgres and redis",
+    "redis is not intentionally used by runtime code",
+    "background work is handled by an in-process scheduler"
+  ],
+  "permission_findings": [
+    "Role and venue auth coverage exists and passed in tests/test_auth.py and tests/test_authz.py",
+    "Employee venue scoping passed in tests/test_pocket_workflow.py",
+    "allow_legacy_header_auth defaults to true",
+    "bootstrap route falls back to the earliest seeded user when unauthenticated"
+  ],
+  "go_no_go": {
+    "recommendation": "NO-GO",
+    "reason": "Use for local/dev evaluation only. Do not treat as live-pilot ready until backend schema drift, migration drift, health depth, and production auth posture are hardened."
+  }
+}

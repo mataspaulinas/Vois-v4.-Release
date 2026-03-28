@@ -1,0 +1,333 @@
+{
+  "block_id": "B076",
+  "name": "Communication Culture & Feedback",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Builds an open, psychologically safe communication culture where feedback flows freely in all directions — upward, downward, and peer-to-peer — ensuring issues are raised early, good work is recognised, and the team operates with transparency and mutual respect.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish norms and practices that make giving and receiving feedback a regular, non-threatening part of working life",
+      "Create safe channels for team members to raise concerns, suggest improvements, and challenge decisions without fear of reprisal",
+      "Train all staff in constructive feedback techniques so that feedback is specific, timely, and focused on behaviour rather than personality",
+      "Build a culture where mistakes are treated as learning opportunities rather than grounds for blame",
+      "Ensure communication flows consistently across shifts, between roles, and between management and the floor team"
+    ],
+    "secondary_objectives": [
+      "Reduce conflict by encouraging early, direct communication before issues escalate",
+      "Improve customer service by enabling real-time coaching and constructive feedback during shifts",
+      "Strengthen the grievance prevention system by making informal resolution the default"
+    ]
+  },
+  "why_this_matters": "Communication is the invisible infrastructure of every cafe. When it works, staff share information freely, flag problems early, support each other through rushes, and give honest feedback that drives improvement. When it fails, information hoards behind cliques, problems fester until they explode, passive-aggressive behaviour replaces honest conversation, and the owner is the last to know about critical issues. Poor communication is the root cause behind a startling proportion of hospitality workplace problems. ACAS reports that the majority of formal grievances could have been resolved informally if the parties had been able to have a direct, constructive conversation earlier. Employment tribunal cases frequently cite breakdowns in communication — the manager who never told someone their performance was concerning, the team member who never felt safe raising a health and safety worry, the policy change announced without explanation. Psychological safety — the belief that you will not be punished or humiliated for speaking up — is the foundation of effective communication culture. Google's extensive Project Aristotle research identified psychological safety as the single most important factor in high-performing teams. In a cafe, this means a junior barista feels able to tell a senior colleague that they have just used the wrong milk without fear of being snapped at. It means a team member can tell the owner that a new process is not working without being accused of negativity. Building this culture requires deliberate action: modelling vulnerability and openness from the top, creating structured channels for feedback, training the team in feedback techniques, and responding to raised concerns with gratitude rather than defensiveness.",
+  "block_design": {
+    "intervention_type": "bounded_operating_intervention",
+    "purpose": "Builds an open, psychologically safe communication culture where feedback flows freely in all directions — upward, downward, and peer-to-peer — ensuring issues are raised early, good work is recognised, and the team operates with transparency and mutual respect.",
+    "failure_modes_addressed": [
+      "Defensive management response shuts down future feedback",
+      "Feedback habits fade because the culture is not reinforced",
+      "Anonymous suggestions are collected but ignored",
+      "Managers avoid difficult conversations until conflict escalates"
+    ],
+    "response_patterns_addressed": [
+      "RP020"
+    ],
+    "primary_execution_module": "M04",
+    "entry_conditions": [
+      "The venue needs safer, more consistent feedback and escalation behaviour.",
+      "Communication issues, conflict, or silence are starting to affect team trust or service quality.",
+      "Managers want a repeatable system for feedback, one-to-ones, and difficult conversations."
+    ],
+    "prerequisites": [
+      "Daily and weekly communication forums exist or are being established through B074 and B075.",
+      "Managers are willing to model openness and accept feedback themselves.",
+      "The venue can provide private enough space and time for one-to-ones or difficult conversations."
+    ],
+    "contraindications": [
+      "Do not use this block as the sole response for formal disciplinary, safeguarding, discrimination, or legal grievance matters.",
+      "Do not launch anonymous feedback channels if leadership is not prepared to respond consistently.",
+      "Do not position feedback culture work as a substitute for fixing obvious structural meeting or handover failures in B074 and B075."
+    ],
+    "owner_role": "Owner and manager with participation from all staff",
+    "effort_load": {
+      "setup": "2-6 hours depending on charter and training rollout",
+      "weekly": "15-30 minutes for suggestion review and feedback follow-through",
+      "monthly": "1-2 hours for one-to-ones, pattern review, and culture actions"
+    },
+    "expected_time_to_effect": {
+      "first_visible_effect": "Within 1-2 weeks once feedback routines and response loops are visible",
+      "stabilisation_window": "8+ weeks as trust and psychological safety build through repeated behaviour"
+    },
+    "proof_of_completion": [
+      "The communication charter, 1:1 structure, and suggestion-response loop are active.",
+      "Managers are using the difficult-conversation and conflict tools in real cases.",
+      "A culture survey or equivalent review cadence exists with visible follow-through."
+    ],
+    "proof_of_effectiveness": [
+      "Staff raise concerns earlier and more specifically.",
+      "Suggestions receive visible responses within the agreed timeframe.",
+      "Conflict and feedback issues are addressed informally before escalating into formal grievance."
+    ],
+    "successor_triggers": [
+      {
+        "trigger": "Communication issues are still driven by missing daily shift forums rather than feedback culture, so the operating rhythm needs reinforcing.",
+        "next_block_id": "B074"
+      },
+      {
+        "trigger": "Recurring team issues point to weak weekly meeting structure or unresolved follow-through.",
+        "next_block_id": "B075"
+      }
+    ],
+    "linked_tools": [
+      "T076-01",
+      "T076-02",
+      "T076-03",
+      "T076-04",
+      "T076-05",
+      "T076-06",
+      "T076-07"
+    ]
+  },
+  "implementation_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Leadership says feedback is welcome but reacts defensively when it arrives.",
+        "what_can_go_wrong": "The whole intervention becomes performative and staff stop speaking honestly because the social risk remains high.",
+        "early_signals": [
+          "Suggestions drop sharply after a negative response.",
+          "Staff use vague language or only praise in feedback exercises.",
+          "Managers explain away criticism instead of acknowledging it."
+        ],
+        "prevention": [
+          "Model vulnerability early and visibly.",
+          "Respond to raised concerns with gratitude before debate.",
+          "Use the suggestion tracker to prove every item was reviewed."
+        ],
+        "mitigation": [
+          "Name the defensive response openly and reset the expectation.",
+          "Follow up visibly on ignored or mishandled feedback.",
+          "Increase manager coaching around T076-04 and T076-06."
+        ],
+        "if_occurs_next_signals": [
+          "psychological_safety_drop",
+          "feedback_suppression"
+        ],
+        "possible_successor_blocks": [
+          "B074",
+          "B075"
+        ]
+      },
+      {
+        "warning": "The tools are introduced but not woven into the real management rhythm.",
+        "what_can_go_wrong": "The block becomes a workshop memory instead of a daily operating intervention.",
+        "early_signals": [
+          "One-to-ones are scheduled once then abandoned.",
+          "The charter is displayed but not referenced in live decisions.",
+          "Difficult conversations still happen ad hoc or too late."
+        ],
+        "prevention": [
+          "Anchor each tool to a real cadence: briefing, 1:1, weekly review, survey cycle.",
+          "Assign clear ownership for each tool.",
+          "Review recurring communication themes monthly."
+        ],
+        "mitigation": [
+          "Restart with the smallest live routines first: 1:1s, tracker review, and SBI usage.",
+          "Use real recent cases to re-demonstrate the tools.",
+          "Tighten manager accountability for follow-through."
+        ],
+        "if_occurs_next_signals": [
+          "tool_adoption_failure",
+          "conflict_recurrence"
+        ],
+        "possible_successor_blocks": [
+          "B074",
+          "B075"
+        ]
+      }
+    ]
+  },
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Establish the principle that feedback is welcome by stating it clearly and modelling it personally. In the next team briefing, the owner or manager should share one thing they are working to improve about their own management — this vulnerability signals that feedback is genuinely wanted, not just tolerated. Introduce a simple feedback mechanism: a suggestions box (physical or digital) where team members can submit ideas, concerns, or feedback anonymously if they prefer. Commit to reviewing submissions weekly and responding to every one, even if the answer is 'we cannot do this right now because...' Week 2: Teach the team a simple feedback model — the SBI approach: Situation (when and where), Behaviour (what specifically was done), Impact (the effect it had). Practice it with a positive example first: 'During the morning rush (situation), you spotted the oat milk was running low and grabbed a new carton before we ran out (behaviour), which meant we did not have to stop mid-service and the queue kept moving (impact).' This normalises feedback as a constructive, specific, and positive tool before it is used for development areas. Ask each team member to give one SBI feedback to a colleague during the week — it can be entirely positive. Review how it went in the next briefing.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Communication Charter — a short document co-created with the team that defines the venue's communication norms. Examples: 'We give feedback directly and kindly,' 'We raise concerns early rather than letting them build,' 'We assume good intent,' 'We listen before responding.' Display the charter in the staff area as a visible commitment. Establish regular one-to-one conversations between the manager and each team member — monthly for established staff, fortnightly for newer team members. These are not performance reviews but open conversations about how things are going, any frustrations, and what support is needed. Train all shift leads on having difficult conversations — giving constructive feedback on underperformance, addressing interpersonal conflict between team members, and escalating appropriately when informal resolution fails. Develop a simple Conflict Resolution Protocol: when two team members have a disagreement, the first step is a direct conversation using SBI. If unresolved, a facilitated conversation with a manager. Only if still unresolved does it become a formal grievance under ACAS guidelines. This protocol keeps most issues at the informal level.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Conduct an annual Communication Culture Survey measuring psychological safety, feedback frequency, clarity of information flow, and trust in management communication. Use validated questions from psychological safety research (e.g., 'I feel safe to take a risk in this team,' 'If I make a mistake in this team, it is not held against me'). Introduce peer-to-peer feedback sessions — paired team members give each other structured feedback quarterly using the SBI model. This builds a culture where feedback is everyone's responsibility, not just management's. Analyse whether communication improvements correlate with operational performance — do teams with higher communication scores have lower waste, fewer complaints, and better reviews? Track grievance and conflict data: are formal complaints decreasing as informal communication improves? Celebrate examples of great communication: someone who raised a concern that prevented a food safety incident, a team member who gave constructive feedback that helped a colleague improve, a shift where handover communication prevented an error."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Model openness by sharing a personal development area in a team briefing",
+        "Introduce a suggestions box (physical or digital) for anonymous team input",
+        "Commit to reviewing and responding to every submission weekly",
+        "Teach the SBI feedback model to the entire team with a positive practice exercise",
+        "Ask each team member to give one SBI feedback to a colleague during the week",
+        "Respond to raised concerns with gratitude, regardless of content",
+        "Establish that feedback is a regular topic in daily briefings"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Co-create a Communication Charter with the team and display in the staff area",
+        "Establish monthly one-to-one conversations using T076-06",
+        "Train shift leads on SBI and difficult conversations using T076-01 and T076-04",
+        "Use T076-03 to resolve team conflict through clear informal-to-formal stages",
+        "Track every suggestion and concern in T076-07 and respond to every item weekly",
+        "Review one-to-one themes monthly for recurring communication patterns",
+        "Escalate to formal grievance only when the informal route is unsafe or exhausted"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Run the Communication Culture Survey & Scorecard using T076-05 on a regular cadence",
+        "Track trend lines in psychological safety, conflict, and response follow-through",
+        "Introduce quarterly peer-to-peer feedback sessions using the SBI model",
+        "Review and refresh the Communication Charter annually with team input",
+        "Celebrate examples of excellent communication in briefings and Wall of Wins",
+        "Use survey and tracker data to decide the next culture actions visibly"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "SBI Feedback Quick Card",
+    "Communication Charter workshop pack and final poster",
+    "Conflict Resolution Pathway & Case Log",
+    "Difficult Conversations prep and follow-up sheet",
+    "Communication Culture Survey & Scorecard",
+    "Monthly 1:1 Conversation Template",
+    "Suggestions & Response Tracker"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T076-01",
+        "tool_name": "SBI Feedback Quick Card",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "Pocket card and mini checklist for giving specific feedback using Situation-Behaviour-Impact, with cafe examples for praise and correction."
+      },
+      {
+        "tool_id": "T076-02",
+        "tool_name": "Communication Charter Workshop Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Facilitated workshop template for agreeing team communication rules, pressure-testing them, and turning them into a short visible charter."
+      },
+      {
+        "tool_id": "T076-03",
+        "tool_name": "Conflict Resolution Pathway & Case Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Three-stage conflict pathway with a printable case log capturing issue summary, current stage, agreements, review date, and escalation decisions."
+      },
+      {
+        "tool_id": "T076-04",
+        "tool_name": "Difficult Conversations Guide",
+        "level": "L2",
+        "format": "guide",
+        "owner_role": "Manager",
+        "description": "Manager playbook with a prep sheet, phrase bank, scenario prompts, and follow-up record for handling hard conversations early and well."
+      },
+      {
+        "tool_id": "T076-05",
+        "tool_name": "Communication Culture Survey & Scorecard",
+        "level": "L3",
+        "format": "audit",
+        "owner_role": "Owner",
+        "description": "Anonymous communication survey with a scoring sheet and action register to measure psychological safety, trust, and feedback quality over time."
+      },
+      {
+        "tool_id": "T076-06",
+        "tool_name": "Monthly 1:1 Conversation Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Printable monthly one-to-one template covering check-in, communication issues, support needs, agreed actions, and review date."
+      },
+      {
+        "tool_id": "T076-07",
+        "tool_name": "Suggestions & Response Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Simple tracker for suggestions and concerns showing owner, response due date, status, and what changed so the team sees the loop close."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The owner says feedback is welcome but reacts defensively when criticism is given, shutting down future openness",
+    "Feedback training is delivered but not reinforced, so the team reverts to old habits within weeks",
+    "Anonymous feedback channels are introduced but submissions are ignored, destroying trust",
+    "Conflict resolution protocol exists but managers avoid using it because difficult conversations are uncomfortable"
+  ],
+  "kpis": [
+    "Suggestions box receives at least two submissions per month (indicating team engagement)",
+    "100% of suggestions responded to within one week of submission",
+    "Formal grievances below one per year for teams of ten or fewer",
+    "Communication Culture Survey scores improving or stable year on year",
+    "At least 80% of team members reporting they feel safe to raise concerns in anonymous surveys"
+  ],
+  "dependencies": [
+    "B074",
+    "B075"
+  ],
+  "constraints": [
+    "Psychological safety takes time to build and can be destroyed instantly by one defensive reaction from management",
+    "Anonymous feedback mechanisms must be genuinely anonymous, particularly in small teams",
+    "Conflict resolution must comply with ACAS guidance on grievance and disciplinary procedures"
+  ],
+  "time_load": {
+    "L1": "2 hours (SBI training, suggestions box setup, modelling openness)",
+    "L2": "6 hours (charter creation, one-to-one setup, conflict protocol, manager training)",
+    "L3": "2 hours/quarter (survey, analysis, peer feedback sessions)"
+  },
+  "review_protocol": "Weekly: suggestions box reviewed and responses given. Monthly: one-to-one conversations conducted for all staff. Quarterly: review of feedback themes and conflict data. Annually: Communication Culture Survey deployed, analysed, and results shared with team.",
+  "meta": {
+    "summary_for_humans": "This block builds an open communication culture where feedback flows freely, concerns are raised early, and psychological safety enables honest, constructive conversations that prevent conflict and drive continuous improvement.",
+    "implementation_risks": [
+      "Building psychological safety requires consistent modelling from the owner — one bad reaction can undo months of progress",
+      "In very small teams, anonymous feedback may not be genuinely anonymous, discouraging honest input",
+      "Feedback training must be ongoing, not a one-off session"
+    ],
+    "notes_for_engine": "Activate when signals indicate communication breakdown, conflict, grievances, or staff citing poor management communication in exit interviews. Builds on B074 and B075 communication infrastructure.",
+    "tags": [
+      "communication",
+      "feedback",
+      "SBI",
+      "psychological_safety",
+      "conflict_resolution",
+      "culture",
+      "openness",
+      "grievance",
+      "ACAS"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "independent_cafe",
+      "specialty_coffee",
+      "chain_cafe",
+      "franchise_cafe",
+      "drive_through",
+      "kiosk",
+      "coffee_van",
+      "bakery_cafe"
+    ],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

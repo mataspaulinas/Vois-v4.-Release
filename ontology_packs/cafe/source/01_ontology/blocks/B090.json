@@ -1,0 +1,167 @@
+{
+  "block_id": "B090",
+  "name": "Station Design Optimisation",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Optimises the design of individual work stations — the espresso bar, food preparation area, till point, and cleaning station — so that every tool, supply, and piece of equipment is positioned to minimise reaching, walking, and searching, enabling maximum efficiency within each operator's workspace.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Audit each work station for ergonomic efficiency, ensuring all frequently used items are within one step and arm's reach",
+      "Apply the 'golden triangle' principle to the espresso bar: grinder, group head, and milk steaming within a 90-degree arc",
+      "Standardise station setup so that every barista finds the same layout regardless of who set up before them",
+      "Eliminate clutter and unused items from active work stations to reduce visual noise and searching time",
+      "Design station storage so that restocking can happen quickly and without disrupting service"
+    ],
+    "secondary_objectives": [
+      "Reduce repetitive strain by improving ergonomic positioning of frequently used equipment",
+      "Improve cleaning efficiency by designing stations that are easy to wipe down between services",
+      "Create visually professional station presentation that impresses customers watching the barista work"
+    ]
+  },
+  "why_this_matters": "If the workflow layout audit (B089) looks at the big picture — how the whole cafe fits together — station design optimisation zooms in to the micro level of each individual workspace. The barista's station is the heart of the cafe's production capability, and its design has an outsized impact on speed, quality, and the barista's physical wellbeing. The difference between a well-designed bar and a poorly designed one is visible in every drink. A well-designed espresso station follows what the specialty coffee industry calls the 'golden triangle' — the grinder, the group head, and the steam wand are positioned so the barista can dose, tamp, insert, extract, and steam without taking a step. Cups are stacked within arm's reach, sorted by size. Milk jugs are pre-positioned. The knock box is beside the group head. The cleaning cloth is hanging within reach. Every motion flows in a natural sequence. A poorly designed station forces the barista to turn around for cups, walk to the fridge for milk, search through a cluttered shelf for the right syrup, and bend down to access the knock box. Each of these interruptions adds seconds to every drink and multiplies across hundreds of drinks per day into significant lost productivity. Beyond the espresso bar, the same principles apply to every station. The till point should have cups, lids, bags, and receipt paper within reach. The food counter should have serving tools, labels, and packaging adjacent. The cleaning station should have chemicals, cloths, and mops organised and accessible. Station design optimisation is the closest the cafe industry comes to industrial engineering — applying scientific thinking to workspace design to maximise human output while minimising physical strain.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Focus on the espresso bar station first — this is where the highest-value production happens. Stand at the machine and extend your arms to full reach in all directions. Everything the barista uses frequently during service should be within this reach envelope. Map what is inside the envelope and what is outside. Typical items that should be within reach: portafilter, tamper, dose cup or scales, milk jugs (at least two), knock box, cups by size, lids, cleaning cloth, drip tray access. Typical items that are often outside reach but should not be: milk (fridge should be under the counter or beside the machine), syrups (should be on a shelf beside the machine, not behind the barista), alternative milks (should be as accessible as regular milk). Move items within reach immediately — this often requires adding a small shelf, repositioning the cup dispenser, or installing an under-counter fridge. Week 2: Apply the same reach-envelope analysis to the till station and the food preparation area. At the till: cups, lids, bags, loyalty cards, pens, receipt roll, and the menu or price list should all be within reach. At food: serving utensils, plates, packaging, labels, and allergen information should be positioned for one-motion access. Fix any obvious positioning issues immediately.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Station Design Standard for each work station — a document and photograph showing the exact position of every item. This becomes the 'reset' standard: at the start of every shift, the station is set up to this exact configuration. Print the photographs and laminate them at each station as a visual reference. Apply the five-S methodology adapted for cafe use: Sort (remove anything from the station that is not used daily), Set in order (give everything a specific home and label it), Shine (clean the station thoroughly), Standardise (create the setup standard), Sustain (build maintenance into the daily routine). Assess the ergonomics of each station: is the barista bending or reaching excessively? Is the till at the right height? Is the food prep surface at an appropriate working height? Poor ergonomics create fatigue, slow performance, and risk of injury over time. Address any significant ergonomic issues with platform steps, anti-fatigue mats, or equipment repositioning. Design the restocking flow for each station: how does new stock reach the station, where is the backup stored, and can restocking happen without interrupting service? Position backup supplies as close to the station as possible.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Station design becomes a point of professional pride. The barista station is treated like a chef's station — meticulously organised, spotlessly clean, and optimised for peak performance. Conduct a six-monthly station design review incorporating team feedback, new equipment, and menu changes. Track the relationship between station improvements and drink production speed — does the optimised station produce more drinks per hour with fewer errors? Benchmark station design against award-winning specialty coffee bars and professional barista competition setups — these represent the pinnacle of station ergonomics. If considering new equipment purchases, assess them against station design principles before buying — will the new grinder fit within the golden triangle, or will it force the barista to turn around? Invest in professional anti-fatigue matting, appropriate lighting, and noise reduction at stations where baristas spend extended periods — these investments in comfort pay dividends through sustained performance and reduced injury risk."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Stand at the espresso station and map the reach envelope for all frequently used items",
+        "Identify items outside the reach envelope that should be within it",
+        "Move items within reach: cups, milk, syrups, knock box, cleaning cloths",
+        "Apply the same reach analysis to the till station and food preparation area",
+        "Fix obvious positioning issues immediately (move, add shelf, reposition)",
+        "Ask the barista and till operator for their station frustrations and address quick wins",
+        "Photograph the improved station setup as a preliminary standard"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a Station Design Standard document with photographs for each station",
+        "Apply five-S methodology: Sort, Set in order, Shine, Standardise, Sustain",
+        "Assess ergonomics at each station and address issues with mats, platforms, or repositioning",
+        "Design the restocking flow so backup supplies are positioned for uninterrupted service",
+        "Install laminated station setup photographs at each work station",
+        "Train all staff to reset their station to standard at the start of every shift",
+        "Review station design after any equipment or menu change"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct six-monthly station design reviews incorporating feedback and changes",
+        "Track drink production speed and error rates against station improvements",
+        "Benchmark station design against competition-level and award-winning setups",
+        "Assess all new equipment purchases against station design principles before buying",
+        "Invest in anti-fatigue matting, lighting, and noise reduction for sustained performance",
+        "Celebrate excellent station management as a mark of professional pride"
+      ],
+      "responsible": "Head Barista, Owner"
+    }
+  },
+  "deliverables": [
+    "Station Reach Envelope Analysis per work station",
+    "Station Design Standard document with photographs",
+    "Five-S Implementation checklist adapted for cafe stations",
+    "Restocking Flow Map for each station",
+    "Ergonomic Assessment report for each work station"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T090-01",
+        "tool_name": "Station Reach Envelope Analysis",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "Template for mapping the reach envelope at each station, listing all items used during service and categorising them as within reach (keep), outside reach but frequently used (move closer), or rarely used (remove from station)."
+      },
+      {
+        "tool_id": "T090-02",
+        "tool_name": "Station Design Standard Photograph Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Head Barista",
+        "description": "Laminated photographs showing the exact position of every item at each station when correctly set up, serving as the reset standard for every shift start."
+      },
+      {
+        "tool_id": "T090-03",
+        "tool_name": "Five-S Station Audit Checklist",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Monthly audit checklist applying the five-S principles to each station: Sort (nothing unnecessary), Set in order (everything in its place), Shine (clean), Standardise (matches the standard), Sustain (maintained daily)."
+      },
+      {
+        "tool_id": "T090-04",
+        "tool_name": "Ergonomic Station Assessment",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Assessment of working height, reach distances, bending frequency, standing surface quality, and lighting at each station, with recommendations for improvements to reduce fatigue and injury risk."
+      },
+      {
+        "tool_id": "T090-05",
+        "tool_name": "Station Efficiency Benchmarking Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Six-monthly report comparing station design against specialty coffee best practice, tracking drinks per hour per station, error rates, and team feedback on workspace quality."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Station standards are created but staff revert to personal preferences within days, losing the consistency benefit",
+    "The espresso bar is optimised but other stations are neglected, creating bottlenecks elsewhere",
+    "Ergonomic issues are identified but not addressed due to cost, leading to staff discomfort and injury over time",
+    "New equipment is purchased without considering station design impact, undoing previous optimisation"
+  ],
+  "kpis": [
+    "All frequently used items within the barista's reach envelope (zero steps for core items)",
+    "Station reset to standard at the start of every shift verified by shift lead",
+    "Five-S station audit score averaging 4 out of 5 or above across all stations",
+    "Drinks per hour per barista improving after station optimisation",
+    "Zero staff injuries attributable to poor station ergonomics"
+  ],
+  "dependencies": ["B089"],
+  "constraints": [
+    "Fixed equipment (espresso machine, plumbing) may limit station reconfiguration options",
+    "Counter space is finite — optimisation requires ruthless prioritisation of what earns station real estate",
+    "Ergonomic improvements (anti-fatigue mats, height adjustments) have modest costs that must be budgeted"
+  ],
+  "time_load": {
+    "L1": "3 hours (reach analysis, repositioning, immediate improvements)",
+    "L2": "6 hours (design standards, five-S implementation, ergonomic assessment, restocking flow)",
+    "L3": "2 hours/six months (review, benchmarking, equipment assessment)"
+  },
+  "review_protocol": "Daily: station reset to standard verified by shift lead. Monthly: five-S audit conducted at all stations. Quarterly: station design reviewed against team feedback and any operational changes. Six-monthly: comprehensive station review with efficiency benchmarking.",
+  "meta": {
+    "summary_for_humans": "This block optimises individual work stations so every tool and supply is positioned for maximum efficiency — applying the golden triangle principle to the espresso bar and reach-envelope analysis to all stations.",
+    "implementation_risks": [
+      "Staff may resist standardised station setup if they prefer their personal arrangement",
+      "Optimisation requires an initial investment of time to analyse, reorganise, and document each station",
+      "Station design must be revisited whenever the menu, equipment, or workflow changes"
+    ],
+    "notes_for_engine": "Activate alongside B089 layout audit. Also activate when peak performance analysis (B088) identifies station-level inefficiency. Feeds directly into B091 workflow excellence.",
+    "tags": ["station_design", "ergonomics", "golden_triangle", "five_S", "efficiency", "espresso_bar", "reach_envelope", "workspace", "optimisation"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

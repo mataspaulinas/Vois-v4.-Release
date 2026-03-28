@@ -1,0 +1,167 @@
+{
+  "block_id": "B069",
+  "name": "Probation Review Framework",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Establishes a structured probation review process with formal check-ins at 30, 60, and 90 days, ensuring new starters receive clear feedback, documented performance assessment, and a fair decision on confirmation of employment — while protecting the business from retaining poor fits.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define a probation period length and structure that is clearly communicated in the employment contract",
+      "Create a 30/60/90-day review schedule with specific assessment criteria for each milestone",
+      "Ensure probation reviews are documented, creating a fair and defensible record of performance assessment",
+      "Provide new starters with structured feedback so they understand expectations and areas for improvement",
+      "Establish a clear decision-making process for confirming, extending, or ending employment at probation conclusion"
+    ],
+    "secondary_objectives": [
+      "Identify training needs early so they can be addressed before probation ends",
+      "Reduce the cost of bad hires by making timely decisions rather than letting poor performers drift",
+      "Demonstrate fair employment practices that comply with ACAS guidance on probation periods"
+    ]
+  },
+  "why_this_matters": "Probation periods are one of the most underused management tools in small cafes. Many owners either skip probation entirely or set a three-month period in the contract and then forget about it until month four, at which point the employee is confirmed by default. This is a missed opportunity on both sides. A well-run probation process protects the business by creating a structured window to assess whether a new hire genuinely fits the role, the team, and the culture — with a lower-risk exit route if they do not. It also protects the employee by guaranteeing they receive regular feedback, clear expectations, and genuine support to succeed. Under UK employment law, employees generally cannot claim ordinary unfair dismissal until they have two years' continuous service (Employment Rights Act 1996, s.108), which gives employers flexibility during the probation period. However, ACAS guidance strongly recommends that probation dismissals follow a fair process including clear expectations, documented feedback, and an opportunity to improve. Discrimination claims under the Equality Act 2010 have no qualifying service period, so probation processes must be applied consistently and without bias. A structured 30/60/90-day framework transforms probation from a forgotten contractual clause into an active management process. The 30-day review catches early issues — is the person turning up on time, learning the basics, fitting into the team? The 60-day review assesses developing competence — can they work a station independently, handle customer interactions, follow SOPs? The 90-day review is the confirmation decision — has this person earned their place on the team?",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Review all current employment contracts to confirm that probation periods are clearly stated, including length (typically three or six months for cafe roles), notice period during probation (usually one week), and the process for extension or termination. If contracts do not include probation terms, draft an updated template with legal guidance. Create a simple Probation Review Form with three sections: what is going well, what needs improvement, and agreed actions for the next period. This single form is used at 30, 60, and 90 days with progressive expectations at each stage. Week 2: For any staff currently in their probation period, schedule their next review meeting immediately. Prepare by reviewing their induction checklist completion (B067), any training assessments (B068), attendance record, and feedback from their buddy or shift leads. Conduct the review as a supportive two-way conversation — not an interrogation. Document the outcome, have both parties sign, and file in the staff record. Set calendar reminders for every new hire's 30, 60, and 90-day review dates at the point of hiring so that reviews are never missed.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Probation Assessment Framework with specific, measurable criteria for each review stage. At 30 days: attendance and punctuality, basic hygiene compliance, venue orientation complete, team integration, attitude and willingness to learn. At 60 days: independent operation of at least one station, consistent menu execution, customer interaction confidence, adherence to SOPs, proactive communication. At 90 days: reliable independent performance across required stations, contribution to team culture, problem-solving and initiative, readiness for confirmation. Create a probation tracker that shows all current probationers, their review dates, and status — this prevents anyone falling through the cracks. Draft a Probation Extension Letter template for cases where performance is borderline — an extension (typically one to three months) with specific targets gives the employee a fair chance to improve while protecting the business. Develop a Probation Termination Process aligned with ACAS guidance: a meeting with the employee, clear explanation of the reasons, written confirmation, and the contractual notice period honoured. Train all managers on how to conduct probation reviews fairly, consistently, and with proper documentation.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Analyse probation data to identify patterns — are certain roles, shifts, or managers associated with higher probation failure rates? This data feeds back into recruitment (B064) and induction (B067) improvements. Introduce a probation success celebration — when someone passes their 90-day review, recognise it in the team briefing and on the Wall of Wins. This signals that completing probation is an achievement worth marking. Survey staff who have recently completed probation on the quality of the process — was feedback useful, were expectations clear, did they feel supported? Use this to refine the framework. Benchmark probation outcomes against sector norms: a probation pass rate of 80-90% suggests good recruitment and induction; below 70% suggests upstream problems; above 95% suggests the probation process may not be rigorous enough. Integrate probation review outcomes with the career progression framework in B071, so that passing probation is the first step on a visible development pathway."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Review all employment contracts for clear probation terms and update if necessary",
+        "Create a Probation Review Form covering strengths, areas for improvement, and agreed actions",
+        "Schedule review meetings for any staff currently in their probation period",
+        "Set calendar reminders for 30/60/90-day reviews at the point of every new hire",
+        "Conduct first probation reviews as supportive two-way conversations with documentation",
+        "File all probation review records in individual staff files",
+        "Brief existing managers on the expectation to conduct and document all probation reviews"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Probation Assessment Framework with specific criteria for 30/60/90-day stages",
+        "Create a probation tracker showing all current probationers with dates and status",
+        "Draft Probation Extension Letter and Probation Termination Letter templates",
+        "Develop a Probation Termination Process aligned with ACAS guidance",
+        "Train all managers on fair, consistent, and documented probation review delivery",
+        "Link probation assessment criteria to induction milestones from B067",
+        "Establish a sign-off process requiring both manager and employee signatures"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Analyse probation data for patterns in pass rates, failure reasons, and role-specific trends",
+        "Introduce a probation success celebration as part of team recognition",
+        "Survey recently confirmed staff on the quality and fairness of the probation process",
+        "Benchmark probation outcomes against hospitality sector norms",
+        "Integrate probation completion into the career progression pathway in B071"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Probation Review Form (used at 30, 60, and 90 days)",
+    "Probation Assessment Framework with stage-specific criteria",
+    "Probation Tracker (all current probationers, dates, status)",
+    "Probation Extension Letter template",
+    "Probation Termination Process document (ACAS-aligned)"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T069-01",
+        "tool_name": "Probation Review Form",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Structured review form used at 30, 60, and 90 days covering strengths, areas for improvement, agreed actions, and progressive assessment criteria. Signed by both manager and employee."
+      },
+      {
+        "tool_id": "T069-02",
+        "tool_name": "Probation Assessment Criteria Matrix",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Detailed matrix defining specific, measurable assessment criteria for each probation stage — attendance, skill development, team integration, SOP compliance, and customer interaction standards."
+      },
+      {
+        "tool_id": "T069-03",
+        "tool_name": "Probation Tracker Dashboard",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Live tracker showing all staff currently in probation, their start date, next review date, review status, and any flags or concerns. Prevents anyone from being overlooked."
+      },
+      {
+        "tool_id": "T069-04",
+        "tool_name": "Probation Extension and Termination Templates",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Letter templates for extending probation (with specific improvement targets and timeline) and for ending employment during probation (with reasons, notice period, and ACAS-compliant process documentation)."
+      },
+      {
+        "tool_id": "T069-05",
+        "tool_name": "Probation Outcome Analysis Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Quarterly analysis of probation outcomes including pass rates, extension rates, termination rates, common development areas, and correlation with recruitment source and induction quality."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Probation reviews are never scheduled or are consistently postponed, resulting in confirmation by default without genuine assessment",
+    "Reviews are conducted informally with no documentation, leaving the business exposed if a dismissal is challenged",
+    "Assessment criteria are vague or subjective, making it difficult to justify extension or termination decisions",
+    "Manager avoids difficult conversations about underperformance, allowing poor fits to become confirmed employees"
+  ],
+  "kpis": [
+    "100% of probation reviews conducted within five days of the scheduled 30/60/90-day date",
+    "All probation reviews documented with signed forms filed in staff records",
+    "Probation pass rate between 80% and 90% (indicating balanced rigour and recruitment quality)",
+    "Zero probation-related tribunal claims or ACAS early conciliation cases",
+    "New starters reporting clear expectations and fair feedback in post-probation surveys"
+  ],
+  "dependencies": ["B067"],
+  "constraints": [
+    "Probation terms must be clearly stated in the employment contract to be enforceable",
+    "Probation dismissals should follow ACAS guidance including a fair process and written confirmation",
+    "Discrimination protections under the Equality Act 2010 apply from day one regardless of probation status",
+    "Probation reviews must be consistent across all new starters to avoid claims of unfair treatment"
+  ],
+  "time_load": {
+    "L1": "2 hours (form creation, contract review, scheduling)",
+    "L2": "6 hours (assessment framework, tracker, templates, manager training)",
+    "L3": "1 hour/quarter (data analysis, process refinement, benchmarking)"
+  },
+  "review_protocol": "Probation reviews conducted at 30, 60, and 90 days for every new starter without exception. Monthly check of probation tracker for upcoming reviews. Quarterly review of probation outcomes and trend analysis. Annual review of probation process effectiveness and ACAS compliance.",
+  "meta": {
+    "summary_for_humans": "This block creates a structured 30/60/90-day probation review process with clear assessment criteria, proper documentation, and ACAS-aligned procedures for confirmation, extension, or termination of new starters.",
+    "implementation_risks": [
+      "Managers may find difficult conversations uncomfortable and avoid raising performance concerns",
+      "In very small teams, formal probation reviews can feel overly bureaucratic — frame them as supportive check-ins",
+      "Probation extension or termination without proper documentation creates legal risk"
+    ],
+    "notes_for_engine": "Activate immediately for every new hire. Cross-reference with B067 for induction completion status, B068 for barista skills assessment, and B071 for career progression gateway.",
+    "tags": ["probation", "review", "30_60_90", "ACAS", "assessment", "new_starter", "performance", "confirmation", "employment_law"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

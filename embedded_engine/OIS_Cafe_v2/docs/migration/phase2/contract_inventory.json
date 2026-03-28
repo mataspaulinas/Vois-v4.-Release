@@ -1,0 +1,721 @@
+[
+  {
+    "name": "OrganizationContract",
+    "field_count": 4,
+    "fields": [
+      "id",
+      "name",
+      "slug",
+      "data_residency"
+    ],
+    "glossary": "Tenant-level organization owning workspaces, venues, users, and data-residency policy."
+  },
+  {
+    "name": "WorkspaceContract",
+    "field_count": 6,
+    "fields": [
+      "id",
+      "organization_id",
+      "name",
+      "slug",
+      "vertical",
+      "venue_ids"
+    ],
+    "glossary": "Migration seam for a portfolio or workspace container grouping venue/project records inside one organization."
+  },
+  {
+    "name": "VenueContextContract",
+    "field_count": 6,
+    "fields": [
+      "venue_name",
+      "venue_type",
+      "team_size",
+      "location",
+      "stage",
+      "concept"
+    ],
+    "glossary": "Runtime venue context passed into intake and engine runs."
+  },
+  {
+    "name": "VenueProjectContract",
+    "field_count": 18,
+    "fields": [
+      "id",
+      "organization_id",
+      "slug",
+      "name",
+      "vertical",
+      "status",
+      "stage",
+      "concept",
+      "location",
+      "team_size",
+      "capacity_profile",
+      "workflow_stage",
+      "health_state",
+      "owner_user_id",
+      "primary_consultant_user_id",
+      "next_review_at",
+      "created_at",
+      "updated_at"
+    ],
+    "glossary": "Canonical venue or project record carrying lifecycle, ownership, and operational context."
+  },
+  {
+    "name": "AssessmentSignalState",
+    "field_count": 4,
+    "fields": [
+      "active",
+      "notes",
+      "confidence",
+      "value"
+    ],
+    "glossary": "Manual or AI-suggested state of a single signal inside an assessment draft or run request."
+  },
+  {
+    "name": "AssessmentDraftContract",
+    "field_count": 14,
+    "fields": [
+      "id",
+      "venue_id",
+      "assessment_type",
+      "assessment_date",
+      "created_by",
+      "notes",
+      "selected_signal_ids",
+      "signal_states",
+      "raw_input_text",
+      "ontology_version",
+      "management_hours_available",
+      "weekly_effort_budget",
+      "venue_context",
+      "created_at"
+    ],
+    "glossary": "Persisted assessment snapshot before or after a run, including raw text and selected signals."
+  },
+  {
+    "name": "AssessmentRunRequestContract",
+    "field_count": 14,
+    "fields": [
+      "venue_id",
+      "assessment_type",
+      "assessment_date",
+      "created_by",
+      "notes",
+      "selected_signal_ids",
+      "signal_states",
+      "raw_input_text",
+      "ontology_version",
+      "management_hours_available",
+      "weekly_effort_budget",
+      "venue_context",
+      "triage_enabled",
+      "triage_intensity"
+    ],
+    "glossary": "Validated request payload for running the engine from saved assessment state or fresh intake."
+  },
+  {
+    "name": "SignalContract",
+    "field_count": 13,
+    "fields": [
+      "signal_id",
+      "signal_name",
+      "domain_id",
+      "severity",
+      "timestamp",
+      "source_type",
+      "venue_id",
+      "notes",
+      "description",
+      "value",
+      "score",
+      "evidence_snippet",
+      "match_reasons"
+    ],
+    "glossary": "Normalized signal or intake-detected signal with evidence and severity metadata."
+  },
+  {
+    "name": "FailureModeContract",
+    "field_count": 8,
+    "fields": [
+      "failure_mode_id",
+      "title",
+      "description",
+      "severity",
+      "score",
+      "domain_id",
+      "module_id",
+      "signal_ids"
+    ],
+    "glossary": "Activated failure mode with score and contributing signal ids."
+  },
+  {
+    "name": "ResponsePatternTriggerContract",
+    "field_count": 4,
+    "fields": [
+      "failure_mode_id",
+      "fm_title",
+      "fm_score",
+      "link_priority"
+    ],
+    "glossary": "Link between a response pattern and the failure mode that triggered it."
+  },
+  {
+    "name": "ResponsePatternContract",
+    "field_count": 10,
+    "fields": [
+      "response_pattern_id",
+      "rp_name",
+      "domain",
+      "severity",
+      "priority_score",
+      "description",
+      "triggering_fms",
+      "l1_focus",
+      "l2_focus",
+      "l3_focus"
+    ],
+    "glossary": "Activated response pattern with priority and L1/L2/L3 guidance."
+  },
+  {
+    "name": "BlockActivationLevelsContract",
+    "field_count": 3,
+    "fields": [
+      "L1",
+      "L2",
+      "L3"
+    ],
+    "glossary": "Activated block ids grouped by execution layer."
+  },
+  {
+    "name": "BlockActivationContract",
+    "field_count": 4,
+    "fields": [
+      "response_pattern_id",
+      "rp_name",
+      "priority_score",
+      "activated_items"
+    ],
+    "glossary": "Response-pattern-to-block activation contract used by diagnostic outputs."
+  },
+  {
+    "name": "TaskDependencyContract",
+    "field_count": 4,
+    "fields": [
+      "predecessor_task_id",
+      "successor_task_id",
+      "dependency_kind",
+      "note"
+    ],
+    "glossary": "Explicit dependency edge between two tasks rather than an implicit string list."
+  },
+  {
+    "name": "TaskCommentContract",
+    "field_count": 8,
+    "fields": [
+      "id",
+      "task_id",
+      "venue_id",
+      "author_user_id",
+      "author_name",
+      "body",
+      "visibility",
+      "created_at"
+    ],
+    "glossary": "Human commentary attached to a task; intentionally distinct from progress, observations, and escalations."
+  },
+  {
+    "name": "TaskEventContract",
+    "field_count": 8,
+    "fields": [
+      "id",
+      "task_id",
+      "event_type",
+      "status",
+      "actor_user_id",
+      "actor_name",
+      "note",
+      "created_at"
+    ],
+    "glossary": "Immutable task event log such as status changes, follow-up creation, or escalation."
+  },
+  {
+    "name": "SubActionContract",
+    "field_count": 4,
+    "fields": [
+      "id",
+      "text",
+      "completed",
+      "completed_at"
+    ],
+    "glossary": "Checklist item nested under a task."
+  },
+  {
+    "name": "DeliverableItemContract",
+    "field_count": 3,
+    "fields": [
+      "name",
+      "completed",
+      "completed_at"
+    ],
+    "glossary": "Deliverable status record nested under a task."
+  },
+  {
+    "name": "DeliverableProofContract",
+    "field_count": 9,
+    "fields": [
+      "id",
+      "task_id",
+      "deliverable_name",
+      "proof_kind",
+      "file_asset_id",
+      "source_url",
+      "note",
+      "created_at",
+      "verified_at"
+    ],
+    "glossary": "Proof artifact or evidence that a deliverable was completed or verified."
+  },
+  {
+    "name": "TaskContract",
+    "field_count": 35,
+    "fields": [
+      "id",
+      "block_id",
+      "title",
+      "status",
+      "order_index",
+      "layer",
+      "timeline_label",
+      "priority",
+      "effort_hours",
+      "rationale",
+      "description",
+      "notes",
+      "source_response_pattern_id",
+      "source_response_pattern_name",
+      "module_id",
+      "dependency_ids",
+      "depends_on_modules",
+      "trace",
+      "sub_actions",
+      "deliverables",
+      "comments",
+      "events",
+      "assigned_to",
+      "assignee_user_id",
+      "assignee_name",
+      "due_at",
+      "created_at",
+      "started_at",
+      "completed_at",
+      "updated_at",
+      "updated_by",
+      "review_required",
+      "verification",
+      "expected_output",
+      "flags"
+    ],
+    "glossary": "Operational plan task with execution state, nested checklist items, deliverables, comments, and events."
+  },
+  {
+    "name": "GeneratedPlanTaskContract",
+    "field_count": 12,
+    "fields": [
+      "task_id",
+      "item_id",
+      "item_type",
+      "title",
+      "source_rp",
+      "rp_name",
+      "module_id",
+      "timeline",
+      "priority",
+      "description",
+      "depends_on_modules",
+      "trace"
+    ],
+    "glossary": "Legacy engine-generated task before persistence flattening or execution-state enrichment."
+  },
+  {
+    "name": "GeneratedPlanContract",
+    "field_count": 3,
+    "fields": [
+      "L1_tasks",
+      "L2_tasks",
+      "L3_tasks"
+    ],
+    "glossary": "Legacy engine-generated plan grouped by L1/L2/L3 layers; intentionally distinct from persisted plans."
+  },
+  {
+    "name": "PlanContract",
+    "field_count": 23,
+    "fields": [
+      "id",
+      "venue_id",
+      "engine_run_id",
+      "title",
+      "summary",
+      "total_effort_hours",
+      "status",
+      "load_classification",
+      "source_assessment",
+      "version",
+      "previous_versions",
+      "owner_user_id",
+      "reviewer_user_id",
+      "approval_requested_at",
+      "approved_at",
+      "approved_by_user_id",
+      "confidence",
+      "strengths",
+      "summary_snapshot",
+      "dependency_notes",
+      "tasks",
+      "created_at",
+      "updated_at"
+    ],
+    "glossary": "Operational plan returned by the engine or persisted for execution work."
+  },
+  {
+    "name": "ReportContract",
+    "field_count": 11,
+    "fields": [
+      "id",
+      "engine_run_id",
+      "venue_id",
+      "report_kind",
+      "report_type",
+      "summary",
+      "markdown",
+      "diagnostic_spine",
+      "investigation_threads",
+      "verification_briefs",
+      "created_at"
+    ],
+    "glossary": "Frozen report artifact; intentionally distinct from comments, help requests, and progress entries."
+  },
+  {
+    "name": "DiagnosticResultContract",
+    "field_count": 14,
+    "fields": [
+      "engine_run_id",
+      "assessment_id",
+      "venue_id",
+      "ontology_version",
+      "load_classification",
+      "normalized_signals",
+      "failure_modes",
+      "response_patterns",
+      "block_activations",
+      "constrained_block_activations",
+      "constraint_report",
+      "generated_plan",
+      "plan",
+      "report"
+    ],
+    "glossary": "Complete engine response including signals, modes, patterns, activations, plan, and report."
+  },
+  {
+    "name": "ProgressEntryContract",
+    "field_count": 8,
+    "fields": [
+      "id",
+      "venue_id",
+      "created_by",
+      "entry_type",
+      "summary",
+      "detail",
+      "status",
+      "created_at"
+    ],
+    "glossary": "Progress feed entry; intentionally keeps entry_type so milestone, note, and update are not flattened."
+  },
+  {
+    "name": "ObservationContract",
+    "field_count": 10,
+    "fields": [
+      "id",
+      "venue_id",
+      "related_task_id",
+      "author_user_id",
+      "observation_type",
+      "title",
+      "detail",
+      "source",
+      "created_at",
+      "evidence_file_asset_id"
+    ],
+    "glossary": "Observed fact or field note from audit, staff, customer, or consultant input."
+  },
+  {
+    "name": "HelpRequestContract",
+    "field_count": 10,
+    "fields": [
+      "id",
+      "venue_id",
+      "requester_user_id",
+      "channel",
+      "title",
+      "prompt",
+      "status",
+      "linked_thread_id",
+      "created_at",
+      "resolved_at"
+    ],
+    "glossary": "Explicit request for help or explanation; intentionally distinct from general chat and task comments."
+  },
+  {
+    "name": "FollowUpContract",
+    "field_count": 14,
+    "fields": [
+      "id",
+      "venue_id",
+      "task_id",
+      "assigned_to",
+      "created_by",
+      "title",
+      "status",
+      "due_at",
+      "acknowledged_at",
+      "completed_at",
+      "escalated_at",
+      "notes",
+      "created_at",
+      "is_overdue"
+    ],
+    "glossary": "Execution-control reminder tied to a task with overdue and escalation semantics."
+  },
+  {
+    "name": "EscalationContract",
+    "field_count": 12,
+    "fields": [
+      "id",
+      "venue_id",
+      "follow_up_id",
+      "task_id",
+      "created_by",
+      "escalated_to",
+      "severity",
+      "status",
+      "reason",
+      "resolution_notes",
+      "created_at",
+      "resolved_at"
+    ],
+    "glossary": "Higher-severity execution control object used when a follow-up or task requires intervention."
+  },
+  {
+    "name": "NotificationSubscriptionContract",
+    "field_count": 6,
+    "fields": [
+      "endpoint",
+      "p256dh_key",
+      "auth_key",
+      "user_id",
+      "channel",
+      "created_at"
+    ],
+    "glossary": "Request payload for registering a delivery endpoint such as web push."
+  },
+  {
+    "name": "NotificationEventContract",
+    "field_count": 13,
+    "fields": [
+      "id",
+      "organization_id",
+      "venue_id",
+      "user_id",
+      "channel",
+      "level",
+      "title",
+      "body",
+      "entity_type",
+      "entity_id",
+      "sent_at",
+      "read_at",
+      "acknowledged_at"
+    ],
+    "glossary": "User-facing notification event with delivery and acknowledgement timestamps."
+  },
+  {
+    "name": "ChatReferenceContract",
+    "field_count": 4,
+    "fields": [
+      "type",
+      "label",
+      "id",
+      "payload"
+    ],
+    "glossary": "Structured reference embedded in a chat message."
+  },
+  {
+    "name": "ChatAttachmentContract",
+    "field_count": 5,
+    "fields": [
+      "file_asset_id",
+      "file_name",
+      "content_type",
+      "url",
+      "content_base64"
+    ],
+    "glossary": "Attachment metadata embedded in a chat message create/read payload."
+  },
+  {
+    "name": "ChatMessageContract",
+    "field_count": 9,
+    "fields": [
+      "id",
+      "thread_id",
+      "created_by",
+      "author_role",
+      "source_mode",
+      "content",
+      "references",
+      "attachments",
+      "created_at"
+    ],
+    "glossary": "Copilot or user message in a thread."
+  },
+  {
+    "name": "ChatThreadContract",
+    "field_count": 10,
+    "fields": [
+      "id",
+      "organization_id",
+      "venue_id",
+      "title",
+      "scope",
+      "archived",
+      "message_count",
+      "latest_message_at",
+      "created_at",
+      "messages"
+    ],
+    "glossary": "Copilot thread summary/detail payload including messages."
+  },
+  {
+    "name": "KnowledgeReferenceContract",
+    "field_count": 8,
+    "fields": [
+      "id",
+      "entity_kind",
+      "title",
+      "description",
+      "source_ref",
+      "linked_entity_ids",
+      "uri",
+      "updated_at"
+    ],
+    "glossary": "KB or ontology reference entity used by chat, reports, and guided workflows."
+  },
+  {
+    "name": "AITraceContract",
+    "field_count": 15,
+    "fields": [
+      "function",
+      "provider",
+      "model",
+      "prompt_version",
+      "invoked_at",
+      "organization_id",
+      "venue_id",
+      "thread_id",
+      "ontology_version",
+      "context_sources",
+      "evidence_refs",
+      "confidence",
+      "mutation_summary",
+      "user_confirmation_required",
+      "user_confirmation_status"
+    ],
+    "glossary": "Auditable record of an AI invocation including model, prompt version, and evidence refs."
+  },
+  {
+    "name": "AIIntakeSnapshotContract",
+    "field_count": 10,
+    "fields": [
+      "raw_input_text",
+      "raw_input_length",
+      "extraction_summary",
+      "confidence_distribution",
+      "unmapped_observations",
+      "active_signal_ids",
+      "venue_context",
+      "provider",
+      "model",
+      "prompt_version"
+    ],
+    "glossary": "Frozen AI-assisted intake snapshot including unmapped observations and extraction coverage notes."
+  },
+  {
+    "name": "TaskMutationRequestContract",
+    "field_count": 4,
+    "fields": [
+      "status",
+      "notes",
+      "sub_action_completions",
+      "deliverable_completions"
+    ],
+    "glossary": "Validated request payload for task status and checklist mutation."
+  },
+  {
+    "name": "CommentCreateRequestContract",
+    "field_count": 4,
+    "fields": [
+      "task_id",
+      "venue_id",
+      "body",
+      "visibility"
+    ],
+    "glossary": "Validated request payload for adding a task comment."
+  },
+  {
+    "name": "ProgressCreateRequestContract",
+    "field_count": 5,
+    "fields": [
+      "venue_id",
+      "entry_type",
+      "summary",
+      "detail",
+      "status"
+    ],
+    "glossary": "Validated request payload for adding a typed progress entry."
+  },
+  {
+    "name": "FollowUpCreateRequestContract",
+    "field_count": 6,
+    "fields": [
+      "venue_id",
+      "task_id",
+      "assigned_to",
+      "title",
+      "due_at",
+      "notes"
+    ],
+    "glossary": "Validated request payload for creating a follow-up reminder."
+  },
+  {
+    "name": "EscalationCreateRequestContract",
+    "field_count": 6,
+    "fields": [
+      "venue_id",
+      "follow_up_id",
+      "task_id",
+      "escalated_to",
+      "severity",
+      "reason"
+    ],
+    "glossary": "Validated request payload for opening an escalation."
+  },
+  {
+    "name": "ChatMessageCreateRequestContract",
+    "field_count": 3,
+    "fields": [
+      "content",
+      "created_by",
+      "attachments"
+    ],
+    "glossary": "Validated request payload for posting a chat message with attachments."
+  }
+]

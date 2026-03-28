@@ -1,0 +1,157 @@
+{
+  "block_id": "B110",
+  "name": "Food Supply Chain Resilience",
+  "version": "v1.0",
+  "domain": "D06_supply_chain",
+  "module": "M06: Supply Chain & Supplier Relations",
+  "state": "enriched",
+  "purpose": "Builds a resilient, ethical, and sustainable food supply chain that can withstand disruptions, supports the cafe's values around sourcing and sustainability, and positions the business for long-term supply security in an increasingly volatile global food market.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Map the full food supply chain from farm to counter, identifying vulnerabilities and single points of failure",
+      "Build resilience through supplier diversification, local sourcing, and strategic buffer stock for non-perishable items",
+      "Integrate ethical and sustainable sourcing principles into supplier selection and purchasing decisions",
+      "Develop contingency protocols for supply chain disruptions (severe weather, transport strikes, supplier insolvency, global events)",
+      "Create a supply chain governance framework that balances cost, quality, resilience, and ethics"
+    ],
+    "secondary_objectives": [
+      "Use sustainable and local sourcing as a marketing differentiator and customer engagement tool",
+      "Reduce the cafe's environmental footprint through supply chain decisions (shorter transport distances, less packaging, less waste)",
+      "Build a supply chain that supports future growth without creating fragility"
+    ]
+  },
+  "why_this_matters": "The UK food supply chain has been tested repeatedly in recent years — Brexit-related import complications, COVID-19 disruptions, the 2021 lorry driver shortage, energy price spikes affecting food producers, and ongoing inflationary pressure on ingredients. For independent cafes, these macro disruptions manifest as real operational problems: the dairy supplier short-delivers because their warehouse is understaffed, the bakery raises prices by 20% to cover energy costs, the coffee roaster cannot source a particular origin because of shipping delays, and the packaging supplier switches to lower-quality alternatives without notice. Building supply chain resilience is not about predicting the next crisis — it is about creating a supply network that can absorb shocks without passing them directly to the customer as stockouts, price increases, or quality reductions. Resilient supply chains have three characteristics: diversification (multiple suppliers for critical categories), locality (shorter supply chains that are less vulnerable to transport disruption), and transparency (understanding where ingredients come from and what risks exist at each stage). Alongside resilience, customers increasingly expect ethical sourcing. Fair trade coffee, free-range eggs, responsibly sourced dairy, and sustainably grown produce are becoming baseline expectations in the UK cafe market, not premium differentiators. A cafe that cannot articulate its sourcing values is increasingly at a competitive disadvantage. This capstone block brings together the work from B104-B109 into a unified, resilient, and ethically grounded supply chain strategy.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create a Supply Chain Map — a simple visual document showing every supplier, what they provide, where they are located, and the delivery route to the cafe. For each supplier, note: single source or diversified? Local or national? Direct or via distributor? This map immediately reveals concentration risks — if three critical categories all come from the same distributor, a single disruption point threatens the entire supply. Week 2: Assess the cafe's current ethical sourcing position. For each major ingredient category, answer: Is the coffee certified (Fairtrade, Rainforest Alliance, Direct Trade)? Are eggs free-range? Is dairy from responsible farms? Are there any ingredients the cafe should be sourcing more responsibly but currently is not? Create a simple Ethical Sourcing Statement — one paragraph that honestly describes the cafe's current sourcing values and commitments. This statement should be genuine, not aspirational. Post it on the website and consider displaying it in-store. Identify the three most vulnerable points in the supply chain (single-source suppliers with no backup, long-distance imports, suppliers with known reliability issues) and create immediate mitigation actions (linking to B105).",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Supply Chain Risk Register — a document listing each supply risk, its likelihood, its impact if realised, and the mitigation in place. Review quarterly. Increase local sourcing where quality and cost allow: a local bakery, a regional dairy, a nearby farm for salad ingredients. Local suppliers typically have shorter lead times, lower transport costs, and stronger relationships — all of which improve resilience. Calculate the 'local sourcing percentage' — what proportion of the cafe's supply spend goes to suppliers within 50 miles? This metric is increasingly important to customers and can be a marketing asset. Develop disruption response protocols: for each critical supply category, define what happens if supply is disrupted for 1 day, 3 days, and 1 week. Include menu adjustments, emergency sourcing, and customer communication. Build strategic buffer stock for non-perishable items that are critical and have long lead times: coffee beans (keep 2 weeks extra stock), packaging (keep 1 month buffer), ambient ingredients (maintain par levels with safety margin). These buffers absorb short-term disruptions without requiring emergency action.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Supply chain resilience and ethics should be embedded in the cafe's identity and operations. Achieve at least one supply chain certification or commitment: Fairtrade, Rainforest Alliance, or a documented Direct Trade relationship with the roaster. Publish an annual Sourcing Report (even a single page) detailing where key ingredients come from, the cafe's sustainability initiatives, and progress against ethical sourcing goals. Join or create a local cafe purchasing cooperative to increase collective buying power and share supply chain resilience. Attend supplier open days and farm visits to deepen understanding of the supply chain and build content for customer communication. Review the full supply chain strategy annually, stress-testing it against potential disruption scenarios and adjusting for market changes. Position supply chain excellence as a core competitive advantage and brand differentiator."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create a Supply Chain Map showing all suppliers, locations, and delivery routes",
+        "Identify concentration risks: multiple categories from a single source or distributor",
+        "Assess current ethical sourcing position across all major ingredient categories",
+        "Draft an honest Ethical Sourcing Statement for the website and in-store display",
+        "Identify the three most vulnerable points in the supply chain",
+        "Create immediate mitigation actions for critical vulnerabilities (linking to B105)",
+        "Begin recording supplier locations and distances for local sourcing measurement"
+      ],
+      "responsible": "Cafe Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Supply Chain Risk Register with quarterly review cycle",
+        "Increase local sourcing where quality and cost allow",
+        "Calculate and track the local sourcing percentage",
+        "Develop disruption response protocols for 1-day, 3-day, and 1-week scenarios",
+        "Build strategic buffer stock for non-perishable critical items",
+        "Create a supply chain resilience budget for buffer stock and diversification",
+        "Integrate supply chain resilience into the backup supplier contingency (B105)"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Achieve at least one supply chain certification or documented ethical commitment",
+        "Publish an annual Sourcing Report for customers and stakeholders",
+        "Explore or create a local cafe purchasing cooperative",
+        "Attend supplier open days and farm visits for relationship and content building",
+        "Review the full supply chain strategy annually with stress-test scenarios"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Supply Chain Map (visual document)",
+    "Ethical Sourcing Statement",
+    "Supply Chain Risk Register",
+    "Disruption Response Protocols by category",
+    "Annual Sourcing Report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T110-01",
+        "tool_name": "Supply Chain Map Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Visual document mapping all suppliers, their locations, what they provide, delivery routes, and identified concentration risks. Used to reveal vulnerabilities at a glance."
+      },
+      {
+        "tool_id": "T110-02",
+        "tool_name": "Supply Chain Risk Register",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Register listing each supply chain risk with likelihood rating, impact assessment, current mitigation measures, and owner. Reviewed quarterly."
+      },
+      {
+        "tool_id": "T110-03",
+        "tool_name": "Disruption Response Protocol Cards",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Laminated protocol cards for each critical supply category defining actions for 1-day, 3-day, and 1-week disruption scenarios: emergency sourcing, menu adjustments, and customer communication."
+      },
+      {
+        "tool_id": "T110-04",
+        "tool_name": "Annual Sourcing Report Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Template for the cafe's annual sourcing report: key supplier profiles, origin information, ethical certifications, sustainability initiatives, and progress against sourcing goals."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Supply chain mapping is done once and never updated, becoming outdated as suppliers change",
+    "Ethical sourcing claims are made without verification, creating reputational risk if challenged",
+    "Buffer stock for non-perishables is built up but not rotated, leading to quality degradation or expiry",
+    "Resilience planning focuses on dramatic scenarios (pandemics, wars) while ignoring common everyday risks (lorry breakdowns, staff illness at supplier)"
+  ],
+  "kpis": [
+    "No critical supply categories dependent on a single source without backup",
+    "Local sourcing percentage tracked and targeted at minimum 30% of spend within 50 miles",
+    "Supply chain disruptions resolved within 24 hours without customer-facing impact 90% of the time",
+    "Ethical sourcing claims verified and documented for 100% of marketed provenance"
+  ],
+  "dependencies": ["B104", "B108", "B109"],
+  "constraints": [
+    "Local sourcing is not always possible or financially viable for all categories — be realistic about trade-offs",
+    "Ethical sourcing certifications have associated costs (licence fees, audit costs) that may not be justified for very small cafes",
+    "Buffer stock ties up working capital and requires storage space — balance resilience with financial efficiency"
+  ],
+  "time_load": {
+    "L1": "3 hours (supply chain mapping, ethical assessment, vulnerability identification)",
+    "L2": "5 hours (risk register, response protocols, buffer stock planning, local sourcing research)",
+    "L3": "4 hours/year (annual review, sourcing report, certification, stress testing)"
+  },
+  "review_protocol": "Monthly buffer stock check by manager. Quarterly supply chain risk register review. Bi-annual supply chain resilience assessment. Annual full strategy review with sourcing report publication.",
+  "meta": {
+    "summary_for_humans": "This capstone block builds a resilient, ethical, and sustainable food supply chain through mapping, risk assessment, local sourcing, buffer stocking, and disruption protocols. It brings together the work from B104-B109 into a unified strategy that can withstand supply shocks while supporting the cafe's values.",
+    "implementation_risks": [
+      "Supply chain mapping can feel overwhelming — start simple with a single-page visual and build detail over time",
+      "Ethical sourcing commitments must be genuine — customers and media quickly identify greenwashing",
+      "Resilience measures (buffer stock, multiple suppliers) increase costs — quantify the insurance value against disruption costs"
+    ],
+    "notes_for_engine": "This is a capstone block — activate after B104, B108, and B109 are operational. Flag as high-value if signals indicate supply chain vulnerabilities, ethical sourcing gaps, or recent disruption incidents.",
+    "tags": ["supply_chain", "resilience", "sustainability", "ethical_sourcing", "risk_management", "local_sourcing", "food_safety", "capstone"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

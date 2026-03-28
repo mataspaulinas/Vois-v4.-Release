@@ -1,0 +1,80 @@
+{
+  "identification": {
+    "tool_id": "T005-03",
+    "tool_name": "Supplier Allergen Evidence Register",
+    "block_id": "B005"
+  },
+  "tool_design": {
+    "format": "tracker",
+    "role_in_intervention": "Tracks whether every bought-in product has current allergen evidence and shows which supplier records need chasing before safe sale.",
+    "adaptation_variables": [
+      "supplier_count",
+      "bought_in_sku_count",
+      "review_frequency",
+      "centralised_vs_site_level_buying"
+    ],
+    "usage_moment": "Supplier onboarding, product substitution, weekly evidence review, and quarterly audit prep",
+    "expected_output": "Current supplier evidence tracker showing verified, pending, overdue, and blocked products",
+    "linked_blocks": [
+      "B005",
+      "B006",
+      "B008"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The register becomes a filing list instead of an active chase-and-status tracker.",
+        "what_can_go_wrong": "Missing evidence stays hidden until a complaint, audit, or product change exposes it.",
+        "early_signals": [
+          "Products are listed with blank review dates",
+          "Managers cannot tell which items are pending versus verified"
+        ],
+        "prevention": [
+          "Use explicit status values: Verified, Pending, Overdue, Blocked",
+          "Review the register weekly against current stock"
+        ],
+        "mitigation": [
+          "Prioritise high-risk or top-selling bought-in items first",
+          "Block sale to allergy-sensitive customers until evidence is current"
+        ],
+        "if_occurs_next_signals": [
+          "supplier_evidence_backlog"
+        ],
+        "possible_successor_blocks": [
+          "B008"
+        ]
+      },
+      {
+        "warning": "Teams assume a new delivery matches the old declaration without verifying product code or revision.",
+        "what_can_go_wrong": "A supplier reformulation enters service under the old allergen call.",
+        "early_signals": [
+          "Packaging differs from prior deliveries but the register is unchanged",
+          "Alternative product codes appear on invoices with no review record"
+        ],
+        "prevention": [
+          "Match supplier evidence to exact product code and pack size where possible",
+          "Log every substitute or reformulation through the change gate"
+        ],
+        "mitigation": [
+          "Quarantine the product until evidence is checked",
+          "Update linked recipe sheets and the matrix from the new declaration"
+        ],
+        "if_occurs_next_signals": [
+          "reformulation_without_review"
+        ],
+        "possible_successor_blocks": [
+          "B006",
+          "B008"
+        ]
+      }
+    ]
+  },
+  "content": "# Supplier Allergen Evidence Register\n\n**Tool ID:** T005-03  \n**Block:** B005 (Allergen Identification & Labelling)  \n**Format:** Tracker  \n**Primary Role:** Manager  \n**Use Moment:** Supplier onboarding, weekly evidence review, and change control  \n**Output:** Live tracker of bought-in product allergen evidence status\n\n---\n\n## What This Tool Does\n\nThis register tells you which bought-in products are backed by current allergen evidence and which ones are not. It should make weak spots visible before they reach customers.\n\nStatus key:\n- `Verified` = current declaration held and checked\n- `Pending` = requested, awaiting supplier response\n- `Overdue` = request not resolved by review date\n- `Blocked` = do not rely on this product for allergen-safe sale until resolved\n\n---\n\n## Supplier Summary\n\n| Supplier | Contact | Product Types Supplied | Last Evidence Review | Overall Status | Owner |\n|---|---|---|---|---|---|\n| | | | | Verified / Pending / Overdue / Blocked | |\n| | | | | Verified / Pending / Overdue / Blocked | |\n| | | | | Verified / Pending / Overdue / Blocked | |\n| | | | | Verified / Pending / Overdue / Blocked | |\n\n---\n\n## Product Evidence Register\n\n| Product | Supplier | Product Code / Pack | Current Spec Held? | Evidence Date | Next Review | Status | Linked Menu Items | Notes |\n|---|---|---|---|---|---|---|---|---|\n| | | | Yes / No | | | Verified / Pending / Overdue / Blocked | | |\n| | | | Yes / No | | | Verified / Pending / Overdue / Blocked | | |\n| | | | Yes / No | | | Verified / Pending / Overdue / Blocked | | |\n| | | | Yes / No | | | Verified / Pending / Overdue / Blocked | | |\n| | | | Yes / No | | | Verified / Pending / Overdue / Blocked | | |\n| | | | Yes / No | | | Verified / Pending / Overdue / Blocked | | |\n\n---\n\n## Evidence Chase Log\n\n| Date | Supplier / Product | Missing or Unclear Information | Action Taken | Next Follow-Up | Escalation Needed? |\n|---|---|---|---|---|---|\n| | | | | | Yes / No |\n| | | | | | Yes / No |\n| | | | | | Yes / No |\n| | | | | | Yes / No |\n\n---\n\n## Weekly Review Checks\n\n<input type=\"checkbox\" disabled /> Every bought-in product currently in use appears in the register  \n<input type=\"checkbox\" disabled /> Any substitute or emergency purchase is logged  \n<input type=\"checkbox\" disabled /> Overdue evidence has an owner and chase date  \n<input type=\"checkbox\" disabled /> Blocked items are not presented as verified in the matrix  \n<input type=\"checkbox\" disabled /> Linked menu items are updated if a declaration changes\n\n---\n\n## Common Failure Patterns\n\n### 1. Filing the PDF but never updating the register\nThe file is not enough. The register is what makes the gap visible during review.\n\n### 2. Treating similar products as identical\nTwo chocolate syrups from different brands can have different allergen declarations. Track the exact product.\n\n### 3. Letting an overdue item stay in service without any flag\nIf evidence is overdue, the matrix and customer-facing pack must reflect that uncertainty or the product must be blocked.\n",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T005-03_supplier_allergen_evidence_register.md",
+    "migration_method": "manual_enrichment"
+  }
+}

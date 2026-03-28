@@ -1,0 +1,157 @@
+{
+  "block_id": "B097",
+  "name": "Stock Management Excellence",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Elevates stock management from a reactive chore to a strategic capability by integrating par levels (B095), mid-service checks (B096), waste tracking, demand forecasting, and supplier coordination into a unified system. This is the capstone block that transforms stock management from 'ordering when we run out' to 'never running out and never over-ordering'.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Integrate par-level management and mid-service checks into a single cohesive stock management framework",
+      "Implement waste tracking that identifies the root causes of stock loss (over-ordering, spoilage, portioning, theft)",
+      "Build demand forecasting capability using historical sales data, day-of-week patterns, and seasonal trends",
+      "Establish a continuous improvement cycle where stock management performance is measured, reviewed, and optimised monthly",
+      "Create a stock management culture where every team member understands the financial impact of waste and stockouts"
+    ],
+    "secondary_objectives": [
+      "Reduce total stock holding value by 15-25% without increasing stockout risk",
+      "Achieve food cost percentage targets consistently (25-35% for food, 20-28% for coffee)",
+      "Position the cafe to negotiate better supplier terms through accurate, predictable ordering patterns"
+    ]
+  },
+  "why_this_matters": "Stock management is where operational discipline and financial performance intersect most visibly. A UK cafe spending £3,000 per week on supplies with a 5% waste rate is losing £150 weekly — £7,800 annually — to poor stock management alone. That figure does not include the hidden costs of stockouts (lost sales, customer churn) or over-ordering (tied-up capital, storage space, rushed end-of-day discounting). Most independent cafe owners know they waste too much but cannot quantify it or identify the root causes. Is the waste coming from over-ordering milk that expires? From portioning sandwiches too generously? From pastries that do not sell on quiet days? Without a systematic approach, waste becomes an accepted cost of doing business rather than a solvable problem. Stock Management Excellence brings together par levels, mid-service checks, waste logs, and demand data into a single system that answers these questions. It moves the cafe from reactive ('we ran out of oat milk again') to predictive ('we will need 20% more oat milk next week because of the school holidays') to strategic ('we can reduce our milk order by 10 litres per week by switching to a 3-day delivery cycle'). For cafes approaching multi-site expansion or seeking investment, demonstrating disciplined stock management is a credibility signal that sophisticated operators and investors look for immediately.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). This block assumes B095 (Par-Level Stock Management) and B096 (Mid-Service Stock Check) are already operational. Week 1: Introduce a Daily Waste Log — a simple sheet where staff record every item discarded during the day, including the reason (expired, damaged, over-produced, dropped, returned by customer). Place the waste log next to the waste bin so recording happens at the point of disposal. Categorise waste into three types: Avoidable (over-production, poor rotation), Unavoidable (coffee grounds, vegetable trimmings), and Unknown (the concerning category that needs investigation). At the end of each day, the closing team totals the waste log. Week 2: The manager reviews one week of waste logs and identifies the top 3 waste items by value. For each, determine the root cause: if croissants are consistently wasted, is the par level too high or is the cafe ordering the same quantity regardless of day of the week? If milk is being dumped, is it a rotation issue or an over-ordering issue? Create a simple action plan for each of the top 3 waste items.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Build a Stock Management Dashboard — a weekly spreadsheet or digital tool that brings together data from par levels, mid-service checks, waste logs, and ordering records. Track three core metrics weekly: Waste Percentage (waste cost divided by total stock cost), Stockout Incidents (number of times items were unavailable during service), and Order Accuracy (how closely actual orders match what was actually needed). Begin building demand forecasting by day of the week: record daily sales of key items (coffees by type, food items, pastries) and after 4 weeks, calculate the average and standard deviation for each day. Use this data to adjust par levels and ordering with day-specific quantities. Implement a weekly stock management review meeting (15 minutes) where the manager reviews dashboard data, discusses waste trends, and agrees actions. Introduce team waste awareness training — show staff the financial impact of waste using real numbers from the cafe ('last month we threw away £600 of food — that's more than one of your monthly wages').",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Stock management should now be data-driven and proactive. Implement a monthly Stock Management Scorecard covering waste percentage, stockout rate, order accuracy, and cost trends. Set targets: food waste below 3% of food cost, zero critical stockouts, order accuracy above 90%. Use 12 weeks of demand data to build simple forecasting models that predict next week's needs based on day-of-week patterns, weather, local events, and school term dates. Explore supplier consolidation — can fewer, better suppliers improve quality, reduce delivery frequency, and lower costs? Introduce quarterly stock management reviews with the owner, linking stock performance directly to GP% and profitability. Consider investing in a basic inventory management system (e.g., MarketMan, Lightspeed) if the cafe's scale justifies the cost. Share stock management excellence as a team achievement — display the waste reduction journey visually so staff see their collective impact."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Introduce a Daily Waste Log at the point of waste disposal",
+        "Categorise waste as Avoidable, Unavoidable, or Unknown",
+        "Train all staff to record waste at the moment of disposal",
+        "Manager reviews waste logs weekly and identifies top 3 waste items by value",
+        "Determine root cause for each major waste item and create action plans",
+        "Ensure B095 (Par Levels) and B096 (Mid-Service Checks) are operational",
+        "Set up a simple stock performance tracking sheet"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build a Stock Management Dashboard integrating waste, stockout, and ordering data",
+        "Track Waste %, Stockout Incidents, and Order Accuracy weekly",
+        "Record daily sales by item for 4+ weeks to build day-of-week demand profiles",
+        "Adjust par levels and ordering with day-specific quantities",
+        "Implement a weekly 15-minute stock management review meeting",
+        "Deliver team waste awareness training using real cafe financial data",
+        "Create a waste reduction action plan targeting the top 5 waste categories"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Implement a monthly Stock Management Scorecard with targets",
+        "Build simple demand forecasting models using 12+ weeks of data",
+        "Explore supplier consolidation for improved terms and delivery efficiency",
+        "Conduct quarterly stock management reviews linking to GP% and profitability",
+        "Display waste reduction journey visually for team motivation"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Daily Waste Log (printable template)",
+    "Stock Management Dashboard (weekly spreadsheet)",
+    "Demand Forecasting Worksheet by day of week",
+    "Monthly Stock Management Scorecard",
+    "Waste Awareness Training materials"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T097-01",
+        "tool_name": "Daily Waste Log",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "All Staff",
+        "description": "Simple recording sheet placed next to the waste bin for staff to log every discarded item with quantity, estimated value, and reason (expired, over-produced, damaged, returned). Totalled daily by the closing team."
+      },
+      {
+        "tool_id": "T097-02",
+        "tool_name": "Stock Management Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Weekly spreadsheet integrating data from par levels, mid-service checks, waste logs, and ordering records. Tracks Waste %, Stockout Incidents, and Order Accuracy with trend analysis."
+      },
+      {
+        "tool_id": "T097-03",
+        "tool_name": "Demand Forecasting Worksheet",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Day-of-week demand profiles for key items built from 4-12 weeks of sales data, enabling predictive ordering that adjusts quantities based on expected trading patterns, weather, and events."
+      },
+      {
+        "tool_id": "T097-04",
+        "tool_name": "Monthly Stock Management Scorecard",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly performance report covering waste percentage against target, stockout frequency, order accuracy, cost trends, and GP% impact. Used in management review meetings and quarterly business reviews."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Waste log is not completed consistently, making waste data unreliable and root cause analysis impossible",
+    "Stock management is treated as the manager's problem rather than a team responsibility, limiting improvement potential",
+    "Dashboard data is collected but never reviewed or acted upon, creating a system that consumes time without delivering value",
+    "Demand forecasting relies on insufficient data or ignores external factors (weather, events, school holidays)"
+  ],
+  "kpis": [
+    "Food waste percentage below 3% of total food cost",
+    "Zero critical stockouts (top 10 items) per week",
+    "Order accuracy above 90% (ordered quantity within 10% of actual need)",
+    "GP% improvement of at least 2 percentage points within 12 weeks of implementation"
+  ],
+  "dependencies": ["B095", "B096"],
+  "constraints": [
+    "Requires B095 (Par Levels) and B096 (Mid-Service Checks) to be operational before this block can deliver full value",
+    "Demand forecasting requires a minimum of 4 weeks of sales data before producing reliable predictions",
+    "Waste tracking must be honest and complete — a culture of blame will cause staff to hide waste rather than record it"
+  ],
+  "time_load": {
+    "L1": "2 hours (waste log setup, staff training, initial review)",
+    "L2": "4 hours (dashboard build, demand profiling, review meeting setup)",
+    "L3": "2 hours/month (scorecard review, forecasting updates, supplier analysis)"
+  },
+  "review_protocol": "Daily waste log review by closing team. Weekly stock management dashboard review by manager. Monthly Stock Management Scorecard review in management meeting. Quarterly comprehensive review linking stock performance to financial results.",
+  "meta": {
+    "summary_for_humans": "This capstone block brings together par levels, mid-service checks, waste tracking, and demand forecasting into a unified stock management system. It transforms stock management from reactive ordering into a strategic capability that directly improves GP% and reduces waste.",
+    "implementation_risks": [
+      "Attempting to implement this block before B095 and B096 are stable will overwhelm the team with too many new processes simultaneously",
+      "Waste logging requires a blame-free culture — if staff fear punishment for recording waste, they will hide it instead",
+      "Small cafes may find the full dashboard and forecasting system disproportionate to their scale — scale the tools to fit the operation"
+    ],
+    "notes_for_engine": "This is a capstone block — only activate once B095 and B096 are showing stable performance. Flag as high-value if signals indicate high waste percentages, poor GP%, or inconsistent ordering patterns.",
+    "tags": ["operations", "stock_excellence", "waste_reduction", "demand_forecasting", "dashboard", "GP_improvement", "capstone"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

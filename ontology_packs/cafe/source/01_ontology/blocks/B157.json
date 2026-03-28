@@ -1,0 +1,165 @@
+{
+  "block_id": "B157",
+  "name": "Technology Roadmap",
+  "version": "v1.0",
+  "domain": "D10_technology_systems",
+  "module": "M10: Digital Tools & Customer Data",
+  "state": "enriched",
+  "purpose": "Creates a strategic technology investment plan that aligns technology spending with business priorities, prevents ad-hoc purchases that create integration nightmares, and ensures every technology decision serves a clear operational or commercial objective. This block transforms technology from an expense to be minimised into an investment to be optimised.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Audit the cafe's current technology stack to identify what is in use, what is underutilised, and what is missing",
+      "Create a prioritised 12-month technology investment plan aligned with business objectives and budget constraints",
+      "Define integration requirements so new technology purchases work with existing systems rather than creating silos",
+      "Establish a technology evaluation framework so purchases are made on evidence and fit rather than sales pitches",
+      "Build internal capability to manage and troubleshoot the technology stack without constant external support"
+    ],
+    "secondary_objectives": [
+      "Reduce technology-related operational friction through better system integration",
+      "Identify technology solutions that generate measurable return on investment within 12 months",
+      "Avoid vendor lock-in by understanding data portability and contract terms before committing",
+      "Future-proof technology decisions by considering scalability and emerging cafe technology trends"
+    ]
+  },
+  "why_this_matters": "Independent cafes face a paradox with technology. They cannot afford to ignore it because competitors, customer expectations, and regulatory requirements all demand digital capability. But they also cannot afford to waste money on technology that does not deliver value. The typical technology failure in an independent cafe is not buying the wrong thing; it is buying the right thing at the wrong time, without integration, or without the knowledge to use it. A cafe that buys an inventory management system before its POS is properly configured creates more work, not less. A cafe that subscribes to five different platforms for ordering, loyalty, social media, email marketing, and scheduling ends up spending 300-500 pounds per month on subscriptions that do not talk to each other. A technology roadmap prevents these mistakes by forcing a simple discipline: before buying any technology, answer three questions. What business problem does this solve? How does it integrate with what we already have? What will it cost over 3 years including subscriptions, training, and maintenance? Most technology vendors for the hospitality sector are excellent at selling features and terrible at explaining total cost of ownership. A cafe that evaluates a 50 pound per month platform as costing 600 pounds per year is underestimating the true cost, which includes setup time, staff training, ongoing administration, and the opportunity cost of learning a system that may be replaced in 18 months.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create a Technology Audit by listing every piece of technology currently in use across the business. Categories include: POS system, payment processing, accounting software, staff scheduling, inventory or stock management, online ordering, website, social media tools, email marketing, customer loyalty, Wi-Fi and networking, music licensing and streaming, CCTV, booking or reservation system, and any other subscriptions. For each item, record: product name, monthly cost, contract end date, what it is used for, how well it works (score 1-5), and whether it integrates with other systems. Total the monthly technology spend to establish a baseline. Week 2: Identify the three biggest technology pain points in the business. Common examples: manual stock counting because there is no inventory system, re-keying sales data into accounting software, no visibility of staff costs against revenue, inability to contact customers because there is no email list, or social media managed from a personal phone with no scheduling tool. Rank these pain points by business impact (how much time, money, or opportunity they cost) and complexity to resolve.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a 12-Month Technology Roadmap document. Structure it in quarterly priorities: Q1 focuses on fixing the highest-impact pain point, Q2 on the second priority, Q3 on integration and optimisation, Q4 on review and planning for the following year. For each planned technology investment, document: the business problem it solves, the selected solution, total cost of ownership (setup plus 36 months of subscription, training, and maintenance), integration requirements, success metrics (how you will know it is working), and the responsible person for implementation. Apply the Technology Evaluation Framework to any new purchase decision. This framework asks: Does it solve a problem we have today (not a hypothetical future problem)? Does it integrate with our existing POS and accounting systems? What is the total 3-year cost including all hidden fees? Can we trial it before committing? What happens to our data if we leave? What training do staff need and who will provide it? Establish a monthly technology budget that includes all subscriptions, and review it quarterly to cancel anything that is not delivering value.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Conduct a 6-monthly technology review: reassess the roadmap against actual business performance, evaluate whether implemented solutions are delivering their promised ROI, and adjust priorities based on changing business needs. Stay informed about emerging cafe technology through industry events, trade publications, and peer networking. Build a relationship with one or two trusted technology advisors who understand hospitality rather than relying solely on vendor sales teams. Consider appointing a Technology Champion within the team: a staff member who has aptitude and interest in technology and can serve as the first point of contact for troubleshooting and training. Create a technology succession plan: if the owner or manager who configured all the systems left tomorrow, could someone else access, manage, and maintain everything? Document all login credentials, admin access, and configuration settings securely."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Conduct a full Technology Audit listing every system, cost, contract date, and effectiveness score",
+        "Calculate total monthly and annual technology spend across all subscriptions and services",
+        "Identify and rank the top 3 technology pain points by business impact",
+        "Review contract end dates and identify any upcoming renewal decisions",
+        "Cancel or downgrade any subscriptions providing no measurable value",
+        "Document all technology login credentials and admin access in a secure location"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a 12-Month Technology Roadmap with quarterly priorities",
+        "Develop a Technology Evaluation Framework for all future purchase decisions",
+        "Establish a monthly technology budget with quarterly review cycle",
+        "Address the highest-priority technology pain point with a selected solution",
+        "Document integration requirements between existing and new systems",
+        "Define success metrics for each technology investment"
+      ],
+      "responsible": "Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct 6-monthly technology reviews assessing ROI and adjusting roadmap",
+        "Build relationships with trusted technology advisors in the hospitality sector",
+        "Appoint a Technology Champion from the team for day-to-day troubleshooting",
+        "Create a technology succession plan with documented access and configurations",
+        "Stay informed about emerging cafe technology through industry channels"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Technology Audit Report (current stack, costs, effectiveness scores)",
+    "12-Month Technology Roadmap with quarterly priorities",
+    "Technology Evaluation Framework (decision criteria for new purchases)",
+    "Technology Budget and Subscription Tracker",
+    "Technology Succession Plan (credentials, access, configurations)"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T157-01",
+        "tool_name": "Technology Audit Template",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Spreadsheet template for cataloguing every technology system in use: product name, category, monthly cost, contract end date, integration status, effectiveness score (1-5), and notes. Provides a complete view of the current technology stack and spend."
+      },
+      {
+        "tool_id": "T157-02",
+        "tool_name": "Technology Evaluation Framework",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Structured decision framework for evaluating any new technology purchase. Covers: business problem definition, integration requirements, total 3-year cost of ownership, trial availability, data portability, training needs, and ROI projection."
+      },
+      {
+        "tool_id": "T157-03",
+        "tool_name": "12-Month Technology Roadmap Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Quarterly planning document specifying technology priorities, selected solutions, implementation timelines, budget allocation, responsible owners, and success metrics for each planned investment."
+      },
+      {
+        "tool_id": "T157-04",
+        "tool_name": "Subscription and Licence Tracker",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Monthly tracker of all technology subscriptions with renewal dates, costs, and a flag for contracts approaching renewal. Prevents unexpected charges and enables proactive negotiation or cancellation."
+      },
+      {
+        "tool_id": "T157-05",
+        "tool_name": "Technology Succession Plan Document",
+        "level": "L3",
+        "format": "SOP",
+        "owner_role": "Owner",
+        "description": "Secure document listing all technology systems, login credentials, admin access details, configuration notes, and vendor contact information. Ensures business continuity if the primary technology manager is unavailable."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Technology purchases driven by vendor sales pitches rather than genuine business needs, resulting in expensive underutilised subscriptions",
+    "No integration strategy so each new system creates a data silo, increasing manual effort rather than reducing it",
+    "Technology roadmap is created but never reviewed, becoming outdated within 3 months as priorities shift",
+    "All technology knowledge resides with one person, creating a critical single point of failure"
+  ],
+  "kpis": [
+    "100% of technology subscriptions catalogued with costs and renewal dates",
+    "Technology spend as a percentage of revenue maintained within planned budget (typically 2-4%)",
+    "All new technology purchases evaluated against the Technology Evaluation Framework before commitment",
+    "Technology succession plan documented and updated every 6 months"
+  ],
+  "dependencies": ["B155", "B156"],
+  "constraints": [
+    "Technology investment is constrained by the cafe's cash flow and cannot exceed sustainable monthly commitments",
+    "Integration possibilities are limited by the POS system's API capabilities and supported partner ecosystem",
+    "Staff technology literacy varies significantly and may limit the complexity of solutions that can be adopted",
+    "Rural or poorly connected locations may face bandwidth limitations that constrain cloud-based technology options"
+  ],
+  "time_load": {
+    "L1": "4 hours (technology audit, cost analysis, pain point identification)",
+    "L2": "8 hours (roadmap creation, evaluation framework, budget setup)",
+    "L3": "4 hours/6 months (technology review, roadmap updates, industry research)"
+  },
+  "review_protocol": "Subscription tracker reviewed monthly. Technology roadmap reviewed quarterly against business performance. Technology Evaluation Framework applied before every new purchase decision. Full technology audit repeated annually. Succession plan updated every 6 months or whenever systems change.",
+  "meta": {
+    "summary_for_humans": "This block creates a strategic approach to technology investment, replacing ad-hoc purchases with a planned roadmap that aligns spending with business priorities. It includes a technology audit, evaluation framework, subscription tracker, and succession plan.",
+    "implementation_risks": [
+      "Owner may lack confidence in evaluating technology options and default to vendor recommendations",
+      "Sunk cost fallacy may prevent cancelling underperforming subscriptions that were expensive to implement",
+      "Technology landscape changes quickly so the roadmap must be treated as a living document, not a fixed plan"
+    ],
+    "notes_for_engine": "Activate when signals indicate technology sprawl, high subscription costs relative to value, poor system integration, or ad-hoc technology purchases. This block provides the strategic framework that B155 and B156 deliver tactically.",
+    "tags": ["technology", "roadmap", "strategy", "investment", "integration", "subscriptions", "planning", "evaluation"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

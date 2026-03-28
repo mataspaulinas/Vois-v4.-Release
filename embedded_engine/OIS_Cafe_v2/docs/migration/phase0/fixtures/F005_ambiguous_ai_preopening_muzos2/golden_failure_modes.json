@@ -1,0 +1,548 @@
+[
+  {
+    "failure_mode_id": "FM007",
+    "score": 1.0,
+    "domain_id": "D01",
+    "module_id": "",
+    "signal_ids": [
+      "S007",
+      "S008",
+      "S002"
+    ],
+    "title": "Food safety management system (HACCP) failure",
+    "severity": "high",
+    "description": "Food safety management system HACCP failure"
+  },
+  {
+    "failure_mode_id": "FM010",
+    "score": 1.0,
+    "domain_id": "D01",
+    "module_id": "",
+    "signal_ids": [
+      "S005",
+      "S018",
+      "S008"
+    ],
+    "title": "EHO readiness and audit compliance failure",
+    "severity": "high",
+    "description": "EHO readiness and audit compliance failure"
+  },
+  {
+    "failure_mode_id": "FM009",
+    "score": 1.0,
+    "domain_id": "D01",
+    "module_id": "",
+    "signal_ids": [
+      "S007",
+      "S065",
+      "S018"
+    ],
+    "title": "Food safety training and certification failure",
+    "severity": "high",
+    "description": "Food safety training and certification failure"
+  },
+  {
+    "failure_mode_id": "FM025",
+    "score": 1.0,
+    "domain_id": "D03",
+    "module_id": "",
+    "signal_ids": [
+      "S045",
+      "S051"
+    ],
+    "title": "Recipe standardisation and portion control failure",
+    "severity": "medium",
+    "description": "Recipe standardisation and portion control failure"
+  },
+  {
+    "failure_mode_id": "FM053",
+    "score": 1.0,
+    "domain_id": "D06",
+    "module_id": "",
+    "signal_ids": [
+      "S096",
+      "S045"
+    ],
+    "title": "Food cost percentage control failure",
+    "severity": "high",
+    "description": "Food cost percentage control failure"
+  },
+  {
+    "failure_mode_id": "FM030",
+    "score": 1.0,
+    "domain_id": "D04",
+    "module_id": "",
+    "signal_ids": [
+      "S054",
+      "S065"
+    ],
+    "title": "Onboarding and induction failure",
+    "severity": "high",
+    "description": "Onboarding and induction failure"
+  },
+  {
+    "failure_mode_id": "FM029",
+    "score": 1.0,
+    "domain_id": "D04",
+    "module_id": "",
+    "signal_ids": [
+      "S194",
+      "S054",
+      "S187"
+    ],
+    "title": "Staff turnover and retention failure",
+    "severity": "high",
+    "description": "Staff turnover and retention failure"
+  },
+  {
+    "failure_mode_id": "FM034",
+    "score": 1.0,
+    "domain_id": "D04",
+    "module_id": "",
+    "signal_ids": [
+      "S187",
+      "S058",
+      "S061"
+    ],
+    "title": "Key person dependency and cover failure",
+    "severity": "high",
+    "description": "Key person dependency and cover failure"
+  },
+  {
+    "failure_mode_id": "FM037",
+    "score": 1.0,
+    "domain_id": "D04",
+    "module_id": "",
+    "signal_ids": [
+      "S058",
+      "S061"
+    ],
+    "title": "Owner overwork and delegation failure",
+    "severity": "high",
+    "description": "Owner overwork and delegation failure"
+  },
+  {
+    "failure_mode_id": "FM062",
+    "score": 1.0,
+    "domain_id": "D07",
+    "module_id": "",
+    "signal_ids": [
+      "S145",
+      "S102",
+      "S106",
+      "S105"
+    ],
+    "title": "Financial review and reporting failure",
+    "severity": "high",
+    "description": "Financial review and reporting failure"
+  },
+  {
+    "failure_mode_id": "FM065",
+    "score": 1.0,
+    "domain_id": "D07",
+    "module_id": "",
+    "signal_ids": [
+      "S102",
+      "S106",
+      "S105",
+      "S154"
+    ],
+    "title": "Cash flow and budgeting failure",
+    "severity": "high",
+    "description": "Cash flow and budgeting failure"
+  },
+  {
+    "failure_mode_id": "FM070",
+    "score": 1.0,
+    "domain_id": "D08",
+    "module_id": "",
+    "signal_ids": [
+      "S116",
+      "S120",
+      "S124",
+      "S128"
+    ],
+    "title": "Social media and visual presence failure",
+    "severity": "medium",
+    "description": "Social media and visual presence failure"
+  },
+  {
+    "failure_mode_id": "FM073",
+    "score": 1.0,
+    "domain_id": "D08",
+    "module_id": "",
+    "signal_ids": [
+      "S117",
+      "S128",
+      "S125",
+      "S116",
+      "S126",
+      "S120",
+      "S149"
+    ],
+    "title": "Customer acquisition strategy failure",
+    "severity": "medium",
+    "description": "Customer acquisition strategy failure"
+  },
+  {
+    "failure_mode_id": "FM071",
+    "score": 1.0,
+    "domain_id": "D08",
+    "module_id": "",
+    "signal_ids": [
+      "S152",
+      "S117"
+    ],
+    "title": "Google Business and local search failure",
+    "severity": "medium",
+    "description": "Google Business and local search failure"
+  },
+  {
+    "failure_mode_id": "FM084",
+    "score": 1.0,
+    "domain_id": "D10",
+    "module_id": "",
+    "signal_ids": [
+      "S125",
+      "S149"
+    ],
+    "title": "Customer data and CRM failure",
+    "severity": "medium",
+    "description": "Customer data and CRM failure"
+  },
+  {
+    "failure_mode_id": "FM093",
+    "score": 1.0,
+    "domain_id": "D12",
+    "module_id": "",
+    "signal_ids": [
+      "S166",
+      "S167",
+      "S169"
+    ],
+    "title": "Standards consistency and culture failure",
+    "severity": "medium",
+    "description": "Standards consistency and culture failure"
+  },
+  {
+    "failure_mode_id": "FM092",
+    "score": 1.0,
+    "domain_id": "D12",
+    "module_id": "",
+    "signal_ids": [
+      "S166",
+      "S169"
+    ],
+    "title": "Values articulation and alignment failure",
+    "severity": "medium",
+    "description": "Values articulation and alignment failure"
+  },
+  {
+    "failure_mode_id": "FM101",
+    "score": 1.0,
+    "domain_id": "D04",
+    "module_id": "M16",
+    "signal_ids": [
+      "S194",
+      "S167",
+      "S193"
+    ],
+    "title": "Licensing and employment law compliance failure",
+    "severity": "high",
+    "description": "Licensing and employment law compliance failure"
+  },
+  {
+    "failure_mode_id": "FM099",
+    "score": 1.0,
+    "domain_id": "D01",
+    "module_id": "M16",
+    "signal_ids": [
+      "S195",
+      "S190"
+    ],
+    "title": "Health and safety risk assessment failure",
+    "severity": "high",
+    "description": "Health and safety risk assessment failure"
+  },
+  {
+    "failure_mode_id": "FM098",
+    "score": 1.0,
+    "domain_id": "D01",
+    "module_id": "M16",
+    "signal_ids": [
+      "S193",
+      "S191",
+      "S190"
+    ],
+    "title": "Regulatory compliance and risk management failure",
+    "severity": "high",
+    "description": "Regulatory compliance and risk management failure"
+  },
+  {
+    "failure_mode_id": "FM100",
+    "score": 1.0,
+    "domain_id": "D01",
+    "module_id": "M16",
+    "signal_ids": [
+      "S191",
+      "S195"
+    ],
+    "title": "Fire safety and emergency preparedness failure",
+    "severity": "high",
+    "description": "Fire safety and emergency preparedness failure"
+  },
+  {
+    "failure_mode_id": "FM109",
+    "score": 1.0,
+    "domain_id": "D07",
+    "module_id": "M16",
+    "signal_ids": [
+      "S212",
+      "S211"
+    ],
+    "title": "VAT and tax reporting compliance failure",
+    "severity": "high",
+    "description": "Monthly VAT declaration and electronic tax reporting obligations not met"
+  },
+  {
+    "failure_mode_id": "FM072",
+    "score": 0.93,
+    "domain_id": "D08",
+    "module_id": "",
+    "signal_ids": [
+      "S127",
+      "S124"
+    ],
+    "title": "Brand identity and consistency failure",
+    "severity": "medium",
+    "description": "Brand identity and consistency failure"
+  },
+  {
+    "failure_mode_id": "FM110",
+    "score": 0.85,
+    "domain_id": "D04",
+    "module_id": "M16",
+    "signal_ids": [
+      "S213"
+    ],
+    "title": "Social insurance administration failure",
+    "severity": "high",
+    "description": "Social insurance notifications contributions and employee registrations not filed correctly or on time"
+  },
+  {
+    "failure_mode_id": "FM111",
+    "score": 0.85,
+    "domain_id": "D01",
+    "module_id": "M16",
+    "signal_ids": [
+      "S214"
+    ],
+    "title": "Food business approval and licensing failure",
+    "severity": "high",
+    "description": "Food business operator approval certificate lapsed or licensing conditions not maintained"
+  },
+  {
+    "failure_mode_id": "FM118",
+    "score": 0.85,
+    "domain_id": "D01",
+    "module_id": "M16",
+    "signal_ids": [
+      "S215"
+    ],
+    "title": "Alcohol licensing compliance failure",
+    "severity": "high",
+    "description": "Alcohol licence conditions including operating hours distance rules and age verification not maintained"
+  },
+  {
+    "failure_mode_id": "FM112",
+    "score": 0.85,
+    "domain_id": "D04",
+    "module_id": "M16",
+    "signal_ids": [
+      "S216"
+    ],
+    "title": "Employment contract and labour law failure",
+    "severity": "high",
+    "description": "Employment contracts and working conditions not compliant with national labour code requirements"
+  },
+  {
+    "failure_mode_id": "FM002",
+    "score": 0.8,
+    "domain_id": "D01",
+    "module_id": "",
+    "signal_ids": [
+      "S002"
+    ],
+    "title": "Allergen management and PPDS compliance failure",
+    "severity": "high",
+    "description": "Allergen management and PPDS compliance failure"
+  },
+  {
+    "failure_mode_id": "FM005",
+    "score": 0.8,
+    "domain_id": "D01",
+    "module_id": "",
+    "signal_ids": [
+      "S005"
+    ],
+    "title": "Cleaning and sanitation programme failure",
+    "severity": "high",
+    "description": "Cleaning and sanitation programme failure"
+  },
+  {
+    "failure_mode_id": "FM032",
+    "score": 0.8,
+    "domain_id": "D04",
+    "module_id": "",
+    "signal_ids": [
+      "S056"
+    ],
+    "title": "Team communication and meeting failure",
+    "severity": "medium",
+    "description": "Team communication and meeting failure"
+  },
+  {
+    "failure_mode_id": "FM039",
+    "score": 0.8,
+    "domain_id": "D05",
+    "module_id": "",
+    "signal_ids": [
+      "S069"
+    ],
+    "title": "Opening and closing routine failure",
+    "severity": "high",
+    "description": "Opening and closing routine failure"
+  },
+  {
+    "failure_mode_id": "FM074",
+    "score": 0.8,
+    "domain_id": "D08",
+    "module_id": "",
+    "signal_ids": [
+      "S127"
+    ],
+    "title": "Community marketing and engagement failure",
+    "severity": "medium",
+    "description": "Community marketing and engagement failure"
+  },
+  {
+    "failure_mode_id": "FM083",
+    "score": 0.8,
+    "domain_id": "D10",
+    "module_id": "",
+    "signal_ids": [
+      "S145"
+    ],
+    "title": "Data reporting and analytics failure",
+    "severity": "medium",
+    "description": "Data reporting and analytics failure"
+  },
+  {
+    "failure_mode_id": "FM086",
+    "score": 0.8,
+    "domain_id": "D11",
+    "module_id": "",
+    "signal_ids": [
+      "S154"
+    ],
+    "title": "Business planning and strategy failure",
+    "severity": "medium",
+    "description": "Business planning and strategy failure"
+  },
+  {
+    "failure_mode_id": "FM114",
+    "score": 0.8,
+    "domain_id": "D09",
+    "module_id": "M09",
+    "signal_ids": [
+      "S218"
+    ],
+    "title": "Seasonal terrace and outdoor operations failure",
+    "severity": "medium",
+    "description": "Outdoor terrace season not planned with permits setup procedures and seasonal menu not developed"
+  },
+  {
+    "failure_mode_id": "FM115",
+    "score": 0.8,
+    "domain_id": "D11",
+    "module_id": "M11",
+    "signal_ids": [
+      "S219"
+    ],
+    "title": "Tourist and local customer segmentation failure",
+    "severity": "medium",
+    "description": "No differentiation between tourist and local customer segments in service pricing or marketing"
+  },
+  {
+    "failure_mode_id": "FM031",
+    "score": 0.7,
+    "domain_id": "D04",
+    "module_id": "",
+    "signal_ids": [
+      "S051"
+    ],
+    "title": "Barista skills and craft development failure",
+    "severity": "high",
+    "description": "Barista skills and craft development failure"
+  },
+  {
+    "failure_mode_id": "FM036",
+    "score": 0.7,
+    "domain_id": "D04",
+    "module_id": "",
+    "signal_ids": [
+      "S056"
+    ],
+    "title": "Team morale and wellbeing failure",
+    "severity": "high",
+    "description": "Team morale and wellbeing failure"
+  },
+  {
+    "failure_mode_id": "FM097",
+    "score": 0.7,
+    "domain_id": "D05",
+    "module_id": "M14",
+    "signal_ids": [
+      "S069"
+    ],
+    "title": "Operational discipline and daily routine failure",
+    "severity": "high",
+    "description": "Operational discipline and daily routine failure"
+  },
+  {
+    "failure_mode_id": "FM061",
+    "score": 0.7,
+    "domain_id": "D07",
+    "module_id": "",
+    "signal_ids": [
+      "S096"
+    ],
+    "title": "Pricing strategy and review failure",
+    "severity": "medium",
+    "description": "Pricing strategy and review failure"
+  },
+  {
+    "failure_mode_id": "FM069",
+    "score": 0.7,
+    "domain_id": "D08",
+    "module_id": "",
+    "signal_ids": [
+      "S126"
+    ],
+    "title": "Online review and reputation failure",
+    "severity": "high",
+    "description": "Online review and reputation failure"
+  },
+  {
+    "failure_mode_id": "FM082",
+    "score": 0.7,
+    "domain_id": "D10",
+    "module_id": "",
+    "signal_ids": [
+      "S152"
+    ],
+    "title": "Digital ordering and payment failure",
+    "severity": "medium",
+    "description": "Digital ordering and payment failure"
+  }
+]

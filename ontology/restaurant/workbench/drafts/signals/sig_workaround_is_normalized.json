@@ -1,0 +1,29 @@
+{
+  "id": "sig_workaround_is_normalized",
+  "name": "Workaround has become normal",
+  "description": "The team routinely compensates for missing tools, broken equipment, or weak systems with improvised workarounds that are now treated as normal.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: normal workarounds are hidden evidence of tool friction and unclosed learning loops",
+  "updated_at": "2026-03-14T00:41:10.253158Z",
+  "domain": "kitchen_operations",
+  "module": "workaround_management",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "staff_report",
+    "live_observation"
+  ],
+  "source_types": [
+    "audit_notes",
+    "chat"
+  ],
+  "temporal_behavior": "persistent",
+  "likely_co_signals": [
+    "sig_staff_confusion",
+    "sig_equipment_breaks_service_flow"
+  ],
+  "adapter_aliases": [
+    "temporary_fix_is_permanent",
+    "normalised_workaround"
+  ]
+}

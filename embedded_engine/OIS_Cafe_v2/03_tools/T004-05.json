@@ -1,0 +1,82 @@
+{
+  "identification": {
+    "tool_id": "T004-05",
+    "tool_name": "Staff-Facing Cold Chain Scoreboard",
+    "block_id": "B004"
+  },
+  "tool_design": {
+    "format": "dashboard",
+    "role_in_intervention": "Visible weekly scoreboard that turns dashboard data into team-facing focus.",
+    "adaptation_variables": [
+      "team_size",
+      "display_space",
+      "message_style"
+    ],
+    "usage_moment": "Weekly after the manager dashboard review",
+    "expected_output": "Updated staff board showing current cold-chain score, focus, and watch-out",
+    "linked_blocks": [
+      "B004",
+      "B001",
+      "B002",
+      "B003"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The board becomes decorative and stops reflecting the current week.",
+        "what_can_go_wrong": "Staff stop looking at it because it feels disconnected from reality.",
+        "early_signals": [
+          "The same message stays up for several weeks",
+          "The team cannot say what the current cold-chain focus is"
+        ],
+        "prevention": [
+          "Update it immediately after the weekly dashboard review",
+          "Keep it simple enough to rewrite in under five minutes"
+        ],
+        "mitigation": [
+          "Refresh it from the current workbook only",
+          "Reduce it to three live numbers and one action focus"
+        ],
+        "if_occurs_next_signals": [
+          "staff_visibility_failure"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B002",
+          "B003"
+        ]
+      },
+      {
+        "warning": "The board is used as surveillance instead of shared operating visibility.",
+        "what_can_go_wrong": "The team disengages or feels punished by the reporting layer.",
+        "early_signals": [
+          "Messages are written as blame rather than focus",
+          "The board highlights individuals instead of system issues"
+        ],
+        "prevention": [
+          "Keep the board team-facing and system-facing",
+          "Use one improvement focus rather than naming and shaming"
+        ],
+        "mitigation": [
+          "Reset the messaging tone immediately",
+          "Use the board to show wins and next actions, not personal failures"
+        ],
+        "if_occurs_next_signals": [
+          "negative_visibility_culture"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B002"
+        ]
+      }
+    ]
+  },
+  "content": "# Staff-Facing Cold Chain Scoreboard\n\n**Tool ID:** T004-05  \n**Block:** B004 (Cold Chain Excellence Dashboard)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L3  \n**Format:** Dashboard  \n**Role:** Manager / Shift Lead  \n**Time Required:** 5 minutes weekly  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this board to give the team a simple weekly picture of cold-chain control without flooding them with management detail.\n\n---\n## Weekly Board\n\n**Week of:** ____________________\n\n| Item | This Week |\n|---|---|\n| Daily check completion | __________ |\n| Delivery check completion | __________ |\n| Days since last excursion | __________ |\n| Unit to watch | __________ |\n| Team focus this week | __________ |\n\n---\n## Weekly Message\n\n**What went well:**\n__________________________________________________\n\n**What we need to tighten:**\n__________________________________________________\n\n**One thing to watch this week:**\n__________________________________________________\n\n---\n## Keep It Useful\n\n- Update it from the current workbook, not memory.\n- Keep it team-facing, not person-blaming.\n- Change it every week so it stays alive.\n- Use it in the weekly briefing for 60 seconds, then move on.\n\n---\n## Connected Resources\n\n**Built from:**\n- T004-01 - Cold Chain Dashboard Workbook\n- T004-02 - Monthly Cold Chain Management Report\n\n---\n\n*Tool Version 2.0 - a short weekly signal so the team can see the standard, not just hear about it.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T004-05_staff_facing_cold_chain_scoreboard.md",
+    "migration_method": "manual_enrichment"
+  }
+}

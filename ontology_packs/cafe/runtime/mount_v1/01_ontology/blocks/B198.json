@@ -1,0 +1,167 @@
+{
+  "block_id": "B198",
+  "name": "Cupping & Quality Benchmarking",
+  "version": "v1.0",
+  "domain": "D03_coffee_product_quality",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Establishes a regular cupping and quality benchmarking programme that ensures the cafe's coffee quality is objectively assessed, calibrated across the team, and tracked over time. This block embeds professional-grade quality control into daily operations through structured cupping sessions, espresso benchmarking, competitive tasting comparisons, and feedback loops with roasting partners.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Implement weekly cupping sessions following SCA protocol as the primary quality control mechanism",
+      "Establish espresso benchmarking routines that set and maintain target extraction parameters for each coffee",
+      "Create feedback loops with roaster partners so quality data flows both ways and drives continuous improvement",
+      "Calibrate the entire team's palate through regular triangulation tests and comparative tastings",
+      "Benchmark against competitor cafes and industry standards to understand where quality sits relative to the market"
+    ],
+    "secondary_objectives": [
+      "Build a historical quality database that reveals seasonal patterns and supplier consistency trends",
+      "Develop staff sensory confidence so they can detect and correct quality drift during service",
+      "Identify the best coffees for seasonal rotations and menu features through blind evaluation",
+      "Strengthen commercial negotiation with roasters by providing structured quality feedback"
+    ]
+  },
+  "why_this_matters": "Without systematic quality evaluation, a cafe has no way of knowing whether its coffee is genuinely good or merely familiar. The human palate adapts quickly — baristas who taste the same espresso every day lose perspective on whether it has drifted. A coffee that was bright and sweet when the bag was opened can become flat and ashy by day 10 post-roast without anyone noticing, because the change happens gradually. Regular cupping — the industry-standard method of evaluating coffee by breaking a crust of grounds in hot water and slurping from a spoon — cuts through this habituation by forcing structured, comparative evaluation. The SCA cupping protocol scores coffee across fragrance, aroma, flavour, aftertaste, acidity, body, balance, uniformity, clean cup, sweetness, and overall impression, producing a numerical score that can be tracked over time. A cafe that cups weekly has objective data on whether its coffee quality is improving, stable, or declining. It can compare new potential coffees against current offerings in blind tastings, removing bias. It can give roasters specific, professional-grade feedback rather than vague complaints. And it can benchmark against competitor cafes by purchasing and cupping their retail bags. For cafes aspiring to specialty-grade quality (SCA score 80+), cupping is not optional — it is the quality assurance programme. Even for cafes serving commercial-grade coffee, regular benchmarking catches problems before customers do. The cost of a cupping session is a few grammes of coffee and 30 minutes of time; the cost of serving substandard coffee for weeks because nobody checked is lost customers who never explain why they stopped coming.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Acquire basic cupping equipment. You need: cupping bowls (or identical ceramic mugs — 6 to 8), cupping spoons (deep-bowled soup spoons work initially), a kettle capable of hitting 93-96°C, a grinder (the cafe grinder will do), a kitchen scale, and a timer. Print the SCA cupping form — it is freely available and provides a standard scoring framework. Grind 11g of coffee per bowl to a medium-coarse setting (slightly coarser than filter). Pour 200ml of water at 93°C, wait 4 minutes, then break the crust with the spoon and evaluate fragrance, aroma, and flavour. The first session should be simple: cup the current house espresso as a brewed coffee and discuss what you taste as a team. No scores needed yet — the goal is to establish the habit and vocabulary. Week 2: Run a second session comparing the house espresso against one alternative. This could be a different roaster's offering, a different origin from the same roaster, or an older bag versus a fresh bag. Discuss differences as a team. Begin recording basic tasting notes — even informal ones — to build a quality history. Establish that this session will happen every week at a fixed time.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Formalise the cupping programme. Adopt the full SCA cupping protocol with numerical scoring. Train the team on the scoring criteria — what a 7.5 versus an 8.0 in acidity actually means in the cup. Run calibration exercises: have the whole team cup the same coffees independently, then compare scores. Variation between cuppers should narrow over time as palates calibrate. Establish an Espresso Benchmarking routine: for each new coffee, dial in the espresso and define the target recipe (dose, yield, time) and the target flavour profile. Record this as the benchmark. Every morning, the opening barista pulls a shot and tastes it against the benchmark — if it deviates, they adjust before service begins. Create a Quality Log spreadsheet tracking: coffee name, roast date, cupping score, espresso benchmark parameters, and any notes on quality changes over the bag's life. Share cupping results with the roaster monthly — this feedback loop is invaluable for both parties. Begin competitive benchmarking: purchase a bag from two or three competitor cafes each quarter and blind-cup them alongside your own coffee. Score honestly. This reveals where you stand in the local market.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Quality benchmarking should now be an ingrained part of operations, not an extra activity. Expand cupping beyond evaluation into discovery: taste coffees from origins or processes you have never served, evaluate experimental lots from roasters, and use cupping to make evidence-based purchasing decisions. Run team triangulation tests monthly — three cups, two identical, one different — to sharpen discrimination skills. These should be fun and competitive, not stressful. Establish an annual quality review meeting with the roaster where you present the year's cupping data, discuss trends, and plan the next year's coffee programme together. Publish a simplified version of your quality scores on the menu or website — customers increasingly appreciate transparency about quality evaluation. Contribute to the broader community by hosting public cuppings, inviting customers to taste alongside the team, or participating in regional cupping events. Track your historical cupping data to identify seasonal patterns — does your espresso score higher in cooler months when extraction is more stable? Does a particular origin consistently outperform? Use data to refine the menu year on year."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Acquire basic cupping equipment: bowls, spoons, kettle, scale, timer",
+        "Print SCA cupping forms and familiarise the team with the scoring categories",
+        "Run the first cupping session with the current house coffee to establish the habit",
+        "Schedule a fixed weekly cupping slot in the team rota",
+        "Cup the house coffee against one alternative to introduce comparative evaluation",
+        "Begin recording basic tasting notes after each session",
+        "Establish an espresso taste check as part of the daily opening routine"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Adopt the full SCA cupping protocol with numerical scoring for all sessions",
+        "Run team calibration exercises to align scoring across all cuppers",
+        "Create an Espresso Benchmark Card for each coffee with target recipe and flavour profile",
+        "Build a Quality Log spreadsheet tracking cupping scores, espresso parameters, and quality trends",
+        "Share cupping results monthly with the roasting partner as a structured feedback loop",
+        "Purchase competitor coffees quarterly for blind competitive benchmarking",
+        "Train the team on SCA scoring criteria and what each score point means in the cup"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Expand cupping to include discovery tastings of new origins, processes, and experimental lots",
+        "Run monthly triangulation tests to maintain and sharpen team palate discrimination",
+        "Hold an annual quality review meeting with the roaster presenting a year of cupping data",
+        "Host public cupping events inviting customers to taste alongside the team",
+        "Track multi-year quality data to identify seasonal patterns and inform purchasing",
+        "Publish simplified quality scores on the menu or website for customer transparency"
+      ],
+      "responsible": "Head Barista, Owner"
+    }
+  },
+  "deliverables": [
+    "Cupping Session Protocol and SCA scoring forms",
+    "Espresso Benchmark Card template",
+    "Quality Log spreadsheet for ongoing tracking",
+    "Competitive Benchmarking report template",
+    "Annual Roaster Quality Review agenda"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T198-01",
+        "tool_name": "Weekly Cupping Session Protocol",
+        "level": "L1",
+        "format": "SOP",
+        "owner_role": "Head Barista",
+        "description": "Step-by-step guide for running a cupping session: sample preparation (dose, grind, water temperature), timing, crust-breaking technique, evaluation sequence, and team discussion framework following SCA protocol."
+      },
+      {
+        "tool_id": "T198-02",
+        "tool_name": "Espresso Benchmark Card",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "Per-coffee reference card recording the target espresso recipe (dose, yield, time, temperature), flavour profile descriptors, and acceptable variance ranges. Used as the morning dial-in reference."
+      },
+      {
+        "tool_id": "T198-03",
+        "tool_name": "Quality Log Spreadsheet",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Head Barista",
+        "description": "Ongoing log tracking each coffee evaluated: roast date, cupping date, SCA scores by category, espresso parameters, flavour notes, and quality trajectory across the bag's lifespan."
+      },
+      {
+        "tool_id": "T198-04",
+        "tool_name": "Competitive Benchmarking Report",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Quarterly report template for blind-cupping competitor coffees alongside own offerings, recording scores, tasting notes, price comparisons, and strategic insights on market positioning."
+      },
+      {
+        "tool_id": "T198-05",
+        "tool_name": "Palate Calibration Exercise Sheet",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Head Barista",
+        "description": "Structured triangulation and threshold detection exercises for team sensory calibration, including scoring comparison forms to track inter-rater agreement and individual progression over time."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Cupping sessions become irregular and are deprioritised when the cafe is busy, losing the consistency needed for meaningful trend data",
+    "Scores are inflated out of loyalty to the current roaster, defeating the purpose of objective evaluation",
+    "Only the head barista participates in cupping, creating a single point of failure for quality control",
+    "Espresso benchmarks are set but not enforced — morning dial-in becomes a quick taste rather than a calibrated comparison"
+  ],
+  "kpis": [
+    "Weekly cupping sessions maintained with fewer than 10% cancellation rate over any quarter",
+    "Team cupping score variance (inter-rater agreement) narrowing to within 1.5 points across all categories",
+    "Espresso benchmark taste check completed every morning before service opens",
+    "Quarterly competitive benchmarking completed with documented comparison reports"
+  ],
+  "dependencies": ["B039", "B040"],
+  "constraints": [
+    "Cupping requires dedicated time (30-45 minutes) that must be rostered and protected",
+    "Sensory calibration takes months to develop — expect wide score variance initially and do not rush the process",
+    "Competitive benchmarking requires purchasing competitor products, which should be budgeted quarterly"
+  ],
+  "time_load": {
+    "L1": "2 hours (equipment sourcing, first two cupping sessions, establishing routine)",
+    "L2": "8 hours (protocol formalisation, calibration exercises, quality log setup, roaster feedback system)",
+    "L3": "3 hours/month (extended cuppings, triangulation tests, competitive benchmarking, data analysis)"
+  },
+  "review_protocol": "Weekly cupping scores reviewed immediately after each session. Monthly quality trend review by head barista and manager. Quarterly competitive benchmarking report shared with owner. Annual quality review meeting with roaster partner.",
+  "meta": {
+    "summary_for_humans": "This block embeds professional cupping and quality benchmarking into the cafe's routine. Weekly cupping sessions, espresso benchmarking, palate calibration, and competitive comparisons ensure coffee quality is objectively measured, not assumed.",
+    "implementation_risks": [
+      "Initial cupping sessions may feel awkward or pretentious — frame them as practical quality control, not ceremony",
+      "Score-based evaluation can feel judgemental — emphasise that cupping is about the coffee, not the cupper",
+      "Roaster feedback must be constructive, not adversarial — position it as a partnership for mutual improvement"
+    ],
+    "notes_for_engine": "Activate when signals indicate inconsistent cup quality, customer complaints about taste, new roaster evaluation needed, or specialty positioning ambitions. Core dependency for B197 (Coffee Education) sensory modules.",
+    "tags": ["cupping", "quality_control", "sensory", "benchmarking", "espresso", "SCA", "coffee_quality", "evaluation"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

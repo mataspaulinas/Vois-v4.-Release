@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-12-20T16:16:39.239400",
+  "assessment_type": "initial",
+  "signals": {
+    "S019": {
+      "active": true,
+      "notes": "Occasional wait times approaching threshold during Saturday morning peak",
+      "confidence": "medium",
+      "value": null
+    },
+    "S051": {
+      "active": true,
+      "notes": "Reference materials exist but are outdated — last updated 6 weeks ago",
+      "confidence": "medium",
+      "value": null
+    },
+    "S070": {
+      "active": true,
+      "notes": "Understaffing observed on one shift pattern only",
+      "confidence": "medium",
+      "value": null
+    },
+    "S080": {
+      "active": true,
+      "notes": "Table clearing occasionally delayed but within acceptable range",
+      "confidence": "low",
+      "value": null
+    },
+    "S133": {
+      "active": true,
+      "notes": "Cleaning schedule exists but adherence inconsistent",
+      "confidence": "medium",
+      "value": null
+    },
+    "S071": {
+      "active": true,
+      "notes": "Pre-shift briefings happen but content is informal and not documented",
+      "confidence": "medium",
+      "value": null
+    },
+    "S030": {
+      "active": true,
+      "notes": "Menu pricing review overdue — last checked 2 months ago",
+      "confidence": "medium",
+      "value": null
+    }
+  },
+  "venue_context": {
+    "venue_name": "Kavos Namai Kaunas",
+    "type": "independent_cafe",
+    "team_size": 6,
+    "location": "Kaunas, Laisves Aleja, Lithuania"
+  },
+  "summary": {
+    "blocks": 0,
+    "report_type": "diagnostic",
+    "plan_load": "medium"
+  }
+}

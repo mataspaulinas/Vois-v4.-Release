@@ -1,0 +1,22 @@
+{
+  "id": "tool_void_review_template",
+  "name": "Void review template",
+  "description": "Structured review template for voids and comps that captures the incident, likely cause, preventability, and the corrective action to assign.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: control loops only tighten when loss incidents are explained and owned",
+  "updated_at": "2026-03-14T00:24:43.103781Z",
+  "category": "controls",
+  "format": "review_template",
+  "usage_moment": "Use during the void and comp review huddle after avoidable loss incidents are identified.",
+  "expected_output": "A short review record with cause, preventability judgment, and named corrective action.",
+  "adaptation_variables": [
+    "loss_type",
+    "review_cadence",
+    "approval_rules",
+    "follow_up_owner"
+  ],
+  "block_ids": [
+    "blk_void_review_huddle"
+  ]
+}

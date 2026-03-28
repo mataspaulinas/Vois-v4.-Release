@@ -1,0 +1,168 @@
+{
+  "block_id": "B085",
+  "name": "Peak Staffing Model",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Creates a data-driven staffing model that matches team deployment to customer demand patterns throughout the day, ensuring the right number of people with the right skills are on the floor at the right times — particularly during peak trading periods.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Analyse transaction data and footfall patterns to identify peak, standard, and quiet trading periods",
+      "Define minimum and optimal staffing levels for each period based on covers, service standards, and safety",
+      "Build a staffing model that maps role requirements to each trading period (barista, till, floor, kitchen)",
+      "Create a rota template that reflects the staffing model, not just staff availability",
+      "Establish a process for adjusting staffing levels based on seasonal patterns, events, and weather"
+    ],
+    "secondary_objectives": [
+      "Reduce labour cost per cover during quiet periods by avoiding overstaffing",
+      "Improve service speed and customer satisfaction during peak periods by ensuring adequate coverage",
+      "Minimise the stress on staff during rushes by deploying sufficient team members"
+    ]
+  },
+  "why_this_matters": "Labour is the largest controllable cost in any cafe, typically representing 30-40% of revenue. Yet most independent cafe owners build rotas based on staff availability and gut feeling rather than data-driven demand analysis. The result is a predictable pattern: understaffed during the morning rush when customers queue out the door and walk away, overstaffed during the mid-afternoon lull when three people stand around waiting for customers, and exactly the wrong number of people on shift when an unexpected event creates demand that nobody anticipated. This misalignment costs money in both directions. Understaffing during peak periods means lost sales — a customer who sees a ten-minute queue and leaves represents not just that day's lost flat white but potentially months of lost repeat visits. Research from the American Customer Satisfaction Index shows that queue time is the single strongest predictor of customer dissatisfaction in quick-service hospitality. Overstaffing during quiet periods erodes margins directly, with each unnecessary staff hour costing £11-15 in wages, national insurance, and pension contributions. A peak staffing model solves this by starting with the data. Most EPOS systems can report hourly transaction counts and revenue. Mapping this data over several weeks reveals clear patterns: the commuter rush from 7:30 to 9:00, the mid-morning parents' coffee from 10:00 to 11:00, the lunch crowd from 12:00 to 14:00, and the after-school pickup from 15:00 to 16:00. Each period has different volume, different average transaction value, and different service requirements. The staffing model matches team deployment to these patterns, ensuring the business captures maximum revenue during peaks while controlling costs during quieter periods.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Extract hourly transaction data from the EPOS system for the past four to six weeks. If the EPOS does not provide this data, manually count transactions per hour for one full week using a tally sheet. Create a simple chart showing average transactions per hour across the trading day for each day of the week. Identify the clear peaks (typically 7:30-9:00 and 12:00-13:30), moderate periods, and quiet periods. Note how patterns differ between weekdays and weekends. Week 2: Define minimum staffing levels for each period. As a rule of thumb: one barista can handle approximately 40-50 transactions per hour on espresso alone, one till operator is needed for every 30-40 transactions per hour, and one floor/food person per 30-40 covers during a food service period. These are starting points — adjust based on your specific menu complexity, service style, and layout. Create a Daily Staffing Template showing the required number of staff by role for each hour of the trading day. Compare this against your current rota to identify the biggest mismatches — where are you understaffed during peaks and overstaffed during lulls?",
+    "L2": "SYSTEM BUILD (2-8 weeks). Refine the staffing model by incorporating additional variables: day of the week (Saturdays are typically 30-50% higher than midweek), seasonal patterns (summer versus winter, school holidays), weather impact (sunny weekend afternoons can double garden cafe footfall), and local events (markets, festivals, school activities). Build a Staffing Matrix that shows optimal staffing by role and hour for each day type: quiet weekday, busy weekday, standard Saturday, and peak Saturday. Factor in non-service labour requirements: opening prep time, closing clean-down time, mid-shift restocking, and cleaning tasks that must happen during service. Create a split-shift model if appropriate — staff who work 7:00-10:00 and 11:30-14:00 cover both peaks without the expense of covering the mid-morning lull. However, split shifts must comply with Working Time Regulations 1998 and be offered rather than imposed, as they can be unpopular. Integrate the staffing model into the rota-building process so that every rota starts with demand, not availability. Track labour cost as a percentage of revenue weekly — the target for most cafes is 28-35%. If it consistently exceeds this, the staffing model or pricing needs adjustment.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Implement real-time staffing adjustments: if Monday morning transaction data shows a 20% dip compared to the model, consider sending a team member home early (with their agreement) to protect margins. Conversely, if an unexpected event drives higher-than-modelled demand, activate the call-out list from B079 to bring in additional cover. Analyse the relationship between staffing levels and customer metrics: does a third barista during the morning rush measurably improve average wait time and customer satisfaction? Use this data to justify staffing investments. Build predictive capability: use historical data, weather forecasts, and local event calendars to predict demand three to seven days ahead and adjust staffing proactively. Benchmark labour productivity metrics — revenue per labour hour, covers per staff member per hour — against industry data from UK Hospitality or CGA by NIQ. Share staffing model insights with the team: when staff understand why they are scheduled the way they are, buy-in increases."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Extract hourly transaction data from the EPOS for the past four to six weeks",
+        "Create an average hourly transaction chart for each day of the week",
+        "Identify peak, moderate, and quiet trading periods",
+        "Define minimum staffing levels per period based on transaction-to-staff ratios",
+        "Create a Daily Staffing Template by role and hour",
+        "Compare the template against the current rota to identify mismatches",
+        "Adjust the rota to better align staffing with demand starting next week"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build a Staffing Matrix for each day type (quiet weekday, busy weekday, standard weekend, peak weekend)",
+        "Incorporate seasonal, weather, and event variables into the model",
+        "Factor in non-service labour (prep, clean-down, restocking) alongside service staffing",
+        "Consider split-shift models for peak coverage where appropriate and compliant",
+        "Integrate the staffing model into the rota-building process",
+        "Track labour cost as a percentage of revenue weekly (target 28-35%)",
+        "Review and refine the model monthly based on actual versus predicted demand"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Implement real-time staffing adjustments based on live demand versus model",
+        "Analyse the relationship between staffing levels and customer satisfaction metrics",
+        "Build predictive demand capability using historical data and external factors",
+        "Benchmark labour productivity against UK hospitality industry data",
+        "Share staffing model insights with the team to build understanding and buy-in",
+        "Review the staffing model quarterly against evolving business patterns"
+      ],
+      "responsible": "Manager, Owner"
+    }
+  },
+  "deliverables": [
+    "Hourly Transaction Analysis chart by day of week",
+    "Daily Staffing Template by role and hour",
+    "Staffing Matrix for each day type with optimal and minimum levels",
+    "Labour Cost Tracking template (weekly revenue vs labour cost)",
+    "Demand Prediction worksheet incorporating seasonal and event factors"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T085-01",
+        "tool_name": "Hourly Transaction Analysis Template",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Spreadsheet template for extracting and visualising EPOS transaction data by hour and day of week, identifying peak, moderate, and quiet trading periods with clear visual patterns."
+      },
+      {
+        "tool_id": "T085-02",
+        "tool_name": "Daily Staffing Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Hour-by-hour staffing requirement template showing the number of staff needed per role (barista, till, floor, kitchen) based on predicted transaction volumes for each trading period."
+      },
+      {
+        "tool_id": "T085-03",
+        "tool_name": "Staffing Matrix by Day Type",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Comprehensive matrix defining optimal and minimum staffing levels by role and hour for each day type (quiet weekday, busy weekday, standard weekend, peak weekend, event day)."
+      },
+      {
+        "tool_id": "T085-04",
+        "tool_name": "Labour Cost Tracker",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Weekly tracker comparing actual labour costs against revenue, calculating labour percentage, revenue per labour hour, and covers per staff hour with trend analysis and alerting when targets are exceeded."
+      },
+      {
+        "tool_id": "T085-05",
+        "tool_name": "Demand Prediction Worksheet",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Forward-looking planning tool incorporating historical data, seasonal patterns, weather forecasts, and local events to predict demand three to seven days ahead and recommend staffing adjustments."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Staffing model is built on old data and not updated as trading patterns evolve with seasons and local changes",
+    "The model recommends optimal staffing but the rota builder ignores it in favour of staff availability preferences",
+    "Understaffing during peaks is accepted as normal rather than recognised as a revenue and customer satisfaction loss",
+    "Labour cost percentage is tracked but no action is taken when it exceeds targets"
+  ],
+  "kpis": [
+    "Labour cost between 28% and 35% of revenue on a rolling four-week average",
+    "Zero shifts operating below defined minimum safe staffing levels",
+    "Peak period average customer wait time below three minutes for till service",
+    "Revenue per labour hour improving quarter on quarter",
+    "Staffing model reviewed and updated at least monthly"
+  ],
+  "dependencies": ["B086"],
+  "constraints": [
+    "Staffing model accuracy depends on reliable EPOS transaction data",
+    "Split shifts and flexible scheduling must comply with Working Time Regulations 1998",
+    "National Living Wage and pension costs must be factored into all labour calculations",
+    "Staff availability and contractual hours may limit the ability to perfectly match model recommendations"
+  ],
+  "time_load": {
+    "L1": "4 hours (data extraction, analysis, staffing template creation)",
+    "L2": "6 hours (staffing matrix, cost tracking, model integration with rota)",
+    "L3": "2 hours/month (demand prediction, model refinement, benchmarking)"
+  },
+  "review_protocol": "Weekly: labour cost percentage reviewed against target. Monthly: staffing model reviewed against actual demand and adjusted. Quarterly: full model review incorporating seasonal and trend analysis. Annually: comprehensive review of staffing model assumptions and industry benchmarking.",
+  "meta": {
+    "summary_for_humans": "This block creates a data-driven staffing model that matches team deployment to customer demand patterns, ensuring the right number of people are on the floor at the right times — maximising revenue during peaks and controlling costs during quieter periods.",
+    "implementation_risks": [
+      "Many independent cafes lack reliable EPOS data — manual counting may be needed initially",
+      "Staff may resist flexible scheduling and split shifts, requiring careful communication and fair implementation",
+      "The model is only useful if it is actually used to build rotas rather than filed and forgotten"
+    ],
+    "notes_for_engine": "Activate when signals indicate labour cost concerns, customer complaints about wait times, staff complaints about being overstretched during rushes, or visible understaffing/overstaffing patterns.",
+    "tags": ["staffing", "peak", "demand", "rota", "labour_cost", "scheduling", "transactions", "capacity", "productivity"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "block_id": "B057",
+  "name": "Daily Waste Tracking",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Establishes a daily waste recording system that captures what is wasted, how much, why, and when — providing the data foundation needed to understand waste patterns, calculate true costs, and drive reduction through informed action rather than guesswork.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Implement a simple daily waste log that captures all food and drink waste by category",
+      "Train all staff to record waste honestly and consistently without fear of blame",
+      "Quantify waste in both weight/volume and monetary value to make the cost visible",
+      "Identify waste patterns by time of day, day of week, item type, and cause category",
+      "Create a data foundation that feeds directly into B058 waste reduction strategy"
+    ],
+    "secondary_objectives": [
+      "Build awareness among the team that waste has a direct financial cost",
+      "Distinguish between avoidable waste (over-production, errors) and unavoidable waste (peelings, coffee grounds)",
+      "Support food safety compliance by documenting stock discarded for safety reasons",
+      "Provide data for sustainable business certifications and environmental reporting"
+    ]
+  },
+  "why_this_matters": "You cannot reduce what you do not measure. Most UK cafe owners dramatically underestimate their waste — research by WRAP (the Waste and Resources Action Programme) found that the average UK hospitality business wastes approximately 21% of the food it purchases, costing the sector over £3 billion annually. For a cafe spending £3,000 per month on food and drink ingredients, 21% waste represents £630 lost every month — £7,560 per year — going directly into the bin. This is profit that has been purchased, prepared, and thrown away. Yet without a waste tracking system, this loss is invisible. It leaks out in small amounts every day: two slices of cake that did not sell and went stale, four flat whites that were made incorrectly and poured away, a batch of soup that expired before it was finished, milk that went off because too much was ordered. Individually, each item seems insignificant. Collectively, they represent a substantial portion of the cafe's potential profit. Daily waste tracking makes the invisible visible. When staff write down every item they throw away and the reason why, patterns emerge rapidly. If the same cake flavour is wasted three days running, it is being over-produced or it is not popular enough to justify daily baking. If sink shots spike on Tuesdays, it may be because the Tuesday opener is less skilled at dialling in. These patterns are the raw material for waste reduction (B058), but they can only be identified if the data exists. Waste tracking also shifts culture: when staff see the monetary value of what is being binned, their behaviour changes naturally.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create a simple waste log sheet. Format: A4 paper on a clipboard in the kitchen, with columns for date, time, item wasted, quantity (weight in grams or number of units), reason (categories: expired/out of date, over-production, preparation error, customer return, dropped/damaged, quality not acceptable), and staff initials. Place the clipboard near the waste bin — waste must be logged at the moment it is discarded, not retrospectively at the end of the day. Brief the entire team: explain that the purpose of waste tracking is to save money and improve the business, not to catch individuals. Make it clear that honest logging is valued — a barista who pours a bad shot down the sink and logs it is doing the right thing; one who pours it and does not log it is hiding information the business needs. Use positive framing: 'Every item we track helps us waste less tomorrow.' Week 2: The manager reviews the waste log daily. Calculate the estimated cost of each wasted item (using recipe card costs from B054) and write the daily waste total in pounds on the log. At the end of the week, add up the total. Share this number with the team — 'This week we wasted £87 worth of food and drink. Our goal is to understand why and bring this down.' Do not blame; analyse. Begin categorising waste: what percentage is over-production, what percentage is expiry, what percentage is preparation errors? These categories will guide the reduction strategy in B058.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Move from paper to a structured waste tracking system. This can be a simple spreadsheet (Excel or Google Sheets) updated daily from the paper log, or a basic waste tracking app if available. The system should automatically calculate daily, weekly, and monthly waste values; break down waste by category (over-production, expiry, errors, returns, damage); identify the most frequently wasted items; and show trends over time. Define waste categories more precisely: distinguish between pre-consumer waste (food wasted before it reaches the customer — prep waste, over-production, expiry) and post-consumer waste (plate waste, unfinished drinks). Pre-consumer waste is largely controllable; post-consumer waste is harder to influence but still informative. Establish weekly waste review meetings (10 minutes) where the manager discusses the week's waste data with the kitchen and bar team. Focus on the top three most wasted items and brainstorm solutions. Link waste data to ordering: if specific items are consistently over-ordered, adjust par levels downward. Link waste data to production: if end-of-day cake waste is high, bake fewer or consider selling through a platform like Too Good To Go. Calculate your waste percentage: total waste value divided by total food and drink purchases. WRAP's target for cafes is below 10%, with the best performers achieving below 5%. Track this metric weekly.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Waste tracking should now be a natural habit, with the team genuinely engaged in reducing what they record. Set monthly waste reduction targets and celebrate when they are met. Share waste data visually: post a weekly chart in the staff area showing waste value trends — is the line going down? Create a waste reduction ideas board where any team member can suggest improvements. Conduct monthly 'waste audits' — a physical inspection of what is in the bins at the end of a trading day, categorising and weighing the contents. This provides a reality check against the log and catches items that were not recorded. Connect waste data to environmental impact: WRAP estimates that for every tonne of food waste prevented, approximately 4.2 tonnes of CO2 equivalent are saved. Communicate this to the team and customers as part of the cafe's sustainability story. Integrate waste data with financial reporting so the owner can see waste as a direct line item alongside other costs. Benchmark against WRAP hospitality sector targets and aim to be in the top quartile."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create an A4 waste log sheet and place it on a clipboard near the waste bin",
+        "Brief the entire team on waste tracking: purpose, method, and positive framing",
+        "Begin daily waste logging from Day 1 — every discarded item is recorded",
+        "Manager reviews the waste log daily and calculates estimated cost",
+        "Share the first week's total waste cost with the team",
+        "Begin categorising waste by reason (over-production, expiry, errors, returns, damage)",
+        "Establish the norm: logging waste is valued, not punished"
+      ],
+      "responsible": "Manager, Kitchen, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Transition to a digital waste tracking system (spreadsheet or app)",
+        "Configure automatic calculations for daily, weekly, and monthly waste values",
+        "Define and implement detailed waste categories (pre-consumer vs post-consumer)",
+        "Establish weekly 10-minute waste review meetings with the team",
+        "Link waste data to ordering decisions and production adjustments",
+        "Calculate and track waste percentage weekly",
+        "Connect waste patterns to specific menu items and operational causes"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Set monthly waste reduction targets and celebrate achievements",
+        "Post weekly waste trend charts in the staff area",
+        "Conduct monthly physical waste audits as a reality check",
+        "Connect waste data to environmental impact and sustainability messaging",
+        "Integrate waste data with financial reporting as a visible cost line",
+        "Benchmark waste percentage against WRAP hospitality sector targets"
+      ],
+      "responsible": "Manager, Owner"
+    }
+  },
+  "deliverables": [
+    "Daily Waste Log Sheet (A4, clipboard-mounted)",
+    "Digital Waste Tracking Spreadsheet",
+    "Weekly Waste Summary Report template",
+    "Waste Category Definitions guide",
+    "Monthly Waste Trend Chart"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T057-01",
+        "tool_name": "Daily Waste Log Sheet",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "A4 log sheet placed near the waste bin: columns for time, item, quantity, reason category, and staff initials. Completed in real-time as waste occurs. Reviewed daily by manager with cost annotation."
+      },
+      {
+        "tool_id": "T057-02",
+        "tool_name": "Digital Waste Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Spreadsheet or app tracking all waste entries with automatic calculations for daily, weekly, and monthly values, category breakdowns, most-wasted items, and trend charts."
+      },
+      {
+        "tool_id": "T057-03",
+        "tool_name": "Weekly Waste Review Meeting Agenda",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "10-minute meeting template: review total waste value, discuss top three most-wasted items, brainstorm solutions, assign actions, and compare against previous week's performance."
+      },
+      {
+        "tool_id": "T057-04",
+        "tool_name": "Monthly Waste Audit Checklist",
+        "level": "L3",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Physical bin audit checklist for end-of-day waste inspection: categorise, weigh, and record all waste found. Compare against the daily log to assess recording accuracy."
+      },
+      {
+        "tool_id": "T057-05",
+        "tool_name": "Monthly Waste Performance Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly report showing waste value, waste percentage of purchases, category breakdown, most-wasted items, trend over time, environmental impact estimate, and comparison against WRAP targets."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Staff do not log waste honestly because they fear being blamed for errors or waste",
+    "The waste log is completed retrospectively at end of day from memory, missing items and producing inaccurate data",
+    "Data is collected but never analysed, so waste patterns go unidentified and unaddressed",
+    "Management focuses on individual blame rather than systemic causes, creating a culture of hiding waste rather than tracking it"
+  ],
+  "kpis": [
+    "Waste log completed daily with zero missed trading days",
+    "Waste percentage below 15% within the first month, below 10% within three months",
+    "Weekly waste review meetings held consistently",
+    "At least one waste reduction action identified and implemented per week from log data"
+  ],
+  "dependencies": ["B058"],
+  "constraints": [
+    "Waste logging must be positioned as a positive activity, not a punitive one",
+    "The log must be physically accessible at the point of waste — not filed in an office",
+    "Accurate waste costing requires current ingredient prices from recipe cards (B054)"
+  ],
+  "time_load": {
+    "L1": "2 hours (log creation, team briefing, first week review)",
+    "L2": "4 hours (digital system setup, category definition, meeting structure, training)",
+    "L3": "2 hours/month (waste audits, trend analysis, target setting)"
+  },
+  "review_protocol": "Daily review of waste log by manager with cost annotation. Weekly 10-minute waste review meeting with the team. Monthly waste audit and trend analysis. Waste percentage reported monthly as part of financial review.",
+  "meta": {
+    "summary_for_humans": "This block establishes a daily waste recording system that makes invisible waste visible. It captures what is wasted, how much, why, and when — providing the data foundation needed to drive reduction. The focus is on honest recording, financial visibility, and pattern identification.",
+    "implementation_risks": [
+      "If framed punitively, staff will hide waste rather than log it — honest data requires psychological safety",
+      "Paper logs can be damaged, lost, or illegible — transition to digital when practical",
+      "Without follow-up action, waste tracking becomes a pointless administrative burden"
+    ],
+    "notes_for_engine": "Activate for any cafe serving food or making drinks with perishable ingredients. This is a foundation block — waste data feeds B058 strategy and B059 sustainability. Flag if signals indicate unexplained food cost overruns, high volumes of end-of-day discards, or no existing waste tracking system.",
+    "tags": ["waste", "tracking", "food_cost", "sustainability", "data", "WRAP", "measurement", "daily_log"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

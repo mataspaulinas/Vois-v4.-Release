@@ -1,0 +1,167 @@
+{
+  "block_id": "B201",
+  "name": "Seasonal Specials Playbook",
+  "version": "v1.0",
+  "domain": "D03_coffee_product_quality",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Creates a structured playbook for planning, developing, launching, and retiring seasonal specials across coffee, food, and non-coffee drinks. This block ensures the cafe maintains menu freshness and customer excitement through a disciplined calendar of limited-time offerings, without overwhelming operations or creating waste from untested recipes.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Build an annual seasonal specials calendar with planned launch windows, themes, and retirement dates",
+      "Establish a recipe development and testing process that validates specials before they reach the menu",
+      "Create marketing and in-store merchandising templates that generate excitement for each seasonal launch",
+      "Define operational guidelines so specials can be executed by any trained team member without supervision",
+      "Track sales performance of each special to build an evidence base for future seasonal planning"
+    ],
+    "secondary_objectives": [
+      "Drive social media engagement through photogenic, shareable seasonal offerings",
+      "Create urgency and repeat visits through limited-time scarcity",
+      "Test new flavour concepts and ingredients that may graduate to the permanent menu",
+      "Respond to competitor seasonal launches with distinctive alternatives"
+    ]
+  },
+  "why_this_matters": "A static menu is a slowly dying menu. Customers who visit daily or weekly crave novelty — they love their regular order but are delighted when something new catches their eye. Seasonal specials satisfy this craving while creating commercial urgency: a drink available only for six weeks drives impulse purchases that a permanent menu item never does. The psychology of scarcity is powerful — people value what is temporary more than what is always available. The major chains understand this intimately: their seasonal launches (pumpkin spice, gingerbread, iced summer drinks) are meticulously planned months in advance, supported by national marketing campaigns, and generate measurable revenue spikes. Independent cafes can compete not with marketing budgets but with creativity, quality, and authenticity. A seasonal lavender honey latte made with local honey and house-made lavender syrup has a story that no chain can replicate. However, seasonal specials fail when they are improvised rather than planned. An untested recipe launched on a Monday morning creates operational chaos — staff do not know how to make it, ingredients run out by Wednesday, the flavour is not balanced, and the special quietly disappears without anyone noticing. This block provides the structure to make seasonal specials a strategic advantage rather than an operational headache: plan in advance, test rigorously, launch with impact, track performance, and retire gracefully.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Map the year into four seasonal windows aligned to customer behaviour and ingredient availability. A typical UK cafe calendar: Spring (March-May) — lighter, floral, citrus themes; Summer (June-August) — cold drinks, fruity, refreshing; Autumn (September-November) — warming spices, caramel, apple, pumpkin; Winter (December-February) — indulgent, chocolate, gingerbread, festive. For each window, plan 1-2 drink specials and optionally 1 food special. Start with the current or upcoming season. Week 2: Develop the first seasonal special. Choose a concept that uses readily available ingredients and does not require new equipment. For example, an autumn spiced latte using a house-made syrup (cinnamon, nutmeg, clove, brown sugar simmered in water) added to a standard latte. Make the syrup, test the recipe with the team, adjust sweetness and spice levels, and document the final recipe on a recipe card. Calculate the cost-per-serve including syrup ingredients, coffee, milk, and any garnish (cinnamon stick, star anise). Price at a 30-50% premium over the standard latte to reflect the special nature and additional ingredients. Create a simple chalkboard announcement or A4 poster for in-store promotion.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Build a Seasonal Specials Playbook document that becomes the living reference for all future launches. The playbook should contain: the annual calendar with launch and retirement dates, a recipe development process (concept, first test, team tasting, refinement, final recipe card), a launch checklist (staff training, ingredient ordering, signage, social media content, till button setup), an in-season management protocol (daily prep checklist, ingredient reorder triggers, customer feedback collection), and a retirement process (last day communication, remaining ingredient use-up, performance review). Create a Seasonal Special Recipe Development Template that standardises how new specials are conceived and tested: concept name, inspiration, target flavour profile, ingredient list, method, cost-per-serve, pricing, allergen information, and presentation specification including cup or plate, garnish, and photo reference. Develop a library of house-made syrups, sauces, and bases that can be prepared in advance and stored — vanilla bean syrup, salted caramel sauce, matcha paste, chai concentrate. These become building blocks that make seasonal specials faster to develop and more consistent in execution. Track each special's daily sales in a Seasonal Special Performance Log.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The seasonal specials programme should now generate anticipation — regular customers should ask what is coming next. Build pre-launch hype through social media teasers, email newsletter previews, and in-store countdowns. Involve the team in recipe development — run quarterly brainstorming sessions where anyone can pitch a seasonal concept. The best ideas come from baristas who see what customers enjoy and what ingredients are trending. Develop a Seasonal Specials Archive documenting every special ever launched: recipe, performance data, customer feedback, and lessons learned. This becomes an invaluable reference — the autumn spiced latte recipe that sold brilliantly two years ago can be revived or evolved. Collaborate with local suppliers for seasonal ingredients: a local beekeeper for spring honey, a nearby farm for summer berries, a local bakery for winter mince pie specials. These partnerships add authenticity and story. Consider a seasonal specials loyalty programme — try all four seasonal specials in a year and earn a reward. Analyse annual seasonal data to refine timing, pricing, and concept selection year on year."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Map the year into four seasonal windows with themes and approximate launch dates",
+        "Choose a concept for the current or upcoming seasonal special",
+        "Develop and test the recipe with the team, adjusting until balanced",
+        "Document the final recipe on a recipe card with full cost-per-serve analysis",
+        "Create in-store signage announcing the seasonal special",
+        "Train all staff on preparation and how to describe the special to customers",
+        "Set the price at a premium reflecting seasonal exclusivity and ingredient cost"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build a Seasonal Specials Playbook document with calendar, processes, and templates",
+        "Create a standardised Recipe Development Template for all future specials",
+        "Develop a library of house-made syrups, sauces, and bases for rapid recipe development",
+        "Establish a launch checklist covering training, ordering, signage, social media, and till setup",
+        "Create a Seasonal Special Performance Log tracking daily sales per special",
+        "Define retirement protocols: last day communication, ingredient use-up, and performance review",
+        "Design social media content templates for consistent seasonal special promotion"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Build pre-launch hype through social media teasers and email newsletter previews",
+        "Run quarterly team brainstorming sessions for seasonal special concepts",
+        "Develop a Seasonal Specials Archive documenting all past specials with performance data",
+        "Collaborate with local suppliers for seasonal ingredients that add story and authenticity",
+        "Analyse annual seasonal data to refine timing, pricing, and concept selection",
+        "Consider a seasonal specials loyalty programme to drive engagement across the full year"
+      ],
+      "responsible": "Owner, Manager, Head Barista"
+    }
+  },
+  "deliverables": [
+    "Annual Seasonal Specials Calendar",
+    "Seasonal Special Recipe Development Template",
+    "Seasonal Launch Checklist",
+    "Seasonal Special Performance Log",
+    "Seasonal Specials Playbook master document"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T201-01",
+        "tool_name": "Annual Seasonal Specials Calendar",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Year-view calendar showing four seasonal windows with planned specials, launch dates, retirement dates, ingredient ordering deadlines, and promotional milestones for the entire year."
+      },
+      {
+        "tool_id": "T201-02",
+        "tool_name": "Seasonal Recipe Development Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "Standardised template for developing new specials: concept name, inspiration, ingredients, method, cost-per-serve, allergens, presentation spec, and sign-off by manager before launch."
+      },
+      {
+        "tool_id": "T201-03",
+        "tool_name": "Seasonal Launch Checklist",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Pre-launch checklist covering: recipe card completed, all staff trained, ingredients ordered and received, till button created, signage installed, social media content scheduled, and opening day quality check."
+      },
+      {
+        "tool_id": "T201-04",
+        "tool_name": "Seasonal Special Performance Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Daily sales tracker for each seasonal special showing units sold, revenue, cost-of-goods, margin, and customer feedback notes. Used for post-season performance review and future planning."
+      },
+      {
+        "tool_id": "T201-05",
+        "tool_name": "Seasonal Specials Archive",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Historical archive of every seasonal special launched, including recipe, cost data, sales performance, customer feedback summary, and lessons learned. Referenced when planning future seasons."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Specials are launched without adequate testing, resulting in inconsistent quality and poor customer reception",
+    "Ingredients for the seasonal special run out within days because ordering was not planned against expected demand",
+    "The special is never officially retired, lingering on the menu until ingredients are exhausted, losing its limited-time appeal",
+    "Staff are not trained on the new recipe, leading to slow preparation and variable quality during the launch period"
+  ],
+  "kpis": [
+    "Each seasonal special achieving at least 10% of total drink sales during its launch week",
+    "100% of seasonal specials launched with all checklist items completed on launch day",
+    "Seasonal specials contributing a measurable revenue uplift compared to equivalent non-seasonal periods",
+    "Customer feedback score for seasonal specials averaging 4+ out of 5 stars"
+  ],
+  "dependencies": ["B051"],
+  "constraints": [
+    "Recipe development requires lead time — plan at least 4 weeks before each seasonal launch date",
+    "House-made syrups and sauces require food safety consideration: shelf life, storage, allergen labelling",
+    "Seasonal ingredient availability may vary by year — have backup options for key components"
+  ],
+  "time_load": {
+    "L1": "4 hours (calendar planning, first recipe development and testing, staff training)",
+    "L2": "8 hours (playbook development, template creation, syrup library, launch system setup)",
+    "L3": "3 hours/quarter (brainstorming, archive maintenance, supplier collaboration, data analysis)"
+  },
+  "review_protocol": "Daily sales check during first week of each seasonal launch by manager. Weekly performance review during the special's run. Post-season review within one week of retirement. Annual planning session in January for the full year's seasonal calendar.",
+  "meta": {
+    "summary_for_humans": "This block creates a disciplined playbook for seasonal specials — from annual planning and recipe development through launch, in-season management, and retirement. It ensures specials drive excitement and revenue rather than operational chaos.",
+    "implementation_risks": [
+      "Over-ambitious seasonal menus strain operations — start with 1-2 specials per season and expand gradually",
+      "Seasonal specials that are too similar to permanent menu items cannibalise rather than complement sales",
+      "Social media hype without delivery disappoints — ensure the product matches the promotion"
+    ],
+    "notes_for_engine": "Activate when signals indicate menu staleness, declining repeat visit rates, competitor seasonal launches, or customer requests for novelty. Pairs with B199 (Cold Drink Programme) for summer specials and B054 (menu structure).",
+    "tags": ["seasonal", "specials", "menu_development", "limited_time", "recipe_development", "marketing", "customer_engagement", "innovation"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

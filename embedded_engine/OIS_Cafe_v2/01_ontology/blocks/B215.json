@@ -1,0 +1,22 @@
+{
+  "block_id": "B215",
+  "name": "Seasonal Energy Cost Management",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M14: Operational Rhythm & Daily Discipline",
+  "state": "enriched",
+  "purpose": "Proactively manages heating and energy costs during winter months (October-April) in cold climates. Includes seasonal cost forecasting, energy efficiency investments, utility supplier negotiation, and contingency planning for price spikes.",
+  "tools": [
+    "T215-01",
+    "T215-02",
+    "T215-03",
+    "T215-04"
+  ],
+  "signals": [
+    "S217",
+    "S222"
+  ],
+  "failure_modes": [
+    "FM113"
+  ]
+}

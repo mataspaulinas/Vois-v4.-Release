@@ -1,0 +1,167 @@
+{
+  "block_id": "B041",
+  "name": "Grinder Maintenance Schedule",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Establishes a structured maintenance schedule for all coffee grinders covering daily cleaning, weekly deep cleaning, burr inspection, calibration checks, and planned replacement cycles. The grinder is the single most important variable in espresso quality after the coffee itself, and neglected maintenance directly degrades every shot served.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define daily, weekly, and monthly grinder maintenance tasks with clear ownership",
+      "Establish burr inspection protocols and replacement schedules based on throughput",
+      "Create a maintenance log that tracks cleaning, calibration, and parts replacement",
+      "Ensure all baristas understand basic grinder care as part of their daily responsibilities",
+      "Prevent flavour contamination from stale coffee oils and rancid residue build-up"
+    ],
+    "secondary_objectives": [
+      "Extend grinder lifespan through proper care, reducing capital expenditure",
+      "Maintain grind consistency, reducing dial-in time and coffee waste",
+      "Identify emerging mechanical issues before they cause service disruption",
+      "Build a relationship with a reliable grinder service technician for professional maintenance"
+    ]
+  },
+  "why_this_matters": "The grinder does more to determine espresso quality than the espresso machine itself. A £5,000 espresso machine paired with a neglected grinder will produce worse coffee than a £2,000 machine paired with a well-maintained one. Coffee grinders work by crushing beans between burrs — either flat or conical steel or ceramic discs — and these burrs wear down with use. A typical commercial cafe grinding 5-10kg of coffee per day will wear through a set of flat burrs in 6-12 months, though this varies significantly by grinder model and burr material. As burrs dull, they crush rather than cut the coffee, producing inconsistent particle sizes. This leads to channelling in the espresso puck, uneven extraction, and a muddy, confused flavour. Equally damaging is the accumulation of coffee oils and fines inside the grinding chamber. Coffee oils are highly perishable — within hours of being released from the bean, they begin to oxidise and turn rancid. A grinder that is not cleaned daily accumulates a layer of rancid oil that contaminates every dose ground through it, adding a stale, musty undertone to even the freshest beans. In the UK's damp climate, this problem is exacerbated by humidity, which causes ground coffee to clump inside the chamber. Most cafe owners would never serve milk from yesterday, yet they happily grind today's fresh beans through a chamber coated in last week's rancid oils. A proper maintenance schedule is the difference between a grinder that enhances the coffee and one that silently sabotages it.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Establish the daily grinder cleaning routine. At close of business each day, the closing barista must: switch off the grinder, remove the hopper (if removable), brush out all retained grounds from the grinding chamber using a dedicated grinder brush, wipe the exterior and the dosing area, and reassemble. This takes approximately 5 minutes per grinder. If the hopper is not easily removable, purge the grinder by running it empty until no more grounds emerge, then brush accessible areas. For grinders with dosing chambers, empty and brush the chamber thoroughly. Add this to the closing checklist so it cannot be skipped. Week 2: Establish the weekly deep clean. Once per week, typically on the quietest day or during a scheduled maintenance window: remove the hopper, remove any accessible burrs or grinding chamber components (consult the grinder manual for your specific model), soak removable parts in warm water with a grinder-specific cleaning tablet or powder (e.g., Urnex Grindz or Cafetto), brush the burrs and chamber with a stiff-bristled brush to remove compacted coffee and oils, dry all parts thoroughly before reassembling. Log every daily and weekly clean on a maintenance sheet mounted near the grinder: date, type of clean (daily/weekly), who performed it, any issues noted.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a formal Grinder Maintenance SOP covering daily cleaning, weekly deep cleaning, monthly inspection, and annual professional service. Define burr replacement indicators: for flat burr grinders, typical replacement is every 500-1000kg of coffee ground (track throughput); for conical burrs, replacement is less frequent but should be inspected every 6 months. Signs of worn burrs include: increasingly difficult dial-in, wider grind distribution (more fines and boulders), coffee tasting duller despite fresh beans, and visible nicks or flat spots on burr edges. Establish a burr replacement schedule based on your cafe's daily throughput. For a cafe grinding 8kg per day, flat burrs may need replacement every 2-4 months. Budget accordingly — burrs typically cost £50-200 depending on the grinder model. Create a spare parts inventory: keep a spare set of burrs, a grinder brush, cleaning tablets, and any O-rings or gaskets on site so maintenance is never delayed by awaiting parts. Identify and establish a relationship with a grinder technician who can perform annual professional servicing — full disassembly, burr alignment check, motor inspection, and electrical safety test. Train all baristas on daily and weekly cleaning responsibilities; train the head barista and manager on monthly inspection and burr assessment.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Grinder maintenance should be embedded in the cafe's quality culture as deeply as espresso preparation itself. Track grind consistency metrics over time — if dial-in is taking more shots to achieve or grind settings are drifting unpredictably, this may indicate burr wear. Use data from B039's dial-in logs to spot maintenance triggers. Conduct quarterly burr inspections with photographic records so wear can be tracked visually over time. Evaluate grinder performance after burr changes — fresh burrs should produce noticeably improved grind consistency and flavour clarity. Consider maintaining a grinder service history document that accompanies the grinder throughout its life, enhancing resale value and providing a complete maintenance record. For cafes with multiple grinders, establish a rotation schedule so all grinders receive equal attention. Explore grinder upgrades when replacement cycles arrive — each generation of grinder technology offers improved consistency and features."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Establish a daily grinder cleaning routine performed by the closing barista",
+        "Add grinder cleaning to the closing checklist as a mandatory task",
+        "Purchase a dedicated grinder brush and cleaning tablets for each grinder",
+        "Establish a weekly deep clean schedule on the quietest day",
+        "Create a maintenance log sheet mounted near each grinder",
+        "Demonstrate the cleaning procedure to all baristas",
+        "Locate and file the grinder user manual for reference"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft a formal Grinder Maintenance SOP covering all maintenance frequencies",
+        "Calculate burr replacement schedule based on daily coffee throughput",
+        "Establish a spare parts inventory (burrs, brushes, tablets, gaskets)",
+        "Identify and engage a professional grinder service technician",
+        "Train all baristas on daily and weekly cleaning responsibilities",
+        "Train the head barista on monthly inspection and burr assessment",
+        "Budget for annual burr replacement and professional servicing"
+      ],
+      "responsible": "Head Barista, Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track grind consistency metrics using dial-in log data",
+        "Conduct quarterly burr inspections with photographic records",
+        "Evaluate grinder performance after every burr change",
+        "Maintain a complete service history document for each grinder",
+        "Establish rotation schedules for cafes with multiple grinders",
+        "Review grinder technology and plan upgrades at replacement cycles"
+      ],
+      "responsible": "Head Barista, Owner"
+    }
+  },
+  "deliverables": [
+    "Grinder Maintenance SOP document",
+    "Daily/Weekly Cleaning Checklist (mounted near each grinder)",
+    "Grinder Maintenance Log template",
+    "Burr Replacement Schedule based on throughput calculation",
+    "Spare Parts Inventory list"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T041-01",
+        "tool_name": "Daily Grinder Cleaning Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Barista",
+        "description": "End-of-day checklist for each grinder: hopper emptied, chamber brushed, dosing area cleaned, exterior wiped, log entry made. Part of the closing routine, signed off by the closing barista."
+      },
+      {
+        "tool_id": "T041-02",
+        "tool_name": "Grinder Maintenance Log",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Head Barista",
+        "description": "Ongoing log recording all maintenance activities: daily cleans, weekly deep cleans, monthly inspections, burr changes, and professional services. Tracks who performed each task and any issues found."
+      },
+      {
+        "tool_id": "T041-03",
+        "tool_name": "Grinder Maintenance SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Head Barista",
+        "description": "Comprehensive Standard Operating Procedure detailing daily cleaning steps, weekly deep clean procedure, monthly burr inspection, throughput tracking, burr replacement process, and annual professional service requirements."
+      },
+      {
+        "tool_id": "T041-04",
+        "tool_name": "Burr Replacement Schedule Calculator",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "Spreadsheet or template that calculates burr replacement dates based on daily coffee throughput, burr type, and manufacturer recommendations. Sends alerts when replacement is approaching."
+      },
+      {
+        "tool_id": "T041-05",
+        "tool_name": "Grinder Service History Document",
+        "level": "L3",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Complete lifetime service record for each grinder: purchase date, all maintenance performed, parts replaced, professional service reports, performance notes, and photographic burr inspection records."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Daily cleaning is skipped during busy periods, allowing rancid oil build-up that taints every shot for days",
+    "Burr replacement is delayed to save costs, causing grind quality to deteriorate gradually without anyone noticing the decline",
+    "Only one person knows how to perform the weekly deep clean, creating a single point of failure",
+    "The grinder manual is lost and cleaning is guesswork, risking damage to components or inadequate cleaning"
+  ],
+  "kpis": [
+    "100% of daily grinder cleans completed and logged (zero missed days per month)",
+    "Weekly deep clean completed every week without exception",
+    "Burrs replaced within 10% of their calculated replacement threshold",
+    "Zero flavour complaints attributable to grinder maintenance issues"
+  ],
+  "dependencies": ["B039"],
+  "constraints": [
+    "Grinder cleaning products must be food-safe and specifically designed for coffee grinders",
+    "Weekly deep cleans require the grinder to be out of service for 30-45 minutes — schedule accordingly",
+    "Burr replacement requires the correct parts for the specific grinder model — maintain a spare set on site"
+  ],
+  "time_load": {
+    "L1": "2 hours (procedure demonstration, checklist creation, initial deep clean)",
+    "L2": "5 hours (SOP drafting, throughput calculation, technician sourcing, training)",
+    "L3": "1 hour/quarter (burr inspections, service history updates, upgrade evaluation)"
+  },
+  "review_protocol": "Daily check of cleaning log by head barista. Weekly confirmation of deep clean completion. Monthly burr condition check. Quarterly photographic burr inspection. Annual professional service by qualified technician.",
+  "meta": {
+    "summary_for_humans": "This block establishes a complete grinder maintenance programme covering daily cleaning, weekly deep cleans, burr inspection and replacement scheduling, and professional servicing. The grinder is the single most important piece of equipment for coffee quality, and neglecting its maintenance silently degrades every drink served.",
+    "implementation_risks": [
+      "Cleaning products left inside the grinder can contaminate coffee if not fully purged after deep cleaning",
+      "Inexperienced staff may damage grinder components during deep cleaning without proper training",
+      "Cost of burr replacement may be resisted by owners who do not understand the quality impact"
+    ],
+    "notes_for_engine": "Activate alongside B039 as a paired foundational block. If dial-in data shows increasing difficulty achieving target parameters or grind distribution seems to be widening, flag grinder maintenance as a likely cause. Links to B048 for overall equipment maintenance coordination.",
+    "tags": ["coffee_quality", "grinder", "maintenance", "burrs", "cleaning", "equipment", "calibration", "hygiene"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "venue_id": "phase0_conflicting_capacity_cost",
+  "assessment_type": "full_diagnostic",
+  "assessment_date": "2026-03-27",
+  "triage_enabled": false,
+  "triage_intensity": "balanced",
+  "venue_context": {
+    "venue_name": "Phase 0 Conflict Cafe",
+    "type": "independent_cafe",
+    "stage": "active",
+    "team_size": 11,
+    "location": "Vilnius",
+    "capacity_profile": {
+      "leadership_strength": "medium",
+      "volatility": "high"
+    }
+  },
+  "signals": {
+    "S019": {
+      "active": true,
+      "confidence": "high",
+      "notes": "Observed queue times above 8 minutes on weekday morning peaks for the last two weeks.",
+      "value": 8,
+      "signal_name": "queue_wait_times_excessive",
+      "domain": ""
+    },
+    "S071": {
+      "active": true,
+      "confidence": "medium",
+      "notes": "Morning team is opening without a daily huddle and issues are being discovered live on the floor.",
+      "value": null,
+      "signal_name": "daily_huddle_absent",
+      "domain": ""
+    },
+    "S083": {
+      "active": true,
+      "confidence": "high",
+      "notes": "Peak staffing pattern is not calibrated: two baristas are idle mid-afternoon but the morning queue still collapses.",
+      "value": null,
+      "signal_name": "peak_staffing_not_calibrated",
+      "domain": ""
+    },
+    "S099": {
+      "active": true,
+      "confidence": "medium",
+      "notes": "Revenue per trading hour has fallen over the last three weekly comparisons despite peak queues remaining unresolved.",
+      "value": 9,
+      "signal_name": "revenue_per_hour_declining",
+      "domain": ""
+    },
+    "S104": {
+      "active": true,
+      "confidence": "high",
+      "notes": "Payroll is running above target while the shift shape still fails to cover peak demand cleanly.",
+      "value": 39,
+      "signal_name": "payroll_percentage_high",
+      "domain": ""
+    }
+  },
+  "raw_input_text": "Morning demand is breaking the floor, payroll is still above target, and the rota is solving neither. The owner keeps adding labor hours reactively, but queues remain long during 7-10am while afternoons are quiet.",
+  "extraction_summary": {
+    "mode": "manual_composite",
+    "reason": "Phase 0 representative conflict between throughput pressure and labor-cost pressure."
+  },
+  "confidence_distribution": {
+    "high": 3,
+    "medium": 2,
+    "low": 0
+  },
+  "unmapped_observations": []
+}

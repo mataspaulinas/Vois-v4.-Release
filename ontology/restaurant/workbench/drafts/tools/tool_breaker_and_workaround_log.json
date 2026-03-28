@@ -1,0 +1,22 @@
+{
+  "id": "tool_breaker_and_workaround_log",
+  "name": "Breaker and workaround log",
+  "description": "Visible log of repeated equipment failures, missing tools, system frictions, and the workarounds the team is using to survive them.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: reliability restoration starts by exposing the breakers the team has normalized",
+  "updated_at": "2026-03-14T00:41:10.354912Z",
+  "category": "reliability",
+  "format": "issue_log",
+  "usage_moment": "Use whenever recurring breakers or workarounds surface during readiness checks or live service.",
+  "expected_output": "A visible reliability list with issue, workaround, owner, urgency, and next corrective action.",
+  "adaptation_variables": [
+    "asset_types",
+    "shift_structure",
+    "repair_owner",
+    "urgency_rules"
+  ],
+  "block_ids": [
+    "blk_capture_breakers_and_workarounds"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "sig_training_not_translated_to_execution",
+  "name": "Training is not translating into execution",
+  "description": "The team has been shown the standard, but the expected behavior still does not appear reliably in live service.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: training not translating to execution expressed through restaurant standards drift",
+  "updated_at": "2026-03-15T14:29:28.485702Z",
+  "domain": "training",
+  "module": "training_execution",
+  "indicator_type": "lagging",
+  "evidence_types": [
+    "trained behavior missing in live shift",
+    "coaching happened but standards still do not land",
+    "training exists without execution transfer"
+  ],
+  "source_types": [
+    "manager notes",
+    "training review",
+    "service observation"
+  ],
+  "temporal_behavior": "recurring",
+  "likely_co_signals": [
+    "sig_new_staff_depend_on_memory",
+    "sig_standard_steps_skipped"
+  ],
+  "adapter_aliases": [
+    "training not landing",
+    "coached but not executed"
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "block_id": "B187",
+  "name": "Brand Consistency Audit & Mystery Shopper",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M15: Multi-Site & Chain Management",
+  "state": "enriched",
+  "purpose": "Establishes a structured brand consistency audit programme complemented by mystery shopper visits to ensure every location delivers an identical customer experience — from drink quality and service speed to visual merchandising and brand tone. This block is the guardian of brand equity across multiple sites.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define measurable brand standards covering product quality, service delivery, visual presentation, and customer experience",
+      "Create a brand audit scorecard that can be applied consistently across all locations",
+      "Implement a mystery shopper programme providing objective, unannounced assessments of each site",
+      "Establish a remediation process for sites that fall below brand standards",
+      "Build a continuous improvement loop where audit findings drive SOP updates and training"
+    ],
+    "secondary_objectives": [
+      "Identify best practices at individual sites that can be replicated across the estate",
+      "Provide objective data for area manager performance reviews",
+      "Support franchise compliance monitoring where applicable",
+      "Build customer confidence that every visit to any location will meet the same standard"
+    ]
+  },
+  "why_this_matters": "Brand consistency is the single most valuable asset of a multi-site cafe operation. When a customer visits Location A and receives a perfectly crafted flat white with friendly service in a clean, well-presented space, they expect exactly the same at Location B. Any deviation — a poorly made drink, indifferent service, a dirty toilet, incorrect signage — does not just damage that location; it damages the entire brand. Research from Mintel and CGA consistently shows that consistency is the primary driver of repeat visits in branded hospitality. A single bad experience at one site reduces likelihood to visit any site by 40%. For franchise operations, brand inconsistency can trigger contractual disputes and ultimately franchise termination. Mystery shopping provides the only truly objective measure of customer experience because it captures what actually happens when no manager is watching. Internal audits are valuable but inherently biased — staff behave differently when they know they are being observed. A well-designed mystery shopper programme, combined with structured brand audits, creates a 360-degree view of brand delivery across every location.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0–2 weeks). Week 1: Define the brand standards document — a comprehensive list of every element that must be consistent across sites. Organise into categories: product quality (drink specifications, food presentation, temperature), service standards (greeting, upselling, speed, farewell), visual presentation (signage, merchandising, cleanliness, uniform), and operational standards (opening/closing procedures, safety compliance). For each standard, define what good looks like, what acceptable looks like, and what unacceptable looks like. Week 2: Create a brand audit scorecard using T187-01 that translates these standards into a checkable, scorable format. Pilot the scorecard at one location with the area manager to test its practicality and identify any gaps. Refine based on feedback.",
+    "L2": "SYSTEM BUILD (2–8 weeks). Commission or recruit mystery shoppers — either through a specialist agency or by using trusted individuals unknown to the staff. Design the mystery shopper brief: what to order, what to observe, what to assess, and how to score. Each mystery shop visit should generate a structured report covering all brand standard categories. Establish a quarterly audit cycle: each location receives at least one formal brand audit and one mystery shop visit per quarter. Create a remediation protocol: when a site scores below the acceptable threshold, the area manager has 14 days to submit a corrective action plan and 30 days to demonstrate improvement. Begin tracking scores by location over time to identify trends.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Integrate brand audit and mystery shopper scores into area manager KPIs and bonus structures. Publish a quarterly brand consistency league table (anonymised or named, depending on culture) to create healthy competition. Use audit data to identify training needs and update SOPs in the SOP library (B188). Introduce peer audits where managers from different sites audit each other, building cross-site understanding and shared standards. Benchmark against competitor mystery shop programmes. Review and update brand standards annually to reflect evolving customer expectations and market positioning."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Define comprehensive brand standards document covering product, service, visual, and operational categories",
+        "Create a brand audit scorecard with clear scoring criteria",
+        "Pilot the scorecard at one location with the area manager",
+        "Define what constitutes a pass, marginal, and fail score",
+        "Brief all site managers on brand standards expectations",
+        "Identify mystery shopper providers or recruit trusted individuals",
+        "Set the quarterly audit and mystery shop schedule"
+      ],
+      "responsible": "Operations Director, Area Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Commission and brief mystery shoppers with detailed visit scenarios",
+        "Establish a quarterly audit cycle across all locations",
+        "Create a remediation protocol for underperforming sites",
+        "Build a tracking system for audit and mystery shop scores by location",
+        "Train area managers on conducting brand audits consistently",
+        "Develop a mystery shop report template",
+        "Begin quarterly trend analysis of brand consistency scores"
+      ],
+      "responsible": "Area Manager, Operations Director"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Integrate brand scores into area manager KPIs and bonus structures",
+        "Publish quarterly brand consistency league tables",
+        "Use audit data to drive SOP updates and training programmes",
+        "Introduce peer audit exchanges between site managers",
+        "Benchmark against competitor mystery shop programmes",
+        "Review and update brand standards annually"
+      ],
+      "responsible": "Operations Director, Senior Leadership"
+    }
+  },
+  "deliverables": [
+    "Brand Standards Document",
+    "Brand Audit Scorecard",
+    "Mystery Shopper Brief and Report Template",
+    "Remediation Protocol for underperforming sites",
+    "Quarterly Brand Consistency Report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T187-01",
+        "tool_name": "Brand Audit Scorecard",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Area Manager",
+        "description": "Structured scorecard covering product quality, service delivery, visual presentation, and operational standards with clear scoring criteria (pass/marginal/fail) for each element. Used during formal site audits."
+      },
+      {
+        "tool_id": "T187-02",
+        "tool_name": "Mystery Shopper Brief Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Operations Director",
+        "description": "Detailed brief for mystery shoppers defining the visit scenario, items to order, observations to make, service interactions to assess, and scoring methodology."
+      },
+      {
+        "tool_id": "T187-03",
+        "tool_name": "Mystery Shopper Report Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Area Manager",
+        "description": "Structured report template for mystery shop visits covering all brand standard categories, individual scores, narrative commentary, and photographic evidence where appropriate."
+      },
+      {
+        "tool_id": "T187-04",
+        "tool_name": "Remediation Action Plan Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Site Manager",
+        "description": "Template for documenting corrective actions when a site falls below brand standards: issues identified, root causes, actions to take, responsible persons, and deadlines for resolution."
+      },
+      {
+        "tool_id": "T187-05",
+        "tool_name": "Quarterly Brand Consistency Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Operations Director",
+        "description": "Quarterly dashboard showing brand audit and mystery shop scores across all locations, trend analysis, best and worst performers, and actions arising."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Brand standards are defined but not enforced, making them aspirational rather than operational",
+    "Mystery shoppers are identified by staff who then perform differently, defeating the purpose",
+    "Audit scores are used punitively rather than developmentally, creating fear rather than improvement",
+    "Brand standards are not updated to reflect evolving customer expectations, becoming outdated"
+  ],
+  "kpis": [
+    "All locations score above 85% on brand audits consistently",
+    "Mystery shop scores within 10% variance across all locations",
+    "Remediation plans submitted within 14 days for any site scoring below threshold",
+    "Quarter-on-quarter improvement in lowest-performing sites"
+  ],
+  "dependencies": [
+    "B188"
+  ],
+  "constraints": [
+    "Mystery shoppers must be genuinely unknown to staff to provide valid assessments",
+    "Brand audits require dedicated area manager time that must be protected in scheduling",
+    "Franchise locations may have additional brand compliance requirements from the franchisor"
+  ],
+  "time_load": {
+    "L1": "6 hours (brand standards definition, scorecard creation, pilot)",
+    "L2": "4 hours/quarter per site (audits, mystery shops, remediation)",
+    "L3": "8 hours/quarter (analysis, reporting, SOP updates)"
+  },
+  "review_protocol": "Quarterly brand audits at every location. Quarterly mystery shop visits. Monthly review of remediation plans for underperforming sites. Annual review and update of brand standards document.",
+  "meta": {
+    "summary_for_humans": "This block establishes a brand consistency audit programme with mystery shopper visits to ensure every location delivers an identical customer experience across product quality, service, and visual presentation.",
+    "implementation_risks": [
+      "Mystery shopper programmes can be expensive — start with a small provider or trusted volunteers",
+      "Staff may become demoralised if audits feel punitive rather than supportive",
+      "Brand standards that are too rigid may stifle site-level innovation"
+    ],
+    "notes_for_engine": "Chain-only block. Activate when a cafe operation has two or more sites. Pair with B188 (SOP Library) and B191 (Area Manager Framework). Flag if signals indicate inconsistent customer feedback across locations.",
+    "tags": [
+      "brand",
+      "consistency",
+      "mystery_shopper",
+      "audit",
+      "multi_site",
+      "chain",
+      "quality_assurance"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "chain_cafe",
+      "franchise_cafe"
+    ],
+    "team_size_min": 5,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

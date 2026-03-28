@@ -1,0 +1,165 @@
+{
+  "block_id": "B017",
+  "name": "Internal Food Safety Self-Assessment",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Establishes a regular internal self-assessment programme that mirrors EHO inspection criteria, enabling the cafe to identify and fix food safety gaps before an official inspection occurs. This block turns the cafe into its own most rigorous inspector.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create an internal audit checklist modelled on the Food Hygiene Rating scheme scoring criteria",
+      "Schedule regular self-assessments at monthly and quarterly intervals",
+      "Develop a scoring system that highlights areas needing improvement before they become EHO findings",
+      "Generate action plans from each self-assessment with assigned responsibilities and deadlines",
+      "Build management confidence through evidence of proactive self-regulation"
+    ],
+    "secondary_objectives": [
+      "Maintain or achieve a Food Hygiene Rating of 5 (Very Good) by eliminating issues before inspection",
+      "Develop staff awareness of what EHOs look for during inspections",
+      "Create a culture of continuous improvement in food safety standards"
+    ]
+  },
+  "why_this_matters": "The Food Hygiene Rating Scheme (FHRS) scores food businesses on three criteria: hygienic food handling, structural compliance, and confidence in management/control procedures. Scores range from 0 (urgent improvement necessary) to 5 (very good). The rating is publicly displayed at the premises and on the Food Standards Agency website — in Wales, display is mandatory; in England it is voluntary but expected. A rating below 5 is visible to every customer and can significantly impact trade, particularly as consumers increasingly check ratings before visiting. The challenge is that EHO inspections are unannounced — the inspector arrives without warning and assesses the cafe as they find it. If standards have slipped, there is no opportunity to prepare. The only reliable strategy is to maintain inspection-ready standards at all times, and the way to ensure this is through regular internal self-assessment. By conducting monthly audits that mirror the EHO inspection criteria, the cafe identifies problems when they are small and fixable rather than discovering them through an official inspection that results in a lower rating. A cafe that self-assesses regularly and can show the inspector a file of completed audits with action plans also scores higher on 'confidence in management' — the most subjective of the three criteria and the one where demonstrating proactive management makes the biggest difference. Self-assessment is not about finding fault; it is about finding and fixing issues before anyone else does.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Obtain a copy of the Food Hygiene Rating scheme scoring guidance — this is publicly available from the FSA and details exactly what EHOs assess under each of the three criteria: hygienic food handling, structural compliance, and confidence in management. Use this guidance to create a simplified internal audit checklist. The checklist should cover: food storage (correct temperatures, labelled, covered, in-date), food preparation (cross-contamination controls, handwashing, clean surfaces), cooking and cooling (temperature controls, records), personal hygiene (uniforms, handwashing, illness reporting), cleaning (schedule compliance, chemical safety), documentation (SFBB diary, temperature logs, training records, HACCP plan), structure (walls, floors, ceilings, lighting, ventilation, pest proofing), and management controls (SOPs in place, staff trained, records up to date). Conduct the first self-assessment immediately, scoring each area as Compliant, Partially Compliant, or Non-Compliant. Week 2: For every area scored as Partially Compliant or Non-Compliant, create an immediate action plan: what needs to be done, who will do it, and by when. Address Non-Compliant areas within 48 hours. Address Partially Compliant areas within two weeks. Retain the completed self-assessment and action plan in the food safety file.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a formal Self-Assessment SOP covering: frequency (monthly quick audit, quarterly comprehensive audit), who conducts the assessment (the manager conducts monthly, the owner conducts quarterly), the scoring system, action plan requirements, and documentation. Create a more detailed quarterly audit form that mirrors the full EHO inspection process — walk through the premises as an inspector would, from the delivery area through storage, preparation, cooking, service, and customer areas, checking every element against the FHRS criteria. Introduce a numerical scoring system (0-5 for each area, matching the FHRS scale) so you can track your predicted overall rating over time. Train the manager to think like an EHO: look for the things that are easy to miss — the grime behind the coffee machine, the food past its use-by date pushed to the back of the fridge, the training record that is three months out of date. Establish a culture of 'fresh eyes' assessments: after completing the audit, ask a team member who was not involved to walk through and identify anything the auditor missed. By Week 8, the cafe should have a robust self-assessment system with at least two completed audits and action plans on file.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Self-assessment should be an ingrained management practice, not a task to be reminded about. Conduct quarterly comprehensive audits with detailed scoring and trend analysis. Track your predicted FHRS rating over time — the target is a sustained 5. After each official EHO inspection, compare the inspector's findings with your most recent self-assessment: did you identify the same issues? Were there any surprises? Use any discrepancies to improve the self-assessment process. Consider engaging an independent food safety consultant to conduct an annual 'mock inspection' for an external perspective. Share self-assessment results with the team — transparency drives improvement. Celebrate when the self-assessment achieves a perfect score, and treat it as a genuine achievement."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Obtain the FSA Food Hygiene Rating scheme scoring guidance",
+        "Create a simplified internal audit checklist based on FHRS criteria",
+        "Conduct the first self-assessment immediately, scoring all areas",
+        "Create action plans for all Partially Compliant and Non-Compliant areas",
+        "Address Non-Compliant areas within 48 hours",
+        "Retain the completed self-assessment and action plan in the food safety file",
+        "Schedule the next self-assessment for one month from now"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Self-Assessment SOP covering frequency, scoring, and action plan requirements",
+        "Create a detailed quarterly audit form mirroring the full EHO inspection process",
+        "Introduce a numerical scoring system (0-5) matching the FHRS scale",
+        "Train the manager to conduct assessments with an EHO mindset",
+        "Establish 'fresh eyes' peer review as part of the audit process",
+        "Track predicted FHRS rating over time using audit scores",
+        "File all completed self-assessments and action plans chronologically"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly comprehensive audits with trend analysis",
+        "Compare official EHO findings with self-assessment results to improve the process",
+        "Consider annual independent food safety consultant mock inspections",
+        "Share self-assessment results with the team and celebrate improvements",
+        "Review and update the audit checklist annually based on experience"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Internal Food Safety Audit Checklist (FHRS-aligned)",
+    "Quarterly Comprehensive Audit Form",
+    "Self-Assessment Action Plan Template",
+    "Self-Assessment SOP document",
+    "Predicted FHRS Rating Tracker"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T017-01",
+        "tool_name": "Monthly Food Safety Quick Audit",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Simplified monthly audit checklist covering key FHRS criteria: food storage, preparation, cooking, hygiene, cleaning, documentation, structure, and management controls."
+      },
+      {
+        "tool_id": "T017-02",
+        "tool_name": "Quarterly Comprehensive Food Safety Audit",
+        "level": "L2",
+        "format": "audit",
+        "owner_role": "Owner",
+        "description": "Detailed quarterly audit form mirroring the full EHO inspection process, with numerical scoring (0-5) for each area and an overall predicted FHRS rating."
+      },
+      {
+        "tool_id": "T017-03",
+        "tool_name": "Self-Assessment Action Plan Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Template for documenting actions arising from self-assessments: issue identified, priority rating, action required, responsible person, deadline, and completion confirmation."
+      },
+      {
+        "tool_id": "T017-04",
+        "tool_name": "FHRS Rating Trend Tracker",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Dashboard tracking predicted FHRS scores over time from self-assessments, showing trends by category (food handling, structure, management) and highlighting areas of improvement or concern."
+      },
+      {
+        "tool_id": "T017-05",
+        "tool_name": "Self-Assessment SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering self-assessment frequency, methodology, scoring system, action plan requirements, documentation, and review of effectiveness."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Self-assessments are conducted but action plans are not followed through, defeating the purpose",
+    "The auditor is too lenient or too familiar with the premises to spot issues that a fresh pair of eyes would catch",
+    "Self-assessments are scheduled but repeatedly postponed due to operational pressures",
+    "Results are not shared with the team, missing the opportunity to drive collective improvement"
+  ],
+  "kpis": [
+    "Monthly self-assessments completed on schedule every month",
+    "100% of action items from self-assessments resolved by their deadline",
+    "Predicted FHRS rating sustained at 5 across consecutive quarterly assessments",
+    "Zero surprise findings at official EHO inspections that were not identified in self-assessments"
+  ],
+  "dependencies": ["B016"],
+  "constraints": [
+    "Self-assessments must be based on current FHRS scoring criteria to be meaningful",
+    "All completed self-assessments and action plans must be retained for EHO inspection",
+    "The assessor should rotate periodically to bring fresh perspective"
+  ],
+  "time_load": {
+    "L1": "3 hours (first self-assessment including checklist creation and action plan)",
+    "L2": "4 hours (SOP drafting, quarterly audit form development, scoring system)",
+    "L3": "3 hours/quarter (comprehensive audit, trend analysis, action plan review)"
+  },
+  "review_protocol": "Monthly quick self-assessment by manager. Quarterly comprehensive audit by owner. Action plans reviewed weekly until all items resolved. Annual review of the self-assessment process effectiveness by comparing against actual EHO inspection outcomes.",
+  "meta": {
+    "summary_for_humans": "This block establishes regular internal food safety audits that mirror what an EHO inspector looks for, enabling the cafe to find and fix issues before an official inspection. It includes monthly quick checks, quarterly comprehensive audits, and action plan tracking.",
+    "implementation_risks": [
+      "Self-assessment can become a comfort blanket if not conducted with genuine rigour",
+      "Staff may feel audited and judged — frame it as finding opportunities to improve, not finding fault",
+      "Comparison with actual EHO inspections is essential to calibrate the self-assessment process"
+    ],
+    "notes_for_engine": "Activate after B016 (Record-Keeping) is in place. Flag as urgent if an EHO inspection is anticipated, if the current FHRS rating is below 5, or if no self-assessment has been conducted in the past 3 months.",
+    "tags": ["food_safety", "audit", "self_assessment", "FHRS", "EHO", "compliance", "management", "continuous_improvement"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

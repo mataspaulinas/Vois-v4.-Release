@@ -1,0 +1,2143 @@
+{
+  "venue_context": {
+    "venue_name": "Phase 0 Conflict Cafe",
+    "type": "independent_cafe",
+    "stage": "active",
+    "team_size": 11,
+    "location": "Vilnius",
+    "capacity_profile": {
+      "leadership_strength": "medium",
+      "volatility": "high"
+    },
+    "venue_id": "e02208c5-344d-4e47-b15f-63b460038b05",
+    "assessment_date": "2026-03-27"
+  },
+  "normalized_signals": [
+    {
+      "signal_id": "S019",
+      "domain_id": "Customer Experience & Service",
+      "severity": "high",
+      "timestamp": "2026-03-27",
+      "source_type": "intake",
+      "venue_id": "e02208c5-344d-4e47-b15f-63b460038b05",
+      "notes": "Observed queue times above 8 minutes on weekday morning peaks for the last two weeks.",
+      "signal_name": "queue_wait_times_excessive",
+      "description": "Customers regularly waiting more than 5 minutes in queue during peak periods",
+      "value": 8
+    },
+    {
+      "signal_id": "S071",
+      "domain_id": "Operations & Workflow",
+      "severity": "medium",
+      "timestamp": "2026-03-27",
+      "source_type": "intake",
+      "venue_id": "e02208c5-344d-4e47-b15f-63b460038b05",
+      "notes": "Morning team is opening without a daily huddle and issues are being discovered live on the floor.",
+      "signal_name": "daily_huddle_absent",
+      "description": "No daily team briefing or shift handover communication",
+      "value": null
+    },
+    {
+      "signal_id": "S083",
+      "domain_id": "Operations & Workflow",
+      "severity": "high",
+      "timestamp": "2026-03-27",
+      "source_type": "intake",
+      "venue_id": "e02208c5-344d-4e47-b15f-63b460038b05",
+      "notes": "Peak staffing pattern is not calibrated: two baristas are idle mid-afternoon but the morning queue still collapses.",
+      "signal_name": "peak_staffing_not_calibrated",
+      "description": "Staffing levels not aligned to actual peak-hour demand patterns",
+      "value": null
+    },
+    {
+      "signal_id": "S099",
+      "domain_id": "Financial Performance",
+      "severity": "high",
+      "timestamp": "2026-03-27",
+      "source_type": "intake",
+      "venue_id": "e02208c5-344d-4e47-b15f-63b460038b05",
+      "notes": "Revenue per trading hour has fallen over the last three weekly comparisons despite peak queues remaining unresolved.",
+      "signal_name": "revenue_per_hour_declining",
+      "description": "Revenue per trading hour declining by more than 5 percent over consecutive periods",
+      "value": 9
+    },
+    {
+      "signal_id": "S104",
+      "domain_id": "Financial Performance",
+      "severity": "high",
+      "timestamp": "2026-03-27",
+      "source_type": "intake",
+      "venue_id": "e02208c5-344d-4e47-b15f-63b460038b05",
+      "notes": "Payroll is running above target while the shift shape still fails to cover peak demand cleanly.",
+      "signal_name": "payroll_percentage_high",
+      "description": "Payroll costs exceeding 35 percent of revenue",
+      "value": 39
+    }
+  ],
+  "activated_failure_modes": [
+    {
+      "failure_mode_id": "FM064",
+      "score": 1.0,
+      "domain_id": "D07",
+      "module_id": "",
+      "signal_ids": [
+        "S104",
+        "S083"
+      ],
+      "title": "Payroll cost management failure",
+      "severity": "high",
+      "description": "Payroll cost management failure"
+    },
+    {
+      "failure_mode_id": "FM011",
+      "score": 0.8,
+      "domain_id": "D02",
+      "module_id": "",
+      "signal_ids": [
+        "S019"
+      ],
+      "title": "Queue management and wait time failure",
+      "severity": "high",
+      "description": "Queue management and wait time failure"
+    },
+    {
+      "failure_mode_id": "FM097",
+      "score": 0.8,
+      "domain_id": "D05",
+      "module_id": "M14",
+      "signal_ids": [
+        "S071"
+      ],
+      "title": "Operational discipline and daily routine failure",
+      "severity": "high",
+      "description": "Operational discipline and daily routine failure"
+    },
+    {
+      "failure_mode_id": "FM040",
+      "score": 0.8,
+      "domain_id": "D05",
+      "module_id": "",
+      "signal_ids": [
+        "S083"
+      ],
+      "title": "Morning rush and peak management failure",
+      "severity": "high",
+      "description": "Morning rush and peak management failure"
+    },
+    {
+      "failure_mode_id": "FM059",
+      "score": 0.8,
+      "domain_id": "D07",
+      "module_id": "",
+      "signal_ids": [
+        "S099"
+      ],
+      "title": "Revenue per hour and sales productivity failure",
+      "severity": "high",
+      "description": "Revenue per hour and sales productivity failure"
+    },
+    {
+      "failure_mode_id": "FM042",
+      "score": 0.7,
+      "domain_id": "D05",
+      "module_id": "",
+      "signal_ids": [
+        "S019"
+      ],
+      "title": "Ticket time and service speed failure",
+      "severity": "high",
+      "description": "Ticket time and service speed failure"
+    },
+    {
+      "failure_mode_id": "FM032",
+      "score": 0.7,
+      "domain_id": "D04",
+      "module_id": "",
+      "signal_ids": [
+        "S071"
+      ],
+      "title": "Team communication and meeting failure",
+      "severity": "medium",
+      "description": "Team communication and meeting failure"
+    },
+    {
+      "failure_mode_id": "FM060",
+      "score": 0.7,
+      "domain_id": "D07",
+      "module_id": "",
+      "signal_ids": [
+        "S099"
+      ],
+      "title": "Average transaction value growth failure",
+      "severity": "medium",
+      "description": "Average transaction value growth failure"
+    },
+    {
+      "failure_mode_id": "FM065",
+      "score": 0.7,
+      "domain_id": "D07",
+      "module_id": "",
+      "signal_ids": [
+        "S104"
+      ],
+      "title": "Cash flow and budgeting failure",
+      "severity": "high",
+      "description": "Cash flow and budgeting failure"
+    }
+  ],
+  "activated_response_patterns": [
+    {
+      "response_pattern_id": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "domain": "D05",
+      "severity": "medium-critical",
+      "priority_score": 1.5,
+      "l1_focus": "Review your staffing levels against your transaction data for the past four weeks. Are you adequately staffed during peak hours (typically 7-10am and 12-2pm)? If ticket times exceed 5 minutes during peak you are either understaffed or your workflow is broken. Observe your team during the next morning rush and identify every point of delay or confusion.",
+      "l2_focus": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+      "l3_focus": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+      "description": "Peak Staffing & Rush Management",
+      "triggering_fm_ids": [
+        "FM040",
+        "FM042"
+      ]
+    },
+    {
+      "response_pattern_id": "RP034",
+      "rp_name": "Revenue Growth & Pricing Strategy",
+      "domain": "D07",
+      "severity": "medium-critical",
+      "priority_score": 1.5,
+      "l1_focus": "Pull your revenue per hour data for the past four weeks. Identify your most and least productive hours. Is your average transaction value (ATV) growing or stagnant? When did you last review your prices? If it has been more than 12 months your prices are almost certainly too low given ingredient and wage inflation. Compare your prices to three local competitors this week.",
+      "l2_focus": "Implement a structured pricing review process conducted every 6-12 months. Develop an upselling programme training baristas to suggest add-ons naturally — extra shot cake with coffee larger size. Track ATV daily and set improvement targets. Create revenue targets for each shift and share them with the team. Analyse your highest-margin items and position them prominently.",
+      "l3_focus": "Build a revenue growth culture where the team understands the connection between their service and the cafe's financial health. Your pricing should reflect your value not just your costs. Develop premium offerings that increase ATV without alienating core customers. Track revenue per hour as your primary productivity metric.",
+      "description": "Revenue Growth & Pricing Strategy",
+      "triggering_fm_ids": [
+        "FM059",
+        "FM060"
+      ]
+    },
+    {
+      "response_pattern_id": "RP036",
+      "rp_name": "Cost Structure & Payroll Control",
+      "domain": "D07",
+      "severity": "medium-critical",
+      "priority_score": 1.0,
+      "l1_focus": "Calculate your payroll percentage — total staff costs divided by revenue. For cafes this should be between 30-40%. If it is above 40% you are either overstaffed during quiet periods or your revenue is too low. Review your cost structure: rent utilities insurance supplies. Identify your top three cost-reduction opportunities without compromising quality.",
+      "l2_focus": "Implement a labour scheduling system that matches staffing levels to demand patterns. Create a cost structure dashboard tracking rent payroll cost-of-goods and utilities as percentages of revenue. Develop a payroll optimisation strategy using flexible scheduling split shifts and cross-training. Review all fixed costs annually and negotiate where possible.",
+      "l3_focus": "Master your cost structure so that margin is protected without sacrificing the customer or team experience. Your payroll model should be responsive to demand while providing team members with stable predictable hours. Build a cost-conscious culture where waste in any form is identified and addressed.",
+      "description": "Cost Structure & Payroll Control",
+      "triggering_fm_ids": [
+        "FM064"
+      ]
+    },
+    {
+      "response_pattern_id": "RP006",
+      "rp_name": "Queue Management & Service Speed",
+      "domain": "D02",
+      "severity": "medium-critical",
+      "priority_score": 0.8,
+      "l1_focus": "Measure your peak queue times this week. Time how long customers wait from joining the queue to receiving their order during morning rush (7-10am) and lunchtime peak. If any customer waits more than 5 minutes to order or more than 8 minutes for a coffee something is wrong. Identify the bottleneck immediately — is it the till the espresso machine the food prep or the team capacity?",
+      "l2_focus": "Design a peak period workflow that assigns specific roles: dedicated till operator barista food runner and floor support. Create a peak staffing model based on transaction data showing exactly how many team members you need for each hour of the day. Implement a queue management communication strategy where team members acknowledge waiting customers and provide time estimates.",
+      "l3_focus": "Build a service speed culture where the team takes pride in fast smooth service without sacrificing quality. Track average service times daily and display them to the team. Study your workflow during peak and continuously optimise. Your morning rush should feel energised and efficient not chaotic. Customers should never feel ignored even when you are busy.",
+      "description": "Queue Management & Service Speed",
+      "triggering_fm_ids": [
+        "FM011"
+      ]
+    },
+    {
+      "response_pattern_id": "RP053",
+      "rp_name": "Operational Rhythm & Daily Discipline",
+      "domain": "D05",
+      "severity": "medium-critical",
+      "priority_score": 0.8,
+      "l1_focus": "Review your daily operational discipline. Are prep lists being used? Is the waste log completed every day? Is the maintenance log up to date? Are daily targets communicated to the team? If any of these basic disciplines have lapsed recommit to them this week. Operational discipline is the foundation everything else is built on.",
+      "l2_focus": "Create a comprehensive daily discipline framework covering prep lists waste logs maintenance logs cash reconciliation temperature checks and target tracking. Implement an operational rhythm dashboard that gives you a daily snapshot of compliance. Train all shift-capable team members on the full discipline framework. Conduct weekly discipline audits and address gaps immediately.",
+      "l3_focus": "Operational discipline should be invisible because it is automatic. Your daily routines should be so embedded that they happen without thinking. Build a culture where discipline is respected and lapses are noticed by the team not just by management. Your operational rhythm should be the heartbeat of your cafe.",
+      "description": "Operational Rhythm & Daily Discipline",
+      "triggering_fm_ids": [
+        "FM097"
+      ]
+    },
+    {
+      "response_pattern_id": "RP020",
+      "rp_name": "Team Communication & Meetings",
+      "domain": "D04",
+      "severity": "medium-critical",
+      "priority_score": 0.7,
+      "l1_focus": "Are you holding daily team briefings before each shift? If not start tomorrow. A 5-minute huddle covering the day's targets any specials or changes and any issues from yesterday transforms team alignment. Check whether you have a weekly team meeting — if not schedule one. Communication gaps create errors waste and frustration.",
+      "l2_focus": "Implement a structured communication framework: daily pre-shift briefings weekly team meetings and monthly all-hands sessions. Create agenda templates for each format. Establish a digital communication channel (WhatsApp group or similar) for operational updates. Develop a rota publication policy ensuring at least two weeks advance notice. Track meeting attendance and action completion.",
+      "l3_focus": "Build a communication culture where information flows freely and everyone feels heard. Your team should understand the cafe's goals challenges and successes. Use meetings as opportunities for recognition and skill sharing not just task allocation. Excellent communication is the foundation of team performance.",
+      "description": "Team Communication & Meetings",
+      "triggering_fm_ids": [
+        "FM032"
+      ]
+    },
+    {
+      "response_pattern_id": "RP035",
+      "rp_name": "Financial Review & Budgeting",
+      "domain": "D07",
+      "severity": "medium-critical",
+      "priority_score": 0.7,
+      "l1_focus": "When did you last review your financial performance in detail? If you cannot state your monthly revenue profit and cash position from memory you need better financial visibility. Pull your last three months of data and review trends. Check whether you have a budget or forecast for the year — if not you are flying blind.",
+      "l2_focus": "Establish a weekly financial review ritual covering revenue costs margins and cash position. Create an annual budget broken down by month with variance analysis. Implement a financial dashboard showing key metrics updated weekly. Develop financial literacy across your shift leads so they understand the impact of waste staffing and pricing decisions.",
+      "l3_focus": "Your financial management should give you confidence and control. Track financial KPIs monthly and review trends quarterly. Build a forecasting capability that predicts seasonal patterns and plans accordingly. Financial discipline should be embedded in daily decisions not confined to monthly reviews.",
+      "description": "Financial Review & Budgeting",
+      "triggering_fm_ids": [
+        "FM065"
+      ]
+    }
+  ],
+  "action_plan": {
+    "L1_tasks": [
+      {
+        "task_id": "L1_001",
+        "item_id": "B085",
+        "item_type": "block",
+        "title": "Peak Staffing Model",
+        "source_rp": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "module_id": "M05",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Review your staffing levels against your transaction data for the past four weeks. Are you adequately staffed during peak hours (typically 7-10am and 12-2pm)? If ticket times exceed 5 minutes during peak you are either understaffed or your workflow is broken. Observe your team during the next morning rush and identify every point of delay or confusion.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP024",
+          "rp_name": "Peak Staffing & Rush Management",
+          "failure_modes": [
+            {
+              "fm_id": "FM040",
+              "fm_title": "Morning rush and peak management failure"
+            },
+            {
+              "fm_id": "FM042",
+              "fm_title": "Ticket time and service speed failure"
+            }
+          ],
+          "signal_ids": [
+            "S019",
+            "S083"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_002",
+        "item_id": "B086",
+        "item_type": "block",
+        "title": "Morning Rush Workflow",
+        "source_rp": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "module_id": "M05",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Review your staffing levels against your transaction data for the past four weeks. Are you adequately staffed during peak hours (typically 7-10am and 12-2pm)? If ticket times exceed 5 minutes during peak you are either understaffed or your workflow is broken. Observe your team during the next morning rush and identify every point of delay or confusion.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP024",
+          "rp_name": "Peak Staffing & Rush Management",
+          "failure_modes": [
+            {
+              "fm_id": "FM040",
+              "fm_title": "Morning rush and peak management failure"
+            },
+            {
+              "fm_id": "FM042",
+              "fm_title": "Ticket time and service speed failure"
+            }
+          ],
+          "signal_ids": [
+            "S019",
+            "S083"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_003",
+        "item_id": "B087",
+        "item_type": "block",
+        "title": "Pre-Rush Mise-en-Place",
+        "source_rp": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "module_id": "M05",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Review your staffing levels against your transaction data for the past four weeks. Are you adequately staffed during peak hours (typically 7-10am and 12-2pm)? If ticket times exceed 5 minutes during peak you are either understaffed or your workflow is broken. Observe your team during the next morning rush and identify every point of delay or confusion.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP024",
+          "rp_name": "Peak Staffing & Rush Management",
+          "failure_modes": [
+            {
+              "fm_id": "FM040",
+              "fm_title": "Morning rush and peak management failure"
+            },
+            {
+              "fm_id": "FM042",
+              "fm_title": "Ticket time and service speed failure"
+            }
+          ],
+          "signal_ids": [
+            "S019",
+            "S083"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_004",
+        "item_id": "B118",
+        "item_type": "block",
+        "title": "Menu Pricing Strategy",
+        "source_rp": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "module_id": "M07",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Pull your revenue per hour data for the past four weeks. Identify your most and least productive hours. Is your average transaction value (ATV) growing or stagnant? When did you last review your prices? If it has been more than 12 months your prices are almost certainly too low given ingredient and wage inflation. Compare your prices to three local competitors this week.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP034",
+          "rp_name": "Revenue Growth & Pricing Strategy",
+          "failure_modes": [
+            {
+              "fm_id": "FM059",
+              "fm_title": "Revenue per hour and sales productivity failure"
+            },
+            {
+              "fm_id": "FM060",
+              "fm_title": "Average transaction value growth failure"
+            }
+          ],
+          "signal_ids": [
+            "S099"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_005",
+        "item_id": "B119",
+        "item_type": "block",
+        "title": "Revenue Per Hour Tracking",
+        "source_rp": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "module_id": "M07",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Pull your revenue per hour data for the past four weeks. Identify your most and least productive hours. Is your average transaction value (ATV) growing or stagnant? When did you last review your prices? If it has been more than 12 months your prices are almost certainly too low given ingredient and wage inflation. Compare your prices to three local competitors this week.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP034",
+          "rp_name": "Revenue Growth & Pricing Strategy",
+          "failure_modes": [
+            {
+              "fm_id": "FM059",
+              "fm_title": "Revenue per hour and sales productivity failure"
+            },
+            {
+              "fm_id": "FM060",
+              "fm_title": "Average transaction value growth failure"
+            }
+          ],
+          "signal_ids": [
+            "S099"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_006",
+        "item_id": "B120",
+        "item_type": "block",
+        "title": "Upselling & Add-On Training",
+        "source_rp": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "module_id": "M07",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Pull your revenue per hour data for the past four weeks. Identify your most and least productive hours. Is your average transaction value (ATV) growing or stagnant? When did you last review your prices? If it has been more than 12 months your prices are almost certainly too low given ingredient and wage inflation. Compare your prices to three local competitors this week.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP034",
+          "rp_name": "Revenue Growth & Pricing Strategy",
+          "failure_modes": [
+            {
+              "fm_id": "FM059",
+              "fm_title": "Revenue per hour and sales productivity failure"
+            },
+            {
+              "fm_id": "FM060",
+              "fm_title": "Average transaction value growth failure"
+            }
+          ],
+          "signal_ids": [
+            "S099"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_007",
+        "item_id": "B125",
+        "item_type": "block",
+        "title": "Payroll Cost Optimisation",
+        "source_rp": "RP036",
+        "rp_name": "Cost Structure & Payroll Control",
+        "module_id": "M07",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Calculate your payroll percentage — total staff costs divided by revenue. For cafes this should be between 30-40%. If it is above 40% you are either overstaffed during quiet periods or your revenue is too low. Review your cost structure: rent utilities insurance supplies. Identify your top three cost-reduction opportunities without compromising quality.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP036",
+          "rp_name": "Cost Structure & Payroll Control",
+          "failure_modes": [
+            {
+              "fm_id": "FM064",
+              "fm_title": "Payroll cost management failure"
+            }
+          ],
+          "signal_ids": [
+            "S083",
+            "S104"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_008",
+        "item_id": "B126",
+        "item_type": "block",
+        "title": "Occupancy Cost Strategy",
+        "source_rp": "RP036",
+        "rp_name": "Cost Structure & Payroll Control",
+        "module_id": "M07",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Calculate your payroll percentage — total staff costs divided by revenue. For cafes this should be between 30-40%. If it is above 40% you are either overstaffed during quiet periods or your revenue is too low. Review your cost structure: rent utilities insurance supplies. Identify your top three cost-reduction opportunities without compromising quality.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP036",
+          "rp_name": "Cost Structure & Payroll Control",
+          "failure_modes": [
+            {
+              "fm_id": "FM064",
+              "fm_title": "Payroll cost management failure"
+            }
+          ],
+          "signal_ids": [
+            "S083",
+            "S104"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_009",
+        "item_id": "B021",
+        "item_type": "block",
+        "title": "Peak Queue Management",
+        "source_rp": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "module_id": "M02",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Measure your peak queue times this week. Time how long customers wait from joining the queue to receiving their order during morning rush (7-10am) and lunchtime peak. If any customer waits more than 5 minutes to order or more than 8 minutes for a coffee something is wrong. Identify the bottleneck immediately — is it the till the espresso machine the food prep or the team capacity?",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP006",
+          "rp_name": "Queue Management & Service Speed",
+          "failure_modes": [
+            {
+              "fm_id": "FM011",
+              "fm_title": "Queue management and wait time failure"
+            }
+          ],
+          "signal_ids": [
+            "S019"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_010",
+        "item_id": "B022",
+        "item_type": "block",
+        "title": "Order-Taking Speed Protocol",
+        "source_rp": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "module_id": "M02",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Measure your peak queue times this week. Time how long customers wait from joining the queue to receiving their order during morning rush (7-10am) and lunchtime peak. If any customer waits more than 5 minutes to order or more than 8 minutes for a coffee something is wrong. Identify the bottleneck immediately — is it the till the espresso machine the food prep or the team capacity?",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP006",
+          "rp_name": "Queue Management & Service Speed",
+          "failure_modes": [
+            {
+              "fm_id": "FM011",
+              "fm_title": "Queue management and wait time failure"
+            }
+          ],
+          "signal_ids": [
+            "S019"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_011",
+        "item_id": "B023",
+        "item_type": "block",
+        "title": "Queue Communication Experience",
+        "source_rp": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "module_id": "M02",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Measure your peak queue times this week. Time how long customers wait from joining the queue to receiving their order during morning rush (7-10am) and lunchtime peak. If any customer waits more than 5 minutes to order or more than 8 minutes for a coffee something is wrong. Identify the bottleneck immediately — is it the till the espresso machine the food prep or the team capacity?",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP006",
+          "rp_name": "Queue Management & Service Speed",
+          "failure_modes": [
+            {
+              "fm_id": "FM011",
+              "fm_title": "Queue management and wait time failure"
+            }
+          ],
+          "signal_ids": [
+            "S019"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_012",
+        "item_id": "B179",
+        "item_type": "block",
+        "title": "Daily Prep List Protocol",
+        "source_rp": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "module_id": "M14",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Review your daily operational discipline. Are prep lists being used? Is the waste log completed every day? Is the maintenance log up to date? Are daily targets communicated to the team? If any of these basic disciplines have lapsed recommit to them this week. Operational discipline is the foundation everything else is built on.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP053",
+          "rp_name": "Operational Rhythm & Daily Discipline",
+          "failure_modes": [
+            {
+              "fm_id": "FM097",
+              "fm_title": "Operational discipline and daily routine failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_013",
+        "item_id": "B180",
+        "item_type": "block",
+        "title": "Machine Maintenance Log",
+        "source_rp": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "module_id": "M14",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Review your daily operational discipline. Are prep lists being used? Is the waste log completed every day? Is the maintenance log up to date? Are daily targets communicated to the team? If any of these basic disciplines have lapsed recommit to them this week. Operational discipline is the foundation everything else is built on.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP053",
+          "rp_name": "Operational Rhythm & Daily Discipline",
+          "failure_modes": [
+            {
+              "fm_id": "FM097",
+              "fm_title": "Operational discipline and daily routine failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_014",
+        "item_id": "B181",
+        "item_type": "block",
+        "title": "Waste Log & Reconciliation",
+        "source_rp": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "module_id": "M14",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Review your daily operational discipline. Are prep lists being used? Is the waste log completed every day? Is the maintenance log up to date? Are daily targets communicated to the team? If any of these basic disciplines have lapsed recommit to them this week. Operational discipline is the foundation everything else is built on.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP053",
+          "rp_name": "Operational Rhythm & Daily Discipline",
+          "failure_modes": [
+            {
+              "fm_id": "FM097",
+              "fm_title": "Operational discipline and daily routine failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_015",
+        "item_id": "B074",
+        "item_type": "block",
+        "title": "Daily Team Briefing Protocol",
+        "source_rp": "RP020",
+        "rp_name": "Team Communication & Meetings",
+        "module_id": "M04",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Are you holding daily team briefings before each shift? If not start tomorrow. A 5-minute huddle covering the day's targets any specials or changes and any issues from yesterday transforms team alignment. Check whether you have a weekly team meeting — if not schedule one. Communication gaps create errors waste and frustration.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP020",
+          "rp_name": "Team Communication & Meetings",
+          "failure_modes": [
+            {
+              "fm_id": "FM032",
+              "fm_title": "Team communication and meeting failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_016",
+        "item_id": "B075",
+        "item_type": "block",
+        "title": "Weekly Team Meeting Structure",
+        "source_rp": "RP020",
+        "rp_name": "Team Communication & Meetings",
+        "module_id": "M04",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "Are you holding daily team briefings before each shift? If not start tomorrow. A 5-minute huddle covering the day's targets any specials or changes and any issues from yesterday transforms team alignment. Check whether you have a weekly team meeting — if not schedule one. Communication gaps create errors waste and frustration.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP020",
+          "rp_name": "Team Communication & Meetings",
+          "failure_modes": [
+            {
+              "fm_id": "FM032",
+              "fm_title": "Team communication and meeting failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_017",
+        "item_id": "B122",
+        "item_type": "block",
+        "title": "Weekly Financial Review",
+        "source_rp": "RP035",
+        "rp_name": "Financial Review & Budgeting",
+        "module_id": "M07",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "When did you last review your financial performance in detail? If you cannot state your monthly revenue profit and cash position from memory you need better financial visibility. Pull your last three months of data and review trends. Check whether you have a budget or forecast for the year — if not you are flying blind.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP035",
+          "rp_name": "Financial Review & Budgeting",
+          "failure_modes": [
+            {
+              "fm_id": "FM065",
+              "fm_title": "Cash flow and budgeting failure"
+            }
+          ],
+          "signal_ids": [
+            "S104"
+          ]
+        }
+      },
+      {
+        "task_id": "L1_018",
+        "item_id": "B123",
+        "item_type": "block",
+        "title": "Annual Budget & Forecast",
+        "source_rp": "RP035",
+        "rp_name": "Financial Review & Budgeting",
+        "module_id": "M07",
+        "timeline": "Days 1–30",
+        "priority": "high",
+        "description": "When did you last review your financial performance in detail? If you cannot state your monthly revenue profit and cash position from memory you need better financial visibility. Pull your last three months of data and review trends. Check whether you have a budget or forecast for the year — if not you are flying blind.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP035",
+          "rp_name": "Financial Review & Budgeting",
+          "failure_modes": [
+            {
+              "fm_id": "FM065",
+              "fm_title": "Cash flow and budgeting failure"
+            }
+          ],
+          "signal_ids": [
+            "S104"
+          ]
+        }
+      }
+    ],
+    "L2_tasks": [
+      {
+        "task_id": "L2_001",
+        "item_id": "B085",
+        "item_type": "block",
+        "title": "Peak Staffing Model",
+        "source_rp": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "module_id": "M05",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP024",
+          "rp_name": "Peak Staffing & Rush Management",
+          "failure_modes": [
+            {
+              "fm_id": "FM040",
+              "fm_title": "Morning rush and peak management failure"
+            },
+            {
+              "fm_id": "FM042",
+              "fm_title": "Ticket time and service speed failure"
+            }
+          ],
+          "signal_ids": [
+            "S019",
+            "S083"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_002",
+        "item_id": "B086",
+        "item_type": "block",
+        "title": "Morning Rush Workflow",
+        "source_rp": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "module_id": "M05",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP024",
+          "rp_name": "Peak Staffing & Rush Management",
+          "failure_modes": [
+            {
+              "fm_id": "FM040",
+              "fm_title": "Morning rush and peak management failure"
+            },
+            {
+              "fm_id": "FM042",
+              "fm_title": "Ticket time and service speed failure"
+            }
+          ],
+          "signal_ids": [
+            "S019",
+            "S083"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_003",
+        "item_id": "B087",
+        "item_type": "block",
+        "title": "Pre-Rush Mise-en-Place",
+        "source_rp": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "module_id": "M05",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP024",
+          "rp_name": "Peak Staffing & Rush Management",
+          "failure_modes": [
+            {
+              "fm_id": "FM040",
+              "fm_title": "Morning rush and peak management failure"
+            },
+            {
+              "fm_id": "FM042",
+              "fm_title": "Ticket time and service speed failure"
+            }
+          ],
+          "signal_ids": [
+            "S019",
+            "S083"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_004",
+        "item_id": "B088",
+        "item_type": "block",
+        "title": "Peak Performance Analysis",
+        "source_rp": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "module_id": "M05",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP024",
+          "rp_name": "Peak Staffing & Rush Management",
+          "failure_modes": [
+            {
+              "fm_id": "FM040",
+              "fm_title": "Morning rush and peak management failure"
+            },
+            {
+              "fm_id": "FM042",
+              "fm_title": "Ticket time and service speed failure"
+            }
+          ],
+          "signal_ids": [
+            "S019",
+            "S083"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_005",
+        "item_id": "B203",
+        "item_type": "block",
+        "title": "Drive-Through Workflow",
+        "source_rp": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "module_id": "M05",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP024",
+          "rp_name": "Peak Staffing & Rush Management",
+          "failure_modes": [
+            {
+              "fm_id": "FM040",
+              "fm_title": "Morning rush and peak management failure"
+            },
+            {
+              "fm_id": "FM042",
+              "fm_title": "Ticket time and service speed failure"
+            }
+          ],
+          "signal_ids": [
+            "S019",
+            "S083"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_006",
+        "item_id": "B204",
+        "item_type": "block",
+        "title": "Kiosk Operations",
+        "source_rp": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "module_id": "M05",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP024",
+          "rp_name": "Peak Staffing & Rush Management",
+          "failure_modes": [
+            {
+              "fm_id": "FM040",
+              "fm_title": "Morning rush and peak management failure"
+            },
+            {
+              "fm_id": "FM042",
+              "fm_title": "Ticket time and service speed failure"
+            }
+          ],
+          "signal_ids": [
+            "S019",
+            "S083"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_007",
+        "item_id": "B205",
+        "item_type": "block",
+        "title": "Coffee Van Operations",
+        "source_rp": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "module_id": "M05",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP024",
+          "rp_name": "Peak Staffing & Rush Management",
+          "failure_modes": [
+            {
+              "fm_id": "FM040",
+              "fm_title": "Morning rush and peak management failure"
+            },
+            {
+              "fm_id": "FM042",
+              "fm_title": "Ticket time and service speed failure"
+            }
+          ],
+          "signal_ids": [
+            "S019",
+            "S083"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_008",
+        "item_id": "B118",
+        "item_type": "block",
+        "title": "Menu Pricing Strategy",
+        "source_rp": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "module_id": "M07",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Implement a structured pricing review process conducted every 6-12 months. Develop an upselling programme training baristas to suggest add-ons naturally — extra shot cake with coffee larger size. Track ATV daily and set improvement targets. Create revenue targets for each shift and share them with the team. Analyse your highest-margin items and position them prominently.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP034",
+          "rp_name": "Revenue Growth & Pricing Strategy",
+          "failure_modes": [
+            {
+              "fm_id": "FM059",
+              "fm_title": "Revenue per hour and sales productivity failure"
+            },
+            {
+              "fm_id": "FM060",
+              "fm_title": "Average transaction value growth failure"
+            }
+          ],
+          "signal_ids": [
+            "S099"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_009",
+        "item_id": "B119",
+        "item_type": "block",
+        "title": "Revenue Per Hour Tracking",
+        "source_rp": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "module_id": "M07",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Implement a structured pricing review process conducted every 6-12 months. Develop an upselling programme training baristas to suggest add-ons naturally — extra shot cake with coffee larger size. Track ATV daily and set improvement targets. Create revenue targets for each shift and share them with the team. Analyse your highest-margin items and position them prominently.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP034",
+          "rp_name": "Revenue Growth & Pricing Strategy",
+          "failure_modes": [
+            {
+              "fm_id": "FM059",
+              "fm_title": "Revenue per hour and sales productivity failure"
+            },
+            {
+              "fm_id": "FM060",
+              "fm_title": "Average transaction value growth failure"
+            }
+          ],
+          "signal_ids": [
+            "S099"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_010",
+        "item_id": "B120",
+        "item_type": "block",
+        "title": "Upselling & Add-On Training",
+        "source_rp": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "module_id": "M07",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Implement a structured pricing review process conducted every 6-12 months. Develop an upselling programme training baristas to suggest add-ons naturally — extra shot cake with coffee larger size. Track ATV daily and set improvement targets. Create revenue targets for each shift and share them with the team. Analyse your highest-margin items and position them prominently.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP034",
+          "rp_name": "Revenue Growth & Pricing Strategy",
+          "failure_modes": [
+            {
+              "fm_id": "FM059",
+              "fm_title": "Revenue per hour and sales productivity failure"
+            },
+            {
+              "fm_id": "FM060",
+              "fm_title": "Average transaction value growth failure"
+            }
+          ],
+          "signal_ids": [
+            "S099"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_011",
+        "item_id": "B121",
+        "item_type": "block",
+        "title": "Revenue Growth Strategy",
+        "source_rp": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "module_id": "M07",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Implement a structured pricing review process conducted every 6-12 months. Develop an upselling programme training baristas to suggest add-ons naturally — extra shot cake with coffee larger size. Track ATV daily and set improvement targets. Create revenue targets for each shift and share them with the team. Analyse your highest-margin items and position them prominently.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP034",
+          "rp_name": "Revenue Growth & Pricing Strategy",
+          "failure_modes": [
+            {
+              "fm_id": "FM059",
+              "fm_title": "Revenue per hour and sales productivity failure"
+            },
+            {
+              "fm_id": "FM060",
+              "fm_title": "Average transaction value growth failure"
+            }
+          ],
+          "signal_ids": [
+            "S099"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_012",
+        "item_id": "B125",
+        "item_type": "block",
+        "title": "Payroll Cost Optimisation",
+        "source_rp": "RP036",
+        "rp_name": "Cost Structure & Payroll Control",
+        "module_id": "M07",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Implement a labour scheduling system that matches staffing levels to demand patterns. Create a cost structure dashboard tracking rent payroll cost-of-goods and utilities as percentages of revenue. Develop a payroll optimisation strategy using flexible scheduling split shifts and cross-training. Review all fixed costs annually and negotiate where possible.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP036",
+          "rp_name": "Cost Structure & Payroll Control",
+          "failure_modes": [
+            {
+              "fm_id": "FM064",
+              "fm_title": "Payroll cost management failure"
+            }
+          ],
+          "signal_ids": [
+            "S083",
+            "S104"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_013",
+        "item_id": "B126",
+        "item_type": "block",
+        "title": "Occupancy Cost Strategy",
+        "source_rp": "RP036",
+        "rp_name": "Cost Structure & Payroll Control",
+        "module_id": "M07",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Implement a labour scheduling system that matches staffing levels to demand patterns. Create a cost structure dashboard tracking rent payroll cost-of-goods and utilities as percentages of revenue. Develop a payroll optimisation strategy using flexible scheduling split shifts and cross-training. Review all fixed costs annually and negotiate where possible.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP036",
+          "rp_name": "Cost Structure & Payroll Control",
+          "failure_modes": [
+            {
+              "fm_id": "FM064",
+              "fm_title": "Payroll cost management failure"
+            }
+          ],
+          "signal_ids": [
+            "S083",
+            "S104"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_014",
+        "item_id": "B127",
+        "item_type": "block",
+        "title": "Cost Structure Excellence",
+        "source_rp": "RP036",
+        "rp_name": "Cost Structure & Payroll Control",
+        "module_id": "M07",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Implement a labour scheduling system that matches staffing levels to demand patterns. Create a cost structure dashboard tracking rent payroll cost-of-goods and utilities as percentages of revenue. Develop a payroll optimisation strategy using flexible scheduling split shifts and cross-training. Review all fixed costs annually and negotiate where possible.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP036",
+          "rp_name": "Cost Structure & Payroll Control",
+          "failure_modes": [
+            {
+              "fm_id": "FM064",
+              "fm_title": "Payroll cost management failure"
+            }
+          ],
+          "signal_ids": [
+            "S083",
+            "S104"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_015",
+        "item_id": "B021",
+        "item_type": "block",
+        "title": "Peak Queue Management",
+        "source_rp": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "module_id": "M02",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Design a peak period workflow that assigns specific roles: dedicated till operator barista food runner and floor support. Create a peak staffing model based on transaction data showing exactly how many team members you need for each hour of the day. Implement a queue management communication strategy where team members acknowledge waiting customers and provide time estimates.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP006",
+          "rp_name": "Queue Management & Service Speed",
+          "failure_modes": [
+            {
+              "fm_id": "FM011",
+              "fm_title": "Queue management and wait time failure"
+            }
+          ],
+          "signal_ids": [
+            "S019"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_016",
+        "item_id": "B022",
+        "item_type": "block",
+        "title": "Order-Taking Speed Protocol",
+        "source_rp": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "module_id": "M02",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Design a peak period workflow that assigns specific roles: dedicated till operator barista food runner and floor support. Create a peak staffing model based on transaction data showing exactly how many team members you need for each hour of the day. Implement a queue management communication strategy where team members acknowledge waiting customers and provide time estimates.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP006",
+          "rp_name": "Queue Management & Service Speed",
+          "failure_modes": [
+            {
+              "fm_id": "FM011",
+              "fm_title": "Queue management and wait time failure"
+            }
+          ],
+          "signal_ids": [
+            "S019"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_017",
+        "item_id": "B023",
+        "item_type": "block",
+        "title": "Queue Communication Experience",
+        "source_rp": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "module_id": "M02",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Design a peak period workflow that assigns specific roles: dedicated till operator barista food runner and floor support. Create a peak staffing model based on transaction data showing exactly how many team members you need for each hour of the day. Implement a queue management communication strategy where team members acknowledge waiting customers and provide time estimates.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP006",
+          "rp_name": "Queue Management & Service Speed",
+          "failure_modes": [
+            {
+              "fm_id": "FM011",
+              "fm_title": "Queue management and wait time failure"
+            }
+          ],
+          "signal_ids": [
+            "S019"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_018",
+        "item_id": "B024",
+        "item_type": "block",
+        "title": "Throughput Optimisation System",
+        "source_rp": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "module_id": "M02",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Design a peak period workflow that assigns specific roles: dedicated till operator barista food runner and floor support. Create a peak staffing model based on transaction data showing exactly how many team members you need for each hour of the day. Implement a queue management communication strategy where team members acknowledge waiting customers and provide time estimates.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP006",
+          "rp_name": "Queue Management & Service Speed",
+          "failure_modes": [
+            {
+              "fm_id": "FM011",
+              "fm_title": "Queue management and wait time failure"
+            }
+          ],
+          "signal_ids": [
+            "S019"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_019",
+        "item_id": "B179",
+        "item_type": "block",
+        "title": "Daily Prep List Protocol",
+        "source_rp": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "module_id": "M14",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Create a comprehensive daily discipline framework covering prep lists waste logs maintenance logs cash reconciliation temperature checks and target tracking. Implement an operational rhythm dashboard that gives you a daily snapshot of compliance. Train all shift-capable team members on the full discipline framework. Conduct weekly discipline audits and address gaps immediately.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP053",
+          "rp_name": "Operational Rhythm & Daily Discipline",
+          "failure_modes": [
+            {
+              "fm_id": "FM097",
+              "fm_title": "Operational discipline and daily routine failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_020",
+        "item_id": "B180",
+        "item_type": "block",
+        "title": "Machine Maintenance Log",
+        "source_rp": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "module_id": "M14",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Create a comprehensive daily discipline framework covering prep lists waste logs maintenance logs cash reconciliation temperature checks and target tracking. Implement an operational rhythm dashboard that gives you a daily snapshot of compliance. Train all shift-capable team members on the full discipline framework. Conduct weekly discipline audits and address gaps immediately.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP053",
+          "rp_name": "Operational Rhythm & Daily Discipline",
+          "failure_modes": [
+            {
+              "fm_id": "FM097",
+              "fm_title": "Operational discipline and daily routine failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_021",
+        "item_id": "B181",
+        "item_type": "block",
+        "title": "Waste Log & Reconciliation",
+        "source_rp": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "module_id": "M14",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Create a comprehensive daily discipline framework covering prep lists waste logs maintenance logs cash reconciliation temperature checks and target tracking. Implement an operational rhythm dashboard that gives you a daily snapshot of compliance. Train all shift-capable team members on the full discipline framework. Conduct weekly discipline audits and address gaps immediately.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP053",
+          "rp_name": "Operational Rhythm & Daily Discipline",
+          "failure_modes": [
+            {
+              "fm_id": "FM097",
+              "fm_title": "Operational discipline and daily routine failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_022",
+        "item_id": "B182",
+        "item_type": "block",
+        "title": "Operational Rhythm Dashboard",
+        "source_rp": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "module_id": "M14",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Create a comprehensive daily discipline framework covering prep lists waste logs maintenance logs cash reconciliation temperature checks and target tracking. Implement an operational rhythm dashboard that gives you a daily snapshot of compliance. Train all shift-capable team members on the full discipline framework. Conduct weekly discipline audits and address gaps immediately.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP053",
+          "rp_name": "Operational Rhythm & Daily Discipline",
+          "failure_modes": [
+            {
+              "fm_id": "FM097",
+              "fm_title": "Operational discipline and daily routine failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_023",
+        "item_id": "B122",
+        "item_type": "block",
+        "title": "Weekly Financial Review",
+        "source_rp": "RP035",
+        "rp_name": "Financial Review & Budgeting",
+        "module_id": "M07",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Establish a weekly financial review ritual covering revenue costs margins and cash position. Create an annual budget broken down by month with variance analysis. Implement a financial dashboard showing key metrics updated weekly. Develop financial literacy across your shift leads so they understand the impact of waste staffing and pricing decisions.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP035",
+          "rp_name": "Financial Review & Budgeting",
+          "failure_modes": [
+            {
+              "fm_id": "FM065",
+              "fm_title": "Cash flow and budgeting failure"
+            }
+          ],
+          "signal_ids": [
+            "S104"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_024",
+        "item_id": "B123",
+        "item_type": "block",
+        "title": "Annual Budget & Forecast",
+        "source_rp": "RP035",
+        "rp_name": "Financial Review & Budgeting",
+        "module_id": "M07",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Establish a weekly financial review ritual covering revenue costs margins and cash position. Create an annual budget broken down by month with variance analysis. Implement a financial dashboard showing key metrics updated weekly. Develop financial literacy across your shift leads so they understand the impact of waste staffing and pricing decisions.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP035",
+          "rp_name": "Financial Review & Budgeting",
+          "failure_modes": [
+            {
+              "fm_id": "FM065",
+              "fm_title": "Cash flow and budgeting failure"
+            }
+          ],
+          "signal_ids": [
+            "S104"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_025",
+        "item_id": "B124",
+        "item_type": "block",
+        "title": "Financial Literacy Programme",
+        "source_rp": "RP035",
+        "rp_name": "Financial Review & Budgeting",
+        "module_id": "M07",
+        "timeline": "Days 31–60",
+        "priority": "high",
+        "description": "Establish a weekly financial review ritual covering revenue costs margins and cash position. Create an annual budget broken down by month with variance analysis. Implement a financial dashboard showing key metrics updated weekly. Develop financial literacy across your shift leads so they understand the impact of waste staffing and pricing decisions.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP035",
+          "rp_name": "Financial Review & Budgeting",
+          "failure_modes": [
+            {
+              "fm_id": "FM065",
+              "fm_title": "Cash flow and budgeting failure"
+            }
+          ],
+          "signal_ids": [
+            "S104"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_026",
+        "item_id": "B074",
+        "item_type": "block",
+        "title": "Daily Team Briefing Protocol",
+        "source_rp": "RP020",
+        "rp_name": "Team Communication & Meetings",
+        "module_id": "M04",
+        "timeline": "Days 31–60",
+        "priority": "medium",
+        "description": "Implement a structured communication framework: daily pre-shift briefings weekly team meetings and monthly all-hands sessions. Create agenda templates for each format. Establish a digital communication channel (WhatsApp group or similar) for operational updates. Develop a rota publication policy ensuring at least two weeks advance notice. Track meeting attendance and action completion.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP020",
+          "rp_name": "Team Communication & Meetings",
+          "failure_modes": [
+            {
+              "fm_id": "FM032",
+              "fm_title": "Team communication and meeting failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_027",
+        "item_id": "B075",
+        "item_type": "block",
+        "title": "Weekly Team Meeting Structure",
+        "source_rp": "RP020",
+        "rp_name": "Team Communication & Meetings",
+        "module_id": "M04",
+        "timeline": "Days 31–60",
+        "priority": "medium",
+        "description": "Implement a structured communication framework: daily pre-shift briefings weekly team meetings and monthly all-hands sessions. Create agenda templates for each format. Establish a digital communication channel (WhatsApp group or similar) for operational updates. Develop a rota publication policy ensuring at least two weeks advance notice. Track meeting attendance and action completion.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP020",
+          "rp_name": "Team Communication & Meetings",
+          "failure_modes": [
+            {
+              "fm_id": "FM032",
+              "fm_title": "Team communication and meeting failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      },
+      {
+        "task_id": "L2_028",
+        "item_id": "B076",
+        "item_type": "block",
+        "title": "Communication Culture & Feedback",
+        "source_rp": "RP020",
+        "rp_name": "Team Communication & Meetings",
+        "module_id": "M04",
+        "timeline": "Days 31–60",
+        "priority": "medium",
+        "description": "Implement a structured communication framework: daily pre-shift briefings weekly team meetings and monthly all-hands sessions. Create agenda templates for each format. Establish a digital communication channel (WhatsApp group or similar) for operational updates. Develop a rota publication policy ensuring at least two weeks advance notice. Track meeting attendance and action completion.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP020",
+          "rp_name": "Team Communication & Meetings",
+          "failure_modes": [
+            {
+              "fm_id": "FM032",
+              "fm_title": "Team communication and meeting failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      }
+    ],
+    "L3_tasks": [
+      {
+        "task_id": "L3_001",
+        "item_id": "B085",
+        "item_type": "block",
+        "title": "Peak Staffing Model",
+        "source_rp": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "module_id": "M05",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP024",
+          "rp_name": "Peak Staffing & Rush Management",
+          "failure_modes": [
+            {
+              "fm_id": "FM040",
+              "fm_title": "Morning rush and peak management failure"
+            },
+            {
+              "fm_id": "FM042",
+              "fm_title": "Ticket time and service speed failure"
+            }
+          ],
+          "signal_ids": [
+            "S019",
+            "S083"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_002",
+        "item_id": "B088",
+        "item_type": "block",
+        "title": "Peak Performance Analysis",
+        "source_rp": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "module_id": "M05",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP024",
+          "rp_name": "Peak Staffing & Rush Management",
+          "failure_modes": [
+            {
+              "fm_id": "FM040",
+              "fm_title": "Morning rush and peak management failure"
+            },
+            {
+              "fm_id": "FM042",
+              "fm_title": "Ticket time and service speed failure"
+            }
+          ],
+          "signal_ids": [
+            "S019",
+            "S083"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_003",
+        "item_id": "B203",
+        "item_type": "block",
+        "title": "Drive-Through Workflow",
+        "source_rp": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "module_id": "M05",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP024",
+          "rp_name": "Peak Staffing & Rush Management",
+          "failure_modes": [
+            {
+              "fm_id": "FM040",
+              "fm_title": "Morning rush and peak management failure"
+            },
+            {
+              "fm_id": "FM042",
+              "fm_title": "Ticket time and service speed failure"
+            }
+          ],
+          "signal_ids": [
+            "S019",
+            "S083"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_004",
+        "item_id": "B204",
+        "item_type": "block",
+        "title": "Kiosk Operations",
+        "source_rp": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "module_id": "M05",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP024",
+          "rp_name": "Peak Staffing & Rush Management",
+          "failure_modes": [
+            {
+              "fm_id": "FM040",
+              "fm_title": "Morning rush and peak management failure"
+            },
+            {
+              "fm_id": "FM042",
+              "fm_title": "Ticket time and service speed failure"
+            }
+          ],
+          "signal_ids": [
+            "S019",
+            "S083"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_005",
+        "item_id": "B205",
+        "item_type": "block",
+        "title": "Coffee Van Operations",
+        "source_rp": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "module_id": "M05",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP024",
+          "rp_name": "Peak Staffing & Rush Management",
+          "failure_modes": [
+            {
+              "fm_id": "FM040",
+              "fm_title": "Morning rush and peak management failure"
+            },
+            {
+              "fm_id": "FM042",
+              "fm_title": "Ticket time and service speed failure"
+            }
+          ],
+          "signal_ids": [
+            "S019",
+            "S083"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_006",
+        "item_id": "B118",
+        "item_type": "block",
+        "title": "Menu Pricing Strategy",
+        "source_rp": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "module_id": "M07",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Build a revenue growth culture where the team understands the connection between their service and the cafe's financial health. Your pricing should reflect your value not just your costs. Develop premium offerings that increase ATV without alienating core customers. Track revenue per hour as your primary productivity metric.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP034",
+          "rp_name": "Revenue Growth & Pricing Strategy",
+          "failure_modes": [
+            {
+              "fm_id": "FM059",
+              "fm_title": "Revenue per hour and sales productivity failure"
+            },
+            {
+              "fm_id": "FM060",
+              "fm_title": "Average transaction value growth failure"
+            }
+          ],
+          "signal_ids": [
+            "S099"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_007",
+        "item_id": "B121",
+        "item_type": "block",
+        "title": "Revenue Growth Strategy",
+        "source_rp": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "module_id": "M07",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Build a revenue growth culture where the team understands the connection between their service and the cafe's financial health. Your pricing should reflect your value not just your costs. Develop premium offerings that increase ATV without alienating core customers. Track revenue per hour as your primary productivity metric.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP034",
+          "rp_name": "Revenue Growth & Pricing Strategy",
+          "failure_modes": [
+            {
+              "fm_id": "FM059",
+              "fm_title": "Revenue per hour and sales productivity failure"
+            },
+            {
+              "fm_id": "FM060",
+              "fm_title": "Average transaction value growth failure"
+            }
+          ],
+          "signal_ids": [
+            "S099"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_008",
+        "item_id": "B125",
+        "item_type": "block",
+        "title": "Payroll Cost Optimisation",
+        "source_rp": "RP036",
+        "rp_name": "Cost Structure & Payroll Control",
+        "module_id": "M07",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Master your cost structure so that margin is protected without sacrificing the customer or team experience. Your payroll model should be responsive to demand while providing team members with stable predictable hours. Build a cost-conscious culture where waste in any form is identified and addressed.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP036",
+          "rp_name": "Cost Structure & Payroll Control",
+          "failure_modes": [
+            {
+              "fm_id": "FM064",
+              "fm_title": "Payroll cost management failure"
+            }
+          ],
+          "signal_ids": [
+            "S083",
+            "S104"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_009",
+        "item_id": "B127",
+        "item_type": "block",
+        "title": "Cost Structure Excellence",
+        "source_rp": "RP036",
+        "rp_name": "Cost Structure & Payroll Control",
+        "module_id": "M07",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Master your cost structure so that margin is protected without sacrificing the customer or team experience. Your payroll model should be responsive to demand while providing team members with stable predictable hours. Build a cost-conscious culture where waste in any form is identified and addressed.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP036",
+          "rp_name": "Cost Structure & Payroll Control",
+          "failure_modes": [
+            {
+              "fm_id": "FM064",
+              "fm_title": "Payroll cost management failure"
+            }
+          ],
+          "signal_ids": [
+            "S083",
+            "S104"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_010",
+        "item_id": "B021",
+        "item_type": "block",
+        "title": "Peak Queue Management",
+        "source_rp": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "module_id": "M02",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Build a service speed culture where the team takes pride in fast smooth service without sacrificing quality. Track average service times daily and display them to the team. Study your workflow during peak and continuously optimise. Your morning rush should feel energised and efficient not chaotic. Customers should never feel ignored even when you are busy.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP006",
+          "rp_name": "Queue Management & Service Speed",
+          "failure_modes": [
+            {
+              "fm_id": "FM011",
+              "fm_title": "Queue management and wait time failure"
+            }
+          ],
+          "signal_ids": [
+            "S019"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_011",
+        "item_id": "B024",
+        "item_type": "block",
+        "title": "Throughput Optimisation System",
+        "source_rp": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "module_id": "M02",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Build a service speed culture where the team takes pride in fast smooth service without sacrificing quality. Track average service times daily and display them to the team. Study your workflow during peak and continuously optimise. Your morning rush should feel energised and efficient not chaotic. Customers should never feel ignored even when you are busy.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP006",
+          "rp_name": "Queue Management & Service Speed",
+          "failure_modes": [
+            {
+              "fm_id": "FM011",
+              "fm_title": "Queue management and wait time failure"
+            }
+          ],
+          "signal_ids": [
+            "S019"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_012",
+        "item_id": "B179",
+        "item_type": "block",
+        "title": "Daily Prep List Protocol",
+        "source_rp": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "module_id": "M14",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Operational discipline should be invisible because it is automatic. Your daily routines should be so embedded that they happen without thinking. Build a culture where discipline is respected and lapses are noticed by the team not just by management. Your operational rhythm should be the heartbeat of your cafe.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP053",
+          "rp_name": "Operational Rhythm & Daily Discipline",
+          "failure_modes": [
+            {
+              "fm_id": "FM097",
+              "fm_title": "Operational discipline and daily routine failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_013",
+        "item_id": "B182",
+        "item_type": "block",
+        "title": "Operational Rhythm Dashboard",
+        "source_rp": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "module_id": "M14",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Operational discipline should be invisible because it is automatic. Your daily routines should be so embedded that they happen without thinking. Build a culture where discipline is respected and lapses are noticed by the team not just by management. Your operational rhythm should be the heartbeat of your cafe.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP053",
+          "rp_name": "Operational Rhythm & Daily Discipline",
+          "failure_modes": [
+            {
+              "fm_id": "FM097",
+              "fm_title": "Operational discipline and daily routine failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_014",
+        "item_id": "B074",
+        "item_type": "block",
+        "title": "Daily Team Briefing Protocol",
+        "source_rp": "RP020",
+        "rp_name": "Team Communication & Meetings",
+        "module_id": "M04",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Build a communication culture where information flows freely and everyone feels heard. Your team should understand the cafe's goals challenges and successes. Use meetings as opportunities for recognition and skill sharing not just task allocation. Excellent communication is the foundation of team performance.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP020",
+          "rp_name": "Team Communication & Meetings",
+          "failure_modes": [
+            {
+              "fm_id": "FM032",
+              "fm_title": "Team communication and meeting failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_015",
+        "item_id": "B076",
+        "item_type": "block",
+        "title": "Communication Culture & Feedback",
+        "source_rp": "RP020",
+        "rp_name": "Team Communication & Meetings",
+        "module_id": "M04",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Build a communication culture where information flows freely and everyone feels heard. Your team should understand the cafe's goals challenges and successes. Use meetings as opportunities for recognition and skill sharing not just task allocation. Excellent communication is the foundation of team performance.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP020",
+          "rp_name": "Team Communication & Meetings",
+          "failure_modes": [
+            {
+              "fm_id": "FM032",
+              "fm_title": "Team communication and meeting failure"
+            }
+          ],
+          "signal_ids": [
+            "S071"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_016",
+        "item_id": "B122",
+        "item_type": "block",
+        "title": "Weekly Financial Review",
+        "source_rp": "RP035",
+        "rp_name": "Financial Review & Budgeting",
+        "module_id": "M07",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Your financial management should give you confidence and control. Track financial KPIs monthly and review trends quarterly. Build a forecasting capability that predicts seasonal patterns and plans accordingly. Financial discipline should be embedded in daily decisions not confined to monthly reviews.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP035",
+          "rp_name": "Financial Review & Budgeting",
+          "failure_modes": [
+            {
+              "fm_id": "FM065",
+              "fm_title": "Cash flow and budgeting failure"
+            }
+          ],
+          "signal_ids": [
+            "S104"
+          ]
+        }
+      },
+      {
+        "task_id": "L3_017",
+        "item_id": "B124",
+        "item_type": "block",
+        "title": "Financial Literacy Programme",
+        "source_rp": "RP035",
+        "rp_name": "Financial Review & Budgeting",
+        "module_id": "M07",
+        "timeline": "Days 61–90",
+        "priority": "standard",
+        "description": "Your financial management should give you confidence and control. Track financial KPIs monthly and review trends quarterly. Build a forecasting capability that predicts seasonal patterns and plans accordingly. Financial discipline should be embedded in daily decisions not confined to monthly reviews.",
+        "depends_on_modules": [],
+        "trace": {
+          "rp_id": "RP035",
+          "rp_name": "Financial Review & Budgeting",
+          "failure_modes": [
+            {
+              "fm_id": "FM065",
+              "fm_title": "Cash flow and budgeting failure"
+            }
+          ],
+          "signal_ids": [
+            "S104"
+          ]
+        }
+      }
+    ],
+    "blocks_used": [
+      "B021",
+      "B022",
+      "B023",
+      "B024",
+      "B074",
+      "B075",
+      "B076",
+      "B085",
+      "B086",
+      "B087",
+      "B088",
+      "B118",
+      "B119",
+      "B120",
+      "B121",
+      "B122",
+      "B123",
+      "B124",
+      "B125",
+      "B126",
+      "B127",
+      "B179",
+      "B180",
+      "B181",
+      "B182",
+      "B203",
+      "B204",
+      "B205"
+    ],
+    "tools_used": [],
+    "priority_bands": [
+      {
+        "band": "CRITICAL",
+        "timeline": "Days 1–30",
+        "rp_ids": []
+      },
+      {
+        "band": "HIGH",
+        "timeline": "Days 31–60",
+        "rp_ids": [
+          "RP024",
+          "RP053",
+          "RP034",
+          "RP035",
+          "RP036",
+          "RP006"
+        ]
+      },
+      {
+        "band": "STANDARD",
+        "timeline": "Days 61–90",
+        "rp_ids": [
+          "RP034",
+          "RP020"
+        ]
+      }
+    ],
+    "confidence": {
+      "state": "PROVISIONAL",
+      "note": "This plan is based on partial data. Some areas may need verification before L2 implementation.",
+      "signal_count": 5,
+      "domain_coverage": 3
+    },
+    "strengths": [
+      "Compliance and safety",
+      "Product quality",
+      "Supply chain resilience",
+      "Brand and marketing",
+      "Physical environment",
+      "Technology adoption",
+      "Strategic clarity",
+      "Team culture and rhythm"
+    ],
+    "dependency_notes": [
+      "**Recruitment Onboarding & Development** runs alongside **Service Flow & Peak Management** — Team capacity affects service flow optimisation"
+    ],
+    "summary": {
+      "total_tasks": 63,
+      "total_blocks": 28,
+      "total_tools": 0,
+      "critical_items": 0,
+      "dependencies_enforced": 0
+    }
+  },
+  "metadata": {
+    "engine_version": "3.0",
+    "report_type": "template",
+    "generated_at": "2026-03-27T12:55:38.159886"
+  }
+}

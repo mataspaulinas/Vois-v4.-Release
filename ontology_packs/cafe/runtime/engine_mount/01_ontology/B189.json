@@ -1,0 +1,181 @@
+{
+  "block_id": "B189",
+  "name": "Cross-Site Financial Benchmarking",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M15: Multi-Site & Chain Management",
+  "state": "enriched",
+  "purpose": "Implements a structured financial benchmarking framework that compares key financial metrics across all locations, revealing underperformance, identifying best practices, and enabling data-driven resource allocation decisions. This block turns multi-site financial data from a collection of individual P&Ls into a strategic management tool.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Standardise financial reporting across all locations to enable like-for-like comparison",
+      "Define and track key financial benchmarks: revenue per square foot, labour cost percentage, food cost percentage, gross margin, and net profit by site",
+      "Identify outlier performance (both positive and negative) and investigate root causes",
+      "Create a monthly cross-site financial dashboard accessible to the senior leadership team",
+      "Use benchmarking data to inform investment decisions, site closures, and resource allocation"
+    ],
+    "secondary_objectives": [
+      "Identify cost-saving opportunities by comparing supplier pricing and wastage across sites",
+      "Support area manager performance management with objective financial data",
+      "Provide early warning of financial deterioration at individual sites",
+      "Benchmark against industry standards published by UK Hospitality and the BHA"
+    ]
+  },
+  "why_this_matters": "In a multi-site operation, aggregated financial performance can mask significant variation between individual locations. A chain with an overall gross margin of 68% might have one site at 74% and another at 58% — but without cross-site benchmarking, the underperformer remains invisible, quietly eroding profitability. Cross-site financial benchmarking transforms financial reporting from a backward-looking compliance exercise into a forward-looking management tool. By comparing the same metrics across every location using standardised definitions, operators can quickly identify which sites are outperforming, which are struggling, and why. The why is critical: is Location B's higher labour cost percentage because of poor scheduling, higher local wages, or lower revenue that inflates the percentage? Benchmarking surfaces the questions; investigation provides the answers. For franchise operations, financial benchmarking also supports compliance — franchisees who consistently underperform on key metrics may require additional support or, ultimately, contract review.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0–2 weeks). Week 1: Define the core financial benchmarks to track across all sites: (1) weekly revenue, (2) revenue per square foot, (3) average transaction value, (4) labour cost as percentage of revenue, (5) food and beverage cost as percentage of revenue, (6) gross profit margin, (7) net profit margin, and (8) waste cost as percentage of revenue. Ensure every site uses the same chart of accounts and categorisation for expenses. Week 2: Collect the most recent month's data from all sites and populate a comparison table. Identify the highest and lowest performer for each metric. Present the initial comparison to the leadership team and discuss key variances.",
+    "L2": "SYSTEM BUILD (2–8 weeks). Build a monthly cross-site financial dashboard using a spreadsheet or business intelligence tool. Automate data collection from EPOS and accounting systems where possible. Create a variance analysis protocol: for any metric where a site deviates more than 5 percentage points from the estate average, the area manager must investigate and report root causes within two weeks. Introduce site-level financial targets based on benchmarking data rather than arbitrary budgets. Establish a monthly financial review meeting where the leadership team reviews the cross-site dashboard and agrees on actions.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Integrate benchmarking into the strategic planning cycle. Use trailing 12-month data to identify structural trends rather than just monthly fluctuations. Benchmark against external industry data from UK Hospitality, the BHA, or the Allegra World Coffee Portal. Use benchmarking to build business cases for investment: a site with strong revenue density but poor margins may benefit from equipment investment; a site with low revenue but excellent margins may need marketing support. Share relevant benchmarks with site managers to build financial literacy and ownership."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Define core financial benchmarks with standardised definitions",
+        "Ensure all sites use the same chart of accounts and expense categorisation",
+        "Collect the most recent month's data from all sites",
+        "Create an initial cross-site comparison table",
+        "Identify highest and lowest performers for each metric",
+        "Present initial findings to the leadership team",
+        "Agree on the regular reporting frequency (monthly recommended)"
+      ],
+      "responsible": "Finance Director, Operations Director"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build a monthly cross-site financial dashboard",
+        "Automate data collection from EPOS and accounting systems",
+        "Create a variance analysis protocol with investigation triggers",
+        "Set site-level financial targets based on benchmarking data",
+        "Establish a monthly financial review meeting",
+        "Train area managers on financial benchmarking interpretation",
+        "Begin quarterly trend analysis"
+      ],
+      "responsible": "Finance Director, Area Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Integrate benchmarking into strategic planning and budgeting cycles",
+        "Analyse trailing 12-month data for structural performance trends",
+        "Benchmark against external industry data sources",
+        "Use benchmarking to build investment and resource allocation business cases",
+        "Share relevant benchmarks with site managers to build financial literacy",
+        "Review and refine benchmark definitions annually"
+      ],
+      "responsible": "Finance Director, Operations Director, CEO"
+    }
+  },
+  "deliverables": [
+    "Cross-Site Financial Benchmark Definitions document",
+    "Monthly Cross-Site Financial Dashboard",
+    "Variance Analysis Protocol",
+    "Quarterly Trend Report template",
+    "Annual Benchmarking Review"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T189-01",
+        "tool_name": "Cross-Site Financial Dashboard",
+        "level": "L1",
+        "format": "dashboard",
+        "owner_role": "Finance Director",
+        "description": "Monthly dashboard comparing all core financial metrics across every location, with estate averages, variance highlighting, and trend indicators."
+      },
+      {
+        "tool_id": "T189-02",
+        "tool_name": "Financial Benchmark Definitions Guide",
+        "level": "L1",
+        "format": "reference",
+        "owner_role": "Finance Director",
+        "description": "Reference document defining each financial benchmark, its calculation methodology, data sources, and the standardised chart of accounts to ensure consistency across sites."
+      },
+      {
+        "tool_id": "T189-03",
+        "tool_name": "Variance Investigation Report Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Area Manager",
+        "description": "Template for investigating and reporting on significant financial variances at individual sites: metric affected, size of variance, root cause analysis, and recommended actions."
+      },
+      {
+        "tool_id": "T189-04",
+        "tool_name": "Quarterly Financial Trend Report",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Finance Director",
+        "description": "Quarterly report showing rolling trends across all benchmarks, seasonal adjustments, and commentary on structural changes affecting performance."
+      },
+      {
+        "tool_id": "T189-05",
+        "tool_name": "Annual Benchmarking Review Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "CEO",
+        "description": "Annual strategic review of cross-site financial performance including external benchmarking, investment recommendations, and target-setting for the coming year."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Sites use different accounting treatments for the same expenses, making comparisons misleading",
+    "Benchmarking is conducted but findings are not acted upon, becoming an academic exercise",
+    "Over-focus on lagging financial metrics without investigating the operational drivers behind them",
+    "Site managers are not shared relevant data and therefore cannot contribute to improvement"
+  ],
+  "kpis": [
+    "Cross-site financial dashboard published monthly within 5 working days of month end",
+    "Variance investigations completed within 14 days for any metric deviating more than 5 percentage points",
+    "All sites trending towards estate-average performance on key metrics within 12 months",
+    "Labour cost percentage variance between highest and lowest site below 5 percentage points"
+  ],
+  "dependencies": [
+    "B122"
+  ],
+  "constraints": [
+    "Requires standardised financial reporting across all sites",
+    "Data collection depends on EPOS and accounting system capabilities at each location",
+    "Franchise sites may have different financial reporting obligations that need reconciliation"
+  ],
+  "time_load": {
+    "L1": "4 hours (benchmark definition, initial data collection and comparison)",
+    "L2": "6 hours/month (dashboard build, variance analysis, review meetings)",
+    "L3": "8 hours/quarter (trend analysis, external benchmarking, strategic planning)"
+  },
+  "review_protocol": "Monthly cross-site financial dashboard review by leadership team. Quarterly trend analysis and deep-dive into persistent variances. Annual strategic benchmarking review including external comparisons.",
+  "meta": {
+    "summary_for_humans": "This block implements cross-site financial benchmarking to compare key metrics across all locations, revealing underperformance and enabling data-driven management decisions.",
+    "implementation_risks": [
+      "Inconsistent accounting practices across sites will produce misleading comparisons",
+      "Financial benchmarking without operational context can lead to wrong conclusions",
+      "Over-reliance on benchmarks can create a culture of fear rather than improvement"
+    ],
+    "notes_for_engine": "Chain-only block. Requires B122 (financial management) as foundation. Feeds into B191 (area manager framework) for performance management. Flag if signals indicate significant financial performance gaps between locations.",
+    "tags": [
+      "finance",
+      "benchmarking",
+      "multi_site",
+      "chain",
+      "performance",
+      "P&L",
+      "margin",
+      "cost_control"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "chain_cafe",
+      "franchise_cafe"
+    ],
+    "team_size_min": 5,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

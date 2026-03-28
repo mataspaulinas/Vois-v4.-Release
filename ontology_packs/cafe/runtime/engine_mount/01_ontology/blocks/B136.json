@@ -1,0 +1,157 @@
+{
+  "block_id": "B136",
+  "name": "Online Reputation Excellence",
+  "version": "v1.0",
+  "domain": "D08_marketing_brand",
+  "module": "M08: Brand Visibility & Customer Acquisition",
+  "state": "enriched",
+  "purpose": "Elevates the cafe's online reputation to a position of competitive advantage — a sustained Google rating above 4.5 stars, high review volume, consistent positive sentiment, and a public presence that makes the cafe the obvious choice for any customer searching for a cafe in the area. This block integrates review monitoring (B133), GBP management (B134), and review generation (B135) into a cohesive reputation excellence strategy.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Achieve and sustain a Google rating of 4.5 stars or above with sufficient volume to dominate local search",
+      "Develop a reputation that acts as a competitive moat — difficult for competitors to replicate quickly",
+      "Build a consistent online presence that aligns across Google, TripAdvisor, social media, and delivery platforms",
+      "Convert online reputation into measurable foot traffic and revenue growth",
+      "Create a reputation management rhythm that sustains excellence without becoming a burden"
+    ],
+    "secondary_objectives": [
+      "Position the cafe as the top-rated option in its local area across multiple platforms",
+      "Use reputation data to identify and celebrate the cafe's genuine strengths",
+      "Build resilience against occasional negative reviews through volume and velocity",
+      "Leverage outstanding reputation in PR, partnership opportunities, and recruitment"
+    ]
+  },
+  "why_this_matters": "Online reputation is not just a marketing metric — it is a business asset with tangible financial value. A study by Harvard Business School found that a one-star increase in a restaurant's Yelp rating leads to a 5-9% increase in revenue. While the exact figure varies, the directional impact is clear and consistent across research: higher online ratings equal more customers and more revenue. In the UK cafe market, where most independent cafes sit between 4.0 and 4.5 stars on Google, achieving and sustaining a 4.5+ rating creates a meaningful competitive advantage. Customers deciding between two unfamiliar cafes will almost always choose the higher-rated one. But reputation excellence is more than a number. It is the accumulated weight of hundreds of reviews telling a consistent story: the coffee is excellent, the staff are friendly, the food is fresh, the space is welcoming. This narrative, visible to anyone who searches, is more persuasive than any advertisement the cafe could buy. Conversely, a poor online reputation is extraordinarily difficult to recover from. A cafe that drops to 3.5 stars and accumulates a string of negative reviews faces a long, uphill battle to change customer perception. Every new potential customer sees the low rating before they see the reality. Reputation excellence requires sustained effort across review monitoring (catching issues early), response management (demonstrating care), review generation (capturing positive sentiment), and operational quality (ensuring the experience justifies the rating). This block brings all of those elements together into a strategic discipline.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Conduct a comprehensive reputation audit. Record the current Google rating, total review count, and average rating over the last 3 months. Do the same for TripAdvisor, Facebook, and any delivery platforms. Search for the cafe on Google Maps and note your position in the local pack (the top 3 results shown on the map). Read the 10 most recent reviews on each platform and the 10 most negative reviews overall. Identify the three strongest reputation themes (what customers consistently praise) and the three weakest (what customers consistently criticise). Week 2: Address the three weakest themes operationally. If customers complain about slow service, review staffing and workflow. If they mention cleanliness issues, audit the cleaning schedule. If they criticise a specific food item, reformulate or remove it. Then verify that B133 (Review Monitoring), B134 (GBP), and B135 (Review Generation) are all in motion — reputation excellence requires all three operating simultaneously. Set a reputation target: if currently at 4.2 stars, aim for 4.4 within 3 months. If at 4.4, aim for 4.6. Set a review volume target based on local competitors — you want to match or exceed the top-rated competitor's review count.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a monthly Reputation Dashboard that tracks: Google rating and trend, total review count, new reviews this month, response rate, average sentiment, and local search ranking position. Compare against the top 3 local competitors on the same metrics. Identify correlation between reputation activities and outcomes — does posting more Google Posts correlate with higher search visibility? Does faster review response correlate with improved ratings? Develop a reputation recovery protocol for situations where the rating drops: increase review generation effort, respond to all recent negative reviews with offers to make amends, accelerate operational fixes for common complaints, and consider reaching out to loyal customers directly. Build reputation management into the marketing calendar: coordinate review generation pushes with new menu launches or seasonal events when customer satisfaction is likely to be high. Cross-reference review data with operational performance: are the shifts with the most complaints also the ones with the thinnest staffing? Are negative food reviews concentrated on items prepared by a specific team member?",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The cafe should now have a sustained reputation above 4.5 stars with a growing review base and consistent positive sentiment. Leverage this reputation: add 'Rated 4.7 on Google' to marketing materials, window signage, and social media bios. Apply for local business awards using review data as evidence of customer satisfaction. Use the reputation to attract talent — the best baristas and kitchen staff want to work for well-regarded businesses. Monitor reputation as an early warning system for operational decline: a dip in review sentiment often precedes a dip in revenue by 4-8 weeks, making reviews a leading indicator that something needs attention. Develop relationships with food bloggers, local journalists, and community influencers who can amplify the cafe's positive reputation through independent coverage. Consider whether the cafe's reputation justifies a premium pricing position — customers who choose a cafe based on its 4.7-star rating may be less price-sensitive than walk-in customers."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Conduct a comprehensive reputation audit across Google, TripAdvisor, Facebook, and delivery platforms",
+        "Record baseline metrics: ratings, review counts, local search position",
+        "Identify the three strongest and three weakest reputation themes",
+        "Address the weakest themes operationally as a priority",
+        "Verify that B133, B134, and B135 are all active and operating",
+        "Set specific rating and review volume targets for the next 3 months"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a monthly Reputation Dashboard tracking all key metrics and competitor comparison",
+        "Identify correlations between reputation activities and outcomes",
+        "Develop a reputation recovery protocol for rating drops",
+        "Coordinate review generation with menu launches and events",
+        "Cross-reference review data with operational performance for root cause analysis",
+        "Build reputation targets into the marketing calendar"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Leverage the reputation in marketing, signage, and recruitment",
+        "Apply for local business awards using review data as evidence",
+        "Monitor reputation as a leading indicator for operational quality",
+        "Develop relationships with food bloggers and local media",
+        "Evaluate whether reputation justifies premium pricing positioning",
+        "Review and refresh the reputation strategy annually"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Comprehensive Reputation Audit Report",
+    "Monthly Reputation Dashboard",
+    "Reputation Recovery Protocol",
+    "Competitor Reputation Benchmarking Template",
+    "Reputation Leverage Strategy Document"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T136-01",
+        "tool_name": "Reputation Audit Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A structured template for conducting a comprehensive reputation audit across all platforms, recording ratings, review counts, sentiment themes, local search position, and competitor benchmarks."
+      },
+      {
+        "tool_id": "T136-02",
+        "tool_name": "Monthly Reputation Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "A monthly visual dashboard tracking Google rating, review count, review velocity, response rate, sentiment trend, local search ranking, and competitor comparison. Designed for quick management review."
+      },
+      {
+        "tool_id": "T136-03",
+        "tool_name": "Reputation Recovery Protocol",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Owner",
+        "description": "A step-by-step protocol for responding to a reputation crisis: rating drops, viral negative reviews, or coordinated complaint patterns. Covers immediate response, operational fixes, and recovery measurement."
+      },
+      {
+        "tool_id": "T136-04",
+        "tool_name": "Reputation Leverage Checklist",
+        "level": "L3",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "A checklist of ways to leverage a strong reputation: marketing material updates, award applications, PR opportunities, recruitment positioning, and pricing strategy considerations."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Reputation management is treated as a marketing function disconnected from operations, so ratings improve temporarily but revert when operational issues resurface",
+    "The cafe achieves a high rating but with low review volume, making the rating statistically fragile and vulnerable to a single negative review",
+    "Competitor monitoring creates anxiety rather than motivation, leading to desperate tactics rather than genuine improvement",
+    "Reputation excellence is celebrated once and then neglected, allowing gradual decline"
+  ],
+  "kpis": [
+    "Google rating sustained at 4.5 stars or above for 6 consecutive months",
+    "Review volume equal to or exceeding the top-rated local competitor",
+    "Monthly review velocity of at least 10 new Google reviews",
+    "Local search ranking in the top 3 results for primary search terms"
+  ],
+  "dependencies": ["B133", "B134", "B135"],
+  "constraints": [
+    "Reputation improvement takes time — sustainable rating increases require months of consistent effort",
+    "The reputation must reflect reality — attempting to maintain a 4.8 rating when the experience is genuinely 4.2 will create cognitive dissonance and backlash",
+    "Competitive benchmarking should inform strategy, not dictate it — the cafe should pursue its own excellence, not just beat competitors"
+  ],
+  "time_load": {
+    "L1": "4 hours (comprehensive reputation audit and target setting)",
+    "L2": "2 hours/month (dashboard update, competitor benchmarking, strategy coordination)",
+    "L3": "2 hours/quarter (leverage strategy, awards, PR relationship development)"
+  },
+  "review_protocol": "Monthly Reputation Dashboard review. Quarterly competitor benchmarking. Bi-annual reputation strategy assessment. Annual comprehensive reputation audit to reset targets and refresh approach.",
+  "meta": {
+    "summary_for_humans": "This capstone block integrates review monitoring, GBP management, and review generation into a cohesive reputation excellence strategy. It sets targets for sustained high ratings, competitor-beating review volume, and leverages the reputation for marketing, recruitment, and pricing advantage.",
+    "implementation_risks": [
+      "Reputation targets can create pressure to game the system rather than genuinely improve the experience",
+      "Focusing excessively on ratings can distort operational priorities away from profitability or efficiency",
+      "A reputation crisis (viral negative review, food safety incident) can undo months of careful reputation building"
+    ],
+    "notes_for_engine": "This is the capstone block for the review and reputation cluster (B133-B136). It should only be activated once B133, B134, and B135 are all operational. Primary use case is for cafes that want to move from adequate to excellent online reputation, or for cafes recovering from a reputational setback.",
+    "tags": ["marketing", "reputation", "excellence", "Google", "ratings", "competitive_advantage", "local_search", "brand"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

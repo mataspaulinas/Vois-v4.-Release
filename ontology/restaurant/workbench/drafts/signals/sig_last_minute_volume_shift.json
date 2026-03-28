@@ -1,0 +1,31 @@
+{
+  "id": "sig_last_minute_volume_shift",
+  "name": "Last-minute volume shift hits the floor",
+  "description": "Reservations, walk-ins, large parties, or timing changes bunch together late enough to disrupt pacing and reset the guest flow.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: last-minute volume shift expressed through restaurant arrival flow",
+  "updated_at": "2026-03-15T14:29:28.476771Z",
+  "domain": "guest_experience",
+  "module": "reservation_flow",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "booking wave compresses unexpectedly",
+    "walk-in surge collides with reservations",
+    "late group timing reshapes floor pacing"
+  ],
+  "source_types": [
+    "reservation review",
+    "host notes",
+    "service observation"
+  ],
+  "temporal_behavior": "peak-sensitive",
+  "likely_co_signals": [
+    "sig_reservation_pacing_breakdown",
+    "sig_waitlist_mismatch"
+  ],
+  "adapter_aliases": [
+    "arrival wave shift",
+    "late volume spike"
+  ]
+}

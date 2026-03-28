@@ -1,0 +1,156 @@
+{
+  "block_id": "B139",
+  "name": "Social Media Excellence",
+  "version": "v1.0",
+  "domain": "D08_marketing_brand",
+  "module": "M08: Brand Visibility & Customer Acquisition",
+  "state": "enriched",
+  "purpose": "Elevates the cafe's social media presence from consistent posting to strategic marketing excellence — using data-driven content optimisation, multi-platform coordination, paid amplification where appropriate, and community-building tactics that turn followers into regular customers and brand advocates.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Optimise content strategy based on analytics data, doubling down on what works and retiring what does not",
+      "Develop a multi-platform presence that efficiently repurposes content across Instagram, TikTok, Facebook, and potentially others",
+      "Build a genuine online community around the cafe's brand, not just a follower count",
+      "Explore targeted paid social advertising for specific objectives (event promotion, new menu launch, seasonal push)",
+      "Measure the return on social media investment in terms of attributable footfall and revenue"
+    ],
+    "secondary_objectives": [
+      "Develop the cafe's social media voice into a recognisable local brand personality",
+      "Create viral or widely-shared content that extends reach beyond the local area",
+      "Build partnerships with complementary local businesses for cross-promotion on social media",
+      "Establish the cafe as a thought leader in its niche (specialty coffee, brunch culture, community space)"
+    ]
+  },
+  "why_this_matters": "Once a cafe has established consistent Instagram posting (B137) with quality photography (B138), the question becomes: how do we turn this effort into measurable business results? Social media excellence is the difference between posting content into a void and running a marketing machine that drives footfall, builds loyalty, and generates revenue. Most cafes plateau at a few hundred followers and modest engagement because they never progress beyond basic posting. Excellence requires understanding what the algorithm rewards, what the audience responds to, and how to convert online attention into physical visits. Data from Instagram Insights, TikTok Analytics, and Facebook Page metrics provides a clear picture of what content performs — but most cafe owners never look at this data. A post that receives 10 times normal engagement is telling you something important about what your audience wants. A Reel that gets shared 50 times is a format and topic to replicate. Ignoring this data means repeating content that does not work and missing opportunities to scale what does. Social media excellence also means understanding paid advertising. A cafe does not need a large advertising budget — even 20-30 pounds on a boosted Instagram post promoting a new menu or event, targeted to people within 3 miles of the cafe, can reach thousands of potential customers who have never heard of the business. This is a fraction of the cost of any traditional advertising and is precisely measurable.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Review the last 3 months of Instagram Insights (and any other platform analytics available). Identify the top 5 performing posts by reach and engagement. What do they have in common — format (Reel, carousel, single image), subject (coffee, food, team, behind-the-scenes), time posted, or caption style? Identify the bottom 5 performers too. This analysis reveals what your specific audience responds to. Week 2: Based on the analysis, adjust the content calendar from B137. Increase the frequency of high-performing content types and reduce or eliminate low-performing ones. Set up tracking for two specific objectives this month: follower growth rate and profile visits leading to website clicks or direction requests (both available in Instagram Insights). These metrics bridge the gap between social media activity and business impact.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a multi-platform strategy. TikTok is growing rapidly and cafe content performs well there — repurpose Instagram Reels to TikTok with minimal additional effort. Facebook remains relevant for an older demographic and for event promotion and local community groups. Define which platforms get original content and which receive repurposed content. Create a social media content batching workflow: set aside 2-3 hours once per week to create, edit, and schedule the week's content rather than trying to create in real-time daily. Use scheduling tools (Later, Buffer, Meta Business Suite) to automate posting. Experiment with paid social advertising: start with a small budget (30-50 pounds per month) boosting the best-performing organic post to a targeted local audience. Monitor the results: how many people reached, profile visits generated, and any attributable increase in foot traffic. Develop social media engagement tactics that build community: ask questions in captions, run polls in Stories, create challenges or themed hashtags, spotlight regular customers (with permission), and collaborate with other local businesses on joint social campaigns.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Social media should now be generating measurable business results. Track social media contribution to business objectives: use unique discount codes or landing pages in social posts to measure direct conversion. Monitor whether weeks with strong social performance correlate with stronger trading. Develop a social media calendar that aligns with the overall marketing and events calendar (B144): new menu launches, seasonal events, and promotions should have coordinated social campaigns with build-up, launch, and follow-up phases. Experiment with advanced content formats: Instagram Guides, collaborative posts with partner businesses, live sessions with coffee talks or cooking demonstrations, and user-generated content campaigns. Build a social media playbook documenting what works for this specific cafe: best posting times, top-performing content types, optimal hashtag combinations, and effective caption formulas. This playbook ensures consistency even if the person managing social media changes. Explore whether the cafe's social presence could generate additional revenue through brand partnerships, sponsored content, or merchandise."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Review 3 months of Instagram Insights to identify top and bottom performing content",
+        "Analyse what the top-performing posts have in common",
+        "Adjust the content calendar to increase high-performing content types",
+        "Set up tracking for follower growth rate and profile-to-website conversion",
+        "Identify the current social media effort-to-impact ratio"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a multi-platform strategy repurposing content across Instagram, TikTok, and Facebook",
+        "Implement a weekly content batching workflow using scheduling tools",
+        "Experiment with paid social advertising at a small budget (30-50 pounds per month)",
+        "Create community-building engagement tactics: polls, questions, spotlights, collaborations",
+        "Track paid advertising results and optimise targeting based on data",
+        "Develop cross-promotion partnerships with complementary local businesses"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track social media contribution to business objectives with attributable metrics",
+        "Align social media campaigns with the overall marketing and events calendar",
+        "Experiment with advanced content formats: Lives, Guides, collaborative posts",
+        "Build a social media playbook documenting what works for this specific cafe",
+        "Explore additional revenue opportunities from brand partnerships or merchandise",
+        "Review and update the social strategy quarterly based on platform changes and performance data"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Social Media Performance Analysis (3-month review)",
+    "Multi-Platform Content Strategy Document",
+    "Content Batching Workflow Guide",
+    "Paid Social Advertising Plan and Budget",
+    "Social Media Playbook"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T139-01",
+        "tool_name": "Social Media Performance Analyser",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "A monthly analysis template for reviewing social media performance across platforms: top and bottom performing content, engagement rate trends, follower growth, and content type performance comparison."
+      },
+      {
+        "tool_id": "T139-02",
+        "tool_name": "Multi-Platform Content Repurposing Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "A guide for efficiently adapting content across Instagram, TikTok, Facebook, and other platforms, specifying format adjustments, optimal dimensions, caption adaptation, and platform-specific best practices."
+      },
+      {
+        "tool_id": "T139-03",
+        "tool_name": "Paid Social Advertising Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "A tracker for paid social advertising campaigns: budget spent, reach achieved, engagement generated, profile visits, website clicks, and estimated cost per potential customer reached."
+      },
+      {
+        "tool_id": "T139-04",
+        "tool_name": "Social Media Playbook",
+        "level": "L3",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "A comprehensive document recording the cafe's social media best practices: optimal posting times, top content types, effective hashtag combinations, caption formulas, engagement tactics, and response protocols."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Analytics data is available but never reviewed, so content strategy is based on intuition rather than evidence",
+    "Multi-platform expansion spreads effort too thin, resulting in mediocre presence everywhere rather than excellence somewhere",
+    "Paid advertising is tried once without proper targeting or measurement, and dismissed as ineffective",
+    "Social media becomes a vanity exercise focused on follower count rather than business impact"
+  ],
+  "kpis": [
+    "Engagement rate above 3% on Instagram and growing",
+    "Social media generating measurable profile visits and direction requests monthly",
+    "Paid advertising achieving a cost per reach below 5p when used",
+    "Content performance analysis completed monthly with strategy adjustments documented"
+  ],
+  "dependencies": ["B137", "B138"],
+  "constraints": [
+    "Paid advertising requires a budget, even a small one, which must be justified against other marketing spend",
+    "Platform algorithms change frequently, requiring ongoing adaptation of strategies",
+    "Measuring social media's direct impact on revenue is inherently difficult — attribution is often indirect"
+  ],
+  "time_load": {
+    "L1": "2 hours (initial analytics review and content calendar adjustment)",
+    "L2": "5 hours/week (content batching, multi-platform posting, community engagement, ad management)",
+    "L3": "3 hours/month (performance analysis, strategy refinement, playbook updates)"
+  },
+  "review_protocol": "Weekly engagement and posting compliance check. Monthly performance analysis with content strategy adjustment. Quarterly multi-platform strategy review. Annual comprehensive social media strategy assessment.",
+  "meta": {
+    "summary_for_humans": "This capstone block elevates social media from consistent posting to strategic excellence, using analytics to optimise content, multi-platform distribution for reach, paid advertising for amplification, and community-building tactics that convert followers into customers.",
+    "implementation_risks": [
+      "Social media excellence requires sustained effort and can easily regress when the responsible person is absent or busy",
+      "Chasing viral content can distract from the consistent, brand-appropriate content that actually drives local business",
+      "Paid advertising without clear objectives and measurement can waste budget without results"
+    ],
+    "notes_for_engine": "This is the capstone block for social media (B137-B139). Activate once B137 and B138 are established and the cafe has at least 3 months of consistent posting to analyse. Most valuable for cafes in competitive markets where social media is a primary discovery channel.",
+    "tags": ["marketing", "social_media", "analytics", "paid_advertising", "TikTok", "Facebook", "Instagram", "community", "excellence"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "fixture_id": "F003_conflicting_capacity_vs_cost",
+  "category": "conflicting signals case",
+  "label": "Capacity vs cost conflict",
+  "description": "Composite fixture combining service overload, staffing calibration drift, and payroll pressure.",
+  "kind": "manual_composite",
+  "source": "manual composite of real legacy signal semantics",
+  "source_paths": [],
+  "assessment_type": "full_diagnostic",
+  "active_signal_count": 5,
+  "active_signal_ids": [
+    "S019",
+    "S071",
+    "S083",
+    "S099",
+    "S104"
+  ],
+  "summary": {
+    "signals": 5,
+    "failure_modes": 9,
+    "response_patterns": 7,
+    "raw_activation_items": 63,
+    "constrained_activation_items": 63,
+    "plan_load": "TRIAGE",
+    "report_type": "ai",
+    "top_signal_ids": [
+      "S019",
+      "S071",
+      "S083",
+      "S099",
+      "S104"
+    ]
+  },
+  "output_files": [
+    "fixture_input.json",
+    "golden_normalized_signals.json",
+    "golden_failure_modes.json",
+    "golden_response_patterns.json",
+    "golden_activation_set_raw.json",
+    "golden_activation_context.json",
+    "golden_activation_set_constrained.json",
+    "golden_constraint_report.json",
+    "golden_action_plan.json",
+    "golden_report.md",
+    "golden_summary.json"
+  ]
+}

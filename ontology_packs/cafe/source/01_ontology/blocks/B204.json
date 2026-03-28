@@ -1,0 +1,168 @@
+{
+  "block_id": "B204",
+  "name": "Kiosk Operations",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Establishes the operational framework for running a coffee kiosk or compact format venue, addressing the unique challenges of limited space, reduced equipment, minimal staff, and high-footfall locations. This block covers workflow design within tight footprints, condensed menu strategies, efficient stock management, and the operational discipline required when there is no back-of-house to fall back on.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Design an optimised workflow for a 1-2 person operation within a compact kiosk footprint",
+      "Develop a focused, high-margin menu suited to kiosk service speed and equipment constraints",
+      "Establish stock management protocols for limited storage capacity with daily or near-daily deliveries",
+      "Define opening, operating, and closing procedures specific to kiosk environments",
+      "Implement quality standards that match full-size cafe expectations despite operational constraints"
+    ],
+    "secondary_objectives": [
+      "Maximise revenue per square metre through menu engineering and efficient space utilisation",
+      "Maintain food safety compliance in an environment without traditional kitchen facilities",
+      "Manage weather exposure, power supply, and water access challenges common to outdoor kiosks",
+      "Create a customer experience that feels premium despite the compact format"
+    ]
+  },
+  "why_this_matters": "Kiosk coffee operations are booming across the UK — from railway station concourses and shopping centre atriums to converted shipping containers and purpose-built street kiosks. The format offers dramatically lower rent and fit-out costs compared to traditional cafes, making it an attractive entry point for new operators and an efficient expansion vehicle for established brands. However, the constraints are severe: a typical kiosk is 3-8 square metres, staffed by one or two people, with limited power supply, no running hot water in some cases, minimal storage, and zero separation between preparation and service areas. Every movement matters — there is no room for wasted steps, poorly organised stations, or an overly complex menu that bogs down service. A kiosk that serves 200 drinks per day from a 5-square-metre space must achieve extraordinary efficiency per square metre and per staff member. The menu must be ruthlessly focused: offer the 10-15 items that sell best and execute them brilliantly, rather than attempting the full range of a sit-down cafe. Stock management is a daily discipline — there is nowhere to store a week's worth of milk, so deliveries must be frequent and precisely sized. Food safety is equally demanding: without a separate food prep area, the entire kiosk is the production zone, meaning hygiene standards must be maintained constantly with no retreat to a 'back of house' for cleanup. The operators who succeed in kiosk format are those who treat the constraint as a design challenge, not a limitation — every inch planned, every second of workflow choreographed, every product earning its place on the menu.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Audit the kiosk space and map the workflow. Measure every surface, shelf, and storage area. Draw a floor plan showing equipment placement: espresso machine, grinder, fridge, till, water supply, bin, and cup storage. Stand in the serving position and reach — can you touch the machine, the grinder, the milk fridge, and the till without taking more than one step? If not, rearrange. The principle is zero wasted movement: the most frequently repeated actions (pulling shots, steaming milk, serving) should require the least movement. Identify and eliminate any step that involves turning your back to the customer or walking away from the service counter. Week 2: Define the kiosk menu. Start with the items that account for 80% of sales — typically: espresso, flat white, latte, cappuccino, americano, hot chocolate, and 2-3 cold drinks. Add a maximum of 3-4 food items that require no on-site preparation: wrapped pastries from a bakery partner, pre-packaged sandwiches, or energy bars. Every menu item must be producible within the kiosk's equipment constraints and storable within available refrigeration. Remove anything that slows service disproportionately or requires ingredients that spoil before they are used. Calculate the maximum number of drinks per hour the setup can produce — this is the kiosk's theoretical throughput ceiling. Create a Kiosk Opening and Closing Checklist tailored to the specific site.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop Standard Operating Procedures for the kiosk covering: daily opening sequence (equipment startup, stock check, milk preparation, till float, cleaning), peak-hour workflow (order queuing, drink batching for efficiency, customer communication during waits), and closing procedure (equipment shutdown, stock count, waste recording, cleaning, security). Establish a daily stock management system: count stock at close, calculate tomorrow's requirement based on the day's sales and the next day's expected footfall (adjust for day of week, weather, and events), and place orders for next-day delivery. Kiosks cannot afford to run out of milk at 2pm — ordering precision is critical. Implement food safety protocols specific to the kiosk format: handwashing procedure (especially challenging in kiosks without hot running water — antibacterial gel and wet wipes as supplements, not replacements), temperature monitoring for the fridge, cleaning schedule for surfaces that double as preparation and service areas, and waste management when there may be no mains drainage. Create a Kiosk Maintenance Log tracking equipment condition, cleaning, and any site issues (leaks, power problems, drainage). Train staff on the specific demands of solo kiosk operation — they must be comfortable running the entire service alone, managing queues, handling payments, and maintaining quality simultaneously.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The kiosk should now operate with visible efficiency that impresses customers. Introduce pre-ordering — a simple QR code or app-based system where regular customers can order before arriving, reducing queue time for everyone. Analyse sales data to identify hour-by-hour demand patterns and adjust staffing: if 60% of sales happen between 7:30-9:30am, ensure a second person is rostered for those hours even if the rest of the day is solo operation. Develop a rain and weather contingency plan — outdoor kiosks see dramatic demand shifts with weather, so have protocols for adjusting stock orders and staffing based on forecasts. Build a regular customer programme: in a high-footfall kiosk, regulars are the revenue backbone. Know their names, remember their orders, and reward their loyalty. Track kiosk-specific KPIs: revenue per square metre, revenue per staff hour, drinks per hour at peak, and waste rate. These metrics, benchmarked over time, reveal whether the operation is improving. Explore kiosk expansion opportunities — if one site works, the model may be replicable at other locations with similar footfall."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Audit the kiosk space: measure, draw a floor plan, and map equipment placement",
+        "Optimise the workflow layout so core service actions require zero wasted steps",
+        "Define a focused kiosk menu of 10-15 items that the setup can execute brilliantly",
+        "Remove menu items that slow service or require impractical ingredients for the format",
+        "Calculate the theoretical maximum throughput (drinks per hour) of the current setup",
+        "Create a Kiosk Opening and Closing Checklist specific to the site",
+        "Train staff on the solo operation workflow and customer queue management"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop comprehensive Kiosk SOPs for opening, peak operation, and closing",
+        "Establish a daily stock management and ordering system sized to kiosk storage capacity",
+        "Implement kiosk-specific food safety protocols including handwashing and temperature monitoring",
+        "Create a Kiosk Maintenance Log for equipment and site condition tracking",
+        "Train all kiosk staff on solo operation, food safety, and queue management",
+        "Set up waste tracking to monitor and reduce daily waste volumes",
+        "Establish a supplier delivery schedule aligned to kiosk storage constraints"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce a pre-ordering system (QR code or app) to reduce queue times",
+        "Analyse hourly sales data to optimise staffing levels throughout the day",
+        "Develop a weather contingency plan for stock and staffing adjustments",
+        "Build a regular customer recognition and loyalty programme",
+        "Track kiosk-specific KPIs: revenue per square metre, drinks per hour, waste rate",
+        "Evaluate replicability of the kiosk model for additional locations"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Kiosk Floor Plan and Workflow Layout diagram",
+    "Kiosk Menu Design with cost-per-serve analysis",
+    "Kiosk Opening and Closing Checklist",
+    "Kiosk Operations SOP document",
+    "Daily Stock Management template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T204-01",
+        "tool_name": "Kiosk Workflow Layout Planner",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Floor plan template for mapping equipment, storage, and movement paths within a compact kiosk footprint. Includes reach-zone analysis and step-count optimisation for the primary operator position."
+      },
+      {
+        "tool_id": "T204-02",
+        "tool_name": "Kiosk Opening and Closing Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "Site-specific checklist covering equipment startup, stock check, milk prep, till float, and cleanliness for opening, plus shutdown, stock count, waste recording, cleaning, and security for closing."
+      },
+      {
+        "tool_id": "T204-03",
+        "tool_name": "Daily Kiosk Stock Planner",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Daily stock management template: closing stock count, next-day sales forecast by item, order calculation, delivery confirmation, and variance tracking to minimise both stockouts and waste."
+      },
+      {
+        "tool_id": "T204-04",
+        "tool_name": "Kiosk Operations SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Comprehensive SOP for kiosk operation covering solo workflow, peak-hour batching, customer queue management, food safety protocols, handwashing procedures, and emergency contingencies."
+      },
+      {
+        "tool_id": "T204-05",
+        "tool_name": "Kiosk Performance Dashboard",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Weekly dashboard tracking kiosk-specific metrics: revenue per square metre, drinks per staff hour, peak throughput rate, waste rate, and customer count with trend lines for continuous improvement."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Stock runs out during peak hours because ordering was based on guesswork rather than data, losing sales and frustrating customers",
+    "Workflow layout forces unnecessary movement, reducing throughput and increasing customer wait times during peak",
+    "Food safety protocols lapse because there is no back-of-house separation — surfaces are not cleaned between tasks",
+    "Solo operator becomes overwhelmed during unexpected demand spikes with no backup available"
+  ],
+  "kpis": [
+    "Peak-hour throughput of at least 40 drinks per hour with a two-person kiosk operation",
+    "Stock-out incidents occurring on fewer than 5% of operating days",
+    "Daily waste value below 3% of daily revenue",
+    "Revenue per square metre exceeding comparable full-size cafe operations in the same area"
+  ],
+  "dependencies": ["B089"],
+  "constraints": [
+    "Kiosk footprint is fixed and cannot be expanded — all optimisation must work within existing dimensions",
+    "Power supply may be limited, constraining equipment choices (e.g., no second group head on the machine)",
+    "Water access varies by site — some kiosks have mains water, others rely on tanks requiring daily refilling",
+    "Local authority licensing and planning conditions may restrict operating hours, signage, or food preparation activities"
+  ],
+  "time_load": {
+    "L1": "4 hours (space audit, workflow redesign, menu definition, checklist creation)",
+    "L2": "8 hours (SOP development, stock system setup, food safety protocols, staff training)",
+    "L3": "2 hours/month (data analysis, KPI review, supplier coordination, continuous improvement)"
+  },
+  "review_protocol": "Daily stock and waste check at close by operator. Weekly sales and performance review by manager. Monthly KPI dashboard review by owner. Quarterly workflow and menu optimisation assessment.",
+  "meta": {
+    "summary_for_humans": "This block provides the complete operational framework for running a coffee kiosk — from workflow layout and focused menu design to stock management and food safety in a compact format. It turns tight space constraints into efficient, high-revenue-per-metre operations.",
+    "implementation_risks": [
+      "Kiosk sites with unreliable power or water supply require contingency planning for equipment-down scenarios",
+      "Solo operation demands exceptional multitasking — not all staff are suited to kiosk work",
+      "Council regulations on kiosk operations vary significantly by local authority — verify all permits before committing to a site"
+    ],
+    "notes_for_engine": "Activate for kiosk and coffee_van venue types. Core operational block for compact format operations. Pairs with B205 (Coffee Van Operations) for mobile-specific extensions.",
+    "tags": ["kiosk", "compact_format", "workflow", "operations", "stock_management", "food_safety", "efficiency", "space_optimisation"]
+  },
+  "applicability": {
+    "venue_types": ["kiosk", "coffee_van"],
+    "team_size_min": 1,
+    "team_size_max": 5
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

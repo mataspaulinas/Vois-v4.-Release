@@ -1,0 +1,1891 @@
+{
+  "l1_blocks": [
+    {
+      "block_id": "B085",
+      "title": "Peak Staffing Model",
+      "source_rp": "RP024",
+      "layer": "L1",
+      "rp_priority": 2.0,
+      "description": "Creates a data-driven staffing model that matches team deployment to customer demand patterns throughout the day, ensuring the right number of people with the right skills are on the floor at the right times — particularly during peak trading periods.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B086",
+      "title": "Morning Rush Workflow",
+      "source_rp": "RP024",
+      "layer": "L1",
+      "rp_priority": 2.0,
+      "description": "Designs and optimises the workflow for the morning rush period — typically 7:30 to 9:30am — defining roles, positions, task sequences, and communication protocols that enable the team to serve the maximum number of customers at speed without sacrificing drink quality or customer experience.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B087",
+      "title": "Pre-Rush Mise-en-Place",
+      "source_rp": "RP024",
+      "layer": "L1",
+      "rp_priority": 2.0,
+      "description": "Establishes a comprehensive pre-rush preparation protocol — the cafe equivalent of culinary mise en place — ensuring that every supply, tool, and station element is in position and ready before peak service begins, so the team can focus entirely on speed and quality during the rush.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B001",
+      "title": "Daily Temperature Monitoring",
+      "source_rp": "RP001",
+      "layer": "L1",
+      "rp_priority": 1.5,
+      "description": "Ensures all refrigeration and freezer units are checked at least twice daily, with temperatures logged and any excursions flagged immediately. This block forms the backbone of cold chain compliance and is the single most inspected element during EHO visits.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B002",
+      "title": "Cold Chain Management SOP",
+      "source_rp": "RP001",
+      "layer": "L1",
+      "rp_priority": 1.5,
+      "description": "Establishes end-to-end cold chain procedures from delivery acceptance through to storage and cold-hold service. This block ensures that chilled and frozen products never enter the temperature danger zone (8-63°C) at any point within the cafe's control.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B003",
+      "title": "Temperature Excursion Response",
+      "source_rp": "RP001",
+      "layer": "L1",
+      "rp_priority": 1.5,
+      "description": "Provides a clear, step-by-step response protocol for when refrigeration temperatures breach safe limits. This block ensures that every staff member knows exactly what to do when a fridge or freezer reads too high, preventing unsafe food from reaching customers and creating the documented evidence trail that EHO inspectors require.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B172",
+      "title": "Cafe Values Definition",
+      "source_rp": "RP051",
+      "layer": "L1",
+      "rp_priority": 1.5,
+      "description": "Articulates the cafe's core values in clear, actionable language that guides behaviour, decision-making, and hiring. This block moves values from vague aspirations like 'we care about quality' into specific, observable standards that every team member can understand, apply, and be held accountable to.",
+      "domain": "D12_culture_identity",
+      "module": "M12: Values Identity & Community"
+    },
+    {
+      "block_id": "B173",
+      "title": "Staff Handbook & Policies",
+      "source_rp": "RP051",
+      "layer": "L1",
+      "rp_priority": 1.5,
+      "description": "Creates a comprehensive, accessible staff handbook that codifies the cafe's expectations, policies, procedures, and cultural standards into a single reference document. This block ensures every team member — from day-one starters to long-serving staff — has a clear, written source of truth for how the cafe operates and what is expected of them.",
+      "domain": "D12_culture_identity",
+      "module": "M12: Values Identity & Community"
+    },
+    {
+      "block_id": "B174",
+      "title": "Toxic Dynamics Intervention",
+      "source_rp": "RP051",
+      "layer": "L1",
+      "rp_priority": 1.5,
+      "description": "Provides a structured framework for identifying, diagnosing, and intervening in toxic workplace dynamics before they corrode team culture, drive out good staff, and damage the customer experience. This block addresses the difficult reality that small teams are especially vulnerable to interpersonal dysfunction and gives cafe owners practical tools to confront it.",
+      "domain": "D12_culture_identity",
+      "module": "M12: Values Identity & Community"
+    },
+    {
+      "block_id": "B054",
+      "title": "Drink Recipe Cards",
+      "source_rp": "RP015",
+      "layer": "L1",
+      "rp_priority": 1.0,
+      "description": "Creates standardised recipe documentation for every drink on the menu, ensuring consistency of preparation, taste, and presentation regardless of which barista is making the drink. This block defines the recipe card format, covers espresso-based drinks, teas, hot chocolates, specialty drinks, and cold beverages.",
+      "domain": "D03_coffee_product",
+      "module": "M03: Coffee Craft & Menu Excellence"
+    },
+    {
+      "block_id": "B055",
+      "title": "Portion Control System",
+      "source_rp": "RP015",
+      "layer": "L1",
+      "rp_priority": 1.0,
+      "description": "Establishes consistent portioning for all food and drink items to ensure customers receive the same quantity every time, costs are predictable and controllable, waste is minimised, and the cafe's pricing accurately reflects what is being served.",
+      "domain": "D03_coffee_product",
+      "module": "M03: Coffee Craft & Menu Excellence"
+    },
+    {
+      "block_id": "B067",
+      "title": "New Starter Induction",
+      "source_rp": "RP019",
+      "layer": "L1",
+      "rp_priority": 1.0,
+      "description": "Defines a structured first-week induction programme for all new starters, covering essential orientation, health and safety basics, team introductions, and role-specific fundamentals so that every new team member feels welcome, informed, and safe from day one.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B068",
+      "title": "Barista Training & Certification",
+      "source_rp": "RP019",
+      "layer": "L1",
+      "rp_priority": 1.0,
+      "description": "Establishes a structured barista training programme covering coffee craft fundamentals through to advanced skills, aligned to SCA certification standards where appropriate, ensuring every team member can consistently produce excellent coffee and confidently explain the product to customers.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B069",
+      "title": "Probation Review Framework",
+      "source_rp": "RP019",
+      "layer": "L1",
+      "rp_priority": 1.0,
+      "description": "Establishes a structured probation review process with formal check-ins at 30, 60, and 90 days, ensuring new starters receive clear feedback, documented performance assessment, and a fair decision on confirmation of employment — while protecting the business from retaining poor fits.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B145",
+      "title": "Exterior & Signage Refresh",
+      "source_rp": "RP043",
+      "layer": "L1",
+      "rp_priority": 1.0,
+      "description": "Ensures the cafe's exterior and signage create a compelling first impression that draws passers-by inside and communicates the brand's identity, quality, and welcome from the street. This block treats the exterior as the cafe's most powerful silent salesperson — working 24 hours a day, 7 days a week, whether the cafe is open or not.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    },
+    {
+      "block_id": "B146",
+      "title": "Front-of-House Cleanliness",
+      "source_rp": "RP043",
+      "layer": "L1",
+      "rp_priority": 1.0,
+      "description": "Establishes rigorous, systematic cleaning standards for all customer-facing areas of the cafe, ensuring that every surface, fixture, and piece of furniture a customer can see or touch meets a standard of cleanliness that reinforces the cafe's quality positioning and satisfies food safety regulations.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    },
+    {
+      "block_id": "B147",
+      "title": "Back-of-House Organisation",
+      "source_rp": "RP043",
+      "layer": "L1",
+      "rp_priority": 1.0,
+      "description": "Establishes systematic organisation of the kitchen, storage areas, and all non-customer-facing spaces so that staff can work efficiently, ingredients are stored properly, equipment is maintained, and the back-of-house environment supports — rather than undermines — the front-of-house experience.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    },
+    {
+      "block_id": "B005",
+      "title": "Allergen Identification & Labelling",
+      "source_rp": "RP002",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Creates the source-of-truth system for allergen identification in every menu item, so the cafe can publish accurate non-PPDS allergen information, control recipe changes safely, and keep customer-facing information aligned with the real ingredients in use.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B006",
+      "title": "PPDS Compliance System",
+      "source_rp": "RP002",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Ensures all Prepacked for Direct Sale (PPDS) items are correctly labelled with full ingredient lists and allergen declarations in compliance with Natasha's Law. This block protects customers with food allergies and shields the business from prosecution under food safety legislation.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B007",
+      "title": "Allergen Customer Dialogue Script",
+      "source_rp": "RP002",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Provides front-of-house staff with structured scripts and confidence to handle allergen queries from customers accurately and safely. This block ensures every allergen conversation follows a consistent, legally defensible process that protects the customer and the business.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B021",
+      "title": "Peak Queue Management",
+      "source_rp": "RP006",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Provides systems and strategies for managing customer queues during peak periods — morning rush, lunchtime, and weekend surges — to minimise wait times, prevent walkaways, and maintain service quality under pressure. This block turns the queue from a pain point into a managed, positive experience.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B022",
+      "title": "Order-Taking Speed Protocol",
+      "source_rp": "RP006",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Streamlines the order-taking process to minimise the time between a customer reaching the till and their order being entered into the system, without sacrificing warmth, accuracy, or the opportunity to upsell. This block focuses on the till interaction as the primary bottleneck in cafe throughput.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B023",
+      "title": "Queue Communication Experience",
+      "source_rp": "RP006",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Transforms the waiting experience for customers in the queue by proactively communicating wait times, maintaining visual progress, and creating small positive moments that reduce perceived wait time. This block ensures that even when customers wait, they feel informed, valued, and engaged.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B089",
+      "title": "Workflow Layout Audit",
+      "source_rp": "RP025",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Conducts a systematic audit of the cafe's physical layout and workflow paths, identifying how the arrangement of equipment, counters, storage, and service points helps or hinders efficient operation — particularly during peak service.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B090",
+      "title": "Station Design Optimisation",
+      "source_rp": "RP025",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Optimises the design of individual work stations — the espresso bar, food preparation area, till point, and cleaning station — so that every tool, supply, and piece of equipment is positioned to minimise reaching, walking, and searching, enabling maximum efficiency within each operator's workspace.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B098",
+      "title": "Seating Turnover Strategy",
+      "source_rp": "RP028",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Develops strategies to optimise table turnover during peak periods without making customers feel rushed, balancing the need to maximise covers with the cafe's hospitality values. This block addresses the delicate art of moving people through without pushing them out.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B099",
+      "title": "Peak Capacity Management",
+      "source_rp": "RP028",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Creates a systematic approach to managing the cafe at maximum capacity — coordinating queue management, seating allocation, service speed, kitchen throughput, and team deployment to ensure that peak periods generate maximum revenue without collapsing into chaos.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B168",
+      "title": "Catering & Events Revenue",
+      "source_rp": "RP050",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Develops catering and private events as a structured revenue stream that leverages existing kitchen capacity, supplier relationships, and brand reputation to generate sales outside of normal trading hours and beyond the physical premises. This block transforms ad-hoc catering requests into a scalable, profitable service line.",
+      "domain": "D11_growth_strategy",
+      "module": "M11: Expansion & Market Positioning"
+    },
+    {
+      "block_id": "B169",
+      "title": "Retail Coffee & Merchandise",
+      "source_rp": "RP050",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Develops retail sales of coffee beans, branded merchandise, and curated products as an additional revenue stream that extends the cafe's brand into customers' homes and builds emotional loyalty. This block ensures retail is approached strategically with proper costing, presentation, and promotion rather than as an afterthought.",
+      "domain": "D11_growth_strategy",
+      "module": "M11: Expansion & Market Positioning"
+    },
+    {
+      "block_id": "B179",
+      "title": "Daily Prep List Protocol",
+      "source_rp": "RP053",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Establishes a structured daily preparation list system that ensures every shift begins with a complete, prioritised checklist of prep tasks — from food preparation and ingredient restocking to station setup and mise en place. This block eliminates the guesswork and memory dependence that causes prep failures, rushed mornings, and service breakdowns during peak hours.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B180",
+      "title": "Machine Maintenance Log",
+      "source_rp": "RP053",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Establishes a daily equipment maintenance logging system that tracks the condition, cleaning, and servicing of all critical cafe machinery — espresso machines, grinders, dishwashers, refrigeration units, ovens, and blenders. This block prevents costly breakdowns, extends equipment lifespan, and ensures every drink and dish is produced by properly maintained machinery.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B181",
+      "title": "Waste Log & Reconciliation",
+      "source_rp": "RP053",
+      "layer": "L1",
+      "rp_priority": 0.8,
+      "description": "Establishes a disciplined daily waste logging system that captures every item discarded — from expired pastries and spoilt milk to over-extracted shots and dropped cups — then reconciles waste costs against revenue to reveal hidden profit leaks. This block transforms waste from an invisible cost into a measurable, manageable, and continuously improvable metric.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B013",
+      "title": "HACCP Food Safety System",
+      "source_rp": "RP004",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Documents the cafe's Hazard Analysis and Critical Control Points (HACCP) system, identifying every food safety hazard in the operation, assessing risk, and defining the critical control points where monitoring prevents unsafe food from reaching customers. This block is a legal requirement and the foundation of the entire food safety management system.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B014",
+      "title": "Critical Control Point Monitoring",
+      "source_rp": "RP004",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Provides the ongoing monitoring systems, corrective action procedures, and trend analysis for every Critical Control Point identified in the HACCP plan (B013). This block ensures that CCPs are not just identified on paper but actively monitored every day with clear escalation when limits are breached.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B015",
+      "title": "Supplier Due Diligence",
+      "source_rp": "RP004",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Establishes a systematic process for verifying that all food and ingredient suppliers meet the cafe's food safety standards, hold appropriate certifications, and provide reliable allergen and traceability information. This block ensures the cafe's food safety chain is only as strong as its weakest supplier.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B017",
+      "title": "Internal Food Safety Self-Assessment",
+      "source_rp": "RP005",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Establishes a regular internal self-assessment programme that mirrors EHO inspection criteria, enabling the cafe to identify and fix food safety gaps before an official inspection occurs. This block turns the cafe into its own most rigorous inspector.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B018",
+      "title": "EHO Inspection Readiness",
+      "source_rp": "RP005",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Prepares the cafe for unannounced Environmental Health Officer inspections by ensuring all documentation, processes, and physical standards are maintained at inspection-ready levels every day. This block provides specific guidance on what EHOs assess, how to interact with inspectors, and what to do after an inspection.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B019",
+      "title": "Food Safety Training Plan",
+      "source_rp": "RP005",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Creates a structured food safety training programme ensuring all staff achieve Level 2 Food Hygiene certification and receive ongoing refresher training on allergens, HACCP, cleaning, and personal hygiene. This block ensures competency is documented, maintained, and demonstrable to EHO inspectors.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B029",
+      "title": "Return Visit Tracking",
+      "source_rp": "RP008",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Creates systems for measuring how frequently customers return to the cafe, identifying retention patterns, and understanding what drives repeat visits versus one-time visits. This block provides the data foundation for all customer retention and loyalty initiatives.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B030",
+      "title": "Loyalty Programme Design",
+      "source_rp": "RP008",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Guides the design and implementation of a customer loyalty or rewards programme that incentivises repeat visits, increases average spend, and strengthens the emotional connection between customers and the cafe. This block covers programme design, economics, launch, and ongoing management.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B031",
+      "title": "Regular Customer Recognition",
+      "source_rp": "RP008",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Creates systems and practices for recognising and personally engaging regular customers — remembering names, usual orders, and personal details — to build genuine relationships that transform transactional visits into emotional loyalty. This block is the human-powered retention engine that no competitor can replicate.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B074",
+      "title": "Daily Team Briefing Protocol",
+      "source_rp": "RP020",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured pre-shift team briefing — a daily five-to-ten-minute huddle that aligns the team on priorities, shares critical information, surfaces concerns, and sets the tone for the shift ahead.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B075",
+      "title": "Weekly Team Meeting Structure",
+      "source_rp": "RP020",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured weekly team meeting that goes beyond daily briefings to address operational review, problem-solving, training, and team development in a dedicated 30-to-45-minute session that keeps the team engaged and the business improving.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B077",
+      "title": "Key Person Risk Assessment",
+      "source_rp": "RP022",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Identifies and mitigates single-point-of-failure dependencies where critical knowledge, skills, or relationships reside with only one person, ensuring the cafe can continue operating effectively if any individual is unexpectedly absent or leaves.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B078",
+      "title": "Cross-Training Programme",
+      "source_rp": "RP022",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Establishes a systematic cross-training programme that develops every team member's ability to work competently across multiple stations and roles, eliminating single-person dependencies, enabling flexible scheduling, and building a resilient team that can adapt to any shift configuration.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B079",
+      "title": "Absence Cover Protocol",
+      "source_rp": "RP022",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Defines a clear, pre-planned protocol for managing unexpected staff absences — from the initial notification through to same-day cover arrangements — ensuring the cafe can open and operate safely without panic, last-minute scrambling, or the owner automatically becoming the default cover.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B111",
+      "title": "Menu Item Costing Calculator",
+      "source_rp": "RP031",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Creates a detailed cost breakdown for every item on the menu — coffee, food, pastries, drinks — so the cafe knows exactly what each product costs to make, what margin it generates, and whether its price is set correctly. This block is the financial foundation upon which all pricing, profitability, and cost control decisions are built.",
+      "domain": "D06_supply_chain",
+      "module": "M06: Supply Chain & Supplier Relations"
+    },
+    {
+      "block_id": "B112",
+      "title": "Food Cost % Tracking",
+      "source_rp": "RP031",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Implements weekly food cost percentage monitoring — the most important financial health indicator for the food side of a cafe's operation — tracking actual food costs against revenue to ensure the cafe maintains its target GP% on all food items and identifies cost drift before it erodes profitability.",
+      "domain": "D06_supply_chain",
+      "module": "M06: Supply Chain & Supplier Relations"
+    },
+    {
+      "block_id": "B113",
+      "title": "Coffee Cost % Tracking",
+      "source_rp": "RP031",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Implements weekly coffee cost percentage monitoring — tracking the cost of all coffee-related inputs (beans, milk, syrups, alternative milks, chocolate, tea) against total drink revenue to maintain the cafe's target GP% and catch cost drift early.",
+      "domain": "D06_supply_chain",
+      "module": "M06: Supply Chain & Supplier Relations"
+    },
+    {
+      "block_id": "B118",
+      "title": "Menu Pricing Strategy",
+      "source_rp": "RP034",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Develops a strategic, data-driven approach to menu pricing that balances cost coverage, competitive positioning, customer value perception, and profit maximisation. This block replaces the common practice of pricing by copying competitors with a structured methodology grounded in the cafe's own cost data.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B119",
+      "title": "Revenue Per Hour Tracking",
+      "source_rp": "RP034",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Implements revenue-per-hour tracking across every trading hour, revealing which time slots generate strong returns and which are underperforming. This metric is the foundation for labour scheduling, promotional targeting, and operational decisions about trading hours.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B120",
+      "title": "Upselling & Add-On Training",
+      "source_rp": "RP034",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Trains the team to suggest complementary items naturally and confidently — turning a single-item transaction into a multi-item sale without being pushy, scripted, or annoying. This block increases average transaction value through genuine hospitality rather than hard selling.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B125",
+      "title": "Payroll Cost Optimisation",
+      "source_rp": "RP036",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Ensures that payroll — typically the single largest cost in a cafe business — is managed strategically to achieve the right balance between service quality and financial sustainability. This block connects labour scheduling decisions to revenue data so that staffing levels are driven by evidence rather than habit.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B126",
+      "title": "Occupancy Cost Strategy",
+      "source_rp": "RP036",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Provides a structured approach to managing rent, rates, and property-related costs — typically the second largest cost after payroll — ensuring the cafe is not overpaying for its premises and is maximising the revenue potential of every square foot it occupies.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B149",
+      "title": "Seating Layout Optimisation",
+      "source_rp": "RP044",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Optimises the cafe's seating layout to maximise both revenue capacity and customer comfort, ensuring the space works hard for the business while creating an environment where customers want to linger, return, and spend. This block treats seating as a strategic asset that directly affects revenue per square foot.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    },
+    {
+      "block_id": "B150",
+      "title": "Lighting, Music & Ambiance",
+      "source_rp": "RP044",
+      "layer": "L1",
+      "rp_priority": 0.7,
+      "description": "Creates and manages the sensory atmosphere of the cafe — lighting, music, temperature, and scent — so that the environment emotionally supports the brand positioning, enhances the customer experience, and influences behaviour in ways that benefit the business. This block recognises that atmosphere is not a background detail but a primary product that customers are paying for.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    }
+  ],
+  "l1_tools": [],
+  "l2_blocks": [
+    {
+      "block_id": "B085",
+      "title": "Peak Staffing Model",
+      "source_rp": "RP024",
+      "layer": "L2",
+      "rp_priority": 2.0,
+      "description": "Creates a data-driven staffing model that matches team deployment to customer demand patterns throughout the day, ensuring the right number of people with the right skills are on the floor at the right times — particularly during peak trading periods.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B086",
+      "title": "Morning Rush Workflow",
+      "source_rp": "RP024",
+      "layer": "L2",
+      "rp_priority": 2.0,
+      "description": "Designs and optimises the workflow for the morning rush period — typically 7:30 to 9:30am — defining roles, positions, task sequences, and communication protocols that enable the team to serve the maximum number of customers at speed without sacrificing drink quality or customer experience.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B087",
+      "title": "Pre-Rush Mise-en-Place",
+      "source_rp": "RP024",
+      "layer": "L2",
+      "rp_priority": 2.0,
+      "description": "Establishes a comprehensive pre-rush preparation protocol — the cafe equivalent of culinary mise en place — ensuring that every supply, tool, and station element is in position and ready before peak service begins, so the team can focus entirely on speed and quality during the rush.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B088",
+      "title": "Peak Performance Analysis",
+      "source_rp": "RP024",
+      "layer": "L2",
+      "rp_priority": 2.0,
+      "description": "Establishes a structured approach to measuring, analysing, and improving peak period performance using data from transactions, service times, waste, customer feedback, and team observations to drive continuous workflow optimisation.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B203",
+      "title": "Drive-Through Workflow",
+      "source_rp": "RP024",
+      "layer": "L2",
+      "rp_priority": 2.0,
+      "description": "Designs and optimises the complete drive-through workflow from order point to window handoff, ensuring speed of service, order accuracy, and a positive customer experience within the unique constraints of vehicle-based service. This block addresses lane management, communication systems, menu board design, staffing positions, and performance metrics specific to drive-through cafe operations.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B204",
+      "title": "Kiosk Operations",
+      "source_rp": "RP024",
+      "layer": "L2",
+      "rp_priority": 2.0,
+      "description": "Establishes the operational framework for running a coffee kiosk or compact format venue, addressing the unique challenges of limited space, reduced equipment, minimal staff, and high-footfall locations. This block covers workflow design within tight footprints, condensed menu strategies, efficient stock management, and the operational discipline required when there is no back-of-house to fall back on.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B205",
+      "title": "Coffee Van Operations",
+      "source_rp": "RP024",
+      "layer": "L2",
+      "rp_priority": 2.0,
+      "description": "Addresses the unique operational logistics of running a mobile coffee van, covering vehicle maintenance, location strategy, event booking, licensing, self-contained water and power systems, setup and teardown routines, and the mobile-specific challenges that differentiate van operations from any fixed-site format.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B001",
+      "title": "Daily Temperature Monitoring",
+      "source_rp": "RP001",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Ensures all refrigeration and freezer units are checked at least twice daily, with temperatures logged and any excursions flagged immediately. This block forms the backbone of cold chain compliance and is the single most inspected element during EHO visits.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B002",
+      "title": "Cold Chain Management SOP",
+      "source_rp": "RP001",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Establishes end-to-end cold chain procedures from delivery acceptance through to storage and cold-hold service. This block ensures that chilled and frozen products never enter the temperature danger zone (8-63°C) at any point within the cafe's control.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B003",
+      "title": "Temperature Excursion Response",
+      "source_rp": "RP001",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Provides a clear, step-by-step response protocol for when refrigeration temperatures breach safe limits. This block ensures that every staff member knows exactly what to do when a fridge or freezer reads too high, preventing unsafe food from reaching customers and creating the documented evidence trail that EHO inspectors require.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B004",
+      "title": "Cold Chain Excellence Dashboard",
+      "source_rp": "RP001",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Creates the management dashboard and review layer that consolidates cold-chain evidence from B001, B002, and B003 into one operating view, so the cafe can spot trends early, make repair and supplier decisions faster, and demonstrate active food safety governance rather than passive record-keeping.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B172",
+      "title": "Cafe Values Definition",
+      "source_rp": "RP051",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Articulates the cafe's core values in clear, actionable language that guides behaviour, decision-making, and hiring. This block moves values from vague aspirations like 'we care about quality' into specific, observable standards that every team member can understand, apply, and be held accountable to.",
+      "domain": "D12_culture_identity",
+      "module": "M12: Values Identity & Community"
+    },
+    {
+      "block_id": "B173",
+      "title": "Staff Handbook & Policies",
+      "source_rp": "RP051",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Creates a comprehensive, accessible staff handbook that codifies the cafe's expectations, policies, procedures, and cultural standards into a single reference document. This block ensures every team member — from day-one starters to long-serving staff — has a clear, written source of truth for how the cafe operates and what is expected of them.",
+      "domain": "D12_culture_identity",
+      "module": "M12: Values Identity & Community"
+    },
+    {
+      "block_id": "B174",
+      "title": "Toxic Dynamics Intervention",
+      "source_rp": "RP051",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Provides a structured framework for identifying, diagnosing, and intervening in toxic workplace dynamics before they corrode team culture, drive out good staff, and damage the customer experience. This block addresses the difficult reality that small teams are especially vulnerable to interpersonal dysfunction and gives cafe owners practical tools to confront it.",
+      "domain": "D12_culture_identity",
+      "module": "M12: Values Identity & Community"
+    },
+    {
+      "block_id": "B175",
+      "title": "Culture Excellence",
+      "source_rp": "RP051",
+      "layer": "L2",
+      "rp_priority": 1.5,
+      "description": "Elevates workplace culture from functional to exceptional — moving beyond the absence of problems into the active creation of a working environment that attracts, energises, and retains outstanding people. This block is the aspirational ceiling of the culture domain, building on the foundations of values, policies, and healthy dynamics to create something genuinely distinctive.",
+      "domain": "D12_culture_identity",
+      "module": "M12: Values Identity & Community"
+    },
+    {
+      "block_id": "B054",
+      "title": "Drink Recipe Cards",
+      "source_rp": "RP015",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Creates standardised recipe documentation for every drink on the menu, ensuring consistency of preparation, taste, and presentation regardless of which barista is making the drink. This block defines the recipe card format, covers espresso-based drinks, teas, hot chocolates, specialty drinks, and cold beverages.",
+      "domain": "D03_coffee_product",
+      "module": "M03: Coffee Craft & Menu Excellence"
+    },
+    {
+      "block_id": "B055",
+      "title": "Portion Control System",
+      "source_rp": "RP015",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Establishes consistent portioning for all food and drink items to ensure customers receive the same quantity every time, costs are predictable and controllable, waste is minimised, and the cafe's pricing accurately reflects what is being served.",
+      "domain": "D03_coffee_product",
+      "module": "M03: Coffee Craft & Menu Excellence"
+    },
+    {
+      "block_id": "B056",
+      "title": "Menu Engineering & Optimisation",
+      "source_rp": "RP015",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Applies menu engineering principles to optimise the cafe's menu for profitability, customer satisfaction, and operational efficiency. This block covers menu design, pricing strategy, item categorisation by popularity and margin, menu board layout, and data-driven decision-making about what to keep, promote, rework, or remove.",
+      "domain": "D03_coffee_product",
+      "module": "M03: Coffee Craft & Menu Excellence"
+    },
+    {
+      "block_id": "B067",
+      "title": "New Starter Induction",
+      "source_rp": "RP019",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Defines a structured first-week induction programme for all new starters, covering essential orientation, health and safety basics, team introductions, and role-specific fundamentals so that every new team member feels welcome, informed, and safe from day one.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B068",
+      "title": "Barista Training & Certification",
+      "source_rp": "RP019",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Establishes a structured barista training programme covering coffee craft fundamentals through to advanced skills, aligned to SCA certification standards where appropriate, ensuring every team member can consistently produce excellent coffee and confidently explain the product to customers.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B069",
+      "title": "Probation Review Framework",
+      "source_rp": "RP019",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Establishes a structured probation review process with formal check-ins at 30, 60, and 90 days, ensuring new starters receive clear feedback, documented performance assessment, and a fair decision on confirmation of employment — while protecting the business from retaining poor fits.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B070",
+      "title": "Onboarding Excellence",
+      "source_rp": "RP019",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Provides a holistic assessment and continuous improvement framework for the entire onboarding journey — from pre-start engagement through induction, training, and probation — ensuring all elements work together to deliver a best-in-class new starter experience that accelerates competence and maximises retention.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B197",
+      "title": "Coffee Education & Training Curriculum",
+      "source_rp": "RP019",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Builds an advanced coffee education and training curriculum that takes baristas beyond basic espresso skills into the science, craft, and culture of specialty coffee. This block creates a structured learning pathway covering green coffee, roasting principles, sensory calibration, brewing theory, milk science, and origin knowledge — transforming staff from drink-makers into coffee professionals.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B206",
+      "title": "Barista Competition Programme",
+      "source_rp": "RP019",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Creates a structured programme that uses barista competitions — both internal and external — as a development tool for advancing technical skills, building team motivation, raising the cafe's industry profile, and creating a culture of excellence. This block covers internal throwdowns, preparation for regional and national SCA competitions, budgeting for competition entry, and leveraging competition success for marketing and recruitment.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B145",
+      "title": "Exterior & Signage Refresh",
+      "source_rp": "RP043",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Ensures the cafe's exterior and signage create a compelling first impression that draws passers-by inside and communicates the brand's identity, quality, and welcome from the street. This block treats the exterior as the cafe's most powerful silent salesperson — working 24 hours a day, 7 days a week, whether the cafe is open or not.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    },
+    {
+      "block_id": "B146",
+      "title": "Front-of-House Cleanliness",
+      "source_rp": "RP043",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Establishes rigorous, systematic cleaning standards for all customer-facing areas of the cafe, ensuring that every surface, fixture, and piece of furniture a customer can see or touch meets a standard of cleanliness that reinforces the cafe's quality positioning and satisfies food safety regulations.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    },
+    {
+      "block_id": "B147",
+      "title": "Back-of-House Organisation",
+      "source_rp": "RP043",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Establishes systematic organisation of the kitchen, storage areas, and all non-customer-facing spaces so that staff can work efficiently, ingredients are stored properly, equipment is maintained, and the back-of-house environment supports — rather than undermines — the front-of-house experience.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    },
+    {
+      "block_id": "B148",
+      "title": "Presentation Excellence",
+      "source_rp": "RP043",
+      "layer": "L2",
+      "rp_priority": 1.0,
+      "description": "Elevates the overall physical presentation of the cafe to best-in-class standard — integrating exterior appeal (B145), front-of-house cleanliness (B146), and back-of-house organisation (B147) into a seamlessly excellent presentation that customers notice, photograph, share, and return for.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    },
+    {
+      "block_id": "B005",
+      "title": "Allergen Identification & Labelling",
+      "source_rp": "RP002",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Creates the source-of-truth system for allergen identification in every menu item, so the cafe can publish accurate non-PPDS allergen information, control recipe changes safely, and keep customer-facing information aligned with the real ingredients in use.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B006",
+      "title": "PPDS Compliance System",
+      "source_rp": "RP002",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Ensures all Prepacked for Direct Sale (PPDS) items are correctly labelled with full ingredient lists and allergen declarations in compliance with Natasha's Law. This block protects customers with food allergies and shields the business from prosecution under food safety legislation.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B007",
+      "title": "Allergen Customer Dialogue Script",
+      "source_rp": "RP002",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Provides front-of-house staff with structured scripts and confidence to handle allergen queries from customers accurately and safely. This block ensures every allergen conversation follows a consistent, legally defensible process that protects the customer and the business.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B008",
+      "title": "Allergen Prevention Programme",
+      "source_rp": "RP002",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Establishes a comprehensive allergen awareness culture across the entire cafe operation, encompassing training, auditing, and continuous improvement. This block brings together allergen documentation, labelling, and communication into a unified prevention programme that minimises the risk of allergen-related incidents.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B021",
+      "title": "Peak Queue Management",
+      "source_rp": "RP006",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Provides systems and strategies for managing customer queues during peak periods — morning rush, lunchtime, and weekend surges — to minimise wait times, prevent walkaways, and maintain service quality under pressure. This block turns the queue from a pain point into a managed, positive experience.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B022",
+      "title": "Order-Taking Speed Protocol",
+      "source_rp": "RP006",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Streamlines the order-taking process to minimise the time between a customer reaching the till and their order being entered into the system, without sacrificing warmth, accuracy, or the opportunity to upsell. This block focuses on the till interaction as the primary bottleneck in cafe throughput.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B023",
+      "title": "Queue Communication Experience",
+      "source_rp": "RP006",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Transforms the waiting experience for customers in the queue by proactively communicating wait times, maintaining visual progress, and creating small positive moments that reduce perceived wait time. This block ensures that even when customers wait, they feel informed, valued, and engaged.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B024",
+      "title": "Throughput Optimisation System",
+      "source_rp": "RP006",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Creates a systematic approach to measuring, analysing, and improving the cafe's customer throughput — the number of customers served per hour — through workflow analysis, bottleneck identification, and operational refinement. This block treats throughput as a measurable, improvable metric rather than a fixed characteristic.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B089",
+      "title": "Workflow Layout Audit",
+      "source_rp": "RP025",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Conducts a systematic audit of the cafe's physical layout and workflow paths, identifying how the arrangement of equipment, counters, storage, and service points helps or hinders efficient operation — particularly during peak service.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B090",
+      "title": "Station Design Optimisation",
+      "source_rp": "RP025",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Optimises the design of individual work stations — the espresso bar, food preparation area, till point, and cleaning station — so that every tool, supply, and piece of equipment is positioned to minimise reaching, walking, and searching, enabling maximum efficiency within each operator's workspace.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B091",
+      "title": "Workflow Excellence",
+      "source_rp": "RP025",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Establishes a continuous improvement framework for the cafe's entire operational workflow, synthesising insights from layout audits, station design, peak analysis, and team feedback into an ongoing programme of incremental refinement that drives the operation towards excellence.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B098",
+      "title": "Seating Turnover Strategy",
+      "source_rp": "RP028",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Develops strategies to optimise table turnover during peak periods without making customers feel rushed, balancing the need to maximise covers with the cafe's hospitality values. This block addresses the delicate art of moving people through without pushing them out.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B099",
+      "title": "Peak Capacity Management",
+      "source_rp": "RP028",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Creates a systematic approach to managing the cafe at maximum capacity — coordinating queue management, seating allocation, service speed, kitchen throughput, and team deployment to ensure that peak periods generate maximum revenue without collapsing into chaos.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B100",
+      "title": "Seating Experience Optimisation",
+      "source_rp": "RP028",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Balances the tension between maximising seating turnover for revenue and providing a comfortable, welcoming experience that encourages return visits. This capstone block integrates turnover strategy (B098) and capacity management (B099) into a holistic seating philosophy that serves both the business and the customer.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B168",
+      "title": "Catering & Events Revenue",
+      "source_rp": "RP050",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Develops catering and private events as a structured revenue stream that leverages existing kitchen capacity, supplier relationships, and brand reputation to generate sales outside of normal trading hours and beyond the physical premises. This block transforms ad-hoc catering requests into a scalable, profitable service line.",
+      "domain": "D11_growth_strategy",
+      "module": "M11: Expansion & Market Positioning"
+    },
+    {
+      "block_id": "B169",
+      "title": "Retail Coffee & Merchandise",
+      "source_rp": "RP050",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Develops retail sales of coffee beans, branded merchandise, and curated products as an additional revenue stream that extends the cafe's brand into customers' homes and builds emotional loyalty. This block ensures retail is approached strategically with proper costing, presentation, and promotion rather than as an afterthought.",
+      "domain": "D11_growth_strategy",
+      "module": "M11: Expansion & Market Positioning"
+    },
+    {
+      "block_id": "B170",
+      "title": "Evening Trade Development",
+      "source_rp": "RP050",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Explores and develops evening trading as a distinct revenue stream, transforming the cafe from a daytime-only business into a venue with extended earning potential through evening food service, drinks, events, or a combination of these. This block ensures evening trade is financially viable and operationally sustainable before significant investment is committed.",
+      "domain": "D11_growth_strategy",
+      "module": "M11: Expansion & Market Positioning"
+    },
+    {
+      "block_id": "B171",
+      "title": "Subscription & Membership Model",
+      "source_rp": "RP050",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Develops a recurring revenue model through subscription coffee services, membership programmes, or hybrid offerings that provide customers with ongoing value while delivering predictable, recurring income for the cafe. This block ensures subscription models are financially sound, operationally manageable, and genuinely attractive to customers rather than gimmicky.",
+      "domain": "D11_growth_strategy",
+      "module": "M11: Expansion & Market Positioning"
+    },
+    {
+      "block_id": "B208",
+      "title": "Pop-Up & Market Operations",
+      "source_rp": "RP050",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Provides the operational framework for extending the cafe's brand through pop-up events, farmers' markets, food markets, and temporary trading opportunities. This block covers site selection, equipment logistics, condensed menu planning, financial viability assessment, marketing integration, and the operational discipline required to deliver the cafe's standard of quality in a temporary setting.",
+      "domain": "D11_growth_strategy",
+      "module": "M11: Expansion & Market Positioning"
+    },
+    {
+      "block_id": "B179",
+      "title": "Daily Prep List Protocol",
+      "source_rp": "RP053",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Establishes a structured daily preparation list system that ensures every shift begins with a complete, prioritised checklist of prep tasks — from food preparation and ingredient restocking to station setup and mise en place. This block eliminates the guesswork and memory dependence that causes prep failures, rushed mornings, and service breakdowns during peak hours.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B180",
+      "title": "Machine Maintenance Log",
+      "source_rp": "RP053",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Establishes a daily equipment maintenance logging system that tracks the condition, cleaning, and servicing of all critical cafe machinery — espresso machines, grinders, dishwashers, refrigeration units, ovens, and blenders. This block prevents costly breakdowns, extends equipment lifespan, and ensures every drink and dish is produced by properly maintained machinery.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B181",
+      "title": "Waste Log & Reconciliation",
+      "source_rp": "RP053",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Establishes a disciplined daily waste logging system that captures every item discarded — from expired pastries and spoilt milk to over-extracted shots and dropped cups — then reconciles waste costs against revenue to reveal hidden profit leaks. This block transforms waste from an invisible cost into a measurable, manageable, and continuously improvable metric.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B182",
+      "title": "Operational Rhythm Dashboard",
+      "source_rp": "RP053",
+      "layer": "L2",
+      "rp_priority": 0.8,
+      "description": "Creates a single-view operational dashboard that consolidates daily KPIs — revenue, labour cost, waste, speed of service, customer count, and compliance checks — into a real-time pulse of cafe performance. This block ensures the manager never has to guess how the day is going and can intervene before small problems become expensive ones.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B013",
+      "title": "HACCP Food Safety System",
+      "source_rp": "RP004",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Documents the cafe's Hazard Analysis and Critical Control Points (HACCP) system, identifying every food safety hazard in the operation, assessing risk, and defining the critical control points where monitoring prevents unsafe food from reaching customers. This block is a legal requirement and the foundation of the entire food safety management system.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B014",
+      "title": "Critical Control Point Monitoring",
+      "source_rp": "RP004",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Provides the ongoing monitoring systems, corrective action procedures, and trend analysis for every Critical Control Point identified in the HACCP plan (B013). This block ensures that CCPs are not just identified on paper but actively monitored every day with clear escalation when limits are breached.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B015",
+      "title": "Supplier Due Diligence",
+      "source_rp": "RP004",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Establishes a systematic process for verifying that all food and ingredient suppliers meet the cafe's food safety standards, hold appropriate certifications, and provide reliable allergen and traceability information. This block ensures the cafe's food safety chain is only as strong as its weakest supplier.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B016",
+      "title": "Food Safety Record-Keeping",
+      "source_rp": "RP004",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Creates a centralised, organised system for maintaining all food safety records including the SFBB diary, temperature logs, cleaning records, training records, supplier documentation, and corrective action logs. This block ensures that when an EHO inspector asks for documentation, everything is immediately accessible and complete.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B017",
+      "title": "Internal Food Safety Self-Assessment",
+      "source_rp": "RP005",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Establishes a regular internal self-assessment programme that mirrors EHO inspection criteria, enabling the cafe to identify and fix food safety gaps before an official inspection occurs. This block turns the cafe into its own most rigorous inspector.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B018",
+      "title": "EHO Inspection Readiness",
+      "source_rp": "RP005",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Prepares the cafe for unannounced Environmental Health Officer inspections by ensuring all documentation, processes, and physical standards are maintained at inspection-ready levels every day. This block provides specific guidance on what EHOs assess, how to interact with inspectors, and what to do after an inspection.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B019",
+      "title": "Food Safety Training Plan",
+      "source_rp": "RP005",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Creates a structured food safety training programme ensuring all staff achieve Level 2 Food Hygiene certification and receive ongoing refresher training on allergens, HACCP, cleaning, and personal hygiene. This block ensures competency is documented, maintained, and demonstrable to EHO inspectors.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B020",
+      "title": "Food Safety Excellence Programme",
+      "source_rp": "RP005",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Elevates the cafe's food safety from compliance to best-in-class excellence by integrating hygiene culture, comprehensive documentation, and continuous training into a unified programme that positions food safety as a genuine competitive advantage and point of pride.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B029",
+      "title": "Return Visit Tracking",
+      "source_rp": "RP008",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Creates systems for measuring how frequently customers return to the cafe, identifying retention patterns, and understanding what drives repeat visits versus one-time visits. This block provides the data foundation for all customer retention and loyalty initiatives.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B030",
+      "title": "Loyalty Programme Design",
+      "source_rp": "RP008",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Guides the design and implementation of a customer loyalty or rewards programme that incentivises repeat visits, increases average spend, and strengthens the emotional connection between customers and the cafe. This block covers programme design, economics, launch, and ongoing management.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B031",
+      "title": "Regular Customer Recognition",
+      "source_rp": "RP008",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Creates systems and practices for recognising and personally engaging regular customers — remembering names, usual orders, and personal details — to build genuine relationships that transform transactional visits into emotional loyalty. This block is the human-powered retention engine that no competitor can replicate.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B032",
+      "title": "Customer Lifetime Value Strategy",
+      "source_rp": "RP008",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Establishes a framework for calculating and maximising Customer Lifetime Value (CLV) — the total revenue a customer generates over their entire relationship with the cafe. This block shifts the business mindset from individual transactions to long-term customer relationships and provides the economic rationale for investing in retention.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B074",
+      "title": "Daily Team Briefing Protocol",
+      "source_rp": "RP020",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured pre-shift team briefing — a daily five-to-ten-minute huddle that aligns the team on priorities, shares critical information, surfaces concerns, and sets the tone for the shift ahead.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B075",
+      "title": "Weekly Team Meeting Structure",
+      "source_rp": "RP020",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured weekly team meeting that goes beyond daily briefings to address operational review, problem-solving, training, and team development in a dedicated 30-to-45-minute session that keeps the team engaged and the business improving.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B076",
+      "title": "Communication Culture & Feedback",
+      "source_rp": "RP020",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Builds an open, psychologically safe communication culture where feedback flows freely in all directions — upward, downward, and peer-to-peer — ensuring issues are raised early, good work is recognised, and the team operates with transparency and mutual respect.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B077",
+      "title": "Key Person Risk Assessment",
+      "source_rp": "RP022",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Identifies and mitigates single-point-of-failure dependencies where critical knowledge, skills, or relationships reside with only one person, ensuring the cafe can continue operating effectively if any individual is unexpectedly absent or leaves.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B078",
+      "title": "Cross-Training Programme",
+      "source_rp": "RP022",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Establishes a systematic cross-training programme that develops every team member's ability to work competently across multiple stations and roles, eliminating single-person dependencies, enabling flexible scheduling, and building a resilient team that can adapt to any shift configuration.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B079",
+      "title": "Absence Cover Protocol",
+      "source_rp": "RP022",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Defines a clear, pre-planned protocol for managing unexpected staff absences — from the initial notification through to same-day cover arrangements — ensuring the cafe can open and operate safely without panic, last-minute scrambling, or the owner automatically becoming the default cover.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B080",
+      "title": "Knowledge Capture System",
+      "source_rp": "RP022",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Creates a systematic approach to documenting tribal knowledge — the unwritten procedures, supplier relationships, equipment quirks, and operational shortcuts that exist only in people's heads — ensuring this critical information is captured, accessible, and survives staff changes.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B111",
+      "title": "Menu Item Costing Calculator",
+      "source_rp": "RP031",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Creates a detailed cost breakdown for every item on the menu — coffee, food, pastries, drinks — so the cafe knows exactly what each product costs to make, what margin it generates, and whether its price is set correctly. This block is the financial foundation upon which all pricing, profitability, and cost control decisions are built.",
+      "domain": "D06_supply_chain",
+      "module": "M06: Supply Chain & Supplier Relations"
+    },
+    {
+      "block_id": "B112",
+      "title": "Food Cost % Tracking",
+      "source_rp": "RP031",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Implements weekly food cost percentage monitoring — the most important financial health indicator for the food side of a cafe's operation — tracking actual food costs against revenue to ensure the cafe maintains its target GP% on all food items and identifies cost drift before it erodes profitability.",
+      "domain": "D06_supply_chain",
+      "module": "M06: Supply Chain & Supplier Relations"
+    },
+    {
+      "block_id": "B113",
+      "title": "Coffee Cost % Tracking",
+      "source_rp": "RP031",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Implements weekly coffee cost percentage monitoring — tracking the cost of all coffee-related inputs (beans, milk, syrups, alternative milks, chocolate, tea) against total drink revenue to maintain the cafe's target GP% and catch cost drift early.",
+      "domain": "D06_supply_chain",
+      "module": "M06: Supply Chain & Supplier Relations"
+    },
+    {
+      "block_id": "B114",
+      "title": "Packaging Cost Optimisation",
+      "source_rp": "RP031",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Analyses and optimises the cost of all packaging — cups, lids, sleeves, bags, boxes, napkins, cutlery, and delivery containers — ensuring the cafe minimises this significant cost line without compromising quality, customer experience, or sustainability commitments.",
+      "domain": "D06_supply_chain",
+      "module": "M06: Supply Chain & Supplier Relations"
+    },
+    {
+      "block_id": "B118",
+      "title": "Menu Pricing Strategy",
+      "source_rp": "RP034",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Develops a strategic, data-driven approach to menu pricing that balances cost coverage, competitive positioning, customer value perception, and profit maximisation. This block replaces the common practice of pricing by copying competitors with a structured methodology grounded in the cafe's own cost data.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B119",
+      "title": "Revenue Per Hour Tracking",
+      "source_rp": "RP034",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Implements revenue-per-hour tracking across every trading hour, revealing which time slots generate strong returns and which are underperforming. This metric is the foundation for labour scheduling, promotional targeting, and operational decisions about trading hours.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B120",
+      "title": "Upselling & Add-On Training",
+      "source_rp": "RP034",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Trains the team to suggest complementary items naturally and confidently — turning a single-item transaction into a multi-item sale without being pushy, scripted, or annoying. This block increases average transaction value through genuine hospitality rather than hard selling.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B121",
+      "title": "Revenue Growth Strategy",
+      "source_rp": "RP034",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured, data-driven approach to growing cafe revenue beyond incremental gains. Ensures the business identifies, tests, and scales new revenue streams while protecting the core proposition that customers value.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B125",
+      "title": "Payroll Cost Optimisation",
+      "source_rp": "RP036",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Ensures that payroll — typically the single largest cost in a cafe business — is managed strategically to achieve the right balance between service quality and financial sustainability. This block connects labour scheduling decisions to revenue data so that staffing levels are driven by evidence rather than habit.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B126",
+      "title": "Occupancy Cost Strategy",
+      "source_rp": "RP036",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Provides a structured approach to managing rent, rates, and property-related costs — typically the second largest cost after payroll — ensuring the cafe is not overpaying for its premises and is maximising the revenue potential of every square foot it occupies.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B127",
+      "title": "Cost Structure Excellence",
+      "source_rp": "RP036",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Provides a holistic view of the cafe's entire cost base and establishes a continuous improvement approach to cost management. This block synthesises payroll optimisation (B125), occupancy strategy (B126), and all other cost lines into an integrated cost structure that is benchmarked, monitored, and actively refined.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B149",
+      "title": "Seating Layout Optimisation",
+      "source_rp": "RP044",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Optimises the cafe's seating layout to maximise both revenue capacity and customer comfort, ensuring the space works hard for the business while creating an environment where customers want to linger, return, and spend. This block treats seating as a strategic asset that directly affects revenue per square foot.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    },
+    {
+      "block_id": "B150",
+      "title": "Lighting, Music & Ambiance",
+      "source_rp": "RP044",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Creates and manages the sensory atmosphere of the cafe — lighting, music, temperature, and scent — so that the environment emotionally supports the brand positioning, enhances the customer experience, and influences behaviour in ways that benefit the business. This block recognises that atmosphere is not a background detail but a primary product that customers are paying for.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    },
+    {
+      "block_id": "B151",
+      "title": "Atmosphere Design Programme",
+      "source_rp": "RP044",
+      "layer": "L2",
+      "rp_priority": 0.7,
+      "description": "Establishes a comprehensive approach to designing and refining the cafe's atmosphere, encompassing lighting, acoustics, furniture, colour palette, and sensory experience. Ensures the physical environment actively supports the brand identity and encourages longer dwell times and repeat visits.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    }
+  ],
+  "l2_tools": [],
+  "l3_blocks": [
+    {
+      "block_id": "B085",
+      "title": "Peak Staffing Model",
+      "source_rp": "RP024",
+      "layer": "L3",
+      "rp_priority": 2.0,
+      "description": "Creates a data-driven staffing model that matches team deployment to customer demand patterns throughout the day, ensuring the right number of people with the right skills are on the floor at the right times — particularly during peak trading periods.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B088",
+      "title": "Peak Performance Analysis",
+      "source_rp": "RP024",
+      "layer": "L3",
+      "rp_priority": 2.0,
+      "description": "Establishes a structured approach to measuring, analysing, and improving peak period performance using data from transactions, service times, waste, customer feedback, and team observations to drive continuous workflow optimisation.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B203",
+      "title": "Drive-Through Workflow",
+      "source_rp": "RP024",
+      "layer": "L3",
+      "rp_priority": 2.0,
+      "description": "Designs and optimises the complete drive-through workflow from order point to window handoff, ensuring speed of service, order accuracy, and a positive customer experience within the unique constraints of vehicle-based service. This block addresses lane management, communication systems, menu board design, staffing positions, and performance metrics specific to drive-through cafe operations.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B204",
+      "title": "Kiosk Operations",
+      "source_rp": "RP024",
+      "layer": "L3",
+      "rp_priority": 2.0,
+      "description": "Establishes the operational framework for running a coffee kiosk or compact format venue, addressing the unique challenges of limited space, reduced equipment, minimal staff, and high-footfall locations. This block covers workflow design within tight footprints, condensed menu strategies, efficient stock management, and the operational discipline required when there is no back-of-house to fall back on.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B205",
+      "title": "Coffee Van Operations",
+      "source_rp": "RP024",
+      "layer": "L3",
+      "rp_priority": 2.0,
+      "description": "Addresses the unique operational logistics of running a mobile coffee van, covering vehicle maintenance, location strategy, event booking, licensing, self-contained water and power systems, setup and teardown routines, and the mobile-specific challenges that differentiate van operations from any fixed-site format.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B001",
+      "title": "Daily Temperature Monitoring",
+      "source_rp": "RP001",
+      "layer": "L3",
+      "rp_priority": 1.5,
+      "description": "Ensures all refrigeration and freezer units are checked at least twice daily, with temperatures logged and any excursions flagged immediately. This block forms the backbone of cold chain compliance and is the single most inspected element during EHO visits.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B004",
+      "title": "Cold Chain Excellence Dashboard",
+      "source_rp": "RP001",
+      "layer": "L3",
+      "rp_priority": 1.5,
+      "description": "Creates the management dashboard and review layer that consolidates cold-chain evidence from B001, B002, and B003 into one operating view, so the cafe can spot trends early, make repair and supplier decisions faster, and demonstrate active food safety governance rather than passive record-keeping.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B172",
+      "title": "Cafe Values Definition",
+      "source_rp": "RP051",
+      "layer": "L3",
+      "rp_priority": 1.5,
+      "description": "Articulates the cafe's core values in clear, actionable language that guides behaviour, decision-making, and hiring. This block moves values from vague aspirations like 'we care about quality' into specific, observable standards that every team member can understand, apply, and be held accountable to.",
+      "domain": "D12_culture_identity",
+      "module": "M12: Values Identity & Community"
+    },
+    {
+      "block_id": "B175",
+      "title": "Culture Excellence",
+      "source_rp": "RP051",
+      "layer": "L3",
+      "rp_priority": 1.5,
+      "description": "Elevates workplace culture from functional to exceptional — moving beyond the absence of problems into the active creation of a working environment that attracts, energises, and retains outstanding people. This block is the aspirational ceiling of the culture domain, building on the foundations of values, policies, and healthy dynamics to create something genuinely distinctive.",
+      "domain": "D12_culture_identity",
+      "module": "M12: Values Identity & Community"
+    },
+    {
+      "block_id": "B054",
+      "title": "Drink Recipe Cards",
+      "source_rp": "RP015",
+      "layer": "L3",
+      "rp_priority": 1.0,
+      "description": "Creates standardised recipe documentation for every drink on the menu, ensuring consistency of preparation, taste, and presentation regardless of which barista is making the drink. This block defines the recipe card format, covers espresso-based drinks, teas, hot chocolates, specialty drinks, and cold beverages.",
+      "domain": "D03_coffee_product",
+      "module": "M03: Coffee Craft & Menu Excellence"
+    },
+    {
+      "block_id": "B056",
+      "title": "Menu Engineering & Optimisation",
+      "source_rp": "RP015",
+      "layer": "L3",
+      "rp_priority": 1.0,
+      "description": "Applies menu engineering principles to optimise the cafe's menu for profitability, customer satisfaction, and operational efficiency. This block covers menu design, pricing strategy, item categorisation by popularity and margin, menu board layout, and data-driven decision-making about what to keep, promote, rework, or remove.",
+      "domain": "D03_coffee_product",
+      "module": "M03: Coffee Craft & Menu Excellence"
+    },
+    {
+      "block_id": "B067",
+      "title": "New Starter Induction",
+      "source_rp": "RP019",
+      "layer": "L3",
+      "rp_priority": 1.0,
+      "description": "Defines a structured first-week induction programme for all new starters, covering essential orientation, health and safety basics, team introductions, and role-specific fundamentals so that every new team member feels welcome, informed, and safe from day one.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B070",
+      "title": "Onboarding Excellence",
+      "source_rp": "RP019",
+      "layer": "L3",
+      "rp_priority": 1.0,
+      "description": "Provides a holistic assessment and continuous improvement framework for the entire onboarding journey — from pre-start engagement through induction, training, and probation — ensuring all elements work together to deliver a best-in-class new starter experience that accelerates competence and maximises retention.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B197",
+      "title": "Coffee Education & Training Curriculum",
+      "source_rp": "RP019",
+      "layer": "L3",
+      "rp_priority": 1.0,
+      "description": "Builds an advanced coffee education and training curriculum that takes baristas beyond basic espresso skills into the science, craft, and culture of specialty coffee. This block creates a structured learning pathway covering green coffee, roasting principles, sensory calibration, brewing theory, milk science, and origin knowledge — transforming staff from drink-makers into coffee professionals.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B206",
+      "title": "Barista Competition Programme",
+      "source_rp": "RP019",
+      "layer": "L3",
+      "rp_priority": 1.0,
+      "description": "Creates a structured programme that uses barista competitions — both internal and external — as a development tool for advancing technical skills, building team motivation, raising the cafe's industry profile, and creating a culture of excellence. This block covers internal throwdowns, preparation for regional and national SCA competitions, budgeting for competition entry, and leveraging competition success for marketing and recruitment.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B145",
+      "title": "Exterior & Signage Refresh",
+      "source_rp": "RP043",
+      "layer": "L3",
+      "rp_priority": 1.0,
+      "description": "Ensures the cafe's exterior and signage create a compelling first impression that draws passers-by inside and communicates the brand's identity, quality, and welcome from the street. This block treats the exterior as the cafe's most powerful silent salesperson — working 24 hours a day, 7 days a week, whether the cafe is open or not.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    },
+    {
+      "block_id": "B148",
+      "title": "Presentation Excellence",
+      "source_rp": "RP043",
+      "layer": "L3",
+      "rp_priority": 1.0,
+      "description": "Elevates the overall physical presentation of the cafe to best-in-class standard — integrating exterior appeal (B145), front-of-house cleanliness (B146), and back-of-house organisation (B147) into a seamlessly excellent presentation that customers notice, photograph, share, and return for.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    },
+    {
+      "block_id": "B005",
+      "title": "Allergen Identification & Labelling",
+      "source_rp": "RP002",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Creates the source-of-truth system for allergen identification in every menu item, so the cafe can publish accurate non-PPDS allergen information, control recipe changes safely, and keep customer-facing information aligned with the real ingredients in use.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B008",
+      "title": "Allergen Prevention Programme",
+      "source_rp": "RP002",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Establishes a comprehensive allergen awareness culture across the entire cafe operation, encompassing training, auditing, and continuous improvement. This block brings together allergen documentation, labelling, and communication into a unified prevention programme that minimises the risk of allergen-related incidents.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B021",
+      "title": "Peak Queue Management",
+      "source_rp": "RP006",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Provides systems and strategies for managing customer queues during peak periods — morning rush, lunchtime, and weekend surges — to minimise wait times, prevent walkaways, and maintain service quality under pressure. This block turns the queue from a pain point into a managed, positive experience.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B024",
+      "title": "Throughput Optimisation System",
+      "source_rp": "RP006",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Creates a systematic approach to measuring, analysing, and improving the cafe's customer throughput — the number of customers served per hour — through workflow analysis, bottleneck identification, and operational refinement. This block treats throughput as a measurable, improvable metric rather than a fixed characteristic.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B089",
+      "title": "Workflow Layout Audit",
+      "source_rp": "RP025",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Conducts a systematic audit of the cafe's physical layout and workflow paths, identifying how the arrangement of equipment, counters, storage, and service points helps or hinders efficient operation — particularly during peak service.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B091",
+      "title": "Workflow Excellence",
+      "source_rp": "RP025",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Establishes a continuous improvement framework for the cafe's entire operational workflow, synthesising insights from layout audits, station design, peak analysis, and team feedback into an ongoing programme of incremental refinement that drives the operation towards excellence.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B098",
+      "title": "Seating Turnover Strategy",
+      "source_rp": "RP028",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Develops strategies to optimise table turnover during peak periods without making customers feel rushed, balancing the need to maximise covers with the cafe's hospitality values. This block addresses the delicate art of moving people through without pushing them out.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B100",
+      "title": "Seating Experience Optimisation",
+      "source_rp": "RP028",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Balances the tension between maximising seating turnover for revenue and providing a comfortable, welcoming experience that encourages return visits. This capstone block integrates turnover strategy (B098) and capacity management (B099) into a holistic seating philosophy that serves both the business and the customer.",
+      "domain": "D05_operations_workflow",
+      "module": "M05: Service Flow & Peak Management"
+    },
+    {
+      "block_id": "B168",
+      "title": "Catering & Events Revenue",
+      "source_rp": "RP050",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Develops catering and private events as a structured revenue stream that leverages existing kitchen capacity, supplier relationships, and brand reputation to generate sales outside of normal trading hours and beyond the physical premises. This block transforms ad-hoc catering requests into a scalable, profitable service line.",
+      "domain": "D11_growth_strategy",
+      "module": "M11: Expansion & Market Positioning"
+    },
+    {
+      "block_id": "B171",
+      "title": "Subscription & Membership Model",
+      "source_rp": "RP050",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Develops a recurring revenue model through subscription coffee services, membership programmes, or hybrid offerings that provide customers with ongoing value while delivering predictable, recurring income for the cafe. This block ensures subscription models are financially sound, operationally manageable, and genuinely attractive to customers rather than gimmicky.",
+      "domain": "D11_growth_strategy",
+      "module": "M11: Expansion & Market Positioning"
+    },
+    {
+      "block_id": "B208",
+      "title": "Pop-Up & Market Operations",
+      "source_rp": "RP050",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Provides the operational framework for extending the cafe's brand through pop-up events, farmers' markets, food markets, and temporary trading opportunities. This block covers site selection, equipment logistics, condensed menu planning, financial viability assessment, marketing integration, and the operational discipline required to deliver the cafe's standard of quality in a temporary setting.",
+      "domain": "D11_growth_strategy",
+      "module": "M11: Expansion & Market Positioning"
+    },
+    {
+      "block_id": "B179",
+      "title": "Daily Prep List Protocol",
+      "source_rp": "RP053",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Establishes a structured daily preparation list system that ensures every shift begins with a complete, prioritised checklist of prep tasks — from food preparation and ingredient restocking to station setup and mise en place. This block eliminates the guesswork and memory dependence that causes prep failures, rushed mornings, and service breakdowns during peak hours.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B182",
+      "title": "Operational Rhythm Dashboard",
+      "source_rp": "RP053",
+      "layer": "L3",
+      "rp_priority": 0.8,
+      "description": "Creates a single-view operational dashboard that consolidates daily KPIs — revenue, labour cost, waste, speed of service, customer count, and compliance checks — into a real-time pulse of cafe performance. This block ensures the manager never has to guess how the day is going and can intervene before small problems become expensive ones.",
+      "domain": "D05_operations_workflow",
+      "module": "M14: Operational Rhythm & Daily Discipline"
+    },
+    {
+      "block_id": "B013",
+      "title": "HACCP Food Safety System",
+      "source_rp": "RP004",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Documents the cafe's Hazard Analysis and Critical Control Points (HACCP) system, identifying every food safety hazard in the operation, assessing risk, and defining the critical control points where monitoring prevents unsafe food from reaching customers. This block is a legal requirement and the foundation of the entire food safety management system.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B016",
+      "title": "Food Safety Record-Keeping",
+      "source_rp": "RP004",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Creates a centralised, organised system for maintaining all food safety records including the SFBB diary, temperature logs, cleaning records, training records, supplier documentation, and corrective action logs. This block ensures that when an EHO inspector asks for documentation, everything is immediately accessible and complete.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B017",
+      "title": "Internal Food Safety Self-Assessment",
+      "source_rp": "RP005",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Establishes a regular internal self-assessment programme that mirrors EHO inspection criteria, enabling the cafe to identify and fix food safety gaps before an official inspection occurs. This block turns the cafe into its own most rigorous inspector.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B020",
+      "title": "Food Safety Excellence Programme",
+      "source_rp": "RP005",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Elevates the cafe's food safety from compliance to best-in-class excellence by integrating hygiene culture, comprehensive documentation, and continuous training into a unified programme that positions food safety as a genuine competitive advantage and point of pride.",
+      "domain": "D01_food_safety",
+      "module": "M01: Food Safety & Hygiene Compliance"
+    },
+    {
+      "block_id": "B029",
+      "title": "Return Visit Tracking",
+      "source_rp": "RP008",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Creates systems for measuring how frequently customers return to the cafe, identifying retention patterns, and understanding what drives repeat visits versus one-time visits. This block provides the data foundation for all customer retention and loyalty initiatives.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B032",
+      "title": "Customer Lifetime Value Strategy",
+      "source_rp": "RP008",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Establishes a framework for calculating and maximising Customer Lifetime Value (CLV) — the total revenue a customer generates over their entire relationship with the cafe. This block shifts the business mindset from individual transactions to long-term customer relationships and provides the economic rationale for investing in retention.",
+      "domain": "D02_customer_experience",
+      "module": "M02: Customer Journey & Retention"
+    },
+    {
+      "block_id": "B074",
+      "title": "Daily Team Briefing Protocol",
+      "source_rp": "RP020",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured pre-shift team briefing — a daily five-to-ten-minute huddle that aligns the team on priorities, shares critical information, surfaces concerns, and sets the tone for the shift ahead.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B076",
+      "title": "Communication Culture & Feedback",
+      "source_rp": "RP020",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Builds an open, psychologically safe communication culture where feedback flows freely in all directions — upward, downward, and peer-to-peer — ensuring issues are raised early, good work is recognised, and the team operates with transparency and mutual respect.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B077",
+      "title": "Key Person Risk Assessment",
+      "source_rp": "RP022",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Identifies and mitigates single-point-of-failure dependencies where critical knowledge, skills, or relationships reside with only one person, ensuring the cafe can continue operating effectively if any individual is unexpectedly absent or leaves.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B080",
+      "title": "Knowledge Capture System",
+      "source_rp": "RP022",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Creates a systematic approach to documenting tribal knowledge — the unwritten procedures, supplier relationships, equipment quirks, and operational shortcuts that exist only in people's heads — ensuring this critical information is captured, accessible, and survives staff changes.",
+      "domain": "D04_team_talent",
+      "module": "M04: Recruitment Onboarding & Development"
+    },
+    {
+      "block_id": "B111",
+      "title": "Menu Item Costing Calculator",
+      "source_rp": "RP031",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Creates a detailed cost breakdown for every item on the menu — coffee, food, pastries, drinks — so the cafe knows exactly what each product costs to make, what margin it generates, and whether its price is set correctly. This block is the financial foundation upon which all pricing, profitability, and cost control decisions are built.",
+      "domain": "D06_supply_chain",
+      "module": "M06: Supply Chain & Supplier Relations"
+    },
+    {
+      "block_id": "B114",
+      "title": "Packaging Cost Optimisation",
+      "source_rp": "RP031",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Analyses and optimises the cost of all packaging — cups, lids, sleeves, bags, boxes, napkins, cutlery, and delivery containers — ensuring the cafe minimises this significant cost line without compromising quality, customer experience, or sustainability commitments.",
+      "domain": "D06_supply_chain",
+      "module": "M06: Supply Chain & Supplier Relations"
+    },
+    {
+      "block_id": "B118",
+      "title": "Menu Pricing Strategy",
+      "source_rp": "RP034",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Develops a strategic, data-driven approach to menu pricing that balances cost coverage, competitive positioning, customer value perception, and profit maximisation. This block replaces the common practice of pricing by copying competitors with a structured methodology grounded in the cafe's own cost data.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B121",
+      "title": "Revenue Growth Strategy",
+      "source_rp": "RP034",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Establishes a structured, data-driven approach to growing cafe revenue beyond incremental gains. Ensures the business identifies, tests, and scales new revenue streams while protecting the core proposition that customers value.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B125",
+      "title": "Payroll Cost Optimisation",
+      "source_rp": "RP036",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Ensures that payroll — typically the single largest cost in a cafe business — is managed strategically to achieve the right balance between service quality and financial sustainability. This block connects labour scheduling decisions to revenue data so that staffing levels are driven by evidence rather than habit.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B127",
+      "title": "Cost Structure Excellence",
+      "source_rp": "RP036",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Provides a holistic view of the cafe's entire cost base and establishes a continuous improvement approach to cost management. This block synthesises payroll optimisation (B125), occupancy strategy (B126), and all other cost lines into an integrated cost structure that is benchmarked, monitored, and actively refined.",
+      "domain": "D07_financial_performance",
+      "module": "M07: Pricing Revenue & Cost Control"
+    },
+    {
+      "block_id": "B149",
+      "title": "Seating Layout Optimisation",
+      "source_rp": "RP044",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Optimises the cafe's seating layout to maximise both revenue capacity and customer comfort, ensuring the space works hard for the business while creating an environment where customers want to linger, return, and spend. This block treats seating as a strategic asset that directly affects revenue per square foot.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    },
+    {
+      "block_id": "B151",
+      "title": "Atmosphere Design Programme",
+      "source_rp": "RP044",
+      "layer": "L3",
+      "rp_priority": 0.7,
+      "description": "Establishes a comprehensive approach to designing and refining the cafe's atmosphere, encompassing lighting, acoustics, furniture, colour palette, and sensory experience. Ensures the physical environment actively supports the brand identity and encourages longer dwell times and repeat visits.",
+      "domain": "D09_physical_environment",
+      "module": "M09: Cafe Design & Atmosphere"
+    }
+  ],
+  "l3_tools": []
+}

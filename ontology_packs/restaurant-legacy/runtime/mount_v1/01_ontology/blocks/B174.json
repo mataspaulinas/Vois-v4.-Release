@@ -1,0 +1,166 @@
+{
+  "block_id": "B174",
+  "name": "Toxic Dynamics Intervention",
+  "version": "v1.0",
+  "domain": "D12_culture_identity",
+  "module": "M12: Values Identity & Community",
+  "state": "enriched",
+  "purpose": "Provides a structured framework for identifying, diagnosing, and intervening in toxic workplace dynamics before they corrode team culture, drive out good staff, and damage the customer experience. This block addresses the difficult reality that small teams are especially vulnerable to interpersonal dysfunction and gives cafe owners practical tools to confront it.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish clear definitions of toxic behaviours — bullying, exclusion, passive aggression, gossip, undermining — so they can be named and addressed rather than tolerated as personality differences",
+      "Create a confidential reporting mechanism so staff can raise concerns without fear of retaliation",
+      "Build a structured intervention protocol that moves from informal conversation to formal action if behaviour does not change",
+      "Train managers to recognise early warning signs of toxic dynamics before they escalate into resignations or formal complaints",
+      "Document all interventions to protect the business in the event of tribunal proceedings"
+    ],
+    "secondary_objectives": [
+      "Preserve a psychologically safe working environment where staff feel comfortable speaking up",
+      "Reduce the hidden cost of toxicity — absenteeism, presenteeism, reduced effort, and silent disengagement",
+      "Demonstrate to the wider team that poor behaviour has consequences, reinforcing the cafe's stated values"
+    ]
+  },
+  "why_this_matters": "A single toxic individual in a four-person cafe team does not affect 25% of the culture — they affect 100% of it. In small teams, there is nowhere to hide from difficult dynamics. The barista who belittles a new starter, the shift leader who plays favourites, the long-serving team member who resists every change — these behaviours spread like infection through a small group. Research from the Harvard Business Review shows that the cost of a toxic employee far exceeds the value of a top performer: while a star performer adds roughly 5,000 pounds in annual value, a toxic one costs over 12,000 pounds through turnover they cause, absenteeism they trigger, and productivity they destroy in others. In cafes, the damage is amplified because customers can feel it. Tension behind the counter radiates into the service. Regular customers notice when the atmosphere shifts. Staff who are being undermined or excluded lose their warmth, their attentiveness, their willingness to go beyond the minimum. Most cafe owners avoid confronting toxic dynamics because the conversations are uncomfortable, they fear making things worse, or they rationalise the behaviour because the person is otherwise competent. This avoidance is the single biggest leadership failure in small hospitality businesses. Every week a toxic dynamic goes unaddressed, the good people on your team are silently updating their CVs. This block provides the structure and courage to intervene early, fairly, and effectively — before you lose the staff you cannot afford to lose.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Educate yourself and your management team on what toxic workplace behaviour actually looks like. It is not just shouting or obvious bullying. In cafe environments, the most common forms are: excluding a team member from social interactions, making sarcastic or belittling comments disguised as jokes, withholding information or training to make someone fail, gossiping about colleagues or the owner, passive-aggressive resistance to instructions, and weaponising competence ('I am the only one who can do X, so I do not have to follow the rules'). Write down the three to five specific behaviours that are unacceptable in your cafe, using concrete examples rather than abstract principles. Post these alongside your values in the staff area — not as a threat, but as a shared standard. Week 2: Assess your current team honestly. Are there existing dynamics that you have been tolerating? A team member who everyone walks on eggshells around? A clique that excludes newer staff? A long-running interpersonal conflict that you have been hoping would resolve itself? Name these dynamics privately in writing. For each, assess severity: is it a minor irritant that a direct conversation could fix, or a deep-rooted pattern that requires formal intervention? If any dynamic is actively causing harm — a staff member is distressed, someone has reduced their hours to avoid a colleague, customer-facing service is visibly affected — move directly to the intervention protocol rather than waiting for L2.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Implement the intervention infrastructure. First, establish a confidential reporting channel. In a small cafe, this does not need to be elaborate — a dedicated email address, a physical suggestion box in a private area, or a standing offer that staff can request a private conversation with the owner at any time. The critical element is that the person raising the concern must be protected from retaliation, and they must see that their report leads to action. Second, create a stepped intervention protocol. Step 1: Informal private conversation — the manager speaks directly with the individual about the specific behaviour observed, explains the impact, and agrees on what needs to change. Document the conversation with date, what was said, and the agreed outcome. Step 2: Formal meeting — if behaviour continues, a formal sit-down with written notes provided to the employee afterwards, clearly stating the expected change and consequences of continued behaviour. Step 3: Written warning following the ACAS-compliant disciplinary process documented in B173. Step 4: Final warning or dismissal if the pattern persists. Third, train your manager (or train yourself if you are the sole manager) in having difficult conversations. The key principles are: be specific about the behaviour, not the person; describe the impact on others; state the expected change clearly; set a review date; and follow through. Role-play these conversations before you need them. Fourth, address any existing toxic dynamics identified in L1 using the stepped protocol. Do not skip Step 1 — even serious issues deserve the dignity of a direct conversation first.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Toxic dynamics intervention should now be part of the cafe's cultural immune system — something the team does naturally, not something imposed from above. Introduce the concept of psychological safety in team meetings: the idea that everyone should feel safe to speak up, make mistakes, and disagree without fear of punishment or humiliation. This is not about being soft — it is about creating conditions where problems surface early rather than festering. Conduct anonymous team health checks quarterly, asking specifically about interpersonal dynamics, fairness, and whether anyone feels excluded or undermined. Track these results over time. Empower team members to address minor issues directly with each other before escalating — coach them in giving peer feedback using the 'I noticed, I felt, I need' framework. Review all intervention records every six months to identify patterns: are issues concentrated around one individual, one shift, or one type of behaviour? Use this data to inform hiring decisions, team composition, and leadership development. Celebrate the positive — when the team navigates a disagreement constructively, acknowledge it. When a new starter is welcomed warmly by everyone, name that as a cultural achievement. The goal is a team that self-regulates, where toxic behaviour is rejected by the group norm rather than requiring management intervention every time."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Define three to five specific unacceptable behaviours with concrete cafe-context examples",
+        "Post behavioural standards alongside team values in the staff area",
+        "Conduct an honest private assessment of any existing toxic dynamics in the current team",
+        "Categorise each identified dynamic by severity and determine appropriate response level",
+        "Address any dynamics causing active harm immediately using a direct private conversation",
+        "Brief all managers on the difference between performance issues and behavioural toxicity"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Establish a confidential reporting channel for staff to raise behavioural concerns",
+        "Create a four-step intervention protocol from informal conversation to formal disciplinary action",
+        "Train managers in conducting difficult conversations using specific, impact-focused language",
+        "Document all intervention conversations with dates, content, and agreed outcomes",
+        "Address any existing toxic dynamics identified in L1 using the stepped protocol",
+        "Link the intervention protocol to the disciplinary procedure in the staff handbook (B173)",
+        "Create a record-keeping system for all behavioural interventions filed separately from general HR records"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce the concept of psychological safety in regular team meetings",
+        "Conduct quarterly anonymous team health checks covering interpersonal dynamics",
+        "Coach team members in peer feedback using the 'I noticed, I felt, I need' framework",
+        "Review all intervention records every six months to identify patterns and systemic issues",
+        "Use pattern data to inform hiring decisions and team composition",
+        "Celebrate constructive conflict resolution and strong team behaviours publicly"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Toxic Behaviour Definition Guide with cafe-specific examples",
+    "Confidential Reporting Channel setup documentation",
+    "Stepped Intervention Protocol (4 stages)",
+    "Difficult Conversation Guide for managers",
+    "Intervention Record Template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T174-01",
+        "tool_name": "Toxic Behaviour Definition Guide",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Reference document defining specific toxic behaviours in cafe context — bullying, exclusion, passive aggression, gossip, undermining, favouritism — with concrete examples of what each looks like in practice and how it differs from normal workplace friction."
+      },
+      {
+        "tool_id": "T174-02",
+        "tool_name": "Stepped Intervention Protocol",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Four-stage intervention framework: informal conversation, formal meeting with written notes, written warning (ACAS-compliant), and final warning or dismissal. Each stage includes scripts, documentation requirements, and escalation triggers."
+      },
+      {
+        "tool_id": "T174-03",
+        "tool_name": "Difficult Conversation Script Guide",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Practical guide for structuring behavioural conversations: opening the discussion, describing specific behaviour and impact, stating expected change, agreeing a review date, and documenting the outcome. Includes example scripts for common cafe scenarios."
+      },
+      {
+        "tool_id": "T174-04",
+        "tool_name": "Intervention Record Template",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Confidential record form for each intervention conversation capturing date, individuals involved, behaviour discussed, impact described, agreed actions, review date, and follow-up outcome. Filed securely and separately from general personnel records."
+      },
+      {
+        "tool_id": "T174-05",
+        "tool_name": "Quarterly Team Health Check",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Anonymous survey specifically targeting interpersonal dynamics: do you feel included, respected, and psychologically safe? Are there behaviours that make you uncomfortable? Would you recommend this workplace to a friend? Tracks trends over time."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Owner identifies toxic behaviour but avoids the conversation because the individual is otherwise competent or has been there the longest, allowing the toxicity to deepen",
+    "Intervention is applied inconsistently — one person is held to account while another exhibiting similar behaviour is excused, creating perceptions of favouritism",
+    "Confidential reports are made but the reporter's identity is inadvertently revealed through clumsy handling, destroying trust in the system permanently",
+    "Manager confuses firm intervention with aggression, conducting the conversation in a way that escalates rather than resolves the situation"
+  ],
+  "kpis": [
+    "Zero unresolved toxic dynamics persisting beyond 30 days after identification",
+    "100% of intervention conversations documented with signed records",
+    "Quarterly team health check scores stable or improving on psychological safety measures",
+    "Zero resignations citing workplace bullying or toxic culture as the primary reason for leaving",
+    "Confidential reporting channel used at least once per quarter (indicating trust, not absence of issues)"
+  ],
+  "dependencies": ["B172", "B173"],
+  "constraints": [
+    "All formal interventions must follow the ACAS Code of Practice to protect against unfair dismissal claims",
+    "Confidential reporting must genuinely protect the reporter — in teams of three, true anonymity may be impossible and alternative safeguards are needed",
+    "The owner must be willing to act even when the toxic individual is a top performer or long-tenured — selective enforcement destroys the entire framework"
+  ],
+  "time_load": {
+    "L1": "3 hours (behaviour definition, current team assessment, initial conversations)",
+    "L2": "8 hours (protocol creation, manager training, addressing existing dynamics)",
+    "L3": "2 hours/quarter (team health checks, record reviews, coaching sessions)"
+  },
+  "review_protocol": "Immediate review when any staff member raises a behavioural concern. Monthly check by owner that no unresolved dynamics are festering. Quarterly team health check with trend analysis. Annual review of all intervention records to identify systemic patterns. Immediate review triggered by any resignation citing workplace culture.",
+  "meta": {
+    "summary_for_humans": "This block gives cafe owners the framework to identify and address toxic workplace behaviours — bullying, exclusion, passive aggression, gossip — before they drive out good staff and poison the customer experience. It includes a stepped intervention protocol, conversation guides, and a confidential reporting system.",
+    "implementation_risks": [
+      "Confronting toxic behaviour may trigger short-term conflict or even the departure of the toxic individual — this is often the correct outcome but feels destabilising",
+      "In very small teams, the line between personality clash and genuine toxicity can be blurred — external perspective may be valuable",
+      "Poorly executed interventions can expose the business to constructive dismissal claims if the individual feels targeted"
+    ],
+    "notes_for_engine": "Activate urgently when signals indicate staff conflict, bullying complaints, sudden resignations citing culture, clique formation, or observable tension during service. This block often needs to run concurrently with B064 (retention) as toxicity is a primary driver of turnover.",
+    "tags": ["toxic_dynamics", "bullying", "intervention", "psychological_safety", "culture_identity", "conflict_resolution", "team_health", "ACAS"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

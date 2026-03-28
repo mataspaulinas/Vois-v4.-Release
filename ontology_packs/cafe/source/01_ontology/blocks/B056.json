@@ -1,0 +1,167 @@
+{
+  "block_id": "B056",
+  "name": "Menu Engineering & Optimisation",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Applies menu engineering principles to optimise the cafe's menu for profitability, customer satisfaction, and operational efficiency. This block covers menu design, pricing strategy, item categorisation by popularity and margin, menu board layout, and data-driven decision-making about what to keep, promote, rework, or remove.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Categorise every menu item using the menu engineering matrix (Stars, Plowhorses, Puzzles, Dogs)",
+      "Optimise pricing to achieve target gross margins while maintaining perceived value",
+      "Design the physical and digital menu to guide customers towards high-margin items",
+      "Establish a data-driven process for adding, modifying, or removing menu items",
+      "Balance menu size to maximise choice without creating operational complexity or decision fatigue"
+    ],
+    "secondary_objectives": [
+      "Increase average transaction value through strategic menu design and upselling prompts",
+      "Reduce decision fatigue for customers through clear menu organisation and hierarchy",
+      "Align menu offerings with kitchen and bar capability to ensure consistent execution",
+      "Use menu engineering data to inform seasonal menu development (B051) and food excellence (B053)"
+    ]
+  },
+  "why_this_matters": "The menu is the single most influential piece of marketing material in a cafe. Every customer interacts with it, and its design directly affects what they order, how much they spend, and how they perceive value. Yet most cafe menus are designed by accident — items are added when someone has an idea, prices are set by copying competitors or adding a round-number markup, and the layout is determined by what fits on the board. Menu engineering is the discipline of replacing intuition with data. It combines sales mix data (what sells) with contribution margin data (what makes money) to categorise every item into one of four quadrants. Stars are high-popularity, high-margin items — protect and promote these. Plowhorses are popular but low-margin — find ways to increase their profitability without losing volume. Puzzles are high-margin but unpopular — promote them better or rethink their positioning. Dogs are low-popularity, low-margin — consider removing them to simplify operations. In a UK cafe context, menu engineering typically reveals surprising insights: the best-selling flat white may have a lower margin than the less-popular batch brew; the toastie that accounts for 30% of food sales may be costed so tightly that it barely contributes to profit; and the expensive specialty drink that nobody orders might be the most profitable item on the menu. These insights drive decisions that can increase profitability by 10-20% without changing the customer base or increasing prices across the board.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Gather the data needed for menu engineering. For each menu item (food and drink), you need two figures: the number sold per week (from your EPOS system or till records) and the contribution margin (selling price minus ingredient cost, using the costs calculated from B054 recipe cards and B055 portion control). If you do not have EPOS data, estimate weekly sales from observation and till records over a 2-week period. Calculate the contribution margin for every item — this is the critical number because it tells you how much profit each sale contributes. A flat white selling for £3.80 with ingredients costing £0.55 has a contribution margin of £3.25. A toastie selling for £5.50 with ingredients costing £2.20 has a contribution margin of £3.30. Week 2: Plot every item on the menu engineering matrix. The X-axis is popularity (items sold per week); the Y-axis is contribution margin. Draw the average lines: the average popularity and the average contribution margin divide the matrix into four quadrants. Star items (top-right) are your best performers — protect them. Plowhorses (bottom-right) sell well but have low margins. Puzzles (top-left) have great margins but do not sell enough. Dogs (bottom-left) have neither popularity nor margin. Identify two immediate actions: promote one Puzzle item (move it to a better position on the menu board, train staff to recommend it, add a photo) and evaluate one Dog item for removal or reworking.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Redesign the menu board or printed menu using menu engineering principles. Place Star and Puzzle items in the 'sweet spots' — the areas where customers' eyes naturally land first (top-right of a menu board, the first and last positions in a list, items with photos or borders that draw attention). Use pricing psychology: avoid currency symbols where possible (psychological research shows prices feel lower without them), use nested pricing (small/regular/large) that anchors the middle option as 'normal', and price items ending in .50 or .80 rather than round numbers, which feel arbitrary. Create an 'anchor item' — one premium-priced item that makes everything else feel reasonable by comparison. Review the menu size: research consistently shows that too many options cause decision paralysis and slow service. An optimal cafe menu has 7-10 drink options (excluding size variations) and 8-12 food options. If your menu exceeds this, evaluate which items to consolidate or remove. Establish a quarterly menu engineering review: re-run the matrix analysis with updated sales and cost data, reassess item categorisation, and make data-driven decisions about changes. Train front-of-house staff on suggestive selling for Puzzle items — these are the hidden gems that need a personal recommendation to sell. For example: 'Have you tried our batch brew today? It's a gorgeous Kenyan single origin — really bright and fruity.'",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Menu engineering should become a continuous optimisation discipline, not a one-off exercise. Run the full matrix analysis quarterly, comparing trends over time. Is the flat white becoming a Plowhorse as milk costs rise? Has the new seasonal cake become a Star? Use these trends to make proactive adjustments before margins erode. Experiment with pricing strategies: test a price increase on Star items (they are popular enough to absorb small increases without losing volume) and monitor the impact on sales and margin. Explore bundling: meal deals or drink-plus-pastry offers that increase average transaction value while steering customers towards high-margin combinations. A/B test menu board layouts: try different item positions and measure sales impact. Integrate menu engineering data with customer feedback (B033) and seasonal development (B051) to create a menu strategy that optimises for both profitability and customer delight. Benchmark your menu against local competitors: are your prices competitive? Is your offering distinctive? Are there gaps in the local market that your menu could fill?"
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Gather weekly sales data for every menu item from EPOS or till records",
+        "Calculate contribution margin for every item using recipe card cost data",
+        "Plot all items on the menu engineering matrix (Stars, Plowhorses, Puzzles, Dogs)",
+        "Identify Star items and ensure they are protected and prominent",
+        "Promote one Puzzle item through better positioning and staff recommendations",
+        "Evaluate one Dog item for removal or reworking",
+        "Brief the team on which items are most profitable and worth recommending"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Redesign the menu board using menu engineering principles and pricing psychology",
+        "Review menu size and consolidate or remove items that add complexity without value",
+        "Establish quarterly menu engineering reviews with updated sales and cost data",
+        "Train front-of-house staff on suggestive selling for Puzzle items",
+        "Implement pricing psychology: remove currency symbols, use nested pricing",
+        "Create an anchor item to improve perceived value across the menu",
+        "Link menu engineering data to seasonal development and food excellence programmes"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Run full matrix analysis quarterly and track categorisation trends over time",
+        "Test price increases on Star items and measure impact",
+        "Explore bundling strategies to increase average transaction value",
+        "A/B test menu board layouts and measure sales impact",
+        "Integrate menu data with customer feedback and seasonal planning",
+        "Benchmark menu pricing and offering against local competitors"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Menu Engineering Matrix analysis for all items",
+    "Menu Item Contribution Margin Spreadsheet",
+    "Redesigned Menu Board layout (applying engineering principles)",
+    "Quarterly Menu Engineering Review template",
+    "Suggestive Selling Guide for front-of-house staff"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T056-01",
+        "tool_name": "Menu Engineering Matrix Spreadsheet",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Spreadsheet plotting every menu item by popularity (weekly sales) and contribution margin, automatically categorising items as Stars, Plowhorses, Puzzles, or Dogs. Updated quarterly."
+      },
+      {
+        "tool_id": "T056-02",
+        "tool_name": "Contribution Margin Calculator",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Calculator for determining each menu item's contribution margin: selling price minus ingredient cost per serve. Uses cost data from recipe cards (B054) and portion standards (B055)."
+      },
+      {
+        "tool_id": "T056-03",
+        "tool_name": "Menu Design Best Practice Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Owner",
+        "description": "Guide covering menu design principles: sweet spot positioning, pricing psychology, font and colour choices, category organisation, and menu size optimisation for cafes."
+      },
+      {
+        "tool_id": "T056-04",
+        "tool_name": "Suggestive Selling Prompt Card",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Front-of-House",
+        "description": "Quick-reference card for front-of-house staff listing current Puzzle items to recommend, suggested phrasing for upselling, and bundling options. Updated quarterly after matrix analysis."
+      },
+      {
+        "tool_id": "T056-05",
+        "tool_name": "Quarterly Menu Performance Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Quarterly report showing matrix categorisation changes, contribution margin trends, average transaction value, pricing analysis, and recommendations for menu adjustments."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Menu decisions continue to be made on gut feel rather than data, despite the matrix being available",
+    "Dog items are kept on the menu for sentimental reasons or because one regular orders them, adding unnecessary complexity",
+    "Pricing psychology is applied aggressively, creating a menu that feels manipulative rather than helpful",
+    "Menu engineering focuses only on margin maximisation without considering customer satisfaction and value perception"
+  ],
+  "kpis": [
+    "Overall menu contribution margin exceeds target (typically 70-75% for drinks, 65-70% for food)",
+    "Average transaction value increases by at least 5% within three months of menu redesign",
+    "Star items maintain or grow their sales volume quarter on quarter",
+    "Menu size does not exceed optimal range (7-10 drink options, 8-12 food options)"
+  ],
+  "dependencies": ["B054", "B055"],
+  "constraints": [
+    "Menu engineering requires accurate sales data — invest in a proper EPOS system if not already in place",
+    "Ingredient costs change regularly — contribution margins must be recalculated at least quarterly",
+    "Menu changes affect printed materials, digital listings, and allergen documentation — coordinate updates"
+  ],
+  "time_load": {
+    "L1": "5 hours (data gathering, margin calculation, matrix plotting, initial actions)",
+    "L2": "8 hours (menu redesign, pricing review, staff training, system setup)",
+    "L3": "3 hours/quarter (matrix re-analysis, pricing tests, benchmarking)"
+  },
+  "review_protocol": "Monthly review of sales mix data. Quarterly full menu engineering matrix analysis. Menu redesign evaluated six months after implementation. Pricing reviewed whenever ingredient costs change by more than 10%.",
+  "meta": {
+    "summary_for_humans": "This block applies menu engineering principles to optimise the cafe's menu for profitability and customer satisfaction. It covers the Star/Plowhorse/Puzzle/Dog categorisation matrix, pricing psychology, menu design, suggestive selling, and data-driven decision-making about what to keep, promote, rework, or remove.",
+    "implementation_risks": [
+      "Data-driven menu decisions can conflict with the owner's emotional attachment to certain items",
+      "Over-optimisation for margin can create a menu that feels calculated rather than authentic",
+      "Menu changes require coordination across boards, printed materials, digital platforms, and allergen records"
+    ],
+    "notes_for_engine": "Activate after B054 and B055 are established — menu engineering requires accurate recipe costs and portion data. Signals: declining margins despite stable sales, customer confusion at the menu board, menu has grown large without review, pricing inconsistencies.",
+    "tags": ["menu", "engineering", "pricing", "profitability", "design", "optimisation", "contribution_margin", "upselling"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

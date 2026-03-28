@@ -1,0 +1,167 @@
+{
+  "block_id": "B083",
+  "name": "Leadership Development",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M13: Leadership & Team Culture",
+  "state": "enriched",
+  "purpose": "Builds leadership capability across the cafe's management team — from the owner through to shift leads — ensuring the venue has people who can inspire, develop, and hold accountable their teams, make sound operational decisions, and lead through both calm and crisis.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Assess the current leadership skills of the owner, manager, and shift leads against the demands of their roles",
+      "Create individual leadership development plans addressing the most impactful skill gaps",
+      "Build core leadership competencies: communication, delegation, feedback, conflict resolution, and decision-making",
+      "Develop emotional intelligence and self-awareness as foundations for effective people management",
+      "Establish mentoring and coaching relationships that support ongoing leadership growth"
+    ],
+    "secondary_objectives": [
+      "Prepare high-potential team members for future leadership roles, strengthening succession planning",
+      "Reduce the owner's leadership burden by building a leadership bench across the team",
+      "Create a leadership culture where developing others is seen as a core part of every senior role"
+    ]
+  },
+  "why_this_matters": "Most cafe owners and managers learned their craft behind the bar, not in a management classroom. They were promoted because they made excellent coffee, not because they had demonstrated leadership ability. This skills gap is the hidden cause behind many operational and cultural problems: talented baristas leaving because their manager cannot give constructive feedback, shift leads who cannot resolve conflict between team members, owners who micromanage because they never learned to trust and delegate. Leadership in a cafe context is not about corporate jargon or management theory — it is about practical, human skills. Can the shift lead motivate a tired team through a Saturday morning rush? Can the manager have a difficult conversation about underperformance without destroying the relationship? Can the owner set a vision that the team genuinely believes in and works towards? These are learnable skills, but they do not develop automatically through tenure. The Institute of Leadership and Management (ILM) offers Level 2 and Level 3 qualifications specifically designed for first-line managers and team leaders in small businesses. The CIPD provides resources tailored to people management in hospitality. Even without formal qualifications, structured development — mentoring from experienced operators, reading relevant books, attending industry workshops, and deliberate practice of leadership behaviours — can transform a good barista into an excellent leader. Investing in leadership development has a multiplier effect: one well-developed manager improves the experience of every person they manage, every customer they serve, and every shift they lead.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Identify everyone in the cafe who has leadership responsibilities — this typically includes the owner, manager, shift leads, and potentially a head barista. For each person, list the leadership challenges they face most frequently: giving feedback, handling customer complaints, managing conflict, making staffing decisions, conducting meetings, or motivating during busy periods. Ask each leader to self-assess their confidence in these areas on a simple 1-5 scale. Week 2: For each leader, identify one priority skill for development over the next month. Focus on the skill that would have the biggest practical impact. Common starting points: the SBI feedback model (from B076), the delegation framework (from B081), or the art of conducting a productive one-to-one conversation. Provide one practical resource per person — a short article, a video, or a book chapter — and ask them to try applying the skill once during the next week. Debrief in a brief catch-up: what did they try, what happened, what would they do differently?",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create Individual Leadership Development Plans for each leader covering their current strengths, priority development areas, specific learning actions, and review dates. Align development priorities with the most impactful leadership gaps identified in L1. Establish a monthly Leadership Learning Session — a 60-minute protected session where the leadership team discusses a leadership topic together. Topics could rotate through: giving and receiving feedback, managing difficult conversations, leading during pressure, building team motivation, time management and prioritisation, and emotional intelligence. Use real scenarios from the cafe as discussion material rather than abstract theory. Investigate external development opportunities: ILM Level 2 or 3 qualifications, CIPD short courses, hospitality industry leadership programmes (e.g., through UK Hospitality or the Institute of Hospitality), and local business mentoring networks. Even one external course per year per leader significantly accelerates development. Create a leadership competency framework defining the behaviours expected at each leadership level — shift lead, manager, owner — so that development is targeted and progression criteria are transparent.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Establish a coaching culture where leaders at every level see developing their people as a core part of their role, not an addition to it. Introduce 360-degree feedback for all leaders — annual feedback from their direct reports, peers, and manager — to provide a rounded view of their leadership effectiveness. Connect the owner to external mentoring or peer coaching — other cafe owners, business coaches, or industry mentors who can provide perspective and challenge. Track leadership development impact: are teams led by developing leaders showing improved engagement, retention, and performance? Use this data to justify continued investment. Create a leadership pipeline by identifying high-potential team members and beginning their development before they are promoted — leadership readiness should precede promotion, not follow it. Consider sending one leader per year to an SCA leadership or business skills event, a hospitality industry conference, or a general small business leadership programme."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Identify all team members with leadership responsibilities",
+        "List the leadership challenges each person faces most frequently",
+        "Conduct a simple self-assessment of confidence across key leadership skills",
+        "Identify one priority development skill for each leader for the next month",
+        "Provide one practical resource per person and set a try-it-this-week challenge",
+        "Debrief on the experience in a brief catch-up conversation",
+        "Model the desired leadership behaviours visibly as the owner"
+      ],
+      "responsible": "Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create Individual Leadership Development Plans for each leader",
+        "Establish a monthly 60-minute Leadership Learning Session with rotating topics",
+        "Investigate external development opportunities (ILM, CIPD, industry programmes)",
+        "Create a leadership competency framework for each leadership level",
+        "Use real cafe scenarios as discussion material in learning sessions",
+        "Budget for at least one external development opportunity per leader per year",
+        "Integrate leadership competencies into performance review criteria from B072"
+      ],
+      "responsible": "Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Establish a coaching culture where developing people is a core leadership responsibility",
+        "Introduce annual 360-degree feedback for all leaders",
+        "Connect the owner to external mentoring or peer coaching networks",
+        "Track leadership development impact on team engagement, retention, and performance",
+        "Create a leadership pipeline by identifying and developing high-potential team members early",
+        "Send one leader per year to an industry conference or leadership programme"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Leadership Skills Self-Assessment template",
+    "Individual Leadership Development Plan template",
+    "Leadership Competency Framework by level",
+    "Monthly Leadership Learning Session topic guide",
+    "360-Degree Feedback questionnaire template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T083-01",
+        "tool_name": "Leadership Skills Self-Assessment",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Simple self-assessment covering core leadership skills (feedback, delegation, communication, conflict resolution, motivation, decision-making) rated 1-5 for confidence, with space to identify priority development areas."
+      },
+      {
+        "tool_id": "T083-02",
+        "tool_name": "Individual Leadership Development Plan",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Structured plan for each leader covering current strengths, priority development areas, specific learning actions (reading, courses, practice), timelines, and quarterly review dates."
+      },
+      {
+        "tool_id": "T083-03",
+        "tool_name": "Leadership Competency Framework",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Defines expected leadership behaviours at each level (shift lead, manager, owner) across core competencies, providing clear development targets and progression criteria."
+      },
+      {
+        "tool_id": "T083-04",
+        "tool_name": "Monthly Leadership Learning Session Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Owner",
+        "description": "Guide for running monthly 60-minute leadership learning sessions including suggested topics, discussion prompts, real-scenario exercises, and follow-up practice commitments."
+      },
+      {
+        "tool_id": "T083-05",
+        "tool_name": "360-Degree Feedback Questionnaire",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Annual anonymous feedback questionnaire for direct reports, peers, and managers to assess leadership effectiveness across communication, support, fairness, development, and decision-making."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Leadership development is identified as important but never prioritised because daily operations always feel more urgent",
+    "Development plans are created but learning actions are never completed because protected time is not allocated",
+    "External training is attended but skills are never applied back in the cafe because there is no follow-up or accountability",
+    "The owner develops their own leadership but does not invest in developing their managers and shift leads"
+  ],
+  "kpis": [
+    "100% of leaders have an active Individual Leadership Development Plan",
+    "Monthly Leadership Learning Sessions held at least 10 months per year",
+    "At least one external development opportunity completed per leader per year",
+    "360-degree feedback scores improving year on year for all leaders",
+    "Leadership pipeline: at least one team member identified and in development for the next leadership role"
+  ],
+  "dependencies": ["B081", "B082"],
+  "constraints": [
+    "External leadership courses have costs (ILM Level 2 typically £200-500) that must be budgeted",
+    "Development time must be protected from operational demands — links to B082 management time",
+    "Leadership development is a long-term investment with returns that take months to materialise"
+  ],
+  "time_load": {
+    "L1": "2 hours (assessment, priority identification, resource provision)",
+    "L2": "4 hours/month (learning sessions, plan reviews, external training research)",
+    "L3": "2 hours/quarter (360 feedback, impact analysis, pipeline development)"
+  },
+  "review_protocol": "Monthly: leadership development plan progress reviewed in one-to-one with owner. Quarterly: Leadership Learning Session topics planned for next quarter. Six-monthly: development plans formally reviewed and updated. Annually: 360-degree feedback collected and analysed, external training planned for the year ahead.",
+  "meta": {
+    "summary_for_humans": "This block develops leadership capability across the cafe's management team through structured self-assessment, individual development plans, monthly learning sessions, and external training, ensuring the venue has leaders who can inspire and develop their teams.",
+    "implementation_risks": [
+      "Leadership development requires vulnerability and self-awareness which some people find uncomfortable",
+      "External courses require time away from the business which is difficult for owner-operators to justify",
+      "Leadership skills learned in theory must be actively practised to become embedded behaviours"
+    ],
+    "notes_for_engine": "Activate when signals indicate poor management quality, team complaints about leadership, high turnover under specific managers, or owner burnout from trying to do everything themselves. Builds on B081 and B082.",
+    "tags": ["leadership", "development", "management", "coaching", "ILM", "CIPD", "competencies", "emotional_intelligence", "succession"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

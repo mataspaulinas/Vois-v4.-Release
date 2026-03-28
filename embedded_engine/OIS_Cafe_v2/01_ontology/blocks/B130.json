@@ -1,0 +1,157 @@
+{
+  "block_id": "B130",
+  "name": "Direct Ordering Channel",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Establishes a direct ordering capability — typically a branded online ordering system or app — that allows customers to order for delivery or collection without going through third-party platforms. This block aims to migrate delivery and collection revenue away from commission-heavy platforms toward a direct channel where the cafe retains the full margin.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Implement a direct online ordering system that is branded to the cafe and accessible via the website and social media",
+      "Create financial incentives for customers to order directly rather than through Deliveroo, Uber Eats, or Just Eat",
+      "Migrate at least 20-30% of current delivery and collection orders to the direct channel within 6 months",
+      "Own the customer data from direct orders, enabling marketing, loyalty programmes, and relationship building",
+      "Reduce total delivery commission cost as a percentage of delivery revenue through channel mix shift"
+    ],
+    "secondary_objectives": [
+      "Build a customer database with email addresses and order history for targeted marketing",
+      "Offer collection ordering as a convenience that bypasses queues during peak periods",
+      "Create a branded ordering experience that reinforces the cafe's identity rather than a platform's",
+      "Establish a channel that is fully within the cafe's control, immune to platform algorithm changes or commission increases"
+    ]
+  },
+  "why_this_matters": "Every order placed through a third-party delivery platform costs the cafe 15-35% in commission. On a 15 pound order, that is 2.25 to 5.25 pounds going to the platform rather than the business. If the same customer ordered directly, the cafe retains that entire amount minus only the payment processing fee (typically 1.5-2.5%). For a cafe processing 50 delivery orders per week at an average of 15 pounds, switching half of those to direct ordering could save 75-130 pounds per week — over 4,000-7,000 pounds per year. Beyond the margin benefit, direct ordering gives the cafe something platforms deliberately withhold: customer data. When a customer orders through Deliveroo, the cafe does not know their name, email address, or order history. The platform owns that relationship and can redirect the customer to a competitor at any time. When a customer orders directly, the cafe captures their contact information, builds an order history, and can market to them directly — birthday offers, loyalty rewards, new menu announcements. The technology for direct ordering has become remarkably accessible. Systems like Square Online, Flipdish, Slerp, and Orderswift offer branded ordering pages that integrate with existing POS systems, provide delivery logistics (either through the cafe's own delivery or through delivery partnerships), and cost a fraction of platform commissions — typically a flat monthly fee or 3-5% per transaction. The key challenge is not technology but customer behaviour: convincing customers who are used to ordering through platforms to switch to the direct channel. This requires deliberate incentivisation and consistent promotion.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Research direct ordering solutions appropriate to your size and budget. For most independent cafes, the leading options include Square Online (if already using Square POS), Flipdish, Slerp, and Orderswift. Key evaluation criteria: monthly cost, per-transaction fee, integration with your existing POS, ability to offer both delivery and collection, branded experience, and customer data access. Request demos from at least two providers. Week 2: Select and set up your direct ordering system. Upload your delivery menu (use the optimised delivery menu from B129), configure pricing, set delivery zones and minimum order values, and test the ordering process end to end. If you offer delivery, decide whether to use your own staff for delivery (only viable within a small radius) or integrate with a delivery logistics partner — several direct ordering platforms offer this at a lower cost than full platform commission. Create a simple, memorable ordering URL and set up a QR code that links directly to your ordering page.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Promote the direct ordering channel aggressively. Every dine-in customer should know it exists: table cards with QR codes, till receipts with the ordering URL, verbal reminders from staff ('Did you know you can order directly from us next time?'). Offer a clear incentive for direct ordering — this could be a 10% discount, free delivery over a certain value, a loyalty point bonus, or an item not available on the platforms. The incentive needs to be compelling enough to change behaviour but not so generous that it erodes the margin benefit. Add the direct ordering link to your Google Business Profile, Instagram bio, and any other online presence. Include it in email signatures and any customer communications. Monitor the channel mix weekly: what percentage of delivery and collection orders come through the direct channel versus platforms? Set targets for shifting this mix — moving from 0% to 20% direct within 3 months is achievable with consistent promotion. Train all staff to promote direct ordering naturally in customer interactions, especially at the till when customers pay for takeaway.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The direct ordering channel should now be generating meaningful revenue and the team should actively promote it. Leverage the customer data you are collecting: build an email list and send monthly updates, seasonal promotions, and targeted offers. Implement a loyalty programme on the direct channel (e.g., 10th coffee free) that is exclusive to direct orders — this gives customers a reason to return through your channel rather than defaulting to a platform. Analyse customer behaviour on the direct channel: average order value, order frequency, peak ordering times, and popular items. Compare this to platform customer behaviour to understand whether you are attracting the same or different customers. Consider whether to reduce your platform presence as direct volume grows — some cafes choose to exit one or two platforms entirely once direct ordering reaches critical mass, further improving margins. Evaluate whether a branded app (rather than a web ordering page) would improve customer experience and repeat ordering — for cafes with high regular order volumes, a simple branded app can increase retention significantly."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Research and evaluate at least two direct ordering platforms suitable for the cafe's size and POS system",
+        "Select a platform and set up the branded ordering page with the delivery menu",
+        "Configure delivery zones, minimum order values, and payment processing",
+        "Test the full ordering process end to end before launch",
+        "Create a branded ordering URL and QR code for promotion",
+        "Decide on delivery logistics: own staff, partner courier, or collection-only initially"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Promote direct ordering through table cards, till receipts, verbal prompts, and social media",
+        "Create a compelling incentive for customers to order directly (discount, loyalty bonus, exclusive items)",
+        "Add ordering link to Google Business Profile, Instagram bio, and all online channels",
+        "Monitor weekly channel mix and set targets for direct order percentage",
+        "Train all staff to promote direct ordering in customer interactions",
+        "Begin building a customer email list from direct order data"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Implement a direct-channel-exclusive loyalty programme",
+        "Send monthly customer communications with promotions and updates",
+        "Analyse direct channel customer behaviour and compare against platform customers",
+        "Evaluate reducing platform presence as direct volume reaches critical mass",
+        "Consider a branded app for cafes with high regular order volumes",
+        "Review direct ordering technology and provider annually for better options"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Direct Ordering Platform Evaluation Matrix",
+    "Branded Online Ordering Page (configured and tested)",
+    "QR Code and Promotional Materials for direct ordering",
+    "Customer Incentive Programme for direct orders",
+    "Channel Mix Tracking Dashboard"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T130-01",
+        "tool_name": "Direct Ordering Platform Evaluation Matrix",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A comparison template for evaluating direct ordering platforms across criteria including cost, POS integration, delivery logistics, branding options, customer data access, and ease of use."
+      },
+      {
+        "tool_id": "T130-02",
+        "tool_name": "Channel Mix Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Weekly tracker showing delivery and collection order volumes by channel (each platform plus direct), calculating channel mix percentages and tracking the shift toward direct ordering over time."
+      },
+      {
+        "tool_id": "T130-03",
+        "tool_name": "Direct Ordering Promotion Pack",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "A set of promotional assets for driving direct ordering adoption: table card template, till receipt message, social media post templates, email announcement template, and staff talking points."
+      },
+      {
+        "tool_id": "T130-04",
+        "tool_name": "Commission Savings Calculator",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly calculator showing the commission saved by orders placed through the direct channel rather than platforms, demonstrating the financial return on direct ordering investment."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The direct ordering page is set up but never promoted, resulting in zero orders and wasted subscription fees",
+    "The ordering incentive is too weak (free napkin) or too strong (30% discount), either failing to shift behaviour or eroding the margin benefit",
+    "Staff do not promote direct ordering because they have not been trained or do not understand why it matters",
+    "The direct ordering experience is clunky or slow compared to platform apps, driving customers back to Deliveroo"
+  ],
+  "kpis": [
+    "Direct ordering channel launched within 4 weeks of starting this block",
+    "At least 20% of delivery and collection orders placed through the direct channel within 6 months",
+    "Commission savings from direct orders tracked monthly and showing positive trend",
+    "Customer email list from direct orders growing by at least 10 new contacts per month"
+  ],
+  "dependencies": ["B128", "B156"],
+  "constraints": [
+    "Direct ordering platforms have monthly fees or per-transaction costs that must be factored into the business case",
+    "Own-delivery logistics require staff time, vehicle costs, and insurance that may not be viable for all cafes",
+    "Platform exclusivity clauses in some contracts may restrict the promotion of direct ordering alternatives"
+  ],
+  "time_load": {
+    "L1": "8 hours (research, platform selection, setup, testing, QR code creation)",
+    "L2": "4 hours (promotional material creation, staff training, incentive design)",
+    "L3": "2 hours/month (channel mix monitoring, customer communications, strategy refinement)"
+  },
+  "review_protocol": "Weekly channel mix monitoring. Monthly review of direct ordering volume and commission savings. Quarterly assessment of customer database growth and marketing effectiveness. Annual platform and technology review.",
+  "meta": {
+    "summary_for_humans": "This block establishes a branded direct ordering channel that allows customers to order delivery or collection without third-party platform commissions. It covers platform selection, setup, promotion, and the customer incentive strategy needed to shift ordering behaviour away from commission-heavy apps.",
+    "implementation_risks": [
+      "Customers are habitual platform users and may resist switching despite incentives",
+      "The cafe may lack the technical confidence to set up and maintain a direct ordering system",
+      "Delivery logistics without platform support can be operationally challenging for small teams"
+    ],
+    "notes_for_engine": "This block depends on B128 (Delivery Commission Analysis) for the financial case. Activate when delivery commissions are confirmed as a significant cost and the cafe has volume to justify a direct channel. Particularly valuable for cafes spending more than 500 pounds per month on platform commissions. Lower priority for cafes with minimal delivery business.",
+    "tags": ["finance", "delivery", "direct_ordering", "commission", "technology", "customer_data", "loyalty", "margin"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

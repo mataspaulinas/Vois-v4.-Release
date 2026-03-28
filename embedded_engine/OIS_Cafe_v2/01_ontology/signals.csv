@@ -1,0 +1,223 @@
+signal_id,signal_name,category,type,severity,comparator,threshold,source,window_days,description
+S001,fridge_temperature_records_absent,Food Safety & Hygiene,qualitative,high,,,intake,,No daily fridge and cold-storage temperature logs maintained
+S002,food_allergen_management_non_compliant,Food Safety & Hygiene,qualitative,high,,,intake,,Allergen information not available or EU FIC Regulation 1169/2011 requirements not met
+S003,handwashing_discipline_poor,Food Safety & Hygiene,qualitative,high,,,intake,,Handwashing not practised consistently at food preparation and service points
+S004,food_preparation_cross_contamination,Food Safety & Hygiene,qualitative,high,,,intake,,Cross-contamination risks between allergens raw and cooked items or dietary categories
+S005,cleaning_schedule_absent_or_incomplete,Food Safety & Hygiene,qualitative,medium,,,intake,,No written cleaning schedule or existing schedule not followed consistently
+S006,pest_control_measures_absent,Food Safety & Hygiene,qualitative,high,,,intake,,No pest control contract or evidence of pest activity unaddressed
+S007,food_safety_training_not_current,Food Safety & Hygiene,qualitative,medium,,,intake,,Team members lack Level 2 food hygiene certificates or refresher training overdue
+S008,haccp_procedures_not_documented,Food Safety & Hygiene,qualitative,high,,,intake,,No documented HACCP-based food safety management system in place
+S009,food_waste_disposal_non_compliant,Food Safety & Hygiene,qualitative,medium,,,intake,,Food waste not segregated collected or disposed of according to local regulations
+S010,use_by_date_monitoring_poor,Food Safety & Hygiene,qualitative,high,,,intake,,Use-by and best-before dates not checked systematically and expired stock found on premises
+S011,food_labelling_for_direct_sale_absent,Food Safety & Hygiene,qualitative,high,,,intake,,Pre-packed for direct sale items missing required allergen and ingredient labels under EU FIC Regulation 1169/2011
+S012,food_storage_organisation_poor,Food Safety & Hygiene,qualitative,medium,,,intake,,Food stored on floor not covered or out of correct temperature range
+S013,kitchen_equipment_maintenance_neglected,Food Safety & Hygiene,qualitative,medium,,,intake,,Kitchen equipment not maintained or serviced on schedule
+S014,water_quality_not_tested,Food Safety & Hygiene,qualitative,medium,,,intake,,Water supply not tested or filtered for coffee brewing and limescale affecting equipment
+S015,milk_handling_and_storage_poor,Food Safety & Hygiene,qualitative,high,,,intake,,Milk temperature not monitored open milk left at ambient or alternatives cross-contaminated
+S016,food_safety_inspection_deficiencies,Food Safety & Hygiene,qualitative,high,,,intake,,Food safety authority inspection identified deficiencies or non-compliance requiring corrective action
+S017,personal_hygiene_standards_inconsistent,Food Safety & Hygiene,qualitative,medium,,,intake,,Staff not wearing appropriate clothing jewellery policy absent or illness reporting policy missing
+S018,food_safety_audit_not_conducted,Food Safety & Hygiene,qualitative,medium,,,intake,,No regular internal food safety audits or self-assessments carried out
+S019,queue_wait_times_excessive,Customer Experience & Service,quantitative,high,gt,5,intake,30,Customers regularly waiting more than 5 minutes in queue during peak periods
+S020,order_accuracy_errors_frequent,Customer Experience & Service,qualitative,medium,,,intake,,Incorrect orders wrong milk alternatives or missing modifications served regularly
+S021,customer_greeting_inconsistent,Customer Experience & Service,qualitative,medium,,,intake,,No consistent greeting or acknowledgement when customers enter or approach counter
+S022,complaint_resolution_absent,Customer Experience & Service,qualitative,medium,,,intake,,No formal process for handling customer complaints or feedback
+S023,return_visit_rate_declining,Customer Experience & Service,quantitative,high,gt,10,intake,90,Repeat customer frequency declining by more than 10 percent over quarter
+S024,seating_experience_uncomfortable,Customer Experience & Service,qualitative,medium,,,intake,,Seating arrangements uncomfortable insufficient or not maintained
+S025,takeaway_packaging_poor,Customer Experience & Service,qualitative,medium,,,intake,,Takeaway packaging leaking not insulated or environmentally unsustainable
+S026,wifi_and_amenities_expectations_not_met,Customer Experience & Service,qualitative,low,,,intake,,Customer expectations for wifi power outlets or amenities not met
+S027,customer_feedback_mechanism_absent,Customer Experience & Service,qualitative,medium,,,intake,,No structured way to collect customer feedback
+S028,accessibility_not_considered,Customer Experience & Service,qualitative,medium,,,intake,,Physical accessibility for disabled customers not adequate or compliant
+S029,child_friendliness_absent,Customer Experience & Service,qualitative,low,,,intake,,No consideration for families with children such as highchairs or kid options
+S030,toilet_facilities_poorly_maintained,Customer Experience & Service,qualitative,medium,,,intake,,Customer toilets unclean undersupplied or not maintained to acceptable standard
+S031,dine_in_vs_takeaway_experience_gap,Customer Experience & Service,qualitative,medium,,,intake,,Significant quality gap between dine-in and takeaway customer experience
+S032,third_party_delivery_experience_poor,Customer Experience & Service,qualitative,medium,,,intake,,Delivery orders arriving cold incorrect or with poor presentation
+S033,pre_order_or_click_collect_absent,Customer Experience & Service,qualitative,low,,,intake,,No pre-ordering or click-and-collect option despite customer demand
+S034,customer_names_and_preferences_not_remembered,Customer Experience & Service,qualitative,medium,,,intake,,No effort to learn or record regular customer preferences or names
+S035,espresso_extraction_inconsistent,Coffee & Product Quality,qualitative,high,,,intake,,Shot times dose or yield not calibrated or varying significantly between baristas
+S036,grinder_calibration_not_routine,Coffee & Product Quality,qualitative,high,,,intake,,Grinder not calibrated at opening after bean changes or throughout the day
+S037,milk_steaming_quality_poor,Coffee & Product Quality,qualitative,medium,,,intake,,Milk texture inconsistent too hot too thin poor microfoam or scorched
+S038,water_quality_affecting_coffee,Coffee & Product Quality,qualitative,high,,,intake,,Water not filtered TDS not tested or limescale affecting espresso extraction
+S039,coffee_bean_freshness_not_managed,Coffee & Product Quality,qualitative,medium,,,intake,,Beans used past optimal freshness window no roast dates tracked or stored improperly
+S040,food_quality_inconsistent,Coffee & Product Quality,qualitative,high,,,intake,,Food items varying in portion presentation or taste between days or team members
+S041,menu_offering_stale,Coffee & Product Quality,qualitative,medium,,,intake,,Menu has not been refreshed or seasonally updated in over 6 months
+S042,alternative_milk_range_inadequate,Coffee & Product Quality,qualitative,medium,,,intake,,Limited or no alternative milk options despite customer demand
+S043,brewing_methods_limited,Coffee & Product Quality,qualitative,low,,,intake,,Only espresso-based drinks offered with no filter pour-over batch brew or cold brew
+S044,cake_and_pastry_quality_inconsistent,Coffee & Product Quality,qualitative,medium,,,intake,,Baked goods dry stale inconsistently sourced or not replenished during the day
+S045,portion_control_absent,Coffee & Product Quality,qualitative,medium,,,intake,,No standardised recipes or portion control for food and drink items
+S046,dietary_options_insufficient,Coffee & Product Quality,qualitative,medium,,,intake,,Insufficient vegan gluten-free or dietary-specific options relative to customer demand
+S047,coffee_waste_untracked,Coffee & Product Quality,qualitative,medium,,,intake,,Volume of wasted shots discarded drinks or unused brewed coffee not monitored
+S048,cupping_and_quality_assessment_absent,Coffee & Product Quality,qualitative,low,,,intake,,No regular cupping sessions or quality benchmarking of coffee supply
+S049,drink_presentation_inconsistent,Coffee & Product Quality,qualitative,medium,,,intake,,Latte art cup selection or drink presentation inconsistent across baristas
+S050,seasonal_specials_not_developed,Coffee & Product Quality,qualitative,low,,,intake,,No seasonal or limited-edition drinks or food developed to drive interest
+S051,recipe_cards_or_standards_absent,Coffee & Product Quality,qualitative,medium,,,intake,,No written recipe cards or drink specification standards for the team to follow
+S052,cold_drink_programme_underdeveloped,Coffee & Product Quality,qualitative,low,,,intake,,Iced coffee cold brew smoothie or cold drink range underdeveloped relative to demand
+S053,staff_turnover_elevated,Team & Talent,quantitative,high,gt,40,intake,365,Staff turnover rate above 40 percent annually with frequent departures in first 6 months
+S054,no_structured_onboarding,Team & Talent,qualitative,high,,,intake,,No structured onboarding or induction programme for new team members
+S055,barista_skills_gap,Team & Talent,qualitative,high,,,intake,,Baristas cannot demonstrate core skills including grind calibration shot timing milk steaming
+S056,no_team_meetings,Team & Talent,qualitative,medium,,,intake,,No regular team meetings briefings or communication forums
+S057,no_performance_reviews,Team & Talent,qualitative,medium,,,intake,,No regular appraisals feedback sessions or one-to-one meetings
+S058,key_person_dependency,Team & Talent,qualitative,high,,,intake,,One barista or manager holds disproportionate skill or customer relationships
+S059,no_career_pathway_defined,Team & Talent,qualitative,medium,,,intake,,No defined progression pathway from barista to senior barista shift lead or manager
+S060,morale_visibly_low,Team & Talent,qualitative,high,,,intake,,Observable low morale disengagement or negativity among team members
+S061,owner_working_every_shift,Team & Talent,qualitative,high,,,intake,,Owner or founder working every shift with no protected management or strategy time
+S062,no_cover_for_absence,Team & Talent,qualitative,medium,,,intake,,No contingency plan for staff absence including sickness holiday or emergency
+S063,team_not_cross_trained,Team & Talent,qualitative,medium,,,intake,,Front-of-house kitchen and barista roles not cross-trained
+S064,breaks_skipped_regularly,Team & Talent,qualitative,medium,,,intake,,Team regularly skipping breaks due to peak-hour pressure or understaffing
+S065,food_safety_certification_gaps,Team & Talent,qualitative,high,,,intake,,Required food safety certificates not held by all food handlers
+S066,mentorship_for_new_baristas_absent,Team & Talent,qualitative,medium,,,intake,,No structured mentorship or buddy system for newly hired baristas
+S067,staff_wellbeing_not_addressed,Team & Talent,qualitative,medium,,,intake,,No attention to staff wellbeing burnout prevention or work-life balance support
+S068,rota_published_last_minute,Team & Talent,qualitative,medium,,,intake,,Staff rota published with less than two weeks notice
+S069,no_opening_closing_checklist,Operations & Workflow,qualitative,medium,,,intake,,No standardised opening or closing checklist for daily operations
+S070,morning_rush_management_poor,Operations & Workflow,qualitative,high,,,intake,,Morning peak period 7-10am poorly managed with long queues slow service understaffing
+S071,daily_huddle_absent,Operations & Workflow,qualitative,medium,,,intake,,No daily team briefing or shift handover communication
+S072,ticket_times_excessive,Operations & Workflow,quantitative,high,gt,3,intake,30,Average drink preparation time exceeding 3 minutes during peak periods
+S073,workflow_layout_inefficient,Operations & Workflow,qualitative,medium,,,intake,,Counter machine and preparation area layout causing unnecessary movement or bottlenecks
+S074,end_of_day_reconciliation_missing,Operations & Workflow,qualitative,medium,,,intake,,No end-of-day cash stock or waste reconciliation process
+S075,food_preparation_bottleneck,Operations & Workflow,qualitative,medium,,,intake,,Kitchen or food prep area unable to keep pace with front-of-house demand
+S076,equipment_downtime_frequent,Operations & Workflow,qualitative,high,,,intake,,Espresso machine grinder or key equipment experiencing frequent breakdowns
+S077,cleaning_during_service_disruptive,Operations & Workflow,qualitative,low,,,intake,,Cleaning tasks scheduled during peak service causing disruption to customers
+S078,stock_replenishment_reactive,Operations & Workflow,qualitative,medium,,,intake,,Running out of milk cups or key items during service due to no par-level system
+S079,handover_between_shifts_poor,Operations & Workflow,qualitative,medium,,,intake,,No structured handover between morning and afternoon shifts
+S080,seating_turnover_not_managed,Operations & Workflow,qualitative,medium,,,intake,,No strategy for managing dwell time versus table turnover during peak periods
+S081,delivery_order_integration_poor,Operations & Workflow,qualitative,medium,,,intake,,Third-party delivery orders disrupting in-store workflow or causing delays
+S082,waste_tracking_absent,Operations & Workflow,qualitative,medium,,,intake,,Food waste coffee waste and packaging waste not tracked or measured
+S083,peak_staffing_not_calibrated,Operations & Workflow,qualitative,high,,,intake,,Staffing levels not aligned to actual peak-hour demand patterns
+S084,maintenance_schedule_absent,Operations & Workflow,qualitative,medium,,,intake,,No planned maintenance schedule for espresso machines grinders fridges HVAC
+S085,single_coffee_roaster_dependency,Supply Chain & Procurement,qualitative,medium,,,intake,,Dependent on a single coffee roaster with no backup arrangement
+S086,supplier_relationships_transactional,Supply Chain & Procurement,qualitative,low,,,intake,,Supplier relationships purely transactional with no negotiation or partnership
+S087,milk_supplier_unreliable,Supply Chain & Procurement,qualitative,medium,,,intake,,Milk supplier delivery inconsistent quality variable or frequently substituting
+S088,bakery_supplier_quality_inconsistent,Supply Chain & Procurement,qualitative,medium,,,intake,,Bakery or pastry supplier delivering inconsistent quality or late
+S089,stock_managed_reactively,Supply Chain & Procurement,qualitative,medium,,,intake,,Stock ordering done reactively when items run out rather than by par-level system
+S090,food_cost_percentage_high,Supply Chain & Procurement,quantitative,high,gt,35,intake,30,Food cost percentage exceeding 35 percent of food revenue
+S091,coffee_cost_percentage_high,Supply Chain & Procurement,quantitative,high,gt,25,intake,30,Coffee cost percentage exceeding 25 percent of coffee revenue
+S092,packaging_costs_uncontrolled,Supply Chain & Procurement,qualitative,medium,,,intake,,Takeaway cup lid bag and packaging costs not monitored or optimised
+S093,local_sourcing_not_explored,Supply Chain & Procurement,qualitative,low,,,intake,,No effort to source from local suppliers farms or artisan producers
+S094,ethical_sourcing_not_verified,Supply Chain & Procurement,qualitative,medium,,,intake,,Coffee sourcing ethics not verified or communicated to customers
+S095,supply_chain_disruption_plan_absent,Supply Chain & Procurement,qualitative,medium,,,intake,,No contingency plan for key supplier failure or supply chain disruption
+S096,menu_costing_not_performed,Supply Chain & Procurement,qualitative,medium,,,intake,,Individual menu item costings not calculated and gross margins unknown per item
+S097,inventory_management_system_absent,Supply Chain & Procurement,qualitative,medium,,,intake,,No inventory tracking system and stock counts infrequent or not performed
+S098,expiry_and_freshness_rotation_poor,Supply Chain & Procurement,qualitative,medium,,,intake,,FIFO not practised and stock rotation leading to waste
+S099,revenue_per_hour_declining,Financial Performance,quantitative,high,gt,5,intake,90,Revenue per trading hour declining by more than 5 percent over consecutive periods
+S100,average_transaction_value_stagnant,Financial Performance,qualitative,medium,,,intake,,Average transaction value has not increased in 6 or more months
+S101,pricing_not_reviewed,Financial Performance,qualitative,medium,,,intake,,Menu pricing not reviewed or adjusted in over 12 months
+S102,no_weekly_financial_review,Financial Performance,qualitative,medium,,,intake,,No weekly or monthly financial review rhythm in place
+S103,cost_of_goods_not_monitored,Financial Performance,qualitative,medium,,,intake,,Combined food and coffee cost of goods not tracked or benchmarked
+S104,payroll_percentage_high,Financial Performance,quantitative,high,gt,35,intake,30,Payroll costs exceeding 35 percent of revenue
+S105,cash_flow_reactive,Financial Performance,qualitative,medium,,,intake,,Cash flow management is reactive with no forward forecasting
+S106,no_budget_or_forecast,Financial Performance,qualitative,medium,,,intake,,No annual budget or financial forecast exists for the cafe
+S107,discount_culture_eroding_margins,Financial Performance,qualitative,high,,,intake,,Excessive or habitual discounting eroding profit margins
+S108,rent_and_occupancy_costs_high,Financial Performance,quantitative,high,gt,15,intake,30,Rent and occupancy costs exceeding 15 percent of revenue
+S109,no_financial_targets_per_shift,Financial Performance,qualitative,medium,,,intake,,No revenue targets set for shifts days or individual team members
+S110,upselling_not_practised,Financial Performance,qualitative,medium,,,intake,,Team not trained or incentivised to suggest additional items
+S111,loyalty_programme_roi_unknown,Financial Performance,qualitative,medium,,,intake,,Loyalty programme costs and return on investment not measured
+S112,third_party_delivery_margin_erosion,Financial Performance,quantitative,high,gt,25,intake,30,Deliveroo UberEats commission of 25-35 percent eroding margins with no strategy
+S113,cash_handling_uncontrolled,Financial Performance,qualitative,high,,,intake,,Cash handling procedures absent or not followed consistently
+S114,bad_debt_unmanaged,Financial Performance,qualitative,medium,,,intake,,Outstanding balances from catering accounts or corporate orders not managed
+S115,review_scores_declining,Marketing & Brand,quantitative,high,gt,0.2,intake,180,Average review score declining by more than 0.2 points over 6 months
+S116,no_social_media_strategy,Marketing & Brand,qualitative,medium,,,intake,,No consistent social media presence or content strategy
+S117,google_business_profile_neglected,Marketing & Brand,qualitative,medium,,,intake,,Google Business Profile incomplete not updated or reviews not responded to
+S118,brand_identity_unclear,Marketing & Brand,qualitative,medium,,,intake,,Cafe brand identity unclear or inconsistent across touchpoints
+S119,negative_reviews_not_responded_to,Marketing & Brand,qualitative,medium,,,intake,,Negative online reviews left without professional response
+S120,instagram_presence_weak,Marketing & Brand,qualitative,medium,,,intake,,Instagram not actively used or content quality low
+S121,website_outdated_or_absent,Marketing & Brand,qualitative,medium,,,intake,,Cafe website outdated non-functional or does not exist
+S122,local_community_marketing_absent,Marketing & Brand,qualitative,low,,,intake,,No engagement with local events markets pop-ups or community partnerships
+S123,referral_programme_absent,Marketing & Brand,qualitative,low,,,intake,,No customer referral or word-of-mouth programme in place
+S124,photography_and_visual_content_poor,Marketing & Brand,qualitative,medium,,,intake,,Food and drink photography low quality or absent for marketing use
+S125,email_or_newsletter_marketing_absent,Marketing & Brand,qualitative,low,,,intake,,No email list newsletter or direct customer communication channel
+S126,new_customer_acquisition_strategy_absent,Marketing & Brand,qualitative,medium,,,intake,,No defined strategy for attracting new customers beyond footfall
+S127,local_press_and_pr_not_leveraged,Marketing & Brand,qualitative,low,,,intake,,No outreach to local food bloggers press or influencers
+S128,seasonal_marketing_calendar_absent,Marketing & Brand,qualitative,medium,,,intake,,No planned marketing calendar for seasonal promotions holidays or events
+S129,exterior_and_signage_uninviting,Physical Environment & Design,qualitative,medium,,,intake,,Cafe exterior signage or entrance uninviting or poorly maintained
+S130,interior_design_dated,Physical Environment & Design,qualitative,low,,,intake,,Interior design layout and decor feeling dated or not aligned with brand
+S131,lighting_inappropriate,Physical Environment & Design,qualitative,medium,,,intake,,Lighting too bright too dim or inconsistent with cafe atmosphere
+S132,noise_level_problematic,Physical Environment & Design,qualitative,medium,,,intake,,Ambient noise level too high for customer comfort
+S133,cleanliness_standards_inconsistent,Physical Environment & Design,qualitative,medium,,,intake,,General cleanliness standards inconsistent across front-of-house and customer areas
+S134,seating_layout_inefficient,Physical Environment & Design,qualitative,medium,,,intake,,Seating layout not optimised for mix of solo workers couples and groups
+S135,counter_and_service_area_cluttered,Physical Environment & Design,qualitative,medium,,,intake,,Counter area cluttered confusing or not designed for efficient ordering flow
+S136,temperature_and_ventilation_poor,Physical Environment & Design,qualitative,medium,,,intake,,Indoor temperature uncomfortable or ventilation inadequate
+S137,music_and_ambiance_not_curated,Physical Environment & Design,qualitative,low,,,intake,,Background music absent inappropriate or not aligned with brand identity
+S138,outdoor_seating_underutilised,Physical Environment & Design,qualitative,low,,,intake,,Outdoor seating potential not developed or poorly maintained
+S139,storage_areas_chaotic,Physical Environment & Design,qualitative,medium,,,intake,,Back-of-house storage areas disorganised overfilled or not accessible
+S140,sustainability_features_absent,Physical Environment & Design,qualitative,low,,,intake,,No visible sustainability features such as recycling stations or reusable cup displays
+S141,pos_system_underused,Technology & Systems,qualitative,medium,,,intake,,POS system features not fully utilised including reporting inventory loyalty integration
+S142,no_automated_reminders_or_marketing,Technology & Systems,qualitative,medium,,,intake,,No automated marketing loyalty reminders or customer re-engagement
+S143,data_backup_absent,Technology & Systems,qualitative,medium,,,intake,,Business data POS records and customer data not backed up
+S144,it_infrastructure_unreliable,Technology & Systems,qualitative,medium,,,intake,,Wifi POS hardware or connectivity unreliable causing service disruption
+S145,no_reporting_or_analytics,Technology & Systems,qualitative,medium,,,intake,,No business reporting dashboards or performance analytics in use
+S146,digital_ordering_not_offered,Technology & Systems,qualitative,low,,,intake,,No digital ordering via app QR code or kiosk despite customer demand
+S147,cybersecurity_measures_absent,Technology & Systems,qualitative,medium,,,intake,,No cybersecurity measures for POS system wifi or customer data
+S148,kitchen_display_system_absent,Technology & Systems,qualitative,low,,,intake,,No KDS or order management system with kitchen relying on paper tickets
+S149,customer_data_not_captured,Technology & Systems,qualitative,medium,,,intake,,No systematic capture of customer data including email preferences visit frequency
+S150,payment_options_limited,Technology & Systems,qualitative,medium,,,intake,,Limited payment options such as no contactless no mobile pay or cash-only
+S151,digital_communication_fragmented,Technology & Systems,qualitative,low,,,intake,,Team communication happening across multiple uncoordinated channels
+S152,online_presence_not_integrated,Technology & Systems,qualitative,low,,,intake,,Website social media Google profile and ordering platform not integrated
+S153,expansion_without_systems,Growth & Strategy,qualitative,high,,,intake,,Expanding new site or new offerings without operational systems to support scale
+S154,no_business_plan,Growth & Strategy,qualitative,medium,,,intake,,No written business plan or strategic direction document
+S155,catering_and_events_not_explored,Growth & Strategy,qualitative,low,,,intake,,Corporate catering event catering or private hire not offered despite demand
+S156,wholesale_coffee_not_explored,Growth & Strategy,qualitative,low,,,intake,,Wholesale coffee bean or merchandise sales opportunity not pursued
+S157,competitor_awareness_low,Growth & Strategy,qualitative,low,,,intake,,Little awareness of competitor positioning pricing or offerings locally
+S158,second_location_premature,Growth & Strategy,qualitative,high,,,intake,,Considering opening a second site before first is fully systemised
+S159,no_succession_planning,Growth & Strategy,qualitative,medium,,,intake,,No succession plan for owner departure retirement or sale
+S160,revenue_concentration_risk,Growth & Strategy,qualitative,high,,,intake,,Revenue concentrated in a single daypart such as morning only with no diversification
+S161,market_positioning_vague,Growth & Strategy,qualitative,medium,,,intake,,Cafe market positioning unclear regarding target customer and value proposition
+S162,evening_trade_not_developed,Growth & Strategy,qualitative,low,,,intake,,Evening trade potential including events alcohol licence or supper clubs not explored
+S163,no_annual_review_process,Growth & Strategy,qualitative,low,,,intake,,No annual business review or strategic goal-setting process in place
+S164,subscription_model_not_explored,Growth & Strategy,qualitative,low,,,intake,,Coffee subscription or membership model not explored for revenue stability
+S165,cafe_values_not_articulated,Culture & Identity,qualitative,medium,,,intake,,Cafe values not defined documented or communicated to the team
+S166,team_not_aligned_on_standards,Culture & Identity,qualitative,medium,,,intake,,Team not aligned on service standards expected behaviours or quality expectations
+S167,no_staff_handbook,Culture & Identity,qualitative,medium,,,intake,,No staff handbook or reference document for policies expectations and procedures
+S168,toxic_dynamics_present,Culture & Identity,qualitative,high,,,intake,,Interpersonal tension gossip or cliques negatively affecting the work environment
+S169,owner_vision_not_shared,Culture & Identity,qualitative,medium,,,intake,,Owner or founder has a vision for the cafe but has not shared it with the team
+S170,sustainability_commitment_absent,Culture & Identity,qualitative,low,,,intake,,No sustainability policy environmental commitment or ethical stance communicated
+S171,diversity_inclusion_gaps,Culture & Identity,qualitative,medium,,,intake,,Diversity and inclusion not reflected in team hiring customer approach or marketing
+S172,community_engagement_absent,Culture & Identity,qualitative,low,,,intake,,No engagement with local community initiatives charities or neighbourhood events
+S173,team_recognition_absent,Culture & Identity,qualitative,medium,,,intake,,No system for recognising or celebrating team achievements and milestones
+S174,professional_identity_unclear,Culture & Identity,qualitative,medium,,,intake,,Cafe identity as specialty versus convenience or community versus commercial not defined
+S175,daily_target_awareness_absent,Operational Discipline,qualitative,medium,,,intake,,Team unaware of daily revenue transaction or performance targets
+S176,cash_reconciliation_missing,Operational Discipline,qualitative,high,,,intake,,No end-of-day cash or transaction reconciliation process
+S177,supply_ordering_reactive,Operational Discipline,qualitative,medium,,,intake,,Consumable ordering done reactively when items run out
+S178,prep_list_not_used,Operational Discipline,qualitative,medium,,,intake,,No daily preparation list for food batch brew or cold drinks
+S179,wastage_log_absent,Operational Discipline,qualitative,medium,,,intake,,No daily waste log for coffee food or packaging waste
+S180,shift_changeover_undocumented,Operational Discipline,qualitative,medium,,,intake,,No structured handover documentation between shifts
+S181,machine_maintenance_log_absent,Operational Discipline,qualitative,medium,,,intake,,No log for espresso machine backflushing grinder cleaning or equipment maintenance
+S182,temperature_monitoring_reactive,Operational Discipline,qualitative,medium,,,intake,,Fridge freezer and display case temperatures only checked when problems occur
+S183,deep_clean_schedule_absent,Operational Discipline,qualitative,medium,,,intake,,No weekly or monthly deep-clean schedule for kitchen equipment and storage areas
+S184,banking_and_deposit_routine_absent,Operational Discipline,qualitative,medium,,,intake,,No regular banking or cash deposit routine established
+S185,incident_reporting_absent,Operational Discipline,qualitative,medium,,,intake,,No incident reporting process for accidents near-misses or customer complaints
+S186,emergency_procedures_not_posted,Operational Discipline,qualitative,medium,,,intake,,Emergency procedures including fire first aid gas leak not documented or posted
+S187,staff_departure_unmanaged,Risk & Continuity,qualitative,high,,,intake,,No protocol for managing knowledge transfer when key staff leave
+S188,customer_data_not_protected,Risk & Continuity,qualitative,high,,,intake,,Customer personal data not handled in compliance with GDPR
+S189,insurance_gaps,Risk & Continuity,qualitative,high,,,intake,,Public liability employer liability or product liability insurance gaps or lapses
+S190,health_and_safety_risk_assessment_absent,Risk & Continuity,qualitative,high,,,intake,,No documented health and safety risk assessment for the premises
+S191,fire_safety_compliance_gaps,Risk & Continuity,qualitative,high,,,intake,,Fire risk assessment not conducted fire extinguishers not serviced or escape routes blocked
+S192,business_continuity_plan_absent,Risk & Continuity,qualitative,medium,,,intake,,No business continuity plan for major disruption
+S193,licensing_compliance_gaps,Risk & Continuity,qualitative,high,,,intake,,Premises licence alcohol licence or music licence not current or compliant
+S194,employment_law_non_compliance,Risk & Continuity,qualitative,high,,,intake,,Employment contracts minimum wage working time regulations not compliant
+S195,gas_and_electrical_safety_overdue,Risk & Continuity,qualitative,high,,,intake,,Gas safety certificate or electrical installation condition report overdue or absent
+S196,whistleblowing_policy_absent,Risk & Continuity,qualitative,medium,,,intake,,No whistleblowing or raising-concerns policy in place for staff
+S197,brand_consistency_score_low,Multi-Site Chain,quantitative,high,lt,80,intake,90,Mystery shopper or brand audit scores below 80 percent consistency across sites
+S198,sop_compliance_variance_high,Multi-Site Chain,qualitative,high,,,intake,,Standard operating procedure compliance varying significantly between sites
+S199,cross_site_financial_variance_high,Multi-Site Chain,quantitative,high,gt,15,intake,90,Revenue margin or cost performance varying more than 15 percent between comparable sites
+S200,new_site_opening_playbook_absent,Multi-Site Chain,qualitative,medium,,,intake,,No documented playbook or checklist for opening new sites
+S201,area_manager_framework_absent,Multi-Site Chain,qualitative,medium,,,intake,,No defined area or regional manager role visit cadence or reporting structure
+S202,franchise_compliance_audit_absent,Multi-Site Chain,qualitative,medium,,,intake,,No regular franchise compliance audit programme
+S203,central_procurement_not_leveraged,Multi-Site Chain,qualitative,medium,,,intake,,Central buying power and supplier negotiations not leveraged across sites
+S204,cross_site_learning_absent,Multi-Site Chain,qualitative,medium,,,intake,,No mechanism for sharing best practices innovations or learnings between sites
+S205,retail_coffee_sales_not_explored,Opportunity,qualitative,low,,,intake,,Retail coffee bean merchandise or branded product sales not offered
+S206,coffee_education_not_offered,Opportunity,qualitative,low,,,intake,,Coffee tasting events barista classes or educational experiences not offered
+S207,loyalty_programme_not_implemented,Opportunity,qualitative,low,,,intake,,No loyalty programme despite repeat customer base
+S208,catering_market_not_tapped,Opportunity,qualitative,low,,,intake,,Corporate catering meeting room supply or office delivery market not explored
+S209,collaboration_opportunities_missed,Opportunity,qualitative,low,,,intake,,Collaborations with local businesses artists or brands not explored
+S210,popup_or_market_presence_absent,Opportunity,qualitative,low,,,intake,,No presence at local markets food festivals or pop-up events
+S211,vat_isaf_reporting_non_compliant,Regulatory & Tax,qualitative,high,,,intake,,Monthly i.SAF VAT declaration not submitted to VMI by 20th of following month or i.VAZ goods movement reporting non-compliant
+S212,pos_tax_integration_absent,Regulatory & Tax,qualitative,high,,,intake,,POS system not integrated with national tax authority electronic reporting requirements for audit trail and receipt generation
+S213,social_insurance_tracking_absent,Regulatory & Tax,qualitative,high,,,intake,,No systematic process for tracking mandatory social insurance contributions or filing employer notifications for new hires
+S214,food_business_approval_lapsed,Regulatory & Tax,qualitative,high,,,intake,,Food business operator approval certificate not current or renewal process not tracked
+S215,alcohol_licensing_non_compliant,Regulatory & Tax,qualitative,high,,,intake,,Alcohol licence conditions not met including operating hours product restrictions distance rules or age verification procedures
+S216,employment_contract_non_compliant,Employment & Labour,qualitative,high,,,intake,,Employment contracts do not reference national labour code requirements including minimum wage working hours or leave entitlements
+S217,winter_heating_cost_unmanaged,Operations & Workflow,qualitative,high,,,intake,,No proactive strategy for managing heating costs during winter months with no seasonal cost forecasting or efficiency measures
+S218,seasonal_terrace_not_planned,Growth & Strategy,qualitative,medium,,,intake,,No strategy to maximise outdoor terrace revenue during summer season including permits setup procedures or seasonal menu
+S219,tourist_local_mix_unmanaged,Growth & Strategy,qualitative,medium,,,intake,,No segmentation of tourist traffic versus local regulars with no differentiated service pricing or marketing approach
+S220,digital_payment_methods_limited,Technology & Systems,qualitative,medium,,,intake,,Payment systems do not support prevalent local digital payment methods including mobile banking apps and digital wallets
+S221,team_seasonal_wellbeing_absent,Team & Talent,qualitative,medium,,,intake,,No support for team wellbeing during dark winter months including seasonal depression awareness or mental health resources
+S222,energy_efficiency_not_optimised,Operations & Workflow,qualitative,medium,,,intake,,No seasonal energy consumption plan or investment in heating cooling and insulation efficiency measures

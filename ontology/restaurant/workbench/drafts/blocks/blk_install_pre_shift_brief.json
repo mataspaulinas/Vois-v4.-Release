@@ -1,0 +1,45 @@
+{
+  "id": "blk_install_pre_shift_brief",
+  "name": "Install pre-shift briefing",
+  "description": "Create a repeatable pre-service briefing that aligns the team on demand shape, risks, 86s, role pressure points, and escalation rules before the floor gets noisy.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: install operating rhythm before asking the team for more precision",
+  "updated_at": "2026-03-14T00:24:42.985769Z",
+  "effort_hours": 2.0,
+  "dependencies": [],
+  "tool_ids": [
+    "tool_shift_brief_template"
+  ],
+  "response_pattern_ids": [
+    "rp_leadership_rhythm_reset"
+  ],
+  "entry_conditions": [
+    "Service starts with uneven direction, repeated surprises, or unclear priorities.",
+    "A leader is available to run the briefing and hold follow-through."
+  ],
+  "contraindications": [
+    "Do not turn the briefing into a long speech with no operational decisions.",
+    "Do not use this as a substitute for fixing missing role clarity or readiness basics."
+  ],
+  "owner_role": "venue_manager",
+  "expected_time_to_effect_days": 1,
+  "proof_of_completion": [
+    "A fixed briefing cadence, owner, and timing now exist.",
+    "The team receives covers, risks, 86s, pressure points, and focus items before service.",
+    "Escalation ownership for the shift is named out loud and visible."
+  ],
+  "successor_block_ids": [
+    "blk_host_reservation_huddle",
+    "blk_guest_recovery_loop"
+  ],
+  "service_module_ids": [
+    "readiness_and_setup",
+    "leadership_and_management_rhythm"
+  ],
+  "failure_family_ids": [
+    "leadership_rhythm_failure",
+    "readiness_failure",
+    "accountability_failure"
+  ]
+}

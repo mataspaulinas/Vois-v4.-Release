@@ -1,0 +1,82 @@
+{
+  "identification": {
+    "tool_id": "T001-05",
+    "tool_name": "Temperature Monitoring SOP & Team Sign-Off",
+    "block_id": "B001"
+  },
+  "tool_design": {
+    "format": "SOP",
+    "role_in_intervention": "Venue operating standard defining exactly how B001 is executed and taught.",
+    "adaptation_variables": [
+      "unit_register",
+      "role_structure",
+      "record_retention_rules"
+    ],
+    "usage_moment": "At rollout, onboarding, and any major process change",
+    "expected_output": "Issued SOP with completed unit register and staff sign-off",
+    "linked_blocks": [
+      "B001",
+      "B002",
+      "B003"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "SOP is issued but not briefed or practiced.",
+        "what_can_go_wrong": "The standard exists on paper only.",
+        "early_signals": [
+          "Users cannot describe steps",
+          "Workarounds appear"
+        ],
+        "prevention": [
+          "Brief every user",
+          "Pair with live tool"
+        ],
+        "mitigation": [
+          "Reissue with short briefing",
+          "Audit real behaviour"
+        ],
+        "if_occurs_next_signals": [
+          "standard_not_embedded"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B002",
+          "B003"
+        ]
+      },
+      {
+        "warning": "SOP no longer matches reality.",
+        "what_can_go_wrong": "People bypass it because it feels outdated.",
+        "early_signals": [
+          "Handwritten amendments everywhere",
+          "Users say it no longer fits"
+        ],
+        "prevention": [
+          "Review after changes",
+          "Keep one update owner"
+        ],
+        "mitigation": [
+          "Refresh and re-brief",
+          "Remove outdated copies"
+        ],
+        "if_occurs_next_signals": [
+          "standard_drift"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B002",
+          "B003"
+        ]
+      }
+    ]
+  },
+  "content": "# Temperature Monitoring SOP & Team Sign-Off\n\n**Tool ID:** T001-05  \n**Block:** B001 (Daily Temperature Monitoring)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L2  \n**Format:** SOP  \n**Role:** Manager / Owner  \n**Time Required:** 20 minutes to issue, 5 minutes to brief each team member  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this SOP to define exactly how your venue performs temperature monitoring, who owns it, what \"good\" looks like, and how records are kept inspection-ready.\n\nThis is the operating standard behind `T001-01`, `T001-02`, `T001-03`, and `T001-04`.\n\n---\n## Scope\n\nThis SOP applies to:\n- all chilled and frozen storage units used for food or milk\n- all staff who record or review temperatures\n- all temperature monitoring records retained for compliance\n\n---\n## Roles And Responsibility\n\n| Role | Responsibility |\n|---|---|\n| Opening lead | Complete the first temperature round before service starts |\n| Afternoon lead | Complete the second round during the agreed check window |\n| Manager | Review logs daily, close corrective actions, maintain calibration record |\n| Owner | Review monthly dashboard, resource repairs or replacement |\n\n---\n## Venue Unit Register\n\nComplete this before issuing the SOP.\n\n| Unit Name | Unit Type | Safe Range | Probe Point / Product | Check Windows | Notes |\n|---|---|---|---|---|---|\n| Milk fridge | Chilled | `1-5C` | | Opening / Afternoon | |\n| Prep fridge | Chilled | `1-5C` | | Opening / Afternoon | |\n| Display fridge | Chilled | `1-5C` | | Opening / Afternoon | |\n| Walk-in / back-up fridge | Chilled | `1-5C` | | Opening / Afternoon | |\n| Main freezer | Frozen | `-18C` or below | | Opening / Afternoon | |\n| Other | | | | | |\n\n---\n## Standard Checking Method\n\n<ul>\n  <li><input type=\"checkbox\"> Wash hands and sanitise the probe before use.</li>\n  <li><input type=\"checkbox\"> Follow the unit register in the same order each round.</li>\n  <li><input type=\"checkbox\"> Probe the agreed product or proxy point for each unit.</li>\n  <li><input type=\"checkbox\"> Wait for a stable reading before recording.</li>\n  <li><input type=\"checkbox\"> Record the real number immediately on [T001-01].</li>\n  <li><input type=\"checkbox\"> Sanitise the probe between units.</li>\n</ul>\n\n---\n## Safe Limits And Triggers\n\n| Scenario | Required Response |\n|---|---|\n| Fridge within `1-5C` | Record and continue |\n| Fridge above `5C` but below `8C` | Investigate simple cause, recheck, note action |\n| Fridge `8C` or above | Alert manager and open [T001-03] |\n| Freezer above `-15C` | Investigate immediately and note action |\n| Freezer `-12C` or warmer | Alert manager and open [T001-03] |\n| Probe not calibrated | Stop temperature round until valid device is available |\n\n---\n## Record-Keeping Rules\n\n- `T001-01` is completed twice daily and filed the same day.\n- `T001-02` is updated monthly and whenever the probe is questioned or dropped.\n- `T001-03` is opened for any true trigger event or repeat warning pattern.\n- `T001-04` is completed monthly by management.\n- Keep all records for at least 12 months in the food safety file or digital equivalent.\n\n---\n## Daily Manager Review\n\nManager must confirm:\n- both rounds are present\n- any high readings include action notes\n- any trigger event has the matching record\n- any maintenance risk is captured for follow-up\n- logs are signed before filing\n\n---\n## When This SOP Must Be Reviewed\n\nReview immediately if:\n- a new cold unit is added or removed\n- the check windows change\n- the probe type changes\n- an EHO or internal audit identifies a weakness\n- repeat temperature drift appears in the same unit\n\nOtherwise review at least once every 12 months.\n\n---\n## Team Briefing And Sign-Off\n\nUse this table to confirm every relevant team member has been briefed.\n\n| Team Member | Role | Briefed On | Signature / Initials | Trainer | Date |\n|---|---|---|---|---|---|\n| | | `T001-01` / `T001-03` | | | |\n| | | `T001-01` / `T001-03` | | | |\n| | | `T001-01` / `T001-03` | | | |\n| | | `T001-01` / `T001-03` | | | |\n| | | `T001-01` / `T001-03` | | | |\n\n---\n## Connected Resources\n\n**Core tools in this block:**\n- T001-01 - Daily Temperature Log & Check Sheet\n- T001-02 - Probe Calibration Record & Accuracy Tracker\n- T001-03 - Temperature Excursion Trigger Log\n- T001-04 - Monthly Temperature Compliance Dashboard\n\n**Related blocks:**\n- B002 - Cold Chain Management SOP\n- B003 - Temperature Excursion Response\n\n---\n\n*Tool Version 2.0 - the house standard behind the daily log.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T001-05_temperature_monitoring_sop_and_team_signoff.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

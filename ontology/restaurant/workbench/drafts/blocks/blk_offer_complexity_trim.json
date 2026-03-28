@@ -1,0 +1,44 @@
+{
+  "id": "blk_offer_complexity_trim",
+  "name": "Trim offer complexity",
+  "description": "Identify the menu or service elements creating disproportionate operational instability and simplify them until the current system can execute reliably again.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: complexity should be reduced when the promise outruns the operation's current strength",
+  "updated_at": "2026-03-14T00:41:10.327749Z",
+  "effort_hours": 4.0,
+  "dependencies": [
+    "blk_map_service_steps"
+  ],
+  "tool_ids": [
+    "tool_complexity_trim_matrix"
+  ],
+  "response_pattern_ids": [
+    "rp_offer_complexity_trim"
+  ],
+  "entry_conditions": [
+    "A subset of menu or service elements creates repeated instability, remakes, or bottlenecks.",
+    "Leadership is willing to remove, pause, simplify, or resequence parts of the offer."
+  ],
+  "contraindications": [
+    "Do not trim complexity without linking decisions to observed execution pain and value impact.",
+    "Do not keep everything sacred when the operation is clearly unable to carry it."
+  ],
+  "owner_role": "venue_manager",
+  "expected_time_to_effect_days": 5,
+  "proof_of_completion": [
+    "A complexity review exists showing which offer elements create disproportionate drag.",
+    "At least one menu or service element has been simplified, paused, or resequenced.",
+    "The venue can explain why the trimmed complexity should improve execution reliability."
+  ],
+  "successor_block_ids": [],
+  "service_module_ids": [
+    "promise_and_expectations",
+    "live_execution",
+    "commercial_and_control_loops"
+  ],
+  "failure_family_ids": [
+    "commercial_discipline_failure",
+    "workflow_design_failure"
+  ]
+}

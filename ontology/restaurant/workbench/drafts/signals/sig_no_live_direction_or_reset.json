@@ -1,0 +1,30 @@
+{
+  "id": "sig_no_live_direction_or_reset",
+  "name": "No live direction or reset occurs",
+  "description": "The shift visibly drifts under pressure and nobody steps in to reset pace, roles, or priorities in the moment.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: leadership rhythm failure expressed in live restaurant service",
+  "updated_at": "2026-03-14T12:48:22.229533Z",
+  "domain": "leadership_rhythm",
+  "module": "floor_presence",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "no live reset",
+    "drift without intervention",
+    "leaders watching but not directing"
+  ],
+  "source_types": [
+    "service observation",
+    "manager notes"
+  ],
+  "temporal_behavior": "peak-sensitive",
+  "likely_co_signals": [
+    "sig_manager_floor_absence",
+    "sig_section_imbalance"
+  ],
+  "adapter_aliases": [
+    "no reset happened",
+    "nobody redirected the shift"
+  ]
+}

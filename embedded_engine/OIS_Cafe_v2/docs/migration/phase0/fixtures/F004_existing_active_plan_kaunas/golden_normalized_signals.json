@@ -1,0 +1,50 @@
+[
+  {
+    "signal_id": "S019",
+    "domain_id": "Customer Experience & Service",
+    "severity": "high",
+    "timestamp": "2026-03-02",
+    "source_type": "intake",
+    "venue_id": "kavos_namai_kaunas",
+    "notes": "Occasional wait times approaching threshold during Saturday morning peak",
+    "signal_name": "queue_wait_times_excessive",
+    "description": "Customers regularly waiting more than 5 minutes in queue during peak periods",
+    "value": null
+  },
+  {
+    "signal_id": "S070",
+    "domain_id": "Operations & Workflow",
+    "severity": "high",
+    "timestamp": "2026-03-02",
+    "source_type": "intake",
+    "venue_id": "kavos_namai_kaunas",
+    "notes": "Understaffing observed on one shift pattern only",
+    "signal_name": "morning_rush_management_poor",
+    "description": "Morning peak period 7-10am poorly managed with long queues slow service understaffing",
+    "value": null
+  },
+  {
+    "signal_id": "S080",
+    "domain_id": "Operations & Workflow",
+    "severity": "medium",
+    "timestamp": "2026-03-02",
+    "source_type": "intake",
+    "venue_id": "kavos_namai_kaunas",
+    "notes": "Table clearing occasionally delayed but within acceptable range",
+    "signal_name": "seating_turnover_not_managed",
+    "description": "No strategy for managing dwell time versus table turnover during peak periods",
+    "value": null
+  },
+  {
+    "signal_id": "S071",
+    "domain_id": "Operations & Workflow",
+    "severity": "medium",
+    "timestamp": "2026-03-02",
+    "source_type": "intake",
+    "venue_id": "kavos_namai_kaunas",
+    "notes": "Pre-shift briefings happen but content is informal and not documented",
+    "signal_name": "daily_huddle_absent",
+    "description": "No daily team briefing or shift handover communication",
+    "value": null
+  }
+]

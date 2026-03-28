@@ -1,0 +1,299 @@
+{
+  "block_id": "B003",
+  "name": "Temperature Excursion Response",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Provides a clear, step-by-step response protocol for when refrigeration temperatures breach safe limits. This block ensures that every staff member knows exactly what to do when a fridge or freezer reads too high, preventing unsafe food from reaching customers and creating the documented evidence trail that EHO inspectors require.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define clear temperature thresholds that trigger the excursion response protocol",
+      "Provide a step-by-step decision tree for staff to follow when a breach is detected",
+      "Establish stock assessment criteria to determine what can be saved and what must be discarded",
+      "Create documentation procedures that satisfy EHO inspection requirements",
+      "Define equipment failure escalation pathways including emergency contacts"
+    ],
+    "secondary_objectives": [
+      "Minimise financial loss by making rapid, informed decisions about affected stock",
+      "Build staff confidence so temperature breaches are handled calmly and correctly",
+      "Create data for preventive maintenance by tracking excursion patterns"
+    ]
+  },
+  "why_this_matters": "A temperature excursion — when a fridge rises above 8°C or a freezer above -15°C — is one of the most common and dangerous food safety events in a cafe. The danger zone between 8°C and 63°C is where pathogenic bacteria multiply most rapidly, and some can double in number every 20 minutes. Under EU-retained Regulation (EC) 852/2004, food business operators must take immediate corrective action when cold chain failures occur, and under the Food Safety Act 1990, they must be able to demonstrate that they acted with due diligence. The SFBB pack includes a specific section on what to do when things go wrong, and EHO inspectors will look for evidence that the business has a documented response protocol. The consequences of getting this wrong are severe: serving food that has been in the danger zone for more than 4 hours can cause foodborne illness, and a cafe that cannot demonstrate proper corrective action during an EHO visit will lose marks on management procedures — one of the three scoring categories for the Food Hygiene Rating. Many cafe owners panic during a temperature excursion and either throw everything away (wasteful and expensive) or keep everything (dangerous). This block replaces panic with a systematic response.",
+  "block_design": {
+    "intervention_type": "bounded_operating_intervention",
+    "purpose": "Provides a clear, step-by-step response protocol for when refrigeration temperatures breach safe limits. This block ensures that every staff member knows exactly what to do when a fridge or freezer reads too high, preventing unsafe food from reaching customers and creating the documented evidence trail that EHO inspectors require.",
+    "failure_modes_addressed": [
+      "FM001"
+    ],
+    "response_patterns_addressed": [
+      "RP001"
+    ],
+    "primary_execution_module": "M01",
+    "entry_conditions": [
+      "A fridge or freezer reading breaches the unsafe threshold or stock safety is in doubt.",
+      "A cold unit appears switched off, damaged, or visibly failing.",
+      "Staff need a controlled incident response rather than routine monitoring alone."
+    ],
+    "prerequisites": [
+      "B001 monitoring is active enough to surface genuine trigger readings.",
+      "Managers know where the incident form, stock matrix, and emergency contacts are kept.",
+      "There is at least a basic plan for back-up storage or stock isolation."
+    ],
+    "contraindications": [
+      "Do not treat this block as a substitute for normal daily monitoring in B001.",
+      "Do not use informal judgement when a wider public-health or legal event exists beyond a standard excursion.",
+      "Do not proceed without escalating if stock safety cannot be assessed honestly."
+    ],
+    "owner_role": "Manager or duty lead with escalation to owner as needed",
+    "effort_load": {
+      "setup": "3-5 hours",
+      "per_incident": "10-20 minutes plus transfer or repair coordination",
+      "quarterly": "10-15 minutes per drill and trend review"
+    },
+    "expected_time_to_effect": {
+      "first_visible_effect": "Immediately once the card and manager tools are issued",
+      "stabilisation_window": "2-8 weeks of drills and incident review"
+    },
+    "proof_of_completion": [
+      "Every cold unit has a visible response card and emergency contacts.",
+      "Managers are completing incident reports for genuine excursion events.",
+      "A documented stock decision and root-cause trail exists for each incident."
+    ],
+    "proof_of_effectiveness": [
+      "Response time from trigger to manager action is consistently fast.",
+      "Unsafe stock is isolated or discarded without guesswork.",
+      "Repeat incidents begin to show preventive follow-through instead of recurrence without learning."
+    ],
+    "successor_triggers": [
+      {
+        "trigger": "Incident, stock-loss, and root-cause data is stable enough for aggregated dashboard review.",
+        "next_block_id": "B004"
+      }
+    ],
+    "linked_tools": [
+      "T003-01",
+      "T003-02",
+      "T003-03",
+      "T003-04",
+      "T003-05"
+    ]
+  },
+  "implementation_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Staff panic and either keep unsafe stock or throw everything away without evidence.",
+        "what_can_go_wrong": "The incident becomes either a food safety risk or a preventable financial loss because the response is emotional rather than structured.",
+        "early_signals": [
+          "People argue about smell, appearance, or cost instead of readings and duration.",
+          "No one can say who is making the stock decision.",
+          "The response card is posted but staff still ask what to do first."
+        ],
+        "prevention": [
+          "Run drills using T003-05.",
+          "Teach managers to use T003-03 for stock judgement.",
+          "Keep the quick card and emergency numbers at every relevant unit."
+        ],
+        "mitigation": [
+          "Pause service use of the affected stock immediately.",
+          "Bring the duty lead into the decision and document the evidence.",
+          "Use the safer decision when time or temperature is uncertain."
+        ],
+        "if_occurs_next_signals": [
+          "unsafe_stock_decision_risk",
+          "incident_control_failure"
+        ],
+        "possible_successor_blocks": [
+          "B004"
+        ]
+      },
+      {
+        "warning": "Incidents are handled operationally but not documented or reviewed.",
+        "what_can_go_wrong": "The venue loses proof of due diligence and the chance to prevent the same failure repeating.",
+        "early_signals": [
+          "An excursion is discussed verbally but no T003-02 exists.",
+          "Repairs happen but the root cause is never logged.",
+          "The same unit fails again with no reference to the earlier event."
+        ],
+        "prevention": [
+          "Make incident closure depend on T003-02 completion.",
+          "Update T003-04 during the same review cycle.",
+          "Review incidents in a short post-event debrief."
+        ],
+        "mitigation": [
+          "Reconstruct the event as soon as possible while facts are still fresh.",
+          "Classify the root cause and assign a preventive action owner.",
+          "Review whether B001 or B002 controls need tightening as a result."
+        ],
+        "if_occurs_next_signals": [
+          "missing_due_diligence_evidence",
+          "repeat_excursion_risk"
+        ],
+        "possible_successor_blocks": [
+          "B004"
+        ]
+      }
+    ]
+  },
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create a Temperature Excursion Response Card — a laminated A5 card posted on or near every fridge and freezer. The card should contain: Step 1: Check the reading. Is the fridge above 8°C or the freezer above -15°C? If yes, proceed. Step 2: Do not open the unit unnecessarily. Each door opening raises the temperature further. Step 3: Check if the unit is actually faulty — is the door properly closed? Is anything blocking the vents? Is the unit switched on? Step 4: If the unit is genuinely running warm, inform the manager immediately. Step 5: Probe-check the actual food temperature of the highest-risk items (milk, cooked meats, sandwiches). If food is below 8°C even though the air is warm, it may still be safe. Step 6: Record the air temperature, food temperatures, time of discovery, and your name on the Excursion Log. Week 1 also requires establishing an emergency refrigeration engineer contact — get a 24-hour number and post it alongside the response card. Week 2: Brief all staff on the response card procedure. Run a simulated excursion: set the scenario that the main fridge is reading 12°C at opening time, and walk staff through the response steps. The manager should practise the stock assessment decision: food that has been above 8°C for less than 2 hours can generally be moved to a working unit and used promptly. Food above 8°C for more than 4 hours must be discarded. Food between 2-4 hours requires a risk-based judgement. By end of Week 2, every fridge should have a response card, every staff member should know the procedure, and the emergency engineer number should be on speed dial.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a comprehensive Temperature Excursion SOP that expands on the response card with detailed guidance. Include a decision tree flowchart: discovery of high reading leads to initial checks, which leads to either simple cause identified (door left open — close and monitor) or equipment failure suspected (escalate). For equipment failure, the SOP should cover: contacting the engineer, transferring stock to backup refrigeration, assessing stock safety using the time-temperature matrix, documenting everything, and reporting to the owner. Create a formal Excursion Incident Report template that captures: unit affected, temperature readings (air and food), time of discovery, estimated duration of excursion, cause identified, corrective actions taken, stock affected, stock discarded (with cost), and sign-off by manager. Begin tracking excursion data in a spreadsheet: date, unit, peak temperature, duration, cause, cost of waste. After 8 weeks, analyse the data — are certain units failing repeatedly? Is there a pattern (e.g., excursions on delivery days when the door is opened frequently)? Use this data to drive preventive action. Ensure all corrective action records are filed in the SFBB diary alongside temperature logs.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Temperature excursion response should be automatic and confident. Conduct quarterly excursion drills — simulate a failure and time how quickly staff respond correctly. Review excursion data quarterly to identify trends and invest in preventive measures: if a unit is failing regularly, replace it before a critical failure occurs. Consider installing wireless temperature monitors with SMS or app alerts that notify the manager when temperatures drift out of range, even overnight. Develop a root cause analysis culture — after every excursion, hold a brief 5-minute review with the team: what happened, why, and what can we do to prevent it next time? Display excursion-free streaks on the staff dashboard. Benchmark against industry standards and aim for fewer than 4 excursion events per year across all units."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create and laminate Temperature Excursion Response Cards for every fridge and freezer",
+        "Establish an emergency refrigeration engineer contact and post the number visibly",
+        "Brief all staff on the response card procedure in a team meeting",
+        "Create a simple Excursion Log template for recording incidents",
+        "Run a simulated excursion drill to test staff understanding",
+        "Define the time-temperature thresholds: under 2hrs safe to transfer, 2-4hrs judgement, over 4hrs discard"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Issue the Temperature Excursion SOP & Drill Guide using T003-05 and post T003-01 on every cold unit",
+        "Use T003-02 for every real excursion, stock-safety decision, or equipment-failure event",
+        "Use T003-03 to guide stock decisions whenever time and temperature evidence is incomplete or risky",
+        "Identify back-up storage and emergency engineer contacts as part of the excursion standard",
+        "File all excursion records alongside daily temperature monitoring evidence",
+        "Review early incident data after 8 weeks to identify repeat units, process gaps, or training needs"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Run quarterly excursion drills using the scenarios and scorecard in T003-05",
+        "Track every incident in T003-04 and classify the root cause before closing it",
+        "Use trend data to decide repair, replacement, retraining, or contingency investment priorities",
+        "Share short factual post-incident learnings with the team so the response culture stays confident",
+        "Feed stable excursion data into B004 when the dashboard layer is active"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Temperature Excursion Response Card",
+    "Excursion Incident Report Form",
+    "Time-Temperature Stock Assessment Matrix",
+    "Excursion Trend Tracker & Root Cause Log",
+    "Temperature Excursion SOP & Drill Guide"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T003-01",
+        "tool_name": "Temperature Excursion Response Card",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "Laminated quick-action card for the first minutes of a fridge or freezer excursion, covering trigger confirmation, isolation, notification, and next-step handoff."
+      },
+      {
+        "tool_id": "T003-02",
+        "tool_name": "Excursion Incident Report Form",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Detailed incident form recording readings, timeline, stock decisions, business impact, and follow-up actions for every genuine excursion."
+      },
+      {
+        "tool_id": "T003-03",
+        "tool_name": "Time-Temperature Stock Assessment Matrix",
+        "level": "L2",
+        "format": "guide",
+        "owner_role": "Manager",
+        "description": "Fast decision guide for judging whether chilled or frozen stock can be kept, used soon, transferred, or discarded."
+      },
+      {
+        "tool_id": "T003-04",
+        "tool_name": "Excursion Trend Tracker & Root Cause Log",
+        "level": "L3",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Quarterly review tracker that links incidents to root causes, stock-loss cost, and preventive actions for maintenance or retraining decisions."
+      },
+      {
+        "tool_id": "T003-05",
+        "tool_name": "Temperature Excursion SOP & Drill Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Full excursion operating standard covering roles, stock transfer, drill scenarios, and post-incident review."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Staff discover a temperature breach but do not know what to do and either ignore it or make poor decisions",
+    "Excursions are not documented, leaving no evidence of corrective action for EHO inspectors",
+    "All stock is discarded unnecessarily during minor excursions, causing significant financial loss",
+    "Recurring equipment failures are not identified because excursion data is not tracked or analysed"
+  ],
+  "kpis": [
+    "100% of temperature excursions documented with completed incident reports",
+    "Staff response time under 15 minutes from discovery to corrective action initiated",
+    "Fewer than 4 excursion events per year across all refrigeration units",
+    "Zero instances of food served after being in the danger zone for more than 4 hours"
+  ],
+  "dependencies": [
+    "B001",
+    "B002"
+  ],
+  "constraints": [
+    "Requires backup refrigeration capacity or a plan for emergency stock transfer",
+    "An emergency refrigeration engineer must be identified with a 24-hour contact number",
+    "Staff must be trained on the protocol before they can be left unsupervised"
+  ],
+  "time_load": {
+    "L1": "3 hours",
+    "L2": "5 hours",
+    "L3": "1 hour/month"
+  },
+  "review_protocol": "Response cards reviewed and updated quarterly. Excursion SOP reviewed annually or after any significant incident. Trend data reviewed quarterly. Drill conducted once per quarter.",
+  "meta": {
+    "summary_for_humans": "This block tells every staff member exactly what to do when a fridge or freezer temperature breaches safe limits. It provides response cards, stock assessment guidance, documentation templates, and trend tracking to turn a stressful event into a controlled, documented response.",
+    "implementation_risks": [
+      "Staff may feel anxious about making discard decisions — the matrix and SOP reduce this anxiety",
+      "Paper response cards can become damaged or illegible — laminate them and replace quarterly",
+      "Without an emergency engineer contact, equipment failures can escalate rapidly overnight"
+    ],
+    "notes_for_engine": "Activate immediately if signals detect temperature excursion events, equipment failures, or EHO observations about corrective action gaps.",
+    "tags": [
+      "food_safety",
+      "temperature",
+      "excursion",
+      "corrective_action",
+      "emergency_response",
+      "SFBB",
+      "equipment_failure",
+      "stock_management"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "independent_cafe",
+      "specialty_coffee",
+      "chain_cafe",
+      "franchise_cafe",
+      "drive_through",
+      "kiosk",
+      "coffee_van",
+      "bakery_cafe"
+    ],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

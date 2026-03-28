@@ -1,0 +1,79 @@
+{
+  "identification": {
+    "tool_id": "T005-05",
+    "tool_name": "Customer-Facing Allergen Info Pack",
+    "block_id": "B005"
+  },
+  "tool_design": {
+    "format": "template",
+    "role_in_intervention": "Turns the master matrix into the printed or digital customer-facing documents used for non-PPDS allergen information in service.",
+    "adaptation_variables": [
+      "counter_space",
+      "menu_size",
+      "brand_tone",
+      "digital_vs_print_display"
+    ],
+    "usage_moment": "When the first matrix is released and every time the master allergen information changes",
+    "expected_output": "Current customer-facing sign, allergen menu or reference sheet, and counter version footer aligned to the live matrix",
+    "linked_blocks": [
+      "B005",
+      "B007"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The customer-facing pack is treated as a standalone document rather than an output from the master matrix.",
+        "what_can_go_wrong": "The counter pack says one thing while the master evidence says another.",
+        "early_signals": [
+          "The pack has no version footer",
+          "Staff update the printed pack by hand"
+        ],
+        "prevention": [
+          "Generate this pack only from the live master matrix",
+          "Replace every copy when the version changes"
+        ],
+        "mitigation": [
+          "Pull all service copies and reissue the pack",
+          "Brief the team on which version is now live"
+        ],
+        "if_occurs_next_signals": [
+          "customer_pack_version_drift"
+        ],
+        "possible_successor_blocks": [
+          "B007"
+        ]
+      },
+      {
+        "warning": "The pack is technically present but hard for staff or customers to use under pressure.",
+        "what_can_go_wrong": "The venue has documentation but still gives slow or unclear allergen information in service.",
+        "early_signals": [
+          "Staff cannot find the right item quickly",
+          "Customers are told to wait while papers are searched"
+        ],
+        "prevention": [
+          "Use clear layout by menu category and keep the pack at point of query",
+          "Test retrieval speed during staff briefings"
+        ],
+        "mitigation": [
+          "Simplify the pack layout",
+          "Split into categories or use a quick index page"
+        ],
+        "if_occurs_next_signals": [
+          "slow_allergen_lookup"
+        ],
+        "possible_successor_blocks": [
+          "B007",
+          "B008"
+        ]
+      }
+    ]
+  },
+  "content": "# Customer-Facing Allergen Info Pack\n\n**Tool ID:** T005-05  \n**Block:** B005 (Allergen Identification & Labelling)  \n**Format:** Template  \n**Primary Role:** Manager  \n**Use Moment:** When the master matrix is first released and after every update  \n**Output:** Customer notice, allergen menu/reference sheet, and version-controlled counter pack\n\n---\n\n## What This Tool Does\n\nThis pack is the customer-facing expression of the allergen source-of-truth for non-PPDS sale. It should be easy to find, easy to read, and clearly tied to the current master version.\n\nUse the same version footer on every page in service.\n\n---\n\n## Part 1: Standard Customer Notice\n\nUse this wording on a sign, menu footer, or display card.\n\n> **Allergen Information**  \n> Please speak to a team member before ordering if you have a food allergy or intolerance.  \n> We keep a current allergen information file for our menu items.  \n> Because ingredients and specials can change, please ask us to check the latest version.\n\n| Footer Field | Complete Here |\n|---|---|\n| Matrix version referenced | |\n| Effective from | |\n| Last reviewed by | |\n\n---\n\n## Part 2: Counter Reference Cover Sheet\n\n| Field | Complete Here |\n|---|---|\n| Pack title | |\n| Current version | |\n| Effective from | |\n| Stored at | Till / Counter / Tablet / Host stand |\n| Escalation contact if unclear | |\n\n**Counter use rules**\n\n<input type=\"checkbox\" disabled /> Keep the pack at the point where customers ask questions  \n<input type=\"checkbox\" disabled /> Replace the full pack when the version changes  \n<input type=\"checkbox\" disabled /> Do not add handwritten changes unless the master is updated too  \n<input type=\"checkbox\" disabled /> If an item is missing, pause and escalate rather than guessing\n\n---\n\n## Part 3: Customer Allergen Menu Template\n\n| Menu Item | Category | Declared Allergens | Key Caution or Cross-Contact Note | Version |\n|---|---|---|---|---|\n| | | | | |\n| | | | | |\n| | | | | |\n| | | | | |\n| | | | | |\n| | | | | |\n\nUse one or more pages as needed. Group by drinks, bakery, savoury, specials, and modifiers if that improves speed of use.\n\n---\n\n## Part 4: Update and Replacement Record\n\n| Date | What Changed | Pack Reissued By | Counter Copy Replaced | Old Copy Removed |\n|---|---|---|---|---|\n| | | | Yes / No | Yes / No |\n| | | | Yes / No | Yes / No |\n| | | | Yes / No | Yes / No |\n\n---\n\n## Common Failure Patterns\n\n### 1. The sign is present but the reference pack is missing\nThe notice only works if the detailed reference is available immediately.\n\n### 2. The pack is present but nobody knows which version is live\nAlways show the same version footer used on the master matrix.\n\n### 3. The pack is too dense for quick service use\nIf staff cannot find an item in seconds, reorganise it by category or add an index page.\n",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T005-05_customer_facing_allergen_info_pack.md",
+    "migration_method": "manual_enrichment"
+  }
+}

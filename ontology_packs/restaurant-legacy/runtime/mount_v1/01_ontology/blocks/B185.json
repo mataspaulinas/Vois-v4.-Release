@@ -1,0 +1,187 @@
+{
+  "block_id": "B185",
+  "name": "Licensing & Employment Law Audit",
+  "version": "v1.0",
+  "domain": "D12_culture_identity",
+  "module": "M16: Regulatory Governance & Risk Management",
+  "state": "enriched",
+  "purpose": "Conducts a thorough audit of all licensing requirements and employment law obligations applicable to the cafe, ensuring compliance with premises licensing, food business registration, music licensing, employment contracts, right-to-work checks, and workplace pensions. This block prevents the legal and financial consequences of operating without proper authorisation or breaching employment law.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Audit all premises licensing requirements: food business registration, alcohol licence (if applicable), pavement licence, late-night refreshment licence",
+      "Verify compliance with music licensing obligations (PPL PRS) for any background music, radio, or streaming",
+      "Review all employment contracts for compliance with the Employment Rights Act 1996 and amendments",
+      "Confirm right-to-work checks are completed and documented for every employee",
+      "Ensure workplace pension auto-enrolment obligations are met under the Pensions Act 2008"
+    ],
+    "secondary_objectives": [
+      "Identify any licensing gaps that could result in fines, closure, or prosecution",
+      "Ensure payslip compliance with the Employment Rights Act 1996 (as amended 2019)",
+      "Review working time compliance including rest breaks, maximum hours, and holiday entitlement",
+      "Verify that employer liability insurance is current and displayed"
+    ]
+  },
+  "why_this_matters": "A cafe operates under a complex web of licensing and employment law that many owners do not fully understand until they face enforcement action. Every cafe must be registered as a food business with the local authority at least 28 days before opening — failure to register is a criminal offence. If the cafe plays any background music (including radio or streaming services), it needs both a PPL and PRS licence. If the cafe serves alcohol, a premises licence and a designated premises supervisor with a personal licence are required under the Licensing Act 2003 — selling alcohol without a licence carries an unlimited fine and up to six months in prison. On the employment side, every employee must receive a written statement of employment particulars on or before their first day of work. Right-to-work checks must be conducted before employment begins — employing someone without the right to work can result in a civil penalty of up to £45,000 per worker. Workplace pension auto-enrolment is mandatory for all eligible employees. National Minimum Wage and National Living Wage must be paid correctly — HMRC conducts targeted enforcement and publicly names non-compliant employers.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0–2 weeks). Week 1: Create a licensing and compliance checklist using T185-01. Verify: (1) food business registration with the local authority, (2) food hygiene rating displayed, (3) employer liability insurance certificate displayed, (4) PPL PRS music licence in place if any music is played, (5) pavement licence if tables are placed outside on public land, (6) alcohol premises licence if applicable. For each item, confirm it is in place, note the renewal date, and flag any gaps. Week 2: Review employment law basics. Check that every employee has: (1) a written statement of employment particulars, (2) a completed right-to-work check with copies retained, (3) correct NMW/NLW rate, (4) itemised payslips, (5) auto-enrolment in a workplace pension or a valid opt-out.",
+    "L2": "SYSTEM BUILD (2–8 weeks). Build a compliance calendar that tracks all renewal dates, filing deadlines, and periodic obligations. Develop template employment contracts that comply with current legislation. Create an employee onboarding checklist that includes right-to-work verification, contract issuance, pension enrolment, and health and safety induction. Review working time compliance: ensure no staff member regularly exceeds 48 hours per week without a signed opt-out, that rest breaks are provided for shifts over 6 hours, and that holiday entitlement is correctly calculated. Ensure the cafe has a basic disciplinary and grievance policy in line with ACAS guidance.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Conduct an annual licensing and employment law audit using an external adviser or solicitor specialising in hospitality law. Subscribe to employment law update services to stay ahead of legislative changes. Build compliance awareness into the management team. Review and update employment contracts whenever legislation changes. Maintain a central compliance file containing all licences, insurance certificates, contracts, right-to-work records, and pension correspondence."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Complete a licensing audit checklist covering all required licences and registrations",
+        "Verify food business registration status with the local authority",
+        "Confirm PPL PRS music licence is in place if any music is played",
+        "Check that employer liability insurance is current and displayed",
+        "Review every employee file for written contract, right-to-work check, and pension enrolment",
+        "Verify NMW/NLW rates are correct for all staff",
+        "Flag and prioritise any compliance gaps for immediate resolution"
+      ],
+      "responsible": "Cafe Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build a compliance calendar tracking all renewal dates and deadlines",
+        "Develop template employment contracts compliant with current legislation",
+        "Create an employee onboarding checklist including all legal requirements",
+        "Review and document working time compliance for all staff",
+        "Establish disciplinary and grievance procedures in line with ACAS guidance",
+        "Verify alcohol licensing compliance if applicable",
+        "Set up a central compliance file for all licences and employment records"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct annual licensing and employment law audits",
+        "Subscribe to employment law update services to track legislative changes",
+        "Build compliance awareness into management team responsibilities",
+        "Review and update employment contracts with each legislative change",
+        "Maintain a comprehensive central compliance file",
+        "Consider membership of a hospitality employers association for ongoing support"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Licensing & Compliance Audit Checklist",
+    "Compliance Calendar with renewal dates and deadlines",
+    "Template Employment Contract (cafe-specific)",
+    "Employee Onboarding Compliance Checklist",
+    "Central Compliance File structure guide"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T185-01",
+        "tool_name": "Licensing & Compliance Audit Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Comprehensive checklist covering all licensing and regulatory requirements for a cafe: food business registration, music licensing, alcohol licensing, pavement licence, employer liability insurance, data protection registration, and signage requirements."
+      },
+      {
+        "tool_id": "T185-02",
+        "tool_name": "Employment Law Compliance Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Per-employee checklist verifying: written contract issued, right-to-work check completed, correct NMW/NLW rate, itemised payslips, pension auto-enrolment, and working time compliance."
+      },
+      {
+        "tool_id": "T185-03",
+        "tool_name": "Compliance Calendar",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Annual calendar tracking all licence renewal dates, insurance expiry, pension re-enrolment dates, and regulatory filing deadlines with advance warning alerts."
+      },
+      {
+        "tool_id": "T185-04",
+        "tool_name": "Template Employment Contract",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Cafe-specific employment contract template including all mandatory particulars required by the Employment Rights Act 1996 (as amended), customisable for different roles and working patterns."
+      },
+      {
+        "tool_id": "T185-05",
+        "tool_name": "Employee Onboarding Compliance Checklist",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Step-by-step onboarding checklist ensuring all legal requirements are met before or on day one: right-to-work check, contract issuance, pension information, health and safety briefing, and data protection notice."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Food business registration lapses or was never completed, making the cafe an unregistered food premises",
+    "Music is played without a PPL PRS licence, resulting in legal action and backdated fees",
+    "Right-to-work checks are not completed before employment begins, exposing the owner to civil penalties up to £45,000 per worker",
+    "Workplace pension auto-enrolment is missed, triggering escalating penalties from the Pensions Regulator"
+  ],
+  "kpis": [
+    "All required licences and registrations current with zero lapses",
+    "100% of employees have a written contract issued on or before day one",
+    "Right-to-work checks completed and documented for every employee before employment starts",
+    "Workplace pension auto-enrolment obligations met with zero Pensions Regulator notices"
+  ],
+  "dependencies": [
+    "B183"
+  ],
+  "constraints": [
+    "Food business registration must be completed at least 28 days before opening",
+    "Employment contracts must be issued on or before the employee's first day of work",
+    "Right-to-work documents must be checked before employment begins — retrospective checks are not valid"
+  ],
+  "time_load": {
+    "L1": "4 hours (licensing audit, employment file review, gap identification)",
+    "L2": "8 hours (compliance calendar, contract templates, onboarding checklist, working time review)",
+    "L3": "4 hours/year (annual audit, legislative updates, contract reviews)"
+  },
+  "review_protocol": "Monthly check of compliance calendar for upcoming renewals and deadlines. Quarterly review of employee files for completeness. Annual full licensing and employment law audit. Immediate review when legislation changes or new staff are hired.",
+  "meta": {
+    "summary_for_humans": "This block audits all licensing requirements and employment law obligations for the cafe, from food business registration and music licensing to employment contracts, right-to-work checks, and pension auto-enrolment.",
+    "implementation_risks": [
+      "Many cafe owners are unaware of music licensing requirements until they receive a demand letter",
+      "Employment law changes frequently — contracts must be reviewed when legislation updates",
+      "Small cafes often delay pension auto-enrolment, not realising the Pensions Regulator actively enforces compliance"
+    ],
+    "notes_for_engine": "Activate alongside B183 (risk assessment). Flag urgently if signals indicate missing licences, employment disputes, or regulatory correspondence.",
+    "tags": [
+      "licensing",
+      "employment_law",
+      "compliance",
+      "contracts",
+      "pensions",
+      "right_to_work",
+      "regulatory",
+      "legal"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "independent_cafe",
+      "specialty_coffee",
+      "chain_cafe",
+      "franchise_cafe",
+      "drive_through",
+      "kiosk",
+      "coffee_van",
+      "bakery_cafe"
+    ],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

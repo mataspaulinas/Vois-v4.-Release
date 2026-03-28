@@ -1,0 +1,44 @@
+{
+  "id": "blk_daily_waste_review",
+  "name": "Launch daily waste review",
+  "description": "Review daily waste incidents, their causes, and the next corrective action so prep loss stops being treated as normal background noise.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: tighten control loops by forcing review and correction of recurring waste",
+  "updated_at": "2026-03-14T00:24:42.974176Z",
+  "effort_hours": 2.0,
+  "dependencies": [
+    "blk_standardize_prep_sheet"
+  ],
+  "tool_ids": [
+    "tool_waste_log"
+  ],
+  "response_pattern_ids": [
+    "rp_prep_control_reset"
+  ],
+  "entry_conditions": [
+    "Waste is spiking or prep overproduction is visible but not reviewed systematically.",
+    "The team can identify what was wasted, why, and who owns the follow-up."
+  ],
+  "contraindications": [
+    "Do not run a waste review that records loss without changing prep or ordering behavior.",
+    "Do not bury avoidable waste inside broad end-of-day admin."
+  ],
+  "owner_role": "kitchen_manager",
+  "expected_time_to_effect_days": 3,
+  "proof_of_completion": [
+    "Waste incidents are logged daily with causes and follow-up actions.",
+    "The review distinguishes controllable waste from true demand noise.",
+    "Prep or ordering changes are being made based on the reviewed loss patterns."
+  ],
+  "successor_block_ids": [],
+  "service_module_ids": [
+    "commercial_and_control_loops",
+    "learning_and_improvement"
+  ],
+  "failure_family_ids": [
+    "control_loop_failure",
+    "commercial_discipline_failure",
+    "learning_failure"
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "vertical": "restaurant",
+  "bundle_version": "v2",
+  "adapter_id": "restaurant",
+  "adapter_version": "v1",
+  "core_version": "v1",
+  "service_module_coverage": [
+    {
+      "id": "intake_and_demand",
+      "name": "Intake and demand shaping",
+      "covered_count": 0,
+      "is_covered": false
+    },
+    {
+      "id": "promise_and_expectations",
+      "name": "Promise and expectation setting",
+      "covered_count": 2,
+      "is_covered": true
+    },
+    {
+      "id": "capacity_and_deployment",
+      "name": "Capacity and deployment",
+      "covered_count": 2,
+      "is_covered": true
+    },
+    {
+      "id": "readiness_and_setup",
+      "name": "Readiness and setup",
+      "covered_count": 4,
+      "is_covered": true
+    },
+    {
+      "id": "live_execution",
+      "name": "Live execution",
+      "covered_count": 4,
+      "is_covered": true
+    },
+    {
+      "id": "handoffs_and_coordination",
+      "name": "Handoffs and coordination",
+      "covered_count": 1,
+      "is_covered": true
+    },
+    {
+      "id": "quality_and_standards",
+      "name": "Quality and standards",
+      "covered_count": 0,
+      "is_covered": false
+    },
+    {
+      "id": "recovery_and_exception_handling",
+      "name": "Recovery and exception handling",
+      "covered_count": 1,
+      "is_covered": true
+    },
+    {
+      "id": "leadership_and_management_rhythm",
+      "name": "Leadership and management rhythm",
+      "covered_count": 2,
+      "is_covered": true
+    },
+    {
+      "id": "commercial_and_control_loops",
+      "name": "Commercial and control loops",
+      "covered_count": 4,
+      "is_covered": true
+    },
+    {
+      "id": "learning_and_improvement",
+      "name": "Learning and improvement",
+      "covered_count": 0,
+      "is_covered": false
+    }
+  ],
+  "failure_family_coverage": [
+    {
+      "id": "demand_capacity_mismatch",
+      "name": "Demand-capacity mismatch",
+      "covered_count": 2,
+      "is_covered": true
+    },
+    {
+      "id": "readiness_failure",
+      "name": "Readiness failure",
+      "covered_count": 2,
+      "is_covered": true
+    },
+    {
+      "id": "role_clarity_failure",
+      "name": "Role clarity failure",
+      "covered_count": 0,
+      "is_covered": false
+    },
+    {
+      "id": "handoff_failure",
+      "name": "Handoff failure",
+      "covered_count": 3,
+      "is_covered": true
+    },
+    {
+      "id": "standards_drift",
+      "name": "Standards drift",
+      "covered_count": 1,
+      "is_covered": true
+    },
+    {
+      "id": "capability_gap",
+      "name": "Capability gap",
+      "covered_count": 1,
+      "is_covered": true
+    },
+    {
+      "id": "leadership_rhythm_failure",
+      "name": "Leadership rhythm failure",
+      "covered_count": 2,
+      "is_covered": true
+    },
+    {
+      "id": "control_loop_failure",
+      "name": "Control-loop failure",
+      "covered_count": 3,
+      "is_covered": true
+    },
+    {
+      "id": "tool_or_resource_friction",
+      "name": "Tool or resource friction",
+      "covered_count": 0,
+      "is_covered": false
+    },
+    {
+      "id": "exception_recovery_failure",
+      "name": "Exception recovery failure",
+      "covered_count": 0,
+      "is_covered": false
+    },
+    {
+      "id": "accountability_failure",
+      "name": "Accountability failure",
+      "covered_count": 0,
+      "is_covered": false
+    },
+    {
+      "id": "learning_failure",
+      "name": "Learning failure",
+      "covered_count": 0,
+      "is_covered": false
+    }
+  ],
+  "response_logic_coverage": [
+    {
+      "id": "stabilize_visibility",
+      "name": "Stabilize visibility",
+      "covered_count": 1,
+      "is_covered": true
+    },
+    {
+      "id": "align_roles_and_coverage",
+      "name": "Align roles and coverage",
+      "covered_count": 2,
+      "is_covered": true
+    },
+    {
+      "id": "strengthen_handoffs",
+      "name": "Strengthen handoffs",
+      "covered_count": 2,
+      "is_covered": true
+    },
+    {
+      "id": "install_operating_rhythm",
+      "name": "Install operating rhythm",
+      "covered_count": 3,
+      "is_covered": true
+    },
+    {
+      "id": "tighten_control_loops",
+      "name": "Tighten control loops",
+      "covered_count": 2,
+      "is_covered": true
+    },
+    {
+      "id": "build_capability",
+      "name": "Build capability",
+      "covered_count": 1,
+      "is_covered": true
+    },
+    {
+      "id": "reduce_operational_complexity",
+      "name": "Reduce operational complexity",
+      "covered_count": 0,
+      "is_covered": false
+    }
+  ],
+  "signal_contract_fields": [
+    "id",
+    "name",
+    "description",
+    "domain",
+    "module",
+    "indicator_type",
+    "evidence_types",
+    "source_types",
+    "temporal_behavior",
+    "likely_co_signals",
+    "adapter_aliases",
+    "owner",
+    "source_ref",
+    "status"
+  ],
+  "block_contract_fields": [
+    "id",
+    "name",
+    "description",
+    "effort_hours",
+    "dependencies",
+    "tool_ids",
+    "response_pattern_ids",
+    "entry_conditions",
+    "contraindications",
+    "owner_role",
+    "expected_time_to_effect_days",
+    "proof_of_completion",
+    "successor_block_ids",
+    "service_module_ids",
+    "failure_family_ids",
+    "owner",
+    "source_ref",
+    "status"
+  ],
+  "tool_contract_fields": [
+    "id",
+    "name",
+    "description",
+    "category",
+    "format",
+    "usage_moment",
+    "expected_output",
+    "adaptation_variables",
+    "block_ids",
+    "owner",
+    "source_ref",
+    "status"
+  ],
+  "governance_warning_counts": {
+    "warnings": 10,
+    "block_contract_gaps": 120,
+    "tool_contract_gaps": 80
+  }
+}

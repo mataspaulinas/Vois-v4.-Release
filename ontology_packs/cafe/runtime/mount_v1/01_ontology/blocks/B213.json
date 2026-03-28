@@ -1,0 +1,21 @@
+{
+  "block_id": "B213",
+  "name": "Food Business Licensing & Approval",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M16: Regulatory Governance & Risk Management",
+  "state": "enriched",
+  "purpose": "Tracks food business operator approval certificates, ensures renewal deadlines are met, and maintains compliance with national food safety authority requirements. Replaces UK-specific EHO framework with EU-aligned food safety inspection readiness.",
+  "tools": [
+    "T213-01",
+    "T213-02",
+    "T213-03"
+  ],
+  "signals": [
+    "S214",
+    "S016"
+  ],
+  "failure_modes": [
+    "FM111"
+  ]
+}

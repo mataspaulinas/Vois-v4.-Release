@@ -1,0 +1,107 @@
+{
+  "timestamp": "2026-02-02T16:16:39.239400",
+  "assessment_type": "follow-up",
+  "signals": {
+    "S002": {
+      "active": true,
+      "notes": "Allergen records incomplete — staff cannot confirm dietary info without checking kitchen",
+      "confidence": "high",
+      "value": null
+    },
+    "S019": {
+      "active": true,
+      "notes": "Queue wait times exceed 5 minutes during peak hours",
+      "confidence": "high",
+      "value": null
+    },
+    "S051": {
+      "active": true,
+      "notes": "No FOH reference materials visible at counter or service points",
+      "confidence": "medium",
+      "value": null
+    },
+    "S063": {
+      "active": true,
+      "notes": "Role confusion during busy periods — staff unsure of task ownership",
+      "confidence": "medium",
+      "value": null
+    },
+    "S070": {
+      "active": true,
+      "notes": "Single person handling all service functions during peak — visible stress and delays",
+      "confidence": "critical",
+      "value": null
+    },
+    "S071": {
+      "active": true,
+      "notes": "No structured pre-shift briefing observed",
+      "confidence": "medium",
+      "value": null
+    },
+    "S073": {
+      "active": true,
+      "notes": "Counter layout creates bottlenecks during multi-task service",
+      "confidence": "medium",
+      "value": null
+    },
+    "S080": {
+      "active": true,
+      "notes": "Tables remain uncleared 6-10 minutes after guests leave",
+      "confidence": "high",
+      "value": null
+    },
+    "S083": {
+      "active": true,
+      "notes": "Staffing levels not calibrated to observed peak demand",
+      "confidence": "high",
+      "value": null
+    },
+    "S133": {
+      "active": true,
+      "notes": "FOH cleanliness inconsistent during service periods",
+      "confidence": "medium",
+      "value": null
+    },
+    "S160": {
+      "active": true,
+      "notes": "Revenue appears heavily concentrated in morning period",
+      "confidence": "medium",
+      "value": null
+    },
+    "S166": {
+      "active": true,
+      "notes": "Team not aligned on roles, responsibilities, or service standards",
+      "confidence": "high",
+      "value": null
+    },
+    "S010": {
+      "active": true,
+      "notes": "Temperature logs missing or incomplete for fridges",
+      "confidence": "high",
+      "value": null
+    },
+    "S030": {
+      "active": true,
+      "notes": "Menu pricing does not reflect actual COGS",
+      "confidence": "medium",
+      "value": null
+    },
+    "S045": {
+      "active": true,
+      "notes": "No waste tracking system in place",
+      "confidence": "medium",
+      "value": null
+    }
+  },
+  "venue_context": {
+    "venue_name": "Kavos Namai Riga",
+    "type": "independent_cafe",
+    "team_size": 3,
+    "location": "Riga, Quiet Centre, Latvia"
+  },
+  "summary": {
+    "blocks": 0,
+    "report_type": "diagnostic",
+    "plan_load": "medium"
+  }
+}

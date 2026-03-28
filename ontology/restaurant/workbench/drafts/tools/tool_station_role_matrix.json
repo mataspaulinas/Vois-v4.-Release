@@ -1,0 +1,22 @@
+{
+  "id": "tool_station_role_matrix",
+  "name": "Station role matrix",
+  "description": "Role matrix that shows primary ownership, backup ownership, escalation paths, and cross-station dependencies for the live floor.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: role clarity needs visible ownership, not verbal assumptions",
+  "updated_at": "2026-03-14T00:24:43.097631Z",
+  "category": "org-design",
+  "format": "matrix",
+  "usage_moment": "Use after service flow mapping and before briefing the team on new role boundaries.",
+  "expected_output": "A visible station matrix with named owners, backups, and escalation routes for blocked moments.",
+  "adaptation_variables": [
+    "station_count",
+    "service_style",
+    "support_roles",
+    "manager_coverage"
+  ],
+  "block_ids": [
+    "blk_create_station_roles"
+  ]
+}

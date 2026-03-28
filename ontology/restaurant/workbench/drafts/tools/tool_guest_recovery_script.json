@@ -1,0 +1,22 @@
+{
+  "id": "tool_guest_recovery_script",
+  "name": "Guest recovery script",
+  "description": "Recovery script covering acknowledgement, ownership, immediate resolution, goodwill boundary, and follow-up so service failures are contained consistently.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: recovery should combine warmth, ownership, and recurrence prevention",
+  "updated_at": "2026-03-14T00:24:43.052314Z",
+  "category": "service-recovery",
+  "format": "playbook_script",
+  "usage_moment": "Use immediately after a service failure or complaint that requires active recovery and documented follow-up.",
+  "expected_output": "A completed recovery action with named owner, resolution path, and follow-up or learning note.",
+  "adaptation_variables": [
+    "complaint_type",
+    "service_level",
+    "goodwill_policy",
+    "manager_availability"
+  ],
+  "block_ids": [
+    "blk_guest_recovery_loop"
+  ]
+}

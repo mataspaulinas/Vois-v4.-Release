@@ -1,0 +1,45 @@
+{
+  "id": "blk_map_service_steps",
+  "name": "Map the service steps",
+  "description": "Capture the real guest-facing service sequence, handoff boundaries, and failure-prone moments so workflow redesign starts from observed reality instead of opinion.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: redesign workflow by observing the real service loop before assigning fixes",
+  "updated_at": "2026-03-14T00:24:42.991140Z",
+  "effort_hours": 3.0,
+  "dependencies": [],
+  "tool_ids": [
+    "tool_service_observation_sheet"
+  ],
+  "response_pattern_ids": [
+    "rp_service_flow_reset"
+  ],
+  "entry_conditions": [
+    "Recurring service delay or complaint patterns suggest the real flow is poorly understood.",
+    "Leaders can observe at least one representative service window before redesigning roles or standards."
+  ],
+  "contraindications": [
+    "Do not start with workshop theory alone when no live observation has been done.",
+    "Do not treat this as a paperwork exercise during an active peak collapse."
+  ],
+  "owner_role": "venue_manager",
+  "expected_time_to_effect_days": 2,
+  "proof_of_completion": [
+    "A timestamped service map exists from arrival to payment and reset.",
+    "Each handoff point has a named owner and at least one observed friction note.",
+    "Three highest-risk flow breaks are identified for intervention sequencing."
+  ],
+  "successor_block_ids": [
+    "blk_create_station_roles"
+  ],
+  "service_module_ids": [
+    "live_execution",
+    "handoffs_and_coordination",
+    "quality_and_standards"
+  ],
+  "failure_family_ids": [
+    "workflow_design_failure",
+    "handoff_failure",
+    "standards_drift"
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "block_id": "B113",
+  "name": "Coffee Cost % Tracking",
+  "version": "v1.0",
+  "domain": "D06_supply_chain",
+  "module": "M06: Supply Chain & Supplier Relations",
+  "state": "enriched",
+  "purpose": "Implements weekly coffee cost percentage monitoring — tracking the cost of all coffee-related inputs (beans, milk, syrups, alternative milks, chocolate, tea) against total drink revenue to maintain the cafe's target GP% and catch cost drift early.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Calculate actual coffee/drink cost percentage weekly: (Coffee & Drink Purchases) / Drink Revenue x 100",
+      "Establish a target coffee cost percentage range (20-28%) appropriate to the cafe's pricing and milk mix",
+      "Track individual cost components (beans, dairy milk, alternative milks, syrups) to identify which is driving any cost increase",
+      "Compare actual coffee costs against theoretical costs from B111 to quantify waste, portioning errors, and unrecorded usage",
+      "Create a weekly coffee cost review rhythm integrated with the food cost tracking (B112)"
+    ],
+    "secondary_objectives": [
+      "Monitor the impact of alternative milk usage on coffee cost percentage — oat milk costs 3-5x more than dairy",
+      "Track the cost impact of coffee dose and grind changes on margin",
+      "Build awareness among baristas of the cost of each drink they make"
+    ]
+  },
+  "why_this_matters": "Coffee drinks are the highest-margin items on a cafe's menu — a well-managed espresso-based drink should achieve a GP% of 70-80%. But this high margin is vulnerable to silent erosion from three directions. First, coffee bean costs: a price increase of £1 per kilogram on a cafe using 20kg per week adds £1,040 to annual costs. Second, milk costs: as the proportion of drinks using alternative milks grows (now 30-40% in many UK specialty cafes), the blended milk cost per drink rises significantly. A standard dairy flat white uses milk costing approximately £0.10, while an oat milk flat white uses milk costing £0.60 — a £0.50 difference that most cafes only partially recoup through a 30-60p surcharge. Third, waste and portioning: baristas who run espresso machines slightly longer, steam too much milk, or pour excessive syrup are eroding margin with every drink. A barista who uses a 20g dose instead of the recipe's 18g dose wastes 11% of the cafe's coffee — approximately £30 per week. Weekly coffee cost tracking catches all three erosion factors by comparing what the cafe spends on drink inputs against what it earns from drink sales. The benchmark for UK cafes is a coffee cost percentage of 20-28%, with specialty cafes using premium beans and high alternative milk usage sitting at the upper end. Any cafe consistently above 28% is either under-pricing, over-portioning, or wasting excessively.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Separate all drink-related purchases from food purchases. Drink costs include: coffee beans (all types — espresso, filter, decaf), all milk (dairy and alternatives), syrups, chocolate powder, tea, chai, matcha, and any other drink ingredients. This separation is essential — blending food and drink costs produces a single average that hides problems in both categories. Record total drink revenue from the till for the same period. Calculate: Coffee Cost % = Total Drink Purchases / Total Drink Revenue x 100. The UK benchmark target is 20-28%. Week 2: If the figure is above 28%, break down the cost into components: coffee beans, dairy milk, alternative milks, syrups and other ingredients. Calculate each as a percentage of drink revenue. This decomposition immediately reveals where the problem lies. In most cases, rising coffee cost percentage is driven by alternative milk usage or coffee dose creep rather than bean prices. Begin recording the weekly figure alongside the food cost data to build a trend.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Weekly Coffee Cost Report mirroring the food cost report (B112): drink revenue, drink purchases by component (beans, dairy, alternatives, other), total drink cost, coffee cost %, target comparison, and variance commentary. Track the alternative milk ratio: what percentage of total drinks use alternative milks? This ratio, combined with the surcharge applied, determines whether alternative milk usage is eroding or contributing to margin. Most UK cafes need an alternative milk surcharge of at least 40p to break even on the cost differential, and 60p to maintain the same GP% as dairy. Monitor coffee dose accuracy: weigh 10 espresso doses weekly and compare against the recipe. If the average dose has drifted upward by even 1g, that is a 5-6% increase in coffee bean cost that will show up in the tracking. Implement a monthly reconciliation: total coffee beans purchased versus theoretical usage (doses pulled x recipe weight). Any significant gap indicates waste, spills, or unrecorded consumption (staff drinks, training, etc.).",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Coffee cost awareness should be part of barista culture, not just management reporting. Share the weekly coffee cost percentage with the team and explain the impact of their actions: 'Every gram over the recipe dose costs the cafe £X per week.' Implement barista dose discipline checks during service. Track the GP contribution of each drink category: espresso-based drinks, filter coffee, cold drinks, hot chocolate, tea. This analysis reveals where the drink menu makes money and where it does not. Use coffee cost data in roaster negotiations (B104): accurate consumption data strengthens the cafe's position when discussing pricing. Link coffee cost tracking to the overall financial dashboard and monthly P&L. Review and adjust the coffee cost target annually based on bean price trends, milk pricing, and menu changes."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Separate all drink-related purchase invoices from food purchases",
+        "Calculate total drink revenue from the till for the first full week",
+        "Calculate coffee cost percentage for Week 1 and compare against 20-28% benchmark",
+        "Break down drink costs by component: beans, dairy, alternatives, syrups, other",
+        "Identify which component is the largest cost driver",
+        "Begin recording weekly coffee cost data alongside food cost data",
+        "Check current alternative milk surcharge covers the cost differential"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a Weekly Coffee Cost Report template with component breakdown",
+        "Track the alternative milk usage ratio and its margin impact weekly",
+        "Monitor coffee dose accuracy through weekly 10-dose weigh checks",
+        "Implement monthly bean reconciliation: purchased vs theoretical usage",
+        "Investigate any gap between actual and theoretical coffee consumption",
+        "Compare coffee cost trends with roaster pricing to isolate internal vs external factors",
+        "Present coffee cost data alongside food cost data in monthly management meetings"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Share weekly coffee cost percentage with the barista team",
+        "Implement barista dose discipline checks during service",
+        "Track GP contribution by drink category for menu optimisation",
+        "Use consumption data in roaster pricing negotiations",
+        "Review coffee cost target annually based on market trends"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Weekly Coffee Cost Report template",
+    "Coffee Cost Component Breakdown tracker",
+    "Alternative Milk Margin Analysis",
+    "Monthly Bean Reconciliation sheet",
+    "Dose Accuracy Monitoring log"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T113-01",
+        "tool_name": "Weekly Coffee Cost Report",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Weekly report: drink revenue, coffee bean cost, dairy milk cost, alternative milk cost, other drink ingredient costs, total coffee cost %, target comparison, and variance commentary."
+      },
+      {
+        "tool_id": "T113-02",
+        "tool_name": "Alternative Milk Margin Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Weekly tracker showing alternative milk usage as a percentage of total drinks, cost per alt milk serve, surcharge applied, and net margin impact versus dairy equivalent."
+      },
+      {
+        "tool_id": "T113-03",
+        "tool_name": "Coffee Dose Accuracy Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Head Barista",
+        "description": "Weekly log of 10 randomly weighed espresso doses compared to the recipe weight, calculating average dose, variance, and estimated cost impact of any drift."
+      },
+      {
+        "tool_id": "T113-04",
+        "tool_name": "Monthly Bean Reconciliation Sheet",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Monthly comparison of coffee beans purchased against theoretical consumption (total shots pulled x recipe dose weight), identifying unexplained gaps due to waste, staff drinks, or training."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Drink and food costs are tracked as a single blended figure, hiding problems in both categories",
+    "Alternative milk cost impact is ignored because the surcharge creates an illusion of coverage",
+    "Coffee dose drift is never measured, allowing baristas to unknowingly waste 10-15% of bean stock",
+    "Staff drinks, training, and waste are not accounted for, creating a persistent gap between theoretical and actual costs"
+  ],
+  "kpis": [
+    "Coffee cost percentage maintained within 20-28% on a 4-week rolling average",
+    "Alternative milk surcharge covering at least 100% of the cost differential over dairy",
+    "Average espresso dose within 0.5g of recipe weight across weekly checks",
+    "Bean reconciliation gap below 10% between purchased and theoretical consumption"
+  ],
+  "dependencies": ["B111"],
+  "constraints": [
+    "Accurate tracking requires till systems that separate drink and food revenue",
+    "Alternative milk cost tracking requires recording which milk type is used per drink — EPOS modifiers are essential",
+    "Bean reconciliation requires shot counting capability from the espresso machine or EPOS"
+  ],
+  "time_load": {
+    "L1": "1 hour/week (invoice separation, calculation, recording)",
+    "L2": "2 hours/week (component breakdown, dose checks, reconciliation)",
+    "L3": "1 hour/month (trend review, team communication, target adjustment)"
+  },
+  "review_protocol": "Weekly coffee cost report by manager. Monthly bean reconciliation and dose accuracy review. Quarterly coffee cost trend analysis. Annual target review aligned with roaster pricing and menu changes.",
+  "meta": {
+    "summary_for_humans": "This block implements weekly coffee cost percentage tracking — monitoring beans, milk, alternatives, and syrups against drink revenue to maintain the 20-28% target. It catches the silent margin erosion from dose creep, alternative milk costs, and waste before it compounds into significant financial loss.",
+    "implementation_risks": [
+      "If the till system cannot distinguish drink from food revenue, this tracking requires manual estimation which reduces accuracy",
+      "Baristas may perceive dose checks as a lack of trust — frame it as quality control, not surveillance",
+      "Alternative milk brands have different per-litre costs that change frequently — update pricing regularly"
+    ],
+    "notes_for_engine": "Activate after B111 (Menu Item Costing Calculator) is complete. Flag as urgent if signals indicate coffee cost percentage above 28%, declining drink GP%, or high alternative milk usage without adequate surcharging.",
+    "tags": ["supply_chain", "coffee_cost", "GP_percentage", "weekly_tracking", "milk", "dose_accuracy", "margin", "financial_control"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

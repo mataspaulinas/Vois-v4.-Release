@@ -1,0 +1,29 @@
+{
+  "id": "sig_ownership_confusion_in_service",
+  "name": "Ownership confusion in service",
+  "description": "Work stalls or doubles back because the team is unsure who owns the next action, escalation, or guest-facing decision.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: role clarity failures appear first as ambiguous ownership in live flow",
+  "updated_at": "2026-03-14T00:41:10.244129Z",
+  "domain": "workforce",
+  "module": "role_ownership",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "live_observation",
+    "manager_notes"
+  ],
+  "source_types": [
+    "audit_notes",
+    "consultant_observation"
+  ],
+  "temporal_behavior": "recurring",
+  "likely_co_signals": [
+    "sig_staff_confusion",
+    "sig_service_delay"
+  ],
+  "adapter_aliases": [
+    "unclear_owner",
+    "nobody_took_it"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "blk_void_review_huddle",
+  "name": "Run void and comp review huddle",
+  "description": "Review avoidable voids and comps in a short huddle so the venue closes the loop on loss incidents instead of absorbing them as normal service cost.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: tighten control loops by making avoidable loss visible, reviewed, and owned",
+  "updated_at": "2026-03-14T00:24:43.026305Z",
+  "effort_hours": 2.0,
+  "dependencies": [
+    "blk_install_pre_shift_brief"
+  ],
+  "tool_ids": [
+    "tool_void_review_template"
+  ],
+  "response_pattern_ids": [
+    "rp_leadership_rhythm_reset",
+    "rp_prep_control_reset"
+  ],
+  "entry_conditions": [
+    "Voids or comps are rising and the venue cannot explain which are avoidable.",
+    "A leader can review incidents with enough detail to assign corrective actions."
+  ],
+  "contraindications": [
+    "Do not use the huddle to blame staff without identifying process causes.",
+    "Do not review losses if the venue will not track whether follow-up actions were completed."
+  ],
+  "owner_role": "venue_manager",
+  "expected_time_to_effect_days": 2,
+  "proof_of_completion": [
+    "A short review cadence exists for avoidable voids and comps.",
+    "Each reviewed incident has a likely cause and named follow-up action.",
+    "The venue can distinguish repeatable process losses from true one-off exceptions."
+  ],
+  "successor_block_ids": [],
+  "service_module_ids": [
+    "commercial_and_control_loops",
+    "leadership_and_management_rhythm",
+    "learning_and_improvement"
+  ],
+  "failure_family_ids": [
+    "control_loop_failure",
+    "accountability_failure",
+    "learning_failure"
+  ]
+}

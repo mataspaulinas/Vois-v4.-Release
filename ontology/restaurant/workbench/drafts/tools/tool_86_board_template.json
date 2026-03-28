@@ -1,0 +1,22 @@
+{
+  "id": "tool_86_board_template",
+  "name": "86 board template",
+  "description": "Visible status board for depletion risk, substitutions, and item availability decisions before they reach the guest as surprise.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: stock truth should be shared before service pressure turns it into confusion",
+  "updated_at": "2026-03-14T00:24:43.041266Z",
+  "category": "inventory",
+  "format": "status_board",
+  "usage_moment": "Use before service and update whenever item availability materially changes.",
+  "expected_output": "A visible list of 86 items, depletion risks, substitutions, and sell-through priorities.",
+  "adaptation_variables": [
+    "menu_size",
+    "critical_items",
+    "substitution_policy",
+    "update_owner"
+  ],
+  "block_ids": [
+    "blk_daily_86_board"
+  ]
+}

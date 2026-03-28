@@ -1,0 +1,168 @@
+{
+  "block_id": "B079",
+  "name": "Absence Cover Protocol",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Defines a clear, pre-planned protocol for managing unexpected staff absences — from the initial notification through to same-day cover arrangements — ensuring the cafe can open and operate safely without panic, last-minute scrambling, or the owner automatically becoming the default cover.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish a clear absence notification process so the manager knows about absences as early as possible",
+      "Create a pre-agreed call-out list of team members willing and available to pick up extra shifts at short notice",
+      "Define minimum safe staffing levels for each shift type so the manager knows when a gap is critical",
+      "Develop contingency service plans for operating with reduced staff without compromising safety or quality",
+      "Track absence data to identify patterns that may indicate underlying issues"
+    ],
+    "secondary_objectives": [
+      "Reduce the emotional and operational stress of last-minute absence on the remaining team",
+      "Prevent the owner from being the permanent backup, protecting their wellbeing and strategic time",
+      "Build a culture of mutual support where team members voluntarily help cover gaps"
+    ]
+  },
+  "why_this_matters": "Unexpected absence is not a question of 'if' but 'when.' In the UK hospitality sector, average absence rates run at around four to five days per employee per year, with winter months seeing spikes from cold and flu. For a cafe with eight staff, that is 32 to 40 absent days per year — roughly one unexpected absence every nine working days. Without a protocol, each absence triggers the same chaotic sequence: panicked texts at 6am, the owner abandoning their planned day to cover the shift, the remaining team stretched thin and stressed, and service quality suffering visibly. Over time, this pattern burns out the owner, exhausts the team, and erodes customer experience. A clear absence cover protocol transforms this from crisis to managed inconvenience. When the team knows exactly how to report an absence, when the manager has a pre-agreed call-out list, and when there is a contingency plan for operating with reduced numbers, the emotional temperature drops dramatically. The protocol must also comply with employment law. Under the Employment Rights Act 1996, employees are entitled to reasonable time off for dependants in emergencies. Absence management policies must not discriminate against protected characteristics under the Equality Act 2010 — for example, disability-related absence requires reasonable adjustments. The protocol should be firm but fair: clear expectations about notification, genuine support for those who are genuinely unwell, and a consistent process for managing persistent or patterned absence.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Define the absence notification process. At minimum: team members must notify the manager by phone (not text) at least two hours before their shift starts. If the manager cannot be reached, they call the designated backup contact. Provide the contact numbers to all staff and post them in the staff area. Establish a call-out list — ask every team member whether they are willing to be contacted for short-notice cover, and on which days they are typically available. Rank the list by reliability and proximity to the venue. Week 2: Define minimum safe staffing levels for each shift type. For most cafes: an opening shift needs at least two people (one for coffee, one for till/floor), a peak shift needs three or more depending on volume, and a closing shift needs at least two. If a gap cannot be filled from the call-out list, the manager must decide whether to operate with reduced service (e.g., no food, limited menu) or close. Document these decision criteria so shift leads can make the call if the manager is also unavailable. Create a simple Absence Log — a record of every absence including date, shift, reason given, notice provided, cover arranged, and any impact on service.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a comprehensive Absence Management Policy covering notification requirements, return-to-work conversations, trigger points for formal absence management, and alignment with ACAS guidance on managing absence. Build return-to-work interview templates — a short conversation after every absence, not as punishment but as genuine welfare check and an opportunity to identify any support needed. This is particularly important for disability-related or mental-health-related absence where reasonable adjustments may be required under the Equality Act 2010. Create a Reduced Service Contingency Plan for different staffing scenarios: one person down, two people down, key person absent (head barista, manager). Each scenario should specify which services continue, which are suspended, and what communication goes to customers (e.g., a sign saying 'Reduced menu today — we apologise for any inconvenience'). Analyse absence data monthly for patterns: is the same person always absent on Mondays? Is a particular shift type generating more absences? Are absences clustered around certain periods? Patterned absence may indicate personal issues, shift dissatisfaction, or even workplace conflict that needs addressing.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Build a bank of casual or part-time staff who can be called in for cover — even one or two reliable people on zero-hours contracts provide a critical buffer. Consider partnering with a local hospitality agency for emergency cover, understanding that agency staff will need a basic induction before working a shift. Track absence metrics as a business health indicator: days lost per employee per year, short-term versus long-term absence split, absence cost (lost revenue plus cover costs), and Bradford Factor scores for identifying persistent short-term absence. Benchmark against hospitality sector norms. Create a positive attendance recognition programme — acknowledge and thank team members who maintain strong attendance records without penalising those with genuine health needs. Integrate absence data with workforce planning (B064) to ensure staffing levels include a buffer for predicted absence rates rather than planning every shift at exactly minimum numbers."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Define and communicate the absence notification process (phone call, two hours minimum notice)",
+        "Create a call-out list of team members willing to cover short-notice shifts",
+        "Define minimum safe staffing levels for each shift type",
+        "Establish decision criteria for reduced service or closure when gaps cannot be filled",
+        "Create an Absence Log for recording every absence with details and impact",
+        "Ensure all staff have the manager's and backup contact's phone numbers",
+        "Post the notification process and contact numbers in the staff area"
+      ],
+      "responsible": "Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a comprehensive Absence Management Policy aligned with ACAS guidance",
+        "Create a return-to-work interview template for use after every absence",
+        "Build a Reduced Service Contingency Plan for different staffing shortage scenarios",
+        "Analyse absence data monthly for patterns and trigger investigations where needed",
+        "Train managers on conducting return-to-work conversations supportively and consistently",
+        "Ensure the policy addresses disability-related and mental-health-related absence sensitively",
+        "Link absence triggers to the formal capability process where patterns persist"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Build a bank of casual or part-time cover staff",
+        "Consider partnering with a hospitality staffing agency for emergency situations",
+        "Track absence metrics including Bradford Factor scores and cost of absence",
+        "Benchmark absence rates against hospitality sector norms",
+        "Introduce a positive attendance recognition programme",
+        "Integrate predicted absence rates into workforce planning buffer calculations"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Absence Notification Process document (posted in staff area)",
+    "Cover Call-Out List with availability and contact details",
+    "Reduced Service Contingency Plan for different staffing scenarios",
+    "Absence Management Policy (ACAS-aligned)",
+    "Absence Data Log and Analysis template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T079-01",
+        "tool_name": "Absence Notification Procedure Card",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Laminated card for the staff area showing the absence notification process: who to call, when, how, and what information to provide. Includes manager and backup contact numbers."
+      },
+      {
+        "tool_id": "T079-02",
+        "tool_name": "Cover Call-Out List",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Ranked list of team members available for short-notice cover with typical availability by day, contact numbers, and notes on which stations they can cover."
+      },
+      {
+        "tool_id": "T079-03",
+        "tool_name": "Reduced Service Contingency Plan",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Pre-planned contingency responses for different absence scenarios (one down, two down, key person absent) specifying which services continue, which are suspended, and customer communication scripts."
+      },
+      {
+        "tool_id": "T079-04",
+        "tool_name": "Return-to-Work Interview Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Short structured conversation guide for use after every absence, covering reason for absence, current wellbeing, any support needed, and any workplace adjustments required."
+      },
+      {
+        "tool_id": "T079-05",
+        "tool_name": "Absence Data Dashboard",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly tracker capturing absence days per employee, Bradford Factor scores, short-term versus long-term split, cost of absence, pattern analysis, and benchmarking against sector averages."
+      }
+    ]
+  },
+  "failure_modes": [
+    "No call-out list exists, so every absence triggers panic and the owner becomes the default cover",
+    "Minimum staffing levels are not defined, so shifts operate dangerously understaffed without anyone recognising the risk",
+    "Return-to-work conversations are not conducted, allowing patterned absence to continue unaddressed",
+    "Absence policy is applied inconsistently, creating perceptions of unfairness and potential discrimination claims"
+  ],
+  "kpis": [
+    "90% of unexpected absences covered from the call-out list without owner intervention",
+    "All absences reported at least two hours before shift start per the notification process",
+    "Return-to-work conversation completed after every absence",
+    "Average absence rate at or below the hospitality sector average of five days per employee per year",
+    "Zero shifts operating below defined minimum safe staffing levels"
+  ],
+  "dependencies": ["B077", "B078"],
+  "constraints": [
+    "Absence management must comply with ACAS guidance and employment law including the Equality Act 2010",
+    "Disability-related absence requires reasonable adjustments and cannot be treated the same as other absence",
+    "Time off for dependants in emergencies is a statutory right under the Employment Rights Act 1996",
+    "Call-out list participation must be voluntary — staff cannot be compelled to be available on their days off"
+  ],
+  "time_load": {
+    "L1": "2 hours (notification process, call-out list, minimum staffing levels)",
+    "L2": "6 hours (policy drafting, contingency plans, manager training, return-to-work setup)",
+    "L3": "1 hour/month (data analysis, pattern review, cover bank management)"
+  },
+  "review_protocol": "After every absence: return-to-work conversation and absence log updated. Monthly: absence data reviewed for patterns. Quarterly: call-out list reviewed and updated. Six-monthly: absence policy reviewed for compliance and effectiveness. Annually: full absence data analysis with sector benchmarking.",
+  "meta": {
+    "summary_for_humans": "This block creates a clear protocol for managing unexpected staff absences, from notification through to same-day cover, ensuring the cafe can operate safely without the owner becoming the permanent backup plan.",
+    "implementation_risks": [
+      "Call-out list may be too short in very small teams to provide reliable cover",
+      "Return-to-work conversations require sensitivity training for managers, particularly around mental health",
+      "Patterned absence investigations must be handled carefully to avoid discrimination claims"
+    ],
+    "notes_for_engine": "Activate when signals indicate frequent disruption from absence, owner constantly covering shifts, or no contingency plans in place. Depends on B077 and B078 for risk context and skill coverage.",
+    "tags": ["absence", "cover", "contingency", "staffing", "call_out", "return_to_work", "resilience", "ACAS", "wellbeing"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "block_id": "B141",
+  "name": "New Customer Acquisition",
+  "version": "v1.0",
+  "domain": "D08_marketing_brand",
+  "module": "M08: Brand Visibility & Customer Acquisition",
+  "state": "enriched",
+  "purpose": "Creates a deliberate strategy for attracting new customers to the cafe, ensuring the business has a healthy pipeline of first-time visitors to replace natural attrition, grow revenue, and expand its customer base. This block recognises that even the best cafes lose customers over time through moving, lifestyle changes, or competition — and that without active acquisition, revenue declines.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Identify the cafe's primary customer acquisition channels and understand which ones generate the most first-time visitors",
+      "Develop targeted acquisition tactics for different customer segments: local residents, office workers, tourists, and passers-by",
+      "Create a first-visit experience that maximises the chance of converting a new customer into a repeat visitor",
+      "Measure customer acquisition effectiveness through tracking methods appropriate to a small cafe",
+      "Build a sustainable acquisition engine that generates a steady flow of new customers without requiring constant promotional discounting"
+    ],
+    "secondary_objectives": [
+      "Reduce the cost of acquiring each new customer by focusing on high-return, low-cost channels",
+      "Create a referral programme that turns existing customers into acquisition agents",
+      "Develop partnerships with local businesses, hotels, and offices that drive a consistent flow of new visitors",
+      "Ensure the cafe is visible and discoverable in the physical environment through excellent signage and kerb appeal"
+    ]
+  },
+  "why_this_matters": "Every cafe loses customers over time. People move house, change jobs, alter their routines, discover competitors, or simply stop visiting. Industry research suggests that even the most loyal cafe customer base turns over by 15-25% per year. This means a cafe with 500 regular customers needs to attract 75-125 new regulars every year just to maintain its current revenue. To grow, it needs even more. Yet most independent cafes have no deliberate customer acquisition strategy. They rely on walk-in traffic (which depends entirely on location and signage), word-of-mouth (which they do not actively encourage), and occasional social media posts (which reach their existing followers, not new ones). The result is a slow, often imperceptible decline in customer numbers that only becomes obvious when revenue drops. A deliberate acquisition strategy treats new customer generation as a core business activity, not a happy accident. It identifies where new customers come from, invests in the channels that work, creates systems for converting first-time visitors into regulars, and measures the results. For cafes in competitive areas, acquisition is the difference between growing market share and slowly ceding it to competitors who are more visible, more active, and more welcoming to new faces.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Identify current acquisition channels. How do new customers find you today? Ask new faces 'Is this your first time here? How did you find us?' for one week and note the responses. Common channels include: walk-past (saw the shop), Google search (found you online), Instagram (saw a post), word-of-mouth (friend recommended), delivery platform (ordered delivery, now visiting), and local marketing (flyer, event, partnership). Tally the results to understand your current acquisition mix. Week 2: Assess the first-visit experience from a new customer's perspective. Walk past the cafe as if for the first time: is the signage clear and inviting? Is the entrance welcoming? Can a new customer easily understand what you offer and how to order? Is there a visible menu outside? Does the interior feel approachable or intimidating? Ask a friend who has never visited to do this exercise and give honest feedback. Fix any immediate barriers: if the ordering process is confusing, add clear signage. If the menu is overwhelming, highlight recommendations. If staff do not acknowledge new faces, train them to welcome unfamiliar customers warmly.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop targeted acquisition tactics for each priority channel. For walk-past traffic: optimise kerb appeal (B145), install an A-frame board with a compelling daily message, and ensure outdoor seating (if available) is visible and inviting. For online discovery: GBP optimisation (B134), review generation (B135), and Instagram (B137) are the primary channels. For word-of-mouth: create a referral programme — give existing regulars a card with 'bring a friend and both get a free pastry' or similar. For local partnerships: approach nearby offices, hotels, gyms, and co-working spaces about placing flyers, offering corporate discounts, or cross-promoting. Design a 'new customer welcome' within the service flow: staff should make first-time visitors feel especially welcome, explain anything about the ordering process that is not obvious, and offer a recommendation if the customer seems unsure. Create a first-visit incentive: a loyalty card where the first stamp is already applied, a small complimentary item with their order, or a voucher for their next visit. These small gestures significantly increase the probability of a second visit.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Customer acquisition should be a measured, ongoing discipline. Track new customer footfall using a simple method: a tally counter at the till where staff mark first-time visitors (based on asking or recognising unfamiliar faces), or a question in the loyalty programme sign-up. Set monthly new customer targets and track against them. Analyse which acquisition channels deliver the highest lifetime value — a customer who discovers the cafe through a friend's recommendation may visit more frequently than one who found a discount offer. Invest accordingly. Develop seasonal acquisition campaigns: a January new year, new cafe campaign, a back-to-school September push for nearby parents, or a summer tourist welcome pack. Partner with local events, markets, and festivals for brand exposure to new audiences. Evaluate whether a permanent local advertising presence (bus stop poster, local magazine ad, community newsletter) generates a measurable return. Review the acquisition strategy quarterly, retiring tactics that do not generate results and scaling those that do."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Conduct a one-week survey asking new customers how they found the cafe",
+        "Identify the current acquisition channel mix and note the top three sources",
+        "Walk the first-visit experience from a new customer's perspective and identify barriers",
+        "Fix any obvious barriers: confusing ordering, unwelcoming entrance, unclear signage",
+        "Train staff to welcome new faces warmly and offer recommendations",
+        "Ensure the menu is visible outside and highlights the cafe's best offerings"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop targeted acquisition tactics for each priority channel",
+        "Create a referral programme for existing customers",
+        "Approach local businesses, hotels, and offices about partnership opportunities",
+        "Design a first-visit experience flow including welcome, recommendation, and return incentive",
+        "Install or optimise A-frame signage with compelling daily messages",
+        "Track new customer acquisition by channel on a weekly basis"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Set and track monthly new customer targets",
+        "Analyse which acquisition channels deliver the highest customer lifetime value",
+        "Develop seasonal acquisition campaigns aligned with local events and calendar",
+        "Evaluate permanent local advertising for measurable ROI",
+        "Review acquisition strategy quarterly and adjust based on channel performance",
+        "Build brand exposure through partnerships with local events and community organisations"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Customer Acquisition Channel Analysis",
+    "First-Visit Experience Assessment and Improvement Plan",
+    "Referral Programme Materials",
+    "Local Partnership Outreach List and Pitch",
+    "Monthly New Customer Tracker"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T141-01",
+        "tool_name": "Acquisition Channel Tracker",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "A weekly tracker recording how new customers discovered the cafe, categorised by channel (walk-past, Google, Instagram, word-of-mouth, partnership, other). Used to identify the most effective acquisition sources."
+      },
+      {
+        "tool_id": "T141-02",
+        "tool_name": "First-Visit Experience Audit Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "A checklist for evaluating the first-visit experience from a new customer's perspective: visibility, signage, entrance, ordering clarity, staff welcome, menu accessibility, and return incentive."
+      },
+      {
+        "tool_id": "T141-03",
+        "tool_name": "Referral Programme Kit",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "A complete referral programme package: programme rules, referral card design, staff briefing on how to distribute and explain cards, and tracking method for measuring programme effectiveness."
+      },
+      {
+        "tool_id": "T141-04",
+        "tool_name": "Local Partnership Outreach Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A template for approaching local businesses about partnership opportunities: suggested partnership formats, mutual benefits, flyer/discount card design, and follow-up tracking."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The cafe relies entirely on location for new customers and does nothing proactive when foot traffic declines",
+    "Discounts and promotions attract deal-seekers who visit once and never return, wasting margin without building the customer base",
+    "The first-visit experience is poor (confusing ordering, unwelcoming staff) so new customers do not return regardless of how they were acquired",
+    "Acquisition effort is sporadic — a burst of activity followed by months of neglect — creating inconsistent results"
+  ],
+  "kpis": [
+    "New customer source tracked weekly with at least 3 channels actively generating first-time visitors",
+    "First-visit-to-second-visit conversion rate improving quarter on quarter",
+    "Referral programme generating at least 5 new customers per month once established",
+    "Total customer base stable or growing year on year"
+  ],
+  "dependencies": ["B134", "B140"],
+  "constraints": [
+    "Acquisition tactics must be financially sustainable — avoid deep discounting that attracts non-loyal customers",
+    "Staff time for welcoming new customers and distributing referral materials must be balanced with operational duties",
+    "Partnership approaches to local businesses require professionalism and should offer genuine mutual benefit"
+  ],
+  "time_load": {
+    "L1": "4 hours (channel survey, first-visit audit, initial barrier fixes)",
+    "L2": "6 hours (referral programme setup, partnership outreach, A-frame strategy, tracking setup)",
+    "L3": "2 hours/month (tracking, analysis, seasonal campaign planning)"
+  },
+  "review_protocol": "Weekly new customer tally. Monthly acquisition channel analysis. Quarterly acquisition strategy review. Annual assessment of customer base growth and acquisition cost effectiveness.",
+  "meta": {
+    "summary_for_humans": "This block creates a deliberate strategy for attracting new customers through multiple channels: walk-past visibility, online discovery, word-of-mouth referral, and local partnerships. It also optimises the first-visit experience to maximise conversion from trial to regular.",
+    "implementation_risks": [
+      "Owners may assume they do not need an acquisition strategy because they are in a good location, but even great locations face competition and footfall changes",
+      "Referral programmes can feel awkward for British cafe culture if not designed with appropriate subtlety",
+      "Measuring new customer acquisition accurately is inherently difficult without a formal check-in or loyalty system"
+    ],
+    "notes_for_engine": "Activate when signals indicate declining foot traffic, revenue plateau, or when the cafe is in a competitive area. Connects to B134 (GBP for online discovery), B140 (brand identity for consistency), and B145 (exterior for walk-past appeal). Also relevant when the cafe is new and building its initial customer base.",
+    "tags": ["marketing", "acquisition", "new_customers", "referral", "partnership", "first_visit", "growth", "footfall"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

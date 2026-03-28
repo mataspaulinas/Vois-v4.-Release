@@ -1,0 +1,85 @@
+{
+  "generated_at": "2026-03-27T06:57:30.250736Z",
+  "fixture_count": 6,
+  "route_count": 104,
+  "api_categories": [
+    "<path:path>",
+    "activity",
+    "ai-intake",
+    "auth",
+    "block",
+    "blocks",
+    "brand",
+    "brands",
+    "briefing",
+    "chat",
+    "copilot",
+    "help",
+    "kb",
+    "notifications",
+    "notifications-clear",
+    "ontology",
+    "profile",
+    "profiles",
+    "project",
+    "projects",
+    "report",
+    "root",
+    "run",
+    "search",
+    "settings",
+    "sigmap",
+    "signal",
+    "tasks",
+    "template",
+    "templates",
+    "tool",
+    "tools",
+    "workspace"
+  ],
+  "frontend_files_with_fetches": 7,
+  "fixtures": [
+    {
+      "fixture_id": "F001_normal_followup_warsaw",
+      "category": "normal venue",
+      "active_signal_count": 1,
+      "report_type": "ai",
+      "plan_load": "TRIAGE"
+    },
+    {
+      "fixture_id": "F002_degraded_pegasas",
+      "category": "degraded venue",
+      "active_signal_count": 17,
+      "report_type": "ai",
+      "plan_load": "TRIAGE"
+    },
+    {
+      "fixture_id": "F003_conflicting_capacity_vs_cost",
+      "category": "conflicting signals case",
+      "active_signal_count": 5,
+      "report_type": "ai",
+      "plan_load": "TRIAGE"
+    },
+    {
+      "fixture_id": "F004_existing_active_plan_kaunas",
+      "category": "existing active plan case",
+      "active_signal_count": 4,
+      "report_type": "ai",
+      "plan_load": "TRIAGE"
+    },
+    {
+      "fixture_id": "F005_ambiguous_ai_preopening_muzos2",
+      "category": "partial/ambiguous AI extraction case",
+      "active_signal_count": 46,
+      "report_type": "ai",
+      "plan_load": "TRIAGE"
+    },
+    {
+      "fixture_id": "F006_complex_klaipeda_multi_surface",
+      "category": "richer operational complexity",
+      "active_signal_count": 15,
+      "report_type": "ai",
+      "plan_load": "TRIAGE"
+    }
+  ]
+}

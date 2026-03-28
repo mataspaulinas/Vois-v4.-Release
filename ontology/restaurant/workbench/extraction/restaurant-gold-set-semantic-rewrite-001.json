@@ -1,0 +1,468 @@
+{
+  "vertical": "restaurant",
+  "failure_modes": [
+    {
+      "id": "fm_undefined_workflow",
+      "name": "Undefined workflow structure",
+      "description": "The service sequence, decision rules, and escalation logic are too implicit to hold under live pressure.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: workflow design failure expressed through restaurant service flow",
+      "status": "review",
+      "domain": "service_delivery"
+    },
+    {
+      "id": "fm_host_flow_breakdown",
+      "name": "Host flow breakdown",
+      "description": "Quoting, pacing, seating release, and reservation handling are not tight enough to shape arrival demand cleanly.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: expectation-setting and handoff logic in hospitality intake",
+      "status": "review",
+      "domain": "service_delivery"
+    },
+    {
+      "id": "fm_deployment_misalignment",
+      "name": "Deployment misalignment",
+      "description": "Coverage, sectioning, and peak-role placement do not match the real demand pattern or skill mix of the shift.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: demand-capacity mismatch expressed in FOH deployment",
+      "status": "review",
+      "domain": "workforce"
+    },
+    {
+      "id": "fm_pass_communication_gap",
+      "name": "Pass communication gap",
+      "description": "Timing language, pickup ownership, and cross-station handoff rules at the pass are too weak to move food cleanly.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: handoff failure expressed in kitchen-to-floor transfer",
+      "status": "review",
+      "domain": "kitchen_operations"
+    },
+    {
+      "id": "fm_prep_system_breakdown",
+      "name": "Prep system breakdown",
+      "description": "Prep logic, depletion visibility, and replenishment discipline are not strong enough to keep service execution stable.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: readiness failure expressed through prep and replenishment",
+      "status": "review",
+      "domain": "kitchen_operations"
+    },
+    {
+      "id": "fm_shift_readiness_gap",
+      "name": "Shift readiness gap",
+      "description": "The venue enters service without a reliable readiness check across stations, people, stock, and live priorities.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: readiness failure expressed through service start conditions",
+      "status": "review",
+      "domain": "kitchen_operations"
+    },
+    {
+      "id": "fm_briefing_absence",
+      "name": "Leadership briefing gap",
+      "description": "Critical pre-service direction is missing, so the team starts without a shared read on pressure points, priorities, or constraints.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: leadership rhythm failure expressed through pre-shift briefing absence",
+      "status": "review",
+      "domain": "leadership_rhythm"
+    },
+    {
+      "id": "fm_manager_presence_gap",
+      "name": "Manager presence gap",
+      "description": "Managers are not visibly positioned where live reset, coaching, and escalation are needed during high-risk moments.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: leadership rhythm failure expressed through floor presence",
+      "status": "review",
+      "domain": "leadership_rhythm"
+    },
+    {
+      "id": "fm_open_close_control_gap",
+      "name": "Open-close control gap",
+      "description": "Opening and closing are treated as chores instead of enforced control loops that protect the next service cycle.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: readiness and control-loop failures expressed through reset discipline",
+      "status": "review",
+      "domain": "leadership_rhythm"
+    },
+    {
+      "id": "fm_controls_gap",
+      "name": "Control loop gap",
+      "description": "Void, comp, waste, stock, and other operational leakage are visible but not reviewed tightly enough to drive correction.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: control-loop failure expressed through restaurant operating controls",
+      "status": "review",
+      "domain": "financial_controls"
+    },
+    {
+      "id": "fm_inventory_accuracy_gap",
+      "name": "Inventory accuracy gap",
+      "description": "Counts, depletion updates, and 86 status are not trustworthy enough for service teams to act with confidence.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: commercial discipline and control-loop weakness in stock truth",
+      "status": "review",
+      "domain": "financial_controls"
+    },
+    {
+      "id": "fm_menu_complexity",
+      "name": "Menu complexity overload",
+      "description": "The menu or service promise asks the operation to carry more complexity than the current system can execute reliably.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: expectation and complexity failure expressed through the offer",
+      "status": "review",
+      "domain": "service_delivery"
+    },
+    {
+      "id": "fm_bar_workflow_breakdown",
+      "name": "Bar workflow breakdown",
+      "description": "Bar setup, sequencing, and priority rules are not robust enough to support live service demand and floor handoffs.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: workflow and handoff failure expressed in beverage execution",
+      "status": "review",
+      "domain": "beverage_execution"
+    },
+    {
+      "id": "fm_training_gap",
+      "name": "Insufficient training protocol",
+      "description": "Standards, role expectations, and recovery behaviors are not reinforced enough to survive into live service execution.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: capability gap expressed through hospitality team training",
+      "status": "review",
+      "domain": "workforce"
+    }
+  ],
+  "response_patterns": [
+    {
+      "id": "rp_service_flow_reset",
+      "name": "Service flow reset",
+      "description": "Make the core service sequence explicit, visible, and executable under real pressure.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: redesign workflow expressed through service flow",
+      "status": "review",
+      "focus": "workflow_design"
+    },
+    {
+      "id": "rp_host_pacing_reset",
+      "name": "Host pacing reset",
+      "description": "Constrain quoting, arrival pacing, and seating release so front-door promises stay inside actual capacity.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: constrain promises and strengthen demand shaping at the door",
+      "status": "review",
+      "focus": "promise_and_pacing"
+    },
+    {
+      "id": "rp_deployment_reset",
+      "name": "Deployment reset",
+      "description": "Rebuild sectioning, role placement, and peak-window coverage around the real shape of service demand.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: align roles and coverage in the live venue",
+      "status": "review",
+      "focus": "coverage_alignment"
+    },
+    {
+      "id": "rp_pass_communication_reset",
+      "name": "Pass communication reset",
+      "description": "Install explicit timing language, handoff rules, and pickup discipline across the pass.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: strengthen handoffs at the kitchen-floor boundary",
+      "status": "review",
+      "focus": "handoff_clarity"
+    },
+    {
+      "id": "rp_prep_control_reset",
+      "name": "Prep and control reset",
+      "description": "Restore prep visibility, depletion awareness, and live control points before service instability compounds.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: restore readiness and tighten control loops around prep",
+      "status": "review",
+      "focus": "prep_and_controls"
+    },
+    {
+      "id": "rp_leadership_rhythm_reset",
+      "name": "Leadership rhythm reset",
+      "description": "Create repeatable pre-shift, in-shift, and post-shift leadership cadence so the floor gets real direction and closure.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: install operating rhythm for hospitality leadership",
+      "status": "review",
+      "focus": "leadership_rhythm"
+    },
+    {
+      "id": "rp_manager_presence_reset",
+      "name": "Manager presence reset",
+      "description": "Put visible management attention where service risk is actually building, not where it is most comfortable to stand.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: align leadership coverage with real operating pressure",
+      "status": "review",
+      "focus": "management_presence"
+    },
+    {
+      "id": "rp_open_close_reset",
+      "name": "Open-close reset",
+      "description": "Turn opening and closing into non-negotiable readiness and control rituals that protect the next cycle of work.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: restore readiness through enforced operating rhythm",
+      "status": "review",
+      "focus": "reset_discipline"
+    },
+    {
+      "id": "rp_inventory_accuracy_reset",
+      "name": "Inventory accuracy reset",
+      "description": "Make counts, 86 logic, and depletion updates trustworthy enough that service decisions stop relying on guesswork.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: tighten control loops and restore commercial discipline",
+      "status": "review",
+      "focus": "stock_truth"
+    },
+    {
+      "id": "rp_bar_execution_reset",
+      "name": "Bar execution reset",
+      "description": "Re-sequence bar setup, priority rules, and service handoff so beverage flow holds under peak pressure.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: redesign workflow at the beverage node",
+      "status": "review",
+      "focus": "bar_flow"
+    },
+    {
+      "id": "rp_training_reset",
+      "name": "Training reset",
+      "description": "Move standards, role clarity, and recovery behavior out of memory and into reinforced execution practice.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: build capability and standardize execution",
+      "status": "review",
+      "focus": "capability_building"
+    }
+  ],
+  "signal_failure_map": [
+    {
+      "source_id": "sig_service_delay",
+      "target_id": "fm_undefined_workflow",
+      "weight": 0.85,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: cycle delay is most often workflow fragility expressed live",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_service_delay",
+      "target_id": "fm_deployment_misalignment",
+      "weight": 0.68,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: cycle delay often compounds when coverage is wrong for the peak",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_staff_confusion",
+      "target_id": "fm_undefined_workflow",
+      "weight": 0.82,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: live confusion usually means the sequence or decision rules are too implicit",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_staff_confusion",
+      "target_id": "fm_training_gap",
+      "weight": 0.7,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: confusion also reveals standards that have not been reinforced enough",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_shift_brief_missing",
+      "target_id": "fm_briefing_absence",
+      "weight": 0.96,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: absent briefing is the direct operational signal for a leadership rhythm gap at service start",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_shift_brief_missing",
+      "target_id": "fm_manager_presence_gap",
+      "weight": 0.52,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: the same venue often lacks both pre-shift direction and live managerial coverage",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_ticket_bottleneck",
+      "target_id": "fm_undefined_workflow",
+      "weight": 0.78,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: bottlenecks often reflect sequence design failure rather than isolated speed weakness",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_ticket_bottleneck",
+      "target_id": "fm_prep_system_breakdown",
+      "weight": 0.55,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: bottlenecks also surface when prep readiness is not protecting line flow",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_guest_complaints",
+      "target_id": "fm_manager_presence_gap",
+      "weight": 0.44,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: repeated complaints often persist where live recovery and floor guidance are too weak",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_voids_rising",
+      "target_id": "fm_controls_gap",
+      "weight": 0.9,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: rising voids and comps are a direct leakage signal for weak control loops",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_waste_spike",
+      "target_id": "fm_controls_gap",
+      "weight": 0.84,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: waste spikes should first be treated as control-loop weakness, not normal noise",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_waste_spike",
+      "target_id": "fm_prep_system_breakdown",
+      "weight": 0.48,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: waste also rises when prep and replenishment logic are unstable",
+      "status": "review"
+    }
+  ],
+  "failure_pattern_map": [
+    {
+      "source_id": "fm_undefined_workflow",
+      "target_id": "rp_service_flow_reset",
+      "weight": 0.92,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: workflow design failure should first activate service flow redesign",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_undefined_workflow",
+      "target_id": "rp_deployment_reset",
+      "weight": 0.46,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: some flow failures also require a coverage realignment to hold",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_host_flow_breakdown",
+      "target_id": "rp_host_pacing_reset",
+      "weight": 0.95,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: host flow failure should directly activate promise and pacing correction",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_deployment_misalignment",
+      "target_id": "rp_deployment_reset",
+      "weight": 0.95,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: load mismatch at service level is first corrected through deployment realignment",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_pass_communication_gap",
+      "target_id": "rp_pass_communication_reset",
+      "weight": 0.96,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: handoff failure at the pass should activate direct handoff reinforcement",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_prep_system_breakdown",
+      "target_id": "rp_prep_control_reset",
+      "weight": 0.9,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: prep breakdown requires readiness restoration plus control points",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_shift_readiness_gap",
+      "target_id": "rp_open_close_reset",
+      "weight": 0.72,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: readiness gaps need a stronger service-start reset ritual",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_shift_readiness_gap",
+      "target_id": "rp_prep_control_reset",
+      "weight": 0.7,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: readiness is also protected by better prep visibility and validation",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_briefing_absence",
+      "target_id": "rp_leadership_rhythm_reset",
+      "weight": 0.94,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: missing briefing is a direct leadership rhythm correction target",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_manager_presence_gap",
+      "target_id": "rp_manager_presence_reset",
+      "weight": 0.94,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: visible management attention should be rebuilt where live risk accumulates",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_open_close_control_gap",
+      "target_id": "rp_open_close_reset",
+      "weight": 0.95,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: open-close weakness should trigger an operating-rhythm reset around resets",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_controls_gap",
+      "target_id": "rp_inventory_accuracy_reset",
+      "weight": 0.74,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: some restaurant control leakage centers on stock truth and depletion reliability",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_controls_gap",
+      "target_id": "rp_prep_control_reset",
+      "weight": 0.64,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: control weakness often shares the same live visibility gaps as prep breakdowns",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_inventory_accuracy_gap",
+      "target_id": "rp_inventory_accuracy_reset",
+      "weight": 0.97,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: inventory accuracy failure should directly activate stock-truth restoration",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_menu_complexity",
+      "target_id": "rp_service_flow_reset",
+      "weight": 0.58,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: excessive menu complexity often first shows up as service flow instability",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_bar_workflow_breakdown",
+      "target_id": "rp_bar_execution_reset",
+      "weight": 0.96,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: beverage-node workflow weakness needs a direct sequencing reset",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_training_gap",
+      "target_id": "rp_training_reset",
+      "weight": 0.96,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: capability gaps are first corrected by reinforced training and explicit standards",
+      "status": "review"
+    }
+  ]
+}

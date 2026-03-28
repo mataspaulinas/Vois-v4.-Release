@@ -1,0 +1,345 @@
+{
+  "block_id": "B005",
+  "name": "Allergen Identification & Labelling",
+  "version": "v2.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Creates the source-of-truth system for allergen identification in every menu item, so the cafe can publish accurate non-PPDS allergen information, control recipe changes safely, and keep customer-facing information aligned with the real ingredients in use.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Build one authoritative allergen matrix covering every permanent item, seasonal item, modifier, topping, and add-on",
+      "Create per-item recipe and ingredient declaration records that show where each allergen conclusion came from",
+      "Maintain a supplier evidence register so bought-in products are supported by current specification data",
+      "Prevent recipe or supplier substitutions from going live before allergen information has been checked and updated",
+      "Turn the master data into reliable customer-facing allergen information for non-PPDS service"
+    ],
+    "secondary_objectives": [
+      "Reduce manager dependence on memory during allergen checks",
+      "Create defensible evidence for EHO visits and customer complaints",
+      "Provide clean upstream data for B006 PPDS labels, B007 staff dialogue, and B008 programme-level audit"
+    ]
+  },
+  "why_this_matters": "Allergen control fails when a venue relies on partial memory, old supplier sheets, or menu updates that never reach the master records. In a cafe, the risk is amplified by specials, bought-in bakery items, syrup changes, milk alternatives, dressings, and compound ingredients with hidden allergens. B005 is the block that creates the truth layer under the rest of the allergen system. It is not the live customer conversation block and it is not the PPDS label-printing block; it is the system that makes both of those possible. If the source data here is weak, the whole allergen programme becomes unsafe, legally exposed, and impossible to defend.",
+  "block_design": {
+    "intervention_type": "bounded_operating_intervention",
+    "purpose": "Create and maintain the authoritative allergen data, change-control, and non-PPDS information set for the venue.",
+    "failure_modes_addressed": [
+      "FM002"
+    ],
+    "response_patterns_addressed": [
+      "RP002"
+    ],
+    "primary_execution_module": "M01",
+    "entry_conditions": [
+      "The venue sells food or drink items whose allergen content must be known before sale.",
+      "Managers can access recipes, supplier specification sheets, or ingredient declarations for all active items.",
+      "There is a named owner who can stop a recipe or supplier change if allergen data is incomplete."
+    ],
+    "prerequisites": [
+      "A complete menu and item list exists, including specials, toppings, and modifiers.",
+      "Supplier information can be gathered for bought-in products and branded ingredients.",
+      "The venue is willing to maintain one master source instead of multiple informal versions."
+    ],
+    "contraindications": [
+      "Do not publish a definitive matrix for an item if ingredient information is incomplete or unverified.",
+      "Do not use this block as a substitute for B006 PPDS label compliance, B007 customer dialogue, or cross-contact prevention controls.",
+      "Do not allow convenience substitutions to bypass the change-review gate."
+    ],
+    "owner_role": "Manager with kitchen lead support",
+    "effort_load": {
+      "setup": "6-8 hours",
+      "weekly": "20-30 minutes",
+      "per_change": "10-15 minutes per recipe or supplier change",
+      "quarterly": "45-60 minutes"
+    },
+    "expected_time_to_effect": {
+      "first_visible_effect": "Within 1-2 weeks once the first full matrix and customer-facing pack are released",
+      "stabilisation_window": "4-8 weeks as supplier evidence and change control become reliable"
+    },
+    "proof_of_completion": [
+      "A dated allergen master matrix exists for every live menu item.",
+      "Each own-made or bought-in item has a supporting recipe or ingredient declaration record.",
+      "A supplier evidence register is current enough to show which products are verified, pending, or overdue.",
+      "A formal change-review gate is used before new items or substitutions go live.",
+      "A customer-facing allergen notice and allergen menu/reference pack is updated from the same master source."
+    ],
+    "proof_of_effectiveness": [
+      "Managers and staff can answer allergen questions by checking a current, dated source rather than guessing.",
+      "Recipe and supplier changes are reflected in the matrix before sale rather than after a complaint or incident.",
+      "Quarterly audits can trace sample items from menu to supplier evidence without missing links.",
+      "Customer-facing allergen information matches the real ingredients currently in use."
+    ],
+    "successor_triggers": [
+      {
+        "trigger": "The venue sells PPDS items that require full ingredients and emphasised allergens on-pack.",
+        "next_block_id": "B006"
+      },
+      {
+        "trigger": "Front-of-house staff need a reliable conversation process for allergen questions and escalations.",
+        "next_block_id": "B007"
+      },
+      {
+        "trigger": "The venue has a source-of-truth system and now needs programme-level audit, incident learning, and culture reinforcement.",
+        "next_block_id": "B008"
+      }
+    ],
+    "linked_tools": [
+      "T005-01",
+      "T005-02",
+      "T005-03",
+      "T005-04",
+      "T005-05",
+      "T005-06"
+    ]
+  },
+  "implementation_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The matrix is built once and treated like a finished project instead of a live control.",
+        "what_can_go_wrong": "Customer-facing information drifts away from reality as soon as suppliers, recipes, or specials change.",
+        "early_signals": [
+          "The matrix has no visible version date or review owner",
+          "Specials appear on the menu but not in the master records",
+          "Staff say a recent ingredient swap will be updated later"
+        ],
+        "prevention": [
+          "Use one dated master source and replace all copies when it changes",
+          "Tie matrix review to weekly menu review and every supplier or recipe change",
+          "Empower the owner role to stop sale until records are updated"
+        ],
+        "mitigation": [
+          "Pull all outdated copies immediately",
+          "Run a rapid reconciliation of current stock against the matrix",
+          "Pause sale of any item whose allergen status cannot be confirmed today"
+        ],
+        "if_occurs_next_signals": [
+          "source_of_truth_drift",
+          "unsafe_menu_information"
+        ],
+        "possible_successor_blocks": [
+          "B006",
+          "B007",
+          "B008"
+        ]
+      },
+      {
+        "warning": "Supplier evidence is incomplete, old, or never checked against actual products in use.",
+        "what_can_go_wrong": "The venue believes it has allergen control, but the conclusions are based on stale or partial data.",
+        "early_signals": [
+          "Bought-in cakes or breads are listed without current spec sheets",
+          "Teams rely on packaging fronts instead of full ingredient declarations",
+          "A substitute brand is used with no linked evidence record"
+        ],
+        "prevention": [
+          "Maintain a supplier evidence register with review dates and chase status",
+          "Require full declarations for every bought-in product before first sale",
+          "Review physical stock against the register during weekly checks"
+        ],
+        "mitigation": [
+          "Mark unverified products as unavailable for allergen-sensitive customers until confirmed",
+          "Chase suppliers immediately and log the gap",
+          "Replace the product or remove the item if evidence cannot be secured"
+        ],
+        "if_occurs_next_signals": [
+          "supplier_data_integrity_risk",
+          "unverified_bought_in_product"
+        ],
+        "possible_successor_blocks": [
+          "B006",
+          "B008"
+        ]
+      },
+      {
+        "warning": "Managers treat customer-facing allergen notices as the system itself instead of a reflection of the master source.",
+        "what_can_go_wrong": "The venue updates one display but not the underlying recipe, supplier, or matrix records, creating conflicting versions.",
+        "early_signals": [
+          "Counter copies differ from kitchen copies",
+          "Staff annotate printed sheets by hand without updating the master",
+          "Customer allergen menus have no version footer"
+        ],
+        "prevention": [
+          "Build the customer-facing pack from the master matrix only",
+          "Version and date-stamp every copy in service",
+          "Replace all service copies during the same update cycle"
+        ],
+        "mitigation": [
+          "Collect and destroy outdated copies",
+          "Reissue the pack from the current master source",
+          "Brief all staff on which version is live before the next service"
+        ],
+        "if_occurs_next_signals": [
+          "multiple_truth_sources",
+          "counter_reference_mismatch"
+        ],
+        "possible_successor_blocks": [
+          "B007",
+          "B008"
+        ]
+      }
+    ]
+  },
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Build the first authoritative list of every menu item, modifier, topping, and special. Gather full ingredient information for each item, including bought-in products and sub-ingredients. Use that data to complete the Allergen Master Matrix Workbook and release a dated customer-facing allergen information pack for non-PPDS sale. If any item cannot be verified, do not guess; mark it unresolved and remove it from allergen-safe offer until confirmed.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Strengthen the source-of-truth system so it can survive normal operation. Create per-item recipe and ingredient declaration sheets, establish the Supplier Allergen Evidence Register, and require the Recipe & Supplier Change Allergen Review Gate before new items or substitutions go live. This is the point where the allergen matrix stops being a one-off spreadsheet and becomes a controlled operating system.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Audit whether the source records still match reality. Use the Quarterly Allergen Source-of-Truth Audit to sample live menu items, trace them back to supplier evidence, and verify that customer-facing documents still align. At this stage B005 should make the rest of the allergen programme easier: B006 labels should pull from it, B007 dialogue should trust it, and B008 audit should be able to test it."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "List every live menu item, modifier, topping, syrup, garnish, and special",
+        "Gather recipe details and supplier declarations for each item before confirming allergen status",
+        "Complete T005-01 Allergen Master Matrix Workbook",
+        "Release T005-05 Customer-Facing Allergen Info Pack from the same dated master source",
+        "Remove or hold any item whose allergen information cannot be verified today"
+      ],
+      "responsible": "Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create or refresh T005-02 Recipe Card & Ingredient Declaration Sheet for each item",
+        "Maintain T005-03 Supplier Allergen Evidence Register for all bought-in products",
+        "Run T005-04 Recipe & Supplier Change Allergen Review Gate before any change reaches service",
+        "Set a weekly review point for specials, substitutions, and overdue supplier evidence",
+        "Link B005 updates directly into B006 labels and B007 staff reference where relevant"
+      ],
+      "responsible": "Manager, Kitchen Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Run T005-06 Quarterly Allergen Source-of-Truth Audit",
+        "Sample live items and confirm they match recipe records, supplier evidence, and customer-facing sheets",
+        "Escalate recurring drift, missing evidence, or weak change control into B008 programme review",
+        "Use audit findings to tighten the matrix, recipe sheets, and customer pack rather than adding parallel documents",
+        "Keep the source-of-truth system simple enough that it still gets updated under normal service pressure"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Allergen Master Matrix Workbook",
+    "Recipe Card & Ingredient Declaration Sheet set",
+    "Supplier Allergen Evidence Register",
+    "Recipe & Supplier Change Allergen Review Gate records",
+    "Customer-Facing Allergen Info Pack",
+    "Quarterly Allergen Source-of-Truth Audit"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T005-01",
+        "tool_name": "Allergen Master Matrix Workbook",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Primary source-of-truth workbook mapping every live menu item to declared allergens, version control, and release status."
+      },
+      {
+        "tool_id": "T005-02",
+        "tool_name": "Recipe Card & Ingredient Declaration Sheet",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Kitchen Lead",
+        "description": "Per-item declaration sheet showing ingredients, sub-ingredients, allergen calls, and verification notes."
+      },
+      {
+        "tool_id": "T005-03",
+        "tool_name": "Supplier Allergen Evidence Register",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Tracker for supplier specification sheets, declaration status, chase actions, and review dates for bought-in products."
+      },
+      {
+        "tool_id": "T005-04",
+        "tool_name": "Recipe & Supplier Change Allergen Review Gate",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Stop-the-line review checklist used before any new recipe, substitution, or supplier change goes live."
+      },
+      {
+        "tool_id": "T005-05",
+        "tool_name": "Customer-Facing Allergen Info Pack",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Printable sign, allergen menu, and counter reference pack derived from the current master matrix."
+      },
+      {
+        "tool_id": "T005-06",
+        "tool_name": "Quarterly Allergen Source-of-Truth Audit",
+        "level": "L3",
+        "format": "audit",
+        "owner_role": "Owner",
+        "description": "Quarterly audit tracing live menu items back to recipe, supplier, and customer-facing allergen evidence."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Allergen information is scattered across menus, memory, labels, and supplier emails with no authoritative source",
+    "Recipe or supplier substitutions go live before allergen information is reviewed and updated",
+    "Bought-in products are sold using stale or incomplete supplier declarations",
+    "Customer-facing allergen documents drift away from the real ingredients currently in use"
+  ],
+  "kpis": [
+    "100% of live menu items have a current entry in the master matrix",
+    "100% of bought-in products have a current supplier declaration or a logged unresolved status that prevents confident sale",
+    "100% of recipe or supplier changes are processed through the allergen review gate before service",
+    "Quarterly source-of-truth audit finds no unverified live item in service"
+  ],
+  "dependencies": [],
+  "constraints": [
+    "The system depends on timely supplier declarations for bought-in items",
+    "Seasonal specials and one-day substitutions must follow the same process as permanent menu items",
+    "The block must stay maintainable; an overly complex matrix or filing system will collapse under service pressure"
+  ],
+  "time_load": {
+    "L1": "6-8 hours",
+    "L2": "3-5 hours initial build plus 10-15 minutes per change",
+    "L3": "45-60 minutes per quarter"
+  },
+  "review_protocol": "Weekly manager review of the matrix, supplier evidence register, and any pending change requests. Immediate review before any recipe or supplier substitution goes live. Quarterly source-of-truth audit by owner or manager. Full annual rebuild of the master matrix or earlier if the menu structure changes significantly.",
+  "meta": {
+    "summary_for_humans": "This block builds the real allergen source-of-truth for the cafe: the master matrix, the evidence behind it, the change gate that protects it, and the customer-facing pack that must match it.",
+    "implementation_risks": [
+      "Managers may underestimate how much supplier evidence is missing until they try to build the first matrix",
+      "Customer-facing allergen sheets can drift away from the master if version control is weak",
+      "Substitutions made under service pressure can bypass the change-review gate unless authority is clear"
+    ],
+    "notes_for_engine": "Activate as the foundational allergen data block before or alongside B006 and B007. Use successor triggers to route PPDS label needs to B006, live customer conversation needs to B007, and governance/audit strengthening to B008.",
+    "tags": [
+      "food_safety",
+      "allergens",
+      "allergen_matrix",
+      "supplier_evidence",
+      "menu_labelling",
+      "change_control",
+      "customer_information"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "independent_cafe",
+      "specialty_coffee",
+      "chain_cafe",
+      "franchise_cafe",
+      "drive_through",
+      "kiosk",
+      "coffee_van",
+      "bakery_cafe"
+    ],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-26T00:00:00Z",
+    "enriched_by": "codex_direct_v1",
+    "source_quality": "human_structured_ai_enriched"
+  }
+}

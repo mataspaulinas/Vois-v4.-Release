@@ -1,0 +1,157 @@
+{
+  "block_id": "B093",
+  "name": "Closing Checklist",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Establishes a standardised end-of-day closing procedure that ensures every critical task — from cleaning and cash reconciliation to equipment shutdown and security — is completed consistently, regardless of which team member is closing. This block eliminates the costly assumption that experienced staff 'just know' what needs doing.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a comprehensive, printable closing checklist covering all operational areas",
+      "Define clear task ownership so every closing duty has a named responsible role",
+      "Establish a sign-off process so managers can verify completions before leaving",
+      "Standardise closing times and sequences to reduce labour waste and overtime",
+      "Ensure food safety tasks (temperature checks, dating, waste disposal) are never skipped at close"
+    ],
+    "secondary_objectives": [
+      "Reduce next-morning surprises by ensuring the cafe is fully prepped for opening",
+      "Protect equipment lifespan through proper end-of-day shutdown procedures",
+      "Build accountability culture where closing quality is measurable and trackable"
+    ]
+  },
+  "why_this_matters": "The final thirty minutes of a cafe's trading day determine whether the next morning starts smoothly or in chaos. Without a standardised closing checklist, tasks are forgotten, shortcuts are taken, and problems compound overnight. A grinder left uncleaned develops stale oil residue that taints the first coffees of the morning. A display fridge left slightly ajar runs all night, straining the compressor and risking food safety. Cash left uncounted creates discrepancies that take hours to resolve the following day. In a UK cafe employing part-time staff across rotating shifts, the closing team changes frequently — often it is the least experienced barista who closes midweek. Relying on memory or informal training means standards drift within weeks. Environmental Health Officers expect documented cleaning schedules that include end-of-day deep cleaning tasks, and a closing checklist provides precisely this evidence. From a financial perspective, poor closing discipline leads to waste: food that should have been reduced or donated is binned, perishables are left unrotated, and energy costs creep up from equipment left running. A well-executed closing checklist typically saves a small cafe between £150 and £400 per month in avoided waste, energy, and rework. It also protects security — doors checked, alarms set, tills secured — which is essential for insurance compliance. The closing checklist is not glamorous, but it is the single most reliable indicator of operational discipline in any food and beverage business.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Walk through the entire cafe at the end of a typical trading day and document every task that needs to happen before the last person leaves. Group tasks into logical zones: Front of House (tables wiped, floor swept and mopped, condiment stations restocked, display case emptied and cleaned), Bar Area (espresso machine backflushed, grinder hoppers emptied and wiped, steam wands purged, drip trays cleaned), Kitchen/Prep (all food stored and dated, surfaces sanitised, bins emptied, dishwasher final cycle run), Cash & Admin (till counted and reconciled, Z-read printed or saved, float secured, takings locked in safe), and Security (all doors and windows locked, alarm set, lights off except security lighting, equipment switched off as per manufacturer guidance). Print the checklist on a single A4 sheet, laminate it, and attach it to a clipboard near the till. From Day 1, the closing team leader must work through the list in order, ticking each item and signing at the bottom with the date and time. The manager reviews the completed checklist the following morning. Week 2: Refine the list based on anything missed during the first week. Add time estimates next to each task so the closing team can plan their last hour of service effectively.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a formal Closing Procedures SOP that expands each checklist item into a brief instruction — not just 'Clean grinder' but 'Remove hopper, brush burrs with grinder brush, wipe exterior with damp cloth, replace hopper empty for overnight'. Create role-specific closing assignments so the barista knows their tasks and the kitchen closer knows theirs, with the shift lead overseeing and completing final security checks. Introduce a closing quality score: each morning the opening team rates the close on a scale of 1-5 based on what they find, recording any issues. Track these scores weekly and discuss in team meetings. Begin timing closes to establish a benchmark — a well-run cafe should be fully closed within 30-45 minutes of the last customer leaving. If closes are taking longer, identify bottlenecks and restructure task sequences. Link the closing checklist to the shift handover system (B094) so the closing team communicates any issues to the next day's openers.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Closing quality should now be a point of team pride, not a chore to rush through. Introduce seasonal checklist variations — summer closes may include patio furniture storage and parasol securing, while winter closes add pipe-lagging checks in cold snaps. Conduct monthly spot audits where the owner or manager returns 30 minutes after close to verify everything was done properly. Reward consistent high-quality closes with team incentives. Integrate the closing checklist into a digital system (tablet or app) that timestamps each task completion and stores records automatically. Review and update the checklist quarterly or whenever equipment, menu, or layout changes. Share closing compliance data in monthly team meetings to maintain focus and celebrate excellence."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Walk the entire cafe at close and document every end-of-day task by zone",
+        "Create a single-page A4 closing checklist grouped by area (FOH, Bar, Kitchen, Cash, Security)",
+        "Laminate the checklist and attach to a clipboard near the till area",
+        "Brief all staff on the checklist process and sign-off requirement",
+        "Assign closing team leader responsibility for checklist completion and signature",
+        "Manager reviews completed checklist each morning and flags any gaps immediately",
+        "Add time estimates to each task section to help the closing team plan"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft a formal Closing Procedures SOP with detailed instructions for each task",
+        "Create role-specific closing assignments so responsibilities are clear",
+        "Implement a morning opening quality score (1-5) rating the previous night's close",
+        "Track closing quality scores weekly and review in team meetings",
+        "Benchmark close times and optimise task sequences to achieve 30-45 minute closes",
+        "Link closing checklist to shift handover system (B094) for issue communication",
+        "File all completed checklists for a minimum of 3 months for audit purposes"
+      ],
+      "responsible": "Manager, Shift Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce seasonal checklist variations for summer and winter-specific tasks",
+        "Conduct monthly unannounced post-close spot audits",
+        "Migrate the checklist to a digital system with timestamped task completion",
+        "Review and update the checklist quarterly or when operations change",
+        "Share closing compliance data in monthly team meetings and reward excellence"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Daily Closing Checklist (printable A4 laminated template)",
+    "Closing Procedures SOP document",
+    "Morning Opening Quality Score tracker",
+    "Closing Time Benchmark log",
+    "Monthly Closing Compliance Summary"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T093-01",
+        "tool_name": "Daily Closing Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Shift Lead",
+        "description": "Laminated A4 checklist covering all closing tasks grouped by zone: Front of House, Bar, Kitchen/Prep, Cash & Admin, and Security. Includes tick boxes, sign-off line, date, and time of completion."
+      },
+      {
+        "tool_id": "T093-02",
+        "tool_name": "Closing Procedures SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Detailed Standard Operating Procedure expanding each checklist item into step-by-step instructions with role assignments, time estimates, and quality standards for each task."
+      },
+      {
+        "tool_id": "T093-03",
+        "tool_name": "Morning Opening Quality Score Card",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Opening Shift Lead",
+        "description": "Simple 1-5 rating card completed each morning by the opening team, assessing the quality of the previous night's close with space for specific issue notes."
+      },
+      {
+        "tool_id": "T093-04",
+        "tool_name": "Closing Compliance Dashboard",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Weekly and monthly summary of closing quality scores, completion rates, common missed tasks, and closing time trends. Used in management reviews and team meetings."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Checklist is treated as a formality and ticked without tasks actually being completed, creating false assurance",
+    "Closing team rushes through tasks to leave early, resulting in substandard cleaning and missed food safety steps",
+    "The checklist becomes outdated as equipment or menu changes occur but the document is never updated",
+    "No morning review means missed tasks go undetected and staff learn that shortcuts have no consequences"
+  ],
+  "kpis": [
+    "100% of closing checklists completed and signed every trading day",
+    "Average morning opening quality score of 4.0 or above out of 5.0",
+    "Closing completed within 45 minutes of last customer departure",
+    "Zero food safety or security incidents attributable to closing failures per quarter"
+  ],
+  "dependencies": ["B092"],
+  "constraints": [
+    "Closing checklist must be reviewed and updated whenever equipment, menu, or layout changes",
+    "All completed checklists must be retained for a minimum of 3 months",
+    "At least one trained shift lead must be present for every close"
+  ],
+  "time_load": {
+    "L1": "2 hours (walkthrough, checklist creation, staff briefing)",
+    "L2": "4 hours (SOP drafting, role assignments, quality score setup)",
+    "L3": "1 hour/month (audits, dashboard review, checklist updates)"
+  },
+  "review_protocol": "Daily review of completed checklist by opening manager. Weekly review of opening quality scores by manager. Monthly closing compliance review in team meeting. Quarterly checklist content review and update.",
+  "meta": {
+    "summary_for_humans": "This block creates a standardised closing checklist so every end-of-day task — cleaning, cash, food safety, security — is completed consistently regardless of who is closing. It links directly to morning readiness and prevents the costly drift that occurs when closing is left to memory.",
+    "implementation_risks": [
+      "Staff may resist the perceived 'micromanagement' of a formal checklist — frame it as a support tool, not surveillance",
+      "Paper checklists can be lost or damaged — laminate and consider early digital migration",
+      "Seasonal variations (outdoor seating, extended summer hours) require checklist updates that may be overlooked"
+    ],
+    "notes_for_engine": "Activate alongside B092 (Opening Checklist) as a pair. Flag as urgent if signals indicate morning operational issues traceable to poor closing, equipment damage from improper shutdown, or security concerns.",
+    "tags": ["operations", "closing", "checklist", "cleaning", "security", "cash_handling", "food_safety", "accountability"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

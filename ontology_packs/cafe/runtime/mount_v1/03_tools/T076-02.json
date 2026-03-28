@@ -1,0 +1,82 @@
+{
+  "identification": {
+    "tool_id": "T076-02",
+    "tool_name": "Communication Charter Workshop Template",
+    "block_id": "B076"
+  },
+  "tool_design": {
+    "format": "template",
+    "role_in_intervention": "Workshop structure for defining the team communication charter together.",
+    "adaptation_variables": [
+      "team_size",
+      "meeting_length",
+      "venue_values"
+    ],
+    "usage_moment": "During charter creation or annual refresh",
+    "expected_output": "Completed communication charter with team-agreed norms",
+    "linked_blocks": [
+      "B076",
+      "B074",
+      "B075"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The template is used once as a workshop artifact and then forgotten.",
+        "what_can_go_wrong": "The intervention loses its operating rhythm.",
+        "early_signals": [
+          "The template is completed but never revisited",
+          "Actions or notes stay blank after rollout"
+        ],
+        "prevention": [
+          "Anchor it to a cadence",
+          "Assign ownership"
+        ],
+        "mitigation": [
+          "Restart with a live example",
+          "Tighten follow-through review"
+        ],
+        "if_occurs_next_signals": [
+          "cadence_failure"
+        ],
+        "possible_successor_blocks": [
+          "B076",
+          "B074",
+          "B075"
+        ]
+      },
+      {
+        "warning": "Fields are completed vaguely.",
+        "what_can_go_wrong": "The output exists but does not drive action.",
+        "early_signals": [
+          "Generic phrases dominate",
+          "No owner or due date captured"
+        ],
+        "prevention": [
+          "Show a worked example",
+          "Highlight the minimum specific fields"
+        ],
+        "mitigation": [
+          "Rewrite recent weak entries",
+          "Add first-use review"
+        ],
+        "if_occurs_next_signals": [
+          "low_signal_documentation"
+        ],
+        "possible_successor_blocks": [
+          "B076",
+          "B074",
+          "B075"
+        ]
+      }
+    ]
+  },
+  "content": "# Communication Charter Workshop Template\n\n**Tool ID:** T076-02  \n**Block:** B076 (Communication Culture & Feedback)  \n**Domain:** Team & Talent (D04_team_talent)  \n**Level:** L2  \n**Format:** Template  \n**Role:** Owner / Manager  \n**Time Required:** 45-60 minutes workshop + 15 minutes to finalise  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nThis is not a policy document to write alone and pin on the wall. It is a workshop tool for agreeing how the team will communicate when things are busy, tense, unclear, or uncomfortable.\n\nA good charter should answer:\n- how we raise concerns\n- how we give feedback\n- how we disagree\n- how we handle handovers and missing information\n- what respectful communication looks like here\n\n---\n## Before The Workshop\n\n<ul>\n  <li><input type=\"checkbox\"> Schedule 45-60 minutes when the team can focus.</li>\n  <li><input type=\"checkbox\"> Bring examples of where communication has recently broken down.</li>\n  <li><input type=\"checkbox\"> Start with the goal: better clarity, not blame.</li>\n  <li><input type=\"checkbox\"> Print one copy of the draft charter for the wall and one working copy for notes.</li>\n  <li><input type=\"checkbox\"> Decide who will facilitate and who will capture wording.</li>\n</ul>\n\n---\n## 45-Minute Workshop Agenda\n\n| Time | Section | What To Do |\n|---|---|---|\n| 5 min | Why this matters | Explain what better communication protects: guests, safety, team trust, speed, fairness. |\n| 10 min | What is not working | Ask: where do we get stuck, avoid, snap, or go silent? Capture examples, not names. |\n| 15 min | Build our rules | Turn team input into short, usable statements. |\n| 10 min | Pressure test | Ask: would this still help during a rush, conflict, mistake, or rota problem? |\n| 5 min | Commit and assign | Finalise owner, display location, review date, and how the charter will be used. |\n\n---\n## Draft Statement Bank\n\nCircle, edit, or replace these. Keep the final wording short enough to remember.\n\n<ul>\n  <li><input type=\"checkbox\"> We raise concerns early rather than letting them build.</li>\n  <li><input type=\"checkbox\"> We speak directly and respectfully, not through side conversations.</li>\n  <li><input type=\"checkbox\"> We describe behaviour clearly instead of labelling people.</li>\n  <li><input type=\"checkbox\"> We assume good intent first, then ask questions.</li>\n  <li><input type=\"checkbox\"> We do not correct people in front of guests unless safety requires it.</li>\n  <li><input type=\"checkbox\"> We close loops: if something is raised, someone responds.</li>\n  <li><input type=\"checkbox\"> We use handovers, briefings, and notes properly so information does not go missing.</li>\n  <li><input type=\"checkbox\"> We say thank you and recognise good communication, not just mistakes.</li>\n</ul>\n\n---\n## Final Charter Template\n\n**Venue:** ______________________________  \n**Date agreed:** ______________________________  \n**Review date:** ______________________________\n\n### How We Communicate Here\n\n1. ________________________________________\n2. ________________________________________\n3. ________________________________________\n4. ________________________________________\n5. ________________________________________\n6. ________________________________________\n\n### When Something Goes Wrong\n\nWe will:\n- ________________________________________\n- ________________________________________\n- ________________________________________\n\n### What Respect Looks Like On Shift\n\n- ________________________________________\n- ________________________________________\n- ________________________________________\n\n### What We Do Not Normalise\n\n- ________________________________________\n- ________________________________________\n- ________________________________________\n\n---\n## Publish It Properly\n\n| Task | Owner | Due |\n|---|---|---|\n| Final wording agreed | | |\n| Staff-area poster printed | | |\n| Charter explained in briefing | | |\n| New starters shown the charter | | |\n| Review date booked in diary | | |\n\n---\n## Common Mistakes\n\n- Writing the charter alone and calling it team-owned.\n- Making it too long to remember.\n- Using soft language that nobody can actually apply.\n- Failing to revisit it when communication slips.\n- Displaying it publicly but not modelling it privately.\n\n---\n## Connected Resources\n\n**Used alongside:**\n- T076-01 - SBI Feedback Quick Card\n- T076-04 - Difficult Conversations Guide\n- T076-05 - Communication Culture Survey & Scorecard\n\n**Parent block:** B076 - Communication Culture & Feedback\n\n---\n\n*Tool Version 2.0 - built to create a living team agreement, not a forgotten poster.*\n",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T076-02_communication_charter_workshop_template.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "block_id": "B126",
+  "name": "Occupancy Cost Strategy",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Provides a structured approach to managing rent, rates, and property-related costs — typically the second largest cost after payroll — ensuring the cafe is not overpaying for its premises and is maximising the revenue potential of every square foot it occupies.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Calculate total occupancy cost as a percentage of revenue and benchmark against industry norms",
+      "Establish a rent review and lease management calendar to ensure the business is never caught off guard by landlord actions",
+      "Evaluate whether the current premises deliver sufficient revenue per square foot to justify the occupancy cost",
+      "Identify opportunities to reduce rates, service charges, or utility costs through active management",
+      "Develop a negotiation strategy for lease renewals or rent reviews that is evidence-based rather than emotional"
+    ],
+    "secondary_objectives": [
+      "Assess whether the lease terms are commercially appropriate and identify restrictive clauses that may limit the business",
+      "Evaluate the financial case for subletting unused space, adding outdoor seating, or extending trading hours to spread occupancy cost",
+      "Build a relationship with the landlord that supports the long-term viability of the cafe",
+      "Create a contingency plan for significant rent increases at review points"
+    ]
+  },
+  "why_this_matters": "Occupancy costs — rent, business rates, service charges, buildings insurance, and property maintenance — are the largest fixed cost in most cafe businesses, typically representing 10-18% of revenue. Unlike labour or ingredients, these costs do not flex with trading volume: the rent is due whether the cafe serves 50 customers or 500. This makes occupancy cost management strategically critical. A cafe paying 30,000 pounds per year in rent on a 5-year lease is committing to 150,000 pounds in property costs — likely the single largest financial obligation the owner will ever make. Yet many cafe operators sign leases without professional advice, agree to upward-only rent review clauses without understanding the implications, and fail to challenge business rates assessments even when they are clearly incorrect. In England, business rates are based on the Valuation Office Agency's assessment of rateable value, and small cafes may qualify for Small Business Rate Relief — potentially saving thousands of pounds per year. Many cafe owners do not know this relief exists or assume they do not qualify. Lease negotiations are among the few moments where a cafe can make a decision worth tens of thousands of pounds. A 10% reduction in rent negotiated at a 5-year lease renewal saves 15,000 pounds over the term — equivalent to serving 10,000 additional flat whites. This block ensures the cafe takes an informed, strategic approach to its property costs rather than simply accepting what the landlord or the council demands.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Calculate the total occupancy cost for the last 12 months. Include rent, business rates, service charges, buildings insurance, and any landlord-required maintenance or property costs. Express this as a percentage of total revenue. The industry benchmark for independent cafes is 10-15% of revenue — anything above 18% is a red flag. Check the business rates assessment: log into the Valuation Office Agency website and verify the rateable value of your property. If you believe it is too high, note the appeal deadline. Check whether you qualify for Small Business Rate Relief — if your rateable value is below 15,000 pounds, you may be entitled to partial or full relief. Week 2: Review your lease document. Note the key dates: lease expiry, rent review dates, break clause dates. Identify the rent review mechanism — is it upward-only, open market, or linked to an index? Note any restrictions on use, assignment, alterations, or subletting. If you do not have a copy of your lease, request one from your solicitor or landlord. Create a lease management calendar with all critical dates flagged at least 6 months in advance.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Calculate revenue per square foot by dividing annual revenue by the total trading floor area. This metric allows you to compare your premises efficiency against industry benchmarks and evaluate whether the space is working hard enough. If revenue per square foot is low, consider whether layout changes, extended trading hours, or additional revenue streams could improve utilisation. Commission a professional lease review from a commercial property solicitor if you have not had one — costs are typically 300-500 pounds and can identify clauses that save or cost thousands. Prepare for your next rent review by gathering evidence: comparable rents in the area, any negative factors affecting the property (limited parking, poor footfall, building condition), and your trading history. Landlords negotiate with professional advisors; you should too — consider instructing a commercial surveyor to act on your behalf at the next rent review. Investigate utility cost reduction: compare energy tariffs, consider LED lighting, check whether heating and cooling systems are efficient. Utility costs are often grouped with occupancy costs and can represent 3-5% of revenue in their own right.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Occupancy cost management should become a strategic competency, not a reactive exercise. Maintain a rolling 12-month view of total occupancy cost as a percentage of revenue and track trends. Build a relationship with your landlord based on commercial respect — landlords prefer reliable, long-term tenants who look after the property, and this relationship can be leveraged during negotiations. Evaluate the premises strategically at each lease milestone: Is this the right location for the next 5 years? Has the local area changed? Would a different premises offer better rent-to-revenue ratio? Explore revenue-enhancing uses of the space: can you sublet a corner for a florist or retail display? Can you offer the space for events outside trading hours? Can outdoor seating be added or expanded? Consider whether a rent deposit or bank guarantee could be renegotiated to free up working capital. For multi-site operators, centralise lease management and negotiate portfolio terms with landlords who own multiple properties."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Calculate total occupancy cost for the last 12 months (rent, rates, service charge, insurance, property maintenance)",
+        "Express occupancy cost as a percentage of revenue and compare against the 10-15% benchmark",
+        "Check business rates assessment on the Valuation Office Agency website",
+        "Verify eligibility for Small Business Rate Relief",
+        "Locate and review the lease document, noting key dates and clauses",
+        "Create a lease management calendar with rent review and break clause dates flagged 6 months ahead"
+      ],
+      "responsible": "Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Calculate revenue per square foot and compare against industry benchmarks",
+        "Commission a professional lease review from a commercial property solicitor",
+        "Gather comparable rent evidence for the next rent review negotiation",
+        "Consider instructing a commercial surveyor for rent review representation",
+        "Audit utility costs and compare energy tariffs for potential savings",
+        "Evaluate layout or operational changes to improve revenue per square foot",
+        "Review service charge invoices for accuracy and challenge any discrepancies"
+      ],
+      "responsible": "Owner, Commercial Solicitor"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track occupancy cost as a percentage of revenue on a rolling 12-month basis",
+        "Build a constructive landlord relationship that supports lease negotiations",
+        "Evaluate premises strategically at each lease milestone against business needs",
+        "Explore revenue-enhancing uses of the space (subletting, events, outdoor seating)",
+        "Renegotiate rent deposit or guarantee terms to optimise working capital",
+        "Integrate occupancy cost strategy into the annual budget and 3-year plan"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Occupancy Cost Analysis (annual breakdown with revenue percentage)",
+    "Lease Management Calendar with key dates",
+    "Rent Review Evidence Pack template",
+    "Revenue Per Square Foot Calculator",
+    "Business Rates Review Checklist"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T126-01",
+        "tool_name": "Occupancy Cost Tracker",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Annual spreadsheet tracking all occupancy-related costs (rent, rates, service charge, insurance, maintenance) against revenue, calculating occupancy percentage monthly and identifying trends."
+      },
+      {
+        "tool_id": "T126-02",
+        "tool_name": "Lease Management Calendar",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "A calendar document flagging all critical lease dates — rent reviews, break clauses, lease expiry, insurance renewal — with 6-month advance warnings and action checklists for each milestone."
+      },
+      {
+        "tool_id": "T126-03",
+        "tool_name": "Rent Review Evidence Pack Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A structured document for gathering and presenting evidence at rent review negotiations, including comparable rents, property condition notes, footfall data, and any negative factors affecting value."
+      },
+      {
+        "tool_id": "T126-04",
+        "tool_name": "Revenue Per Square Foot Calculator",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Calculates annual revenue per square foot of trading space and compares against industry benchmarks, highlighting whether the premises is being used efficiently."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Rent review dates pass without preparation, leaving the owner to accept whatever the landlord proposes",
+    "Business rates are paid without challenge even when the rateable value is clearly excessive or relief is available",
+    "The lease is signed without professional review, locking the business into unfavourable terms for years",
+    "Occupancy cost creep goes unnoticed because property costs are treated as fixed rather than manageable"
+  ],
+  "kpis": [
+    "Total occupancy cost maintained below 15% of revenue",
+    "All lease milestone dates actioned at least 6 months in advance",
+    "Business rates assessment reviewed annually and challenged where appropriate",
+    "Revenue per square foot tracked quarterly and trending upward"
+  ],
+  "dependencies": ["B122"],
+  "constraints": [
+    "Lease terms are legally binding and cannot be changed unilaterally — negotiation requires landlord agreement",
+    "Business rates appeals have specific deadlines and procedures that must be followed",
+    "Professional advice (solicitor, surveyor) involves cost that must be weighed against potential savings"
+  ],
+  "time_load": {
+    "L1": "4 hours (cost analysis, rates check, lease review, calendar setup)",
+    "L2": "8-12 hours (professional lease review, rent review preparation, utility audit)",
+    "L3": "2 hours/quarter (tracking, landlord relationship, strategic premises evaluation)"
+  },
+  "review_protocol": "Monthly tracking of occupancy cost percentage. Lease milestone actions triggered 6 months before each key date. Annual business rates assessment review. Full strategic premises evaluation at each lease break or renewal point.",
+  "meta": {
+    "summary_for_humans": "This block ensures the cafe actively manages its property costs — rent, rates, service charges — rather than passively accepting them. It covers lease management, rates relief, rent review preparation, and premises efficiency analysis.",
+    "implementation_risks": [
+      "Challenging business rates or negotiating rent can feel confrontational, and some owners avoid it",
+      "Professional advice costs money upfront, which can deter cash-strapped operators even when the potential savings are significant",
+      "Poor landlord relationships can make lease negotiations adversarial rather than commercial"
+    ],
+    "notes_for_engine": "Activate when signals indicate occupancy cost exceeds 15% of revenue, when a rent review or lease renewal is approaching, or when the owner mentions they have never checked their business rates. High priority if the cafe is in a marginal financial position where occupancy cost reduction could be the difference between survival and closure.",
+    "tags": ["finance", "rent", "rates", "lease", "property", "occupancy", "negotiation", "premises"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

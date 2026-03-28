@@ -1,0 +1,22 @@
+{
+  "id": "tool_closing_reset_checklist",
+  "name": "Closing reset checklist",
+  "description": "Close-down checklist covering stock, prep, cleanliness, unresolved issues, and anything that would poison the next day's readiness if left implicit.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: reset discipline should preserve the next operating cycle, not just finish the current one",
+  "updated_at": "2026-03-14T00:24:43.045419Z",
+  "category": "controls",
+  "format": "checklist",
+  "usage_moment": "Use at close before team members leave and before unresolved issues are handed over.",
+  "expected_output": "A signed close record with completed reset items, unresolved blockers, and explicit carry-forward actions.",
+  "adaptation_variables": [
+    "daypart",
+    "station_count",
+    "handover_model",
+    "critical_assets"
+  ],
+  "block_ids": [
+    "blk_closing_reset_check"
+  ]
+}

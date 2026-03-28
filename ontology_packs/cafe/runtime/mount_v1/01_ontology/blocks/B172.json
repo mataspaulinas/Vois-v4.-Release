@@ -1,0 +1,166 @@
+{
+  "block_id": "B172",
+  "name": "Cafe Values Definition",
+  "version": "v1.0",
+  "domain": "D12_culture_identity",
+  "module": "M12: Values Identity & Community",
+  "state": "enriched",
+  "purpose": "Articulates the cafe's core values in clear, actionable language that guides behaviour, decision-making, and hiring. This block moves values from vague aspirations like 'we care about quality' into specific, observable standards that every team member can understand, apply, and be held accountable to.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Facilitate a values discovery process that identifies 3-5 core values authentic to the cafe and its owner",
+      "Translate each value into specific, observable behaviours that make the value tangible and measurable in daily operations",
+      "Create a Values Charter document that serves as the cultural foundation for hiring, training, and performance conversations",
+      "Ensure every team member can articulate the cafe's values and explain what they mean in practice",
+      "Embed values into decision-making so they become the primary filter for choices about people, products, and priorities"
+    ],
+    "secondary_objectives": [
+      "Attract team members who share the cafe's values, reducing cultural misfit and associated turnover",
+      "Give staff a framework for making autonomous decisions that align with the cafe's identity",
+      "Create consistency of experience for customers regardless of which team member is serving them",
+      "Build a brand identity that is rooted in genuine culture rather than marketing fabrication"
+    ]
+  },
+  "why_this_matters": "Every cafe has a culture whether the owner defines it deliberately or not. In the absence of articulated values, the culture defaults to whatever habits, attitudes, and norms emerge organically, which is often a reflection of the most dominant personality on shift rather than a coherent identity. This creates inconsistency: the cafe feels warm and welcoming when one barista is working and transactional and rushed when another is. Customers sense this inconsistency even if they cannot articulate it, and it erodes trust and loyalty. Defined values solve this by creating a shared standard that transcends individual personalities. When 'genuine warmth' is a stated value with specific behavioural examples (greet every customer with eye contact and a smile, learn regulars' names and orders, check in with seated customers), every team member knows what is expected regardless of their natural disposition. Values are also the most powerful hiring tool an independent cafe has. A cafe that can articulate 'we value craft, warmth, and honesty' can assess candidates against these criteria rather than just technical skills. A skilled barista who does not share the cafe's values will create more problems than an less experienced team member who embodies them completely. Similarly, values provide a framework for difficult conversations. 'You arrived 15 minutes late three times this week, and reliability is one of our core values' is a clearer and more constructive conversation than 'you need to be more reliable.' The cafe's values should be authentically the owner's values. Borrowed or aspirational values that do not reflect how the owner actually operates will be perceived as hollow by the team.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Conduct a Values Discovery exercise. The owner should answer these questions honestly and in writing: What 3 things make me most proud about this cafe? What behaviour from staff makes me genuinely happy? What behaviour from staff genuinely frustrates me? If I could hire someone with only one character trait, what would it be? What do our best customers value most about us? What would I refuse to compromise on even if it cost revenue? The answers to these questions reveal the authentic values that already exist but have not been named. Look for patterns: if pride, frustration, and hiring priorities all point towards 'craft' or 'attention to detail', that is a genuine value. Aim for 3-5 values. More than 5 becomes impossible to remember and apply. Week 2: For each value, write 3-5 specific behavioural examples that describe what the value looks like in practice. For example, if a value is 'Genuine Hospitality': we greet every customer within 10 seconds of them entering; we remember regulars' names and favourite orders; we proactively check on seated customers; we handle complaints with empathy and ownership, not defensiveness; we treat colleagues with the same respect we show customers. These behaviours make the value tangible, observable, and assessable.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Values Charter: a single-page document listing each value, its meaning in one sentence, and its behavioural examples. Design this to be visually appealing and post it in the staff area, not hidden in a filing cabinet. The Values Charter should be discussed in every new staff induction and referenced in team meetings. Integrate values into the hiring process: create interview questions that probe for values alignment. For 'Genuine Hospitality', ask: 'Tell me about a time you went out of your way for someone. What happened and how did it feel?' Listen for whether the candidate describes this behaviour as natural and enjoyable or as exceptional and burdensome. Integrate values into performance conversations: when giving feedback, reference specific values. 'Your attention to detail on the coffee bar today was excellent, that is exactly what our craft value looks like in practice.' This reinforces the connection between values and daily behaviour. Hold a Team Values Workshop: present the values to the full team, discuss what each means in practice, ask for their examples and input, and create collective ownership. Values imposed from above without team input feel like rules. Values co-created feel like shared identity.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Conduct a quarterly Values Health Check: ask each team member to rate (anonymously) how well the cafe lives its stated values on a scale of 1-5. Review the results honestly and address any values where the rating is below 4. This prevents values from becoming aspirational wallpaper. Use values as a decision-making framework: when facing a difficult choice, ask 'which option best aligns with our values?' This creates consistency and reduces the burden of ad-hoc decision-making on the owner. Celebrate values in action: create a 'Values Moment of the Week' recognition where team members nominate colleagues who demonstrated a value exceptionally well. This reinforces the values as living, active standards rather than words on a wall. Review the values annually: are they still accurate? Has the cafe evolved? Have new values emerged? Values should be stable but not permanent. Allow them to evolve as the business matures, but change them deliberately and with team involvement, never by drift."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Complete the Values Discovery exercise with honest written answers to the 6 core questions",
+        "Identify 3-5 core values from the patterns in the discovery answers",
+        "Write 3-5 specific behavioural examples for each value",
+        "Test the values by asking: would I fire someone who consistently violated this value? If not, it is not a core value",
+        "Share the draft values with your most trusted team member for a reality check",
+        "Refine the values based on feedback until they feel genuinely authentic"
+      ],
+      "responsible": "Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create the Values Charter (single-page document with values, meanings, and behaviours)",
+        "Design and display the Values Charter in the staff area",
+        "Integrate values into interview questions for all future hiring",
+        "Integrate values language into performance feedback conversations",
+        "Hold a Team Values Workshop to present, discuss, and co-own the values",
+        "Add values introduction to the new staff induction process",
+        "Begin using values as a reference point in team meetings"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly anonymous Values Health Checks with the team",
+        "Use values as a decision-making framework for difficult choices",
+        "Establish a Values Moment of the Week recognition programme",
+        "Review and potentially refine values annually with team involvement",
+        "Share values stories (examples of values in action) in team communications"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Values Discovery exercise (written answers from owner)",
+    "Values Charter (single-page document with values, meanings, behaviours)",
+    "Values-Based Interview Questions for hiring",
+    "Team Values Workshop agenda and materials",
+    "Quarterly Values Health Check survey"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T172-01",
+        "tool_name": "Values Discovery Worksheet",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Guided worksheet with 6 reflective questions that surface the owner's authentic values. Includes instructions for pattern identification and value naming. Designed for honest, private reflection before any team involvement."
+      },
+      {
+        "tool_id": "T172-02",
+        "tool_name": "Values Charter Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Single-page visual template listing 3-5 core values with a one-sentence meaning and 3-5 specific behavioural examples for each. Designed for wall display in the staff area with professional, on-brand presentation."
+      },
+      {
+        "tool_id": "T172-03",
+        "tool_name": "Values-Based Interview Guide",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Interview question bank with 2-3 behavioural questions per core value. Each question includes: the question text, what a strong answer sounds like, what a weak answer sounds like, and scoring guidance for consistent evaluation."
+      },
+      {
+        "tool_id": "T172-04",
+        "tool_name": "Team Values Workshop Pack",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Workshop facilitation guide for a 45-60 minute team session introducing the cafe's values. Includes: agenda, discussion prompts, activity for generating team-specific behavioural examples, and collective commitment exercise."
+      },
+      {
+        "tool_id": "T172-05",
+        "tool_name": "Quarterly Values Health Check Survey",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Short anonymous survey asking staff to rate how well the cafe lives each value (1-5) with space for comments. Includes analysis framework for identifying values gaps and creating action plans."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Values are aspirational rather than authentic, describing who the owner wants to be rather than who they actually are, creating immediate credibility problems with the team",
+    "Values are defined but never referenced in daily operations, performance conversations, or hiring, becoming empty words on a wall",
+    "Too many values are defined (more than 5), making them impossible to remember and diluting focus",
+    "The owner's behaviour visibly contradicts the stated values, destroying their legitimacy more effectively than any other failure"
+  ],
+  "kpis": [
+    "100% of staff can name the cafe's core values within 3 months of values launch",
+    "Values referenced in at least 50% of performance feedback conversations",
+    "Quarterly Values Health Check average score above 4 out of 5 across all values",
+    "Values-based interview questions used in 100% of hiring decisions"
+  ],
+  "dependencies": ["B173"],
+  "constraints": [
+    "Values must be authentically the owner's values; borrowed or aspirational values will be seen through immediately",
+    "The owner must model the values consistently; any perceived hypocrisy undermines the entire framework",
+    "Values work must be completed before developing the staff handbook (B173) to ensure policies align with values",
+    "Cultural change through values definition takes 6-12 months of consistent reinforcement"
+  ],
+  "time_load": {
+    "L1": "4 hours (values discovery exercise, behavioural definition, initial refinement)",
+    "L2": "6 hours (charter creation, interview questions, team workshop, induction integration)",
+    "L3": "2 hours/quarter (health check survey, analysis, and values reinforcement activities)"
+  },
+  "review_protocol": "Values Charter displayed and visible at all times. Values referenced in weekly team meetings. Quarterly Values Health Check conducted and results acted upon. Values-based interview questions reviewed after every 5 hires for effectiveness. Full values review conducted annually with team input. Values updated deliberately if the business evolves, never by silent drift.",
+  "meta": {
+    "summary_for_humans": "This block guides the cafe through defining 3-5 authentic core values, translating them into specific observable behaviours, and embedding them into hiring, training, feedback, and daily decision-making. It creates the cultural foundation that all other D12 blocks build upon.",
+    "implementation_risks": [
+      "The biggest risk is the owner not modelling the values personally, which invalidates the entire exercise",
+      "Values definition can feel abstract and 'corporate' if not grounded in practical, daily behavioural examples",
+      "Resistance from existing staff is possible if values are imposed without involvement or if they expose current cultural weaknesses"
+    ],
+    "notes_for_engine": "This is the foundational block for all D12 culture and identity blocks. Activate for any cafe showing cultural inconsistency, hiring mismatches, unclear identity, or owner frustration with team behaviour. Must be completed before B173, B174, B175, B176, B177, and B178.",
+    "tags": ["values", "culture", "identity", "hiring", "behaviour", "charter", "leadership", "authenticity"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

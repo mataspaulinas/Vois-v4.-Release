@@ -1,0 +1,4669 @@
+{
+  "meta": {
+    "version": "v8",
+    "vertical": "restaurant",
+    "owner": "execution-program",
+    "released_at": "2026-03-15T17:17:17.633402Z",
+    "recovery_sources": [
+      "OIS-Pre-Seed-Business-Case-Full.docx",
+      "Operational Intelligence System (OIS) — Complete Feature and Function Deep Dive (2).docx",
+      "compass_artifact_wf-e347607e-a3ae-4368-96f6-93ba04857d08_text_markdown.md",
+      "Operational Intelligence System (OIS) - Complete Feature and Function Deep Dive (2).docx",
+      "ontology/restaurant/workbench/extraction/restaurant-signals-batch-001.json",
+      "ontology/restaurant/workbench/extraction/restaurant-failure-modes-batch-001.json",
+      "ontology/restaurant/workbench/extraction/restaurant-response-patterns-batch-001.json",
+      "ontology/restaurant/workbench/extraction/restaurant-blocks-batch-001.json",
+      "ontology/restaurant/workbench/extraction/restaurant-tools-batch-001.json",
+      "ontology/restaurant/workbench/extraction/restaurant-signal-failure-map-batch-001.json",
+      "ontology/restaurant/workbench/extraction/restaurant-failure-pattern-map-batch-001.json",
+      "ontology/restaurant/workbench/extraction/restaurant-pattern-block-map-batch-001.json",
+      "ontology/restaurant/workbench/extraction/restaurant-gold-set-semantic-rewrite-001.json",
+      "ontology/restaurant/workbench/extraction/restaurant-block-tool-gold-set-001.json",
+      "ontology/restaurant/workbench/extraction/restaurant-block-tool-gold-set-002.json",
+      "ontology/restaurant/workbench/extraction/restaurant-coverage-expansion-001.json",
+      "restaurant-signals-batch-002",
+      "ontology/restaurant/workbench/extraction/restaurant-signals-batch-003.json",
+      "restaurant-signals-batch-004",
+      "restaurant-signals-batch-005"
+    ]
+  },
+  "signals": [
+    {
+      "id": "sig_86_surprise",
+      "name": "Mid-shift 86 surprise",
+      "description": "Items go unavailable mid-service without early warning or substitution planning.",
+      "status": "published",
+      "owner": "recovery-team",
+      "source_ref": "compass-market-analysis: intervention planning over fragmented tools",
+      "updated_at": "2026-03-13T16:59:41.575261Z",
+      "domain": "financial_controls",
+      "module": "item_availability",
+      "indicator_type": "lagging",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_bar_ticket_delay",
+      "name": "Bar ticket delay",
+      "description": "Drink production holds back table progression or guest satisfaction.",
+      "status": "published",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: service bottlenecks and throughput signals",
+      "updated_at": "2026-03-13T16:59:41.575990Z",
+      "domain": "beverage_execution",
+      "module": "bar_flow",
+      "indicator_type": "lagging",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_checker_or_qc_absent",
+      "name": "Checker or QC step is absent",
+      "description": "No one is visibly checking quality, completeness, or readiness before work reaches the guest or the next role.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: quality-check absence expressed through restaurant live execution",
+      "updated_at": "2026-03-15T15:59:27.059635Z",
+      "domain": "service_quality",
+      "module": "standard_execution",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "no final check before handoff or send",
+        "quality escapes because nobody checks",
+        "readiness or completeness left to chance"
+      ],
+      "source_types": [
+        "service observation",
+        "quality observation",
+        "manager notes"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_output_quality_inconsistent",
+        "sig_standard_steps_skipped"
+      ],
+      "adapter_aliases": [
+        "no QC step",
+        "nobody checks before send"
+      ]
+    },
+    {
+      "id": "sig_closing_reset_failures",
+      "name": "Closing reset failures",
+      "description": "The closing shift leaves unresolved prep, cleaning, or stock problems for the next day.",
+      "status": "published",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: recurring operational drag between shifts",
+      "updated_at": "2026-03-13T16:59:41.576739Z",
+      "domain": "leadership_rhythm",
+      "module": "open_close_controls",
+      "indicator_type": "lagging",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_complaint_handled_defensively",
+      "name": "Complaint is handled defensively",
+      "description": "A guest complaint is met with explanation, blame-shifting, or resistance instead of calm acknowledgment and structured recovery.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: complaint handled defensively expressed through restaurant guest recovery behavior",
+      "updated_at": "2026-03-15T17:17:16.776734Z",
+      "domain": "guest_experience",
+      "module": "service_recovery",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "staff explain the problem instead of owning the recovery",
+        "guest feedback is met with friction or defensiveness",
+        "recovery language escalates tension instead of stabilizing it"
+      ],
+      "source_types": [
+        "guest complaint",
+        "manager notes",
+        "service observation"
+      ],
+      "temporal_behavior": "event-driven",
+      "likely_co_signals": [
+        "sig_issue_resolution_slow_or_unclear",
+        "sig_guest_complaints"
+      ],
+      "adapter_aliases": [
+        "defensive complaint handling",
+        "guest complaint met with pushback"
+      ]
+    },
+    {
+      "id": "sig_complaint_response_defensive",
+      "name": "Complaint response turns defensive",
+      "description": "Service failures trigger defensiveness, excuse-making, or inconsistent recovery instead of calm ownership and containment.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: recovery quality is visible in the first response to a guest-facing failure",
+      "updated_at": "2026-03-14T00:41:10.240473Z",
+      "domain": "guest_experience",
+      "module": "guest_recovery_protocol",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "review_text",
+        "mystery_guest"
+      ],
+      "source_types": [
+        "complaint_log",
+        "audit_notes"
+      ],
+      "temporal_behavior": "episodic",
+      "likely_co_signals": [
+        "sig_guest_complaints"
+      ],
+      "adapter_aliases": [
+        "defensive_recovery",
+        "poor_complaint_handling"
+      ]
+    },
+    {
+      "id": "sig_count_variance",
+      "name": "Inventory count variance",
+      "description": "Actual counts regularly differ from expected stock on hand.",
+      "status": "published",
+      "owner": "recovery-team",
+      "source_ref": "compass-market-analysis: control loops and operator trust",
+      "updated_at": "2026-03-13T16:59:41.577679Z",
+      "domain": "financial_controls",
+      "module": "inventory_accuracy",
+      "indicator_type": "lagging",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_critical_role_left_uncovered",
+      "name": "Critical role is left uncovered",
+      "description": "A role that protects flow or standards is missing entirely, forcing the rest of the venue to improvise around the gap.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: uncovered critical role expressed through restaurant service flow",
+      "updated_at": "2026-03-15T14:29:28.473723Z",
+      "domain": "workforce",
+      "module": "deployment",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "no expo or floor lead in a pressured window",
+        "missing host, runner, or section owner",
+        "critical service role not assigned"
+      ],
+      "source_types": [
+        "schedule review",
+        "manager notes",
+        "service observation"
+      ],
+      "temporal_behavior": "shift-bound",
+      "likely_co_signals": [
+        "sig_ownership_confusion_in_service",
+        "sig_work_dies_between_roles"
+      ],
+      "adapter_aliases": [
+        "key role uncovered",
+        "nobody owns the critical role"
+      ]
+    },
+    {
+      "id": "sig_customer_expectation_surprise",
+      "name": "Guest expectation surprise appears in service",
+      "description": "Guests react as though the venue's timing, offer, or service experience is materially different from what they expected coming in.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: customer expectation surprise expressed through restaurant guest reactions",
+      "updated_at": "2026-03-15T15:59:27.060481Z",
+      "domain": "guest_experience",
+      "module": "host_flow",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "guest says this is not what they expected",
+        "surprise about wait, offer, or service conditions",
+        "promise and actual experience visibly diverge"
+      ],
+      "source_types": [
+        "guest complaint",
+        "service observation",
+        "manager notes"
+      ],
+      "temporal_behavior": "event-driven",
+      "likely_co_signals": [
+        "sig_promised_time_missed",
+        "sig_guest_complaints"
+      ],
+      "adapter_aliases": [
+        "guests were surprised",
+        "expectation mismatch at the table"
+      ]
+    },
+    {
+      "id": "sig_demand_spike_unabsorbed",
+      "name": "Demand spike goes unabsorbed",
+      "description": "A sudden rush or wave of covers hits the venue faster than the operation can absorb without visible service strain.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: demand-capacity mismatch expressed through restaurant rush absorption",
+      "updated_at": "2026-03-15T14:29:28.474649Z",
+      "domain": "workforce",
+      "module": "deployment",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "rush wave overwhelms capacity",
+        "queue expands immediately after demand spike",
+        "service strain appears within minutes of surge"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "volume review"
+      ],
+      "temporal_behavior": "spike-sensitive",
+      "likely_co_signals": [
+        "sig_service_delay",
+        "sig_work_pace_breaks_under_load"
+      ],
+      "adapter_aliases": [
+        "rush hit too hard",
+        "volume spike unabsorbed"
+      ]
+    },
+    {
+      "id": "sig_equipment_breaks_service_flow",
+      "name": "Equipment breaks service flow",
+      "description": "Equipment or critical assets fail at the moment they are needed and force the service flow into delay, improvisation, or degraded quality.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: asset reliability should be treated as a live operational signal, not maintenance background",
+      "updated_at": "2026-03-14T00:41:10.242234Z",
+      "domain": "kitchen_operations",
+      "module": "equipment_reliability",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "incident_log",
+        "live_observation"
+      ],
+      "source_types": [
+        "manager_notes",
+        "staff_report"
+      ],
+      "temporal_behavior": "episodic",
+      "likely_co_signals": [
+        "sig_ticket_bottleneck",
+        "sig_line_check_missing"
+      ],
+      "adapter_aliases": [
+        "equipment_failure",
+        "critical_asset_down"
+      ]
+    },
+    {
+      "id": "sig_equipment_or_asset_breaks_flow",
+      "name": "Equipment or asset failure breaks the flow",
+      "description": "A piece of equipment, workstation, or physical asset interrupts the operating rhythm enough to change timing, routing, or output quality.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: equipment or asset breaks flow expressed through restaurant live operations",
+      "updated_at": "2026-03-15T17:17:16.779621Z",
+      "domain": "operations",
+      "module": "equipment_reliability",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "equipment failure forces a routing or pacing change",
+        "station output drops because an asset is unreliable",
+        "service timing shifts around a broken or degraded asset"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "maintenance note"
+      ],
+      "temporal_behavior": "event-driven",
+      "likely_co_signals": [
+        "sig_tool_or_system_unavailable",
+        "sig_workaround_is_normalized"
+      ],
+      "adapter_aliases": [
+        "equipment failure breaks service",
+        "asset reliability hit the flow"
+      ]
+    },
+    {
+      "id": "sig_exception_repeats_without_containment",
+      "name": "Exception repeats without containment",
+      "description": "A known exception keeps happening again without the venue putting in a temporary containment rule or a stable correction.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: exception repeating without containment expressed through restaurant issue handling",
+      "updated_at": "2026-03-15T15:59:27.062668Z",
+      "domain": "service_delivery",
+      "module": "service_recovery",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "same breakdown repeats within days",
+        "known issue returns with no temporary guardrail",
+        "recurring exception treated as isolated every time"
+      ],
+      "source_types": [
+        "manager notes",
+        "post-shift review",
+        "incident log"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_issue_resolution_slow_or_unclear",
+        "sig_problem_discussed_not_closed"
+      ],
+      "adapter_aliases": [
+        "repeat exception with no containment",
+        "known problem keeps returning"
+      ]
+    },
+    {
+      "id": "sig_expo_calls_missing",
+      "name": "Expo calls missing",
+      "description": "The pass lacks consistent verbal callouts for timing, fire, and pickup.",
+      "status": "published",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: root-cause transparency between stations",
+      "updated_at": "2026-03-13T16:59:41.581974Z",
+      "domain": "kitchen_operations",
+      "module": "pass_communication",
+      "indicator_type": "leading",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_follow_through_missing",
+      "name": "Follow-through is missing",
+      "description": "The venue discusses the right action, but the reset, check-back, or accountability loop does not actually land afterward.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: missing follow-through expressed through restaurant management rhythm",
+      "updated_at": "2026-03-15T14:29:28.475547Z",
+      "domain": "leadership",
+      "module": "management_follow_through",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "agreed reset not checked later",
+        "manager direction given without follow-through",
+        "actions named but not closed"
+      ],
+      "source_types": [
+        "manager notes",
+        "post-shift review",
+        "service observation"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_no_postmortem_after_breakdown",
+        "sig_improvement_not_standardized"
+      ],
+      "adapter_aliases": [
+        "no follow-through",
+        "direction without closure"
+      ]
+    },
+    {
+      "id": "sig_guest_complaints",
+      "name": "Recurring guest complaints",
+      "description": "Complaint frequency indicates an unresolved service or product issue.",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: operational intake examples",
+      "updated_at": "2026-03-13T00:00:00Z",
+      "domain": "guest_experience",
+      "module": "service_recovery",
+      "indicator_type": "lagging",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_handoff_requires_reclarification",
+      "name": "Handoff requires re-clarification",
+      "description": "A task or guest need has to be restated because the first handoff did not carry enough clarity to move forward cleanly.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: handoff failure expressed through restaurant pass and floor communication",
+      "updated_at": "2026-03-14T12:48:22.220800Z",
+      "domain": "service_delivery",
+      "module": "pass_communication",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "repeated clarifying question",
+        "handoff restatement",
+        "double-check before action"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes"
+      ],
+      "temporal_behavior": "flow-recurring",
+      "likely_co_signals": [
+        "sig_expo_calls_missing",
+        "sig_ownership_confusion_in_service"
+      ],
+      "adapter_aliases": [
+        "needs repeating",
+        "handoff unclear"
+      ]
+    },
+    {
+      "id": "sig_improvement_not_standardized",
+      "name": "Improvement is not standardized",
+      "description": "The team finds a better way once, but it never becomes the normal way of operating across shifts or people.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: learning failure visible through failure to standardize wins",
+      "updated_at": "2026-03-14T12:48:22.222393Z",
+      "domain": "service_delivery",
+      "module": "role_clarity",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "one-off improvement",
+        "fix depends on one person",
+        "better method not codified"
+      ],
+      "source_types": [
+        "manager notes",
+        "post-shift review",
+        "training observation"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_same_issue_repeats_without_review",
+        "sig_standard_steps_skipped"
+      ],
+      "adapter_aliases": [
+        "fix never stuck",
+        "improvement stayed local"
+      ]
+    },
+    {
+      "id": "sig_issue_resolution_slow_or_unclear",
+      "name": "Issue resolution is slow or unclear",
+      "description": "A guest issue or service exception is noticed, but the recovery path is hesitant, slow, or ambiguous.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: exception recovery weakness expressed through restaurant guest recovery",
+      "updated_at": "2026-03-14T12:48:22.223512Z",
+      "domain": "guest_experience",
+      "module": "service_recovery",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "slow recovery response",
+        "unclear owner during issue",
+        "guest waits for resolution"
+      ],
+      "source_types": [
+        "guest complaint",
+        "manager notes",
+        "service observation"
+      ],
+      "temporal_behavior": "event-driven",
+      "likely_co_signals": [
+        "sig_guest_complaints",
+        "sig_complaint_response_defensive"
+      ],
+      "adapter_aliases": [
+        "slow recovery",
+        "unclear issue response"
+      ]
+    },
+    {
+      "id": "sig_key_operating_metric_not_reviewed",
+      "name": "Key operating metric is not reviewed",
+      "description": "The venue is not regularly looking at the metric that would reveal the current control problem before it becomes visible on the floor.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: control-loop weakness visible through missing metric review",
+      "updated_at": "2026-03-14T12:48:22.224653Z",
+      "domain": "financial_controls",
+      "module": "loss_prevention",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "missing KPI review",
+        "no operating metric check",
+        "surprised by preventable drift"
+      ],
+      "source_types": [
+        "manager notes",
+        "metric review",
+        "closing review"
+      ],
+      "temporal_behavior": "cadence-based",
+      "likely_co_signals": [
+        "sig_count_variance",
+        "sig_voids_rising"
+      ],
+      "adapter_aliases": [
+        "no KPI review",
+        "not checking the numbers"
+      ]
+    },
+    {
+      "id": "sig_last_minute_volume_shift",
+      "name": "Last-minute volume shift hits the floor",
+      "description": "Reservations, walk-ins, large parties, or timing changes bunch together late enough to disrupt pacing and reset the guest flow.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: last-minute volume shift expressed through restaurant arrival flow",
+      "updated_at": "2026-03-15T14:29:28.476771Z",
+      "domain": "guest_experience",
+      "module": "reservation_flow",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "booking wave compresses unexpectedly",
+        "walk-in surge collides with reservations",
+        "late group timing reshapes floor pacing"
+      ],
+      "source_types": [
+        "reservation review",
+        "host notes",
+        "service observation"
+      ],
+      "temporal_behavior": "peak-sensitive",
+      "likely_co_signals": [
+        "sig_reservation_pacing_breakdown",
+        "sig_waitlist_mismatch"
+      ],
+      "adapter_aliases": [
+        "arrival wave shift",
+        "late volume spike"
+      ]
+    },
+    {
+      "id": "sig_line_check_missing",
+      "name": "Line check missing",
+      "description": "The line opens without a complete readiness check across product, equipment, and station setup.",
+      "status": "published",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: diagnostic engine from opening risk to response",
+      "updated_at": "2026-03-13T16:59:41.583729Z",
+      "domain": "kitchen_operations",
+      "module": "shift_readiness",
+      "indicator_type": "leading",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_manager_absent_from_critical_moment",
+      "name": "Manager is absent from the critical moment",
+      "description": "A live pressure point arrives and the person expected to stabilize it is not visibly present, directing, or deciding.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: manager absent from critical moment expressed through restaurant peak pressure leadership",
+      "updated_at": "2026-03-15T17:17:16.781568Z",
+      "domain": "leadership",
+      "module": "management_presence",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "rush or escalation happens without visible manager intervention",
+        "the floor looks leaderless during a pressure moment",
+        "decisions wait because the manager is not present"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "post-shift review"
+      ],
+      "temporal_behavior": "event-driven",
+      "likely_co_signals": [
+        "sig_no_live_direction_or_reset",
+        "sig_peak_period_undercovered"
+      ],
+      "adapter_aliases": [
+        "manager missing in the moment",
+        "critical rush with no manager presence"
+      ]
+    },
+    {
+      "id": "sig_manager_floor_absence",
+      "name": "Manager floor absence",
+      "description": "Managers are not visibly present during the venue's most critical service windows.",
+      "status": "published",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: execution decays without leadership presence",
+      "updated_at": "2026-03-13T16:59:41.585354Z",
+      "domain": "leadership_rhythm",
+      "module": "floor_presence",
+      "indicator_type": "leading",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_new_staff_depend_on_memory",
+      "name": "New staff depend on memory and verbal instruction",
+      "description": "Newer team members rely on remembering scattered verbal guidance because repeatable training structure is missing.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: capability gap visible through memory-based onboarding",
+      "updated_at": "2026-03-14T12:48:22.225898Z",
+      "domain": "workforce",
+      "module": "role_clarity",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "asks same basics repeatedly",
+        "verbal-only coaching",
+        "no stable training artifact"
+      ],
+      "source_types": [
+        "manager notes",
+        "training observation"
+      ],
+      "temporal_behavior": "new-hire recurring",
+      "likely_co_signals": [
+        "sig_staff_confusion",
+        "sig_standard_steps_skipped"
+      ],
+      "adapter_aliases": [
+        "memory-based onboarding",
+        "new hires guessing"
+      ]
+    },
+    {
+      "id": "sig_no_live_direction_or_reset",
+      "name": "No live direction or reset occurs",
+      "description": "The shift visibly drifts under pressure and nobody steps in to reset pace, roles, or priorities in the moment.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: leadership rhythm failure expressed in live restaurant service",
+      "updated_at": "2026-03-14T12:48:22.229533Z",
+      "domain": "leadership_rhythm",
+      "module": "floor_presence",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "no live reset",
+        "drift without intervention",
+        "leaders watching but not directing"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes"
+      ],
+      "temporal_behavior": "peak-sensitive",
+      "likely_co_signals": [
+        "sig_manager_floor_absence",
+        "sig_section_imbalance"
+      ],
+      "adapter_aliases": [
+        "no reset happened",
+        "nobody redirected the shift"
+      ]
+    },
+    {
+      "id": "sig_no_postmortem_after_breakdown",
+      "name": "No postmortem follows a breakdown",
+      "description": "The team survives a bad shift or incident, but there is no structured review to convert the pain into a system correction.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: learning failure visible through missing post-breakdown review",
+      "updated_at": "2026-03-14T12:48:22.233423Z",
+      "domain": "leadership_rhythm",
+      "module": "communication_cadence",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "bad shift passes without review",
+        "no after-action discussion",
+        "same breakdown treated as bad luck"
+      ],
+      "source_types": [
+        "manager notes",
+        "post-shift review"
+      ],
+      "temporal_behavior": "event-driven",
+      "likely_co_signals": [
+        "sig_same_issue_repeats_without_review",
+        "sig_guest_complaints"
+      ],
+      "adapter_aliases": [
+        "no debrief",
+        "no after-action review"
+      ]
+    },
+    {
+      "id": "sig_opening_checklist_drift",
+      "name": "Opening checklist drift",
+      "description": "Opening standards vary enough that readiness depends on who opened the venue.",
+      "status": "published",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: operator memory should not be the system",
+      "updated_at": "2026-03-13T16:59:41.586680Z",
+      "domain": "leadership_rhythm",
+      "module": "open_close_controls",
+      "indicator_type": "leading",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_opening_or_reset_incomplete",
+      "name": "Opening or reset is incomplete",
+      "description": "A venue reset starts, but key steps remain half-done, leaving the next service window exposed to avoidable misses.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: opening or reset incomplete expressed through restaurant open-close discipline",
+      "updated_at": "2026-03-15T15:59:27.064239Z",
+      "domain": "operations",
+      "module": "open_close_controls",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "reset begins but is not closed cleanly",
+        "stations reopen half-restocked or half-checked",
+        "handoff into the next period happens with unfinished basics"
+      ],
+      "source_types": [
+        "opening review",
+        "closing review",
+        "manager notes"
+      ],
+      "temporal_behavior": "shift-bound",
+      "likely_co_signals": [
+        "sig_opening_checklist_drift",
+        "sig_closing_reset_failures"
+      ],
+      "adapter_aliases": [
+        "reset left half-done",
+        "open-close incomplete"
+      ]
+    },
+    {
+      "id": "sig_output_quality_inconsistent",
+      "name": "Output quality is inconsistent",
+      "description": "The same menu item, service touchpoint, or guest interaction varies too much depending on who handled it or how busy the venue is.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: standards drift and capability variance in restaurant execution",
+      "updated_at": "2026-03-14T12:48:22.238143Z",
+      "domain": "service_delivery",
+      "module": "floor_execution",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "plate-to-plate variance",
+        "service-step inconsistency",
+        "guest experience inconsistency"
+      ],
+      "source_types": [
+        "quality observation",
+        "guest complaint",
+        "manager notes"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_standard_steps_skipped",
+        "sig_staff_confusion"
+      ],
+      "adapter_aliases": [
+        "quality varies",
+        "not the same every time"
+      ]
+    },
+    {
+      "id": "sig_ownership_confusion_during_flow",
+      "name": "Ownership is confused during live flow",
+      "description": "The team hesitates, re-asks, or duplicates effort because ownership of the next move is not obvious in the moment.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: ownership confusion during flow expressed through restaurant live service",
+      "updated_at": "2026-03-15T17:17:16.783683Z",
+      "domain": "leadership",
+      "module": "role_clarity",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "team members ask who owns the next step",
+        "two people assume the same work or no one assumes it",
+        "flow pauses while ownership is clarified"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "post-shift review"
+      ],
+      "temporal_behavior": "event-driven",
+      "likely_co_signals": [
+        "sig_staff_confusion",
+        "sig_work_dies_between_roles"
+      ],
+      "adapter_aliases": [
+        "nobody clearly owns it",
+        "ownership confusion on shift"
+      ]
+    },
+    {
+      "id": "sig_ownership_confusion_in_service",
+      "name": "Ownership confusion in service",
+      "description": "Work stalls or doubles back because the team is unsure who owns the next action, escalation, or guest-facing decision.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: role clarity failures appear first as ambiguous ownership in live flow",
+      "updated_at": "2026-03-14T00:41:10.244129Z",
+      "domain": "workforce",
+      "module": "role_ownership",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "live_observation",
+        "manager_notes"
+      ],
+      "source_types": [
+        "audit_notes",
+        "consultant_observation"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_staff_confusion",
+        "sig_service_delay"
+      ],
+      "adapter_aliases": [
+        "unclear_owner",
+        "nobody_took_it"
+      ]
+    },
+    {
+      "id": "sig_peak_period_undercovered",
+      "name": "Peak period is undercovered",
+      "description": "The venue enters a known rush without enough capable coverage in the critical roles that carry flow.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: demand-capacity mismatch expressed through restaurant peak coverage",
+      "updated_at": "2026-03-14T12:48:22.239207Z",
+      "domain": "workforce",
+      "module": "deployment",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "thin floor coverage",
+        "uncovered rush role",
+        "peak window labor mismatch"
+      ],
+      "source_types": [
+        "schedule review",
+        "service observation",
+        "manager notes"
+      ],
+      "temporal_behavior": "peak-window recurring",
+      "likely_co_signals": [
+        "sig_section_imbalance",
+        "sig_service_delay"
+      ],
+      "adapter_aliases": [
+        "rush understaffed",
+        "peak coverage gap"
+      ]
+    },
+    {
+      "id": "sig_prep_inconsistency",
+      "name": "Prep inconsistency",
+      "description": "Prep quality or completion varies by shift.",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: signals as surface symptoms",
+      "updated_at": "2026-03-13T00:00:00Z",
+      "domain": "kitchen_operations",
+      "module": "prep_systems",
+      "indicator_type": "leading",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_problem_discussed_not_closed",
+      "name": "Problem is discussed but not closed",
+      "description": "The venue talks about a recurring problem, but nobody assigns ownership, closes the action, or verifies the fix afterward.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: problem discussed but not closed expressed through restaurant follow-through failure",
+      "updated_at": "2026-03-15T15:59:27.065251Z",
+      "domain": "leadership",
+      "module": "management_follow_through",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "same issue appears in repeated conversations",
+        "action named without an owner or closeout",
+        "review happens but closure and verification do not"
+      ],
+      "source_types": [
+        "manager notes",
+        "post-shift review",
+        "team huddle"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_follow_through_missing",
+        "sig_no_postmortem_after_breakdown"
+      ],
+      "adapter_aliases": [
+        "talked about but not closed",
+        "same problem keeps coming back"
+      ]
+    },
+    {
+      "id": "sig_promised_time_missed",
+      "name": "Promised time is missed",
+      "description": "A quoted pickup, seating, delivery, or service time is missed badly enough to break guest trust.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: promise and expectation failure surfacing in restaurant operations",
+      "updated_at": "2026-03-14T12:48:22.240132Z",
+      "domain": "guest_experience",
+      "module": "host_flow",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "quoted wait versus actual wait",
+        "broken ready-time promise",
+        "guest complaint about timing"
+      ],
+      "source_types": [
+        "service observation",
+        "guest complaint",
+        "manager notes"
+      ],
+      "temporal_behavior": "peak-sensitive",
+      "likely_co_signals": [
+        "sig_waitlist_mismatch",
+        "sig_service_delay"
+      ],
+      "adapter_aliases": [
+        "broken promise",
+        "missed quote"
+      ]
+    },
+    {
+      "id": "sig_required_inputs_missing_at_start",
+      "name": "Required inputs are missing at start",
+      "description": "Service starts without key prep, product, information, or setup inputs being ready when the team needs them.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: readiness failure visible through restaurant opening and line preparation",
+      "updated_at": "2026-03-14T12:48:22.241151Z",
+      "domain": "kitchen_operations",
+      "module": "shift_readiness",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "missing mise en place",
+        "missing station items",
+        "missing setup information"
+      ],
+      "source_types": [
+        "opening check",
+        "line check",
+        "manager notes"
+      ],
+      "temporal_behavior": "start-of-shift",
+      "likely_co_signals": [
+        "sig_line_check_missing",
+        "sig_prep_inconsistency"
+      ],
+      "adapter_aliases": [
+        "missing start inputs",
+        "not ready at open"
+      ]
+    },
+    {
+      "id": "sig_reservation_pacing_breakdown",
+      "name": "Reservation pacing breakdown",
+      "description": "Reservation waves hit the floor without pacing rules or release logic.",
+      "status": "published",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: intake examples and venue pressure points",
+      "updated_at": "2026-03-13T16:59:41.587454Z",
+      "domain": "service_delivery",
+      "module": "reservation_flow",
+      "indicator_type": "leading",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_rework_or_repeat_work_observed",
+      "name": "Rework or repeat work is observed",
+      "description": "The team is doing work twice, correcting preventable misses, or remaking steps that should have landed cleanly the first time.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: rework expressed through restaurant service and production execution",
+      "updated_at": "2026-03-15T14:29:28.477911Z",
+      "domain": "service_quality",
+      "module": "standard_execution",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "re-fired or remade work",
+        "service steps repeated because first pass failed",
+        "preventable correction loops"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "guest complaint"
+      ],
+      "temporal_behavior": "throughput-sensitive",
+      "likely_co_signals": [
+        "sig_standard_steps_skipped",
+        "sig_output_quality_inconsistent"
+      ],
+      "adapter_aliases": [
+        "redo work",
+        "repeat work on shift"
+      ]
+    },
+    {
+      "id": "sig_same_issue_repeats_without_review",
+      "name": "Same issue repeats without review",
+      "description": "The venue keeps reliving the same preventable problem because it is discussed informally but never closed through review and operating change.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: repeated unreviewed issues are direct evidence of a missing learning loop",
+      "updated_at": "2026-03-14T00:41:10.246305Z",
+      "domain": "leadership_rhythm",
+      "module": "post_shift_review",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "manager_notes",
+        "incident_log"
+      ],
+      "source_types": [
+        "audit_notes",
+        "progress_log"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_guest_complaints",
+        "sig_voids_rising",
+        "sig_waste_spike"
+      ],
+      "adapter_aliases": [
+        "repeat_issue_no_review",
+        "same_problem_again"
+      ]
+    },
+    {
+      "id": "sig_same_mistake_repeats_across_people",
+      "name": "Same mistake repeats across people",
+      "description": "The same operational miss shows up across different team members, suggesting the issue lives in the system rather than in one person.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: repeated mistakes across people expressed through restaurant training and learning failure",
+      "updated_at": "2026-03-15T14:29:28.478824Z",
+      "domain": "training",
+      "module": "training_execution",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "same miss from multiple staff",
+        "error pattern travels across the team",
+        "different people repeat the same avoidable failure"
+      ],
+      "source_types": [
+        "manager notes",
+        "post-shift review",
+        "service observation"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_same_issue_repeats_without_review",
+        "sig_training_not_translated_to_execution"
+      ],
+      "adapter_aliases": [
+        "same miss across staff",
+        "systemic repeat mistake"
+      ]
+    },
+    {
+      "id": "sig_scope_or_offer_misaligned",
+      "name": "Scope or offer is misaligned to execution reality",
+      "description": "The live offer asks the team to deliver more complexity, variation, or customization than the current operation can execute reliably.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: scope or offer misalignment expressed through restaurant menu and service complexity",
+      "updated_at": "2026-03-15T15:59:27.066228Z",
+      "domain": "service_delivery",
+      "module": "production_flow",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "offer complexity slows the core flow",
+        "modifier load overwhelms the line or bar",
+        "low-frequency items repeatedly disrupt execution"
+      ],
+      "source_types": [
+        "service observation",
+        "menu review",
+        "manager notes"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_ticket_bottleneck",
+        "sig_output_quality_inconsistent"
+      ],
+      "adapter_aliases": [
+        "menu scope too heavy",
+        "offer outpaces execution"
+      ]
+    },
+    {
+      "id": "sig_section_imbalance",
+      "name": "Section imbalance",
+      "description": "Some service sections overload while others remain underused.",
+      "status": "published",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: labor inefficiency and execution drag",
+      "updated_at": "2026-03-13T16:59:41.588141Z",
+      "domain": "workforce",
+      "module": "deployment",
+      "indicator_type": "leading",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_service_delay",
+      "name": "Service delay",
+      "description": "Guests wait too long for the next service touchpoint.",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: operational intake and diagnostic engine",
+      "updated_at": "2026-03-13T00:00:00Z",
+      "domain": "service_delivery",
+      "module": "floor_execution",
+      "indicator_type": "lagging",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_service_or_job_cycle_delay",
+      "name": "Service cycle delay is visible in live flow",
+      "description": "The service cycle is stretching beyond the venue's intended rhythm, creating visible lag between order, production, handoff, and guest delivery.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: service or job cycle delay expressed through restaurant service flow",
+      "updated_at": "2026-03-15T17:17:16.784789Z",
+      "domain": "service_delivery",
+      "module": "floor_execution",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "guests wait materially longer than the house rhythm suggests",
+        "orders or requests sit too long between steps",
+        "the live cycle stalls even when demand is not extreme"
+      ],
+      "source_types": [
+        "service observation",
+        "guest complaint",
+        "manager notes"
+      ],
+      "temporal_behavior": "throughput-sensitive",
+      "likely_co_signals": [
+        "sig_service_delay",
+        "sig_work_pace_breaks_under_load"
+      ],
+      "adapter_aliases": [
+        "service cycle slowing down",
+        "flow is taking too long"
+      ]
+    },
+    {
+      "id": "sig_shift_brief_missing",
+      "name": "Shift brief missing",
+      "description": "Managers are not running a structured pre-shift briefing.",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: welcome briefing and plans",
+      "updated_at": "2026-03-13T00:00:00Z",
+      "domain": "leadership_rhythm",
+      "module": "communication_cadence",
+      "indicator_type": "leading",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_shift_or_day_started_unprepared",
+      "name": "Shift or day starts unprepared",
+      "description": "The venue begins service without the minimum coordination, setup, and readiness needed to absorb normal pressure.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: shift starts unprepared expressed through restaurant readiness failures",
+      "updated_at": "2026-03-15T14:29:28.479763Z",
+      "domain": "operations",
+      "module": "shift_readiness",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "opening begins behind",
+        "service starts without coordinated readiness",
+        "team enters the shift chasing basics"
+      ],
+      "source_types": [
+        "opening review",
+        "manager notes",
+        "service observation"
+      ],
+      "temporal_behavior": "opening-bound",
+      "likely_co_signals": [
+        "sig_opening_checklist_drift",
+        "sig_required_inputs_missing_at_start"
+      ],
+      "adapter_aliases": [
+        "day started behind",
+        "shift opened unprepared"
+      ]
+    },
+    {
+      "id": "sig_skill_mix_mismatch",
+      "name": "Skill mix is mismatched to the work",
+      "description": "The people present are not the right combination of capability and confidence for the pressure or complexity of the shift.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: capability mismatch expressed through restaurant shift deployment",
+      "updated_at": "2026-03-15T14:29:28.483418Z",
+      "domain": "workforce",
+      "module": "deployment",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "experienced coverage too thin for the shift",
+        "novice-heavy floor under pressure",
+        "complex station left to underprepared staff"
+      ],
+      "source_types": [
+        "schedule review",
+        "manager notes",
+        "service observation"
+      ],
+      "temporal_behavior": "shift-bound",
+      "likely_co_signals": [
+        "sig_new_staff_depend_on_memory",
+        "sig_staff_confusion"
+      ],
+      "adapter_aliases": [
+        "wrong mix on shift",
+        "capability mismatch"
+      ]
+    },
+    {
+      "id": "sig_staff_confusion",
+      "name": "Staff confusion",
+      "description": "Team members show uncertainty about priorities or handoffs.",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "business-case: symptom blindness",
+      "updated_at": "2026-03-13T00:00:00Z",
+      "domain": "workforce",
+      "module": "role_clarity",
+      "indicator_type": "leading",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_standard_steps_skipped",
+      "name": "Standard steps skipped",
+      "description": "Critical service or prep steps are being skipped often enough that output consistency depends on who is working.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: standards drift is visible when basic steps stop being reliably repeated",
+      "updated_at": "2026-03-14T00:41:10.248595Z",
+      "domain": "service_delivery",
+      "module": "standard_execution",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "live_observation",
+        "quality_check"
+      ],
+      "source_types": [
+        "audit_notes",
+        "manager_walk"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_prep_inconsistency",
+        "sig_guest_complaints"
+      ],
+      "adapter_aliases": [
+        "steps_skipped",
+        "standard_not_followed"
+      ]
+    },
+    {
+      "id": "sig_stock_or_input_inaccuracy",
+      "name": "Stock or input information is inaccurate",
+      "description": "The count, availability, or readiness information the team is using does not match reality closely enough to make clean decisions.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: stock or input inaccuracy expressed through restaurant availability and count control",
+      "updated_at": "2026-03-15T15:59:27.067083Z",
+      "domain": "financial_controls",
+      "module": "inventory_accuracy",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "recorded stock does not match actual stock",
+        "team relies on availability information that proves wrong",
+        "count-based decisions fail because the inputs are inaccurate"
+      ],
+      "source_types": [
+        "count review",
+        "manager notes",
+        "service observation"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_86_surprise",
+        "sig_count_variance"
+      ],
+      "adapter_aliases": [
+        "inventory reality mismatch",
+        "bad input data on shift"
+      ]
+    },
+    {
+      "id": "sig_table_turn_stall",
+      "name": "Table turn stall",
+      "description": "Tables remain uncleared or unseated long enough to slow service capacity.",
+      "status": "published",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: symptom blindness in service flow",
+      "updated_at": "2026-03-13T16:59:41.588866Z",
+      "domain": "service_delivery",
+      "module": "seating_flow",
+      "indicator_type": "lagging",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_ticket_bottleneck",
+      "name": "Kitchen ticket bottleneck",
+      "description": "Tickets stack in production and delay flow through the kitchen.",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "consulting artifact: kitchen transformation",
+      "updated_at": "2026-03-13T00:00:00Z",
+      "domain": "kitchen_operations",
+      "module": "production_flow",
+      "indicator_type": "lagging",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_tool_or_system_unavailable",
+      "name": "Tool or system is unavailable when needed",
+      "description": "A device, system, or basic tool the venue relies on is missing, offline, dead, or otherwise unavailable during live work.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: tool or system unavailable expressed through restaurant live service friction",
+      "updated_at": "2026-03-15T14:29:28.484703Z",
+      "domain": "equipment",
+      "module": "equipment_reliability",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "POS or printer unavailable",
+        "service tool missing at moment of use",
+        "system outage or device dead during shift"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "incident log"
+      ],
+      "temporal_behavior": "incident-driven",
+      "likely_co_signals": [
+        "sig_workaround_is_normalized",
+        "sig_equipment_breaks_service_flow"
+      ],
+      "adapter_aliases": [
+        "tool unavailable",
+        "system down on shift"
+      ]
+    },
+    {
+      "id": "sig_training_not_translated_to_execution",
+      "name": "Training is not translating into execution",
+      "description": "The team has been shown the standard, but the expected behavior still does not appear reliably in live service.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: training not translating to execution expressed through restaurant standards drift",
+      "updated_at": "2026-03-15T14:29:28.485702Z",
+      "domain": "training",
+      "module": "training_execution",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "trained behavior missing in live shift",
+        "coaching happened but standards still do not land",
+        "training exists without execution transfer"
+      ],
+      "source_types": [
+        "manager notes",
+        "training review",
+        "service observation"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_new_staff_depend_on_memory",
+        "sig_standard_steps_skipped"
+      ],
+      "adapter_aliases": [
+        "training not landing",
+        "coached but not executed"
+      ]
+    },
+    {
+      "id": "sig_voids_rising",
+      "name": "Voids and comps rising",
+      "description": "The venue is losing margin through avoidable service recovery costs.",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "consulting artifact: volume decline and controls",
+      "updated_at": "2026-03-13T00:00:00Z",
+      "domain": "financial_controls",
+      "module": "loss_prevention",
+      "indicator_type": "lagging",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_waitlist_mismatch",
+      "name": "Waitlist estimate mismatch",
+      "description": "Quoted wait times do not match actual seating readiness.",
+      "status": "published",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: operator trust depends on transparent signals",
+      "updated_at": "2026-03-13T16:59:41.589543Z",
+      "domain": "guest_experience",
+      "module": "host_flow",
+      "indicator_type": "lagging",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_waste_loss_or_leakage_unexplained",
+      "name": "Waste, loss, or leakage is unexplained",
+      "description": "The venue is seeing avoidable loss, comp, or waste movement without a clean explanation, containment rule, or review cadence.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: waste, loss, or leakage unexplained expressed through restaurant commercial controls",
+      "updated_at": "2026-03-15T17:17:16.786529Z",
+      "domain": "financial_controls",
+      "module": "waste_management",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "waste or shrink increases without explanation",
+        "void or comp movement is visible but not understood",
+        "loss shows up without review or ownership"
+      ],
+      "source_types": [
+        "waste review",
+        "manager notes",
+        "financial review"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_voids_rising",
+        "sig_waste_spike"
+      ],
+      "adapter_aliases": [
+        "unexplained waste movement",
+        "loss without explanation"
+      ]
+    },
+    {
+      "id": "sig_waste_spike",
+      "name": "Waste spike",
+      "description": "Unexpected food waste suggests prep, forecasting, or controls issues.",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "business-case: fragmented tool stack",
+      "updated_at": "2026-03-13T00:00:00Z",
+      "domain": "financial_controls",
+      "module": "waste_management",
+      "indicator_type": "lagging",
+      "evidence_types": [],
+      "source_types": [],
+      "temporal_behavior": null,
+      "likely_co_signals": [],
+      "adapter_aliases": []
+    },
+    {
+      "id": "sig_work_dies_between_roles",
+      "name": "Work dies between roles",
+      "description": "A guest need or operating task stalls because everyone assumes someone else picked it up.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: role-boundary coordination failure in restaurant flow",
+      "updated_at": "2026-03-14T12:48:22.242555Z",
+      "domain": "service_delivery",
+      "module": "pass_communication",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "stalled follow-through",
+        "orphaned task",
+        "guest need dropped between roles"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "guest complaint"
+      ],
+      "temporal_behavior": "flow-recurring",
+      "likely_co_signals": [
+        "sig_handoff_requires_reclarification",
+        "sig_ownership_confusion_in_service"
+      ],
+      "adapter_aliases": [
+        "dropped between people",
+        "dies in the gap"
+      ]
+    },
+    {
+      "id": "sig_work_intake_not_prioritized",
+      "name": "Work intake is not prioritized in flow",
+      "description": "Tickets, guest asks, and exception work enter the operation without a clear priority rule, so the team fights over what matters first.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: intake and demand priority failure expressed through restaurant live flow",
+      "updated_at": "2026-03-15T15:59:27.067999Z",
+      "domain": "kitchen_operations",
+      "module": "production_flow",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "tickets worked in the wrong order",
+        "urgent work mixed with routine work without triage",
+        "team members disagree on what should move first"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "post-shift review"
+      ],
+      "temporal_behavior": "throughput-sensitive",
+      "likely_co_signals": [
+        "sig_ticket_bottleneck",
+        "sig_service_delay"
+      ],
+      "adapter_aliases": [
+        "priority fight on shift",
+        "work enters without order"
+      ]
+    },
+    {
+      "id": "sig_work_pace_breaks_under_load",
+      "name": "Work pace breaks under load",
+      "description": "The venue can move acceptably at low pressure, but once load rises the pace becomes visibly unstable and backlog forms quickly.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: work pace breaks under load expressed through restaurant floor execution",
+      "updated_at": "2026-03-15T14:29:28.486647Z",
+      "domain": "service_quality",
+      "module": "floor_execution",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "pace collapses in the rush",
+        "throughput drops sharply under pressure",
+        "backlog expands once covers rise"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "shift review"
+      ],
+      "temporal_behavior": "peak-sensitive",
+      "likely_co_signals": [
+        "sig_service_delay",
+        "sig_ticket_bottleneck"
+      ],
+      "adapter_aliases": [
+        "pace collapse",
+        "load breaks the flow"
+      ]
+    },
+    {
+      "id": "sig_workaround_has_become_normal",
+      "name": "Workaround has become normal",
+      "description": "The team has normalized a workaround as part of everyday operation instead of treating it as temporary friction to remove.",
+      "status": "published",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: workaround has become normal expressed through restaurant operating habits",
+      "updated_at": "2026-03-15T17:17:16.787889Z",
+      "domain": "operations",
+      "module": "workaround_management",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "staff describe a workaround as just how the venue works",
+        "temporary fixes have become the stable process",
+        "known friction is absorbed culturally instead of corrected"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "team huddle"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_workaround_is_normalized",
+        "sig_tool_or_system_unavailable"
+      ],
+      "adapter_aliases": [
+        "the workaround became standard",
+        "temporary fix is now the process"
+      ]
+    },
+    {
+      "id": "sig_workaround_is_normalized",
+      "name": "Workaround has become normal",
+      "description": "The team routinely compensates for missing tools, broken equipment, or weak systems with improvised workarounds that are now treated as normal.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: normal workarounds are hidden evidence of tool friction and unclosed learning loops",
+      "updated_at": "2026-03-14T00:41:10.253158Z",
+      "domain": "kitchen_operations",
+      "module": "workaround_management",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "staff_report",
+        "live_observation"
+      ],
+      "source_types": [
+        "audit_notes",
+        "chat"
+      ],
+      "temporal_behavior": "persistent",
+      "likely_co_signals": [
+        "sig_staff_confusion",
+        "sig_equipment_breaks_service_flow"
+      ],
+      "adapter_aliases": [
+        "temporary_fix_is_permanent",
+        "normalised_workaround"
+      ]
+    }
+  ],
+  "failure_modes": [
+    {
+      "id": "fm_bar_workflow_breakdown",
+      "name": "Bar workflow breakdown",
+      "description": "Bar setup, sequencing, and priority rules are not robust enough to support live service demand and floor handoffs.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: workflow and handoff failure expressed in beverage execution",
+      "updated_at": "2026-03-14T00:24:42.779612Z",
+      "domain": "beverage_execution"
+    },
+    {
+      "id": "fm_briefing_absence",
+      "name": "Leadership briefing gap",
+      "description": "Critical pre-service direction is missing, so the team starts without a shared read on pressure points, priorities, or constraints.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: leadership rhythm failure expressed through pre-shift briefing absence",
+      "updated_at": "2026-03-14T00:24:42.786891Z",
+      "domain": "leadership_rhythm"
+    },
+    {
+      "id": "fm_controls_gap",
+      "name": "Control loop gap",
+      "description": "Void, comp, waste, stock, and other operational leakage are visible but not reviewed tightly enough to drive correction.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: control-loop failure expressed through restaurant operating controls",
+      "updated_at": "2026-03-14T00:24:42.788574Z",
+      "domain": "financial_controls"
+    },
+    {
+      "id": "fm_deployment_misalignment",
+      "name": "Deployment misalignment",
+      "description": "Coverage, sectioning, and peak-role placement do not match the real demand pattern or skill mix of the shift.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: demand-capacity mismatch expressed in FOH deployment",
+      "updated_at": "2026-03-14T00:24:42.789881Z",
+      "domain": "workforce"
+    },
+    {
+      "id": "fm_equipment_reliability_gap",
+      "name": "Equipment reliability gap",
+      "description": "Critical equipment or operational assets cannot be relied on during the moments that matter most to service flow.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: asset reliability failure expressed through live service disruption",
+      "updated_at": "2026-03-14T00:41:10.262023Z",
+      "domain": "kitchen_operations"
+    },
+    {
+      "id": "fm_guest_recovery_breakdown",
+      "name": "Guest recovery breakdown",
+      "description": "The venue does not recover guest-facing failures with enough ownership, clarity, consistency, or follow-up to restore trust cleanly.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: exception recovery failure expressed through poor complaint handling",
+      "updated_at": "2026-03-14T00:41:10.266559Z",
+      "domain": "guest_experience"
+    },
+    {
+      "id": "fm_host_flow_breakdown",
+      "name": "Host flow breakdown",
+      "description": "Quoting, pacing, seating release, and reservation handling are not tight enough to shape arrival demand cleanly.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: expectation-setting and handoff logic in hospitality intake",
+      "updated_at": "2026-03-14T00:24:42.791393Z",
+      "domain": "service_delivery"
+    },
+    {
+      "id": "fm_inventory_accuracy_gap",
+      "name": "Inventory accuracy gap",
+      "description": "Counts, depletion updates, and 86 status are not trustworthy enough for service teams to act with confidence.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: commercial discipline and control-loop weakness in stock truth",
+      "updated_at": "2026-03-14T00:24:42.803959Z",
+      "domain": "financial_controls"
+    },
+    {
+      "id": "fm_learning_loop_absence",
+      "name": "Learning loop absence",
+      "description": "The venue experiences the same recurring breakdowns without a short review loop that turns incidents into changed behavior, standards, or checks.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: learning failure expressed through repeated unresolved operational pain",
+      "updated_at": "2026-03-14T00:41:10.268128Z",
+      "domain": "leadership_rhythm"
+    },
+    {
+      "id": "fm_manager_presence_gap",
+      "name": "Manager presence gap",
+      "description": "Managers are not visibly positioned where live reset, coaching, and escalation are needed during high-risk moments.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: leadership rhythm failure expressed through floor presence",
+      "updated_at": "2026-03-14T00:24:42.825715Z",
+      "domain": "leadership_rhythm"
+    },
+    {
+      "id": "fm_menu_complexity",
+      "name": "Menu complexity overload",
+      "description": "The menu or service promise asks the operation to carry more complexity than the current system can execute reliably.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: expectation and complexity failure expressed through the offer",
+      "updated_at": "2026-03-14T00:24:42.831017Z",
+      "domain": "service_delivery"
+    },
+    {
+      "id": "fm_open_close_control_gap",
+      "name": "Open-close control gap",
+      "description": "Opening and closing are treated as chores instead of enforced control loops that protect the next service cycle.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: readiness and control-loop failures expressed through reset discipline",
+      "updated_at": "2026-03-14T00:24:42.832069Z",
+      "domain": "leadership_rhythm"
+    },
+    {
+      "id": "fm_pass_communication_gap",
+      "name": "Pass communication gap",
+      "description": "Timing language, pickup ownership, and cross-station handoff rules at the pass are too weak to move food cleanly.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: handoff failure expressed in kitchen-to-floor transfer",
+      "updated_at": "2026-03-14T00:24:42.833118Z",
+      "domain": "kitchen_operations"
+    },
+    {
+      "id": "fm_prep_system_breakdown",
+      "name": "Prep system breakdown",
+      "description": "Prep logic, depletion visibility, and replenishment discipline are not strong enough to keep service execution stable.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: readiness failure expressed through prep and replenishment",
+      "updated_at": "2026-03-14T00:24:42.837773Z",
+      "domain": "kitchen_operations"
+    },
+    {
+      "id": "fm_role_ownership_blur",
+      "name": "Role ownership blur",
+      "description": "Critical actions, escalations, or service decisions do not have ownership that is explicit enough to hold under live pressure.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: role clarity failure expressed through live service ownership ambiguity",
+      "updated_at": "2026-03-14T00:41:10.269779Z",
+      "domain": "workforce"
+    },
+    {
+      "id": "fm_service_standard_drift",
+      "name": "Service standard drift",
+      "description": "The venue has nominal standards, but daily execution has drifted far enough that output consistency depends on who is on shift.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: standards drift expressed through hospitality variation and skipped basics",
+      "updated_at": "2026-03-14T00:41:10.271905Z",
+      "domain": "service_delivery"
+    },
+    {
+      "id": "fm_shift_readiness_gap",
+      "name": "Shift readiness gap",
+      "description": "The venue enters service without a reliable readiness check across stations, people, stock, and live priorities.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: readiness failure expressed through service start conditions",
+      "updated_at": "2026-03-14T00:24:42.839463Z",
+      "domain": "kitchen_operations"
+    },
+    {
+      "id": "fm_tooling_friction",
+      "name": "Tooling friction",
+      "description": "Work is repeatedly slowed, improvised, or made more fragile because the tools, systems, or information surfaces do not support the real operating flow cleanly.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: tool or resource friction expressed through repeated workarounds",
+      "updated_at": "2026-03-14T00:41:10.273508Z",
+      "domain": "kitchen_operations"
+    },
+    {
+      "id": "fm_training_gap",
+      "name": "Insufficient training protocol",
+      "description": "Standards, role expectations, and recovery behaviors are not reinforced enough to survive into live service execution.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: capability gap expressed through hospitality team training",
+      "updated_at": "2026-03-14T00:24:42.841702Z",
+      "domain": "workforce"
+    },
+    {
+      "id": "fm_undefined_workflow",
+      "name": "Undefined workflow structure",
+      "description": "The service sequence, decision rules, and escalation logic are too implicit to hold under live pressure.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: workflow design failure expressed through restaurant service flow",
+      "updated_at": "2026-03-14T00:24:42.846012Z",
+      "domain": "service_delivery"
+    }
+  ],
+  "response_patterns": [
+    {
+      "id": "rp_bar_execution_reset",
+      "name": "Bar execution reset",
+      "description": "Re-sequence bar setup, priority rules, and service handoff so beverage flow holds under peak pressure.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: redesign workflow at the beverage node",
+      "updated_at": "2026-03-14T00:24:42.858391Z",
+      "focus": "bar_flow"
+    },
+    {
+      "id": "rp_deployment_reset",
+      "name": "Deployment reset",
+      "description": "Rebuild sectioning, role placement, and peak-window coverage around the real shape of service demand.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: align roles and coverage in the live venue",
+      "updated_at": "2026-03-14T00:24:42.859628Z",
+      "focus": "coverage_alignment"
+    },
+    {
+      "id": "rp_host_pacing_reset",
+      "name": "Host pacing reset",
+      "description": "Constrain quoting, arrival pacing, and seating release so front-door promises stay inside actual capacity.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: constrain promises and strengthen demand shaping at the door",
+      "updated_at": "2026-03-14T00:24:42.868616Z",
+      "focus": "promise_and_pacing"
+    },
+    {
+      "id": "rp_inventory_accuracy_reset",
+      "name": "Inventory accuracy reset",
+      "description": "Make counts, 86 logic, and depletion updates trustworthy enough that service decisions stop relying on guesswork.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: tighten control loops and restore commercial discipline",
+      "updated_at": "2026-03-14T00:24:42.869630Z",
+      "focus": "stock_truth"
+    },
+    {
+      "id": "rp_leadership_rhythm_reset",
+      "name": "Leadership rhythm reset",
+      "description": "Create repeatable pre-shift, in-shift, and post-shift leadership cadence so the floor gets real direction and closure.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: install operating rhythm for hospitality leadership",
+      "updated_at": "2026-03-14T00:24:42.870625Z",
+      "focus": "leadership_rhythm"
+    },
+    {
+      "id": "rp_learning_loop_reset",
+      "name": "Learning loop reset",
+      "description": "Install a short review loop that turns repeated issues into explicit next actions, standards, or system fixes.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: verify and learn from repeated operational breakdowns",
+      "updated_at": "2026-03-14T00:41:10.286171Z",
+      "focus": "learning_loop"
+    },
+    {
+      "id": "rp_manager_presence_reset",
+      "name": "Manager presence reset",
+      "description": "Put visible management attention where service risk is actually building, not where it is most comfortable to stand.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: align leadership coverage with real operating pressure",
+      "updated_at": "2026-03-14T00:24:42.871603Z",
+      "focus": "management_presence"
+    },
+    {
+      "id": "rp_offer_complexity_trim",
+      "name": "Offer complexity trim",
+      "description": "Reduce menu or service complexity that the current operation cannot execute without repeated instability.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: reduce operational complexity when the offer is outrunning execution capacity",
+      "updated_at": "2026-03-14T00:41:10.287255Z",
+      "focus": "offer_simplification"
+    },
+    {
+      "id": "rp_open_close_reset",
+      "name": "Open-close reset",
+      "description": "Turn opening and closing into non-negotiable readiness and control rituals that protect the next cycle of work.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: restore readiness through enforced operating rhythm",
+      "updated_at": "2026-03-14T00:24:42.872785Z",
+      "focus": "reset_discipline"
+    },
+    {
+      "id": "rp_pass_communication_reset",
+      "name": "Pass communication reset",
+      "description": "Install explicit timing language, handoff rules, and pickup discipline across the pass.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: strengthen handoffs at the kitchen-floor boundary",
+      "updated_at": "2026-03-14T00:24:42.884029Z",
+      "focus": "handoff_clarity"
+    },
+    {
+      "id": "rp_prep_control_reset",
+      "name": "Prep and control reset",
+      "description": "Restore prep visibility, depletion awareness, and live control points before service instability compounds.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: restore readiness and tighten control loops around prep",
+      "updated_at": "2026-03-14T00:24:42.884947Z",
+      "focus": "prep_and_controls"
+    },
+    {
+      "id": "rp_recovery_protocol_reset",
+      "name": "Recovery protocol reset",
+      "description": "Install a consistent recovery sequence so guest-facing failures are contained with ownership, calmness, and follow-up.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: strengthen recovery through a repeatable protocol",
+      "updated_at": "2026-03-14T00:41:10.288172Z",
+      "focus": "service_recovery"
+    },
+    {
+      "id": "rp_reliability_restore",
+      "name": "Reliability restore",
+      "description": "Expose recurring breakers, remove normalized workarounds, and restore the tools or assets the flow depends on.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: remove friction and restore reliability at the moment of operational need",
+      "updated_at": "2026-03-14T00:41:10.293187Z",
+      "focus": "reliability_restoration"
+    },
+    {
+      "id": "rp_role_visibility_reset",
+      "name": "Role visibility reset",
+      "description": "Make ownership, escalation, and live responsibility visible enough that ambiguous work stops dying between people.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: stabilize visibility around who owns what next",
+      "updated_at": "2026-03-14T00:41:10.294727Z",
+      "focus": "ownership_visibility"
+    },
+    {
+      "id": "rp_service_flow_reset",
+      "name": "Service flow reset",
+      "description": "Make the core service sequence explicit, visible, and executable under real pressure.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: redesign workflow expressed through service flow",
+      "updated_at": "2026-03-14T00:24:42.892910Z",
+      "focus": "workflow_design"
+    },
+    {
+      "id": "rp_standard_work_reset",
+      "name": "Standard work reset",
+      "description": "Reinforce a small number of critical operating standards until execution variation narrows and consistency returns.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: standardize execution through observed reinforcement, not generic reminders",
+      "updated_at": "2026-03-14T00:41:10.296951Z",
+      "focus": "standard_execution"
+    },
+    {
+      "id": "rp_training_reset",
+      "name": "Training reset",
+      "description": "Move standards, role clarity, and recovery behavior out of memory and into reinforced execution practice.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: build capability and standardize execution",
+      "updated_at": "2026-03-14T00:24:42.897481Z",
+      "focus": "capability_building"
+    }
+  ],
+  "blocks": [
+    {
+      "id": "blk_bar_ticket_priority_lane",
+      "name": "Create bar priority lane",
+      "description": "Separate the drink tickets that are actively blocking table flow from the rest of the bar queue so urgent beverage work becomes visible and protected.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: redesign workflow at the beverage node by exposing table-critical priority work",
+      "updated_at": "2026-03-14T00:24:42.953119Z",
+      "effort_hours": 2.5,
+      "dependencies": [
+        "blk_install_expo_callouts"
+      ],
+      "tool_ids": [
+        "tool_bar_priority_board"
+      ],
+      "response_pattern_ids": [
+        "rp_bar_execution_reset",
+        "rp_pass_communication_reset"
+      ],
+      "entry_conditions": [
+        "Bar tickets are delaying table progression or guests are waiting on drinks that gate the next service step.",
+        "The venue can distinguish truly table-critical tickets from normal queue volume."
+      ],
+      "contraindications": [
+        "Do not create a second queue without explicit rules for what qualifies as priority work.",
+        "Do not use this lane to hide structural understaffing or broken bar setup."
+      ],
+      "owner_role": "bar_lead",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "A visible priority lane exists for bar work that blocks table progression.",
+        "The bar team can explain the rule for entering and clearing priority tickets.",
+        "At least one pressured service shows faster resolution of table-critical drink tickets."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "live_execution",
+        "handoffs_and_coordination"
+      ],
+      "failure_family_ids": [
+        "workflow_design_failure",
+        "handoff_failure",
+        "demand_capacity_mismatch"
+      ]
+    },
+    {
+      "id": "blk_build_arrival_pacing_board",
+      "name": "Build arrival pacing board",
+      "description": "Create a live board for reservation waves, walk-in pressure, seat release timing, and decision points so the front door can shape demand in real time.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: stabilize visibility and constrain promises at the intake surface",
+      "updated_at": "2026-03-14T00:24:42.961630Z",
+      "effort_hours": 3.0,
+      "dependencies": [
+        "blk_define_wait_quote_rules"
+      ],
+      "tool_ids": [
+        "tool_arrival_pacing_board"
+      ],
+      "response_pattern_ids": [
+        "rp_host_pacing_reset"
+      ],
+      "entry_conditions": [
+        "Hosts are making pacing decisions without a shared live view of incoming pressure and seating release.",
+        "Wait quote logic exists or is being installed alongside the board."
+      ],
+      "contraindications": [
+        "Do not build a board no one updates during service.",
+        "Do not make the board so detailed that hosts abandon it in real time."
+      ],
+      "owner_role": "host_lead",
+      "expected_time_to_effect_days": 2,
+      "proof_of_completion": [
+        "The host team has a single live board for reservation waves, walk-ins, and release decisions.",
+        "The board is updated through at least one real pressure window.",
+        "Hosts use the board to justify quote and pacing changes instead of relying on guesswork."
+      ],
+      "successor_block_ids": [
+        "blk_host_reservation_huddle"
+      ],
+      "service_module_ids": [
+        "intake_and_demand",
+        "promise_and_expectations",
+        "handoffs_and_coordination"
+      ],
+      "failure_family_ids": [
+        "expectation_setting_failure",
+        "demand_capacity_mismatch",
+        "workflow_design_failure"
+      ]
+    },
+    {
+      "id": "blk_build_floor_training",
+      "name": "Build floor training checklist",
+      "description": "Convert critical service behaviors, role expectations, and recovery standards into an explicit onboarding and refresh checklist that managers can coach against.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: build capability by making live standards coachable instead of memory-dependent",
+      "updated_at": "2026-03-14T00:24:42.964001Z",
+      "effort_hours": 5.0,
+      "dependencies": [
+        "blk_create_station_roles"
+      ],
+      "tool_ids": [
+        "tool_training_checklist"
+      ],
+      "response_pattern_ids": [
+        "rp_training_reset"
+      ],
+      "entry_conditions": [
+        "The same service mistakes repeat across people or new starters rely on shadowing alone.",
+        "Role expectations and standard behaviors are already explicit enough to train against."
+      ],
+      "contraindications": [
+        "Do not turn training into a document dump with no live signoff or coaching.",
+        "Do not build the checklist before role ownership and service standards are clear."
+      ],
+      "owner_role": "floor_lead",
+      "expected_time_to_effect_days": 5,
+      "proof_of_completion": [
+        "A role-specific training checklist exists for the floor positions that most affect service quality.",
+        "Each critical behavior has an observation or signoff method, not just a checkbox.",
+        "Managers use the checklist during onboarding or refresh rather than informal memory transfer."
+      ],
+      "successor_block_ids": [
+        "blk_guest_recovery_loop"
+      ],
+      "service_module_ids": [
+        "team_capability_and_training",
+        "quality_and_standards",
+        "handoffs_and_coordination"
+      ],
+      "failure_family_ids": [
+        "capability_gap",
+        "standards_drift",
+        "role_clarity_failure"
+      ]
+    },
+    {
+      "id": "blk_capture_breakers_and_workarounds",
+      "name": "Capture breakers and workarounds",
+      "description": "Create a simple reliability board for recurring equipment failures, missing tools, and normalized workarounds so the venue can assign fixes before the next shift absorbs them again.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: reliability improves when hidden workarounds and repeated breakers become visible and owned",
+      "updated_at": "2026-03-14T00:41:10.325432Z",
+      "effort_hours": 2.0,
+      "dependencies": [
+        "blk_opening_line_readiness_check"
+      ],
+      "tool_ids": [
+        "tool_breaker_and_workaround_log"
+      ],
+      "response_pattern_ids": [
+        "rp_reliability_restore",
+        "rp_role_visibility_reset"
+      ],
+      "entry_conditions": [
+        "The venue is repeatedly improvising around missing tools, broken equipment, or unreliable systems.",
+        "Someone can own each breaker and decide whether it is fixed, replaced, or escalated."
+      ],
+      "contraindications": [
+        "Do not log breakers without assigning a real fix owner and deadline.",
+        "Do not normalize workarounds by documenting them unless the underlying issue is also escalated."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 2,
+      "proof_of_completion": [
+        "A visible breaker and workaround log exists with owner, status, and next action.",
+        "Recurring tool or equipment issues are reviewed before the next service cycle.",
+        "At least one normalized workaround has been removed or escalated through the log."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "tools_and_asset_reliability",
+        "readiness_and_setup",
+        "learning_and_improvement"
+      ],
+      "failure_family_ids": [
+        "tool_or_resource_friction",
+        "asset_reliability_failure",
+        "learning_failure"
+      ]
+    },
+    {
+      "id": "blk_closing_reset_check",
+      "name": "Run closing reset check",
+      "description": "Install a non-negotiable closing reset across prep, stock, cleanliness, and unresolved issues so the next service cycle does not begin with inherited fragility.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: restore readiness by turning the close into a true reset loop",
+      "updated_at": "2026-03-14T00:24:42.965056Z",
+      "effort_hours": 2.0,
+      "dependencies": [],
+      "tool_ids": [
+        "tool_closing_reset_checklist"
+      ],
+      "response_pattern_ids": [
+        "rp_open_close_reset"
+      ],
+      "entry_conditions": [
+        "The next shift inherits missing prep, poor cleanliness, stock gaps, or unresolved actions.",
+        "A close owner can verify reset completion before people leave."
+      ],
+      "contraindications": [
+        "Do not rely on self-attestation without a visible check and ownership loop.",
+        "Do not close unresolved blockers without explicitly passing them into the next operating cycle."
+      ],
+      "owner_role": "closing_manager",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "A closing reset checklist exists with named ownership and verification.",
+        "Unresolved issues are either fixed before close or passed forward explicitly.",
+        "The next open shows reduced inherited friction from the previous shift."
+      ],
+      "successor_block_ids": [
+        "blk_opening_line_readiness_check"
+      ],
+      "service_module_ids": [
+        "readiness_and_setup",
+        "commercial_and_control_loops",
+        "tools_and_asset_reliability"
+      ],
+      "failure_family_ids": [
+        "readiness_failure",
+        "control_loop_failure",
+        "accountability_failure"
+      ]
+    },
+    {
+      "id": "blk_create_station_roles",
+      "name": "Create station role matrix",
+      "description": "Turn the mapped service flow into explicit primary ownership, backup ownership, and escalation paths at each station so work stops dying between roles.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: align roles and coverage after workflow reality is made explicit",
+      "updated_at": "2026-03-14T00:24:42.966438Z",
+      "effort_hours": 4.0,
+      "dependencies": [
+        "blk_map_service_steps"
+      ],
+      "tool_ids": [
+        "tool_station_role_matrix"
+      ],
+      "response_pattern_ids": [
+        "rp_service_flow_reset"
+      ],
+      "entry_conditions": [
+        "The venue has a current service map or another reliable view of the real operating flow.",
+        "Role ambiguity, double-handling, or stalled ownership is visible during service."
+      ],
+      "contraindications": [
+        "Do not assign roles before the actual flow and handoffs are understood.",
+        "Do not overcomplicate the matrix with edge cases that the team will not use live."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 3,
+      "proof_of_completion": [
+        "Every key station has named primary and backup ownership.",
+        "Escalation routes for blocked service moments are visible to the team.",
+        "The matrix has been briefed to the floor and validated in one live shift."
+      ],
+      "successor_block_ids": [
+        "blk_install_pre_shift_brief"
+      ],
+      "service_module_ids": [
+        "capacity_and_deployment",
+        "handoffs_and_coordination",
+        "quality_and_standards"
+      ],
+      "failure_family_ids": [
+        "role_clarity_failure",
+        "handoff_failure",
+        "workflow_design_failure"
+      ]
+    },
+    {
+      "id": "blk_daily_86_board",
+      "name": "Launch daily 86 board",
+      "description": "Create a visible pre-service 86 and depletion board so stock risk, substitutions, and item status changes are shared before they become guest-facing surprises.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: stabilize visibility around stock truth before live service multiplies confusion",
+      "updated_at": "2026-03-14T00:24:42.972036Z",
+      "effort_hours": 1.5,
+      "dependencies": [
+        "blk_inventory_count_cycle"
+      ],
+      "tool_ids": [
+        "tool_86_board_template"
+      ],
+      "response_pattern_ids": [
+        "rp_inventory_accuracy_reset"
+      ],
+      "entry_conditions": [
+        "86 surprises or uncertain substitutions are reaching the floor mid-service.",
+        "The venue has at least a limited count or depletion truth to feed the board."
+      ],
+      "contraindications": [
+        "Do not post unreliable stock information that will be disproved immediately.",
+        "Do not keep the board hidden from the roles that need to act on it."
+      ],
+      "owner_role": "shift_lead",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "A visible 86 board exists before service with status, substitutions, and risk items.",
+        "Frontline roles know where to read it and when it updates.",
+        "Mid-shift item surprises decline because decisions are shared earlier."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "readiness_and_setup",
+        "commercial_and_control_loops",
+        "promise_and_expectations"
+      ],
+      "failure_family_ids": [
+        "control_loop_failure",
+        "commercial_discipline_failure",
+        "readiness_failure"
+      ]
+    },
+    {
+      "id": "blk_daily_waste_review",
+      "name": "Launch daily waste review",
+      "description": "Review daily waste incidents, their causes, and the next corrective action so prep loss stops being treated as normal background noise.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: tighten control loops by forcing review and correction of recurring waste",
+      "updated_at": "2026-03-14T00:24:42.974176Z",
+      "effort_hours": 2.0,
+      "dependencies": [
+        "blk_standardize_prep_sheet"
+      ],
+      "tool_ids": [
+        "tool_waste_log"
+      ],
+      "response_pattern_ids": [
+        "rp_prep_control_reset"
+      ],
+      "entry_conditions": [
+        "Waste is spiking or prep overproduction is visible but not reviewed systematically.",
+        "The team can identify what was wasted, why, and who owns the follow-up."
+      ],
+      "contraindications": [
+        "Do not run a waste review that records loss without changing prep or ordering behavior.",
+        "Do not bury avoidable waste inside broad end-of-day admin."
+      ],
+      "owner_role": "kitchen_manager",
+      "expected_time_to_effect_days": 3,
+      "proof_of_completion": [
+        "Waste incidents are logged daily with causes and follow-up actions.",
+        "The review distinguishes controllable waste from true demand noise.",
+        "Prep or ordering changes are being made based on the reviewed loss patterns."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "commercial_and_control_loops",
+        "learning_and_improvement"
+      ],
+      "failure_family_ids": [
+        "control_loop_failure",
+        "commercial_discipline_failure",
+        "learning_failure"
+      ]
+    },
+    {
+      "id": "blk_define_wait_quote_rules",
+      "name": "Define wait quote rules",
+      "description": "Define the decision rules for quoting waits, protecting buffer, tightening promises, and escalating when seating readiness slips.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: constrain promises so the front door stops selling false timing",
+      "updated_at": "2026-03-14T00:24:42.975735Z",
+      "effort_hours": 2.0,
+      "dependencies": [],
+      "tool_ids": [
+        "tool_wait_quote_guide"
+      ],
+      "response_pattern_ids": [
+        "rp_host_pacing_reset"
+      ],
+      "entry_conditions": [
+        "Guests are surprised by quoted waits or seating timing.",
+        "Hosts currently rely on feel rather than an explicit quoting logic."
+      ],
+      "contraindications": [
+        "Do not define rules using ideal table-turn assumptions that the venue does not actually achieve.",
+        "Do not create a rule set that only the strongest host can interpret."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "Quote ranges, buffers, release rules, and escalation triggers are written in plain language.",
+        "Hosts can explain when to widen, hold, or reset promised waits.",
+        "The quote guide has been used live in at least one pressured service period."
+      ],
+      "successor_block_ids": [
+        "blk_host_reservation_huddle"
+      ],
+      "service_module_ids": [
+        "intake_and_demand",
+        "promise_and_expectations"
+      ],
+      "failure_family_ids": [
+        "expectation_setting_failure",
+        "workflow_design_failure",
+        "demand_capacity_mismatch"
+      ]
+    },
+    {
+      "id": "blk_guest_recovery_loop",
+      "name": "Create guest recovery loop",
+      "description": "Install a clear recovery script, ownership rule, and follow-up loop so service failures are absorbed cleanly and turned into corrected operating behavior.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: strengthen recovery and verify learning from repeated guest-facing failures",
+      "updated_at": "2026-03-14T00:24:42.977441Z",
+      "effort_hours": 3.0,
+      "dependencies": [
+        "blk_install_pre_shift_brief",
+        "blk_build_floor_training"
+      ],
+      "tool_ids": [
+        "tool_guest_recovery_script"
+      ],
+      "response_pattern_ids": [
+        "rp_service_flow_reset",
+        "rp_training_reset"
+      ],
+      "entry_conditions": [
+        "Complaints, defensive responses, or inconsistent goodwill decisions are recurring.",
+        "Leaders can review recovery quality and close the loop on repeated causes."
+      ],
+      "contraindications": [
+        "Do not launch the recovery loop if managers will not review how recoveries actually played out.",
+        "Do not confuse apology language with true containment, ownership, and recurrence prevention."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 2,
+      "proof_of_completion": [
+        "A common recovery sequence exists for acknowledge, own, resolve, and follow up.",
+        "Frontline teams know when to recover directly and when to escalate.",
+        "Recurring complaint themes are logged and reviewed for underlying fixes."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "recovery_and_exception_handling",
+        "leadership_and_management_rhythm",
+        "learning_and_improvement"
+      ],
+      "failure_family_ids": [
+        "exception_recovery_failure",
+        "accountability_failure",
+        "learning_failure"
+      ]
+    },
+    {
+      "id": "blk_host_reservation_huddle",
+      "name": "Run host reservation huddle",
+      "description": "Run a short pre-peak huddle for the host position to align pacing, quoted waits, reservation releases, and escalation when arrival pressure changes shape.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: constrain promises through local operating rhythm at the front door",
+      "updated_at": "2026-03-14T00:24:42.979558Z",
+      "effort_hours": 1.5,
+      "dependencies": [
+        "blk_build_arrival_pacing_board"
+      ],
+      "tool_ids": [
+        "tool_host_huddle_template"
+      ],
+      "response_pattern_ids": [
+        "rp_host_pacing_reset",
+        "rp_manager_presence_reset"
+      ],
+      "entry_conditions": [
+        "Quoted waits or reservation releases regularly drift away from real seating readiness.",
+        "The venue has identifiable arrival waves or pressure windows that can be planned for."
+      ],
+      "contraindications": [
+        "Do not run the huddle without current pacing information or authority to change the release plan.",
+        "Do not use a host huddle to mask broken floor-turn or bussing fundamentals."
+      ],
+      "owner_role": "host_lead",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "Peak arrival windows have a named huddle moment and owner.",
+        "The host team reviews quote logic, reservation pacing, pressure points, and escalation rules before the wave hits.",
+        "The venue can show how quote or release decisions changed during at least one real peak."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "intake_and_demand",
+        "promise_and_expectations",
+        "leadership_and_management_rhythm"
+      ],
+      "failure_family_ids": [
+        "expectation_setting_failure",
+        "leadership_rhythm_failure",
+        "demand_capacity_mismatch"
+      ]
+    },
+    {
+      "id": "blk_install_expo_callouts",
+      "name": "Install expo callouts",
+      "description": "Install a minimum shared pass language for fire, hold, pickup, and delay escalation so kitchen-to-floor handoffs stop relying on guesswork and volume.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: strengthen handoffs with explicit transfer language at the service boundary",
+      "updated_at": "2026-03-14T00:24:42.983817Z",
+      "effort_hours": 2.0,
+      "dependencies": [],
+      "tool_ids": [
+        "tool_expo_callout_card"
+      ],
+      "response_pattern_ids": [
+        "rp_pass_communication_reset"
+      ],
+      "entry_conditions": [
+        "Food is dying at the pass, pickup timing is unclear, or calls are inconsistent.",
+        "There is enough line leadership to enforce the callout standard for several services."
+      ],
+      "contraindications": [
+        "Do not add more language than the pass can hold live under pressure.",
+        "Do not treat this as training theater if no one will coach or reinforce it in service."
+      ],
+      "owner_role": "kitchen_manager",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "A minimum callout vocabulary for fire, hold, pickup, and delays is posted at the pass.",
+        "Expo and floor leaders have rehearsed the timing language in a live service window.",
+        "Pickup misses and re-clarification moments are being tracked after rollout."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "handoffs_and_coordination",
+        "live_execution"
+      ],
+      "failure_family_ids": [
+        "handoff_failure",
+        "workflow_design_failure"
+      ]
+    },
+    {
+      "id": "blk_install_pre_shift_brief",
+      "name": "Install pre-shift briefing",
+      "description": "Create a repeatable pre-service briefing that aligns the team on demand shape, risks, 86s, role pressure points, and escalation rules before the floor gets noisy.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: install operating rhythm before asking the team for more precision",
+      "updated_at": "2026-03-14T00:24:42.985769Z",
+      "effort_hours": 2.0,
+      "dependencies": [],
+      "tool_ids": [
+        "tool_shift_brief_template"
+      ],
+      "response_pattern_ids": [
+        "rp_leadership_rhythm_reset"
+      ],
+      "entry_conditions": [
+        "Service starts with uneven direction, repeated surprises, or unclear priorities.",
+        "A leader is available to run the briefing and hold follow-through."
+      ],
+      "contraindications": [
+        "Do not turn the briefing into a long speech with no operational decisions.",
+        "Do not use this as a substitute for fixing missing role clarity or readiness basics."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "A fixed briefing cadence, owner, and timing now exist.",
+        "The team receives covers, risks, 86s, pressure points, and focus items before service.",
+        "Escalation ownership for the shift is named out loud and visible."
+      ],
+      "successor_block_ids": [
+        "blk_host_reservation_huddle",
+        "blk_guest_recovery_loop"
+      ],
+      "service_module_ids": [
+        "readiness_and_setup",
+        "leadership_and_management_rhythm"
+      ],
+      "failure_family_ids": [
+        "leadership_rhythm_failure",
+        "readiness_failure",
+        "accountability_failure"
+      ]
+    },
+    {
+      "id": "blk_inventory_count_cycle",
+      "name": "Launch inventory count cycle",
+      "description": "Install a count cadence for high-risk lines so stock truth, 86 decisions, and loss reviews are built on trusted numbers instead of intuition.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: tighten control loops around the items most likely to distort service or margin",
+      "updated_at": "2026-03-14T00:24:42.987541Z",
+      "effort_hours": 3.5,
+      "dependencies": [],
+      "tool_ids": [
+        "tool_inventory_count_sheet"
+      ],
+      "response_pattern_ids": [
+        "rp_inventory_accuracy_reset"
+      ],
+      "entry_conditions": [
+        "Counts drift, 86 surprises, or stock variance already affect service confidence.",
+        "The venue can identify a limited high-risk count set instead of counting everything poorly."
+      ],
+      "contraindications": [
+        "Do not launch a count cycle with no variance review or ownership loop behind it.",
+        "Do not start with full-inventory perfection when only a few lines drive most of the damage."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 3,
+      "proof_of_completion": [
+        "A fixed cadence, owner, and scope exist for high-risk inventory lines.",
+        "Variance thresholds and follow-up actions are documented.",
+        "Count output now feeds 86 decisions or control reviews rather than sitting unused."
+      ],
+      "successor_block_ids": [
+        "blk_daily_86_board"
+      ],
+      "service_module_ids": [
+        "commercial_and_control_loops",
+        "readiness_and_setup"
+      ],
+      "failure_family_ids": [
+        "control_loop_failure",
+        "commercial_discipline_failure"
+      ]
+    },
+    {
+      "id": "blk_manager_floor_walk",
+      "name": "Run manager floor walk",
+      "description": "Run a timed manager walk during critical windows to catch developing pressure, coach live execution, and trigger escalation before the floor drifts into unmanaged chaos.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: leadership rhythm should place attention where risk is building, not where it is comfortable",
+      "updated_at": "2026-03-14T00:24:42.989086Z",
+      "effort_hours": 1.5,
+      "dependencies": [
+        "blk_manager_peak_window_plan"
+      ],
+      "tool_ids": [
+        "tool_floor_walk_sheet"
+      ],
+      "response_pattern_ids": [
+        "rp_manager_presence_reset"
+      ],
+      "entry_conditions": [
+        "Managers disappear into admin or static positions while service risk builds on the floor.",
+        "The venue has clear peak windows where visible management attention changes outcomes."
+      ],
+      "contraindications": [
+        "Do not turn the floor walk into passive observation with no intervention logic.",
+        "Do not schedule the walk if the manager has no authority to coach or escalate live issues."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "Managers have a timed floor walk cadence for critical windows.",
+        "The walk includes observation targets, coaching prompts, and escalation checks.",
+        "At least one real service shows the manager redirecting attention based on the walk."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "leadership_and_management_rhythm",
+        "live_execution",
+        "recovery_and_exception_handling"
+      ],
+      "failure_family_ids": [
+        "leadership_rhythm_failure",
+        "accountability_failure",
+        "standards_drift"
+      ]
+    },
+    {
+      "id": "blk_manager_peak_window_plan",
+      "name": "Set manager peak-window plan",
+      "description": "Define where the manager stands, what they watch, and what triggers intervention during the venue's highest-risk service windows.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: leadership coverage should be designed around pressure, not habit",
+      "updated_at": "2026-03-14T00:24:42.990094Z",
+      "effort_hours": 2.0,
+      "dependencies": [
+        "blk_rebalance_sections"
+      ],
+      "tool_ids": [
+        "tool_peak_window_plan"
+      ],
+      "response_pattern_ids": [
+        "rp_deployment_reset",
+        "rp_manager_presence_reset"
+      ],
+      "entry_conditions": [
+        "Peak periods repeatedly collapse because leadership attention is not placed where the risk actually concentrates.",
+        "The venue can identify its critical windows, pressure nodes, and likely intervention points."
+      ],
+      "contraindications": [
+        "Do not create a peak-window plan if the manager is routinely pulled into unrelated admin at the same time.",
+        "Do not use vague instructions like 'watch the floor' without explicit triggers and zones."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "A written peak-window plan exists with positions, watch zones, and intervention triggers.",
+        "Manager coverage is aligned to the real pressure pattern rather than static presence habits.",
+        "The plan is used in at least one live peak and adjusted based on what happened."
+      ],
+      "successor_block_ids": [
+        "blk_manager_floor_walk"
+      ],
+      "service_module_ids": [
+        "leadership_and_management_rhythm",
+        "capacity_and_deployment",
+        "live_execution"
+      ],
+      "failure_family_ids": [
+        "leadership_rhythm_failure",
+        "demand_capacity_mismatch",
+        "accountability_failure"
+      ]
+    },
+    {
+      "id": "blk_map_service_steps",
+      "name": "Map the service steps",
+      "description": "Capture the real guest-facing service sequence, handoff boundaries, and failure-prone moments so workflow redesign starts from observed reality instead of opinion.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: redesign workflow by observing the real service loop before assigning fixes",
+      "updated_at": "2026-03-14T00:24:42.991140Z",
+      "effort_hours": 3.0,
+      "dependencies": [],
+      "tool_ids": [
+        "tool_service_observation_sheet"
+      ],
+      "response_pattern_ids": [
+        "rp_service_flow_reset"
+      ],
+      "entry_conditions": [
+        "Recurring service delay or complaint patterns suggest the real flow is poorly understood.",
+        "Leaders can observe at least one representative service window before redesigning roles or standards."
+      ],
+      "contraindications": [
+        "Do not start with workshop theory alone when no live observation has been done.",
+        "Do not treat this as a paperwork exercise during an active peak collapse."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 2,
+      "proof_of_completion": [
+        "A timestamped service map exists from arrival to payment and reset.",
+        "Each handoff point has a named owner and at least one observed friction note.",
+        "Three highest-risk flow breaks are identified for intervention sequencing."
+      ],
+      "successor_block_ids": [
+        "blk_create_station_roles"
+      ],
+      "service_module_ids": [
+        "live_execution",
+        "handoffs_and_coordination",
+        "quality_and_standards"
+      ],
+      "failure_family_ids": [
+        "workflow_design_failure",
+        "handoff_failure",
+        "standards_drift"
+      ]
+    },
+    {
+      "id": "blk_offer_complexity_trim",
+      "name": "Trim offer complexity",
+      "description": "Identify the menu or service elements creating disproportionate operational instability and simplify them until the current system can execute reliably again.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: complexity should be reduced when the promise outruns the operation's current strength",
+      "updated_at": "2026-03-14T00:41:10.327749Z",
+      "effort_hours": 4.0,
+      "dependencies": [
+        "blk_map_service_steps"
+      ],
+      "tool_ids": [
+        "tool_complexity_trim_matrix"
+      ],
+      "response_pattern_ids": [
+        "rp_offer_complexity_trim"
+      ],
+      "entry_conditions": [
+        "A subset of menu or service elements creates repeated instability, remakes, or bottlenecks.",
+        "Leadership is willing to remove, pause, simplify, or resequence parts of the offer."
+      ],
+      "contraindications": [
+        "Do not trim complexity without linking decisions to observed execution pain and value impact.",
+        "Do not keep everything sacred when the operation is clearly unable to carry it."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 5,
+      "proof_of_completion": [
+        "A complexity review exists showing which offer elements create disproportionate drag.",
+        "At least one menu or service element has been simplified, paused, or resequenced.",
+        "The venue can explain why the trimmed complexity should improve execution reliability."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "promise_and_expectations",
+        "live_execution",
+        "commercial_and_control_loops"
+      ],
+      "failure_family_ids": [
+        "commercial_discipline_failure",
+        "workflow_design_failure"
+      ]
+    },
+    {
+      "id": "blk_opening_line_readiness_check",
+      "name": "Run opening line readiness check",
+      "description": "Install a structured line-opening check across product, equipment, station setup, 86 risk, and immediate blockers so service does not begin on hidden fragility.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: restore readiness before live execution compounds preventable instability",
+      "updated_at": "2026-03-14T00:24:43.017708Z",
+      "effort_hours": 2.0,
+      "dependencies": [],
+      "tool_ids": [
+        "tool_line_readiness_check"
+      ],
+      "response_pattern_ids": [
+        "rp_open_close_reset",
+        "rp_pass_communication_reset"
+      ],
+      "entry_conditions": [
+        "The line starts service with missing prep, unclear 86s, or surprise equipment issues.",
+        "Someone with authority can stop the open long enough to resolve red conditions."
+      ],
+      "contraindications": [
+        "Do not convert this into a box-ticking ritual without stop/go rules.",
+        "Do not open the line while critical blockers remain unresolved but undocumented."
+      ],
+      "owner_role": "kitchen_manager",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "A visible readiness check exists for station setup, product, equipment, and 86 risk.",
+        "Red conditions have explicit escalation and open-delay logic.",
+        "The line has completed the check before at least one live service start."
+      ],
+      "successor_block_ids": [
+        "blk_daily_86_board"
+      ],
+      "service_module_ids": [
+        "readiness_and_setup",
+        "tools_and_asset_reliability",
+        "live_execution"
+      ],
+      "failure_family_ids": [
+        "readiness_failure",
+        "asset_reliability_failure",
+        "tool_or_resource_friction"
+      ]
+    },
+    {
+      "id": "blk_post_shift_learning_review",
+      "name": "Run post-shift learning review",
+      "description": "Run a short post-shift review of repeated breakdowns, what actually happened, and what changes before the next cycle so problems stop coming back unchallenged.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: learning compounds only when incidents are turned into changed operating truth quickly",
+      "updated_at": "2026-03-14T00:41:10.332621Z",
+      "effort_hours": 1.5,
+      "dependencies": [
+        "blk_install_pre_shift_brief"
+      ],
+      "tool_ids": [
+        "tool_post_shift_learning_review"
+      ],
+      "response_pattern_ids": [
+        "rp_learning_loop_reset"
+      ],
+      "entry_conditions": [
+        "The same preventable issue is recurring and the venue can review it while details are still fresh.",
+        "A leader is willing to close the loop with explicit next actions rather than a vague debrief."
+      ],
+      "contraindications": [
+        "Do not turn the review into emotional venting with no operating change.",
+        "Do not review every issue every night; focus on repeated or high-cost breakdowns."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "A short post-shift review record exists with issue, cause, and next change.",
+        "At least one repeated issue has a named owner and explicit follow-up before the next shift.",
+        "The review distinguishes noise from recurring systemic problems."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "learning_and_improvement",
+        "leadership_and_management_rhythm",
+        "commercial_and_control_loops"
+      ],
+      "failure_family_ids": [
+        "learning_failure",
+        "accountability_failure"
+      ]
+    },
+    {
+      "id": "blk_rebalance_sections",
+      "name": "Rebalance sections",
+      "description": "Redraw section boundaries, support roles, and workload assumptions around the actual cover flow so the peak period stops collapsing into uneven pressure.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: align roles and coverage to the true demand pattern instead of legacy sectioning",
+      "updated_at": "2026-03-14T00:24:43.019082Z",
+      "effort_hours": 3.0,
+      "dependencies": [],
+      "tool_ids": [
+        "tool_section_deployment_board"
+      ],
+      "response_pattern_ids": [
+        "rp_deployment_reset"
+      ],
+      "entry_conditions": [
+        "Sections overload unevenly while other capacity sits underused.",
+        "The team can identify the venue's real peak windows, service mix, and pressure points."
+      ],
+      "contraindications": [
+        "Do not redraw sections without evidence from actual cover flow and support demands.",
+        "Do not use static fairness logic when the venue's traffic pattern is structurally uneven."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 2,
+      "proof_of_completion": [
+        "Section map reflects actual guest flow and support load, not habit.",
+        "Primary and support assignments are visible before the peak window starts.",
+        "Rebalance triggers are defined for overload moments."
+      ],
+      "successor_block_ids": [
+        "blk_manager_peak_window_plan"
+      ],
+      "service_module_ids": [
+        "capacity_and_deployment",
+        "live_execution"
+      ],
+      "failure_family_ids": [
+        "demand_capacity_mismatch",
+        "role_clarity_failure"
+      ]
+    },
+    {
+      "id": "blk_standard_work_observation_loop",
+      "name": "Install standard work observation loop",
+      "description": "Choose a small number of critical service standards, observe them live, coach misses in the moment, and review drift at the end of the shift.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: standards only tighten when they are observed and coached in live service",
+      "updated_at": "2026-03-14T00:41:10.334560Z",
+      "effort_hours": 2.5,
+      "dependencies": [
+        "blk_build_floor_training"
+      ],
+      "tool_ids": [
+        "tool_standard_work_observation_sheet"
+      ],
+      "response_pattern_ids": [
+        "rp_standard_work_reset"
+      ],
+      "entry_conditions": [
+        "A few critical standards are worth protecting because drift is visible and costly.",
+        "A leader can observe and coach during live service without disappearing into admin."
+      ],
+      "contraindications": [
+        "Do not observe ten standards at once when the team can only absorb two or three.",
+        "Do not treat the loop as punitive scorekeeping instead of live correction."
+      ],
+      "owner_role": "floor_lead",
+      "expected_time_to_effect_days": 2,
+      "proof_of_completion": [
+        "A short standard observation sheet exists for live service use.",
+        "At least one shift has completed observe, coach, and review against the chosen standards.",
+        "The venue can point to repeated drift patterns and the coaching responses used."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "quality_and_standards",
+        "live_execution",
+        "team_capability_and_training"
+      ],
+      "failure_family_ids": [
+        "standards_drift",
+        "capability_gap"
+      ]
+    },
+    {
+      "id": "blk_standardize_prep_sheet",
+      "name": "Standardize prep sheet",
+      "description": "Create a role-based prep sheet with clear quantities, cutoffs, and ownership so prep stops depending on memory and shift-to-shift interpretation.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: standardize execution and readiness through explicit prep ownership",
+      "updated_at": "2026-03-14T00:24:43.023971Z",
+      "effort_hours": 4.0,
+      "dependencies": [],
+      "tool_ids": [
+        "tool_prep_sheet_template"
+      ],
+      "response_pattern_ids": [
+        "rp_prep_control_reset"
+      ],
+      "entry_conditions": [
+        "Prep quality or completion varies materially by shift or person.",
+        "The venue can identify critical prep lines and the roles that own them."
+      ],
+      "contraindications": [
+        "Do not create a prep sheet with unrealistic quantities or no cutoff logic.",
+        "Do not treat the sheet as complete unless prep ownership is visible and reviewable."
+      ],
+      "owner_role": "kitchen_manager",
+      "expected_time_to_effect_days": 3,
+      "proof_of_completion": [
+        "A role-based prep sheet exists with named owners, quantities, and cutoffs.",
+        "Prep completion can be checked before service instead of assumed.",
+        "Shift-to-shift variation in prep readiness is reduced through shared standards."
+      ],
+      "successor_block_ids": [
+        "blk_daily_waste_review"
+      ],
+      "service_module_ids": [
+        "readiness_and_setup",
+        "quality_and_standards",
+        "commercial_and_control_loops"
+      ],
+      "failure_family_ids": [
+        "readiness_failure",
+        "standards_drift",
+        "role_clarity_failure"
+      ]
+    },
+    {
+      "id": "blk_void_review_huddle",
+      "name": "Run void and comp review huddle",
+      "description": "Review avoidable voids and comps in a short huddle so the venue closes the loop on loss incidents instead of absorbing them as normal service cost.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: tighten control loops by making avoidable loss visible, reviewed, and owned",
+      "updated_at": "2026-03-14T00:24:43.026305Z",
+      "effort_hours": 2.0,
+      "dependencies": [
+        "blk_install_pre_shift_brief"
+      ],
+      "tool_ids": [
+        "tool_void_review_template"
+      ],
+      "response_pattern_ids": [
+        "rp_leadership_rhythm_reset",
+        "rp_prep_control_reset"
+      ],
+      "entry_conditions": [
+        "Voids or comps are rising and the venue cannot explain which are avoidable.",
+        "A leader can review incidents with enough detail to assign corrective actions."
+      ],
+      "contraindications": [
+        "Do not use the huddle to blame staff without identifying process causes.",
+        "Do not review losses if the venue will not track whether follow-up actions were completed."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 2,
+      "proof_of_completion": [
+        "A short review cadence exists for avoidable voids and comps.",
+        "Each reviewed incident has a likely cause and named follow-up action.",
+        "The venue can distinguish repeatable process losses from true one-off exceptions."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "commercial_and_control_loops",
+        "leadership_and_management_rhythm",
+        "learning_and_improvement"
+      ],
+      "failure_family_ids": [
+        "control_loop_failure",
+        "accountability_failure",
+        "learning_failure"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "id": "tool_86_board_template",
+      "name": "86 board template",
+      "description": "Visible status board for depletion risk, substitutions, and item availability decisions before they reach the guest as surprise.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: stock truth should be shared before service pressure turns it into confusion",
+      "updated_at": "2026-03-14T00:24:43.041266Z",
+      "category": "inventory",
+      "format": "status_board",
+      "usage_moment": "Use before service and update whenever item availability materially changes.",
+      "expected_output": "A visible list of 86 items, depletion risks, substitutions, and sell-through priorities.",
+      "adaptation_variables": [
+        "menu_size",
+        "critical_items",
+        "substitution_policy",
+        "update_owner"
+      ],
+      "block_ids": [
+        "blk_daily_86_board"
+      ]
+    },
+    {
+      "id": "tool_arrival_pacing_board",
+      "name": "Arrival pacing board",
+      "description": "Live board for reservation waves, walk-ins, seat release timing, and front-door pacing decisions.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: intake shaping needs a shared live surface, not private judgment",
+      "updated_at": "2026-03-14T00:24:43.042614Z",
+      "category": "host",
+      "format": "live_board",
+      "usage_moment": "Use during service to track arrival pressure and seat release decisions in real time.",
+      "expected_output": "A current front-door view of waves, waits, release logic, and emerging pacing risk.",
+      "adaptation_variables": [
+        "reservation_density",
+        "walk_in_volume",
+        "hosting_model",
+        "table_release_rules"
+      ],
+      "block_ids": [
+        "blk_build_arrival_pacing_board"
+      ]
+    },
+    {
+      "id": "tool_bar_priority_board",
+      "name": "Bar priority board",
+      "description": "Visual lane that isolates the drinks most likely to block guest flow, table turns, or recovery moments if they sit in the general queue.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: priority surfaces should make blocking work unmistakably visible",
+      "updated_at": "2026-03-14T00:24:43.044104Z",
+      "category": "beverage",
+      "format": "priority_board",
+      "usage_moment": "Use during live bar service when certain tickets need protected handling to preserve table flow.",
+      "expected_output": "A short visible queue of table-critical drink tickets with explicit entry and clearing rules.",
+      "adaptation_variables": [
+        "bar_layout",
+        "ticket_volume",
+        "service_style",
+        "priority_definition"
+      ],
+      "block_ids": [
+        "blk_bar_ticket_priority_lane"
+      ]
+    },
+    {
+      "id": "tool_breaker_and_workaround_log",
+      "name": "Breaker and workaround log",
+      "description": "Visible log of repeated equipment failures, missing tools, system frictions, and the workarounds the team is using to survive them.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: reliability restoration starts by exposing the breakers the team has normalized",
+      "updated_at": "2026-03-14T00:41:10.354912Z",
+      "category": "reliability",
+      "format": "issue_log",
+      "usage_moment": "Use whenever recurring breakers or workarounds surface during readiness checks or live service.",
+      "expected_output": "A visible reliability list with issue, workaround, owner, urgency, and next corrective action.",
+      "adaptation_variables": [
+        "asset_types",
+        "shift_structure",
+        "repair_owner",
+        "urgency_rules"
+      ],
+      "block_ids": [
+        "blk_capture_breakers_and_workarounds"
+      ]
+    },
+    {
+      "id": "tool_closing_reset_checklist",
+      "name": "Closing reset checklist",
+      "description": "Close-down checklist covering stock, prep, cleanliness, unresolved issues, and anything that would poison the next day's readiness if left implicit.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: reset discipline should preserve the next operating cycle, not just finish the current one",
+      "updated_at": "2026-03-14T00:24:43.045419Z",
+      "category": "controls",
+      "format": "checklist",
+      "usage_moment": "Use at close before team members leave and before unresolved issues are handed over.",
+      "expected_output": "A signed close record with completed reset items, unresolved blockers, and explicit carry-forward actions.",
+      "adaptation_variables": [
+        "daypart",
+        "station_count",
+        "handover_model",
+        "critical_assets"
+      ],
+      "block_ids": [
+        "blk_closing_reset_check"
+      ]
+    },
+    {
+      "id": "tool_complexity_trim_matrix",
+      "name": "Complexity trim matrix",
+      "description": "Decision matrix for identifying which menu or service elements create disproportionate execution drag relative to value and should be simplified first.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: complexity should be trimmed with explicit tradeoff logic, not instinct alone",
+      "updated_at": "2026-03-14T00:41:10.359747Z",
+      "category": "strategy",
+      "format": "decision_matrix",
+      "usage_moment": "Use when the current offer is creating repeated instability and leadership is reviewing simplification options.",
+      "expected_output": "A ranked view of high-complexity, low-defensibility offer elements with proposed simplification actions.",
+      "adaptation_variables": [
+        "menu_scope",
+        "station_load",
+        "margin_signal",
+        "guest_value"
+      ],
+      "block_ids": [
+        "blk_offer_complexity_trim"
+      ]
+    },
+    {
+      "id": "tool_expo_callout_card",
+      "name": "Expo callout card",
+      "description": "Compact pass reference showing the minimum shared language for fire, hold, pickup, delays, and escalation at the kitchen-to-floor boundary.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: handoff language should be explicit enough to survive noise and speed",
+      "updated_at": "2026-03-14T00:24:43.046581Z",
+      "category": "kitchen",
+      "format": "reference_card",
+      "usage_moment": "Use at the pass during live service until the callout standard is internalized.",
+      "expected_output": "A shared pass script that reduces re-clarification and missed pickup signals.",
+      "adaptation_variables": [
+        "menu_complexity",
+        "pass_layout",
+        "expo_model",
+        "floor_pickup_flow"
+      ],
+      "block_ids": [
+        "blk_install_expo_callouts"
+      ]
+    },
+    {
+      "id": "tool_floor_walk_sheet",
+      "name": "Floor walk sheet",
+      "description": "Timed observation sheet for live coaching, escalation checks, guest-flow pressure, and the moments where a manager should intervene rather than watch passively.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: management presence should be guided by real risk signals, not vague attentiveness",
+      "updated_at": "2026-03-14T00:24:43.050946Z",
+      "category": "leadership",
+      "format": "observation_sheet",
+      "usage_moment": "Use during critical service windows while the manager is moving the floor deliberately.",
+      "expected_output": "A short record of observed pressure points, coaching actions, escalation events, and follow-up needs.",
+      "adaptation_variables": [
+        "peak_window",
+        "service_nodes",
+        "guest_flow_profile",
+        "manager_capacity"
+      ],
+      "block_ids": [
+        "blk_manager_floor_walk"
+      ]
+    },
+    {
+      "id": "tool_guest_recovery_script",
+      "name": "Guest recovery script",
+      "description": "Recovery script covering acknowledgement, ownership, immediate resolution, goodwill boundary, and follow-up so service failures are contained consistently.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: recovery should combine warmth, ownership, and recurrence prevention",
+      "updated_at": "2026-03-14T00:24:43.052314Z",
+      "category": "service-recovery",
+      "format": "playbook_script",
+      "usage_moment": "Use immediately after a service failure or complaint that requires active recovery and documented follow-up.",
+      "expected_output": "A completed recovery action with named owner, resolution path, and follow-up or learning note.",
+      "adaptation_variables": [
+        "complaint_type",
+        "service_level",
+        "goodwill_policy",
+        "manager_availability"
+      ],
+      "block_ids": [
+        "blk_guest_recovery_loop"
+      ]
+    },
+    {
+      "id": "tool_host_huddle_template",
+      "name": "Host huddle template",
+      "description": "Short huddle template for reviewing reservation waves, quote logic, arrival pressure, and escalation rules before the front door gets stressed.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: local operating rhythm at intake should shape promises, not just react to them",
+      "updated_at": "2026-03-14T00:24:43.054823Z",
+      "category": "communication",
+      "format": "huddle_template",
+      "usage_moment": "Use 10 to 15 minutes before peak arrivals or any major reservation wave.",
+      "expected_output": "A brief pacing huddle with quote decisions, pressure notes, and a named escalation owner.",
+      "adaptation_variables": [
+        "reservation_volume",
+        "walk_in_mix",
+        "table_turn_assumption",
+        "hosting_model"
+      ],
+      "block_ids": [
+        "blk_host_reservation_huddle"
+      ]
+    },
+    {
+      "id": "tool_inventory_count_sheet",
+      "name": "Inventory count sheet",
+      "description": "High-risk count sheet that focuses on the lines most likely to cause service disruption, margin leakage, or false 86 decisions.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: tighter control loops begin with a narrow, trusted counting surface",
+      "updated_at": "2026-03-14T00:24:43.057294Z",
+      "category": "inventory",
+      "format": "count_sheet",
+      "usage_moment": "Use on the defined cadence for high-risk lines before count truth feeds service and control decisions.",
+      "expected_output": "A variance-reviewed count record with follow-up actions and any resulting 86 or replenishment decisions.",
+      "adaptation_variables": [
+        "sku_risk_set",
+        "count_cadence",
+        "variance_threshold",
+        "storage_locations"
+      ],
+      "block_ids": [
+        "blk_inventory_count_cycle"
+      ]
+    },
+    {
+      "id": "tool_line_readiness_check",
+      "name": "Line readiness check",
+      "description": "Stop-go checklist for product availability, equipment readiness, station setup, 86 risk, and any blocker that should delay the open.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: readiness tools should create real stop/go decisions, not ceremonial ticks",
+      "updated_at": "2026-03-14T00:24:43.058387Z",
+      "category": "kitchen",
+      "format": "checklist",
+      "usage_moment": "Use before opening the line and after any disruption that could invalidate readiness.",
+      "expected_output": "A signed readiness record with open blockers, resolved blockers, and clear escalation for red conditions.",
+      "adaptation_variables": [
+        "station_count",
+        "equipment_profile",
+        "menu_daypart",
+        "prep_dependency_risk"
+      ],
+      "block_ids": [
+        "blk_opening_line_readiness_check"
+      ]
+    },
+    {
+      "id": "tool_peak_window_plan",
+      "name": "Peak-window plan",
+      "description": "Simple plan that fixes where the manager stands, what they watch, and what triggers intervention during the venue's highest-risk windows.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: leadership deployment needs a visible plan tied to real pressure moments",
+      "updated_at": "2026-03-14T00:24:43.059592Z",
+      "category": "leadership",
+      "format": "deployment_plan",
+      "usage_moment": "Use before and during the venue's highest-risk service windows.",
+      "expected_output": "A written manager coverage plan with zones, watch targets, and intervention triggers.",
+      "adaptation_variables": [
+        "peak_window",
+        "pressure_nodes",
+        "manager_count",
+        "escalation_paths"
+      ],
+      "block_ids": [
+        "blk_manager_peak_window_plan"
+      ]
+    },
+    {
+      "id": "tool_post_shift_learning_review",
+      "name": "Post-shift learning review",
+      "description": "Short review template for repeated issues, what actually happened, what changes next, and who owns the follow-up before the next service cycle begins.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: learning loops need a short, repeatable review surface tied to action",
+      "updated_at": "2026-03-14T00:41:10.361702Z",
+      "category": "learning",
+      "format": "review_template",
+      "usage_moment": "Use after service when repeated or high-cost breakdowns deserve same-day learning closure.",
+      "expected_output": "A concise review with issue, cause hypothesis, next change, and named owner.",
+      "adaptation_variables": [
+        "review_scope",
+        "issue_type",
+        "owner_roles",
+        "next_shift_timing"
+      ],
+      "block_ids": [
+        "blk_post_shift_learning_review"
+      ]
+    },
+    {
+      "id": "tool_prep_sheet_template",
+      "name": "Prep sheet template",
+      "description": "Role-based prep tracker with quantities, cutoffs, owner names, and completion visibility for the items that protect service readiness.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: readiness improves when prep becomes explicit, visible, and reviewable",
+      "updated_at": "2026-03-14T00:24:43.064785Z",
+      "category": "kitchen",
+      "format": "tracker",
+      "usage_moment": "Use before service and during prep handovers to verify readiness against explicit ownership.",
+      "expected_output": "A prep tracker showing what is done, what is not, who owns it, and what cutoff or quantity applies.",
+      "adaptation_variables": [
+        "menu_daypart",
+        "prep_lines",
+        "par_levels",
+        "owner_roles"
+      ],
+      "block_ids": [
+        "blk_standardize_prep_sheet"
+      ]
+    },
+    {
+      "id": "tool_section_deployment_board",
+      "name": "Section deployment board",
+      "description": "Visible sectioning board that shows primary server assignments, support coverage, overload triggers, and rebalance options.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: deployment reset needs a visible operating shape the team can act on immediately",
+      "updated_at": "2026-03-14T00:24:43.083689Z",
+      "category": "planning",
+      "format": "planning_board",
+      "usage_moment": "Use before the peak and update when live load materially changes section pressure.",
+      "expected_output": "A live section board with named ownership, support roles, and rebalance triggers.",
+      "adaptation_variables": [
+        "floor_layout",
+        "expected_cover_mix",
+        "server_count",
+        "support_role_capacity"
+      ],
+      "block_ids": [
+        "blk_rebalance_sections"
+      ]
+    },
+    {
+      "id": "tool_service_observation_sheet",
+      "name": "Service observation sheet",
+      "description": "Timestamped worksheet for capturing service touchpoints, delay points, unclear handoffs, and visible recovery failures during live observation.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: evidence-first workflow redesign starts with observation, not memory",
+      "updated_at": "2026-03-14T00:24:43.085092Z",
+      "category": "observation",
+      "format": "worksheet",
+      "usage_moment": "Use during a representative live service before redesigning workflow or role ownership.",
+      "expected_output": "A marked-up service map with timestamps, handoff friction notes, and three highest-risk failure moments.",
+      "adaptation_variables": [
+        "service_format",
+        "peak_window",
+        "venue_layout",
+        "team_structure"
+      ],
+      "block_ids": [
+        "blk_map_service_steps"
+      ]
+    },
+    {
+      "id": "tool_shift_brief_template",
+      "name": "Shift brief template",
+      "description": "Structured briefing template covering demand shape, 86s, live risks, role pressure points, recovery focus, and named escalation ownership.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: leadership rhythm should create shared situational awareness before the shift gets loud",
+      "updated_at": "2026-03-14T00:24:43.095577Z",
+      "category": "communication",
+      "format": "briefing_template",
+      "usage_moment": "Use at the start of each shift and before major peak windows.",
+      "expected_output": "A short briefing record with priorities, risks, ownership, and the shift's operational focus.",
+      "adaptation_variables": [
+        "daypart",
+        "forecasted_covers",
+        "86_status",
+        "staffing_mix"
+      ],
+      "block_ids": [
+        "blk_install_pre_shift_brief"
+      ]
+    },
+    {
+      "id": "tool_standard_work_observation_sheet",
+      "name": "Standard work observation sheet",
+      "description": "Short observation sheet for tracking whether critical service standards are actually being executed, coached, and reinforced in live service.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: standardization depends on visible observation, not memory of training",
+      "updated_at": "2026-03-14T00:41:10.364163Z",
+      "category": "quality",
+      "format": "observation_sheet",
+      "usage_moment": "Use during live service when checking a small set of critical standards and coaching misses.",
+      "expected_output": "A short record of observed standards, misses, coaching actions, and repeated drift patterns.",
+      "adaptation_variables": [
+        "critical_standards",
+        "service_period",
+        "role_set",
+        "coach"
+      ],
+      "block_ids": [
+        "blk_standard_work_observation_loop"
+      ]
+    },
+    {
+      "id": "tool_station_role_matrix",
+      "name": "Station role matrix",
+      "description": "Role matrix that shows primary ownership, backup ownership, escalation paths, and cross-station dependencies for the live floor.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: role clarity needs visible ownership, not verbal assumptions",
+      "updated_at": "2026-03-14T00:24:43.097631Z",
+      "category": "org-design",
+      "format": "matrix",
+      "usage_moment": "Use after service flow mapping and before briefing the team on new role boundaries.",
+      "expected_output": "A visible station matrix with named owners, backups, and escalation routes for blocked moments.",
+      "adaptation_variables": [
+        "station_count",
+        "service_style",
+        "support_roles",
+        "manager_coverage"
+      ],
+      "block_ids": [
+        "blk_create_station_roles"
+      ]
+    },
+    {
+      "id": "tool_training_checklist",
+      "name": "Training checklist",
+      "description": "Role-specific training checklist with live signoff points so new and existing team members can be coached against explicit service standards.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: capability grows when standards become observable and signoff-able",
+      "updated_at": "2026-03-14T00:24:43.099719Z",
+      "category": "training",
+      "format": "checklist",
+      "usage_moment": "Use during onboarding, refresh training, and manager coaching for service roles.",
+      "expected_output": "A signed checklist of critical behaviors, observations, and capability gaps by role.",
+      "adaptation_variables": [
+        "role_type",
+        "service_model",
+        "training_stage",
+        "coach_availability"
+      ],
+      "block_ids": [
+        "blk_build_floor_training"
+      ]
+    },
+    {
+      "id": "tool_void_review_template",
+      "name": "Void review template",
+      "description": "Structured review template for voids and comps that captures the incident, likely cause, preventability, and the corrective action to assign.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: control loops only tighten when loss incidents are explained and owned",
+      "updated_at": "2026-03-14T00:24:43.103781Z",
+      "category": "controls",
+      "format": "review_template",
+      "usage_moment": "Use during the void and comp review huddle after avoidable loss incidents are identified.",
+      "expected_output": "A short review record with cause, preventability judgment, and named corrective action.",
+      "adaptation_variables": [
+        "loss_type",
+        "review_cadence",
+        "approval_rules",
+        "follow_up_owner"
+      ],
+      "block_ids": [
+        "blk_void_review_huddle"
+      ]
+    },
+    {
+      "id": "tool_wait_quote_guide",
+      "name": "Wait quote guide",
+      "description": "Decision guide for quoted waits, timing buffers, release logic, and escalation when seating readiness and promises drift apart.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: expectation-setting needs explicit rules rather than personality-driven guesses",
+      "updated_at": "2026-03-14T00:24:43.105038Z",
+      "category": "host",
+      "format": "decision_guide",
+      "usage_moment": "Use whenever waits are quoted, held, widened, or reset during live service.",
+      "expected_output": "A plain-language rule set for quote ranges, buffer use, and escalation thresholds.",
+      "adaptation_variables": [
+        "seat_count",
+        "turn_time_baseline",
+        "walk_in_policy",
+        "reservation_density"
+      ],
+      "block_ids": [
+        "blk_define_wait_quote_rules"
+      ]
+    },
+    {
+      "id": "tool_waste_log",
+      "name": "Waste log",
+      "description": "Daily log for waste incidents, likely causes, and the next correction so recurring prep loss becomes visible enough to fix.",
+      "status": "published",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: loss visibility should feed learning and action, not passive record-keeping",
+      "updated_at": "2026-03-14T00:24:43.106631Z",
+      "category": "controls",
+      "format": "log",
+      "usage_moment": "Use at end of day or after meaningful waste events to support a short loss review.",
+      "expected_output": "A dated waste record with cause notes, pattern tags, and the next corrective action.",
+      "adaptation_variables": [
+        "waste_categories",
+        "shift_structure",
+        "prep_model",
+        "review_owner"
+      ],
+      "block_ids": [
+        "blk_daily_waste_review"
+      ]
+    }
+  ],
+  "signal_failure_map": [
+    {
+      "signal_id": "sig_86_surprise",
+      "failure_mode_id": "fm_inventory_accuracy_gap",
+      "weight": 0.9
+    },
+    {
+      "signal_id": "sig_86_surprise",
+      "failure_mode_id": "fm_shift_readiness_gap",
+      "weight": 0.5
+    },
+    {
+      "signal_id": "sig_bar_ticket_delay",
+      "failure_mode_id": "fm_bar_workflow_breakdown",
+      "weight": 0.9
+    },
+    {
+      "signal_id": "sig_bar_ticket_delay",
+      "failure_mode_id": "fm_pass_communication_gap",
+      "weight": 0.6
+    },
+    {
+      "signal_id": "sig_checker_or_qc_absent",
+      "failure_mode_id": "fm_controls_gap",
+      "weight": 0.73
+    },
+    {
+      "signal_id": "sig_checker_or_qc_absent",
+      "failure_mode_id": "fm_service_standard_drift",
+      "weight": 0.89
+    },
+    {
+      "signal_id": "sig_closing_reset_failures",
+      "failure_mode_id": "fm_open_close_control_gap",
+      "weight": 1.0
+    },
+    {
+      "signal_id": "sig_complaint_handled_defensively",
+      "failure_mode_id": "fm_guest_recovery_breakdown",
+      "weight": 0.95
+    },
+    {
+      "signal_id": "sig_complaint_handled_defensively",
+      "failure_mode_id": "fm_manager_presence_gap",
+      "weight": 0.62
+    },
+    {
+      "signal_id": "sig_complaint_response_defensive",
+      "failure_mode_id": "fm_guest_recovery_breakdown",
+      "weight": 0.95
+    },
+    {
+      "signal_id": "sig_complaint_response_defensive",
+      "failure_mode_id": "fm_manager_presence_gap",
+      "weight": 0.42
+    },
+    {
+      "signal_id": "sig_count_variance",
+      "failure_mode_id": "fm_controls_gap",
+      "weight": 0.5
+    },
+    {
+      "signal_id": "sig_count_variance",
+      "failure_mode_id": "fm_inventory_accuracy_gap",
+      "weight": 1.0
+    },
+    {
+      "signal_id": "sig_critical_role_left_uncovered",
+      "failure_mode_id": "fm_deployment_misalignment",
+      "weight": 0.93
+    },
+    {
+      "signal_id": "sig_critical_role_left_uncovered",
+      "failure_mode_id": "fm_role_ownership_blur",
+      "weight": 0.69
+    },
+    {
+      "signal_id": "sig_customer_expectation_surprise",
+      "failure_mode_id": "fm_guest_recovery_breakdown",
+      "weight": 0.71
+    },
+    {
+      "signal_id": "sig_customer_expectation_surprise",
+      "failure_mode_id": "fm_host_flow_breakdown",
+      "weight": 0.82
+    },
+    {
+      "signal_id": "sig_demand_spike_unabsorbed",
+      "failure_mode_id": "fm_deployment_misalignment",
+      "weight": 0.95
+    },
+    {
+      "signal_id": "sig_demand_spike_unabsorbed",
+      "failure_mode_id": "fm_manager_presence_gap",
+      "weight": 0.66
+    },
+    {
+      "signal_id": "sig_equipment_breaks_service_flow",
+      "failure_mode_id": "fm_equipment_reliability_gap",
+      "weight": 0.95
+    },
+    {
+      "signal_id": "sig_equipment_breaks_service_flow",
+      "failure_mode_id": "fm_tooling_friction",
+      "weight": 0.72
+    },
+    {
+      "signal_id": "sig_equipment_or_asset_breaks_flow",
+      "failure_mode_id": "fm_equipment_reliability_gap",
+      "weight": 0.94
+    },
+    {
+      "signal_id": "sig_equipment_or_asset_breaks_flow",
+      "failure_mode_id": "fm_tooling_friction",
+      "weight": 0.69
+    },
+    {
+      "signal_id": "sig_exception_repeats_without_containment",
+      "failure_mode_id": "fm_guest_recovery_breakdown",
+      "weight": 0.72
+    },
+    {
+      "signal_id": "sig_exception_repeats_without_containment",
+      "failure_mode_id": "fm_learning_loop_absence",
+      "weight": 0.86
+    },
+    {
+      "signal_id": "sig_expo_calls_missing",
+      "failure_mode_id": "fm_pass_communication_gap",
+      "weight": 0.9
+    },
+    {
+      "signal_id": "sig_expo_calls_missing",
+      "failure_mode_id": "fm_shift_readiness_gap",
+      "weight": 0.4
+    },
+    {
+      "signal_id": "sig_follow_through_missing",
+      "failure_mode_id": "fm_learning_loop_absence",
+      "weight": 0.79
+    },
+    {
+      "signal_id": "sig_follow_through_missing",
+      "failure_mode_id": "fm_manager_presence_gap",
+      "weight": 0.71
+    },
+    {
+      "signal_id": "sig_guest_complaints",
+      "failure_mode_id": "fm_briefing_absence",
+      "weight": 0.4
+    },
+    {
+      "signal_id": "sig_guest_complaints",
+      "failure_mode_id": "fm_manager_presence_gap",
+      "weight": 0.44
+    },
+    {
+      "signal_id": "sig_guest_complaints",
+      "failure_mode_id": "fm_undefined_workflow",
+      "weight": 0.7
+    },
+    {
+      "signal_id": "sig_handoff_requires_reclarification",
+      "failure_mode_id": "fm_pass_communication_gap",
+      "weight": 0.92
+    },
+    {
+      "signal_id": "sig_handoff_requires_reclarification",
+      "failure_mode_id": "fm_role_ownership_blur",
+      "weight": 0.71
+    },
+    {
+      "signal_id": "sig_improvement_not_standardized",
+      "failure_mode_id": "fm_learning_loop_absence",
+      "weight": 0.84
+    },
+    {
+      "signal_id": "sig_improvement_not_standardized",
+      "failure_mode_id": "fm_service_standard_drift",
+      "weight": 0.74
+    },
+    {
+      "signal_id": "sig_issue_resolution_slow_or_unclear",
+      "failure_mode_id": "fm_guest_recovery_breakdown",
+      "weight": 0.9
+    },
+    {
+      "signal_id": "sig_issue_resolution_slow_or_unclear",
+      "failure_mode_id": "fm_manager_presence_gap",
+      "weight": 0.63
+    },
+    {
+      "signal_id": "sig_key_operating_metric_not_reviewed",
+      "failure_mode_id": "fm_controls_gap",
+      "weight": 0.9
+    },
+    {
+      "signal_id": "sig_key_operating_metric_not_reviewed",
+      "failure_mode_id": "fm_learning_loop_absence",
+      "weight": 0.66
+    },
+    {
+      "signal_id": "sig_last_minute_volume_shift",
+      "failure_mode_id": "fm_deployment_misalignment",
+      "weight": 0.74
+    },
+    {
+      "signal_id": "sig_last_minute_volume_shift",
+      "failure_mode_id": "fm_host_flow_breakdown",
+      "weight": 0.84
+    },
+    {
+      "signal_id": "sig_line_check_missing",
+      "failure_mode_id": "fm_shift_readiness_gap",
+      "weight": 1.0
+    },
+    {
+      "signal_id": "sig_manager_absent_from_critical_moment",
+      "failure_mode_id": "fm_briefing_absence",
+      "weight": 0.64
+    },
+    {
+      "signal_id": "sig_manager_absent_from_critical_moment",
+      "failure_mode_id": "fm_manager_presence_gap",
+      "weight": 0.96
+    },
+    {
+      "signal_id": "sig_manager_floor_absence",
+      "failure_mode_id": "fm_briefing_absence",
+      "weight": 0.5
+    },
+    {
+      "signal_id": "sig_manager_floor_absence",
+      "failure_mode_id": "fm_manager_presence_gap",
+      "weight": 1.0
+    },
+    {
+      "signal_id": "sig_new_staff_depend_on_memory",
+      "failure_mode_id": "fm_service_standard_drift",
+      "weight": 0.64
+    },
+    {
+      "signal_id": "sig_new_staff_depend_on_memory",
+      "failure_mode_id": "fm_training_gap",
+      "weight": 0.92
+    },
+    {
+      "signal_id": "sig_no_live_direction_or_reset",
+      "failure_mode_id": "fm_briefing_absence",
+      "weight": 0.72
+    },
+    {
+      "signal_id": "sig_no_live_direction_or_reset",
+      "failure_mode_id": "fm_manager_presence_gap",
+      "weight": 0.88
+    },
+    {
+      "signal_id": "sig_no_postmortem_after_breakdown",
+      "failure_mode_id": "fm_learning_loop_absence",
+      "weight": 0.92
+    },
+    {
+      "signal_id": "sig_no_postmortem_after_breakdown",
+      "failure_mode_id": "fm_manager_presence_gap",
+      "weight": 0.58
+    },
+    {
+      "signal_id": "sig_opening_checklist_drift",
+      "failure_mode_id": "fm_open_close_control_gap",
+      "weight": 0.8
+    },
+    {
+      "signal_id": "sig_opening_checklist_drift",
+      "failure_mode_id": "fm_shift_readiness_gap",
+      "weight": 0.6
+    },
+    {
+      "signal_id": "sig_opening_or_reset_incomplete",
+      "failure_mode_id": "fm_open_close_control_gap",
+      "weight": 0.93
+    },
+    {
+      "signal_id": "sig_opening_or_reset_incomplete",
+      "failure_mode_id": "fm_shift_readiness_gap",
+      "weight": 0.74
+    },
+    {
+      "signal_id": "sig_output_quality_inconsistent",
+      "failure_mode_id": "fm_service_standard_drift",
+      "weight": 0.9
+    },
+    {
+      "signal_id": "sig_output_quality_inconsistent",
+      "failure_mode_id": "fm_training_gap",
+      "weight": 0.78
+    },
+    {
+      "signal_id": "sig_ownership_confusion_during_flow",
+      "failure_mode_id": "fm_pass_communication_gap",
+      "weight": 0.71
+    },
+    {
+      "signal_id": "sig_ownership_confusion_during_flow",
+      "failure_mode_id": "fm_role_ownership_blur",
+      "weight": 0.93
+    },
+    {
+      "signal_id": "sig_ownership_confusion_in_service",
+      "failure_mode_id": "fm_role_ownership_blur",
+      "weight": 0.92
+    },
+    {
+      "signal_id": "sig_ownership_confusion_in_service",
+      "failure_mode_id": "fm_training_gap",
+      "weight": 0.48
+    },
+    {
+      "signal_id": "sig_peak_period_undercovered",
+      "failure_mode_id": "fm_deployment_misalignment",
+      "weight": 0.95
+    },
+    {
+      "signal_id": "sig_peak_period_undercovered",
+      "failure_mode_id": "fm_manager_presence_gap",
+      "weight": 0.62
+    },
+    {
+      "signal_id": "sig_prep_inconsistency",
+      "failure_mode_id": "fm_prep_system_breakdown",
+      "weight": 0.9
+    },
+    {
+      "signal_id": "sig_problem_discussed_not_closed",
+      "failure_mode_id": "fm_learning_loop_absence",
+      "weight": 0.89
+    },
+    {
+      "signal_id": "sig_problem_discussed_not_closed",
+      "failure_mode_id": "fm_manager_presence_gap",
+      "weight": 0.67
+    },
+    {
+      "signal_id": "sig_promised_time_missed",
+      "failure_mode_id": "fm_deployment_misalignment",
+      "weight": 0.7
+    },
+    {
+      "signal_id": "sig_promised_time_missed",
+      "failure_mode_id": "fm_host_flow_breakdown",
+      "weight": 0.9
+    },
+    {
+      "signal_id": "sig_required_inputs_missing_at_start",
+      "failure_mode_id": "fm_shift_readiness_gap",
+      "weight": 0.9
+    },
+    {
+      "signal_id": "sig_required_inputs_missing_at_start",
+      "failure_mode_id": "fm_tooling_friction",
+      "weight": 0.68
+    },
+    {
+      "signal_id": "sig_reservation_pacing_breakdown",
+      "failure_mode_id": "fm_deployment_misalignment",
+      "weight": 0.5
+    },
+    {
+      "signal_id": "sig_reservation_pacing_breakdown",
+      "failure_mode_id": "fm_host_flow_breakdown",
+      "weight": 0.9
+    },
+    {
+      "signal_id": "sig_rework_or_repeat_work_observed",
+      "failure_mode_id": "fm_service_standard_drift",
+      "weight": 0.84
+    },
+    {
+      "signal_id": "sig_rework_or_repeat_work_observed",
+      "failure_mode_id": "fm_undefined_workflow",
+      "weight": 0.76
+    },
+    {
+      "signal_id": "sig_same_issue_repeats_without_review",
+      "failure_mode_id": "fm_controls_gap",
+      "weight": 0.46
+    },
+    {
+      "signal_id": "sig_same_issue_repeats_without_review",
+      "failure_mode_id": "fm_learning_loop_absence",
+      "weight": 0.95
+    },
+    {
+      "signal_id": "sig_same_mistake_repeats_across_people",
+      "failure_mode_id": "fm_learning_loop_absence",
+      "weight": 0.84
+    },
+    {
+      "signal_id": "sig_same_mistake_repeats_across_people",
+      "failure_mode_id": "fm_training_gap",
+      "weight": 0.92
+    },
+    {
+      "signal_id": "sig_scope_or_offer_misaligned",
+      "failure_mode_id": "fm_menu_complexity",
+      "weight": 0.94
+    },
+    {
+      "signal_id": "sig_scope_or_offer_misaligned",
+      "failure_mode_id": "fm_undefined_workflow",
+      "weight": 0.67
+    },
+    {
+      "signal_id": "sig_section_imbalance",
+      "failure_mode_id": "fm_deployment_misalignment",
+      "weight": 1.0
+    },
+    {
+      "signal_id": "sig_section_imbalance",
+      "failure_mode_id": "fm_manager_presence_gap",
+      "weight": 0.4
+    },
+    {
+      "signal_id": "sig_service_delay",
+      "failure_mode_id": "fm_deployment_misalignment",
+      "weight": 0.68
+    },
+    {
+      "signal_id": "sig_service_delay",
+      "failure_mode_id": "fm_training_gap",
+      "weight": 0.5
+    },
+    {
+      "signal_id": "sig_service_delay",
+      "failure_mode_id": "fm_undefined_workflow",
+      "weight": 0.85
+    },
+    {
+      "signal_id": "sig_service_or_job_cycle_delay",
+      "failure_mode_id": "fm_bar_workflow_breakdown",
+      "weight": 0.68
+    },
+    {
+      "signal_id": "sig_service_or_job_cycle_delay",
+      "failure_mode_id": "fm_host_flow_breakdown",
+      "weight": 0.79
+    },
+    {
+      "signal_id": "sig_shift_brief_missing",
+      "failure_mode_id": "fm_briefing_absence",
+      "weight": 0.96
+    },
+    {
+      "signal_id": "sig_shift_brief_missing",
+      "failure_mode_id": "fm_manager_presence_gap",
+      "weight": 0.52
+    },
+    {
+      "signal_id": "sig_shift_or_day_started_unprepared",
+      "failure_mode_id": "fm_briefing_absence",
+      "weight": 0.7
+    },
+    {
+      "signal_id": "sig_shift_or_day_started_unprepared",
+      "failure_mode_id": "fm_shift_readiness_gap",
+      "weight": 0.95
+    },
+    {
+      "signal_id": "sig_skill_mix_mismatch",
+      "failure_mode_id": "fm_deployment_misalignment",
+      "weight": 0.81
+    },
+    {
+      "signal_id": "sig_skill_mix_mismatch",
+      "failure_mode_id": "fm_training_gap",
+      "weight": 0.88
+    },
+    {
+      "signal_id": "sig_staff_confusion",
+      "failure_mode_id": "fm_training_gap",
+      "weight": 0.7
+    },
+    {
+      "signal_id": "sig_staff_confusion",
+      "failure_mode_id": "fm_undefined_workflow",
+      "weight": 0.82
+    },
+    {
+      "signal_id": "sig_standard_steps_skipped",
+      "failure_mode_id": "fm_service_standard_drift",
+      "weight": 0.95
+    },
+    {
+      "signal_id": "sig_standard_steps_skipped",
+      "failure_mode_id": "fm_training_gap",
+      "weight": 0.57
+    },
+    {
+      "signal_id": "sig_stock_or_input_inaccuracy",
+      "failure_mode_id": "fm_controls_gap",
+      "weight": 0.78
+    },
+    {
+      "signal_id": "sig_stock_or_input_inaccuracy",
+      "failure_mode_id": "fm_inventory_accuracy_gap",
+      "weight": 0.94
+    },
+    {
+      "signal_id": "sig_table_turn_stall",
+      "failure_mode_id": "fm_deployment_misalignment",
+      "weight": 0.6
+    },
+    {
+      "signal_id": "sig_table_turn_stall",
+      "failure_mode_id": "fm_host_flow_breakdown",
+      "weight": 0.9
+    },
+    {
+      "signal_id": "sig_ticket_bottleneck",
+      "failure_mode_id": "fm_menu_complexity",
+      "weight": 0.7
+    },
+    {
+      "signal_id": "sig_ticket_bottleneck",
+      "failure_mode_id": "fm_prep_system_breakdown",
+      "weight": 0.55
+    },
+    {
+      "signal_id": "sig_ticket_bottleneck",
+      "failure_mode_id": "fm_undefined_workflow",
+      "weight": 0.78
+    },
+    {
+      "signal_id": "sig_tool_or_system_unavailable",
+      "failure_mode_id": "fm_equipment_reliability_gap",
+      "weight": 0.74
+    },
+    {
+      "signal_id": "sig_tool_or_system_unavailable",
+      "failure_mode_id": "fm_tooling_friction",
+      "weight": 0.95
+    },
+    {
+      "signal_id": "sig_training_not_translated_to_execution",
+      "failure_mode_id": "fm_learning_loop_absence",
+      "weight": 0.67
+    },
+    {
+      "signal_id": "sig_training_not_translated_to_execution",
+      "failure_mode_id": "fm_service_standard_drift",
+      "weight": 0.58
+    },
+    {
+      "signal_id": "sig_training_not_translated_to_execution",
+      "failure_mode_id": "fm_training_gap",
+      "weight": 0.95
+    },
+    {
+      "signal_id": "sig_voids_rising",
+      "failure_mode_id": "fm_controls_gap",
+      "weight": 0.9
+    },
+    {
+      "signal_id": "sig_waitlist_mismatch",
+      "failure_mode_id": "fm_host_flow_breakdown",
+      "weight": 1.0
+    },
+    {
+      "signal_id": "sig_waste_loss_or_leakage_unexplained",
+      "failure_mode_id": "fm_controls_gap",
+      "weight": 0.9
+    },
+    {
+      "signal_id": "sig_waste_loss_or_leakage_unexplained",
+      "failure_mode_id": "fm_inventory_accuracy_gap",
+      "weight": 0.72
+    },
+    {
+      "signal_id": "sig_waste_spike",
+      "failure_mode_id": "fm_controls_gap",
+      "weight": 0.84
+    },
+    {
+      "signal_id": "sig_waste_spike",
+      "failure_mode_id": "fm_prep_system_breakdown",
+      "weight": 0.48
+    },
+    {
+      "signal_id": "sig_work_dies_between_roles",
+      "failure_mode_id": "fm_pass_communication_gap",
+      "weight": 0.9
+    },
+    {
+      "signal_id": "sig_work_dies_between_roles",
+      "failure_mode_id": "fm_role_ownership_blur",
+      "weight": 0.78
+    },
+    {
+      "signal_id": "sig_work_intake_not_prioritized",
+      "failure_mode_id": "fm_role_ownership_blur",
+      "weight": 0.68
+    },
+    {
+      "signal_id": "sig_work_intake_not_prioritized",
+      "failure_mode_id": "fm_undefined_workflow",
+      "weight": 0.91
+    },
+    {
+      "signal_id": "sig_work_pace_breaks_under_load",
+      "failure_mode_id": "fm_deployment_misalignment",
+      "weight": 0.87
+    },
+    {
+      "signal_id": "sig_work_pace_breaks_under_load",
+      "failure_mode_id": "fm_undefined_workflow",
+      "weight": 0.72
+    },
+    {
+      "signal_id": "sig_workaround_has_become_normal",
+      "failure_mode_id": "fm_controls_gap",
+      "weight": 0.65
+    },
+    {
+      "signal_id": "sig_workaround_has_become_normal",
+      "failure_mode_id": "fm_tooling_friction",
+      "weight": 0.88
+    },
+    {
+      "signal_id": "sig_workaround_is_normalized",
+      "failure_mode_id": "fm_learning_loop_absence",
+      "weight": 0.54
+    },
+    {
+      "signal_id": "sig_workaround_is_normalized",
+      "failure_mode_id": "fm_tooling_friction",
+      "weight": 0.9
+    }
+  ],
+  "failure_pattern_map": [
+    {
+      "failure_mode_id": "fm_bar_workflow_breakdown",
+      "response_pattern_id": "rp_bar_execution_reset",
+      "weight": 0.96
+    },
+    {
+      "failure_mode_id": "fm_briefing_absence",
+      "response_pattern_id": "rp_leadership_rhythm_reset",
+      "weight": 0.94
+    },
+    {
+      "failure_mode_id": "fm_controls_gap",
+      "response_pattern_id": "rp_inventory_accuracy_reset",
+      "weight": 0.74
+    },
+    {
+      "failure_mode_id": "fm_controls_gap",
+      "response_pattern_id": "rp_leadership_rhythm_reset",
+      "weight": 0.7
+    },
+    {
+      "failure_mode_id": "fm_controls_gap",
+      "response_pattern_id": "rp_prep_control_reset",
+      "weight": 0.64
+    },
+    {
+      "failure_mode_id": "fm_deployment_misalignment",
+      "response_pattern_id": "rp_deployment_reset",
+      "weight": 0.95
+    },
+    {
+      "failure_mode_id": "fm_equipment_reliability_gap",
+      "response_pattern_id": "rp_reliability_restore",
+      "weight": 0.97
+    },
+    {
+      "failure_mode_id": "fm_guest_recovery_breakdown",
+      "response_pattern_id": "rp_recovery_protocol_reset",
+      "weight": 0.96
+    },
+    {
+      "failure_mode_id": "fm_host_flow_breakdown",
+      "response_pattern_id": "rp_host_pacing_reset",
+      "weight": 0.95
+    },
+    {
+      "failure_mode_id": "fm_inventory_accuracy_gap",
+      "response_pattern_id": "rp_inventory_accuracy_reset",
+      "weight": 0.97
+    },
+    {
+      "failure_mode_id": "fm_learning_loop_absence",
+      "response_pattern_id": "rp_learning_loop_reset",
+      "weight": 0.97
+    },
+    {
+      "failure_mode_id": "fm_manager_presence_gap",
+      "response_pattern_id": "rp_manager_presence_reset",
+      "weight": 0.94
+    },
+    {
+      "failure_mode_id": "fm_menu_complexity",
+      "response_pattern_id": "rp_offer_complexity_trim",
+      "weight": 0.93
+    },
+    {
+      "failure_mode_id": "fm_menu_complexity",
+      "response_pattern_id": "rp_prep_control_reset",
+      "weight": 0.6
+    },
+    {
+      "failure_mode_id": "fm_menu_complexity",
+      "response_pattern_id": "rp_service_flow_reset",
+      "weight": 0.58
+    },
+    {
+      "failure_mode_id": "fm_open_close_control_gap",
+      "response_pattern_id": "rp_open_close_reset",
+      "weight": 0.95
+    },
+    {
+      "failure_mode_id": "fm_pass_communication_gap",
+      "response_pattern_id": "rp_pass_communication_reset",
+      "weight": 0.96
+    },
+    {
+      "failure_mode_id": "fm_prep_system_breakdown",
+      "response_pattern_id": "rp_prep_control_reset",
+      "weight": 0.9
+    },
+    {
+      "failure_mode_id": "fm_role_ownership_blur",
+      "response_pattern_id": "rp_role_visibility_reset",
+      "weight": 0.93
+    },
+    {
+      "failure_mode_id": "fm_service_standard_drift",
+      "response_pattern_id": "rp_standard_work_reset",
+      "weight": 0.96
+    },
+    {
+      "failure_mode_id": "fm_shift_readiness_gap",
+      "response_pattern_id": "rp_open_close_reset",
+      "weight": 0.72
+    },
+    {
+      "failure_mode_id": "fm_shift_readiness_gap",
+      "response_pattern_id": "rp_pass_communication_reset",
+      "weight": 0.5
+    },
+    {
+      "failure_mode_id": "fm_shift_readiness_gap",
+      "response_pattern_id": "rp_prep_control_reset",
+      "weight": 0.7
+    },
+    {
+      "failure_mode_id": "fm_tooling_friction",
+      "response_pattern_id": "rp_reliability_restore",
+      "weight": 0.88
+    },
+    {
+      "failure_mode_id": "fm_training_gap",
+      "response_pattern_id": "rp_training_reset",
+      "weight": 0.96
+    },
+    {
+      "failure_mode_id": "fm_undefined_workflow",
+      "response_pattern_id": "rp_deployment_reset",
+      "weight": 0.46
+    },
+    {
+      "failure_mode_id": "fm_undefined_workflow",
+      "response_pattern_id": "rp_service_flow_reset",
+      "weight": 0.92
+    }
+  ],
+  "pattern_block_map": [
+    {
+      "response_pattern_id": "rp_bar_execution_reset",
+      "block_id": "blk_bar_ticket_priority_lane",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_bar_execution_reset",
+      "block_id": "blk_install_expo_callouts",
+      "weight": 0.6
+    },
+    {
+      "response_pattern_id": "rp_deployment_reset",
+      "block_id": "blk_manager_peak_window_plan",
+      "weight": 0.9
+    },
+    {
+      "response_pattern_id": "rp_deployment_reset",
+      "block_id": "blk_rebalance_sections",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_host_pacing_reset",
+      "block_id": "blk_build_arrival_pacing_board",
+      "weight": 0.9
+    },
+    {
+      "response_pattern_id": "rp_host_pacing_reset",
+      "block_id": "blk_define_wait_quote_rules",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_host_pacing_reset",
+      "block_id": "blk_host_reservation_huddle",
+      "weight": 0.8
+    },
+    {
+      "response_pattern_id": "rp_inventory_accuracy_reset",
+      "block_id": "blk_daily_86_board",
+      "weight": 0.8
+    },
+    {
+      "response_pattern_id": "rp_inventory_accuracy_reset",
+      "block_id": "blk_inventory_count_cycle",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_leadership_rhythm_reset",
+      "block_id": "blk_install_pre_shift_brief",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_leadership_rhythm_reset",
+      "block_id": "blk_void_review_huddle",
+      "weight": 0.8
+    },
+    {
+      "response_pattern_id": "rp_learning_loop_reset",
+      "block_id": "blk_daily_waste_review",
+      "weight": 0.52
+    },
+    {
+      "response_pattern_id": "rp_learning_loop_reset",
+      "block_id": "blk_post_shift_learning_review",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_learning_loop_reset",
+      "block_id": "blk_void_review_huddle",
+      "weight": 0.64
+    },
+    {
+      "response_pattern_id": "rp_manager_presence_reset",
+      "block_id": "blk_host_reservation_huddle",
+      "weight": 0.4
+    },
+    {
+      "response_pattern_id": "rp_manager_presence_reset",
+      "block_id": "blk_manager_floor_walk",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_manager_presence_reset",
+      "block_id": "blk_manager_peak_window_plan",
+      "weight": 0.7
+    },
+    {
+      "response_pattern_id": "rp_offer_complexity_trim",
+      "block_id": "blk_offer_complexity_trim",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_open_close_reset",
+      "block_id": "blk_closing_reset_check",
+      "weight": 0.9
+    },
+    {
+      "response_pattern_id": "rp_open_close_reset",
+      "block_id": "blk_opening_line_readiness_check",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_pass_communication_reset",
+      "block_id": "blk_install_expo_callouts",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_pass_communication_reset",
+      "block_id": "blk_opening_line_readiness_check",
+      "weight": 0.6
+    },
+    {
+      "response_pattern_id": "rp_prep_control_reset",
+      "block_id": "blk_daily_waste_review",
+      "weight": 0.8
+    },
+    {
+      "response_pattern_id": "rp_prep_control_reset",
+      "block_id": "blk_standardize_prep_sheet",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_prep_control_reset",
+      "block_id": "blk_void_review_huddle",
+      "weight": 0.5
+    },
+    {
+      "response_pattern_id": "rp_recovery_protocol_reset",
+      "block_id": "blk_guest_recovery_loop",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_reliability_restore",
+      "block_id": "blk_capture_breakers_and_workarounds",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_reliability_restore",
+      "block_id": "blk_opening_line_readiness_check",
+      "weight": 0.58
+    },
+    {
+      "response_pattern_id": "rp_role_visibility_reset",
+      "block_id": "blk_create_station_roles",
+      "weight": 0.95
+    },
+    {
+      "response_pattern_id": "rp_role_visibility_reset",
+      "block_id": "blk_install_pre_shift_brief",
+      "weight": 0.62
+    },
+    {
+      "response_pattern_id": "rp_service_flow_reset",
+      "block_id": "blk_create_station_roles",
+      "weight": 0.9
+    },
+    {
+      "response_pattern_id": "rp_service_flow_reset",
+      "block_id": "blk_guest_recovery_loop",
+      "weight": 0.7
+    },
+    {
+      "response_pattern_id": "rp_service_flow_reset",
+      "block_id": "blk_map_service_steps",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_standard_work_reset",
+      "block_id": "blk_build_floor_training",
+      "weight": 0.82
+    },
+    {
+      "response_pattern_id": "rp_standard_work_reset",
+      "block_id": "blk_standard_work_observation_loop",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_training_reset",
+      "block_id": "blk_build_floor_training",
+      "weight": 1.0
+    },
+    {
+      "response_pattern_id": "rp_training_reset",
+      "block_id": "blk_guest_recovery_loop",
+      "weight": 0.5
+    }
+  ]
+}

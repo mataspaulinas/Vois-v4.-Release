@@ -1,0 +1,167 @@
+{
+  "block_id": "B077",
+  "name": "Key Person Risk Assessment",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Identifies and mitigates single-point-of-failure dependencies where critical knowledge, skills, or relationships reside with only one person, ensuring the cafe can continue operating effectively if any individual is unexpectedly absent or leaves.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Identify every operational area where only one person holds the required knowledge or skill to perform a critical function",
+      "Assess the impact on the business if each key person were unavailable for one day, one week, or permanently",
+      "Create mitigation plans for each identified risk, prioritised by likelihood and impact",
+      "Drive cross-training and knowledge documentation to distribute critical capabilities across the team",
+      "Establish a regular review cycle to ensure key person risks do not silently re-accumulate"
+    ],
+    "secondary_objectives": [
+      "Reduce the owner's personal operational burden by ensuring they are not the sole holder of critical knowledge",
+      "Improve the cafe's resilience to illness, holiday, and unexpected departures",
+      "Support succession planning by identifying who could step into key roles"
+    ]
+  },
+  "why_this_matters": "Every cafe has them — the one person who knows how to fix the espresso machine when it acts up, the only team member who can do the end-of-month stocktake, the owner who is the sole contact for the roaster, the cleaner, and the landlord. These single-person dependencies are invisible during normal operations but catastrophic when that person is suddenly unavailable. A head barista struck down by flu for a week. A manager who hands in their notice. An owner who needs emergency surgery. In each case, the question is the same: can the cafe continue to operate at an acceptable standard? In most independent cafes, the honest answer is 'barely' or 'no.' The owner is almost always the biggest key person risk. They typically hold supplier relationships, financial system access, equipment maintenance contacts, lease obligations, and the overall vision that guides daily decisions. If the owner cannot work for two weeks, many cafes simply close — not because they cannot make coffee, but because nobody else knows the Wi-Fi password, where the fuse box is, how to submit VAT returns, or what to do when the card machine goes offline. Key person risk assessment is not a theoretical exercise — it is a survival tool. The process is straightforward: list every critical function in the business, identify who performs it and who else could perform it, rate the risk, and create a plan to mitigate each identified dependency. The mitigations flow directly into B078 (Cross-Training) and B080 (Knowledge Capture).",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: List every critical operational function in the cafe. Cover all areas: coffee preparation, food preparation, opening procedure, closing procedure, cash handling and banking, ordering supplies, receiving deliveries, stock management, equipment maintenance and troubleshooting, customer complaint resolution, staff scheduling, payroll processing, VAT and accounting, health and safety compliance, social media and marketing, and any venue-specific functions. For each function, write down who currently performs it and who else could perform it if that person were absent. Where only one name appears, highlight it as a key person risk. Week 2: Assess the impact of each identified risk using a simple matrix. For each single-person dependency, answer: if this person were absent for one day, could we manage? One week? What if they left permanently? Rate the impact as low (minor inconvenience), medium (significant disruption but we could cope), or high (operation would fail or be seriously compromised). Prioritise the top five risks by combining likelihood (how likely is this person to be absent) with impact. For the top three risks, identify an immediate short-term mitigation — often this is as simple as writing down the process steps, sharing a password, or giving a second person access to a supplier account.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a formal Key Person Risk Register documenting each identified risk, the critical function, the current sole holder, the impact rating, the mitigation plan, and the target date for resolution. Feed the highest-priority risks into B078 (Cross-Training Programme) as immediate training priorities and B080 (Knowledge Capture System) for documentation. Conduct a deep-dive on the owner as key person — this is almost always the highest-risk area. Create an 'Owner Absence Pack' that would enable a designated deputy to run the cafe for two weeks: supplier contact list, equipment service contacts, bank and payment system access procedures (not passwords, but who to call), alarm codes, utility account details, insurance documents, and landlord contact. This pack should be updated every six months and stored securely. Establish a deputy structure — for each key person, nominate a designated backup who is being actively developed to cover that function. This backup does not need to be as skilled as the primary — they need to be competent enough to keep the function operating at an acceptable level for a short period.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Embed key person risk review into the quarterly management review cycle. Every quarter, revisit the risk register and ask: have any risks been mitigated, have any new ones emerged, has the team structure changed in a way that creates new dependencies? Track the percentage of critical functions that have at least two competent performers — target 100% coverage. Conduct an annual 'shadow day' where the owner steps away from operations for a full day and the deputy team runs the cafe. This is the ultimate test of key person risk mitigation — does the cafe run smoothly without the owner present? Document lessons learned and close any gaps revealed. Use the risk register to inform recruitment priorities — if the cafe loses a key person, knowing exactly which function needs replacing allows for faster, more targeted hiring. Benchmark key person resilience against business continuity best practice — the cafe should be able to survive any single person's absence for at least two weeks without customer-facing quality declining."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "List every critical operational function in the cafe across all areas",
+        "Identify who currently performs each function and who else could cover it",
+        "Highlight all single-person dependencies as key person risks",
+        "Assess impact of each risk using one-day, one-week, and permanent absence scenarios",
+        "Prioritise the top five risks by likelihood and impact",
+        "Implement immediate short-term mitigations for the top three risks",
+        "Brief the team on the concept and purpose of key person risk assessment"
+      ],
+      "responsible": "Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a formal Key Person Risk Register with mitigation plans and target dates",
+        "Feed priority risks into B078 cross-training and B080 knowledge capture programmes",
+        "Create an Owner Absence Pack enabling a deputy to run the cafe for two weeks",
+        "Nominate a designated backup for every key person and begin development",
+        "Ensure critical system access (supplier accounts, payment systems) has at least two authorised users",
+        "Document all operational procedures for functions currently held by one person",
+        "Review and update the Owner Absence Pack every six months"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Embed key person risk review into the quarterly management review cycle",
+        "Track percentage of critical functions with at least two competent performers",
+        "Conduct an annual shadow day where the owner steps away and the deputy team operates",
+        "Use the risk register to inform recruitment priorities after departures",
+        "Benchmark key person resilience against business continuity best practice",
+        "Celebrate the achievement of full redundancy coverage as a team milestone"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Key Person Risk Register (functions, holders, impact ratings, mitigations)",
+    "Owner Absence Pack (contacts, access, procedures for two-week deputy coverage)",
+    "Critical Function Coverage Map (who can do what across the team)",
+    "Deputy Nomination and Development Plan",
+    "Quarterly Risk Review checklist"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T077-01",
+        "tool_name": "Key Person Risk Register",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Register documenting every identified key person risk with critical function description, current sole holder, impact rating (low/medium/high), mitigation plan, backup nominee, and target resolution date."
+      },
+      {
+        "tool_id": "T077-02",
+        "tool_name": "Critical Function Coverage Map",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Visual grid showing all critical functions against team members, indicating primary performer and backup coverage. Highlights single-person dependencies in red and full coverage in green."
+      },
+      {
+        "tool_id": "T077-03",
+        "tool_name": "Owner Absence Pack",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Comprehensive pack enabling a deputy to run the cafe for two weeks including supplier contacts, equipment service numbers, bank procedures, alarm codes, utility details, insurance information, and landlord contact."
+      },
+      {
+        "tool_id": "T077-04",
+        "tool_name": "Deputy Development Plan",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Individual development plan for each nominated deputy covering the specific skills and knowledge they need to acquire, training schedule, assessment criteria, and readiness date."
+      },
+      {
+        "tool_id": "T077-05",
+        "tool_name": "Shadow Day Assessment Report",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Assessment template for the annual shadow day when the owner steps away, capturing what went well, what problems arose, what could not be resolved, and what gaps need closing."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Risk assessment is completed but mitigations are never actioned, creating false confidence",
+    "The owner is identified as the biggest risk but resists delegating because they believe nobody else can do it as well",
+    "Deputy nominations are made but no training or development time is allocated",
+    "The Owner Absence Pack is created once but never updated, becoming dangerously out of date within months"
+  ],
+  "kpis": [
+    "100% of critical functions have at least two competent performers (no single-person dependencies)",
+    "Owner Absence Pack reviewed and updated every six months",
+    "Key Person Risk Register reviewed quarterly with all mitigations on track",
+    "Annual shadow day completed successfully with no critical service failures",
+    "Time to cover any unexpected absence less than 24 hours for all critical functions"
+  ],
+  "dependencies": ["B078"],
+  "constraints": [
+    "Mitigating key person risk requires investment in cross-training time from B078",
+    "Sharing access to financial systems and supplier accounts must be done securely with appropriate controls",
+    "The Owner Absence Pack contains sensitive information and must be stored securely"
+  ],
+  "time_load": {
+    "L1": "3 hours (function listing, risk assessment, immediate mitigations)",
+    "L2": "8 hours (risk register, Owner Absence Pack, deputy plans, system access)",
+    "L3": "2 hours/quarter (risk review, shadow day planning, coverage tracking)"
+  },
+  "review_protocol": "Monthly check that active mitigations are progressing. Quarterly formal review of the Key Person Risk Register. Six-monthly update of the Owner Absence Pack. Annual shadow day exercise with documented lessons learned.",
+  "meta": {
+    "summary_for_humans": "This block identifies single-point-of-failure dependencies in the team and creates mitigation plans through cross-training, knowledge documentation, and deputy development to ensure the cafe can survive any individual's absence.",
+    "implementation_risks": [
+      "Owners often resist addressing their own key person risk because letting go feels like losing control",
+      "Small teams may have inherent key person risks that cannot be fully mitigated without additional headcount",
+      "Sensitive information in the Owner Absence Pack requires secure storage and access controls"
+    ],
+    "notes_for_engine": "Activate urgently when the owner is the sole operator, when a key team member gives notice, or when signals indicate fragile staffing. Drives B078 cross-training priorities and B080 knowledge capture.",
+    "tags": ["key_person", "risk", "resilience", "succession", "continuity", "dependency", "backup", "single_point_of_failure"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

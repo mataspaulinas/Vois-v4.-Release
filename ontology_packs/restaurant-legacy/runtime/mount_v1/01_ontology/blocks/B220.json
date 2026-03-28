@@ -1,0 +1,20 @@
+{
+  "block_id": "B220",
+  "name": "Team Seasonal Wellbeing",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M13: Leadership & Team Culture",
+  "state": "enriched",
+  "purpose": "Addresses team mental health and wellbeing challenges specific to northern climates with long dark winters, including seasonal affective disorder awareness, light therapy resources, burnout prevention during quiet months, and morale management strategies.",
+  "tools": [
+    "T220-01",
+    "T220-02",
+    "T220-03"
+  ],
+  "signals": [
+    "S221"
+  ],
+  "failure_modes": [
+    "FM117"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "venue_id": "kavos_namai_kaunas",
+  "venue_name": "Kaunas",
+  "type": "independent_cafe",
+  "stage": "operational",
+  "team_size": 6,
+  "location": "Kaunas, Laisves Aleja, Lithuania",
+  "concept": "Flagship specialty coffee bar on the main pedestrian street. High footfall, espresso-forward menu with pastries from local bakery partner. Young professional clientele.",
+  "team_profile": {},
+  "capacity_profile": {
+    "leadership_strength": "medium",
+    "volatility": "low"
+  },
+  "status": "active",
+  "created": "2025-12-20T16:16:39.239400",
+  "last_assessment": "2026-03-16T16:16:39.239400",
+  "current_signals": {
+    "S019": {
+      "active": true,
+      "notes": "Occasional wait times approaching threshold during Saturday morning peak",
+      "confidence": "medium",
+      "value": null
+    },
+    "S070": {
+      "active": true,
+      "notes": "Understaffing observed on one shift pattern only",
+      "confidence": "medium",
+      "value": null
+    },
+    "S080": {
+      "active": true,
+      "notes": "Table clearing occasionally delayed but within acceptable range",
+      "confidence": "low",
+      "value": null
+    },
+    "S133": {
+      "active": true,
+      "notes": "Cleaning schedule exists but adherence inconsistent",
+      "confidence": "medium",
+      "value": null
+    }
+  },
+  "workflow_stage": "plan_active",
+  "owner_user_id": "u_portfolio",
+  "primary_consultant_user_id": "u_consultant",
+  "last_updated_by": "u_consultant",
+  "last_activity_at": "2026-03-19T16:16:39.239400",
+  "health_state": "stable",
+  "next_review_at": "2026-04-19",
+  "owner_user_name": "Portfolio Lead",
+  "primary_consultant_user_name": "Lead Consultant",
+  "brand": "kavos_namai"
+}

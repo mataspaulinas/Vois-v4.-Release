@@ -1,0 +1,165 @@
+{
+  "block_id": "B021",
+  "name": "Peak Queue Management",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Provides systems and strategies for managing customer queues during peak periods — morning rush, lunchtime, and weekend surges — to minimise wait times, prevent walkaways, and maintain service quality under pressure. This block turns the queue from a pain point into a managed, positive experience.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Identify the cafe's peak periods and measure current queue lengths and wait times",
+      "Implement queue management strategies that reduce perceived and actual waiting time",
+      "Define staffing levels and station configurations optimised for peak throughput",
+      "Create contingency plans for unexpected demand surges",
+      "Prevent customer walkaways by managing the queue experience proactively"
+    ],
+    "secondary_objectives": [
+      "Increase peak-period revenue by serving more customers per hour without sacrificing quality",
+      "Reduce staff stress during rushes through clear roles and rehearsed procedures",
+      "Build a reputation for efficient, friendly service even when the cafe is busy"
+    ]
+  },
+  "why_this_matters": "For most UK cafes, a disproportionate share of daily revenue is generated during two peak windows: the morning rush (7:00-9:30) and lunchtime (12:00-14:00). A specialty coffee shop may serve 40% of its daily customers in the morning rush alone. Every customer who sees a long queue and walks away is lost revenue — and research from the British Coffee Association suggests that walkaways during peak periods can cost an independent cafe £200-400 per week in lost sales. But queue management is not just about speed; it is about experience. A customer who waits 5 minutes in a well-managed queue with clear communication feels differently from one who waits 3 minutes in a chaotic, confusing queue. The perception of waiting is as important as the actual wait time. UK consumers are particularly sensitive to queuing — the British Social Attitudes Survey has repeatedly shown that fairness, communication, and visible progress are the key factors in queue satisfaction. For cafes, poor queue management has a cascading effect: stressed staff make more errors, drink quality drops, customer complaints increase, and the atmosphere becomes tense rather than welcoming. The cafe that manages its queues well during peak periods creates a virtuous cycle: fast service attracts more customers, smooth operations reduce staff stress, and the positive atmosphere encourages return visits. Queue management is not an operational afterthought — it is a strategic capability that directly impacts revenue, reputation, and team morale.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Identify and document the cafe's peak periods. Use POS data (transaction timestamps) or simple manual counting to determine: when does the queue start building, when does it peak, and when does it dissipate? For most cafes, the pattern will show a morning rush starting around 7:30, a lunchtime peak around 12:30, and possibly a Saturday/Sunday late-morning surge. Measure current queue metrics during one peak period: count the number of people in the queue every 5 minutes, time several customers from joining the queue to receiving their drink, and note any walkaways. This gives you a baseline. Assign clear roles for peak periods: one person on till (order-taking), one person on espresso (drink preparation), and if possible one person on food prep. During peak, no one should be multitasking between roles. If you only have two staff, pre-agree who does what. Week 2: Implement three immediate queue improvements. First, ensure the menu board is clearly visible from the queue so customers can decide before they reach the till — this is the single biggest reducer of order-taking time. Second, prepare for peak: pre-stock milk jugs, grind coffee, prepare takeaway cups, and restock pastries 15 minutes before the rush starts. Third, acknowledge every customer in the queue — a simple 'We will be with you in just a moment' from anyone on the team prevents the feeling of being ignored. Track walkaways for one week by counting customers who approach the queue but leave without ordering.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Peak Period SOP that covers: staffing levels required for each peak period, station assignments, pre-rush preparation checklist, queue management techniques, and post-rush debrief. Analyse the order mix during peak periods — are certain items taking disproportionately long to prepare? Can complex drinks be batched more efficiently? Can food items be pre-prepared? Optimise the workspace layout for peak throughput: ensure the espresso machine, grinder, milk, cups, and lids are all within arm's reach of the barista without unnecessary movement. Implement a peak-period menu strategy: consider promoting faster-to-prepare items during rush, or pre-making popular items like filter coffee and batch brew. Create a queue overflow plan: if the queue exceeds a defined threshold (e.g., more than 8 people), trigger a response such as deploying an additional staff member, activating a second till, or having someone take orders in the queue with a tablet. Monitor peak-period performance weekly: average wait time, customers served per hour, walkaway rate, and customer feedback. By Week 8, the cafe should have a tested peak-period system with measurable improvements in throughput and customer experience.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Peak performance should be a source of team pride — the rush is when the cafe is at its best, not its most stressed. Conduct monthly peak-period reviews analysing transaction data, wait times, and customer feedback. Set improvement targets: reduce average wait time by 30 seconds per quarter, increase peak-hour transactions by 5%. Invest in infrastructure improvements based on data: a second grinder, a faster card payment terminal, a better queue layout. Consider digital ordering for peak periods (order-ahead via app or QR code) to reduce queue length. Train the team to perform well under pressure — role-play peak scenarios during quiet periods so the muscle memory is there when it matters. Celebrate peak-period records: 'We served 45 customers between 8 and 9 today — our best ever!' This transforms the rush from a dreaded challenge into a team sport."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Identify and document peak periods using POS data or manual observation",
+        "Measure baseline queue metrics: queue length, wait time, walkaways",
+        "Assign clear roles for peak periods: till, espresso, food prep",
+        "Ensure the menu board is clearly visible from the queue",
+        "Implement a pre-rush preparation routine 15 minutes before peak",
+        "Acknowledge every customer in the queue promptly",
+        "Track walkaways for one week to establish a baseline"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Peak Period SOP covering staffing, stations, and procedures",
+        "Analyse the order mix to identify bottlenecks in preparation time",
+        "Optimise workspace layout for minimal barista movement during peak",
+        "Implement a peak-period menu strategy promoting faster items",
+        "Create a queue overflow plan triggered at a defined queue threshold",
+        "Monitor peak performance weekly: wait time, throughput, walkaways",
+        "Establish a post-rush debrief to capture lessons from each peak period"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct monthly peak-period performance reviews with the team",
+        "Set quarterly improvement targets for wait time and throughput",
+        "Invest in infrastructure improvements based on performance data",
+        "Evaluate digital ordering solutions for peak-period queue reduction",
+        "Celebrate peak-period records and achievements with the team"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Peak Period Identification Report",
+    "Peak Period SOP with staffing and station assignments",
+    "Pre-Rush Preparation Checklist",
+    "Queue Overflow Response Plan",
+    "Weekly Peak Performance Metrics Report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T021-01",
+        "tool_name": "Peak Period Observation Log",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Log for recording peak period data: start/end times, queue lengths at 5-minute intervals, wait times for sampled customers, walkaway counts, and staffing levels."
+      },
+      {
+        "tool_id": "T021-02",
+        "tool_name": "Pre-Rush Preparation Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Head Barista",
+        "description": "Checklist of preparation tasks to complete 15 minutes before each peak period: stock milk, grind coffee, prepare cups and lids, restock pastries, clear counter space, check till float."
+      },
+      {
+        "tool_id": "T021-03",
+        "tool_name": "Peak Period SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering peak period management: staffing requirements, station assignments, preparation steps, queue techniques, overflow triggers, and post-rush debrief."
+      },
+      {
+        "tool_id": "T021-04",
+        "tool_name": "Weekly Peak Performance Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Weekly dashboard tracking peak-period metrics: average wait time, customers served per hour, walkaway rate, peak queue length, and staff-to-customer ratio."
+      },
+      {
+        "tool_id": "T021-05",
+        "tool_name": "Queue Overflow Response Plan",
+        "level": "L2",
+        "format": "protocol",
+        "owner_role": "Manager",
+        "description": "Protocol defining the queue length threshold that triggers overflow response, the specific actions to deploy (extra staff, second till, queue ordering), and escalation steps."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Peak periods are not formally identified, so staffing and preparation are reactive rather than planned",
+    "Staff roles blur during the rush with everyone trying to do everything, creating chaos rather than efficiency",
+    "Pre-rush preparation is skipped because the previous shift ran over or staff arrived late",
+    "Walkaways are not tracked, so the cost of poor queue management remains invisible to management"
+  ],
+  "kpis": [
+    "Average customer wait time during peak periods under 4 minutes",
+    "Walkaway rate below 5% of peak-period visitors",
+    "Peak-period customers served per hour increasing quarter-on-quarter",
+    "Pre-rush preparation checklist completed before every peak period"
+  ],
+  "dependencies": ["B022"],
+  "constraints": [
+    "Staffing levels during peak must be adequate — queue management cannot compensate for understaffing",
+    "Queue management strategies must not compromise drink quality or food safety",
+    "Physical space constraints may limit queue layout options — work within the cafe's footprint"
+  ],
+  "time_load": {
+    "L1": "4 hours (peak observation, baseline measurement, role assignment, quick wins)",
+    "L2": "8 hours (SOP development, workspace optimisation, metrics system setup)",
+    "L3": "2 hours/month (performance reviews, target setting, infrastructure evaluation)"
+  },
+  "review_protocol": "Daily post-rush debrief (2 minutes). Weekly peak performance metrics review. Monthly team discussion of peak-period improvements. Quarterly target review and strategy adjustment.",
+  "meta": {
+    "summary_for_humans": "This block manages the cafe's busiest periods — morning rush and lunchtime — through planned staffing, pre-rush preparation, clear role assignments, and queue monitoring. It aims to reduce wait times, prevent walkaways, and make peak periods a team strength rather than a source of stress.",
+    "implementation_risks": [
+      "Peak management requires adequate staffing — the best systems cannot fix understaffing",
+      "Staff may resist structured roles, preferring to 'just help out' — clarity is more efficient than flexibility during rush",
+      "Measurement requires discipline — tracking must be consistent to show real trends"
+    ],
+    "notes_for_engine": "Activate for all cafes with identifiable peak periods. Flag as urgent if signals indicate long queues, high walkaway rates, customer complaints about wait times, or staff stress during rushes.",
+    "tags": ["customer_experience", "queue", "peak", "throughput", "efficiency", "staffing", "service_speed", "operations"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,407 @@
+[
+  {
+    "fixture_id": "F001_normal_followup_warsaw",
+    "category": "normal venue",
+    "label": "Warsaw follow-up steady state",
+    "description": "Minimal follow-up case with one active signal and an improving active venue.",
+    "kind": "assessment_snapshot",
+    "source": {
+      "venue_slug": "kavos_namai_warsaw",
+      "assessment_file": "2026-03-05_004.json"
+    },
+    "source_paths": [
+      "project.json",
+      "operational_plan.json",
+      "signal_history.json",
+      "progress/entries.json",
+      "chat_history/_index.json",
+      "assessment.json",
+      "chat_history/t_eb800f5dc542.json"
+    ],
+    "assessment_type": "follow-up",
+    "active_signal_count": 1,
+    "active_signal_ids": [
+      "S051"
+    ],
+    "summary": {
+      "signals": 1,
+      "failure_modes": 2,
+      "response_patterns": 2,
+      "raw_activation_items": 20,
+      "constrained_activation_items": 20,
+      "plan_load": "TRIAGE",
+      "report_type": "ai",
+      "top_signal_ids": [
+        "S051"
+      ]
+    },
+    "output_files": [
+      "fixture_input.json",
+      "golden_normalized_signals.json",
+      "golden_failure_modes.json",
+      "golden_response_patterns.json",
+      "golden_activation_set_raw.json",
+      "golden_activation_context.json",
+      "golden_activation_set_constrained.json",
+      "golden_constraint_report.json",
+      "golden_action_plan.json",
+      "golden_report.md",
+      "golden_summary.json"
+    ]
+  },
+  {
+    "fixture_id": "F002_degraded_pegasas",
+    "category": "degraded venue",
+    "label": "Pegasas degraded storefront",
+    "description": "High-friction venue with broad operational degradation and rich AI intake text.",
+    "kind": "assessment_snapshot",
+    "source": {
+      "venue_slug": "kavinė_pegasas",
+      "assessment_file": "2026-03-21_001.json"
+    },
+    "source_paths": [
+      "project.json",
+      "operational_plan.json",
+      "assessment.json"
+    ],
+    "assessment_type": "full_diagnostic",
+    "active_signal_count": 17,
+    "active_signal_ids": [
+      "S002",
+      "S019",
+      "S020",
+      "S046",
+      "S056",
+      "S061",
+      "S069",
+      "S070",
+      "S071",
+      "S073",
+      "S083",
+      "S160",
+      "S166",
+      "S169",
+      "S175",
+      "S178",
+      "S180"
+    ],
+    "summary": {
+      "signals": 17,
+      "failure_modes": 21,
+      "response_patterns": 18,
+      "raw_activation_items": 164,
+      "constrained_activation_items": 164,
+      "plan_load": "TRIAGE",
+      "report_type": "ai",
+      "top_signal_ids": [
+        "S002",
+        "S019",
+        "S020",
+        "S046",
+        "S056",
+        "S061",
+        "S069",
+        "S070",
+        "S071",
+        "S073"
+      ]
+    },
+    "output_files": [
+      "fixture_input.json",
+      "golden_normalized_signals.json",
+      "golden_failure_modes.json",
+      "golden_response_patterns.json",
+      "golden_activation_set_raw.json",
+      "golden_activation_context.json",
+      "golden_activation_set_constrained.json",
+      "golden_constraint_report.json",
+      "golden_action_plan.json",
+      "golden_report.md",
+      "golden_summary.json"
+    ]
+  },
+  {
+    "fixture_id": "F003_conflicting_capacity_vs_cost",
+    "category": "conflicting signals case",
+    "label": "Capacity vs cost conflict",
+    "description": "Composite fixture combining service overload, staffing calibration drift, and payroll pressure.",
+    "kind": "manual_composite",
+    "source": "manual composite of real legacy signal semantics",
+    "source_paths": [],
+    "assessment_type": "full_diagnostic",
+    "active_signal_count": 5,
+    "active_signal_ids": [
+      "S019",
+      "S071",
+      "S083",
+      "S099",
+      "S104"
+    ],
+    "summary": {
+      "signals": 5,
+      "failure_modes": 9,
+      "response_patterns": 7,
+      "raw_activation_items": 63,
+      "constrained_activation_items": 63,
+      "plan_load": "TRIAGE",
+      "report_type": "ai",
+      "top_signal_ids": [
+        "S019",
+        "S071",
+        "S083",
+        "S099",
+        "S104"
+      ]
+    },
+    "output_files": [
+      "fixture_input.json",
+      "golden_normalized_signals.json",
+      "golden_failure_modes.json",
+      "golden_response_patterns.json",
+      "golden_activation_set_raw.json",
+      "golden_activation_context.json",
+      "golden_activation_set_constrained.json",
+      "golden_constraint_report.json",
+      "golden_action_plan.json",
+      "golden_report.md",
+      "golden_summary.json"
+    ]
+  },
+  {
+    "fixture_id": "F004_existing_active_plan_kaunas",
+    "category": "existing active plan case",
+    "label": "Kaunas active plan",
+    "description": "Stable venue with an active plan, progress feed, signal history, and persisted chat threads.",
+    "kind": "assessment_snapshot",
+    "source": {
+      "venue_slug": "kavos_namai_kaunas",
+      "assessment_file": "2026-03-02_005.json"
+    },
+    "source_paths": [
+      "project.json",
+      "operational_plan.json",
+      "signal_history.json",
+      "progress/entries.json",
+      "chat_history/_index.json",
+      "assessment.json",
+      "chat_history/t_48f81c67cfc2.json",
+      "chat_history/t_8a99c0a95098.json"
+    ],
+    "assessment_type": "follow-up",
+    "active_signal_count": 4,
+    "active_signal_ids": [
+      "S019",
+      "S070",
+      "S080",
+      "S071"
+    ],
+    "summary": {
+      "signals": 4,
+      "failure_modes": 7,
+      "response_patterns": 6,
+      "raw_activation_items": 54,
+      "constrained_activation_items": 54,
+      "plan_load": "TRIAGE",
+      "report_type": "ai",
+      "top_signal_ids": [
+        "S019",
+        "S070",
+        "S080",
+        "S071"
+      ]
+    },
+    "output_files": [
+      "fixture_input.json",
+      "golden_normalized_signals.json",
+      "golden_failure_modes.json",
+      "golden_response_patterns.json",
+      "golden_activation_set_raw.json",
+      "golden_activation_context.json",
+      "golden_activation_set_constrained.json",
+      "golden_constraint_report.json",
+      "golden_action_plan.json",
+      "golden_report.md",
+      "golden_summary.json"
+    ]
+  },
+  {
+    "fixture_id": "F005_ambiguous_ai_preopening_muzos2",
+    "category": "partial/ambiguous AI extraction case",
+    "label": "Muzos 2 pre-opening ambiguity",
+    "description": "Large AI-derived narrative with many medium-confidence signals and unmapped observations.",
+    "kind": "assessment_snapshot",
+    "source": {
+      "venue_slug": "muzos_2",
+      "assessment_file": "2026-03-25_001.json"
+    },
+    "source_paths": [
+      "project.json",
+      "operational_plan.json",
+      "operational_plan_v1.json",
+      "chat_history/_index.json",
+      "assessment.json",
+      "chat_history/t_172c36cb0ae8.json",
+      "chat_history/t_5941b0308233.json",
+      "chat_history/t_617360cbfddc.json",
+      "chat_history/t_b1b95db59464.json"
+    ],
+    "assessment_type": "full_diagnostic",
+    "active_signal_count": 46,
+    "active_signal_ids": [
+      "S002",
+      "S005",
+      "S007",
+      "S008",
+      "S018",
+      "S045",
+      "S051",
+      "S054",
+      "S056",
+      "S058",
+      "S061",
+      "S065",
+      "S069",
+      "S096",
+      "S102",
+      "S105",
+      "S106",
+      "S116",
+      "S117",
+      "S120",
+      "S124",
+      "S125",
+      "S126",
+      "S127",
+      "S128",
+      "S145",
+      "S149",
+      "S152",
+      "S154",
+      "S166",
+      "S167",
+      "S169",
+      "S187",
+      "S190",
+      "S191",
+      "S193",
+      "S194",
+      "S195",
+      "S211",
+      "S212",
+      "S213",
+      "S214",
+      "S215",
+      "S216",
+      "S218",
+      "S219"
+    ],
+    "summary": {
+      "signals": 46,
+      "failure_modes": 42,
+      "response_patterns": 25,
+      "raw_activation_items": 213,
+      "constrained_activation_items": 213,
+      "plan_load": "TRIAGE",
+      "report_type": "ai",
+      "top_signal_ids": [
+        "S002",
+        "S005",
+        "S007",
+        "S008",
+        "S018",
+        "S045",
+        "S051",
+        "S054",
+        "S056",
+        "S058"
+      ]
+    },
+    "output_files": [
+      "fixture_input.json",
+      "golden_normalized_signals.json",
+      "golden_failure_modes.json",
+      "golden_response_patterns.json",
+      "golden_activation_set_raw.json",
+      "golden_activation_context.json",
+      "golden_activation_set_constrained.json",
+      "golden_constraint_report.json",
+      "golden_action_plan.json",
+      "golden_report.md",
+      "golden_summary.json"
+    ]
+  },
+  {
+    "fixture_id": "F006_complex_klaipeda_multi_surface",
+    "category": "richer operational complexity",
+    "label": "Klaipeda complex multi-surface case",
+    "description": "Operationally active venue with broader signal mix plus plan, progress, chat, and signal history surfaces.",
+    "kind": "assessment_snapshot",
+    "source": {
+      "venue_slug": "kavos_namai_klaipeda",
+      "assessment_file": "2026-03-21_001.json"
+    },
+    "source_paths": [
+      "project.json",
+      "operational_plan.json",
+      "signal_history.json",
+      "progress/entries.json",
+      "chat_history/_index.json",
+      "assessment.json",
+      "chat_history/t_3457d6daac1a.json",
+      "chat_history/t_3bea15d8e724.json"
+    ],
+    "assessment_type": "weekly_pulse",
+    "active_signal_count": 15,
+    "active_signal_ids": [
+      "S002",
+      "S010",
+      "S019",
+      "S030",
+      "S045",
+      "S051",
+      "S063",
+      "S070",
+      "S071",
+      "S073",
+      "S080",
+      "S083",
+      "S133",
+      "S160",
+      "S166"
+    ],
+    "summary": {
+      "signals": 15,
+      "failure_modes": 24,
+      "response_patterns": 21,
+      "raw_activation_items": 188,
+      "constrained_activation_items": 188,
+      "plan_load": "TRIAGE",
+      "report_type": "ai",
+      "top_signal_ids": [
+        "S002",
+        "S010",
+        "S019",
+        "S030",
+        "S045",
+        "S051",
+        "S063",
+        "S070",
+        "S071",
+        "S073"
+      ]
+    },
+    "output_files": [
+      "fixture_input.json",
+      "golden_normalized_signals.json",
+      "golden_failure_modes.json",
+      "golden_response_patterns.json",
+      "golden_activation_set_raw.json",
+      "golden_activation_context.json",
+      "golden_activation_set_constrained.json",
+      "golden_constraint_report.json",
+      "golden_action_plan.json",
+      "golden_report.md",
+      "golden_summary.json"
+    ]
+  }
+]

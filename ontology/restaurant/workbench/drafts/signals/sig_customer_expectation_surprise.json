@@ -1,0 +1,31 @@
+{
+  "id": "sig_customer_expectation_surprise",
+  "name": "Guest expectation surprise appears in service",
+  "description": "Guests react as though the venue's timing, offer, or service experience is materially different from what they expected coming in.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: customer expectation surprise expressed through restaurant guest reactions",
+  "updated_at": "2026-03-15T15:59:27.060481Z",
+  "domain": "guest_experience",
+  "module": "host_flow",
+  "indicator_type": "lagging",
+  "evidence_types": [
+    "guest says this is not what they expected",
+    "surprise about wait, offer, or service conditions",
+    "promise and actual experience visibly diverge"
+  ],
+  "source_types": [
+    "guest complaint",
+    "service observation",
+    "manager notes"
+  ],
+  "temporal_behavior": "event-driven",
+  "likely_co_signals": [
+    "sig_promised_time_missed",
+    "sig_guest_complaints"
+  ],
+  "adapter_aliases": [
+    "guests were surprised",
+    "expectation mismatch at the table"
+  ]
+}

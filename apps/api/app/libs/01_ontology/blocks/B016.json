@@ -1,0 +1,165 @@
+{
+  "block_id": "B016",
+  "name": "Food Safety Record-Keeping",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Creates a centralised, organised system for maintaining all food safety records including the SFBB diary, temperature logs, cleaning records, training records, supplier documentation, and corrective action logs. This block ensures that when an EHO inspector asks for documentation, everything is immediately accessible and complete.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish a single, organised location for all food safety documentation",
+      "Define retention periods for each type of record to ensure legal compliance",
+      "Create a filing system that any team member can navigate without assistance",
+      "Implement regular record reviews to identify gaps before they become compliance issues",
+      "Ensure the SFBB diary is maintained with 4-weekly reviews as required by the FSA"
+    ],
+    "secondary_objectives": [
+      "Reduce stress during EHO inspections by having all documents immediately accessible",
+      "Enable trend analysis across food safety data to drive continuous improvement",
+      "Support the due diligence defence by maintaining a complete evidence trail"
+    ]
+  },
+  "why_this_matters": "Documentation is the evidence that proves a food safety management system is actually working. An EHO inspector cannot observe what happened last Tuesday — they rely on records to assess whether the business consistently maintains food safety standards. The Food Standards Agency's SFBB pack requires a 4-weekly review diary where the manager confirms that the food safety management system has been followed. But the SFBB diary is only one part of the documentation picture. A comprehensive food safety file should include: temperature monitoring logs (B001), cooking and cooling records, cleaning schedules and sign-off sheets (B011), staff training records (B019), allergen matrices and PPDS documentation (B005, B006), HACCP plans and CCP monitoring records (B013, B014), supplier due diligence records (B015), corrective action logs, and pest control records. Without a structured filing system, these documents accumulate in random drawers, clipboards, and folders — making it nearly impossible to demonstrate compliance during an inspection. Under the Food Safety Act 1990, the due diligence defence requires demonstrating that all reasonable precautions were taken. Records are the primary evidence for this defence. If records are missing, incomplete, or disorganised, the defence fails regardless of how well the cafe actually manages food safety. Good record-keeping is not bureaucracy; it is the legal shield that protects the business from criminal liability.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Gather every food safety document currently in the cafe — temperature logs, cleaning checklists, training certificates, supplier paperwork, SFBB pack, and any other records. Sort them into categories: temperatures, cleaning, training, suppliers, HACCP, allergens, corrective actions, and pest control. Purchase a large ring binder or lever arch file and create labelled dividers for each category. If the cafe uses the SFBB pack, ensure it is the current version and that all sections are completed. The SFBB diary (the 4-weekly review section) must show regular reviews — if it is blank, start completing it immediately. Place the food safety file in a known, accessible location — ideally in the office or behind the counter where staff and the manager can access it quickly. Week 2: Create a record-keeping checklist listing every document that should be in the file, with its current status (present/missing/out of date). Address any missing documents immediately — this is the priority. Assign responsibility for maintaining each section: the manager owns the overall file, but specific sections may be delegated (e.g., the head barista maintains temperature logs, the kitchen lead maintains cleaning records). Establish a routine: at the end of each day, completed daily records (temperature logs, cleaning checklists) are placed in the file. Weekly records are filed at the end of each week.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Food Safety Record-Keeping SOP that defines: what records must be kept, where they are filed, how long they are retained, who is responsible for each record type, and how records are reviewed. Establish retention periods: daily records (temperature logs, cleaning checklists) must be retained for a minimum of 12 months. Training records should be retained for the duration of employment plus 12 months. Supplier documentation should be retained for as long as the supplier relationship continues plus 12 months. HACCP documentation should be retained indefinitely. Create a monthly record review process: the manager checks every section of the food safety file to confirm it is complete, current, and properly filed. Document the review itself — a simple checklist showing what was checked and the outcome. Consider digitising records: scanning completed paper forms and storing them electronically provides a backup and makes retrieval easier. If using digital records, ensure they are backed up regularly and that paper originals are still retained as required. Implement version control for SOPs and policies — when a document is updated, clearly mark the old version as superseded and file the current version at the front of the section. By Week 8, the food safety file should be complete, well-organised, and actively maintained.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The record-keeping system should be so well-established that it runs without constant managerial attention. Conduct quarterly record audits where the manager or owner reviews the entire file for completeness, accuracy, and organisation. Score each section and track improvement over time. Consider transitioning to a digital food safety management system (e.g., Navitas, Food Alert, or similar) that automates record collection, sends reminders for overdue tasks, and generates compliance reports. Share the record completion rate with the team — if every daily checklist is filed on time for a month, recognise the achievement. Prepare a 'ready pack' for EHO inspections: a quick-reference folder or summary sheet that pulls together the key documents an EHO will want to see first (SFBB diary, recent temperature logs, training records, allergen documentation). This reduces inspection stress and demonstrates excellent management confidence."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Gather all existing food safety documents from around the cafe",
+        "Sort documents into categories and create a labelled ring binder with dividers",
+        "Verify the SFBB pack is current and complete, including the 4-weekly review diary",
+        "Create a record-keeping checklist listing every required document and its status",
+        "Address any missing or out-of-date documents immediately",
+        "Place the food safety file in an accessible, known location",
+        "Assign responsibility for maintaining each section of the file"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft a Food Safety Record-Keeping SOP with document types, retention periods, and responsibilities",
+        "Establish daily and weekly filing routines for completed records",
+        "Create a monthly record review checklist for the manager",
+        "Implement version control for SOPs and policy documents",
+        "Consider digitising records with scanning and electronic backup",
+        "Define retention periods for each record type and set up an archiving system",
+        "File the Record-Keeping SOP itself in the food safety file"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly record completeness audits with scored sections",
+        "Evaluate digital food safety management systems for automation",
+        "Prepare an EHO inspection ready pack with key documents",
+        "Share record completion rates with the team and recognise achievements",
+        "Archive expired records according to retention policy"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Food Safety Record File (organised ring binder with labelled sections)",
+    "Record-Keeping Checklist (document inventory)",
+    "Food Safety Record-Keeping SOP",
+    "Monthly Record Review Checklist",
+    "EHO Inspection Ready Pack"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T016-01",
+        "tool_name": "Food Safety Document Inventory Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Complete inventory of all required food safety documents, showing what should be in the file, its current status (present/missing/out of date), and the action needed."
+      },
+      {
+        "tool_id": "T016-02",
+        "tool_name": "Monthly Record Review Checklist",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Monthly review checklist for the manager to verify every section of the food safety file is complete, current, and properly organised, with space for notes and actions."
+      },
+      {
+        "tool_id": "T016-03",
+        "tool_name": "Food Safety Record-Keeping SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure defining what records must be kept, filing location, retention periods, responsible persons, review frequency, and archiving procedures."
+      },
+      {
+        "tool_id": "T016-04",
+        "tool_name": "Record Retention Schedule",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Schedule listing every food safety record type with its required retention period, storage location, and archiving/destruction procedures."
+      },
+      {
+        "tool_id": "T016-05",
+        "tool_name": "Quarterly Record Completeness Audit",
+        "level": "L3",
+        "format": "audit",
+        "owner_role": "Owner",
+        "description": "Quarterly audit scoring each section of the food safety file for completeness, accuracy, organisation, and currency, with trend tracking over time."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Daily records are completed but not filed, accumulating on clipboards until they are lost or damaged",
+    "The food safety file is maintained but kept in a location that staff cannot access, reducing its practical value",
+    "SFBB 4-weekly review diary is left blank, giving EHOs the impression that the food safety system is not actively managed",
+    "Records are filed but never reviewed, allowing gaps and errors to accumulate undetected"
+  ],
+  "kpis": [
+    "100% of daily food safety records filed in the food safety file by the end of each operating day",
+    "Monthly record review completed on schedule with all gaps addressed within 7 days",
+    "SFBB 4-weekly review diary entries completed without gaps",
+    "Food safety file immediately available for EHO inspection with all sections complete and current"
+  ],
+  "dependencies": ["B013", "B014"],
+  "constraints": [
+    "Food safety records must be retained for a minimum of 12 months for EHO inspection",
+    "The SFBB diary must include 4-weekly management reviews as specified by the FSA",
+    "All records must be legible, dated, and signed by the person who completed them"
+  ],
+  "time_load": {
+    "L1": "5 hours (document gathering, file setup, initial inventory)",
+    "L2": "6 hours (SOP drafting, retention schedule, review system setup)",
+    "L3": "2 hours/quarter (audits, archiving, system improvements)"
+  },
+  "review_protocol": "Daily filing of completed records. Weekly check by manager that the current week's records are in place. Monthly formal record review using checklist. Quarterly completeness audit. Annual retention review and archiving of expired records.",
+  "meta": {
+    "summary_for_humans": "This block creates an organised, centralised system for all food safety documentation — from daily temperature logs to the SFBB diary, training records, supplier files, and HACCP plans. It ensures everything is filed, accessible, and ready for EHO inspection at any time.",
+    "implementation_risks": [
+      "Initial file setup requires gathering scattered documents — allow adequate time",
+      "Paper-based systems are vulnerable to loss and damage — consider digital backup",
+      "Record-keeping can feel like admin overhead — emphasise its role as legal protection"
+    ],
+    "notes_for_engine": "Activate for all cafes. Flag as urgent if signals indicate missing documentation, incomplete SFBB diary, or EHO inspection imminent. This block integrates records from B001, B005, B006, B011, B013, B014, B015, and B019.",
+    "tags": ["food_safety", "records", "documentation", "SFBB", "EHO", "compliance", "due_diligence", "filing"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

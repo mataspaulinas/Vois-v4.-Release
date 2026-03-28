@@ -1,0 +1,45 @@
+{
+  "id": "blk_daily_86_board",
+  "name": "Launch daily 86 board",
+  "description": "Create a visible pre-service 86 and depletion board so stock risk, substitutions, and item status changes are shared before they become guest-facing surprises.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: stabilize visibility around stock truth before live service multiplies confusion",
+  "updated_at": "2026-03-14T00:24:42.972036Z",
+  "effort_hours": 1.5,
+  "dependencies": [
+    "blk_inventory_count_cycle"
+  ],
+  "tool_ids": [
+    "tool_86_board_template"
+  ],
+  "response_pattern_ids": [
+    "rp_inventory_accuracy_reset"
+  ],
+  "entry_conditions": [
+    "86 surprises or uncertain substitutions are reaching the floor mid-service.",
+    "The venue has at least a limited count or depletion truth to feed the board."
+  ],
+  "contraindications": [
+    "Do not post unreliable stock information that will be disproved immediately.",
+    "Do not keep the board hidden from the roles that need to act on it."
+  ],
+  "owner_role": "shift_lead",
+  "expected_time_to_effect_days": 1,
+  "proof_of_completion": [
+    "A visible 86 board exists before service with status, substitutions, and risk items.",
+    "Frontline roles know where to read it and when it updates.",
+    "Mid-shift item surprises decline because decisions are shared earlier."
+  ],
+  "successor_block_ids": [],
+  "service_module_ids": [
+    "readiness_and_setup",
+    "commercial_and_control_loops",
+    "promise_and_expectations"
+  ],
+  "failure_family_ids": [
+    "control_loop_failure",
+    "commercial_discipline_failure",
+    "readiness_failure"
+  ]
+}

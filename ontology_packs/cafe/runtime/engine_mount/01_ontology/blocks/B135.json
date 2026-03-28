@@ -1,0 +1,157 @@
+{
+  "block_id": "B135",
+  "name": "Review Generation Strategy",
+  "version": "v1.0",
+  "domain": "D08_marketing_brand",
+  "module": "M08: Brand Visibility & Customer Acquisition",
+  "state": "enriched",
+  "purpose": "Creates a proactive, systematic approach to encouraging satisfied customers to leave positive reviews, increasing both the volume and recency of reviews across key platforms. This block recognises that happy customers rarely leave reviews spontaneously — they need a gentle, well-timed prompt.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Increase the volume of Google reviews by at least 30% within the first 3 months",
+      "Develop non-intrusive prompting methods that feel natural and do not pressure customers",
+      "Create physical and digital touchpoints that make leaving a review as frictionless as possible",
+      "Train staff to identify the right moments to ask for reviews and do so comfortably",
+      "Maintain a consistent flow of new reviews to satisfy Google's recency weighting in search rankings"
+    ],
+    "secondary_objectives": [
+      "Shift the review mix upward by capturing more positive experiences that would otherwise go unrecorded",
+      "Build a review volume that makes individual negative reviews less impactful on the overall rating",
+      "Generate review content that potential customers find authentic and persuasive",
+      "Create a feedback loop where review generation effort reveals whether the customer experience is genuinely positive"
+    ]
+  },
+  "why_this_matters": "The fundamental asymmetry of online reviews is that dissatisfied customers leave reviews spontaneously while satisfied customers do not. A customer who has a terrible experience will go home and post a 1-star review fuelled by frustration. A customer who has a lovely flat white and a friendly chat will simply come back next week — they do not think to leave a review because the experience was pleasant rather than remarkable. This asymmetry means that cafes with no review generation strategy tend to accumulate a disproportionate number of negative reviews, dragging the average rating downward even if the vast majority of customers are happy. The solution is not to suppress negative reviews (unethical and impractical) but to proactively encourage the happy majority to share their experience. Google's local search algorithm weights review velocity (how frequently new reviews arrive) and recency heavily. A cafe with 50 reviews from 2023 and nothing since will rank below a competitor with 30 reviews that received 5 new ones in the last month. Consistent review generation is therefore not just a reputation play — it is a search visibility strategy. The numbers are compelling: a cafe that generates 5 new Google reviews per week will accumulate over 250 reviews per year. At an average of 4.7 stars, this creates a powerful competitive advantage against cafes with 40 reviews at 4.2 stars. The volume creates statistical stability (one bad review barely moves the needle) and the recency signals freshness to Google's algorithm.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create a direct review link for your Google Business Profile. In GBP Manager, navigate to the 'Ask for reviews' section to get your short link, or use the Google Place ID to create a direct link that opens the review form. Create a QR code from this link using a free QR code generator. Test the link and QR code yourself to ensure they work smoothly — the customer should land directly on the review form with no extra clicks. Week 2: Deploy the QR code in high-visibility locations within the cafe. The most effective placements are: on the counter near the till (customers see it while paying), on table cards or tent cards, on the back of receipts or on a card handed with the bill, and on a sticker by the exit door. Each placement should include a brief, warm message: 'Enjoyed your visit? We would love a Google review' with the QR code. Avoid any language that sounds desperate or incentivised — Google's policies prohibit offering rewards for reviews. Brief the team: explain that you are asking happy customers to share their experience, not asking everyone indiscriminately. The best moment to prompt is after a positive interaction — when a customer compliments the coffee, says they enjoyed a new menu item, or thanks a staff member.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Train staff to make review requests feel natural rather than scripted. The most effective approach is conversational: 'I am really glad you enjoyed it — if you have a moment, we would love it if you left us a Google review. There is a QR code on the table.' Staff should never ask customers who appear unhappy or rushed. Develop a digital review request strategy: add a Google review link to email signatures, post-purchase emails (if you have an email list), and the cafe's website. If using a loyalty programme or direct ordering system (B130), include a review prompt after the third or fourth visit — by then the customer is a genuine fan. Consider a monthly 'review spotlight' on social media where you share a positive review (with the reviewer's name visible as it is already public) and thank them. This signals to other customers that you value reviews and encourages them to leave one. Set a weekly review target (e.g., 3-5 new Google reviews per week) and track progress. Make it a team goal rather than an individual one to avoid any sense of pressure.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Review generation should be woven into the cafe's operational rhythm. Track the weekly review count and average rating as team KPIs, celebrating when targets are met. Analyse the content of reviews for marketing insights — recurring phrases like 'best flat white in [area]' or 'friendliest staff' are powerful testimonials that can be incorporated into marketing materials and social media. Experiment with timing and placement of review prompts to optimise conversion. Extend the review generation strategy beyond Google to include TripAdvisor (particularly important for cafes in tourist areas), Facebook, and any niche platforms relevant to your market. Maintain a minimum review velocity that keeps the cafe competitive in local search — as your total review count grows, the volume needed to maintain ranking impact may decrease but recency must remain consistent. Consider post-visit feedback surveys (via email or text) that route satisfied customers to leave a public review while directing dissatisfied customers to provide private feedback — this is ethical and effective when done transparently."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create a direct Google review link from the Google Business Profile",
+        "Generate a QR code from the review link and test the full customer journey",
+        "Deploy QR codes on counter cards, table tents, receipts, and exit signage",
+        "Write a brief, warm review request message to accompany each QR code placement",
+        "Brief the team on when and how to ask for reviews naturally",
+        "Set a baseline: note current total review count and average rating"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Train staff on natural, conversational review request techniques",
+        "Add review links to email signatures, website, and post-purchase communications",
+        "Create a monthly review spotlight feature for social media",
+        "Set a weekly review generation target and track progress",
+        "Develop a post-visit email review prompt for loyalty or direct ordering customers",
+        "Monitor review velocity and adjust prompting intensity to maintain targets"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track weekly review count and average rating as team KPIs",
+        "Mine review content for marketing testimonials and brand insights",
+        "Experiment with different review prompt placements and messaging",
+        "Extend review generation strategy to TripAdvisor, Facebook, and niche platforms",
+        "Implement a post-visit survey that routes feedback appropriately",
+        "Maintain consistent review velocity to support local search ranking"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Google Review Direct Link and QR Code",
+    "Review Request Card Designs (counter, table, receipt)",
+    "Staff Review Request Training Brief",
+    "Weekly Review Generation Tracker",
+    "Post-Visit Review Request Email Template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T135-01",
+        "tool_name": "Google Review QR Code Kit",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "A ready-to-print kit containing the cafe's Google review direct link QR code formatted for counter cards, table tents, receipt inserts, and exit door stickers. Includes the recommended review request message."
+      },
+      {
+        "tool_id": "T135-02",
+        "tool_name": "Staff Review Request Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "A brief training guide for staff on how to ask for reviews naturally, when to ask (and when not to), example phrases, and how to handle customers who seem interested but unsure."
+      },
+      {
+        "tool_id": "T135-03",
+        "tool_name": "Weekly Review Generation Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "A weekly tracker logging new reviews received by platform, running total, average rating trend, and comparison against the weekly target. Used to monitor review velocity and adjust strategy."
+      },
+      {
+        "tool_id": "T135-04",
+        "tool_name": "Post-Visit Review Request Email Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "An email template sent to customers after their visit (via loyalty or ordering system) thanking them and including a direct review link. Written in a warm, non-pushy tone with the cafe's brand voice."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Review requests feel pushy or transactional, creating an uncomfortable experience for customers",
+    "Staff are told to ask for reviews but given no training on how, leading to awkward or scripted interactions",
+    "QR codes are printed but placed where no one notices them, generating zero additional reviews",
+    "Review generation is treated as a one-off project rather than an ongoing discipline, and velocity drops after the initial push"
+  ],
+  "kpis": [
+    "At least 3-5 new Google reviews received per week consistently",
+    "Review velocity (new reviews per month) showing an upward or stable trend",
+    "Average rating on new reviews at or above 4.5 stars",
+    "Total Google review count growing toward a competitive threshold for the local market"
+  ],
+  "dependencies": ["B133", "B134"],
+  "constraints": [
+    "Google's policies prohibit incentivising reviews with discounts, freebies, or competitions — violation risks profile suspension",
+    "Review generation must be ethical: asking happy customers to share is appropriate, coaching them on what to say or screening for positive-only reviews is not",
+    "Overly aggressive prompting can annoy customers and generate backlash"
+  ],
+  "time_load": {
+    "L1": "3 hours (link creation, QR code generation, print material design, team briefing)",
+    "L2": "2 hours/week (staff coaching, tracking, social media spotlight, digital prompts)",
+    "L3": "1 hour/month (strategy refinement, multi-platform expansion, survey implementation)"
+  },
+  "review_protocol": "Weekly review count and velocity check. Monthly assessment of average rating trend on new reviews. Quarterly strategy review to refresh prompting methods and messaging. Annual evaluation of review generation effectiveness and competitive position.",
+  "meta": {
+    "summary_for_humans": "This block creates a systematic approach to encouraging happy customers to leave Google reviews, using QR codes, natural staff prompts, and digital touchpoints. The goal is to increase review volume and recency, which directly improves local search ranking and customer trust.",
+    "implementation_risks": [
+      "If the underlying customer experience is poor, review generation will surface more negative reviews rather than positive ones",
+      "Google may penalise profiles if review generation methods appear to violate their policies",
+      "Staff who are uncomfortable asking for reviews may avoid the task entirely without explicit training and support"
+    ],
+    "notes_for_engine": "This block depends on B133 (Review Monitoring) and B134 (GBP) being in place first. Activate when the cafe has fewer reviews than local competitors, when review velocity has stalled, or when the owner wants to improve their Google rating. Do not activate if the customer experience has significant problems — fix the experience first or review generation will backfire.",
+    "tags": ["marketing", "reviews", "Google", "QR_code", "reputation", "velocity", "customer_feedback", "local_search"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

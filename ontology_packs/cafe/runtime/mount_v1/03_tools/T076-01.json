@@ -1,0 +1,82 @@
+{
+  "identification": {
+    "tool_id": "T076-01",
+    "tool_name": "SBI Feedback Quick Card",
+    "block_id": "B076"
+  },
+  "tool_design": {
+    "format": "checklist",
+    "role_in_intervention": "Micro-tool for turning feedback into a specific, usable live action.",
+    "adaptation_variables": [
+      "team_size",
+      "feedback_use_case",
+      "service_context"
+    ],
+    "usage_moment": "During peer feedback, briefings, coaching, and one-to-ones",
+    "expected_output": "A specific SBI feedback statement or mini practice entry",
+    "linked_blocks": [
+      "B076",
+      "B074",
+      "B075"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The checklist is used mechanically without understanding the moment.",
+        "what_can_go_wrong": "Feedback becomes formulaic and low-trust.",
+        "early_signals": [
+          "Users can tick boxes but not give a clear example",
+          "Feedback stays vague"
+        ],
+        "prevention": [
+          "Train the why behind SBI",
+          "Use live examples"
+        ],
+        "mitigation": [
+          "Re-demo with a real case",
+          "Pair with a manager or lead"
+        ],
+        "if_occurs_next_signals": [
+          "surface_compliance_without_clarity"
+        ],
+        "possible_successor_blocks": [
+          "B076",
+          "B074",
+          "B075"
+        ]
+      },
+      {
+        "warning": "The checklist is not used in the live moment.",
+        "what_can_go_wrong": "The tool exists but feedback still happens too late or not at all.",
+        "early_signals": [
+          "Card is never referenced in briefings or 1:1s",
+          "People default to general comments"
+        ],
+        "prevention": [
+          "Keep it in briefings and 1:1 packs",
+          "Assign a live owner"
+        ],
+        "mitigation": [
+          "Reset with one coached use",
+          "Review adoption weekly"
+        ],
+        "if_occurs_next_signals": [
+          "tool_adoption_failure"
+        ],
+        "possible_successor_blocks": [
+          "B076",
+          "B074",
+          "B075"
+        ]
+      }
+    ]
+  },
+  "content": "# SBI Feedback Quick Card\n\n**Tool ID:** T076-01  \n**Block:** B076 (Communication Culture & Feedback)  \n**Domain:** Team & Talent (D04_team_talent)  \n**Level:** L2  \n**Format:** Checklist  \n**Role:** All Staff  \n**Time Required:** 1-3 minutes in the moment  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this card when you need to give feedback without sounding vague, personal, or dramatic.\n\nSBI means:\n- **Situation**: when and where it happened\n- **Behaviour**: what you saw or heard\n- **Impact**: what effect it had\n\nUse it for:\n- positive recognition\n- quick peer feedback\n- shift-lead coaching\n- briefing shout-outs\n- early correction before a bigger problem forms\n\n---\n## 20-Second Checklist\n\n<ul>\n  <li><input type=\"checkbox\"> I can name the exact moment, not just a general feeling.</li>\n  <li><input type=\"checkbox\"> I am describing behaviour, not personality.</li>\n  <li><input type=\"checkbox\"> I can explain the impact on guest, team, quality, or flow.</li>\n  <li><input type=\"checkbox\"> I can say it calmly in one or two sentences.</li>\n  <li><input type=\"checkbox\"> I am saying it to help, not to win.</li>\n</ul>\n\nIf you cannot tick at least four, pause and get clearer before speaking.\n\n---\n## The Formula\n\n**Situation**  \nDuring ______________________________\n\n**Behaviour**  \nI saw / heard ______________________________\n\n**Impact**  \nThe result was ______________________________\n\n**Full sentence:**  \n\"During __________, you __________, and the impact was __________.\"\n\n---\n## Examples From A Cafe\n\n| Use Case | Poor Version | Better SBI Version |\n|---|---|---|\n| Positive feedback | \"Nice job today.\" | \"During the morning rush, you spotted the oat milk running low and replaced it before we ran out. That kept the queue moving.\" |\n| Missed handover | \"Your communication is bad.\" | \"At close yesterday, the grinder issue was not written in the handover notes. That left the opener walking into a problem cold.\" |\n| Hygiene | \"You need to be more careful.\" | \"During prep, you touched garnish after clearing plates without washing hands. That creates a food safety risk.\" |\n| Tone with colleague | \"You were rude.\" | \"When Mia asked about table 6, you replied sharply and walked off. That shut the conversation down and created tension on the floor.\" |\n\n---\n## Use It In Three Ways\n\n### 1. Positive reinforcement\nUse SBI to lock in good habits.\n\nPrompt:\n\"During __________, you __________, and it helped because __________.\"\n\n### 2. Quick correction\nUse SBI early, before frustration builds.\n\nPrompt:\n\"Just so we reset it early: during __________, you __________, and the impact was __________.\"\n\n### 3. Shift briefing recognition\nUse one positive SBI example in team briefings each week.\n\nPrompt:\n\"Yesterday, during __________, __________ did __________, which helped us __________.\"\n\n---\n## Mini Practice Sheet\n\nFill in one positive and one constructive example.\n\n| Type | Situation | Behaviour | Impact |\n|---|---|---|---|\n| Positive | | | |\n| Constructive | | | |\n\n---\n## Common Slips\n\n- Do not say \"you always\" or \"you never\".\n- Do not guess motives.\n- Do not deliver feedback in front of guests.\n- Do not save six weeks of irritation for one conversation.\n- Do not use SBI as a script for embarrassment; use it for clarity.\n\n---\n## Connected Resources\n\n**Used alongside:**\n- T076-02 - Communication Charter Workshop Template\n- T076-03 - Conflict Resolution Pathway & Case Log\n- T076-04 - Difficult Conversations Guide\n\n**Parent block:** B076 - Communication Culture & Feedback\n\n---\n\n*Tool Version 2.0 - short enough to live in a pocket, specific enough to change behaviour.*\n",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T076-01_sbi_feedback_quick_card.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

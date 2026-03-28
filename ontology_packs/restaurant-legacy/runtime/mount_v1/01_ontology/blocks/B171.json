@@ -1,0 +1,166 @@
+{
+  "block_id": "B171",
+  "name": "Subscription & Membership Model",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M11: Expansion & Market Positioning",
+  "state": "enriched",
+  "purpose": "Develops a recurring revenue model through subscription coffee services, membership programmes, or hybrid offerings that provide customers with ongoing value while delivering predictable, recurring income for the cafe. This block ensures subscription models are financially sound, operationally manageable, and genuinely attractive to customers rather than gimmicky.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Evaluate which subscription or membership model best fits the cafe's customer base, operational capacity, and brand positioning",
+      "Design a subscription offering that delivers clear value to customers while maintaining adequate margins for the cafe",
+      "Build the operational infrastructure to manage recurring payments, fulfilment, and member communication",
+      "Create a member retention strategy that keeps subscribers engaged and reduces churn",
+      "Track subscription economics including customer acquisition cost, monthly recurring revenue, churn rate, and subscriber lifetime value"
+    ],
+    "secondary_objectives": [
+      "Create predictable, recurring revenue that smooths cash flow fluctuations from seasonal and weather-related trading variations",
+      "Deepen customer relationships beyond transactional interactions, building genuine community and loyalty",
+      "Generate valuable customer data from subscription behaviours that inform broader business decisions",
+      "Use subscription as a customer acquisition tool where gift subscriptions introduce new customers to the brand"
+    ]
+  },
+  "why_this_matters": "Recurring revenue is the holy grail of small business finance. While a traditional cafe earns revenue only when a customer walks through the door, a subscription model generates predictable income regardless of weather, footfall, or the owner's marketing efforts on any given day. Even a modest subscription programme can transform business stability. A cafe with 50 subscribers paying 25 pounds per month has 1,250 pounds of guaranteed monthly revenue before opening the doors. Over a year, that is 15,000 pounds of predictable income. The subscription economy has grown dramatically across all sectors, and coffee is one of its natural fits. Customers already buy coffee habitually, and a subscription formalises this habit while offering them value. Common models include: daily coffee subscriptions (unlimited or fixed number of drinks per month for a flat fee), bean delivery subscriptions (regular shipments of fresh roasted coffee to homes), and membership programmes (tiered benefits including discounts, priority access, exclusive events, and free drinks). The UK cafe market has seen successful subscription models from Pret a Manger (unlimited drinks), Leon (drink bundles), and numerous independents. The key challenge is designing a model that is genuinely profitable. A naive pricing approach that offers 'unlimited coffee for 30 pounds per month' to a customer who currently visits daily and spends 3.50 each time is giving away revenue rather than creating it. The target customer for a subscription is one who currently visits 2-3 times per week and would increase to 4-5 times per week with a subscription, generating incremental visits and ancillary food purchases that exceed the margin cost of the additional drinks.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Analyse your current customer visit patterns using POS data (B158) and CRM data (B159) if available. Key questions: What is the average visit frequency of your top 50 customers? What is their average spend per visit? How much of their spend is coffee versus food? What would need to be true for a subscription to increase their visit frequency? Evaluate which subscription model fits your cafe. Options: (1) In-Cafe Drink Subscription: fixed monthly fee for a set number of drinks or unlimited drinks. Best for cafes with high foot traffic and low variable cost per drink. (2) Bean Delivery Subscription: monthly shipment of fresh-roasted coffee beans to subscribers' homes. Best for specialty coffee cafes with strong retail coffee sales (B169). (3) Membership Programme: annual or monthly fee providing tiered benefits (discounts, free birthday drink, member events, priority booking). Best for cafes with a strong community and brand identity. (4) Hybrid Model: combining elements of the above. Week 2: Model the economics of your preferred model. For a drink subscription at 30 pounds per month: What is the marginal cost of each additional drink served (coffee, milk, cup, lid)? Typically 0.50-0.80 pounds per drink. If a subscriber redeems 20 drinks per month, the drink cost is 10-16 pounds, leaving 14-20 pounds margin before overhead allocation. But what if they currently visit 15 times per month and pay 3.50 each time? Then the subscription reduces their revenue from 52.50 to 30 pounds. Only subscribers who increase their visit frequency or bring additional food purchases make the model profitable. Model several scenarios with different redemption rates.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Design the subscription offering in detail. Key design decisions: Price point (must feel like obvious value to the customer while maintaining margins for the cafe). Drink inclusion (which drinks are included: all drinks up to a certain size, or specific drinks only? Excluding premium drinks protects margin). Redemption limit (unlimited vs capped at one per day or a fixed monthly number). Payment mechanism (direct debit, app-based, card-on-file). Member identification (app, physical card, POS lookup). Terms (minimum commitment period, cancellation policy, pause option). Build the operational infrastructure: set up recurring payment processing (Stripe, GoCardless, or through your POS platform if supported). Create a member registration process. Configure the POS to identify and track subscriber redemptions. Design member communication (welcome email, monthly usage summary, exclusive offers). Launch with a Founding Members pilot of 20-30 subscribers at a promotional rate. This validates demand, tests operations, and generates testimonials before a wider launch. Founding members get a slightly better rate locked in permanently as a reward for early adoption and feedback.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Track subscription economics monthly: number of active subscribers, monthly recurring revenue (MRR), average drinks redeemed per subscriber, food attachment rate (do subscribers buy food when they visit?), churn rate (percentage cancelling each month), and subscriber acquisition cost. Calculate subscriber lifetime value (LTV) and compare it to the lifetime value of non-subscribing customers with similar visit patterns. If subscribers have higher LTV, expand the programme. If not, investigate why and adjust the model. Develop a retention strategy: members who feel part of a community have lower churn than those who simply receive a discount. Create member-exclusive experiences: early access to new menu items, invitations to cupping sessions or barista workshops, member-only events, and a private communication channel (newsletter segment or messaging group). Implement a win-back process for lapsed subscribers: contact within 48 hours of cancellation with a brief survey, and offer a pause option rather than outright cancellation. Consider tiered membership (basic, premium, VIP) to allow customers to self-select their engagement level and to create aspiration within the membership base."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Analyse current customer visit patterns and spend using POS and CRM data",
+        "Evaluate subscription model options for best fit with customer base and operations",
+        "Model the economics of the preferred model with multiple redemption scenarios",
+        "Identify the target subscriber profile (who benefits most and generates profit for the cafe)",
+        "Research payment processing options for recurring subscription billing",
+        "Survey 20 regular customers about their interest in a subscription or membership"
+      ],
+      "responsible": "Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Design the subscription offering: price, inclusions, limits, terms, and cancellation policy",
+        "Set up recurring payment processing infrastructure",
+        "Configure POS for subscriber identification and redemption tracking",
+        "Create member registration process and welcome communication",
+        "Launch a Founding Members pilot with 20-30 subscribers at a promotional rate",
+        "Train all staff on subscriber identification, redemption process, and upselling food",
+        "Collect pilot feedback weekly and adjust the model based on operational learnings"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track subscription economics monthly (MRR, churn, LTV, food attachment rate)",
+        "Develop a retention strategy with member-exclusive experiences and communication",
+        "Implement a win-back process for lapsed subscribers with pause option",
+        "Consider tiered membership for customer self-selection and aspiration",
+        "Evaluate gift subscriptions as a customer acquisition channel"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Subscription Model Economic Analysis (scenarios and viability assessment)",
+    "Subscription Programme Design document (pricing, terms, inclusions, operations)",
+    "Founding Members Pilot plan and evaluation framework",
+    "Member Communication Programme (welcome, monthly updates, exclusive offers)",
+    "Monthly Subscription Performance Dashboard"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T171-01",
+        "tool_name": "Subscription Model Economic Calculator",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Spreadsheet modelling subscription economics across multiple scenarios: price point, marginal drink cost, average redemptions, food attachment revenue, current spend displacement, and net monthly value per subscriber. Validates viability before launch."
+      },
+      {
+        "tool_id": "T171-02",
+        "tool_name": "Subscription Programme Design Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Comprehensive design document covering: pricing rationale, drink inclusions and exclusions, redemption limits, payment method, member identification, terms and conditions, cancellation and pause policy, and staff procedures."
+      },
+      {
+        "tool_id": "T171-03",
+        "tool_name": "Founding Members Pilot Plan",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Pilot plan for testing the subscription model with 20-30 early adopters: recruitment approach, promotional pricing, feedback collection schedule, success metrics, evaluation criteria, and decision framework for wider launch."
+      },
+      {
+        "tool_id": "T171-04",
+        "tool_name": "Member Communication Calendar",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Monthly communication plan for subscribers: welcome sequence, usage summaries, exclusive offers, event invitations, feedback requests, and renewal reminders. Designed to build community and reduce churn."
+      },
+      {
+        "tool_id": "T171-05",
+        "tool_name": "Subscription Performance Dashboard",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly dashboard tracking: active subscribers, MRR, average redemptions, food attachment rate, churn rate, new subscriber acquisition, subscriber LTV, and comparison to non-subscriber customer value."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Subscription is priced too low, attracting high-frequency customers who shift existing spend into the subscription and reduce overall revenue",
+    "Operational complexity of managing subscriptions (payment failures, member identification, staff training) overwhelms the small team",
+    "No retention strategy is implemented, resulting in high churn as the novelty wears off and subscribers see the programme as purely transactional",
+    "The subscription is launched without economic modelling, and the cafe discovers too late that it is losing money on every subscriber"
+  ],
+  "kpis": [
+    "Monthly recurring revenue (MRR) growing month-on-month for the first 12 months",
+    "Subscriber churn rate below 8% per month (industry benchmark for food and drink subscriptions)",
+    "Food attachment rate (subscribers buying food during visits) above 40%",
+    "Subscriber lifetime value at least 20% higher than equivalent non-subscriber customer lifetime value"
+  ],
+  "dependencies": ["B164", "B159"],
+  "constraints": [
+    "Recurring payment processing requires a payment platform that supports subscriptions (Stripe, GoCardless, or POS-integrated)",
+    "Drink subscription models require POS capability to identify and track subscriber redemptions",
+    "Bean delivery subscriptions require packaging, postage logistics, and fulfilment infrastructure",
+    "Terms and conditions must comply with Consumer Contracts Regulations 2013 including 14-day cooling-off period for distance sales"
+  ],
+  "time_load": {
+    "L1": "5 hours (data analysis, model evaluation, economic modelling, customer survey)",
+    "L2": "15 hours (programme design, payment setup, POS configuration, staff training, pilot launch)",
+    "L3": "4 hours/month (performance tracking, member communication, retention activities)"
+  },
+  "review_protocol": "Subscription economics reviewed monthly for the first 6 months, then quarterly. Churn analysis conducted monthly with follow-up contact for every cancellation. Pricing reviewed quarterly against redemption data and margin performance. Member satisfaction assessed quarterly through brief survey. Full programme strategy reviewed every 6 months for evolution or adjustment.",
+  "meta": {
+    "summary_for_humans": "This block develops a subscription or membership model that generates predictable recurring revenue while deepening customer relationships. It covers model selection, economic modelling, pilot testing, operational infrastructure, and retention strategy, ensuring the model is profitable before scaling.",
+    "implementation_risks": [
+      "The most dangerous risk is pricing without modelling, which can turn every subscriber into a loss-making customer",
+      "Payment processing complexity can overwhelm small teams if not chosen and configured carefully",
+      "Member expectation management is critical; overpromising benefits leads to disappointment and churn"
+    ],
+    "notes_for_engine": "Activate when signals indicate strong customer loyalty, high visit frequency among a core segment, or owner interest in predictable revenue. Requires B159 CRM data for customer analysis and B164 for strategic alignment. Best suited for cafes with established brand identity and community.",
+    "tags": ["subscription", "membership", "recurring_revenue", "loyalty", "retention", "MRR", "community", "predictable_income"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "bakery_cafe"],
+    "team_size_min": 2,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

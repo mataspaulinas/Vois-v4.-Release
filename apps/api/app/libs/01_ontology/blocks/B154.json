@@ -1,0 +1,166 @@
+{
+  "block_id": "B154",
+  "name": "Equipment Lifecycle Planning",
+  "version": "v1.0",
+  "domain": "D09_physical_environment",
+  "module": "M09: Cafe Design & Atmosphere",
+  "state": "enriched",
+  "purpose": "Creates a long-term equipment investment strategy that prevents the catastrophic scenario of multiple critical assets failing simultaneously. This block ensures every major piece of cafe equipment has a known age, expected lifespan, replacement cost, and planned replacement window, turning equipment failures from emergencies into managed transitions.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Build a complete equipment asset register listing every major item, its purchase date, cost, expected lifespan, and current condition",
+      "Create a rolling 5-year replacement forecast so the cafe can budget for capital expenditure in advance",
+      "Establish condition assessment criteria so equipment is replaced at the optimal point between too-early waste and too-late failure",
+      "Define procurement standards for replacement equipment including minimum specifications, preferred suppliers, and warranty requirements",
+      "Integrate equipment lifecycle data with financial planning to smooth capital expenditure across years"
+    ],
+    "secondary_objectives": [
+      "Reduce emergency equipment purchases that carry premium pricing and poor specification matching",
+      "Build relationships with equipment suppliers for better pricing on planned replacements",
+      "Identify opportunities to upgrade rather than like-for-like replace, improving efficiency or capability",
+      "Create a depreciation schedule for accurate financial reporting and tax planning"
+    ]
+  },
+  "why_this_matters": "A typical independent cafe has 15,000-40,000 pounds worth of equipment: espresso machine, grinders, dishwasher, refrigeration units, ovens, blenders, water filtration, and furniture. Most of this equipment has a commercial lifespan of 5-10 years, meaning that a cafe that opened with all-new equipment will face a cliff edge of simultaneous replacements within a decade. Without lifecycle planning, cafes face two damaging patterns. First, the emergency replacement trap: a critical piece of equipment fails on a Friday morning, the owner scrambles to find a replacement, pays a premium for next-day delivery, and ends up with whatever is available rather than what is optimal. Second, the gradual decline: equipment degrades slowly, each piece performing slightly worse than last year, until customers experience lukewarm dishwasher-cleaned cups, inconsistent espresso from worn grinder burrs, and a fridge that cannot maintain safe temperatures. The cafe loses trade without understanding why. Equipment lifecycle planning is also a financial planning tool. A cafe that knows it needs to replace its espresso machine in 18 months can save 500 pounds per month towards it, negotiate with suppliers, and plan the installation during a quiet trading period. A cafe that wakes up to a dead machine on Monday morning is looking at emergency finance, disrupted trading, and whatever machine can arrive fastest. The difference between these two scenarios is not luck. It is planning.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Walk through the entire cafe and list every piece of equipment with a replacement cost over 200 pounds. For each item, record: equipment name, manufacturer and model, serial number, purchase date (or best estimate), original purchase price, estimated current condition (good/fair/poor), and any known issues. Common items include: espresso machine, grinder(s), dishwasher, under-counter fridges, display fridge, freezer, oven or combi oven, microwave, blender(s), ice machine, water filtration system, POS hardware, and furniture (tables, chairs, counter). Do not forget less obvious items like the water boiler, extraction canopy, signage, and lighting fixtures. Week 2: Research the typical commercial lifespan for each item type. General benchmarks: espresso machines 7-12 years, grinders 5-8 years (burrs every 2-3 years), dishwashers 5-7 years, commercial fridges 8-12 years, ovens 10-15 years, POS hardware 4-6 years, furniture 5-10 years depending on quality. Estimate each item's remaining useful life based on age, condition, and usage intensity. Flag any items currently past their expected lifespan or showing signs of imminent failure.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a formal Equipment Asset Register in a spreadsheet or dedicated system. Columns should include: asset ID, equipment name, manufacturer, model, serial number, location in cafe, purchase date, purchase price, expected lifespan (years), estimated replacement date, estimated replacement cost (at today's prices plus 5% annual inflation), current condition score (1-5), last service date, service provider, warranty expiry date, and notes. Using the replacement dates and costs, build a 5-Year Equipment Replacement Forecast. Map out which items are due for replacement in each year, the estimated cost, and the cumulative capital requirement. Identify any years with clustering of replacements and consider whether any items can be brought forward or pushed back to smooth the expenditure curve. Establish an Equipment Replacement Fund: a dedicated savings or reserve account that receives a fixed monthly contribution calculated from the 5-year forecast. For example, if total equipment replacement over 5 years is estimated at 25,000 pounds, the monthly contribution should be approximately 420 pounds. Create a Procurement Standards document defining minimum specifications for key equipment categories, preferred suppliers, warranty requirements (minimum 2 years parts and labour), and installation standards. This prevents panic-buying inferior equipment during emergency replacements.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Conduct a formal equipment condition assessment every 6 months, updating condition scores and adjusting replacement timelines accordingly. Integrate equipment lifecycle data into annual business planning and financial forecasting. Build a supplier relationship programme: meet with key equipment suppliers annually to discuss upcoming replacements, negotiate volume or loyalty pricing, and stay informed about new technology or energy-efficient models. Consider total cost of ownership when evaluating replacements, not just purchase price: factor in energy consumption, maintenance costs, consumables, and productivity impact. Establish a policy for equipment disposal: consider trade-in value, resale to other cafes, donation to training programmes, or responsible recycling. Review the Equipment Replacement Fund quarterly to ensure contributions are on track and adjust if the forecast changes. Share the equipment replacement plan with the team so they understand why equipment care (B152, B153) matters for the long-term health of the business."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Conduct a full walk-through audit of all equipment with replacement cost over 200 pounds",
+        "Record manufacturer, model, serial number, purchase date, and current condition for each item",
+        "Research typical commercial lifespans for each equipment category",
+        "Estimate remaining useful life for each item and flag anything past expected lifespan",
+        "Identify any equipment showing signs of imminent failure requiring urgent attention",
+        "Gather all existing warranty documents and service records into one location"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a formal Equipment Asset Register spreadsheet with all required fields",
+        "Build a 5-Year Equipment Replacement Forecast with annual cost projections",
+        "Establish an Equipment Replacement Fund with calculated monthly contributions",
+        "Draft a Procurement Standards document for key equipment categories",
+        "Smooth the replacement timeline to avoid capital expenditure clustering",
+        "Set up calendar reminders for warranty expiry dates and scheduled replacement windows",
+        "Create a depreciation schedule for financial reporting purposes"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct 6-monthly formal equipment condition assessments",
+        "Integrate equipment lifecycle data into annual business planning",
+        "Build supplier relationship programme with annual review meetings",
+        "Review Equipment Replacement Fund quarterly and adjust contributions",
+        "Share equipment replacement plan with team to reinforce daily care importance"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Equipment Asset Register (comprehensive spreadsheet)",
+    "5-Year Equipment Replacement Forecast",
+    "Equipment Replacement Fund calculation and setup guide",
+    "Procurement Standards document for key equipment categories",
+    "Equipment Condition Assessment template (6-monthly)"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T154-01",
+        "tool_name": "Equipment Asset Register",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Comprehensive spreadsheet listing every major equipment item with manufacturer, model, serial number, purchase date, cost, expected lifespan, condition score, warranty status, and service history. The single source of truth for all equipment data."
+      },
+      {
+        "tool_id": "T154-02",
+        "tool_name": "5-Year Replacement Forecast",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Forward-looking capital expenditure plan showing which equipment items are due for replacement in each year, estimated costs with inflation adjustment, and cumulative funding requirements. Used for financial planning and cash flow management."
+      },
+      {
+        "tool_id": "T154-03",
+        "tool_name": "Equipment Replacement Fund Calculator",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Calculator that takes the 5-year replacement forecast total and derives the required monthly savings contribution, with adjustments for existing reserves, planned financing, and priority weighting of critical vs non-critical equipment."
+      },
+      {
+        "tool_id": "T154-04",
+        "tool_name": "Equipment Condition Assessment Form",
+        "level": "L3",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Standardised 6-monthly assessment form for each major equipment item covering: physical condition, performance quality, reliability, safety compliance, energy efficiency, and overall condition score (1-5). Triggers replacement planning when scores drop below threshold."
+      },
+      {
+        "tool_id": "T154-05",
+        "tool_name": "Procurement Standards Document",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Owner",
+        "description": "Reference document defining minimum specifications, preferred suppliers, warranty requirements, and installation standards for each major equipment category. Prevents panic-buying and ensures consistent quality across replacements."
+      }
+    ]
+  },
+  "failure_modes": [
+    "No asset register exists so the cafe has no visibility of equipment ages, leading to surprise failures and emergency replacements at premium cost",
+    "Replacement fund is raided for operational expenses, leaving nothing available when equipment actually fails",
+    "Condition assessments are not conducted regularly, so gradual degradation goes unnoticed until equipment fails completely",
+    "Owner replaces equipment on a like-for-like basis without evaluating whether newer technology or different specifications would better serve the business"
+  ],
+  "kpis": [
+    "100% of equipment items over 200 pounds recorded in the asset register with complete data",
+    "Equipment Replacement Fund balance on track with 5-year forecast (within 10% variance)",
+    "Zero emergency equipment purchases per year (all replacements planned minimum 3 months ahead)",
+    "6-monthly condition assessments completed for all major equipment items"
+  ],
+  "dependencies": ["B152", "B153"],
+  "constraints": [
+    "Requires accurate purchase date and cost information for all equipment, which may not be available for inherited or second-hand items",
+    "Replacement cost estimates must be updated annually to account for inflation and market changes",
+    "Fund contributions depend on the cafe generating sufficient cash flow to set aside monthly reserves",
+    "Some equipment replacements require premises work (electrical, plumbing) that adds cost and planning complexity"
+  ],
+  "time_load": {
+    "L1": "6 hours (full equipment audit, research on lifespans, initial register creation)",
+    "L2": "10 hours (asset register build, 5-year forecast, fund setup, procurement standards)",
+    "L3": "4 hours/6 months (condition assessments, forecast updates, supplier meetings)"
+  },
+  "review_protocol": "Asset register updated whenever equipment is purchased, serviced, or disposed of. 5-year forecast reviewed and updated annually during business planning. Equipment Replacement Fund balance reviewed quarterly. Full condition assessment conducted every 6 months. Procurement standards reviewed annually or when a major replacement is approaching.",
+  "meta": {
+    "summary_for_humans": "This block creates a long-term equipment investment strategy with a complete asset register, 5-year replacement forecast, dedicated savings fund, and procurement standards. It prevents the catastrophic scenario of multiple critical equipment failures occurring simultaneously without financial preparation.",
+    "implementation_risks": [
+      "Accurate purchase dates and costs may be difficult to establish for equipment acquired before current ownership",
+      "Monthly fund contributions may be challenging for cafes with tight cash flow, requiring creative financing approaches",
+      "Equipment technology changes rapidly so replacement specifications may shift significantly over a 5-year planning horizon"
+    ],
+    "notes_for_engine": "Activate when signals indicate multiple pieces of ageing equipment, recent emergency replacements, or lack of capital planning. This block is strategic and should be paired with B152 and B153 for operational equipment management.",
+    "tags": ["equipment", "lifecycle", "investment", "planning", "asset_register", "capital_expenditure", "replacement", "procurement"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

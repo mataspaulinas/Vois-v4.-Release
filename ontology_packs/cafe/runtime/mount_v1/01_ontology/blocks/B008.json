@@ -1,0 +1,165 @@
+{
+  "block_id": "B008",
+  "name": "Allergen Prevention Programme",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Establishes a comprehensive allergen awareness culture across the entire cafe operation, encompassing training, auditing, and continuous improvement. This block brings together allergen documentation, labelling, and communication into a unified prevention programme that minimises the risk of allergen-related incidents.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create an integrated allergen management programme combining knowledge from B005, B006, and B007",
+      "Establish allergen awareness as a core competency for every role in the cafe",
+      "Implement regular allergen audits covering menus, processes, communication, and documentation",
+      "Develop incident response procedures for suspected allergen reactions on premises",
+      "Build a culture where allergen safety is treated with the same seriousness as fire safety"
+    ],
+    "secondary_objectives": [
+      "Achieve recognition as an allergen-aware business through Allergy UK or similar accreditation",
+      "Reduce near-miss allergen incidents to zero through proactive prevention",
+      "Position allergen competence as a competitive advantage and trust signal for customers"
+    ]
+  },
+  "why_this_matters": "The UK has one of the highest rates of food allergy in the world, with an estimated 2 million people living with a diagnosed food allergy and many more with undiagnosed sensitivities. The Food Standards Agency reports that food allergy-related hospital admissions have increased significantly over the past two decades, particularly among young people. For cafes, allergen management is not a single task but an interconnected system — the allergen matrix must be accurate (B005), PPDS labels must be correct (B006), and front-of-house communication must be reliable (B007). But these individual blocks can only work if they are bound together by a culture of allergen awareness that permeates every aspect of the operation. A cafe might have a perfect allergen matrix on paper, but if the kitchen team does not understand cross-contamination risks, or if a new supplier introduces a reformulated product without anyone updating the records, the matrix becomes dangerously misleading. The Allergen Prevention Programme addresses this systemic risk by creating a structured cycle of training, auditing, and improvement. It ensures that allergen safety is not dependent on any single person's knowledge but is embedded in the cafe's operating systems. Following the Pret A Manger and other high-profile cases, enforcement has intensified — local authorities now conduct targeted allergen inspections, and the penalties for failure include unlimited fines, imprisonment, and forced closure.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Appoint an Allergen Champion — one person (typically the manager or head barista) who takes overall responsibility for allergen management across the cafe. This does not mean they do everything themselves, but they are accountable for ensuring B005, B006, and B007 are implemented and maintained. The Allergen Champion conducts an initial gap assessment: Is the allergen matrix complete and up to date? Are all PPDS items labelled? Do all front-of-house staff know the allergen dialogue script? Are kitchen processes designed to minimise cross-contamination? Score each area Red (not done), Amber (partially done), or Green (complete). This gives a clear picture of where the gaps are. Week 2: Address any Red-rated gaps immediately — these represent immediate legal and safety risks. Brief the entire team on the cafe's allergen prevention commitment. Post the names of the 14 declarable allergens in the kitchen with examples of common cafe ingredients containing each one (e.g., 'Sesame — present in some bread rolls, tahini in hummus'). Ensure every team member can name at least 10 of the 14 allergens from memory. Begin recording all allergen-related incidents and near-misses in a dedicated log, even if the outcome was positive — these records are invaluable for identifying patterns and improving systems.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a formal Allergen Management Policy document — a one-page statement signed by the owner that sets out the cafe's commitment to allergen safety, the roles and responsibilities of each team member, and the consequences of non-compliance. This policy should be displayed in the staff area and given to every new starter. Create an allergen audit checklist covering all touchpoints: menu accuracy, matrix currency, PPDS labelling, kitchen practices, cleaning procedures, supplier documentation, staff knowledge, and customer communication. Schedule monthly allergen audits using this checklist, with findings recorded and actions tracked to completion. Develop an allergen incident response protocol: if a customer reports a suspected allergic reaction on premises, staff must know to call 999 immediately if the customer shows signs of anaphylaxis, locate any EpiPen the customer may carry, and never attempt to administer medication themselves unless trained to do so. After any incident, conduct a full root cause analysis and update procedures. Integrate allergen training into the onboarding process for all new starters — no one serves food until they have completed allergen awareness training and passed a competency check. By Week 8, the cafe should have a documented policy, regular audits, incident procedures, and a training programme that ensures no one handles food without understanding allergen risks.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Elevate allergen management from compliance to competitive advantage. Pursue Allergy UK's Allergy Aware accreditation or equivalent, which provides independent verification of the cafe's allergen management standards. Conduct bi-annual allergen scenario exercises — present the team with a realistic situation (e.g., 'A customer with a tree nut allergy orders the granola — what do you do?') and evaluate the response. Share allergen audit results openly with the team and celebrate improvements. Monitor industry developments — new allergen guidance from the FSA, emerging allergen risks, or changes to the 14 declarable allergens list. Review the allergen management policy annually and update it based on audit findings, incident reviews, and regulatory changes."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Appoint an Allergen Champion with overall accountability for allergen management",
+        "Conduct a RAG-rated gap assessment across all allergen management areas",
+        "Address any Red-rated gaps immediately as they represent immediate risk",
+        "Post the 14 declarable allergens with common cafe examples in the kitchen",
+        "Brief the entire team on the cafe's allergen prevention commitment",
+        "Begin recording all allergen-related incidents and near-misses",
+        "Test all team members on their ability to name at least 10 of the 14 allergens"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft and sign a formal Allergen Management Policy document",
+        "Create a comprehensive allergen audit checklist covering all touchpoints",
+        "Schedule and conduct monthly allergen audits with tracked actions",
+        "Develop an allergen incident response protocol including anaphylaxis procedure",
+        "Integrate allergen training into the new starter onboarding process",
+        "Conduct root cause analysis after any allergen incident or near-miss",
+        "Ensure all allergen documentation is filed and accessible for EHO inspection"
+      ],
+      "responsible": "Manager, Allergen Champion"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Pursue Allergy UK Allergy Aware accreditation or equivalent",
+        "Conduct bi-annual allergen scenario exercises with the team",
+        "Share audit results openly and celebrate improvement trends",
+        "Monitor FSA guidance and industry developments on allergens",
+        "Review and update the Allergen Management Policy annually"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Allergen Gap Assessment (RAG-rated)",
+    "Allergen Management Policy document",
+    "Monthly Allergen Audit Checklist",
+    "Allergen Incident Response Protocol",
+    "Allergen Training and Competency Record"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T008-01",
+        "tool_name": "Allergen Gap Assessment",
+        "level": "L1",
+        "format": "assessment",
+        "owner_role": "Allergen Champion",
+        "description": "RAG-rated assessment tool covering all allergen management areas: matrix accuracy, PPDS labelling, staff knowledge, kitchen practices, and documentation. Identifies immediate gaps."
+      },
+      {
+        "tool_id": "T008-02",
+        "tool_name": "Monthly Allergen Audit Checklist",
+        "level": "L2",
+        "format": "audit",
+        "owner_role": "Manager",
+        "description": "Comprehensive monthly audit checklist covering menu accuracy, allergen matrix currency, PPDS compliance, kitchen cross-contamination controls, staff competency, and customer communication."
+      },
+      {
+        "tool_id": "T008-03",
+        "tool_name": "Allergen Incident Response Protocol",
+        "level": "L2",
+        "format": "protocol",
+        "owner_role": "Manager",
+        "description": "Step-by-step protocol for responding to a suspected allergic reaction on premises, including emergency services contact, customer care, incident documentation, and root cause analysis."
+      },
+      {
+        "tool_id": "T008-04",
+        "tool_name": "Allergen Training Competency Record",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Individual training record for each team member documenting allergen awareness training completion, competency test results, refresher dates, and areas for improvement."
+      },
+      {
+        "tool_id": "T008-05",
+        "tool_name": "Allergen Management Policy Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "One-page policy template setting out the cafe's commitment to allergen safety, roles and responsibilities, key procedures, and consequences of non-compliance. Signed by the owner."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The Allergen Champion role is assigned but not given adequate time or authority to perform audits",
+    "Monthly audits become a tick-box exercise without genuine investigation of allergen risks",
+    "Allergen training is completed once but never refreshed, leading to knowledge decay",
+    "Incident reporting is discouraged by a blame culture, causing near-misses to go unreported and unlearned from"
+  ],
+  "kpis": [
+    "Monthly allergen audits completed on schedule with all actions closed within 7 days",
+    "100% of staff pass allergen competency assessment within first week of employment",
+    "Zero allergen-related customer complaints or incidents per quarter",
+    "Allergen gap assessment showing all areas rated Green within 8 weeks of programme launch"
+  ],
+  "dependencies": ["B005", "B006", "B007"],
+  "constraints": [
+    "Requires B005, B006, and B007 to be implemented before the programme can function as a unified system",
+    "The Allergen Champion must have adequate time allocation — minimum 2 hours per week for allergen duties",
+    "Allergen training records must be retained for the duration of employment plus 12 months"
+  ],
+  "time_load": {
+    "L1": "6 hours (champion appointment, gap assessment, initial briefings)",
+    "L2": "12 hours (policy drafting, audit system setup, training programme development)",
+    "L3": "4 hours/month (audits, training refreshers, scenario exercises)"
+  },
+  "review_protocol": "Monthly allergen audit by the Allergen Champion. Quarterly programme review by the owner covering audit trends, incident reports, and training compliance. Annual policy review and update. Immediate review triggered by any allergen incident or near-miss.",
+  "meta": {
+    "summary_for_humans": "This block brings together the allergen matrix, PPDS labelling, and customer dialogue into a unified prevention programme with audits, training, incident response, and a designated Allergen Champion. It ensures allergen safety is systemic, not dependent on any single person.",
+    "implementation_risks": [
+      "Programme scope can feel overwhelming for small cafes — start with the gap assessment and prioritise",
+      "Allergen Champion role must be genuinely empowered, not just a title on paper",
+      "Documentation burden is real but necessary — consider digital tools to reduce paperwork"
+    ],
+    "notes_for_engine": "Activate after B005, B006, and B007 are in place. This is the integration block that binds them together. Flag as urgent if signals indicate systemic allergen management failures or multiple allergen-related complaints.",
+    "tags": ["food_safety", "allergens", "prevention", "culture", "audit", "training", "compliance", "HACCP"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

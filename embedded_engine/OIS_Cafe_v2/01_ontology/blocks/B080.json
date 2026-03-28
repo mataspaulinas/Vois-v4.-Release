@@ -1,0 +1,167 @@
+{
+  "block_id": "B080",
+  "name": "Knowledge Capture System",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Creates a systematic approach to documenting tribal knowledge — the unwritten procedures, supplier relationships, equipment quirks, and operational shortcuts that exist only in people's heads — ensuring this critical information is captured, accessible, and survives staff changes.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Identify all critical operational knowledge that currently exists only in one or two people's heads",
+      "Create a structured documentation system that is simple enough to maintain and easy enough to use",
+      "Capture not just procedures but context — why things are done a certain way, not just how",
+      "Establish a habit of documenting as knowledge is created or updated, rather than trying to capture it retrospectively",
+      "Build a knowledge base that accelerates new starter onboarding and supports cross-training"
+    ],
+    "secondary_objectives": [
+      "Reduce dependency on the owner's memory for critical operational information",
+      "Preserve institutional knowledge when team members leave",
+      "Create a foundation for standardised operations that can be replicated or scaled"
+    ]
+  },
+  "why_this_matters": "Every cafe runs on tribal knowledge — the unwritten rules, undocumented procedures, and personal relationships that make the operation work. The owner knows that the espresso machine pressure drops on cold mornings and needs five minutes longer to warm up. The head barista knows that the milk supplier accepts orders until 2pm for next-day delivery but the bread supplier needs 48 hours. The closer knows that the alarm keypad is temperamental and you need to press code-enter-code-enter, not just code-enter. None of this is written down. It lives in people's heads, shared through conversation and osmosis over months and years. This is fine until someone leaves — and then the knowledge walks out the door with them. The cost of lost knowledge is insidious. It does not show up as a single dramatic failure but as a gradual accumulation of small problems: orders placed too late because nobody knows the supplier's cut-off time, equipment breakdowns that the previous head barista would have prevented with a simple maintenance step, customer preferences forgotten because only the departed team member remembered them. Over time, these small losses compound into significant operational degradation. Knowledge capture is the discipline of making the invisible visible. It means creating simple, accessible documentation of every critical piece of operational knowledge — from equipment start-up sequences to supplier account numbers, from recipe specifications to emergency contact lists. The documentation does not need to be elaborate. A shared Google Drive folder with clearly named documents, a physical operations manual in a ring binder, or even a well-organised set of laminated cards at each station — whatever format the team will actually use. The key insight is that knowledge capture is an ongoing process, not a one-off project. Every time someone figures out a new solution, discovers a supplier preference, or develops a better way to do something, it must be documented immediately or it will be lost.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Walk through a full operating day — opening to closing — and list every point where someone relies on knowledge that is not written down. Common examples: alarm code and security system operation, equipment start-up sequence and warm-up times, supplier contact details and order cut-off times, grinder settings for current coffee, recipe specifications for all food items, Wi-Fi password and router reset procedure, till float amount and cash-up process, emergency contacts (landlord, electrician, plumber, equipment service), waste collection days and recycling requirements, and any customer-specific knowledge (regulars' orders, dietary requirements of regular catering clients). Write each item on a sticky note and group them by area. Week 2: For the top ten most critical items, create simple one-page reference documents. Use a consistent format: title, what it covers, step-by-step procedure, key contacts or details, and last updated date. Store these in a physical Operations Folder kept in a consistent, known location (e.g., under the counter or in the office). Tell every team member where the folder is and that they should check it before asking the owner.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a comprehensive Operations Manual covering all critical knowledge areas organised by function: opening and closing procedures, coffee preparation standards, food preparation recipes and procedures, cleaning schedules and methods, stock management and ordering, equipment operation and basic troubleshooting, health and safety procedures, customer service standards, and financial processes. For each entry, include not just the 'how' but the 'why' — the rationale behind the procedure helps staff make good decisions in novel situations. Establish a digital backup using a shared cloud folder (Google Drive, Dropbox) so that knowledge is not lost if the physical folder is damaged. Assign ownership for each section of the manual — the person who writes and updates each section. Create a change log system: when a supplier changes, a recipe is updated, or a procedure is modified, the relevant document is updated with the new information, dated, and the old version archived. Integrate the Operations Manual with the induction process (B067) and cross-training programme (B078) — new starters and cross-trainees should be directed to the relevant manual sections as part of their learning.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Embed knowledge capture into daily operations — when someone discovers a better way to do something, the expectation is that they document it immediately rather than just remembering it. Create a 'Knowledge Drop' box (physical or digital) where team members can submit tips, tricks, and discoveries for inclusion in the manual. Review and incorporate submissions monthly. Conduct a quarterly knowledge audit: are all documents current, have any procedures changed without being updated, are there new knowledge areas that need documenting? Use new starter feedback to identify gaps — when a new team member asks a question that should be answered in the manual but is not, that gap gets added immediately. Build a video library for complex procedures — a two-minute smartphone video of the espresso machine cleaning sequence is worth more than a page of written instructions. Track knowledge capture metrics: number of documented procedures, last-updated dates, and new-starter time to find information. The goal is an Operations Manual that is genuinely used as a daily reference, not a dusty binder nobody opens."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Walk through a full operating day and list all undocumented knowledge",
+        "Identify the top ten most critical undocumented items",
+        "Create simple one-page reference documents for each of the top ten",
+        "Establish a physical Operations Folder in a consistent, known location",
+        "Tell every team member where the folder is and how to use it",
+        "Document all supplier contact details and order cut-off times",
+        "Record all alarm codes, equipment sequences, and emergency contacts"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a comprehensive Operations Manual organised by function",
+        "Include rationale ('why') alongside procedures ('how') in every entry",
+        "Set up a digital backup of all documentation in a shared cloud folder",
+        "Assign ownership for each section of the manual to a specific team member",
+        "Establish a change log system for tracking updates and archiving old versions",
+        "Integrate the Operations Manual with induction (B067) and cross-training (B078)",
+        "Create a consistent document template for all new entries"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Embed knowledge capture into daily operations as an expected habit",
+        "Create a Knowledge Drop box for team members to submit tips and discoveries",
+        "Conduct quarterly knowledge audits for currency and completeness",
+        "Use new-starter questions to identify and fill documentation gaps",
+        "Build a video library for complex procedures using smartphone recordings",
+        "Track knowledge capture metrics and Operations Manual usage"
+      ],
+      "responsible": "Manager"
+    }
+  },
+  "deliverables": [
+    "Top Ten Critical Knowledge Reference Documents",
+    "Physical Operations Folder with consistent location",
+    "Comprehensive Operations Manual (digital and physical)",
+    "Document Template for consistent new entries",
+    "Knowledge Audit Checklist (quarterly)"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T080-01",
+        "tool_name": "Knowledge Capture Worksheet",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Worksheet for walking through a full operating day and identifying all undocumented knowledge, organised by time of day and operational area, with space to note who currently holds each piece of knowledge."
+      },
+      {
+        "tool_id": "T080-02",
+        "tool_name": "Standard Document Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Consistent one-page template for all Operations Manual entries with sections for title, scope, step-by-step procedure, rationale, key contacts, last updated date, and owner."
+      },
+      {
+        "tool_id": "T080-03",
+        "tool_name": "Operations Manual Index",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Master index of all Operations Manual entries organised by function, showing document title, section owner, last updated date, and next review date for quick navigation."
+      },
+      {
+        "tool_id": "T080-04",
+        "tool_name": "Change Log Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Log recording every update to the Operations Manual with date, document changed, nature of change, who made the change, and reason for the update."
+      },
+      {
+        "tool_id": "T080-05",
+        "tool_name": "Quarterly Knowledge Audit Checklist",
+        "level": "L3",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Structured checklist for quarterly review of the Operations Manual covering document currency, identified gaps, new procedures needing documentation, and team feedback on usability."
+      }
+    ]
+  },
+  "failure_modes": [
+    "An Operations Manual is created but never updated, becoming misleading within months as procedures change",
+    "Documentation is so detailed and verbose that nobody reads it, defeating the purpose entirely",
+    "Knowledge capture is treated as a one-off project rather than an ongoing discipline, so new knowledge accumulates undocumented",
+    "The manual is stored in a location nobody knows about or can easily access during a shift"
+  ],
+  "kpis": [
+    "100% of critical operational procedures documented in the Operations Manual",
+    "All documents reviewed and updated within the past six months",
+    "New starters able to locate and use the Operations Manual from Day 1 of induction",
+    "Zero operational failures attributable to lost knowledge after a team member's departure",
+    "Knowledge Drop box receiving at least two submissions per month from team members"
+  ],
+  "dependencies": ["B077", "B078", "B079"],
+  "constraints": [
+    "Documentation must be simple and practical enough to be maintained by busy cafe staff",
+    "Sensitive information (alarm codes, bank details, passwords) must be stored securely",
+    "The Operations Manual must be physically accessible during shifts, not locked in a drawer"
+  ],
+  "time_load": {
+    "L1": "6 hours (knowledge walk-through, top ten documents, folder setup)",
+    "L2": "15 hours (comprehensive manual creation, digital backup, integration)",
+    "L3": "2 hours/quarter (knowledge audit, gap filling, video creation)"
+  },
+  "review_protocol": "Monthly: change log reviewed and pending updates actioned. Quarterly: full knowledge audit using the checklist. Six-monthly: all documents reviewed for currency with outdated entries updated or archived. Annually: comprehensive manual review including format, usability, and team feedback.",
+  "meta": {
+    "summary_for_humans": "This block creates a systematic approach to capturing and documenting the tribal knowledge that exists only in people's heads — supplier quirks, equipment procedures, operational shortcuts — ensuring critical information survives staff changes.",
+    "implementation_risks": [
+      "The biggest risk is over-engineering the system — start simple with the top ten critical items and build gradually",
+      "Owners often resist documenting because the act of writing things down feels like acknowledging they could be replaced",
+      "Maintaining documentation currency requires ongoing discipline — assign clear ownership for each section"
+    ],
+    "notes_for_engine": "Activate when B077 identifies critical knowledge dependencies or when a key team member gives notice. Also activate when signals indicate new starters struggling with undocumented procedures or repeated operational mistakes.",
+    "tags": ["knowledge", "documentation", "operations_manual", "tribal_knowledge", "SOPs", "continuity", "procedures", "onboarding"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

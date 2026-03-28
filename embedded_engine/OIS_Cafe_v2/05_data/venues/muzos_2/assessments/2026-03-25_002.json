@@ -1,0 +1,509 @@
+{
+  "signals": {
+    "S056": {
+      "active": true,
+      "notes": "Direct evidence of communication breakdown at leadership level that prevents team communication structures from being established. No comprehensive meeting has occurred despite repeated attempts. Pattern documented since January. 'You agreed to meet that evening. Rolandas postponed to the next day. Next day — nothing.' This is worsened in the sense that it is now blocking pre-opening critical path items.",
+      "confidence": "high",
+      "value": null
+    },
+    "S154": {
+      "active": true,
+      "notes": "Business plan or strategic direction is implicitly undermined by the communication failure. Salary ranges unresolved since January, garden measurements since February, DSS contract since late February — these are foundational pre-opening decisions that remain open. The venue cannot execute a coherent opening strategy without owner decision-making engagement. Severity elevated: this is not a missing document problem, it is an owner disengagement problem at the most critical pre-opening phase.",
+      "confidence": "high",
+      "value": null
+    },
+    "S187": {
+      "active": true,
+      "notes": "NEW ACTIVATION — not in previous signal set but directly evidenced. 'Nearly losing Andrius — a real chef candidate, gone because nobody replied to his email for a week.' A qualified chef candidate was lost due to management non-response. With a March 24 visit scheduled with two chef candidates, the same risk is live and unmitigated. Severity: CRITICAL at pre-opening stage — losing key kitchen talent before opening is existential.",
+      "confidence": "high",
+      "value": null
+    },
+    "S166": {
+      "active": true,
+      "notes": "Standards alignment is impossible when management is not engaging with the consultant or with each other. 'Dozen-plus open items' unresolved. The consultant explicitly 'connected it to their future role as team leaders' — indicating that Simona and Rolandas are not demonstrating the leadership behaviours required to align a team. This is worsened: the pattern is now documented across multiple months.",
+      "confidence": "",
+      "value": null
+    }
+  },
+  "venue_context": {
+    "venue_name": "muzos 2",
+    "type": "independent_cafe",
+    "team_size": 8,
+    "location": "kalvarija",
+    "stage": "preopening"
+  },
+  "assessment_type": "follow_up",
+  "summary": {
+    "blocks": 13,
+    "blocks_activated": 52,
+    "failure_modes": 8,
+    "plan_load": "TRIAGE",
+    "report_type": "ai",
+    "response_patterns": 6,
+    "signals": 4
+  },
+  "constraint_report": {
+    "capacity": 11,
+    "constrained_count": 13,
+    "deferred_count": 39,
+    "deferred_items": [
+      {
+        "block_id": "B063",
+        "description": "Establishes a structured exit interview process and turnover analysis framework that transforms staff departures from lost knowledge into actionable intelligence. Ensures every leaver provides insight that helps reduce future turnover and improve working conditions.",
+        "domain": "D04_team_talent",
+        "layer": "L1",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 1.4,
+        "source_rp": "RP018",
+        "title": "Exit Interview & Turnover Analysis"
+      },
+      {
+        "block_id": "B064",
+        "description": "Establishes a proactive retention strategy that identifies flight risks, addresses disengagement triggers, and creates compelling reasons for talented staff to stay. This block transforms retention from a reactive scramble when someone resigns into a systematic programme that continuously strengthens the employment proposition.",
+        "domain": "D04_team_talent",
+        "layer": "L1",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 1.4,
+        "source_rp": "RP018",
+        "title": "Retention Strategy & Engagement Plan"
+      },
+      {
+        "block_id": "B065",
+        "description": "Establishes a structured approach to benchmarking pay rates, tips distribution, and benefits against the local cafe and hospitality market, ensuring the venue attracts and retains quality staff without overspending relative to revenue.",
+        "domain": "D04_team_talent",
+        "layer": "L1",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 1.4,
+        "source_rp": "RP018",
+        "title": "Compensation Benchmarking"
+      },
+      {
+        "block_id": "B074",
+        "description": "Establishes a structured pre-shift team briefing — a daily five-to-ten-minute huddle that aligns the team on priorities, shares critical information, surfaces concerns, and sets the tone for the shift ahead.",
+        "domain": "D04_team_talent",
+        "layer": "L1",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP020",
+        "title": "Daily Team Briefing Protocol"
+      },
+      {
+        "block_id": "B075",
+        "description": "Establishes a structured weekly team meeting that goes beyond daily briefings to address operational review, problem-solving, training, and team development in a dedicated 30-to-45-minute session that keeps the team engaged and the business improving.",
+        "domain": "D04_team_talent",
+        "layer": "L1",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP020",
+        "title": "Weekly Team Meeting Structure"
+      },
+      {
+        "block_id": "B077",
+        "description": "Identifies and mitigates single-point-of-failure dependencies where critical knowledge, skills, or relationships reside with only one person, ensuring the cafe can continue operating effectively if any individual is unexpectedly absent or leaves.",
+        "domain": "D04_team_talent",
+        "layer": "L1",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP022",
+        "title": "Key Person Risk Assessment"
+      },
+      {
+        "block_id": "B078",
+        "description": "Establishes a systematic cross-training programme that develops every team member's ability to work competently across multiple stations and roles, eliminating single-person dependencies, enabling flexible scheduling, and building a resilient team that can adapt to any shift configuration.",
+        "domain": "D04_team_talent",
+        "layer": "L1",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP022",
+        "title": "Cross-Training Programme"
+      },
+      {
+        "block_id": "B079",
+        "description": "Defines a clear, pre-planned protocol for managing unexpected staff absences — from the initial notification through to same-day cover arrangements — ensuring the cafe can open and operate safely without panic, last-minute scrambling, or the owner automatically becoming the default cover.",
+        "domain": "D04_team_talent",
+        "layer": "L1",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP022",
+        "title": "Absence Cover Protocol"
+      },
+      {
+        "block_id": "B164",
+        "description": "Ensures the cafe has a clear, documented business plan that articulates where the business is going, how it will get there, and what success looks like. This block transforms the owner's ambitions from unspoken assumptions into a written strategy that guides every significant decision, from menu changes to capital investment to hiring.",
+        "domain": "D11_growth_strategy",
+        "layer": "L1",
+        "module": "M11: Expansion & Market Positioning",
+        "rp_priority": 0.8,
+        "source_rp": "RP049",
+        "title": "Business Plan & Strategy"
+      },
+      {
+        "block_id": "B165",
+        "description": "Equips the cafe owner with a clear, evidence-based understanding of their competitive landscape, target customer segments, and market positioning. This block ensures the cafe knows exactly who it serves, who it competes with, and what makes it worth choosing, replacing assumptions with research and gut feeling with insight.",
+        "domain": "D11_growth_strategy",
+        "layer": "L1",
+        "module": "M11: Expansion & Market Positioning",
+        "rp_priority": 0.8,
+        "source_rp": "RP049",
+        "title": "Market Analysis & Positioning"
+      },
+      {
+        "block_id": "B122",
+        "description": "Establishes a structured weekly financial review process that gives the cafe owner a clear, timely picture of profitability, cash flow, and cost performance. Transforms financial management from reactive guesswork into a disciplined weekly rhythm.",
+        "domain": "D07_financial_performance",
+        "layer": "L1",
+        "module": "M07: Pricing Revenue & Cost Control",
+        "rp_priority": 0.7,
+        "source_rp": "RP035",
+        "title": "Weekly Financial Review"
+      },
+      {
+        "block_id": "B123",
+        "description": "Establishes a structured annual budgeting and forecasting process so the cafe operates with clear financial targets, understands seasonal revenue patterns, and can make proactive decisions rather than reacting to cash shortfalls. This block transforms financial management from guesswork into a disciplined planning cycle.",
+        "domain": "D07_financial_performance",
+        "layer": "L1",
+        "module": "M07: Pricing Revenue & Cost Control",
+        "rp_priority": 0.7,
+        "source_rp": "RP035",
+        "title": "Annual Budget & Forecast"
+      },
+      {
+        "block_id": "B065",
+        "description": "Establishes a structured approach to benchmarking pay rates, tips distribution, and benefits against the local cafe and hospitality market, ensuring the venue attracts and retains quality staff without overspending relative to revenue.",
+        "domain": "D04_team_talent",
+        "layer": "L2",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 1.4,
+        "source_rp": "RP018",
+        "title": "Compensation Benchmarking"
+      },
+      {
+        "block_id": "B066",
+        "description": "Builds a workplace culture that people genuinely do not want to leave, addressing the root causes of hospitality turnover through belonging, recognition, growth, and fair treatment — moving beyond pay alone to create an environment where staff choose to stay.",
+        "domain": "D04_team_talent",
+        "layer": "L2",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 1.4,
+        "source_rp": "RP018",
+        "title": "Retention Culture Programme"
+      },
+      {
+        "block_id": "B074",
+        "description": "Establishes a structured pre-shift team briefing — a daily five-to-ten-minute huddle that aligns the team on priorities, shares critical information, surfaces concerns, and sets the tone for the shift ahead.",
+        "domain": "D04_team_talent",
+        "layer": "L2",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP020",
+        "title": "Daily Team Briefing Protocol"
+      },
+      {
+        "block_id": "B075",
+        "description": "Establishes a structured weekly team meeting that goes beyond daily briefings to address operational review, problem-solving, training, and team development in a dedicated 30-to-45-minute session that keeps the team engaged and the business improving.",
+        "domain": "D04_team_talent",
+        "layer": "L2",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP020",
+        "title": "Weekly Team Meeting Structure"
+      },
+      {
+        "block_id": "B076",
+        "description": "Builds an open, psychologically safe communication culture where feedback flows freely in all directions — upward, downward, and peer-to-peer — ensuring issues are raised early, good work is recognised, and the team operates with transparency and mutual respect.",
+        "domain": "D04_team_talent",
+        "layer": "L2",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP020",
+        "title": "Communication Culture & Feedback"
+      },
+      {
+        "block_id": "B077",
+        "description": "Identifies and mitigates single-point-of-failure dependencies where critical knowledge, skills, or relationships reside with only one person, ensuring the cafe can continue operating effectively if any individual is unexpectedly absent or leaves.",
+        "domain": "D04_team_talent",
+        "layer": "L2",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP022",
+        "title": "Key Person Risk Assessment"
+      },
+      {
+        "block_id": "B078",
+        "description": "Establishes a systematic cross-training programme that develops every team member's ability to work competently across multiple stations and roles, eliminating single-person dependencies, enabling flexible scheduling, and building a resilient team that can adapt to any shift configuration.",
+        "domain": "D04_team_talent",
+        "layer": "L2",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP022",
+        "title": "Cross-Training Programme"
+      },
+      {
+        "block_id": "B079",
+        "description": "Defines a clear, pre-planned protocol for managing unexpected staff absences — from the initial notification through to same-day cover arrangements — ensuring the cafe can open and operate safely without panic, last-minute scrambling, or the owner automatically becoming the default cover.",
+        "domain": "D04_team_talent",
+        "layer": "L2",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP022",
+        "title": "Absence Cover Protocol"
+      },
+      {
+        "block_id": "B080",
+        "description": "Creates a systematic approach to documenting tribal knowledge — the unwritten procedures, supplier relationships, equipment quirks, and operational shortcuts that exist only in people's heads — ensuring this critical information is captured, accessible, and survives staff changes.",
+        "domain": "D04_team_talent",
+        "layer": "L2",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP022",
+        "title": "Knowledge Capture System"
+      },
+      {
+        "block_id": "B164",
+        "description": "Ensures the cafe has a clear, documented business plan that articulates where the business is going, how it will get there, and what success looks like. This block transforms the owner's ambitions from unspoken assumptions into a written strategy that guides every significant decision, from menu changes to capital investment to hiring.",
+        "domain": "D11_growth_strategy",
+        "layer": "L2",
+        "module": "M11: Expansion & Market Positioning",
+        "rp_priority": 0.8,
+        "source_rp": "RP049",
+        "title": "Business Plan & Strategy"
+      },
+      {
+        "block_id": "B165",
+        "description": "Equips the cafe owner with a clear, evidence-based understanding of their competitive landscape, target customer segments, and market positioning. This block ensures the cafe knows exactly who it serves, who it competes with, and what makes it worth choosing, replacing assumptions with research and gut feeling with insight.",
+        "domain": "D11_growth_strategy",
+        "layer": "L2",
+        "module": "M11: Expansion & Market Positioning",
+        "rp_priority": 0.8,
+        "source_rp": "RP049",
+        "title": "Market Analysis & Positioning"
+      },
+      {
+        "block_id": "B166",
+        "description": "Provides a rigorous framework for assessing whether a cafe is genuinely ready to expand, whether through a second location, a larger premises, or a significant scaling of operations. This block prevents premature expansion, which is the single most common cause of independent cafe failure after the first year.",
+        "domain": "D11_growth_strategy",
+        "layer": "L2",
+        "module": "M11: Expansion & Market Positioning",
+        "rp_priority": 0.8,
+        "source_rp": "RP049",
+        "title": "Expansion Readiness Assessment"
+      },
+      {
+        "block_id": "B207",
+        "description": "Develops a succession plan that ensures the cafe can continue operating successfully if the owner steps back, retires, becomes incapacitated, or decides to sell. This block covers leadership development, operational documentation, business valuation awareness, ownership transition options, and the often-neglected emotional and practical preparation required for founder exit.",
+        "domain": "D11_growth_strategy",
+        "layer": "L2",
+        "module": "M11: Expansion & Market Positioning",
+        "rp_priority": 0.8,
+        "source_rp": "RP049",
+        "title": "Succession Planning"
+      },
+      {
+        "block_id": "B210",
+        "description": "Establishes a systematic industry benchmarking programme that compares the cafe's performance, practices, and positioning against competitors, industry averages, and best-in-class operators. This block provides frameworks for financial benchmarking, operational benchmarking, customer experience comparison, and strategic positioning analysis — ensuring the owner makes decisions based on market reality rather than assumptions.",
+        "domain": "D11_growth_strategy",
+        "layer": "L2",
+        "module": "M11: Expansion & Market Positioning",
+        "rp_priority": 0.8,
+        "source_rp": "RP049",
+        "title": "Industry Benchmarking"
+      },
+      {
+        "block_id": "B122",
+        "description": "Establishes a structured weekly financial review process that gives the cafe owner a clear, timely picture of profitability, cash flow, and cost performance. Transforms financial management from reactive guesswork into a disciplined weekly rhythm.",
+        "domain": "D07_financial_performance",
+        "layer": "L2",
+        "module": "M07: Pricing Revenue & Cost Control",
+        "rp_priority": 0.7,
+        "source_rp": "RP035",
+        "title": "Weekly Financial Review"
+      },
+      {
+        "block_id": "B123",
+        "description": "Establishes a structured annual budgeting and forecasting process so the cafe operates with clear financial targets, understands seasonal revenue patterns, and can make proactive decisions rather than reacting to cash shortfalls. This block transforms financial management from guesswork into a disciplined planning cycle.",
+        "domain": "D07_financial_performance",
+        "layer": "L2",
+        "module": "M07: Pricing Revenue & Cost Control",
+        "rp_priority": 0.7,
+        "source_rp": "RP035",
+        "title": "Annual Budget & Forecast"
+      },
+      {
+        "block_id": "B124",
+        "description": "Builds financial understanding across the cafe team so that every staff member — from barista to shift lead — understands how their daily actions affect revenue, costs, and profitability. This block moves financial awareness beyond the owner's spreadsheet and into the operational culture of the business.",
+        "domain": "D07_financial_performance",
+        "layer": "L2",
+        "module": "M07: Pricing Revenue & Cost Control",
+        "rp_priority": 0.7,
+        "source_rp": "RP035",
+        "title": "Financial Literacy Programme"
+      },
+      {
+        "block_id": "B074",
+        "description": "Establishes a structured pre-shift team briefing — a daily five-to-ten-minute huddle that aligns the team on priorities, shares critical information, surfaces concerns, and sets the tone for the shift ahead.",
+        "domain": "D04_team_talent",
+        "layer": "L3",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP020",
+        "title": "Daily Team Briefing Protocol"
+      },
+      {
+        "block_id": "B076",
+        "description": "Builds an open, psychologically safe communication culture where feedback flows freely in all directions — upward, downward, and peer-to-peer — ensuring issues are raised early, good work is recognised, and the team operates with transparency and mutual respect.",
+        "domain": "D04_team_talent",
+        "layer": "L3",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP020",
+        "title": "Communication Culture & Feedback"
+      },
+      {
+        "block_id": "B077",
+        "description": "Identifies and mitigates single-point-of-failure dependencies where critical knowledge, skills, or relationships reside with only one person, ensuring the cafe can continue operating effectively if any individual is unexpectedly absent or leaves.",
+        "domain": "D04_team_talent",
+        "layer": "L3",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP022",
+        "title": "Key Person Risk Assessment"
+      },
+      {
+        "block_id": "B080",
+        "description": "Creates a systematic approach to documenting tribal knowledge — the unwritten procedures, supplier relationships, equipment quirks, and operational shortcuts that exist only in people's heads — ensuring this critical information is captured, accessible, and survives staff changes.",
+        "domain": "D04_team_talent",
+        "layer": "L3",
+        "module": "M04: Recruitment Onboarding & Development",
+        "rp_priority": 0.8,
+        "source_rp": "RP022",
+        "title": "Knowledge Capture System"
+      },
+      {
+        "block_id": "B164",
+        "description": "Ensures the cafe has a clear, documented business plan that articulates where the business is going, how it will get there, and what success looks like. This block transforms the owner's ambitions from unspoken assumptions into a written strategy that guides every significant decision, from menu changes to capital investment to hiring.",
+        "domain": "D11_growth_strategy",
+        "layer": "L3",
+        "module": "M11: Expansion & Market Positioning",
+        "rp_priority": 0.8,
+        "source_rp": "RP049",
+        "title": "Business Plan & Strategy"
+      },
+      {
+        "block_id": "B167",
+        "description": "Establishes an annual strategic planning cycle that forces the cafe owner to step back from daily operations, review the year honestly, set priorities for the next 12 months, and create accountability for execution. This block prevents the drift that occurs when cafes run on autopilot, repeating the same patterns year after year without deliberate improvement.",
+        "domain": "D11_growth_strategy",
+        "layer": "L3",
+        "module": "M11: Expansion & Market Positioning",
+        "rp_priority": 0.8,
+        "source_rp": "RP049",
+        "title": "Strategic Planning & Annual Review"
+      },
+      {
+        "block_id": "B207",
+        "description": "Develops a succession plan that ensures the cafe can continue operating successfully if the owner steps back, retires, becomes incapacitated, or decides to sell. This block covers leadership development, operational documentation, business valuation awareness, ownership transition options, and the often-neglected emotional and practical preparation required for founder exit.",
+        "domain": "D11_growth_strategy",
+        "layer": "L3",
+        "module": "M11: Expansion & Market Positioning",
+        "rp_priority": 0.8,
+        "source_rp": "RP049",
+        "title": "Succession Planning"
+      },
+      {
+        "block_id": "B210",
+        "description": "Establishes a systematic industry benchmarking programme that compares the cafe's performance, practices, and positioning against competitors, industry averages, and best-in-class operators. This block provides frameworks for financial benchmarking, operational benchmarking, customer experience comparison, and strategic positioning analysis — ensuring the owner makes decisions based on market reality rather than assumptions.",
+        "domain": "D11_growth_strategy",
+        "layer": "L3",
+        "module": "M11: Expansion & Market Positioning",
+        "rp_priority": 0.8,
+        "source_rp": "RP049",
+        "title": "Industry Benchmarking"
+      },
+      {
+        "block_id": "B122",
+        "description": "Establishes a structured weekly financial review process that gives the cafe owner a clear, timely picture of profitability, cash flow, and cost performance. Transforms financial management from reactive guesswork into a disciplined weekly rhythm.",
+        "domain": "D07_financial_performance",
+        "layer": "L3",
+        "module": "M07: Pricing Revenue & Cost Control",
+        "rp_priority": 0.7,
+        "source_rp": "RP035",
+        "title": "Weekly Financial Review"
+      },
+      {
+        "block_id": "B124",
+        "description": "Builds financial understanding across the cafe team so that every staff member — from barista to shift lead — understands how their daily actions affect revenue, costs, and profitability. This block moves financial awareness beyond the owner's spreadsheet and into the operational culture of the business.",
+        "domain": "D07_financial_performance",
+        "layer": "L3",
+        "module": "M07: Pricing Revenue & Cost Control",
+        "rp_priority": 0.7,
+        "source_rp": "RP035",
+        "title": "Financial Literacy Programme"
+      }
+    ],
+    "evidence_warnings": {
+      "evidence_ratio": 1,
+      "level": "ok",
+      "message": "All signals have evidence notes",
+      "signals_without_evidence": []
+    },
+    "original_count": 52,
+    "plan_load": "TRIAGE",
+    "team_size": 8,
+    "triage_intensity": "focused",
+    "triage_message": "This venue activated 52 items, but a team of 8 can realistically absorb ~11 concurrent changes (focused mode). The plan has been trimmed to 13 highest-priority items. 39 items deferred to a future phase.",
+    "triage_mode": true,
+    "weekly_budget": 4,
+    "weeks_estimated": 4
+  },
+  "report_md": "# muzos 2 — Follow-up Report\n\n> Muzos 2 has made little to no meaningful progress since the last assessment, with four high-priority issues still unresolved and the same patterns of operational and people challenges continuing to hold the business back.\n\n**2026-03-25** · Follow-up\n\n## Signal Movement\n\n| Signal | Status | Notes |\n|--------|--------|-------|\n\n## New Concerns\n\n- 🟡 **No Team Meetings** — Direct evidence of communication breakdown at leadership level that prevents team communication stru\n- 🟡 **No Business Plan** — Business plan or strategic direction is implicitly undermined by the communication failure. Salary r\n- 🟠 **Staff Departure Unmanaged** — NEW ACTIVATION — not in previous signal set but directly evidenced. 'Nearly losing Andrius — a real \n- 🟡 **Team Not Aligned On Standards** — Standards alignment is impossible when management is not engaging with the consultant or with each o\n\n## Updated Actions\n\n- **B172** Cafe Values Definition — this week\n- **B173** Staff Handbook & Policies — this week\n- **B174** Toxic Dynamics Intervention — this week\n- **B063** Exit Interview & Turnover Analysis — this month\n- **B064** Retention Strategy & Engagement Plan — this month\n- **B172** Cafe Values Definition — this month\n\n---\n*Follow-up · 2026-03-25 · OIS 3.6*",
+  "report_html": "<h1>muzos 2 — Follow-up Report</h1>\n<blockquote>\n<p>Muzos 2 has made little to no meaningful progress since the last assessment, with four high-priority issues still unresolved and the same patterns of operational and people challenges continuing to hold the business back.</p>\n</blockquote>\n<p><strong>2026-03-25</strong> · Follow-up</p>\n<h2>Signal Movement</h2>\n<table>\n<thead>\n<tr>\n<th>Signal</th>\n<th>Status</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h2>New Concerns</h2>\n<ul>\n<li>🟡 <strong>No Team Meetings</strong> — Direct evidence of communication breakdown at leadership level that prevents team communication stru</li>\n<li>🟡 <strong>No Business Plan</strong> — Business plan or strategic direction is implicitly undermined by the communication failure. Salary r</li>\n<li>🟠 <strong>Staff Departure Unmanaged</strong> — NEW ACTIVATION — not in previous signal set but directly evidenced. 'Nearly losing Andrius — a real </li>\n<li>🟡 <strong>Team Not Aligned On Standards</strong> — Standards alignment is impossible when management is not engaging with the consultant or with each o</li>\n</ul>\n<h2>Updated Actions</h2>\n<ul>\n<li><strong>B172</strong> Cafe Values Definition — this week</li>\n<li><strong>B173</strong> Staff Handbook &amp; Policies — this week</li>\n<li><strong>B174</strong> Toxic Dynamics Intervention — this week</li>\n<li><strong>B063</strong> Exit Interview &amp; Turnover Analysis — this month</li>\n<li><strong>B064</strong> Retention Strategy &amp; Engagement Plan — this month</li>\n<li><strong>B172</strong> Cafe Values Definition — this month</li>\n</ul>\n<hr />\n<p><em>Follow-up · 2026-03-25 · OIS 3.6</em></p>",
+  "raw_input_text": "The communication problem.\nThis is the single biggest operational risk on the project, and it's been documented repeatedly. The pattern is: you send emails with detailed deliverables and questions → no reply for one to two weeks → you have to call → you get partial verbal information → you agree to meet → the meeting gets postponed or cancelled → the cycle restarts.\nThis has been going on since at least January. You've documented it formally in multiple emails. The clearest consequence was nearly losing Andrius — a real chef candidate, gone because nobody replied to his email for a week. That's the preview of what happens with future staff, vendors, and eventually guests.\nYou sent a major status email on March 3 covering over ten items. Then another on March 5 pushing DSS and signage. Then menus and signage drafts on March 6. You called Simona on March 10, went through everything verbally, agreed to meet that evening. Rolandas postponed to the next day. Next day — nothing. March 12 at 9 AM you asked again, got a vague response, no meeting. You drafted and sent a comprehensive status email documenting every open item, every date, every unanswered question. You explicitly named the communication pattern and its consequences, connected it to their future role as team leaders, and asked for one hour to go through everything.\nThe salary ranges question has been open since January. The garden measurements since February. The DSS contract since late February. Multiple deliverables are complete but sitting idle because there's no response.\nAnd now you're physically at Kalvos, working on staff facilities and inventory, preparing for the March 24 visit with both chef candidates, still not having had that comprehensive meeting to resolve the dozen-plus open items.\n\nThe good news is that everything related preious asessement is sorted to hundred percent, all tasks completed, but seems like management is drifting again..",
+  "extraction_summary": {
+    "changes_since_last": "All 30 previously active signals confirmed resolved at 100% — a significant positive result representing full compliance with the previous assessment cycle. However, three signals are now re-activated or newly activated: S056 (team meetings/communication) and S166 (team standards alignment) have worsened due to owner disengagement re-emerging, S154 (no business plan/strategic direction) has worsened as unresolved foundational decisions now block the critical path, and S187 (staff departure unmanaged) is newly activated due to the loss of chef candidate Andrius and the live risk to the March 24 candidate visit. The core finding is that the previous cycle's compliance was externally driven and has not produced internalised owner behaviour change. The communication dysfunction is now the single highest-severity risk to the opening timeline.",
+    "coverage_gaps": [
+      "No visibility into physical build or fit-out progress beyond implied presence at Kalvos",
+      "No financial data — costs, budget burn rate, or opening capital position not mentioned",
+      "No detail on what the 'dozen-plus open items' are beyond the three named (salary ranges, garden measurements, DSS contract)",
+      "No information on the second chef candidate or their status",
+      "No information on Simona's perspective or explanation for the communication pattern",
+      "No information on whether the March 24 visit has been confirmed with both candidates",
+      "No visibility into supplier or vendor relationships beyond the DSS contract mention",
+      "Staff hiring status beyond the Andrius situation is unknown",
+      "Regulatory and licensing compliance status not covered in this report",
+      "No information on menu development progress despite menus being referenced as sent on March 6"
+    ],
+    "text_quality": "detailed",
+    "text_type": "consultant_report"
+  },
+  "unmapped_observations": [
+    {
+      "evidence": "The pattern is: you send emails with detailed deliverables and questions → no reply for one to two weeks → you have to call → you get partial verbal information → you agree to meet → the meeting gets postponed or cancelled → the cycle restarts. This has been going on since at least January.",
+      "observation": "Systematic owner/management communication failure creating pre-opening critical path blockage. This is a recurring, documented, multi-month pattern — not an isolated incident. The consultant has sent major status emails on March 3, 5, and 6, called on March 10, had a meeting cancelled by Rolandas, received no follow-up on March 11, and got a vague non-response on March 12. The pattern has been formally named and documented by the consultant.",
+      "suggested_domain": "leadership"
+    },
+    {
+      "evidence": "The salary ranges question has been open since January. The garden measurements since February. The DSS contract since late February. Multiple deliverables are complete but sitting idle because there's no response.",
+      "observation": "Specific unresolved pre-opening decisions with documented open durations: salary ranges (open since January), garden measurements (open since February), DSS contract (open since late February). These are not soft items — they are structural decisions required before hiring, fit-out completion, and supplier contracting can proceed.",
+      "suggested_domain": "operations"
+    },
+    {
+      "evidence": "Nearly losing Andrius — a real chef candidate, gone because nobody replied to his email for a week. That's the preview of what happens with future staff, vendors, and eventually guests.",
+      "observation": "Chef candidate lost due to management email non-response. A second candidate visit is scheduled for March 24 with the same communication dysfunction unresolved. This represents a direct, measurable consequence of the communication failure and a live repeat risk.",
+      "suggested_domain": "leadership"
+    },
+    {
+      "evidence": "You're physically at Kalvos, working on staff facilities and inventory, preparing for the March 24 visit with both chef candidates, still not having had that comprehensive meeting to resolve the dozen-plus open items.",
+      "observation": "Consultant is physically present at the venue (Kalvos) working on staff facilities and inventory while the owners are absent and unresponsive. This represents a dependency inversion — the external consultant is driving pre-opening operational work while the owners are disengaged. This is unsustainable and creates a single-point-of-failure risk on the consultant relationship.",
+      "suggested_domain": "leadership"
+    },
+    {
+      "evidence": "The good news is that everything related to previous assessment is sorted to hundred percent, all tasks completed, but seems like management is drifting again.",
+      "observation": "The text explicitly notes 'management is drifting again' — implying this is a recurring behavioural pattern, not a one-off. The previous assessment cycle produced full compliance, but the underlying owner engagement problem has re-emerged. This suggests the compliance was task-driven (responding to structured pressure) rather than internalised. The risk is that without sustained external pressure, drift will recur post-opening.",
+      "suggested_domain": "leadership"
+    }
+  ],
+  "confidence_distribution": {
+    "high": 4,
+    "low": 0,
+    "medium": 0
+  },
+  "timestamp": "2026-03-25T22:59:21.551936"
+}

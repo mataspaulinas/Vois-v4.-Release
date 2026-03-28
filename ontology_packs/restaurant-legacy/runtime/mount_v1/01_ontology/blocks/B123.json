@@ -1,0 +1,159 @@
+{
+  "block_id": "B123",
+  "name": "Annual Budget & Forecast",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Establishes a structured annual budgeting and forecasting process so the cafe operates with clear financial targets, understands seasonal revenue patterns, and can make proactive decisions rather than reacting to cash shortfalls. This block transforms financial management from guesswork into a disciplined planning cycle.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a comprehensive annual budget covering revenue, cost of goods sold, labour, overheads, and capital expenditure",
+      "Build a 12-month cash flow forecast that accounts for seasonal trading patterns specific to cafe operations",
+      "Establish monthly budget-vs-actual review meetings to identify variances early",
+      "Develop scenario planning for best-case, expected, and worst-case trading conditions",
+      "Set clear financial targets that cascade into daily and weekly operational goals"
+    ],
+    "secondary_objectives": [
+      "Provide a financial framework for investment decisions such as equipment purchases or refurbishments",
+      "Create a buffer strategy for known quiet periods to avoid cash crises",
+      "Enable informed negotiations with landlords, suppliers, and lenders by demonstrating financial literacy",
+      "Build a historical financial dataset that improves forecast accuracy year on year"
+    ]
+  },
+  "why_this_matters": "The majority of independent cafes that fail do so not because the coffee is poor but because the owner never built a financial plan. Without an annual budget, an operator cannot answer basic questions: Can I afford a second barista on Saturdays? Should I invest in a new grinder or repair the old one? Will I survive January? A budget converts vague anxiety into concrete numbers. In UK hospitality, gross margins typically sit between 65-75% for beverages and 55-65% for food, but net profit margins are razor-thin — often 5-12% for a well-run independent cafe. That means a 3% unplanned cost increase (a rent review, a supplier price hike, a minimum wage uplift) can halve profitability or push the business into loss. The annual budget is the tool that makes these risks visible before they become crises. A 12-month forecast also reveals the cash flow reality of cafe trading: strong spring and summer months must fund quieter winter periods, and the budget quantifies exactly how much surplus needs to be banked. Without this foresight, owners frequently overspend in good months and scramble for overdraft facilities in bad ones. HMRC expects businesses to maintain adequate financial records, and a formal budget process supports both VAT returns and self-assessment accuracy. For any cafe considering expansion, seeking investment, or approaching a bank, a credible budget and forecast is the minimum financial document expected.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Gather all financial data from the past 12 months — till reports, bank statements, supplier invoices, payroll records, rent and utility bills, and any loan or lease payments. If the business is new and lacks 12 months of trading data, use whatever history exists supplemented by industry benchmarks from the British Coffee Association or UK Hospitality. Create a simple spreadsheet with 12 monthly columns and rows for: total revenue (split by dine-in, takeaway, delivery if possible), cost of goods sold, total labour cost (including employer NI and pension), rent, utilities, insurance, marketing, repairs/maintenance, professional fees, loan repayments, and a miscellaneous line. Populate the historical months with actual figures. Week 2: Using the historical pattern, draft projected figures for the next 12 months. Apply known changes: any confirmed rent increases, minimum wage uplifts (check gov.uk for April changes), supplier price changes already communicated, and planned investments. Add a 3% contingency line for unexpected costs. Calculate the projected monthly profit or loss and running cash balance. Identify any months where cash is projected to go negative — these are the danger zones that need immediate planning. Share the draft budget with any business partners or key managers for input before finalising.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Refine the budget into three scenarios: pessimistic (revenue 15% below expected), expected, and optimistic (revenue 10% above expected). Each scenario should show the impact on profit and cash flow, making it clear at what point the business needs to take action. Introduce a monthly budget review meeting (30-45 minutes) where the owner or manager compares actual figures against the budget. Record variances as percentages and investigate anything exceeding 5%. Create a rolling forecast that updates the remaining months based on actual performance — if Q1 is 8% ahead of budget, adjust Q2-Q4 accordingly rather than clinging to outdated projections. Set up a simple KPI dashboard tracking: revenue per trading day, average transaction value, labour cost as a percentage of revenue, food cost percentage, and net profit margin. Link daily till targets to the annual budget so every team member understands how daily trading connects to annual goals. Establish a mid-year budget review in Month 6 where the full budget is reassessed and adjusted based on first-half performance.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The budget should now be a living management tool, not a document filed away in January and forgotten. Introduce weekly flash reporting — a one-page summary showing the week's revenue, costs, and profit against the weekly budget target. Share simplified financial updates with the team monthly so that financial awareness becomes part of the culture. Begin benchmarking against industry data from sources such as the Allegra World Coffee Portal or UK Hospitality's quarterly reports. Develop a 3-year financial plan that considers longer-term investments: equipment replacement cycles, lease renewal strategy, potential expansion, and owner compensation growth. Use the budget process to evaluate major decisions quantitatively — every significant expenditure should be assessed against the budget impact. Consider cloud accounting software (Xero, QuickBooks) integrated with your POS system for real-time financial visibility."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Gather 12 months of financial records: till reports, bank statements, invoices, payroll, and overheads",
+        "Create a budget spreadsheet with 12 monthly columns and all revenue and cost categories",
+        "Populate historical months with actual figures and identify seasonal patterns",
+        "Draft projected figures for the next 12 months incorporating known cost changes",
+        "Add a 3% contingency line for unplanned expenses",
+        "Identify months where projected cash balance goes negative and plan mitigations",
+        "Share draft budget with business partners or key staff for review"
+      ],
+      "responsible": "Cafe Owner, Accountant"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build three budget scenarios: pessimistic, expected, and optimistic",
+        "Establish a monthly budget-vs-actual review meeting with documented variance analysis",
+        "Create a rolling forecast updating remaining months based on actual trading",
+        "Set up a KPI dashboard tracking daily revenue, labour percentage, food cost, and net margin",
+        "Translate annual budget into daily and weekly till targets for the team",
+        "Conduct a formal mid-year budget review and adjustment in Month 6",
+        "Link capital expenditure decisions to the budget approval process"
+      ],
+      "responsible": "Owner, Manager, Accountant"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce weekly flash financial reports for management review",
+        "Share simplified monthly financial updates with the whole team",
+        "Benchmark performance against published industry data",
+        "Develop a 3-year financial plan covering equipment, leases, and growth strategy",
+        "Integrate cloud accounting software with POS for real-time financial visibility",
+        "Review and refine the budget process annually to improve forecast accuracy"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Annual Budget Spreadsheet (12-month revenue and cost plan)",
+    "Cash Flow Forecast Template with seasonal adjustments",
+    "Monthly Variance Report Template",
+    "Budget Review Meeting Agenda and Minutes Template",
+    "Weekly Flash Financial Report Template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T123-01",
+        "tool_name": "Annual Budget Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A 12-month spreadsheet template with pre-built rows for all cafe revenue streams and cost categories, including formulae for gross margin, net profit, and running cash balance. Includes a tab for assumptions and known cost changes."
+      },
+      {
+        "tool_id": "T123-02",
+        "tool_name": "Monthly Variance Report",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Monthly one-page report comparing budgeted figures against actuals across all categories, highlighting variances exceeding 5% and documenting root causes and corrective actions."
+      },
+      {
+        "tool_id": "T123-03",
+        "tool_name": "Scenario Planning Worksheet",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Three-scenario budget model (pessimistic, expected, optimistic) showing the impact on monthly profit and cash balance, with trigger points for when contingency actions should be activated."
+      },
+      {
+        "tool_id": "T123-04",
+        "tool_name": "Weekly Flash Financial Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "One-page weekly summary showing revenue, key cost lines, and profit against the weekly budget target. Designed for rapid management review and early identification of trends."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Budget is created at the start of the year and never revisited, becoming irrelevant as actual trading diverges from assumptions",
+    "Owner builds the budget on aspirational revenue figures rather than evidence-based projections, masking a structural deficit",
+    "Cost increases such as rent reviews, supplier hikes, and wage uplifts are not incorporated into the forecast until they hit the bank account",
+    "Cash flow is ignored in favour of profit projections, leading to a profitable-on-paper business that cannot pay its bills on time"
+  ],
+  "kpis": [
+    "Budget completed and approved before the start of each financial year",
+    "Monthly variance review completed within 10 days of month-end, every month",
+    "Revenue forecast accuracy within plus or minus 10% of actual for 9 out of 12 months",
+    "No unplanned cash shortfalls requiring emergency borrowing or late supplier payments"
+  ],
+  "dependencies": ["B122"],
+  "constraints": [
+    "Requires access to at least 6 months of historical trading data for meaningful projections",
+    "Owner or manager must have basic spreadsheet competency or access to an accountant",
+    "Budget must be updated whenever significant cost changes are confirmed"
+  ],
+  "time_load": {
+    "L1": "8 hours (data gathering, initial budget build, review)",
+    "L2": "4 hours/month (variance analysis, rolling forecast updates, review meetings)",
+    "L3": "2 hours/week (flash reports, benchmarking, strategic planning integration)"
+  },
+  "review_protocol": "Monthly budget-vs-actual review within 10 days of month-end. Mid-year full budget reassessment in Month 6. Annual budget rebuild in the final quarter for the following year. Quarterly review of forecast accuracy to improve projection methodology.",
+  "meta": {
+    "summary_for_humans": "This block establishes a proper annual budget and forecasting process for the cafe, covering revenue projections, cost planning, cash flow forecasting, and monthly variance reviews. It transforms financial management from reactive guesswork into structured planning.",
+    "implementation_risks": [
+      "Owners without financial backgrounds may find budgeting intimidating and avoid starting",
+      "Seasonal trading patterns can be dramatic in cafe businesses, making first-year budgets particularly inaccurate",
+      "The budget can become a source of stress rather than empowerment if variances are treated punitively"
+    ],
+    "notes_for_engine": "This block is foundational for D07 and should be activated early in any engagement. Many downstream financial blocks depend on B123 data. Flag as urgent if signals indicate the cafe has no formal budget, is experiencing cash flow problems, or is planning significant expenditure without financial modelling.",
+    "tags": ["finance", "budget", "forecast", "cash_flow", "planning", "annual", "variance", "profitability"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

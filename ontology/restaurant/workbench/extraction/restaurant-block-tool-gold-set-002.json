@@ -1,0 +1,664 @@
+{
+  "vertical": "restaurant",
+  "blocks": [
+    {
+      "id": "blk_bar_ticket_priority_lane",
+      "name": "Create bar priority lane",
+      "description": "Separate the drink tickets that are actively blocking table flow from the rest of the bar queue so urgent beverage work becomes visible and protected.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: redesign workflow at the beverage node by exposing table-critical priority work",
+      "status": "review",
+      "effort_hours": 2.5,
+      "dependencies": [
+        "blk_install_expo_callouts"
+      ],
+      "tool_ids": [
+        "tool_bar_priority_board"
+      ],
+      "response_pattern_ids": [
+        "rp_bar_execution_reset",
+        "rp_pass_communication_reset"
+      ],
+      "entry_conditions": [
+        "Bar tickets are delaying table progression or guests are waiting on drinks that gate the next service step.",
+        "The venue can distinguish truly table-critical tickets from normal queue volume."
+      ],
+      "contraindications": [
+        "Do not create a second queue without explicit rules for what qualifies as priority work.",
+        "Do not use this lane to hide structural understaffing or broken bar setup."
+      ],
+      "owner_role": "bar_lead",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "A visible priority lane exists for bar work that blocks table progression.",
+        "The bar team can explain the rule for entering and clearing priority tickets.",
+        "At least one pressured service shows faster resolution of table-critical drink tickets."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "live_execution",
+        "handoffs_and_coordination"
+      ],
+      "failure_family_ids": [
+        "workflow_design_failure",
+        "handoff_failure",
+        "demand_capacity_mismatch"
+      ]
+    },
+    {
+      "id": "blk_build_arrival_pacing_board",
+      "name": "Build arrival pacing board",
+      "description": "Create a live board for reservation waves, walk-in pressure, seat release timing, and decision points so the front door can shape demand in real time.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: stabilize visibility and constrain promises at the intake surface",
+      "status": "review",
+      "effort_hours": 3.0,
+      "dependencies": [
+        "blk_define_wait_quote_rules"
+      ],
+      "tool_ids": [
+        "tool_arrival_pacing_board"
+      ],
+      "response_pattern_ids": [
+        "rp_host_pacing_reset"
+      ],
+      "entry_conditions": [
+        "Hosts are making pacing decisions without a shared live view of incoming pressure and seating release.",
+        "Wait quote logic exists or is being installed alongside the board."
+      ],
+      "contraindications": [
+        "Do not build a board no one updates during service.",
+        "Do not make the board so detailed that hosts abandon it in real time."
+      ],
+      "owner_role": "host_lead",
+      "expected_time_to_effect_days": 2,
+      "proof_of_completion": [
+        "The host team has a single live board for reservation waves, walk-ins, and release decisions.",
+        "The board is updated through at least one real pressure window.",
+        "Hosts use the board to justify quote and pacing changes instead of relying on guesswork."
+      ],
+      "successor_block_ids": [
+        "blk_host_reservation_huddle"
+      ],
+      "service_module_ids": [
+        "intake_and_demand",
+        "promise_and_expectations",
+        "handoffs_and_coordination"
+      ],
+      "failure_family_ids": [
+        "expectation_setting_failure",
+        "demand_capacity_mismatch",
+        "workflow_design_failure"
+      ]
+    },
+    {
+      "id": "blk_build_floor_training",
+      "name": "Build floor training checklist",
+      "description": "Convert critical service behaviors, role expectations, and recovery standards into an explicit onboarding and refresh checklist that managers can coach against.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: build capability by making live standards coachable instead of memory-dependent",
+      "status": "review",
+      "effort_hours": 5.0,
+      "dependencies": [
+        "blk_create_station_roles"
+      ],
+      "tool_ids": [
+        "tool_training_checklist"
+      ],
+      "response_pattern_ids": [
+        "rp_training_reset"
+      ],
+      "entry_conditions": [
+        "The same service mistakes repeat across people or new starters rely on shadowing alone.",
+        "Role expectations and standard behaviors are already explicit enough to train against."
+      ],
+      "contraindications": [
+        "Do not turn training into a document dump with no live signoff or coaching.",
+        "Do not build the checklist before role ownership and service standards are clear."
+      ],
+      "owner_role": "floor_lead",
+      "expected_time_to_effect_days": 5,
+      "proof_of_completion": [
+        "A role-specific training checklist exists for the floor positions that most affect service quality.",
+        "Each critical behavior has an observation or signoff method, not just a checkbox.",
+        "Managers use the checklist during onboarding or refresh rather than informal memory transfer."
+      ],
+      "successor_block_ids": [
+        "blk_guest_recovery_loop"
+      ],
+      "service_module_ids": [
+        "team_capability_and_training",
+        "quality_and_standards",
+        "handoffs_and_coordination"
+      ],
+      "failure_family_ids": [
+        "capability_gap",
+        "standards_drift",
+        "role_clarity_failure"
+      ]
+    },
+    {
+      "id": "blk_closing_reset_check",
+      "name": "Run closing reset check",
+      "description": "Install a non-negotiable closing reset across prep, stock, cleanliness, and unresolved issues so the next service cycle does not begin with inherited fragility.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: restore readiness by turning the close into a true reset loop",
+      "status": "review",
+      "effort_hours": 2.0,
+      "dependencies": [],
+      "tool_ids": [
+        "tool_closing_reset_checklist"
+      ],
+      "response_pattern_ids": [
+        "rp_open_close_reset"
+      ],
+      "entry_conditions": [
+        "The next shift inherits missing prep, poor cleanliness, stock gaps, or unresolved actions.",
+        "A close owner can verify reset completion before people leave."
+      ],
+      "contraindications": [
+        "Do not rely on self-attestation without a visible check and ownership loop.",
+        "Do not close unresolved blockers without explicitly passing them into the next operating cycle."
+      ],
+      "owner_role": "closing_manager",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "A closing reset checklist exists with named ownership and verification.",
+        "Unresolved issues are either fixed before close or passed forward explicitly.",
+        "The next open shows reduced inherited friction from the previous shift."
+      ],
+      "successor_block_ids": [
+        "blk_opening_line_readiness_check"
+      ],
+      "service_module_ids": [
+        "readiness_and_setup",
+        "commercial_and_control_loops",
+        "tools_and_asset_reliability"
+      ],
+      "failure_family_ids": [
+        "readiness_failure",
+        "control_loop_failure",
+        "accountability_failure"
+      ]
+    },
+    {
+      "id": "blk_daily_86_board",
+      "name": "Launch daily 86 board",
+      "description": "Create a visible pre-service 86 and depletion board so stock risk, substitutions, and item status changes are shared before they become guest-facing surprises.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: stabilize visibility around stock truth before live service multiplies confusion",
+      "status": "review",
+      "effort_hours": 1.5,
+      "dependencies": [
+        "blk_inventory_count_cycle"
+      ],
+      "tool_ids": [
+        "tool_86_board_template"
+      ],
+      "response_pattern_ids": [
+        "rp_inventory_accuracy_reset"
+      ],
+      "entry_conditions": [
+        "86 surprises or uncertain substitutions are reaching the floor mid-service.",
+        "The venue has at least a limited count or depletion truth to feed the board."
+      ],
+      "contraindications": [
+        "Do not post unreliable stock information that will be disproved immediately.",
+        "Do not keep the board hidden from the roles that need to act on it."
+      ],
+      "owner_role": "shift_lead",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "A visible 86 board exists before service with status, substitutions, and risk items.",
+        "Frontline roles know where to read it and when it updates.",
+        "Mid-shift item surprises decline because decisions are shared earlier."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "readiness_and_setup",
+        "commercial_and_control_loops",
+        "promise_and_expectations"
+      ],
+      "failure_family_ids": [
+        "control_loop_failure",
+        "commercial_discipline_failure",
+        "readiness_failure"
+      ]
+    },
+    {
+      "id": "blk_daily_waste_review",
+      "name": "Launch daily waste review",
+      "description": "Review daily waste incidents, their causes, and the next corrective action so prep loss stops being treated as normal background noise.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: tighten control loops by forcing review and correction of recurring waste",
+      "status": "review",
+      "effort_hours": 2.0,
+      "dependencies": [
+        "blk_standardize_prep_sheet"
+      ],
+      "tool_ids": [
+        "tool_waste_log"
+      ],
+      "response_pattern_ids": [
+        "rp_prep_control_reset"
+      ],
+      "entry_conditions": [
+        "Waste is spiking or prep overproduction is visible but not reviewed systematically.",
+        "The team can identify what was wasted, why, and who owns the follow-up."
+      ],
+      "contraindications": [
+        "Do not run a waste review that records loss without changing prep or ordering behavior.",
+        "Do not bury avoidable waste inside broad end-of-day admin."
+      ],
+      "owner_role": "kitchen_manager",
+      "expected_time_to_effect_days": 3,
+      "proof_of_completion": [
+        "Waste incidents are logged daily with causes and follow-up actions.",
+        "The review distinguishes controllable waste from true demand noise.",
+        "Prep or ordering changes are being made based on the reviewed loss patterns."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "commercial_and_control_loops",
+        "learning_and_improvement"
+      ],
+      "failure_family_ids": [
+        "control_loop_failure",
+        "commercial_discipline_failure",
+        "learning_failure"
+      ]
+    },
+    {
+      "id": "blk_manager_floor_walk",
+      "name": "Run manager floor walk",
+      "description": "Run a timed manager walk during critical windows to catch developing pressure, coach live execution, and trigger escalation before the floor drifts into unmanaged chaos.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: leadership rhythm should place attention where risk is building, not where it is comfortable",
+      "status": "review",
+      "effort_hours": 1.5,
+      "dependencies": [
+        "blk_manager_peak_window_plan"
+      ],
+      "tool_ids": [
+        "tool_floor_walk_sheet"
+      ],
+      "response_pattern_ids": [
+        "rp_manager_presence_reset"
+      ],
+      "entry_conditions": [
+        "Managers disappear into admin or static positions while service risk builds on the floor.",
+        "The venue has clear peak windows where visible management attention changes outcomes."
+      ],
+      "contraindications": [
+        "Do not turn the floor walk into passive observation with no intervention logic.",
+        "Do not schedule the walk if the manager has no authority to coach or escalate live issues."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "Managers have a timed floor walk cadence for critical windows.",
+        "The walk includes observation targets, coaching prompts, and escalation checks.",
+        "At least one real service shows the manager redirecting attention based on the walk."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "leadership_and_management_rhythm",
+        "live_execution",
+        "recovery_and_exception_handling"
+      ],
+      "failure_family_ids": [
+        "leadership_rhythm_failure",
+        "accountability_failure",
+        "standards_drift"
+      ]
+    },
+    {
+      "id": "blk_manager_peak_window_plan",
+      "name": "Set manager peak-window plan",
+      "description": "Define where the manager stands, what they watch, and what triggers intervention during the venue's highest-risk service windows.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: leadership coverage should be designed around pressure, not habit",
+      "status": "review",
+      "effort_hours": 2.0,
+      "dependencies": [
+        "blk_rebalance_sections"
+      ],
+      "tool_ids": [
+        "tool_peak_window_plan"
+      ],
+      "response_pattern_ids": [
+        "rp_deployment_reset",
+        "rp_manager_presence_reset"
+      ],
+      "entry_conditions": [
+        "Peak periods repeatedly collapse because leadership attention is not placed where the risk actually concentrates.",
+        "The venue can identify its critical windows, pressure nodes, and likely intervention points."
+      ],
+      "contraindications": [
+        "Do not create a peak-window plan if the manager is routinely pulled into unrelated admin at the same time.",
+        "Do not use vague instructions like 'watch the floor' without explicit triggers and zones."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "A written peak-window plan exists with positions, watch zones, and intervention triggers.",
+        "Manager coverage is aligned to the real pressure pattern rather than static presence habits.",
+        "The plan is used in at least one live peak and adjusted based on what happened."
+      ],
+      "successor_block_ids": [
+        "blk_manager_floor_walk"
+      ],
+      "service_module_ids": [
+        "leadership_and_management_rhythm",
+        "capacity_and_deployment",
+        "live_execution"
+      ],
+      "failure_family_ids": [
+        "leadership_rhythm_failure",
+        "demand_capacity_mismatch",
+        "accountability_failure"
+      ]
+    },
+    {
+      "id": "blk_standardize_prep_sheet",
+      "name": "Standardize prep sheet",
+      "description": "Create a role-based prep sheet with clear quantities, cutoffs, and ownership so prep stops depending on memory and shift-to-shift interpretation.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: standardize execution and readiness through explicit prep ownership",
+      "status": "review",
+      "effort_hours": 4.0,
+      "dependencies": [],
+      "tool_ids": [
+        "tool_prep_sheet_template"
+      ],
+      "response_pattern_ids": [
+        "rp_prep_control_reset"
+      ],
+      "entry_conditions": [
+        "Prep quality or completion varies materially by shift or person.",
+        "The venue can identify critical prep lines and the roles that own them."
+      ],
+      "contraindications": [
+        "Do not create a prep sheet with unrealistic quantities or no cutoff logic.",
+        "Do not treat the sheet as complete unless prep ownership is visible and reviewable."
+      ],
+      "owner_role": "kitchen_manager",
+      "expected_time_to_effect_days": 3,
+      "proof_of_completion": [
+        "A role-based prep sheet exists with named owners, quantities, and cutoffs.",
+        "Prep completion can be checked before service instead of assumed.",
+        "Shift-to-shift variation in prep readiness is reduced through shared standards."
+      ],
+      "successor_block_ids": [
+        "blk_daily_waste_review"
+      ],
+      "service_module_ids": [
+        "readiness_and_setup",
+        "quality_and_standards",
+        "commercial_and_control_loops"
+      ],
+      "failure_family_ids": [
+        "readiness_failure",
+        "standards_drift",
+        "role_clarity_failure"
+      ]
+    },
+    {
+      "id": "blk_void_review_huddle",
+      "name": "Run void and comp review huddle",
+      "description": "Review avoidable voids and comps in a short huddle so the venue closes the loop on loss incidents instead of absorbing them as normal service cost.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: tighten control loops by making avoidable loss visible, reviewed, and owned",
+      "status": "review",
+      "effort_hours": 2.0,
+      "dependencies": [
+        "blk_install_pre_shift_brief"
+      ],
+      "tool_ids": [
+        "tool_void_review_template"
+      ],
+      "response_pattern_ids": [
+        "rp_leadership_rhythm_reset",
+        "rp_prep_control_reset"
+      ],
+      "entry_conditions": [
+        "Voids or comps are rising and the venue cannot explain which are avoidable.",
+        "A leader can review incidents with enough detail to assign corrective actions."
+      ],
+      "contraindications": [
+        "Do not use the huddle to blame staff without identifying process causes.",
+        "Do not review losses if the venue will not track whether follow-up actions were completed."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 2,
+      "proof_of_completion": [
+        "A short review cadence exists for avoidable voids and comps.",
+        "Each reviewed incident has a likely cause and named follow-up action.",
+        "The venue can distinguish repeatable process losses from true one-off exceptions."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "commercial_and_control_loops",
+        "leadership_and_management_rhythm",
+        "learning_and_improvement"
+      ],
+      "failure_family_ids": [
+        "control_loop_failure",
+        "accountability_failure",
+        "learning_failure"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "id": "tool_86_board_template",
+      "name": "86 board template",
+      "description": "Visible status board for depletion risk, substitutions, and item availability decisions before they reach the guest as surprise.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: stock truth should be shared before service pressure turns it into confusion",
+      "status": "review",
+      "category": "inventory",
+      "format": "status_board",
+      "usage_moment": "Use before service and update whenever item availability materially changes.",
+      "expected_output": "A visible list of 86 items, depletion risks, substitutions, and sell-through priorities.",
+      "adaptation_variables": [
+        "menu_size",
+        "critical_items",
+        "substitution_policy",
+        "update_owner"
+      ],
+      "block_ids": [
+        "blk_daily_86_board"
+      ]
+    },
+    {
+      "id": "tool_arrival_pacing_board",
+      "name": "Arrival pacing board",
+      "description": "Live board for reservation waves, walk-ins, seat release timing, and front-door pacing decisions.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: intake shaping needs a shared live surface, not private judgment",
+      "status": "review",
+      "category": "host",
+      "format": "live_board",
+      "usage_moment": "Use during service to track arrival pressure and seat release decisions in real time.",
+      "expected_output": "A current front-door view of waves, waits, release logic, and emerging pacing risk.",
+      "adaptation_variables": [
+        "reservation_density",
+        "walk_in_volume",
+        "hosting_model",
+        "table_release_rules"
+      ],
+      "block_ids": [
+        "blk_build_arrival_pacing_board"
+      ]
+    },
+    {
+      "id": "tool_bar_priority_board",
+      "name": "Bar priority board",
+      "description": "Visual lane that isolates the drinks most likely to block guest flow, table turns, or recovery moments if they sit in the general queue.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: priority surfaces should make blocking work unmistakably visible",
+      "status": "review",
+      "category": "beverage",
+      "format": "priority_board",
+      "usage_moment": "Use during live bar service when certain tickets need protected handling to preserve table flow.",
+      "expected_output": "A short visible queue of table-critical drink tickets with explicit entry and clearing rules.",
+      "adaptation_variables": [
+        "bar_layout",
+        "ticket_volume",
+        "service_style",
+        "priority_definition"
+      ],
+      "block_ids": [
+        "blk_bar_ticket_priority_lane"
+      ]
+    },
+    {
+      "id": "tool_closing_reset_checklist",
+      "name": "Closing reset checklist",
+      "description": "Close-down checklist covering stock, prep, cleanliness, unresolved issues, and anything that would poison the next day's readiness if left implicit.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: reset discipline should preserve the next operating cycle, not just finish the current one",
+      "status": "review",
+      "category": "controls",
+      "format": "checklist",
+      "usage_moment": "Use at close before team members leave and before unresolved issues are handed over.",
+      "expected_output": "A signed close record with completed reset items, unresolved blockers, and explicit carry-forward actions.",
+      "adaptation_variables": [
+        "daypart",
+        "station_count",
+        "handover_model",
+        "critical_assets"
+      ],
+      "block_ids": [
+        "blk_closing_reset_check"
+      ]
+    },
+    {
+      "id": "tool_floor_walk_sheet",
+      "name": "Floor walk sheet",
+      "description": "Timed observation sheet for live coaching, escalation checks, guest-flow pressure, and the moments where a manager should intervene rather than watch passively.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: management presence should be guided by real risk signals, not vague attentiveness",
+      "status": "review",
+      "category": "leadership",
+      "format": "observation_sheet",
+      "usage_moment": "Use during critical service windows while the manager is moving the floor deliberately.",
+      "expected_output": "A short record of observed pressure points, coaching actions, escalation events, and follow-up needs.",
+      "adaptation_variables": [
+        "peak_window",
+        "service_nodes",
+        "guest_flow_profile",
+        "manager_capacity"
+      ],
+      "block_ids": [
+        "blk_manager_floor_walk"
+      ]
+    },
+    {
+      "id": "tool_peak_window_plan",
+      "name": "Peak-window plan",
+      "description": "Simple plan that fixes where the manager stands, what they watch, and what triggers intervention during the venue's highest-risk windows.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: leadership deployment needs a visible plan tied to real pressure moments",
+      "status": "review",
+      "category": "leadership",
+      "format": "deployment_plan",
+      "usage_moment": "Use before and during the venue's highest-risk service windows.",
+      "expected_output": "A written manager coverage plan with zones, watch targets, and intervention triggers.",
+      "adaptation_variables": [
+        "peak_window",
+        "pressure_nodes",
+        "manager_count",
+        "escalation_paths"
+      ],
+      "block_ids": [
+        "blk_manager_peak_window_plan"
+      ]
+    },
+    {
+      "id": "tool_prep_sheet_template",
+      "name": "Prep sheet template",
+      "description": "Role-based prep tracker with quantities, cutoffs, owner names, and completion visibility for the items that protect service readiness.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: readiness improves when prep becomes explicit, visible, and reviewable",
+      "status": "review",
+      "category": "kitchen",
+      "format": "tracker",
+      "usage_moment": "Use before service and during prep handovers to verify readiness against explicit ownership.",
+      "expected_output": "A prep tracker showing what is done, what is not, who owns it, and what cutoff or quantity applies.",
+      "adaptation_variables": [
+        "menu_daypart",
+        "prep_lines",
+        "par_levels",
+        "owner_roles"
+      ],
+      "block_ids": [
+        "blk_standardize_prep_sheet"
+      ]
+    },
+    {
+      "id": "tool_training_checklist",
+      "name": "Training checklist",
+      "description": "Role-specific training checklist with live signoff points so new and existing team members can be coached against explicit service standards.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: capability grows when standards become observable and signoff-able",
+      "status": "review",
+      "category": "training",
+      "format": "checklist",
+      "usage_moment": "Use during onboarding, refresh training, and manager coaching for service roles.",
+      "expected_output": "A signed checklist of critical behaviors, observations, and capability gaps by role.",
+      "adaptation_variables": [
+        "role_type",
+        "service_model",
+        "training_stage",
+        "coach_availability"
+      ],
+      "block_ids": [
+        "blk_build_floor_training"
+      ]
+    },
+    {
+      "id": "tool_void_review_template",
+      "name": "Void review template",
+      "description": "Structured review template for voids and comps that captures the incident, likely cause, preventability, and the corrective action to assign.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: control loops only tighten when loss incidents are explained and owned",
+      "status": "review",
+      "category": "controls",
+      "format": "review_template",
+      "usage_moment": "Use during the void and comp review huddle after avoidable loss incidents are identified.",
+      "expected_output": "A short review record with cause, preventability judgment, and named corrective action.",
+      "adaptation_variables": [
+        "loss_type",
+        "review_cadence",
+        "approval_rules",
+        "follow_up_owner"
+      ],
+      "block_ids": [
+        "blk_void_review_huddle"
+      ]
+    },
+    {
+      "id": "tool_waste_log",
+      "name": "Waste log",
+      "description": "Daily log for waste incidents, likely causes, and the next correction so recurring prep loss becomes visible enough to fix.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: loss visibility should feed learning and action, not passive record-keeping",
+      "status": "review",
+      "category": "controls",
+      "format": "log",
+      "usage_moment": "Use at end of day or after meaningful waste events to support a short loss review.",
+      "expected_output": "A dated waste record with cause notes, pattern tags, and the next corrective action.",
+      "adaptation_variables": [
+        "waste_categories",
+        "shift_structure",
+        "prep_model",
+        "review_owner"
+      ],
+      "block_ids": [
+        "blk_daily_waste_review"
+      ]
+    }
+  ]
+}

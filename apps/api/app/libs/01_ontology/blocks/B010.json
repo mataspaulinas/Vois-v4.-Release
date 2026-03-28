@@ -1,0 +1,165 @@
+{
+  "block_id": "B010",
+  "name": "Cross-Contamination Prevention",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Prevents the transfer of harmful bacteria and allergens between foods, surfaces, and equipment through colour-coded chopping boards, dedicated utensils, and workflow separation. This block addresses one of the most common causes of foodborne illness and EHO non-compliance findings in UK cafes.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Implement a colour-coded chopping board and utensil system to prevent bacterial cross-contamination",
+      "Establish physical and temporal workflow separation between raw and ready-to-eat food preparation",
+      "Create clear rules for equipment use, storage, and cleaning that prevent cross-contact",
+      "Address allergen cross-contamination through dedicated preparation areas and equipment",
+      "Train all staff to understand why cross-contamination occurs and how their actions prevent it"
+    ],
+    "secondary_objectives": [
+      "Reduce the risk of E. coli, Salmonella, Campylobacter, and Listeria transmission in the kitchen",
+      "Support HACCP compliance by controlling cross-contamination as a critical hazard",
+      "Eliminate confusion about which equipment to use for which task"
+    ]
+  },
+  "why_this_matters": "Cross-contamination is one of the four pillars of the Food Standards Agency's Safer Food Better Business (SFBB) framework — the '4 Cs' of Cleaning, Cooking, Chilling, and Cross-contamination. It occurs when harmful bacteria or allergens are transferred from one food, surface, or piece of equipment to another. In a cafe kitchen, this can happen in seconds: a knife used to cut raw chicken is then used to slice bread; a prep surface is wiped with a cloth that was previously used on raw meat; or a barista touches a nut-topped cake and then handles a customer's sandwich. The consequences range from customer illness to fatal allergic reactions. Campylobacter, the most common cause of food poisoning in the UK (with over 280,000 cases annually according to the FSA), is primarily transmitted through cross-contamination from raw poultry. E. coli O157, which can cause kidney failure, spreads through contact between raw and ready-to-eat foods. For cafes that handle both raw ingredients and ready-to-eat items like sandwiches, salads, and baked goods, the risk is particularly acute because the ready-to-eat items will not undergo further cooking to kill any transferred bacteria. EHO inspectors specifically look for evidence of cross-contamination controls: colour-coded boards, separate storage, clean-as-you-go practices, and staff knowledge. Failures in this area commonly result in a Food Hygiene Rating of 3 or below and may trigger a revisit inspection.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Purchase and implement a colour-coded chopping board system following the UK industry standard: Red for raw meat, Blue for raw fish, Yellow for cooked meat, Green for salad and fruit, Brown for vegetables, White for bakery and dairy. Label each board clearly and store them in a visible rack so the correct board is always easy to grab. If the cafe does minimal raw food preparation (many cafes do not handle raw meat), simplify to three boards minimum: one for allergen-free items, one for items containing allergens, and one general purpose. Assign dedicated utensils (knives, tongs, spoons) to each preparation area — do not allow a knife that has touched raw food to be used for ready-to-eat items without thorough washing and sanitising first. Inspect the kitchen layout: is there physical separation between raw food storage/preparation and ready-to-eat food preparation? At minimum, raw foods must be stored below ready-to-eat foods in the fridge to prevent drip contamination. Ideally, raw and ready-to-eat preparation happens on different surfaces. If space is limited, establish temporal separation: prepare raw items first, thoroughly clean and sanitise the surface, then prepare ready-to-eat items. Week 2: Brief all kitchen staff on the colour-coding system and the reasons behind it. Conduct a walk-through of the kitchen with the team, identifying every cross-contamination risk point and the control measure for each. Post a colour-code reference chart in the kitchen.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Cross-Contamination Prevention SOP covering: the colour-coding system, utensil assignment, workflow separation, fridge storage rules, cleaning procedures between tasks, and allergen cross-contact controls. Map the kitchen workflow to identify potential cross-contamination points — where do raw and ready-to-eat preparation zones overlap? Can the layout be improved to create better separation? Implement clean-as-you-go procedures: after any task involving raw food or allergens, the surface, utensils, and hands must be cleaned and sanitised before the next task begins. Provide colour-coded cleaning cloths that match the chopping board system — a red cloth for raw meat areas, green for salad prep areas, and so on. Establish allergen-specific controls: if the cafe serves nut-containing items alongside nut-free items, designate specific preparation areas, utensils, and storage for each. Consider the risk from shared equipment like toasters, blenders, and cake slicers. Train all kitchen staff to Level 2 Food Hygiene standard, which covers cross-contamination in detail. Conduct weekly kitchen inspections checking that colour-coding is being followed, equipment is properly assigned, and surfaces are being cleaned between tasks.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Cross-contamination prevention should be automatic muscle memory for all kitchen staff. Conduct quarterly internal audits that include observing food preparation practices during a normal service period — not just checking paperwork but watching what actually happens. Use ATP (adenosine triphosphate) swab testing on surfaces to objectively measure cleaning effectiveness — a surface that looks clean may still be contaminated. Track audit results over time and identify trends. Review the kitchen layout annually — could better equipment positioning reduce cross-contamination risk? Share best practices from industry sources such as the Chartered Institute of Environmental Health. Celebrate the team when audits show consistently high standards."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Purchase colour-coded chopping boards and a storage rack",
+        "Assign dedicated utensils to each preparation area",
+        "Inspect fridge storage to ensure raw foods are stored below ready-to-eat items",
+        "Establish physical or temporal separation between raw and ready-to-eat preparation",
+        "Post a colour-code reference chart in the kitchen",
+        "Brief all kitchen staff on the system and the reasons behind it",
+        "Conduct a kitchen walk-through identifying every cross-contamination risk point"
+      ],
+      "responsible": "Manager, Kitchen Lead"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft a Cross-Contamination Prevention SOP",
+        "Map the kitchen workflow and identify cross-contamination risk points",
+        "Implement clean-as-you-go procedures with colour-coded cleaning cloths",
+        "Establish allergen-specific preparation areas and dedicated equipment",
+        "Conduct weekly kitchen inspections for colour-coding and equipment compliance",
+        "Train all kitchen staff to Level 2 Food Hygiene standard",
+        "File SOPs, inspection records, and training records in the food safety folder"
+      ],
+      "responsible": "Manager, Kitchen Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly observational audits during normal service",
+        "Introduce ATP swab testing to verify surface cleanliness",
+        "Review kitchen layout annually for improved workflow separation",
+        "Track audit trends and share results with the team",
+        "Celebrate consistently high cross-contamination prevention standards"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Colour-Code Reference Chart (laminated, kitchen display)",
+    "Cross-Contamination Prevention SOP",
+    "Kitchen Workflow Map with risk points identified",
+    "Weekly Kitchen Inspection Checklist",
+    "Allergen Cross-Contact Control Plan"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T010-01",
+        "tool_name": "Colour-Code Reference Chart",
+        "level": "L1",
+        "format": "guide",
+        "owner_role": "Kitchen Lead",
+        "description": "Laminated A4 chart showing the colour-coded chopping board and utensil system with the food type assigned to each colour, posted in the kitchen for quick reference."
+      },
+      {
+        "tool_id": "T010-02",
+        "tool_name": "Cross-Contamination Prevention SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering colour-coding, utensil assignment, workflow separation, fridge storage rules, clean-as-you-go procedures, and allergen cross-contact controls."
+      },
+      {
+        "tool_id": "T010-03",
+        "tool_name": "Weekly Kitchen Cross-Contamination Inspection",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Weekly inspection checklist verifying colour-coded board use, utensil assignment, fridge storage order, surface cleanliness, and workflow separation compliance."
+      },
+      {
+        "tool_id": "T010-04",
+        "tool_name": "Kitchen Workflow Risk Map",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Visual map of the kitchen layout identifying all cross-contamination risk points with corresponding control measures, used for staff training and layout reviews."
+      },
+      {
+        "tool_id": "T010-05",
+        "tool_name": "Quarterly Cross-Contamination Audit",
+        "level": "L3",
+        "format": "audit",
+        "owner_role": "Owner",
+        "description": "Comprehensive quarterly audit covering observational checks during service, ATP swab test results, equipment condition, and staff knowledge assessment."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Colour-coded boards are purchased but staff revert to using the nearest available board during busy periods",
+    "Utensils migrate between preparation areas and are used interchangeably without cleaning",
+    "Clean-as-you-go procedures are skipped during peak times, leaving contaminated surfaces in use",
+    "Raw and ready-to-eat items are stored at the same level in the fridge, allowing drip contamination"
+  ],
+  "kpis": [
+    "100% compliance with colour-coded board usage observed in weekly inspections",
+    "Zero instances of raw food stored above ready-to-eat food in any fridge",
+    "Weekly kitchen inspections completed on schedule with all issues resolved within 24 hours",
+    "All kitchen staff can explain the colour-coding system and cross-contamination risks when asked"
+  ],
+  "dependencies": ["B009", "B011"],
+  "constraints": [
+    "Minimum six colour-coded chopping boards required for full implementation",
+    "Kitchen layout must allow at least temporal separation between raw and ready-to-eat preparation",
+    "All staff handling food must hold or be working towards Level 2 Food Hygiene certification"
+  ],
+  "time_load": {
+    "L1": "4 hours (equipment purchase, setup, staff briefing, kitchen walk-through)",
+    "L2": "8 hours (SOP drafting, workflow mapping, training, inspection setup)",
+    "L3": "2 hours/quarter (audits, ATP testing, layout reviews)"
+  },
+  "review_protocol": "Daily observation by kitchen lead during service. Weekly formal kitchen inspection. Monthly SOP compliance review. Quarterly comprehensive cross-contamination audit. Annual kitchen layout review.",
+  "meta": {
+    "summary_for_humans": "This block prevents harmful bacteria and allergens from transferring between foods, surfaces, and equipment through colour-coded boards, dedicated utensils, workflow separation, and clean-as-you-go procedures. It addresses one of the most common causes of foodborne illness.",
+    "implementation_risks": [
+      "Staff may resist colour-coding as unnecessary during busy periods — emphasise the why, not just the what",
+      "Small kitchen spaces make physical separation challenging — temporal separation is the fallback",
+      "Equipment investment is relatively low but must be maintained and replaced when worn"
+    ],
+    "notes_for_engine": "Activate for all cafes that prepare food on premises. Flag as urgent if signals indicate mixed-use equipment, no colour-coding system, raw/cooked food stored together, or EHO cross-contamination concerns.",
+    "tags": ["food_safety", "cross_contamination", "kitchen", "colour_coding", "SFBB", "hygiene", "HACCP", "equipment"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "block_id": "B028",
+  "name": "Order Accuracy Tracking",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Creates a data-driven system for measuring, analysing, and reducing order error rates over time, transforming anecdotal awareness of mistakes into systematic improvement. This block provides the measurement infrastructure that makes order accuracy a manageable, improvable metric.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish a permanent order error tracking system that captures every mistake",
+      "Categorise errors by type (wrong drink, wrong milk, wrong size, wrong food, missing modifier) to identify patterns",
+      "Calculate weekly and monthly error rates as a percentage of total orders served",
+      "Conduct root cause analysis on recurring error types to implement systemic fixes",
+      "Set error reduction targets and track progress towards them"
+    ],
+    "secondary_objectives": [
+      "Reduce ingredient waste from remade drinks and food items",
+      "Provide data for training decisions — focus training on the most common error types",
+      "Build a culture of quality where errors are learning opportunities, not failures"
+    ]
+  },
+  "why_this_matters": "You cannot improve what you do not measure. Most cafes are vaguely aware that order errors happen but have no data on how often, what types, or why. Without data, improvement is guesswork. The Order Accuracy Tracking system transforms error management from reactive ('Oh no, we got another one wrong') to proactive ('Our wrong-milk error rate has dropped from 2.1% to 0.8% since we introduced cup marking'). In commercial terms, every error has a cost: the wasted ingredients of the incorrect drink (approximately £1.50-2.00), the time to remake it (delaying all subsequent orders), the potential loss of a customer who decides the cafe is unreliable, and the occasional negative review that deters new customers. For a cafe serving 200 drinks per day with a 4% error rate, that is 8 errors per day, approximately £80-100 per week in direct waste costs, and potentially far more in lost customer lifetime value. Error tracking also reveals operational insights that go beyond individual mistakes. If errors spike on specific days or shifts, there may be a staffing or training issue. If errors cluster around certain menu items, the item may need clearer labelling on the POS or the recipe may need simplification. If errors increase after a menu change, the change may not have been communicated effectively. This data turns operational noise into actionable intelligence. The UK hospitality sector has increasingly adopted data-driven approaches to service quality, with chains like Pret and Costa tracking error rates systematically. Independent cafes that adopt similar discipline gain a significant competitive advantage in consistency.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create a simple error tracking log — a notebook or printed sheet near the bar where any team member records every order error. The log should capture: date, time, what was ordered, what was made, the error type (pre-defined categories: wrong drink, wrong milk, wrong size, missing modifier, wrong food, other), the likely cause, and how it was resolved. Make it clear: this is not a blame tool. Errors are recorded to find patterns, not to punish individuals. If staff fear blame, they will hide errors and the data will be useless. The manager reinforces this daily: 'Thank you for logging that — it helps us all get better.' Start recording from Day 1. Week 2: After one week, count the total orders served (from POS data) and the total errors recorded. Calculate the error rate: errors divided by total orders, multiplied by 100. This is the baseline. Review the error categories: which type is most common? This tells you where to focus first. Share the results with the team: 'We served 1,200 orders this week and had 42 errors — that is a 3.5% error rate. Our most common error was wrong milk, happening 18 times. Let us focus on fixing that.' Set a target: reduce the overall error rate by 1 percentage point within 4 weeks.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Move from a manual log to a structured tracking system. Create a weekly error report that automatically calculates error rates by category, identifies trends, and compares against targets. If the POS system has error or void tracking, integrate that data. Implement root cause analysis for the top 3 error categories. For each: what is causing the error? Is it a POS issue (items labelled confusingly)? A communication issue (orders not reaching the bar clearly)? A training issue (staff not knowing the menu)? A workflow issue (similar drinks being confused during peak)? For each root cause, implement a specific fix and track whether the error rate for that category decreases. Create a monthly Order Accuracy Report for management review, showing: total orders, total errors, error rate, breakdown by category, trend over time, root causes identified, fixes implemented, and impact of fixes. Establish an error review as part of the weekly team meeting (5 minutes): share the numbers, highlight improvements, and discuss any new patterns. By Week 8, the error rate should show measurable decline and the tracking system should be routine.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Error tracking should be a permanent, valued part of cafe operations. Display the current error rate in the staff area with the target and trend line — make it visible. Celebrate milestones: when the error rate drops below 2% for the first time, when the team achieves an error-free day, or when a specific error type is eliminated. Conduct quarterly deep-dive analyses: are there time-of-day patterns? Staff-specific patterns? Menu-item patterns? Use these insights to refine training, processes, and the menu itself. Consider implementing a digital error tracking system that integrates with the POS for automatic analysis. Benchmark the cafe's error rate against industry standards and set stretch targets. Integrate error tracking data with customer satisfaction data (B034) to understand the relationship between accuracy and customer retention."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create a simple error tracking log with pre-defined error categories",
+        "Place the log near the bar and explain its purpose to all staff",
+        "Emphasise non-blame culture: errors are learning data, not performance failures",
+        "Begin recording every order error from Day 1",
+        "After one week, calculate the baseline error rate from POS and error log data",
+        "Identify the most common error type from the first week's data",
+        "Set a 4-week target to reduce the error rate by 1 percentage point"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a structured weekly error report with category breakdowns and trends",
+        "Conduct root cause analysis for the top 3 error categories",
+        "Implement specific fixes for each identified root cause",
+        "Create a monthly Order Accuracy Report for management review",
+        "Integrate error discussion into the weekly team meeting (5 minutes)",
+        "Track the impact of each fix on the relevant error category",
+        "Link POS void/refund data to the error tracking system where possible"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Display current error rate with target and trend in the staff area",
+        "Celebrate error rate milestones and error-free achievements",
+        "Conduct quarterly deep-dive analyses for time, staff, and menu-item patterns",
+        "Evaluate digital error tracking integration with POS system",
+        "Benchmark error rate against industry standards and set stretch targets"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Order Error Tracking Log (daily use)",
+    "Weekly Error Rate Report",
+    "Monthly Order Accuracy Report",
+    "Root Cause Analysis Template",
+    "Error Rate Trend Dashboard"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T028-01",
+        "tool_name": "Order Error Tracking Log",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "All Staff",
+        "description": "Daily log for recording every order error with pre-defined categories: wrong drink, wrong milk, wrong size, missing modifier, wrong food, and other. Includes fields for likely cause and resolution."
+      },
+      {
+        "tool_id": "T028-02",
+        "tool_name": "Weekly Error Rate Calculator",
+        "level": "L1",
+        "format": "calculator",
+        "owner_role": "Manager",
+        "description": "Simple calculator template: total errors divided by total orders served, multiplied by 100, with category breakdowns and comparison against target and previous weeks."
+      },
+      {
+        "tool_id": "T028-03",
+        "tool_name": "Root Cause Analysis Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Structured template for investigating recurring error types: description of the error pattern, possible causes, evidence review, root cause determination, fix implemented, and follow-up plan."
+      },
+      {
+        "tool_id": "T028-04",
+        "tool_name": "Monthly Order Accuracy Report",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Monthly report showing total orders, total errors, error rate, category breakdown, trend over time, root causes addressed, fixes implemented, and their impact."
+      },
+      {
+        "tool_id": "T028-05",
+        "tool_name": "Quarterly Error Deep-Dive Analysis",
+        "level": "L3",
+        "format": "audit",
+        "owner_role": "Owner",
+        "description": "Quarterly analysis examining error patterns by time of day, day of week, staff member, menu item, and order complexity, with recommendations for systemic improvements."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Staff do not log errors because they fear blame, producing artificially low error data",
+    "Data is collected but never analysed or acted upon, making the tracking pointless",
+    "Root causes are identified but fixes are not implemented because they require investment or change",
+    "Error tracking becomes a bureaucratic burden that staff resent rather than a useful improvement tool"
+  ],
+  "kpis": [
+    "Error rate below 2% of total orders within 8 weeks of tracking launch",
+    "100% of order errors recorded in the tracking log",
+    "Root cause analysis completed for any error category exceeding 1% of orders",
+    "Error rate showing consistent downward trend month-on-month"
+  ],
+  "dependencies": ["B025", "B026", "B027"],
+  "constraints": [
+    "Error tracking must be non-punitive — the system loses value if staff hide errors",
+    "POS data is needed to calculate error rates — manual counting is a fallback",
+    "Root cause fixes may require POS changes, training investment, or workflow redesign"
+  ],
+  "time_load": {
+    "L1": "2 hours (log creation, team briefing, first week calculation)",
+    "L2": "4 hours (report templates, root cause analysis, team meeting integration)",
+    "L3": "2 hours/quarter (deep-dive analysis, benchmarking, system review)"
+  },
+  "review_protocol": "Daily error log review by shift manager. Weekly error rate calculation and category review. Monthly Order Accuracy Report. Quarterly deep-dive analysis. Annual benchmarking and target reset.",
+  "meta": {
+    "summary_for_humans": "This block creates a data-driven system for tracking every order error, calculating error rates, identifying the most common error types through root cause analysis, and systematically reducing mistakes over time. It transforms error awareness from anecdotal to measurable.",
+    "implementation_risks": [
+      "The biggest risk is a blame culture that discourages honest error reporting",
+      "Data collection requires daily discipline — if logging stops for a week, trends are lost",
+      "Management must act on the data — tracking without action breeds cynicism"
+    ],
+    "notes_for_engine": "Activate after B025, B026, and B027 are in place. Flag as urgent if signals indicate high error rates, frequent remakes, customer complaints about wrong orders, or significant ingredient waste.",
+    "tags": ["customer_experience", "order_accuracy", "tracking", "data", "errors", "quality", "measurement", "improvement"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

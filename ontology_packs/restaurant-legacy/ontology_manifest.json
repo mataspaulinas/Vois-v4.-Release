@@ -1,0 +1,23 @@
+{
+  "manifest_version": 1,
+  "ontology_id": "restaurant-legacy",
+  "display_name": "Restaurant Legacy Compatibility Pack",
+  "version": "v8",
+  "adapter_id": "restaurant",
+  "core_canon_version": "v3",
+  "status": "compatibility",
+  "pack_kind": "compatibility_archive",
+  "description": "Historical restaurant ontology kept mountable during the Phase 9 cutover.",
+  "vertical_aliases": ["restaurant"],
+  "runtime": {
+    "ontology_bundle": "runtime/published/v8/ontology.json",
+    "adapter_pack": "runtime/adapter/v1/adapter.json",
+    "engine_mount_root": "runtime/mount_v1",
+    "support": {
+      "standards_index": "runtime/standards/index.json",
+      "reference_index": "runtime/reference/index.json",
+      "kb_index": "runtime/kb/index.json",
+      "intake_keywords": "runtime/intake_keywords.json"
+    }
+  }
+}

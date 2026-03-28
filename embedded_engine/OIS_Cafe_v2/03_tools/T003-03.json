@@ -1,0 +1,76 @@
+{
+  "identification": {
+    "tool_id": "T003-03",
+    "tool_name": "Time-Temperature Stock Assessment Matrix",
+    "block_id": "B003"
+  },
+  "tool_design": {
+    "format": "guide",
+    "role_in_intervention": "Manager decision aid for whether stock can be kept, used soon, transferred, or discarded.",
+    "adaptation_variables": [
+      "product_risk_profile",
+      "time_thresholds",
+      "freezer_rules"
+    ],
+    "usage_moment": "During live stock assessment in an excursion",
+    "expected_output": "Defensible stock decision linked to time and temperature evidence",
+    "linked_blocks": [
+      "B003"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The guide is too detached from the use moment.",
+        "what_can_go_wrong": "Managers improvise instead of using evidence.",
+        "early_signals": [
+          "People ask what to do instead of opening it",
+          "The guide is only read once"
+        ],
+        "prevention": [
+          "Keep the key table near the top",
+          "Train with a real scenario"
+        ],
+        "mitigation": [
+          "Extract a quick reference if needed",
+          "Pair with the incident form"
+        ],
+        "if_occurs_next_signals": [
+          "reference_tool_nonadoption"
+        ],
+        "possible_successor_blocks": [
+          "B003"
+        ]
+      },
+      {
+        "warning": "Guidance is read but not converted into an action.",
+        "what_can_go_wrong": "The team feels informed but stock decisions stay vague.",
+        "early_signals": [
+          "Conversation happens with no final decision",
+          "The same uncertainty repeats"
+        ],
+        "prevention": [
+          "State the next action explicitly",
+          "Link guide to incident form"
+        ],
+        "mitigation": [
+          "Rebrief on handoff from guide to action",
+          "Review a real recent case"
+        ],
+        "if_occurs_next_signals": [
+          "guidance_without_execution"
+        ],
+        "possible_successor_blocks": [
+          "B003"
+        ]
+      }
+    ]
+  },
+  "content": "# Time-Temperature Stock Assessment Matrix\n\n**Tool ID:** T003-03  \n**Block:** B003 (Temperature Excursion Response)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L2  \n**Format:** Guide  \n**Role:** Manager / Food Safety Lead  \n**Time Required:** 2-5 minutes in a live incident  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this guide when you have a real reading, an estimated time out of range, and need to decide what happens to the stock.\n\nThis tool exists to stop two bad responses:\n- throwing everything away without thinking\n- keeping unsafe food because the loss feels painful\n\n---\n## How To Use It\n\n1. Confirm the product temperature.\n2. Estimate the time out of safe control as honestly as possible.\n3. Match the product to the nearest category below.\n4. If duration is unknown, take the safer decision.\n\n---\n## Fridge Stock Decision Matrix\n\n| Product Temperature | Estimated Time Above Safe Limit | Decision |\n|---|---|---|\n| Below `8C` | Any duration | Keep, move to a safe unit, monitor |\n| `8-12C` | Under 2 hours | Use soon or move to safe storage with manager approval |\n| `8-12C` | 2-4 hours | High risk. Use only if justified by process and manager approves; otherwise discard |\n| `8-12C` | Over 4 hours | Discard |\n| Above `12C` | Any duration | Discard |\n\n---\n## Freezer Stock Decision Matrix\n\n| Product State | Temperature / Condition | Decision |\n|---|---|---|\n| Still fully frozen | Above target but still hard-frozen | Transfer and monitor |\n| Softening but not thawed | Borderline | Manager decision and urgent transfer |\n| Thawed or clearly refrozen risk | Unsafe state | Discard |\n\n---\n## High-Risk Product Prompts\n\n| Product Type | Be More Conservative Because |\n|---|---|\n| Milk, cream, soft cheese | Supports rapid bacterial growth |\n| Ready-to-eat fillings | No further kill step before service |\n| Cream cakes / chilled desserts | High-risk dairy and guest-facing ready-to-eat item |\n| Cooked meats | High consequence if mishandled |\n\n---\n## Never Use These As Decision Shortcuts\n\n- Smell test\n- \"It looks fine\"\n- \"We cannot afford to waste it\"\n- Guessing a shorter time than is realistic\n- Assuming the fridge will pull everything safe again\n\n---\n## If Unsure\n\nWhen evidence is weak, choose the safer path and document why. The cost of waste is smaller than the cost of serving unsafe food.\n\n---\n## Connected Resources\n\n**Use with:**\n- T003-01 - Temperature Excursion Response Card\n- T003-02 - Excursion Incident Report Form\n- T003-05 - Temperature Excursion SOP & Drill Guide\n\n---\n\n*Tool Version 2.0 - a fast decision aid for the hardest judgement in the incident.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T003-03_time_temperature_stock_assessment_matrix.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

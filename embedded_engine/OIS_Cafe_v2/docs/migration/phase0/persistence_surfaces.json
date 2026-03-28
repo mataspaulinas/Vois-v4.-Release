@@ -1,0 +1,57 @@
+[
+  {
+    "surface": "project metadata and active signals",
+    "path_pattern": "05_data/venues/<slug>/project.json",
+    "notes": "Primary venue record including workflow stage, health state, and current_signals."
+  },
+  {
+    "surface": "assessment snapshots",
+    "path_pattern": "05_data/venues/<slug>/assessments/*.json",
+    "notes": "Saved AI/manual intake payloads plus report and constraint output when present."
+  },
+  {
+    "surface": "operational plan state",
+    "path_pattern": "05_data/venues/<slug>/operational_plan.json",
+    "notes": "Mutable task graph, review state, comments, assignments, due dates, and deliverables."
+  },
+  {
+    "surface": "progress feed",
+    "path_pattern": "05_data/venues/<slug>/progress/entries.json",
+    "notes": "Timeline notes, updates, and escalation-like activity."
+  },
+  {
+    "surface": "copilot/chat threads",
+    "path_pattern": "05_data/venues/<slug>/chat_history/*.json",
+    "notes": "Thread index and per-thread message history."
+  },
+  {
+    "surface": "signal lifecycle history",
+    "path_pattern": "05_data/venues/<slug>/signal_history.json",
+    "notes": "Activation/deactivation log written when assessments replace current_signals."
+  },
+  {
+    "surface": "workspace users",
+    "path_pattern": "05_data/system/users.json",
+    "notes": "Static workspace actor catalog used for assignments and audit metadata."
+  },
+  {
+    "surface": "audit log",
+    "path_pattern": "05_data/system/audit_events.json",
+    "notes": "System-wide event trail for plan generation, progress, chat, and review actions."
+  },
+  {
+    "surface": "notifications",
+    "path_pattern": "05_data/system/notifications.json",
+    "notes": "Notification center state."
+  },
+  {
+    "surface": "brands",
+    "path_pattern": "05_data/system/brands.json",
+    "notes": "Brand records referenced by project create/update flows."
+  },
+  {
+    "surface": "runtime secrets/config",
+    "path_pattern": ".env",
+    "notes": "Passphrase hash, Anthropic key, and runtime knobs are persisted outside app data."
+  }
+]

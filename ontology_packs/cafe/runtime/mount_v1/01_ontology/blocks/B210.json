@@ -1,0 +1,167 @@
+{
+  "block_id": "B210",
+  "name": "Industry Benchmarking",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M11: Expansion & Market Positioning",
+  "state": "enriched",
+  "purpose": "Establishes a systematic industry benchmarking programme that compares the cafe's performance, practices, and positioning against competitors, industry averages, and best-in-class operators. This block provides frameworks for financial benchmarking, operational benchmarking, customer experience comparison, and strategic positioning analysis — ensuring the owner makes decisions based on market reality rather than assumptions.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Identify and track key industry benchmarks across financial, operational, and customer experience metrics",
+      "Conduct regular competitor analysis covering pricing, menu, service quality, digital presence, and positioning",
+      "Compare the cafe's financial performance against published industry averages for cost ratios and profitability",
+      "Visit and evaluate competitor and aspirational cafes using a structured assessment framework",
+      "Use benchmarking insights to set informed targets and prioritise improvement initiatives"
+    ],
+    "secondary_objectives": [
+      "Identify industry trends early by monitoring what leading operators are doing differently",
+      "Discover best practices from other sectors (hospitality, retail, food service) that can be adapted for cafe use",
+      "Build a network of non-competing cafe owners for shared benchmarking and mutual learning",
+      "Create a competitive intelligence database that informs strategic decisions over time"
+    ]
+  },
+  "why_this_matters": "Most independent cafe owners operate in an information vacuum. They know their own numbers — revenue, costs, profit — but have no idea how those numbers compare to similar cafes. Is a 65% gross margin good or could it be 72%? Is spending 32% of revenue on staff costs typical or excessive? Is a 4.3-star Google rating competitive or below par for the area? Without benchmarks, every decision is made in the dark. Industry benchmarking provides the context that transforms raw numbers into meaningful insights. The UK cafe sector has well-established benchmarks: food cost should typically sit between 28-35% of food revenue, staff costs between 28-35% of total revenue, and rent between 8-15% of revenue for a healthy business. The average UK independent cafe generates approximately £250,000-400,000 in annual revenue with a net profit margin of 5-15%. If a cafe's numbers fall significantly outside these ranges, it signals either a structural problem (costs too high, prices too low, wrong location) or a competitive advantage worth understanding and protecting. Beyond financial benchmarks, operational and experiential comparisons reveal where the cafe excels and where it lags. A structured competitor visit — ordering a coffee, observing workflow, noting menu structure, assessing ambience, checking the toilets — produces insights that no spreadsheet can capture. Seeing how a thriving cafe in another town handles peak-hour queuing, displays pastries, or trains its staff to upsell can inspire improvements that would never be discovered internally. Industry benchmarking is not about copying competitors; it is about understanding the landscape so the cafe can position itself intentionally rather than accidentally.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Identify the competitive set. List every cafe within a 15-minute walk (or 5-minute drive for suburban locations) that competes for the same customer. For each, note: name, type (independent, chain, specialty, bakery cafe), approximate price point (cost of a flat white), Google rating and number of reviews, and any obvious differentiator. This is the local competitive set. Separately, identify 3-5 aspirational cafes — places you admire or that represent what you want your cafe to become. These may be in other cities or even other countries. Record their names and what specifically you admire about them. Week 2: Conduct a basic financial benchmark. Gather the cafe's current figures for: revenue per month, cost of goods sold (COGS) as a percentage of revenue, staff costs as a percentage of revenue, rent as a percentage of revenue, and net profit margin. Compare against published UK cafe industry averages (available from industry reports, accountancy firms specialising in hospitality, or trade associations). Identify the largest gaps — where the cafe is furthest from the healthy range. For example, if staff costs are 40% of revenue against an industry target of 30-35%, that is a clear priority area. Create a simple Benchmarking Dashboard showing the cafe's key metrics alongside industry averages, updated monthly.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Competitor Visit Programme. Schedule visits to 2-3 local competitors and 1-2 aspirational cafes per quarter. Use a structured Competitor Visit Scorecard covering: exterior and signage (kerb appeal), interior design and ambience, menu range and pricing, coffee quality (order a flat white — the universal benchmark), food quality, service speed and friendliness, cleanliness, digital presence (website, social media, Google Business profile), and any notable innovation or differentiator. Score each element on a consistent scale and compare against your own cafe. Build a Competitive Intelligence Database — a spreadsheet or document compiling all competitor data: pricing, menu changes, new offerings, marketing campaigns, renovations, staffing changes, and online reviews. Update this quarterly. Expand financial benchmarking beyond basic ratios: track revenue per seat, revenue per square metre, average transaction value, customer count, and drinks per labour hour. Compare these against industry data and against your own performance over time. Join industry networks: the Specialty Coffee Association, the UK Coffee Leaders group, local hospitality business forums, or independent cafe owner communities on social media. These provide access to benchmarking data, best practice sharing, and peer support.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Benchmarking should now inform every strategic decision. Produce a quarterly Benchmarking Report synthesising: financial performance versus industry averages, competitor landscape changes, trend observations from aspirational visits, and recommended actions based on insights. Present this to the management team and use it to set quarterly improvement targets. Establish a benchmarking partnership with 2-3 non-competing cafe owners in other areas — share financial data confidentially to create a small peer group with meaningful comparison data. This is enormously valuable because published industry averages are broad, while a peer group of similar-sized independents provides precise, relevant benchmarks. Attend industry trade shows (London Coffee Festival, World of Coffee) and conferences to benchmark against international standards and emerging trends. Track the cafe's competitive position over time — is the gap closing against stronger competitors? Are weaker competitors catching up? Use this longitudinal data to adjust strategy. Commission an annual mystery shopper assessment comparing the cafe against its top 3 competitors on a consistent scorecard — this external perspective is invaluable for calibrating self-assessment bias."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "List all cafes in the local competitive set with type, pricing, and Google rating",
+        "Identify 3-5 aspirational cafes that represent the cafe's target standard",
+        "Gather current financial figures: COGS %, staff cost %, rent %, net profit margin",
+        "Compare financial metrics against published UK cafe industry averages",
+        "Identify the largest gaps between current performance and healthy benchmarks",
+        "Create a simple Benchmarking Dashboard showing key metrics versus industry norms",
+        "Schedule the first competitor visit within the next fortnight"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Competitor Visit Scorecard with consistent scoring across all evaluation criteria",
+        "Schedule quarterly competitor visits: 2-3 local and 1-2 aspirational per quarter",
+        "Build a Competitive Intelligence Database tracking competitor pricing, menus, and changes",
+        "Expand financial benchmarking to include revenue per seat, per square metre, and per labour hour",
+        "Join industry networks and trade associations for access to benchmarking data and peer support",
+        "Track average transaction value, customer count, and drinks per labour hour against benchmarks",
+        "Begin collecting and organising industry reports and published benchmarking data"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Produce a quarterly Benchmarking Report with financial, competitive, and trend insights",
+        "Establish a confidential benchmarking partnership with 2-3 non-competing cafe owners",
+        "Attend industry trade shows and conferences for international benchmarking exposure",
+        "Track competitive position longitudinally over 12+ months to identify trajectory",
+        "Commission annual mystery shopper assessments comparing against top competitors",
+        "Use benchmarking insights to set evidence-based quarterly improvement targets"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Local Competitive Set map and database",
+    "Financial Benchmarking Dashboard",
+    "Competitor Visit Scorecard",
+    "Competitive Intelligence Database",
+    "Quarterly Benchmarking Report template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T210-01",
+        "tool_name": "Financial Benchmarking Dashboard",
+        "level": "L1",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly dashboard comparing the cafe's key financial metrics (COGS %, staff cost %, rent %, net margin, ATV, revenue per seat) against published UK cafe industry averages, with traffic-light indicators for each metric."
+      },
+      {
+        "tool_id": "T210-02",
+        "tool_name": "Competitor Visit Scorecard",
+        "level": "L2",
+        "format": "scorecard",
+        "owner_role": "Owner",
+        "description": "Structured assessment form for evaluating competitor and aspirational cafes: exterior, interior, menu, coffee quality, food, service, cleanliness, digital presence, and innovation, with numerical scoring and comparison notes."
+      },
+      {
+        "tool_id": "T210-03",
+        "tool_name": "Competitive Intelligence Database",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Ongoing database of competitor information: pricing by product category, menu changes, marketing campaigns, renovations, online review trends, and notable innovations. Updated quarterly with dated entries."
+      },
+      {
+        "tool_id": "T210-04",
+        "tool_name": "Quarterly Benchmarking Report Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Report template synthesising financial performance vs. benchmarks, competitor landscape changes, aspirational visit insights, industry trend observations, and recommended strategic actions for the next quarter."
+      },
+      {
+        "tool_id": "T210-05",
+        "tool_name": "Mystery Shopper Comparison Checklist",
+        "level": "L3",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Assessment checklist used by mystery shoppers to evaluate the cafe alongside its top 3 competitors on identical criteria: approach, greeting, order process, wait time, product quality, ambience, cleanliness, and overall impression."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Benchmarking data is collected but never acted upon — reports are produced but gather dust while the same problems persist",
+    "Competitor visits become superficial tourism rather than structured assessment — visiting a nice cafe is enjoyable but useless without a scoring framework",
+    "Financial benchmarks are compared against inappropriate reference sets — a specialty coffee bar in Shoreditch has different economics to a village tea room",
+    "Benchmarking becomes obsessive competitor-watching that distracts from internal improvement and original strategy"
+  ],
+  "kpis": [
+    "Financial benchmarking dashboard updated monthly with all key metrics compared to industry averages",
+    "Quarterly competitor visits completed on schedule with documented scorecards for all visits",
+    "At least one actionable improvement initiative launched per quarter based directly on benchmarking insights",
+    "The cafe's key financial metrics trending toward or exceeding healthy industry benchmarks over 12 months"
+  ],
+  "dependencies": ["B164", "B165"],
+  "constraints": [
+    "Published industry benchmarks are averages that may not reflect the cafe's specific format, location, or market segment",
+    "Competitor pricing and operational data is not always publicly available — some benchmarking requires inference rather than fact",
+    "Confidential benchmarking partnerships require trust and mutual commitment that takes time to build"
+  ],
+  "time_load": {
+    "L1": "3 hours (competitive set mapping, financial data gathering, first benchmark comparison)",
+    "L2": "8 hours (scorecard development, quarterly visits, database setup, industry network joining)",
+    "L3": "4 hours/quarter (benchmarking report production, peer group sharing, conference attendance, mystery shopper review)"
+  },
+  "review_protocol": "Monthly financial benchmark update by owner or manager. Quarterly competitor visit programme and benchmarking report. Annual strategic review integrating a full year of benchmarking data. Ongoing competitive intelligence updates as changes are observed.",
+  "meta": {
+    "summary_for_humans": "This block creates a systematic benchmarking programme that compares the cafe's financial performance, operations, and customer experience against competitors and industry standards. It replaces gut feeling with data, enabling evidence-based strategic decisions.",
+    "implementation_risks": [
+      "Benchmarking must inspire action, not paralysis — seeing competitors do well should motivate improvement, not despair",
+      "Financial benchmarks vary significantly by region, format, and market segment — always compare like with like",
+      "Avoid the trap of copying competitors rather than learning from them — benchmarking informs strategy, it does not dictate it"
+    ],
+    "notes_for_engine": "Activate when signals indicate strategic uncertainty, pricing confidence issues, competitive pressure, or desire for data-driven decision making. Pairs with B164 (business planning) and B165 (market positioning).",
+    "tags": ["benchmarking", "competitor_analysis", "financial_metrics", "industry_standards", "strategy", "market_positioning", "competitive_intelligence", "KPIs"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

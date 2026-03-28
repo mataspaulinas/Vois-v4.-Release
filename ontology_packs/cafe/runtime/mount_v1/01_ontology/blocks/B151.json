@@ -1,0 +1,157 @@
+{
+  "block_id": "B151",
+  "name": "Atmosphere Design Programme",
+  "version": "v1.0",
+  "domain": "D09_physical_environment",
+  "module": "M09: Cafe Design & Atmosphere",
+  "state": "enriched",
+  "purpose": "Establishes a comprehensive approach to designing and refining the cafe's atmosphere, encompassing lighting, acoustics, furniture, colour palette, and sensory experience. Ensures the physical environment actively supports the brand identity and encourages longer dwell times and repeat visits.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Audit the current atmosphere across all sensory dimensions — visual, auditory, olfactory, tactile, and thermal",
+      "Define a target atmosphere profile aligned with brand values and customer expectations",
+      "Create a phased improvement plan covering lighting, music, seating comfort, and decor",
+      "Establish seasonal and time-of-day atmosphere variations to maximise appeal across trading periods",
+      "Develop measurement mechanisms to track atmosphere impact on dwell time and spend"
+    ],
+    "secondary_objectives": [
+      "Reduce customer complaints related to noise, temperature, or seating discomfort",
+      "Create Instagrammable moments and visual touchpoints that drive organic social sharing",
+      "Support staff wellbeing by ensuring the working environment is pleasant and ergonomic"
+    ]
+  },
+  "why_this_matters": "The atmosphere of a cafe is not merely decoration — it is a silent salesperson that determines whether a customer stays for five minutes or fifty, whether they order a second coffee or leave after one. Research consistently shows that UK cafe customers rank ambience as a top-three factor in choosing where to spend their time and money, often above food quality. In an era where specialty coffee quality has become table stakes, atmosphere is the differentiator that separates thriving independents from those struggling against chain competition.\n\nPoor atmosphere design manifests in measurable ways: low average transaction values, short dwell times, poor Google review scores mentioning noise or discomfort, and an inability to attract the lucrative remote-worker segment who seek comfortable workspaces. Conversely, a well-designed atmosphere creates a virtuous cycle — customers stay longer, spend more, post on social media, and return more frequently.\n\nFor UK cafes specifically, the challenge is acute. High street rents demand maximum revenue per square foot, yet the British customer expects a certain standard of comfort. Getting the balance wrong — too cramped, too loud, too dark, too clinical — directly impacts the bottom line. This block provides a structured approach to atmosphere design that moves beyond gut feeling to evidence-based environmental optimisation.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks): Begin with a comprehensive sensory audit of the current space. Walk through the cafe at different times of day — morning rush, midday lull, afternoon trade — and document the experience from a customer's perspective. Note lighting levels (is it too harsh under fluorescents? too dim to read a menu?), noise levels (can customers hold a conversation comfortably? does the grinder dominate?), temperature (are seats near the door draughty? is it stifling in summer?), and seating comfort (are chairs comfortable for more than 20 minutes? do tables wobble?). Photograph every angle and compare against competitor cafes and aspirational benchmarks. Ask five regular customers for honest feedback on the environment. Review your Google and TripAdvisor reviews for any mentions of atmosphere, comfort, noise, or decor — these are free data points that most operators ignore. Create a simple scoring matrix rating each sensory dimension from 1-5. Identify the three quickest wins — these are often lighting adjustments, music volume/playlist changes, or rearranging furniture to improve flow. Implement these quick wins immediately. Cost should be minimal at this stage; most L1 improvements involve repositioning existing elements rather than purchasing new ones. Document the baseline state with photographs and scores for future comparison.",
+    "L2": "SYSTEM BUILD (2-8 weeks): With the audit complete and quick wins implemented, move to systematic atmosphere design. Develop a formal Atmosphere Design Brief that defines your target sensory profile — what should the cafe look, sound, smell, and feel like at 7am versus 3pm versus 7pm? This brief becomes the reference document for all future design decisions. Invest in the medium-cost improvements identified during L1: consider upgrading to warm-tone LED lighting with dimmer capability, installing acoustic panels or soft furnishings to manage noise, sourcing comfortable seating that balances durability with comfort, and curating a music programme that matches your brand (consider services like Soundtrack Your Brand which are licenced for commercial use in the UK, avoiding the PRS/PPL compliance issues of personal Spotify accounts). Create distinct zones within the space — a quick-service area near the counter for takeaway customers, comfortable seating for those who want to linger, and potentially a quieter zone for laptop workers. Develop a seasonal decoration calendar that keeps the space feeling fresh without requiring major investment — think plants, artwork rotation, seasonal table settings. Establish a monthly atmosphere check using your scoring matrix to track improvements. Brief all staff on the atmosphere standards so they understand why music volume, table clearing speed, and lighting settings matter. Consider engaging a local interior designer for a consultation — many offer affordable initial assessments that can identify opportunities a non-specialist would miss.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks): Atmosphere management becomes an embedded cultural practice rather than a project. Staff intuitively adjust lighting, music, and table arrangements based on the time of day, weather, and customer mix. The team understands that atmosphere is part of the product and takes ownership of maintaining standards. Implement quarterly atmosphere reviews that incorporate customer feedback data, dwell time analytics (available through wifi login data or POS transaction timing), and staff observations. Develop relationships with local artists for rotating exhibitions that keep the visual environment dynamic while supporting the community. Create an annual atmosphere refresh budget — even small annual investments in paint, plants, or furniture replacement prevent the gradual decline that makes cafes feel tired. Benchmark against leading specialty coffee shops nationally and incorporate emerging trends thoughtfully. The cafe becomes known for its atmosphere as much as its coffee, creating a genuine competitive moat that chains cannot easily replicate."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Atmosphere Actions",
+      "actions": [
+        "Conduct full sensory audit at three different times of day using the Atmosphere Audit Scorecard",
+        "Review all Google, TripAdvisor, and social media mentions for atmosphere-related feedback",
+        "Photograph the cafe from every angle and compare against three competitor/aspirational cafes",
+        "Survey five regular customers on their experience of the physical environment",
+        "Identify and implement three quick-win improvements (lighting, music, furniture arrangement)",
+        "Create baseline atmosphere scores for future tracking",
+        "Check PRS/PPL music licence compliance and switch to a commercially licenced music service if needed"
+      ],
+      "responsible": "Owner / Manager"
+    },
+    "L2_build": {
+      "title": "Systematic Atmosphere Development",
+      "actions": [
+        "Draft a formal Atmosphere Design Brief defining target sensory profiles by time of day",
+        "Upgrade lighting to warm-tone LEDs with dimmer capability where possible",
+        "Address top three acoustic issues identified in the audit (panels, soft furnishings, layout changes)",
+        "Create distinct zones for different customer needs (quick-service, lingering, laptop work)",
+        "Develop a seasonal decoration calendar with quarterly refresh schedule",
+        "Brief all staff on atmosphere standards and their role in maintaining them",
+        "Engage a local interior designer for a one-off consultation if budget permits"
+      ],
+      "responsible": "Owner / Manager with designer input"
+    },
+    "L3_embed": {
+      "title": "Atmosphere Culture Embedding",
+      "actions": [
+        "Implement quarterly atmosphere reviews incorporating customer data and staff feedback",
+        "Establish relationships with local artists for rotating visual displays",
+        "Create an annual atmosphere refresh budget line in the business plan",
+        "Benchmark against leading UK specialty cafes and incorporate relevant trends",
+        "Train staff to intuitively manage atmosphere settings throughout the trading day"
+      ],
+      "responsible": "Owner / Manager / Full team"
+    }
+  },
+  "deliverables": [
+    "Completed Atmosphere Audit Scorecard with baseline scores across all sensory dimensions",
+    "Atmosphere Design Brief defining target sensory profiles by trading period",
+    "Seasonal decoration calendar and annual refresh budget",
+    "Monthly atmosphere tracking reports showing score progression",
+    "Staff atmosphere standards guide integrated into daily opening/closing procedures"
+  ],
+  "embedded_tools": ["T151-01", "T151-02", "T151-03", "T151-04"],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T151-01",
+        "tool_name": "Atmosphere Audit Scorecard",
+        "level": "L1",
+        "format": "scorecard",
+        "owner_role": "Owner / Manager",
+        "description": "A structured scoring matrix covering lighting, acoustics, temperature, seating comfort, aroma, visual appeal, and cleanliness. Scored 1-5 at three times of day to establish baselines and track improvements."
+      },
+      {
+        "tool_id": "T151-02",
+        "tool_name": "Atmosphere Design Brief Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner / Manager",
+        "description": "A comprehensive template for defining the target atmosphere profile, including sensory specifications by time of day, brand alignment notes, and reference imagery."
+      },
+      {
+        "tool_id": "T151-03",
+        "tool_name": "Seasonal Decoration Calendar",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "A twelve-month calendar template for planning seasonal visual refreshes, artwork rotations, plant replacements, and themed displays with associated budgets."
+      },
+      {
+        "tool_id": "T151-04",
+        "tool_name": "Atmosphere Monthly Tracker",
+        "level": "L3",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "A monthly tracking dashboard that logs atmosphere scores, customer feedback themes, dwell time data, and improvement actions taken to monitor long-term atmosphere quality."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Investing heavily in aesthetic improvements without addressing fundamental comfort issues (noise, temperature, seating) — style over substance",
+    "Designing the atmosphere for the owner's personal taste rather than the target customer's preferences, leading to a disconnect between brand and experience",
+    "Neglecting ongoing maintenance after initial improvements, allowing the space to gradually deteriorate back to pre-intervention standards",
+    "Ignoring staff input on practical issues — furniture that is beautiful but impossible to clean, lighting that looks good but makes it hard to work the till"
+  ],
+  "kpis": [
+    "Average dwell time increases by 15% within 3 months of L2 implementation",
+    "Google review average rating for atmosphere-related comments reaches 4.5+ stars",
+    "Average transaction value increases by 10% as customers stay longer and order more",
+    "Atmosphere audit scorecard average reaches 4.0/5.0 across all dimensions within 6 months"
+  ],
+  "dependencies": ["B149", "B150"],
+  "constraints": [
+    "Budget limitations may restrict the scope of physical improvements — prioritise high-impact, low-cost changes first",
+    "Listed building or landlord restrictions may limit structural modifications such as acoustic panels or lighting changes",
+    "Music licensing (PRS/PPL) costs must be factored into any background music programme"
+  ],
+  "time_load": {
+    "L1": "6-8 hours",
+    "L2": "15-25 hours",
+    "L3": "3-4 hours/month"
+  },
+  "review_protocol": "Monthly atmosphere score review; quarterly comprehensive audit; annual design refresh planning",
+  "meta": {
+    "summary_for_humans": "A structured programme for designing and managing the cafe's atmosphere across all senses — lighting, sound, comfort, smell, and visual appeal. Moves atmosphere management from guesswork to evidence-based practice, directly impacting dwell time, spend, and repeat visits.",
+    "implementation_risks": [
+      "Over-investing in aesthetics at the expense of operational functionality",
+      "Customer resistance to changes in a space they have become accustomed to",
+      "Scope creep turning a focused atmosphere improvement into a full renovation project"
+    ],
+    "notes_for_engine": "Activate when review signals mention atmosphere, comfort, noise, temperature, decor, ambience, or seating. Also trigger on low dwell time metrics or below-average transaction values that may indicate atmosphere issues.",
+    "tags": ["atmosphere", "design", "ambience", "lighting", "acoustics", "seating", "customer_experience", "physical_environment"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

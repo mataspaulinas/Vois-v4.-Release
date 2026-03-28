@@ -1,0 +1,157 @@
+{
+  "block_id": "B096",
+  "name": "Mid-Service Stock Check",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Implements a structured mid-service stock check that catches low-stock situations before they become stockouts, giving the team time to restock from back-of-house, adjust menu availability, or place emergency orders. This block is the early warning system that prevents the worst moment in hospitality: telling a customer you have run out.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish a scheduled mid-service stock check at a fixed time each day (typically 11am or just before the lunch rush)",
+      "Define a quick-check list of the 15-20 items most likely to run out during service",
+      "Create a rapid restocking protocol so back-of-house stock is moved to service areas before demand peaks",
+      "Integrate the mid-service check with par levels (B095) so staff know exactly what 'low' means for each item",
+      "Enable real-time menu adjustments when items are running low to avoid customer-facing stockouts"
+    ],
+    "secondary_objectives": [
+      "Build staff awareness of consumption patterns so they anticipate shortages rather than react to them",
+      "Reduce the stress of discovering empty shelves during the busiest period of the day",
+      "Provide daily usage data that feeds back into par-level accuracy (B095)"
+    ]
+  },
+  "why_this_matters": "Most cafe stockouts do not happen because the item was never ordered — they happen because the item ran out during service and nobody noticed until a customer asked for it. The gap between back-of-house storage and the service counter is where stock visibility dies. A full box of oat milk sits in the walk-in while the barista tells the fifth customer in a row that they have run out, simply because nobody checked. A tray of croissants waits in the kitchen while the display cabinet sits empty and customers assume there are none left. These are not supply chain failures; they are information failures. The mid-service stock check solves this by creating a deliberate pause — typically at 11am, before the lunch rush — where a designated team member walks the entire service area and checks stock levels against a short, focused list. This takes 5-7 minutes and prevents hours of lost revenue and customer frustration. In a cafe turning over £1,500-£3,000 per day, a single stockout of a popular item during the lunch rush can cost £50-£150 in lost sales. More importantly, it costs customer confidence: regulars who find their usual order unavailable twice in a month start looking elsewhere. The mid-service check is a tiny time investment with outsized returns in revenue protection and customer satisfaction.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Identify the 15-20 items most likely to run out during a typical trading day. These will almost always include: milk (all types), takeaway cups (most popular sizes), coffee beans in the hopper, sandwich fillings or daily specials, pastries in the display, napkins and packaging. Create a simple Quick Check Card — a single laminated card listing these items with a tick box and space to note 'OK', 'Low', or 'Out'. Assign the mid-service check to the shift lead or a designated team member, scheduled for 11:00am daily (or 30 minutes before the busiest period if the cafe's peak is different). The check should take no more than 7 minutes: walk the bar, check the display, check the counter supplies, glance at the till roll, and note anything that needs restocking. If items are low, immediately restock from back-of-house. If items are out and cannot be restocked, update the team verbally and remove the item from any menu boards. Week 2: Review the first week's Quick Check Cards to identify which items consistently show as 'Low' — these may indicate par levels need adjusting (feed back to B095).",
+    "L2": "SYSTEM BUILD (2-8 weeks). Expand the mid-service check into a two-check system: a primary check at 11am and a secondary check at 2pm (or appropriate times for the cafe's trading pattern). Create a digital version of the Quick Check Card accessible on a tablet or phone so results are instantly visible to the manager. Build a Restock Protocol that defines where each item is stored in back-of-house and how much should be brought forward during a restock — avoid the common mistake of bringing too much to the counter and creating clutter. Introduce a 'menu flex' system: when the check reveals a key item is running low and cannot be restocked, the shift lead has authority to remove it from the menu board and suggest alternatives to the team, preventing the awkward customer-facing 'sorry, we've run out' moment. Track mid-service check data weekly to spot patterns — if oat milk consistently runs low by 11am, either the par level is wrong or the morning demand is higher than estimated.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Mid-service stock awareness should become instinctive for the whole team, not dependent on a formal check. Train all staff to adopt a 'stock radar' mindset: whenever they pass a storage area, they glance at levels. Introduce a traffic-light stock display system for key items (green = adequate, amber = approaching par, red = below par) visible in the prep area. Use mid-service check data to create demand forecasting models — over time, the cafe should be able to predict exactly when items will run low on any given day of the week. Integrate mid-service checks into the digital stock management system so data flows automatically to par levels, ordering, and waste tracking. Celebrate weeks with zero stockouts as team achievements."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Identify the 15-20 items most likely to run out during service",
+        "Create a laminated Quick Check Card with tick boxes for each item",
+        "Assign the mid-service check to the shift lead at 11:00am daily",
+        "Define the check route: Bar, Display, Counter Supplies, Packaging",
+        "Establish immediate restocking from back-of-house when items are low",
+        "Train team to remove unavailable items from menu boards immediately",
+        "Review Quick Check Cards weekly to identify recurring shortages"
+      ],
+      "responsible": "Manager, Shift Lead"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Expand to a two-check system at 11am and 2pm",
+        "Create a digital Quick Check accessible on tablet or phone",
+        "Build a Restock Protocol defining storage locations and restock quantities",
+        "Introduce a menu flex system for real-time availability adjustments",
+        "Track mid-service check data weekly to identify demand patterns",
+        "Feed mid-service data back to par-level calculations (B095)",
+        "Train shift leads on proactive menu management during shortages"
+      ],
+      "responsible": "Manager, Shift Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Train all staff to adopt a continuous 'stock radar' mindset",
+        "Implement a traffic-light stock display system for key items",
+        "Use check data to build demand forecasting models by day of week",
+        "Integrate mid-service checks into digital stock management system",
+        "Celebrate zero-stockout weeks as team achievements"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Quick Check Card (laminated A5 reference card)",
+    "Mid-Service Stock Check SOP",
+    "Restock Protocol with storage locations and quantities",
+    "Weekly Stockout Pattern Analysis",
+    "Menu Flex Authority guidelines"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T096-01",
+        "tool_name": "Quick Check Card",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Shift Lead",
+        "description": "Laminated A5 card listing the 15-20 items most likely to run out during service, with tick boxes for OK/Low/Out status. Designed for a 5-7 minute walkthrough of all service areas."
+      },
+      {
+        "tool_id": "T096-02",
+        "tool_name": "Restock Protocol Sheet",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Reference document showing where each key item is stored in back-of-house, the standard restock quantity, and the maximum front-of-house holding to prevent counter clutter."
+      },
+      {
+        "tool_id": "T096-03",
+        "tool_name": "Mid-Service Stock Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Weekly tracker compiling mid-service check results to identify items that consistently run low, feeding data back to par-level adjustments and ordering decisions."
+      },
+      {
+        "tool_id": "T096-04",
+        "tool_name": "Menu Flex Decision Guide",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Shift Lead",
+        "description": "Quick-reference guide giving the shift lead authority and scripts for removing items from the menu when stock runs low, including suggested alternative recommendations for customers."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The mid-service check is skipped during busy periods — precisely when it is most needed",
+    "Check is performed superficially (glancing rather than counting) and misses low-stock items hidden behind fuller stock",
+    "Results of the check are not acted upon — items are noted as 'Low' but nobody restocks",
+    "The check list becomes outdated as menu items change but the card is not updated"
+  ],
+  "kpis": [
+    "Mid-service stock check completed on time 100% of trading days",
+    "Customer-facing stockouts (items ordered but unavailable) reduced to fewer than 3 per week",
+    "Time from low-stock detection to restocking under 10 minutes",
+    "Menu flex decisions made proactively (before customer requests) 90% of the time"
+  ],
+  "dependencies": ["B095"],
+  "constraints": [
+    "Mid-service check timing must be adjusted to suit the cafe's specific peak trading pattern",
+    "The Quick Check Card must be updated whenever menu items are added or removed",
+    "Back-of-house stock must be organised so restocking can happen within minutes, not requiring a search"
+  ],
+  "time_load": {
+    "L1": "1 hour (item identification, card creation, staff briefing)",
+    "L2": "2 hours (protocol development, digital setup, flex guidelines)",
+    "L3": "30 minutes/month (data analysis, forecasting updates)"
+  },
+  "review_protocol": "Daily completion verification by manager. Weekly stockout pattern review. Monthly analysis of mid-service check data feeding back to par levels. Quarterly Quick Check Card content review.",
+  "meta": {
+    "summary_for_humans": "This block implements a quick mid-service stock check — typically at 11am before the lunch rush — that catches low-stock items before they become stockouts. It takes 5-7 minutes and prevents the revenue loss and customer frustration of running out during the busiest part of the day.",
+    "implementation_risks": [
+      "The check will be the first thing skipped when the cafe gets busy, which is precisely when it matters most — build it into the daily rhythm",
+      "Staff may not know where back-of-house stock is stored, making restocking slow — label everything",
+      "If the shift lead is also making drinks during peak, they need cover for the 7 minutes the check takes"
+    ],
+    "notes_for_engine": "Activate alongside B095 (Par-Level Stock Management) as a pair. Flag as urgent if signals indicate frequent mid-service stockouts, customer complaints about item availability, or high waste from over-restocking.",
+    "tags": ["operations", "stock_check", "mid_service", "stockout_prevention", "restocking", "menu_management", "peak_management"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

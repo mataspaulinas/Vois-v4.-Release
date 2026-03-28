@@ -1,0 +1,165 @@
+{
+  "block_id": "B024",
+  "name": "Throughput Optimisation System",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Creates a systematic approach to measuring, analysing, and improving the cafe's customer throughput — the number of customers served per hour — through workflow analysis, bottleneck identification, and operational refinement. This block treats throughput as a measurable, improvable metric rather than a fixed characteristic.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish baseline throughput metrics: customers served per hour during peak, off-peak, and average periods",
+      "Identify and eliminate bottlenecks in the end-to-end customer journey from queue to drink handoff",
+      "Optimise workflow by analysing barista movement, equipment positioning, and task sequencing",
+      "Set throughput improvement targets and track progress systematically",
+      "Balance throughput with quality — speed must not compromise the product or experience"
+    ],
+    "secondary_objectives": [
+      "Increase revenue capacity during peak periods by serving more customers without extending hours",
+      "Reduce customer wait times as a natural consequence of improved throughput",
+      "Build a data-driven approach to operational improvement"
+    ]
+  },
+  "why_this_matters": "A cafe's revenue is ultimately constrained by throughput — the number of customers it can serve per hour. During peak periods, when demand exceeds capacity, every improvement in throughput directly translates to additional revenue. For a UK independent cafe with an average transaction value of £4.50, increasing peak-hour throughput by just 10 customers per hour represents an additional £45 per peak hour, or over £300 per week in extra revenue. But throughput is not just about speed — it is about the efficient coordination of every element in the service chain: order-taking, drink preparation, food preparation, payment processing, and drink handoff. A bottleneck at any single point constrains the entire system. The cafe is only as fast as its slowest step. Systematic throughput analysis — borrowed from lean manufacturing principles — identifies where time is wasted, where steps can be parallelised, and where equipment or layout changes can unlock capacity. This is fundamentally different from simply telling staff to work faster, which creates stress and reduces quality. Instead, it is about working smarter: eliminating unnecessary movement, pre-positioning supplies, sequencing tasks optimally, and ensuring every team member knows exactly what to do and when. The UK specialty coffee scene has driven significant interest in workflow optimisation, with competitions and industry training focused on barista efficiency alongside quality. The principles apply equally to high-street cafes and neighbourhood coffee shops.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Establish baseline throughput. Using POS data, calculate the number of transactions per hour for each hour of the operating day, for at least one typical week. Identify the peak throughput hour (this is your current maximum capacity), the average throughput, and the ratio between peak demand and current capacity. If the queue is always long during peak, you have more demand than capacity. Conduct a simple workflow observation during one peak period: stand back and watch the entire process from queue to handoff. Note every moment where someone is waiting, walking unnecessarily, looking for something, or redoing a step. Time the key stages: order-taking, espresso extraction, milk steaming, drink finishing, and handoff. Which stage takes longest? That is your primary bottleneck. Week 2: Address the primary bottleneck with an immediate fix. Common bottlenecks and solutions: if order-taking is slow, see B022 (Order-Taking Speed). If the espresso machine is the constraint, check whether both group heads are being used, whether the grinder is fast enough, and whether drinks are being sequenced efficiently. If milk steaming is the bottleneck, consider a second steam wand or jug rinser. If food preparation is slowing the line, separate food prep from the drink-making workflow. Implement the fix and re-measure throughput the following week to confirm improvement.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Map the complete customer journey workflow from queue entry to drink handoff, documenting every step with time estimates. Identify parallelisation opportunities: which steps can happen simultaneously? For example, while one drink is extracting, the barista should be steaming milk for the next drink. While the customer is paying, the barista should be starting their drink. Create a Throughput Optimisation SOP covering: optimal station layout, task sequencing, multi-drink batching techniques, and team coordination during peak. Analyse equipment positioning: the espresso machine, grinder, milk fridge, cups, lids, and syrups should form a compact workflow station where the barista can reach everything without walking. Every step is a second lost. Implement weekly throughput tracking: pull transaction-per-hour data from the POS and plot it to identify trends. Are improvements being sustained? Are there specific days or shifts that underperform? Conduct a staff throughput comparison: are some baristas significantly faster than others? Observe the fastest barista and identify the techniques that make them efficient — then train others. By Week 8, throughput should show measurable improvement against baseline.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Throughput optimisation should become an ongoing discipline, not a one-off project. Set monthly throughput targets and track them on a visible dashboard. Conduct quarterly workflow reviews: as the menu changes, new equipment is added, or staff change, the optimal workflow may shift. Review and update the optimisation SOP accordingly. Consider equipment investments based on throughput data: a under-counter fridge closer to the espresso machine, a faster grinder, a second POS terminal, or an automated milk steamer. Calculate the payback period for each investment based on the additional throughput it enables. Share throughput achievements with the team — hitting a new peak-hour record is something to celebrate. Balance the throughput focus with quality checks (B027) to ensure speed gains do not come at the cost of drink standards."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Calculate baseline throughput: transactions per hour for each hour across a typical week",
+        "Conduct a peak-period workflow observation noting every delay and bottleneck",
+        "Time each stage of the service process: ordering, extraction, steaming, finishing, handoff",
+        "Identify the primary bottleneck constraining overall throughput",
+        "Implement an immediate fix for the primary bottleneck",
+        "Re-measure throughput after the fix to confirm improvement",
+        "Document current equipment layout and barista movement patterns"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Map the complete customer journey workflow with step-by-step timing",
+        "Identify parallelisation opportunities for simultaneous task execution",
+        "Create a Throughput Optimisation SOP covering layout, sequencing, and coordination",
+        "Optimise equipment positioning for minimal barista movement",
+        "Implement weekly throughput tracking from POS data",
+        "Compare throughput across baristas to identify and share best practices",
+        "Test multi-drink batching and sequencing techniques during peak"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Set monthly throughput targets and display progress on a team dashboard",
+        "Conduct quarterly workflow reviews and SOP updates",
+        "Evaluate equipment investments with throughput-based payback calculations",
+        "Share throughput records and celebrate peak achievements",
+        "Balance throughput with quality through integrated quality checks (B027)"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Throughput Baseline Report (transactions per hour analysis)",
+    "Customer Journey Workflow Map with timing",
+    "Throughput Optimisation SOP",
+    "Weekly Throughput Tracking Report",
+    "Equipment Layout Optimisation Plan"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T024-01",
+        "tool_name": "Throughput Baseline Calculator",
+        "level": "L1",
+        "format": "calculator",
+        "owner_role": "Manager",
+        "description": "Template for calculating transactions per hour from POS data, identifying peak capacity, average throughput, and demand-capacity gaps across the operating day."
+      },
+      {
+        "tool_id": "T024-02",
+        "tool_name": "Workflow Observation Log",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Structured observation log for recording step-by-step timings, delays, unnecessary movements, and bottleneck identification during peak service periods."
+      },
+      {
+        "tool_id": "T024-03",
+        "tool_name": "Throughput Optimisation SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Head Barista",
+        "description": "Standard Operating Procedure covering optimal station layout, task sequencing, drink batching, team coordination, and efficiency techniques for maximum throughput."
+      },
+      {
+        "tool_id": "T024-04",
+        "tool_name": "Weekly Throughput Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Weekly dashboard plotting transactions per hour across the operating day, comparing against baseline and targets, highlighting peak performance and underperforming periods."
+      },
+      {
+        "tool_id": "T024-05",
+        "tool_name": "Equipment Investment Calculator",
+        "level": "L3",
+        "format": "calculator",
+        "owner_role": "Owner",
+        "description": "Calculator for assessing the throughput impact and payback period of potential equipment investments: additional grinder, second POS, milk steamer, or layout changes."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Throughput is measured but the data is not analysed or acted upon",
+    "Speed improvements come at the cost of drink quality, creating a false economy of more sales but lower satisfaction",
+    "Bottleneck is identified but the fix requires equipment investment that the owner delays or refuses",
+    "Staff feel pressured by throughput metrics, creating stress rather than efficiency"
+  ],
+  "kpis": [
+    "Peak-hour throughput increasing by at least 10% within 8 weeks of programme launch",
+    "Primary bottleneck identified and addressed within the first 2 weeks",
+    "Weekly throughput tracking maintained consistently with data-driven decisions",
+    "Throughput improvements achieved without any decline in drink quality scores"
+  ],
+  "dependencies": ["B021", "B022", "B023"],
+  "constraints": [
+    "Throughput gains must never compromise product quality or food safety",
+    "Equipment investment decisions require owner approval and financial justification",
+    "Throughput targets must be realistic given the cafe's physical space and equipment"
+  ],
+  "time_load": {
+    "L1": "4 hours (baseline measurement, bottleneck analysis, initial fix)",
+    "L2": "10 hours (workflow mapping, SOP development, POS analysis, training)",
+    "L3": "3 hours/month (tracking, target review, quarterly workflow review)"
+  },
+  "review_protocol": "Weekly throughput data review from POS. Monthly target comparison and adjustment. Quarterly comprehensive workflow review and SOP update. Annual equipment and layout review.",
+  "meta": {
+    "summary_for_humans": "This block systematically measures and improves the cafe's ability to serve customers efficiently — identifying bottlenecks, optimising workflow, and tracking throughput metrics to increase capacity without sacrificing quality.",
+    "implementation_risks": [
+      "Risk of creating a speed-obsessed culture that degrades the customer experience",
+      "Data collection requires discipline — POS analysis must happen weekly to be useful",
+      "Equipment investment decisions can stall if the financial case is not clearly presented"
+    ],
+    "notes_for_engine": "Activate after B021, B022, and B023 are in place. Flag as urgent if signals indicate serious throughput constraints: long queues, high walkaways, or revenue plateaus despite strong demand.",
+    "tags": ["customer_experience", "throughput", "efficiency", "workflow", "bottleneck", "measurement", "operations", "revenue"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

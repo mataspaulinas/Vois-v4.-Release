@@ -1,0 +1,45 @@
+{
+  "id": "blk_standardize_prep_sheet",
+  "name": "Standardize prep sheet",
+  "description": "Create a role-based prep sheet with clear quantities, cutoffs, and ownership so prep stops depending on memory and shift-to-shift interpretation.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: standardize execution and readiness through explicit prep ownership",
+  "updated_at": "2026-03-14T00:24:43.023971Z",
+  "effort_hours": 4.0,
+  "dependencies": [],
+  "tool_ids": [
+    "tool_prep_sheet_template"
+  ],
+  "response_pattern_ids": [
+    "rp_prep_control_reset"
+  ],
+  "entry_conditions": [
+    "Prep quality or completion varies materially by shift or person.",
+    "The venue can identify critical prep lines and the roles that own them."
+  ],
+  "contraindications": [
+    "Do not create a prep sheet with unrealistic quantities or no cutoff logic.",
+    "Do not treat the sheet as complete unless prep ownership is visible and reviewable."
+  ],
+  "owner_role": "kitchen_manager",
+  "expected_time_to_effect_days": 3,
+  "proof_of_completion": [
+    "A role-based prep sheet exists with named owners, quantities, and cutoffs.",
+    "Prep completion can be checked before service instead of assumed.",
+    "Shift-to-shift variation in prep readiness is reduced through shared standards."
+  ],
+  "successor_block_ids": [
+    "blk_daily_waste_review"
+  ],
+  "service_module_ids": [
+    "readiness_and_setup",
+    "quality_and_standards",
+    "commercial_and_control_loops"
+  ],
+  "failure_family_ids": [
+    "readiness_failure",
+    "standards_drift",
+    "role_clarity_failure"
+  ]
+}

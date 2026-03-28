@@ -1,0 +1,57 @@
+{
+  "fixture_id": "F004_existing_active_plan_kaunas",
+  "category": "existing active plan case",
+  "label": "Kaunas active plan",
+  "description": "Stable venue with an active plan, progress feed, signal history, and persisted chat threads.",
+  "kind": "assessment_snapshot",
+  "source": {
+    "venue_slug": "kavos_namai_kaunas",
+    "assessment_file": "2026-03-02_005.json"
+  },
+  "source_paths": [
+    "project.json",
+    "operational_plan.json",
+    "signal_history.json",
+    "progress/entries.json",
+    "chat_history/_index.json",
+    "assessment.json",
+    "chat_history/t_48f81c67cfc2.json",
+    "chat_history/t_8a99c0a95098.json"
+  ],
+  "assessment_type": "follow-up",
+  "active_signal_count": 4,
+  "active_signal_ids": [
+    "S019",
+    "S070",
+    "S080",
+    "S071"
+  ],
+  "summary": {
+    "signals": 4,
+    "failure_modes": 7,
+    "response_patterns": 6,
+    "raw_activation_items": 54,
+    "constrained_activation_items": 54,
+    "plan_load": "TRIAGE",
+    "report_type": "ai",
+    "top_signal_ids": [
+      "S019",
+      "S070",
+      "S080",
+      "S071"
+    ]
+  },
+  "output_files": [
+    "fixture_input.json",
+    "golden_normalized_signals.json",
+    "golden_failure_modes.json",
+    "golden_response_patterns.json",
+    "golden_activation_set_raw.json",
+    "golden_activation_context.json",
+    "golden_activation_set_constrained.json",
+    "golden_constraint_report.json",
+    "golden_action_plan.json",
+    "golden_report.md",
+    "golden_summary.json"
+  ]
+}

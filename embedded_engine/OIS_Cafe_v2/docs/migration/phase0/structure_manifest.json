@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-03-27T06:57:30.234798Z",
+  "legacy_root": "C:\\Users\\matas\\Documents\\00\\OIS_Cafe_v2",
+  "baseline_root": "C:\\Users\\matas\\Documents\\00\\OIS_Cafe_v2\\docs\\migration\\phase0",
+  "app_entrypoints": [
+    "06_app/app.py",
+    "04_engine/engine.py",
+    "scripts/export_operational_plan_html.py"
+  ],
+  "engine_modules": [
+    "04_engine/signal_normalization.py",
+    "04_engine/failure_mode_engine.py",
+    "04_engine/response_pattern_engine.py",
+    "04_engine/block_activation_engine.py",
+    "04_engine/constraint_engine.py",
+    "04_engine/plan_generator.py",
+    "04_engine/report_generator.py"
+  ],
+  "ontology_mapping_files": [
+    "01_ontology/signals.csv",
+    "01_ontology/signal_to_fm_map.csv",
+    "01_ontology/failure_modes.csv",
+    "01_ontology/fm_to_rp_map.csv",
+    "01_ontology/response_patterns.csv",
+    "01_ontology/rp_to_block_map.csv",
+    "01_ontology/module_dependencies.csv",
+    "01_ontology/ontology_export.json"
+  ],
+  "runtime_data_folders": [
+    "05_data/sample_inputs",
+    "05_data/sample_outputs",
+    "05_data/venues",
+    "05_data/chat",
+    "05_data/system"
+  ],
+  "ui_shell_files": [
+    "06_app/templates/index.html",
+    "06_app/static/app.js",
+    "06_app/static/app-shell.js",
+    "06_app/static/app-portfolio.js",
+    "06_app/static/app-home.js",
+    "06_app/static/app-kb.js",
+    "06_app/static/app-sigmap.js",
+    "06_app/static/app-foundation.js",
+    "06_app/static/app-chrome.js",
+    "06_app/static/help-system.js",
+    "06_app/static/sidebar-v2.js"
+  ],
+  "helper_content": {
+    "kb_articles_count": 54,
+    "help_manual_count": 12,
+    "help_index_files": [
+      "06_app/help/help_index.json",
+      "06_app/help/terminology.json",
+      "06_app/help/tours.json",
+      "06_app/help/changelog.json"
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "sig_critical_role_left_uncovered",
+  "name": "Critical role is left uncovered",
+  "description": "A role that protects flow or standards is missing entirely, forcing the rest of the venue to improvise around the gap.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: uncovered critical role expressed through restaurant service flow",
+  "updated_at": "2026-03-15T14:29:28.473723Z",
+  "domain": "workforce",
+  "module": "deployment",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "no expo or floor lead in a pressured window",
+    "missing host, runner, or section owner",
+    "critical service role not assigned"
+  ],
+  "source_types": [
+    "schedule review",
+    "manager notes",
+    "service observation"
+  ],
+  "temporal_behavior": "shift-bound",
+  "likely_co_signals": [
+    "sig_ownership_confusion_in_service",
+    "sig_work_dies_between_roles"
+  ],
+  "adapter_aliases": [
+    "key role uncovered",
+    "nobody owns the critical role"
+  ]
+}

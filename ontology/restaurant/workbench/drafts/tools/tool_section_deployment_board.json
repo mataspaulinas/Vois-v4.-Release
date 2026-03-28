@@ -1,0 +1,22 @@
+{
+  "id": "tool_section_deployment_board",
+  "name": "Section deployment board",
+  "description": "Visible sectioning board that shows primary server assignments, support coverage, overload triggers, and rebalance options.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: deployment reset needs a visible operating shape the team can act on immediately",
+  "updated_at": "2026-03-14T00:24:43.083689Z",
+  "category": "planning",
+  "format": "planning_board",
+  "usage_moment": "Use before the peak and update when live load materially changes section pressure.",
+  "expected_output": "A live section board with named ownership, support roles, and rebalance triggers.",
+  "adaptation_variables": [
+    "floor_layout",
+    "expected_cover_mix",
+    "server_count",
+    "support_role_capacity"
+  ],
+  "block_ids": [
+    "blk_rebalance_sections"
+  ]
+}

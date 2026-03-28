@@ -1,0 +1,22 @@
+{
+  "verified_at": "2026-03-27T07:05:17.504454Z",
+  "fixture_count": 6,
+  "mismatches": [
+    "F001_normal_followup_warsaw/golden_report.md",
+    "F002_degraded_pegasas/golden_failure_modes.json",
+    "F002_degraded_pegasas/golden_action_plan.json",
+    "F002_degraded_pegasas/golden_report.md",
+    "F003_conflicting_capacity_vs_cost/golden_failure_modes.json",
+    "F003_conflicting_capacity_vs_cost/golden_action_plan.json",
+    "F003_conflicting_capacity_vs_cost/golden_report.md",
+    "F004_existing_active_plan_kaunas/golden_action_plan.json",
+    "F004_existing_active_plan_kaunas/golden_report.md",
+    "F005_ambiguous_ai_preopening_muzos2/golden_failure_modes.json",
+    "F005_ambiguous_ai_preopening_muzos2/golden_action_plan.json",
+    "F005_ambiguous_ai_preopening_muzos2/golden_report.md",
+    "F006_complex_klaipeda_multi_surface/golden_failure_modes.json",
+    "F006_complex_klaipeda_multi_surface/golden_action_plan.json",
+    "F006_complex_klaipeda_multi_surface/golden_report.md"
+  ],
+  "status": "fail"
+}

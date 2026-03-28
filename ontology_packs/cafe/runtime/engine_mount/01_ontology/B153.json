@@ -1,0 +1,167 @@
+{
+  "block_id": "B153",
+  "name": "Espresso Machine Service",
+  "version": "v1.0",
+  "domain": "D09_physical_environment",
+  "module": "M09: Cafe Design & Atmosphere",
+  "state": "enriched",
+  "purpose": "Establishes a specialist maintenance programme for espresso machines, the single most expensive and operationally critical piece of equipment in any cafe. This block ensures machines are serviced proactively rather than reactively, minimising downtime, protecting shot quality, and extending equipment life by years.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a preventive maintenance schedule covering daily, weekly, monthly, and annual service tasks",
+      "Establish a relationship with at least one qualified espresso machine engineer for emergency and scheduled callouts",
+      "Define clear daily cleaning routines including backflushing, group head purging, and steam wand wiping that all baristas must follow",
+      "Implement a service log that tracks all maintenance, parts replacements, and engineer visits",
+      "Set maximum acceptable response times for emergency breakdowns to protect trading hours"
+    ],
+    "secondary_objectives": [
+      "Reduce unplanned downtime to fewer than two incidents per year",
+      "Extend machine lifespan beyond the typical 5-7 year replacement cycle",
+      "Protect espresso quality consistency by preventing gradual performance degradation",
+      "Build barista confidence in basic troubleshooting to resolve minor issues without engineer callouts"
+    ]
+  },
+  "why_this_matters": "An espresso machine is typically the most expensive single asset in a cafe, costing between 5,000 and 20,000 pounds for a commercial two- or three-group machine. When it breaks down during service, the cafe loses its core product. Espresso-based drinks often account for 60-70% of total beverage revenue. A single day without espresso can cost an independent cafe 500 to 1,500 pounds in lost sales, plus the emergency callout fee of 150-300 pounds. Beyond breakdowns, poorly maintained machines produce inconsistent extraction: clogged shower screens create channelling, worn group gaskets leak, scale buildup restricts water flow and alters brew temperature, and neglected steam wands harbour milk residue that contaminates flavour. Customers notice. A flat white that tasted brilliant last week but tastes sour or bitter today drives regulars to competitors, and they rarely tell you why they left. Under UK health and safety law, espresso machines are pressurised vessels. A poorly maintained boiler or pressure relief valve presents a genuine safety risk. Water at 93 degrees Celsius under 9 bars of pressure is not forgiving of neglected maintenance. Insurance policies for commercial catering equipment typically require evidence of regular professional servicing. Skipping annual service can invalidate cover, leaving the cafe exposed to the full replacement cost. Proactive servicing costs roughly 300-500 pounds per year. A new machine costs 8,000-15,000 pounds. The maths is straightforward.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Locate the machine manual, serial number, and any existing warranty or service agreement documents. If these cannot be found, contact the manufacturer or supplier with the machine model to obtain digital copies. Create a simple daily cleaning checklist that every barista must complete at close: backflush with cleaning detergent (e.g. Cafiza), purge each group head for 5 seconds, wipe and purge all steam wands, empty and rinse drip trays, and wipe the machine exterior. Laminate this checklist and fix it to the wall beside the machine. Identify a local espresso machine engineer by asking your coffee supplier for recommendations, checking the Speciality Coffee Association (SCA) directory, or contacting the machine manufacturer for approved service partners. Book an initial health check if the machine has not been professionally serviced in the past 6 months. Week 2: Begin the daily cleaning checklist with manager sign-off for the first two weeks. Order replacement consumables: group gaskets, shower screens, and cleaning detergent in bulk. Check the water filtration system as most espresso machines require filtered water to prevent scale; confirm the filter is within its service life and replace if overdue. Record the current machine hours or shot count if the machine has a counter.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Machine Service Log as a dedicated folder (physical or digital) containing: service history, parts replaced, engineer reports, daily cleaning checklists, and water filter change dates. Draft a Preventive Maintenance Schedule with four tiers: Daily (backflush, steam wand clean, drip tray empty), Weekly (deep clean group heads, descale steam wands with milk residue remover, check hopper and doser), Monthly (replace group gaskets if worn, inspect shower screens for clogging, check water softener salt levels, test pressure gauge readings), Annual (full professional service including boiler descale, pump pressure check, safety valve test, electrical inspection, and full gasket replacement). Negotiate a service contract with your chosen engineer covering two scheduled visits per year plus priority emergency callout. Typical contracts run 400-600 pounds annually and guarantee response within 4-24 hours. Train all baristas in basic troubleshooting: what to do if the machine loses pressure, how to identify a tripped thermal fuse, when a grinder issue is mimicking a machine fault, and critically, when NOT to attempt a fix and to call the engineer instead. Document water hardness in your area and set filter replacement intervals accordingly; in hard water areas (much of England), filters may need changing every 3-4 months rather than the standard 6.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Implement a machine performance tracking system: record daily brew temperature (using a group head thermometer), flow rate, and pressure readings. Over time, this data reveals gradual degradation before it affects cup quality. Establish a relationship with a backup engineer in case your primary contact is unavailable during a breakdown. Review the machine total cost of ownership annually: purchase price amortised over expected lifespan, plus annual service, parts, water filtration, cleaning products, and electricity. Use this figure to inform future equipment investment decisions (B154). Consider investing in a telemetry-enabled machine or retrofit kit that sends real-time performance data and maintenance alerts. Conduct quarterly barista skills sessions focused on machine care as understanding the mechanics builds ownership and pride. Keep a small emergency parts kit on-site: spare group gaskets, shower screens, steam tip, and a portafilter spring. These 20 pounds worth of parts can prevent a 200 pound emergency callout for a 5-minute fix."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Locate machine manual, serial number, warranty documents, and any existing service records",
+        "Create and laminate a daily cleaning checklist (backflush, purge, steam wand clean, drip tray)",
+        "Identify and contact a qualified local espresso machine engineer",
+        "Book an initial machine health check if not serviced in the past 6 months",
+        "Check water filtration system and replace filter if overdue",
+        "Order bulk cleaning supplies: detergent, group gaskets, shower screens",
+        "Begin daily cleaning log with manager sign-off"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a Machine Service Log folder with full service history documentation",
+        "Draft a four-tier Preventive Maintenance Schedule (daily, weekly, monthly, annual)",
+        "Negotiate an annual service contract with priority emergency callout terms",
+        "Train all baristas in basic troubleshooting and when to escalate to an engineer",
+        "Document local water hardness and set appropriate filter replacement intervals",
+        "Schedule two professional service visits per year in the cafe calendar",
+        "Establish a parts replacement budget line in monthly accounts"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Implement daily machine performance tracking (temperature, pressure, flow rate)",
+        "Establish a backup engineer relationship for emergency cover",
+        "Conduct annual total cost of ownership review to inform equipment investment",
+        "Run quarterly barista machine-care skills sessions",
+        "Maintain an on-site emergency parts kit with common replacement components"
+      ],
+      "responsible": "Owner, Manager, Head Barista"
+    }
+  },
+  "deliverables": [
+    "Daily Espresso Machine Cleaning Checklist (laminated, wall-mounted)",
+    "Preventive Maintenance Schedule (daily/weekly/monthly/annual tiers)",
+    "Machine Service Log template",
+    "Basic Troubleshooting Guide for baristas",
+    "Annual Service Contract brief for engineer negotiation"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T153-01",
+        "tool_name": "Daily Espresso Machine Cleaning Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Baristas",
+        "description": "Laminated A4 checklist covering end-of-day machine cleaning: backflush with detergent, group head purge, steam wand clean, drip tray empty, and exterior wipe. Signed off daily by closing barista and countersigned by manager."
+      },
+      {
+        "tool_id": "T153-02",
+        "tool_name": "Machine Service Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Comprehensive log recording all maintenance activity: daily cleaning sign-offs, parts replacements, engineer visits, water filter changes, and any faults reported. Forms the auditable maintenance history for warranty and insurance purposes."
+      },
+      {
+        "tool_id": "T153-03",
+        "tool_name": "Preventive Maintenance Schedule",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Four-tier maintenance calendar specifying daily, weekly, monthly, and annual tasks with responsible roles, expected time per task, and parts or consumables required."
+      },
+      {
+        "tool_id": "T153-04",
+        "tool_name": "Barista Troubleshooting Quick Reference",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Head Barista",
+        "description": "Visual guide covering common espresso machine faults such as low pressure, no water flow, steam issues, and error codes, with step-by-step resolution for minor issues and clear escalation criteria for engineer callouts."
+      },
+      {
+        "tool_id": "T153-05",
+        "tool_name": "Machine Performance Tracker",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Weekly tracking of brew temperature, pump pressure, flow rate, and shot count. Visualises trends to detect gradual degradation before it affects cup quality or causes breakdown."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Daily cleaning is skipped during busy closes, causing buildup of coffee oils and milk residue that degrades extraction quality and eventually damages components",
+    "No service contract in place so breakdowns result in scrambling for an available engineer at emergency rates with no guaranteed response time",
+    "Water filtration is neglected, allowing scale to accumulate in the boiler and restrict water flow, leading to expensive descaling or boiler replacement",
+    "Baristas attempt repairs beyond their competence, voiding warranty or causing further damage to pressurised components"
+  ],
+  "kpis": [
+    "Zero unplanned machine downtime days per quarter",
+    "100% daily cleaning checklist completion rate",
+    "Water filter replaced within 2 weeks of scheduled change date",
+    "All scheduled professional service visits completed on time (2 per year minimum)"
+  ],
+  "dependencies": ["B152"],
+  "constraints": [
+    "Requires access to a qualified espresso machine engineer within reasonable callout distance",
+    "Machine must have valid documentation (manual, serial number) for effective servicing",
+    "Water filtration system must be compatible with local water hardness levels",
+    "Annual service budget of 400-600 pounds must be allocated and protected"
+  ],
+  "time_load": {
+    "L1": "4 hours (locating documents, setting up checklist, booking initial service)",
+    "L2": "8 hours (service log setup, maintenance schedule, engineer contract, barista training)",
+    "L3": "2 hours/month (performance tracking, log review, quarterly skills sessions)"
+  },
+  "review_protocol": "Daily cleaning checklist reviewed by manager each morning. Monthly review of service log and parts inventory. Quarterly machine performance trend analysis. Annual review of service contract terms and total cost of ownership. Full maintenance schedule review after any major repair or parts replacement.",
+  "meta": {
+    "summary_for_humans": "This block establishes a comprehensive espresso machine maintenance programme covering daily cleaning routines, preventive maintenance schedules, engineer relationships, and performance tracking. It protects the cafe's most valuable asset and ensures consistent espresso quality.",
+    "implementation_risks": [
+      "Staff may view daily cleaning as tedious and rush through steps, reducing effectiveness",
+      "Service contracts may lapse if renewal is not calendared and budgeted in advance",
+      "Hard water areas require more frequent filter changes and generic schedules may be insufficient"
+    ],
+    "notes_for_engine": "Activate alongside B152 for any cafe reporting espresso quality inconsistency, machine breakdowns, or absent maintenance records. Prioritise if signals indicate the machine has not been professionally serviced in over 12 months.",
+    "tags": ["espresso_machine", "maintenance", "service", "equipment", "cleaning", "preventive", "engineer", "water_filtration"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

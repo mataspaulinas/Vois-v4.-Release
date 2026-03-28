@@ -1,0 +1,31 @@
+{
+  "id": "sig_output_quality_inconsistent",
+  "name": "Output quality is inconsistent",
+  "description": "The same menu item, service touchpoint, or guest interaction varies too much depending on who handled it or how busy the venue is.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: standards drift and capability variance in restaurant execution",
+  "updated_at": "2026-03-14T12:48:22.238143Z",
+  "domain": "service_delivery",
+  "module": "floor_execution",
+  "indicator_type": "lagging",
+  "evidence_types": [
+    "plate-to-plate variance",
+    "service-step inconsistency",
+    "guest experience inconsistency"
+  ],
+  "source_types": [
+    "quality observation",
+    "guest complaint",
+    "manager notes"
+  ],
+  "temporal_behavior": "recurring",
+  "likely_co_signals": [
+    "sig_standard_steps_skipped",
+    "sig_staff_confusion"
+  ],
+  "adapter_aliases": [
+    "quality varies",
+    "not the same every time"
+  ]
+}

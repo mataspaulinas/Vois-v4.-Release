@@ -1,0 +1,22 @@
+{
+  "id": "tool_arrival_pacing_board",
+  "name": "Arrival pacing board",
+  "description": "Live board for reservation waves, walk-ins, seat release timing, and front-door pacing decisions.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: intake shaping needs a shared live surface, not private judgment",
+  "updated_at": "2026-03-14T00:24:43.042614Z",
+  "category": "host",
+  "format": "live_board",
+  "usage_moment": "Use during service to track arrival pressure and seat release decisions in real time.",
+  "expected_output": "A current front-door view of waves, waits, release logic, and emerging pacing risk.",
+  "adaptation_variables": [
+    "reservation_density",
+    "walk_in_volume",
+    "hosting_model",
+    "table_release_rules"
+  ],
+  "block_ids": [
+    "blk_build_arrival_pacing_board"
+  ]
+}

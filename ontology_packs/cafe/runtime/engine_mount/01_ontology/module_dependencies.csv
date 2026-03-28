@@ -1,0 +1,19 @@
+from_module,to_module,type,level,weight,min_confidence,condition_expression,confidence_decay_weeks,notes
+M01,M02,prerequisite,L2,0.90,0.5,,8,Food safety compliance before customer experience improvements
+M01,M03,prerequisite,L2,0.85,0.5,,8,Safety protocols before coffee craft and menu changes
+M04,M03,corequisite,L1,0.80,0.3,,8,Team stability enables coffee craft excellence
+M04,M05,corequisite,L2,0.75,0.3,,8,Team capacity affects service flow optimisation
+M13,M04,prerequisite,L2,0.85,0.5,,8,Leadership culture before recruitment and development
+M07,M06,prerequisite,L2,0.70,0.3,,12,Pricing clarity before supply chain strategy
+M02,M08,prerequisite,L2,0.65,0.3,,12,Customer experience solid before marketing investment
+M07,M11,prerequisite,L2,0.75,0.3,,12,Financial health before growth initiatives
+M13,M12,prerequisite,L2,0.80,0.5,,8,Leadership must model the cafe culture
+M14,M03,corequisite,L1,0.70,0.3,,8,Daily discipline supports coffee craft delivery
+M10,M05,reinforcement,L2,0.60,0.3,,12,Digital tools reinforce service flow efficiency
+M03,M06,reinforcement,L2,0.55,0.3,,12,Coffee quality supports supplier relationship confidence
+M04,M13,corequisite,L2,0.65,0.3,,8,Team development and leadership culture reinforce each other
+M01,M09,prerequisite,L1,0.80,0.5,,4,Food safety before environment improvements
+M07,M08,prerequisite,L3,0.60,0.3,,12,Financial stability before brand investment
+M16,M01,prerequisite,L1,0.90,0.5,,4,Regulatory governance underpins food safety compliance
+M16,M03,prerequisite,L2,0.85,0.5,,8,Regulatory framework supports operational protocol adherence
+M15,M05,prerequisite,L2,0.80,0.5,,8,Multi-site framework before operations scaling

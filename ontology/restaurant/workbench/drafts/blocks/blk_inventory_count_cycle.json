@@ -1,0 +1,43 @@
+{
+  "id": "blk_inventory_count_cycle",
+  "name": "Launch inventory count cycle",
+  "description": "Install a count cadence for high-risk lines so stock truth, 86 decisions, and loss reviews are built on trusted numbers instead of intuition.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: tighten control loops around the items most likely to distort service or margin",
+  "updated_at": "2026-03-14T00:24:42.987541Z",
+  "effort_hours": 3.5,
+  "dependencies": [],
+  "tool_ids": [
+    "tool_inventory_count_sheet"
+  ],
+  "response_pattern_ids": [
+    "rp_inventory_accuracy_reset"
+  ],
+  "entry_conditions": [
+    "Counts drift, 86 surprises, or stock variance already affect service confidence.",
+    "The venue can identify a limited high-risk count set instead of counting everything poorly."
+  ],
+  "contraindications": [
+    "Do not launch a count cycle with no variance review or ownership loop behind it.",
+    "Do not start with full-inventory perfection when only a few lines drive most of the damage."
+  ],
+  "owner_role": "venue_manager",
+  "expected_time_to_effect_days": 3,
+  "proof_of_completion": [
+    "A fixed cadence, owner, and scope exist for high-risk inventory lines.",
+    "Variance thresholds and follow-up actions are documented.",
+    "Count output now feeds 86 decisions or control reviews rather than sitting unused."
+  ],
+  "successor_block_ids": [
+    "blk_daily_86_board"
+  ],
+  "service_module_ids": [
+    "commercial_and_control_loops",
+    "readiness_and_setup"
+  ],
+  "failure_family_ids": [
+    "control_loop_failure",
+    "commercial_discipline_failure"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "raw_input_text": "Back-of-house (color mixing, stock, sterilization, maintenance): Handled loosely by owners/stylists (no dedicated BOH staff). Product stock (natural cosmetics from site) organized but no routines—mixing areas sometimes cluttered post-rush, sterilization basic (UV/disposables, but no logs), equipment (dryers, sinks) shows wear after 3 years (looks like 10, per details). No standards for checks/upkeep, leading to gradual decay.\nFOH / Front-of-house snapshot\nReception + floor: No dedicated admin/receptionist (can't afford, per ops). Owners + tenants rotate duties loosely. Equipped solidly (mirrors, chairs, lighting, product displays). But undermanaged:\n\nNo full-time front desk → phones/emails/bookings handled ad-hoc, occasional delays (5–10 min waits for check-in).\nStations sometimes left with clippings/tools 4–7 min after clients.\nRetail program undeveloped (products from site available, but no push—displays dusty, no sales training).\nMinor gaps: “What’s the wait time?” → “Let me check with everyone” (no central schedule visibility). Social media/marketing absent (no strategy, content planning, brandbook/values unclear).\nScattered reviews/FB comments echo light frictions: “Amazing color but booking was confusing”, “Talents great, but salon could be tidier”, “Love the products but nobody explained them”.",
+  "raw_input_length": 1322,
+  "extraction_summary": {
+    "coverage_gaps": [
+      "No financial data provided — revenue, costs, margins, payroll percentage entirely unknown",
+      "No information on food safety or hygiene rating (EHO equivalent for Lithuania)",
+      "Staff turnover rate and tenure not mentioned",
+      "No detail on booking volume, capacity utilisation, or appointment fill rate",
+      "Employment contracts and legal compliance for tenant stylists not addressed",
+      "No information on pricing strategy or whether prices have been reviewed",
+      "Customer retention and repeat visit rate not discussed",
+      "No detail on supplier relationships for cosmetics products",
+      "Insurance and liability coverage not mentioned",
+      "No information on whether any formal training or certification exists for stylists"
+    ],
+    "text_quality": "moderate",
+    "text_type": "audit_notes"
+  },
+  "confidence_distribution": {
+    "high": 16,
+    "low": 4,
+    "medium": 24
+  },
+  "unmapped_observations": [
+    {
+      "evidence": "Owners + tenants rotate duties loosely. No dedicated BOH staff. Handled loosely by owners/stylists.",
+      "observation": "Tenant-based staffing model creating accountability vacuum — no single person responsible for standards",
+      "suggested_domain": "operations"
+    },
+    {
+      "evidence": "'What's the wait time?' → 'Let me check with everyone' (no central schedule visibility). 'Booking was confusing' (customer review). Phones/emails/bookings handled ad-hoc.",
+      "observation": "Booking system absent or non-functional — no central schedule visibility causing customer-facing confusion",
+      "suggested_domain": "technology"
+    },
+    {
+      "evidence": "Retail program undeveloped (products from site available, but no push — displays dusty, no sales training). Customer review: 'Love the products but nobody explained them.'",
+      "observation": "Retail cosmetics programme present but entirely passive — products stocked but not sold",
+      "suggested_domain": "financial"
+    },
+    {
+      "evidence": "Sterilization basic (UV/disposables, but no logs).",
+      "observation": "Sterilization logs absent in a personal care/beauty context — this is a regulatory compliance risk, not merely an operational gap",
+      "suggested_domain": "legal"
+    },
+    {
+      "evidence": "Equipment (dryers, sinks) shows wear after 3 years (looks like 10, per details). No standards for checks/upkeep, leading to gradual decay.",
+      "observation": "Accelerated physical decay of premises and equipment relative to age — suggests systemic maintenance neglect with compounding cost risk",
+      "suggested_domain": "operations"
+    },
+    {
+      "evidence": "'Amazing color but booking was confusing.' 'Talents great, but salon could be tidier.' 'Love the products but nobody explained them.'",
+      "observation": "Customer experience quality is stylist-dependent, not system-dependent — positive reviews praise individual talent, negative reviews cite systemic failures",
+      "suggested_domain": "customer"
+    },
+    {
+      "evidence": "No dedicated admin/receptionist (can't afford, per ops).",
+      "observation": "Affordability constraint explicitly cited as reason for operational gaps — owner acknowledges structural resource limitation",
+      "suggested_domain": "financial"
+    }
+  ],
+  "active_signal_ids": [
+    "S002",
+    "S010",
+    "S019",
+    "S030",
+    "S045",
+    "S051",
+    "S063",
+    "S070",
+    "S071",
+    "S073",
+    "S080",
+    "S083",
+    "S133",
+    "S160",
+    "S166"
+  ]
+}

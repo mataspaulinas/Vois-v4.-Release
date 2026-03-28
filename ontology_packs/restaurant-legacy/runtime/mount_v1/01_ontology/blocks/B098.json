@@ -1,0 +1,157 @@
+{
+  "block_id": "B098",
+  "name": "Seating Turnover Strategy",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Develops strategies to optimise table turnover during peak periods without making customers feel rushed, balancing the need to maximise covers with the cafe's hospitality values. This block addresses the delicate art of moving people through without pushing them out.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Analyse current seating turnover rates by time period and day of the week",
+      "Identify bottlenecks that slow table turnover: slow clearing, lingering customers, inefficient table layouts",
+      "Implement subtle turnover techniques that maintain a welcoming atmosphere",
+      "Design service flow so that table clearing and resetting happens within 2 minutes of a customer leaving",
+      "Create peak-period seating management protocols that maximise revenue per seat per hour"
+    ],
+    "secondary_objectives": [
+      "Reduce walkaways during peak periods caused by no available seating",
+      "Improve the perceived speed of service by eliminating waits for a clean table",
+      "Balance dine-in turnover with the takeaway channel to manage capacity overall"
+    ]
+  },
+  "why_this_matters": "A cafe with 30 seats and an average dwell time of 45 minutes can serve a maximum of 40 covers per hour. But if table clearing takes 5 minutes and resetting takes another 3, effective capacity drops to 30 covers — a 25% loss. During peak hours (typically 8-10am and 12-2pm in a UK cafe), every minute a table sits dirty or unoccupied represents lost revenue. At an average spend of £6-8 per customer, a single seat sitting empty for 15 unnecessary minutes during the Saturday morning rush costs the cafe £1.50-£2.00. Across 30 seats over a 4-hour peak window, this inefficiency can cost £50-£100 per day — over £1,000 per month. But turnover optimisation is not simply about speed; it is about subtlety. Customers who feel rushed leave bad reviews, stop returning, and tell their friends. The best cafes manage turnover through environmental and service design rather than direct pressure: natural service cues like presenting the bill with the second coffee, clearing plates promptly, adjusting music tempo during peak periods, and designing furniture that is comfortable for 30-45 minutes but not for hours. In the UK coffee culture, where many customers treat cafes as remote offices, the tension between dwell time and turnover is particularly acute. This block provides a structured approach to maximising revenue without sacrificing the welcoming atmosphere that defines a great cafe.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Measure current table turnover by observing and recording, for three representative days, how long each table is occupied (dwell time), how long tables sit dirty after customers leave (clearing time), and how long it takes to reset a table for the next customer (reset time). Calculate average dwell time, average clearing time, and average reset time. Most UK cafes will find dwell times of 30-60 minutes, clearing times of 3-8 minutes, and reset times of 1-3 minutes. The immediate win is almost always in clearing time — dirty tables are both lost revenue and an unpleasant sight for arriving customers. Implement a 'clear within 2 minutes' rule: when a customer leaves, the nearest available team member clears the table within 2 minutes and resets it within 1 further minute. This requires tables to be visible from the counter or service area. Week 2: Designate a team member during peak periods whose primary role is floor management — clearing, resetting, and greeting customers to available tables. Even in a small cafe, having one person focused on floor flow during the rush transforms efficiency. Train the team on natural service cues: offering the bill alongside the last drink rather than waiting to be asked, asking 'Can I get you anything else?' as a gentle signal, and ensuring WiFi and power sockets are positioned to support quick visits rather than extended stays.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Introduce a revenue-per-seat-per-hour metric and track it across different time slots and days. This metric reveals when turnover is strong and when it is weak, guiding where to focus improvement efforts. Design a peak-period service flow that differs from off-peak: during quiet periods, longer dwell times are actively welcome (they create atmosphere and potential add-on sales), but during peak periods the team shifts into a higher-tempo mode with faster clearing, proactive bill delivery, and queue management. Create a table management system — for cafes with more than 20 seats, this can be as simple as a whiteboard showing table status (available, occupied, needs clearing). Implement environmental turnover cues: slightly brighter lighting during peak, up-tempo background music, and table settings that encourage eating over working (removing power strips during lunch rush, for example). Analyse the mix of seating types — high stools and bar seating naturally encourage shorter dwell times than deep sofas, so position quick-turnover seating near the entrance for peak-period arrivals.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Seating turnover should be managed as a strategic capability linked directly to revenue optimisation. Develop a seating heat map showing which tables turn fastest and which have the longest dwell times — this data informs layout decisions and furniture investments. Experiment with reservation or time-slot systems during peak periods (increasingly common in busy UK brunch cafes). Test different table configurations seasonally — more two-tops during busy periods, community tables during quieter times. Link turnover data to the peak capacity management system (B099) so that seating and capacity are managed holistically. Review turnover strategy quarterly, adjusting for seasonal demand patterns, new menu introductions, and any changes to the local competitive landscape."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Measure current dwell time, clearing time, and reset time over 3 representative days",
+        "Implement a 'clear within 2 minutes, reset within 1 minute' rule for all tables",
+        "Designate a floor management role during peak periods for clearing and resetting",
+        "Train team on natural service cues for encouraging turnover without pressure",
+        "Ensure all tables are visible from the counter or service area for quick clearing",
+        "Position cleaning supplies within easy reach of the floor area",
+        "Observe and record how many potential customers walk away due to no available seats"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Introduce and track revenue-per-seat-per-hour metric across time slots",
+        "Design differentiated peak and off-peak service flow protocols",
+        "Create a simple table management system (whiteboard or digital)",
+        "Implement environmental turnover cues: lighting, music tempo, power access",
+        "Analyse seating mix and position quick-turnover furniture for peak arrivals",
+        "Train team on peak-period service tempo shifts",
+        "Track walkaway rates during peak periods as a capacity indicator"
+      ],
+      "responsible": "Manager, Shift Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Develop a seating heat map showing turnover rates by table position",
+        "Experiment with reservation or time-slot systems during peak brunch periods",
+        "Test seasonal table configurations to optimise for demand patterns",
+        "Link turnover data to peak capacity management (B099)",
+        "Review turnover strategy quarterly with revenue impact analysis"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Table Turnover Baseline Report (dwell, clearing, reset times)",
+    "Peak Period Service Flow Protocol",
+    "Revenue Per Seat Per Hour tracking sheet",
+    "Environmental Turnover Cues guide",
+    "Quarterly Turnover Strategy Review report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T098-01",
+        "tool_name": "Table Turnover Observation Sheet",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Data collection sheet for recording dwell time, clearing time, and reset time for each table over a representative trading day. Used to establish baseline turnover metrics."
+      },
+      {
+        "tool_id": "T098-02",
+        "tool_name": "Peak Period Service Flow Protocol",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Shift Lead",
+        "description": "Written protocol defining the differentiated service approach during peak periods: clearing speed targets, bill delivery timing, floor management role, and environmental cue adjustments."
+      },
+      {
+        "tool_id": "T098-03",
+        "tool_name": "Revenue Per Seat Per Hour Tracker",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Weekly spreadsheet calculating revenue per available seat per hour across different time slots and days, identifying peak and underperforming periods for targeted improvement."
+      },
+      {
+        "tool_id": "T098-04",
+        "tool_name": "Seating Heat Map Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Visual floor plan overlay showing average turnover rate, dwell time, and revenue contribution for each table position, informing layout decisions and furniture investments."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Staff make customers feel rushed by clearing too aggressively, generating negative reviews and reduced return visits",
+    "The 'clear within 2 minutes' rule is ignored during peak periods when staff are focused on making drinks",
+    "Environmental cues are applied too bluntly (e.g., turning lights up so much that the cafe loses its atmosphere)",
+    "Turnover strategy focuses only on speed without considering the customer experience and lifetime value"
+  ],
+  "kpis": [
+    "Average table clearing time under 2 minutes during peak periods",
+    "Revenue per seat per hour improved by 15% within 8 weeks",
+    "Walkaway rate during peak periods reduced by 50%",
+    "Customer satisfaction scores maintained at or above pre-implementation levels"
+  ],
+  "dependencies": ["B099"],
+  "constraints": [
+    "Turnover tactics must never make customers feel unwelcome or rushed — hospitality comes first",
+    "Environmental cues must be subtle enough that most customers do not consciously notice them",
+    "Any seating layout changes must comply with fire safety occupancy limits and accessibility requirements"
+  ],
+  "time_load": {
+    "L1": "3 hours (baseline measurement, rule implementation, staff training)",
+    "L2": "4 hours (metric setup, service flow design, environmental cue planning)",
+    "L3": "2 hours/quarter (heat map analysis, strategy review, layout testing)"
+  },
+  "review_protocol": "Daily observation of clearing times during peak periods by shift lead. Weekly revenue-per-seat-per-hour review by manager. Monthly walkaway rate analysis. Quarterly full turnover strategy review with layout and furniture assessment.",
+  "meta": {
+    "summary_for_humans": "This block develops strategies to improve table turnover during peak periods without making customers feel rushed. It focuses on the practical mechanics — clearing speed, service cues, environmental design — and the strategic metrics like revenue per seat per hour that quantify the financial impact.",
+    "implementation_risks": [
+      "Overly aggressive turnover tactics will damage the cafe's reputation — always err on the side of hospitality",
+      "Staff may feel uncomfortable with the shift to more active floor management if the cafe culture has been passive",
+      "Laptop workers and remote workers present a particular challenge — they stay for hours and spend minimally, requiring a separate policy"
+    ],
+    "notes_for_engine": "Activate alongside B099 (Peak Capacity Management) as a pair. Flag as urgent if signals indicate high walkaway rates during peak periods, customer complaints about waiting for tables, or revenue-per-seat-per-hour significantly below benchmarks.",
+    "tags": ["operations", "seating", "turnover", "peak_management", "revenue_optimisation", "table_management", "customer_experience"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

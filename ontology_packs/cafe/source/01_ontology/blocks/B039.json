@@ -1,0 +1,167 @@
+{
+  "block_id": "B039",
+  "name": "Daily Espresso Dial-In Protocol",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Defines the morning calibration routine that ensures espresso extraction is dialled in before the first customer is served. This block covers the systematic process of adjusting grind size, dose, yield, and time to achieve optimal espresso extraction for the day's coffee, accounting for variables such as bean age, humidity, and ambient temperature.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish a repeatable morning dial-in routine that every opening barista can follow",
+      "Define target extraction parameters (dose, yield, time) and acceptable tolerance ranges",
+      "Ensure dial-in is completed and verified before the cafe opens to customers",
+      "Create a dial-in log that tracks daily adjustments and identifies trends",
+      "Train all baristas to taste espresso critically during dial-in and adjust accordingly"
+    ],
+    "secondary_objectives": [
+      "Reduce wasted coffee during dial-in by building skill and efficiency over time",
+      "Identify when a coffee bean is past its optimal extraction window through dial-in data",
+      "Build a culture where espresso quality is non-negotiable and never rushed",
+      "Provide data to inform grinder maintenance schedules and bean ordering decisions"
+    ]
+  },
+  "why_this_matters": "Espresso is the foundation of every coffee drink on the menu. A flat white, latte, cappuccino, or americano is only as good as the espresso shot at its core. Coffee is a natural product that changes behaviour constantly — as beans degas after roasting, as humidity fluctuates, as temperature shifts, the same grind setting that produced a perfect shot yesterday will produce a different result today. Without daily dial-in, the cafe is serving espresso based on yesterday's settings, which means the first customers of the day receive the worst coffee. In specialty coffee, this is unacceptable. In any cafe that takes quality seriously, it is a fundamental failure. The Specialty Coffee Association defines optimal espresso extraction as typically between 18-22% of the coffee's soluble material, achieved through the interplay of dose, grind size, water temperature, pressure, and time. Even small deviations — a second or two in shot time, half a gram in dose — produce detectable flavour differences. Under-extracted espresso tastes sour, thin, and sharp. Over-extracted espresso tastes bitter, harsh, and astringent. Neither is acceptable. The dial-in process is the barista's quality control moment — the daily commitment to tasting, adjusting, and confirming that every shot served meets the cafe's standard. Cafes that skip or rush this process are gambling with their core product. A customer who receives a sour flat white at 8am will not come back tomorrow to see if it is better. They will go to the cafe down the road.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Define the cafe's espresso recipe — the target parameters that the opening barista dials in to each morning. A standard starting point: 18g dose in, 36g yield out, in 25-30 seconds (a 1:2 ratio). These numbers should be set by the head barista or owner based on the current coffee blend or single origin. Write the recipe on a laminated card and fix it to the grinder. Establish the dial-in routine: the opening barista arrives at least 15 minutes before the cafe opens. Step 1: Turn on the machine and grinder, allow the machine to reach stable temperature. Step 2: Purge the group head with a blank shot. Step 3: Grind a dose, distribute evenly in the portafilter, tamp with consistent pressure. Step 4: Pull a shot, timing it from the moment the pump engages. Step 5: Weigh the output on scales. Step 6: Taste the shot. If the shot runs too fast (under 22 seconds for 36g), the grind is too coarse — adjust finer. If too slow (over 32 seconds), adjust coarser. Each adjustment should be small — a single notch or click on the grinder. Repeat until the shot falls within the target time and tastes balanced: sweet, with pleasant acidity, no bitterness or sourness dominating. Week 2: Log every dial-in on a simple sheet: date, grind setting, dose, yield, time, tasting notes, barista initials. The manager or head barista reviews the log daily to ensure consistency and provide feedback.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a formal Dial-In SOP that covers every variable: grind adjustment increments, water temperature verification, distribution and tamping technique, scales usage, timing method, and tasting evaluation criteria. Train every barista who opens the cafe on the full dial-in routine — this is not just the head barista's job. Each opener should be capable of dialling in independently. Introduce a tasting vocabulary framework so baristas can communicate about espresso consistently: sour (under-extracted), bitter (over-extracted), sweet (well-extracted), body (mouthfeel), acidity (brightness), and finish (aftertaste). Begin tracking grind setting trends over time — as beans age post-roast, the grind typically needs to go finer. This data helps predict when to adjust and when a new batch of beans will behave differently. Establish a 'double-check' system: after dial-in, the opening barista makes a milk drink (flat white or cortado) to confirm the espresso performs well in milk, not just as a straight shot. Introduce refractometry if budget allows — a coffee refractometer (approximately £150-300) measures Total Dissolved Solids (TDS) and calculates extraction percentage, providing objective data alongside subjective tasting. Set up a communication method so the opening barista can share the day's dial-in notes with the team arriving later — a WhatsApp message, a note on the grinder, or a staff communication board.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Dial-in should now be an automatic, non-negotiable part of the opening routine that every barista takes pride in. Introduce mid-day re-dial checks — as the cafe warms up and humidity changes through the day, the grind may need adjustment. Train the team to taste shots periodically throughout service, not just during morning dial-in. Use dial-in log data to evaluate roasters and beans: which coffees dial in easily and which are problematic? This informs purchasing decisions. Conduct monthly cupping sessions where the team tastes and evaluates espresso together, calibrating their palates and building shared quality standards. Track dial-in waste (shots poured before achieving target) and work to reduce it over time as barista skill improves. Share dial-in data with your roaster — good roasters welcome feedback about how their coffee performs and may adjust their roasting profile based on your data."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Define the cafe's espresso recipe (dose, yield, time, ratio) and post it on the grinder",
+        "Ensure accurate scales (0.1g precision) and a timer are stationed at the espresso machine",
+        "Demonstrate the full dial-in routine to all opening baristas",
+        "Establish the 15-minute pre-opening dial-in window in the opening schedule",
+        "Create a dial-in log sheet and begin daily recording",
+        "Taste every dial-in shot and confirm it meets the quality standard before opening",
+        "Brief the team that no customer coffee is served until dial-in is confirmed"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft a formal Dial-In SOP covering all variables and adjustment procedures",
+        "Train every opening-capable barista on independent dial-in",
+        "Introduce a tasting vocabulary framework for consistent espresso evaluation",
+        "Implement a milk-drink confirmation step after dial-in",
+        "Track grind setting trends to anticipate bean ageing adjustments",
+        "Set up a communication method for sharing dial-in notes with the team",
+        "Consider investing in a refractometer for objective extraction measurement"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce mid-day re-dial checks during extended service",
+        "Train the team to taste shots periodically throughout the day",
+        "Use dial-in data to evaluate roasters and inform bean purchasing decisions",
+        "Conduct monthly cupping sessions for palate calibration",
+        "Track and reduce dial-in waste over time",
+        "Share dial-in performance data with your coffee roaster"
+      ],
+      "responsible": "Head Barista, Manager, Owner"
+    }
+  },
+  "deliverables": [
+    "Espresso Recipe Card (laminated, grinder-mounted)",
+    "Dial-In SOP document",
+    "Daily Dial-In Log Sheet",
+    "Tasting Vocabulary Reference Card",
+    "Monthly Dial-In Trend Analysis report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T039-01",
+        "tool_name": "Daily Dial-In Log Sheet",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Head Barista",
+        "description": "Daily log recording grind setting, dose, yield, shot time, tasting notes, and adjustments made. Tracks who performed dial-in and confirms quality was verified before opening."
+      },
+      {
+        "tool_id": "T039-02",
+        "tool_name": "Espresso Recipe Card",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "Laminated A6 card mounted on or near the grinder displaying the current espresso recipe: dose, yield, target time, ratio, and acceptable tolerance ranges. Updated when the coffee changes."
+      },
+      {
+        "tool_id": "T039-03",
+        "tool_name": "Dial-In SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Head Barista",
+        "description": "Comprehensive Standard Operating Procedure covering the full dial-in process: machine warm-up, purging, grinding, distribution, tamping, extraction, weighing, timing, tasting, adjusting, and communicating results to the team."
+      },
+      {
+        "tool_id": "T039-04",
+        "tool_name": "Tasting Vocabulary Reference",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "Reference card defining the key espresso tasting terms — sour, bitter, sweet, body, acidity, finish — with examples and guidance on what each indicates about extraction quality."
+      },
+      {
+        "tool_id": "T039-05",
+        "tool_name": "Monthly Grind Trend Analysis",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Head Barista",
+        "description": "Monthly chart plotting grind settings over time against bean batch changes, environmental conditions, and maintenance events. Used to predict adjustments and evaluate bean consistency."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Dial-in is skipped on busy mornings or when running late, meaning the first customers receive poorly extracted coffee",
+    "Only one barista can dial in, creating a single point of failure when they are absent",
+    "Baristas adjust by time only without tasting, missing flavour issues that fall within the 'acceptable' time window",
+    "Dial-in log is completed retrospectively or fabricated, providing false confidence in quality"
+  ],
+  "kpis": [
+    "100% of trading days have dial-in completed and logged before the first customer is served",
+    "Dial-in achieved within three test shots on at least 80% of mornings",
+    "All opening-capable baristas can independently dial in to target parameters",
+    "Zero customer complaints about espresso quality in the first hour of trading"
+  ],
+  "dependencies": ["B041"],
+  "constraints": [
+    "Requires accurate scales (0.1g precision) and a reliable timer at the espresso station",
+    "Opening barista must arrive at least 15 minutes before the first customer is served",
+    "Espresso recipe must be set by a qualified person (head barista or owner) and not changed by staff without approval"
+  ],
+  "time_load": {
+    "L1": "2 hours (recipe definition, routine demonstration, log setup)",
+    "L2": "6 hours (SOP drafting, staff training, tasting vocabulary sessions)",
+    "L3": "1 hour/month (trend analysis, cupping sessions, roaster communication)"
+  },
+  "review_protocol": "Daily review of dial-in log by head barista or manager. Weekly check of grind trend data. Monthly review of dial-in efficiency (shots wasted) and staff competency. Espresso recipe reviewed whenever the bean blend or roaster changes.",
+  "meta": {
+    "summary_for_humans": "This block establishes the daily morning espresso dial-in routine — the process of calibrating the grinder and verifying espresso quality before the first customer is served. It covers the method, the standards, the logging, and the training needed to ensure every shot meets the cafe's quality standard.",
+    "implementation_risks": [
+      "Time pressure on opening shifts may lead to shortcuts, especially in high-volume cafes",
+      "Baristas may adjust mechanically without developing genuine tasting ability",
+      "Relying solely on refractometer data without tasting can miss flavour nuances"
+    ],
+    "notes_for_engine": "Activate immediately for any cafe serving espresso. This is a foundational block — without consistent dial-in, all downstream coffee quality blocks (B040, B042, B043, B054) are undermined. Flag as urgent if signals indicate inconsistent coffee quality or customer complaints about taste.",
+    "tags": ["coffee_quality", "espresso", "dial_in", "grinder", "extraction", "calibration", "morning_routine", "barista_skills"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

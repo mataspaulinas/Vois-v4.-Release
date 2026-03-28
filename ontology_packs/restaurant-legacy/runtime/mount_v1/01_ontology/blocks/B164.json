@@ -1,0 +1,166 @@
+{
+  "block_id": "B164",
+  "name": "Business Plan & Strategy",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M11: Expansion & Market Positioning",
+  "state": "enriched",
+  "purpose": "Ensures the cafe has a clear, documented business plan that articulates where the business is going, how it will get there, and what success looks like. This block transforms the owner's ambitions from unspoken assumptions into a written strategy that guides every significant decision, from menu changes to capital investment to hiring.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a written business plan covering vision, mission, target market, competitive positioning, financial targets, and growth strategy",
+      "Define clear 12-month objectives with measurable targets and quarterly milestones",
+      "Align all operational decisions with the strategic direction by creating a decision-making framework",
+      "Establish financial projections including revenue targets, cost budgets, profit expectations, and cash flow forecasts",
+      "Communicate the plan to the management team so everyone is working towards the same goals"
+    ],
+    "secondary_objectives": [
+      "Provide a foundation document for securing investment, loans, or lease negotiations",
+      "Force clarity of thinking about the business model, customer proposition, and competitive advantage",
+      "Create accountability by setting targets that can be tracked and reviewed",
+      "Identify strategic risks and develop mitigation plans before they become crises"
+    ]
+  },
+  "why_this_matters": "Most independent cafes operate without a written business plan. The owner has a general sense of what they want but it lives entirely in their head, often evolving week by week in response to immediate pressures rather than strategic intent. This creates several problems. First, without clear targets, there is no way to know whether the business is succeeding or merely surviving. Revenue might be growing but if costs are growing faster, the business is actually declining. Second, without a documented strategy, every decision becomes ad-hoc. Should we add evening service? Should we invest in a better espresso machine? Should we hire another barista? Without strategic context, these decisions are made on gut feeling or urgency rather than alignment with a coherent plan. Third, the business becomes entirely dependent on the owner's presence and memory. If the owner is ill, on holiday, or simply having a bad week, decision quality deteriorates because nobody else knows the direction. A business plan does not need to be a 50-page document. For an independent cafe, 5-10 pages covering vision, market, proposition, finances, and key priorities is sufficient. The value is not in the document itself but in the thinking it forces and the alignment it creates. Research consistently shows that businesses with written plans grow 30% faster than those without, not because the plan is magical but because the planning process clarifies priorities and creates accountability.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Answer the foundational questions. Before writing anything formal, the owner should write honest answers to these questions: Why does this cafe exist beyond making money? Who is our ideal customer and what do they value most? What makes us different from the three nearest competitors? What does success look like in 12 months (specific numbers, not vague aspirations)? What is the single biggest risk to this business right now? What is the one thing we must get right this year? These answers form the raw material for the business plan. Week 2: Create a one-page Business Summary covering: the cafe's purpose statement (2-3 sentences), target customer description, key differentiator, current annual revenue, 12-month revenue target, 3 strategic priorities for the year, and the owner's personal vision for the business in 3 years. This one-pager should be pinned to the office wall and referenced in every significant decision. Share it with the manager and any business partners.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Expand the one-page summary into a full Business Plan. Structure: (1) Executive Summary: the business in one page. (2) Vision and Mission: why the cafe exists and what it aims to achieve. (3) Market Analysis: target customer profiles, local competition, market trends, and the cafe's positioning (link to B165). (4) Products and Services: menu strategy, pricing approach, and planned developments. (5) Marketing Strategy: how customers are acquired and retained. (6) Operations Plan: key operational priorities and resource requirements. (7) Financial Plan: 12-month revenue projections by month, cost budget by category, profit forecast, cash flow projection, and capital expenditure plan. (8) Risk Assessment: top 5 strategic risks with likelihood, impact, and mitigation actions. (9) Key Milestones: quarterly targets and deliverables. Create the Financial Plan using actual historical data where available and realistic assumptions where not. The most common error in cafe business planning is overestimating revenue growth and underestimating costs. Be conservative in projections and plan for scenarios where revenue falls 10-20% below target. Present the plan to the management team and discuss how daily operations connect to strategic objectives.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Conduct a formal Quarterly Strategic Review using the business plan as the agenda. Review: progress against 12-month targets, quarterly milestone achievement, financial performance versus projections, strategic risk updates, and priorities for the next quarter. Update the plan annually with fresh market analysis, revised financial projections, and evolved strategic priorities. The plan should be a living document, not a filing cabinet ornament. Build strategic thinking capability in the management team by involving them in quarterly reviews and asking for their input on priorities. A manager who understands the business strategy makes better daily decisions without needing to consult the owner. Use the business plan to evaluate opportunities and distractions. Every new idea (evening service, catering, retail products, second location) should be assessed against the strategic framework: does it align with our vision, serve our target customer, and generate adequate financial return? This prevents shiny-object syndrome where the cafe pursues every opportunity and executes none well."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Answer the 6 foundational business questions honestly and in writing",
+        "Create a one-page Business Summary covering purpose, target customer, differentiator, and targets",
+        "Define the 12-month revenue target with quarterly milestones",
+        "Identify the 3 strategic priorities for the year",
+        "Share the one-page summary with the manager and any business partners",
+        "Pin the summary to the office wall as a daily reference point"
+      ],
+      "responsible": "Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Expand the one-page summary into a full Business Plan (9 sections)",
+        "Create a 12-month Financial Plan with monthly revenue projections and cost budgets",
+        "Conduct a Risk Assessment covering the top 5 strategic risks with mitigation plans",
+        "Define quarterly milestones and deliverables for the year",
+        "Present the Business Plan to the management team and discuss implications",
+        "Set up a quarterly strategic review calendar",
+        "Create scenario plans for revenue shortfalls of 10% and 20%"
+      ],
+      "responsible": "Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct formal Quarterly Strategic Reviews using the business plan as agenda",
+        "Update the Business Plan annually with fresh analysis and revised projections",
+        "Involve the management team in strategic thinking and priority setting",
+        "Evaluate all new opportunities against the strategic framework before committing",
+        "Use the business plan when negotiating leases, loans, or supplier terms"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "One-Page Business Summary (vision, customer, differentiator, targets, priorities)",
+    "Full Business Plan (9-section document)",
+    "12-Month Financial Plan with monthly projections",
+    "Strategic Risk Assessment with mitigation plans",
+    "Quarterly Strategic Review agenda template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T164-01",
+        "tool_name": "One-Page Business Summary Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Single-page template capturing the business essence: purpose statement, target customer, key differentiator, current revenue, 12-month target, 3 strategic priorities, and 3-year vision. Designed for wall display and daily reference."
+      },
+      {
+        "tool_id": "T164-02",
+        "tool_name": "Business Plan Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "9-section business plan template tailored for independent cafes: executive summary, vision and mission, market analysis, products and services, marketing strategy, operations plan, financial plan, risk assessment, and key milestones."
+      },
+      {
+        "tool_id": "T164-03",
+        "tool_name": "12-Month Financial Projection Spreadsheet",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Monthly financial projection spreadsheet covering: revenue by category, cost of goods sold, labour costs, overheads, profit forecast, and cash flow. Includes scenario modelling for 10% and 20% revenue shortfalls."
+      },
+      {
+        "tool_id": "T164-04",
+        "tool_name": "Strategic Risk Register",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "Register documenting the top 5-10 strategic risks with: risk description, likelihood (high/medium/low), potential impact, current mitigation measures, additional actions required, and responsible owner. Reviewed quarterly."
+      },
+      {
+        "tool_id": "T164-05",
+        "tool_name": "Quarterly Strategic Review Agenda",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Structured agenda for quarterly strategic reviews covering: performance versus targets, milestone achievement, financial variance analysis, risk register updates, market changes, and priority setting for the next quarter."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The business plan is written once and filed away, never reviewed or used to guide decisions",
+    "Financial projections are unrealistically optimistic, creating a false sense of security and inadequate contingency planning",
+    "The plan exists only in the owner's head and is never documented or communicated, limiting its value to the team",
+    "Strategic priorities shift monthly based on the latest idea or pressure, preventing any single initiative from being executed well"
+  ],
+  "kpis": [
+    "Written business plan completed and shared with management team within 8 weeks",
+    "Quarterly Strategic Reviews conducted 4 times per year with documented outcomes",
+    "Financial performance tracked monthly against projections with variance analysis",
+    "Business plan updated annually with fresh market analysis and revised projections"
+  ],
+  "dependencies": ["B165"],
+  "constraints": [
+    "Business plan quality depends on honest self-assessment which some owners find uncomfortable",
+    "Financial projections require access to historical trading data which may be incomplete for newer businesses",
+    "The planning process requires dedicated time which feels difficult to justify in a busy operational environment",
+    "Strategic reviews must be protected in the calendar and not cancelled during busy trading periods"
+  ],
+  "time_load": {
+    "L1": "4 hours (foundational questions, one-page summary creation)",
+    "L2": "16 hours (full business plan writing, financial projections, risk assessment)",
+    "L3": "4 hours/quarter (quarterly strategic reviews) + 8 hours/year (annual plan update)"
+  },
+  "review_protocol": "One-page summary referenced in every significant business decision. Financial performance reviewed monthly against projections. Quarterly Strategic Review conducted with documented outcomes and action items. Full business plan updated annually. Risk register reviewed quarterly and updated whenever new strategic risks emerge.",
+  "meta": {
+    "summary_for_humans": "This block ensures the cafe has a written business plan that articulates vision, strategy, financial targets, and priorities. It starts with a one-page summary and builds to a full plan with quarterly reviews, transforming the owner's unspoken ambitions into a documented strategy that guides every significant decision.",
+    "implementation_risks": [
+      "Business planning feels like a corporate exercise that does not apply to a small cafe, requiring reframing as practical strategic thinking",
+      "Owners who have operated successfully without a plan may not see the value until they face a strategic decision without a framework",
+      "Financial projections can create anxiety if they reveal uncomfortable truths about profitability"
+    ],
+    "notes_for_engine": "This is a foundational block for all D11 growth and strategy blocks. Activate for any cafe that cannot clearly articulate its strategic direction, has no written targets, or is considering significant changes (expansion, new services, major investment). Pairs with B165 Market Analysis.",
+    "tags": ["business_plan", "strategy", "vision", "financial_planning", "targets", "risk_assessment", "growth", "leadership"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

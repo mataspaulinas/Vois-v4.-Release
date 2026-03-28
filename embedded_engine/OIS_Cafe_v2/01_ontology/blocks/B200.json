@@ -1,0 +1,168 @@
+{
+  "block_id": "B200",
+  "name": "Batch Brew & Filter Programme",
+  "version": "v1.0",
+  "domain": "D03_coffee_product_quality",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Implements a batch brew and filter coffee programme that offers customers a high-quality, lower-priced black coffee option served quickly and consistently. This block covers equipment selection, recipe development, freshness management, coffee selection for filter, and the operational workflows needed to make batch brew a profitable and respected part of the menu.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Select and install appropriate batch brew equipment suited to the cafe's volume and format",
+      "Develop standardised batch brew recipes with defined dose, water volume, grind size, and brew time",
+      "Establish a freshness protocol ensuring batch brew is never served stale — maximum hold time and discard rules",
+      "Curate a rotating filter coffee selection that showcases different origins and flavour profiles",
+      "Train all staff to brew, monitor, and talk about batch brew with the same confidence as espresso"
+    ],
+    "secondary_objectives": [
+      "Increase speed of service during peak hours by offering an instant-pour black coffee option",
+      "Attract black coffee drinkers who may currently feel underserved by an espresso-only menu",
+      "Provide a lower price point option that drives footfall without cannibalising espresso sales",
+      "Use filter coffee as a gateway to educate customers about single-origin flavour diversity"
+    ]
+  },
+  "why_this_matters": "Espresso dominates UK cafe culture, but filter coffee is experiencing a significant resurgence, particularly in the specialty sector. Batch brew — high-quality filter coffee brewed in a commercial machine and held in an insulated airpot or server — combines the flavour clarity of pour-over with the speed and consistency of a push-button operation. A well-made batch brew takes 4-6 minutes to produce 2-3 litres (roughly 10-15 cups) and can be served in under 5 seconds per customer — dramatically faster than pulling espresso shots. This makes it invaluable during morning peak when every second counts. From a financial perspective, batch brew is extraordinarily profitable: a 2.5-litre batch using 150g of specialty coffee (cost approximately £4-5) produces 12 servings priced at £2.50-3.00 each, yielding revenue of £30-36 from £5 of input. The margin exceeds 85% before overheads. For customers, batch brew offers a different experience from espresso — lighter body, cleaner flavour, more nuanced acidity, and the ability to taste the character of a single-origin coffee without milk or sugar masking it. Many specialty cafes use batch brew as their primary vehicle for showcasing guest coffees and seasonal arrivals. The challenge is freshness: batch brew deteriorates within 30-60 minutes of brewing as oxidation and temperature decline alter the flavour. A stale batch brew is worse than no batch brew at all — it communicates carelessness. This block provides the systems to ensure freshness is never compromised.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Evaluate equipment options. For most cafes, a Moccamaster, Fetco, or Marco batch brewer is the standard choice, ranging from £300 (Moccamaster) to £1,500+ (Fetco/Marco) depending on volume needs. If budget is constrained, a large V60 or Chemex can serve as a manual batch brew solution for lower-volume sites, though these require more staff attention. Choose a brewer that matches expected demand — a 1.8-litre Moccamaster suits a small cafe selling 15-20 filter coffees per day; a Fetco with dual 3-litre servers suits higher-volume operations. Install the brewer in a visible, accessible position — customers should see it and smell it. Select the first filter coffee: choose something different from the espresso to give customers a reason to try it. A washed Ethiopian or Kenyan with bright acidity contrasts nicely against a typical Brazilian or Colombian espresso blend. Week 2: Develop the recipe. A standard starting ratio is 60g of coffee per litre of water, ground medium (between espresso and French press). Brew into an insulated server (airpot or thermal carafe). Taste the first batch as a team and adjust grind size to optimise extraction — if it tastes sour and thin, grind finer; if bitter and harsh, grind coarser. Once dialled in, record the recipe on a Batch Brew Recipe Card: coffee name, dose, grind setting (by number on your grinder), water volume, and target brew time. Set a maximum hold time of 45 minutes in a thermal server, or 90 minutes on a hot plate (though thermal servers are strongly preferred for quality). After the hold time, discard and rebrew. Price batch brew 20-30% below espresso-based drinks to encourage trial.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Standardise the production schedule. Analyse peak hour demand to determine how many batches are needed and when. Typically: first batch brewed 10 minutes before opening, second batch mid-morning, and possibly a third for the lunchtime rush. On quiet afternoons, suspend batch brew rather than letting it sit. Create a Batch Brew Log tracking: brew time, coffee used, grind setting, discard time, and cups sold per batch. This data reveals demand patterns and waste rates. Introduce a rotating filter coffee programme: change the filter coffee weekly or fortnightly, selecting from different origins and processes to keep the offering fresh and educational. Create simple tasting note cards displayed next to the batch brewer so customers know what they are drinking — origin, process, roast level, and two or three flavour descriptors in plain language. Train all staff on the batch brew workflow, including when to brew, how to check freshness (taste a small pour before serving — if it tastes flat or papery, discard immediately), and how to describe the current coffee to customers. Establish a waste tracking metric: batch brew waste should stay below 15% of total production. If waste is consistently high, reduce batch sizes or frequency.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Batch brew should now be an established, respected part of the menu with its own following. Introduce pour-over or manual brew options alongside batch brew for customers who want a single-cup experience — V60, AeroPress, or Kalita Wave brewed to order. This two-tier approach serves both speed-focused and experience-focused customers. Develop a coffee subscription or loyalty programme specifically for filter coffee, encouraging daily batch brew customers. Host monthly filter coffee tasting events where customers can try the next month's selection before it launches. Track filter coffee as a separate category in sales reporting to understand its contribution to revenue, average transaction value, and customer acquisition. Collaborate with the roaster to source exclusive or limited micro-lot coffees for the filter programme that are unavailable elsewhere locally. Display origin information prominently — a map, farm photos, processing details — to educate customers and differentiate from chain filter coffee. Conduct quarterly recipe reviews, optimising extraction using a refractometer (TDS meter) to ensure consistency as coffees change."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Evaluate and select a batch brew machine suited to the cafe's volume and budget",
+        "Select the first filter coffee — choose a contrasting profile to the house espresso",
+        "Develop and record the batch brew recipe (dose, grind, water volume, brew time)",
+        "Set a maximum hold time (45 minutes in thermal server) and enforce discard rules",
+        "Add batch brew to the menu board with price and a brief tasting description",
+        "Train all staff on the brewing and service procedure",
+        "Position the brewer visibly so customers can see and smell the fresh coffee"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a Batch Brew Production Log tracking brew times, discard times, and cups sold per batch",
+        "Establish a production schedule aligned to peak demand periods",
+        "Introduce a rotating filter coffee programme with weekly or fortnightly changes",
+        "Design and display tasting note cards next to the batch brewer for each coffee",
+        "Train all staff on freshness checking, waste management, and customer coffee descriptions",
+        "Track waste rates weekly with a target below 15% of production",
+        "Calculate cost-per-serve and confirm pricing delivers target margin"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce pour-over or manual brew-to-order options alongside batch brew",
+        "Launch a filter coffee loyalty or subscription programme",
+        "Host monthly filter coffee tasting events for customers",
+        "Track filter coffee as a separate sales category in reporting",
+        "Source exclusive micro-lot coffees for the filter programme",
+        "Display origin stories and farm information prominently for each coffee",
+        "Conduct quarterly recipe optimisation using a refractometer for TDS measurement"
+      ],
+      "responsible": "Head Barista, Owner"
+    }
+  },
+  "deliverables": [
+    "Batch Brew Recipe Card template",
+    "Batch Brew Production Log",
+    "Filter Coffee Rotation schedule template",
+    "Customer Tasting Note Card design",
+    "Batch brew cost-per-serve analysis"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T200-01",
+        "tool_name": "Batch Brew Recipe Card",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "Laminated recipe card for each coffee showing dose, grind setting, water volume, brew time, maximum hold time, and flavour profile notes. Positioned at the brew station for reference during service."
+      },
+      {
+        "tool_id": "T200-02",
+        "tool_name": "Batch Brew Production Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Head Barista",
+        "description": "Daily log tracking each batch brewed: time brewed, coffee used, grind setting, discard time, cups served, and waste volume. Used to optimise production scheduling and minimise waste."
+      },
+      {
+        "tool_id": "T200-03",
+        "tool_name": "Filter Coffee Rotation Planner",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Planning template for the rotating filter coffee programme: scheduled coffees by week, origin and process details, order quantities, roast dates, and changeover dates to ensure seamless transitions."
+      },
+      {
+        "tool_id": "T200-04",
+        "tool_name": "Customer Tasting Note Card Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "A5 card template displayed next to the batch brewer showing the current coffee's name, origin, farm or cooperative, process, roast profile, and three flavour descriptors in accessible language."
+      },
+      {
+        "tool_id": "T200-05",
+        "tool_name": "Filter Programme Margin Calculator",
+        "level": "L2",
+        "format": "calculator",
+        "owner_role": "Manager",
+        "description": "Spreadsheet calculating batch brew cost-per-serve including coffee cost, water, filters, and waste factor, with margin analysis and recommended pricing to achieve profitability targets."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Batch brew sits past its hold time and is served stale, creating a terrible first impression that deters repeat orders",
+    "Production schedule is not aligned to demand, resulting in either frequent stockouts (frustrating customers) or chronic overproduction (wasting coffee)",
+    "Staff do not taste-check batches before serving, allowing sub-standard brews to reach customers",
+    "Filter coffee is not rotated or described, making it feel like an anonymous afterthought rather than a curated offering"
+  ],
+  "kpis": [
+    "Batch brew waste rate below 15% of total production volume",
+    "Filter coffee sales reaching at least 10% of total drink sales within 6 months",
+    "Zero stale batches served — 100% compliance with maximum hold time and discard protocol",
+    "Filter coffee rotation maintained with a new coffee introduced at least every fortnight"
+  ],
+  "dependencies": ["B054"],
+  "constraints": [
+    "Batch brew equipment requires counter space and a power outlet near the service area",
+    "Freshness management demands discipline — the 45-minute discard rule must be non-negotiable even when waste feels painful",
+    "Filter-roasted coffees may need to be sourced separately from espresso roasts if the roaster does not offer omni-roast profiles"
+  ],
+  "time_load": {
+    "L1": "3 hours (equipment setup, recipe development, first batches, staff training)",
+    "L2": "6 hours (production log setup, rotation planning, tasting card design, cost analysis)",
+    "L3": "2 hours/month (rotation management, data analysis, tasting events, recipe optimisation)"
+  },
+  "review_protocol": "Daily freshness compliance check by shift lead. Weekly production log review by head barista. Monthly waste rate and sales analysis. Quarterly recipe optimisation and rotation planning session.",
+  "meta": {
+    "summary_for_humans": "This block implements a batch brew and filter coffee programme that delivers fast, consistent, high-quality black coffee with exceptional margins. It covers equipment, recipes, freshness protocols, rotation planning, and staff training to make filter coffee a respected revenue stream.",
+    "implementation_risks": [
+      "Stale batch brew will actively damage the cafe's reputation — freshness discipline must be absolute",
+      "Some customers may perceive filter coffee as 'cheap' — presentation and origin storytelling counter this",
+      "Equipment failure mid-service leaves no batch brew backup — a manual brew method should be available as fallback"
+    ],
+    "notes_for_engine": "Activate when signals indicate peak-hour bottlenecks, demand for black coffee, or desire to showcase single-origin diversity. Pairs with B199 (Cold Drink Programme) for iced filter and B198 (Cupping & Quality Benchmarking) for coffee selection.",
+    "tags": ["batch_brew", "filter_coffee", "black_coffee", "production", "freshness", "menu_development", "speed_of_service", "margin"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

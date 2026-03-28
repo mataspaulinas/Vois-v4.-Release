@@ -1,0 +1,938 @@
+[
+  {
+    "path": "/api/auth/setup",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_auth_setup",
+    "line_number": 144,
+    "category": "auth"
+  },
+  {
+    "path": "/api/auth/login",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_auth_login",
+    "line_number": 170,
+    "category": "auth"
+  },
+  {
+    "path": "/api/auth/logout",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_auth_logout",
+    "line_number": 185,
+    "category": "auth"
+  },
+  {
+    "path": "/api/auth/status",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_auth_status",
+    "line_number": 191,
+    "category": "auth"
+  },
+  {
+    "path": "/",
+    "methods": [
+      "GET"
+    ],
+    "handler": "index",
+    "line_number": 1376,
+    "category": "root"
+  },
+  {
+    "path": "/api/profiles",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_profiles",
+    "line_number": 1382,
+    "category": "profiles"
+  },
+  {
+    "path": "/api/profile/<filename>",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_load_profile",
+    "line_number": 1387,
+    "category": "profile"
+  },
+  {
+    "path": "/api/profile/save",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_save_profile",
+    "line_number": 1400,
+    "category": "profile"
+  },
+  {
+    "path": "/api/ai-intake",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_ai_intake",
+    "line_number": 1413,
+    "category": "ai-intake"
+  },
+  {
+    "path": "/api/run",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_run_engine",
+    "line_number": 1533,
+    "category": "run"
+  },
+  {
+    "path": "/api/report/<filename>",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_view_report",
+    "line_number": 1664,
+    "category": "report"
+  },
+  {
+    "path": "/api/briefing/welcome",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_briefing_welcome",
+    "line_number": 1681,
+    "category": "briefing"
+  },
+  {
+    "path": "/api/copilot/proactive",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_copilot_proactive",
+    "line_number": 1746,
+    "category": "copilot"
+  },
+  {
+    "path": "/api/chat/threads",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_chat_threads",
+    "line_number": 1958,
+    "category": "chat"
+  },
+  {
+    "path": "/api/chat/threads/all",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_all_chat_threads",
+    "line_number": 1969,
+    "category": "chat"
+  },
+  {
+    "path": "/api/chat/threads",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_create_thread",
+    "line_number": 2013,
+    "category": "chat"
+  },
+  {
+    "path": "/api/chat/thread/<thread_id>",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_get_thread",
+    "line_number": 2037,
+    "category": "chat"
+  },
+  {
+    "path": "/api/chat/thread/<thread_id>",
+    "methods": [
+      "PATCH"
+    ],
+    "handler": "api_rename_thread",
+    "line_number": 2051,
+    "category": "chat"
+  },
+  {
+    "path": "/api/chat/thread/<thread_id>",
+    "methods": [
+      "DELETE"
+    ],
+    "handler": "api_delete_thread",
+    "line_number": 2068,
+    "category": "chat"
+  },
+  {
+    "path": "/api/chat/threads/bulk",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_bulk_thread_action",
+    "line_number": 2086,
+    "category": "chat"
+  },
+  {
+    "path": "/api/chat/threads/archived",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_archived_threads",
+    "line_number": 2163,
+    "category": "chat"
+  },
+  {
+    "path": "/api/chat/thread/<thread_id>/message",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_chat_message",
+    "line_number": 2209,
+    "category": "chat"
+  },
+  {
+    "path": "/api/chat/upload",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_chat_upload",
+    "line_number": 2754,
+    "category": "chat"
+  },
+  {
+    "path": "/api/chat/uploads/<path:filename>",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_serve_upload_main",
+    "line_number": 2812,
+    "category": "chat"
+  },
+  {
+    "path": "/api/chat/uploads/<slug>/<path:filename>",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_serve_upload_venue",
+    "line_number": 2819,
+    "category": "chat"
+  },
+  {
+    "path": "/api/brands",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_list_brands",
+    "line_number": 2830,
+    "category": "brands"
+  },
+  {
+    "path": "/api/brand/create",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_create_brand",
+    "line_number": 2835,
+    "category": "brand"
+  },
+  {
+    "path": "/api/brand/<slug>/update",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_update_brand",
+    "line_number": 2857,
+    "category": "brand"
+  },
+  {
+    "path": "/api/brand/<slug>/delete",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_delete_brand",
+    "line_number": 2873,
+    "category": "brand"
+  },
+  {
+    "path": "/api/projects",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_list_projects",
+    "line_number": 2895,
+    "category": "projects"
+  },
+  {
+    "path": "/api/projects/stats",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_project_stats",
+    "line_number": 2906,
+    "category": "projects"
+  },
+  {
+    "path": "/api/project/<slug>",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_get_project",
+    "line_number": 2920,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/create",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_create_project",
+    "line_number": 2945,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/update",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_update_project",
+    "line_number": 3008,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/archive",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_archive_project",
+    "line_number": 3059,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/unarchive",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_unarchive_project",
+    "line_number": 3076,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/delete",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_delete_project",
+    "line_number": 3094,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/assessment",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_save_assessment",
+    "line_number": 3111,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/assessments",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_list_assessments",
+    "line_number": 3169,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/assessment/<filename>",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_get_assessment",
+    "line_number": 3176,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/progress",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_get_progress",
+    "line_number": 3189,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/timeline",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_get_timeline",
+    "line_number": 3196,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/progress",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_add_progress",
+    "line_number": 3203,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/chat/save",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_save_chat",
+    "line_number": 3236,
+    "category": "project"
+  },
+  {
+    "path": "/api/kb/articles",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_kb_articles",
+    "line_number": 3460,
+    "category": "kb"
+  },
+  {
+    "path": "/api/kb/articles/<slug>",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_kb_article",
+    "line_number": 3479,
+    "category": "kb"
+  },
+  {
+    "path": "/api/kb/categories",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_kb_categories",
+    "line_number": 3493,
+    "category": "kb"
+  },
+  {
+    "path": "/api/kb/domains",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_kb_domains",
+    "line_number": 3517,
+    "category": "kb"
+  },
+  {
+    "path": "/api/chat",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_chat",
+    "line_number": 3930,
+    "category": "chat"
+  },
+  {
+    "path": "/api/block/<block_id>",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_get_block",
+    "line_number": 3998,
+    "category": "block"
+  },
+  {
+    "path": "/api/blocks",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_list_blocks",
+    "line_number": 4014,
+    "category": "blocks"
+  },
+  {
+    "path": "/api/ontology/signals",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_ontology_signals",
+    "line_number": 4097,
+    "category": "ontology"
+  },
+  {
+    "path": "/api/ontology/failure-modes",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_ontology_failure_modes",
+    "line_number": 4103,
+    "category": "ontology"
+  },
+  {
+    "path": "/api/ontology/response-patterns",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_ontology_response_patterns",
+    "line_number": 4109,
+    "category": "ontology"
+  },
+  {
+    "path": "/api/ontology/blocks",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_ontology_blocks",
+    "line_number": 4115,
+    "category": "ontology"
+  },
+  {
+    "path": "/api/ontology/block/<block_id>",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_ontology_block",
+    "line_number": 4129,
+    "category": "ontology"
+  },
+  {
+    "path": "/api/ontology/modules",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_ontology_modules",
+    "line_number": 4145,
+    "category": "ontology"
+  },
+  {
+    "path": "/api/ontology/signal-to-fm-map",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_ontology_signal_to_fm_map",
+    "line_number": 4150,
+    "category": "ontology"
+  },
+  {
+    "path": "/api/ontology/fm-to-rp-map",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_ontology_fm_to_rp_map",
+    "line_number": 4155,
+    "category": "ontology"
+  },
+  {
+    "path": "/api/ontology/rp-to-block-map",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_ontology_rp_to_block_map",
+    "line_number": 4160,
+    "category": "ontology"
+  },
+  {
+    "path": "/api/ontology/full",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_ontology_full",
+    "line_number": 4165,
+    "category": "ontology"
+  },
+  {
+    "path": "/api/tools",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_list_tools",
+    "line_number": 4172,
+    "category": "tools"
+  },
+  {
+    "path": "/api/tool/<tool_id>",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_get_tool",
+    "line_number": 4248,
+    "category": "tool"
+  },
+  {
+    "path": "/api/project/<slug>/plan",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_get_plan",
+    "line_number": 4340,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/plan/task/<task_id>/status",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_update_task_status",
+    "line_number": 4353,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/plan/task/<task_id>/action/<action_id>/toggle",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_toggle_sub_action",
+    "line_number": 4417,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/plan/task/<task_id>/comment",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_add_task_comment",
+    "line_number": 4453,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/plan/task/<task_id>/deliverable/<int:idx>/toggle",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_toggle_deliverable",
+    "line_number": 4497,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/plan/task/<task_id>/assign",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_assign_task",
+    "line_number": 4524,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/plan/task/<task_id>/due-date",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_update_task_due_date",
+    "line_number": 4570,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/plan/review/request",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_request_plan_review",
+    "line_number": 4600,
+    "category": "project"
+  },
+  {
+    "path": "/api/project/<slug>/plan/review/decision",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_decide_plan_review",
+    "line_number": 4648,
+    "category": "project"
+  },
+  {
+    "path": "/api/workspace/users",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_workspace_users",
+    "line_number": 4710,
+    "category": "workspace"
+  },
+  {
+    "path": "/api/notifications",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_notifications",
+    "line_number": 4715,
+    "category": "notifications"
+  },
+  {
+    "path": "/api/notifications-clear",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_notifications_clear",
+    "line_number": 4727,
+    "category": "notifications-clear"
+  },
+  {
+    "path": "/api/notifications/<notification_id>/status",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_notification_status",
+    "line_number": 4740,
+    "category": "notifications"
+  },
+  {
+    "path": "/api/projects/bulk",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_bulk_projects",
+    "line_number": 4754,
+    "category": "projects"
+  },
+  {
+    "path": "/api/templates",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_list_templates",
+    "line_number": 4787,
+    "category": "templates"
+  },
+  {
+    "path": "/api/template/save",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_save_template",
+    "line_number": 4807,
+    "category": "template"
+  },
+  {
+    "path": "/api/template/<template_id>/apply",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_apply_template",
+    "line_number": 4851,
+    "category": "template"
+  },
+  {
+    "path": "/api/search",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_search",
+    "line_number": 4903,
+    "category": "search"
+  },
+  {
+    "path": "/api/project/<slug>/signal-history",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_signal_history",
+    "line_number": 5007,
+    "category": "project"
+  },
+  {
+    "path": "/api/activity/recent",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_activity_recent",
+    "line_number": 5022,
+    "category": "activity"
+  },
+  {
+    "path": "/api/tasks/due-soon",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_tasks_due_soon",
+    "line_number": 5060,
+    "category": "tasks"
+  },
+  {
+    "path": "/api/notifications/proactive",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_notifications_proactive",
+    "line_number": 5108,
+    "category": "notifications"
+  },
+  {
+    "path": "/api/signal/<signal_id>/mappings",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_signal_mappings",
+    "line_number": 5198,
+    "category": "signal"
+  },
+  {
+    "path": "/api/settings/api-key-status",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_key_status",
+    "line_number": 5221,
+    "category": "settings"
+  },
+  {
+    "path": "/api/settings/api-key",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_key_update",
+    "line_number": 5231,
+    "category": "settings"
+  },
+  {
+    "path": "/api/settings/engine",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_settings_engine_get",
+    "line_number": 5288,
+    "category": "settings"
+  },
+  {
+    "path": "/api/settings/engine",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_settings_engine_post",
+    "line_number": 5293,
+    "category": "settings"
+  },
+  {
+    "path": "/api/settings/export",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_export_data",
+    "line_number": 5307,
+    "category": "settings"
+  },
+  {
+    "path": "/api/signal/<signal_id>/affected-blocks",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_signal_affected_blocks",
+    "line_number": 5340,
+    "category": "signal"
+  },
+  {
+    "path": "/api/sigmap/portfolio-matrix",
+    "methods": [
+      "GET"
+    ],
+    "handler": "_get_portfolio_matrix_data",
+    "line_number": 5394,
+    "category": "sigmap"
+  },
+  {
+    "path": "/api/sigmap/signal-timeline/<slug>",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_sigmap_signal_timeline",
+    "line_number": 5593,
+    "category": "sigmap"
+  },
+  {
+    "path": "/api/sigmap/trace",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_sigmap_trace",
+    "line_number": 5693,
+    "category": "sigmap"
+  },
+  {
+    "path": "/api/project/<slug>/plan/add-block",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_add_block_to_plan",
+    "line_number": 5835,
+    "category": "project"
+  },
+  {
+    "path": "/api/sigmap/flag-systemic",
+    "methods": [
+      "POST"
+    ],
+    "handler": "api_flag_systemic",
+    "line_number": 5913,
+    "category": "sigmap"
+  },
+  {
+    "path": "/api/sigmap/precursors/<signal_id>",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_sigmap_precursors",
+    "line_number": 5942,
+    "category": "sigmap"
+  },
+  {
+    "path": "/api/help/tours",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_help_tours",
+    "line_number": 6014,
+    "category": "help"
+  },
+  {
+    "path": "/api/help/terminology",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_help_terminology",
+    "line_number": 6023,
+    "category": "help"
+  },
+  {
+    "path": "/api/help/index",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_help_index",
+    "line_number": 6032,
+    "category": "help"
+  },
+  {
+    "path": "/api/help/manual",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_help_manual",
+    "line_number": 6041,
+    "category": "help"
+  },
+  {
+    "path": "/api/help/manual/<chapter>",
+    "methods": [
+      "GET"
+    ],
+    "handler": "api_help_manual_chapter",
+    "line_number": 6052,
+    "category": "help"
+  },
+  {
+    "path": "/<path:path>",
+    "methods": [
+      "GET"
+    ],
+    "handler": "catch_all",
+    "line_number": 6095,
+    "category": "<path:path>"
+  }
+]

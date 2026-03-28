@@ -1,0 +1,76 @@
+{
+  "identification": {
+    "tool_id": "T076-07",
+    "tool_name": "Suggestions & Response Tracker",
+    "block_id": "B076"
+  },
+  "tool_design": {
+    "format": "tracker",
+    "role_in_intervention": "Visible closure-loop tracker proving suggestions and concerns were heard and answered.",
+    "adaptation_variables": [
+      "submission_channel",
+      "review_cadence",
+      "visibility_level"
+    ],
+    "usage_moment": "When suggestions or concerns are submitted and reviewed",
+    "expected_output": "Suggestion log with owner, response date, and outcome status",
+    "linked_blocks": [
+      "B076"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Entries are logged late or inconsistently.",
+        "what_can_go_wrong": "Patterns and closure loops stay hidden.",
+        "early_signals": [
+          "Large gaps",
+          "Cases are discussed verbally but not logged"
+        ],
+        "prevention": [
+          "Tie updates to a fixed review cadence",
+          "Keep ownership explicit"
+        ],
+        "mitigation": [
+          "Reconstruct while fresh",
+          "Increase review cadence"
+        ],
+        "if_occurs_next_signals": [
+          "pattern_visibility_failure"
+        ],
+        "possible_successor_blocks": [
+          "B076"
+        ]
+      },
+      {
+        "warning": "Tracker is updated but no action follows.",
+        "what_can_go_wrong": "The same communication issue repeats despite being visible.",
+        "early_signals": [
+          "Same themes recur",
+          "Status columns stay unchanged"
+        ],
+        "prevention": [
+          "Review tracker outputs regularly",
+          "Assign closure owners"
+        ],
+        "mitigation": [
+          "Escalate repeated items",
+          "Run a short corrective review"
+        ],
+        "if_occurs_next_signals": [
+          "closed_loop_failure"
+        ],
+        "possible_successor_blocks": [
+          "B076"
+        ]
+      }
+    ]
+  },
+  "content": "# Suggestions & Response Tracker\n\n**Tool ID:** T076-07  \n**Block:** B076 (Communication Culture & Feedback)  \n**Domain:** Team & Talent (D04_team_talent)  \n**Level:** L2  \n**Format:** Tracker  \n**Role:** Manager / Owner  \n**Time Required:** 2 minutes per entry, 10 minutes weekly review  \n**Version:** 1.0\n\n---\n## What This Tool Is For\n\nIf the team raises concerns or ideas and management does not respond, trust collapses fast.\n\nThis tracker creates a visible loop:\n- something was raised\n- someone owns the response\n- a date exists\n- the team can see whether it was acted on, parked, or declined with a reason\n\nUse it for:\n- suggestion box items\n- anonymous feedback\n- recurring staff comments\n- improvements raised in meetings or 1:1s\n\n---\n## Weekly Review Rules\n\n<ul>\n  <li><input type=\"checkbox\"> Review all new entries once per week.</li>\n  <li><input type=\"checkbox\"> Respond to every item, even if the answer is no.</li>\n  <li><input type=\"checkbox\"> Give a reason when something is not being actioned.</li>\n  <li><input type=\"checkbox\"> Close the loop publicly where appropriate.</li>\n</ul>\n\n---\n## Tracker\n\n| Entry ID | Date Raised | Source | Summary | Owner | Response Due | Status | What Happened |\n|---|---|---|---|---|---|---|---|\n| | | Suggestion box / 1:1 / meeting / other | | | | New / Reviewed / In progress / Closed / Declined | |\n| | | Suggestion box / 1:1 / meeting / other | | | | New / Reviewed / In progress / Closed / Declined | |\n| | | Suggestion box / 1:1 / meeting / other | | | | New / Reviewed / In progress / Closed / Declined | |\n| | | Suggestion box / 1:1 / meeting / other | | | | New / Reviewed / In progress / Closed / Declined | |\n\n---\n## Response Template\n\n**Entry ID:** ____________________\n\n**What was raised?**\n________________________________________\n\n**Decision:**\n[ ] action now  \n[ ] trial first  \n[ ] park for later  \n[ ] decline\n\n**Reason / response:**\n________________________________________\n________________________________________\n\n**Who will communicate the outcome?** ____________________\n\n**By when?** ____________________\n\n---\n## What Good Looks Like\n\n| Status | Meaning |\n|---|---|\n| New | Logged but not yet reviewed |\n| Reviewed | Read and acknowledged |\n| In progress | Action agreed and moving |\n| Closed | Completed and communicated |\n| Declined | Not proceeding, but reason given |\n\n---\n## Common Mistakes\n\n- Logging suggestions but never responding.\n- Leaving items \"open\" forever.\n- Treating anonymous input as less valid.\n- Saying no without explanation.\n- Failing to tell the team when a good idea led to change.\n\n---\n## Connected Resources\n\n**Used alongside:**\n- T076-02 - Communication Charter Workshop Template\n- T076-05 - Communication Culture Survey & Scorecard\n- T076-06 - Monthly 1:1 Conversation Template\n\n**Parent block:** B076 - Communication Culture & Feedback\n\n---\n\n*Tool Version 1.0 - built to prove that speaking up leads somewhere.*\n",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T076-07_suggestions_and_response_tracker.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

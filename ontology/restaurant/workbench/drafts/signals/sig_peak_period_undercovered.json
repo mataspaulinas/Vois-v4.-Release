@@ -1,0 +1,31 @@
+{
+  "id": "sig_peak_period_undercovered",
+  "name": "Peak period is undercovered",
+  "description": "The venue enters a known rush without enough capable coverage in the critical roles that carry flow.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: demand-capacity mismatch expressed through restaurant peak coverage",
+  "updated_at": "2026-03-14T12:48:22.239207Z",
+  "domain": "workforce",
+  "module": "deployment",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "thin floor coverage",
+    "uncovered rush role",
+    "peak window labor mismatch"
+  ],
+  "source_types": [
+    "schedule review",
+    "service observation",
+    "manager notes"
+  ],
+  "temporal_behavior": "peak-window recurring",
+  "likely_co_signals": [
+    "sig_section_imbalance",
+    "sig_service_delay"
+  ],
+  "adapter_aliases": [
+    "rush understaffed",
+    "peak coverage gap"
+  ]
+}

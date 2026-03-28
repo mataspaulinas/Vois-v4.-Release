@@ -1,0 +1,157 @@
+{
+  "block_id": "B094",
+  "name": "Shift Handover System",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Creates a structured shift handover process that ensures critical information — outstanding tasks, equipment issues, customer complaints, stock shortages, and operational notes — transfers reliably between outgoing and incoming teams. This block prevents the information black holes that form at every shift change.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish a written handover log that captures all essential information at every shift change",
+      "Define a face-to-face handover briefing protocol between outgoing and incoming shift leads",
+      "Ensure equipment issues, customer complaints, and stock shortages are communicated without fail",
+      "Create accountability so problems are owned across shifts rather than falling between the cracks",
+      "Standardise handover timing to prevent service gaps during transition periods"
+    ],
+    "secondary_objectives": [
+      "Build team cohesion by connecting shifts that might otherwise operate in isolation",
+      "Reduce repeated customer complaints caused by information not being passed between teams",
+      "Provide managers with a daily operational narrative they can review remotely"
+    ]
+  },
+  "why_this_matters": "In a typical UK cafe, there are at least two distinct shift teams each day — an opening crew and an afternoon/closing crew — and often a third covering the lunch rush. Each shift change represents a potential rupture in operational continuity. Without a formal handover system, critical information evaporates: the morning team discovers a blocked drain but leaves before the plumber arrives, and the afternoon team has no idea the plumber is coming or what the issue was. A customer complains about their sandwich at 11am, the opening team promises a replacement on their next visit, but the afternoon team knows nothing about it. The espresso machine starts pulling shots slowly at 2pm, but nobody recorded that the morning team already descaled it, so the afternoon team wastes thirty minutes repeating the process. These failures are individually small but cumulatively devastating. They erode customer trust, waste labour hours, create friction between shift teams ('they never tell us anything'), and generate the kind of low-level operational chaos that owners struggle to diagnose because the root cause is invisible — it lives in the gap between shifts. A structured handover system takes five minutes per shift change but saves hours of confusion, prevents repeated work, and creates an auditable daily log that managers can review to spot emerging patterns. For cafes with absent owners or multi-site operators, the shift handover log becomes the single most valuable document for understanding what is actually happening on the floor.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create a simple A4 Shift Handover Log with sections for: Date and Shift (AM/PM), Outgoing Shift Lead name, Key Issues (anything the next team needs to know), Equipment Status (any faults or quirks), Stock Alerts (items running low or out), Customer Notes (complaints, promises, VIP visits), Outstanding Tasks (anything started but not finished), and Incoming Shift Lead signature confirming they have read and understood. Place the log in a dedicated folder or clipboard at the till point. From Day 1, the outgoing shift lead completes the handover log in the final 10 minutes of their shift. When possible, the outgoing and incoming leads should overlap by 10-15 minutes to walk through the log together. If overlap is not possible (common in small cafes with tight labour budgets), the incoming lead reads the log immediately upon arrival and signs it. The manager reviews all handover logs daily, either in person or via a photo sent to a WhatsApp group. Week 2: Refine the log format based on what information is actually useful versus what is being left blank. Add a 'Priorities for Next Shift' section so the outgoing team can flag the single most important thing the incoming team should focus on.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Shift Handover SOP that formalises the process: who writes it, when it must be completed, what must be included, and how the incoming team acknowledges receipt. Create a digital version using a shared Google Doc or simple app (e.g., a WhatsApp Business channel dedicated to handovers) so all staff can access handover history from their phones. Introduce a handover quality score — the incoming shift lead rates the handover they received on a 1-5 scale, and these scores are reviewed weekly. Begin tracking recurring themes in handover logs (e.g., if the same equipment issue appears three days running, it triggers a maintenance request). Link handover logs to the closing checklist (B093) so that closing tasks feed directly into the next morning's handover. Establish that any customer complaint or promise must be recorded in the handover log as a mandatory field — this prevents the most damaging type of information loss.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Shift handovers should feel like a professional briefing, not paperwork. Train shift leads to deliver a 2-minute verbal summary covering the three most important points, then hand over the written log for detail. Introduce cross-shift recognition — if the afternoon team finds the cafe in excellent condition, they can leave a positive note for the morning team, building mutual respect. Conduct monthly handover audits where the manager reviews a week's worth of logs and provides feedback. Integrate handover data into weekly management meetings to identify operational trends. Consider a digital handover board visible to all staff that shows the last three handovers at a glance. Review and update the handover template quarterly to keep it relevant and concise."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Design and print a simple A4 Shift Handover Log template",
+        "Place the handover log at a consistent, accessible location near the till",
+        "Brief all shift leads on the handover process and sign-off requirement",
+        "Schedule 10-15 minute shift overlaps where labour budget allows",
+        "Manager reviews all handover logs daily and flags any gaps",
+        "Add a 'Priorities for Next Shift' section after first week of use",
+        "Establish a photo-to-WhatsApp backup for days when manager is offsite"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft a formal Shift Handover SOP with mandatory fields and timing",
+        "Create a digital handover channel (shared doc or messaging group)",
+        "Implement incoming shift lead quality scoring (1-5) for handovers received",
+        "Track recurring handover themes weekly to identify systemic issues",
+        "Link handover logs to closing checklist (B093) for continuity",
+        "Make customer complaint recording a mandatory handover field",
+        "File all handover logs for a minimum of 4 weeks for review purposes"
+      ],
+      "responsible": "Manager, Shift Leads"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Train shift leads to deliver 2-minute verbal handover summaries",
+        "Introduce cross-shift recognition notes for positive team feedback",
+        "Conduct monthly handover audits reviewing a full week of logs",
+        "Integrate handover data into weekly management meeting agendas",
+        "Review and update the handover template quarterly"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Shift Handover Log template (printable A4)",
+    "Shift Handover SOP document",
+    "Handover Quality Score tracker",
+    "Weekly Handover Theme Analysis summary",
+    "Digital Handover Channel setup guide"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T094-01",
+        "tool_name": "Shift Handover Log",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Shift Lead",
+        "description": "A4 template with sections for key issues, equipment status, stock alerts, customer notes, outstanding tasks, and priorities for the next shift. Signed by both outgoing and incoming shift leads."
+      },
+      {
+        "tool_id": "T094-02",
+        "tool_name": "Shift Handover SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure defining handover timing, mandatory content fields, verbal briefing protocol, quality scoring, and escalation procedures for critical issues."
+      },
+      {
+        "tool_id": "T094-03",
+        "tool_name": "Handover Quality Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Weekly tracker recording incoming shift lead quality scores for handovers received, identifying patterns in poor handovers and linking them to specific teams or individuals."
+      },
+      {
+        "tool_id": "T094-04",
+        "tool_name": "Handover Theme Analysis Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly report analysing recurring themes from handover logs — equipment issues, stock shortages, customer complaints — to identify systemic problems requiring management intervention."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Outgoing shift leaves without completing the handover log, creating a complete information gap for the incoming team",
+    "Handover log is filled with vague or unhelpful entries ('all fine') that provide no actionable information",
+    "Incoming shift lead does not read the handover log and repeats work or misses critical issues",
+    "Manager stops reviewing handover logs, removing the accountability that makes the system work"
+  ],
+  "kpis": [
+    "100% of shift changes have a completed and signed handover log",
+    "Average handover quality score of 4.0 or above out of 5.0",
+    "Zero customer complaints caused by information lost between shifts per month",
+    "All equipment issues recorded in handover logs resolved within 48 hours"
+  ],
+  "dependencies": ["B092", "B093"],
+  "constraints": [
+    "Requires a minimum 10-minute overlap between shifts for face-to-face handover where possible",
+    "Handover logs must be retained for a minimum of 4 weeks",
+    "Customer complaint records in handover logs must be cross-referenced with customer feedback systems"
+  ],
+  "time_load": {
+    "L1": "1 hour (template design, staff briefing)",
+    "L2": "3 hours (SOP drafting, digital channel setup, quality score implementation)",
+    "L3": "30 minutes/month (audits, theme analysis, template updates)"
+  },
+  "review_protocol": "Daily review of handover logs by manager. Weekly review of handover quality scores. Monthly handover audit reviewing one full week of logs. Quarterly template review and update.",
+  "meta": {
+    "summary_for_humans": "This block creates a formal shift handover system so critical information — equipment issues, customer complaints, stock shortages, outstanding tasks — transfers reliably between teams. It prevents the information black holes that form at every shift change and gives managers a daily operational narrative.",
+    "implementation_risks": [
+      "Shift leads may view handover logs as unnecessary paperwork if the value is not clearly communicated",
+      "Labour budget constraints may prevent adequate shift overlap for face-to-face briefings",
+      "Digital handover channels can become cluttered with non-essential messages if not managed"
+    ],
+    "notes_for_engine": "Activate alongside B092 and B093 as part of the shift management trio. Flag as urgent if signals indicate recurring information gaps between shifts, repeated customer complaints, or equipment issues that persist across multiple days without resolution.",
+    "tags": ["operations", "shift_handover", "communication", "accountability", "team_management", "continuity", "information_flow"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

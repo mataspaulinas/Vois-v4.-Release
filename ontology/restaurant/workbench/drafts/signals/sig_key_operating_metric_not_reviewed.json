@@ -1,0 +1,31 @@
+{
+  "id": "sig_key_operating_metric_not_reviewed",
+  "name": "Key operating metric is not reviewed",
+  "description": "The venue is not regularly looking at the metric that would reveal the current control problem before it becomes visible on the floor.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: control-loop weakness visible through missing metric review",
+  "updated_at": "2026-03-14T12:48:22.224653Z",
+  "domain": "financial_controls",
+  "module": "loss_prevention",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "missing KPI review",
+    "no operating metric check",
+    "surprised by preventable drift"
+  ],
+  "source_types": [
+    "manager notes",
+    "metric review",
+    "closing review"
+  ],
+  "temporal_behavior": "cadence-based",
+  "likely_co_signals": [
+    "sig_count_variance",
+    "sig_voids_rising"
+  ],
+  "adapter_aliases": [
+    "no KPI review",
+    "not checking the numbers"
+  ]
+}

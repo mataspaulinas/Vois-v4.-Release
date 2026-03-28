@@ -1,0 +1,167 @@
+{
+  "block_id": "B089",
+  "name": "Workflow Layout Audit",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Conducts a systematic audit of the cafe's physical layout and workflow paths, identifying how the arrangement of equipment, counters, storage, and service points helps or hinders efficient operation — particularly during peak service.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Map the current physical layout including all equipment positions, counters, walkways, storage, and service points",
+      "Trace the movement paths of each team role during a typical service period and identify unnecessary movement",
+      "Identify physical bottlenecks where team members collide, queue, or have to wait for access to shared equipment",
+      "Assess whether the customer flow path (entry, ordering, waiting, collection, seating) is intuitive and efficient",
+      "Document layout constraints (fixed plumbing, electrical points, structural walls) and layout opportunities"
+    ],
+    "secondary_objectives": [
+      "Reduce cumulative walking distance for baristas and floor staff during a shift",
+      "Improve customer perception of efficiency by redesigning the ordering and collection experience",
+      "Identify quick-win layout changes that require no capital investment — just moving things around"
+    ]
+  },
+  "why_this_matters": "The physical layout of a cafe determines the upper limit of its operational efficiency. No amount of training, motivation, or staffing can overcome a fundamentally flawed layout. A barista who has to walk five steps to reach the milk fridge, three steps to the cup dispenser, and two steps back to the machine is losing 15 to 20 seconds per drink in unnecessary movement. Over a 200-drink day, that is 50 to 65 minutes of pure wasted motion — the equivalent of an entire extra staff hour, costing £11-15, every single day. Multiply that across a year and poor layout costs thousands of pounds in invisible inefficiency. Industrial engineers call this 'muda' — waste through unnecessary movement. In a professional kitchen, station design follows a simple principle: everything the operator needs should be within one step and arm's reach. Yet many cafes evolve organically, with equipment placed wherever it fits rather than where it optimises workflow. The espresso machine faces the wrong direction because that is where the plumbing was. The food display is on the opposite side from the kitchen because that is where the previous tenant left it. The till is positioned so that queue formation blocks access to the collection point, creating customer confusion and staff frustration. A workflow layout audit makes these invisible costs visible. By systematically mapping the physical space, tracing movement paths, and timing key workflows, the audit reveals exactly where the layout is helping and where it is hurting. Many of the findings can be addressed immediately at zero cost — moving the cup dispenser closer to the machine, repositioning the milk fridge, swapping the locations of two stations to eliminate a crossover path. Others require modest investment — adding a shelf, relocating a counter section, or installing an under-counter fridge.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Draw a simple floor plan of the cafe showing all fixed and movable elements: espresso machine, grinder(s), counter, till, food display, fridges, sinks, dishwasher, storage shelves, customer seating, entry and exit points, and toilets. Use graph paper or a digital tool — accuracy matters but perfection does not. Mark the location of electrical sockets, water points, and drainage as these constrain what can be moved. Walk through a typical service from the perspective of each role — barista, till operator, food handler, floor cleaner — and trace their movement path on the floor plan using a different colour for each role. Identify any point where two or more paths cross (a collision risk) and any point where a role has to travel more than two steps to access something they use frequently. Week 2: During a morning rush, stand in a position where you can observe all movement and note every instance of: a team member waiting for another to move, a team member walking to get something that should be within reach, a team member and a customer blocking each other, or a team member reversing direction because their path is blocked. Count these instances over a 30-minute period. List the top five layout frustrations as reported by the team — ask them directly: 'What about the layout annoys you during a rush?'",
+    "L2": "SYSTEM BUILD (2-8 weeks). Conduct a formal Workflow Layout Audit using the data collected in L1. For each identified issue, assess: the frequency of the problem, the time impact per occurrence, the cumulative daily impact, the difficulty of fixing (easy/moderate/hard), and the cost of fixing (zero/low/medium/high). Prioritise improvements using a simple 2x2 matrix: high impact and easy to fix (do first), high impact and hard to fix (plan carefully), low impact and easy to fix (do when convenient), low impact and hard to fix (deprioritise). Implement the quick wins immediately — these often include: moving the cup dispenser to within arm's reach of the barista, adding an under-counter milk fridge at the bar station, repositioning the till to create a better customer queue line, moving the food display to reduce floor staff walking distance, or adding a shelf for frequently used items. For larger changes, create a Layout Improvement Plan with costings and a timeline. Test proposed changes before committing: use masking tape on the floor to mark new positions and trial them for a week before making permanent moves.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Conduct a comprehensive annual layout audit incorporating updated trading data, menu changes, and any new equipment. Use video recording (with staff consent) to analyse movement patterns quantitatively — counting steps, timing workflows, and measuring the impact of layout changes. Benchmark the layout against specialty coffee bar design best practice: the SCA and equipment manufacturers publish guidance on optimal bar configurations. Engage a specialist cafe design consultant for a professional layout review if the business is considering a significant refit or expansion. Introduce 'layout experiments' where the team trials small changes for a week and measures the impact before deciding whether to keep them. Track the relationship between layout improvements and peak performance metrics from B088. Build layout thinking into every menu or equipment change — before adding a new piece of equipment or a new service offering, ask: where will this go and how will it affect workflow?"
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Draw a floor plan showing all equipment, counters, storage, and fixed services",
+        "Trace movement paths for each role using different colours on the floor plan",
+        "Identify crossing points, collision risks, and excessive walking distances",
+        "Observe a morning rush and count instances of waiting, walking, and blocking",
+        "Ask the team to list their top five layout frustrations",
+        "Photograph the current layout from multiple angles for reference",
+        "List all identified layout issues with a brief description of each"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Conduct a formal Workflow Layout Audit scoring each issue by frequency, impact, and fix difficulty",
+        "Prioritise improvements using the high-impact-easy-fix matrix",
+        "Implement quick-win changes immediately (repositioning items, adding shelves, moving supplies)",
+        "Create a Layout Improvement Plan for medium and high-cost changes with costings and timeline",
+        "Test proposed changes using masking tape trials before making permanent moves",
+        "Measure the time impact of each change to validate the improvement",
+        "Update the floor plan to reflect all changes made"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct an annual comprehensive layout audit incorporating current trading data",
+        "Benchmark against SCA bar design guidance and specialty coffee best practice",
+        "Consider engaging a cafe design consultant for significant refit planning",
+        "Introduce layout experiments for the team to trial and measure small changes",
+        "Track layout improvements against peak performance metrics from B088",
+        "Build layout impact assessment into every menu or equipment change decision"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Cafe Floor Plan with movement paths mapped by role",
+    "Workflow Layout Audit Report (issues, frequency, impact, fix priority)",
+    "Layout Improvement Plan with costings and timeline",
+    "Quick-Win Changes implementation log",
+    "Updated Floor Plan reflecting all layout changes"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T089-01",
+        "tool_name": "Cafe Floor Plan Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Graph paper or digital template for drawing the cafe's physical layout showing all equipment, counters, services, and movement paths. Includes a legend for role-specific path colours and annotation symbols."
+      },
+      {
+        "tool_id": "T089-02",
+        "tool_name": "Workflow Observation Sheet",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Structured observation template for recording movement waste during a rush: instances of waiting, walking, blocking, collisions, and reversing. Includes a tally format and space for notes."
+      },
+      {
+        "tool_id": "T089-03",
+        "tool_name": "Layout Issue Prioritisation Matrix",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "2x2 matrix tool for prioritising layout improvements by impact (high/low) and difficulty (easy/hard), with space for each identified issue, estimated cost, and recommended action."
+      },
+      {
+        "tool_id": "T089-04",
+        "tool_name": "Layout Improvement Plan",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Detailed plan for medium and high-cost layout changes including description, rationale, expected impact, estimated cost, timeline, and success measurement criteria."
+      },
+      {
+        "tool_id": "T089-05",
+        "tool_name": "Annual Layout Audit Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Comprehensive annual review of the cafe's physical layout incorporating workflow data, peak performance correlation, team feedback, and recommendations for the coming year."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Layout issues are identified but nothing is changed because the owner assumes all changes require major investment",
+    "The audit is conducted once but never revisited as the menu, equipment, and team evolve",
+    "Quick-win changes are made but their impact is not measured, so the team does not recognise the value",
+    "Layout changes are imposed without consulting the team who work in the space daily and understand the practical implications"
+  ],
+  "kpis": [
+    "Floor plan drawn and movement paths mapped within the first two weeks",
+    "Top five quick-win layout changes implemented within the first month",
+    "Measured reduction in barista steps-per-drink after layout improvements",
+    "Team satisfaction with layout improving in quarterly feedback",
+    "Annual layout audit completed and improvement plan updated"
+  ],
+  "dependencies": ["B090"],
+  "constraints": [
+    "Fixed services (plumbing, electrical, drainage) constrain what can be moved without significant investment",
+    "Listed building or leasehold restrictions may limit structural changes",
+    "Layout changes during trading hours must be minimised to avoid service disruption"
+  ],
+  "time_load": {
+    "L1": "4 hours (floor plan, observation, team consultation, issue listing)",
+    "L2": "6 hours (formal audit, prioritisation, quick-win implementation, improvement plan)",
+    "L3": "4 hours/year (annual audit, benchmarking, experiment management)"
+  },
+  "review_protocol": "Monthly: review progress on Layout Improvement Plan. Quarterly: reassess layout against any operational changes (new equipment, menu additions). Annually: full layout audit with updated floor plan, movement analysis, and improvement prioritisation.",
+  "meta": {
+    "summary_for_humans": "This block audits the cafe's physical layout, mapping movement paths and identifying bottlenecks where the arrangement of equipment and counters wastes time and hinders efficient service, then prioritises changes from quick wins to strategic investments.",
+    "implementation_risks": [
+      "Owners often accept their layout as fixed because they have always worked with it — fresh eyes see waste they have become blind to",
+      "Layout changes can be disorienting for the team initially — allow an adjustment period and gather feedback",
+      "Some of the biggest layout improvements require capital investment that may not be available immediately"
+    ],
+    "notes_for_engine": "Activate when signals indicate workflow inefficiency, staff complaints about the layout, excessive movement during peak, or when peak performance analysis (B088) identifies layout as a bottleneck contributor.",
+    "tags": ["layout", "workflow", "audit", "floor_plan", "movement", "bottleneck", "efficiency", "station_design", "ergonomics"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

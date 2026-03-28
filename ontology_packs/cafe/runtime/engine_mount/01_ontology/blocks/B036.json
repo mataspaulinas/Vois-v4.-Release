@@ -1,0 +1,167 @@
+{
+  "block_id": "B036",
+  "name": "Customer Journey Mapping",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Maps the complete customer experience from first awareness through to post-visit advocacy, identifying every touchpoint where the cafe can delight or disappoint. This block provides a systematic framework for understanding, measuring, and improving the end-to-end customer journey specific to cafe environments.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Document every customer touchpoint from online discovery through to departure and post-visit behaviour",
+      "Identify pain points and moments of delight at each stage of the journey",
+      "Create measurable standards for each critical touchpoint",
+      "Align staff roles and responsibilities to specific journey stages",
+      "Build a visual journey map that the whole team can reference and improve"
+    ],
+    "secondary_objectives": [
+      "Understand how different customer segments experience the cafe differently",
+      "Identify opportunities for personalisation at key touchpoints",
+      "Connect journey insights to operational improvements in other blocks",
+      "Establish a baseline for measuring experience improvements over time"
+    ]
+  },
+  "why_this_matters": "Most cafe owners think about their business from behind the counter. Customer journey mapping forces you to see the entire experience through the customer's eyes — and what you discover is often uncomfortable. The journey does not start when someone walks through the door; it begins when they search for a cafe on Google Maps, scroll past your Instagram, or hear a friend mention your name. Every touchpoint either builds or erodes the relationship. In the UK cafe market, where high street competition is intense and customers have abundant choice, the venues that thrive are those that obsess over the details most operators ignore: Is the pavement signage inviting or cluttered? Can customers see the menu before committing to enter? Is the ordering process intuitive for first-timers? Does the farewell feel genuine or robotic? Research from the hospitality sector shows that customers remember the peak moment and the final moment of an experience most vividly — the peak-end rule. A cafe that serves an outstanding flat white but has a chaotic checkout process will be remembered for the chaos. Journey mapping reveals these hidden failures and creates a shared language for improvement. Without it, improvement efforts are scattered and reactive — fixing whatever the loudest complaint was about rather than addressing the touchpoints that matter most to retention and advocacy.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Walk the customer journey yourself. Start from the street — approach the cafe as a first-time visitor would. Note what you see, hear, and feel at each stage: finding the cafe, approaching the entrance, entering, orienting, queuing, ordering, waiting, receiving, sitting, consuming, paying, leaving. Write down every touchpoint on sticky notes and arrange them chronologically on a wall or large sheet. Do this exercise at different times — morning rush, quiet afternoon, Saturday lunchtime. Ask two or three trusted regulars to describe their experience from arrival to departure; record their words. Week 2: Identify the five most critical touchpoints where the experience is strongest and the five where it is weakest. For each weak point, define one immediate improvement that can be implemented this week without cost. For example: if customers look confused when entering, add a clear 'Order Here' sign. If the farewell is inconsistent, brief the team that every customer should be thanked and wished well by name if known. Create a simple A3 journey map poster showing the key stages (Discover, Arrive, Enter, Order, Wait, Receive, Enjoy, Pay, Leave, Return) and pin it in the staff area. Hold a 20-minute team discussion about the map, asking staff to add their observations about where customers seem happiest and most frustrated.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a detailed journey map document that covers all customer segments: first-time visitors, regulars, remote workers, parents with children, takeaway-only customers, and delivery/collection customers. For each segment, map the journey stages, expected emotions, key touchpoints, staff interactions, and current performance level (rated 1-5). Create customer journey standards — specific, measurable expectations for each critical touchpoint. For example: 'Greeting within 10 seconds of entering', 'Drink served within 4 minutes of ordering', 'Customer name used at least once during the interaction for regulars'. Implement a simple touchpoint audit system where the manager periodically scores each stage during a shift. Introduce journey-based training — instead of generic customer service training, train staff on their specific role at each journey stage. The barista's job is not just making coffee; it is creating the 'receive' moment. The front-of-house role is not just clearing tables; it is shaping the 'enjoy' stage. Collect journey feedback through short intercept surveys: ask three departing customers per day to rate their experience at one specific touchpoint. Rotate the touchpoint weekly to build a comprehensive dataset. By Week 8, have a complete journey map with standards, audit scores, and at least 4 weeks of touchpoint feedback data.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The journey map should become a living document that the team owns and evolves. Hold monthly journey review sessions where the team examines touchpoint audit scores, customer feedback, and proposes improvements. Introduce A/B testing of journey improvements — try two different approaches to the greeting or the farewell and measure which gets better feedback. Map the digital journey alongside the physical one: how does your Google Business listing, Instagram presence, and website experience connect to the in-venue journey? Conduct quarterly shadow exercises where a staff member silently observes a customer's complete journey and notes every moment of friction or delight. Create journey personas — fictional but data-informed profiles of your key customer types — and use them in team discussions. Benchmark your journey standards against the best cafes in your area. Integrate journey data into the broader customer retention strategy alongside B033 and B034."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Walk the complete customer journey yourself at three different times of day",
+        "Interview two or three regulars about their experience from arrival to departure",
+        "Create a sticky-note journey map identifying all touchpoints chronologically",
+        "Identify the five strongest and five weakest touchpoints",
+        "Implement one zero-cost improvement for each weak point",
+        "Create an A3 journey map poster for the staff area",
+        "Hold a 20-minute team discussion about the journey map"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a detailed journey map covering all customer segments",
+        "Define measurable standards for each critical touchpoint",
+        "Implement a touchpoint audit system for periodic scoring",
+        "Introduce journey-based training aligned to staff roles at each stage",
+        "Launch daily intercept surveys targeting specific touchpoints on rotation",
+        "Create a journey standards reference document for the team",
+        "Begin tracking touchpoint performance data weekly"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Hold monthly journey review sessions with the full team",
+        "Introduce A/B testing of journey improvements at key touchpoints",
+        "Map the digital customer journey alongside the physical journey",
+        "Conduct quarterly shadow observation exercises",
+        "Create data-informed journey personas for key customer types",
+        "Benchmark journey standards against top local competitors"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Visual Customer Journey Map (A3 poster for staff area)",
+    "Detailed Journey Map Document covering all customer segments",
+    "Touchpoint Standards Reference sheet",
+    "Touchpoint Audit Scorecard",
+    "Monthly Journey Performance Report template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T036-01",
+        "tool_name": "Customer Journey Walk-Through Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Structured checklist for walking the complete customer journey from street approach to departure, noting observations at each of the ten key stages. Used during initial mapping and quarterly reviews."
+      },
+      {
+        "tool_id": "T036-02",
+        "tool_name": "Touchpoint Standards Reference",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Document defining measurable standards for each critical journey touchpoint including greeting time, order accuracy, drink delivery speed, farewell quality, and cleanliness standards."
+      },
+      {
+        "tool_id": "T036-03",
+        "tool_name": "Touchpoint Audit Scorecard",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Periodic audit tool where the manager scores each journey stage (1-5) during a shift, noting specific observations and improvement opportunities. Results feed into monthly reviews."
+      },
+      {
+        "tool_id": "T036-04",
+        "tool_name": "Journey Intercept Survey Card",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Front-of-House",
+        "description": "Short three-question survey card used with departing customers to rate their experience at one specific touchpoint. Rotated weekly to build comprehensive journey feedback."
+      },
+      {
+        "tool_id": "T036-05",
+        "tool_name": "Monthly Journey Performance Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly summary combining touchpoint audit scores, intercept survey data, and online review sentiment to show journey performance trends and identify priority improvement areas."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The journey map is created once and never updated, becoming a wall decoration rather than a working tool",
+    "Staff see journey mapping as management theory disconnected from their daily reality",
+    "Touchpoint standards are set unrealistically high, demoralising the team when scores are consistently low",
+    "The digital journey is ignored, creating a disconnect between online expectations and in-venue reality"
+  ],
+  "kpis": [
+    "Touchpoint audit average score of 4.0 or above across all journey stages",
+    "Customer intercept survey satisfaction rate above 85% at each touchpoint",
+    "At least one measurable journey improvement implemented per month",
+    "First-time visitor return rate above 30% within 30 days"
+  ],
+  "dependencies": ["B021", "B026", "B033"],
+  "constraints": [
+    "Journey mapping requires honest self-assessment — the owner must be willing to hear uncomfortable truths",
+    "Intercept surveys must be brief (under 60 seconds) to avoid annoying customers",
+    "Journey standards must be achievable with current staffing levels before being raised"
+  ],
+  "time_load": {
+    "L1": "4 hours (walk-throughs, interviews, initial mapping, team discussion)",
+    "L2": "10 hours (detailed mapping, standards definition, training, survey setup)",
+    "L3": "3 hours/month (reviews, shadow exercises, benchmarking)"
+  },
+  "review_protocol": "Weekly review of intercept survey data. Monthly touchpoint audit by manager. Monthly team journey review session. Quarterly shadow observation exercise. Full journey map refresh every six months.",
+  "meta": {
+    "summary_for_humans": "This block maps the complete customer experience from online discovery through to post-visit advocacy, identifying every touchpoint where the cafe can improve. It creates measurable standards for each stage and builds a shared understanding across the team of what great looks like at every moment.",
+    "implementation_risks": [
+      "Journey mapping can feel abstract to staff unless tied to specific, actionable improvements",
+      "Over-measuring can create survey fatigue among customers",
+      "The digital journey is often neglected because it feels separate from daily cafe operations"
+    ],
+    "notes_for_engine": "Activate when signals indicate inconsistent customer experiences, low first-visit return rates, or disconnect between online presence and in-venue reality. Foundation block for B037 and B038.",
+    "tags": ["customer_experience", "journey_mapping", "touchpoints", "standards", "retention", "customer_insight"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

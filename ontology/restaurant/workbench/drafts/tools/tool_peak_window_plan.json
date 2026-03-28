@@ -1,0 +1,22 @@
+{
+  "id": "tool_peak_window_plan",
+  "name": "Peak-window plan",
+  "description": "Simple plan that fixes where the manager stands, what they watch, and what triggers intervention during the venue's highest-risk windows.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: leadership deployment needs a visible plan tied to real pressure moments",
+  "updated_at": "2026-03-14T00:24:43.059592Z",
+  "category": "leadership",
+  "format": "deployment_plan",
+  "usage_moment": "Use before and during the venue's highest-risk service windows.",
+  "expected_output": "A written manager coverage plan with zones, watch targets, and intervention triggers.",
+  "adaptation_variables": [
+    "peak_window",
+    "pressure_nodes",
+    "manager_count",
+    "escalation_paths"
+  ],
+  "block_ids": [
+    "blk_manager_peak_window_plan"
+  ]
+}

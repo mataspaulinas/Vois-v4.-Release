@@ -1,0 +1,22 @@
+{
+  "id": "tool_expo_callout_card",
+  "name": "Expo callout card",
+  "description": "Compact pass reference showing the minimum shared language for fire, hold, pickup, delays, and escalation at the kitchen-to-floor boundary.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: handoff language should be explicit enough to survive noise and speed",
+  "updated_at": "2026-03-14T00:24:43.046581Z",
+  "category": "kitchen",
+  "format": "reference_card",
+  "usage_moment": "Use at the pass during live service until the callout standard is internalized.",
+  "expected_output": "A shared pass script that reduces re-clarification and missed pickup signals.",
+  "adaptation_variables": [
+    "menu_complexity",
+    "pass_layout",
+    "expo_model",
+    "floor_pickup_flow"
+  ],
+  "block_ids": [
+    "blk_install_expo_callouts"
+  ]
+}

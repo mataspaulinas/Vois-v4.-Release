@@ -1,0 +1,79 @@
+{
+  "identification": {
+    "tool_id": "T001-02",
+    "tool_name": "Probe Calibration Record & Accuracy Tracker",
+    "block_id": "B001"
+  },
+  "tool_design": {
+    "format": "tracker",
+    "role_in_intervention": "Accuracy-control record ensuring the probe used in B001 can be trusted.",
+    "adaptation_variables": [
+      "probe_count",
+      "calibration_frequency",
+      "site_labeling"
+    ],
+    "usage_moment": "Monthly and whenever the probe is dropped or questioned",
+    "expected_output": "Calibration record with variance, pass/fail status, and next due date",
+    "linked_blocks": [
+      "B001",
+      "B003"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Entries are logged late or inconsistently.",
+        "what_can_go_wrong": "Patterns cannot be reviewed or escalated.",
+        "early_signals": [
+          "Large gaps",
+          "Incidents remembered verbally"
+        ],
+        "prevention": [
+          "Tie updates to review routine",
+          "Keep ownership explicit"
+        ],
+        "mitigation": [
+          "Reconstruct while fresh",
+          "Increase review cadence"
+        ],
+        "if_occurs_next_signals": [
+          "pattern_visibility_failure"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B003"
+        ]
+      },
+      {
+        "warning": "Tracker is updated but never used to decide action.",
+        "what_can_go_wrong": "Information is stored but not acted on.",
+        "early_signals": [
+          "Same issue repeats",
+          "Review notes stay blank"
+        ],
+        "prevention": [
+          "Review on a fixed cadence",
+          "Link repeats to escalation"
+        ],
+        "mitigation": [
+          "Add a short review",
+          "Assign closure owner"
+        ],
+        "if_occurs_next_signals": [
+          "closed_loop_failure"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B003"
+        ]
+      }
+    ]
+  },
+  "content": "# Probe Calibration Record & Accuracy Tracker\n\n**Tool ID:** T001-02  \n**Block:** B001 (Daily Temperature Monitoring)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L2  \n**Format:** Tracker  \n**Role:** Manager / Food Safety Lead  \n**Time Required:** 10 minutes per calibration  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this tracker to prove that your thermometer can be trusted before staff use it to make food safety decisions.\n\nA daily log is only as good as the probe behind it. This tool makes calibration visible, repeatable, and reviewable.\n\nUse it:\n- monthly as standard\n- after the probe is dropped\n- after battery change\n- when readings look suspicious\n- before an EHO visit if the device history is unclear\n\n---\n## Pass Standard\n\n| Check Method | Target Reading | Pass Window | Fail Action |\n|---|---|---|---|\n| Ice-water test | `0C` | `-1C` to `+1C` | Re-test once. If still outside range, remove from use and replace or recalibrate. |\n\n**Important:** If the probe fails calibration, stop using it for `T001-01` until the issue is resolved.\n\n---\n## Calibration Method\n\n### Ice-water method\n<ul>\n  <li><input type=\"checkbox\"> Fill a cup with crushed ice and a small amount of clean water.</li>\n  <li><input type=\"checkbox\"> Stir for 15 seconds so the slush is evenly cold.</li>\n  <li><input type=\"checkbox\"> Insert the probe tip into the middle without touching sides or base.</li>\n  <li><input type=\"checkbox\"> Wait until the reading stabilises.</li>\n  <li><input type=\"checkbox\"> Record the result and the variance from `0C`.</li>\n  <li><input type=\"checkbox\"> If out of range, repeat once and decide whether the probe stays in service.</li>\n</ul>\n\n---\n## Calibration Tracker\n\n**Probe ID / Label:** ____________________  \n**Storage location:** ____________________  \n**Owned by venue / manager:** ____________________\n\n| Date | Probe ID | Test Method | Target | Actual Reading | Variance | Pass / Fail | Action Taken | Checked By | Next Due |\n|---|---|---|---|---|---|---|---|---|---|\n| | | Ice-water | `0C` | | | | | | |\n| | | Ice-water | `0C` | | | | | | |\n| | | Ice-water | `0C` | | | | | | |\n| | | Ice-water | `0C` | | | | | | |\n| | | Ice-water | `0C` | | | | | | |\n| | | Ice-water | `0C` | | | | | | |\n\n---\n## Accuracy Trend Check\n\nUse this section when the probe keeps drifting close to the limit.\n\n| Month | Result Pattern | Risk Level | Decision |\n|---|---|---|---|\n| | Stable within `0.5C` | Low | Keep in service |\n| | Repeatedly near `+/-1C` | Medium | Monitor weekly until stable |\n| | Outside window twice in a row | High | Replace or professionally recalibrate |\n\n---\n## Replacement Or Escalation Record\n\n| Date | Issue Found | Temporary Cover Used? | Replacement Ordered? | Closed By |\n|---|---|---|---|---|\n| | | | | |\n| | | | | |\n| | | | | |\n\n---\n## Common Failure Points\n\n- Probe stored wet or dirty between uses\n- Probe dropped during service and put back without re-checking accuracy\n- Team assumes digital means accurate\n- No back-up thermometer on site when the main one fails\n\n---\n## Connected Resources\n\n**Used with:**\n- T001-01 - Daily Temperature Log & Check Sheet\n- T001-03 - Temperature Excursion Trigger Log\n- T001-05 - Temperature Monitoring SOP & Team Sign-Off\n\n**Related blocks:**\n- B003 - Temperature Excursion Response\n\n---\n\n*Tool Version 2.0 - because an accurate record starts with an accurate probe.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T001-02_probe_calibration_record_and_accuracy_tracker.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

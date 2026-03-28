@@ -1,0 +1,47 @@
+{
+  "id": "blk_build_arrival_pacing_board",
+  "name": "Build arrival pacing board",
+  "description": "Create a live board for reservation waves, walk-in pressure, seat release timing, and decision points so the front door can shape demand in real time.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: stabilize visibility and constrain promises at the intake surface",
+  "updated_at": "2026-03-14T00:24:42.961630Z",
+  "effort_hours": 3.0,
+  "dependencies": [
+    "blk_define_wait_quote_rules"
+  ],
+  "tool_ids": [
+    "tool_arrival_pacing_board"
+  ],
+  "response_pattern_ids": [
+    "rp_host_pacing_reset"
+  ],
+  "entry_conditions": [
+    "Hosts are making pacing decisions without a shared live view of incoming pressure and seating release.",
+    "Wait quote logic exists or is being installed alongside the board."
+  ],
+  "contraindications": [
+    "Do not build a board no one updates during service.",
+    "Do not make the board so detailed that hosts abandon it in real time."
+  ],
+  "owner_role": "host_lead",
+  "expected_time_to_effect_days": 2,
+  "proof_of_completion": [
+    "The host team has a single live board for reservation waves, walk-ins, and release decisions.",
+    "The board is updated through at least one real pressure window.",
+    "Hosts use the board to justify quote and pacing changes instead of relying on guesswork."
+  ],
+  "successor_block_ids": [
+    "blk_host_reservation_huddle"
+  ],
+  "service_module_ids": [
+    "intake_and_demand",
+    "promise_and_expectations",
+    "handoffs_and_coordination"
+  ],
+  "failure_family_ids": [
+    "expectation_setting_failure",
+    "demand_capacity_mismatch",
+    "workflow_design_failure"
+  ]
+}

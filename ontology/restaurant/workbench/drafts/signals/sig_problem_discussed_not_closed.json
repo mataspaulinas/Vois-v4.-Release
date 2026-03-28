@@ -1,0 +1,31 @@
+{
+  "id": "sig_problem_discussed_not_closed",
+  "name": "Problem is discussed but not closed",
+  "description": "The venue talks about a recurring problem, but nobody assigns ownership, closes the action, or verifies the fix afterward.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: problem discussed but not closed expressed through restaurant follow-through failure",
+  "updated_at": "2026-03-15T15:59:27.065251Z",
+  "domain": "leadership",
+  "module": "management_follow_through",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "same issue appears in repeated conversations",
+    "action named without an owner or closeout",
+    "review happens but closure and verification do not"
+  ],
+  "source_types": [
+    "manager notes",
+    "post-shift review",
+    "team huddle"
+  ],
+  "temporal_behavior": "recurring",
+  "likely_co_signals": [
+    "sig_follow_through_missing",
+    "sig_no_postmortem_after_breakdown"
+  ],
+  "adapter_aliases": [
+    "talked about but not closed",
+    "same problem keeps coming back"
+  ]
+}

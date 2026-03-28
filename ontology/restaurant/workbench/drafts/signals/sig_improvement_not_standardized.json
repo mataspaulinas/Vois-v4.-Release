@@ -1,0 +1,31 @@
+{
+  "id": "sig_improvement_not_standardized",
+  "name": "Improvement is not standardized",
+  "description": "The team finds a better way once, but it never becomes the normal way of operating across shifts or people.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: learning failure visible through failure to standardize wins",
+  "updated_at": "2026-03-14T12:48:22.222393Z",
+  "domain": "service_delivery",
+  "module": "role_clarity",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "one-off improvement",
+    "fix depends on one person",
+    "better method not codified"
+  ],
+  "source_types": [
+    "manager notes",
+    "post-shift review",
+    "training observation"
+  ],
+  "temporal_behavior": "recurring",
+  "likely_co_signals": [
+    "sig_same_issue_repeats_without_review",
+    "sig_standard_steps_skipped"
+  ],
+  "adapter_aliases": [
+    "fix never stuck",
+    "improvement stayed local"
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "block_id": "B009",
+  "name": "Handwashing Protocol",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Establishes a clear, enforced handwashing protocol specifying when, how, and for how long staff must wash their hands, with compliance monitoring to prevent pathogen transmission. This block is the foundation of personal hygiene in any food business and a key element inspected by EHOs.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define every trigger point that requires handwashing — arrival, after toilet use, after handling raw food, after touching bins, after handling money, after sneezing or coughing",
+      "Standardise the handwashing technique to the NHS/FSA recommended 20-second method with soap and warm water",
+      "Ensure adequate handwashing facilities are available, stocked, and maintained",
+      "Implement visible compliance monitoring so handwashing becomes a verified habit, not an assumed one",
+      "Create documentation that demonstrates due diligence for EHO inspections"
+    ],
+    "secondary_objectives": [
+      "Reduce the risk of Norovirus, E. coli, and other pathogen transmission through hand contact",
+      "Build a hygiene-first culture where staff remind each other to wash hands without embarrassment",
+      "Support a Food Hygiene Rating of 5 by demonstrating robust personal hygiene controls"
+    ]
+  },
+  "why_this_matters": "Hand contamination is the single most common route of pathogen transmission in food businesses. The Food Standards Agency's Safer Food Better Business (SFBB) pack identifies handwashing as a cornerstone of the '4 Cs' framework under Cross-contamination prevention. EU-retained Regulation (EC) 852/2004, Annex II, Chapter I requires food premises to provide an adequate number of washbasins for cleaning hands, supplied with hot and cold running water, soap, and hygienic drying facilities. These washbasins must be separate from those used for washing food. During an EHO inspection, the officer will check that handwashing facilities are adequate, accessible, and in use — they will often observe staff behaviour to see if handwashing is actually happening, not just documented. A cafe where the handwash basin is blocked by boxes, lacks soap, or uses a shared towel will lose points on the Food Hygiene Rating scheme. Norovirus, which causes the majority of foodborne illness outbreaks in the UK, is primarily transmitted through contaminated hands. A single infected staff member who does not wash their hands properly after using the toilet can contaminate hundreds of portions of food. The consequences range from customer illness and negative reviews to local authority investigation, media coverage, and business closure. Handwashing is the cheapest, simplest, and most effective food safety measure available — but only if it is done correctly, consistently, and monitored.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Inspect all handwashing facilities in the cafe. There must be at least one dedicated handwash basin that is not used for food preparation or washing equipment. The basin must have hot and cold (or warm) running water, antibacterial soap in a wall-mounted dispenser (not a shared bar of soap), and hygienic hand drying — either paper towels from a dispenser or a hot air dryer. If any of these are missing, fix them immediately — this is a legal requirement. Post a handwashing instruction poster above every handwash basin showing the correct 20-second technique: wet hands, apply soap, rub palms together, interlace fingers, rub backs of hands, rub thumbs, rub fingertips in palms, rinse thoroughly, dry with paper towel. Define and communicate the mandatory handwashing trigger points to all staff: when arriving for a shift, after using the toilet, after handling raw meat or eggs, after touching bins or waste, after handling money, after sneezing, coughing or touching face, after eating or drinking, after handling cleaning chemicals, and between different food preparation tasks. Week 2: The manager observes each staff member's handwashing at least twice during the week and provides immediate corrective feedback if the technique is wrong, too brief, or skipped. Begin a simple handwashing compliance log — a tick sheet posted near the basin where staff initial after washing. This is not a perfect system but creates visibility and accountability from Day 1.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Handwashing SOP document that codifies the technique, trigger points, facility requirements, and monitoring procedures. Include photographs showing correct technique. Integrate handwashing compliance into the daily manager walk-around — during every shift, the manager should observe at least one handwashing event and check that facilities are stocked. Introduce a weekly facility check: soap levels, paper towel stock, water temperature, basin cleanliness, and poster condition. Record this check on a dedicated facilities log. Train all staff as part of their Level 2 Food Hygiene certification — handwashing technique is a core element tested in the qualification. For new starters, the handwashing demonstration should be one of the first things they learn, before they touch any food or equipment. Implement a peer accountability system: encourage staff to remind each other to wash hands without creating a punitive culture. The language should be collaborative ('Hey, don't forget to wash your hands after that') rather than accusatory. By Week 8, the cafe should have an SOP, regular facility checks, observed compliance, and documented training for every team member.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Handwashing should now be automatic behaviour — staff should feel uncomfortable if they have not washed their hands, like leaving the house without keys. Conduct quarterly handwashing audits where the manager observes technique and timing without announcing the audit in advance. Track compliance trends and share results with the team — aim for 100% observed compliance. Consider installing a timed handwashing station that plays a 20-second audio cue. Review facility standards annually — are the soap and paper towels high quality enough that staff actually want to use them? Cheap, harsh soap discourages handwashing. Integrate handwashing into broader hygiene culture initiatives (B012) so it becomes part of the cafe's identity as a clean, professional operation."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Inspect all handwashing facilities for compliance: hot/cold water, soap dispenser, paper towels",
+        "Fix any deficiencies immediately — missing soap, blocked basin, no paper towels",
+        "Post NHS/FSA-compliant handwashing instruction posters above every basin",
+        "Communicate mandatory handwashing trigger points to all staff",
+        "Demonstrate correct 20-second handwashing technique to every team member",
+        "Begin a handwashing compliance tick sheet near the basin",
+        "Manager observes each staff member washing hands at least twice in the first week"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft a Handwashing SOP with technique, trigger points, and monitoring procedures",
+        "Implement weekly facility checks: soap, towels, water temperature, basin cleanliness",
+        "Integrate handwashing observation into the daily manager walk-around",
+        "Include handwashing demonstration as the first element of new starter induction",
+        "Establish peer accountability culture for handwashing reminders",
+        "Document all handwashing training in individual staff records",
+        "File facility check logs and SOP in the SFBB diary"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly unannounced handwashing audits",
+        "Track and share compliance trends with the team",
+        "Review soap and towel quality to encourage use",
+        "Consider timed handwashing stations with audio cues",
+        "Integrate handwashing into broader hygiene culture programme (B012)"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Handwashing Instruction Poster (A4, laminated)",
+    "Handwashing SOP document",
+    "Handwashing Compliance Log",
+    "Weekly Facility Check Log",
+    "Staff Handwashing Training Record"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T009-01",
+        "tool_name": "Handwashing Instruction Poster",
+        "level": "L1",
+        "format": "guide",
+        "owner_role": "Manager",
+        "description": "A4 laminated poster showing the correct 20-second handwashing technique step by step, positioned above every handwash basin in the cafe."
+      },
+      {
+        "tool_id": "T009-02",
+        "tool_name": "Handwashing Compliance Log",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "Daily tick sheet posted near the handwash basin where staff initial after washing at key trigger points, creating visibility and accountability."
+      },
+      {
+        "tool_id": "T009-03",
+        "tool_name": "Handwashing Facility Check Log",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Weekly checklist for inspecting handwashing facilities: soap levels, paper towel stock, water temperature, basin cleanliness, poster condition, and overall accessibility."
+      },
+      {
+        "tool_id": "T009-04",
+        "tool_name": "Handwashing SOP Template",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering handwashing technique, trigger points, facility requirements, monitoring procedures, and corrective actions for non-compliance."
+      },
+      {
+        "tool_id": "T009-05",
+        "tool_name": "Quarterly Handwashing Audit Form",
+        "level": "L3",
+        "format": "audit",
+        "owner_role": "Owner",
+        "description": "Structured audit form for unannounced quarterly handwashing observations, recording technique quality, timing, trigger point compliance, and facility condition."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Handwash basin is used for rinsing cups or storing items, making it unavailable for handwashing",
+    "Soap dispenser runs empty and is not refilled promptly, so staff rinse with water only",
+    "Staff wash hands too briefly (under 10 seconds) without using proper technique",
+    "Compliance log is filled in retrospectively or fabricated, giving false assurance"
+  ],
+  "kpis": [
+    "100% of handwashing facilities stocked and functional at all times during service",
+    "Zero observed instances of staff handling food without proper handwashing",
+    "Quarterly audit scores averaging 95% or above for technique and trigger point compliance",
+    "All new starters complete handwashing demonstration before handling any food"
+  ],
+  "dependencies": ["B011"],
+  "constraints": [
+    "At least one dedicated handwash basin must be available that is not used for food preparation",
+    "Antibacterial soap and paper towels must be continuously available during all operating hours",
+    "Handwashing instruction posters must be permanently displayed above every basin"
+  ],
+  "time_load": {
+    "L1": "3 hours (facility inspection, poster installation, staff demonstration)",
+    "L2": "5 hours (SOP drafting, facility check setup, training integration)",
+    "L3": "1 hour/quarter (audits, trend analysis, facility reviews)"
+  },
+  "review_protocol": "Daily observation by shift manager during service. Weekly facility check logged and signed. Monthly compliance log review. Quarterly unannounced handwashing audit. SOP reviewed annually or when facility changes occur.",
+  "meta": {
+    "summary_for_humans": "This block establishes a clear handwashing protocol covering when, how, and for how long staff must wash their hands, with proper facilities, instruction posters, and compliance monitoring. It is the most fundamental personal hygiene measure in any food business.",
+    "implementation_risks": [
+      "Handwashing compliance drops during busy periods when staff feel rushed",
+      "Facilities in poor condition (cold water, harsh soap) discourage proper handwashing",
+      "Staff may view monitoring as micromanagement — frame it as professional standards, not distrust"
+    ],
+    "notes_for_engine": "Activate immediately for all cafes. Flag as urgent if signals indicate handwashing facility deficiencies, observed non-compliance, EHO hygiene concerns, or food illness reports. Foundation block for all personal hygiene.",
+    "tags": ["food_safety", "hygiene", "handwashing", "personal_hygiene", "SFBB", "EHO", "compliance", "daily_check"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

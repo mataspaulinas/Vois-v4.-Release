@@ -1,0 +1,62 @@
+[
+  {
+    "signal_id": "S019",
+    "domain_id": "Customer Experience & Service",
+    "severity": "high",
+    "timestamp": "2026-03-27",
+    "source_type": "intake",
+    "venue_id": "phase0_conflicting_capacity_cost",
+    "notes": "Observed queue times above 8 minutes on weekday morning peaks for the last two weeks.",
+    "signal_name": "queue_wait_times_excessive",
+    "description": "Customers regularly waiting more than 5 minutes in queue during peak periods",
+    "value": 8
+  },
+  {
+    "signal_id": "S071",
+    "domain_id": "Operations & Workflow",
+    "severity": "medium",
+    "timestamp": "2026-03-27",
+    "source_type": "intake",
+    "venue_id": "phase0_conflicting_capacity_cost",
+    "notes": "Morning team is opening without a daily huddle and issues are being discovered live on the floor.",
+    "signal_name": "daily_huddle_absent",
+    "description": "No daily team briefing or shift handover communication",
+    "value": null
+  },
+  {
+    "signal_id": "S083",
+    "domain_id": "Operations & Workflow",
+    "severity": "high",
+    "timestamp": "2026-03-27",
+    "source_type": "intake",
+    "venue_id": "phase0_conflicting_capacity_cost",
+    "notes": "Peak staffing pattern is not calibrated: two baristas are idle mid-afternoon but the morning queue still collapses.",
+    "signal_name": "peak_staffing_not_calibrated",
+    "description": "Staffing levels not aligned to actual peak-hour demand patterns",
+    "value": null
+  },
+  {
+    "signal_id": "S099",
+    "domain_id": "Financial Performance",
+    "severity": "high",
+    "timestamp": "2026-03-27",
+    "source_type": "intake",
+    "venue_id": "phase0_conflicting_capacity_cost",
+    "notes": "Revenue per trading hour has fallen over the last three weekly comparisons despite peak queues remaining unresolved.",
+    "signal_name": "revenue_per_hour_declining",
+    "description": "Revenue per trading hour declining by more than 5 percent over consecutive periods",
+    "value": 9
+  },
+  {
+    "signal_id": "S104",
+    "domain_id": "Financial Performance",
+    "severity": "high",
+    "timestamp": "2026-03-27",
+    "source_type": "intake",
+    "venue_id": "phase0_conflicting_capacity_cost",
+    "notes": "Payroll is running above target while the shift shape still fails to cover peak demand cleanly.",
+    "signal_name": "payroll_percentage_high",
+    "description": "Payroll costs exceeding 35 percent of revenue",
+    "value": 39
+  }
+]

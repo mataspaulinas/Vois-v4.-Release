@@ -1,0 +1,31 @@
+{
+  "id": "sig_service_or_job_cycle_delay",
+  "name": "Service cycle delay is visible in live flow",
+  "description": "The service cycle is stretching beyond the venue's intended rhythm, creating visible lag between order, production, handoff, and guest delivery.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: service or job cycle delay expressed through restaurant service flow",
+  "updated_at": "2026-03-15T17:17:16.784789Z",
+  "domain": "service_delivery",
+  "module": "floor_execution",
+  "indicator_type": "lagging",
+  "evidence_types": [
+    "guests wait materially longer than the house rhythm suggests",
+    "orders or requests sit too long between steps",
+    "the live cycle stalls even when demand is not extreme"
+  ],
+  "source_types": [
+    "service observation",
+    "guest complaint",
+    "manager notes"
+  ],
+  "temporal_behavior": "throughput-sensitive",
+  "likely_co_signals": [
+    "sig_service_delay",
+    "sig_work_pace_breaks_under_load"
+  ],
+  "adapter_aliases": [
+    "service cycle slowing down",
+    "flow is taking too long"
+  ]
+}

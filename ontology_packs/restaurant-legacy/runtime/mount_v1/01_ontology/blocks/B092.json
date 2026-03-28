@@ -1,0 +1,168 @@
+{
+  "block_id": "B092",
+  "name": "Opening Checklist",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Creates a comprehensive, standardised opening checklist that ensures the cafe is fully prepared for trading every single day — covering safety checks, equipment start-up, stock readiness, cleanliness, and regulatory compliance so that nothing is missed regardless of who opens.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Document every task that must be completed before the cafe opens for service each morning",
+      "Ensure critical safety checks (gas, electrical, fire exits, temperature logs) are completed before opening",
+      "Standardise the opening process so that any trained team member can open the cafe to the same standard",
+      "Integrate regulatory compliance tasks (temperature logging, allergen checks, SFBB diary) into the opening routine",
+      "Create an accountability mechanism where the opening checklist is signed and filed as a daily record"
+    ],
+    "secondary_objectives": [
+      "Reduce the opening team's cognitive load by replacing memory-dependent routines with a structured checklist",
+      "Enable the owner to stop opening every day by having a replicable process that others can follow",
+      "Create a documented record of opening compliance for EHO inspection and insurance purposes"
+    ]
+  },
+  "why_this_matters": "The opening of a cafe is a complex operational sequence that must happen correctly every single day. It involves tasks across safety, compliance, equipment, stock, cleanliness, and customer readiness — often completed by a small team under time pressure in the early hours of the morning. Without a standardised checklist, opening quality depends entirely on who is doing it and how they are feeling. The experienced manager remembers everything. The new shift lead forgets to turn on the grinder, misses the temperature check, and does not notice that the fire exit is blocked by yesterday's delivery. The owner, on their rare day off, receives a panicked call at 7:15am because nobody knows the alarm code. A comprehensive opening checklist eliminates this variability. It ensures that regardless of who opens — the manager, a shift lead, or a senior barista — the same tasks are completed in the same order to the same standard. This is not about removing autonomy; it is about ensuring safety and consistency as a baseline upon which individual judgement can then be applied. The compliance dimension is critical. Under the Food Safety Act 1990 and the Food Hygiene (England) Regulations 2006, food businesses must demonstrate that food safety checks are completed systematically. Temperature logging (B001), allergen information displays, and cleaning schedules must all be verified at opening. Under the Regulatory Reform (Fire Safety) Order 2005, fire exits must be checked and unobstructed. Under health and safety legislation, gas safety and electrical safety must be verified. An opening checklist that includes these regulatory requirements provides a daily compliance record. If an EHO officer asks when the fridges were last checked, the opening checklist provides the answer. If an insurance claim requires evidence of fire safety compliance, the signed checklists provide the audit trail.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Walk through the entire opening process from the moment the first team member arrives to the moment the cafe opens its doors. List every task in chronological order. Organise the list into categories: Safety (alarm deactivation, lights on, check fire exits clear, gas check, check no overnight damage), Equipment (espresso machine on, grinder on, dishwasher on, oven on if applicable, till booted and float counted, card machine on and charged, music/lighting set), Compliance (temperature checks completed and logged, allergen information displayed, SFBB diary completed, cleaning schedule displayed), Stock (milk deliveries received and stored, pastries and food displayed and labelled, cups and consumables stocked, coffee hopper filled), Cleanliness (floor swept and mopped, toilets checked and stocked, tables wiped, windows and door clean, outdoor area set if applicable), Customer Readiness (menus and boards updated, specials displayed, Wi-Fi working, seating arranged, signage visible). Create a printable A4 checklist with tick boxes for each item, space for the opener's name, date, and signature. Week 2: Trial the checklist for one full week. Time how long the full opening takes. Gather feedback from everyone who uses it — is anything missing, is the order logical, are any items unnecessary? Revise based on feedback and print the final version.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop the checklist into a formal Opening SOP with accompanying guidance notes for each category. The SOP should explain why each check matters (not just what to do, but why it is important), what to do if a check fails (e.g., fridge temperature above 8°C — follow B003 excursion protocol), and who to contact if there is a problem that cannot be resolved (escalation contacts). Create a Closing-to-Opening Handover Note template (linked to B074) — a simple form the closing team leaves for the opener covering anything unusual from the previous day: equipment issues, stock shortages, incidents, or tasks deferred to the morning. Establish a filing system for completed opening checklists — keep them for at least 12 months for compliance and insurance purposes. Digital alternatives (a shared form or app) are acceptable but ensure the data is backed up. Train all staff who may open the cafe on the full checklist procedure, including the compliance and safety elements. Assess whether anyone needs additional training (e.g., how to read and log fridge temperatures, how to check the fire alarm panel).",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The opening checklist is now a non-negotiable daily ritual that the team takes pride in executing perfectly. Track opening compliance: was the checklist completed and signed every day? Were any items missed? What were the most common issues flagged (equipment problems, stock shortages, cleanliness concerns)? Analyse this data monthly to identify recurring problems that need systemic solutions. Conduct quarterly audits where the manager observes an opening performed by someone other than the usual opener, assessing consistency and identifying any drift from the standard. Use the checklist as an EHO inspection asset — when the inspector arrives, present the opening checklists as evidence of systematic daily compliance. Review and update the checklist annually or whenever the operation changes — new equipment, new menu items, or new regulatory requirements should trigger an immediate update. Link the opening checklist to the pre-rush mise en place (B087) — the opening checklist covers operational readiness; the pre-rush checklist covers peak-specific preparation. Together they ensure a seamless transition from closed to fully operational to peak-ready."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Walk through the entire opening process and list every task in chronological order",
+        "Organise tasks into categories: Safety, Equipment, Compliance, Stock, Cleanliness, Customer Readiness",
+        "Create a printable A4 opening checklist with tick boxes, opener name, date, and signature",
+        "Trial the checklist for one full week and time the opening process",
+        "Gather feedback from all team members who use the checklist",
+        "Revise and print the final version based on feedback",
+        "Post the checklist at the designated opening station (typically near the till or office)"
+      ],
+      "responsible": "Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop an Opening SOP with guidance notes explaining why each check matters",
+        "Create a Closing-to-Opening Handover Note template",
+        "Establish a filing system for completed opening checklists (retain for at least 12 months)",
+        "Train all staff who may open the cafe on the full checklist procedure",
+        "Ensure all openers understand the escalation procedure for failed checks",
+        "Link the opening checklist to the pre-rush mise en place from B087",
+        "Include the opening checklist in the induction programme for new starters from B067"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track opening compliance data and analyse for recurring issues monthly",
+        "Conduct quarterly audits observing openings by non-regular openers",
+        "Present opening checklists as compliance evidence during EHO inspections",
+        "Review and update the checklist annually or upon operational changes",
+        "Celebrate consistent opening excellence as evidence of professional standards",
+        "Share opening audit findings in weekly team meetings for continuous improvement"
+      ],
+      "responsible": "Manager, Owner"
+    }
+  },
+  "deliverables": [
+    "Opening Checklist (printable A4 with tick boxes and sign-off)",
+    "Opening SOP with guidance notes and escalation procedures",
+    "Closing-to-Opening Handover Note template",
+    "Opening Checklist Filing and Retention system",
+    "Opening Training Guide for new openers"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T092-01",
+        "tool_name": "Daily Opening Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Shift Lead",
+        "description": "Comprehensive A4 checklist covering Safety, Equipment, Compliance, Stock, Cleanliness, and Customer Readiness categories with tick boxes, opener name, date, time of completion, and signature."
+      },
+      {
+        "tool_id": "T092-02",
+        "tool_name": "Opening SOP Document",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Detailed standard operating procedure accompanying the checklist, explaining the rationale for each check, the correct procedure, what to do if a check fails, and escalation contacts."
+      },
+      {
+        "tool_id": "T092-03",
+        "tool_name": "Closing-to-Opening Handover Note",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Shift Lead",
+        "description": "Simple form left by the closing team for the opener highlighting equipment issues, stock shortages, incidents, deferred tasks, and anything the morning team needs to know."
+      },
+      {
+        "tool_id": "T092-04",
+        "tool_name": "Opening Compliance Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Monthly tracker recording whether the opening checklist was completed and signed every day, any items missed, common issues flagged, and follow-up actions taken."
+      },
+      {
+        "tool_id": "T092-05",
+        "tool_name": "Quarterly Opening Audit Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Audit template for observing an opening performed by a non-regular opener, assessing adherence to the checklist, time taken, items missed, and recommendations for refresher training or checklist updates."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The checklist exists but is completed retrospectively or ticked without actually performing the checks",
+    "Opening tasks are completed from memory and the checklist is treated as an unnecessary formality",
+    "The checklist is not updated when the operation changes, becoming inaccurate and losing credibility",
+    "Completed checklists are not filed, losing the compliance audit trail that protects the business"
+  ],
+  "kpis": [
+    "Opening checklist completed and signed before the cafe opens on 100% of operating days",
+    "All compliance items (temperature checks, allergen displays, SFBB diary) verified at opening daily",
+    "Opening completed within the allocated time window on at least 90% of days",
+    "Quarterly opening audit scores at 90% or above for checklist adherence",
+    "Opening checklists filed and retrievable for at least 12 months for compliance purposes"
+  ],
+  "dependencies": ["B093"],
+  "constraints": [
+    "The opening checklist must include all regulatory compliance requirements applicable to the venue",
+    "Temperature checks must comply with food safety legislation and link to B001",
+    "Fire safety checks must comply with the Regulatory Reform (Fire Safety) Order 2005",
+    "Completed checklists constitute compliance records and must be retained securely"
+  ],
+  "time_load": {
+    "L1": "3 hours (process walk-through, checklist creation, one-week trial and revision)",
+    "L2": "4 hours (SOP development, handover note, filing system, training)",
+    "L3": "1 hour/quarter (compliance tracking, quarterly audit, annual checklist review)"
+  },
+  "review_protocol": "Daily: opening checklist completed, signed, and filed. Weekly: manager spot-checks a completed checklist for thoroughness. Monthly: compliance tracker reviewed for missed items or recurring issues. Quarterly: audit of opening performed by a non-regular opener. Annually: full checklist review and update for operational and regulatory changes.",
+  "meta": {
+    "summary_for_humans": "This block creates a comprehensive opening checklist ensuring the cafe is safely, cleanly, and compliantly prepared for trading every morning — providing consistency regardless of who opens and creating an audit trail for regulatory compliance.",
+    "implementation_risks": [
+      "Checklists can become tick-box exercises if not reinforced through periodic audits and management spot-checks",
+      "The opening checklist must be concise enough to be practical — an overly long list will not be followed",
+      "Retaining completed checklists requires a simple filing system that does not create admin burden"
+    ],
+    "notes_for_engine": "Activate for every venue. This is a foundational operational block with strong compliance implications. Links to B001 (temperature monitoring), B087 (pre-rush prep), and B074 (daily briefing which follows the opening).",
+    "tags": ["opening", "checklist", "compliance", "safety", "EHO", "SFBB", "daily", "standardisation", "fire_safety", "audit"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,583 @@
+{
+  "meta": {
+    "pack_id": "restaurant-core-scenarios-v1",
+    "title": "Restaurant Core Scenarios v1",
+    "vertical": "restaurant",
+    "ontology_version": "v8",
+    "owner": "execution-program",
+    "updated_at": "2026-03-15T17:20:00Z",
+    "description": "Expanded restaurant scenario pack for validating diagnosis and sequencing against recurring service pressure in the current v8 ontology."
+  },
+  "scenarios": [
+    {
+      "id": "scn_dinner_rush_leadership_reset",
+      "name": "Dinner rush leadership reset",
+      "description": "Rush conditions expose briefing absence, weak manager presence, and uneven deployment.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_service_delay",
+          "sig_shift_brief_missing",
+          "sig_manager_floor_absence",
+          "sig_section_imbalance",
+          "sig_ownership_confusion_in_service"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_manager_presence_gap",
+          "fm_deployment_misalignment",
+          "fm_briefing_absence"
+        ],
+        "top_response_pattern_ids": [
+          "rp_deployment_reset",
+          "rp_manager_presence_reset",
+          "rp_leadership_rhythm_reset"
+        ],
+        "required_block_ids": [
+          "blk_install_pre_shift_brief",
+          "blk_rebalance_sections",
+          "blk_manager_peak_window_plan"
+        ],
+        "expected_load_classification": "moderate",
+        "min_plan_task_count": 3,
+        "max_plan_task_count": 3
+      }
+    },
+    {
+      "id": "scn_opening_readiness_drift",
+      "name": "Opening readiness drift",
+      "description": "Opening checks, line readiness, and leadership briefing all drift at once before service starts.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_opening_checklist_drift",
+          "sig_shift_brief_missing",
+          "sig_line_check_missing"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_shift_readiness_gap",
+          "fm_briefing_absence",
+          "fm_open_close_control_gap"
+        ],
+        "top_response_pattern_ids": [
+          "rp_open_close_reset",
+          "rp_prep_control_reset",
+          "rp_leadership_rhythm_reset"
+        ],
+        "required_block_ids": [
+          "blk_closing_reset_check",
+          "blk_install_pre_shift_brief",
+          "blk_opening_line_readiness_check"
+        ],
+        "forbidden_block_ids": [
+          "blk_guest_recovery_loop"
+        ],
+        "expected_load_classification": "moderate",
+        "min_plan_task_count": 4,
+        "max_plan_task_count": 4
+      }
+    },
+    {
+      "id": "scn_host_pacing_breakdown",
+      "name": "Host pacing breakdown",
+      "description": "Wait estimates, reservation pacing, and table-turn flow all fail together at the door.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_waitlist_mismatch",
+          "sig_reservation_pacing_breakdown",
+          "sig_table_turn_stall"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_host_flow_breakdown",
+          "fm_deployment_misalignment"
+        ],
+        "top_response_pattern_ids": [
+          "rp_host_pacing_reset",
+          "rp_deployment_reset"
+        ],
+        "required_block_ids": [
+          "blk_define_wait_quote_rules",
+          "blk_build_arrival_pacing_board",
+          "blk_host_reservation_huddle"
+        ],
+        "expected_load_classification": "moderate",
+        "min_plan_task_count": 3,
+        "max_plan_task_count": 3
+      }
+    },
+    {
+      "id": "scn_prep_system_breakdown",
+      "name": "Prep system breakdown",
+      "description": "Prep inconsistency and mid-shift availability gaps point to a weak readiness and prep-control system.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_prep_inconsistency",
+          "sig_86_surprise",
+          "sig_line_check_missing"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_shift_readiness_gap",
+          "fm_inventory_accuracy_gap",
+          "fm_prep_system_breakdown"
+        ],
+        "top_response_pattern_ids": [
+          "rp_prep_control_reset",
+          "rp_open_close_reset",
+          "rp_inventory_accuracy_reset"
+        ],
+        "required_block_ids": [
+          "blk_opening_line_readiness_check",
+          "blk_standardize_prep_sheet",
+          "blk_daily_waste_review"
+        ],
+        "forbidden_block_ids": [
+          "blk_guest_recovery_loop",
+          "blk_manager_floor_walk"
+        ],
+        "expected_load_classification": "moderate",
+        "min_plan_task_count": 3,
+        "max_plan_task_count": 3
+      }
+    },
+    {
+      "id": "scn_inventory_control_breakdown",
+      "name": "Inventory and control breakdown",
+      "description": "The venue is getting surprised by 86s, count variance, closing failures, and waste drift.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_86_surprise",
+          "sig_count_variance",
+          "sig_closing_reset_failures",
+          "sig_waste_spike"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_inventory_accuracy_gap",
+          "fm_controls_gap",
+          "fm_open_close_control_gap"
+        ],
+        "top_response_pattern_ids": [
+          "rp_inventory_accuracy_reset",
+          "rp_prep_control_reset",
+          "rp_open_close_reset"
+        ],
+        "required_block_ids": [
+          "blk_inventory_count_cycle",
+          "blk_opening_line_readiness_check",
+          "blk_daily_86_board"
+        ],
+        "expected_load_classification": "moderate",
+        "min_plan_task_count": 3,
+        "max_plan_task_count": 3
+      }
+    },
+    {
+      "id": "scn_manager_absence_under_peak_load",
+      "name": "Manager absence under peak load",
+      "description": "Peak pressure exposes missing floor leadership, weak deployment, and a lack of live reset in service.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_manager_floor_absence",
+          "sig_service_delay",
+          "sig_shift_brief_missing",
+          "sig_section_imbalance"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_manager_presence_gap",
+          "fm_deployment_misalignment",
+          "fm_briefing_absence"
+        ],
+        "top_response_pattern_ids": [
+          "rp_deployment_reset",
+          "rp_manager_presence_reset",
+          "rp_leadership_rhythm_reset"
+        ],
+        "required_block_ids": [
+          "blk_rebalance_sections",
+          "blk_manager_peak_window_plan",
+          "blk_manager_floor_walk"
+        ],
+        "forbidden_block_ids": [
+          "blk_inventory_count_cycle"
+        ],
+        "expected_load_classification": "moderate",
+        "min_plan_task_count": 3,
+        "max_plan_task_count": 3
+      }
+    },
+    {
+      "id": "scn_pass_communication_breakdown",
+      "name": "Pass communication breakdown",
+      "description": "Ticket pressure and missing expo discipline expose a larger workflow and standards problem.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_ticket_bottleneck",
+          "sig_expo_calls_missing",
+          "sig_standard_steps_skipped"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_service_standard_drift",
+          "fm_pass_communication_gap",
+          "fm_undefined_workflow"
+        ],
+        "top_response_pattern_ids": [
+          "rp_prep_control_reset",
+          "rp_service_flow_reset",
+          "rp_pass_communication_reset"
+        ],
+        "required_block_ids": [
+          "blk_map_service_steps",
+          "blk_create_station_roles",
+          "blk_build_floor_training"
+        ],
+        "expected_load_classification": "heavy",
+        "min_plan_task_count": 3,
+        "max_plan_task_count": 3
+      }
+    },
+    {
+      "id": "scn_standards_drift_without_learning_loop",
+      "name": "Standards drift without learning loop",
+      "description": "Standard steps are skipped repeatedly, nobody reviews the breakdowns, and the team keeps improvising instead of stabilizing.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_standard_steps_skipped",
+          "sig_same_issue_repeats_without_review",
+          "sig_staff_confusion"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_training_gap",
+          "fm_learning_loop_absence",
+          "fm_service_standard_drift"
+        ],
+        "top_response_pattern_ids": [
+          "rp_training_reset",
+          "rp_learning_loop_reset",
+          "rp_standard_work_reset"
+        ],
+        "required_block_ids": [
+          "blk_map_service_steps",
+          "blk_create_station_roles",
+          "blk_build_floor_training"
+        ],
+        "forbidden_block_ids": [
+          "blk_guest_recovery_loop"
+        ],
+        "expected_load_classification": "heavy",
+        "min_plan_task_count": 3,
+        "max_plan_task_count": 3
+      }
+    },
+    {
+      "id": "scn_guest_recovery_breakdown",
+      "name": "Guest recovery breakdown",
+      "description": "Complaints are active and the response has become defensive, forcing a recovery-system intervention.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_guest_complaints",
+          "sig_complaint_response_defensive"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_guest_recovery_breakdown",
+          "fm_manager_presence_gap",
+          "fm_undefined_workflow"
+        ],
+        "top_response_pattern_ids": [
+          "rp_recovery_protocol_reset",
+          "rp_manager_presence_reset",
+          "rp_service_flow_reset"
+        ],
+        "required_block_ids": [
+          "blk_guest_recovery_loop"
+        ],
+        "expected_load_classification": "overloaded",
+        "min_plan_task_count": 5,
+        "max_plan_task_count": 5
+      }
+    },
+    {
+      "id": "scn_rush_absorption_breakdown",
+      "name": "Rush absorption breakdown",
+      "description": "A late arrival wave collides with a rush window, critical coverage is thin, and the floor pace breaks under load.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_demand_spike_unabsorbed",
+          "sig_last_minute_volume_shift",
+          "sig_work_pace_breaks_under_load",
+          "sig_critical_role_left_uncovered"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_deployment_misalignment",
+          "fm_host_flow_breakdown",
+          "fm_undefined_workflow"
+        ],
+        "top_response_pattern_ids": [
+          "rp_deployment_reset",
+          "rp_host_pacing_reset",
+          "rp_service_flow_reset"
+        ],
+        "required_block_ids": [
+          "blk_define_wait_quote_rules",
+          "blk_rebalance_sections",
+          "blk_manager_peak_window_plan"
+        ],
+        "expected_load_classification": "moderate",
+        "min_plan_task_count": 3,
+        "max_plan_task_count": 3
+      }
+    },
+    {
+      "id": "scn_training_transfer_failure",
+      "name": "Training transfer failure",
+      "description": "The same preventable mistakes repeat across multiple staff, standards keep slipping, and coaching does not survive live service.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_same_mistake_repeats_across_people",
+          "sig_training_not_translated_to_execution",
+          "sig_standard_steps_skipped",
+          "sig_follow_through_missing"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_training_gap",
+          "fm_learning_loop_absence",
+          "fm_service_standard_drift"
+        ],
+        "top_response_pattern_ids": [
+          "rp_training_reset",
+          "rp_learning_loop_reset",
+          "rp_standard_work_reset"
+        ],
+        "required_block_ids": [
+          "blk_map_service_steps",
+          "blk_create_station_roles",
+          "blk_build_floor_training"
+        ],
+        "forbidden_block_ids": [
+          "blk_guest_recovery_loop"
+        ],
+        "expected_load_classification": "heavy",
+        "min_plan_task_count": 3,
+        "max_plan_task_count": 3
+      }
+    },
+    {
+      "id": "scn_live_tool_outage",
+      "name": "Live tool outage",
+      "description": "A core live-service tool or system is unavailable, the venue leans on workarounds, and readiness gaps make the outage hurt more.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_tool_or_system_unavailable",
+          "sig_workaround_is_normalized",
+          "sig_required_inputs_missing_at_start"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_tooling_friction",
+          "fm_shift_readiness_gap",
+          "fm_equipment_reliability_gap"
+        ],
+        "top_response_pattern_ids": [
+          "rp_reliability_restore",
+          "rp_open_close_reset",
+          "rp_prep_control_reset"
+        ],
+        "required_block_ids": [
+          "blk_opening_line_readiness_check",
+          "blk_capture_breakers_and_workarounds"
+        ],
+        "forbidden_block_ids": [
+          "blk_guest_recovery_loop"
+        ],
+        "expected_load_classification": "moderate",
+        "min_plan_task_count": 4,
+        "max_plan_task_count": 4
+      }
+    },
+    {
+      "id": "scn_offer_expectation_misalignment",
+      "name": "Offer and expectation misalignment",
+      "description": "The live offer has outgrown execution reality, guest expectations break, and promise-setting stress becomes visible on the floor.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_scope_or_offer_misaligned",
+          "sig_customer_expectation_surprise",
+          "sig_promised_time_missed"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_host_flow_breakdown",
+          "fm_menu_complexity",
+          "fm_guest_recovery_breakdown"
+        ],
+        "top_response_pattern_ids": [
+          "rp_host_pacing_reset",
+          "rp_service_flow_reset",
+          "rp_deployment_reset"
+        ],
+        "required_block_ids": [
+          "blk_define_wait_quote_rules",
+          "blk_build_arrival_pacing_board",
+          "blk_host_reservation_huddle"
+        ],
+        "expected_load_classification": "moderate",
+        "min_plan_task_count": 3,
+        "max_plan_task_count": 3
+      }
+    },
+    {
+      "id": "scn_control_loop_closure_failure",
+      "name": "Control-loop closure failure",
+      "description": "Inventory picture, QC discipline, and follow-through all degrade together, leaving recurring issues open and uncontained.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_stock_or_input_inaccuracy",
+          "sig_checker_or_qc_absent",
+          "sig_problem_discussed_not_closed",
+          "sig_exception_repeats_without_containment"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_learning_loop_absence",
+          "fm_controls_gap",
+          "fm_inventory_accuracy_gap"
+        ],
+        "top_response_pattern_ids": [
+          "rp_inventory_accuracy_reset",
+          "rp_learning_loop_reset",
+          "rp_leadership_rhythm_reset"
+        ],
+        "required_block_ids": [
+          "blk_inventory_count_cycle",
+          "blk_void_review_huddle"
+        ],
+        "forbidden_block_ids": [
+          "blk_guest_recovery_loop"
+        ],
+        "expected_load_classification": "moderate",
+        "min_plan_task_count": 3,
+        "max_plan_task_count": 3
+      }
+    },
+    {
+      "id": "scn_defensive_recovery_under_absent_manager",
+      "name": "Defensive recovery under absent manager",
+      "description": "A guest complaint escalates, complaint handling turns defensive, and the expected manager is absent from the pressure moment.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_complaint_handled_defensively",
+          "sig_issue_resolution_slow_or_unclear",
+          "sig_manager_absent_from_critical_moment"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_manager_presence_gap",
+          "fm_guest_recovery_breakdown",
+          "fm_briefing_absence"
+        ],
+        "top_response_pattern_ids": [
+          "rp_manager_presence_reset",
+          "rp_recovery_protocol_reset",
+          "rp_leadership_rhythm_reset"
+        ],
+        "required_block_ids": [
+          "blk_manager_peak_window_plan",
+          "blk_manager_floor_walk"
+        ],
+        "forbidden_block_ids": [
+          "blk_inventory_count_cycle"
+        ],
+        "expected_load_classification": "moderate",
+        "min_plan_task_count": 3,
+        "max_plan_task_count": 3
+      }
+    },
+    {
+      "id": "scn_unexplained_loss_control_drift",
+      "name": "Unexplained loss and control drift",
+      "description": "Loss and waste movement rise without explanation, stock accuracy is weak, and follow-through is too soft to close the loop.",
+      "input": {
+        "selected_signal_ids": [
+          "sig_waste_loss_or_leakage_unexplained",
+          "sig_stock_or_input_inaccuracy",
+          "sig_problem_discussed_not_closed"
+        ],
+        "management_hours_available": 8,
+        "weekly_effort_budget": 8
+      },
+      "expectations": {
+        "top_failure_mode_ids": [
+          "fm_controls_gap",
+          "fm_inventory_accuracy_gap",
+          "fm_learning_loop_absence"
+        ],
+        "top_response_pattern_ids": [
+          "rp_inventory_accuracy_reset",
+          "rp_leadership_rhythm_reset",
+          "rp_prep_control_reset"
+        ],
+        "required_block_ids": [
+          "blk_inventory_count_cycle",
+          "blk_daily_86_board"
+        ],
+        "forbidden_block_ids": [
+          "blk_guest_recovery_loop"
+        ],
+        "expected_load_classification": "moderate",
+        "min_plan_task_count": 3,
+        "max_plan_task_count": 3
+      }
+    }
+  ]
+}

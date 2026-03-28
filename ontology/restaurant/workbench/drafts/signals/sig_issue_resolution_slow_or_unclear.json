@@ -1,0 +1,31 @@
+{
+  "id": "sig_issue_resolution_slow_or_unclear",
+  "name": "Issue resolution is slow or unclear",
+  "description": "A guest issue or service exception is noticed, but the recovery path is hesitant, slow, or ambiguous.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: exception recovery weakness expressed through restaurant guest recovery",
+  "updated_at": "2026-03-14T12:48:22.223512Z",
+  "domain": "guest_experience",
+  "module": "service_recovery",
+  "indicator_type": "lagging",
+  "evidence_types": [
+    "slow recovery response",
+    "unclear owner during issue",
+    "guest waits for resolution"
+  ],
+  "source_types": [
+    "guest complaint",
+    "manager notes",
+    "service observation"
+  ],
+  "temporal_behavior": "event-driven",
+  "likely_co_signals": [
+    "sig_guest_complaints",
+    "sig_complaint_response_defensive"
+  ],
+  "adapter_aliases": [
+    "slow recovery",
+    "unclear issue response"
+  ]
+}

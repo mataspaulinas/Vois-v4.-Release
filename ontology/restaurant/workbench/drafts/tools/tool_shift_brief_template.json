@@ -1,0 +1,22 @@
+{
+  "id": "tool_shift_brief_template",
+  "name": "Shift brief template",
+  "description": "Structured briefing template covering demand shape, 86s, live risks, role pressure points, recovery focus, and named escalation ownership.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: leadership rhythm should create shared situational awareness before the shift gets loud",
+  "updated_at": "2026-03-14T00:24:43.095577Z",
+  "category": "communication",
+  "format": "briefing_template",
+  "usage_moment": "Use at the start of each shift and before major peak windows.",
+  "expected_output": "A short briefing record with priorities, risks, ownership, and the shift's operational focus.",
+  "adaptation_variables": [
+    "daypart",
+    "forecasted_covers",
+    "86_status",
+    "staffing_mix"
+  ],
+  "block_ids": [
+    "blk_install_pre_shift_brief"
+  ]
+}

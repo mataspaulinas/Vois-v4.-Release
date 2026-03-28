@@ -1,0 +1,157 @@
+{
+  "block_id": "B111",
+  "name": "Menu Item Costing Calculator",
+  "version": "v1.0",
+  "domain": "D06_supply_chain",
+  "module": "M06: Supply Chain & Supplier Relations",
+  "state": "enriched",
+  "purpose": "Creates a detailed cost breakdown for every item on the menu — coffee, food, pastries, drinks — so the cafe knows exactly what each product costs to make, what margin it generates, and whether its price is set correctly. This block is the financial foundation upon which all pricing, profitability, and cost control decisions are built.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Calculate the exact ingredient cost of every menu item, including all components (coffee dose, milk volume, syrup, packaging for takeaway)",
+      "Determine the gross profit percentage for each item at current selling prices",
+      "Identify items that are under-priced (GP% too low) and items that are over-priced relative to their cost",
+      "Create a standardised costing template that can be updated when ingredient prices change",
+      "Enable informed pricing decisions by providing accurate cost data (feeding directly into B118)"
+    ],
+    "secondary_objectives": [
+      "Expose hidden costs that are often ignored in menu costing: packaging, sauces, garnishes, condiments",
+      "Support menu engineering by identifying high-margin and low-margin items",
+      "Provide the cost basis for delivery menu pricing where commission must be absorbed"
+    ]
+  },
+  "why_this_matters": "Most independent cafe owners set prices by looking at what nearby cafes charge and adding or subtracting a few pence. This approach ignores the cafe's own cost structure, which is unique — different rent, different wages, different suppliers, different waste levels. The result is that many cafes have menu items that lose money on every sale without the owner realising. A large oat milk latte priced at £4.20 might seem profitable, but when you cost the double espresso shot (18g at £20/kg = £0.36), the oat milk (250ml of barista oat at £2.40/litre = £0.60), the takeaway cup, lid, and sleeve (£0.25), and the labour time (say £0.30 for the 2 minutes it takes to make and serve), the total cost is £1.51. The gross profit is £2.69 or 64%. That is healthy. But a loaded avocado toast priced at £7.50 with sourdough bread (£0.45), two avocados in season (£1.60), poached eggs (£0.40), toppings and seasoning (£0.30), a garnish (£0.15), and packaging if delivered (£0.35) costs £3.25 — a GP of 57%, which drops to just 22% after a 35% delivery commission. Without item-level costing, the cafe cannot distinguish between its most profitable and least profitable items. The Menu Item Costing Calculator provides this visibility. It is not glamorous work, but it is the single most impactful financial exercise a cafe owner can undertake. Cafes that complete this exercise for the first time almost always discover at least 3-5 items that need immediate price adjustment.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create a master ingredients price list. Go through every ingredient the cafe uses and record the purchase price per unit (per kg, per litre, per item). Include: coffee beans (price per kg), every milk type (price per litre), syrups (price per pump or ml), bread (price per slice or loaf), all sandwich fillings (price per kg or per item), pastries (price per unit if bought in), eggs (price per egg), vegetables and salad (price per kg), sauces and condiments (price per serving), and takeaway packaging (cup, lid, bag, box — price per unit). This list becomes the reference document for all costing. Week 2: Cost the menu's top 20 items by volume (the items sold most frequently). For each item, list every ingredient with the exact quantity used and calculate the cost per serve. Do not forget the small items that add up: a sprinkle of cocoa powder, a sachet of sugar, a napkin, a stirrer. These microcosts typically add £0.05-£0.15 per item but are almost always excluded from amateur costings. Calculate the GP% for each item: (Selling Price - Ingredient Cost) / Selling Price x 100. Flag any item with a GP% below 60% for coffee-based drinks or below 55% for food items — these need investigation.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Build a comprehensive Menu Costing Spreadsheet covering every item on the menu (not just the top 20). Include columns for: item name, category (hot drinks, cold drinks, food, pastries), each ingredient with quantity and unit cost, total ingredient cost, selling price, GP%, GP in £, and a flag column for items below target GP%. Create a separate section for delivery items showing the same data plus packaging cost and platform commission deducted. Generate a Menu Profitability Ranking — a sorted list from highest GP% to lowest — this immediately reveals which items are the cafe's profit drivers and which are margin drains. Update the costing spreadsheet whenever supplier prices change — create a simple process where any price change notification triggers a costing update within one week. Use the costing data to run 'what if' scenarios: what happens to the GP% if milk prices increase 10%? If the cafe switches to a cheaper bread supplier? If portion sizes are reduced by 10%? These scenarios inform proactive decision-making.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Menu costing should be a living system, not a one-off exercise. Establish a monthly costing review where the manager checks the top 10 items for any cost drift (ingredient price changes, portion creep, new components added without costing). Integrate costing data with sales data to calculate total GP contribution by item: an item with a lower GP% but very high sales volume may contribute more total profit than a high-GP% item that rarely sells. Use costing data to inform menu design: position high-margin items prominently, create combo offers that blend high and low margin items, and consider discontinuing items where the GP% is persistently unacceptable. Share simplified costing data with the team so they understand which items make money and can make informed recommendations to customers. Review the entire menu costing annually or whenever the menu changes significantly."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create a master ingredients price list recording the cost per unit of every ingredient",
+        "Cost the top 20 menu items by volume with all ingredients and quantities",
+        "Include micro-costs: packaging, condiments, garnishes, napkins",
+        "Calculate GP% for each item and flag any below 60% (drinks) or 55% (food)",
+        "Identify items that need immediate price adjustment based on GP% analysis",
+        "Create a simple reference card showing ingredient costs for daily use",
+        "Store all costing data in a single accessible document or spreadsheet"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build a comprehensive Menu Costing Spreadsheet covering every menu item",
+        "Create a delivery-specific costing section including packaging and commission",
+        "Generate a Menu Profitability Ranking from highest to lowest GP%",
+        "Establish a process to update costings within 1 week of any supplier price change",
+        "Run 'what if' scenarios for key cost variables (milk, coffee, bread prices)",
+        "Integrate costing with B112 (Food Cost % Tracking) and B113 (Coffee Cost % Tracking)",
+        "Create a monthly costing review process for the top 10 items"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Establish monthly costing reviews checking for cost drift and portion creep",
+        "Integrate costing data with sales data for total GP contribution analysis",
+        "Use costing data to inform menu design and item positioning",
+        "Share simplified costing insights with the team for informed customer recommendations",
+        "Review entire menu costing annually or with any significant menu change"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Master Ingredients Price List",
+    "Menu Costing Spreadsheet (all items)",
+    "Menu Profitability Ranking",
+    "Delivery Menu Costing with commission impact",
+    "Monthly Costing Review report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T111-01",
+        "tool_name": "Master Ingredients Price List",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Comprehensive list of every ingredient used in the cafe with purchase price per unit (kg, litre, item), supplier, and last updated date. The reference document for all menu costing."
+      },
+      {
+        "tool_id": "T111-02",
+        "tool_name": "Menu Item Costing Sheet",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Per-item costing template listing every ingredient with quantity per serve, unit cost, extended cost, total cost, selling price, and GP% calculation. Includes micro-costs and packaging."
+      },
+      {
+        "tool_id": "T111-03",
+        "tool_name": "Menu Profitability Ranking Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Sorted ranking of all menu items from highest to lowest GP%, with total GP in pounds, sales volume, and total profit contribution. Identifies the cafe's financial winners and drains."
+      },
+      {
+        "tool_id": "T111-04",
+        "tool_name": "Delivery Margin Calculator",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Calculator showing the margin impact of delivery platform commission on each menu item: ingredient cost, packaging cost, commission at 25-35%, and resulting net margin per item."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Costing exercise is done once and never updated, becoming increasingly inaccurate as ingredient prices change",
+    "Micro-costs (packaging, garnishes, condiments) are excluded, understating true costs by 5-15%",
+    "Portion sizes drift upward over time (portion creep) without costing being updated, silently eroding margin",
+    "Staff do not know the cost impact of their portioning decisions, wasting expensive ingredients through inconsistency"
+  ],
+  "kpis": [
+    "100% of menu items costed with documented ingredient breakdowns",
+    "All coffee-based drinks achieving GP% above 65%",
+    "All food items achieving GP% above 55%",
+    "Costing spreadsheet updated within 1 week of any supplier price change"
+  ],
+  "dependencies": ["B112"],
+  "constraints": [
+    "Ingredient prices change frequently — the costing spreadsheet must be treated as a living document, not a one-off exercise",
+    "Delivery costing must include platform commission (25-35%) which dramatically changes the margin picture",
+    "Portion consistency is essential for costing accuracy — if portions are not standardised, costs are theoretical rather than actual"
+  ],
+  "time_load": {
+    "L1": "6 hours (ingredients list, top 20 item costing, GP% analysis)",
+    "L2": "8 hours (full menu costing, delivery costing, profitability ranking, scenario modelling)",
+    "L3": "2 hours/month (costing reviews, updates, team communication)"
+  },
+  "review_protocol": "Weekly check of any supplier price changes requiring costing updates. Monthly review of top 10 items for cost drift. Quarterly full menu profitability ranking review. Annual comprehensive recosting of entire menu.",
+  "meta": {
+    "summary_for_humans": "This block creates a detailed cost breakdown for every menu item so the cafe knows exactly what each product costs to make, what margin it generates, and whether its price is correct. It is the financial foundation for all pricing, profitability, and cost control decisions.",
+    "implementation_risks": [
+      "The initial costing exercise is time-intensive — block out a full day with the manager to complete it properly",
+      "Staff may feel uncomfortable if costing data reveals that their favourite menu items are unprofitable",
+      "Costing accuracy depends on portion consistency — invest in measuring and portioning standards before expecting precise cost data"
+    ],
+    "notes_for_engine": "This is a foundational block that feeds directly into B112, B113, B114, and B118. Activate early in any cafe's financial improvement journey. Flag as urgent if signals indicate unknown food costs, pricing set by competitor matching, or GP% significantly below benchmarks.",
+    "tags": ["supply_chain", "costing", "menu", "GP_percentage", "pricing", "profitability", "financial", "margin"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

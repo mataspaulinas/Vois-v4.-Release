@@ -1,0 +1,157 @@
+{
+  "block_id": "B147",
+  "name": "Back-of-House Organisation",
+  "version": "v1.0",
+  "domain": "D09_physical_environment",
+  "module": "M09: Cafe Design & Atmosphere",
+  "state": "enriched",
+  "purpose": "Establishes systematic organisation of the kitchen, storage areas, and all non-customer-facing spaces so that staff can work efficiently, ingredients are stored properly, equipment is maintained, and the back-of-house environment supports — rather than undermines — the front-of-house experience.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Implement a logical, labelled storage system where every item has a designated place and staff can find anything within 30 seconds",
+      "Establish FIFO (First In, First Out) stock rotation across all ingredients and supplies",
+      "Create workflow zones in the kitchen that minimise unnecessary movement and prevent bottlenecks",
+      "Maintain back-of-house cleanliness and organisation to the standard required for EHO inspection at any time",
+      "Reduce waste and inefficiency caused by disorganised storage, misplaced equipment, and unclear systems"
+    ],
+    "secondary_objectives": [
+      "Ensure new staff can navigate the kitchen and storage areas independently after one training shift",
+      "Reduce ingredient waste from expired or forgotten stock by implementing clear date labelling and rotation",
+      "Maintain a tidy, well-organised space that boosts staff morale and professional pride",
+      "Support food safety compliance by ensuring proper separation of raw and cooked foods, allergens, and cleaning chemicals"
+    ]
+  },
+  "why_this_matters": "The customer never sees the back of house, but it shapes everything they experience at the front. A chaotic kitchen produces inconsistent food, slow service, and stressed staff. A disorganised storage area leads to over-ordering (because no one can find what is already in stock), waste (because expired items are hidden behind newer ones), and food safety failures (because raw chicken is stored above ready-to-eat sandwiches). An EHO inspector will assess the back of house meticulously: storage practices, labelling, cleanliness, maintenance, and pest prevention are all scored. A cafe with a beautiful customer area but a chaotic kitchen will not achieve a Food Hygiene Rating of 5. Beyond compliance, back-of-house organisation directly affects operational efficiency. A barista who has to search for coffee beans, a chef who cannot find a clean chopping board, or a shift leader who does not know which deliveries have arrived all waste time and create frustration. These inefficiencies compound across every shift, every day, adding up to hours of lost productivity per week. The Japanese lean manufacturing principle of 5S (Sort, Set in Order, Shine, Standardise, Sustain) applies perfectly to cafe kitchens. A place for everything and everything in its place is not just tidy — it is the foundation of operational excellence.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Conduct a back-of-house audit. Walk through every non-customer-facing area: kitchen, prep area, dry storage, fridge and freezer contents, cleaning cupboard, staff area, and any outdoor storage. Photograph each area as-is. Note: items without a designated home, expired stock, unlabelled containers, cluttered surfaces, blocked fire exits, disorganised shelving, missing or broken equipment, and any food safety violations (raw/cooked separation, allergen storage, chemicals near food). Remove any item that is broken beyond repair, expired, or no longer used — a clear-out is the essential first step. Week 2: Implement a basic labelling and zoning system. Designate zones for each storage area: dry goods, chilled, frozen, cleaning products, packaging, and equipment. Within each zone, group similar items together and label shelves so that staff know exactly where each item belongs. Apply FIFO labels to all stock: use the day dot system (coloured stickers for day of the week) for prepared items and write delivery dates on dry goods. Move older stock to the front. Clean every surface, shelf, and container in the storage areas — this is both a hygiene requirement and a fresh start. Establish a rule: every item in back-of-house has a labelled home, and after use it returns there.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Apply 5S methodology to the kitchen and storage areas. Sort: remove anything unnecessary. Set in Order: arrange items by frequency of use (daily items at eye level and within reach, weekly items higher or lower). Shine: deep clean all surfaces, behind equipment, and inside cupboards. Standardise: create a visual reference showing where everything belongs — a photographed 'standard state' that any team member can refer to. Sustain: build daily tidying into shift routines. Create a Kitchen Organisation SOP covering: delivery intake procedure (check, date-label, rotate, store), prep area setup at shift start, clean-as-you-go requirements during service, end-of-shift breakdown and reset, and weekly deep clean assignments. Optimise workflow zones: identify the paths staff take during service and eliminate unnecessary steps. The coffee station should have everything within arm's reach. The food prep area should flow from storage to prep to plating to pass without backtracking. If the layout cannot be changed structurally, improve it through better placement of frequently used items, dedicated tool stations, and clear routing. Implement a weekly back-of-house check by the manager: a 10-minute walk-through scoring organisation, cleanliness, stock rotation compliance, and any maintenance issues.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Back-of-house organisation should now be a matter of professional pride. The standard should be that anyone could walk into the kitchen at any moment — an EHO inspector, the owner's mother, a photographer — and find it clean, organised, and impressive. Create a maintenance log for all kitchen equipment: record when each item was last serviced, when filters were changed, when deep cleaning was done. This prevents the gradual deterioration that leads to equipment breakdown and costly emergency repairs. Develop a seasonal reorganisation rhythm: review storage layouts quarterly and adjust for seasonal menu changes (summer requires more cold storage space for fresh ingredients, winter needs space for hearty cooking ingredients). Track waste data and connect it to storage practices — if certain items are consistently wasted, the storage or rotation system may need adjustment. Invest in organisation tools that make the system easier to maintain: clear storage containers, label makers, wall-mounted equipment holders, and dedicated cleaning stations. These small investments pay for themselves many times over in efficiency and waste reduction."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Conduct a comprehensive back-of-house audit with photographs",
+        "Remove broken, expired, and unused items",
+        "Designate storage zones and label shelves so every item has a home",
+        "Implement FIFO labelling with day dots for prepared items and date stamps for deliveries",
+        "Deep clean all back-of-house surfaces, shelves, and storage containers",
+        "Establish the rule: everything has a labelled home and returns there after use"
+      ],
+      "responsible": "Manager, Kitchen Team"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Apply 5S methodology and create a photographed standard state for each area",
+        "Create a Kitchen Organisation SOP covering all key procedures",
+        "Optimise workflow zones to minimise unnecessary movement during service",
+        "Build daily tidying and reset into shift routines",
+        "Implement a weekly manager back-of-house inspection",
+        "Review delivery intake procedures to ensure immediate labelling and rotation"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Maintain an equipment maintenance log for all kitchen equipment",
+        "Conduct quarterly storage layout reviews aligned with seasonal menu changes",
+        "Track waste data and connect it to storage and rotation practices",
+        "Invest in organisation tools: clear containers, label makers, wall-mounted holders",
+        "Build back-of-house pride: the kitchen should be showroom-ready at all times",
+        "Include back-of-house organisation in staff induction and performance reviews"
+      ],
+      "responsible": "Manager, Kitchen Team"
+    }
+  },
+  "deliverables": [
+    "Back-of-House Audit Report with photographs and action plan",
+    "Storage Zone Map and Shelf Labelling System",
+    "Kitchen Organisation SOP",
+    "Standard State Photographs for each area",
+    "Weekly BOH Inspection Checklist"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T147-01",
+        "tool_name": "Back-of-House Audit Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "A comprehensive checklist for auditing all non-customer-facing areas: kitchen, storage, fridge/freezer, cleaning cupboard, and staff area. Covers organisation, labelling, cleanliness, food safety compliance, and maintenance."
+      },
+      {
+        "tool_id": "T147-02",
+        "tool_name": "Storage Zone Map Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "A visual map showing the designated location for every category of item in the kitchen and storage areas. Includes shelf-by-shelf labelling guides and FIFO rotation direction indicators."
+      },
+      {
+        "tool_id": "T147-03",
+        "tool_name": "Kitchen Organisation SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard operating procedure covering delivery intake, stock rotation, prep area setup, clean-as-you-go requirements, end-of-shift breakdown, and weekly deep clean assignments."
+      },
+      {
+        "tool_id": "T147-04",
+        "tool_name": "Weekly BOH Inspection Scorecard",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "A weekly inspection scorecard for the back-of-house areas, scoring organisation, cleanliness, stock rotation compliance, equipment condition, and food safety compliance on a 1-5 scale."
+      }
+    ]
+  },
+  "failure_modes": [
+    "The clear-out and reorganisation is done once but not maintained, reverting to chaos within weeks",
+    "Staff label shelves but do not enforce the system, so items gradually migrate to incorrect locations",
+    "FIFO rotation is theoretically understood but not practised, leading to continued stock waste",
+    "The manager inspects weekly but takes no action on findings, making the inspection pointless"
+  ],
+  "kpis": [
+    "Any item in back-of-house can be located by any staff member within 30 seconds",
+    "Zero expired stock found during weekly inspections",
+    "Weekly BOH inspection score consistently at 4 out of 5 or above",
+    "Food waste from storage and rotation failures reduced by at least 20% within 3 months"
+  ],
+  "dependencies": ["B146"],
+  "constraints": [
+    "Kitchen layout may be structurally constrained by the building and cannot be changed without significant investment",
+    "Storage space in many UK cafe premises is extremely limited, requiring creative solutions",
+    "FIFO and labelling systems require consistent training as new staff join"
+  ],
+  "time_load": {
+    "L1": "6 hours (audit, clear-out, zone designation, labelling, deep clean)",
+    "L2": "4 hours (SOP creation, workflow optimisation, standard state photography)",
+    "L3": "30 minutes/week (weekly inspection and maintenance log updates)"
+  },
+  "review_protocol": "Daily shift-end check that back-of-house is reset to standard state. Weekly manager inspection scoring all areas. Monthly deep clean compliance check. Quarterly storage layout review aligned with menu changes.",
+  "meta": {
+    "summary_for_humans": "This block transforms the kitchen and storage areas from chaotic to systematically organised using zoning, labelling, 5S methodology, and FIFO stock rotation. It creates SOPs for kitchen organisation and weekly inspection routines that maintain standards consistently.",
+    "implementation_risks": [
+      "The initial clear-out and reorganisation requires significant time and may need to be done on a closed day",
+      "Staff resistance to new systems is common, particularly if previous habits were deeply ingrained",
+      "Very small kitchens may require creative solutions that standard organisation frameworks do not address"
+    ],
+    "notes_for_engine": "Activate when signals indicate kitchen disorganisation, food waste from expired stock, staff frustration with finding items, or when EHO inspection scores identify storage or cleanliness issues. This block supports food safety (B011) and connects to front-of-house cleanliness (B146) for a complete premises standard.",
+    "tags": ["environment", "kitchen", "organisation", "storage", "FIFO", "5S", "cleanliness", "BOH", "efficiency"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

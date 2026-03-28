@@ -1,0 +1,31 @@
+{
+  "id": "sig_exception_repeats_without_containment",
+  "name": "Exception repeats without containment",
+  "description": "A known exception keeps happening again without the venue putting in a temporary containment rule or a stable correction.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: exception repeating without containment expressed through restaurant issue handling",
+  "updated_at": "2026-03-15T15:59:27.062668Z",
+  "domain": "service_delivery",
+  "module": "service_recovery",
+  "indicator_type": "lagging",
+  "evidence_types": [
+    "same breakdown repeats within days",
+    "known issue returns with no temporary guardrail",
+    "recurring exception treated as isolated every time"
+  ],
+  "source_types": [
+    "manager notes",
+    "post-shift review",
+    "incident log"
+  ],
+  "temporal_behavior": "recurring",
+  "likely_co_signals": [
+    "sig_issue_resolution_slow_or_unclear",
+    "sig_problem_discussed_not_closed"
+  ],
+  "adapter_aliases": [
+    "repeat exception with no containment",
+    "known problem keeps returning"
+  ]
+}

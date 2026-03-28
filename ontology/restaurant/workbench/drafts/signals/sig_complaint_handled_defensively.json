@@ -1,0 +1,31 @@
+{
+  "id": "sig_complaint_handled_defensively",
+  "name": "Complaint is handled defensively",
+  "description": "A guest complaint is met with explanation, blame-shifting, or resistance instead of calm acknowledgment and structured recovery.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: complaint handled defensively expressed through restaurant guest recovery behavior",
+  "updated_at": "2026-03-15T17:17:16.776734Z",
+  "domain": "guest_experience",
+  "module": "service_recovery",
+  "indicator_type": "lagging",
+  "evidence_types": [
+    "staff explain the problem instead of owning the recovery",
+    "guest feedback is met with friction or defensiveness",
+    "recovery language escalates tension instead of stabilizing it"
+  ],
+  "source_types": [
+    "guest complaint",
+    "manager notes",
+    "service observation"
+  ],
+  "temporal_behavior": "event-driven",
+  "likely_co_signals": [
+    "sig_issue_resolution_slow_or_unclear",
+    "sig_guest_complaints"
+  ],
+  "adapter_aliases": [
+    "defensive complaint handling",
+    "guest complaint met with pushback"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "identification": {
+    "tool_id": "T003-05",
+    "tool_name": "Temperature Excursion SOP & Drill Guide",
+    "block_id": "B003"
+  },
+  "tool_design": {
+    "format": "SOP",
+    "role_in_intervention": "Full operating standard behind the quick-response card, including drills and post-incident review.",
+    "adaptation_variables": [
+      "contact_tree",
+      "drill_scenarios",
+      "contingency_storage_plan"
+    ],
+    "usage_moment": "At rollout, drills, and manager refresher reviews",
+    "expected_output": "Issued excursion SOP with drill scorecards and clarified response roles",
+    "linked_blocks": [
+      "B003",
+      "B001",
+      "B004"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "SOP is issued but not practiced through drills.",
+        "what_can_go_wrong": "Staff know of the standard but still panic under pressure.",
+        "early_signals": [
+          "Card is visible but confidence is low",
+          "Drill scorecards do not exist"
+        ],
+        "prevention": [
+          "Run quarterly drills",
+          "Brief every relevant user"
+        ],
+        "mitigation": [
+          "Reissue with a practical drill",
+          "Audit real incident behaviour"
+        ],
+        "if_occurs_next_signals": [
+          "standard_not_embedded"
+        ],
+        "possible_successor_blocks": [
+          "B003",
+          "B001",
+          "B004"
+        ]
+      },
+      {
+        "warning": "SOP no longer matches real contingency options.",
+        "what_can_go_wrong": "The team follows an outdated response path.",
+        "early_signals": [
+          "Contacts are wrong",
+          "Backup storage plan is unclear"
+        ],
+        "prevention": [
+          "Review after equipment or staffing changes",
+          "Keep one update owner"
+        ],
+        "mitigation": [
+          "Refresh contacts and plan quickly",
+          "Remove outdated copies"
+        ],
+        "if_occurs_next_signals": [
+          "standard_drift"
+        ],
+        "possible_successor_blocks": [
+          "B003",
+          "B001",
+          "B004"
+        ]
+      }
+    ]
+  },
+  "content": "# Temperature Excursion SOP & Drill Guide\n\n**Tool ID:** T003-05  \n**Block:** B003 (Temperature Excursion Response)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L2  \n**Format:** SOP  \n**Role:** Manager / Owner  \n**Time Required:** 20 minutes to issue, 10 minutes per drill  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this SOP to define the full venue response when a unit fails, stock is at risk, or an excursion happens outside a simple one-line fix.\n\nThis is the deeper operating guide behind the response card.\n\n---\n## Incident Sequence\n\n| Step | Standard |\n|---|---|\n| 1 | Trigger identified and confirmed |\n| 2 | Unit protected from unnecessary opening |\n| 3 | Manager notified |\n| 4 | Stock assessed using [T003-03] |\n| 5 | Incident recorded on [T003-02] |\n| 6 | Engineer / owner / back-up storage activated if needed |\n| 7 | Root cause and prevention captured in [T003-04] |\n\n---\n## Roles During An Excursion\n\n| Role | Responsibility |\n|---|---|\n| First finder | Trigger the response and notify manager |\n| Manager / duty lead | Lead the assessment and stock decision |\n| Owner | Support major loss, supplier, or equipment decisions |\n| Engineer / contractor | Repair or advise on recovery |\n\n---\n## Stock Transfer Rule\n\nIf safe stock must be moved:\n- use a known compliant back-up fridge or freezer\n- minimise door-open time during transfer\n- mark transferred stock clearly\n- avoid mixing questionable stock with known-safe stock without a decision record\n\n---\n## Drill Guide\n\nRun a short drill at least quarterly.\n\n### Suggested scenarios\n- Main milk fridge found at `11C` at opening\n- Freezer door left ajar overnight\n- Display fridge warm during peak service\n- Power cut affects more than one unit\n\n### Drill scorecard\n\n| Check | Yes / No | Notes |\n|---|---|---|\n| Team identified the trigger quickly | | |\n| Manager was notified fast | | |\n| Stock decision used the matrix, not guesswork | | |\n| Incident record would have been completed | | |\n| Team knew where back-up storage was | | |\n\n---\n## Post-Incident Review\n\nAfter every real excursion ask:\n- what happened\n- why it happened\n- what we controlled badly\n- what we need to change before the next one\n\nKeep the review short, factual, and action-focused.\n\n---\n## Connected Resources\n\n**Core tools in this block:**\n- T003-01 - Temperature Excursion Response Card\n- T003-02 - Excursion Incident Report Form\n- T003-03 - Time-Temperature Stock Assessment Matrix\n- T003-04 - Excursion Trend Tracker & Root Cause Log\n\n**Related blocks:**\n- B001 - Daily Temperature Monitoring\n- B002 - Cold Chain Management SOP\n- B004 - Cold Chain Excellence Dashboard\n\n---\n\n*Tool Version 2.0 - the full incident standard behind the quick card.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T003-05_temperature_excursion_sop_and_drill_guide.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

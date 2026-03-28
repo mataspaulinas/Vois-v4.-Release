@@ -1,0 +1,157 @@
+{
+  "block_id": "B127",
+  "name": "Cost Structure Excellence",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Provides a holistic view of the cafe's entire cost base and establishes a continuous improvement approach to cost management. This block synthesises payroll optimisation (B125), occupancy strategy (B126), and all other cost lines into an integrated cost structure that is benchmarked, monitored, and actively refined.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Map the complete cost structure of the cafe into a clear, categorised framework: COGS, labour, occupancy, operating overheads, and discretionary spend",
+      "Benchmark each cost category against industry norms and identify areas where costs are above benchmark",
+      "Establish a quarterly cost review process that systematically examines each cost line for reduction opportunities",
+      "Create a cost hierarchy that distinguishes between essential costs, efficiency-improvable costs, and discretionary costs that can be flexed",
+      "Develop supplier management practices that leverage buying power and prevent cost creep"
+    ],
+    "secondary_objectives": [
+      "Build a cost database that tracks unit costs over time, revealing trends and enabling early intervention",
+      "Create a decision framework for evaluating make-vs-buy decisions (e.g., baking in-house vs. buying in)",
+      "Identify hidden costs that are often overlooked: card processing fees, packaging, breakage, shrinkage, and waste disposal",
+      "Establish a cost-conscious culture where every team member considers value for money in their daily decisions"
+    ]
+  },
+  "why_this_matters": "Cafe profitability is determined not by any single cost line but by the overall cost structure — the relationship between all costs and the revenue they generate. An operator who controls food cost brilliantly but ignores utility waste, overpays for packaging, and never negotiates card processing fees may still run an unprofitable business. Cost structure excellence means understanding every significant outflow and ensuring that each one is appropriate, competitive, and regularly challenged. UK independent cafes typically have a cost structure that looks roughly like this: COGS 28-35%, labour 28-35%, occupancy 10-15%, other overheads 10-15%, leaving a net profit of 5-12%. The difference between a cafe at 5% net margin and one at 12% is rarely about one dramatic cost saving — it is about disciplined management of every cost category, compounding small improvements across the whole business. A 1% improvement in food cost, 1% in labour, and 1% in overheads collectively delivers a 3% improvement in net margin — potentially doubling profit on a 5% margin business. Hidden costs are a particular danger: card processing fees (1.5-3% of card revenue), delivery platform commissions (15-35%), packaging costs, waste disposal charges, and equipment maintenance can collectively represent 5-8% of revenue but are often not tracked individually. This block brings every cost into the light, benchmarks it, and establishes a rhythm of continuous improvement that protects and grows the bottom line.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create a complete cost map for the cafe. Using the last 3 months of bank statements, invoices, and payroll records, categorise every outgoing payment into five groups: Cost of Goods Sold (ingredients, packaging, coffee beans, milk, bakery items), Labour (wages, employer NI, pensions, benefits), Occupancy (rent, rates, service charge, insurance), Operating Overheads (utilities, cleaning supplies, card processing fees, POS subscription, waste disposal, accounting fees, equipment maintenance, internet, phone), and Discretionary (marketing, subscriptions, training, equipment upgrades). Calculate each category as a percentage of revenue. Week 2: Compare your cost structure against industry benchmarks. Identify any category that is more than 2 percentage points above the benchmark — these are your priority areas. For each priority area, list three potential actions to reduce cost without reducing quality. Review every subscription and recurring payment: cancel anything unused, downgrade anything over-specified, and renegotiate anything that has not been reviewed in 12 months. Check card processing fees — many cafes are paying rates set when they first opened and have never renegotiated despite increased transaction volumes.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Establish a quarterly cost review meeting (1-2 hours) where each major cost category is examined systematically. For each category, review: current cost as a percentage of revenue, trend over the last 3 months, comparison to benchmark, and any upcoming changes (contract renewals, price increases). Develop a supplier management approach: for your top 5 suppliers by spend, ensure you have competitive quotes, review pricing at least annually, and maintain relationships that support negotiation. Create a make-vs-buy decision framework for key products: is it cheaper and better to bake cakes in-house or buy from a wholesale bakery? This analysis should include the full cost of in-house production (ingredients, labour, equipment, energy, waste) not just ingredient cost. Track unit costs for your top 20 products — what does each flat white, sandwich, and slice of cake actually cost to produce including all direct costs? This granular understanding enables pricing decisions and menu engineering. Implement a purchase order approval process where any non-routine expenditure above a set threshold (e.g., 100 pounds) requires manager or owner approval before commitment.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Cost management should be embedded in the culture as a shared responsibility, not just the owner's burden. Every team member should understand that the cafe operates on thin margins and that waste in any form directly reduces profitability. Introduce a cost innovation programme: encourage team members to suggest cost-saving ideas and reward the best ones. Some of the most effective cost savings come from frontline staff who see waste and inefficiency daily. Benchmark costs annually against published industry data and, if possible, against peer cafes through informal networking or business groups. Develop long-term supplier partnerships that provide price stability, preferential terms, and early access to new products. Evaluate group purchasing opportunities through buying groups or local cafe alliances. Review the cost structure as part of the annual budget process (B123), ensuring that cost targets for the coming year are realistic, evidence-based, and improvement-oriented. Consider engaging an accountant for an annual cost efficiency review — a fresh pair of professional eyes can often spot savings that become invisible to the owner."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create a complete cost map categorising all outgoings into COGS, Labour, Occupancy, Overheads, and Discretionary",
+        "Calculate each category as a percentage of revenue for the last 3 months",
+        "Benchmark against industry norms and identify categories more than 2 points above benchmark",
+        "Review and cancel or renegotiate all unused subscriptions and recurring payments",
+        "Check card processing fees and request competitive quotes",
+        "List three potential cost reduction actions for each above-benchmark category"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Establish a quarterly cost review meeting examining each major cost category",
+        "Develop a supplier management approach with annual pricing reviews for top 5 suppliers",
+        "Create a make-vs-buy decision framework for key products",
+        "Track unit costs for the top 20 products sold",
+        "Implement a purchase order approval process for non-routine expenditure",
+        "Build a cost trend tracker showing each category's percentage of revenue over time"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce a cost innovation programme encouraging staff cost-saving suggestions",
+        "Benchmark costs annually against industry data and peer cafes",
+        "Develop long-term supplier partnerships for price stability and preferential terms",
+        "Evaluate group purchasing opportunities through buying groups",
+        "Engage an accountant for an annual cost efficiency review",
+        "Integrate cost structure targets into the annual budget process"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Complete Cost Map (categorised cost breakdown with revenue percentages)",
+    "Quarterly Cost Review Meeting Agenda and Template",
+    "Supplier Management Tracker",
+    "Unit Cost Calculator for top products",
+    "Make-vs-Buy Decision Framework Template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T127-01",
+        "tool_name": "Cost Structure Map",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A comprehensive template categorising all cafe costs into five groups (COGS, Labour, Occupancy, Overheads, Discretionary), calculating each as a percentage of revenue and benchmarking against industry norms."
+      },
+      {
+        "tool_id": "T127-02",
+        "tool_name": "Quarterly Cost Review Template",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Structured agenda for the quarterly cost review meeting, examining each cost category's current level, trend, benchmark comparison, and action items for improvement."
+      },
+      {
+        "tool_id": "T127-03",
+        "tool_name": "Supplier Management Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Tracker for the cafe's top suppliers showing annual spend, last price review date, contract terms, alternative suppliers identified, and next review date."
+      },
+      {
+        "tool_id": "T127-04",
+        "tool_name": "Make-vs-Buy Decision Framework",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A structured template for evaluating whether to produce in-house or buy externally, comparing full costs (ingredients, labour, equipment, energy, waste) against wholesale purchase price and quality factors."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Cost reviews focus only on the obvious categories (food, labour) while hidden costs like processing fees and packaging grow unchecked",
+    "Supplier relationships become complacent, with prices never challenged because the owner values convenience over competitiveness",
+    "Cost cutting is approached with a hatchet rather than a scalpel, damaging quality or team morale in pursuit of short-term savings",
+    "The cost map is created once but never maintained, becoming outdated as costs change and new expenses are added"
+  ],
+  "kpis": [
+    "Total cost structure (excluding owner compensation) maintained within target range for the venue type",
+    "Quarterly cost review completed every quarter with documented actions",
+    "Top 5 suppliers by spend reviewed for pricing competitiveness at least annually",
+    "Net profit margin improving or stable year-on-year, driven by cost structure improvements"
+  ],
+  "dependencies": ["B122", "B125", "B126"],
+  "constraints": [
+    "Cost reduction must not compromise food safety, product quality, or regulatory compliance",
+    "Supplier changes require careful transition planning to avoid service disruption",
+    "Some costs are genuinely fixed or non-negotiable and should not consume disproportionate management time"
+  ],
+  "time_load": {
+    "L1": "6 hours (initial cost mapping, benchmarking, subscription review)",
+    "L2": "4 hours/quarter (quarterly cost review, supplier management, unit cost tracking)",
+    "L3": "2 hours/month (innovation programme, benchmarking, strategic cost planning)"
+  },
+  "review_protocol": "Quarterly formal cost review examining all categories. Annual supplier pricing review for top 5 suppliers. Monthly informal check of cost percentages against budget. Annual cost structure assessment as part of budget process.",
+  "meta": {
+    "summary_for_humans": "This block takes a holistic view of the cafe's entire cost base, mapping every outgoing into categories, benchmarking against industry norms, and establishing continuous improvement processes. It is the integration point for payroll (B125) and occupancy (B126) strategies into an overall cost excellence approach.",
+    "implementation_risks": [
+      "The breadth of cost categories can feel overwhelming, leading to paralysis rather than action",
+      "Small cost lines are individually insignificant but collectively material — the owner must resist the temptation to dismiss them",
+      "Cost benchmarks vary significantly by location and venue type, so industry averages should be used as guides not absolute targets"
+    ],
+    "notes_for_engine": "This is a capstone block for cost management within D07. It should be activated after B125 (payroll) and B126 (occupancy) are underway. Particularly valuable when signals indicate the cafe is profitable but margins are thin, or when costs are rising faster than revenue. Also relevant when the owner cannot clearly articulate where their money goes.",
+    "tags": ["finance", "cost", "structure", "benchmarking", "supplier", "efficiency", "margins", "overheads"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

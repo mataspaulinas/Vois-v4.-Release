@@ -1,0 +1,167 @@
+{
+  "block_id": "B209",
+  "name": "Corporate & Office Delivery",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Develops a corporate and office delivery service that generates recurring B2B revenue through regular coffee delivery contracts, meeting catering, office coffee subscriptions, and corporate account management. This block covers service design, pricing strategy, logistics, quality maintenance during transport, client acquisition, and the systems needed to run delivery alongside core cafe operations without compromising either.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Design a corporate delivery service offering covering regular orders, meeting catering, and coffee subscriptions",
+      "Develop pricing structures that cover delivery costs, maintain margins, and remain competitive for corporate clients",
+      "Establish delivery logistics including packaging, transport, timing, and quality maintenance during transit",
+      "Build a corporate client acquisition and account management process",
+      "Create operational workflows so delivery preparation does not disrupt in-store cafe service during peak hours"
+    ],
+    "secondary_objectives": [
+      "Generate predictable, recurring revenue through weekly or monthly corporate delivery contracts",
+      "Extend brand awareness into offices and workplaces, converting corporate customers into personal cafe visitors",
+      "Reduce revenue volatility by diversifying income streams beyond walk-in cafe trade",
+      "Develop wholesale relationships that may lead to office coffee machine supply or branded product placement"
+    ]
+  },
+  "why_this_matters": "Corporate delivery represents one of the largest untapped revenue streams for independent cafes. Within a typical cafe's catchment area, there are offices, co-working spaces, business parks, and professional services firms where employees drink coffee all day — but their options are often limited to instant coffee, a vending machine, or a pod system that nobody is happy with. A cafe that can deliver genuinely good coffee, pastries, and lunch items to these offices on a regular basis captures revenue that would otherwise go to supermarket coffee purchases, Deliveroo orders from chains, or internal catering budgets. The economics are compelling: a weekly delivery contract with a 30-person office might involve 15 coffees and a tray of pastries, totalling £60-80 per visit. Fifty such contracts represent £3,000-4,000 per week in recurring revenue — a transformative addition for an independent cafe. Corporate clients also tend to be more price-tolerant than individual consumers: they are spending a company budget, not their own money, and they value reliability and quality over the cheapest option. The challenges are logistical rather than conceptual. Coffee quality degrades rapidly after brewing — a flat white served 20 minutes after preparation bears little resemblance to one served immediately. Delivery packaging must maintain temperature and prevent spills. Preparation timing must be coordinated so orders are ready for dispatch without overwhelming the bar during the cafe's own peak hours. And corporate clients expect professional service: invoicing, consistency, and responsiveness to changes. The cafe that solves these logistics creates a competitive moat — it is genuinely difficult for national chains to offer personalised, high-quality local delivery to individual offices.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Define the delivery service offering. Start simple with two or three packages: a Coffee Run (6-12 coffees to order, delivered in insulated carriers), a Meeting Pack (coffee, pastries, and perhaps sandwiches for a meeting of 8-20 people), and a Weekly Office Subscription (a standing order delivered on set days). For each package, define: what is included, minimum order value (to cover delivery cost), delivery radius (start with a 10-15 minute drive from the cafe), and ordering lead time (24 hours for regular orders, 48 hours for meeting packs). Calculate pricing that covers product cost, packaging, delivery time (driver labour or your own time), and generates at least a 40% margin after all costs. Week 2: Identify potential corporate clients. Walk the local area or search online for offices, co-working spaces, business parks, estate agents, dental practices, law firms — any workplace with 10+ people and no great coffee option nearby. Prepare a simple one-page flyer or email pitch explaining the service, pricing, and how to order. Approach 5-10 prospects in the first week. For the first clients, deliver personally — this builds the relationship and lets you troubleshoot logistics before delegating. Test packaging: insulated coffee carriers or airpots for bulk, individual cups with lids for personal orders. Confirm that coffee arrives at acceptable drinking temperature.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Formalise delivery operations. Create a Delivery Operations SOP covering: order receipt and confirmation process, preparation scheduling (deliveries should be prepped outside peak cafe hours — typically mid-morning or early afternoon), packaging standards, delivery route planning (batch nearby deliveries together), handoff protocol (who receives at the office, contactless or in-person), and feedback collection. Establish a Corporate Client Management System: a simple CRM or spreadsheet tracking each client's contact details, standing order, delivery schedule, payment terms (weekly or monthly invoicing is standard for corporate accounts), and any special requirements. Develop a Corporate Menu designed specifically for delivery: items that travel well, maintain quality for 15-20 minutes, and can be assembled efficiently in bulk. Hot filter coffee in airpots is superior to espresso drinks for large office orders because it stays hot and can be self-served. Pastry platters, sandwich boxes, and individually wrapped items suit meeting catering better than items requiring plating. Set up invoicing — corporate clients expect to pay on account, not per transaction. Monthly invoicing with 14-30 day payment terms is standard. Ensure the cafe's accounting system can handle this. Track delivery revenue separately from walk-in revenue to measure the programme's contribution.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The delivery programme should now generate reliable recurring revenue. Scale by adding a dedicated delivery slot in the daily schedule, potentially hiring a part-time delivery driver. Introduce a Corporate Coffee Subscription: offices receive a weekly delivery of whole beans or ground coffee for their own machine, plus training on how to brew it properly — this extends the brand into the office kitchen. Develop tiered pricing with volume discounts that incentivise larger or more frequent orders. Create a quarterly Corporate Client Review process: contact each client to check satisfaction, discuss their evolving needs, and identify upsell opportunities (office events, team celebrations, seasonal catering). Explore partnerships with office management companies, co-working spaces, and corporate event planners who can refer clients. Track customer lifetime value for corporate clients — a single contract running for two years at £80 per week represents over £8,000 in revenue, justifying significant acquisition effort. Develop a referral programme: existing corporate clients who refer new clients receive a free delivery or credit."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Define the delivery service offering: Coffee Run, Meeting Pack, and Weekly Office Subscription",
+        "Calculate pricing that delivers at least 40% margin after all costs including delivery labour",
+        "Set minimum order values and maximum delivery radius",
+        "Identify and approach 5-10 potential corporate clients within the delivery area",
+        "Test delivery packaging for temperature maintenance and spill prevention",
+        "Deliver the first orders personally to build relationships and troubleshoot logistics",
+        "Create a simple ordering process: email, phone, or messaging with 24-hour lead time"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a Delivery Operations SOP covering preparation, packaging, routing, and handoff",
+        "Build a Corporate Client Management System tracking orders, schedules, and payment terms",
+        "Develop a Corporate Menu of items optimised for delivery quality and efficient bulk preparation",
+        "Set up monthly invoicing capability with 14-30 day payment terms for corporate accounts",
+        "Track delivery revenue separately from walk-in revenue in the accounting system",
+        "Train staff on delivery preparation workflow so it runs independently of the main bar",
+        "Establish a delivery preparation schedule that avoids peak cafe service hours"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Scale the programme with a dedicated delivery slot and potentially a part-time driver",
+        "Launch a Corporate Coffee Subscription for offices with their own brewing equipment",
+        "Implement tiered pricing with volume discounts for larger clients",
+        "Conduct quarterly Corporate Client Reviews to maintain relationships and identify upsell opportunities",
+        "Build partnerships with office management companies and corporate event planners",
+        "Develop a referral programme rewarding existing clients for new introductions"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Corporate Delivery Service menu and pricing sheet",
+    "Delivery Operations SOP",
+    "Corporate Client Management tracker",
+    "Monthly invoicing templates for corporate accounts",
+    "Corporate client acquisition pitch materials"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T209-01",
+        "tool_name": "Corporate Delivery Pricing Calculator",
+        "level": "L1",
+        "format": "calculator",
+        "owner_role": "Owner",
+        "description": "Spreadsheet calculating per-delivery costs (product, packaging, delivery time, fuel) and pricing for each package type, ensuring minimum 40% margin with sensitivity analysis for different order sizes."
+      },
+      {
+        "tool_id": "T209-02",
+        "tool_name": "Delivery Operations SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard operating procedure for the complete delivery workflow: order receipt, preparation scheduling, quality checks, packaging, route planning, delivery handoff protocol, and post-delivery feedback collection."
+      },
+      {
+        "tool_id": "T209-03",
+        "tool_name": "Corporate Client Management Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "CRM-style tracker for corporate accounts: company name, contact person, standing order details, delivery schedule, payment terms, last review date, revenue to date, and notes on preferences or special requirements."
+      },
+      {
+        "tool_id": "T209-04",
+        "tool_name": "Corporate Client Pitch Pack",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Sales materials for approaching corporate prospects: one-page service overview, menu with pricing, ordering instructions, and testimonials from existing clients. Available as print and digital versions."
+      },
+      {
+        "tool_id": "T209-05",
+        "tool_name": "Quarterly Corporate Client Review Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Structured review template for quarterly client check-ins: satisfaction assessment, order pattern analysis, upcoming needs (events, seasonal requirements), upsell opportunities, and relationship health score."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Coffee arrives cold or spilled because packaging was inadequate, creating a terrible first impression that loses the client permanently",
+    "Delivery preparation overwhelms the bar during peak cafe hours, degrading in-store customer experience",
+    "Corporate clients are invoiced but payment is not chased, creating cash flow problems from overdue accounts",
+    "Service is inconsistent — different staff prepare different quality deliveries — undermining corporate client trust"
+  ],
+  "kpis": [
+    "Delivery revenue reaching at least 15% of total cafe revenue within 12 months of launch",
+    "Corporate client retention rate exceeding 80% on annual renewal of standing orders",
+    "Delivery margin maintained at or above 40% after all direct costs",
+    "Zero delivery quality complaints resulting in client loss per quarter"
+  ],
+  "dependencies": ["B101", "B128"],
+  "constraints": [
+    "Delivery radius is limited by time — coffee quality degrades within 15-20 minutes of preparation, constraining how far deliveries can travel",
+    "Corporate invoicing on payment terms introduces cash flow lag that must be managed alongside immediate cafe expenses",
+    "Delivery during peak cafe hours requires either dedicated staff or careful scheduling to avoid service conflicts"
+  ],
+  "time_load": {
+    "L1": "6 hours (service design, pricing, prospect identification, first deliveries, packaging testing)",
+    "L2": "10 hours (SOP creation, client management setup, invoicing system, staff training, menu development)",
+    "L3": "4 hours/month (client reviews, programme scaling, partnership development, data analysis)"
+  },
+  "review_protocol": "Daily delivery quality check by preparing barista before dispatch. Weekly delivery revenue and order volume review. Monthly invoicing and payment tracking. Quarterly corporate client review calls. Annual programme profitability and growth assessment.",
+  "meta": {
+    "summary_for_humans": "This block builds a corporate delivery service — regular coffee and food delivery to offices, meeting catering, and corporate subscriptions. It covers pricing, logistics, packaging, client acquisition, and account management to create a reliable B2B revenue stream.",
+    "implementation_risks": [
+      "Start small and prove the model before investing in dedicated delivery resources — scale follows demand, not the other way around",
+      "Payment terms must be enforced — a cafe cannot afford to subsidise corporate cash flow for 60+ days",
+      "Delivery quality must match in-store quality or the brand suffers — never let delivery become a lesser service"
+    ],
+    "notes_for_engine": "Activate when signals indicate proximity to office areas, underutilised mid-morning capacity, desire for revenue diversification, or specific corporate enquiries. Pairs with B101 (pricing strategy) and B128 (revenue management).",
+    "tags": ["corporate", "delivery", "B2B", "office", "catering", "revenue", "subscription", "client_management"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

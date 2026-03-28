@@ -1,0 +1,447 @@
+[
+  {
+    "event_id": "261f4e5e7fbb4a79b8a73908760ce265",
+    "workspace_id": "default",
+    "venue_slug": "codex_smoke_cafe",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "project",
+    "object_id": "codex_smoke_cafe",
+    "action": "project_created",
+    "summary": "Project created for Codex Smoke Cafe",
+    "details": {
+      "body": "Codex Smoke Cafe created as a new venue workspace."
+    },
+    "timestamp": "2026-03-17T12:16:57.326261"
+  },
+  {
+    "event_id": "dab2ff15f136448c87f8d92d1ef17cd4",
+    "workspace_id": "default",
+    "venue_slug": "kavos_namai_riga",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "project",
+    "object_id": "kavos_namai_riga",
+    "action": "project_updated",
+    "summary": "Venue updated by Lead Consultant",
+    "details": {
+      "changes": {
+        "current_signals": {
+          "old": 15,
+          "new": 0
+        }
+      }
+    },
+    "timestamp": "2026-03-22T22:05:03.307511"
+  },
+  {
+    "event_id": "1d61a09d1d1e4bad95eef4a63605cc69",
+    "workspace_id": "default",
+    "venue_slug": "kavos_namai_riga",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "assessment",
+    "object_id": "2026-03-22_001.json",
+    "action": "assessment_saved",
+    "summary": "Assessment saved for Riga",
+    "details": {
+      "body": "1 signals captured in 2026-03-22_001.json."
+    },
+    "timestamp": "2026-03-22T22:05:45.309859"
+  },
+  {
+    "event_id": "e8f0375f03c548f7885cf7ecb7f46041",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "project",
+    "object_id": "muzos_2",
+    "action": "project_created",
+    "summary": "Project created for muzos 2",
+    "details": {
+      "body": "muzos 2 created as a new venue workspace."
+    },
+    "timestamp": "2026-03-25T21:58:40.170682"
+  },
+  {
+    "event_id": "98d09377198146fba72e027149180e90",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "project",
+    "object_id": "muzos_2",
+    "action": "project_updated",
+    "summary": "Venue updated by Lead Consultant",
+    "details": {
+      "changes": {
+        "current_signals": {
+          "old": 0,
+          "new": 46
+        }
+      }
+    },
+    "timestamp": "2026-03-25T22:32:17.183078"
+  },
+  {
+    "event_id": "f01175da3a914f218b475d407be10ce2",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "plan",
+    "object_id": "plan_20260325_001",
+    "action": "plan_generated",
+    "summary": "Operational plan generated for muzos 2",
+    "details": {
+      "body": "13 tasks generated."
+    },
+    "timestamp": "2026-03-25T22:32:29.494167"
+  },
+  {
+    "event_id": "5e9cbe7bbe3247248d80cd4c56579603",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "assessment",
+    "object_id": "2026-03-25_001.json",
+    "action": "assessment_saved",
+    "summary": "Assessment saved for muzos 2",
+    "details": {
+      "body": "46 signals captured in 2026-03-25_001.json."
+    },
+    "timestamp": "2026-03-25T22:32:29.963368"
+  },
+  {
+    "event_id": "6f19653fe4e24ab1ada903a6723311d7",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "task",
+    "object_id": "L1_001",
+    "action": "task_status_updated",
+    "summary": "Health & Safety Risk Assessment set to ready",
+    "details": {
+      "body": "Health & Safety Risk Assessment",
+      "status": "ready"
+    },
+    "timestamp": "2026-03-25T22:50:31.088315"
+  },
+  {
+    "event_id": "dfc38f5edb1e4944ab7465e25f27ec39",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "task",
+    "object_id": "L1_001",
+    "action": "task_status_updated",
+    "summary": "Health & Safety Risk Assessment set to completed",
+    "details": {
+      "body": "Health & Safety Risk Assessment",
+      "status": "completed"
+    },
+    "timestamp": "2026-03-25T22:50:35.024588"
+  },
+  {
+    "event_id": "b60174c1d791463a8d72dfa9ecb03246",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "task",
+    "object_id": "L1_003",
+    "action": "task_status_updated",
+    "summary": "Licensing & Employment Law Audit set to completed",
+    "details": {
+      "body": "Licensing & Employment Law Audit",
+      "status": "completed"
+    },
+    "timestamp": "2026-03-25T22:50:59.444375"
+  },
+  {
+    "event_id": "342e420842444930bc0854bcca189ede",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "task",
+    "object_id": "L2_001",
+    "action": "task_status_updated",
+    "summary": "Health & Safety Risk Assessment set to completed",
+    "details": {
+      "body": "Health & Safety Risk Assessment",
+      "status": "completed"
+    },
+    "timestamp": "2026-03-25T22:51:02.402122"
+  },
+  {
+    "event_id": "3a62390765e240099fd6ee372ca93390",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "task",
+    "object_id": "L2_002",
+    "action": "task_status_updated",
+    "summary": "Fire Safety & Emergency Procedures set to completed",
+    "details": {
+      "body": "Fire Safety & Emergency Procedures",
+      "status": "completed"
+    },
+    "timestamp": "2026-03-25T22:51:09.072129"
+  },
+  {
+    "event_id": "3a5c58e0807a4da1b5f219f7cb06d65f",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "task",
+    "object_id": "L2_003",
+    "action": "task_status_updated",
+    "summary": "Licensing & Employment Law Audit set to completed",
+    "details": {
+      "body": "Licensing & Employment Law Audit",
+      "status": "completed"
+    },
+    "timestamp": "2026-03-25T22:51:29.085450"
+  },
+  {
+    "event_id": "b88e9b8b8ac94088b35278284d3f2c1c",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "task",
+    "object_id": "L2_004",
+    "action": "task_status_updated",
+    "summary": "Regulatory Excellence & Compliance Culture set to completed",
+    "details": {
+      "body": "Regulatory Excellence & Compliance Culture",
+      "status": "completed"
+    },
+    "timestamp": "2026-03-25T22:51:31.287178"
+  },
+  {
+    "event_id": "a4841d468ff5466ab971e4eaa7f9bb89",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "task",
+    "object_id": "L2_005",
+    "action": "task_status_updated",
+    "summary": "Internal Food Safety Self-Assessment set to completed",
+    "details": {
+      "body": "Internal Food Safety Self-Assessment",
+      "status": "completed"
+    },
+    "timestamp": "2026-03-25T22:51:36.912216"
+  },
+  {
+    "event_id": "9cb79550e5284e75b65ad59084e4e430",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "task",
+    "object_id": "L2_006",
+    "action": "task_status_updated",
+    "summary": "EHO Inspection Readiness set to completed",
+    "details": {
+      "body": "EHO Inspection Readiness",
+      "status": "completed"
+    },
+    "timestamp": "2026-03-25T22:51:39.958021"
+  },
+  {
+    "event_id": "9550c18b88524177aa7edab6ea190beb",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "task",
+    "object_id": "L3_001",
+    "action": "task_status_updated",
+    "summary": "Health & Safety Risk Assessment set to completed",
+    "details": {
+      "body": "Health & Safety Risk Assessment",
+      "status": "completed"
+    },
+    "timestamp": "2026-03-25T22:52:18.948694"
+  },
+  {
+    "event_id": "0f6beee84ab447a7b3fc99ad9dbde999",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "task",
+    "object_id": "L3_002",
+    "action": "task_status_updated",
+    "summary": "Regulatory Excellence & Compliance Culture set to completed",
+    "details": {
+      "body": "Regulatory Excellence & Compliance Culture",
+      "status": "completed"
+    },
+    "timestamp": "2026-03-25T22:52:29.922793"
+  },
+  {
+    "event_id": "bde332e7922349f8be622338122ac8d5",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "task",
+    "object_id": "L3_003",
+    "action": "task_status_updated",
+    "summary": "Internal Food Safety Self-Assessment set to completed",
+    "details": {
+      "body": "Internal Food Safety Self-Assessment",
+      "status": "completed"
+    },
+    "timestamp": "2026-03-25T22:52:59.421026"
+  },
+  {
+    "event_id": "86ceabf07a9c45d0a9bd4d018381f5c6",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "task",
+    "object_id": "L3_004",
+    "action": "task_status_updated",
+    "summary": "Food Safety Excellence Programme set to completed",
+    "details": {
+      "body": "Food Safety Excellence Programme",
+      "status": "completed"
+    },
+    "timestamp": "2026-03-25T22:53:13.960727"
+  },
+  {
+    "event_id": "7b7b9827ec7d46bb8741ab86ce6e2187",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "task",
+    "object_id": "L1_002",
+    "action": "task_status_updated",
+    "summary": "Fire Safety & Emergency Procedures set to completed",
+    "details": {
+      "body": "Fire Safety & Emergency Procedures",
+      "status": "completed"
+    },
+    "timestamp": "2026-03-25T22:53:30.180022"
+  },
+  {
+    "event_id": "4c79e455d34b412d85d1807d8f753e3e",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "plan",
+    "object_id": "plan_20260325_001",
+    "action": "plan_review_requested",
+    "summary": "Plan review requested for muzos 2",
+    "details": {
+      "body": "Requested from Portfolio Lead."
+    },
+    "timestamp": "2026-03-25T22:54:24.970600"
+  },
+  {
+    "event_id": "17896adce9294797af3d07f4f88ca2ab",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "project",
+    "object_id": "muzos_2",
+    "action": "project_updated",
+    "summary": "Venue updated by Lead Consultant",
+    "details": {
+      "changes": {
+        "current_signals": {
+          "old": 46,
+          "new": 4
+        }
+      }
+    },
+    "timestamp": "2026-03-25T22:59:16.761936"
+  },
+  {
+    "event_id": "fe7711c12421402c887599165cd986d4",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "plan",
+    "object_id": "plan_20260325_002",
+    "action": "plan_generated",
+    "summary": "Operational plan generated for muzos 2",
+    "details": {
+      "body": "13 tasks generated."
+    },
+    "timestamp": "2026-03-25T22:59:21.191454"
+  },
+  {
+    "event_id": "5ca753ebfef54b259e2c7725b87a03e5",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "assessment",
+    "object_id": "2026-03-25_002.json",
+    "action": "assessment_saved",
+    "summary": "Assessment saved for muzos 2",
+    "details": {
+      "body": "4 signals captured in 2026-03-25_002.json."
+    },
+    "timestamp": "2026-03-25T22:59:21.570985"
+  },
+  {
+    "event_id": "019e7d17ef6a42c3a875384d2c5a6674",
+    "workspace_id": "default",
+    "venue_slug": "muzos_2",
+    "actor_user_id": "u_consultant",
+    "actor_name": "Lead Consultant",
+    "actor_role": "consultant",
+    "object_type": "plan",
+    "object_id": "plan_20260325_002",
+    "action": "plan_review_requested",
+    "summary": "Plan review requested for muzos 2",
+    "details": {
+      "body": "Requested from Portfolio Lead."
+    },
+    "timestamp": "2026-03-25T23:40:08.651693"
+  }
+]

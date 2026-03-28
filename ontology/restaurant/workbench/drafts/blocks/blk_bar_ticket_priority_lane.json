@@ -1,0 +1,45 @@
+{
+  "id": "blk_bar_ticket_priority_lane",
+  "name": "Create bar priority lane",
+  "description": "Separate the drink tickets that are actively blocking table flow from the rest of the bar queue so urgent beverage work becomes visible and protected.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: redesign workflow at the beverage node by exposing table-critical priority work",
+  "updated_at": "2026-03-14T00:24:42.953119Z",
+  "effort_hours": 2.5,
+  "dependencies": [
+    "blk_install_expo_callouts"
+  ],
+  "tool_ids": [
+    "tool_bar_priority_board"
+  ],
+  "response_pattern_ids": [
+    "rp_bar_execution_reset",
+    "rp_pass_communication_reset"
+  ],
+  "entry_conditions": [
+    "Bar tickets are delaying table progression or guests are waiting on drinks that gate the next service step.",
+    "The venue can distinguish truly table-critical tickets from normal queue volume."
+  ],
+  "contraindications": [
+    "Do not create a second queue without explicit rules for what qualifies as priority work.",
+    "Do not use this lane to hide structural understaffing or broken bar setup."
+  ],
+  "owner_role": "bar_lead",
+  "expected_time_to_effect_days": 1,
+  "proof_of_completion": [
+    "A visible priority lane exists for bar work that blocks table progression.",
+    "The bar team can explain the rule for entering and clearing priority tickets.",
+    "At least one pressured service shows faster resolution of table-critical drink tickets."
+  ],
+  "successor_block_ids": [],
+  "service_module_ids": [
+    "live_execution",
+    "handoffs_and_coordination"
+  ],
+  "failure_family_ids": [
+    "workflow_design_failure",
+    "handoff_failure",
+    "demand_capacity_mismatch"
+  ]
+}

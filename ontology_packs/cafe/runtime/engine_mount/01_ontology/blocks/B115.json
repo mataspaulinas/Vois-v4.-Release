@@ -1,0 +1,157 @@
+{
+  "block_id": "B115",
+  "name": "Inventory Count System",
+  "version": "v1.0",
+  "domain": "D06_supply_chain",
+  "module": "M06: Supply Chain & Supplier Relations",
+  "state": "enriched",
+  "purpose": "Establishes a regular, structured inventory counting process that gives the cafe accurate visibility of what stock it actually holds, enabling precise cost calculations, waste identification, theft detection, and ordering accuracy.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define which items are counted and at what frequency (weekly for high-value, monthly for low-value)",
+      "Create a standardised count sheet that makes the process efficient, consistent, and auditable",
+      "Train all relevant staff on counting procedures to ensure accuracy and consistency",
+      "Use count data to calculate actual cost of goods sold (feeding into B112 and B113)",
+      "Identify stock variances (differences between expected and actual stock) that reveal waste, theft, or recording errors"
+    ],
+    "secondary_objectives": [
+      "Improve ordering accuracy by knowing exactly what is on hand before placing orders",
+      "Support financial reporting with accurate stock valuation for month-end and year-end accounts",
+      "Create an audit trail that demonstrates stock management discipline to potential investors or buyers"
+    ]
+  },
+  "why_this_matters": "You cannot manage what you do not measure, and stock is the most commonly unmeasured asset in independent cafes. Most cafe owners have a rough idea of what they have in stock — 'a couple of boxes of cups, about 10 litres of milk, some bags of beans' — but this approximation leads to over-ordering, under-ordering, undetected waste, and a complete inability to calculate accurate cost of goods sold. Without a regular count, the cafe's food cost and coffee cost percentages (B112 and B113) are based on purchases rather than consumption, which can be misleading when purchase timing differs from usage timing. A cafe that buys £800 of stock in one week and £200 the next has not halved its costs — it has simply shifted the purchasing pattern while consumption remains steady. Stock counts correct for this by measuring actual usage: (Opening Stock + Purchases - Closing Stock) = Cost of Goods Consumed. Stock counts also serve as a theft detection mechanism. Pilferage in hospitality is more common than owners want to admit — even small amounts add up. If the count reveals that 2kg of coffee beans have disappeared without corresponding sales, that is a £30 loss per occurrence. Multiplied across all stock categories and weeks, undetected shrinkage can represent 2-5% of total stock cost. Regular counting creates visibility that deters casual theft and identifies problems early. For UK cafes seeking external investment, franchise agreements, or business valuation, accurate stock records are a basic expectation of financial credibility.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Identify all stock items that need counting and categorise them by value and volatility: Category A (high-value, fast-moving — coffee beans, milk, bread, pastries, sandwich fillings), Category B (moderate-value, steady — syrups, chocolate, tea, packaging), Category C (low-value, slow-moving — cleaning supplies, napkins, condiments). Create a simple Count Sheet organised by storage location (behind the bar, walk-in fridge, dry store, under-counter storage) with columns for: item name, unit of measure (kg, litres, units), expected stock level (from par levels, if established), actual count, and variance. Conduct the first full count at close of business on Sunday evening or Monday morning before any deliveries arrive. Count everything — this first count establishes the baseline. It will take 45-60 minutes for a small cafe. Week 2: Conduct a second count at the same time and compare against the first, adjusting for purchases and sales during the intervening week. Calculate usage: Opening Stock + Purchases - Closing Stock = Usage. Compare this usage figure against what the till says was sold — any significant gap is worth investigating.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Establish a tiered counting frequency: Category A items counted weekly (every Sunday evening), Category B items counted fortnightly, Category C items counted monthly. This reduces the counting burden while maintaining visibility of the most important items. Create a digital count sheet (Google Sheet or simple inventory app) that calculates variances automatically when counts are entered. Train at least 2 team members to conduct counts so the process is not dependent on a single person. Implement a blind count procedure: the counter should not see the expected stock level before counting — this prevents them from 'counting to the number' rather than counting accurately. After counting, the manager reviews variances and investigates any item where actual stock differs from expected by more than 5%. Use count data to feed accurate stock values into the weekly food cost (B112) and coffee cost (B113) calculations. File all count sheets for a minimum of 6 months — they provide essential evidence for cost analysis and any discrepancy investigation.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Stock counting should be an ingrained routine, not a special event. Consider transitioning to a perpetual inventory system where high-value items are counted daily as part of the opening or closing routine (e.g., counting milk and coffee beans daily takes 2 minutes and provides real-time visibility). Implement cycle counting: instead of counting everything weekly, count a different section each day so that all items are counted at least monthly with high-value items counted more frequently. Use stock variance data to set improvement targets: reduce total stock variance below 2% of stock value per month. Benchmark stock accuracy against industry standards and share results with the team. Integrate stock count data with the ordering system so that counts automatically trigger reorders when stock falls below par levels (B095). Review the counting system annually to ensure it remains efficient and aligned with the cafe's operational scale."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Categorise all stock items into Category A (high-value/fast), B (moderate), and C (low-value/slow)",
+        "Create a Count Sheet organised by physical storage location",
+        "Conduct the first full stock count at close of business on Sunday or Monday morning",
+        "Record all counts with item, unit of measure, and actual quantity",
+        "Calculate baseline stock value across all categories",
+        "Conduct a second count the following week and calculate usage",
+        "Compare usage against till sales to identify any significant gaps"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Establish tiered counting frequency: A weekly, B fortnightly, C monthly",
+        "Create a digital count sheet with automatic variance calculations",
+        "Train at least 2 team members on accurate counting procedures",
+        "Implement blind count procedure (counter does not see expected levels)",
+        "Investigate any item variance exceeding 5% of expected stock",
+        "Feed count data into weekly food cost and coffee cost calculations",
+        "File all count sheets for minimum 6 months"
+      ],
+      "responsible": "Manager, Shift Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Implement daily counts for highest-value items (milk, beans) as part of routine",
+        "Introduce cycle counting to spread the counting load across the week",
+        "Set stock variance targets below 2% of stock value per month",
+        "Integrate count data with ordering system for automatic reorder triggers",
+        "Review the counting system annually for efficiency and alignment with operations"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Stock Count Sheet template (by storage location)",
+    "Stock Item Category Matrix (A, B, C)",
+    "Counting Procedures guide",
+    "Variance Investigation log",
+    "Monthly Stock Accuracy report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T115-01",
+        "tool_name": "Stock Count Sheet",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Shift Lead",
+        "description": "Count sheet organised by physical storage location with columns for item name, unit of measure, actual count, expected level, and variance. Used weekly for Category A items."
+      },
+      {
+        "tool_id": "T115-02",
+        "tool_name": "Stock Counting Procedures Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Step-by-step guide for conducting accurate stock counts: blind counting protocol, unit of measure standards, partial-unit estimation, recording procedures, and filing requirements."
+      },
+      {
+        "tool_id": "T115-03",
+        "tool_name": "Stock Variance Investigation Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Investigation template for stock variances exceeding 5%: item details, expected vs actual, possible causes (waste, portioning, theft, recording error), and corrective actions."
+      },
+      {
+        "tool_id": "T115-04",
+        "tool_name": "Monthly Stock Accuracy Dashboard",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly summary of stock accuracy by category: total variance value, variance as percentage of stock, trend over time, and items requiring attention."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Counts are performed inaccurately because staff are rushing or estimating rather than physically counting",
+    "Counting is skipped during busy periods and never caught up, creating gaps in the data",
+    "Variances are identified but never investigated, removing the accountability that stock counting creates",
+    "Count data is not used to improve ordering or cost calculations, making the effort feel pointless to staff"
+  ],
+  "kpis": [
+    "Category A stock counted weekly without exception",
+    "Stock variance below 2% of total stock value per month",
+    "All variances exceeding 5% investigated and documented within 48 hours",
+    "Stock count data feeding into weekly food and coffee cost calculations"
+  ],
+  "dependencies": ["B116"],
+  "constraints": [
+    "Stock counts must be conducted at a consistent time (ideally before any deliveries) for comparability",
+    "At least 2 staff members must be trained to count, preventing single-person dependency",
+    "Count sheets must be filed for a minimum of 6 months for audit and investigation purposes"
+  ],
+  "time_load": {
+    "L1": "2 hours (category setup, count sheet creation, first count, staff training)",
+    "L2": "45 minutes/week (Category A count) + 30 minutes/fortnight (Category B) + 30 minutes/month (Category C)",
+    "L3": "30 minutes/month (accuracy review, variance analysis, system refinement)"
+  },
+  "review_protocol": "Weekly Category A count by shift lead. Fortnightly Category B count by manager. Monthly full stock accuracy review. Quarterly counting procedure review and staff refresher.",
+  "meta": {
+    "summary_for_humans": "This block establishes a regular stock counting system so the cafe knows exactly what it holds, enabling accurate cost calculations, waste identification, and theft detection. It uses a tiered approach: high-value items weekly, moderate items fortnightly, low-value items monthly.",
+    "implementation_risks": [
+      "Stock counting feels like a chore — keep it efficient with well-organised count sheets and clear procedures",
+      "Inaccurate counts are worse than no counts — they provide false confidence. Invest in training and blind counting",
+      "If count data is collected but never reviewed or acted upon, staff will quickly stop taking it seriously"
+    ],
+    "notes_for_engine": "Activate alongside B116 (FIFO & Stock Rotation) as a pair. Flag as urgent if signals indicate unknown stock levels, persistent discrepancies between purchases and usage, or suspected shrinkage.",
+    "tags": ["supply_chain", "inventory", "stock_count", "variance", "accuracy", "cost_control", "theft_detection", "financial"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

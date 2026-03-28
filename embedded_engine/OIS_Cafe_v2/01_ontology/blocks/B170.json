@@ -1,0 +1,166 @@
+{
+  "block_id": "B170",
+  "name": "Evening Trade Development",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M11: Expansion & Market Positioning",
+  "state": "enriched",
+  "purpose": "Explores and develops evening trading as a distinct revenue stream, transforming the cafe from a daytime-only business into a venue with extended earning potential through evening food service, drinks, events, or a combination of these. This block ensures evening trade is financially viable and operationally sustainable before significant investment is committed.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Assess whether evening trade is viable for this cafe based on location, customer base, competitive landscape, and operational capacity",
+      "Define the evening proposition (food, drinks, events, or combination) that aligns with the cafe's brand and fills a genuine gap in the local market",
+      "Model the financial impact including additional revenue, staff costs, utilities, licensing, and the risk of cannibalising daytime trade through staff fatigue",
+      "Plan the operational transition from day to evening service including staffing, menu, ambiance, and closing procedures",
+      "Test evening trade through a pilot programme before committing to permanent extended hours"
+    ],
+    "secondary_objectives": [
+      "Maximise return on fixed costs (rent, rates, insurance) by extending the revenue-generating hours of the premises",
+      "Attract a new customer segment that may not visit during daytime trading hours",
+      "Create community engagement opportunities through evening events (quiz nights, live music, supper clubs)",
+      "Build the cafe's reputation as a neighbourhood hub rather than just a coffee shop"
+    ]
+  },
+  "why_this_matters": "A typical cafe pays rent, rates, and insurance for 24 hours a day, 7 days a week, but generates revenue for only 8-10 hours, 6-7 days a week. Evening trade represents an opportunity to extract more value from these fixed costs. If the cafe is already paying 3,000 pounds per month in rent and generates no revenue after 5pm, every pound earned in the evening goes further because the major fixed costs are already covered. However, evening trade also carries significant risks. The additional costs are real: staff overtime or additional staff, increased utilities, extended equipment wear, and potentially a premises licence for alcohol sales (currently 190 pounds for a new application plus an annual fee of 70-350 pounds depending on rateable value). If evening revenue does not comfortably exceed these additional costs, the cafe is working longer hours for less profit. There is also the operational risk: staff who work a full day shift and then cover evening service will burn out. Quality will decline. The daytime business, which is the proven revenue generator, may suffer. The most successful cafe evening trade models share common characteristics: they are distinct from the daytime offer (not just 'staying open later'), they serve a specific local need (nowhere else to eat, no quality wine bar, no community event space), and they are tested as pilots before permanent commitment. Rushing into evening service without piloting is one of the most common and most expensive independent cafe mistakes.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Conduct an Evening Viability Assessment. Walk the surrounding area between 6pm and 9pm on a weekday and a weekend. What is the foot traffic like? Are people around? What other evening food and drink options exist within a 5-minute walk? Is there an underserved need (no quality restaurant, no casual dining, no alcohol-free social space, no event venue)? Check your lease: does it permit evening trading and alcohol service? Check local planning: is the premises classified for A3 use (restaurants and cafes) or A1 (shops), and does this affect evening trading? Research your local council's approach to premises licences for new evening venues. Week 2: Survey existing customers: Would they visit in the evening? What would they come for (dinner, drinks, events, study space)? What time would they come and leave? Survey 30 customers and note the patterns. Assess operational capacity: Would the same staff work day and evening or would separate evening staff be needed? Is the kitchen equipped for a dinner service? Would the current menu work or does a distinct evening menu need development? What additional costs would evening trading add (staffing, utilities, licensing, insurance)?",
+    "L2": "SYSTEM BUILD (2-8 weeks). Design an Evening Pilot Programme. Rather than committing to permanent evening opening, run a structured 4-8 week pilot on 1-2 evenings per week. Choose the evenings strategically: Thursday and Friday typically have the strongest evening demand; Monday and Tuesday are usually weakest. Define the evening proposition for the pilot. Options include: (1) Extended cafe service with evening food menu (small plates, sharing boards, upgraded light meals). (2) Wine, beer, and cocktail bar with food (requires premises licence). (3) Themed event nights (supper club, quiz night, live acoustic music, coffee tasting, craft workshop). (4) Study or co-working evening (extended hours with the existing daytime offer, targeting students and remote workers). Create a distinct evening ambiance: adjust lighting (dimmer, warmer), change the music (slower tempo, lower volume), rearrange furniture if possible (more intimate table settings), and add candles or low lighting elements. The space should feel different from the daytime cafe. Develop an evening-specific menu that is operationally simple (minimal additional prep, shared ingredients with the day menu where possible) but feels intentionally designed for evening dining. Price evening items at a premium appropriate to the dining context. Staff the pilot appropriately: evening staff should ideally be separate from day staff to prevent burnout. Calculate the break-even point for each evening: how much revenue is needed to cover additional staff, food costs, utilities, and any licensing costs.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Evaluate the pilot rigorously. After 4-8 weeks, assess: average evening revenue versus break-even target, customer count and average spend, customer feedback and repeat visit rate, impact on staff satisfaction and daytime performance, and operational challenges encountered. If the pilot meets or exceeds targets, consider expanding to additional evenings. If it falls short, analyse why before committing further. Develop an evening marketing strategy: evening trade requires different marketing to daytime. Use social media (evening imagery, event promotion), local listing sites, neighbourhood newsletters, and partnerships with local businesses and cultural venues. Build an events calendar: regular programming (monthly supper club, fortnightly quiz, weekly acoustic night) builds habit and creates reasons to visit. One-off events create excitement. The combination of regular and special events builds a sustainable evening trade. If pursuing alcohol service, obtain a premises licence and train designated staff to the required level (Personal Licence holders need an accredited qualification). Ensure compliance with all licensing conditions. Monitor the long-term impact of evening trade on the overall business: are daytime regulars visiting in the evening (incremental revenue) or are they shifting their spend from day to evening (cannibalization)?"
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Walk the surrounding area between 6-9pm on weekday and weekend to assess evening foot traffic",
+        "Map competing evening venues within a 5-minute walk and identify market gaps",
+        "Check lease terms and planning classification for evening trading and alcohol service",
+        "Survey 30 existing customers about evening visit interest and preferences",
+        "Assess operational capacity: staffing, kitchen capability, and equipment readiness",
+        "Calculate additional costs of evening trading (staff, utilities, licensing, insurance)"
+      ],
+      "responsible": "Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Design an Evening Pilot Programme for 1-2 nights per week over 4-8 weeks",
+        "Define the evening proposition (food, drinks, events, or combination)",
+        "Develop an evening-specific menu with appropriate pricing",
+        "Create a distinct evening ambiance (lighting, music, furniture arrangement)",
+        "Recruit or schedule evening staff separate from day shifts where possible",
+        "Calculate break-even revenue for each evening session",
+        "Market the pilot through social media, in-cafe signage, and customer communication"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Evaluate pilot results rigorously against break-even and customer satisfaction targets",
+        "Develop an evening marketing strategy distinct from daytime marketing",
+        "Build a regular events calendar combining recurring and special events",
+        "Obtain premises licence for alcohol service if the evening model requires it",
+        "Monitor long-term impact on daytime trade and overall business performance"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Evening Viability Assessment report",
+    "Evening Pilot Programme plan (proposition, menu, staffing, break-even, timeline)",
+    "Evening Menu (distinct from daytime, operationally feasible)",
+    "Pilot Evaluation Report with go/no-go recommendation",
+    "Evening Events Calendar (if progressing beyond pilot)"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T170-01",
+        "tool_name": "Evening Viability Assessment Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Structured assessment covering: evening foot traffic observations, competitor mapping, lease and planning review, customer survey results, operational capacity analysis, and financial impact projection. Produces a viability score and recommendation."
+      },
+      {
+        "tool_id": "T170-02",
+        "tool_name": "Evening Pilot Programme Plan",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Complete pilot plan covering: chosen evenings, proposition definition, menu, staffing plan, ambiance changes, break-even calculation, marketing approach, success metrics, and evaluation timeline. Designed for 4-8 week structured testing."
+      },
+      {
+        "tool_id": "T170-03",
+        "tool_name": "Evening Break-Even Calculator",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Spreadsheet calculating the minimum evening revenue needed to cover additional costs: staff wages, food cost of goods sold, additional utilities, licensing fees, and other marginal costs. Produces a per-evening break-even target."
+      },
+      {
+        "tool_id": "T170-04",
+        "tool_name": "Pilot Evaluation Scorecard",
+        "level": "L3",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Post-pilot evaluation covering: revenue versus break-even, customer count trend, average spend, customer feedback summary, staff impact assessment, operational challenges, and clear go/no-go recommendation with conditions."
+      },
+      {
+        "tool_id": "T170-05",
+        "tool_name": "Evening Events Calendar Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Monthly event planning template for evening programming: recurring events, special events, required resources, marketing timeline, booking management, and revenue targets per event type."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Evening service is launched permanently without piloting, committing to ongoing costs before demand is validated",
+    "Day staff are expected to cover evening shifts, leading to burnout, quality decline, and daytime performance deterioration",
+    "The evening offer is identical to the daytime offer (same menu, same ambiance) so customers see no reason to visit in the evening",
+    "Evening trade generates revenue but at such low margins (after additional costs) that it reduces overall business profitability"
+  ],
+  "kpis": [
+    "Evening pilot revenue exceeding break-even target by at least 20% before expanding",
+    "Evening customer count growing week-on-week during the pilot period",
+    "No measurable decline in daytime service quality or staff satisfaction during the pilot",
+    "Evening average transaction value at least 30% higher than daytime average (reflecting premium evening pricing)"
+  ],
+  "dependencies": ["B164"],
+  "constraints": [
+    "Lease terms and planning classification must permit evening trading and any intended use (food, alcohol)",
+    "Premises licence is required for alcohol sales and takes 4-8 weeks to obtain from the local licensing authority",
+    "Evening staffing must be separate from or additional to daytime staffing to prevent team burnout",
+    "Kitchen equipment may need upgrading to support a dinner service (larger oven, additional refrigeration)"
+  ],
+  "time_load": {
+    "L1": "6 hours (viability assessment, customer survey, competitor research, cost modelling)",
+    "L2": "15 hours (pilot design, menu development, ambiance planning, staff scheduling, marketing)",
+    "L3": "8 hours (pilot evaluation) + ongoing management time for permanent evening service"
+  },
+  "review_protocol": "Pilot performance reviewed weekly during the pilot period. Break-even analysis updated after each evening session. Customer feedback collected and reviewed weekly. Staff impact assessed fortnightly. Post-pilot evaluation completed within one week of pilot conclusion. If evening trade continues, performance reviewed monthly for the first 6 months, then quarterly.",
+  "meta": {
+    "summary_for_humans": "This block guides the exploration and development of evening trade through a structured viability assessment, pilot programme, and evaluation process. It ensures evening service is tested before permanent commitment and that financial, operational, and team impacts are carefully managed.",
+    "implementation_risks": [
+      "Emotional enthusiasm for evening trade can override objective viability assessment",
+      "The premises licence process takes time and the outcome is not guaranteed",
+      "Evening service fundamentally changes the cafe's identity and this shift must be intentional"
+    ],
+    "notes_for_engine": "Activate when signals indicate the owner is considering evening opening, when fixed costs are high relative to revenue, or when the local area has clear unmet evening demand. Always recommend piloting before permanent commitment.",
+    "tags": ["evening_trade", "extended_hours", "events", "supper_club", "licensing", "pilot", "revenue_diversification", "ambiance"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "bakery_cafe"],
+    "team_size_min": 3,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

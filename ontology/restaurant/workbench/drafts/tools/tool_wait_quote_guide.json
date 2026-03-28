@@ -1,0 +1,22 @@
+{
+  "id": "tool_wait_quote_guide",
+  "name": "Wait quote guide",
+  "description": "Decision guide for quoted waits, timing buffers, release logic, and escalation when seating readiness and promises drift apart.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: expectation-setting needs explicit rules rather than personality-driven guesses",
+  "updated_at": "2026-03-14T00:24:43.105038Z",
+  "category": "host",
+  "format": "decision_guide",
+  "usage_moment": "Use whenever waits are quoted, held, widened, or reset during live service.",
+  "expected_output": "A plain-language rule set for quote ranges, buffer use, and escalation thresholds.",
+  "adaptation_variables": [
+    "seat_count",
+    "turn_time_baseline",
+    "walk_in_policy",
+    "reservation_density"
+  ],
+  "block_ids": [
+    "blk_define_wait_quote_rules"
+  ]
+}

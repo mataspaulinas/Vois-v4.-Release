@@ -1,0 +1,167 @@
+{
+  "block_id": "B055",
+  "name": "Portion Control System",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Establishes consistent portioning for all food and drink items to ensure customers receive the same quantity every time, costs are predictable and controllable, waste is minimised, and the cafe's pricing accurately reflects what is being served.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define exact portion sizes for every food and drink item on the menu",
+      "Provide the tools (scales, scoops, measuring cups, portioning guides) to achieve consistent portioning",
+      "Train all staff on portioning standards and the financial reasons behind them",
+      "Establish a system for monitoring portioning accuracy during service",
+      "Connect portioning data to cost analysis to identify margin erosion"
+    ],
+    "secondary_objectives": [
+      "Reduce food and drink waste from over-portioning",
+      "Ensure customer fairness — every customer receives the same amount",
+      "Support accurate menu costing for pricing decisions (B056)",
+      "Reduce the variance between theoretical and actual food costs"
+    ]
+  },
+  "why_this_matters": "Portion control is the invisible bridge between recipe cards and profitability. A recipe card may specify 30g of cheddar on a toastie, but if the kitchen worker uses 50g because they are being 'generous', the food cost for that item has just increased by 67%. Across a day, a week, a month, uncontrolled portioning can destroy a cafe's margins. In UK cafes where net profit margins are typically 5-15%, even small portioning deviations have outsized impact on the bottom line. Consider a cafe selling 50 toasties per day at £5.50 each. If the cheese portion is 20g over-spec on each, that is 1kg of extra cheese per day — approximately £6-8 per day or £180-240 per month of unplanned cost. Scale this across every item and ingredient, and uncontrolled portioning can easily account for £500-1,000 per month in margin erosion — often the difference between a profitable cafe and a struggling one. But portion control is not just about saving money. It is about customer fairness and consistency. A regular who receives a generously loaded sandwich on Monday and a sparse one on Wednesday feels cheated, even if Wednesday's portion is technically correct. Consistent portioning means every customer gets the fair, intended amount — no more, no less. It also means accurate allergen and nutritional information, which matters increasingly to health-conscious consumers. Baristas also need portion control for drinks: how much syrup goes in a flavoured latte, how much chocolate in a mocha, how much milk in a flat white. Without measurement, these quantities vary with every pour, changing the drink's flavour profile and cost.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Identify the ten ingredients with the highest cost impact — these are typically cheese, protein (chicken, bacon, smoked salmon), avocado, butter, coffee beans, syrups, and chocolate. For each, define the exact portion per serving in grams or millilitres. Write these portions on the prep cards (B050) and recipe cards (B054). Purchase the portioning tools needed: a digital scale in the kitchen (accurate to 1g), measuring scoops sized for common portions, and syrup pumps calibrated to a known volume (test each pump — they vary). For coffee, scales at the espresso station (B039) already provide dose control; this block extends the discipline to all other ingredients. Week 2: Demonstrate correct portioning to the kitchen and bar team. For the ten key ingredients, show what the correct portion looks like on the scale, then show it in the serving (on the plate, in the cup). Let staff feel the weight of a correct portion in their hand so they begin to develop intuitive accuracy, but insist that scales are used during the learning period. Introduce a simple portioning accuracy check: once per shift, the manager weighs one prepared food item and one drink ingredient and compares to the specification. Record the result. If portions are consistently over or under, provide immediate coaching.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Expand portioning standards to cover every ingredient in every food and drink item. Create a Portion Control Standards document listing every item, its ingredients, and the exact portion in grams or millilitres. This document is the single source of truth for what goes into every serve. Invest in pre-portioning where practical: weigh and package individual portions of high-cost ingredients during prep (e.g., 30g portions of cheese in small bags, pre-measured syrup doses). Pre-portioning adds a few minutes of prep time but eliminates portioning variance during busy service. Introduce a weekly 'yield test' for the five highest-cost ingredients: compare the amount purchased against the amount theoretically used (number of serves multiplied by portion size) and calculate the variance. A variance above 10% indicates a portioning problem, waste issue, or potential theft. Train the team on the financial impact: show them that a seemingly small 10g over-portion on cheese across 50 toasties equals £6 per day, £180 per month, £2,160 per year. Making the numbers concrete builds understanding and buy-in. Create visual portioning guides for the kitchen: laminated photos showing what the correct portion looks like on a plate, with the weight annotated. These are faster to reference than scales during peak service.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Portion control should now be automatic, not effortful. Staff should intuitively know what a correct portion looks and feels like, using scales only to verify occasionally rather than for every serve. Track yield test data monthly and share with the team — celebrate when variance is low and investigate collaboratively when it spikes. Connect portioning data to food cost reports: the gap between theoretical and actual food cost should narrow as portioning improves. Target a variance below 3%. Explore technology solutions for high-volume items: automated portioning for syrups (calibrated pumps), pre-programmed scales that alert when a portion exceeds the target, or portioning scoops sized exactly to the specification. Review portions when prices change: if cheese prices increase, the portion may need to be adjusted or the menu price increased rather than absorbing the cost silently. Use portion control data to inform menu engineering decisions in B056."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Identify the ten highest-cost ingredients and define exact portions for each",
+        "Write portions on prep cards (B050) and recipe cards (B054)",
+        "Purchase digital kitchen scales, measuring scoops, and calibrated syrup pumps",
+        "Demonstrate correct portioning to all kitchen and bar staff",
+        "Introduce a once-per-shift portioning accuracy check",
+        "Show the team what correct portions look and feel like",
+        "Record portioning check results for review"
+      ],
+      "responsible": "Manager, Kitchen, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a complete Portion Control Standards document covering every ingredient",
+        "Implement pre-portioning of high-cost ingredients during prep time",
+        "Introduce weekly yield tests for the five highest-cost ingredients",
+        "Train the team on the financial impact of portioning variance with concrete numbers",
+        "Create visual portioning guides (laminated photos) for the kitchen",
+        "Install calibrated syrup pumps at the bar station",
+        "Begin tracking theoretical versus actual ingredient usage"
+      ],
+      "responsible": "Manager, Kitchen"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track yield test data monthly and share with the team",
+        "Target theoretical-to-actual food cost variance below 3%",
+        "Explore technology solutions for automated portioning",
+        "Review portions when ingredient prices change significantly",
+        "Connect portioning data to food cost reports and menu engineering",
+        "Celebrate low-variance periods and investigate spikes collaboratively"
+      ],
+      "responsible": "Manager, Owner"
+    }
+  },
+  "deliverables": [
+    "Portion Control Standards Document (all items, all ingredients)",
+    "Visual Portioning Guide (laminated photos for the kitchen)",
+    "Weekly Yield Test template",
+    "Portioning Accuracy Check Log",
+    "Theoretical vs Actual Cost Comparison template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T055-01",
+        "tool_name": "Portion Control Standards Sheet",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Complete document listing every food and drink item with exact portion sizes for every ingredient in grams or millilitres. The single source of truth for what goes into every serve."
+      },
+      {
+        "tool_id": "T055-02",
+        "tool_name": "Visual Portioning Guide",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Kitchen",
+        "description": "Laminated A4 photos showing correct portions of high-cost ingredients on plates and in cups, with weight annotations. Posted in kitchen and bar for quick reference during service."
+      },
+      {
+        "tool_id": "T055-03",
+        "tool_name": "Portioning Accuracy Check Log",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Log for recording random portioning checks during service: item checked, specified portion, actual measured portion, variance, and any coaching action taken."
+      },
+      {
+        "tool_id": "T055-04",
+        "tool_name": "Weekly Yield Test Template",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Template for weekly yield testing of high-cost ingredients: amount purchased, theoretical usage (serves x portion), actual remaining stock, calculated variance, and investigation notes."
+      },
+      {
+        "tool_id": "T055-05",
+        "tool_name": "Monthly Food Cost Variance Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly report comparing theoretical food costs (based on portion standards and sales data) against actual food costs (based on purchases). Highlights variance by ingredient category and identifies trends."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Portioning is enforced strictly by management but perceived as mean by staff, who quietly over-portion to please customers",
+    "Scales and measuring tools are available but not used during busy service because they slow preparation",
+    "Yield tests reveal significant variance but no action is taken to investigate or correct the cause",
+    "Portion standards are set once and never updated when recipe cards, suppliers, or prices change"
+  ],
+  "kpis": [
+    "Portioning accuracy within 10% of specification on at least 90% of random checks",
+    "Weekly yield test variance below 10% for all high-cost ingredients",
+    "Theoretical-to-actual food cost variance below 5% within three months, below 3% within six months",
+    "Zero customer complaints about portion size inconsistency per week"
+  ],
+  "dependencies": ["B054"],
+  "constraints": [
+    "Scales and measuring tools must be available and functional at every preparation station",
+    "Portion standards must balance cost control with customer value perception — cutting portions too aggressively drives complaints",
+    "Pre-portioning during prep adds time — staffing and scheduling must accommodate this"
+  ],
+  "time_load": {
+    "L1": "4 hours (portion definition, tool purchase, team demonstration, check system setup)",
+    "L2": "6 hours (standards document, yield testing setup, visual guides, team training)",
+    "L3": "2 hours/month (yield test analysis, variance reporting, standard reviews)"
+  },
+  "review_protocol": "Daily portioning accuracy check (one food, one drink per shift). Weekly yield test for top five ingredients. Monthly food cost variance analysis. Portion standards reviewed whenever recipes, suppliers, or prices change.",
+  "meta": {
+    "summary_for_humans": "This block establishes consistent portioning for all food and drink items through defined standards, proper tools, staff training, and ongoing monitoring. It ensures customers receive the same quantity every time, protects profit margins, and provides data for accurate menu costing.",
+    "implementation_risks": [
+      "Staff may view portion control as stingy management rather than professional standards",
+      "Over-emphasis on portioning can slow service and create a mechanical, joyless kitchen environment",
+      "Portion standards without customer perception feedback can result in portions that are 'correct' but feel too small"
+    ],
+    "notes_for_engine": "Activate alongside B054 recipe cards — portions must be documented before they can be controlled. Links directly to B056 menu engineering for pricing accuracy. Flag if signals indicate food cost overruns, complaints about inconsistent portions, or growing gap between theoretical and actual food costs.",
+    "tags": ["food_quality", "portions", "cost_control", "consistency", "waste_reduction", "yield_testing", "profitability"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

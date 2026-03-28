@@ -1,0 +1,168 @@
+{
+  "block_id": "B072",
+  "name": "Performance Review System",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Establishes a structured system of regular performance conversations — distinct from probation reviews — that provide ongoing feedback, recognise achievement, identify development needs, and create the evidence base for career progression and pay decisions.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Implement a regular performance review cycle with formal reviews at least every six months",
+      "Create a performance review format that is constructive, two-way, and focused on development rather than judgement",
+      "Establish clear performance standards linked to role descriptions and career level criteria from B071",
+      "Document performance conversations to create a fair, consistent record that supports progression and capability decisions",
+      "Train managers to deliver effective performance feedback that motivates rather than demoralises"
+    ],
+    "secondary_objectives": [
+      "Identify high performers early and fast-track their development to reduce flight risk",
+      "Surface underperformance before it becomes entrenched, enabling timely support or intervention",
+      "Create a feedback-rich culture where performance conversations are normal, not feared"
+    ]
+  },
+  "why_this_matters": "In most independent cafes, performance feedback happens in one of two ways: never, or in a crisis. Staff either receive no formal feedback at all — drifting along with no idea whether their work is valued — or they receive feedback only when something goes wrong, making every conversation feel like a disciplinary. Both approaches are damaging. The absence of feedback leads to disengagement. The CIPD's annual Good Work Index consistently shows that employees who receive regular feedback report significantly higher job satisfaction, motivation, and intention to stay. In a cafe context, a barista who never hears that their latte art is improving, their customer interactions are excellent, or their stock rotation is noticed will eventually conclude that nobody cares about their contribution — and start looking elsewhere. Conversely, when underperformance is not addressed, it spreads. Other team members notice when a colleague consistently arrives late, cuts corners, or delivers poor drinks without consequence. They either lower their own standards to match or resent picking up the slack. Without documented performance conversations, the manager has no foundation for capability processes if the situation deteriorates, leaving the business exposed under ACAS disciplinary and grievance guidelines. A structured performance review system provides the discipline to have regular, balanced conversations about what is going well, what could improve, and what the team member needs to reach their goals. It connects directly to the career progression framework (B071) by providing the evidence base for promotion decisions and to the skills matrix (B073) by identifying specific development areas.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Decide on the review cycle — for most cafes, a formal review every six months supplemented by informal monthly check-ins works well. Create a simple Performance Review Form with four sections: achievements since last review, areas for development, goals for the next period, and any support or training needed. Keep it to one to two pages — this is a conversation framework, not a bureaucratic exercise. Week 2: Schedule the first round of reviews for all team members who are past their probation period. Give each person at least one week's notice and ask them to prepare by thinking about what they are proud of, what they find challenging, and what they want to achieve in the next six months. Conduct reviews in a quiet space away from the shop floor, allocating at least 30 minutes per person. Begin each review by asking the team member for their self-assessment — let them speak first. This makes the conversation collaborative rather than top-down. Document the key points, agreed actions, and goals. Both parties sign the form and a copy goes in the staff file.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Performance Standards document that defines what good performance looks like at each career level for each key responsibility — these standards provide objective reference points for review conversations. Create a self-assessment template that team members complete before their review, encouraging reflection on achievements, challenges, and aspirations. Establish a monthly informal check-in protocol — a five-to-ten-minute conversation between manager and each team member covering workload, wellbeing, and any immediate concerns. These check-ins are not documented formally but ensure that the six-monthly review contains no surprises. Build a performance tracker showing all team members, their last review date, next review date, key development goals, and progress status. Train managers on giving balanced feedback using the SBI (Situation-Behaviour-Impact) model: describe the situation, the specific behaviour observed, and the impact it had. This prevents feedback from feeling personal or vague. Create a process for addressing underperformance identified through reviews — aligned with ACAS guidance on capability procedures — including additional support, closer supervision, and a clear improvement plan with timeline.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Introduce 360-degree feedback for senior roles — input from peers, direct reports, and customers (via feedback analysis) provides a richer picture of performance than manager assessment alone. Calibrate performance assessments across the team to ensure consistency — are different managers applying the same standards? Conduct a calibration meeting where all reviewers discuss their assessments before finalising. Link performance review outcomes directly to pay review decisions and career progression discussions, creating a transparent connection between contribution and reward. Analyse performance data for patterns: are certain skills consistently identified as development areas across the team, suggesting a training gap? Are high performers clustered under certain managers, suggesting leadership quality variation? Conduct an annual review of the performance review process itself — survey participants on whether reviews feel fair, useful, and motivating. Adjust the format based on feedback."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Decide on the performance review cycle (recommended: six-monthly formal, monthly informal)",
+        "Create a Performance Review Form with achievements, development areas, goals, and support needed",
+        "Schedule first-round reviews for all staff past probation with at least one week's notice",
+        "Conduct reviews in a quiet space allowing at least 30 minutes per person",
+        "Begin each review with the team member's self-assessment",
+        "Document key points, agreed actions, and goals with dual sign-off",
+        "File all review records in individual staff files"
+      ],
+      "responsible": "Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Performance Standards document defining good performance at each career level",
+        "Create a self-assessment template for team members to complete before reviews",
+        "Establish a monthly informal check-in protocol",
+        "Build a performance tracker showing review dates, goals, and progress for all staff",
+        "Train managers on SBI feedback model and constructive review delivery",
+        "Create an underperformance management process aligned with ACAS capability guidance",
+        "Link performance review records to career progression evidence in B071"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce 360-degree feedback for senior roles and shift leads",
+        "Conduct calibration meetings to ensure consistency across reviewers",
+        "Link performance outcomes to pay review and progression decisions",
+        "Analyse performance data for team-wide training gaps and leadership quality patterns",
+        "Survey participants annually on the fairness and usefulness of the review process",
+        "Refine review format and frequency based on team feedback"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Performance Review Form (one to two pages, four sections)",
+    "Performance Standards Document by career level",
+    "Self-Assessment Template for pre-review preparation",
+    "Performance Tracker (dates, goals, progress for all staff)",
+    "Underperformance Management Process (ACAS-aligned)"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T072-01",
+        "tool_name": "Performance Review Form",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Structured review form covering achievements, development areas, goals for the next period, and support or training needs. Includes dual sign-off and is used for six-monthly formal reviews."
+      },
+      {
+        "tool_id": "T072-02",
+        "tool_name": "Self-Assessment Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "All Staff",
+        "description": "Pre-review questionnaire for team members to reflect on their achievements, challenges, skill development, and aspirations before the formal performance conversation."
+      },
+      {
+        "tool_id": "T072-03",
+        "tool_name": "Performance Standards Reference",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Document defining observable performance standards for each key responsibility at each career level, providing objective benchmarks for review conversations and progression assessments."
+      },
+      {
+        "tool_id": "T072-04",
+        "tool_name": "Monthly Check-In Guide",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Five-question guide for informal monthly check-ins covering workload, wellbeing, concerns, support needs, and any quick wins or blockers. Takes five to ten minutes per person."
+      },
+      {
+        "tool_id": "T072-05",
+        "tool_name": "Underperformance Improvement Plan Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Structured improvement plan for use when performance reviews identify capability concerns, defining specific targets, support measures, review dates, and consequences — aligned with ACAS capability guidance."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Reviews are scheduled but consistently cancelled or postponed, signalling that people development is not a priority",
+    "Feedback is exclusively negative, turning reviews into dreaded events rather than developmental conversations",
+    "Reviews are conducted but actions are never followed up, making the process feel pointless",
+    "Different managers apply wildly different standards, creating perceived unfairness across the team"
+  ],
+  "kpis": [
+    "100% of post-probation staff receive a formal performance review every six months",
+    "Monthly informal check-ins completed for at least 80% of team members",
+    "All reviews documented with signed forms filed within one week of the conversation",
+    "At least 70% of development goals set in reviews achieved by the next review period",
+    "Staff survey scores on feedback quality and fairness at 4 out of 5 or above"
+  ],
+  "dependencies": ["B071"],
+  "constraints": [
+    "Performance reviews must be fair, consistent, and free from discriminatory bias under the Equality Act 2010",
+    "Underperformance processes must follow ACAS guidance on capability procedures",
+    "Review documentation must be stored securely in compliance with GDPR data protection requirements",
+    "Reviews require protected time away from the shop floor, impacting labour scheduling"
+  ],
+  "time_load": {
+    "L1": "3 hours (form creation, scheduling, first round of reviews for a small team)",
+    "L2": "8 hours (standards document, tracker, manager training, process design)",
+    "L3": "1 hour/month (check-ins, data analysis, calibration)"
+  },
+  "review_protocol": "Formal performance reviews conducted every six months for all post-probation staff. Monthly informal check-ins between manager and each team member. Quarterly review of performance tracker for overdue reviews or stalled development plans. Annual calibration session to ensure consistency across reviewers. Annual review of the performance review process itself.",
+  "meta": {
+    "summary_for_humans": "This block creates a structured performance review system with six-monthly formal reviews and monthly informal check-ins, providing balanced feedback, documenting development, and connecting performance to career progression and pay decisions.",
+    "implementation_risks": [
+      "Owner-managers in very small cafes may feel performance reviews are too formal for their setting",
+      "Poorly trained reviewers can do more harm than good — invest in feedback skills first",
+      "Linking reviews to pay creates pressure to inflate assessments, undermining the system's integrity"
+    ],
+    "notes_for_engine": "Activate when signals indicate absent feedback, staff complaints about unclear expectations, underperformance going unaddressed, or readiness for career progression framework activation. Bidirectional dependency with B071.",
+    "tags": ["performance", "review", "feedback", "appraisal", "development", "check_in", "SBI", "ACAS", "capability"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

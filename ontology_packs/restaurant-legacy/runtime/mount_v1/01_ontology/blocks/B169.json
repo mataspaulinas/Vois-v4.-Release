@@ -1,0 +1,167 @@
+{
+  "block_id": "B169",
+  "name": "Retail Coffee & Merchandise",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M11: Expansion & Market Positioning",
+  "state": "enriched",
+  "purpose": "Develops retail sales of coffee beans, branded merchandise, and curated products as an additional revenue stream that extends the cafe's brand into customers' homes and builds emotional loyalty. This block ensures retail is approached strategically with proper costing, presentation, and promotion rather than as an afterthought.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Assess demand and feasibility for retail products aligned with the cafe's brand and customer base",
+      "Develop a retail coffee offering (whole bean or ground) with appropriate packaging, pricing, and shelf presentation",
+      "Create a curated merchandise range that reinforces brand identity without requiring large inventory investment",
+      "Establish retail pricing that covers all costs (product, packaging, labour, display space) and delivers adequate margins",
+      "Integrate retail into the customer experience so it feels natural rather than forced, including point-of-sale placement and staff recommendation"
+    ],
+    "secondary_objectives": [
+      "Increase average transaction value by 10-15% through retail add-on sales",
+      "Create take-home products that keep the cafe brand present in customers' daily lives",
+      "Generate revenue from online sales if the cafe has an e-commerce capable website or social media presence",
+      "Build deeper relationships with coffee roasters by committing to retail volumes",
+      "Offer gift options (retail bags, gift sets, merchandise) that drive new customer acquisition through gift recipients"
+    ]
+  },
+  "why_this_matters": "Retail coffee and merchandise represent a high-margin revenue stream that most independent cafes under-exploit. A customer who loves the cafe's coffee and is asked 'Would you like to take a bag home?' at the point of sale will say yes surprisingly often, particularly if the bag is attractively presented and reasonably priced. The margin on a 250g retail bag of coffee typically exceeds 50%, making it one of the most profitable items on offer. Beyond direct revenue, retail products serve as brand ambassadors. A branded keep cup on a customer's desk, a bag of the cafe's beans in their kitchen, or a tote bag carried around the neighbourhood all create visibility and word-of-mouth marketing at zero ongoing cost. For specialty coffee shops, retail beans are almost expected. Customers who appreciate quality coffee want to replicate the experience at home. Failing to offer retail beans is a missed revenue opportunity and a missed branding opportunity. The key considerations are: (1) Product quality must match or exceed the in-cafe experience. (2) Packaging must be professional and brand-consistent. (3) Pricing must cover all costs including packaging, which is often more expensive than expected. (4) Presentation must be prominent and appealing, not hidden on a dusty shelf in the corner. (5) Staff must be trained to recommend retail products naturally. Done well, retail can add 5-15% to total revenue with minimal additional operational complexity.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Assess retail opportunity. Consider your customer base: are they the type who would buy beans, merchandise, or curated products? (Specialty coffee customers almost certainly are; a grab-and-go commuter base less so.) Survey 20 customers informally: 'Would you buy a bag of our coffee to take home if we offered it?' Contact your coffee roaster about retail packaging options. Most specialty roasters offer retail bags (250g or 1kg) with the cafe's branding or their own, at wholesale prices of 4-7 pounds for a 250g bag. Evaluate what retail products fit naturally: coffee beans, ground coffee, branded reusable cups, tote bags, tea, hot chocolate, syrups, biscuits, or curated gift sets. Week 2: Start with the simplest retail option. For most cafes, this is offering 250g bags of the house espresso and filter coffee from the roaster. Price at 2.5-3x wholesale cost (a bag costing 5 pounds wholesale should retail at 12-15 pounds). Set up a prominent display at the point of sale: near the till, at eye level, with a simple sign explaining the coffee. Train staff with a one-line recommendation: 'Enjoyed your coffee? Take a bag home and you can have it every morning.'",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop the full retail range based on initial response. For coffee: offer 2-3 options (house espresso blend, single origin, decaf) in both whole bean and ground formats if feasible. Source professional packaging that includes: cafe branding, roast date, tasting notes, brewing guidance, and weight. If your roaster provides custom-labelled bags, this is usually the most cost-effective approach for smaller volumes. For merchandise: start with 1-2 items that have proven demand. Branded reusable coffee cups (keep cups or similar) typically sell well and have practical value. Tote bags are low-cost, high-visibility brand vehicles. Premium items (ceramic mugs, coffee brewing equipment, branded apparel) require higher investment and should only be stocked once demand is validated. Create a Retail Pricing Model that accounts for: product cost, packaging cost, display space allocation, staff time for stocking and recommendation, and wastage (expired coffee, damaged merchandise). Target a minimum 50% gross margin on all retail items. Set up inventory management for retail: track stock levels, set reorder points, and monitor sell-through rates. Coffee bags should be rotated by roast date and discounted or removed if approaching staleness. Establish a visual merchandising standard: how the retail display should look, what signage is required, and how often it should be refreshed.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Track retail performance monthly: total retail revenue, retail as a percentage of total revenue, units sold by product, margin by product, and average retail items per transaction. Set a target for retail attachment rate (the percentage of transactions that include a retail item). Develop seasonal and limited-edition retail products: holiday gift sets, seasonal single-origin coffees, collaborative products with local artisans. These create urgency and excitement, driving purchases that regular stock does not. Consider online retail: an e-commerce section on the cafe's website or shop through Instagram/Facebook can extend the cafe's retail reach beyond physical visitors. Start simple with a small product range and standard shipping. Subscription coffee is a natural extension (see B171). Create a Gift Programme: curated gift boxes at 2-3 price points for corporate gifts, birthdays, and holidays. Promote these through email marketing (B159) and in-cafe signage. Gifts introduce new customers to the brand and drive discovery visits."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Assess retail opportunity by surveying 20 customers about interest in take-home products",
+        "Contact coffee roaster about retail packaging options, pricing, and branding",
+        "Select the initial retail product (typically 250g coffee bags of house blend)",
+        "Price retail coffee at 2.5-3x wholesale cost with competitive benchmarking",
+        "Set up a prominent retail display near the point of sale at eye level",
+        "Train staff with a natural one-line recommendation for retail products"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop the full retail range: 2-3 coffee options plus 1-2 merchandise items",
+        "Source professional packaging with cafe branding and required information",
+        "Create a Retail Pricing Model accounting for all costs with minimum 50% margin",
+        "Set up inventory management with stock tracking and reorder points",
+        "Establish visual merchandising standards for the retail display",
+        "Train all staff on retail product knowledge and recommendation techniques",
+        "Add retail products to the POS system for accurate sales tracking"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track retail performance monthly (revenue, attachment rate, margin by product)",
+        "Develop seasonal and limited-edition products to drive excitement and urgency",
+        "Consider online retail through website or social media shops",
+        "Create a Gift Programme with curated boxes at 2-3 price points",
+        "Review and refresh the retail range quarterly based on sales data"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Retail Product Range plan with sourcing and pricing",
+    "Retail Pricing Model (cost-plus with margin analysis)",
+    "Visual Merchandising Standards for retail display",
+    "Staff Retail Recommendation training brief",
+    "Monthly Retail Performance Report template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T169-01",
+        "tool_name": "Retail Opportunity Assessment",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Assessment checklist evaluating retail readiness: customer base analysis, product-market fit, display space availability, roaster retail support, competitor retail offerings, and initial product selection with rationale."
+      },
+      {
+        "tool_id": "T169-02",
+        "tool_name": "Retail Pricing Model",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Spreadsheet model for pricing each retail product: ingredient or product cost, packaging cost, labour allocation, display space cost, wastage allowance, target margin, and competitive benchmark price. Ensures all retail items are profitably priced."
+      },
+      {
+        "tool_id": "T169-03",
+        "tool_name": "Visual Merchandising Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Guide defining retail display standards: product placement, signage requirements, lighting, stock rotation rules, seasonal refresh schedule, and photography standards for social media promotion."
+      },
+      {
+        "tool_id": "T169-04",
+        "tool_name": "Retail Inventory Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Stock tracking spreadsheet for all retail products: current stock level, reorder point, reorder quantity, supplier lead time, roast date tracking (for coffee), and sell-through rate. Prevents stockouts and staleness."
+      },
+      {
+        "tool_id": "T169-05",
+        "tool_name": "Monthly Retail Performance Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly report tracking: total retail revenue, retail as percentage of total revenue, units sold by product, gross margin by product, retail attachment rate, and seasonal comparison. Informs range decisions and identifies top performers."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Retail coffee is displayed on a low shelf in poor packaging with no signage, making it invisible to customers and suggesting low quality",
+    "Pricing does not account for packaging costs, making retail sales unprofitable despite apparently healthy wholesale margins",
+    "Excessive merchandise inventory is purchased upfront, tying up cash in slow-moving stock",
+    "Staff never mention retail products to customers, relying entirely on passive display to drive sales"
+  ],
+  "kpis": [
+    "Retail revenue reaching 5-10% of total revenue within 6 months",
+    "Retail attachment rate (percentage of transactions including a retail item) above 5%",
+    "Gross margin on all retail products maintained above 50%",
+    "Coffee bag stock rotation maintaining freshness (no bags beyond 6 weeks from roast date on shelf)"
+  ],
+  "dependencies": ["B164"],
+  "constraints": [
+    "Retail packaging for coffee requires adequate branding and information (roast date, tasting notes, weight) which adds cost",
+    "Minimum order quantities from roasters for custom-branded retail bags may require upfront investment",
+    "Display space near the till is premium real estate and retail must justify the space versus other uses",
+    "Merchandise requires cash investment in stock with uncertain sell-through timelines"
+  ],
+  "time_load": {
+    "L1": "4 hours (opportunity assessment, roaster contact, initial display setup, staff briefing)",
+    "L2": "8 hours (full range development, pricing model, inventory setup, merchandising standards)",
+    "L3": "3 hours/month (performance tracking, stock management, seasonal range planning)"
+  },
+  "review_protocol": "Retail sales data reviewed weekly during first 3 months, then monthly. Stock levels checked and reordered weekly. Coffee freshness (roast dates) monitored daily. Retail range reviewed quarterly for additions, removals, and pricing adjustments. Visual merchandising standards refreshed seasonally. Full retail strategy reviewed annually during strategic planning (B167).",
+  "meta": {
+    "summary_for_humans": "This block develops retail sales of coffee beans, merchandise, and curated products as a high-margin revenue stream. It covers product selection, pricing, packaging, display standards, staff training, and performance tracking, ensuring retail enhances rather than distracts from the core cafe experience.",
+    "implementation_risks": [
+      "Starting with too many products creates complexity and cash risk; beginning with just coffee bags minimises this",
+      "Professional packaging costs more than expected and must be factored into pricing from the outset",
+      "Online retail adds operational complexity (shipping, packaging, customer service) that must be justified by volume"
+    ],
+    "notes_for_engine": "Activate when signals indicate customer interest in take-home products, strong brand identity suitable for retail extension, or owner seeking revenue diversification. Particularly relevant for specialty coffee cafes.",
+    "tags": ["retail", "merchandise", "coffee_beans", "brand", "revenue_diversification", "gift", "packaging", "visual_merchandising"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "blk_manager_peak_window_plan",
+  "name": "Set manager peak-window plan",
+  "description": "Define where the manager stands, what they watch, and what triggers intervention during the venue's highest-risk service windows.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: leadership coverage should be designed around pressure, not habit",
+  "updated_at": "2026-03-14T00:24:42.990094Z",
+  "effort_hours": 2.0,
+  "dependencies": [
+    "blk_rebalance_sections"
+  ],
+  "tool_ids": [
+    "tool_peak_window_plan"
+  ],
+  "response_pattern_ids": [
+    "rp_deployment_reset",
+    "rp_manager_presence_reset"
+  ],
+  "entry_conditions": [
+    "Peak periods repeatedly collapse because leadership attention is not placed where the risk actually concentrates.",
+    "The venue can identify its critical windows, pressure nodes, and likely intervention points."
+  ],
+  "contraindications": [
+    "Do not create a peak-window plan if the manager is routinely pulled into unrelated admin at the same time.",
+    "Do not use vague instructions like 'watch the floor' without explicit triggers and zones."
+  ],
+  "owner_role": "venue_manager",
+  "expected_time_to_effect_days": 1,
+  "proof_of_completion": [
+    "A written peak-window plan exists with positions, watch zones, and intervention triggers.",
+    "Manager coverage is aligned to the real pressure pattern rather than static presence habits.",
+    "The plan is used in at least one live peak and adjusted based on what happened."
+  ],
+  "successor_block_ids": [
+    "blk_manager_floor_walk"
+  ],
+  "service_module_ids": [
+    "leadership_and_management_rhythm",
+    "capacity_and_deployment",
+    "live_execution"
+  ],
+  "failure_family_ids": [
+    "leadership_rhythm_failure",
+    "demand_capacity_mismatch",
+    "accountability_failure"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "signals": {
+    "S037": {
+      "active": true,
+      "notes": "",
+      "confidence": "",
+      "value": null
+    }
+  },
+  "venue_context": {
+    "venue_name": "Riga",
+    "type": "independent_cafe",
+    "team_size": 3,
+    "location": "Riga, Quiet Centre, Latvia",
+    "stage": "distressed"
+  },
+  "assessment_type": "follow_up",
+  "summary": {
+    "blocks": 4,
+    "blocks_activated": 9,
+    "failure_modes": 2,
+    "plan_load": "TRIAGE",
+    "report_type": "ai",
+    "response_patterns": 1,
+    "signals": 1
+  },
+  "constraint_report": {
+    "capacity": 4,
+    "constrained_count": 4,
+    "deferred_count": 5,
+    "deferred_items": [
+      {
+        "block_id": "B044",
+        "description": "Provides specific guidance for steaming and handling plant-based alternative milks — primarily oat, soy, almond, and coconut — which behave differently from dairy milk under steam and require adjusted techniques, temperatures, and brand awareness to produce consistently good results.",
+        "domain": "D03_coffee_product",
+        "layer": "L1",
+        "module": "M03: Coffee Craft & Menu Excellence",
+        "rp_priority": 1.5,
+        "source_rp": "RP012",
+        "title": "Alternative Milk Handling"
+      },
+      {
+        "block_id": "B045",
+        "description": "Establishes standards for visual drink presentation through latte art, ensuring every milk-based drink is served with intentional, clean, and consistent artwork. This block covers the fundamental pouring techniques, presentation standards for different cup sizes, and the role of visual quality in customer perception and brand identity.",
+        "domain": "D03_coffee_product",
+        "layer": "L1",
+        "module": "M03: Coffee Craft & Menu Excellence",
+        "rp_priority": 1.5,
+        "source_rp": "RP012",
+        "title": "Latte Art & Presentation"
+      },
+      {
+        "block_id": "B045",
+        "description": "Establishes standards for visual drink presentation through latte art, ensuring every milk-based drink is served with intentional, clean, and consistent artwork. This block covers the fundamental pouring techniques, presentation standards for different cup sizes, and the role of visual quality in customer perception and brand identity.",
+        "domain": "D03_coffee_product",
+        "layer": "L2",
+        "module": "M03: Coffee Craft & Menu Excellence",
+        "rp_priority": 1.5,
+        "source_rp": "RP012",
+        "title": "Latte Art & Presentation"
+      },
+      {
+        "block_id": "B046",
+        "description": "Integrates milk steaming technique (B043), alternative milk handling (B044), and latte art (B045) into a comprehensive milk craft mastery programme that develops advanced skills, builds team capability, and positions milk quality as a defining feature of the cafe's identity.",
+        "domain": "D03_coffee_product",
+        "layer": "L2",
+        "module": "M03: Coffee Craft & Menu Excellence",
+        "rp_priority": 1.5,
+        "source_rp": "RP012",
+        "title": "Milk Craft Mastery Programme"
+      },
+      {
+        "block_id": "B046",
+        "description": "Integrates milk steaming technique (B043), alternative milk handling (B044), and latte art (B045) into a comprehensive milk craft mastery programme that develops advanced skills, builds team capability, and positions milk quality as a defining feature of the cafe's identity.",
+        "domain": "D03_coffee_product",
+        "layer": "L3",
+        "module": "M03: Coffee Craft & Menu Excellence",
+        "rp_priority": 1.5,
+        "source_rp": "RP012",
+        "title": "Milk Craft Mastery Programme"
+      }
+    ],
+    "evidence_warnings": {
+      "evidence_ratio": 0,
+      "level": "info",
+      "message": "1 signal(s) without evidence notes: S037",
+      "signals_without_evidence": [
+        "S037"
+      ]
+    },
+    "original_count": 9,
+    "plan_load": "TRIAGE",
+    "team_size": 3,
+    "triage_intensity": "focused",
+    "triage_message": "This venue activated 9 items, but a team of 3 can realistically absorb ~4 concurrent changes (focused mode). The plan has been trimmed to 4 highest-priority items. 5 items deferred to a future phase.",
+    "triage_mode": true,
+    "weekly_budget": 2,
+    "weeks_estimated": 2
+  },
+  "report_md": "# Riga — Follow-up Report\n\n> Since the last assessment, the café is showing some ongoing struggles with milk steaming technique and how drinks are being presented to customers — both areas still need focused attention from the team.\n\n**2026-03-22** · Follow-up\n\n## Signal Movement\n\n| Signal | Status | Notes |\n|--------|--------|-------|\n\n## New Concerns\n\n- 🟡 **Milk Steaming Quality Poor** — \n\n## Updated Actions\n\n- **B043** Milk Steaming Technique — this week\n- **B043** Milk Steaming Technique — this month\n- **B044** Alternative Milk Handling — this month\n\n---\n*Follow-up · 2026-03-22 · OIS 3.6*",
+  "report_html": "<h1>Riga — Follow-up Report</h1>\n<blockquote>\n<p>Since the last assessment, the café is showing some ongoing struggles with milk steaming technique and how drinks are being presented to customers — both areas still need focused attention from the team.</p>\n</blockquote>\n<p><strong>2026-03-22</strong> · Follow-up</p>\n<h2>Signal Movement</h2>\n<table>\n<thead>\n<tr>\n<th>Signal</th>\n<th>Status</th>\n<th>Notes</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</tbody>\n</table>\n<h2>New Concerns</h2>\n<ul>\n<li>🟡 <strong>Milk Steaming Quality Poor</strong> — </li>\n</ul>\n<h2>Updated Actions</h2>\n<ul>\n<li><strong>B043</strong> Milk Steaming Technique — this week</li>\n<li><strong>B043</strong> Milk Steaming Technique — this month</li>\n<li><strong>B044</strong> Alternative Milk Handling — this month</li>\n</ul>\n<hr />\n<p><em>Follow-up · 2026-03-22 · OIS 3.6</em></p>",
+  "raw_input_text": "Went there yesterday, roughly at 10am so things look pretty good. i saw some real efficiency improvements in general, looks like they reorganised the setup both at the counter and at the espresso machine. seems lik staff is a little happier, there was a feeling of harmony and they lookied like they are coming from the same shelf.",
+  "extraction_summary": {
+    "changes_since_last": "Two positive directional signals observed: (1) physical reorganisation of counter and espresso station suggesting workflow improvement, likely addressing previous bottleneck or layout inefficiency; (2) team morale and cohesion visibly improved, suggesting some cultural or interpersonal progress. However, the visit note is too brief and impressionistic to confirm resolution of any specific previously flagged signals. No signals can be formally closed on this evidence alone. A structured follow-up with specific signal checks is strongly recommended.",
+    "coverage_gaps": [
+      "No signal-level evidence provided — observation is impressionistic only, no specific operational details",
+      "Visit was at 10am — morning rush (7–10am) transition not captured; no data on peak performance",
+      "No coffee or product quality observations made",
+      "No financial indicators mentioned",
+      "No food safety observations",
+      "No customer experience detail — queue times, order accuracy, greeting",
+      "No comparison against specific signals flagged in previous assessment",
+      "No information on whether previously identified issues have been actioned or remain open",
+      "Team size of 3 in a distressed venue — no observation on staffing adequacy for the visit time",
+      "No mention of any specific changes implemented since last visit beyond physical layout"
+    ],
+    "text_quality": "sparse",
+    "text_type": "audit_notes"
+  },
+  "unmapped_observations": [
+    {
+      "evidence": "they reorganised the setup both at the counter and at the espresso machine",
+      "observation": "Counter and espresso station layout has been reorganised, with visible efficiency improvements noted by observer",
+      "suggested_domain": "operations"
+    },
+    {
+      "evidence": "staff is a little happier, there was a feeling of harmony and they looked like they are coming from the same shelf",
+      "observation": "Team morale and cohesion appears improved since previous assessment — staff observed as happier and more aligned",
+      "suggested_domain": "operations"
+    }
+  ],
+  "confidence_distribution": {
+    "high": 0,
+    "low": 0,
+    "medium": 0
+  },
+  "timestamp": "2026-03-22T22:05:45.245649"
+}

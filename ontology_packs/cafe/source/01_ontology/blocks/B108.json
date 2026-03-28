@@ -1,0 +1,157 @@
+{
+  "block_id": "B108",
+  "name": "Milk Supplier Assessment",
+  "version": "v1.0",
+  "domain": "D06_supply_chain",
+  "module": "M06: Supply Chain & Supplier Relations",
+  "state": "enriched",
+  "purpose": "Evaluates and manages dairy and alternative milk suppliers — the cafe's highest-volume daily consumable — to ensure consistent quality, reliable supply, competitive pricing, and appropriate range across whole milk, semi-skimmed, oat, soy, almond, and any other milks the cafe offers.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Assess current milk suppliers across quality (steaming performance, taste, freshness), reliability, pricing, and range",
+      "Ensure the cafe offers a milk range that meets customer demand — particularly the growing UK demand for oat and other plant-based alternatives",
+      "Negotiate pricing that reflects volume — milk is a high-volume, low-margin consumable where pennies per litre matter",
+      "Establish delivery schedules that guarantee fresh milk availability every trading day",
+      "Monitor and compare the steaming and latte art performance of different milk brands"
+    ],
+    "secondary_objectives": [
+      "Reduce milk waste through accurate ordering aligned with demand patterns",
+      "Explore barista-edition alternative milks designed for steaming and latte art quality",
+      "Build backup supply routes for milk as the most time-critical daily consumable"
+    ]
+  },
+  "why_this_matters": "Milk is the single most consumed ingredient in a UK cafe by volume. A typical independent cafe serving 200+ coffees per day will use 40-60 litres of milk daily — over 1,000 litres per month. At current UK prices, this represents a monthly spend of £700-£1,500 on dairy alone, with alternative milks costing significantly more per litre. The quality of the milk directly impacts every milk-based drink: a milk that steams poorly produces flat, bubbly microfoam that ruins latte art and mutes espresso flavour. A milk that tastes thin or overly sweet changes the flavour balance of the drink. UK customers are increasingly discerning about milk — they notice the difference between whole and semi-skimmed, between standard oat milk and barista-edition oat milk, and between fresh milk and milk that has been open too long. The alternative milk market in the UK has grown dramatically: oat milk now accounts for 30-40% of all milk used in specialty cafes, and many customers have strong brand preferences (Oatly, Minor Figures, Bonsoy). The cafe's milk choice is therefore both an operational decision (quality, cost, supply) and a brand decision (which alternatives to offer, at what price, with what prominence). Getting milk wrong — whether through poor quality, inconsistent supply, inadequate alternatives, or excessive cost — undermines the cafe's core product on a daily basis. Unlike coffee beans that are ordered fortnightly, milk must arrive reliably every single day, making supplier reliability absolutely critical.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Audit current milk supply arrangements. For dairy milk, record: supplier name, milk type (whole, semi-skimmed, skimmed), brand, price per litre, delivery schedule, minimum order, shelf life upon delivery, and steaming quality assessment (how well does it microfoam?). For alternative milks, record the same plus: which alternatives are offered (oat, soy, almond, coconut), which brand for each, whether barista-edition variants are used, and customer demand split (what percentage of drinks use each milk type). Calculate the total weekly milk cost and the milk cost as a proportion of coffee revenue. Run a steaming quality test: steam each milk type and assess microfoam quality, texture, latte art holdability, and taste. If any milk performs poorly, identify alternatives. Week 2: Research alternative dairy suppliers in the local area — most UK regions have multiple dairy delivery options. Compare pricing per litre (including delivery charges), delivery frequency, freshness guarantees, and minimum orders. For alternative milks, if not already using barista-edition variants, source samples and test them — the difference in steaming quality between standard and barista-edition oat milk is dramatic. Survey customers informally: are there alternative milks they wish the cafe offered? Coconut, almond, and hemp milk have growing followings.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Milk Supplier Scorecard using the criteria from B106 but tailored to milk-specific requirements: freshness on delivery, steaming performance, taste consistency, delivery reliability (milk is the one supply where a missed delivery is most damaging), pricing competitiveness, and range availability. Negotiate pricing based on volume — a cafe buying 200+ litres of dairy per week has leverage, and switching costs for dairy suppliers are low. Establish a backup milk supply route (see B105) — the nearest supermarket or cash-and-carry that opens early enough to provide emergency milk before the cafe opens. This is a Critical contingency. Implement weekly milk waste tracking: how many litres of milk are being poured away due to over-ordering, expiry, or jug waste (milk steamed but not used)? Jug waste alone can account for 5-10% of total milk used in a cafe with poor pour discipline. Optimise alternative milk pricing: plant-based milks cost 3-5 times more than dairy per litre, and most UK cafes charge a 30-60p surcharge for alternatives. Ensure the surcharge covers the cost differential at minimum.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Milk management should be a quiet operational strength that customers notice through consistent drink quality. Conduct quarterly milk quality benchmarking: test 2-3 alternative suppliers alongside the current one to ensure the cafe is using the best-performing milk at the best price. Track customer alternative milk preferences monthly and adjust the range accordingly — the plant milk market is evolving rapidly. Explore direct relationships with local dairies for provenance marketing ('our milk comes from [local farm]'). Negotiate annual pricing agreements with dairy suppliers that provide price stability through volatile wholesale milk markets. Investigate bulk purchasing of alternative milks to reduce per-unit cost. Review the entire milk supply strategy bi-annually, considering market trends, customer preferences, and emerging alternatives."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Audit all current milk suppliers: dairy and alternatives, pricing, delivery, quality",
+        "Calculate total weekly milk cost and milk cost as proportion of coffee revenue",
+        "Conduct steaming quality tests for all milk types currently used",
+        "Research alternative dairy suppliers and compare pricing and delivery",
+        "Source and test barista-edition alternative milks if not already using them",
+        "Survey customers informally about alternative milk preferences",
+        "Identify the nearest emergency milk supply source (supermarket or cash-and-carry)"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a milk-specific Supplier Scorecard using B106 framework",
+        "Negotiate volume-based pricing with dairy supplier",
+        "Establish a backup milk supply route as a Critical contingency",
+        "Implement weekly milk waste tracking including jug waste",
+        "Review and optimise alternative milk surcharge pricing",
+        "Track alternative milk usage by type weekly to match ordering to demand",
+        "Train team on efficient milk steaming to reduce jug waste"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly milk quality benchmarking against alternative suppliers",
+        "Track customer alternative milk preferences monthly and adjust range",
+        "Explore local dairy partnerships for provenance marketing",
+        "Negotiate annual pricing agreements for price stability",
+        "Review full milk supply strategy bi-annually"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Milk Supply Audit Report",
+    "Milk Supplier Scorecard (quarterly)",
+    "Milk Waste Tracking log",
+    "Alternative Milk Range and Pricing review",
+    "Milk Steaming Quality Test results"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T108-01",
+        "tool_name": "Milk Supply Audit Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Audit template covering all milk types used: supplier, brand, price per litre, delivery schedule, shelf life, steaming quality score, and customer demand percentage."
+      },
+      {
+        "tool_id": "T108-02",
+        "tool_name": "Milk Steaming Quality Scorecard",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Head Barista",
+        "description": "Scoring sheet for evaluating milk steaming performance: microfoam quality (1-5), texture smoothness, latte art holdability, taste, and sweetness balance. Used for comparing brands."
+      },
+      {
+        "tool_id": "T108-03",
+        "tool_name": "Weekly Milk Waste Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Shift Lead",
+        "description": "Weekly log tracking milk waste by category: expired/unused, jug waste (steamed but not served), spillage, and total. Calculates waste as a percentage of total milk purchased."
+      },
+      {
+        "tool_id": "T108-04",
+        "tool_name": "Alternative Milk Pricing Calculator",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Calculator comparing the cost per serve of each alternative milk against the surcharge applied, ensuring every alternative milk drink covers its additional cost and contributes to margin."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Milk delivery fails and there is no backup plan, leaving the cafe unable to make 70%+ of its drinks",
+    "Standard (non-barista) alternative milks are used, producing poor steaming quality that disappoints customers",
+    "Milk waste from over-ordering and jug waste goes untracked, silently eroding margin by 5-10%",
+    "Alternative milk surcharge does not cover the cost differential, meaning every alternative milk drink loses money"
+  ],
+  "kpis": [
+    "Milk cost as a percentage of coffee revenue maintained within 8-12%",
+    "Milk waste below 5% of total milk purchased per week",
+    "Zero milk stockouts during trading hours per month",
+    "Milk steaming quality scores above 4.0 for all milk types used"
+  ],
+  "dependencies": ["B106"],
+  "constraints": [
+    "Milk deliveries must arrive before trading hours begin — negotiate morning delivery slots",
+    "Alternative milk brand switches affect regular customers who have preferences — communicate changes in advance",
+    "UK dairy pricing is subject to wholesale market volatility — consider annual agreements for price stability"
+  ],
+  "time_load": {
+    "L1": "2 hours (audit, steaming tests, supplier research)",
+    "L2": "3 hours (scorecard setup, waste tracking, pricing optimisation)",
+    "L3": "1 hour/quarter (benchmarking, range review, supplier negotiation)"
+  },
+  "review_protocol": "Daily milk freshness and stock check by opening team. Weekly milk waste review by manager. Monthly alternative milk demand tracking. Quarterly milk supplier scorecard and quality benchmarking.",
+  "meta": {
+    "summary_for_humans": "This block manages dairy and alternative milk suppliers — the cafe's highest-volume daily consumable. It covers supplier assessment, steaming quality testing, waste reduction, alternative milk range and pricing, and backup supply for the one ingredient where a missed delivery is most damaging.",
+    "implementation_risks": [
+      "Switching dairy supplier disrupts established delivery routines — trial new suppliers alongside existing ones before switching",
+      "Barista-edition alternative milks cost significantly more — ensure surcharges cover the differential",
+      "Oat milk brand loyalty among customers (particularly Oatly) means switching can generate strong reactions — communicate changes proactively"
+    ],
+    "notes_for_engine": "Activate after B106 is operational. Flag as urgent if signals indicate milk quality complaints, frequent stockouts, high waste rates, or milk cost percentage above 12% of coffee revenue.",
+    "tags": ["supply_chain", "milk", "dairy", "alternative_milk", "oat_milk", "supplier", "steaming", "waste", "quality"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

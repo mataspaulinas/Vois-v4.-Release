@@ -1,0 +1,76 @@
+{
+  "identification": {
+    "tool_id": "T076-03",
+    "tool_name": "Conflict Resolution Pathway & Case Log",
+    "block_id": "B076"
+  },
+  "tool_design": {
+    "format": "tracker",
+    "role_in_intervention": "Case pathway for moving conflict through direct conversation, facilitation, and escalation when needed.",
+    "adaptation_variables": [
+      "case_type",
+      "manager_role",
+      "review_cadence"
+    ],
+    "usage_moment": "Whenever interpersonal conflict needs a documented path",
+    "expected_output": "Conflict case log with stage, agreements, and review date",
+    "linked_blocks": [
+      "B076"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Entries are logged late or inconsistently.",
+        "what_can_go_wrong": "Patterns and closure loops stay hidden.",
+        "early_signals": [
+          "Large gaps",
+          "Cases are discussed verbally but not logged"
+        ],
+        "prevention": [
+          "Tie updates to a fixed review cadence",
+          "Keep ownership explicit"
+        ],
+        "mitigation": [
+          "Reconstruct while fresh",
+          "Increase review cadence"
+        ],
+        "if_occurs_next_signals": [
+          "pattern_visibility_failure"
+        ],
+        "possible_successor_blocks": [
+          "B076"
+        ]
+      },
+      {
+        "warning": "Tracker is updated but no action follows.",
+        "what_can_go_wrong": "The same communication issue repeats despite being visible.",
+        "early_signals": [
+          "Same themes recur",
+          "Status columns stay unchanged"
+        ],
+        "prevention": [
+          "Review tracker outputs regularly",
+          "Assign closure owners"
+        ],
+        "mitigation": [
+          "Escalate repeated items",
+          "Run a short corrective review"
+        ],
+        "if_occurs_next_signals": [
+          "closed_loop_failure"
+        ],
+        "possible_successor_blocks": [
+          "B076"
+        ]
+      }
+    ]
+  },
+  "content": "# Conflict Resolution Pathway & Case Log\n\n**Tool ID:** T076-03  \n**Block:** B076 (Communication Culture & Feedback)  \n**Domain:** Team & Talent (D04_team_talent)  \n**Level:** L2  \n**Format:** Tracker  \n**Role:** Manager / Owner  \n**Time Required:** 5 minutes to classify, 10-20 minutes per stage, 2 minutes to log  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nThis tool keeps conflict from drifting into gossip, avoidance, or formal grievance too early.\n\nIt gives you:\n- a clean pathway for what happens first, second, and third\n- a record of what was tried\n- a review date so issues do not disappear and then return\n\nUse it when the issue is between people rather than a single standards conversation.\n\n---\n## The 3-Stage Pathway\n\n| Stage | Use When | Owner | Output |\n|---|---|---|---|\n| Stage 1 - Direct conversation | Two people can still speak directly and safely | The people involved | One clear agreement |\n| Stage 2 - Facilitated conversation | Stage 1 failed, was avoided, or needs support | Manager | Shared understanding + next steps |\n| Stage 3 - Formal escalation check | Safety, discrimination, harassment, retaliation, or repeated unresolved issue | Owner / formal route | Decision to escalate or close |\n\n---\n## Fast Triage Check\n\n<ul>\n  <li><input type=\"checkbox\"> Is anyone unsafe?</li>\n  <li><input type=\"checkbox\"> Is there a harassment, discrimination, or bullying concern?</li>\n  <li><input type=\"checkbox\"> Is food safety or legal compliance involved?</li>\n  <li><input type=\"checkbox\"> Has this already been addressed informally more than once?</li>\n</ul>\n\nIf any answer is yes, do not rely on informal resolution alone.\n\n---\n## Stage 1 - Direct Conversation Prompt\n\nUse this if both people can still engage professionally.\n\nSuggested script:\n- \"I want to clear something early so it doesn't keep affecting the shift.\"\n- \"What happened from your side?\"\n- \"The impact on the team / service was...\"\n- \"What do we need to do differently next time?\"\n\n**Stage 1 agreement:**\n________________________________________\n\n**Review date:** ______________________\n\n---\n## Stage 2 - Facilitated Conversation Structure\n\nUse this when direct conversation has failed or is being avoided.\n\n**Manager rules for the room:**\n- one person speaks at a time\n- facts before interpretation\n- impact before blame\n- one agreement before close\n\n**Agenda:**\n| Step | Prompt |\n|---|---|\n| 1 | What happened? |\n| 2 | What impact did it have on work, trust, or service? |\n| 3 | What needs to change immediately? |\n| 4 | What support or boundary is needed? |\n| 5 | When will we review it? |\n\n---\n## Case Log\n\n| Case ID | Date Opened | People Involved | Issue Summary | Current Stage | Owner | Review Date | Status |\n|---|---|---|---|---|---|---|---|\n| | | | | Stage 1 / Stage 2 / Stage 3 | | | Open / Closed / Escalated |\n| | | | | Stage 1 / Stage 2 / Stage 3 | | | Open / Closed / Escalated |\n| | | | | Stage 1 / Stage 2 / Stage 3 | | | Open / Closed / Escalated |\n\n---\n## Case Detail Record\n\n**Case ID:** ______________________  \n**Date opened:** ______________________  \n**Opened by:** ______________________\n\n**People involved:**\n________________________________________\n\n**What happened:**\n________________________________________\n________________________________________\n\n**Impact on shift / team / guest experience:**\n________________________________________\n________________________________________\n\n**Stage used today:**\n[ ] Stage 1 direct conversation  \n[ ] Stage 2 facilitated conversation  \n[ ] Stage 3 escalation review\n\n**Agreement reached:**\n________________________________________\n________________________________________\n\n**Support / boundary agreed:**\n________________________________________\n\n**Review date:** ______________________\n\n**Outcome at review:**\n[ ] closed  \n[ ] monitor further  \n[ ] escalated formally\n\n---\n## Escalate Instead If\n\n- someone reports bullying, discrimination, harassment, or retaliation\n- one party fears speaking directly\n- there is serious dishonesty or tampering with records\n- there is immediate safety risk\n- the same pair is repeating the same issue with no behavioural change\n\n---\n## Common Mistakes\n\n- Treating gossip as evidence.\n- Forcing a direct conversation when one person clearly feels unsafe.\n- Letting mediation become a debate about personality.\n- Closing the issue without a review date.\n- Saying \"sorted\" when nothing specific was actually agreed.\n\n---\n## Connected Resources\n\n**Used alongside:**\n- T076-01 - SBI Feedback Quick Card\n- T076-04 - Difficult Conversations Guide\n- T076-05 - Communication Culture Survey & Scorecard\n\n**Parent block:** B076 - Communication Culture & Feedback\n\n---\n\n*Tool Version 2.0 - built to stop low-grade friction from becoming a culture problem.*\n",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T076-03_conflict_resolution_pathway_and_case_log.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

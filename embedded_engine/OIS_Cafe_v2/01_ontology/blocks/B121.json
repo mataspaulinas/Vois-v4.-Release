@@ -1,0 +1,157 @@
+{
+  "block_id": "B121",
+  "name": "Revenue Growth Strategy",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Establishes a structured, data-driven approach to growing cafe revenue beyond incremental gains. Ensures the business identifies, tests, and scales new revenue streams while protecting the core proposition that customers value.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Map all current and potential revenue streams across dine-in, takeaway, delivery, retail, and wholesale channels",
+      "Build a revenue growth roadmap with phased targets tied to seasonal trading patterns",
+      "Identify underperforming dayparts and develop targeted activation plans",
+      "Create a structured approach to testing new revenue initiatives with clear success criteria",
+      "Establish revenue diversification targets to reduce dependency on any single channel"
+    ],
+    "secondary_objectives": [
+      "Build commercial confidence across the team so growth becomes a shared objective",
+      "Create a pipeline of revenue ideas that are continuously evaluated and prioritised",
+      "Develop the owner's strategic planning capability beyond day-to-day operations"
+    ]
+  },
+  "why_this_matters": "Most independent cafes in the UK plateau at a revenue level that barely covers costs, leaving the owner trapped in a cycle of working harder rather than smarter. Without a deliberate revenue growth strategy, cafes rely on footfall and hope, which is not a business plan. The average UK coffee shop turns over between £150,000 and £300,000 per annum, but the difference between a struggling cafe and a thriving one is rarely just about making better coffee — it is about systematically finding and activating every viable revenue opportunity. A cafe that serves 200 covers on a Saturday but only 40 on a Tuesday afternoon has a massive untapped asset sitting idle. A venue that sells excellent pastries but has never considered wholesale supply to local offices is leaving money on the table. Revenue growth strategy is not about gimmicks or discounting — it is about understanding your capacity, your customer base, and your market position, then building a deliberate plan to grow. In the current UK trading environment, with rising business rates, employer NIC increases, and energy costs still elevated, standing still on revenue is effectively going backwards. This block ensures the cafe has a living, breathing growth plan that evolves with the business.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Begin by conducting a comprehensive revenue audit. Pull together the last 12 months of sales data broken down by channel (dine-in, takeaway, delivery), by daypart (morning, lunch, afternoon, evening if applicable), and by category (drinks, food, retail). Most EPoS systems can generate these reports, but many cafe owners have never actually sat down and analysed them. Calculate your revenue per available seat hour (RevPASH) for each trading period — this single metric will reveal where your biggest growth opportunities lie. Map your current revenue streams and honestly assess which are growing, stable, or declining. Identify your three weakest dayparts and brainstorm at least five ideas for each that could drive incremental revenue. These might include loyalty programme launches, corporate catering trials, afternoon tea offerings, or evening events. Speak to at least ten regular customers and ask what else they would buy from you if you offered it. Review what your three closest competitors are doing that you are not. Create a simple revenue growth target: what does a realistic 10% increase look like in pounds per week, and where could it come from? Document everything in a Revenue Growth Canvas that becomes your strategic planning tool. This is not about implementing everything at once — it is about seeing the full picture for the first time.",
+    "L2": "SYSTEM BUILD (2-8 weeks). With the revenue audit complete, move into structured experimentation. Select your top three growth initiatives from the L1 brainstorm and design a proper test for each. Every test needs a clear hypothesis, a defined time period (minimum two weeks), a measurable success metric, and a cost to implement. For example: 'If we introduce a £6.50 lunch meal deal available 11:30-14:00, we will increase Tuesday-Thursday lunch covers by 25% within four weeks.' Track results rigorously using your EPoS data. Build a Revenue Dashboard that you review weekly, showing total revenue, revenue by channel, average transaction value, covers by daypart, and progress against your growth target. Establish a monthly Revenue Strategy Meeting — even if you are a sole trader, block out 90 minutes on the first Monday of each month to review performance, assess what is working, and plan the next month's initiatives. Begin developing your secondary revenue streams: retail product range, corporate catering menu, event hosting packages, or wholesale supply proposals. Create pricing strategies for each new stream that protect your margins. Build relationships with potential B2B customers — local offices, event organisers, wedding venues that need coffee service. Document your Revenue Playbook: a living document that captures every initiative tested, results achieved, and lessons learned.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Revenue growth becomes embedded in the culture of the business. Every team member understands the revenue targets and their role in achieving them. Your baristas know that suggesting a pastry with every coffee is not pushy selling — it is delivering a better experience whilst growing average transaction value. Implement a Revenue Innovation Pipeline where new ideas are continuously captured, evaluated, and tested. Run quarterly strategic reviews where you step back from daily operations and assess whether your revenue mix is healthy, diversified, and growing. Set annual revenue growth targets that are ambitious but achievable, and tie team incentives to collective performance. Build a reputation in your local market as a business that is always innovating, always offering something new, always worth visiting."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Extract 12 months of EPoS sales data broken down by channel, daypart, and category",
+        "Calculate Revenue per Available Seat Hour (RevPASH) for each trading period",
+        "Map all current revenue streams and classify as growing, stable, or declining",
+        "Identify three weakest dayparts and brainstorm five activation ideas for each",
+        "Conduct ten customer conversations about unmet needs and desired offerings",
+        "Benchmark against three local competitors on pricing, range, and services",
+        "Create Revenue Growth Canvas with 10% growth target broken into weekly increments"
+      ],
+      "responsible": "Owner / Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Design and launch three structured revenue growth experiments with clear hypotheses",
+        "Build weekly Revenue Dashboard tracking total revenue, channel mix, ATV, and covers",
+        "Establish monthly Revenue Strategy Meeting with standard agenda and action tracking",
+        "Develop secondary revenue stream proposals: retail, catering, wholesale, or events",
+        "Create pricing models for each new revenue stream ensuring margin protection",
+        "Build B2B prospect list and begin outreach to local offices and organisations",
+        "Document Revenue Playbook capturing all initiatives, results, and lessons learned"
+      ],
+      "responsible": "Owner / Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Train all team members on revenue targets and their individual contribution levers",
+        "Implement Revenue Innovation Pipeline for continuous idea capture and evaluation",
+        "Run quarterly strategic revenue reviews with year-on-year performance comparison",
+        "Tie team incentives to collective revenue growth milestones",
+        "Build annual revenue planning into the business calendar with formal target-setting"
+      ],
+      "responsible": "Owner / Manager with full team engagement"
+    }
+  },
+  "deliverables": [
+    "Revenue Growth Canvas with channel analysis and 12-month growth roadmap",
+    "Weekly Revenue Dashboard with channel, daypart, and category breakdowns",
+    "Revenue Playbook documenting all growth initiatives and outcomes",
+    "B2B prospect list with outreach plan and conversion tracking",
+    "Quarterly Strategic Revenue Review presentation template"
+  ],
+  "embedded_tools": ["T121-01", "T121-02", "T121-03", "T121-04"],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T121-01",
+        "tool_name": "Revenue Growth Canvas",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner / Manager",
+        "description": "Strategic planning template that maps all current and potential revenue streams, identifies growth opportunities by daypart and channel, and sets phased targets for revenue expansion."
+      },
+      {
+        "tool_id": "T121-02",
+        "tool_name": "Weekly Revenue Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Owner / Manager",
+        "description": "Standardised weekly reporting dashboard tracking total revenue, revenue by channel, average transaction value, covers by daypart, and progress against growth targets."
+      },
+      {
+        "tool_id": "T121-03",
+        "tool_name": "Revenue Experiment Tracker",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Owner / Manager",
+        "description": "Structured tracker for managing revenue growth experiments including hypothesis, test parameters, success metrics, results, and go/no-go decisions for scaling."
+      },
+      {
+        "tool_id": "T121-04",
+        "tool_name": "RevPASH Calculator",
+        "level": "L1",
+        "format": "calculator",
+        "owner_role": "Owner / Manager",
+        "description": "Calculator for Revenue per Available Seat Hour across different dayparts and days of the week, identifying underperforming periods with the greatest growth potential."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Owner becomes overwhelmed by analysis and never moves to action — set a two-week deadline for the audit phase",
+    "Growth initiatives cannibalise existing profitable lines rather than generating incremental revenue",
+    "Chasing revenue growth without monitoring margin impact leads to higher turnover but lower profit",
+    "Team perceives upselling initiatives as pressure selling, damaging customer experience and morale"
+  ],
+  "kpis": [
+    "Total weekly revenue growth: target 10% year-on-year increase",
+    "Revenue per Available Seat Hour (RevPASH): target 15% improvement in weakest dayparts",
+    "Average Transaction Value (ATV): target £0.50 increase within 8 weeks",
+    "Revenue channel diversification: no single channel exceeds 70% of total revenue"
+  ],
+  "dependencies": ["B118", "B119", "B120"],
+  "constraints": [
+    "Growth initiatives must not compromise the core customer experience or brand positioning",
+    "New revenue streams require adequate capacity — do not overextend kitchen or service capability",
+    "All pricing changes must maintain target gross margins as defined in the pricing strategy"
+  ],
+  "time_load": {
+    "L1": "6-8 hours",
+    "L2": "4-5 hours per week",
+    "L3": "3-4 hours per month"
+  },
+  "review_protocol": "Weekly dashboard review every Monday morning. Monthly Revenue Strategy Meeting on first Monday of each month. Quarterly strategic review with full performance analysis.",
+  "meta": {
+    "summary_for_humans": "This block creates a systematic approach to growing your cafe's revenue. It starts with understanding exactly where your money comes from today, identifies the biggest untapped opportunities, and builds a disciplined process for testing and scaling new revenue streams.",
+    "implementation_risks": [
+      "Revenue diversification efforts may dilute focus from the core proposition",
+      "Growth targets set too aggressively can demoralise the team if missed consistently",
+      "B2B revenue streams may have longer sales cycles than anticipated"
+    ],
+    "notes_for_engine": "Activate when venue signals show revenue plateau, declining like-for-like sales, or underutilised capacity during specific dayparts. Cross-reference with B119 margin data to ensure growth initiatives are profitable.",
+    "tags": ["revenue", "growth", "strategy", "financial-performance", "diversification", "RevPASH", "commercial", "planning"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

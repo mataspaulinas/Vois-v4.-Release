@@ -1,0 +1,67 @@
+import json, os
+
+base_path = r"C:\Users\matas\Documents\00 vOIS 3+4 Merge\OIS_Cafe\01_ontology\blocks"
+
+def wb(block):
+    path = os.path.join(base_path, block["block_id"] + ".json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(block, f, indent=2, ensure_ascii=False)
+    print(block["block_id"] + " written")
+
+ALL_8 = ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"]
+
+wb({
+  "block_id": "B181",
+  "name": "Waste Log & Reconciliation",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M14: Operational Rhythm & Daily Discipline",
+  "state": "enriched",
+  "purpose": "Establishes a disciplined daily waste logging system that captures every item discarded \u2014 from expired pastries and spoilt milk to over-extracted shots and dropped cups \u2014 then reconciles waste costs against revenue to reveal hidden profit leaks. This block transforms waste from an invisible cost into a measurable, manageable, and continuously improvable metric.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Implement a daily waste log capturing category, item, quantity, reason, and estimated cost for every discard event",
+      "Classify waste into actionable categories: spoilage, overproduction, preparation error, customer return, and expired stock",
+      "Reconcile daily waste costs against revenue to calculate waste-to-revenue ratio",
+      "Establish weekly and monthly waste trend analysis to identify recurring patterns",
+      "Create accountability by linking waste events to shifts and stations"
+    ],
+    "secondary_objectives": [
+      "Inform ordering decisions by revealing which items are consistently over-ordered",
+      "Support menu engineering by identifying low-selling items that generate disproportionate waste",
+      "Provide data for sustainability reporting and environmental compliance",
+      "Build a culture of waste awareness without creating a blame culture"
+    ]
+  },
+  "why_this_matters": "In a typical UK cafe, waste accounts for 5\u201315% of food and beverage costs \u2014 yet most operators have only a vague idea of how much they actually throw away. A cafe turning over \u00a3300,000 per annum with a 10% waste rate is losing \u00a38,000\u2013\u00a312,000 in food cost alone, before factoring in the labour cost of preparing items that were never sold. Under the Resources (Waste) and Contamination Regulations 2019 and the Environment Act 2021, food businesses have increasing obligations around waste segregation, reporting, and reduction. WRAP estimates that UK hospitality generates 1.1 million tonnes of food waste annually, and cafes contribute significantly. Beyond compliance, waste has a direct and measurable impact on gross margin. A cafe operating at a 65% gross margin that reduces waste by just 2 percentage points of revenue effectively adds those points straight to the bottom line. Without a structured waste log, operators cannot distinguish between unavoidable waste (coffee grounds, fruit peel) and avoidable waste (overproduction, poor stock rotation, incorrect portion sizes). The reconciliation element elevates this from a simple logging exercise to a financial control tool. By comparing what was purchased, what was sold, and what was wasted, the operator can identify variance \u2014 and variance is where profit disappears.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0\u20132 weeks). Week 1: Create a simple waste log sheet stationed at the main prep area and behind the bar. The log should have columns for: date, time, item name, category (spoilage/overproduction/prep error/return/expired), quantity, estimated unit cost, total cost, reason, and staff initials. Brief all staff during a 15-minute team huddle explaining that the log is not about blame but about understanding where money goes. Ask staff to log every item discarded during their shift with no exceptions. Provide a laminated category guide next to the log. At end of day, the closing manager totals the waste cost column and records it in a daily summary. Week 2: Review the first week to identify the top three waste items by cost. Compare total waste cost against daily revenue to calculate waste-to-revenue percentage. Post the daily percentage on a whiteboard visible to staff. Set a baseline and target a 1 percentage point reduction next month. Begin separating unavoidable waste from avoidable waste in the log.",
+    "L2": "SYSTEM BUILD (2\u20138 weeks). Develop a Waste Reconciliation SOP that integrates with stock-take procedures (B057) and daily cash-up routines (B179). Create a weekly waste report template aggregating daily logs into category breakdowns, shift-level analysis, and cost trends. Introduce a waste walk \u2014 a 10-minute end-of-day inspection where the closing manager physically checks bins, prep stations, and fridges for unlogged waste. Cross-reference waste data with purchasing data to optimise order quantities. Implement waste cost targets by category: milk waste should not exceed 3% of milk purchased, pastry waste should not exceed 8%. Train all staff to understand the financial impact with concrete examples. Establish a monthly waste review meeting (20 minutes) where the team reviews trends, celebrates reductions, and problem-solves persistent issues.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Integrate waste data into the operational rhythm dashboard (B182) for real-time visibility alongside other KPIs. Introduce monthly waste reduction challenges with small team rewards. Conduct quarterly deep-dive waste audits including compositional analysis. Use waste data to inform seasonal menu changes and promotional strategies. Explore partnerships with food redistribution charities such as Too Good To Go, FareShare, or OLIO. Calculate carbon impact of waste reduction for sustainability reporting. Review waste targets annually and ratchet them down progressively."
+  },
+  "execution_framework": {
+    "L1_setup": {"title": "Immediate Actions", "actions": ["Design and print daily waste log sheets with category columns and cost fields", "Brief all staff on waste logging purpose, method, and expectations", "Station waste logs at each key area: prep station, bar, and kitchen", "Create a laminated waste category guide for quick reference", "Assign end-of-day waste total calculation to the closing manager", "Calculate baseline waste-to-revenue percentage from first week of data", "Post daily waste percentage on a staff-visible whiteboard"], "responsible": "Cafe Owner, Manager"},
+    "L2_build": {"title": "System Development", "actions": ["Draft a Waste Reconciliation SOP integrating stock-take and cash-up routines", "Create a weekly waste report template with category and shift breakdowns", "Implement a daily waste walk as part of closing procedures", "Cross-reference waste data with purchasing to optimise order quantities", "Set waste cost targets by product category", "Train staff on the financial impact of waste with concrete cost examples", "Establish a monthly waste review meeting"], "responsible": "Manager, Head Barista"},
+    "L3_embed": {"title": "Culture Embedding", "actions": ["Integrate waste metrics into the operational rhythm dashboard", "Introduce monthly waste reduction challenges with team recognition", "Conduct quarterly compositional waste audits", "Use waste data to inform menu engineering and promotional strategy", "Explore food redistribution partnerships (Too Good To Go, FareShare)", "Calculate carbon impact of waste reduction for sustainability reporting", "Review and tighten waste targets annually"], "responsible": "Owner, Manager"}
+  },
+  "deliverables": ["Daily Waste Log Sheet (printable A4 template)", "Waste Reconciliation SOP document", "Weekly Waste Report template", "Waste Category Reference Guide (laminated card)", "Monthly Waste Trend Dashboard template"],
+  "embedded_tools": [],
+  "tool_definitions": {"tools": [
+    {"tool_id": "T181-01", "tool_name": "Daily Waste Log Sheet", "level": "L1", "format": "checklist", "owner_role": "All Staff", "description": "A4 printable log with columns for date, time, item, category, quantity, unit cost, total cost, reason, and staff initials. Stationed at each waste point for real-time logging throughout every shift."},
+    {"tool_id": "T181-02", "tool_name": "Waste Category Reference Guide", "level": "L1", "format": "reference", "owner_role": "All Staff", "description": "Laminated quick-reference card defining each waste category with examples, placed next to waste log stations to ensure consistent categorisation across all staff."},
+    {"tool_id": "T181-03", "tool_name": "Weekly Waste Reconciliation Report", "level": "L2", "format": "template", "owner_role": "Manager", "description": "Weekly summary aggregating daily waste logs into category breakdowns, shift-level analysis, waste-to-revenue ratios, and comparison against targets and previous periods."},
+    {"tool_id": "T181-04", "tool_name": "Waste Reconciliation SOP", "level": "L2", "format": "SOP", "owner_role": "Manager", "description": "Standard Operating Procedure covering waste logging methods, reconciliation against purchasing and sales data, escalation triggers for excessive waste, and monthly review protocols."},
+    {"tool_id": "T181-05", "tool_name": "Monthly Waste Trend Dashboard", "level": "L3", "format": "dashboard", "owner_role": "Owner", "description": "Visual dashboard showing waste-to-revenue trends, category breakdowns, shift comparisons, and progress against reduction targets. Used in monthly management reviews."}
+  ]},
+  "failure_modes": ["Staff under-report waste to avoid perceived blame, creating inaccurate data that masks the true cost", "Waste logs are completed retrospectively at end of shift from memory rather than in real time, missing items and misstating quantities", "Manager fails to reconcile waste against purchasing and sales data, reducing the log to a meaningless tick-box exercise", "Unavoidable waste is conflated with avoidable waste, making targets unrealistic and demoralising"],
+  "kpis": ["Daily waste log completion rate of 100% across all shifts", "Total avoidable waste-to-revenue ratio below 3% for beverages and below 8% for food", "Month-on-month reduction in avoidable waste cost until target is reached", "Weekly reconciliation completed within 24 hours of week end"],
+  "dependencies": ["B057", "B179"],
+  "constraints": ["Requires accurate cost prices for all menu items to calculate waste cost", "Staff must be trained on waste categorisation to ensure data consistency", "Waste logs must be retained for a minimum of 12 months for financial and environmental audit purposes"],
+  "time_load": {"L1": "2 hours (setup, briefing, template creation)", "L2": "5 hours (SOP drafting, report templates, staff training)", "L3": "2 hours/month (reviews, audits, dashboard updates)"},
+  "review_protocol": "Daily review of waste totals by closing manager. Weekly reconciliation against purchases and sales by manager. Monthly waste review meeting with full team. Quarterly compositional waste audit. Annual review of waste targets and SOP.",
+  "meta": {"summary_for_humans": "This block creates a structured daily waste logging system that captures every discard by category and cost, then reconciles waste against revenue to reveal hidden profit leaks.", "implementation_risks": ["Staff may view waste logging as punitive rather than constructive without clear communication", "Paper-based logs can be lost or illegible \u2014 consider early digitisation", "Without linking waste data to purchasing and menu decisions, the exercise becomes data collection without action"], "notes_for_engine": "Activate alongside B057 (stock management) and B179 (daily reconciliation). Flag as priority if signals indicate high food cost percentages, frequent stock shortages, or poor gross margin performance.", "tags": ["waste", "cost_control", "reconciliation", "sustainability", "daily_discipline", "food_cost", "operations"]},
+  "applicability": {"venue_types": ALL_8, "team_size_min": 1, "team_size_max": 99},
+  "enrichment_status": {"level": "gold", "enriched_at": "2026-03-04T12:00:00Z", "enriched_by": "claude_direct_v2", "source_quality": "ai_generated"}
+})
+
+print("=== B181 done ===")

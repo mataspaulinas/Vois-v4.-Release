@@ -1,0 +1,182 @@
+{
+  "block_id": "B191",
+  "name": "Area Manager Framework",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M15: Multi-Site & Chain Management",
+  "state": "enriched",
+  "purpose": "Defines the area manager role, responsibilities, KPIs, and operating rhythm for multi-site cafe operations. This block ensures that as the business grows beyond what one owner or operator can directly oversee, there is a structured management layer that maintains standards, develops site teams, and drives performance across all locations.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define the area manager role with clear responsibilities covering operational standards, people management, financial performance, and brand compliance",
+      "Establish a weekly and monthly operating rhythm for area manager site visits and reporting",
+      "Create a KPI framework that holds area managers accountable for the performance of their sites",
+      "Build area manager development pathways including training, coaching, and career progression",
+      "Define the relationship between area managers, site managers, and central operations"
+    ],
+    "secondary_objectives": [
+      "Ensure consistent management coverage across all sites as the estate grows",
+      "Reduce owner dependency by delegating operational oversight to area managers",
+      "Create a talent pipeline for future operations directors and senior leadership",
+      "Standardise the area manager role across the organisation to ensure consistency"
+    ]
+  },
+  "why_this_matters": "The area manager is the most critical role in a multi-site cafe operation. They are the bridge between central strategy and site-level execution. Without effective area management, the owner becomes the bottleneck — unable to oversee every site personally, yet not confident that standards are being maintained in their absence. The typical span of control for a cafe area manager is 4–8 sites, depending on geography and complexity. An area manager should spend 60–70% of their time in sites (not in the office) conducting structured visits that cover operational standards, team development, financial review, and customer experience. Their weekly rhythm should include at least one full visit to each site, with additional targeted visits for underperforming locations. The KPI framework must balance leading indicators (audit scores, training completion, compliance rates) with lagging indicators (revenue, margin, customer feedback) to give a complete picture of area performance.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0–2 weeks). Week 1: Draft the area manager role description using T191-01, covering: operational standards oversight, brand audit execution, people management and development, financial performance management, and escalation responsibilities. Define the site visit structure: a standard visit should take 2–3 hours and follow a consistent format covering walk-through observation, team conversations, data review, and action planning. Week 2: Define the area manager KPI framework: (1) brand audit scores across their sites, (2) financial performance against targets, (3) staff turnover and engagement, (4) compliance completion rates, (5) customer satisfaction metrics. Brief existing area managers (or those being promoted into the role) on expectations and the operating rhythm.",
+    "L2": "SYSTEM BUILD (2–8 weeks). Create a weekly site visit report template that the area manager completes after every visit. Build a monthly area performance dashboard that aggregates site-level data into an area view. Establish a fortnightly one-to-one between each area manager and the operations director. Develop an area manager induction programme covering: brand standards, SOP library, financial benchmarking, people management skills, and regulatory compliance. Create a site manager development programme that area managers deliver, building leadership capability at site level.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Integrate area manager performance into the annual review and bonus cycle. Conduct 360-degree feedback reviews for area managers including input from site managers, central team, and the operations director. Create area manager peer learning forums where they share best practices and problem-solve together. Build career pathways from area manager to operations director. Review and adjust the span of control as the estate grows to ensure area managers are not overloaded."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Draft the area manager role description with clear responsibilities",
+        "Define the standard site visit structure and format",
+        "Create the area manager KPI framework with 5 core metrics",
+        "Brief area managers on expectations and operating rhythm",
+        "Define the span of control (sites per area manager)",
+        "Establish the weekly site visit schedule",
+        "Create a visit reporting format"
+      ],
+      "responsible": "Operations Director, CEO"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a weekly site visit report template",
+        "Build a monthly area performance dashboard",
+        "Establish fortnightly one-to-ones between area managers and operations director",
+        "Develop an area manager induction programme",
+        "Create a site manager development programme for area managers to deliver",
+        "Implement a structured action tracking system for visit follow-ups",
+        "Begin monthly area performance reviews"
+      ],
+      "responsible": "Operations Director, HR"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Integrate area manager performance into annual review and bonus cycle",
+        "Conduct 360-degree feedback reviews for area managers",
+        "Create peer learning forums for area managers",
+        "Build career pathways from area manager to operations director",
+        "Review span of control as the estate grows",
+        "Conduct annual area manager role review and update"
+      ],
+      "responsible": "Operations Director, CEO, HR"
+    }
+  },
+  "deliverables": [
+    "Area Manager Role Description",
+    "Site Visit Structure and Report Template",
+    "Area Manager KPI Framework",
+    "Monthly Area Performance Dashboard",
+    "Area Manager Induction Programme outline"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T191-01",
+        "tool_name": "Area Manager Role Description",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Operations Director",
+        "description": "Comprehensive role description covering responsibilities, KPIs, reporting lines, span of control, time allocation expectations, and key competencies required for the area manager position."
+      },
+      {
+        "tool_id": "T191-02",
+        "tool_name": "Site Visit Report Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Area Manager",
+        "description": "Structured report template completed after every site visit covering: walk-through observations, team conversations, data review findings, actions agreed, and follow-up deadlines."
+      },
+      {
+        "tool_id": "T191-03",
+        "tool_name": "Area Manager KPI Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Operations Director",
+        "description": "Monthly dashboard showing each area manager's performance across all KPIs: brand audit scores, financial performance, staff metrics, compliance rates, and customer satisfaction."
+      },
+      {
+        "tool_id": "T191-04",
+        "tool_name": "Area Manager Induction Checklist",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Operations Director",
+        "description": "Structured induction checklist for new area managers covering brand standards, SOP library, financial systems, people management processes, compliance requirements, and key contacts."
+      },
+      {
+        "tool_id": "T191-05",
+        "tool_name": "360-Degree Feedback Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Operations Director",
+        "description": "Annual 360-degree feedback form collecting structured input from site managers, peers, central team, and the operations director on the area manager's performance across key competencies."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Area managers spend too much time in the office and not enough time in sites, losing touch with operational reality",
+    "KPIs focus only on financial metrics, ignoring leading indicators like audit scores and staff development",
+    "Area managers are overloaded with too many sites, spreading their attention too thin to be effective",
+    "Site visits become social calls rather than structured performance reviews"
+  ],
+  "kpis": [
+    "Each site receives at least one structured area manager visit per week",
+    "Area manager KPI dashboard updated monthly with all metrics current",
+    "Staff turnover in area manager's sites below industry average",
+    "Brand audit scores across all sites in the area above 85%"
+  ],
+  "dependencies": [
+    "B187",
+    "B189"
+  ],
+  "constraints": [
+    "Optimal span of control is 4–8 sites per area manager depending on geography",
+    "Area managers must spend a minimum of 60% of their time in sites",
+    "The role requires both operational expertise and people management skills"
+  ],
+  "time_load": {
+    "L1": "6 hours (role definition, KPI framework, visit structure)",
+    "L2": "10 hours (dashboard build, induction programme, report templates)",
+    "L3": "2 hours/month (performance reviews, framework refinement)"
+  },
+  "review_protocol": "Weekly site visit reports reviewed by operations director. Monthly area performance dashboard review. Quarterly one-to-one with operations director. Annual 360-degree feedback and performance review. Annual review of span of control and role description.",
+  "meta": {
+    "summary_for_humans": "This block defines the area manager role, responsibilities, KPIs, and operating rhythm, ensuring consistent management oversight and performance accountability across all sites.",
+    "implementation_risks": [
+      "Hiring the wrong area manager can damage multiple sites simultaneously",
+      "Without structured visits, area managers default to firefighting rather than proactive management",
+      "The transition from owner-managed to area-manager-managed requires the owner to genuinely delegate authority"
+    ],
+    "notes_for_engine": "Chain-only block. Activate when the estate reaches 3+ sites. Depends on B187 (brand audits) and B189 (financial benchmarking) for the KPI framework. Critical for scalability.",
+    "tags": [
+      "area_manager",
+      "management",
+      "multi_site",
+      "chain",
+      "KPIs",
+      "leadership",
+      "operations",
+      "scalability"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "chain_cafe",
+      "franchise_cafe"
+    ],
+    "team_size_min": 10,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

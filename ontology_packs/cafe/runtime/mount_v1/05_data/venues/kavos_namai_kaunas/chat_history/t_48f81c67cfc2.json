@@ -1,0 +1,38 @@
+{
+  "id": "t_48f81c67cfc2",
+  "title": "Why is the Saturday morning queue so bad?",
+  "type": "venue",
+  "venue_slug": "kavos_namai_kaunas",
+  "created": "2026-01-09T16:16:39.239400",
+  "updated": "2026-01-09T18:41:31.239400",
+  "messages": [
+    {
+      "id": "m_eae80125",
+      "role": "user",
+      "content": "Every Saturday we get hammered from 9am. What's causing this and what can we do?",
+      "timestamp": "2026-01-09T16:16:39.239400",
+      "attachments": []
+    },
+    {
+      "id": "m_53f6aed5",
+      "role": "assistant",
+      "content": "Based on the assessment data, the Saturday issue is a combination of three factors:\n\n1. **Staffing (S083):** Your weekday morning shift has 3 people, but Saturday volume is roughly 40% higher based on the queue observations. You're running the same staffing level for significantly higher demand.\n\n2. **Role clarity (S063):** During peak, your team defaults to reactive mode — everyone tries to help everywhere, which creates collisions at the espresso machine and confusion about who's clearing tables.\n\n3. **Layout (S073):** The counter flow works fine at moderate volume, but during a Saturday rush, the single POS position creates a bottleneck. Customers queue for ordering while finished drinks pile up at the same handoff point.\n\n**Quick wins for next Saturday:**\n- Assign fixed stations: Person 1 = POS + drinks handoff. Person 2 = espresso. Person 3 = clearing + restock. No switching during peak.\n- Move drink handoff to the end of the counter (even temporarily with a tray) to separate the queue from pickup.\n- If budget allows, bring in a 4th person for a 4-hour shift (08:30-12:30).\n\nThese are L1 interventions — try them this Saturday and let me know what changes.",
+      "timestamp": "2026-01-09T16:17:09.239400",
+      "attachments": []
+    },
+    {
+      "id": "m_6c8c8777",
+      "role": "user",
+      "content": "We tried the fixed stations approach last Saturday. Massive difference. Person 3 on clearing was the key — tables were clean in under 2 minutes.",
+      "timestamp": "2026-01-09T17:03:09.239400",
+      "attachments": []
+    },
+    {
+      "id": "m_899db9e9",
+      "role": "assistant",
+      "content": "That's excellent. The clearing bottleneck was cascading into everything else — dirty tables = fewer seats = longer apparent queues even if service speed was fine.\n\nI'll update the task status for the role clarity items. A few things to lock in:\n\n1. **Document the station assignments** — write them on a card and post them in the back. Don't let this become tribal knowledge that disappears when someone's off.\n2. **Keep running this for 3 more Saturdays** to confirm it holds. One good Saturday could be an anomaly.\n3. **Track the table clear time** informally — even just a mental note. If it stays under 3 minutes consistently, we can mark S080 as resolved for Kaunas.\n\nThe staffing question is still open (S083) — you managed this Saturday with 3 people and clear roles, but the question is whether that holds at higher volume (summer, events). Something to revisit next month.",
+      "timestamp": "2026-01-09T17:03:31.239400",
+      "attachments": []
+    }
+  ]
+}

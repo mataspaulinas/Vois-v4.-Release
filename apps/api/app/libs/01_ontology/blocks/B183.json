@@ -1,0 +1,186 @@
+{
+  "block_id": "B183",
+  "name": "Health & Safety Risk Assessment",
+  "version": "v1.0",
+  "domain": "D12_culture_identity",
+  "module": "M16: Regulatory Governance & Risk Management",
+  "state": "enriched",
+  "purpose": "Delivers a comprehensive workplace risk assessment covering all hazards present in a cafe environment — from scalding steam wands and slippery floors to manual handling of deliveries and repetitive strain from tamping. This block ensures legal compliance with the Health and Safety at Work etc. Act 1974 and the Management of Health and Safety at Work Regulations 1999, while building a proactive safety culture that protects staff, customers, and the business.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Conduct a full hazard identification survey covering every area of the cafe: front of house, bar, kitchen, storage, toilets, and exterior",
+      "Assess each hazard for likelihood and severity to determine risk rating",
+      "Document control measures for every identified risk, assigning responsibility and review dates",
+      "Create a living risk assessment document that is reviewed and updated at least annually or when circumstances change",
+      "Ensure all staff are briefed on relevant risks and control measures during induction and at regular intervals"
+    ],
+    "secondary_objectives": [
+      "Reduce workplace accidents and near-misses through proactive hazard management",
+      "Minimise employer liability and insurance costs through documented due diligence",
+      "Build staff confidence by demonstrating that their safety is taken seriously",
+      "Create a foundation for fire safety (B184), licensing (B185), and compliance culture (B186) blocks"
+    ]
+  },
+  "why_this_matters": "Under the Health and Safety at Work etc. Act 1974, every employer has a legal duty to ensure, so far as is reasonably practicable, the health, safety, and welfare of all employees. The Management of Health and Safety at Work Regulations 1999 require every employer with five or more employees to conduct and record a suitable and sufficient risk assessment. Even cafes with fewer than five employees must conduct a risk assessment — they simply are not required to record it in writing, although best practice strongly recommends doing so. The Health and Safety Executive (HSE) can inspect any workplace at any time, and a cafe without a documented risk assessment faces enforcement action ranging from an Improvement Notice to prosecution. In the hospitality sector, the most common hazards include burns and scalds (from steam wands, hot water, and cooking equipment), slips, trips and falls (wet floors, cables, uneven surfaces), manual handling injuries (lifting deliveries, moving furniture), cuts (from knives, broken crockery), and electrical hazards (faulty equipment, overloaded sockets). A single workplace accident can result in HSE investigation, potential prosecution, personal injury claims, increased insurance premiums, loss of key staff to injury, and reputational damage. For a small cafe, a successful personal injury claim or HSE prosecution can be financially devastating.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0–2 weeks). Week 1: Download the HSE risk assessment template (available free from hse.gov.uk) or use the template provided in T183-01. Walk through every area of the cafe with a notebook: bar area, kitchen/prep, storage, customer seating, toilets, entrance/exit, and any outdoor areas. For each area, list every hazard you can identify — hot surfaces, sharp objects, wet floors, heavy items at height, electrical equipment, trip hazards, chemical cleaning products. For each hazard, note who might be harmed, how, and what controls are already in place. Rate each risk as high, medium, or low. Week 2: For each medium and high risk, document specific control measures: what needs to be done, who is responsible, and by when. Post a summary of key risks and controls in the staff area. Brief all current staff on the risk assessment findings. File the completed risk assessment and note the review date.",
+    "L2": "SYSTEM BUILD (2–8 weeks). Develop a Health and Safety SOP library covering the top risks: burns and scalds prevention, manual handling technique, slip prevention and wet floor procedures, chemical handling (COSHH), and electrical safety. Introduce a near-miss reporting system — a simple form where staff can record incidents that nearly caused harm. Near-miss data is invaluable for identifying emerging risks before they cause harm. Conduct specific risk assessments for vulnerable groups: pregnant workers, young workers (under 18), and anyone with a disability. Review insurance policies to ensure coverage aligns with identified risks. Schedule quarterly risk assessment reviews. Train a designated member of staff as the health and safety lead.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Integrate risk assessment into daily operations through pre-shift safety checks. Establish a health and safety committee that meets quarterly to review risks, near-misses, and improvement ideas. Conduct annual external health and safety audits. Benchmark accident rates against industry data from HSE hospitality statistics. Invest in additional controls for persistent risks: anti-fatigue mats, burn-resistant gloves, automatic wet floor signs, cable management solutions. Develop a culture where any team member can raise a safety concern without hesitation."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Download or create a risk assessment template suitable for cafe environments",
+        "Conduct a full hazard identification walk-through of every area of the premises",
+        "Rate each identified hazard for likelihood and severity",
+        "Document control measures for every medium and high risk with assigned responsibility",
+        "Brief all staff on key risks and control measures in a team meeting",
+        "File the completed risk assessment and set an annual review date",
+        "Ensure the accident book (BI 510) is available and all staff know where it is"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop Health and Safety SOPs for top risk categories",
+        "Introduce a near-miss reporting system",
+        "Conduct specific risk assessments for vulnerable groups",
+        "Review insurance coverage against identified risks",
+        "Schedule quarterly risk assessment reviews",
+        "Designate and train a health and safety lead",
+        "Create a COSHH register for all cleaning chemicals and hazardous substances"
+      ],
+      "responsible": "Manager, Health & Safety Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Integrate pre-shift safety checks into daily opening routines",
+        "Establish a quarterly health and safety review meeting",
+        "Conduct annual external health and safety audits",
+        "Benchmark accident rates against HSE hospitality industry data",
+        "Invest in additional physical controls for persistent risk areas",
+        "Build a culture where near-miss reporting is encouraged and celebrated"
+      ],
+      "responsible": "Owner, Manager, Health & Safety Lead"
+    }
+  },
+  "deliverables": [
+    "Comprehensive Risk Assessment document (cafe-specific template)",
+    "Health and Safety SOP library",
+    "Near-Miss Reporting Form",
+    "COSHH Register template",
+    "Quarterly Risk Review template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T183-01",
+        "tool_name": "Cafe Risk Assessment Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Comprehensive risk assessment template pre-populated with common cafe hazards organised by area (bar, kitchen, storage, customer area, exterior), with columns for hazard, who is at risk, existing controls, risk rating, additional controls needed, responsible person, and review date."
+      },
+      {
+        "tool_id": "T183-02",
+        "tool_name": "Near-Miss Reporting Form",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "Simple one-page form for recording near-miss incidents: date, time, location, description of what happened, what prevented harm, and suggested improvement. Anonymity option included to encourage reporting."
+      },
+      {
+        "tool_id": "T183-03",
+        "tool_name": "Health and Safety SOP Library Index",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Master index of all health and safety SOPs covering burns prevention, manual handling, slip prevention, COSHH, electrical safety, and lone working, with version control and review schedule."
+      },
+      {
+        "tool_id": "T183-04",
+        "tool_name": "COSHH Assessment Register",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Register of all hazardous substances used in the cafe (cleaning chemicals, descalers, sanitisers) with safety data sheets, storage requirements, PPE requirements, and first aid measures."
+      },
+      {
+        "tool_id": "T183-05",
+        "tool_name": "Quarterly Risk Review Checklist",
+        "level": "L3",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Quarterly review checklist covering all risk assessment entries, near-miss trends, accident book review, control measure effectiveness, and actions arising. Signed off by owner."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Risk assessment is completed once and never reviewed, becoming outdated as the cafe changes equipment, layout, or activities",
+    "Risk assessment is a paper exercise that does not translate into actual workplace practices or staff awareness",
+    "Near-misses go unreported because staff fear blame, allowing hazards to persist until a serious accident occurs",
+    "Control measures are documented but not implemented or enforced, creating a false sense of security"
+  ],
+  "kpis": [
+    "Risk assessment completed and documented with zero overdue review dates",
+    "All staff briefed on relevant risks within one week of starting employment",
+    "Near-miss reports submitted at a rate indicating genuine engagement (minimum 1 per quarter per 5 staff)",
+    "Zero HSE enforcement notices or improvement orders"
+  ],
+  "dependencies": [
+    "B184"
+  ],
+  "constraints": [
+    "Employers with 5 or more employees must record the risk assessment in writing",
+    "Risk assessment must be reviewed at least annually or whenever there is a significant change",
+    "An accident book (BI 510) must be maintained and RIDDOR-reportable incidents reported within statutory timescales"
+  ],
+  "time_load": {
+    "L1": "4 hours (initial walk-through, documentation, staff briefing)",
+    "L2": "8 hours (SOP development, COSHH register, near-miss system setup)",
+    "L3": "2 hours/quarter (reviews, audits, updates)"
+  },
+  "review_protocol": "Annual full review of risk assessment document. Quarterly review of near-miss reports and accident book. Immediate review after any accident, near-miss involving injury, or significant change to premises or equipment. Staff briefing whenever risk assessment is updated.",
+  "meta": {
+    "summary_for_humans": "This block delivers a comprehensive workplace risk assessment covering all cafe hazards, with documented control measures, near-miss reporting, and a structured review cycle.",
+    "implementation_risks": [
+      "Owner may underestimate the breadth of hazards in a cafe environment",
+      "Risk assessment can feel bureaucratic for small teams — keep it practical and cafe-specific",
+      "Without near-miss reporting, the risk assessment only captures known hazards, not emerging ones"
+    ],
+    "notes_for_engine": "Foundation block for the regulatory governance module. Activate before or alongside B184 (fire safety) and B185 (licensing). Flag urgently if signals indicate workplace accidents, HSE visits, or missing documentation.",
+    "tags": [
+      "health_safety",
+      "risk_assessment",
+      "HSE",
+      "compliance",
+      "COSHH",
+      "workplace_safety",
+      "regulatory"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "independent_cafe",
+      "specialty_coffee",
+      "chain_cafe",
+      "franchise_cafe",
+      "drive_through",
+      "kiosk",
+      "coffee_van",
+      "bakery_cafe"
+    ],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

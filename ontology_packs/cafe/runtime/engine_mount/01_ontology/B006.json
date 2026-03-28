@@ -1,0 +1,185 @@
+{
+  "block_id": "B006",
+  "name": "PPDS Compliance System",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Ensures all Prepacked for Direct Sale (PPDS) items are correctly labelled with full ingredient lists and allergen declarations in compliance with Natasha's Law. This block protects customers with food allergies and shields the business from prosecution under food safety legislation.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Implement compliant PPDS labelling for all items wrapped or packaged on premises before a customer selects them",
+      "Ensure every label includes the product name, full ingredients list, and allergens emphasised in bold, italics, or uppercase",
+      "Create a label production workflow that integrates with recipe changes and new product launches",
+      "Establish a verification step so no PPDS item reaches the display without a checked label",
+      "Maintain a master ingredients database that drives all label generation"
+    ],
+    "secondary_objectives": [
+      "Reduce the risk of prosecution under the Food Information Regulations 2014 (as amended 2021)",
+      "Build customer trust through transparent, professional labelling",
+      "Streamline label updates when suppliers change product formulations"
+    ]
+  },
+  "why_this_matters": "Natasha's Law (the Food Information (Amendment) (England) Regulations 2019, effective 1 October 2021) was introduced following the death of Natasha Ednan-Laperouse, who suffered a fatal allergic reaction to a Pret A Manger baguette that lacked allergen labelling. The law requires any food that is prepacked for direct sale — meaning wrapped or packaged on the premises before a customer selects or orders it — to carry a label showing the food name, full ingredients list, and the 14 declarable allergens emphasised within that list. This applies to sandwiches wrapped in cling film, boxed salads, sealed cake slices, bottled smoothies made on-site, and any other item a customer picks up without speaking to staff first. For cafes, this is a significant compliance burden because many items cross the PPDS threshold daily. A sandwich made to order is not PPDS, but the same sandwich pre-wrapped for the lunchtime rush is. Failure to label correctly is a criminal offence under the Food Safety Act 1990, carrying unlimited fines and potential imprisonment. Environmental Health Officers actively check PPDS labelling during inspections, and failures directly impact the Food Hygiene Rating. Beyond legal risk, incorrect labelling puts lives at risk — the 14 declarable allergens include peanuts, tree nuts, milk, and cereals containing gluten, all of which can trigger fatal anaphylaxis. A robust PPDS system is not optional; it is a legal and moral necessity for any cafe selling pre-wrapped food.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Audit every item currently sold in the cafe to determine which qualify as PPDS. The key test is simple — if the item is packaged before the customer chooses it and before they have the opportunity to ask about allergens, it is PPDS and requires a label. Common cafe PPDS items include pre-wrapped sandwiches, boxed salads, sealed cake slices, pre-bottled smoothies or juices, and packaged baked goods. Create a master list of all PPDS items. For each item, compile the complete recipe including every ingredient, sub-ingredient, and any processing aids. Cross-reference each ingredient against the 14 declarable allergens: celery, cereals containing gluten, crustaceans, eggs, fish, lupin, milk, molluscs, mustard, nuts, peanuts, sesame, soya, and sulphur dioxide (above 10mg/kg). Purchase adhesive label stock and either a label printer (budget £100-300 for a Brother or Dymo label printer) or use a standard printer with adhesive label sheets. Design a basic label template that includes: product name, the word 'INGREDIENTS:' followed by the full list with allergens in bold, the business name, and a use-by or best-before date. Print and apply labels to all PPDS items immediately. Week 2: Have the manager verify every label against the recipe file. Conduct a spot check on five random PPDS items each day to confirm labels are present, legible, and accurate. Brief all kitchen and front-of-house staff on what PPDS means and why every wrapped item must be labelled before it reaches the display.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a master ingredients database — a spreadsheet or simple database linking every recipe to its full ingredient breakdown and allergen declarations. When a supplier changes a product formulation (e.g., the bread supplier adds sesame to their seeded loaf), the database must be updated and all affected labels reprinted the same day. Establish a label change management process: any new menu item, recipe change, or supplier switch triggers a label review before the product is sold. Develop a Label Production SOP covering who creates labels, who approves them, how they are printed, how they are applied, and what happens if a label is missing or suspected to be incorrect. Train all staff who prepare or package PPDS items on the labelling requirements — they must understand that removing or obscuring a label is a food safety violation. Implement a daily PPDS check: before service, one designated person verifies that every PPDS item on display has a correct, legible label. Record this check in the food safety diary. Set up a supplier notification system: request that all ingredient suppliers notify you in writing of any formulation changes. File these notifications and cross-reference them against your label database within 24 hours. By Week 8, every PPDS item should have a verified label, a traceable recipe record, and an auditable trail of any label changes.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Integrate PPDS compliance into the daily opening routine so thoroughly that serving an unlabelled PPDS item becomes unthinkable. Conduct quarterly PPDS audits where the manager selects ten random items and checks labels against the master database, recording any discrepancies. Invest in label design improvements — consider branded labels that reinforce the cafe's identity while meeting legal requirements. Review and update the master ingredients database monthly, even if no changes have occurred, to confirm ongoing accuracy. Share compliance performance with the team and celebrate zero-defect months. Monitor regulatory updates from the Food Standards Agency for any changes to PPDS requirements or allergen declarations. Consider digital label management systems that link directly to your recipe database and automatically generate compliant labels when recipes are updated."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Audit all products sold to identify which items qualify as PPDS",
+        "Compile complete recipes and ingredient lists for every PPDS item",
+        "Cross-reference all ingredients against the 14 declarable allergens",
+        "Purchase label printing equipment or adhesive label stock",
+        "Design and print compliant labels for all identified PPDS items",
+        "Apply labels to all PPDS items before they reach the display",
+        "Brief all staff on what PPDS means and the legal requirement for labelling"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build a master ingredients database linking recipes to allergen declarations",
+        "Create a Label Production SOP covering creation, approval, printing, and application",
+        "Establish a label change management process for recipe or supplier changes",
+        "Implement a daily pre-service PPDS label verification check",
+        "Set up a supplier notification system for formulation changes",
+        "Train all food preparation staff on PPDS labelling requirements",
+        "File all label records and supplier notifications in the food safety folder"
+      ],
+      "responsible": "Manager, Kitchen Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly PPDS label audits against the master database",
+        "Invest in branded, professional label design",
+        "Review and confirm the master ingredients database monthly",
+        "Monitor Food Standards Agency updates for regulatory changes",
+        "Evaluate digital label management systems for automated compliance"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "PPDS Item Audit Checklist",
+    "Master Ingredients and Allergen Database template",
+    "PPDS Label Template (compliant format)",
+    "Label Production SOP document",
+    "Daily PPDS Label Verification Log"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T006-01",
+        "tool_name": "PPDS Item Audit Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Comprehensive checklist for auditing all products to determine PPDS status, listing each item, its packaging method, whether it qualifies as PPDS, and current labelling status."
+      },
+      {
+        "tool_id": "T006-02",
+        "tool_name": "Master Ingredients and Allergen Database",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Centralised database linking every PPDS recipe to its full ingredient list, sub-ingredients, allergen declarations, supplier details, and last-verified date."
+      },
+      {
+        "tool_id": "T006-03",
+        "tool_name": "PPDS Label Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Kitchen Lead",
+        "description": "Pre-formatted label template meeting Natasha's Law requirements, including product name, full ingredients list with allergens emphasised in bold, business name, and date fields."
+      },
+      {
+        "tool_id": "T006-04",
+        "tool_name": "Label Production SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering the end-to-end label production process: who creates labels, approval workflow, printing standards, application method, and change management."
+      },
+      {
+        "tool_id": "T006-05",
+        "tool_name": "Daily PPDS Label Verification Log",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Front-of-House Lead",
+        "description": "Daily pre-service verification log confirming every PPDS item on display has a correct, legible, and up-to-date label. Includes spot-check results and any corrective actions."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Staff wrap items for convenience without realising they have created a PPDS product requiring a label",
+    "Supplier changes an ingredient formulation without notifying the cafe, rendering existing labels inaccurate",
+    "Labels are printed but not applied, or fall off during display, leaving PPDS items unlabelled",
+    "Allergens are listed in the ingredients but not emphasised (bold/italics), failing the legal requirement"
+  ],
+  "kpis": [
+    "100% of PPDS items on display carry a compliant label at all times",
+    "Zero allergen labelling errors detected in quarterly audits",
+    "Master ingredients database updated within 24 hours of any supplier formulation change",
+    "All food preparation staff trained on PPDS requirements within first week of employment"
+  ],
+  "dependencies": [
+    "B005"
+  ],
+  "constraints": [
+    "Requires access to complete ingredient information from all suppliers",
+    "Labels must include all 14 declarable allergens emphasised within the ingredients list",
+    "Any change to a recipe or supplier requires immediate label update before the product is sold"
+  ],
+  "time_load": {
+    "L1": "8 hours (product audit, recipe compilation, initial label creation)",
+    "L2": "10 hours (database build, SOP drafting, staff training)",
+    "L3": "3 hours/month (audits, database reviews, label updates)"
+  },
+  "review_protocol": "Daily pre-service PPDS label verification check. Weekly review of label accuracy against recipes by manager. Monthly master database confirmation. Quarterly full PPDS audit. Immediate review triggered by any supplier formulation change notification.",
+  "meta": {
+    "summary_for_humans": "This block ensures every pre-wrapped food item sold in the cafe carries a legally compliant label listing all ingredients with allergens clearly highlighted, as required by Natasha's Law. It protects customers with allergies and the business from criminal prosecution.",
+    "implementation_risks": [
+      "High initial effort to compile complete ingredient lists for all PPDS items",
+      "Ongoing vigilance needed as recipes and suppliers change",
+      "Label printers can malfunction — always have a backup method such as handwritten labels"
+    ],
+    "notes_for_engine": "Activate immediately for any cafe selling pre-wrapped food. Flag as critical if signals indicate missing PPDS labels, allergen complaints, or recent Natasha's Law enforcement action. Always co-activate with B005 (Allergen Matrix).",
+    "tags": [
+      "food_safety",
+      "allergens",
+      "PPDS",
+      "Natashas_Law",
+      "labelling",
+      "compliance",
+      "EHO",
+      "SFBB"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "independent_cafe",
+      "specialty_coffee",
+      "chain_cafe",
+      "franchise_cafe",
+      "drive_through",
+      "kiosk",
+      "coffee_van",
+      "bakery_cafe"
+    ],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

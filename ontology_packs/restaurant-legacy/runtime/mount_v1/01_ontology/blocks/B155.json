@@ -1,0 +1,166 @@
+{
+  "block_id": "B155",
+  "name": "POS System Optimisation",
+  "version": "v1.0",
+  "domain": "D10_technology_systems",
+  "module": "M10: Digital Tools & Customer Data",
+  "state": "enriched",
+  "purpose": "Ensures the cafe extracts maximum value from its Point of Sale system by configuring it correctly, training all staff to use it fully, and leveraging its data and integration capabilities. Most cafes use less than 30% of their POS features, leaving substantial operational intelligence and efficiency gains untapped.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Audit the current POS configuration to identify unused features, miscategorised products, and missing modifiers",
+      "Ensure every menu item is correctly entered with accurate pricing, categories, modifiers, and tax settings",
+      "Train all staff to use the POS efficiently including voids, refunds, split bills, discounts, and end-of-day reporting",
+      "Configure POS reporting to generate daily, weekly, and monthly sales summaries automatically",
+      "Integrate the POS with other systems where possible: accounting software, inventory management, online ordering"
+    ],
+    "secondary_objectives": [
+      "Reduce transaction errors and till discrepancies through proper POS use",
+      "Speed up service by optimising the POS layout and button arrangement for the most common orders",
+      "Enable data-driven menu decisions by ensuring accurate product-level sales tracking",
+      "Prepare the POS infrastructure for future integrations including digital ordering (B156) and CRM (B159)"
+    ]
+  },
+  "why_this_matters": "The POS system is the operational nerve centre of any cafe. Every transaction passes through it, making it simultaneously the cash register, the sales tracker, the inventory signal, the staff performance monitor, and the financial reporting foundation. Yet most independent cafes treat their POS as a glorified till, entering sales under generic categories like 'coffee' or 'food' rather than tracking specific products. This means the owner cannot answer basic questions: Which drinks sell best on Mondays? Has the new cake range increased average transaction value? Is the lunch trade growing or declining? Without this data, menu decisions become guesswork, pricing changes have no measurable impact, and marketing efforts cannot be evaluated. A properly configured POS also prevents revenue leakage. Miscategorised items lead to incorrect VAT calculations. Missing modifiers mean upsells like extra shots or alternative milks are given away free. Untrained staff creating ad-hoc workarounds introduce errors that compound across hundreds of daily transactions. The average independent cafe loses 2-5% of revenue to POS-related errors including incorrect pricing, missed upsells, and void/discount abuse. On annual turnover of 250,000 pounds, that represents 5,000 to 12,500 pounds of preventable loss. Modern POS systems (Square, Lightspeed, Epos Now, Clover, Toast) offer powerful features at accessible price points. The technology is not the bottleneck. Configuration and training are.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Conduct a full POS audit. Print or export the complete product list and review every item: Is the name clear? Is the price correct and current? Is it in the right category? Are all modifiers present (milk alternatives, sizes, extras, dietary options)? Are tax rates correctly assigned (standard rate for eat-in, zero-rated for takeaway food where applicable)? Delete any obsolete items, duplicate entries, or test products. If products are entered under generic categories, create specific entries for each menu item. Week 2: Optimise the POS screen layout. Arrange buttons so the most frequently ordered items are in the most accessible positions. Group items logically: hot drinks, cold drinks, food, cakes, retail. Use colour coding if the system supports it. Test the layout during a quiet period by processing 20 typical orders and timing the process. Ensure every staff member can process a standard order, apply a discount, split a bill, process a refund, and run a basic end-of-day report. Create a quick reference card for less common POS functions and keep it near the till.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Set up automated daily sales reports to be emailed to the owner and manager each evening or morning. Configure the reports to show: total revenue, transaction count, average transaction value, sales by category, sales by hour, and comparison to the same day last week. If the POS supports it, enable product-level reporting so you can track individual item performance. Integrate the POS with accounting software (Xero, QuickBooks, FreeAgent) to eliminate manual data entry for daily takings. Set up payment reconciliation so card and cash totals are automatically matched. Create staff accounts on the POS with appropriate permission levels: basic staff can process sales and simple voids; supervisors can apply discounts and process refunds; managers can access reports, change prices, and modify the product catalogue. This creates accountability and an audit trail. Document all POS procedures in a POS Operations Manual covering: opening procedure, processing different transaction types, handling errors, end-of-day cashing up, and reporting. Train all staff on these procedures with practical assessment.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Use POS data to drive weekly management decisions: review the top 10 and bottom 10 selling items, analyse day-part performance, track the impact of menu changes or promotions, and monitor average transaction value trends. Set up custom reports for specific business questions: Are upsell rates improving? How does weather affect sales mix? What is the true profitability of each menu category when combined with cost data? Evaluate POS add-ons and integrations that could further benefit the business: kitchen display systems, customer-facing displays, loyalty programme integration, table management, or inventory tracking. Review the POS contract and pricing annually to ensure you are on the best plan for your transaction volume. Consider whether a different POS platform would better serve the business as needs evolve. Share relevant POS insights with the team during weekly briefings to build a data-aware culture (B160)."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Conduct a full POS product audit: verify every item name, price, category, modifier, and tax rate",
+        "Delete obsolete items, duplicates, and generic categories; create specific product entries",
+        "Optimise POS screen layout with most frequent items in accessible positions",
+        "Train all staff on core POS functions: sales, voids, refunds, discounts, split bills",
+        "Create a quick reference card for less common POS functions",
+        "Test end-of-day cashing up procedure with the current team"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Configure automated daily sales reports sent to owner and manager",
+        "Integrate POS with accounting software to eliminate manual data entry",
+        "Set up staff accounts with tiered permission levels and audit trails",
+        "Document all POS procedures in a POS Operations Manual",
+        "Train all staff on documented procedures with practical assessment",
+        "Set up payment reconciliation for card and cash matching",
+        "Enable product-level sales tracking and reporting"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Establish weekly POS data review as part of management routine",
+        "Create custom reports for specific business questions and seasonal analysis",
+        "Evaluate POS add-ons and integrations for further business benefit",
+        "Review POS contract and platform annually for value and fit",
+        "Share relevant sales insights with team during weekly briefings"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "POS Audit Report with corrections and optimisation recommendations",
+    "Optimised POS screen layout configuration",
+    "POS Operations Manual for all staff",
+    "Automated daily sales report configuration",
+    "Staff POS training programme with practical assessment checklist"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T155-01",
+        "tool_name": "POS Product Audit Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Systematic checklist for auditing every product entry in the POS: verifying name accuracy, current pricing, correct category, complete modifiers, appropriate tax rate assignment, and active/inactive status."
+      },
+      {
+        "tool_id": "T155-02",
+        "tool_name": "POS Operations Manual",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Comprehensive reference document covering all POS procedures: opening setup, transaction processing, voids and refunds, discount application, split bills, end-of-day cashing up, and report generation. Includes screenshots and step-by-step instructions."
+      },
+      {
+        "tool_id": "T155-03",
+        "tool_name": "Daily Sales Report Template",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Automated report configuration showing total revenue, transaction count, average transaction value, sales by category and hour, and week-on-week comparison. Sent daily to owner and manager."
+      },
+      {
+        "tool_id": "T155-04",
+        "tool_name": "Staff POS Competency Assessment",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Practical assessment checklist testing each staff member on core POS operations: standard sale, modifier application, discount, void, refund, split bill, gift card, and end-of-day report. Must be completed before solo till operation."
+      },
+      {
+        "tool_id": "T155-05",
+        "tool_name": "Weekly POS Data Review Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Structured template for weekly management review of POS data covering: top and bottom sellers, day-part analysis, average transaction value trends, promotion impact, and action items for the coming week."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Products remain under generic categories so the cafe cannot track individual item performance or make data-driven menu decisions",
+    "Staff use workarounds instead of proper POS functions, creating inaccurate data and till discrepancies",
+    "Daily sales reports are configured but never reviewed, so the data generates no actionable insight",
+    "POS integration with accounting is never set up, resulting in hours of manual data entry each week and delayed financial visibility"
+  ],
+  "kpis": [
+    "100% of menu items entered individually in the POS with correct pricing and modifiers",
+    "Till discrepancies below 5 pounds per day on average",
+    "All staff pass POS competency assessment within 2 weeks of starting",
+    "Daily sales reports reviewed by owner or manager at least 5 days per week"
+  ],
+  "dependencies": ["B156"],
+  "constraints": [
+    "POS system must be a modern cloud-based or hybrid platform capable of detailed product-level reporting",
+    "Staff training requires dedicated time during non-trading or low-trading hours",
+    "Integration with accounting software depends on both platforms supporting compatible APIs or data export formats",
+    "Some POS features may require subscription upgrades that increase monthly costs"
+  ],
+  "time_load": {
+    "L1": "6 hours (product audit, screen layout optimisation, basic staff training)",
+    "L2": "12 hours (operations manual, report setup, accounting integration, full staff training)",
+    "L3": "2 hours/week (data review, custom reports, ongoing optimisation)"
+  },
+  "review_protocol": "POS product catalogue reviewed monthly for accuracy and completeness. Staff POS competency reassessed quarterly. Automated reports reviewed for relevance and accuracy every 3 months. POS platform and contract reviewed annually. Full system audit conducted whenever the menu changes significantly or a new POS version is released.",
+  "meta": {
+    "summary_for_humans": "This block ensures the cafe gets maximum value from its POS system through proper configuration, comprehensive staff training, automated reporting, and accounting integration. It transforms the POS from a simple till into the operational intelligence hub of the business.",
+    "implementation_risks": [
+      "Product audit can be time-consuming for cafes with large or frequently changing menus",
+      "Staff may resist changing established POS habits even when current practices are inefficient",
+      "Accounting integration may require professional setup if the cafe lacks technical confidence"
+    ],
+    "notes_for_engine": "This is a foundational block for all D10 technology blocks. Activate early for any cafe showing signs of poor data visibility, till discrepancies, or manual financial processes. Applicable to all 8 venue types.",
+    "tags": ["POS", "point_of_sale", "technology", "data", "reporting", "training", "integration", "accounting"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

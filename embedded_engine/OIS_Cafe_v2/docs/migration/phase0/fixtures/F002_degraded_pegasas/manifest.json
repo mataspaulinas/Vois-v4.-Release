@@ -1,0 +1,71 @@
+{
+  "fixture_id": "F002_degraded_pegasas",
+  "category": "degraded venue",
+  "label": "Pegasas degraded storefront",
+  "description": "High-friction venue with broad operational degradation and rich AI intake text.",
+  "kind": "assessment_snapshot",
+  "source": {
+    "venue_slug": "kavinė_pegasas",
+    "assessment_file": "2026-03-21_001.json"
+  },
+  "source_paths": [
+    "project.json",
+    "operational_plan.json",
+    "assessment.json"
+  ],
+  "assessment_type": "full_diagnostic",
+  "active_signal_count": 17,
+  "active_signal_ids": [
+    "S002",
+    "S019",
+    "S020",
+    "S046",
+    "S056",
+    "S061",
+    "S069",
+    "S070",
+    "S071",
+    "S073",
+    "S083",
+    "S160",
+    "S166",
+    "S169",
+    "S175",
+    "S178",
+    "S180"
+  ],
+  "summary": {
+    "signals": 17,
+    "failure_modes": 21,
+    "response_patterns": 18,
+    "raw_activation_items": 164,
+    "constrained_activation_items": 164,
+    "plan_load": "TRIAGE",
+    "report_type": "ai",
+    "top_signal_ids": [
+      "S002",
+      "S019",
+      "S020",
+      "S046",
+      "S056",
+      "S061",
+      "S069",
+      "S070",
+      "S071",
+      "S073"
+    ]
+  },
+  "output_files": [
+    "fixture_input.json",
+    "golden_normalized_signals.json",
+    "golden_failure_modes.json",
+    "golden_response_patterns.json",
+    "golden_activation_set_raw.json",
+    "golden_activation_context.json",
+    "golden_activation_set_constrained.json",
+    "golden_constraint_report.json",
+    "golden_action_plan.json",
+    "golden_report.md",
+    "golden_summary.json"
+  ]
+}

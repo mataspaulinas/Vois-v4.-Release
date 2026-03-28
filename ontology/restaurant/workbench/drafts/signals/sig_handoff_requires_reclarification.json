@@ -1,0 +1,30 @@
+{
+  "id": "sig_handoff_requires_reclarification",
+  "name": "Handoff requires re-clarification",
+  "description": "A task or guest need has to be restated because the first handoff did not carry enough clarity to move forward cleanly.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: handoff failure expressed through restaurant pass and floor communication",
+  "updated_at": "2026-03-14T12:48:22.220800Z",
+  "domain": "service_delivery",
+  "module": "pass_communication",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "repeated clarifying question",
+    "handoff restatement",
+    "double-check before action"
+  ],
+  "source_types": [
+    "service observation",
+    "manager notes"
+  ],
+  "temporal_behavior": "flow-recurring",
+  "likely_co_signals": [
+    "sig_expo_calls_missing",
+    "sig_ownership_confusion_in_service"
+  ],
+  "adapter_aliases": [
+    "needs repeating",
+    "handoff unclear"
+  ]
+}

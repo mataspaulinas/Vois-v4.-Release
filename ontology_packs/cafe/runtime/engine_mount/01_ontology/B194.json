@@ -1,0 +1,182 @@
+{
+  "block_id": "B194",
+  "name": "Cross-Site Best Practice Network",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M15: Multi-Site & Chain Management",
+  "state": "enriched",
+  "purpose": "Creates a structured framework for identifying, documenting, sharing, and implementing best practices across all locations in a multi-site cafe operation. This block ensures that the innovation and problem-solving that happens at individual sites benefits the entire network rather than remaining siloed.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish a systematic process for capturing best practices from individual sites",
+      "Create a sharing platform (physical or digital) where learnings are accessible to all site teams",
+      "Build a culture where sharing knowledge is valued and recognised",
+      "Implement a process for evaluating, validating, and rolling out best practices network-wide",
+      "Connect site managers with peers for problem-solving and mutual support"
+    ],
+    "secondary_objectives": [
+      "Reduce duplication of effort where multiple sites solve the same problem independently",
+      "Accelerate improvement across the network by spreading innovations quickly",
+      "Build stronger inter-site relationships and a sense of shared purpose",
+      "Feed validated best practices into the SOP library (B188) for permanent adoption"
+    ]
+  },
+  "why_this_matters": "In a multi-site operation, every location faces similar challenges: managing peak periods, reducing waste, improving speed of service, retaining staff, and maintaining quality under pressure. Without a best practice network, each site solves these problems independently, often arriving at different solutions of varying quality. The best ideas remain trapped at the site that created them, while other locations struggle with the same issues unnecessarily. A structured best practice network changes this by creating channels for ideas to flow across the organisation. When Location A discovers that pre-batching a popular syrup-based drink reduces service time by 20 seconds during peak, that knowledge should reach every other location within weeks, not months or never. The best multi-site operators in the UK treat knowledge sharing as a competitive advantage, recognising that the collective intelligence of 50 team members across 8 sites is far greater than any individual or central office.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0–2 weeks). Week 1: Establish a simple best practice sharing mechanism. This can be as basic as a shared document, WhatsApp group, or a standing agenda item in area manager meetings where each site shares one thing that is working well. Create a best practice submission form (T194-01) that captures: the practice, the problem it solves, the results observed, and how other sites could implement it. Week 2: Ask each site manager to submit at least one best practice from their location. Compile these into a best practice bulletin and distribute to all sites. Identify the three most impactful practices for immediate network-wide adoption.",
+    "L2": "SYSTEM BUILD (2–8 weeks). Create a quarterly best practice forum where site managers from across the network meet (in person or virtually) to share learnings, discuss challenges, and learn from each other. Establish a validation process: before a best practice is recommended for network-wide adoption, it should be tested at a second site to confirm the results are replicable. Build a best practice library organised by topic (speed of service, waste reduction, team management, customer experience, cleaning, etc.). Introduce a best practice ambassador role at each site — a team member who actively looks for improvements and shares them with the network.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Integrate best practice sharing into the culture through recognition programmes: awards for the most impactful shared practice each quarter, mentions in company communications, and contribution to performance reviews. Create site exchange visits where team members spend a shift at another location to learn their methods firsthand. Feed validated best practices into the SOP library (B188) so they become permanent standard procedures. Track the financial or operational impact of adopted best practices to quantify the value of the network."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Establish a simple best practice sharing channel (shared document, messaging group, or meeting agenda)",
+        "Create a best practice submission form",
+        "Ask each site manager to submit at least one best practice",
+        "Compile initial submissions into a best practice bulletin",
+        "Distribute the bulletin to all sites",
+        "Identify the top three practices for immediate network-wide adoption",
+        "Celebrate early contributions to set the cultural tone"
+      ],
+      "responsible": "Operations Director, Area Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Establish a quarterly best practice forum for site managers",
+        "Create a validation process for testing practices at a second site",
+        "Build a best practice library organised by topic",
+        "Introduce a best practice ambassador role at each site",
+        "Create a standard format for documenting and sharing practices",
+        "Begin tracking adoption rates across sites",
+        "Integrate best practice sharing into area manager visit agendas"
+      ],
+      "responsible": "Operations Director, Area Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Launch a quarterly best practice recognition programme",
+        "Organise site exchange visits for cross-pollination of ideas",
+        "Feed validated best practices into the SOP library",
+        "Track and communicate the financial impact of adopted practices",
+        "Conduct annual best practice network review and improvement",
+        "Ensure best practice sharing is valued in performance reviews"
+      ],
+      "responsible": "Operations Director, Senior Leadership"
+    }
+  },
+  "deliverables": [
+    "Best Practice Submission Form",
+    "Quarterly Best Practice Bulletin",
+    "Best Practice Library (organised by topic)",
+    "Best Practice Forum agenda template",
+    "Best Practice Impact Tracking template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T194-01",
+        "tool_name": "Best Practice Submission Form",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "All Staff",
+        "description": "Simple form for submitting a best practice: what the practice is, what problem it solves, the results observed, how to implement it, and any resources needed."
+      },
+      {
+        "tool_id": "T194-02",
+        "tool_name": "Quarterly Best Practice Bulletin",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Operations Director",
+        "description": "Quarterly newsletter or document compiling the best shared practices from across the network, with implementation guidance and contact details for the originating site."
+      },
+      {
+        "tool_id": "T194-03",
+        "tool_name": "Best Practice Library Index",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Operations Director",
+        "description": "Master index of all validated best practices organised by topic, with status (submitted/validated/adopted), originating site, adoption rate, and measured impact."
+      },
+      {
+        "tool_id": "T194-04",
+        "tool_name": "Best Practice Forum Agenda Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Area Manager",
+        "description": "Structured agenda for quarterly best practice forums: featured practices, implementation updates, challenge discussions, and action planning."
+      },
+      {
+        "tool_id": "T194-05",
+        "tool_name": "Best Practice Impact Tracker",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Operations Director",
+        "description": "Dashboard tracking the operational and financial impact of adopted best practices across the network: practices adopted, sites implementing, measured improvements, and estimated value created."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Best practice sharing is launched enthusiastically but fades within months due to lack of follow-up",
+    "Practices are shared but never validated, leading to ineffective or harmful methods being adopted",
+    "Site managers are too busy with daily operations to engage with the network",
+    "The network becomes a top-down broadcast channel rather than a genuine peer-to-peer sharing platform"
+  ],
+  "kpis": [
+    "At least one best practice submitted per site per quarter",
+    "Quarterly best practice forum attended by all site managers",
+    "At least 3 validated best practices adopted network-wide per year",
+    "Measurable improvement (time, cost, or quality) demonstrated for each adopted practice"
+  ],
+  "dependencies": [
+    "B187",
+    "B191"
+  ],
+  "constraints": [
+    "Best practice sharing requires protected time for site managers to contribute",
+    "Validation at a second site adds time before network-wide rollout",
+    "Best practices must be documented clearly enough for any site to implement without the originator present"
+  ],
+  "time_load": {
+    "L1": "2 hours (sharing channel setup, initial submissions)",
+    "L2": "4 hours/quarter (forums, validation, library management)",
+    "L3": "2 hours/quarter (impact tracking, recognition, SOP integration)"
+  },
+  "review_protocol": "Quarterly best practice forums with all site managers. Monthly review of submissions and adoption progress by operations director. Annual review of best practice network effectiveness and programme refresh.",
+  "meta": {
+    "summary_for_humans": "This block creates a structured framework for identifying, sharing, and implementing best practices across all sites, ensuring that innovation at individual locations benefits the entire network.",
+    "implementation_risks": [
+      "Without ongoing energy and leadership support, best practice networks fizzle out quickly",
+      "Forced participation creates resentment — the network should be valued, not mandated",
+      "Best practices from one site may not transfer directly to another with different conditions"
+    ],
+    "notes_for_engine": "Chain-only block. Depends on B187 (brand audits for identifying good practice) and B191 (area managers as facilitators). Activate when the estate reaches 3+ sites.",
+    "tags": [
+      "best_practice",
+      "knowledge_sharing",
+      "multi_site",
+      "chain",
+      "innovation",
+      "learning",
+      "collaboration",
+      "network"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "chain_cafe",
+      "franchise_cafe"
+    ],
+    "team_size_min": 5,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

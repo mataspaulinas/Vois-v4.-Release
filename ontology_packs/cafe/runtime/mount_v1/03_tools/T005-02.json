@@ -1,0 +1,79 @@
+{
+  "identification": {
+    "tool_id": "T005-02",
+    "tool_name": "Recipe Card & Ingredient Declaration Sheet",
+    "block_id": "B005"
+  },
+  "tool_design": {
+    "format": "template",
+    "role_in_intervention": "Per-item declaration record that proves how the venue decided the allergen status of an item.",
+    "adaptation_variables": [
+      "made_in_house_vs_bought_in",
+      "batch_size",
+      "ingredient_complexity",
+      "menu_category"
+    ],
+    "usage_moment": "When a recipe is created, changed, or reverified",
+    "expected_output": "Completed recipe and ingredient declaration sheet with ingredient list, sub-ingredient notes, allergen outcome, and sign-off",
+    "linked_blocks": [
+      "B005",
+      "B006"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The sheet records headline ingredients but not the sub-ingredients that drive allergen risk.",
+        "what_can_go_wrong": "Hidden allergens are missed and the matrix is built on incomplete evidence.",
+        "early_signals": [
+          "Compound ingredients are listed without brand or declaration detail",
+          "Notes say 'standard pesto' or 'house sauce' with no breakdown"
+        ],
+        "prevention": [
+          "Capture supplier brand and sub-ingredient source for every compound input",
+          "Highlight hidden-risk ingredients during review"
+        ],
+        "mitigation": [
+          "Reopen the declaration sheet and trace every compound ingredient",
+          "Mark the item unresolved until evidence is complete"
+        ],
+        "if_occurs_next_signals": [
+          "hidden_allergen_risk"
+        ],
+        "possible_successor_blocks": [
+          "B006",
+          "B008"
+        ]
+      },
+      {
+        "warning": "Recipe sheets are created once and never revised after yield, garnish, or supplier changes.",
+        "what_can_go_wrong": "The supporting evidence becomes older than the live product.",
+        "early_signals": [
+          "Recipe version does not match current menu spec",
+          "The matrix changes but the declaration sheet date stays old"
+        ],
+        "prevention": [
+          "Link recipe sheet updates to the change-review gate",
+          "Show version number and last checked date on every sheet"
+        ],
+        "mitigation": [
+          "Archive old versions and reissue the current sheet",
+          "Audit every live item that has changed since the last review"
+        ],
+        "if_occurs_next_signals": [
+          "declaration_sheet_obsolescence"
+        ],
+        "possible_successor_blocks": [
+          "B008"
+        ]
+      }
+    ]
+  },
+  "content": "# Recipe Card & Ingredient Declaration Sheet\n\n**Tool ID:** T005-02  \n**Block:** B005 (Allergen Identification & Labelling)  \n**Format:** Template  \n**Primary Role:** Kitchen Lead  \n**Use Moment:** When a recipe is created, amended, or reverified  \n**Output:** One signed declaration sheet per live item\n\n---\n\n## What This Tool Does\n\nThis sheet is the evidence behind a row in the allergen matrix. Complete one for every own-made item and for any bought-in product where the venue needs a structured local record.\n\nUse one sheet per item.\n\n---\n\n## Item Identity\n\n| Field | Complete Here |\n|---|---|\n| Menu item name | |\n| Category | Drink / Food / Bakery / Sauce / Modifier / Special |\n| Item code or POS name | |\n| Version number | |\n| Yield / portion size | |\n| Prepared in-house or bought-in? | |\n| Date issued | |\n| Next review date | |\n| Prepared by | |\n| Verified by | |\n\n---\n\n## Ingredient Declaration Table\n\n| Ingredient / Component | Brand / Supplier | Qty per Batch or Portion | Sub-ingredients Checked? | Allergens Present | Hidden-Risk Notes | Evidence File Ref |\n|---|---|---|---|---|---|---|\n| | | | Yes / No | | | |\n| | | | Yes / No | | | |\n| | | | Yes / No | | | |\n| | | | Yes / No | | | |\n| | | | Yes / No | | | |\n| | | | Yes / No | | | |\n| | | | Yes / No | | | |\n\n---\n\n## Final Allergen Outcome\n\n| Allergen | Present | May Contain / Cross-Contact | Not Present | Notes |\n|---|---|---|---|---|\n| Celery | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | |\n| Gluten | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | |\n| Crustaceans | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | |\n| Eggs | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | |\n| Fish | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | |\n| Lupin | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | |\n| Milk | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | |\n| Molluscs | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | |\n| Mustard | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | |\n| Tree nuts | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | |\n| Peanuts | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | |\n| Sesame | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | |\n| Soya | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | |\n| Sulphites | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | <input type=\"checkbox\" disabled /> | |\n\n---\n\n## Cross-Contact and Service Notes\n\n| Prompt | Notes |\n|---|---|\n| Shared equipment or prep surfaces to mention | |\n| Storage or handling notes for service team | |\n| Customer wording or caution note needed in reference pack | |\n| Does this item feed a PPDS label? | Yes / No |\n\n---\n\n## Sign-Off\n\n<input type=\"checkbox\" disabled /> All ingredients checked against current evidence  \n<input type=\"checkbox\" disabled /> Final allergen outcome matches the matrix  \n<input type=\"checkbox\" disabled /> Customer-facing wording reviewed where needed  \n<input type=\"checkbox\" disabled /> Old version archived if superseded\n\n| Role | Name | Date |\n|---|---|---|\n| Prepared by | | |\n| Verified by | | |\n| Approved for service | | |\n\n---\n\n## Common Failure Patterns\n\n### 1. The sheet lists 'cake mix' or 'house sauce' with no evidence\nBreak down compound ingredients until the allergen conclusion is defendable.\n\n### 2. Recipe sheets are filed but never linked to the live matrix\nUpdate the matrix row and date stamp it on the same day.\n\n### 3. Garnishes and toppings get forgotten\nTreat garnish, drizzle, crumb, and optional add-ons as ingredients, not decoration.\n",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T005-02_recipe_card_and_ingredient_declaration_sheet.md",
+    "migration_method": "manual_enrichment"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "sig_equipment_or_asset_breaks_flow",
+  "name": "Equipment or asset failure breaks the flow",
+  "description": "A piece of equipment, workstation, or physical asset interrupts the operating rhythm enough to change timing, routing, or output quality.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: equipment or asset breaks flow expressed through restaurant live operations",
+  "updated_at": "2026-03-15T17:17:16.779621Z",
+  "domain": "operations",
+  "module": "equipment_reliability",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "equipment failure forces a routing or pacing change",
+    "station output drops because an asset is unreliable",
+    "service timing shifts around a broken or degraded asset"
+  ],
+  "source_types": [
+    "service observation",
+    "manager notes",
+    "maintenance note"
+  ],
+  "temporal_behavior": "event-driven",
+  "likely_co_signals": [
+    "sig_tool_or_system_unavailable",
+    "sig_workaround_is_normalized"
+  ],
+  "adapter_aliases": [
+    "equipment failure breaks service",
+    "asset reliability hit the flow"
+  ]
+}

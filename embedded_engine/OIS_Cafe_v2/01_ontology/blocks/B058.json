@@ -1,0 +1,167 @@
+{
+  "block_id": "B058",
+  "name": "Waste Reduction Strategy",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Translates the waste data collected in B057 into a systematic reduction strategy targeting the root causes of waste — over-production, poor stock rotation, preparation errors, and demand forecasting failures. This block provides the frameworks and actions needed to reduce waste percentage measurably and sustainably.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Analyse waste data to identify the top causes of avoidable waste",
+      "Implement production planning that matches preparation quantities to anticipated demand",
+      "Establish stock rotation and shelf-life management to prevent expiry waste",
+      "Reduce preparation errors through training, standardisation, and quality systems",
+      "Set measurable waste reduction targets and track progress monthly"
+    ],
+    "secondary_objectives": [
+      "Explore waste redistribution channels (Too Good To Go, local food banks, staff meals)",
+      "Optimise ordering quantities to prevent over-stocking of perishable items",
+      "Reduce environmental impact through measurable waste diversion from landfill",
+      "Build a cost-saving case that demonstrates the financial return on waste reduction efforts"
+    ]
+  },
+  "why_this_matters": "Data without action is just paperwork. Once B057 reveals the scale and patterns of waste, the cafe needs a strategy to address the root causes systematically. In UK cafes, the primary drivers of avoidable food waste are over-production (making more than is sold, particularly baked goods and prepared sandwiches), poor stock rotation (older stock pushed to the back of the fridge while newer stock is used first), inadequate demand forecasting (preparing the same quantities on a quiet Tuesday as a busy Saturday), and preparation errors (wrong orders, dropped items, failed batches). Each driver requires a different intervention. Over-production is addressed through production planning that adjusts quantities based on historical sales data and day-of-week patterns. Stock rotation is addressed through rigorous first-in-first-out (FIFO) discipline and clear date labelling. Demand forecasting improves through recording daily sales by item and using that data to predict future demand. Preparation errors reduce through training, standardised recipes (B050, B054), and quality checks. The financial opportunity is compelling. WRAP data suggests that for every £1 invested in food waste reduction, businesses see an average return of £14. A cafe that reduces its waste percentage from 20% to 10% on £3,000 monthly ingredient spend saves £300 per month — £3,600 per year — which flows directly to profit. This is often the single highest-impact intervention available to a cafe owner seeking to improve profitability without raising prices or increasing sales.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Review the waste data from B057 and identify the top five most-wasted items by value and volume. For each, determine the primary cause category. Implement the single most impactful quick win for each: if the top waste item is end-of-day unsold cake, reduce the morning bake quantity by 20-30% tomorrow and observe whether sales are affected (they usually are not — customers rarely buy the last slice anyway). If the top waste is expired milk, review ordering frequency and reduce order quantities. If the top waste is sink shots, invest in barista dial-in training (B039). Week 2: Implement FIFO stock rotation across all perishable storage. Mark every item entering the fridge or storeroom with its delivery date (use a marker pen or date stickers). Train all staff: older stock goes at the front, newer stock goes at the back. During prep, always use the oldest stock first. This single practice prevents a large proportion of expiry waste. Check all current stock for items past or close to their use-by date — use them today if safe, discard if not. Begin adjusting production quantities based on day-of-week demand patterns: if Monday consistently sells 30% fewer sandwiches than Friday, prepare 30% fewer on Monday.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Waste Reduction Action Plan documenting specific interventions for each major waste category. For over-production: create par level sheets for each prepared item by day of week, based on historical sales data. For expiry: implement a weekly stock check with date audit. For preparation errors: link to training from B050 and B054. For customer returns: analyse whether returns indicate a recipe or quality issue. Explore waste redistribution channels: register with Too Good To Go to sell surplus items at reduced prices rather than binning them (this generates revenue from waste and attracts new customers). Contact local food banks about donating suitable surplus. Allow staff to take home end-of-day items that would otherwise be wasted — this is both practical waste reduction and a staff benefit. Establish a monthly waste reduction target: start with a 5% reduction from the baseline, then set progressive targets each quarter. Calculate and publicise the financial savings achieved: 'Last month we saved £180 by reducing waste — that is equivalent to selling 60 extra flat whites.' Investigate composting for unavoidable food waste: coffee grounds (excellent compost material), fruit and vegetable peelings, and plate scraps. Partner with a local composting service or install a small food waste caddy for council food waste collection.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Waste reduction should now be embedded in daily decision-making. Production planning should be automatic and data-driven. Stock rotation should be a habit. The team should feel genuine ownership of waste targets. Pursue WRAP's hospitality sector targets: below 5% waste for the best-performing cafes. Introduce 'zero waste challenges' — weeks where the team attempts to eliminate avoidable waste entirely. Even if the target is not fully achieved, the mindset shift is valuable. Develop innovative uses for common waste items: coffee grounds for garden partnerships or body scrub products, banana skins for banana bread, stale bread for breadcrumbs or croutons. These transform waste into value and create an interesting story for customers. Track the cumulative financial savings from waste reduction since the programme began — this number grows impressively over months and years. Share the environmental impact: tonnes of CO2 saved, kilograms diverted from landfill. Use this data in marketing, sustainability reporting, and applications for environmental business awards."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Review B057 waste data and identify the top five most-wasted items by value",
+        "Implement one quick-win reduction action for each top five item",
+        "Implement FIFO stock rotation across all perishable storage",
+        "Mark all incoming stock with delivery dates",
+        "Adjust production quantities based on day-of-week demand patterns",
+        "Conduct a stock check clearing any expired items",
+        "Brief the team on the waste reduction objective and quick wins"
+      ],
+      "responsible": "Manager, Kitchen"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Waste Reduction Action Plan with interventions for each cause category",
+        "Create par level sheets for prepared items adjusted by day of week",
+        "Register with Too Good To Go or similar platform for surplus sales",
+        "Establish a weekly stock check with date audit protocol",
+        "Set monthly waste reduction targets and track progress",
+        "Investigate composting and food waste collection options",
+        "Calculate and communicate financial savings from waste reduction"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Pursue WRAP's best-practice waste target (below 5%)",
+        "Introduce periodic 'zero waste challenges' for the team",
+        "Develop innovative uses for common waste materials",
+        "Track cumulative financial and environmental savings",
+        "Use waste reduction data in marketing and sustainability messaging",
+        "Apply for environmental business awards and certifications"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Waste Reduction Action Plan",
+    "Par Level Sheets for prepared items (by day of week)",
+    "FIFO Stock Rotation SOP",
+    "Monthly Waste Reduction Progress Report",
+    "Surplus Redistribution Channel Guide (Too Good To Go, food banks, staff meals)"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T058-01",
+        "tool_name": "Waste Reduction Action Plan",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Structured document listing the top waste items, root cause analysis for each, specific reduction interventions, responsible persons, target dates, and expected savings."
+      },
+      {
+        "tool_id": "T058-02",
+        "tool_name": "Par Level Sheet",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Kitchen",
+        "description": "Production planning sheet showing the target preparation quantity for each item by day of week, based on historical sales data. Adjusted monthly as demand patterns shift seasonally."
+      },
+      {
+        "tool_id": "T058-03",
+        "tool_name": "FIFO Stock Rotation SOP",
+        "level": "L1",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure for first-in-first-out stock rotation: date marking on receipt, storage positioning, prep usage sequence, and weekly date audit procedure."
+      },
+      {
+        "tool_id": "T058-04",
+        "tool_name": "Weekly Stock Date Audit Checklist",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Kitchen",
+        "description": "Weekly inspection checklist for all perishable stock: verify date labels present, check use-by dates, identify items within 48 hours of expiry for priority use, and flag items for disposal."
+      },
+      {
+        "tool_id": "T058-05",
+        "tool_name": "Monthly Waste Reduction Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly report tracking waste percentage trend, progress against targets, financial savings achieved, redistribution volumes (Too Good To Go, donations), and environmental impact metrics."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Reduction targets are set without addressing root causes, creating pressure to hide waste rather than reduce it",
+    "FIFO is implemented but not maintained — during busy restocking, newer items end up at the front again",
+    "Par levels are set once and never adjusted for seasonal demand changes, school holidays, or weather patterns",
+    "Waste redistribution channels create administrative overhead without meaningful volume reduction"
+  ],
+  "kpis": [
+    "Waste percentage reduced by at least 5 percentage points within the first three months",
+    "FIFO stock rotation verified during 100% of weekly date audits",
+    "Par level adherence above 80% (prepared quantities within 20% of target)",
+    "Financial savings from waste reduction quantified and reported monthly"
+  ],
+  "dependencies": ["B057"],
+  "constraints": [
+    "Waste reduction must not compromise food safety — never extend shelf lives or relax temperature controls to reduce waste",
+    "Too Good To Go and similar platforms require registration, item listing, and operational management",
+    "Par level accuracy depends on reliable sales data — invest in proper EPOS tracking"
+  ],
+  "time_load": {
+    "L1": "3 hours (data analysis, quick wins, FIFO implementation, team briefing)",
+    "L2": "8 hours (action plan, par levels, redistribution setup, stock audit system)",
+    "L3": "2 hours/month (target review, innovation, reporting, benchmarking)"
+  },
+  "review_protocol": "Weekly stock date audit. Weekly waste review meeting (from B057). Monthly waste percentage tracking against targets. Monthly par level accuracy check. Quarterly comprehensive waste strategy review.",
+  "meta": {
+    "summary_for_humans": "This block turns waste data into action, implementing systematic reduction strategies targeting over-production, stock rotation, preparation errors, and demand forecasting. It covers par levels, FIFO rotation, waste redistribution channels, and measurable reduction targets.",
+    "implementation_risks": [
+      "Aggressive waste reduction targets can lead to stock-outs that disappoint customers",
+      "Too Good To Go bags require end-of-day preparation and collection management",
+      "Staff may feel constrained by par levels and unable to respond to unexpected demand spikes"
+    ],
+    "notes_for_engine": "Activate after B057 has produced at least 2 weeks of waste data. The strategy requires data to target interventions effectively. Flag if signals indicate high waste costs, frequent end-of-day discards, or poor stock rotation practices.",
+    "tags": ["waste", "reduction", "strategy", "FIFO", "par_levels", "sustainability", "cost_saving", "WRAP", "Too_Good_To_Go"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

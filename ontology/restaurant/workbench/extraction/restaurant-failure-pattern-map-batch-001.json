@@ -1,0 +1,77 @@
+{
+  "vertical": "restaurant",
+  "failure_pattern_map": [
+    {
+      "source_id": "fm_host_flow_breakdown",
+      "target_id": "rp_host_pacing_reset",
+      "weight": 1.0,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: front-of-house issues should map to clear response families",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_deployment_misalignment",
+      "target_id": "rp_deployment_reset",
+      "weight": 1.0,
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: capacity and deployment need structured correction",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_pass_communication_gap",
+      "target_id": "rp_pass_communication_reset",
+      "weight": 1.0,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: handoff failures should activate pass communication work",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_open_close_control_gap",
+      "target_id": "rp_open_close_reset",
+      "weight": 1.0,
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: unmanaged resets create chronic drag",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_inventory_accuracy_gap",
+      "target_id": "rp_inventory_accuracy_reset",
+      "weight": 1.0,
+      "owner": "recovery-team",
+      "source_ref": "compass-market-analysis: accurate stock is a prerequisite for intelligence",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_bar_workflow_breakdown",
+      "target_id": "rp_bar_execution_reset",
+      "weight": 1.0,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: bar execution deserves its own response pattern",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_shift_readiness_gap",
+      "target_id": "rp_open_close_reset",
+      "weight": 0.7,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: readiness depends on opening discipline",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_shift_readiness_gap",
+      "target_id": "rp_pass_communication_reset",
+      "weight": 0.5,
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: readiness and communication reinforce each other",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_manager_presence_gap",
+      "target_id": "rp_manager_presence_reset",
+      "weight": 1.0,
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: management presence should be deliberate",
+      "status": "review"
+    }
+  ]
+}

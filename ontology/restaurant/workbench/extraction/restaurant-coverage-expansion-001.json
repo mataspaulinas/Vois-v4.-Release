@@ -1,0 +1,793 @@
+{
+  "vertical": "restaurant",
+  "signals": [
+    {
+      "id": "sig_ownership_confusion_in_service",
+      "name": "Ownership confusion in service",
+      "description": "Work stalls or doubles back because the team is unsure who owns the next action, escalation, or guest-facing decision.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: role clarity failures appear first as ambiguous ownership in live flow",
+      "status": "review",
+      "domain": "workforce",
+      "module": "role_ownership",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "live_observation",
+        "manager_notes"
+      ],
+      "source_types": [
+        "audit_notes",
+        "consultant_observation"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_staff_confusion",
+        "sig_service_delay"
+      ],
+      "adapter_aliases": [
+        "unclear_owner",
+        "nobody_took_it"
+      ]
+    },
+    {
+      "id": "sig_standard_steps_skipped",
+      "name": "Standard steps skipped",
+      "description": "Critical service or prep steps are being skipped often enough that output consistency depends on who is working.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: standards drift is visible when basic steps stop being reliably repeated",
+      "status": "review",
+      "domain": "service_delivery",
+      "module": "standard_execution",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "live_observation",
+        "quality_check"
+      ],
+      "source_types": [
+        "audit_notes",
+        "manager_walk"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_prep_inconsistency",
+        "sig_guest_complaints"
+      ],
+      "adapter_aliases": [
+        "steps_skipped",
+        "standard_not_followed"
+      ]
+    },
+    {
+      "id": "sig_equipment_breaks_service_flow",
+      "name": "Equipment breaks service flow",
+      "description": "Equipment or critical assets fail at the moment they are needed and force the service flow into delay, improvisation, or degraded quality.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: asset reliability should be treated as a live operational signal, not maintenance background",
+      "status": "review",
+      "domain": "kitchen_operations",
+      "module": "equipment_reliability",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "incident_log",
+        "live_observation"
+      ],
+      "source_types": [
+        "manager_notes",
+        "staff_report"
+      ],
+      "temporal_behavior": "episodic",
+      "likely_co_signals": [
+        "sig_ticket_bottleneck",
+        "sig_line_check_missing"
+      ],
+      "adapter_aliases": [
+        "equipment_failure",
+        "critical_asset_down"
+      ]
+    },
+    {
+      "id": "sig_workaround_is_normalized",
+      "name": "Workaround has become normal",
+      "description": "The team routinely compensates for missing tools, broken equipment, or weak systems with improvised workarounds that are now treated as normal.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: normal workarounds are hidden evidence of tool friction and unclosed learning loops",
+      "status": "review",
+      "domain": "kitchen_operations",
+      "module": "workaround_management",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "staff_report",
+        "live_observation"
+      ],
+      "source_types": [
+        "audit_notes",
+        "chat"
+      ],
+      "temporal_behavior": "persistent",
+      "likely_co_signals": [
+        "sig_staff_confusion",
+        "sig_equipment_breaks_service_flow"
+      ],
+      "adapter_aliases": [
+        "temporary_fix_is_permanent",
+        "normalised_workaround"
+      ]
+    },
+    {
+      "id": "sig_complaint_response_defensive",
+      "name": "Complaint response turns defensive",
+      "description": "Service failures trigger defensiveness, excuse-making, or inconsistent recovery instead of calm ownership and containment.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: recovery quality is visible in the first response to a guest-facing failure",
+      "status": "review",
+      "domain": "guest_experience",
+      "module": "guest_recovery_protocol",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "review_text",
+        "mystery_guest"
+      ],
+      "source_types": [
+        "complaint_log",
+        "audit_notes"
+      ],
+      "temporal_behavior": "episodic",
+      "likely_co_signals": [
+        "sig_guest_complaints"
+      ],
+      "adapter_aliases": [
+        "defensive_recovery",
+        "poor_complaint_handling"
+      ]
+    },
+    {
+      "id": "sig_same_issue_repeats_without_review",
+      "name": "Same issue repeats without review",
+      "description": "The venue keeps reliving the same preventable problem because it is discussed informally but never closed through review and operating change.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: repeated unreviewed issues are direct evidence of a missing learning loop",
+      "status": "review",
+      "domain": "leadership_rhythm",
+      "module": "post_shift_review",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "manager_notes",
+        "incident_log"
+      ],
+      "source_types": [
+        "audit_notes",
+        "progress_log"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_guest_complaints",
+        "sig_voids_rising",
+        "sig_waste_spike"
+      ],
+      "adapter_aliases": [
+        "repeat_issue_no_review",
+        "same_problem_again"
+      ]
+    }
+  ],
+  "failure_modes": [
+    {
+      "id": "fm_role_ownership_blur",
+      "name": "Role ownership blur",
+      "description": "Critical actions, escalations, or service decisions do not have ownership that is explicit enough to hold under live pressure.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: role clarity failure expressed through live service ownership ambiguity",
+      "status": "review",
+      "domain": "workforce"
+    },
+    {
+      "id": "fm_service_standard_drift",
+      "name": "Service standard drift",
+      "description": "The venue has nominal standards, but daily execution has drifted far enough that output consistency depends on who is on shift.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: standards drift expressed through hospitality variation and skipped basics",
+      "status": "review",
+      "domain": "service_delivery"
+    },
+    {
+      "id": "fm_tooling_friction",
+      "name": "Tooling friction",
+      "description": "Work is repeatedly slowed, improvised, or made more fragile because the tools, systems, or information surfaces do not support the real operating flow cleanly.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: tool or resource friction expressed through repeated workarounds",
+      "status": "review",
+      "domain": "kitchen_operations"
+    },
+    {
+      "id": "fm_equipment_reliability_gap",
+      "name": "Equipment reliability gap",
+      "description": "Critical equipment or operational assets cannot be relied on during the moments that matter most to service flow.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: asset reliability failure expressed through live service disruption",
+      "status": "review",
+      "domain": "kitchen_operations"
+    },
+    {
+      "id": "fm_guest_recovery_breakdown",
+      "name": "Guest recovery breakdown",
+      "description": "The venue does not recover guest-facing failures with enough ownership, clarity, consistency, or follow-up to restore trust cleanly.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: exception recovery failure expressed through poor complaint handling",
+      "status": "review",
+      "domain": "guest_experience"
+    },
+    {
+      "id": "fm_learning_loop_absence",
+      "name": "Learning loop absence",
+      "description": "The venue experiences the same recurring breakdowns without a short review loop that turns incidents into changed behavior, standards, or checks.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: learning failure expressed through repeated unresolved operational pain",
+      "status": "review",
+      "domain": "leadership_rhythm"
+    }
+  ],
+  "response_patterns": [
+    {
+      "id": "rp_role_visibility_reset",
+      "name": "Role visibility reset",
+      "description": "Make ownership, escalation, and live responsibility visible enough that ambiguous work stops dying between people.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: stabilize visibility around who owns what next",
+      "status": "review",
+      "focus": "ownership_visibility"
+    },
+    {
+      "id": "rp_standard_work_reset",
+      "name": "Standard work reset",
+      "description": "Reinforce a small number of critical operating standards until execution variation narrows and consistency returns.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: standardize execution through observed reinforcement, not generic reminders",
+      "status": "review",
+      "focus": "standard_execution"
+    },
+    {
+      "id": "rp_reliability_restore",
+      "name": "Reliability restore",
+      "description": "Expose recurring breakers, remove normalized workarounds, and restore the tools or assets the flow depends on.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: remove friction and restore reliability at the moment of operational need",
+      "status": "review",
+      "focus": "reliability_restoration"
+    },
+    {
+      "id": "rp_recovery_protocol_reset",
+      "name": "Recovery protocol reset",
+      "description": "Install a consistent recovery sequence so guest-facing failures are contained with ownership, calmness, and follow-up.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: strengthen recovery through a repeatable protocol",
+      "status": "review",
+      "focus": "service_recovery"
+    },
+    {
+      "id": "rp_learning_loop_reset",
+      "name": "Learning loop reset",
+      "description": "Install a short review loop that turns repeated issues into explicit next actions, standards, or system fixes.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: verify and learn from repeated operational breakdowns",
+      "status": "review",
+      "focus": "learning_loop"
+    },
+    {
+      "id": "rp_offer_complexity_trim",
+      "name": "Offer complexity trim",
+      "description": "Reduce menu or service complexity that the current operation cannot execute without repeated instability.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: reduce operational complexity when the offer is outrunning execution capacity",
+      "status": "review",
+      "focus": "offer_simplification"
+    }
+  ],
+  "blocks": [
+    {
+      "id": "blk_standard_work_observation_loop",
+      "name": "Install standard work observation loop",
+      "description": "Choose a small number of critical service standards, observe them live, coach misses in the moment, and review drift at the end of the shift.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: standards only tighten when they are observed and coached in live service",
+      "status": "review",
+      "effort_hours": 2.5,
+      "dependencies": [
+        "blk_build_floor_training"
+      ],
+      "tool_ids": [
+        "tool_standard_work_observation_sheet"
+      ],
+      "response_pattern_ids": [
+        "rp_standard_work_reset"
+      ],
+      "entry_conditions": [
+        "A few critical standards are worth protecting because drift is visible and costly.",
+        "A leader can observe and coach during live service without disappearing into admin."
+      ],
+      "contraindications": [
+        "Do not observe ten standards at once when the team can only absorb two or three.",
+        "Do not treat the loop as punitive scorekeeping instead of live correction."
+      ],
+      "owner_role": "floor_lead",
+      "expected_time_to_effect_days": 2,
+      "proof_of_completion": [
+        "A short standard observation sheet exists for live service use.",
+        "At least one shift has completed observe, coach, and review against the chosen standards.",
+        "The venue can point to repeated drift patterns and the coaching responses used."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "quality_and_standards",
+        "live_execution",
+        "team_capability_and_training"
+      ],
+      "failure_family_ids": [
+        "standards_drift",
+        "capability_gap"
+      ]
+    },
+    {
+      "id": "blk_capture_breakers_and_workarounds",
+      "name": "Capture breakers and workarounds",
+      "description": "Create a simple reliability board for recurring equipment failures, missing tools, and normalized workarounds so the venue can assign fixes before the next shift absorbs them again.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: reliability improves when hidden workarounds and repeated breakers become visible and owned",
+      "status": "review",
+      "effort_hours": 2.0,
+      "dependencies": [
+        "blk_opening_line_readiness_check"
+      ],
+      "tool_ids": [
+        "tool_breaker_and_workaround_log"
+      ],
+      "response_pattern_ids": [
+        "rp_reliability_restore",
+        "rp_role_visibility_reset"
+      ],
+      "entry_conditions": [
+        "The venue is repeatedly improvising around missing tools, broken equipment, or unreliable systems.",
+        "Someone can own each breaker and decide whether it is fixed, replaced, or escalated."
+      ],
+      "contraindications": [
+        "Do not log breakers without assigning a real fix owner and deadline.",
+        "Do not normalize workarounds by documenting them unless the underlying issue is also escalated."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 2,
+      "proof_of_completion": [
+        "A visible breaker and workaround log exists with owner, status, and next action.",
+        "Recurring tool or equipment issues are reviewed before the next service cycle.",
+        "At least one normalized workaround has been removed or escalated through the log."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "tools_and_asset_reliability",
+        "readiness_and_setup",
+        "learning_and_improvement"
+      ],
+      "failure_family_ids": [
+        "tool_or_resource_friction",
+        "asset_reliability_failure",
+        "learning_failure"
+      ]
+    },
+    {
+      "id": "blk_post_shift_learning_review",
+      "name": "Run post-shift learning review",
+      "description": "Run a short post-shift review of repeated breakdowns, what actually happened, and what changes before the next cycle so problems stop coming back unchallenged.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: learning compounds only when incidents are turned into changed operating truth quickly",
+      "status": "review",
+      "effort_hours": 1.5,
+      "dependencies": [
+        "blk_install_pre_shift_brief"
+      ],
+      "tool_ids": [
+        "tool_post_shift_learning_review"
+      ],
+      "response_pattern_ids": [
+        "rp_learning_loop_reset"
+      ],
+      "entry_conditions": [
+        "The same preventable issue is recurring and the venue can review it while details are still fresh.",
+        "A leader is willing to close the loop with explicit next actions rather than a vague debrief."
+      ],
+      "contraindications": [
+        "Do not turn the review into emotional venting with no operating change.",
+        "Do not review every issue every night; focus on repeated or high-cost breakdowns."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 1,
+      "proof_of_completion": [
+        "A short post-shift review record exists with issue, cause, and next change.",
+        "At least one repeated issue has a named owner and explicit follow-up before the next shift.",
+        "The review distinguishes noise from recurring systemic problems."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "learning_and_improvement",
+        "leadership_and_management_rhythm",
+        "commercial_and_control_loops"
+      ],
+      "failure_family_ids": [
+        "learning_failure",
+        "accountability_failure"
+      ]
+    },
+    {
+      "id": "blk_offer_complexity_trim",
+      "name": "Trim offer complexity",
+      "description": "Identify the menu or service elements creating disproportionate operational instability and simplify them until the current system can execute reliably again.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: complexity should be reduced when the promise outruns the operation's current strength",
+      "status": "review",
+      "effort_hours": 4.0,
+      "dependencies": [
+        "blk_map_service_steps"
+      ],
+      "tool_ids": [
+        "tool_complexity_trim_matrix"
+      ],
+      "response_pattern_ids": [
+        "rp_offer_complexity_trim"
+      ],
+      "entry_conditions": [
+        "A subset of menu or service elements creates repeated instability, remakes, or bottlenecks.",
+        "Leadership is willing to remove, pause, simplify, or resequence parts of the offer."
+      ],
+      "contraindications": [
+        "Do not trim complexity without linking decisions to observed execution pain and value impact.",
+        "Do not keep everything sacred when the operation is clearly unable to carry it."
+      ],
+      "owner_role": "venue_manager",
+      "expected_time_to_effect_days": 5,
+      "proof_of_completion": [
+        "A complexity review exists showing which offer elements create disproportionate drag.",
+        "At least one menu or service element has been simplified, paused, or resequenced.",
+        "The venue can explain why the trimmed complexity should improve execution reliability."
+      ],
+      "successor_block_ids": [],
+      "service_module_ids": [
+        "promise_and_expectations",
+        "live_execution",
+        "commercial_and_control_loops"
+      ],
+      "failure_family_ids": [
+        "commercial_discipline_failure",
+        "workflow_design_failure"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "id": "tool_standard_work_observation_sheet",
+      "name": "Standard work observation sheet",
+      "description": "Short observation sheet for tracking whether critical service standards are actually being executed, coached, and reinforced in live service.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: standardization depends on visible observation, not memory of training",
+      "status": "review",
+      "category": "quality",
+      "format": "observation_sheet",
+      "usage_moment": "Use during live service when checking a small set of critical standards and coaching misses.",
+      "expected_output": "A short record of observed standards, misses, coaching actions, and repeated drift patterns.",
+      "adaptation_variables": [
+        "critical_standards",
+        "service_period",
+        "role_set",
+        "coach"
+      ],
+      "block_ids": [
+        "blk_standard_work_observation_loop"
+      ]
+    },
+    {
+      "id": "tool_breaker_and_workaround_log",
+      "name": "Breaker and workaround log",
+      "description": "Visible log of repeated equipment failures, missing tools, system frictions, and the workarounds the team is using to survive them.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: reliability restoration starts by exposing the breakers the team has normalized",
+      "status": "review",
+      "category": "reliability",
+      "format": "issue_log",
+      "usage_moment": "Use whenever recurring breakers or workarounds surface during readiness checks or live service.",
+      "expected_output": "A visible reliability list with issue, workaround, owner, urgency, and next corrective action.",
+      "adaptation_variables": [
+        "asset_types",
+        "shift_structure",
+        "repair_owner",
+        "urgency_rules"
+      ],
+      "block_ids": [
+        "blk_capture_breakers_and_workarounds"
+      ]
+    },
+    {
+      "id": "tool_post_shift_learning_review",
+      "name": "Post-shift learning review",
+      "description": "Short review template for repeated issues, what actually happened, what changes next, and who owns the follow-up before the next service cycle begins.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: learning loops need a short, repeatable review surface tied to action",
+      "status": "review",
+      "category": "learning",
+      "format": "review_template",
+      "usage_moment": "Use after service when repeated or high-cost breakdowns deserve same-day learning closure.",
+      "expected_output": "A concise review with issue, cause hypothesis, next change, and named owner.",
+      "adaptation_variables": [
+        "review_scope",
+        "issue_type",
+        "owner_roles",
+        "next_shift_timing"
+      ],
+      "block_ids": [
+        "blk_post_shift_learning_review"
+      ]
+    },
+    {
+      "id": "tool_complexity_trim_matrix",
+      "name": "Complexity trim matrix",
+      "description": "Decision matrix for identifying which menu or service elements create disproportionate execution drag relative to value and should be simplified first.",
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: complexity should be trimmed with explicit tradeoff logic, not instinct alone",
+      "status": "review",
+      "category": "strategy",
+      "format": "decision_matrix",
+      "usage_moment": "Use when the current offer is creating repeated instability and leadership is reviewing simplification options.",
+      "expected_output": "A ranked view of high-complexity, low-defensibility offer elements with proposed simplification actions.",
+      "adaptation_variables": [
+        "menu_scope",
+        "station_load",
+        "margin_signal",
+        "guest_value"
+      ],
+      "block_ids": [
+        "blk_offer_complexity_trim"
+      ]
+    }
+  ],
+  "signal_failure_map": [
+    {
+      "source_id": "sig_ownership_confusion_in_service",
+      "target_id": "fm_role_ownership_blur",
+      "weight": 0.92,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: repeated ownership ambiguity is the direct operating signal for role clarity failure",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_ownership_confusion_in_service",
+      "target_id": "fm_training_gap",
+      "weight": 0.48,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: some ownership confusion is reinforced by weak role training",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_standard_steps_skipped",
+      "target_id": "fm_service_standard_drift",
+      "weight": 0.95,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: skipped basics are the clearest surface signal of standards drift",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_standard_steps_skipped",
+      "target_id": "fm_training_gap",
+      "weight": 0.57,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: standard drift often persists because reinforcement and practice are weak",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_equipment_breaks_service_flow",
+      "target_id": "fm_equipment_reliability_gap",
+      "weight": 0.95,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: live disruption from failing assets is a direct asset-reliability signal",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_equipment_breaks_service_flow",
+      "target_id": "fm_tooling_friction",
+      "weight": 0.72,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: the same disruption also reveals friction in the tool and support system around the work",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_workaround_is_normalized",
+      "target_id": "fm_tooling_friction",
+      "weight": 0.9,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: normalized workarounds are a first-order signal of persistent tooling friction",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_workaround_is_normalized",
+      "target_id": "fm_learning_loop_absence",
+      "weight": 0.54,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: when workarounds become normal, the venue is also failing to learn from repeated pain",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_complaint_response_defensive",
+      "target_id": "fm_guest_recovery_breakdown",
+      "weight": 0.95,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: defensive complaint handling is the surface form of weak recovery protocol",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_complaint_response_defensive",
+      "target_id": "fm_manager_presence_gap",
+      "weight": 0.42,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: poor recovery also persists where leadership is absent from live failure moments",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_same_issue_repeats_without_review",
+      "target_id": "fm_learning_loop_absence",
+      "weight": 0.95,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: repeated unreviewed issues are the direct signal of a missing learning loop",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_same_issue_repeats_without_review",
+      "target_id": "fm_controls_gap",
+      "weight": 0.46,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: some repeated issues also persist because review cadences and control loops are weak",
+      "status": "review"
+    }
+  ],
+  "failure_pattern_map": [
+    {
+      "source_id": "fm_role_ownership_blur",
+      "target_id": "rp_role_visibility_reset",
+      "weight": 0.93,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: ownership ambiguity is corrected first by making responsibility and escalation visible",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_service_standard_drift",
+      "target_id": "rp_standard_work_reset",
+      "weight": 0.96,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: drifting standards require direct reinforcement of standard work",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_tooling_friction",
+      "target_id": "rp_reliability_restore",
+      "weight": 0.88,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: repeated tool friction should activate reliability restoration, not just local heroics",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_equipment_reliability_gap",
+      "target_id": "rp_reliability_restore",
+      "weight": 0.97,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: failing assets should trigger explicit reliability restoration",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_guest_recovery_breakdown",
+      "target_id": "rp_recovery_protocol_reset",
+      "weight": 0.96,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: poor recovery needs a protocol reset, not improvised apologies",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_learning_loop_absence",
+      "target_id": "rp_learning_loop_reset",
+      "weight": 0.97,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: repeated unresolved issues should trigger a learning-loop intervention",
+      "status": "review"
+    },
+    {
+      "source_id": "fm_menu_complexity",
+      "target_id": "rp_offer_complexity_trim",
+      "weight": 0.93,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: when the offer outgrows the operation, complexity should be reduced directly",
+      "status": "review"
+    }
+  ],
+  "pattern_block_map": [
+    {
+      "source_id": "rp_role_visibility_reset",
+      "target_id": "blk_create_station_roles",
+      "weight": 0.95,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: visible role ownership is rebuilt through explicit station-role design",
+      "status": "review"
+    },
+    {
+      "source_id": "rp_role_visibility_reset",
+      "target_id": "blk_install_pre_shift_brief",
+      "weight": 0.62,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: role visibility is reinforced when the shift begins with shared ownership and escalation cues",
+      "status": "review"
+    },
+    {
+      "source_id": "rp_standard_work_reset",
+      "target_id": "blk_standard_work_observation_loop",
+      "weight": 1.0,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: the primary intervention for standards drift is live standard observation and coaching",
+      "status": "review"
+    },
+    {
+      "source_id": "rp_standard_work_reset",
+      "target_id": "blk_build_floor_training",
+      "weight": 0.82,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: standard work holds better when training and reinforcement support it",
+      "status": "review"
+    },
+    {
+      "source_id": "rp_reliability_restore",
+      "target_id": "blk_capture_breakers_and_workarounds",
+      "weight": 1.0,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: reliability restoration starts with exposing breakers and owning their fix path",
+      "status": "review"
+    },
+    {
+      "source_id": "rp_reliability_restore",
+      "target_id": "blk_opening_line_readiness_check",
+      "weight": 0.58,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: readiness checks are also a leverage point for catching reliability failures early",
+      "status": "review"
+    },
+    {
+      "source_id": "rp_recovery_protocol_reset",
+      "target_id": "blk_guest_recovery_loop",
+      "weight": 1.0,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: guest recovery protocol becomes real through a closed-loop recovery block",
+      "status": "review"
+    },
+    {
+      "source_id": "rp_learning_loop_reset",
+      "target_id": "blk_post_shift_learning_review",
+      "weight": 1.0,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: learning resets require a short review loop tied directly to follow-through",
+      "status": "review"
+    },
+    {
+      "source_id": "rp_learning_loop_reset",
+      "target_id": "blk_void_review_huddle",
+      "weight": 0.64,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: existing loss reviews can reinforce the learning loop when follow-through is explicit",
+      "status": "review"
+    },
+    {
+      "source_id": "rp_learning_loop_reset",
+      "target_id": "blk_daily_waste_review",
+      "weight": 0.52,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: waste review becomes more valuable when it explicitly feeds learning and next-shift change",
+      "status": "review"
+    },
+    {
+      "source_id": "rp_offer_complexity_trim",
+      "target_id": "blk_offer_complexity_trim",
+      "weight": 1.0,
+      "owner": "ontology-gold-set",
+      "source_ref": "core-v2: operational complexity is reduced through explicit offer-trim decisions",
+      "status": "review"
+    }
+  ]
+}

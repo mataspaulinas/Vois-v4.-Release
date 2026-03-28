@@ -1,0 +1,157 @@
+{
+  "block_id": "B102",
+  "name": "Delivery Packaging Standards",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Defines packaging standards that ensure food and drink quality is maintained from cafe to customer's door, covering material selection, assembly techniques, labelling, and presentation. This block recognises that the delivery packaging is the cafe's brand ambassador when the customer cannot experience the physical space.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Select packaging materials that maintain food temperature, prevent leakage, and present professionally",
+      "Create assembly standards for each delivery menu category (hot drinks, cold drinks, sandwiches, salads, pastries, hot food)",
+      "Ensure all packaging meets food safety labelling requirements (allergens, use-by dates, business name and address)",
+      "Balance packaging quality with cost — every penny of packaging comes directly off the margin",
+      "Reduce environmental impact through sustainable packaging choices that align with customer expectations"
+    ],
+    "secondary_objectives": [
+      "Build brand recognition through consistent, branded packaging that stands out on the doorstep",
+      "Reduce delivery complaint rates caused by spills, temperature loss, or damaged items",
+      "Ensure compliance with UK food labelling regulations for distance selling (Food Information Regulations 2014)"
+    ]
+  },
+  "why_this_matters": "When a customer orders from a cafe through Deliveroo, Uber Eats, or Just Eat, the packaging is the cafe. There is no beautifully designed interior, no friendly barista, no aroma of fresh coffee. There is only a bag, a box, and whatever is inside. If the sandwich arrives crushed, the soup has leaked, or the coffee is lukewarm, the customer's entire impression of the cafe is shaped by that single experience. Delivery platforms display star ratings prominently, and packaging failures drive negative reviews that suppress future order volumes. In practical terms, a poorly packaged delivery order costs the cafe twice: once in the immediate refund or credit the platform issues to the unhappy customer (often without even consulting the cafe), and again in the reduced visibility and order volume that follows declining ratings. UK food labelling regulations for distance selling add a compliance dimension — all food delivered to a customer must include the business name and address, a full list of ingredients with allergens emphasised, use-by or best-before dates where applicable, and storage instructions. Non-compliance can result in enforcement action from Trading Standards. Packaging cost is a critical consideration: the average UK cafe spends 3-6% of delivery revenue on packaging alone, and this comes directly off the already commission-squeezed margin. Every packaging decision must balance quality, cost, sustainability, and regulatory compliance simultaneously.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Audit current delivery packaging by ordering from the cafe's own delivery platforms (or asking a friend to) and assessing the customer experience: Does the food arrive at the correct temperature? Is there any leakage? Are items separated appropriately? Is the packaging clean and professional? Is allergen information included? Compile a list of every packaging item currently used: cups, lids, bags, boxes, wraps, napkins, cutlery, stickers, labels. For each, record the supplier, unit cost, and whether it meets the need. Identify the top 3 packaging failures from delivery reviews and platform feedback — these are the problems to solve first. Week 2: Source improved packaging for the identified problem areas. Key priorities: double-wall or insulated cups for hot drinks (the standard single-wall cup loses 10°C in 15 minutes), leak-proof containers for soups and sauces, and rigid boxes for items that crush easily (pastries, cakes, salads). Ensure all packaging can carry a printed or stickered label with the cafe name, allergen information, and use-by date. Create a simple packaging assembly guide — a laminated card showing which container to use for each menu item and how to assemble the order (e.g., 'place salad in large deli box, dressing in a separate pot, cutlery in the bag').",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Delivery Packaging SOP that covers every menu item available on delivery: which container, which lid, how to seal, how to label, and how to bag. Include photos for visual reference so any team member can pack an order correctly. Introduce branded packaging elements — even a simple branded sticker on a plain kraft bag significantly improves brand recognition and customer perception. Calculate the true packaging cost per delivery order and factor this into delivery menu pricing (see B111 and B114). Source sustainable packaging where financially viable — UK customers increasingly expect recyclable or compostable packaging, and platforms like Deliveroo highlight eco-friendly packaging in their app. Test packaging performance: prepare a delivery order, package it, leave it for 20 minutes (simulating delivery time), then assess temperature, presentation, and structural integrity. This simple test reveals problems before customers do. Establish a packaging stock check as part of the daily mid-service check (B096) to ensure the cafe never runs out of delivery packaging during a busy service.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Packaging should be a brand-building investment, not just a cost to minimise. Develop seasonal packaging variations — a festive sticker in December, a summer design in July — that create social media-worthy unboxing moments. Negotiate packaging supply agreements with bulk pricing, reviewing at least quarterly. Track delivery packaging complaints separately from food quality complaints to isolate packaging-specific issues. Explore branded insulated bags that riders can use (some platforms facilitate this). Investigate compostable packaging certifications (PAS 9017, EN 13432) and communicate sustainability commitments to customers via packaging inserts or stickers. Review packaging standards quarterly, incorporating customer feedback, cost data, and sustainability developments."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Audit current delivery packaging by ordering from the cafe and assessing the experience",
+        "Inventory all current packaging items with suppliers and unit costs",
+        "Identify top 3 packaging failures from delivery reviews and platform feedback",
+        "Source improved packaging for the identified problem areas (insulated cups, leak-proof containers)",
+        "Create a laminated packaging assembly guide for each delivery menu item",
+        "Ensure all packaging carries cafe name, allergen info, and use-by date as required",
+        "Place packaging supplies in a logical, accessible order near the delivery staging area"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Delivery Packaging SOP with photos for every menu item",
+        "Introduce branded packaging elements (stickers, stamped bags, printed cups)",
+        "Calculate true packaging cost per delivery order and adjust menu pricing accordingly",
+        "Source sustainable packaging where financially viable",
+        "Conduct packaging performance tests simulating 20-minute delivery times",
+        "Add delivery packaging to daily mid-service stock check (B096)",
+        "Train all team members on correct packaging assembly using the SOP"
+      ],
+      "responsible": "Manager, Shift Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Develop seasonal packaging variations for brand-building moments",
+        "Negotiate bulk packaging supply agreements with quarterly review",
+        "Track delivery packaging complaints separately from food quality complaints",
+        "Explore compostable packaging certifications and sustainability communication",
+        "Review packaging standards quarterly incorporating feedback and cost data"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Packaging Audit Report with cost and quality assessment",
+    "Delivery Packaging SOP with photos",
+    "Packaging Assembly Guide (laminated reference card)",
+    "Packaging Cost Per Order calculation",
+    "Quarterly Packaging Review report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T102-01",
+        "tool_name": "Packaging Assembly Guide",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "Laminated visual guide showing which container, lid, label, and bag to use for each delivery menu item, with assembly instructions and photos for consistent order packaging."
+      },
+      {
+        "tool_id": "T102-02",
+        "tool_name": "Delivery Packaging SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Detailed SOP covering packaging materials, assembly procedures, allergen labelling requirements, quality checks before handoff, and sustainability standards."
+      },
+      {
+        "tool_id": "T102-03",
+        "tool_name": "Packaging Cost Calculator",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Spreadsheet calculating the total packaging cost per delivery order by menu item, including all components (container, lid, bag, label, cutlery, napkin), feeding into delivery menu pricing."
+      },
+      {
+        "tool_id": "T102-04",
+        "tool_name": "Packaging Performance Test Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Test log for evaluating packaging performance under simulated delivery conditions: temperature retention, structural integrity, leak prevention, and visual presentation after 20 minutes."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Packaging is chosen on cost alone, resulting in poor temperature retention, leaks, and crushed items that drive negative reviews",
+    "Allergen labelling is incomplete or missing, creating legal liability under Food Information Regulations 2014",
+    "Team members assemble delivery orders inconsistently because no packaging SOP exists, leading to variable quality",
+    "Packaging stock runs out during a busy delivery period because it was not included in routine stock checks"
+  ],
+  "kpis": [
+    "Delivery packaging complaint rate below 2% of total delivery orders",
+    "100% of delivery orders include correct allergen labelling and business information",
+    "Packaging cost maintained between 3-6% of delivery order revenue",
+    "Packaging performance test pass rate above 95% (temperature, integrity, presentation)"
+  ],
+  "dependencies": ["B101"],
+  "constraints": [
+    "All delivery food must comply with Food Information Regulations 2014 for distance selling (allergen info, business name and address)",
+    "Packaging costs must be factored into delivery menu pricing to protect margins after platform commission",
+    "Sustainable packaging choices must not compromise food safety or temperature maintenance"
+  ],
+  "time_load": {
+    "L1": "3 hours (audit, sourcing, assembly guide creation)",
+    "L2": "4 hours (SOP development, cost calculation, performance testing, staff training)",
+    "L3": "1 hour/quarter (review, sustainability updates, supplier negotiation)"
+  },
+  "review_protocol": "Daily visual check of packaging assembly by shift lead. Weekly delivery complaint review with packaging analysis. Monthly packaging cost review. Quarterly full packaging standards review with performance testing.",
+  "meta": {
+    "summary_for_humans": "This block sets packaging standards for delivery orders so food and drink arrive in excellent condition. It covers material selection, assembly procedures, allergen labelling compliance, cost management, and sustainability — recognising that delivery packaging is the cafe's brand ambassador when the customer never visits the physical space.",
+    "implementation_risks": [
+      "Premium packaging significantly increases per-order cost — ensure delivery menu pricing accounts for this",
+      "Sustainable packaging is often more expensive and may not perform as well for hot items — test before committing",
+      "Allergen labelling for delivery is a legal requirement that many small cafes overlook — non-compliance risk is real"
+    ],
+    "notes_for_engine": "Activate alongside B101 (Delivery Workflow Integration) as a pair. Flag as urgent if signals indicate high delivery complaint rates related to packaging, missing allergen information, or delivery platform ratings below 4.0.",
+    "tags": ["operations", "delivery", "packaging", "food_safety", "allergens", "branding", "sustainability", "compliance"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

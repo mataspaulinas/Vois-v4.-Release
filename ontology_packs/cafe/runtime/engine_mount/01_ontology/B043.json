@@ -1,0 +1,167 @@
+{
+  "block_id": "B043",
+  "name": "Milk Steaming Technique",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Defines the standards and techniques for steaming dairy milk to produce consistently smooth, sweet, and properly textured microfoam for all milk-based espresso drinks. This block covers the fundamental skills of milk steaming including aeration, texturing, temperature control, and the differences required for various drink types.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Establish a standardised milk steaming technique that all baristas follow consistently",
+      "Define target temperature ranges and texture standards for different drink types",
+      "Train baristas to produce silky microfoam suitable for latte art on every drink",
+      "Eliminate common milk steaming faults: scalding, under-texturing, excessive foam, and uneven temperature",
+      "Ensure milk is never re-steamed or over-heated, maintaining food safety and flavour quality"
+    ],
+    "secondary_objectives": [
+      "Reduce milk waste from poorly steamed batches",
+      "Build muscle memory through structured practice rather than trial and error",
+      "Create a foundation for advanced milk skills covered in B044, B045, and B046",
+      "Ensure consistency between baristas so customers receive the same quality regardless of who makes their drink"
+    ]
+  },
+  "why_this_matters": "In the UK, approximately 80% of coffee drinks sold contain milk. The flat white, latte, and cappuccino dominate cafe menus, and in all three, the quality of the steamed milk is at least as important as the espresso. A perfectly extracted shot paired with scalded, bubbly, or thin milk produces a mediocre drink. Conversely, silky, sweet, properly textured milk can elevate even an average shot into something enjoyable. Milk steaming is where many cafes fall short — it is treated as a simple task when it is actually a technical skill that requires understanding of protein chemistry, fat content, temperature control, and steam pressure. When milk is heated, the whey proteins unfold and stabilise air bubbles, creating microfoam. Above approximately 65-68 degrees Celsius, these proteins begin to denature irreversibly, the lactose caramelisation that produces sweetness is destroyed, and the milk develops a scorched, sulphurous flavour. Most customers cannot articulate why their latte tastes different today, but they absolutely notice. The difference between a flat white made with perfectly textured 62-degree milk and one made with bubbly 75-degree milk is the difference between a customer becoming a regular and a customer never returning. Milk waste is also a significant cost factor — a barista who consistently over-fills the jug or fails to achieve usable foam wastes litres of milk daily. At current UK milk prices, even modest waste adds up to hundreds of pounds per year.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Demonstrate the correct milk steaming technique to the entire team. The fundamental process: fill the steaming jug to just below the spout (appropriate volume for the drink size — do not overfill), purge the steam wand briefly to clear condensation, submerge the wand tip just below the milk surface at a slight angle, open the steam valve fully. Phase 1 (Stretching/Aeration): hold the jug so the wand tip sits just at the surface — you should hear a gentle 'tsk-tsk' sound as small amounts of air are incorporated. For a flat white, stretch for 1-2 seconds; for a cappuccino, stretch for 3-4 seconds; for a latte, stretch for 2-3 seconds. Phase 2 (Texturing/Spinning): lower the jug slightly so the wand tip is submerged about 1cm below the surface, creating a whirlpool that integrates the air bubbles into a uniform microfoam. Continue until the jug feels hot to hold against the palm — approximately 60-65°C. Phase 3: close the steam valve, remove the jug, tap the base firmly on the counter to burst any large bubbles, and swirl gently to create a glossy, paint-like consistency. Wipe the steam wand immediately with a damp cloth and purge briefly. Key rule: never re-steam milk. If the texture is wrong, discard and start fresh. Provide each barista with a practice session using water with a drop of washing-up liquid (it froths similarly to milk but costs nothing) to build technique without waste.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a formal Milk Steaming SOP document that covers technique, temperature standards, drink-specific foam depths, jug sizing, and common faults with corrections. Define the temperature standards clearly: flat whites 60-65°C, lattes 60-65°C, cappuccinos 60-65°C, extra-hot drinks maximum 70°C (inform customers that extra-hot reduces sweetness). Invest in a milk thermometer clip for each steaming jug if baristas are still developing their temperature judgement by touch. Introduce the 'five-point check' for every steamed milk: correct volume, correct temperature, glossy appearance, no visible bubbles, pours smoothly without clumping. Train baristas on jug management: choosing the right jug size for the drink (a 12oz jug for a single flat white, a 20oz for two drinks or a large latte) to minimise waste. Establish a 'milk standards board' in the staff area with photos showing perfect microfoam versus common faults (too foamy, too thin, scorched, bubbly). Conduct weekly practice sessions during quiet periods where baristas steam milk and pour into glasses, assessing their own texture before the head barista provides feedback. Track milk usage per drink served — a rising ratio indicates waste from poor technique or over-filling.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Milk steaming should now be second nature for all baristas, with consistent quality across the team. Introduce blind texture assessments: baristas steam milk without a thermometer and the head barista checks temperature accuracy — target is within 2°C of the standard every time. Track individual barista consistency through periodic assessments. Experiment with advanced techniques: split steaming for different textures in a single pour, temperature variations for different bean profiles (lighter roasts often pair better with slightly lower milk temperatures). Conduct monthly milk quality benchmarking: taste-test your steamed milk alongside the best cafes in the area. Share milk steaming tips and techniques with the team through a 'technique of the month' focused practice. Connect milk quality data to customer satisfaction feedback — do periods of inconsistent milk quality correlate with satisfaction dips?"
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Demonstrate the correct three-phase steaming technique to all baristas",
+        "Provide each barista with a water-based practice session to build technique",
+        "Establish the rule: never re-steam milk — discard and start fresh",
+        "Ensure steam wand cleaning (wipe and purge) happens after every use",
+        "Define target temperatures for each drink type and communicate to the team",
+        "Post a simple steaming quick-reference card at the espresso station",
+        "Observe each barista steaming during a shift and provide immediate feedback"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft a formal Milk Steaming SOP covering technique, temperatures, and faults",
+        "Provide milk thermometer clips for baristas still developing temperature judgement",
+        "Introduce the five-point check for every steamed milk",
+        "Train baristas on appropriate jug sizing to minimise waste",
+        "Create a milk standards board with visual examples of perfect and faulty foam",
+        "Conduct weekly practice sessions during quiet periods",
+        "Begin tracking milk usage per drink to identify waste trends"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce blind temperature assessments to verify barista skill",
+        "Track individual barista consistency through periodic assessments",
+        "Experiment with advanced steaming techniques for different drink profiles",
+        "Conduct monthly milk quality benchmarking against local competitors",
+        "Share a 'technique of the month' for continuous improvement",
+        "Connect milk quality data to customer satisfaction feedback"
+      ],
+      "responsible": "Head Barista, Manager"
+    }
+  },
+  "deliverables": [
+    "Milk Steaming SOP document",
+    "Steaming Quick-Reference Card (posted at espresso station)",
+    "Milk Standards Visual Board (perfect vs faulty foam images)",
+    "Five-Point Milk Quality Check guide",
+    "Weekly Milk Usage Tracking template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T043-01",
+        "tool_name": "Milk Steaming Quick-Reference Card",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "Laminated A5 card posted at the espresso station showing the three steaming phases, target temperatures for each drink type, and the five-point quality check. Quick visual reference during service."
+      },
+      {
+        "tool_id": "T043-02",
+        "tool_name": "Milk Steaming SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Head Barista",
+        "description": "Comprehensive Standard Operating Procedure covering the full steaming process: jug selection, filling, stretching, texturing, temperature control, common faults and corrections, and waste minimisation."
+      },
+      {
+        "tool_id": "T043-03",
+        "tool_name": "Milk Quality Fault Guide",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "Visual and descriptive guide showing common milk steaming faults (too foamy, too thin, scalded, bubbly, separated) with causes and corrections. Used for training and self-diagnosis."
+      },
+      {
+        "tool_id": "T043-04",
+        "tool_name": "Barista Milk Steaming Assessment",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Head Barista",
+        "description": "Practical assessment checklist evaluating a barista's steaming technique: positioning, aeration duration, texture quality, temperature accuracy, waste management, and steam wand hygiene."
+      },
+      {
+        "tool_id": "T043-05",
+        "tool_name": "Milk Usage Tracker",
+        "level": "L3",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Weekly tracker comparing milk purchased against drinks served to calculate usage ratio. Identifies waste trends and correlates with barista shifts to pinpoint training opportunities."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Baristas steam to the sound rather than the texture, producing inconsistent results depending on steam pressure and ambient noise",
+    "Temperature is judged by hand alone without calibration, leading to systematic over- or under-heating",
+    "Milk is re-steamed to avoid waste, producing a degraded, flat, and potentially unsafe product",
+    "Large jugs are used for small drinks out of convenience, wasting significant volumes of milk daily"
+  ],
+  "kpis": [
+    "100% of milk drinks served at the correct temperature (60-65°C standard, max 70°C extra-hot)",
+    "Zero instances of re-steamed milk served to customers",
+    "Milk waste below 15% of total milk purchased",
+    "All baristas pass the milk steaming practical assessment within their first month"
+  ],
+  "dependencies": ["B039"],
+  "constraints": [
+    "Steam wand must be cleaned (wiped and purged) after every single use — no exceptions",
+    "Milk must be stored at or below 5°C and used within its use-by date",
+    "Extra-hot requests must be capped at 70°C with the customer informed that it affects flavour"
+  ],
+  "time_load": {
+    "L1": "3 hours (technique demonstration, practice sessions, observation and feedback)",
+    "L2": "6 hours (SOP drafting, assessment creation, standards board, training sessions)",
+    "L3": "2 hours/month (assessments, benchmarking, technique practice)"
+  },
+  "review_protocol": "Daily observation of milk steaming quality by head barista during service. Weekly practice sessions. Monthly barista steaming assessments. Milk usage data reviewed weekly. SOP reviewed whenever equipment or milk suppliers change.",
+  "meta": {
+    "summary_for_humans": "This block establishes the fundamental milk steaming standards for all dairy-based coffee drinks, covering technique, temperature, texture, and waste management. It ensures every barista can produce consistently smooth, sweet microfoam and provides the foundation for advanced milk skills in B044, B045, and B046.",
+    "implementation_risks": [
+      "Practice sessions during service hours may disrupt workflow if not scheduled carefully",
+      "Baristas with existing habits may resist changing their technique",
+      "Temperature standards may cause friction with customers requesting very hot drinks"
+    ],
+    "notes_for_engine": "Activate alongside B039 as a paired foundation block. Milk quality is half of every milk drink — without this block, shot quality improvements from B039/B040 are undermined. Flag if customer complaints mention milk temperature, texture, or taste.",
+    "tags": ["coffee_quality", "milk", "steaming", "microfoam", "temperature", "barista_skills", "technique", "waste_reduction"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

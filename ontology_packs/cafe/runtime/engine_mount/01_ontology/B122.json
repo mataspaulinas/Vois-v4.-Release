@@ -1,0 +1,157 @@
+{
+  "block_id": "B122",
+  "name": "Weekly Financial Review",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Establishes a structured weekly financial review process that gives the cafe owner a clear, timely picture of profitability, cash flow, and cost performance. Transforms financial management from reactive guesswork into a disciplined weekly rhythm.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Create a standardised weekly P&L review that takes no more than 60 minutes to complete",
+      "Build a weekly cash flow monitoring process that prevents nasty surprises",
+      "Establish variance tracking against budget and prior year for all key financial metrics",
+      "Develop early warning indicators that flag financial problems before they become critical",
+      "Create accountability through documented weekly financial actions and follow-ups"
+    ],
+    "secondary_objectives": [
+      "Build the owner's financial confidence and literacy through regular engagement with numbers",
+      "Create a financial data trail that supports better annual planning and budgeting",
+      "Enable faster decision-making by having current financial data always at hand"
+    ]
+  },
+  "why_this_matters": "The single biggest reason independent cafes fail financially is not poor sales or bad products — it is that the owner does not know their numbers until it is too late. Many cafe owners check their bank balance as their primary financial management tool, which tells them almost nothing useful about profitability, cost trends, or cash flow trajectory. By the time the quarterly accountant review reveals a problem, thousands of pounds may have been lost. A weekly financial review changes this entirely. It creates a 52-times-per-year opportunity to spot problems, celebrate wins, and adjust course. In the UK hospitality sector, where margins are typically between 5% and 15% net, a single week of unnoticed food cost drift from 30% to 38% can wipe out an entire month's profit. Weekly VAT tracking ensures the quarterly return is never a shock. Weekly payroll monitoring against revenue prevents the insidious creep of labour costs that kills so many cafes. This is not about becoming an accountant — it is about building a 60-minute weekly habit that protects everything you have built. The cafes that survive and thrive are invariably the ones whose owners know their numbers cold.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Start by establishing your baseline financial data sources. Identify where your key numbers live: EPoS system for revenue, banking app for cash position, supplier invoices for cost of goods, payroll system for labour costs, and your bookkeeping software (Xero, QuickBooks, or FreeAgent) for everything else. Create a simple Weekly Financial Review template — this does not need to be sophisticated. At minimum, you need: total revenue for the week (split by channel if possible), total purchases and cost of goods, total payroll cost, cash position at week end, and any unusual or one-off expenses. Set a fixed time each week for this review — Monday morning before opening works well for most cafes, as it allows you to review the prior week with fresh eyes. For your first review, gather the last four weeks of data to establish your baseline. Calculate your key ratios: food cost percentage (cost of goods / food revenue), labour cost percentage (total payroll / total revenue), and prime cost (food cost + labour cost as % of revenue). In the UK cafe sector, you should be targeting food cost below 35%, labour below 30%, and prime cost below 65%. If your numbers are outside these ranges, you have just identified your first priority actions. Pull your current VAT liability position and compare it against what you have set aside. Check your cash flow forecast for the next four weeks — are there any large payments due that could create a pinch point?",
+    "L2": "SYSTEM BUILD (2-8 weeks). Evolve the basic weekly review into a structured financial management system. Build a proper Weekly Financial Dashboard in a spreadsheet or your accounting software that automatically calculates your key metrics and shows week-on-week and year-on-year trends. Add traffic light indicators: green for on-target, amber for within 5% variance, red for over 5% variance. Create a rolling 13-week cash flow forecast that you update every week — this is the most powerful financial tool any small business can have, and it takes just 15 minutes to maintain once set up. Establish a standard agenda for your weekly review: revenue performance against budget, cost of goods analysis, payroll analysis, cash flow update, VAT position, any outstanding debtor or creditor issues, and actions from last week. Begin tracking your breakeven point weekly — how much revenue do you need each week just to cover your fixed costs? This number should be burned into your brain. Integrate your delivery platform statements into the weekly review so you understand the true net revenue from Deliveroo, Uber Eats, and Just Eat after commissions. Create a weekly action list: every review should generate two to three specific financial actions for the coming week, whether that is renegotiating a supplier, adjusting a price, or investigating an anomaly. File every weekly review in a dedicated folder — this creates an invaluable audit trail for your accountant and for your own annual planning.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). The weekly financial review becomes a non-negotiable business ritual. You can complete it in 45 minutes because you have built the systems and muscle memory. Your financial dashboard gives you instant visibility of trends, and you spot problems in week one rather than month three. Share relevant financial metrics with your team — not everything, but enough that they understand how their daily actions affect profitability. When a team member sees that reducing coffee waste by 5% added £200 to weekly profit, financial awareness becomes personal. Conduct a monthly deeper dive that looks at trends, seasonal patterns, and strategic opportunities. Use your 52-week financial history to build increasingly accurate budgets and forecasts."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Identify all financial data sources: EPoS, banking, payroll, bookkeeping software",
+        "Create a simple Weekly Financial Review template covering revenue, COGS, payroll, and cash",
+        "Schedule a fixed weekly review slot — Monday morning recommended",
+        "Gather four weeks of historical data to establish baseline financial metrics",
+        "Calculate baseline ratios: food cost %, labour cost %, and prime cost %",
+        "Review current VAT liability position and cash set aside for next return",
+        "Check four-week cash flow forecast for upcoming payment pinch points"
+      ],
+      "responsible": "Owner / Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build a Weekly Financial Dashboard with automated calculations and traffic light indicators",
+        "Create a rolling 13-week cash flow forecast and update process",
+        "Establish a standard weekly review agenda covering all key financial areas",
+        "Calculate and track weekly breakeven revenue target",
+        "Integrate delivery platform commission data into weekly net revenue reporting",
+        "Create a weekly financial action list process with follow-up accountability",
+        "Establish a filing system for weekly reviews to build a 52-week financial history"
+      ],
+      "responsible": "Owner / Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Reduce weekly review to under 45 minutes through streamlined systems and practice",
+        "Share relevant financial KPIs with the team to build collective financial awareness",
+        "Conduct monthly deep-dive financial reviews examining trends and seasonal patterns",
+        "Use 52-week financial history to improve annual budget accuracy",
+        "Integrate financial review outputs into strategic decision-making processes"
+      ],
+      "responsible": "Owner / Manager with selective team engagement"
+    }
+  },
+  "deliverables": [
+    "Weekly Financial Review template with all key metrics and ratios",
+    "Weekly Financial Dashboard with automated calculations and trend tracking",
+    "Rolling 13-week cash flow forecast maintained weekly",
+    "Standard weekly review agenda and action tracking process",
+    "52-week financial review archive for annual planning"
+  ],
+  "embedded_tools": ["T122-01", "T122-02", "T122-03", "T122-04"],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T122-01",
+        "tool_name": "Weekly Financial Review Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner / Manager",
+        "description": "Standardised template for conducting the weekly financial review, covering revenue, cost of goods, payroll, cash position, VAT liability, and key financial ratios with variance indicators."
+      },
+      {
+        "tool_id": "T122-02",
+        "tool_name": "Rolling 13-Week Cash Flow Forecast",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Owner / Manager",
+        "description": "Forward-looking cash flow forecast updated weekly, showing expected inflows and outflows over the next 13 weeks with alerts for potential cash pinch points."
+      },
+      {
+        "tool_id": "T122-03",
+        "tool_name": "Weekly Breakeven Calculator",
+        "level": "L2",
+        "format": "calculator",
+        "owner_role": "Owner / Manager",
+        "description": "Calculator that determines the weekly revenue required to cover all fixed and variable costs, updated as cost base changes and showing buffer above breakeven."
+      },
+      {
+        "tool_id": "T122-04",
+        "tool_name": "Financial Health Scorecard",
+        "level": "L2",
+        "format": "scorecard",
+        "owner_role": "Owner / Manager",
+        "description": "Traffic light scorecard summarising the key weekly financial health indicators including food cost %, labour %, prime cost, cash position, and revenue variance against budget."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Owner skips the review during busy weeks, losing the rhythm — treat it as non-negotiable as opening the shop",
+    "Data entry errors or incomplete data lead to misleading financial picture — validate data sources weekly",
+    "Review becomes a box-ticking exercise without generating meaningful actions or insights",
+    "Over-focus on weekly fluctuations rather than trends causes reactive rather than strategic decisions"
+  ],
+  "kpis": [
+    "Weekly review completion rate: target 48 out of 52 weeks per year",
+    "Food cost percentage: maintained within 2% of target week-on-week",
+    "Cash flow forecast accuracy: actual within 10% of forecast over rolling 4-week period",
+    "Time to complete weekly review: under 60 minutes by week 8, under 45 minutes by week 16"
+  ],
+  "dependencies": ["B119"],
+  "constraints": [
+    "Requires reliable EPoS data — if POS system is unreliable, fix that first",
+    "Owner must commit to a fixed weekly time slot and protect it from operational demands",
+    "Financial review quality depends on timely supplier invoice processing and bookkeeping"
+  ],
+  "time_load": {
+    "L1": "4-5 hours initial setup",
+    "L2": "60-90 minutes per week",
+    "L3": "45-60 minutes per week"
+  },
+  "review_protocol": "Weekly financial review every Monday morning. Monthly deep-dive on first Monday of the month. Quarterly review with accountant using accumulated weekly data.",
+  "meta": {
+    "summary_for_humans": "This block establishes a weekly financial review habit that gives you clear, timely visibility of your cafe's financial health. It turns your numbers from a quarterly surprise into a weekly superpower, helping you spot problems early and make confident decisions.",
+    "implementation_risks": [
+      "Incomplete or delayed bookkeeping undermines the accuracy of weekly reviews",
+      "Owner may resist confronting difficult financial realities revealed by regular review",
+      "Without a proper EPoS system, data gathering becomes too time-consuming to sustain"
+    ],
+    "notes_for_engine": "Activate as a foundational block whenever financial performance signals are detected. This block supports almost every other financial block and should be among the first implemented. Flag if venue has no EPoS system or no bookkeeping software.",
+    "tags": ["financial-review", "weekly-rhythm", "cash-flow", "P&L", "breakeven", "VAT", "financial-management", "discipline"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

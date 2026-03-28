@@ -1,0 +1,167 @@
+{
+  "block_id": "B044",
+  "name": "Alternative Milk Handling",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Provides specific guidance for steaming and handling plant-based alternative milks — primarily oat, soy, almond, and coconut — which behave differently from dairy milk under steam and require adjusted techniques, temperatures, and brand awareness to produce consistently good results.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Train baristas on the specific steaming characteristics of each major alternative milk type",
+      "Identify and stock the best-performing barista-edition alternative milks for the cafe's equipment",
+      "Establish temperature and technique adjustments for each alternative milk",
+      "Prevent cross-contamination between dairy and alternative milks for allergen safety",
+      "Ensure alternative milk drinks are presented to the same quality standard as dairy drinks"
+    ],
+    "secondary_objectives": [
+      "Reduce waste from failed alternative milk steaming attempts",
+      "Build confidence among baristas who find plant milks challenging to work with",
+      "Stay current with new alternative milk products and formulations entering the UK market",
+      "Communicate clearly with customers about which alternative milks are available and how they perform"
+    ]
+  },
+  "why_this_matters": "Alternative milk consumption in UK cafes has surged dramatically — industry data from the Mintel Group indicates that over 30% of UK consumers now regularly choose plant-based milk in their coffee, with oat milk leading the category. For many cafes, alternative milk drinks now represent a quarter to a third of all milk-based orders. Yet most barista training focuses exclusively on dairy, leaving staff to figure out plant milks through trial and error. This matters because alternative milks are fundamentally different from dairy. They have different protein structures, fat contents, sugar levels, and pH values — all of which affect how they respond to steam, integrate with espresso, and present in the cup. Oat milk is the most forgiving and closest to dairy in behaviour, but even barista-edition oat milks vary significantly between brands (Oatly, Minor Figures, Bonsoy, and own-brand alternatives all perform differently). Soy milk is highly sensitive to temperature and the acidity of espresso — it curdles visibly if steamed too hot or poured into very acidic coffee. Almond milk produces thin, watery foam that separates quickly. Coconut milk has a high fat content that can overwhelm espresso flavour. Each requires specific knowledge. A customer who orders an oat flat white expects the same care and quality as a dairy one. If the barista produces a bubbly, thin, or curdled drink, that customer — who is often making a values-driven dietary choice — feels that the cafe does not respect their needs. This is a retention and reputation issue as much as a quality one.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Audit your current alternative milk offering. Which brands are you stocking? Are they barista editions (formulated for steaming) or regular retail versions? Barista editions contain added fats, stabilisers, and sometimes acidity regulators that make them perform significantly better under steam. If you are using retail versions, switch to barista editions immediately — the cost difference is pennies per litre but the quality difference is dramatic. For oat milk, test Oatly Barista Edition, Minor Figures, or Bonsoy. For soy, use a barista-formulated version — standard soy curdles easily. Brief the team on the key differences from dairy: alternative milks generally require a lower steaming temperature (55-60°C versus 60-65°C for dairy), shorter stretching time (they aerate faster), and gentler handling (aggressive steaming creates large bubbles that will not integrate). The most critical rule: soy milk must be steamed to no more than 60°C and poured gently into the espresso — pouring espresso into soy is more likely to cause curdling. Week 2: Conduct a practical session with each alternative milk type. Steam each one, pour a flat white, and discuss the differences in texture, taste, and visual quality. Let every barista experience the feel of each milk under steam. Establish dedicated jugs for dairy-free milks — ideally colour-coded or labelled — to prevent cross-contamination (this is an allergen safety requirement, not just a preference). Ensure all alternative milks are clearly labelled on the menu with any allergen information (soy is one of the 14 major allergens under UK food law).",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create an Alternative Milk SOP that covers steaming technique, temperature, and known issues for each type stocked. Include brand-specific notes — different brands of oat milk, for example, can behave quite differently. Document the optimal pour sequence for each: oat milk is forgiving and pours similarly to dairy; soy requires a gentle pour and should be poured into the cup first or simultaneously with espresso; almond milk benefits from less aeration and lower temperatures; coconut milk needs minimal stretching as it foams easily. Establish a tasting protocol for evaluating new alternative milk products — when a new brand launches or a supplier changes, test it before adding it to the menu. Rate on: steaming performance, foam quality, taste in espresso, latte art capability, and stability over time. Train the team on allergen implications: alternative milks are not allergen-free — soy is a major allergen, many oat milks contain gluten (not suitable for coeliacs), some nut milks present allergen risks. Staff must be able to communicate accurately about allergens when customers ask. Implement a monthly alternative milk review: check that stock is rotating properly (alternative milks have shorter shelf lives once opened), verify that barista editions are being ordered consistently, and review any customer feedback about plant milk drink quality.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Alternative milk drinks should be indistinguishable in care and presentation from dairy drinks. Pursue latte art excellence with oat milk — it is the most capable alternative for art and many baristas find it easier than dairy once they adjust their technique. Enter latte art competitions using alternative milk to build team skills and profile. Stay ahead of market trends: new alternative milks enter the UK market regularly (potato milk, pea protein milk, hemp milk). Test promising new products proactively rather than reactively. Build customer communication around your alternative milk offering — which brands you stock, why you chose them, and how they enhance the coffee experience. Consider offering a 'plant milk flight' — three small milk drinks with different plant milks — as an educational experience for interested customers. Track alternative milk sales data alongside dairy to understand the trajectory and adjust ordering and training investment accordingly."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Audit current alternative milk stock and switch to barista editions if not already",
+        "Brief the team on key differences: lower temperature, shorter stretch, gentler handling",
+        "Conduct a practical steaming session with each alternative milk type",
+        "Establish dedicated colour-coded or labelled jugs for dairy-free milks",
+        "Ensure alternative milks and allergen information are clearly listed on the menu",
+        "Post a quick-reference card at the station showing temperature and technique for each type",
+        "Train staff on soy milk curdling prevention: lower temperature, gentle pour"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft an Alternative Milk SOP with brand-specific steaming notes",
+        "Establish a tasting protocol for evaluating new alternative milk products",
+        "Train the team on allergen implications of each alternative milk type",
+        "Implement monthly alternative milk stock and quality reviews",
+        "Document pour sequence guidance for each milk type",
+        "Create allergen communication training specific to alternative milks",
+        "Track customer feedback on plant milk drink quality"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Pursue latte art excellence with oat milk across the team",
+        "Proactively test new alternative milk products as they enter the market",
+        "Build customer-facing communication about plant milk choices and sourcing",
+        "Track alternative milk sales trends and adjust ordering accordingly",
+        "Consider plant milk flights or tasting experiences for customers",
+        "Enter competitions using alternative milks to build profile"
+      ],
+      "responsible": "Head Barista, Manager, Owner"
+    }
+  },
+  "deliverables": [
+    "Alternative Milk SOP document with brand-specific notes",
+    "Alternative Milk Quick-Reference Card (station-mounted)",
+    "Alternative Milk Tasting Evaluation template",
+    "Allergen Communication Guide for alternative milks",
+    "Monthly Alternative Milk Review checklist"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T044-01",
+        "tool_name": "Alternative Milk Quick-Reference Card",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "Laminated card at the espresso station showing steaming temperature, stretch duration, pour technique, and known issues for each alternative milk type stocked. Updated when brands change."
+      },
+      {
+        "tool_id": "T044-02",
+        "tool_name": "Alternative Milk SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Head Barista",
+        "description": "Detailed Standard Operating Procedure covering steaming technique, temperature targets, pour sequences, allergen considerations, and brand-specific notes for oat, soy, almond, and coconut milks."
+      },
+      {
+        "tool_id": "T044-03",
+        "tool_name": "Alternative Milk Product Evaluation Form",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Head Barista",
+        "description": "Structured tasting form for evaluating new alternative milk products on: steaming performance, foam quality, taste with espresso, latte art capability, shelf stability, cost, and allergen profile."
+      },
+      {
+        "tool_id": "T044-04",
+        "tool_name": "Dairy-Free Allergen Communication Guide",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Staff guide covering allergen content of each alternative milk stocked (soy allergen, gluten in oat, tree nuts in almond/coconut), what to tell customers, and when to advise caution."
+      },
+      {
+        "tool_id": "T044-05",
+        "tool_name": "Alternative Milk Sales and Waste Tracker",
+        "level": "L3",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Monthly tracker comparing alternative milk purchases, usage per drink, waste volumes, and sales trends. Used to optimise ordering quantities and brand selection."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Retail-grade alternative milks are stocked instead of barista editions, producing consistently poor foam and customer complaints",
+    "Cross-contamination between dairy and plant milk jugs, creating allergen risks for lactose-intolerant or vegan customers",
+    "Soy milk is steamed too hot and curdles visibly in the cup, creating an unpleasant visual and taste experience",
+    "Staff lack allergen knowledge about alternative milks and provide incorrect information to customers with dietary needs"
+  ],
+  "kpis": [
+    "Zero cross-contamination incidents between dairy and alternative milks",
+    "Zero soy milk curdling incidents per week",
+    "Alternative milk drinks rated at parity with dairy drinks in customer feedback",
+    "All baristas demonstrate competent steaming of at least two alternative milks within their first month"
+  ],
+  "dependencies": ["B043"],
+  "constraints": [
+    "Dedicated dairy-free jugs must be used — this is a food safety and allergen requirement",
+    "Staff must be trained on the allergen content of every alternative milk stocked",
+    "Alternative milk brands should not be changed without a formal tasting evaluation"
+  ],
+  "time_load": {
+    "L1": "3 hours (audit, team briefing, practical steaming session, jug setup)",
+    "L2": "5 hours (SOP drafting, allergen training, evaluation protocol, review setup)",
+    "L3": "1 hour/month (product testing, sales tracking, market monitoring)"
+  },
+  "review_protocol": "Daily observation of alternative milk steaming quality. Monthly stock and quality review. Product evaluations whenever new brands are considered. Allergen training refreshed annually. SOP updated when brands or product formulations change.",
+  "meta": {
+    "summary_for_humans": "This block provides specific guidance for steaming and handling plant-based alternative milks, covering the different techniques required for oat, soy, almond, and coconut milks. It addresses allergen safety, brand selection, cross-contamination prevention, and ensures alternative milk drinks meet the same quality standard as dairy.",
+    "implementation_risks": [
+      "Brand-specific guidance becomes outdated when manufacturers reformulate products",
+      "Baristas may avoid alternative milks during busy periods, asking customers to choose dairy instead",
+      "Over-stocking alternative milks leads to waste from short shelf lives once opened"
+    ],
+    "notes_for_engine": "Activate alongside B043 — alternative milk handling is now essential for every UK cafe. Flag if signals indicate customer complaints about plant milk drink quality, allergen concerns, or visible curdling in drinks. Growing market share makes this increasingly critical.",
+    "tags": ["coffee_quality", "milk", "alternative_milk", "oat", "soy", "almond", "coconut", "plant_based", "allergens", "vegan"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

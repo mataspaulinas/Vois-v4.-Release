@@ -1,0 +1,305 @@
+{
+  "block_id": "B004",
+  "name": "Cold Chain Excellence Dashboard",
+  "version": "v2.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Creates the management dashboard and review layer that consolidates cold-chain evidence from B001, B002, and B003 into one operating view, so the cafe can spot trends early, make repair and supplier decisions faster, and demonstrate active food safety governance rather than passive record-keeping.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Consolidate cold-chain data from daily checks, delivery controls, and excursion records into one review system",
+      "Turn scattered paperwork into weekly and monthly decisions that can actually change risk",
+      "Make repeat equipment, supplier, or process failures visible before they become severe",
+      "Provide a management and inspection-ready summary of how the cold chain is being governed",
+      "Create a staff-facing visibility layer so the team can see current performance without drowning in admin"
+    ],
+    "secondary_objectives": [
+      "Support better repair versus replacement decisions",
+      "Improve owner oversight without requiring deep manual file reading",
+      "Create a stable base for future multi-site or cross-period comparison"
+    ]
+  },
+  "why_this_matters": "Daily logs, delivery sheets, and incident reports are necessary, but they are not enough on their own. Without a management layer above them, the venue stays reactive: a fridge drifts warm for weeks before anyone notices the pattern, one supplier keeps arriving borderline but no one connects the incidents, or excursion reports are filed without changing the underlying cause. This block creates the cold-chain governance layer. It is what turns evidence into management control. For an owner, it answers the real questions: Are we actually in control? Which unit is becoming risky? Which supplier is slipping? What should we fix this month rather than after a failure? This matters not just for EHO confidence, but for money, operational resilience, and trust in the food safety system itself.",
+  "block_design": {
+    "intervention_type": "bounded_operating_intervention",
+    "purpose": "Build the dashboard, reporting, and review layer that governs the cold chain above daily operational records.",
+    "failure_modes_addressed": [
+      "FM001"
+    ],
+    "response_patterns_addressed": [
+      "RP001"
+    ],
+    "primary_execution_module": "M01",
+    "entry_conditions": [
+      "B001, B002, and B003 are active enough to produce usable cold-chain data.",
+      "Management needs one consolidated view instead of reading source paperwork separately.",
+      "There is enough review discipline to act on trends once they are visible."
+    ],
+    "prerequisites": [
+      "Daily temperature monitoring is already functioning.",
+      "Delivery and storage controls are already producing logs or audits.",
+      "Excursion events are being recorded when they occur."
+    ],
+    "contraindications": [
+      "Do not build this block before the source blocks are generating stable evidence.",
+      "Do not use this block as a replacement for B001, B002, or B003 live controls.",
+      "Do not overbuild the dashboard into a system nobody can maintain week to week."
+    ],
+    "owner_role": "Manager and owner",
+    "effort_load": {
+      "setup": "4-6 hours",
+      "weekly": "15-20 minutes",
+      "monthly": "20-30 minutes",
+      "quarterly": "20-30 minutes"
+    },
+    "expected_time_to_effect": {
+      "first_visible_effect": "Within 2-4 weeks once source data is flowing into one view",
+      "stabilisation_window": "4-12 weeks as review cadence and action follow-through settle"
+    },
+    "proof_of_completion": [
+      "A live dashboard workbook exists and is being updated from B001-B003 records.",
+      "A monthly report is produced and reviewed by owner or manager.",
+      "Equipment, supplier, and incident trends can be shown without manual file reconstruction.",
+      "A staff-facing scoreboard is updated from the current weekly review."
+    ],
+    "proof_of_effectiveness": [
+      "Repeated equipment or supplier problems are identified earlier than before.",
+      "Management actions are linked to visible dashboard evidence rather than memory.",
+      "The venue can explain cold-chain performance quickly in inspection or management review settings.",
+      "Trend reviews result in clear repair, replacement, retraining, or escalation decisions."
+    ],
+    "successor_triggers": [
+      {
+        "trigger": "Dashboard review shows a recurring failure in daily monitoring discipline.",
+        "next_block_id": "B001"
+      },
+      {
+        "trigger": "Dashboard review shows supplier or storage discipline problems are the main driver of risk.",
+        "next_block_id": "B002"
+      },
+      {
+        "trigger": "Dashboard review shows excursions, unit failures, or stock-safety incidents are rising.",
+        "next_block_id": "B003"
+      }
+    ],
+    "linked_tools": [
+      "T004-01",
+      "T004-02",
+      "T004-03",
+      "T004-04",
+      "T004-05"
+    ]
+  },
+  "implementation_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The dashboard is introduced before source records are stable enough to support it.",
+        "what_can_go_wrong": "The governance layer starts on weak inputs and quickly becomes unreliable or abandoned.",
+        "early_signals": [
+          "Managers spend more time fixing missing source data than reviewing trends",
+          "The dashboard contains blanks or guesswork every week"
+        ],
+        "prevention": [
+          "Confirm B001-B003 are producing regular data first",
+          "Start with a small metric set and expand only when upkeep is stable"
+        ],
+        "mitigation": [
+          "Strip the dashboard back to essential KPIs",
+          "Reinforce the failing source block before expanding governance reporting"
+        ],
+        "if_occurs_next_signals": [
+          "dashboard_input_instability"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B002",
+          "B003"
+        ]
+      },
+      {
+        "warning": "Management reviews the dashboard but does not convert trends into concrete action.",
+        "what_can_go_wrong": "The venue becomes better at seeing risk than reducing it.",
+        "early_signals": [
+          "The same red or amber items remain open across review cycles",
+          "Quarterly reviews describe patterns but no repair, retraining, or escalation follows"
+        ],
+        "prevention": [
+          "Keep an action register in the weekly and monthly tools",
+          "Require a named owner and due date for each material issue"
+        ],
+        "mitigation": [
+          "Escalate unresolved themes to owner review",
+          "Push repeated issues back into the operating block that owns the root cause"
+        ],
+        "if_occurs_next_signals": [
+          "governance_without_followthrough"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B002",
+          "B003"
+        ]
+      }
+    ]
+  },
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Confirm B001, B002, and B003 are live enough to produce usable data. Build a simple cold-chain workbook that pulls in weekly check completion, supplier incidents, fridge audit scores, and any excursion events. Keep the first version small: a KPI summary, a by-unit watch list, and an action register. Begin reviewing it once per week, even if the first dataset is imperfect.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Turn the workbook into a dependable management tool. Establish the monthly report and equipment scorecard, clarify which trends trigger repair versus replacement discussion, and add a quarterly trend review that compares one period against the last rather than just repeating the latest month. Create a short staff-facing scoreboard so the team can see performance and focus areas without reading the full dashboard.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Use the dashboard layer as a true governance system. Quarterly reviews should drive visible supplier, training, and equipment decisions. The venue should be able to explain current cold-chain status quickly, show why recent decisions were made, and use the staff board to keep the standard visible in daily operations. At this stage the block is not just reporting performance; it is steering it."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Confirm B001, B002, and B003 are producing stable source records",
+        "Create the first Cold Chain Dashboard Workbook using T004-01",
+        "Choose a weekly review slot and assign a named dashboard owner",
+        "Start with a small KPI set: completion, supplier issues, excursions, and unit watch list",
+        "Use the weekly review to produce one visible action or explicit no-action decision"
+      ],
+      "responsible": "Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Issue the Monthly Cold Chain Management Report using T004-02",
+        "Score each unit through T004-03 so repair and replacement discussions use evidence instead of memory",
+        "Run the Quarterly Cold Chain Trend Review using T004-04",
+        "Use T004-05 to turn weekly review outputs into a short staff-facing scoreboard",
+        "Link repeated supplier, monitoring, or excursion themes back into B001, B002, or B003 as needed"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Use the dashboard as the standing agenda for monthly cold-chain governance review",
+        "Keep the staff-facing scoreboard live so the team sees current priorities",
+        "Review whether repeat red items are being closed fast enough and escalate if not",
+        "Use quarter-on-quarter patterns to drive equipment and supplier decisions proactively",
+        "Refresh the dashboard structure if it has become too complex to maintain reliably"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Cold Chain Dashboard Workbook",
+    "Monthly Cold Chain Management Report",
+    "Equipment Health Scorecard & Replacement Trigger",
+    "Quarterly Cold Chain Trend Review",
+    "Staff-Facing Cold Chain Scoreboard"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T004-01",
+        "tool_name": "Cold Chain Dashboard Workbook",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Primary weekly and monthly workbook consolidating cold-chain source data into one KPI, trend, and action view."
+      },
+      {
+        "tool_id": "T004-02",
+        "tool_name": "Monthly Cold Chain Management Report",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Monthly management and evidence pack summarising KPI performance, significant events, decisions, and next actions."
+      },
+      {
+        "tool_id": "T004-03",
+        "tool_name": "Equipment Health Scorecard & Replacement Trigger",
+        "level": "L3",
+        "format": "scorecard",
+        "owner_role": "Manager",
+        "description": "Per-unit scorecard used to decide whether cold equipment should be watched, repaired, or replaced."
+      },
+      {
+        "tool_id": "T004-04",
+        "tool_name": "Quarterly Cold Chain Trend Review",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Quarterly strategic review translating repeated patterns into repair, retraining, supplier, or investment decisions."
+      },
+      {
+        "tool_id": "T004-05",
+        "tool_name": "Staff-Facing Cold Chain Scoreboard",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Simple weekly board showing the team the current cold-chain score, watch-out, and focus area."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Cold-chain data exists across multiple records but no one consolidates it into a management view",
+    "Recurring weak units and supplier issues remain hidden because nobody compares periods or patterns",
+    "Owners rely on anecdote and memory rather than evidence when deciding repairs or investments",
+    "The team sees food safety paperwork as invisible back-office admin because no staff-facing review layer exists"
+  ],
+  "kpis": [
+    "Dashboard workbook updated and reviewed weekly with no major gaps in source data",
+    "Monthly management report completed by the agreed review date every month",
+    "Quarterly trend review results in at least one concrete equipment, supplier, or process decision",
+    "Staff-facing scoreboard updated weekly with current focus and performance state"
+  ],
+  "dependencies": [
+    "B001",
+    "B002",
+    "B003"
+  ],
+  "constraints": [
+    "The dashboard is only as good as the source controls feeding it",
+    "If the review structure becomes too complex, adoption will drop quickly",
+    "The staff-facing layer must stay team-focused rather than becoming a blame board"
+  ],
+  "time_load": {
+    "L1": "3-4 hours",
+    "L2": "4-6 hours",
+    "L3": "1-2 hours per month plus quarterly review"
+  },
+  "review_protocol": "Weekly workbook review by manager. Monthly report and equipment review with owner. Quarterly trend review and decision session. Staff-facing scoreboard refreshed after the weekly dashboard review.",
+  "meta": {
+    "summary_for_humans": "This block creates the dashboard and review layer above the cold-chain operating blocks so managers can see patterns, make decisions sooner, and show active food safety governance.",
+    "implementation_risks": [
+      "The dashboard can become stale if source data discipline slips",
+      "Managers may create a reporting habit without creating an action habit",
+      "A staff-facing board can backfire if it is written as blame instead of shared visibility"
+    ],
+    "notes_for_engine": "Activate after B001-B003 are stable enough to feed a governance layer. Route recurring trends back into the owning operational block rather than treating dashboard review as a substitute for action.",
+    "tags": [
+      "food_safety",
+      "cold_chain",
+      "dashboard",
+      "governance",
+      "trend_review",
+      "equipment",
+      "supplier",
+      "management_reporting"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "independent_cafe",
+      "specialty_coffee",
+      "chain_cafe",
+      "franchise_cafe",
+      "drive_through",
+      "kiosk",
+      "coffee_van",
+      "bakery_cafe"
+    ],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-26T00:00:00Z",
+    "enriched_by": "codex_direct_v1",
+    "source_quality": "human_structured_ai_enriched"
+  }
+}

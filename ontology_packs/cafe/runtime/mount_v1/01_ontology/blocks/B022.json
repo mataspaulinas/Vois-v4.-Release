@@ -1,0 +1,165 @@
+{
+  "block_id": "B022",
+  "name": "Order-Taking Speed Protocol",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Streamlines the order-taking process to minimise the time between a customer reaching the till and their order being entered into the system, without sacrificing warmth, accuracy, or the opportunity to upsell. This block focuses on the till interaction as the primary bottleneck in cafe throughput.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Reduce average order-taking time to under 45 seconds for standard drink orders",
+      "Train staff on efficient till operation including shortcut keys and common order sequences",
+      "Eliminate unnecessary friction in the order process: menu confusion, payment delays, indecision",
+      "Maintain a warm, personal interaction despite the focus on speed",
+      "Integrate allergen checking and upselling into the order flow without adding significant time"
+    ],
+    "secondary_objectives": [
+      "Reduce queue length by increasing the number of orders processed per minute",
+      "Decrease staff frustration with POS system inefficiencies",
+      "Improve order accuracy by creating a clear, consistent order-taking sequence"
+    ]
+  },
+  "why_this_matters": "The order-taking interaction is the single biggest controllable factor in queue speed. In a typical UK cafe, the time from a customer reaching the till to the order being entered and payment taken ranges from 30 seconds for a simple black coffee to 90 seconds or more for a complex order with modifications. During the morning rush, when the cafe might serve 60 customers per hour, even a 10-second improvement per order gains 10 minutes — enough to serve an additional 6-8 customers. The order-taking moment is also the customer's primary human interaction with the cafe. It sets the tone for their entire experience. A flustered, slow interaction communicates chaos; a confident, efficient one communicates competence and care. The challenge is balancing speed with quality: a drive to reduce order time must not strip away the warmth, eye contact, and personal connection that differentiate an independent cafe from a vending machine. The most effective approach is to eliminate wasted time — hesitation, confusion, equipment delays — while preserving and enhancing the meaningful elements of the interaction. Common time wasters include: customers who cannot see the menu until they reach the till, POS systems that require too many taps to enter an order, card payment terminals that are slow to connect, staff who are not familiar with the full menu, and orders that have to be repeated because they were not captured clearly the first time. Each of these is fixable.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Time the order-taking process during one peak period. Record the time from when the customer reaches the till to when payment is completed for 20 orders. Calculate the average. Identify the top three time wasters — the moments where the process stalls or slows. Common culprits: customers studying the menu at the till (solution: better menu visibility from the queue), staff searching for items on the POS (solution: learn the layout and shortcuts), slow card payment processing (solution: contactless terminals, better Wi-Fi), and long modifier conversations (solution: structured question sequence). Address the single biggest time waster immediately. If the menu board is hard to read from the queue, improve it this week. If the POS is slow, contact the provider or consider a system update. Week 2: Create a standard order-taking sequence that every till operator follows: 1. Greet the customer warmly, 2. Take the drink order (type, size, milk, modifications), 3. Ask about food ('Would you like anything to eat with that?'), 4. Ask about allergens if food is ordered, 5. Confirm the order back, 6. Process payment. Train every front-of-house team member on this sequence. Practise it during quiet periods until it becomes natural. The key is consistency — when every staff member follows the same sequence, speed improves because there is no hesitation about what comes next.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Optimise the POS system for speed: learn every shortcut, create quick-access buttons for the top 10 drinks, set up modifier sequences that match the order-taking flow. If the POS does not support quick access, consider whether it is the right system for a busy cafe. Develop a menu knowledge training programme: every till operator must be able to answer any menu question instantly — what milks are available, which cakes contain nuts, how many calories in a croissant. Hesitation while checking kills throughput. Implement a structured upsell approach that adds value without adding time: suggest a specific item ('Our almond croissant is fresh out of the oven this morning') rather than a generic 'anything else?'. Create a payment speed protocol: ensure contactless terminals are always on, ready, and positioned for the customer to tap while their drink is being confirmed. Consider mobile payment integration. Train staff on handling common scenarios efficiently: split bills, loyalty stamps, discount codes, and takeaway versus eat-in. Each scenario should have a practised response. By Week 8, every till operator should follow the standard sequence, know the menu thoroughly, and process orders in under 45 seconds on average.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Continuously refine the order-taking process through observation and data. Track average order time monthly and set improvement targets. Observe the best performers and identify what they do differently — share their techniques with the team. Review the menu regularly for items that create order confusion or take too long to explain. Consider seasonal menu simplification during peak periods. Explore pre-ordering technology: QR code ordering from tables, app-based order-ahead, or a 'regulars' quick-order system where known customers' usual orders are stored. Conduct quarterly till efficiency audits comparing order times across staff members and identifying training opportunities."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Time 20 orders during peak to establish baseline average order-taking time",
+        "Identify the top three time wasters in the current order process",
+        "Address the single biggest time waster immediately",
+        "Ensure the menu board is clearly visible and readable from the queue",
+        "Create a standard order-taking sequence for all till operators",
+        "Train every front-of-house team member on the standard sequence",
+        "Practise the sequence during quiet periods until it becomes natural"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Optimise POS system with quick-access buttons and shortcut keys for top items",
+        "Develop menu knowledge training so till operators can answer any question instantly",
+        "Implement a structured upsell approach that adds value without time",
+        "Create a payment speed protocol with contactless always ready",
+        "Train staff on efficient handling of common scenarios: split bills, discounts, loyalty",
+        "Track average order time weekly to measure improvement",
+        "Identify and share best practices from top-performing till operators"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track average order time monthly and set improvement targets",
+        "Conduct quarterly till efficiency audits across all staff",
+        "Review the menu for items causing confusion or delay",
+        "Explore pre-ordering technology: QR codes, apps, regulars' quick-order",
+        "Share efficiency techniques from top performers across the team"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Standard Order-Taking Sequence (laminated reference card)",
+    "Order Time Baseline Report",
+    "POS Quick-Access Configuration Guide",
+    "Menu Knowledge Training Programme",
+    "Payment Speed Protocol"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T022-01",
+        "tool_name": "Order-Taking Sequence Card",
+        "level": "L1",
+        "format": "guide",
+        "owner_role": "Front-of-House Staff",
+        "description": "Laminated card at each till showing the standard 6-step order-taking sequence: greet, drink order, food prompt, allergen check, confirm, payment."
+      },
+      {
+        "tool_id": "T022-02",
+        "tool_name": "Order Time Tracking Log",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Log for timing sample orders during peak periods: order number, items ordered, time from greeting to payment complete, and notes on any delays."
+      },
+      {
+        "tool_id": "T022-03",
+        "tool_name": "POS Optimisation Guide",
+        "level": "L2",
+        "format": "guide",
+        "owner_role": "Manager",
+        "description": "Guide for optimising the POS system: quick-access button setup for top sellers, modifier sequences, shortcut keys, and troubleshooting common speed issues."
+      },
+      {
+        "tool_id": "T022-04",
+        "tool_name": "Menu Knowledge Quiz",
+        "level": "L2",
+        "format": "assessment",
+        "owner_role": "Manager",
+        "description": "Quick assessment testing till operators on full menu knowledge: drink options, milk alternatives, food ingredients, allergens, prices, and modification options."
+      },
+      {
+        "tool_id": "T022-05",
+        "tool_name": "Quarterly Till Efficiency Audit",
+        "level": "L3",
+        "format": "audit",
+        "owner_role": "Manager",
+        "description": "Quarterly audit comparing order-taking times across all till operators, identifying training needs, equipment issues, and process improvements."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Speed focus strips away warmth and personality, making the interaction feel transactional and cold",
+    "POS system limitations prevent efficient order entry regardless of staff training",
+    "Staff skip the allergen question to save time, creating a food safety risk",
+    "Order-taking speed improves but order accuracy drops because staff rush through confirmations"
+  ],
+  "kpis": [
+    "Average order-taking time under 45 seconds for standard drink orders",
+    "Average order-taking time under 75 seconds for complex or food-inclusive orders",
+    "Zero allergen questions skipped during order-taking",
+    "Customer satisfaction scores for speed of service above 4 out of 5"
+  ],
+  "dependencies": ["B021"],
+  "constraints": [
+    "Speed must never compromise allergen questioning or food safety procedures",
+    "POS system must support quick-access buttons or shortcuts — upgrade if necessary",
+    "Staff warmth and personal connection must be maintained alongside speed improvements"
+  ],
+  "time_load": {
+    "L1": "3 hours (baseline timing, sequence development, initial training)",
+    "L2": "6 hours (POS optimisation, menu training, payment protocol, ongoing measurement)",
+    "L3": "2 hours/quarter (efficiency audits, target reviews, technology evaluation)"
+  },
+  "review_protocol": "Daily observation by shift manager during peak. Weekly order time sample measurement. Monthly review of average order times and trends. Quarterly till efficiency audit across all operators.",
+  "meta": {
+    "summary_for_humans": "This block streamlines the order-taking interaction to reduce the time from customer greeting to payment completion, using a standard sequence, POS optimisation, and menu knowledge training — all while maintaining warmth and allergen checking.",
+    "implementation_risks": [
+      "Risk of making the interaction feel robotic — the sequence is a framework, not a script to be recited",
+      "POS system changes may require investment — but the throughput gain justifies the cost",
+      "New staff need training time — the sequence is not intuitive without practice"
+    ],
+    "notes_for_engine": "Activate alongside B021 (Queue Management). Flag as urgent if signals indicate long order times, customer frustration at the till, or significant throughput bottleneck at the order point.",
+    "tags": ["customer_experience", "order_taking", "speed", "POS", "throughput", "training", "efficiency", "front_of_house"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

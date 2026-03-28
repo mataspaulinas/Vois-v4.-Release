@@ -1,0 +1,84 @@
+{
+  "identification": {
+    "tool_id": "T004-01",
+    "tool_name": "Cold Chain Dashboard Workbook",
+    "block_id": "B004"
+  },
+  "tool_design": {
+    "format": "dashboard",
+    "role_in_intervention": "Primary aggregation layer for cold-chain data from B001-B003.",
+    "adaptation_variables": [
+      "unit_count",
+      "supplier_count",
+      "review_cadence",
+      "site_complexity"
+    ],
+    "usage_moment": "Daily update and weekly manager review",
+    "expected_output": "Updated workbook with current KPIs, RAG status, and action register",
+    "linked_blocks": [
+      "B001",
+      "B002",
+      "B003",
+      "B004"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "Source data stops flowing into the workbook consistently.",
+        "what_can_go_wrong": "The dashboard looks current but is actually stale, so management decisions are made on the wrong picture.",
+        "early_signals": [
+          "Daily logs exist but the workbook has not moved for days",
+          "Managers stop trusting the dashboard and go back to verbal updates"
+        ],
+        "prevention": [
+          "Assign one named owner for daily updates",
+          "Tie dashboard update to the close or Monday review rhythm"
+        ],
+        "mitigation": [
+          "Reset the workbook from current source records",
+          "Reduce the KPI set until upkeep is reliable again"
+        ],
+        "if_occurs_next_signals": [
+          "stale_management_visibility"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B002",
+          "B003"
+        ]
+      },
+      {
+        "warning": "The dashboard is reviewed passively without producing action.",
+        "what_can_go_wrong": "The block becomes display rather than governance.",
+        "early_signals": [
+          "Amber or red items appear for several weeks with no owner assigned",
+          "The same unit or supplier issue keeps reappearing"
+        ],
+        "prevention": [
+          "Require at least one action or explicit no-action decision each review",
+          "Keep owners and due dates visible in the workbook"
+        ],
+        "mitigation": [
+          "Run a focused review on repeated red items",
+          "Escalate unresolved trends back into B001, B002, or B003"
+        ],
+        "if_occurs_next_signals": [
+          "analysis_without_intervention"
+        ],
+        "possible_successor_blocks": [
+          "B001",
+          "B002",
+          "B003"
+        ]
+      }
+    ]
+  },
+  "content": "# Cold Chain Dashboard Workbook\n\n**Tool ID:** T004-01  \n**Block:** B004 (Cold Chain Excellence Dashboard)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L2  \n**Format:** Dashboard  \n**Role:** Manager / Owner  \n**Time Required:** 5 minutes daily update, 15 minutes weekly review  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this workbook to turn the evidence created in `B001`, `B002`, and `B003` into one management view.\n\nThis is the decision layer for questions like:\n- Are checks being completed reliably?\n- Which unit is drifting before failure?\n- Which supplier is becoming a pattern?\n- Are excursion events increasing or shrinking?\n- What needs action this week?\n\n---\n## Source Feeds\n\n| Source Block | Source Tool | What Feeds The Workbook |\n|---|---|---|\n| B001 | T001-01 / T001-02 / T001-03 | Daily completion, calibration status, trigger events |\n| B002 | T002-01 / T002-03 / T002-04 | Delivery compliance, supplier incidents, fridge audit scores |\n| B003 | T003-02 / T003-04 | Excursions, stock loss, root causes |\n\n---\n## Recommended Workbook Tabs\n\n| Tab | Purpose | Update Rhythm |\n|---|---|---|\n| Daily Inputs | Pull in check completion, trigger counts, and delivery data | Daily |\n| Unit Trends | Track average temperatures and warning drift by unit | Weekly |\n| Supplier View | Track borderline or rejected deliveries by supplier | Weekly |\n| Excursion View | Track incidents, stock loss, and root causes | As incidents happen |\n| Action Register | Hold current owners, due dates, and status | Weekly |\n\n---\n## Weekly Manager View\n\n**Week ending:** ____________________\n\n| KPI | Target | Actual | Status | Notes |\n|---|---|---|---|---|\n| Daily temp check completion | `100%` | | Green / Amber / Red | |\n| Delivery acceptance completion | `100%` | | Green / Amber / Red | |\n| Weekly fridge audit score | `90%+` | | Green / Amber / Red | |\n| Excursion count | `0` | | Green / Amber / Red | |\n| Calibration current | `Yes` | | Green / Amber / Red | |\n\n---\n## By-Unit Alert Table\n\n| Unit | Avg Temp | Warning Events | Excursions This Quarter | Current Decision |\n|---|---|---|---|---|\n| Milk fridge | | | | Watch / Repair / Replace |\n| Prep fridge | | | | Watch / Repair / Replace |\n| Display fridge | | | | Watch / Repair / Replace |\n| Main freezer | | | | Watch / Repair / Replace |\n\n---\n## Action Register\n\n| Priority | Issue | Owner | Due Date | Status |\n|---|---|---|---|---|\n| High / Medium / Low | | | | Open / Closed |\n| High / Medium / Low | | | | Open / Closed |\n| High / Medium / Low | | | | Open / Closed |\n\n---\n## Review Questions\n\n- What changed this week that actually needs action?\n- Which issue belongs back in `B001`, `B002`, or `B003` instead of staying in dashboard-land?\n- Which trend is early enough to fix cheaply?\n- What one message should the team see this week on the staff board?\n\n---\n## Connected Resources\n\n**Built from:**\n- T001-04 - Monthly Temperature Compliance Dashboard\n- T002-03 - Supplier Temperature Incident Log & Escalation Record\n- T003-04 - Excursion Trend Tracker & Root Cause Log\n\n**Used with:**\n- T004-02 - Monthly Cold Chain Management Report\n- T004-03 - Equipment Health Scorecard & Replacement Trigger\n- T004-05 - Staff-Facing Cold Chain Scoreboard\n\n---\n\n*Tool Version 2.0 - the manager view that turns cold-chain records into decisions.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T004-01_cold_chain_dashboard_workbook.md",
+    "migration_method": "manual_enrichment"
+  }
+}

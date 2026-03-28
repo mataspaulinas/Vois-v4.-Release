@@ -1,0 +1,167 @@
+{
+  "block_id": "B040",
+  "name": "Shot Quality Standards",
+  "version": "v1.0",
+  "domain": "D03_coffee_product",
+  "module": "M03: Coffee Craft & Menu Excellence",
+  "state": "enriched",
+  "purpose": "Defines the measurable quality standards for every espresso shot served, providing objective and subjective criteria that all baristas must meet during service. This block establishes what 'good' looks like, when a shot should be discarded and remade, and how to maintain consistency throughout a busy shift.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define objective espresso quality parameters: dose, yield, extraction time, crema, and temperature",
+      "Establish subjective tasting standards: flavour balance, sweetness, acidity, body, and finish",
+      "Create a clear 'sink shot' policy — when a shot must be discarded and remade",
+      "Ensure quality standards are maintained during peak service, not just during quiet periods",
+      "Build a culture where every barista takes personal responsibility for shot quality"
+    ],
+    "secondary_objectives": [
+      "Reduce inconsistency between baristas working the same shift",
+      "Provide a framework for quality-focused feedback during service",
+      "Connect shot quality standards to customer satisfaction metrics",
+      "Create a progression pathway from basic competence to advanced espresso skill"
+    ]
+  },
+  "why_this_matters": "A cafe's reputation is built or destroyed one shot at a time. When a customer orders a flat white, they expect it to taste the same whether it is made by the head barista on a Monday morning or by the newest team member on a Saturday afternoon. Consistency is the hallmark of professional coffee service. Without defined shot quality standards, 'good enough' becomes the default — and what one barista considers acceptable, another would pour down the sink. This inconsistency is immediately noticeable to regular customers, who develop a mental model of what their coffee should taste like and register any deviation. In the UK specialty coffee scene, shot quality is a competitive battleground. Customers who have experienced genuinely well-extracted espresso will not tolerate sour, bitter, or thin shots, and they will tell their friends — or worse, their Instagram followers — about the decline. But shot quality standards are not just about specialty snobs. Even in a high-street cafe serving a mainstream blend, the difference between a well-extracted and a poorly extracted shot is detectable by anyone. A sour shot makes milk drinks taste sharp and unpleasant. A bitter shot makes an americano harsh and undrinkable. The financial impact is direct: each wasted shot costs approximately 30-50p in coffee alone, plus milk, time, and customer goodwill. A cafe pulling 200 shots per day with a 10% discard rate is wasting 20 shots — roughly £8-10 per day, £240-300 per month in coffee cost alone, not counting the customers who received the bad shots that were not caught.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Document the cafe's shot quality standards on a single A4 sheet. This should include: target dose (e.g., 18g ±0.3g), target yield (e.g., 36g ±2g), target extraction time (e.g., 25-30 seconds), acceptable crema characteristics (golden-brown, even, approximately 2-3mm thick, lasting at least 30 seconds), and serving temperature (espresso should be served immediately, not left to cool on the machine). Add a visual guide: photos or descriptions of what a good shot, an under-extracted shot, and an over-extracted shot look like in the cup. Define the sink shot policy clearly: any shot that runs outside the time window (e.g., under 20 or over 35 seconds), shows visible channelling (uneven flow, blonde spots, spraying), has watery or pale crema, or tastes noticeably sour or bitter must be discarded and remade. No exceptions. Post the quality standards sheet at eye level near the espresso machine. Week 2: Observe every barista pulling shots during a shift. Provide immediate, private feedback when standards are not met. Taste shots together — have each barista pull a shot, taste it, and describe what they experience. Compare their assessment with yours. Calibrate the team so everyone agrees on what 'good' tastes and looks like. Ensure scales are used for every shot, not just during dial-in — dosing by feel is not accurate enough for consistent quality.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a formal Shot Quality SOP that covers every aspect: portafilter preparation, dosing, distribution, tamping, insertion, extraction monitoring, visual assessment, tasting, and the decision to serve or discard. Include troubleshooting: what to adjust when shots are consistently fast, slow, thin, bitter, sour, or lacking body. Create a barista competency assessment for shot quality — a practical test where each barista must demonstrate they can consistently pull shots within the target parameters and accurately describe the flavour. This becomes part of the probation process for new hires. Introduce random quality checks during service: the manager or head barista tastes a random shot from each barista at least once per shift and provides feedback. Log these checks as part of ongoing quality assurance. Begin tracking shot quality data: how many sink shots per shift, which baristas are most consistent, which times of day see quality dip. Use this data to identify training needs and scheduling optimisations. If multiple baristas are working the machine simultaneously during peak periods, establish clear protocols: one person 'owns' the grinder settings for espresso and communicates any adjustments made. Implement a 'buddy system' for new baristas — they work alongside an experienced barista for their first two weeks, with every shot checked before serving.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Shot quality should be a point of pride for every team member. Introduce an internal espresso quality score — a weekly rating based on random checks, sink shot rates, and customer feedback. Share the score with the team and celebrate consistent excellence. Conduct quarterly blind tasting sessions where baristas taste shots without knowing who pulled them and evaluate quality — this builds objectivity and removes ego from quality feedback. Explore advanced extraction techniques: pre-infusion programming, pressure profiling (if the machine supports it), or temperature surfing for different beans. Connect shot quality data to customer satisfaction data from B033 and B034 — do periods of lower shot quality correlate with lower satisfaction scores? Use refractometry to add objective extraction percentage data alongside subjective tasting. Set ambitious quality targets: less than 5% sink shot rate, consistent extraction percentage within the 18-22% range."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Document shot quality standards on an A4 reference sheet with visual examples",
+        "Post the standards sheet at eye level near the espresso machine",
+        "Define and communicate the sink shot policy — when to discard and remake",
+        "Ensure scales are used for every shot during service, not just dial-in",
+        "Observe each barista pulling shots and provide private feedback",
+        "Conduct a team tasting session to calibrate what 'good' means",
+        "Verify all portafilters, baskets, and tampers are in good condition"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Draft a formal Shot Quality SOP with troubleshooting guidance",
+        "Create a barista competency assessment for shot quality",
+        "Implement random quality checks — at least one taste-test per barista per shift",
+        "Begin tracking sink shot rates and quality check outcomes",
+        "Establish grinder ownership protocols for peak service periods",
+        "Implement a buddy system for new baristas during their first two weeks",
+        "Include shot quality assessment in the probation review process"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Introduce a weekly internal espresso quality score shared with the team",
+        "Conduct quarterly blind tasting sessions for objective quality evaluation",
+        "Explore advanced extraction techniques appropriate to the machine",
+        "Correlate shot quality data with customer satisfaction metrics",
+        "Set and track ambitious sink shot rate targets (below 5%)",
+        "Use refractometry for objective extraction measurement during quality audits"
+      ],
+      "responsible": "Head Barista, Manager, Owner"
+    }
+  },
+  "deliverables": [
+    "Shot Quality Standards Reference Sheet (A4, posted at machine)",
+    "Shot Quality SOP document",
+    "Barista Competency Assessment (shot quality practical test)",
+    "Random Quality Check Log template",
+    "Weekly Espresso Quality Score report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T040-01",
+        "tool_name": "Shot Quality Standards Card",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "A4 laminated reference showing target parameters (dose, yield, time), visual examples of good/bad shots, crema standards, and the sink shot policy. Posted at the espresso station."
+      },
+      {
+        "tool_id": "T040-02",
+        "tool_name": "Random Quality Check Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Head Barista",
+        "description": "Log for recording random shot quality checks during service: barista name, time, measured parameters, tasting notes, pass/fail, and feedback given. Used for trend analysis and training decisions."
+      },
+      {
+        "tool_id": "T040-03",
+        "tool_name": "Shot Quality SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Head Barista",
+        "description": "Comprehensive procedure covering portafilter preparation, dosing, distribution, tamping, extraction monitoring, visual assessment, tasting evaluation, and troubleshooting common quality issues."
+      },
+      {
+        "tool_id": "T040-04",
+        "tool_name": "Barista Shot Competency Assessment",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Head Barista",
+        "description": "Practical assessment checklist for evaluating a barista's ability to consistently pull shots within target parameters, accurately assess quality, and make appropriate grind adjustments."
+      },
+      {
+        "tool_id": "T040-05",
+        "tool_name": "Weekly Espresso Quality Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Manager",
+        "description": "Weekly summary of quality check results, sink shot rates by barista and time period, competency assessment outcomes, and trends in extraction consistency."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Standards exist on paper but are ignored during busy periods when speed takes priority over quality",
+    "The sink shot policy is undermined by pressure to reduce waste — baristas serve marginal shots rather than remaking",
+    "Quality checks feel punitive rather than developmental, creating anxiety at the machine instead of confidence",
+    "Only the head barista meets the standards consistently, with no pathway for others to reach the same level"
+  ],
+  "kpis": [
+    "Sink shot rate below 8% in the first month, below 5% by month three",
+    "100% of baristas pass the shot competency assessment within their probation period",
+    "At least one random quality check per barista per shift logged and reviewed",
+    "Zero customer complaints about espresso taste per week"
+  ],
+  "dependencies": ["B039"],
+  "constraints": [
+    "Accurate scales (0.1g) must be available at every espresso station during service",
+    "Shot quality standards must be reviewed whenever the coffee blend or roaster changes",
+    "Quality checks must be conducted supportively — punitive approaches will backfire"
+  ],
+  "time_load": {
+    "L1": "3 hours (standards documentation, team calibration session, observation)",
+    "L2": "8 hours (SOP drafting, competency assessment creation, training, check system setup)",
+    "L3": "2 hours/month (quality score compilation, blind tastings, trend analysis)"
+  },
+  "review_protocol": "Daily review of any sink shots and quality check notes. Weekly compilation of espresso quality score. Monthly review of barista competency and training needs. Standards reviewed whenever the coffee changes or quality metrics indicate drift.",
+  "meta": {
+    "summary_for_humans": "This block defines what a good espresso shot looks and tastes like, establishes when a shot must be discarded, and builds systems for maintaining quality consistency across all baristas and all shifts. It covers the objective parameters, the subjective taste standards, and the ongoing quality assurance checks.",
+    "implementation_risks": [
+      "Overly strict standards without adequate training create stress and waste rather than quality",
+      "Random quality checks can feel like surveillance if the culture is not supportive",
+      "Focusing only on measurable parameters (time, weight) while neglecting taste leads to technically correct but flavourless espresso"
+    ],
+    "notes_for_engine": "Activate alongside B039 — dial-in establishes the daily baseline, shot quality standards maintain it through service. Flag if signals indicate inconsistent coffee quality between baristas, rising customer taste complaints, or high sink shot rates.",
+    "tags": ["coffee_quality", "espresso", "shot_standards", "consistency", "barista_skills", "quality_control", "sink_shots"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

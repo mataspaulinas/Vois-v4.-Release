@@ -1,0 +1,38 @@
+{
+  "id": "t_eb800f5dc542",
+  "title": "Ready for L2 — what does that look like?",
+  "type": "venue",
+  "venue_slug": "kavos_namai_warsaw",
+  "created": "2026-03-08T16:16:39.239400",
+  "updated": "2026-03-08T19:32:06.239400",
+  "messages": [
+    {
+      "id": "m_1c3fe1f5",
+      "role": "user",
+      "content": "We've completed most of our L1 tasks. What does moving to L2 look like in practice?",
+      "timestamp": "2026-03-08T16:16:39.239400",
+      "attachments": []
+    },
+    {
+      "id": "m_31842721",
+      "role": "assistant",
+      "content": "Good position to be in. L1 was about stabilization — making sure nothing's on fire. L2 is about building systems that sustain themselves without you personally driving every task.\n\n**The L2 shift in mindset:**\n- L1: 'Fix this thing today'\n- L2: 'Build a system so this thing stays fixed'\n\n**What changes practically:**\n\n1. **SOPs replace verbal instructions** — those role assignments you wrote on cards? They become proper standard operating procedures with checklists, training sign-offs, and review dates.\n\n2. **Metrics replace observations** — instead of 'tables seem to be cleared faster,' you track table clear time, queue length at intervals, waste percentage. Data, not vibes.\n\n3. **Ownership transfers from consultant to manager** — I stop telling your team what to do. Your manager tells the team what to do, using the systems we built. I review and adjust.\n\n4. **Cadence formalizes** — weekly reviews, monthly assessments, quarterly plan updates. Not reactive firefighting.\n\n**Your first L2 priorities (based on the plan):**\n- B054 Drink Recipe Cards — standardize every recipe with exact specs\n- B055 Portion Control System — define portions for top-cost ingredients\n- B060 Weekly Team Meeting Structure — formalize the briefing into a proper cadence\n\nThese are all 'system-building' tasks. They take longer than L1 tasks but the payoff compounds. Ready to start?",
+      "timestamp": "2026-03-08T16:16:52.239400",
+      "attachments": []
+    },
+    {
+      "id": "m_498a6e81",
+      "role": "user",
+      "content": "Yes. Let's start with recipe cards since our new barista keeps making drinks differently.",
+      "timestamp": "2026-03-08T17:40:52.239400",
+      "attachments": []
+    },
+    {
+      "id": "m_8e87eae2",
+      "role": "assistant",
+      "content": "Classic symptom — inconsistent drinks = missing recipe specs. Here's how to build the recipe card system:\n\n**Step 1 (Today): Audit your current drinks**\nList every drink on the menu. For each one, write down:\n- Exact dose (grams of coffee)\n- Grind setting (number/click on your grinder)\n- Yield (grams in cup)\n- Time (extraction time range)\n- Milk: type, temperature, texture, volume\n- Syrups/additions: exact pumps or ml\n\n**Step 2 (Tomorrow): Create the cards**\nOne card per drink. Laminate them. Mount them at the bar where the barista can see them during service.\n\nFormat:\n```\n[DRINK NAME]\nDose: 18g  |  Grind: 4.5  |  Yield: 36g  |  Time: 28-32s\nMilk: Full fat, 65°C, microfoam\nServed in: 240ml ceramic\nGarnish: None\n```\n\n**Step 3 (This week): Train and test**\nMake each drink with the new barista, side by side, following the card. They make it, you taste it, adjust the card if needed. Then they make it 3 times solo.\n\n**Step 4 (Ongoing): Spot-check**\nOnce a week, order a drink as if you're a customer. Does it match the spec? If not, retrain — don't just tell them, show them.\n\nI'll mark B054 as in progress. This should take 3-4 days to complete properly.",
+      "timestamp": "2026-03-08T17:41:06.239400",
+      "attachments": []
+    }
+  ]
+}

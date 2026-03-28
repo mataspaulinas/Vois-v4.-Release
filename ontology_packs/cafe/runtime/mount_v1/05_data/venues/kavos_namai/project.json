@@ -1,0 +1,99 @@
+{
+  "venue_id": "kavos_namai",
+  "venue_name": "Kavos Namai",
+  "brand": "kavos_namai",
+  "type": "independent_cafe",
+  "stage": "",
+  "team_size": null,
+  "location": "Vilnius Old Town, Lithuania",
+  "concept": "Specialty coffee with simple all-day food menu (sourdough toasts, yogurt bowls, house-baked muffins, soups/sandwiches); warm cozy aesthetic targeting locals",
+  "team_profile": {},
+  "capacity_profile": {
+    "leadership_strength": "medium",
+    "volatility": "medium"
+  },
+  "status": "active",
+  "created": "2026-03-04T16:58:06.251775",
+  "last_assessment": "2026-03-04T16:58:59.659646",
+  "current_signals": {
+    "S002": {
+      "active": true,
+      "notes": "Partial evidence: FOH staff unable to confirm vegan status of soup without checking — 'Is the soup vegan? → Let me check… sorry, one sec' — with the kitchen only 2 steps away. Suggests allergen/dietary information is not immediately accessible to front-of-house staff, which is a compliance risk under EU food information regulations applicable in Lithuania.",
+      "confidence": "medium",
+      "value": null
+    },
+    "S019": {
+      "active": true,
+      "notes": "Direct evidence: 'long waits (5–8 min for simple orders)' during '10–12 person queues'. Multiple reviews confirm: 'waited forever for table clear', 'Staff nice but overwhelmed on busy mornings'. Exceeds the 5-minute threshold defined in this signal.",
+      "confidence": "high",
+      "value": null
+    },
+    "S026": {
+      "active": true,
+      "notes": "Partial evidence only: 'Wi-Fi code forgotten once' — a single observed instance suggesting Wi-Fi information is not systematically communicated or posted. Weak signal; one incident.",
+      "confidence": "low",
+      "value": null
+    },
+    "S051": {
+      "active": true,
+      "notes": "Implied by: allergen knowledge gap ('Is the soup vegan? Let me check'), specials not consistently communicated, and Wi-Fi code forgotten. These suggest no FOH reference materials (recipe cards, allergen sheets, daily briefing notes) are in use or posted at the counter.",
+      "confidence": "medium",
+      "value": null
+    },
+    "S063": {
+      "active": true,
+      "notes": "Implied by role confusion during busy periods: 'both baristas look unsure who handles what when busy — wait, is that your table or mine?' Suggests roles are not interchangeable or clearly defined, and cross-training on responsibilities (clearing, payments, drinks) is incomplete.",
+      "confidence": "medium",
+      "value": null
+    },
+    "S070": {
+      "active": true,
+      "notes": "Direct evidence: 'Often only one person handling orders + drinks + clearing + payments during 10–12 person queues → visible stress, long waits (5–8 min for simple orders).' Reviews confirm: 'Staff nice but overwhelmed on busy mornings', 'could use one more person'. Observed during morning drop-ins.",
+      "confidence": "high",
+      "value": null
+    },
+    "S071": {
+      "active": true,
+      "notes": "Implied by: 'Specials not always verbalized to all' and 'Wi-Fi code forgotten once' — both suggest no structured pre-shift briefing where specials, codes, and task allocation are communicated consistently to the whole team.",
+      "confidence": "medium",
+      "value": null
+    },
+    "S073": {
+      "active": true,
+      "notes": "Implied by single-person bottleneck: one barista handling orders, drinks, clearing, and payments simultaneously suggests the counter and floor layout does not support efficient task separation. However, no direct description of physical layout inefficiency — confidence capped at medium.",
+      "confidence": "medium",
+      "value": null
+    },
+    "S080": {
+      "active": true,
+      "notes": "Direct evidence: 'Tables sit dirty 6–10 min after guests leave (especially corners people linger).' Review confirms: 'Coffee amazing but waited forever for table clear.' In an 18–22 seat venue, uncleared tables for 6–10 minutes represents a meaningful capacity constraint.",
+      "confidence": "high",
+      "value": null
+    },
+    "S083": {
+      "active": true,
+      "notes": "Direct evidence: 'Often only one person handling orders + drinks + clearing + payments during 10–12 person queues.' Reviews state 'could use one more person.' Staffing clearly not calibrated to actual peak demand — two FOH staff insufficient for observed volume.",
+      "confidence": "high",
+      "value": null
+    },
+    "S133": {
+      "active": true,
+      "notes": "Partially evidenced: 'Tables sit dirty 6–10 min after guests leave (especially corners).' BOH described as 'clean stations' — so inconsistency is specifically in FOH cleanliness maintenance during service, not a general hygiene failure.",
+      "confidence": "medium",
+      "value": null
+    },
+    "S160": {
+      "active": true,
+      "notes": "Implied by context: the observation covers two morning drop-ins only, and the venue is described as a 'quiet Old Town alley' with a calm, cozy daytime vibe. No mention of evening trade, events, or afternoon revenue streams. The stress and queue issues are specifically morning-concentrated. Revenue likely heavily morning-weighted.",
+      "confidence": "medium",
+      "value": null
+    },
+    "S166": {
+      "active": true,
+      "notes": "Direct evidence: 'No clear shift lead — both baristas look unsure who handles what when busy — wait, is that your table or mine?' Specials not consistently communicated. Allergen knowledge gap. These collectively indicate the team is not aligned on roles, responsibilities, or service standards during peak.",
+      "confidence": "high",
+      "value": null
+    }
+  },
+  "slug": "kavos_namai"
+}

@@ -1,0 +1,166 @@
+response_pattern_id,layer,block_ids,tool_ids,notes
+RP001,L1,"B001,B002,B003",,Temperature Monitoring & Cold Chain -> M01
+RP001,L2,"B001,B002,B003,B004",,Temperature Monitoring & Cold Chain -> M01
+RP001,L3,"B001,B004",,Temperature Monitoring & Cold Chain -> M01
+RP002,L1,"B005,B006,B007",,Allergen Management & PPDS -> M01
+RP002,L2,"B005,B006,B007,B008",,Allergen Management & PPDS -> M01
+RP002,L3,"B005,B008",,Allergen Management & PPDS -> M01
+RP003,L1,"B009,B010,B011",,Hygiene & Cleaning Discipline -> M01
+RP003,L2,"B009,B010,B011,B012",,Hygiene & Cleaning Discipline -> M01
+RP003,L3,"B009,B012",,Hygiene & Cleaning Discipline -> M01
+RP004,L1,"B013,B014,B015",,HACCP & Food Safety System -> M01
+RP004,L2,"B013,B014,B015,B016",,HACCP & Food Safety System -> M01
+RP004,L3,"B013,B016",,HACCP & Food Safety System -> M01
+RP005,L1,"B017,B018,B019",,Food Safety Training & EHO -> M01
+RP005,L2,"B017,B018,B019,B020",,Food Safety Training & EHO -> M01
+RP005,L3,"B017,B020",,Food Safety Training & EHO -> M01
+RP006,L1,"B021,B022,B023",,Queue Management & Service Speed -> M02
+RP006,L2,"B021,B022,B023,B024",,Queue Management & Service Speed -> M02
+RP006,L3,"B021,B024",,Queue Management & Service Speed -> M02
+RP007,L1,"B025,B026,B027",,Order Accuracy & Service Quality -> M02
+RP007,L2,"B025,B026,B027,B028",,Order Accuracy & Service Quality -> M02
+RP007,L3,"B025,B028",,Order Accuracy & Service Quality -> M02
+RP008,L1,"B029,B030,B031",,Customer Retention & Loyalty -> M02
+RP008,L2,"B029,B030,B031,B032",,Customer Retention & Loyalty -> M02
+RP008,L3,"B029,B032",,Customer Retention & Loyalty -> M02
+RP009,L1,"B033,B034,B035",,Complaint Resolution & Recovery -> M02
+RP009,L2,"B033,B034,B035,B036",,Complaint Resolution & Recovery -> M02
+RP009,L3,"B033,B036",,Complaint Resolution & Recovery -> M02
+RP010,L1,"B037,B038",,Customer Journey & Accessibility -> M02
+RP010,L2,"B037,B038",,Customer Journey & Accessibility -> M02
+RP010,L3,"B037,B038",,Customer Journey & Accessibility -> M02
+RP011,L1,"B039,B040,B041",,Espresso Extraction & Quality -> M03
+RP011,L2,"B039,B040,B041,B042,B198,B200",,Espresso Extraction & Quality -> M03
+RP011,L3,"B039,B042,B198,B200",,Espresso Extraction & Quality -> M03
+RP012,L1,"B043,B044,B045",,Milk Craft & Presentation -> M03
+RP012,L2,"B043,B044,B045,B046",,Milk Craft & Presentation -> M03
+RP012,L3,"B043,B046",,Milk Craft & Presentation -> M03
+RP013,L1,"B047,B048",,Water Quality & Equipment -> M03
+RP013,L2,"B047,B048,B049",,Water Quality & Equipment -> M03
+RP013,L3,"B047,B049",,Water Quality & Equipment -> M03
+RP014,L1,"B050,B051,B052",,Food Quality & Menu -> M03
+RP014,L2,"B050,B051,B052,B053,B199,B201",,Food Quality & Menu -> M03
+RP014,L3,"B050,B053,B199,B201",,Food Quality & Menu -> M03
+RP015,L1,"B054,B055",,Recipe Standards & Portions -> M03
+RP015,L2,"B054,B055,B056",,Recipe Standards & Portions -> M03
+RP015,L3,"B054,B056",,Recipe Standards & Portions -> M03
+RP016,L1,"B057,B058",,Coffee Waste & Sustainability -> M03
+RP016,L2,"B057,B058,B059,B196",,Coffee Waste & Sustainability -> M03
+RP016,L3,"B057,B059,B196",,Coffee Waste & Sustainability -> M03
+RP017,L1,"B060,B061",,Dietary Inclusivity -> M03
+RP017,L2,"B060,B061,B062",,Dietary Inclusivity -> M03
+RP017,L3,"B060,B062",,Dietary Inclusivity -> M03
+RP018,L1,"B063,B064,B065",,Staff Retention & Engagement -> M04
+RP018,L2,"B063,B064,B065,B066",,Staff Retention & Engagement -> M04
+RP018,L3,"B063,B066",,Staff Retention & Engagement -> M04
+RP019,L1,"B067,B068,B069",,Onboarding & Barista Training -> M04
+RP019,L2,"B067,B068,B069,B070,B197,B206",,Onboarding & Barista Training -> M04
+RP019,L3,"B067,B070,B197,B206",,Onboarding & Barista Training -> M04
+RP020,L1,"B074,B075",,Team Communication & Meetings -> M04
+RP020,L2,"B074,B075,B076",,Team Communication & Meetings -> M04
+RP020,L3,"B074,B076",,Team Communication & Meetings -> M04
+RP021,L1,"B071,B072",,Performance & Career Development -> M04
+RP021,L2,"B071,B072,B073",,Performance & Career Development -> M04
+RP021,L3,"B071,B073",,Performance & Career Development -> M04
+RP022,L1,"B077,B078,B079",,Key Person Risk & Cross-Training -> M04
+RP022,L2,"B077,B078,B079,B080",,Key Person Risk & Cross-Training -> M04
+RP022,L3,"B077,B080",,Key Person Risk & Cross-Training -> M04
+RP023,L1,"B081,B082,B083",,Owner Role & Leadership -> M13
+RP023,L2,"B081,B082,B083,B084",,Owner Role & Leadership -> M13
+RP023,L3,"B081,B084",,Owner Role & Leadership -> M13
+RP024,L1,"B085,B086,B087",,Peak Staffing & Rush Management -> M05
+RP024,L2,"B085,B086,B087,B088,B203,B204,B205",,Peak Staffing & Rush Management -> M05
+RP024,L3,"B085,B088,B203,B204,B205",,Peak Staffing & Rush Management -> M05
+RP025,L1,"B089,B090",,Workflow Layout & Station Design -> M05
+RP025,L2,"B089,B090,B091",,Workflow Layout & Station Design -> M05
+RP025,L3,"B089,B091",,Workflow Layout & Station Design -> M05
+RP026,L1,"B092,B093,B094",,Daily Routines & Shift Handover -> M05
+RP026,L2,"B092,B093,B094",,Daily Routines & Shift Handover -> M05
+RP026,L3,"B092,B094",,Daily Routines & Shift Handover -> M05
+RP027,L1,"B095,B096",,Stock Management & Par Levels -> M05
+RP027,L2,"B095,B096,B097",,Stock Management & Par Levels -> M05
+RP027,L3,"B095,B097",,Stock Management & Par Levels -> M05
+RP028,L1,"B098,B099",,Seating & Capacity Management -> M05
+RP028,L2,"B098,B099,B100",,Seating & Capacity Management -> M05
+RP028,L3,"B098,B100",,Seating & Capacity Management -> M05
+RP029,L1,"B101,B102",,Delivery Integration & Waste -> M05
+RP029,L2,"B101,B102,B103",,Delivery Integration & Waste -> M05
+RP029,L3,"B101,B103",,Delivery Integration & Waste -> M05
+RP030,L1,"B104,B105,B106",,Coffee Roaster & Suppliers -> M06
+RP030,L2,"B104,B105,B106,B107,B108,B109,B202",,Coffee Roaster & Suppliers -> M06
+RP030,L3,"B104,B107,B202",,Coffee Roaster & Suppliers -> M06
+RP031,L1,"B111,B112,B113",,Food & Coffee Cost Control -> M06
+RP031,L2,"B111,B112,B113,B114",,Food & Coffee Cost Control -> M06
+RP031,L3,"B111,B114",,Food & Coffee Cost Control -> M06
+RP032,L1,"B115,B116",,Inventory Management -> M06
+RP032,L2,"B115,B116,B117",,Inventory Management -> M06
+RP032,L3,"B115,B117",,Inventory Management -> M06
+RP033,L1,"B110",,Ethical Sourcing & Resilience -> M06
+RP033,L2,"B110,B195",,Ethical Sourcing & Resilience -> M06
+RP033,L3,"B110,B195",,Ethical Sourcing & Resilience -> M06
+RP034,L1,"B118,B119,B120",,Revenue Growth & Pricing -> M07
+RP034,L2,"B118,B119,B120,B121",,Revenue Growth & Pricing -> M07
+RP034,L3,"B118,B121",,Revenue Growth & Pricing -> M07
+RP035,L1,"B122,B123",,Financial Review & Budgeting -> M07
+RP035,L2,"B122,B123,B124",,Financial Review & Budgeting -> M07
+RP035,L3,"B122,B124",,Financial Review & Budgeting -> M07
+RP036,L1,"B125,B126",,Cost Structure & Payroll -> M07
+RP036,L2,"B125,B126,B127",,Cost Structure & Payroll -> M07
+RP036,L3,"B125,B127",,Cost Structure & Payroll -> M07
+RP037,L1,"B128,B129",,Delivery & Margin Protection -> M07
+RP037,L2,"B128,B129,B130,B209",,Delivery & Margin Protection -> M07
+RP037,L3,"B128,B130,B209",,Delivery & Margin Protection -> M07
+RP038,L1,"B131,B132",,Cash Handling & Reconciliation -> M07
+RP038,L2,"B131,B132",,Cash Handling & Reconciliation -> M07
+RP038,L3,"B131,B132",,Cash Handling & Reconciliation -> M07
+RP039,L1,"B133,B134,B135",,Reviews & Reputation -> M08
+RP039,L2,"B133,B134,B135,B136",,Reviews & Reputation -> M08
+RP039,L3,"B133,B136",,Reviews & Reputation -> M08
+RP040,L1,"B137,B138",,Social Media & Visual Branding -> M08
+RP040,L2,"B137,B138,B139",,Social Media & Visual Branding -> M08
+RP040,L3,"B137,B139",,Social Media & Visual Branding -> M08
+RP041,L1,"B140,B141",,Brand Identity & Acquisition -> M08
+RP041,L2,"B140,B141,B142",,Brand Identity & Acquisition -> M08
+RP041,L3,"B140,B142",,Brand Identity & Acquisition -> M08
+RP042,L1,"B143,B144",,Community Marketing -> M08
+RP042,L2,"B143,B144",,Community Marketing -> M08
+RP042,L3,"B143,B144",,Community Marketing -> M08
+RP043,L1,"B145,B146,B147",,Exterior & Cleanliness -> M09
+RP043,L2,"B145,B146,B147,B148",,Exterior & Cleanliness -> M09
+RP043,L3,"B145,B148",,Exterior & Cleanliness -> M09
+RP044,L1,"B149,B150",,Interior Design & Atmosphere -> M09
+RP044,L2,"B149,B150,B151",,Interior Design & Atmosphere -> M09
+RP044,L3,"B149,B151",,Interior Design & Atmosphere -> M09
+RP045,L1,"B152,B153",,Equipment Maintenance -> M09
+RP045,L2,"B152,B153,B154",,Equipment Maintenance -> M09
+RP045,L3,"B152,B154",,Equipment Maintenance -> M09
+RP046,L1,"B155,B156",,POS & Digital Ordering -> M10
+RP046,L2,"B155,B156,B157",,POS & Digital Ordering -> M10
+RP046,L3,"B155,B157",,POS & Digital Ordering -> M10
+RP047,L1,"B158,B159",,Data Analytics & CRM -> M10
+RP047,L2,"B158,B159,B160",,Data Analytics & CRM -> M10
+RP047,L3,"B158,B160",,Data Analytics & CRM -> M10
+RP048,L1,"B161,B162",,IT Infrastructure & Security -> M10
+RP048,L2,"B161,B162,B163",,IT Infrastructure & Security -> M10
+RP048,L3,"B161,B163",,IT Infrastructure & Security -> M10
+RP049,L1,"B164,B165",,Business Planning & Positioning -> M11
+RP049,L2,"B164,B165,B166,B207,B210",,Business Planning & Positioning -> M11
+RP049,L3,"B164,B167,B207,B210",,Business Planning & Positioning -> M11
+RP050,L1,"B168,B169",,Revenue Diversification & Expansion -> M11
+RP050,L2,"B168,B169,B170,B171,B208",,Revenue Diversification & Expansion -> M11
+RP050,L3,"B168,B171,B208",,Revenue Diversification & Expansion -> M11
+RP051,L1,"B172,B173,B174",,Values & Standards Culture -> M12
+RP051,L2,"B172,B173,B174,B175",,Values & Standards Culture -> M12
+RP051,L3,"B172,B175",,Values & Standards Culture -> M12
+RP052,L1,"B176,B177",,Community Identity & Belonging -> M12
+RP052,L2,"B176,B177,B178",,Community Identity & Belonging -> M12
+RP052,L3,"B176,B178",,Community Identity & Belonging -> M12
+RP053,L1,"B179,B180,B181",,Operational Rhythm & Discipline -> M14
+RP053,L2,"B179,B180,B181,B182",,Operational Rhythm & Discipline -> M14
+RP053,L3,"B179,B182",,Operational Rhythm & Discipline -> M14
+RP054,L1,"B183,B184,B185",,Regulatory Compliance & Risk -> M16
+RP054,L2,"B183,B184,B185,B186",,Regulatory Compliance & Risk -> M16
+RP054,L3,"B183,B186",,Regulatory Compliance & Risk -> M16
+RP055,L1,"B187,B188,B189",,Multi-Site & Chain Management -> M15
+RP055,L2,"B187,B188,B189,B190,B191,B192,B193",,Multi-Site & Chain Management -> M15
+RP055,L3,"B187,B194",,Multi-Site & Chain Management -> M15

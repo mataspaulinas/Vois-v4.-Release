@@ -1,0 +1,157 @@
+{
+  "block_id": "B103",
+  "name": "Delivery Channel Strategy",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Develops a strategic approach to delivery platform partnerships — determining which platforms to use, how to negotiate terms, when to invest in direct ordering, and how to optimise the delivery channel as a profitable revenue stream rather than a margin-eroding necessity.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Evaluate each delivery platform (Deliveroo, Uber Eats, Just Eat) for suitability based on the cafe's location, customer base, and menu",
+      "Negotiate commission rates and promotional terms that protect margin",
+      "Develop a delivery-specific menu optimised for items that travel well and generate acceptable profit after commission",
+      "Explore direct ordering channels (own website, app, phone) to capture delivery revenue without platform commission",
+      "Build a delivery channel P&L so the true profitability of delivery is understood and managed"
+    ],
+    "secondary_objectives": [
+      "Use delivery as a customer acquisition channel — converting delivery customers into dine-in regulars",
+      "Leverage platform marketing tools (promoted listings, offers) strategically rather than reactively",
+      "Build a delivery brand presence that complements rather than competes with the dine-in brand"
+    ]
+  },
+  "why_this_matters": "Delivery platform commissions in the UK typically range from 25-35% of the order value — a charge that can erase profit entirely if the delivery menu is not priced and managed strategically. Many independent cafe owners view delivery as 'free extra revenue' without recognising that after commission, packaging, and the operational cost of fulfilling orders, some delivery items generate negative margin. A £4.50 flat white delivered via Deliveroo at 30% commission nets the cafe £3.15 before packaging (say 30p for an insulated cup and lid), leaving £2.85 — against a coffee cost of approximately £0.90 and labour allocation of at least £0.50, the gross margin is around £1.45 or 32%. Compare this to the same flat white sold in-store at £4.50 with a GP of over 75%. Delivery is profitable only when managed strategically: pricing delivery items higher than dine-in (platforms allow independent pricing), curating a delivery menu that excludes low-margin items, negotiating commission rates based on volume, and investing in direct ordering channels that bypass commissions entirely. For a cafe doing £2,000 per week in delivery revenue at 30% average commission, the annual commission bill is over £31,000. Reducing commission by 5 percentage points — achievable through negotiation and direct ordering — saves over £5,000 per year. The delivery channel strategy determines whether delivery is a profit centre or a public charity that subsidises platform shareholders at the cafe owner's expense.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Audit current delivery platform performance. For each platform the cafe is listed on, gather: total orders per week, average order value, commission rate, current platform rating, and any promotional spend. If the cafe is not yet on delivery platforms, research which platforms are most active in the local area — this varies significantly by UK region and town size. Deliveroo tends to dominate in urban areas, Just Eat has wider UK coverage including smaller towns, and Uber Eats sits between the two. Contact each platform's local sales representative and request current commission terms — do not accept the first offer. Calculate the current gross margin on the top 10 delivery items after commission and packaging costs. If any items generate a gross margin below 40%, they are candidates for price adjustment or removal from the delivery menu. Week 2: Adjust delivery menu pricing if the current prices match dine-in prices. Most platforms allow independent pricing, and delivery customers expect to pay a premium of 10-20% over dine-in prices. Remove any items that generate unacceptable margins after commission — not everything on the dine-in menu belongs on the delivery menu.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Build a Delivery Channel P&L that tracks delivery revenue, commission costs, packaging costs, estimated labour allocation, and resulting net margin by platform. Review this P&L monthly to identify which platform is most profitable. Develop relationships with platform account managers — regular contact (monthly calls) positions the cafe for promotional support, preferential placement, and commission negotiation when volume warrants it. Create a delivery-specific marketing calendar using platform promotional tools: featured listings, percentage-off offers during quiet periods, and new item launches. Calculate the return on promotional spend — a 20% discount offer must generate enough incremental volume to be worthwhile after the increased commission on the higher order count. Explore direct ordering: set up a simple ordering page on the cafe's website using a free or low-cost tool (e.g., Square Online, Shopify), and promote it with in-store signage ('Order for delivery directly and save') and social media. Even capturing 10% of current delivery orders directly saves significant commission.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Delivery strategy should be managed as a distinct business channel with its own targets, metrics, and optimisation cycle. Conduct quarterly platform reviews comparing performance, commission rates, and customer acquisition across all channels. Negotiate commission reductions based on demonstrated volume — platforms regularly offer reduced rates to retain high-performing partners. Build a loyalty mechanism for direct ordering customers (e.g., 10th delivery free) to shift volume away from platforms over time. Analyse delivery customer data to understand demographics, order patterns, and conversion potential — who are these customers and can they be encouraged to visit in-store? Evaluate emerging delivery models: dark kitchen partnerships, collection-only delivery listings, and micro-delivery zones. Review the entire delivery channel strategy bi-annually, aligning with the cafe's broader business plan and growth objectives."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Audit current delivery platform performance: orders, revenue, commission, ratings",
+        "Research platform activity in the local area if not yet listed",
+        "Contact platform sales representatives and negotiate commission terms",
+        "Calculate gross margin on top 10 delivery items after commission and packaging",
+        "Adjust delivery menu pricing to 10-20% above dine-in prices where platforms allow",
+        "Remove low-margin items from the delivery menu",
+        "Ensure delivery menu descriptions and photos are accurate and appealing"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build a Delivery Channel P&L tracking revenue, commission, packaging, and net margin by platform",
+        "Establish monthly contact with platform account managers",
+        "Create a delivery marketing calendar using platform promotional tools",
+        "Calculate ROI on each promotional campaign before committing spend",
+        "Set up a direct ordering channel on the cafe's website",
+        "Promote direct ordering with in-store signage and social media",
+        "Review delivery P&L monthly and adjust strategy accordingly"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly platform performance reviews with commission renegotiation",
+        "Build a loyalty mechanism for direct ordering customers",
+        "Analyse delivery customer data for demographics and conversion potential",
+        "Evaluate emerging delivery models (dark kitchen, collection-only, micro-zones)",
+        "Review full delivery channel strategy bi-annually aligned with business plan"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Delivery Platform Audit Report",
+    "Delivery Channel P&L (monthly spreadsheet)",
+    "Delivery Menu with optimised pricing and item selection",
+    "Direct Ordering Channel setup",
+    "Quarterly Delivery Strategy Review report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T103-01",
+        "tool_name": "Delivery Platform Audit Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Audit template for evaluating each delivery platform's performance: weekly orders, average order value, commission rate, platform rating, promotional spend, and estimated net margin."
+      },
+      {
+        "tool_id": "T103-02",
+        "tool_name": "Delivery Channel P&L Spreadsheet",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly P&L tracking delivery revenue by platform, commission costs, packaging costs, labour allocation, promotional spend, and resulting net margin with trend analysis."
+      },
+      {
+        "tool_id": "T103-03",
+        "tool_name": "Delivery Menu Margin Calculator",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Item-by-item margin calculator for the delivery menu, showing dine-in price, delivery price, ingredient cost, packaging cost, commission at various rates, and resulting GP% for each item."
+      },
+      {
+        "tool_id": "T103-04",
+        "tool_name": "Commission Negotiation Preparation Brief",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Preparation template for platform commission negotiations: current volume data, competitor commission intelligence, negotiation targets, and fallback positions."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Delivery menu pricing mirrors dine-in pricing, resulting in unacceptable margins after 25-35% commission",
+    "Commission rates are accepted without negotiation, leaving significant money on the table",
+    "Promotional spend on platforms is deployed reactively without ROI calculation, burning margin without measurable return",
+    "Direct ordering is not explored, leaving the cafe permanently dependent on high-commission platforms"
+  ],
+  "kpis": [
+    "Delivery channel net margin above 15% after all costs (commission, packaging, labour)",
+    "Average commission rate across platforms reduced by at least 3 percentage points within 12 months",
+    "Direct ordering capturing at least 10% of total delivery volume within 6 months of launch",
+    "Platform ratings maintained at 4.5 or above across all delivery partners"
+  ],
+  "dependencies": ["B101", "B102"],
+  "constraints": [
+    "Platform exclusivity clauses may restrict listing on competing platforms — review all contracts carefully",
+    "Delivery menu pricing must remain competitive with similar local cafes on the same platforms",
+    "Direct ordering requires a reliable delivery fulfilment method (self-delivery or courier partnership)"
+  ],
+  "time_load": {
+    "L1": "3 hours (platform audit, margin calculation, pricing adjustments)",
+    "L2": "6 hours (P&L build, direct ordering setup, marketing calendar, account manager meetings)",
+    "L3": "2 hours/quarter (strategy review, commission negotiation, channel performance analysis)"
+  },
+  "review_protocol": "Monthly delivery P&L review by owner. Quarterly platform performance and commission review. Bi-annual full delivery channel strategy review. Annual delivery channel alignment with business plan.",
+  "meta": {
+    "summary_for_humans": "This capstone block develops a strategic approach to delivery platforms — which to use, how to negotiate terms, what to charge, and when to invest in direct ordering. It transforms delivery from a margin-eroding afterthought into a managed, profitable revenue channel.",
+    "implementation_risks": [
+      "Raising delivery prices too aggressively can reduce order volumes — test increases incrementally",
+      "Direct ordering requires delivery fulfilment infrastructure that the cafe may not have",
+      "Platform algorithms favour cafes that accept all orders quickly — throttling or pausing can reduce future visibility"
+    ],
+    "notes_for_engine": "This is a capstone block — activate after B101 and B102 are operational. Flag as high-value if signals indicate delivery revenue exceeding 15% of total but with unknown or poor profitability.",
+    "tags": ["operations", "delivery", "strategy", "commission", "Deliveroo", "Uber_Eats", "Just_Eat", "direct_ordering", "margin", "capstone"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

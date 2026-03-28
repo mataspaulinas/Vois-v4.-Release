@@ -1,0 +1,79 @@
+{
+  "identification": {
+    "tool_id": "T002-05",
+    "tool_name": "Cold-Hold & Date Label Pack",
+    "block_id": "B002"
+  },
+  "tool_design": {
+    "format": "template",
+    "role_in_intervention": "Point-of-use labelling pack that makes cold-hold and shelf-life decisions visible in service.",
+    "adaptation_variables": [
+      "label_formats",
+      "product_types",
+      "display_time_rules"
+    ],
+    "usage_moment": "Whenever items are opened, decanted, or placed out for cold hold",
+    "expected_output": "Visible labels showing opened date, use-by, out-time, or discard time",
+    "linked_blocks": [
+      "B002",
+      "B001"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The template is available but not completed at the trigger moment.",
+        "what_can_go_wrong": "Important evidence is lost because the tool is used too late.",
+        "early_signals": [
+          "Blank templates stack up",
+          "Details are reconstructed from memory"
+        ],
+        "prevention": [
+          "Keep it near the trigger",
+          "Make completion part of closure"
+        ],
+        "mitigation": [
+          "Simplify if speed is the issue",
+          "Coach one live use"
+        ],
+        "if_occurs_next_signals": [
+          "late_documentation_risk"
+        ],
+        "possible_successor_blocks": [
+          "B002",
+          "B001"
+        ]
+      },
+      {
+        "warning": "Fields are completed vaguely.",
+        "what_can_go_wrong": "The output exists but cannot guide action.",
+        "early_signals": [
+          "Generic wording",
+          "No owner or due date captured"
+        ],
+        "prevention": [
+          "Show a worked example",
+          "Highlight minimum specific fields"
+        ],
+        "mitigation": [
+          "Rewrite weak entries while fresh",
+          "Add first-use sign-off"
+        ],
+        "if_occurs_next_signals": [
+          "low_signal_documentation"
+        ],
+        "possible_successor_blocks": [
+          "B002",
+          "B001"
+        ]
+      }
+    ]
+  },
+  "content": "# Cold-Hold & Date Label Pack\n\n**Tool ID:** T002-05  \n**Block:** B002 (Cold Chain Management SOP)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L1  \n**Format:** Template  \n**Role:** All Staff  \n**Time Required:** Under 1 minute per label  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse these printable labels to make cold-hold timing and opened-item dating visible at the exact point of use.\n\nThis tool covers two common blind spots:\n- food taken out for display without a discard time\n- opened or decanted items put back into the fridge with no traceable life left on them\n\n---\n## Label Rules\n\n| Label Type | Use It When | Minimum Fields |\n|---|---|---|\n| Cold-hold display label | A chilled item is placed out for service | Product, out time, discard time, initials |\n| Opened pack label | A sealed product is opened | Product, opened date, use-by, initials |\n| Decanted / house-made label | Food is transferred or made in-house | Product, made date, use-by, initials |\n\n---\n## Quick Check Before Labelling\n\n<ul>\n  <li><input type=\"checkbox\"> I know whether this item is being displayed, opened, or decanted.</li>\n  <li><input type=\"checkbox\"> I am writing the real discard or use-by time, not \"later\".</li>\n  <li><input type=\"checkbox\"> The label will stay visible on the item or tray.</li>\n</ul>\n\n---\n## Printable Label Templates\n\n### 1. Cold-Hold Display Label\n\n| Field | Write Here |\n|---|---|\n| Product | ____________________ |\n| Put out at | ____________________ |\n| Discard at | ____________________ |\n| Initials | ____________________ |\n\n### 2. Opened Pack Label\n\n| Field | Write Here |\n|---|---|\n| Product | ____________________ |\n| Opened on | ____________________ |\n| Use by | ____________________ |\n| Initials | ____________________ |\n\n### 3. Decanted / House-Made Item Label\n\n| Field | Write Here |\n|---|---|\n| Product | ____________________ |\n| Made / decanted on | ____________________ |\n| Use by | ____________________ |\n| Initials | ____________________ |\n\n---\n## House Rules To Print Beside The Labels\n\n- Time-label chilled display items the moment they leave refrigeration.\n- Do not re-chill and restart the clock after the display limit is reached.\n- Do not store unlabeled opened dairy, fillings, sauces, or desserts.\n- If you cannot confirm when something was opened or put out, do not guess. Escalate and discard if needed.\n\n---\n## Best Uses In A Cafe\n\n- Sandwiches and rolls placed into a grab-and-go display\n- Milk or cream opened for service prep\n- Sauces, spreads, or fillings transferred into squeeze bottles or gastro tubs\n- Cake slices or chilled desserts moved into service display trays\n\n---\n## Connected Resources\n\n**Used with:**\n- T002-01 - Delivery Acceptance Checklist\n- T002-02 - Cold Chain SOP & Fridge Layout Guide\n- T002-04 - Weekly Fridge Organisation & Date Labelling Audit\n\n**Related blocks:**\n- B001 - Daily Temperature Monitoring\n\n---\n\n*Tool Version 2.0 - a tiny tool that prevents a lot of \"how long has this been here?\" moments.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T002-05_cold_hold_and_date_label_pack.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

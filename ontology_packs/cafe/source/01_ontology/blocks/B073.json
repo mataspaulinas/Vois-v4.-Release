@@ -1,0 +1,167 @@
+{
+  "block_id": "B073",
+  "name": "Skills Matrix & Development",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Creates a visual skills matrix mapping every team member's current competency across all operational areas, identifying strengths, gaps, and development priorities to ensure balanced capability across the team and targeted investment in training.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Map all operational skills required across the venue — coffee, food, till, cleaning, opening, closing, stock management",
+      "Assess each team member's competency level in each skill area using a consistent rating scale",
+      "Identify critical skill gaps where only one or two people hold a key competency",
+      "Create individual development plans driven by skills matrix insights",
+      "Track skill development over time to demonstrate team capability growth"
+    ],
+    "secondary_objectives": [
+      "Inform cross-training priorities by highlighting single-person dependencies",
+      "Support rota planning by showing which staff can cover which stations",
+      "Provide objective evidence for career progression decisions linked to B071"
+    ]
+  },
+  "why_this_matters": "Most cafe owners carry a mental map of who can do what — they know that Sarah makes the best flat whites, Tom is the fastest on till, and only Maria knows how to do the end-of-day cash-up. The problem with mental maps is that they are invisible, untested, and fragile. When the owner is not on shift, the shift lead may not know that the new starter has never been shown how to operate the dishwasher or that nobody scheduled today can handle a dairy-free milk complaint. A skills matrix makes the invisible visible. By mapping every team member against every operational skill on a simple grid — using ratings such as 'not trained,' 'learning,' 'competent,' and 'can train others' — the cafe immediately sees where its strengths and vulnerabilities lie. If only one person is rated 'competent' at grinder calibration, that is a key person risk (B077). If three out of eight staff have never been trained on allergen checking, that is a food safety risk (B001-B006). If nobody on the weekend rota is competent at food preparation, that is a service quality risk. The skills matrix is not a judgement tool — it is a planning tool. It drives training investment towards the areas of greatest need and greatest impact. Combined with the career progression framework (B071) and performance reviews (B072), it gives each team member a clear picture of where they are strong, where they need development, and what steps will help them progress. The matrix also makes scheduling smarter: the rota builder can ensure that every shift has the right mix of skills to cover all stations safely and effectively.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: List all operational skills required in the venue. For most cafes this includes: espresso preparation, milk steaming, filter brewing, latte art, food preparation, food plating, allergen management, till operation, card payment handling, opening procedure, closing procedure, stock rotation, goods receiving, cleaning stations, dishwasher operation, grinder calibration, equipment troubleshooting, customer complaint handling, and first aid. Adjust this list to match your specific operation. Create a grid with team member names across the top and skills down the side. Week 2: Rate each team member against each skill using a four-point scale: 0 = Not Trained, 1 = Learning (can do with supervision), 2 = Competent (can do independently), 3 = Expert (can train others). Be honest — this is a diagnostic tool, not a performance review. Involve shift leads in the assessment for accuracy. Highlight any skills where only one person is rated at competent or above — these are immediate cross-training priorities. Share the completed matrix with the team, framing it as a development tool that shows where training investment will go.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a digital version of the skills matrix (spreadsheet or simple app) that can be updated as training progresses. Use colour coding: red for skills with single-person dependency, amber for two-person coverage, green for three or more competent team members. Build Individual Development Plans (IDPs) for each team member, driven by the matrix — each person should have two to three specific skills they are working to develop over the next quarter. These IDPs should align with the career progression criteria in B071 and be reviewed in performance conversations per B072. Establish a training calendar that allocates protected time for skill development based on matrix priorities. Link the skills matrix to rota planning — when building the weekly rota, cross-reference against the matrix to ensure each shift has the minimum required skill coverage for all operational areas. Create a quarterly skills review process where the matrix is updated based on recent training, assessments, and operational observation.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Track skills development velocity — how many skill-level increases are achieved across the team per quarter? Set a target and celebrate when it is exceeded. Use the matrix to identify potential trainers and mentors: team members rated at level 3 in a skill area should be supported to teach that skill to others, building their leadership capabilities. Analyse the relationship between skills depth and operational performance — do shifts with higher average skill ratings produce fewer errors, less waste, and better customer satisfaction scores? Integrate the skills matrix with SCA certification planning from B068 — which SCA modules align with which matrix skills, and who is the next candidate for external certification? Conduct an annual matrix review that also assesses whether the skill categories themselves need updating as the venue's offering evolves — new menu items, new equipment, new service formats."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "List all operational skills required across the venue",
+        "Create a skills matrix grid with team members and skills on a four-point scale",
+        "Rate each team member honestly with input from shift leads",
+        "Identify single-person skill dependencies and flag as immediate priorities",
+        "Share the completed matrix with the team as a development tool",
+        "Identify the top three cross-training priorities from the matrix",
+        "Begin addressing the highest-risk skill gap within the first fortnight"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a digital skills matrix with colour-coded dependency warnings",
+        "Build Individual Development Plans driven by matrix gaps for each team member",
+        "Establish a training calendar allocating protected time for skill development",
+        "Link the skills matrix to rota planning for minimum skill coverage per shift",
+        "Create a quarterly skills review and matrix update process",
+        "Integrate skills data with career progression criteria from B071",
+        "Align development plans with performance review goals from B072"
+      ],
+      "responsible": "Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track skills development velocity as a team metric",
+        "Identify and support level-3 team members to become trainers and mentors",
+        "Analyse correlation between shift skill ratings and operational performance",
+        "Integrate the matrix with SCA certification planning from B068",
+        "Conduct annual matrix review updating skill categories for business evolution",
+        "Celebrate skill development achievements in team briefings and Wall of Wins"
+      ],
+      "responsible": "Manager, Owner"
+    }
+  },
+  "deliverables": [
+    "Skills Matrix Grid (team members vs operational skills, four-point scale)",
+    "Individual Development Plan template driven by matrix gaps",
+    "Skills Matrix Update Process (quarterly review guide)",
+    "Training Calendar template aligned to matrix priorities",
+    "Skills Coverage Report for rota planning"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T073-01",
+        "tool_name": "Operational Skills Matrix",
+        "level": "L1",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Grid mapping all team members against all operational skills using a four-point rating scale (Not Trained, Learning, Competent, Expert). Colour-coded to highlight single-person dependencies."
+      },
+      {
+        "tool_id": "T073-02",
+        "tool_name": "Individual Development Plan Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Per-person development plan identifying two to three priority skills from the matrix, specific learning actions, timelines, and support needed. Reviewed quarterly and linked to performance reviews."
+      },
+      {
+        "tool_id": "T073-03",
+        "tool_name": "Training Calendar Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Monthly calendar allocating protected training time for skill development based on matrix priorities, with assigned trainers, topics, and expected outcomes."
+      },
+      {
+        "tool_id": "T073-04",
+        "tool_name": "Shift Skills Coverage Checker",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Rota-planning tool that cross-references the daily staff roster against the skills matrix to verify that each shift has minimum required competency coverage across all operational areas."
+      },
+      {
+        "tool_id": "T073-05",
+        "tool_name": "Skills Development Velocity Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Quarterly report tracking the number of skill-level increases across the team, identifying top developers, persistent gaps, and correlation with operational performance metrics."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Skills matrix is created once but never updated, becoming inaccurate and irrelevant within months",
+    "Ratings are inflated to avoid difficult conversations, masking genuine competency gaps",
+    "Matrix identifies gaps but no training time is allocated to address them",
+    "Team members feel judged or ranked rather than supported by the matrix, creating resentment"
+  ],
+  "kpis": [
+    "Zero operational skills with single-person dependency (minimum two competent staff per skill)",
+    "100% of team members have an active Individual Development Plan",
+    "Skills matrix updated quarterly with fresh assessments",
+    "At least one skill-level increase per team member per quarter",
+    "Every scheduled shift meets minimum skills coverage requirements per the coverage checker"
+  ],
+  "dependencies": ["B071", "B072"],
+  "constraints": [
+    "Skills assessment must be honest and objective to be useful as a planning tool",
+    "Training time must be protected in the rota to close identified gaps",
+    "The matrix must be kept current — stale data is worse than no data"
+  ],
+  "time_load": {
+    "L1": "3 hours (skill listing, matrix creation, initial assessment)",
+    "L2": "6 hours (digital build, IDPs, training calendar, rota integration)",
+    "L3": "2 hours/quarter (matrix update, velocity tracking, analysis)"
+  },
+  "review_protocol": "Weekly use of skills coverage checker when building the rota. Monthly informal check on IDP progress during one-to-ones. Quarterly full matrix update with fresh assessments. Six-monthly alignment review with career progression framework. Annual review of skill categories against business evolution.",
+  "meta": {
+    "summary_for_humans": "This block creates a visual skills matrix mapping every team member's competency across all operational areas, driving targeted training investment, smarter rota planning, and evidence-based career development.",
+    "implementation_risks": [
+      "Small teams may find the matrix exposes uncomfortable truths about over-reliance on key individuals",
+      "Without genuine training investment, the matrix becomes a document of problems rather than a tool for solutions",
+      "Maintaining the matrix requires discipline — assign clear ownership for quarterly updates"
+    ],
+    "notes_for_engine": "Activate when signals indicate skill gaps, rota fragility, or training investment uncertainty. Key input for B077 (key person risk) and B078 (cross-training). Depends on B071 and B072 for context.",
+    "tags": ["skills", "matrix", "competency", "development", "training", "gaps", "IDP", "rota_planning", "cross_training"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

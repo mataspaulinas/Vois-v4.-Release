@@ -1,0 +1,167 @@
+{
+  "block_id": "B066",
+  "name": "Retention Culture Programme",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Builds a workplace culture that people genuinely do not want to leave, addressing the root causes of hospitality turnover through belonging, recognition, growth, and fair treatment — moving beyond pay alone to create an environment where staff choose to stay.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Identify and address the top reasons staff leave through structured exit interview analysis",
+      "Create a recognition programme that celebrates contribution at individual and team level",
+      "Build a sense of belonging and team identity that goes beyond transactional employment",
+      "Establish regular pulse checks on team morale and satisfaction",
+      "Develop a retention dashboard tracking tenure, turnover rate, and cost of replacement"
+    ],
+    "secondary_objectives": [
+      "Reduce the direct and indirect costs of turnover including recruitment, training, and lost productivity",
+      "Create a positive employer reputation that makes future recruitment easier",
+      "Build institutional knowledge retention by keeping experienced staff longer"
+    ]
+  },
+  "why_this_matters": "The UK hospitality sector has an average annual staff turnover rate of around 30%, with some cafe businesses experiencing rates above 50%. Each departure costs a small cafe between £1,500 and £3,000 when you factor in advertising, interviewing, onboarding, training time, and the productivity dip while a new starter gets up to speed. For a cafe with eight staff losing four per year, that is £6,000 to £12,000 in annual turnover costs — money that flows straight off the bottom line. But the financial cost understates the real damage. When an experienced barista leaves, they take with them knowledge of regular customers' orders, understanding of the espresso machine's quirks, the ability to train juniors, and the social glue that holds the team together. Regulars notice when familiar faces disappear. Service quality drops during the transition. The remaining team picks up extra shifts, increasing their own burnout risk and creating a vicious cycle of further departures. Retention is not about trapping people in jobs — it is about creating conditions where talented people actively choose to stay. Research consistently shows that after a baseline of fair pay, the strongest retention drivers are feeling valued, having a sense of purpose, seeing a path for growth, working in a supportive team, and having a reasonable work-life balance. Most of these cost very little to implement but require deliberate attention and consistent effort. The cafes that crack retention build a competitive moat — experienced teams deliver better coffee, better service, and better customer relationships, which drives revenue that further funds the culture.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Conduct a simple team pulse survey — five to seven anonymous questions covering satisfaction with pay, schedule, management, team atmosphere, and whether they see a future at the venue. Use a free tool such as Google Forms or paper slips in a sealed box. Review the results honestly, even if uncomfortable. Simultaneously, calculate your current annual turnover rate: number of leavers in the past 12 months divided by average team size. If it exceeds 25%, retention is an urgent priority. Week 2: Introduce a simple recognition habit — start each team briefing with a genuine thank-you to someone who went above and beyond the previous day. This costs nothing but signals that contribution is noticed. Hold a one-to-one conversation with every team member over two weeks, asking three questions: what do you enjoy most about working here, what frustrates you, and what would make this the best job you have ever had. Document the themes that emerge. Fix any quick wins immediately — if three people mention the broken staff room chair or the unfair rota pattern, address these within the fortnight. Quick wins build trust that feedback leads to action.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Establish a formal recognition programme with both peer-to-peer and manager-led elements. Create a 'Wall of Wins' in the staff area where achievements, positive customer feedback, and milestones (work anniversaries, training completions) are displayed. Introduce structured stay interviews at the six-month and twelve-month marks — not performance reviews, but dedicated conversations about what keeps someone engaged and what might cause them to leave. Build a quarterly team social calendar — even low-cost events like a team coffee tasting, a group walk, or a bring-a-dish lunch create bonds outside the pressure of service. Draft a retention dashboard tracking: monthly turnover rate, average tenure, reasons for leaving (categorised), cost per leaver, and time to fill vacancies. Review this monthly. Formalise flexible scheduling practices — allow shift swaps, honour time-off requests where possible, and avoid last-minute rota changes that erode trust. Ensure managers are trained to spot early warning signs of disengagement: increased lateness, withdrawal from team interaction, decline in discretionary effort.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Retention culture becomes self-reinforcing at this stage. Conduct an annual engagement survey with benchmarking against hospitality sector norms. Introduce a 'culture council' — two to three team members who meet monthly with management to discuss working conditions, suggest improvements, and act as a bridge between the floor and the office. Celebrate tenure milestones publicly: one-year, two-year, five-year anniversaries with meaningful recognition (not just a certificate — a personal gift, an experience, a day off). Track your employer Net Promoter Score — would your team recommend working here to a friend? Analyse the correlation between retention improvements and business metrics: do months with stable teams show higher revenue, better reviews, lower waste? Use this data to justify continued investment in culture. Share anonymised retention data with the team — when people see that average tenure has increased from eight months to eighteen months, they feel part of something that is working. Integrate retention metrics into management performance reviews so that looking after people is explicitly rewarded."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Calculate current annual turnover rate and cost of replacement per leaver",
+        "Conduct anonymous team pulse survey on satisfaction and morale",
+        "Hold one-to-one conversations with every team member about their experience",
+        "Introduce daily recognition practice in team briefings",
+        "Identify and fix quick-win frustrations raised by the team",
+        "Begin documenting reasons for recent departures if not already captured",
+        "Post a visual reminder in the staff area of the venue's values and team identity"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Launch a formal recognition programme with peer-to-peer and manager elements",
+        "Introduce structured stay interviews at six-month and twelve-month marks",
+        "Build a retention dashboard tracking turnover, tenure, and cost metrics",
+        "Establish a quarterly team social calendar with budget allocation",
+        "Formalise flexible scheduling practices and shift-swap protocols",
+        "Train managers to identify early warning signs of disengagement",
+        "Create a Wall of Wins in the staff area for ongoing recognition"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct an annual engagement survey benchmarked against hospitality norms",
+        "Establish a culture council with team representation",
+        "Celebrate tenure milestones with meaningful, personalised recognition",
+        "Track employer Net Promoter Score quarterly",
+        "Analyse correlation between retention and business performance metrics",
+        "Integrate retention KPIs into management performance reviews"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Team Pulse Survey template (anonymous, five to seven questions)",
+    "Retention Dashboard with turnover, tenure, and cost tracking",
+    "Recognition Programme guidelines and Wall of Wins setup",
+    "Stay Interview question framework",
+    "Annual Engagement Survey template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T066-01",
+        "tool_name": "Team Pulse Survey Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Anonymous five-to-seven-question survey covering pay satisfaction, schedule fairness, management quality, team atmosphere, and future outlook. Designed for quarterly deployment via Google Forms or paper."
+      },
+      {
+        "tool_id": "T066-02",
+        "tool_name": "Retention Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly tracker capturing turnover rate, average tenure, reasons for leaving categorised by theme, cost per leaver, time to fill vacancies, and trend analysis over rolling 12 months."
+      },
+      {
+        "tool_id": "T066-03",
+        "tool_name": "Stay Interview Question Framework",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Structured question set for six-month and twelve-month stay interviews focusing on engagement drivers, frustration points, career aspirations, and flight risk indicators."
+      },
+      {
+        "tool_id": "T066-04",
+        "tool_name": "Recognition Programme Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Guidelines for running peer-to-peer and manager-led recognition including daily briefing shout-outs, Wall of Wins maintenance, monthly awards, and tenure milestone celebrations."
+      },
+      {
+        "tool_id": "T066-05",
+        "tool_name": "Annual Engagement Survey",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Comprehensive annual survey covering engagement, satisfaction, culture, leadership, development, and wellbeing, with benchmarking guidance against UK hospitality sector norms."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Pulse surveys are conducted but feedback is never acted upon, destroying trust and increasing cynicism",
+    "Recognition becomes formulaic or insincere, reducing its impact to zero",
+    "Owner focuses exclusively on pay as a retention lever while ignoring culture, management quality, and scheduling fairness",
+    "Exit interviews are not conducted or data is not analysed for patterns, so the same problems drive repeated departures"
+  ],
+  "kpis": [
+    "Annual voluntary turnover rate below 25% (sector average is approximately 30%)",
+    "Average team tenure above 12 months",
+    "Team pulse survey scores improving or stable quarter on quarter",
+    "90% of exit interviews completed for all departing staff",
+    "Employer Net Promoter Score above +20"
+  ],
+  "dependencies": ["B063", "B064", "B065"],
+  "constraints": [
+    "Recognition programmes must be applied fairly and consistently to avoid perceptions of favouritism",
+    "Pulse surveys must be genuinely anonymous to generate honest responses",
+    "Retention strategies must complement, not replace, fair compensation per B065"
+  ],
+  "time_load": {
+    "L1": "4 hours (survey creation, one-to-ones, quick-win fixes)",
+    "L2": "10 hours (recognition programme, stay interviews, dashboard build, social calendar)",
+    "L3": "3 hours/month (survey analysis, culture council, milestone celebrations)"
+  },
+  "review_protocol": "Monthly review of turnover and tenure data. Quarterly pulse survey deployment and analysis. Six-monthly stay interviews for all staff. Annual engagement survey with year-on-year comparison. Immediate review triggered when two or more staff leave within a 30-day period.",
+  "meta": {
+    "summary_for_humans": "This block builds a retention-focused culture that goes beyond pay, using recognition, feedback loops, stay interviews, and team-building to create a workplace people actively choose to remain part of.",
+    "implementation_risks": [
+      "Culture initiatives can feel forced if not authentically championed by the owner",
+      "Small teams may find anonymous surveys difficult to keep truly anonymous",
+      "Social events require budget and time that feel hard to justify when margins are tight"
+    ],
+    "notes_for_engine": "Activate when signals indicate high turnover, team morale issues, or multiple departures in quick succession. Strong interdependency with B063 (workforce planning), B064 (recruitment), and B065 (compensation).",
+    "tags": ["retention", "culture", "engagement", "turnover", "recognition", "morale", "stay_interview", "team_building"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

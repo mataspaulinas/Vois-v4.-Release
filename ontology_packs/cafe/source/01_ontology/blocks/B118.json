@@ -1,0 +1,157 @@
+{
+  "block_id": "B118",
+  "name": "Menu Pricing Strategy",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Develops a strategic, data-driven approach to menu pricing that balances cost coverage, competitive positioning, customer value perception, and profit maximisation. This block replaces the common practice of pricing by copying competitors with a structured methodology grounded in the cafe's own cost data.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Set prices for every menu item based on accurate cost data (from B111), target GP%, and competitive context",
+      "Define a pricing strategy that reflects the cafe's brand positioning — premium, mid-market, or value",
+      "Implement price architecture: strategic price points, price ladders, and bundle pricing that guides customer behaviour",
+      "Create a structured annual pricing review process that adjusts prices in response to cost changes",
+      "Manage delivery pricing separately from dine-in, accounting for platform commission and packaging costs"
+    ],
+    "secondary_objectives": [
+      "Optimise the pricing mix so that the menu's blended GP% meets the cafe's financial targets",
+      "Use pricing psychology (charm pricing, anchor pricing, decoy options) to increase average transaction value",
+      "Avoid the common independent cafe mistake of underpricing out of fear of losing customers"
+    ]
+  },
+  "why_this_matters": "Pricing is the single most powerful lever a cafe owner has for improving profitability, yet it is the lever most owners are afraid to pull. A 5% price increase across the menu — approximately 15-25p per item — typically has negligible impact on customer volume (demand for cafe products is relatively inelastic in the UK, particularly for coffee) but can increase the cafe's annual profit by 20-40%. For a cafe with £300,000 annual revenue and a 10% net profit of £30,000, a 5% price increase that retains 95% of customers adds approximately £14,250 to the top line and almost entirely flows to the bottom line, increasing profit by nearly 50%. Yet most independent cafe owners set prices in one of three ways, all of which are flawed: competitor matching (copying what the cafe across the road charges, without knowing their cost structure), gut feeling ('£4.50 feels about right for a latte'), or historical precedent ('we've always charged £3.80 for a filter coffee'). None of these methods accounts for the cafe's actual costs, margin requirements, or brand positioning. The result is chronic underpricing that forces the owner to work harder for less margin. Strategic pricing starts with the cost data from B111 (what does each item actually cost to make?), adds the target GP% (what margin does each item need to generate?), and then adjusts for market context (what are competitors charging and what will customers pay?). This three-part methodology ensures every price covers costs, contributes to profit, and sits within a competitive range that customers accept.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Using the cost data from B111, calculate the target selling price for every menu item using the formula: Target Price = Ingredient Cost / (1 - Target GP%). For coffee-based drinks, use a target GP% of 70-80%. For food items, use 60-70%. For pastries (bought in), use 65-75%. For example, a flat white costing £0.85 to make (coffee + dairy milk + cup) at a target GP% of 75% should be priced at: £0.85 / (1 - 0.75) = £3.40 minimum. Compare this calculated target against the cafe's current price — any item where the current price is below the target needs immediate attention. Conduct a local competitor pricing audit: visit or check online menus of the 5 nearest cafes and record their prices for comparable items. The cafe's prices should be within the competitive range for its positioning — a premium specialty cafe should be at or near the top of the range, not the bottom. Week 2: Adjust prices where the gap between current and target is significant. If an increase of more than 10% is needed on a single item, consider phasing it: a 5% increase now and another 5% in 3 months. Round prices to psychologically comfortable points: £3.80 and £4.20 feel more considered than £3.85 or £4.17. Update the menu board, printed menus, EPOS system, and delivery platform listings simultaneously.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a comprehensive Menu Pricing Matrix — a spreadsheet showing every item with: ingredient cost, packaging cost (if takeaway/delivery), target GP%, calculated minimum price, current selling price, competitor average price, and the recommended price. Use this matrix to identify pricing opportunities: items where the cafe's price is significantly below competitors despite similar quality, items where a small price increase would have a large margin impact, and items where price-sensitive customers might need a value option. Implement price architecture: design the menu with a 'Good-Better-Best' structure (e.g., filter coffee at £2.80, flat white at £3.80, specialty single-origin pour-over at £4.50) that creates a natural price ladder and anchors the mid-range option as the default. Set delivery prices 10-20% above dine-in to cover platform commission and packaging — platforms allow independent pricing and delivery customers expect a premium. Create a formal Annual Pricing Review process: in January each year, review all costs, competitor prices, and customer feedback, and set prices for the year ahead. This removes the need for ad-hoc price decisions throughout the year.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Pricing should be managed as a strategic discipline, not a reactive necessity. Implement pricing psychology techniques: use charm pricing (£3.95 rather than £4.00 for price-sensitive items), anchor pricing (place a premium item at the top of each category to make the next item seem reasonable), and bundle pricing (a coffee and pastry combo at £5.50 generates higher average spend than selling each individually). Conduct bi-annual price sensitivity testing: raise the price of one category by 5% for one month and measure the impact on sales volume — if volume drops by less than 3%, the increase is profitable. Track average transaction value weekly and use it as a KPI for pricing effectiveness. Use pricing data to inform menu design: position high-margin items prominently (top-right of the menu board, first listed in each category). Review and adjust pricing seasonally: iced drinks and cold food can command summer premiums; hot drinks and comfort food can command winter premiums. Share pricing strategy rationale with the team so they can confidently explain prices to customers if asked."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Calculate target selling price for every menu item using B111 cost data and target GP%",
+        "Compare target prices against current prices and flag items needing adjustment",
+        "Conduct a local competitor pricing audit covering the 5 nearest comparable cafes",
+        "Adjust prices where the gap is significant, phasing increases over 10%",
+        "Round prices to psychologically comfortable price points",
+        "Update all menus, EPOS, and delivery platform listings simultaneously",
+        "Communicate price changes to staff with confidence-building rationale"
+      ],
+      "responsible": "Cafe Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Build a comprehensive Menu Pricing Matrix with all cost, competitor, and target data",
+        "Implement Good-Better-Best price architecture across all menu categories",
+        "Set delivery prices 10-20% above dine-in to cover commission and packaging",
+        "Create a formal Annual Pricing Review process for January each year",
+        "Identify pricing opportunities where increases are justified by competitor context",
+        "Design bundle pricing for popular combinations (coffee + pastry, lunch combos)",
+        "Brief the team on the pricing strategy and how to handle price queries from customers"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Implement pricing psychology techniques: charm pricing, anchor pricing, bundle pricing",
+        "Conduct bi-annual price sensitivity testing on one category at a time",
+        "Track average transaction value weekly as a pricing effectiveness KPI",
+        "Use pricing data to inform menu design and item positioning",
+        "Review and adjust pricing seasonally for demand shifts"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Menu Pricing Matrix spreadsheet",
+    "Local Competitor Pricing Audit",
+    "Price Architecture Guide (Good-Better-Best)",
+    "Annual Pricing Review Process document",
+    "Delivery Pricing Strategy with commission impact"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T118-01",
+        "tool_name": "Menu Pricing Matrix",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Comprehensive spreadsheet showing every menu item with ingredient cost, packaging cost, target GP%, calculated minimum price, current price, competitor average, and recommended price."
+      },
+      {
+        "tool_id": "T118-02",
+        "tool_name": "Competitor Pricing Audit Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Template for recording competitor prices across 5 comparable local cafes for all key menu categories: hot drinks, cold drinks, food, pastries. Updated bi-annually."
+      },
+      {
+        "tool_id": "T118-03",
+        "tool_name": "Annual Pricing Review Checklist",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Structured checklist for the annual pricing review: cost data review, competitor analysis, customer feedback assessment, price adjustment recommendations, and implementation plan."
+      },
+      {
+        "tool_id": "T118-04",
+        "tool_name": "Price Sensitivity Test Protocol",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Protocol for conducting price sensitivity tests: which category to test, the price increase percentage, measurement period, volume tracking methodology, and profitability impact calculation."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Prices are set by competitor matching without understanding the cafe's own cost structure, resulting in chronic underpricing",
+    "Fear of customer reaction prevents necessary price increases, slowly eroding margin year after year",
+    "Price increases are implemented without communicating value to customers, causing unnecessary churn",
+    "Delivery prices match dine-in prices, meaning delivery items generate minimal or negative margin after commission"
+  ],
+  "kpis": [
+    "Overall blended menu GP% meeting target (typically 65-75% for a well-run UK cafe)",
+    "Average transaction value increasing by at least 3% year-on-year through pricing optimisation",
+    "Annual pricing review completed in January with all price adjustments implemented by February",
+    "Delivery menu GP% above 40% after commission and packaging costs"
+  ],
+  "dependencies": ["B111"],
+  "constraints": [
+    "Price increases must be balanced against customer retention — avoid increases exceeding 10% on a single item in a single adjustment",
+    "Delivery platform pricing must comply with each platform's pricing policies and display requirements",
+    "VAT registration threshold and implications must be considered if the cafe is approaching £90,000 taxable turnover"
+  ],
+  "time_load": {
+    "L1": "4 hours (target price calculation, competitor audit, initial adjustments)",
+    "L2": "6 hours (pricing matrix build, architecture design, delivery pricing, annual review setup)",
+    "L3": "3 hours/year (price sensitivity testing, psychology implementation, seasonal adjustments)"
+  },
+  "review_protocol": "Monthly average transaction value review by manager. Quarterly competitor pricing check. Annual comprehensive pricing review in January. Immediate review triggered by any supplier price increase exceeding 5%.",
+  "meta": {
+    "summary_for_humans": "This block develops a strategic, data-driven approach to menu pricing — replacing guesswork with a methodology based on actual costs, target margins, competitive context, and pricing psychology. It is the single most powerful lever for improving cafe profitability.",
+    "implementation_risks": [
+      "Owners often resist price increases due to fear of customer loss — data shows UK cafe price elasticity is low for increases under 10%",
+      "Implementing all price increases at once creates a more noticeable impact than phased increases — consider staggering",
+      "Staff need confidence to explain and justify prices — brief them thoroughly before any price changes go live"
+    ],
+    "notes_for_engine": "Activate after B111 (Menu Item Costing Calculator) is complete. Flag as urgent if signals indicate chronic underpricing, GP% significantly below target, or prices unchanged for more than 18 months despite cost increases.",
+    "tags": ["financial", "pricing", "menu", "GP_percentage", "revenue", "competitive_analysis", "pricing_psychology", "profitability"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

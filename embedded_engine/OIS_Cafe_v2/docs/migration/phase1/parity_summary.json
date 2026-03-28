@@ -1,0 +1,83 @@
+{
+  "deterministic_legacy_vs_extracted": [
+    {
+      "fixture_id": "F001_normal_followup_warsaw",
+      "diff_keys": []
+    },
+    {
+      "fixture_id": "F002_degraded_pegasas",
+      "diff_keys": []
+    },
+    {
+      "fixture_id": "F003_conflicting_capacity_vs_cost",
+      "diff_keys": []
+    },
+    {
+      "fixture_id": "F004_existing_active_plan_kaunas",
+      "diff_keys": []
+    },
+    {
+      "fixture_id": "F005_ambiguous_ai_preopening_muzos2",
+      "diff_keys": []
+    },
+    {
+      "fixture_id": "F006_complex_klaipeda_multi_surface",
+      "diff_keys": []
+    }
+  ],
+  "phase0_goldens_vs_extracted": [
+    {
+      "fixture_id": "F001_normal_followup_warsaw",
+      "diff_files": [
+        "golden_report.md"
+      ],
+      "report_type": "ai"
+    },
+    {
+      "fixture_id": "F002_degraded_pegasas",
+      "diff_files": [
+        "golden_failure_modes.json",
+        "golden_action_plan.json",
+        "golden_report.md"
+      ],
+      "report_type": "ai"
+    },
+    {
+      "fixture_id": "F003_conflicting_capacity_vs_cost",
+      "diff_files": [
+        "golden_failure_modes.json",
+        "golden_action_plan.json",
+        "golden_report.md"
+      ],
+      "report_type": "ai"
+    },
+    {
+      "fixture_id": "F004_existing_active_plan_kaunas",
+      "diff_files": [
+        "golden_action_plan.json",
+        "golden_report.md"
+      ],
+      "report_type": "ai"
+    },
+    {
+      "fixture_id": "F005_ambiguous_ai_preopening_muzos2",
+      "diff_files": [
+        "golden_failure_modes.json",
+        "golden_action_plan.json",
+        "golden_report.md"
+      ],
+      "report_type": "ai"
+    },
+    {
+      "fixture_id": "F006_complex_klaipeda_multi_surface",
+      "diff_files": [
+        "golden_failure_modes.json",
+        "golden_action_plan.json",
+        "golden_report.md"
+      ],
+      "report_type": "ai"
+    }
+  ],
+  "legacy_vs_extracted_clean": true,
+  "phase0_fixture_match_clean": false
+}

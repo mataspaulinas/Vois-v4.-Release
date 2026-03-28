@@ -1,0 +1,167 @@
+{
+  "block_id": "B087",
+  "name": "Pre-Rush Mise-en-Place",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Establishes a comprehensive pre-rush preparation protocol — the cafe equivalent of culinary mise en place — ensuring that every supply, tool, and station element is in position and ready before peak service begins, so the team can focus entirely on speed and quality during the rush.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define a complete pre-rush checklist covering every station: bar, till, food counter, floor, and support areas",
+      "Ensure all consumables are stocked to rush-ready levels before the first peak customer arrives",
+      "Verify all equipment is operational, clean, and calibrated — particularly the espresso machine and grinders",
+      "Pre-prepare batch items (filter coffee, batch brew, food items) to reduce to-order preparation time during peak",
+      "Establish a timed preparation sequence so prep is completed efficiently without wasting early trading time"
+    ],
+    "secondary_objectives": [
+      "Reduce mid-rush restocking interruptions that break the service flow",
+      "Eliminate the stress of discovering missing supplies or broken equipment at the start of a rush",
+      "Build a team habit where preparation is seen as essential, not optional"
+    ]
+  },
+  "why_this_matters": "The French culinary concept of mise en place — 'everything in its place' — is the foundation of every professional kitchen in the world. No chef begins service without their station set, ingredients portioned, and tools organised. Yet most cafes approach their morning rush with the operational equivalent of a chef discovering they have no onions after the dinner service has started. The barista arrives, turns on the machine, realises there is no decaf in the grinder hopper, goes to the storeroom, cannot find the decaf, asks the manager who is on the phone to a supplier, and by the time the decaf is loaded the first three customers are already queuing. This is not bad luck — it is a failure of preparation. Every minute spent restocking, searching for supplies, or troubleshooting equipment during a rush is a minute of lost productivity that directly impacts queue times, drink quality, and revenue. A barista who has to leave the machine to grab milk from the back fridge breaks their rhythm, slows the drink queue, and may lose the flow for the next several drinks. Pre-rush mise en place eliminates these interruptions by ensuring that everything the team will need during the rush is already in position. The espresso machine is warm and stable, both grinders are loaded and dialled in, milk jugs are filled and positioned, cups are stacked at arm's reach, lids are within hand distance of the takeaway station, the filter brewer has a fresh batch ready, food display items are plated and labelled, the till float is counted and in place, and the floor is clean and tables are set. When the first customer walks in, the team is ready — not scrambling.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Create a Pre-Rush Preparation Checklist by walking through the entire cafe and listing everything that needs to be in place before the morning rush. Organise the list by station: Bar (espresso machine on and stable, both grinders loaded, dose and yield checked with test shots, milk in bar fridge or jugs filled, cups and lids stocked, syrups topped up, drip tray empty, cleaning cloths fresh), Till (float counted and in register, receipt paper full, card machine charged, loyalty cards or stamp cards stocked, specials written on board), Food (display cabinet stocked and labelled, sandwich ingredients prepped if applicable, pastries plated, allergen labels in place), Floor (tables wiped, chairs positioned, menus current, sugar and napkin dispensers full, bins empty), Support (backup milk in reach, backup cups accessible, take-away bags stocked, cleaning supplies ready). Week 2: Assign responsibility for each section of the prep checklist and build it into the opening shift routine. The opening team should arrive with enough time to complete the full prep before the rush begins — typically 45 to 60 minutes before peak starts. Time the preparation process: if prep takes longer than allocated, either start earlier or identify steps that can be done the evening before.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Develop a Pre-Rush Mise en Place SOP that standardises the preparation process, including par levels (how much stock to have at the bar before rush), timing (what must be done by what time), and quality checks (test shots, milk freshness, food temperature). Create visual guides for each station showing exactly where each item should be positioned — laminated photos of a perfectly set bar, till station, and food counter serve as powerful reference tools. Establish a prep quality check: ten minutes before the rush is expected to begin, the shift lead walks the prep checklist and verifies that every element is in place. Any gaps are closed immediately. If a critical item is unavailable (e.g., the oat milk delivery has not arrived), the shift lead activates the contingency protocol from B086, including customer communication. Build a closing-for-opening protocol: certain prep tasks are more efficiently done the night before — stocking cups, refilling sugar dispensers, preparing the float bag, pre-labelling takeaway items. Integrate these into the closing checklist (B092) to reduce morning prep time.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Pre-rush mise en place becomes an ingrained habit that the team takes pride in. The phrase 'Are we set?' before the rush starts becomes part of the venue's language. Track prep completion times and identify the fastest, most reliable prep routines for each team member. Share best practices across the team. Conduct a quarterly mise en place audit: is the checklist still complete, have any new items been added to the menu that require prep additions, has the layout changed in a way that affects stock positioning? Introduce a 'rush-ready' standard — a visual snapshot of what perfect preparation looks like at every station — and train all staff to this standard. Connect prep quality to rush performance data: does rush performance improve on days when prep was completed fully versus days when it was rushed or incomplete? Use this data to reinforce the importance of preparation."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Walk through the entire cafe and list every item that must be in place before the rush",
+        "Organise the list by station: Bar, Till, Food, Floor, Support",
+        "Create a printable Pre-Rush Preparation Checklist",
+        "Assign responsibility for each section to specific opening team members",
+        "Ensure the opening team arrives 45-60 minutes before peak rush begins",
+        "Time the preparation process and adjust timing if prep is not completing before rush",
+        "Complete the checklist every morning and file or display it for accountability"
+      ],
+      "responsible": "Shift Lead, Head Barista"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Develop a Pre-Rush Mise en Place SOP with par levels, timing, and quality checks",
+        "Create visual station setup guides (laminated photos of perfectly prepared stations)",
+        "Establish a shift-lead prep quality check ten minutes before expected rush",
+        "Build a closing-for-opening protocol integrating prep tasks into the evening close",
+        "Define contingency protocols for missing supplies or equipment issues discovered during prep",
+        "Standardise test shot procedure for espresso dialling-in as part of bar prep",
+        "Link pre-rush prep to the morning rush workflow SOP from B086"
+      ],
+      "responsible": "Head Barista, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Establish 'Are we set?' as a pre-rush ritual and team checkpoint",
+        "Track prep completion times and share best practices across the team",
+        "Conduct quarterly mise en place audits updating the checklist for menu and layout changes",
+        "Create a visual 'rush-ready' standard for every station",
+        "Correlate prep quality data with rush performance metrics",
+        "Celebrate excellent preparation as a contributor to rush success"
+      ],
+      "responsible": "Head Barista, Manager"
+    }
+  },
+  "deliverables": [
+    "Pre-Rush Preparation Checklist by station (printable A4)",
+    "Pre-Rush Mise en Place SOP with par levels and timing",
+    "Visual Station Setup Guides (laminated photos)",
+    "Closing-for-Opening Prep Protocol",
+    "Prep Quality Check procedure"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T087-01",
+        "tool_name": "Pre-Rush Preparation Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Shift Lead",
+        "description": "Comprehensive station-by-station checklist covering every item that must be in position before the morning rush: bar supplies, till setup, food display, floor readiness, and support stock levels."
+      },
+      {
+        "tool_id": "T087-02",
+        "tool_name": "Station Par Level Guide",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Head Barista",
+        "description": "Defines the exact quantities of each consumable required at each station before the rush begins: number of milk jugs filled, cups stacked by size, syrup bottles at minimum level, backup stock positioned."
+      },
+      {
+        "tool_id": "T087-03",
+        "tool_name": "Visual Station Setup Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Head Barista",
+        "description": "Laminated photographs showing exactly how each station should look when fully prepared for the rush — bar setup, cup positioning, food display arrangement, and till station layout."
+      },
+      {
+        "tool_id": "T087-04",
+        "tool_name": "Espresso Dial-In Record",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Head Barista",
+        "description": "Daily record of espresso dialling-in during pre-rush prep: dose weight, yield, extraction time, taste notes, and any grinder adjustments made. Ensures the bar is calibrated before the first customer order."
+      },
+      {
+        "tool_id": "T087-05",
+        "tool_name": "Prep Completion Time Log",
+        "level": "L3",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Daily log recording prep start time, completion time, any gaps identified in the quality check, and correlation with rush performance. Used to optimise prep timing and staffing."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Prep checklist exists but is not followed, with staff assuming they will remember everything",
+    "Opening team arrives too late to complete full preparation, starting the rush already behind",
+    "Stock levels at stations are not replenished to par, leading to mid-rush restocking interruptions",
+    "Espresso is not dialled in before the first customer order, resulting in poor drinks during the first 15 minutes of rush"
+  ],
+  "kpis": [
+    "Pre-rush checklist 100% complete before the first peak customer on every operating day",
+    "Espresso dialled in and test shots approved before the rush begins on every day",
+    "Zero mid-rush restocking interruptions for items that should have been prepped",
+    "Prep completed within the allocated time window on at least 90% of days",
+    "Shift-lead quality check conducted ten minutes before rush on at least 90% of days"
+  ],
+  "dependencies": ["B086"],
+  "constraints": [
+    "Prep time requires staffing — the opening team must arrive early enough to complete the full checklist",
+    "Some prep tasks (e.g., fresh food items) cannot be done the night before due to food safety requirements",
+    "Equipment warm-up times (espresso machine: 20-30 minutes) must be factored into the prep schedule"
+  ],
+  "time_load": {
+    "L1": "2 hours (checklist creation, timing assessment, initial implementation)",
+    "L2": "4 hours (SOP development, visual guides, closing-for-opening integration, dial-in protocol)",
+    "L3": "1 hour/quarter (audit, checklist update, prep time analysis)"
+  },
+  "review_protocol": "Daily: prep checklist completed and quality check conducted. Weekly: any prep failures reviewed and root causes addressed. Monthly: prep timing data analysed and adjustments made. Quarterly: full mise en place audit updating the checklist for menu and layout changes.",
+  "meta": {
+    "summary_for_humans": "This block creates a comprehensive pre-rush preparation protocol ensuring every supply, tool, and station is ready before peak service begins — so the team can focus entirely on speed and quality during the morning rush.",
+    "implementation_risks": [
+      "Opening staff may resist arriving earlier for prep if they are not compensated for the additional time",
+      "The checklist can become a tick-box exercise unless the quality check enforces genuine readiness",
+      "Closing-for-opening prep requires good communication between the closing and opening teams"
+    ],
+    "notes_for_engine": "Activate alongside B086 morning rush workflow. Also activate when signals indicate rushed openings, drinks quality issues in early service, or mid-rush supply interruptions. Pre-rush prep is the foundation of rush performance.",
+    "tags": ["mise_en_place", "preparation", "pre_rush", "opening", "setup", "par_levels", "espresso", "dial_in", "checklist"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

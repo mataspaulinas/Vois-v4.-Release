@@ -1,0 +1,47 @@
+{
+  "id": "blk_build_floor_training",
+  "name": "Build floor training checklist",
+  "description": "Convert critical service behaviors, role expectations, and recovery standards into an explicit onboarding and refresh checklist that managers can coach against.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: build capability by making live standards coachable instead of memory-dependent",
+  "updated_at": "2026-03-14T00:24:42.964001Z",
+  "effort_hours": 5.0,
+  "dependencies": [
+    "blk_create_station_roles"
+  ],
+  "tool_ids": [
+    "tool_training_checklist"
+  ],
+  "response_pattern_ids": [
+    "rp_training_reset"
+  ],
+  "entry_conditions": [
+    "The same service mistakes repeat across people or new starters rely on shadowing alone.",
+    "Role expectations and standard behaviors are already explicit enough to train against."
+  ],
+  "contraindications": [
+    "Do not turn training into a document dump with no live signoff or coaching.",
+    "Do not build the checklist before role ownership and service standards are clear."
+  ],
+  "owner_role": "floor_lead",
+  "expected_time_to_effect_days": 5,
+  "proof_of_completion": [
+    "A role-specific training checklist exists for the floor positions that most affect service quality.",
+    "Each critical behavior has an observation or signoff method, not just a checkbox.",
+    "Managers use the checklist during onboarding or refresh rather than informal memory transfer."
+  ],
+  "successor_block_ids": [
+    "blk_guest_recovery_loop"
+  ],
+  "service_module_ids": [
+    "team_capability_and_training",
+    "quality_and_standards",
+    "handoffs_and_coordination"
+  ],
+  "failure_family_ids": [
+    "capability_gap",
+    "standards_drift",
+    "role_clarity_failure"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "vertical": "restaurant",
+  "tools": [
+    {
+      "id": "tool_wait_quote_guide",
+      "name": "Wait quote guide",
+      "description": "Simple decision guide for quoted waits, release timing, and escalation triggers.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: operational decisions should be explainable",
+      "status": "review",
+      "category": "host"
+    },
+    {
+      "id": "tool_arrival_pacing_board",
+      "name": "Arrival pacing board",
+      "description": "Live board for reservation waves, walk-ins, and seat release decisions.",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: fragmented information creates confusion",
+      "status": "review",
+      "category": "host"
+    },
+    {
+      "id": "tool_host_huddle_template",
+      "name": "Host huddle template",
+      "description": "Peak-window host huddle template covering pacing, pressure points, and escalation.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: welcome brief adapted for venue roles",
+      "status": "review",
+      "category": "communication"
+    },
+    {
+      "id": "tool_section_deployment_board",
+      "name": "Section deployment board",
+      "description": "Sectioning board that shows assignments, support roles, and backup ownership.",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: role clarity reduces firefighting",
+      "status": "review",
+      "category": "planning"
+    },
+    {
+      "id": "tool_peak_window_plan",
+      "name": "Peak-window plan",
+      "description": "Live plan for manager placement, section pressure, and intervention windows.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: plans must respect available leadership capacity",
+      "status": "review",
+      "category": "leadership"
+    },
+    {
+      "id": "tool_expo_callout_card",
+      "name": "Expo callout card",
+      "description": "Reference card for pass callouts, timing language, and pickup triggers.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: block library should carry practical tooling",
+      "status": "review",
+      "category": "kitchen"
+    },
+    {
+      "id": "tool_bar_priority_board",
+      "name": "Bar priority board",
+      "description": "Visual lane for drink tickets that are blocking guest flow.",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: visible prioritization beats hidden queues",
+      "status": "review",
+      "category": "beverage"
+    },
+    {
+      "id": "tool_line_readiness_check",
+      "name": "Line readiness check",
+      "description": "Opening check for product, equipment, prep status, and immediate risks.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: leading indicators should drive early intervention",
+      "status": "review",
+      "category": "kitchen"
+    },
+    {
+      "id": "tool_closing_reset_checklist",
+      "name": "Closing reset checklist",
+      "description": "Close-down checklist covering stock, prep, cleanliness, and unresolved actions.",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: systems should survive shift changes",
+      "status": "review",
+      "category": "controls"
+    },
+    {
+      "id": "tool_inventory_count_sheet",
+      "name": "Inventory count sheet",
+      "description": "Targeted count sheet for high-risk inventory lines and variance review.",
+      "owner": "recovery-team",
+      "source_ref": "compass-market-analysis: structured intelligence requires trustworthy inputs",
+      "status": "review",
+      "category": "inventory"
+    },
+    {
+      "id": "tool_86_board_template",
+      "name": "86 board template",
+      "description": "Template for item depletion alerts, substitutions, and sell-through priorities.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: tool packs should improve live coordination",
+      "status": "review",
+      "category": "inventory"
+    },
+    {
+      "id": "tool_floor_walk_sheet",
+      "name": "Floor walk sheet",
+      "description": "Timed observation sheet for coaching, escalation, and guest-flow checks.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: operator-facing intelligence needs verification loops",
+      "status": "review",
+      "category": "leadership"
+    }
+  ]
+}

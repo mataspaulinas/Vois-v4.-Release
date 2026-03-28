@@ -1,0 +1,182 @@
+{
+  "block_id": "B193",
+  "name": "Central Procurement Framework",
+  "version": "v1.0",
+  "domain": "D11_growth_strategy",
+  "module": "M15: Multi-Site & Chain Management",
+  "state": "enriched",
+  "purpose": "Establishes a centralised procurement framework that leverages the buying power of multiple sites to negotiate better prices, ensure consistent product quality, streamline supplier management, and reduce the administrative burden on individual site managers. This block transforms purchasing from a fragmented, site-by-site activity into a strategic function.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Consolidate supplier relationships across all sites to negotiate volume-based pricing",
+      "Establish an approved supplier list ensuring consistent product quality and brand standards",
+      "Create a central ordering system or framework that simplifies procurement for site managers",
+      "Negotiate improved payment terms, delivery schedules, and service level agreements",
+      "Implement category management to optimise spend across key purchasing categories"
+    ],
+    "secondary_objectives": [
+      "Reduce procurement cost as a percentage of revenue through consolidated buying power",
+      "Minimise supply chain disruption by maintaining approved alternative suppliers",
+      "Ensure food safety and quality standards are maintained through supplier vetting",
+      "Build data visibility across the supply chain for better forecasting and waste reduction"
+    ]
+  },
+  "why_this_matters": "Procurement is typically the second-largest cost category for a cafe after labour, accounting for 25–40% of revenue. In a multi-site operation where each site orders independently, the business is paying the small-buyer price at every location, missing volume discounts that could save 5–15% across key categories. A chain buying 500kg of coffee per month across 8 sites should pay significantly less per kilogram than each site ordering 60kg independently. Beyond price, centralised procurement ensures consistency: every site uses the same milk, the same syrups, the same takeaway cups, and the same cleaning products. This consistency is essential for brand standards (B187) and customer experience. Centralised procurement also simplifies supplier management, reducing the number of invoices, deliveries, and relationships that each site manager must handle, freeing them to focus on operations and customer service.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0–2 weeks). Week 1: Audit current procurement across all sites. List every supplier used, what they supply, the price paid, payment terms, and delivery frequency. Identify where different sites use different suppliers for the same product and where pricing varies. Calculate total spend by category: coffee, milk, food ingredients, bakery, packaging, cleaning, equipment consumables. Week 2: Identify the top 5 categories by total spend and the top 5 suppliers by total value. For each, assess whether consolidation to a single supplier (or a reduced number) would unlock volume pricing. Begin conversations with key suppliers about multi-site pricing.",
+    "L2": "SYSTEM BUILD (2–8 weeks). Negotiate central supply agreements for the top categories. Create an approved supplier list with clear criteria for approval: price competitiveness, product quality, delivery reliability, food safety accreditation, and sustainability credentials. Develop a central ordering framework — this could be a shared ordering portal, a consolidated order managed by head office, or a framework agreement that sites order against directly. Establish delivery schedules that optimise logistics and reduce per-delivery costs. Create a supplier performance review process with quarterly assessments.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Implement category management across all procurement: assign a category owner for each major spend area. Negotiate annual supply agreements with built-in price review mechanisms. Develop alternative supplier relationships for business continuity. Use cross-site demand data to improve ordering accuracy and reduce waste. Explore cooperative purchasing with other independent cafe groups for even greater buying power."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Audit current procurement across all sites: suppliers, products, prices, terms",
+        "Calculate total spend by category across the estate",
+        "Identify consolidation opportunities where multiple suppliers serve the same need",
+        "Begin multi-site pricing conversations with key suppliers",
+        "Create a master supplier list with contact details and current terms",
+        "Identify the top 5 categories for immediate consolidation",
+        "Assess current delivery logistics for optimisation potential"
+      ],
+      "responsible": "Operations Director, Finance Director"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Negotiate central supply agreements for top categories",
+        "Create an approved supplier list with clear approval criteria",
+        "Develop a central ordering framework or portal",
+        "Establish optimised delivery schedules across all sites",
+        "Create a supplier performance review process",
+        "Build a procurement cost tracking dashboard",
+        "Develop a new supplier vetting and approval process"
+      ],
+      "responsible": "Procurement Lead, Operations Director"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Implement category management with assigned category owners",
+        "Negotiate annual supply agreements with price review mechanisms",
+        "Develop alternative supplier relationships for business continuity",
+        "Use cross-site demand data for improved forecasting",
+        "Explore cooperative purchasing with other cafe groups",
+        "Conduct annual procurement strategy review"
+      ],
+      "responsible": "Procurement Lead, Finance Director, CEO"
+    }
+  },
+  "deliverables": [
+    "Procurement Audit Report (current state across all sites)",
+    "Approved Supplier List with vetting criteria",
+    "Central Supply Agreements for key categories",
+    "Procurement Cost Dashboard",
+    "Supplier Performance Review template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T193-01",
+        "tool_name": "Procurement Audit Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Operations Director",
+        "description": "Template for auditing current procurement across all sites: supplier details, products, prices, terms, delivery frequency, and total spend by category."
+      },
+      {
+        "tool_id": "T193-02",
+        "tool_name": "Approved Supplier List",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Procurement Lead",
+        "description": "Master list of approved suppliers with approval status, product categories, pricing, terms, food safety accreditation, and review dates."
+      },
+      {
+        "tool_id": "T193-03",
+        "tool_name": "Supplier Performance Scorecard",
+        "level": "L2",
+        "format": "checklist",
+        "owner_role": "Procurement Lead",
+        "description": "Quarterly scorecard assessing each key supplier on price competitiveness, product quality, delivery reliability, invoice accuracy, and responsiveness."
+      },
+      {
+        "tool_id": "T193-04",
+        "tool_name": "Procurement Cost Dashboard",
+        "level": "L2",
+        "format": "dashboard",
+        "owner_role": "Finance Director",
+        "description": "Dashboard tracking total procurement spend by category, price trends, savings versus pre-consolidation baseline, and cost as percentage of revenue across all sites."
+      },
+      {
+        "tool_id": "T193-05",
+        "tool_name": "Central Supply Agreement Template",
+        "level": "L3",
+        "format": "template",
+        "owner_role": "Finance Director",
+        "description": "Template for negotiating and documenting central supply agreements: volumes, pricing tiers, payment terms, delivery schedule, quality standards, and termination clauses."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Central agreements restrict site managers from sourcing locally, reducing quality or freshness for perishable items",
+    "Volume commitments are overestimated, leading to contractual obligations the business cannot fulfil",
+    "Supplier consolidation creates single points of failure with no backup suppliers in place",
+    "Site managers circumvent central procurement by ordering independently, undermining negotiated prices"
+  ],
+  "kpis": [
+    "Procurement cost as percentage of revenue reduced by at least 2 percentage points within 12 months",
+    "90% of procurement spend through approved suppliers",
+    "Supplier performance reviews completed quarterly for all key suppliers",
+    "Zero supply chain disruptions lasting more than 24 hours"
+  ],
+  "dependencies": [
+    "B104",
+    "B107"
+  ],
+  "constraints": [
+    "Central agreements must allow for local sourcing of perishable items where quality demands it",
+    "Volume commitments must be realistic and achievable across the estate",
+    "Franchise sites may have existing supplier relationships that need to be transitioned gradually"
+  ],
+  "time_load": {
+    "L1": "8 hours (procurement audit across all sites)",
+    "L2": "20 hours (supplier negotiations, agreement drafting, system setup)",
+    "L3": "4 hours/quarter (performance reviews, strategy updates)"
+  },
+  "review_protocol": "Quarterly supplier performance reviews. Monthly procurement cost tracking. Annual central supply agreement reviews and renegotiations. Immediate review when supply disruptions occur.",
+  "meta": {
+    "summary_for_humans": "This block creates a centralised procurement framework that consolidates buying power across multiple sites to achieve better pricing, consistent quality, and streamlined supplier management.",
+    "implementation_risks": [
+      "Over-centralisation can alienate site managers who value local supplier relationships",
+      "Volume commitments can become contractual liabilities if the estate contracts",
+      "Transitioning from multiple suppliers to central agreements requires careful change management"
+    ],
+    "notes_for_engine": "Chain-only block. Depends on B104 (supplier management) and B107 (cost management). Activate when the estate reaches 3+ sites. Significant cost-saving potential.",
+    "tags": [
+      "procurement",
+      "purchasing",
+      "suppliers",
+      "multi_site",
+      "chain",
+      "cost_control",
+      "volume_buying",
+      "supply_chain"
+    ]
+  },
+  "applicability": {
+    "venue_types": [
+      "chain_cafe",
+      "franchise_cafe"
+    ],
+    "team_size_min": 5,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

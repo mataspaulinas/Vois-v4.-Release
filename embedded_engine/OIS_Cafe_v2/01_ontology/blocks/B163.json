@@ -1,0 +1,167 @@
+{
+  "block_id": "B163",
+  "name": "Cybersecurity & POS Security",
+  "version": "v1.0",
+  "domain": "D10_technology_systems",
+  "module": "M10: Digital Tools & Customer Data",
+  "state": "enriched",
+  "purpose": "Protects the cafe from cyber threats targeting payment systems, customer data, and business operations. This block implements proportionate cybersecurity measures for a small hospitality business, focusing on the most likely attack vectors: payment card theft, phishing, ransomware, and Wi-Fi exploitation.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Secure the POS system against payment card data theft through proper configuration, access controls, and PCI DSS awareness",
+      "Protect all business accounts (email, banking, POS, social media) with strong passwords and multi-factor authentication",
+      "Train staff to recognise and respond to common cyber threats including phishing emails, social engineering, and suspicious devices",
+      "Ensure payment card processing meets Payment Card Industry Data Security Standard (PCI DSS) requirements through the payment processor",
+      "Create an incident response plan for cyber attacks including ransomware, data theft, and account compromise"
+    ],
+    "secondary_objectives": [
+      "Protect the cafe's reputation by preventing customer data breaches",
+      "Ensure cyber insurance is in place and covers the most likely incident types",
+      "Reduce the risk of financial loss from business email compromise or payment fraud",
+      "Build staff awareness of cybersecurity as a normal part of operational responsibility"
+    ]
+  },
+  "why_this_matters": "Small businesses are disproportionately targeted by cyber criminals because they typically have weaker defences than larger organisations. The UK government's Cyber Security Breaches Survey consistently shows that around 30-40% of small businesses experience cyber attacks annually. For cafes, the primary risks are: POS and payment system compromise (skimming devices, malware on payment terminals), phishing attacks targeting the business email (fake supplier invoices, CEO fraud), ransomware that locks business systems and demands payment, and exploitation of unsecured Wi-Fi networks. A payment card breach is particularly devastating for a small cafe. Beyond the direct financial liability, the reputational damage of customers' card details being stolen can permanently destroy trust. The cafe may also face: PCI DSS non-compliance fines from the payment processor, mandatory forensic investigation costs (typically 5,000-20,000 pounds), increased payment processing fees, and potential loss of the ability to accept card payments at all. The average cost of a cyber incident for a UK small business is estimated at 8,000-13,000 pounds, which for many independent cafes represents a month or more of profit. Prevention costs a fraction of this. Most of the protective measures in this block cost nothing or very little to implement; they require knowledge, discipline, and simple process changes.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Secure all business accounts. Create an inventory of every online account used by the business: email, online banking, POS admin portal, accounting software, social media, website hosting, ordering platforms, and any other cloud services. For every account, ensure: the password is unique (not shared with any other account), the password is strong (minimum 12 characters, not guessable), and multi-factor authentication (MFA) is enabled where available. Use a password manager (Bitwarden, 1Password) rather than writing passwords on paper or storing them in a shared document. Change any default passwords on POS terminals, routers, and other network equipment. Restrict POS admin access to the owner and manager only; all other staff should use standard user accounts. Week 2: Conduct a physical security check of payment systems. Inspect all card payment terminals for signs of tampering (loose components, unfamiliar attachments, broken seals). Confirm terminals are running the latest software version by checking with your payment processor. Verify that card payment data flows directly from the terminal to the payment processor without passing through cafe systems (this is the standard setup for modern payment terminals and is the simplest way to maintain PCI DSS compliance). If in doubt, contact your payment processor to confirm your setup and compliance status.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Implement a Cybersecurity Awareness Training session for all staff covering: recognising phishing emails (unexpected urgency, spelling errors, unfamiliar sender, requests for passwords or payment), safe handling of customer payment cards (never write down card details, never photograph cards), what to do if they notice something suspicious on the POS or payment terminal, password hygiene and why sharing passwords is forbidden, and how to report a suspected cyber incident. Verify PCI DSS compliance through your payment processor. Most small cafes achieve compliance through SAQ A or SAQ B (Self-Assessment Questionnaires) which require minimal technical controls if using approved payment terminals that encrypt card data at the point of capture. Your payment processor should provide guidance on which SAQ applies. Set up email security: enable spam filtering, configure SPF/DKIM/DMARC for your business email domain (your email provider can assist), and create a procedure for verifying any email that requests payment or changes to payment details (always verify by phone using a known number, never the number in the email). Review cyber insurance: check whether your business insurance includes cyber cover, and if not, consider adding it. Basic cyber insurance for small businesses typically costs 150-400 pounds per year and covers incident response costs, data breach notification, and business interruption.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Create a Cyber Incident Response Plan covering: account compromise (someone gains access to a business account), payment terminal tampering, ransomware attack, customer data breach, and business email compromise. For each scenario, define: immediate containment steps, who to contact (payment processor, ICO, police via Action Fraud, cyber insurance provider), communication plan for customers and staff, recovery steps, and post-incident review. Conduct quarterly cybersecurity mini-reviews: check for software updates on all systems, review account access and remove former staff, verify MFA is still active on all critical accounts, and inspect payment terminals for tampering. Perform an annual cybersecurity assessment using the National Cyber Security Centre (NCSC) free small business guide and self-assessment tool. Stay informed about emerging threats through the NCSC's weekly threat reports and small business newsletters. Build a culture where staff feel comfortable reporting suspicious activity without fear of looking foolish; the cost of not reporting a genuine threat is far higher than the cost of investigating a false alarm."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Create an inventory of all business online accounts and cloud services",
+        "Set unique, strong passwords for every account and enable MFA where available",
+        "Set up a password manager for secure credential storage",
+        "Change all default passwords on POS terminals, routers, and network equipment",
+        "Restrict POS admin access to owner and manager only",
+        "Physically inspect all payment terminals for signs of tampering",
+        "Verify payment terminal software is up to date with payment processor"
+      ],
+      "responsible": "Owner"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Deliver Cybersecurity Awareness Training to all staff",
+        "Verify PCI DSS compliance status with payment processor",
+        "Configure email security (spam filtering, SPF/DKIM/DMARC)",
+        "Create a procedure for verifying payment-related email requests by phone",
+        "Review and update cyber insurance coverage",
+        "Document all security configurations and access controls",
+        "Set up a process for revoking access when staff leave"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Create a Cyber Incident Response Plan for 5 key threat scenarios",
+        "Conduct quarterly cybersecurity mini-reviews (updates, access, MFA, terminal checks)",
+        "Perform annual cybersecurity assessment using NCSC tools",
+        "Stay informed about emerging threats through NCSC communications",
+        "Build a reporting culture where staff flag suspicious activity without hesitation"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Business Account Security Audit (all accounts, passwords, MFA status)",
+    "Cybersecurity Awareness Training materials for staff",
+    "PCI DSS Compliance verification documentation",
+    "Cyber Incident Response Plan",
+    "Quarterly Cybersecurity Review checklist"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T163-01",
+        "tool_name": "Business Account Security Audit",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Comprehensive audit of all business online accounts covering: account name, purpose, who has access, password strength rating, MFA enabled (yes/no), last password change date, and action required. Used for initial security hardening and quarterly reviews."
+      },
+      {
+        "tool_id": "T163-02",
+        "tool_name": "Staff Cybersecurity Training Pack",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Training materials for a 20-30 minute staff session covering: phishing recognition, safe payment card handling, password rules, suspicious activity reporting, and real-world examples of cafe-relevant cyber threats."
+      },
+      {
+        "tool_id": "T163-03",
+        "tool_name": "Payment Terminal Inspection Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "Physical security inspection checklist for card payment terminals: checking for loose components, unfamiliar attachments, broken seals, unusual cables, and software version verification. Completed monthly and after any unattended period."
+      },
+      {
+        "tool_id": "T163-04",
+        "tool_name": "Cyber Incident Response Plan",
+        "level": "L3",
+        "format": "SOP",
+        "owner_role": "Owner",
+        "description": "Structured response procedures for 5 cyber threat scenarios: account compromise, terminal tampering, ransomware, data breach, and email fraud. Each scenario includes containment steps, contact list, communication templates, and recovery procedures."
+      },
+      {
+        "tool_id": "T163-05",
+        "tool_name": "Quarterly Cybersecurity Review Checklist",
+        "level": "L3",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Quarterly review covering: software updates on all systems, account access audit, MFA verification, payment terminal physical inspection, password manager review, former staff access removal, and emerging threat awareness check."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Default passwords remain on POS terminals and network equipment, providing easy access for attackers",
+    "Staff fall for phishing emails and provide login credentials or process fraudulent payment requests",
+    "Payment terminal is compromised with a skimming device that goes undetected for weeks, capturing hundreds of customer card details",
+    "No cyber incident response plan exists, resulting in panic, delayed response, and failure to notify the ICO within the required 72 hours"
+  ],
+  "kpis": [
+    "MFA enabled on 100% of business accounts that support it",
+    "All staff complete cybersecurity awareness training within 4 weeks of starting",
+    "Payment terminals physically inspected at least monthly with signed-off checklist",
+    "Zero default passwords remaining on any business system or network equipment"
+  ],
+  "dependencies": ["B161", "B162"],
+  "constraints": [
+    "PCI DSS compliance requirements are set by the payment card industry and enforced through the payment processor",
+    "Cyber insurance premiums may increase if the business cannot demonstrate basic security measures",
+    "Staff cybersecurity training must be refreshed annually to remain effective against evolving threats",
+    "Some security measures (MFA, password managers) require staff to adopt new habits which takes time and patience"
+  ],
+  "time_load": {
+    "L1": "4 hours (account audit, password changes, MFA setup, terminal inspection)",
+    "L2": "6 hours (staff training, PCI DSS verification, email security, insurance review)",
+    "L3": "2 hours/quarter (quarterly reviews) + 4 hours/year (incident response plan, annual assessment)"
+  },
+  "review_protocol": "Payment terminals inspected monthly. Account access reviewed and former staff removed within 24 hours of departure. Quarterly cybersecurity mini-review completed. Staff training refreshed annually. Cyber incident response plan reviewed and tabletop-tested annually. Full cybersecurity assessment conducted annually using NCSC guidance.",
+  "meta": {
+    "summary_for_humans": "This block protects the cafe from cyber threats targeting payment systems, customer data, and business operations. It covers account security, POS hardening, staff awareness training, PCI DSS compliance, and incident response planning, all scaled proportionately for a small hospitality business.",
+    "implementation_risks": [
+      "Cybersecurity may feel overly technical for non-technical cafe owners, requiring simplified guidance",
+      "Staff may resist password managers and MFA as inconvenient, requiring patient change management",
+      "PCI DSS compliance can seem complex but is largely handled by the payment processor for standard setups"
+    ],
+    "notes_for_engine": "Activate when signals indicate: default passwords in use, absent MFA, lack of PCI DSS awareness, staff unable to recognise phishing, or previous cyber incident. Depends on B161 for data protection framework and B162 for network infrastructure security.",
+    "tags": ["cybersecurity", "POS_security", "PCI_DSS", "phishing", "payment_security", "passwords", "MFA", "incident_response"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

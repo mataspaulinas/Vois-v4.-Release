@@ -1,0 +1,147 @@
+[
+  {
+    "response_pattern_id": "RP024",
+    "rp_name": "Peak Staffing & Rush Management",
+    "domain": "D05",
+    "severity": "medium-critical",
+    "priority_score": 1.5,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM040",
+        "fm_title": "Morning rush and peak management failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM042",
+        "fm_title": "Ticket time and service speed failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Review your staffing levels against your transaction data for the past four weeks. Are you adequately staffed during peak hours (typically 7-10am and 12-2pm)? If ticket times exceed 5 minutes during peak you are either understaffed or your workflow is broken. Observe your team during the next morning rush and identify every point of delay or confusion.",
+    "l2_focus": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+    "l3_focus": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+    "description": "Peak Staffing & Rush Management"
+  },
+  {
+    "response_pattern_id": "RP034",
+    "rp_name": "Revenue Growth & Pricing Strategy",
+    "domain": "D07",
+    "severity": "medium-critical",
+    "priority_score": 1.5,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM059",
+        "fm_title": "Revenue per hour and sales productivity failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      },
+      {
+        "failure_mode_id": "FM060",
+        "fm_title": "Average transaction value growth failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Pull your revenue per hour data for the past four weeks. Identify your most and least productive hours. Is your average transaction value (ATV) growing or stagnant? When did you last review your prices? If it has been more than 12 months your prices are almost certainly too low given ingredient and wage inflation. Compare your prices to three local competitors this week.",
+    "l2_focus": "Implement a structured pricing review process conducted every 6-12 months. Develop an upselling programme training baristas to suggest add-ons naturally — extra shot cake with coffee larger size. Track ATV daily and set improvement targets. Create revenue targets for each shift and share them with the team. Analyse your highest-margin items and position them prominently.",
+    "l3_focus": "Build a revenue growth culture where the team understands the connection between their service and the cafe's financial health. Your pricing should reflect your value not just your costs. Develop premium offerings that increase ATV without alienating core customers. Track revenue per hour as your primary productivity metric.",
+    "description": "Revenue Growth & Pricing Strategy"
+  },
+  {
+    "response_pattern_id": "RP036",
+    "rp_name": "Cost Structure & Payroll Control",
+    "domain": "D07",
+    "severity": "medium-critical",
+    "priority_score": 1.0,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM064",
+        "fm_title": "Payroll cost management failure",
+        "fm_score": 1.0,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Calculate your payroll percentage — total staff costs divided by revenue. For cafes this should be between 30-40%. If it is above 40% you are either overstaffed during quiet periods or your revenue is too low. Review your cost structure: rent utilities insurance supplies. Identify your top three cost-reduction opportunities without compromising quality.",
+    "l2_focus": "Implement a labour scheduling system that matches staffing levels to demand patterns. Create a cost structure dashboard tracking rent payroll cost-of-goods and utilities as percentages of revenue. Develop a payroll optimisation strategy using flexible scheduling split shifts and cross-training. Review all fixed costs annually and negotiate where possible.",
+    "l3_focus": "Master your cost structure so that margin is protected without sacrificing the customer or team experience. Your payroll model should be responsive to demand while providing team members with stable predictable hours. Build a cost-conscious culture where waste in any form is identified and addressed.",
+    "description": "Cost Structure & Payroll Control"
+  },
+  {
+    "response_pattern_id": "RP006",
+    "rp_name": "Queue Management & Service Speed",
+    "domain": "D02",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM011",
+        "fm_title": "Queue management and wait time failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Measure your peak queue times this week. Time how long customers wait from joining the queue to receiving their order during morning rush (7-10am) and lunchtime peak. If any customer waits more than 5 minutes to order or more than 8 minutes for a coffee something is wrong. Identify the bottleneck immediately — is it the till the espresso machine the food prep or the team capacity?",
+    "l2_focus": "Design a peak period workflow that assigns specific roles: dedicated till operator barista food runner and floor support. Create a peak staffing model based on transaction data showing exactly how many team members you need for each hour of the day. Implement a queue management communication strategy where team members acknowledge waiting customers and provide time estimates.",
+    "l3_focus": "Build a service speed culture where the team takes pride in fast smooth service without sacrificing quality. Track average service times daily and display them to the team. Study your workflow during peak and continuously optimise. Your morning rush should feel energised and efficient not chaotic. Customers should never feel ignored even when you are busy.",
+    "description": "Queue Management & Service Speed"
+  },
+  {
+    "response_pattern_id": "RP053",
+    "rp_name": "Operational Rhythm & Daily Discipline",
+    "domain": "D05",
+    "severity": "medium-critical",
+    "priority_score": 0.8,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM097",
+        "fm_title": "Operational discipline and daily routine failure",
+        "fm_score": 0.8,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Review your daily operational discipline. Are prep lists being used? Is the waste log completed every day? Is the maintenance log up to date? Are daily targets communicated to the team? If any of these basic disciplines have lapsed recommit to them this week. Operational discipline is the foundation everything else is built on.",
+    "l2_focus": "Create a comprehensive daily discipline framework covering prep lists waste logs maintenance logs cash reconciliation temperature checks and target tracking. Implement an operational rhythm dashboard that gives you a daily snapshot of compliance. Train all shift-capable team members on the full discipline framework. Conduct weekly discipline audits and address gaps immediately.",
+    "l3_focus": "Operational discipline should be invisible because it is automatic. Your daily routines should be so embedded that they happen without thinking. Build a culture where discipline is respected and lapses are noticed by the team not just by management. Your operational rhythm should be the heartbeat of your cafe.",
+    "description": "Operational Rhythm & Daily Discipline"
+  },
+  {
+    "response_pattern_id": "RP020",
+    "rp_name": "Team Communication & Meetings",
+    "domain": "D04",
+    "severity": "medium-critical",
+    "priority_score": 0.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM032",
+        "fm_title": "Team communication and meeting failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "Are you holding daily team briefings before each shift? If not start tomorrow. A 5-minute huddle covering the day's targets any specials or changes and any issues from yesterday transforms team alignment. Check whether you have a weekly team meeting — if not schedule one. Communication gaps create errors waste and frustration.",
+    "l2_focus": "Implement a structured communication framework: daily pre-shift briefings weekly team meetings and monthly all-hands sessions. Create agenda templates for each format. Establish a digital communication channel (WhatsApp group or similar) for operational updates. Develop a rota publication policy ensuring at least two weeks advance notice. Track meeting attendance and action completion.",
+    "l3_focus": "Build a communication culture where information flows freely and everyone feels heard. Your team should understand the cafe's goals challenges and successes. Use meetings as opportunities for recognition and skill sharing not just task allocation. Excellent communication is the foundation of team performance.",
+    "description": "Team Communication & Meetings"
+  },
+  {
+    "response_pattern_id": "RP035",
+    "rp_name": "Financial Review & Budgeting",
+    "domain": "D07",
+    "severity": "medium-critical",
+    "priority_score": 0.7,
+    "triggering_fms": [
+      {
+        "failure_mode_id": "FM065",
+        "fm_title": "Cash flow and budgeting failure",
+        "fm_score": 0.7,
+        "link_priority": "primary"
+      }
+    ],
+    "l1_focus": "When did you last review your financial performance in detail? If you cannot state your monthly revenue profit and cash position from memory you need better financial visibility. Pull your last three months of data and review trends. Check whether you have a budget or forecast for the year — if not you are flying blind.",
+    "l2_focus": "Establish a weekly financial review ritual covering revenue costs margins and cash position. Create an annual budget broken down by month with variance analysis. Implement a financial dashboard showing key metrics updated weekly. Develop financial literacy across your shift leads so they understand the impact of waste staffing and pricing decisions.",
+    "l3_focus": "Your financial management should give you confidence and control. Track financial KPIs monthly and review trends quarterly. Build a forecasting capability that predicts seasonal patterns and plans accordingly. Financial discipline should be embedded in daily decisions not confined to monthly reviews.",
+    "description": "Financial Review & Budgeting"
+  }
+]

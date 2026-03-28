@@ -1,0 +1,157 @@
+{
+  "block_id": "B134",
+  "name": "Google Business Profile",
+  "version": "v1.0",
+  "domain": "D08_marketing_brand",
+  "module": "M08: Brand Visibility & Customer Acquisition",
+  "state": "enriched",
+  "purpose": "Ensures the cafe's Google Business Profile (GBP) is fully optimised, accurate, and actively managed as the single most important free marketing asset for local customer acquisition. For most cafes, Google is where new customers discover them, and GBP is the shop window that determines whether they visit.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Claim, verify, and fully complete the Google Business Profile with accurate and comprehensive information",
+      "Optimise the profile for local search ranking factors: categories, attributes, photos, and regular updates",
+      "Ensure opening hours, phone number, address, and website are always accurate and immediately updated when they change",
+      "Develop a regular posting schedule using Google Posts to signal activity to the algorithm and engage potential customers",
+      "Manage the Q&A section and photo gallery proactively to control the narrative about the cafe"
+    ],
+    "secondary_objectives": [
+      "Use GBP Insights to understand how customers find the cafe (direct search vs. discovery) and what actions they take",
+      "Optimise for Google Maps visibility, which is often the primary discovery channel for cafes",
+      "Create a GBP that serves as a mini-website for customers who never visit the actual cafe website",
+      "Leverage GBP features such as menus, products, and booking links to convert searchers into visitors"
+    ]
+  },
+  "why_this_matters": "Google Business Profile is the most important free marketing tool available to any cafe. When a potential customer searches 'cafe near me', 'best coffee in [area]', or your cafe by name, GBP determines what they see — your rating, photos, opening hours, reviews, and distance. Research shows that 46% of all Google searches have local intent, and businesses with complete, active GBP profiles receive 70% more visits than those with incomplete profiles. For a cafe, GBP is not supplementary marketing — it is the front door to the business for anyone discovering it online. A poorly managed GBP causes immediate, measurable harm. Incorrect opening hours lead to customers arriving at a closed cafe and leaving a negative review. Missing photos mean the listing looks inactive or unprofessional compared to competitors. Failing to respond to questions in the Q&A section (which anyone can answer) risks incorrect information being publicly associated with your business. The Google Maps algorithm favours profiles that are complete, regularly updated, and actively managed. A cafe that posts weekly Google Posts, responds to every review, uploads fresh photos monthly, and keeps all information current will outrank a competitor with a stale profile — even if that competitor has been established longer. In a competitive local market, GBP optimisation is one of the highest-return activities a cafe owner can invest time in.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: If you have not already claimed your Google Business Profile, do so immediately at business.google.com. Verification may take 5-14 days via postcard, phone, or email depending on Google's requirements. If the profile is already claimed, review it thoroughly for accuracy. Check and update: business name (must match your trading name exactly), address (must be precise and match Royal Mail's format), phone number (use the main cafe number, not a personal mobile), website URL, and opening hours (including bank holiday variations and seasonal changes). Select the most accurate primary category — 'Coffee shop' or 'Cafe' — and add relevant secondary categories such as 'Breakfast restaurant', 'Sandwich shop', or 'Bakery' as appropriate. Week 2: Upload at least 10 high-quality photos showing the exterior (so customers can recognise it), interior (showing the ambiance), food and drinks (the best sellers), and the team. Photos should be well-lit, appetising, and representative of the actual experience. Write a compelling business description (up to 750 characters) that includes relevant keywords naturally — mention the neighbourhood, your specialty (e.g., specialty coffee, homemade cakes), and what makes the cafe distinctive. Add all applicable attributes: Wi-Fi availability, outdoor seating, wheelchair accessibility, card payment accepted, and others relevant to your cafe.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Establish a weekly Google Posts schedule. Google Posts are short updates (100-300 words with an image) that appear on your profile and signal to the algorithm that your business is active. Post about: new menu items, seasonal specials, events, behind-the-scenes content, or community involvement. Each post should include a compelling image and, where appropriate, a call to action (Order online, Visit us, Learn more). Monitor and manage the Q&A section: check it weekly and answer any customer questions promptly and accurately. Pre-populate the Q&A with common questions and answers (Do you have Wi-Fi? Is there outdoor seating? Do you cater for dietary requirements?) before customers post them. Review GBP Insights monthly: track how many people viewed your profile, what search terms they used (branded vs discovery), what actions they took (visited website, requested directions, called), and how photo views compare to competitors. Use this data to understand what is driving customer discovery and where to focus improvement. Upload at least 3-5 new photos monthly to keep the visual content fresh. Ensure your menu is uploaded and current — many customers check the GBP menu before deciding whether to visit.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). GBP management should be a routine weekly task, not a one-off project. The profile should always be immaculately accurate and actively updated. Track your local search ranking for key terms ('cafe near [location]', 'best coffee [area]') and monitor how your position changes in response to GBP activity. Leverage GBP's newer features as they become available — Google frequently adds capabilities such as messaging, booking integration, and product showcases. Stay current with changes and adopt features that are relevant. Use GBP data to inform marketing and operational decisions: if Insights show that most customers find you through 'cafe near me' rather than your name, invest in local SEO. If photo views are declining, refresh your visual content. Encourage staff to contribute photos and content ideas — they see the business daily and can capture authentic moments. Coordinate GBP activity with social media (B137) and review generation (B135) for maximum impact: a new menu item should be posted on GBP, shared on Instagram, and prompt staff to mention it to customers who might review."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Claim and verify the Google Business Profile if not already done",
+        "Audit and correct all basic information: name, address, phone, website, opening hours",
+        "Select the most accurate primary and secondary business categories",
+        "Upload at least 10 high-quality photos covering exterior, interior, food, drinks, and team",
+        "Write a compelling business description with relevant local keywords",
+        "Add all applicable attributes (Wi-Fi, outdoor seating, accessibility, payment methods)"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Establish a weekly Google Posts schedule with varied content themes",
+        "Monitor and manage the Q&A section weekly, pre-populating common questions",
+        "Review GBP Insights monthly to understand discovery patterns and customer actions",
+        "Upload 3-5 new photos monthly to keep visual content fresh",
+        "Ensure the menu is uploaded and kept current on the profile",
+        "Respond to all reviews according to B133 response protocols"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track local search ranking for key search terms monthly",
+        "Adopt new GBP features as they become available and relevant",
+        "Use GBP Insights data to inform marketing and operational decisions",
+        "Coordinate GBP activity with social media and review generation efforts",
+        "Encourage team contributions to photo content and update ideas",
+        "Review and refresh the business description and attributes quarterly"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Fully Optimised Google Business Profile",
+    "GBP Content Calendar (weekly posting schedule)",
+    "GBP Photo Library (categorised by type)",
+    "Monthly GBP Insights Review template",
+    "Q&A Pre-Population Document"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T134-01",
+        "tool_name": "GBP Optimisation Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "A comprehensive checklist covering every element of a fully optimised Google Business Profile: basic information, categories, attributes, photos, description, menu, products, Q&A, and initial posts."
+      },
+      {
+        "tool_id": "T134-02",
+        "tool_name": "GBP Content Calendar",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "A monthly content calendar for Google Posts with suggested themes for each week (new items, behind-the-scenes, seasonal, community), image requirements, and posting schedule."
+      },
+      {
+        "tool_id": "T134-03",
+        "tool_name": "Monthly GBP Insights Report",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "A monthly report template capturing key GBP metrics: profile views, search queries, customer actions (directions, calls, website visits), photo views vs competitors, and trends over time."
+      },
+      {
+        "tool_id": "T134-04",
+        "tool_name": "Local Search Ranking Tracker",
+        "level": "L3",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "A quarterly tracker monitoring the cafe's position in local search results for key terms, tracking changes over time and correlating with GBP management activities."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Opening hours on GBP do not match reality, leading to frustrated customers who arrive to find the cafe closed",
+    "The photo gallery is empty or contains only dark, unappealing images while competitors have professional-quality photography",
+    "Google Posts are never used, making the profile appear inactive and reducing search ranking",
+    "The Q&A section contains incorrect answers posted by members of the public that the cafe has never reviewed or corrected"
+  ],
+  "kpis": [
+    "Google Business Profile 100% complete across all fields with no missing information",
+    "At least one Google Post published per week",
+    "GBP Insights reviewed monthly with actions documented",
+    "All Q&A questions answered within 48 hours and pre-populated with at least 10 common questions"
+  ],
+  "dependencies": ["B133"],
+  "constraints": [
+    "GBP information must be 100% accurate at all times — Google may suspend profiles with inconsistent or misleading information",
+    "Google's policies prohibit keyword stuffing in the business name or description",
+    "Photo quality matters — poor images are worse than no images"
+  ],
+  "time_load": {
+    "L1": "4 hours (profile audit, verification, photo upload, description, attributes)",
+    "L2": "2 hours/week (posting, Q&A management, photo uploads, Insights review)",
+    "L3": "1 hour/month (ranking tracking, feature adoption, strategic coordination)"
+  },
+  "review_protocol": "Weekly posting and Q&A check. Monthly GBP Insights review and photo refresh. Quarterly audit of all profile information for accuracy. Immediate update whenever opening hours, phone number, or address changes.",
+  "meta": {
+    "summary_for_humans": "This block ensures the cafe's Google Business Profile is fully optimised for local search, with accurate information, high-quality photos, regular posts, managed Q&A, and active use of Insights data. GBP is the most important free marketing tool for local customer discovery.",
+    "implementation_risks": [
+      "GBP verification can take 1-2 weeks, delaying the initial optimisation",
+      "Google occasionally makes unwanted changes to business profiles (hours, categories) that must be caught and corrected",
+      "Staff may not prioritise GBP management unless it is assigned as a specific responsibility with time allocated"
+    ],
+    "notes_for_engine": "This is one of the highest-impact blocks in D08. Activate immediately for any cafe where GBP is incomplete, inaccurate, or unmanaged. Flag as urgent if Google rating is below 4.0, if the profile has fewer than 10 photos, or if opening hours are incorrect. This block supports B133 (Review Monitoring), B135 (Review Generation), and B141 (New Customer Acquisition).",
+    "tags": ["marketing", "Google", "GBP", "local_search", "SEO", "maps", "reviews", "discovery", "photos"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

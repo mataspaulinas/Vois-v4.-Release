@@ -1,0 +1,898 @@
+{
+  "plan_id": "plan_20260321_001",
+  "venue_slug": "kavinė_pegasas",
+  "venue_name": "Kavinė Pegasas",
+  "created_at": "2026-03-21T11:26:00.716491",
+  "updated_at": "2026-03-21T11:26:00.878584",
+  "last_updated_by": "system",
+  "source_assessment": "",
+  "assessment_date": "2026-03-21",
+  "version": 1,
+  "previous_versions": [],
+  "plan_state": "draft",
+  "owner_user_id": "u_consultant",
+  "reviewer_user_id": "u_portfolio",
+  "approval_requested_at": "",
+  "approved_at": "",
+  "approved_by_user_id": "",
+  "confidence": {
+    "state": "PROVISIONAL",
+    "note": "This plan is based on partial data. Some areas may need verification before L2 implementation.",
+    "signal_count": 17,
+    "domain_coverage": 8
+  },
+  "strengths": [
+    "Team culture and rhythm",
+    "Guest experience",
+    "Financial controls",
+    "Leadership alignment",
+    "Compliance and safety",
+    "Market positioning",
+    "Brand and marketing",
+    "Operational systems",
+    "Strategic clarity",
+    "Team stability",
+    "Technology adoption"
+  ],
+  "dependency_notes": [],
+  "summary": {
+    "total_tasks": 8,
+    "by_layer": {
+      "L1": 2,
+      "L2": 4,
+      "L3": 2
+    },
+    "by_status": {
+      "not_started": 8
+    },
+    "by_priority": {
+      "high": 6,
+      "standard": 2
+    },
+    "overdue_tasks": 0,
+    "domains_covered": [],
+    "response_patterns_active": [
+      "RP024"
+    ]
+  },
+  "tasks": [
+    {
+      "task_id": "L1_001",
+      "item_id": "B085",
+      "item_type": "block",
+      "title": "Peak Staffing Model",
+      "description": "Review your staffing levels against your transaction data for the past four weeks. Are you adequately staffed during peak hours (typically 7-10am and 12-2pm)? If ticket times exceed 5 minutes during peak you are either understaffed or your workflow is broken. Observe your team during the next morning rush and identify every point of delay or confusion.",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "module_name": "M05",
+      "domain": "",
+      "layer": "L1",
+      "timeline_label": "Days 1–30",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-21T11:26:00.716491",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "Manager, Owner",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-03-24",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-21T11:26:00.716491",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [
+        {
+          "action_id": "L1_001_A01",
+          "text": "Extract hourly transaction data from the EPOS for the past four to six weeks",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_001_A02",
+          "text": "Create an average hourly transaction chart for each day of the week",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_001_A03",
+          "text": "Identify peak, moderate, and quiet trading periods",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_001_A04",
+          "text": "Define minimum staffing levels per period based on transaction-to-staff ratios",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_001_A05",
+          "text": "Create a Daily Staffing Template by role and hour",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_001_A06",
+          "text": "Compare the template against the current rota to identify mismatches",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_001_A07",
+          "text": "Adjust the rota to better align staffing with demand starting next week",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        }
+      ],
+      "deliverables": [
+        {
+          "name": "Hourly Transaction Analysis chart by day of week",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Daily Staffing Template by role and hour",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Staffing Matrix for each day type with optimal and minimum levels",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Labour Cost Tracking template (weekly revenue vs labour cost)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Demand Prediction worksheet incorporating seasonal and event factors",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L1_002",
+      "item_id": "B086",
+      "item_type": "block",
+      "title": "Morning Rush Workflow",
+      "description": "Review your staffing levels against your transaction data for the past four weeks. Are you adequately staffed during peak hours (typically 7-10am and 12-2pm)? If ticket times exceed 5 minutes during peak you are either understaffed or your workflow is broken. Observe your team during the next morning rush and identify every point of delay or confusion.",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "module_name": "M05",
+      "domain": "",
+      "layer": "L1",
+      "timeline_label": "Days 1–30",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-21T11:26:00.716491",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "Manager, Head Barista",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-03-24",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-21T11:26:00.716491",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [
+        {
+          "action_id": "L1_002_A01",
+          "text": "Observe one full morning rush without intervening, timing key service intervals",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_002_A02",
+          "text": "Identify the three biggest bottlenecks and time-wasters in the current workflow",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_002_A03",
+          "text": "Define clear rush roles: Till, Bar, Support, and Floater (if staffing allows)",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_002_A04",
+          "text": "Assign roles during the daily briefing before the rush begins",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_002_A05",
+          "text": "Ensure the barista does not leave the machine during peak service",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_002_A06",
+          "text": "Introduce consistent drink calling format between till and bar",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        },
+        {
+          "action_id": "L1_002_A07",
+          "text": "Debrief after each morning rush for the first two weeks to identify improvements",
+          "source": "execution_framework.L1_setup",
+          "checked": false,
+          "checked_at": null
+        }
+      ],
+      "deliverables": [
+        {
+          "name": "Morning Rush Workflow SOP (roles, positions, communication, sequencing)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Floor Plan Workflow Map showing movement paths for each role",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Rush Communication Protocol card (standardised drink calling format)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Morning Rush Service Time Tracker",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Rush Contingency Protocol for common disruptions",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_001",
+      "item_id": "B085",
+      "item_type": "block",
+      "title": "Peak Staffing Model",
+      "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "module_name": "M05",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-21T11:26:00.716491",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-11",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-21T11:26:00.716491",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Hourly Transaction Analysis chart by day of week",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Daily Staffing Template by role and hour",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Staffing Matrix for each day type with optimal and minimum levels",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Labour Cost Tracking template (weekly revenue vs labour cost)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Demand Prediction worksheet incorporating seasonal and event factors",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_002",
+      "item_id": "B086",
+      "item_type": "block",
+      "title": "Morning Rush Workflow",
+      "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "module_name": "M05",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-21T11:26:00.716491",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-11",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-21T11:26:00.716491",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Morning Rush Workflow SOP (roles, positions, communication, sequencing)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Floor Plan Workflow Map showing movement paths for each role",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Rush Communication Protocol card (standardised drink calling format)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Morning Rush Service Time Tracker",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Rush Contingency Protocol for common disruptions",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_003",
+      "item_id": "B087",
+      "item_type": "block",
+      "title": "Pre-Rush Mise-en-Place",
+      "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "module_name": "M05",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-21T11:26:00.716491",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-11",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-21T11:26:00.716491",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Pre-Rush Preparation Checklist by station (printable A4)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Pre-Rush Mise en Place SOP with par levels and timing",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Visual Station Setup Guides (laminated photos)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Closing-for-Opening Prep Protocol",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Prep Quality Check procedure",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L2_004",
+      "item_id": "B088",
+      "item_type": "block",
+      "title": "Peak Performance Analysis",
+      "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "module_name": "M05",
+      "domain": "",
+      "layer": "L2",
+      "timeline_label": "Days 31–60",
+      "priority": "high",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-21T11:26:00.716491",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-04-11",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-21T11:26:00.716491",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Peak Performance Metrics Definition document",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Daily Peak Data Collection Sheet (tally and observation template)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Weekly Peak Performance Dashboard",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Binding Constraint Analysis template",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Improvement Action Log with measured outcomes",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L3_001",
+      "item_id": "B085",
+      "item_type": "block",
+      "title": "Peak Staffing Model",
+      "description": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "module_name": "M05",
+      "domain": "",
+      "layer": "L3",
+      "timeline_label": "Days 61–90",
+      "priority": "standard",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-21T11:26:00.716491",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-06-19",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-21T11:26:00.716491",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Hourly Transaction Analysis chart by day of week",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Daily Staffing Template by role and hour",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Staffing Matrix for each day type with optimal and minimum levels",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Labour Cost Tracking template (weekly revenue vs labour cost)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Demand Prediction worksheet incorporating seasonal and event factors",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    },
+    {
+      "task_id": "L3_002",
+      "item_id": "B088",
+      "item_type": "block",
+      "title": "Peak Performance Analysis",
+      "description": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "module_name": "M05",
+      "domain": "",
+      "layer": "L3",
+      "timeline_label": "Days 61–90",
+      "priority": "standard",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      },
+      "status": "not_started",
+      "status_history": [
+        {
+          "status": "not_started",
+          "at": "2026-03-21T11:26:00.716491",
+          "by": "system"
+        }
+      ],
+      "assigned_to": "",
+      "assignee_user_id": "",
+      "assignee_name": "",
+      "due_date": "2026-06-19",
+      "started_at": null,
+      "completed_at": null,
+      "updated_at": "2026-03-21T11:26:00.716491",
+      "updated_by": "system",
+      "review_required": false,
+      "sub_actions": [],
+      "deliverables": [
+        {
+          "name": "Peak Performance Metrics Definition document",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Daily Peak Data Collection Sheet (tally and observation template)",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Weekly Peak Performance Dashboard",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Binding Constraint Analysis template",
+          "completed": false,
+          "completed_at": null
+        },
+        {
+          "name": "Improvement Action Log with measured outcomes",
+          "completed": false,
+          "completed_at": null
+        }
+      ],
+      "kpis": {
+        "quantitative": [],
+        "qualitative": []
+      },
+      "verification": "",
+      "expected_output": "",
+      "time_load": {},
+      "comments": [],
+      "tools": [],
+      "flags": []
+    }
+  ],
+  "owner_user_name": "Lead Consultant",
+  "reviewer_user_name": "Portfolio Lead"
+}

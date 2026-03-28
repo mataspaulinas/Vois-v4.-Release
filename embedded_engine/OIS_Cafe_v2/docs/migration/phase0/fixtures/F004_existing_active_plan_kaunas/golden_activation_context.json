@@ -1,0 +1,134 @@
+[
+  {
+    "response_pattern_id": "RP024",
+    "rp_name": "Peak Staffing & Rush Management",
+    "priority_score": 1.73,
+    "activated_items": {
+      "L1": [
+        "B085",
+        "B086",
+        "B087"
+      ],
+      "L2": [
+        "B085",
+        "B086",
+        "B087",
+        "B088",
+        "B203",
+        "B204",
+        "B205"
+      ],
+      "L3": [
+        "B085",
+        "B088",
+        "B203",
+        "B204",
+        "B205"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP006",
+    "rp_name": "Queue Management & Service Speed",
+    "priority_score": 0.8,
+    "activated_items": {
+      "L1": [
+        "B021",
+        "B022",
+        "B023"
+      ],
+      "L2": [
+        "B021",
+        "B022",
+        "B023",
+        "B024"
+      ],
+      "L3": [
+        "B021",
+        "B024"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP028",
+    "rp_name": "Seating & Capacity Management",
+    "priority_score": 0.8,
+    "activated_items": {
+      "L1": [
+        "B098",
+        "B099"
+      ],
+      "L2": [
+        "B098",
+        "B099",
+        "B100"
+      ],
+      "L3": [
+        "B098",
+        "B100"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP053",
+    "rp_name": "Operational Rhythm & Daily Discipline",
+    "priority_score": 0.8,
+    "activated_items": {
+      "L1": [
+        "B179",
+        "B180",
+        "B181"
+      ],
+      "L2": [
+        "B179",
+        "B180",
+        "B181",
+        "B182"
+      ],
+      "L3": [
+        "B179",
+        "B182"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP020",
+    "rp_name": "Team Communication & Meetings",
+    "priority_score": 0.7,
+    "activated_items": {
+      "L1": [
+        "B074",
+        "B075"
+      ],
+      "L2": [
+        "B074",
+        "B075",
+        "B076"
+      ],
+      "L3": [
+        "B074",
+        "B076"
+      ]
+    }
+  },
+  {
+    "response_pattern_id": "RP044",
+    "rp_name": "Interior Design & Atmosphere",
+    "priority_score": 0.7,
+    "activated_items": {
+      "L1": [
+        "B149",
+        "B150"
+      ],
+      "L2": [
+        "B149",
+        "B150",
+        "B151"
+      ],
+      "L3": [
+        "B149",
+        "B151"
+      ]
+    }
+  }
+]

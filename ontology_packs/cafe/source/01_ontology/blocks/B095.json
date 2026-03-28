@@ -1,0 +1,157 @@
+{
+  "block_id": "B095",
+  "name": "Par-Level Stock Management",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Defines minimum stock levels (par levels) for every key ingredient and consumable, ensuring the cafe never runs out of critical items during service while avoiding over-ordering that ties up cash and increases waste. Par levels are the foundation of intelligent stock management.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Identify every stock item that requires a defined minimum holding level",
+      "Calculate par levels based on actual daily usage, lead times, and delivery schedules",
+      "Create a visual par-level reference sheet accessible to all staff at the point of stock storage",
+      "Establish a simple reorder trigger system — when stock hits par, the order goes in automatically",
+      "Adjust par levels seasonally and in response to menu changes or trading pattern shifts"
+    ],
+    "secondary_objectives": [
+      "Reduce emergency orders from cash-and-carry runs that cost more and disrupt the shift",
+      "Minimise waste from over-ordering perishable items like milk, pastries, and fresh produce",
+      "Free up working capital by holding only what is needed rather than over-stocking"
+    ]
+  },
+  "why_this_matters": "Running out of oat milk at 10am on a Saturday morning is not a minor inconvenience — it is a revenue disaster. In a typical UK specialty cafe, alternative milks now account for 30-40% of all drinks sold, and a customer who cannot get their oat flat white will leave, not switch to dairy. The same principle applies across the menu: no sourdough for the avocado toast, no bananas for smoothies, no takeaway cups for the morning rush. Each stockout costs not just the immediate sale but the customer's confidence that the cafe is well-run. On the other side of the equation, over-ordering is equally destructive. A cafe that buys too much fresh milk dumps litres down the drain every week. Pastries ordered in excess of demand either get sold at a loss through end-of-day discounting or thrown away entirely. Every item sitting on a shelf represents cash that could be earning returns elsewhere. Par-level stock management solves both problems by establishing a scientifically derived minimum holding for each item. The par level is calculated from average daily usage multiplied by lead time (how long it takes to get a delivery), plus a safety buffer for demand spikes. When stock drops to the par level, an order is triggered. This simple system — used universally in professional hospitality — prevents both stockouts and over-ordering. For a small UK cafe spending £2,000-£4,000 per week on supplies, getting par levels right typically reduces waste by 10-15% and eliminates 90% of emergency purchasing, saving £200-£500 per month.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: List every stock item the cafe uses, grouped by category: Coffee & Tea (beans, tea bags, syrups, chocolate powder), Dairy & Alternatives (whole milk, semi-skimmed, oat milk, soy milk, cream), Food Ingredients (bread, butter, eggs, avocados, salad items, sandwich fillings), Pastries & Baked Goods (croissants, muffins, cakes — whether baked in-house or bought in), Packaging (takeaway cups in all sizes, lids, paper bags, napkins, deli boxes), and Cleaning Supplies (sanitiser, cloths, bin bags). For each item, record the current delivery schedule (e.g., milk delivered Monday/Wednesday/Friday, coffee beans fortnightly). Over the first week, track actual daily usage by counting what you use each day — this does not need to be precise, rough counts are fine to start. Week 2: For each item, calculate a simple par level using the formula: Par = (Average Daily Usage x Days Between Deliveries) + 1 Day Safety Buffer. Write the par level on a label and stick it on the shelf where the item is stored. Train all staff: 'If you notice stock is at or below the label level, tell the shift lead immediately.' Create a simple reorder sheet listing all items, their par levels, current stock, and order quantity needed.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Refine par levels using 4-6 weeks of actual usage data rather than estimates. Differentiate par levels by day of the week — a Saturday par level for milk will be significantly higher than a Tuesday. Build a Weekly Order Template that pre-populates expected order quantities based on par levels, allowing the person ordering to simply adjust for any unusual circumstances (events, holidays, weather forecasts). Create a Par Level Master Sheet in a spreadsheet that records each item's par level, supplier, unit cost, lead time, and last review date. Introduce a monthly par level review where the manager compares actual usage against par levels and adjusts any items that are consistently over- or under-ordered. Link par levels to the mid-service stock check (B096) so that par-level items are specifically monitored during busy periods. Establish a supplier communication protocol so orders triggered by par levels are placed by a consistent deadline (e.g., all orders for next-day delivery placed by 2pm).",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Par levels should now be second nature to the team. Introduce seasonal par-level profiles — summer levels for iced drinks, cold brew, and salad items; winter levels for hot chocolate, soup, and heavier bakes. Implement a digital stock management system (even a shared Google Sheet works) where par levels are tracked in real time and orders can be generated semi-automatically. Conduct quarterly par-level audits comparing waste data, stockout frequency, and ordering costs against the par-level framework. Adjust par levels immediately when menu items are added, removed, or changed. Share par-level performance data with the team so they understand the financial impact of good stock management. Explore just-in-time delivery arrangements with key suppliers to reduce the safety buffer needed and further tighten working capital."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "List every stock item the cafe uses, grouped by category",
+        "Record current delivery schedules for all suppliers",
+        "Track actual daily usage for each item over one full week",
+        "Calculate par levels using the formula: (Daily Usage x Days Between Deliveries) + 1 Day Buffer",
+        "Label each storage location with the par level for the item stored there",
+        "Train all staff to report when stock reaches the par-level label",
+        "Create a simple reorder sheet listing items, par levels, and order quantities"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Refine par levels using 4-6 weeks of actual usage data",
+        "Create day-of-week par level variations for high-volume items",
+        "Build a Weekly Order Template pre-populated with par-level quantities",
+        "Create a Par Level Master Sheet in a spreadsheet with full item details",
+        "Introduce monthly par level review meetings to adjust levels",
+        "Link par levels to mid-service stock checks (B096)",
+        "Establish supplier order deadlines aligned with delivery schedules"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Create seasonal par-level profiles for summer and winter trading",
+        "Implement a digital stock management system for real-time tracking",
+        "Conduct quarterly par-level audits against waste and stockout data",
+        "Share par-level performance data with the team monthly",
+        "Explore just-in-time delivery to reduce safety buffer requirements"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Stock Item Master List with par levels",
+    "Par Level Shelf Labels (printable)",
+    "Weekly Order Template",
+    "Par Level Master Sheet (spreadsheet)",
+    "Monthly Par Level Review report"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T095-01",
+        "tool_name": "Par Level Calculation Worksheet",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Spreadsheet template for calculating par levels for every stock item based on average daily usage, delivery frequency, and safety buffer. Includes columns for item name, category, daily usage, lead time, calculated par, and review date."
+      },
+      {
+        "tool_id": "T095-02",
+        "tool_name": "Weekly Order Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Pre-populated order form listing all stock items with par levels, current stock, and calculated order quantities. Allows quick adjustment for unusual demand and generates orders by supplier."
+      },
+      {
+        "tool_id": "T095-03",
+        "tool_name": "Par Level Shelf Labels",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "Printable labels showing the par level for each stock item, designed to be affixed to shelves, fridges, and storage areas so any team member can instantly see whether stock needs reordering."
+      },
+      {
+        "tool_id": "T095-04",
+        "tool_name": "Monthly Par Level Review Report",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Monthly analysis comparing par levels against actual usage, waste, and stockout incidents. Flags items where par levels need adjustment and tracks the financial impact of stock management improvements."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Par levels are set based on guesswork rather than actual usage data, leading to persistent over- or under-ordering",
+    "Par levels are never reviewed after initial setup, becoming increasingly inaccurate as demand patterns change",
+    "Staff do not check stock against par levels or fail to report when items hit the trigger point",
+    "Seasonal demand shifts are not reflected in par levels, causing summer stockouts of cold items or winter waste of salad ingredients"
+  ],
+  "kpis": [
+    "Zero critical stockouts (milk, coffee beans, takeaway cups) during trading hours per week",
+    "Food waste reduction of 10-15% within 8 weeks of par level implementation",
+    "Emergency cash-and-carry runs reduced to fewer than 2 per month",
+    "Par levels reviewed and adjusted monthly with documented evidence"
+  ],
+  "dependencies": ["B096"],
+  "constraints": [
+    "Par levels must be recalculated whenever supplier delivery schedules change",
+    "Perishable items require tighter par levels than ambient goods due to shelf life limitations",
+    "Seasonal par-level adjustments must be made at least 2 weeks before demand shifts"
+  ],
+  "time_load": {
+    "L1": "4 hours (item listing, usage tracking, initial par calculation, labelling)",
+    "L2": "3 hours (data refinement, order template creation, monthly review setup)",
+    "L3": "1 hour/month (audits, seasonal adjustments, digital system maintenance)"
+  },
+  "review_protocol": "Daily stock-to-par check by shift lead. Weekly order review against par levels by manager. Monthly par level accuracy review in management meeting. Quarterly full par level audit with seasonal adjustments.",
+  "meta": {
+    "summary_for_humans": "This block defines minimum stock levels for every key item so the cafe never runs out during service and never over-orders. Par levels are calculated from actual usage data and delivery schedules, creating a simple reorder trigger that prevents both stockouts and waste.",
+    "implementation_risks": [
+      "Staff may resist the discipline of checking stock against par levels during busy periods",
+      "Initial par level calculations based on limited data may be inaccurate — plan to refine after 4-6 weeks",
+      "Supplier delivery reliability directly impacts par level effectiveness — unreliable suppliers need higher buffers"
+    ],
+    "notes_for_engine": "Activate alongside B096 (Mid-Service Stock Check) as a pair. Flag as urgent if signals indicate frequent stockouts, excessive waste, or emergency purchasing patterns.",
+    "tags": ["operations", "stock_management", "par_levels", "ordering", "waste_reduction", "inventory", "supply_chain"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

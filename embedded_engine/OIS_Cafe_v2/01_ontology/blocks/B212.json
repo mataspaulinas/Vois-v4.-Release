@@ -1,0 +1,20 @@
+{
+  "block_id": "B212",
+  "name": "Social Insurance Administration",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M16: Regulatory Governance & Risk Management",
+  "state": "enriched",
+  "purpose": "Manages mandatory social insurance obligations including new hire notifications within required timeframes, contribution calculations for employer and employee portions, and ongoing compliance with national social insurance authority requirements.",
+  "tools": [
+    "T212-01",
+    "T212-02",
+    "T212-03"
+  ],
+  "signals": [
+    "S213"
+  ],
+  "failure_modes": [
+    "FM110"
+  ]
+}

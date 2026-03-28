@@ -1,0 +1,31 @@
+{
+  "id": "sig_demand_spike_unabsorbed",
+  "name": "Demand spike goes unabsorbed",
+  "description": "A sudden rush or wave of covers hits the venue faster than the operation can absorb without visible service strain.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: demand-capacity mismatch expressed through restaurant rush absorption",
+  "updated_at": "2026-03-15T14:29:28.474649Z",
+  "domain": "workforce",
+  "module": "deployment",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "rush wave overwhelms capacity",
+    "queue expands immediately after demand spike",
+    "service strain appears within minutes of surge"
+  ],
+  "source_types": [
+    "service observation",
+    "manager notes",
+    "volume review"
+  ],
+  "temporal_behavior": "spike-sensitive",
+  "likely_co_signals": [
+    "sig_service_delay",
+    "sig_work_pace_breaks_under_load"
+  ],
+  "adapter_aliases": [
+    "rush hit too hard",
+    "volume spike unabsorbed"
+  ]
+}

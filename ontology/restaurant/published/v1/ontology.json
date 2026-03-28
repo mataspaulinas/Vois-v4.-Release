@@ -1,0 +1,438 @@
+{
+  "meta": {
+    "version": "v1",
+    "vertical": "restaurant",
+    "owner": "OIS recovery team",
+    "released_at": "2026-03-13T00:00:00Z",
+    "recovery_sources": [
+      "OIS-Pre-Seed-Business-Case-Full.docx",
+      "Operational Intelligence System (OIS) — Complete Feature and Function Deep Dive (2).docx",
+      "compass_artifact_wf-e347607e-a3ae-4368-96f6-93ba04857d08_text_markdown.md"
+    ]
+  },
+  "signals": [
+    {
+      "id": "sig_service_delay",
+      "name": "Service delay",
+      "description": "Guests wait too long for the next service touchpoint.",
+      "domain": "service_delivery",
+      "module": "floor_execution",
+      "indicator_type": "lagging",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: operational intake and diagnostic engine",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "sig_staff_confusion",
+      "name": "Staff confusion",
+      "description": "Team members show uncertainty about priorities or handoffs.",
+      "domain": "workforce",
+      "module": "role_clarity",
+      "indicator_type": "leading",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "business-case: symptom blindness",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "sig_guest_complaints",
+      "name": "Recurring guest complaints",
+      "description": "Complaint frequency indicates an unresolved service or product issue.",
+      "domain": "guest_experience",
+      "module": "service_recovery",
+      "indicator_type": "lagging",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: operational intake examples",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "sig_ticket_bottleneck",
+      "name": "Kitchen ticket bottleneck",
+      "description": "Tickets stack in production and delay flow through the kitchen.",
+      "domain": "kitchen_operations",
+      "module": "production_flow",
+      "indicator_type": "lagging",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "consulting artifact: kitchen transformation",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "sig_prep_inconsistency",
+      "name": "Prep inconsistency",
+      "description": "Prep quality or completion varies by shift.",
+      "domain": "kitchen_operations",
+      "module": "prep_systems",
+      "indicator_type": "leading",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: signals as surface symptoms",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "sig_waste_spike",
+      "name": "Waste spike",
+      "description": "Unexpected food waste suggests prep, forecasting, or controls issues.",
+      "domain": "financial_controls",
+      "module": "waste_management",
+      "indicator_type": "lagging",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "business-case: fragmented tool stack",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "sig_shift_brief_missing",
+      "name": "Shift brief missing",
+      "description": "Managers are not running a structured pre-shift briefing.",
+      "domain": "leadership_rhythm",
+      "module": "communication_cadence",
+      "indicator_type": "leading",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: welcome briefing and plans",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "sig_voids_rising",
+      "name": "Voids and comps rising",
+      "description": "The venue is losing margin through avoidable service recovery costs.",
+      "domain": "financial_controls",
+      "module": "loss_prevention",
+      "indicator_type": "lagging",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "consulting artifact: volume decline and controls",
+      "updated_at": "2026-03-13T00:00:00Z"
+    }
+  ],
+  "failure_modes": [
+    {
+      "id": "fm_undefined_workflow",
+      "name": "Undefined workflow structure",
+      "description": "Core service steps and handoffs are not explicitly designed.",
+      "domain": "service_delivery",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "business-case: symptom blindness",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "fm_training_gap",
+      "name": "Insufficient training protocol",
+      "description": "Training relies on memory and shadowing instead of a repeatable system.",
+      "domain": "workforce",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: stage 2 failure mode detection",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "fm_prep_system_breakdown",
+      "name": "Prep system breakdown",
+      "description": "Prep sequencing, ownership, or standards are inconsistent.",
+      "domain": "kitchen_operations",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "consulting artifact: kitchen transformation",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "fm_briefing_absence",
+      "name": "Leadership briefing gap",
+      "description": "The venue lacks a daily rhythm for prioritization and coordination.",
+      "domain": "leadership_rhythm",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: welcome briefing and role-based intelligence",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "fm_menu_complexity",
+      "name": "Menu complexity overload",
+      "description": "Menu complexity exceeds current production capability.",
+      "domain": "kitchen_operations",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: signal to intervention transparency",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "fm_controls_gap",
+      "name": "Control loop gap",
+      "description": "The venue does not close the loop on loss, waste, or recovery incidents.",
+      "domain": "financial_controls",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "business-case: no causal transparency",
+      "updated_at": "2026-03-13T00:00:00Z"
+    }
+  ],
+  "response_patterns": [
+    {
+      "id": "rp_service_flow_reset",
+      "name": "Service flow reset",
+      "description": "Redesign the service path and role handoffs.",
+      "focus": "service_design",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: response pattern activation",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "rp_training_reset",
+      "name": "Training reset",
+      "description": "Create structured onboarding and reinforcement around critical stations.",
+      "focus": "capability_building",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: response pattern activation",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "rp_prep_control_reset",
+      "name": "Prep and control reset",
+      "description": "Stabilize prep standards and management review loops.",
+      "focus": "kitchen_systems",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: block activation and constraint engine",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "rp_leadership_rhythm_reset",
+      "name": "Leadership rhythm reset",
+      "description": "Install daily communication and escalation routines.",
+      "focus": "management_rhythm",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: welcome briefing",
+      "updated_at": "2026-03-13T00:00:00Z"
+    }
+  ],
+  "blocks": [
+    {
+      "id": "blk_map_service_steps",
+      "name": "Map the service steps",
+      "description": "Document every guest-facing service touchpoint and the owner of each handoff.",
+      "effort_hours": 3,
+      "dependencies": [],
+      "tool_ids": ["tool_service_observation_sheet"],
+      "response_pattern_ids": ["rp_service_flow_reset"],
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "consulting artifact: workflow restructuring",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "blk_create_station_roles",
+      "name": "Create station role matrix",
+      "description": "Define explicit station responsibilities and escalation points.",
+      "effort_hours": 4,
+      "dependencies": ["blk_map_service_steps"],
+      "tool_ids": ["tool_station_role_matrix"],
+      "response_pattern_ids": ["rp_service_flow_reset"],
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "business-case: symptom blindness",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "blk_build_floor_training",
+      "name": "Build floor training checklist",
+      "description": "Turn critical service behaviors into an onboarding and refresh checklist.",
+      "effort_hours": 5,
+      "dependencies": ["blk_create_station_roles"],
+      "tool_ids": ["tool_training_checklist"],
+      "response_pattern_ids": ["rp_training_reset"],
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: block library",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "blk_install_pre_shift_brief",
+      "name": "Install pre-shift briefing",
+      "description": "Create a repeatable daily briefing for priorities, risks, and escalation.",
+      "effort_hours": 2,
+      "dependencies": [],
+      "tool_ids": ["tool_shift_brief_template"],
+      "response_pattern_ids": ["rp_leadership_rhythm_reset"],
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: welcome briefing",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "blk_guest_recovery_loop",
+      "name": "Create guest recovery loop",
+      "description": "Standardize complaint handling and close the loop on recurring failures.",
+      "effort_hours": 3,
+      "dependencies": ["blk_install_pre_shift_brief", "blk_build_floor_training"],
+      "tool_ids": ["tool_guest_recovery_script"],
+      "response_pattern_ids": ["rp_service_flow_reset", "rp_training_reset"],
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: reports and plans",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "blk_standardize_prep_sheet",
+      "name": "Standardize prep sheet",
+      "description": "Create a role-based prep sheet with clear ownership and quantities.",
+      "effort_hours": 4,
+      "dependencies": [],
+      "tool_ids": ["tool_prep_sheet_template"],
+      "response_pattern_ids": ["rp_prep_control_reset"],
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "consulting artifact: kitchen transformation",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "blk_daily_waste_review",
+      "name": "Launch daily waste review",
+      "description": "Review waste, causes, and corrective actions at the end of each day.",
+      "effort_hours": 2,
+      "dependencies": ["blk_standardize_prep_sheet"],
+      "tool_ids": ["tool_waste_log"],
+      "response_pattern_ids": ["rp_prep_control_reset"],
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "business-case: tool fragmentation",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "blk_void_review_huddle",
+      "name": "Run void and comp review huddle",
+      "description": "Review every avoidable loss incident and assign follow-up actions.",
+      "effort_hours": 2,
+      "dependencies": ["blk_install_pre_shift_brief"],
+      "tool_ids": ["tool_void_review_template"],
+      "response_pattern_ids": ["rp_leadership_rhythm_reset", "rp_prep_control_reset"],
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "consulting artifact: controls loop",
+      "updated_at": "2026-03-13T00:00:00Z"
+    }
+  ],
+  "tools": [
+    {
+      "id": "tool_service_observation_sheet",
+      "name": "Service observation sheet",
+      "description": "Checklist for observing service touchpoints and delays live on the floor.",
+      "category": "observation",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "consulting artifact: live service observation",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "tool_station_role_matrix",
+      "name": "Station role matrix",
+      "description": "Role clarity matrix covering tasks, escalation, and backup ownership.",
+      "category": "org-design",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: tool library",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "tool_training_checklist",
+      "name": "Training checklist",
+      "description": "Station-specific training checklist with signoff.",
+      "category": "training",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: block library",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "tool_shift_brief_template",
+      "name": "Shift brief template",
+      "description": "Structured agenda for pre-shift priorities, risks, and focus.",
+      "category": "communication",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: welcome briefing",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "tool_guest_recovery_script",
+      "name": "Guest recovery script",
+      "description": "Script for response, ownership, and follow-up after service failure.",
+      "category": "service-recovery",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "deep-dive: reports and plans",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "tool_prep_sheet_template",
+      "name": "Prep sheet template",
+      "description": "Daily prep tracker with quantities, cutoffs, and owner.",
+      "category": "kitchen",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "consulting artifact: kitchen transformation",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "tool_waste_log",
+      "name": "Waste log",
+      "description": "Log for waste incidents, root causes, and actions.",
+      "category": "controls",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "business-case: initiative fatigue and controls",
+      "updated_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "id": "tool_void_review_template",
+      "name": "Void review template",
+      "description": "Structured review of voids, comps, cause, and corrective action.",
+      "category": "controls",
+      "status": "published",
+      "owner": "OIS recovery team",
+      "source_ref": "consulting artifact: financial controls",
+      "updated_at": "2026-03-13T00:00:00Z"
+    }
+  ],
+  "signal_failure_map": [
+    { "signal_id": "sig_service_delay", "failure_mode_id": "fm_undefined_workflow", "weight": 1.0 },
+    { "signal_id": "sig_service_delay", "failure_mode_id": "fm_training_gap", "weight": 0.5 },
+    { "signal_id": "sig_staff_confusion", "failure_mode_id": "fm_undefined_workflow", "weight": 0.8 },
+    { "signal_id": "sig_staff_confusion", "failure_mode_id": "fm_training_gap", "weight": 0.9 },
+    { "signal_id": "sig_guest_complaints", "failure_mode_id": "fm_undefined_workflow", "weight": 0.7 },
+    { "signal_id": "sig_guest_complaints", "failure_mode_id": "fm_briefing_absence", "weight": 0.4 },
+    { "signal_id": "sig_ticket_bottleneck", "failure_mode_id": "fm_prep_system_breakdown", "weight": 1.0 },
+    { "signal_id": "sig_ticket_bottleneck", "failure_mode_id": "fm_menu_complexity", "weight": 0.7 },
+    { "signal_id": "sig_prep_inconsistency", "failure_mode_id": "fm_prep_system_breakdown", "weight": 0.9 },
+    { "signal_id": "sig_waste_spike", "failure_mode_id": "fm_controls_gap", "weight": 0.8 },
+    { "signal_id": "sig_shift_brief_missing", "failure_mode_id": "fm_briefing_absence", "weight": 1.0 },
+    { "signal_id": "sig_voids_rising", "failure_mode_id": "fm_controls_gap", "weight": 0.9 }
+  ],
+  "failure_pattern_map": [
+    { "failure_mode_id": "fm_undefined_workflow", "response_pattern_id": "rp_service_flow_reset", "weight": 1.0 },
+    { "failure_mode_id": "fm_training_gap", "response_pattern_id": "rp_training_reset", "weight": 1.0 },
+    { "failure_mode_id": "fm_prep_system_breakdown", "response_pattern_id": "rp_prep_control_reset", "weight": 1.0 },
+    { "failure_mode_id": "fm_briefing_absence", "response_pattern_id": "rp_leadership_rhythm_reset", "weight": 1.0 },
+    { "failure_mode_id": "fm_menu_complexity", "response_pattern_id": "rp_prep_control_reset", "weight": 0.6 },
+    { "failure_mode_id": "fm_controls_gap", "response_pattern_id": "rp_leadership_rhythm_reset", "weight": 0.7 },
+    { "failure_mode_id": "fm_controls_gap", "response_pattern_id": "rp_prep_control_reset", "weight": 0.6 }
+  ],
+  "pattern_block_map": [
+    { "response_pattern_id": "rp_service_flow_reset", "block_id": "blk_map_service_steps", "weight": 1.0 },
+    { "response_pattern_id": "rp_service_flow_reset", "block_id": "blk_create_station_roles", "weight": 0.9 },
+    { "response_pattern_id": "rp_service_flow_reset", "block_id": "blk_guest_recovery_loop", "weight": 0.7 },
+    { "response_pattern_id": "rp_training_reset", "block_id": "blk_build_floor_training", "weight": 1.0 },
+    { "response_pattern_id": "rp_training_reset", "block_id": "blk_guest_recovery_loop", "weight": 0.5 },
+    { "response_pattern_id": "rp_prep_control_reset", "block_id": "blk_standardize_prep_sheet", "weight": 1.0 },
+    { "response_pattern_id": "rp_prep_control_reset", "block_id": "blk_daily_waste_review", "weight": 0.8 },
+    { "response_pattern_id": "rp_prep_control_reset", "block_id": "blk_void_review_huddle", "weight": 0.5 },
+    { "response_pattern_id": "rp_leadership_rhythm_reset", "block_id": "blk_install_pre_shift_brief", "weight": 1.0 },
+    { "response_pattern_id": "rp_leadership_rhythm_reset", "block_id": "blk_void_review_huddle", "weight": 0.8 }
+  ]
+}

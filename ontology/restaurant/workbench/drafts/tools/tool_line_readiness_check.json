@@ -1,0 +1,22 @@
+{
+  "id": "tool_line_readiness_check",
+  "name": "Line readiness check",
+  "description": "Stop-go checklist for product availability, equipment readiness, station setup, 86 risk, and any blocker that should delay the open.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: readiness tools should create real stop/go decisions, not ceremonial ticks",
+  "updated_at": "2026-03-14T00:24:43.058387Z",
+  "category": "kitchen",
+  "format": "checklist",
+  "usage_moment": "Use before opening the line and after any disruption that could invalidate readiness.",
+  "expected_output": "A signed readiness record with open blockers, resolved blockers, and clear escalation for red conditions.",
+  "adaptation_variables": [
+    "station_count",
+    "equipment_profile",
+    "menu_daypart",
+    "prep_dependency_risk"
+  ],
+  "block_ids": [
+    "blk_opening_line_readiness_check"
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "block_id": "B007",
+  "name": "Allergen Customer Dialogue Script",
+  "version": "v1.0",
+  "domain": "D01_food_safety",
+  "module": "M01: Food Safety & Hygiene Compliance",
+  "state": "enriched",
+  "purpose": "Provides front-of-house staff with structured scripts and confidence to handle allergen queries from customers accurately and safely. This block ensures every allergen conversation follows a consistent, legally defensible process that protects the customer and the business.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Equip all front-of-house staff with scripted responses for common allergen questions",
+      "Ensure staff never guess or assume — always check the allergen matrix or ask the kitchen",
+      "Create a clear escalation pathway when a customer declares a severe allergy",
+      "Train staff to proactively ask about allergies rather than waiting for customers to volunteer information",
+      "Document allergen conversations on orders so kitchen staff can act on the information"
+    ],
+    "secondary_objectives": [
+      "Build customer confidence that the cafe takes allergies seriously",
+      "Reduce the risk of allergen-related incidents caused by miscommunication",
+      "Create a culture where allergen dialogue is seen as professional customer care, not an inconvenience"
+    ]
+  },
+  "why_this_matters": "Food allergy reactions cause approximately 10 deaths per year in the UK and thousands of hospital admissions. Under the Food Information Regulations 2014, food businesses have a legal duty to provide accurate allergen information to customers upon request. The Food Standards Agency's guidance makes clear that staff must be able to tell customers whether any of the 14 declarable allergens are present in the food they are ordering. This is not optional — failure to provide accurate information is a criminal offence. In a cafe environment, the front-of-house team is the primary point of contact for allergen queries. If a barista says 'I think the cake is nut-free' when it actually contains ground almonds, the consequences could be fatal. The 2016 inquest into the death of Megan Lee, a teenager who died after eating food from a takeaway that failed to communicate allergen information, led to the restaurant owner being convicted of manslaughter. Cafes face the same legal exposure. The challenge is that cafe staff are often young, part-time, and may not have received formal food safety training. Without a clear script and process, they may panic when asked about allergens, give vague or incorrect answers, or fail to escalate appropriately. A structured dialogue script transforms allergen conversations from a source of anxiety into a confident, repeatable process that protects both the customer and the business.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Develop a core allergen dialogue script that every front-of-house team member must learn. The script should cover three scenarios. Scenario 1 — Proactive Ask: When taking an order, staff say: 'Do you have any food allergies or intolerances I should know about?' This question must be asked for every food order, every time. Scenario 2 — Reactive Response: When a customer asks 'Does this contain nuts?', staff respond: 'Let me check our allergen information for you — I want to make sure I give you the right answer.' They then consult the allergen matrix (B005) and provide a definitive answer. Staff must never say 'I think so' or 'It should be fine.' Scenario 3 — Severe Allergy Escalation: When a customer says 'I have a severe nut allergy' or mentions anaphylaxis or an EpiPen, staff immediately escalate to the manager or most senior person on shift, who confirms the order can be safely prepared or advises the customer which items are safe. Print the three-scenario script on a laminated card and place one at each till point and in the kitchen. Week 2: Role-play each scenario with every front-of-house team member. The manager observes and corrects until each person can deliver the script naturally and confidently. Record who has been trained and the date in the training log.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Expand the script to cover edge cases: items with 'may contain' warnings, cross-contamination risks from shared equipment, and situations where the allergen matrix cannot give a definitive answer (e.g., a new cake from an external supplier). Develop a written Allergen Communication SOP that codifies the script, escalation steps, and documentation requirements. Integrate allergen noting into the order process — when a customer declares an allergy, it must be written on the order ticket or flagged in the POS system so the kitchen knows before they start preparing food. Create an allergen conversation log template for recording any incident where a customer declared a severe allergy and the steps taken. This log serves as evidence of due diligence if a complaint or legal claim arises. Train staff on the difference between an allergy (immune system response, potentially fatal) and an intolerance (digestive discomfort, unpleasant but not life-threatening) — the response protocol differs. For severe allergies, the cafe may need to decline to serve certain items if cross-contamination cannot be ruled out. Staff must be empowered to say: 'I'm sorry, I cannot guarantee this is safe for you — can I suggest an alternative?' By Week 8, every team member should be able to handle all common allergen scenarios confidently without reaching for the script card.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Embed allergen dialogue into the cafe's identity as a mark of professionalism and care. Conduct quarterly mystery shopper-style allergen tests where the manager or a trusted colleague poses an allergen question and evaluates the response. Review the allergen conversation log quarterly to identify patterns — are certain items generating frequent queries? Consider reformulating or better labelling those items. Share positive feedback from customers who felt well-served during allergen conversations. Update scripts whenever the menu changes or new allergen information emerges. Consider displaying a visible sign at the counter: 'Please speak to our team about any food allergies — we are here to help.' This normalises the conversation and encourages customers to ask."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Write the three-scenario allergen dialogue script (proactive, reactive, escalation)",
+        "Print laminated script cards for each till point and the kitchen",
+        "Brief all front-of-house staff on the script during a team meeting",
+        "Role-play each scenario with every team member and record completion",
+        "Ensure the allergen matrix (B005) is accessible at every order-taking point",
+        "Instruct staff to never guess or say 'I think' when answering allergen questions",
+        "Begin asking 'Do you have any food allergies?' for every food order from Day 1"
+      ],
+      "responsible": "Manager, Front-of-House Lead"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Expand scripts to cover edge cases: may-contain warnings, cross-contamination, unknown items",
+        "Create an Allergen Communication SOP document",
+        "Integrate allergen flagging into the order ticket or POS system",
+        "Develop an allergen conversation log for recording severe allergy interactions",
+        "Train staff on the difference between allergies and intolerances",
+        "Empower staff to decline service if cross-contamination cannot be ruled out",
+        "File all training records and conversation logs in the food safety folder"
+      ],
+      "responsible": "Manager, Head Barista"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Conduct quarterly mystery shopper allergen tests",
+        "Review allergen conversation logs for patterns and improvement opportunities",
+        "Display visible signage encouraging customers to ask about allergens",
+        "Update scripts whenever the menu changes",
+        "Share positive customer feedback about allergen handling with the team"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Three-Scenario Allergen Dialogue Script (laminated card)",
+    "Allergen Communication SOP document",
+    "Allergen Conversation Log template",
+    "Staff Training Record for allergen dialogue competency",
+    "Customer-facing allergen signage"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T007-01",
+        "tool_name": "Allergen Dialogue Script Card",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Front-of-House Staff",
+        "description": "Laminated A5 card with scripted responses for three allergen scenarios: proactive ask, reactive response, and severe allergy escalation. Positioned at each till point."
+      },
+      {
+        "tool_id": "T007-02",
+        "tool_name": "Allergen Communication SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering the complete allergen communication process: when to ask, how to check, escalation steps, order flagging, and documentation requirements."
+      },
+      {
+        "tool_id": "T007-03",
+        "tool_name": "Allergen Conversation Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "Log for recording any interaction where a customer declared a severe allergy, including the customer's allergy, items discussed, actions taken, and outcome."
+      },
+      {
+        "tool_id": "T007-04",
+        "tool_name": "Allergen Dialogue Role-Play Assessment",
+        "level": "L1",
+        "format": "assessment",
+        "owner_role": "Manager",
+        "description": "Structured assessment form for evaluating staff performance during allergen dialogue role-plays, covering accuracy, confidence, escalation, and documentation."
+      },
+      {
+        "tool_id": "T007-05",
+        "tool_name": "Quarterly Allergen Mystery Shopper Scorecard",
+        "level": "L3",
+        "format": "scorecard",
+        "owner_role": "Owner",
+        "description": "Scorecard template for quarterly mystery shopper allergen tests, rating staff on proactive asking, accuracy, confidence, escalation, and overall customer experience."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Staff skip the proactive allergen question during busy periods, assuming customers will volunteer the information",
+    "A team member guesses an answer rather than checking the allergen matrix, giving incorrect information",
+    "Allergen information is communicated verbally but not recorded on the order ticket, so the kitchen is unaware",
+    "New or temporary staff are not trained on the script before they start taking orders"
+  ],
+  "kpis": [
+    "100% of food orders preceded by the proactive allergen question",
+    "Zero incidents where incorrect allergen information is given to a customer",
+    "All front-of-house staff role-play assessed within first week of employment",
+    "Quarterly mystery shopper scores averaging 90% or above"
+  ],
+  "dependencies": ["B005"],
+  "constraints": [
+    "Requires the allergen matrix (B005) to be complete and accessible at all order-taking points",
+    "All front-of-house staff must be trained before they are permitted to take food orders unsupervised",
+    "Scripts must be updated within 24 hours of any menu change"
+  ],
+  "time_load": {
+    "L1": "4 hours (script development, card printing, initial training and role-plays)",
+    "L2": "6 hours (SOP drafting, POS integration, expanded training sessions)",
+    "L3": "2 hours/quarter (mystery shopper tests, log reviews, script updates)"
+  },
+  "review_protocol": "Daily observation by shift manager during service. Weekly check that script cards are in place and legible. Monthly review of allergen conversation log. Quarterly mystery shopper allergen test. Script update review whenever the menu changes.",
+  "meta": {
+    "summary_for_humans": "This block gives front-of-house staff scripted, practised responses for handling allergen questions from customers. It ensures no one guesses, every severe allergy is escalated, and every allergen conversation is documented.",
+    "implementation_risks": [
+      "Staff may feel the proactive question is awkward or slows service — role-play builds confidence",
+      "High staff turnover means allergen training must be part of every new starter's first shift",
+      "Scripts can feel robotic if not practised — encourage natural delivery while maintaining accuracy"
+    ],
+    "notes_for_engine": "Activate alongside B005 (Allergen Matrix). Flag as urgent if signals indicate customer allergen complaints, staff uncertainty about allergens, or recent allergen-related incidents. Critical for any cafe serving food.",
+    "tags": ["food_safety", "allergens", "customer_communication", "front_of_house", "scripts", "training", "compliance"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

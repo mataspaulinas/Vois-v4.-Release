@@ -1,0 +1,31 @@
+{
+  "id": "sig_ownership_confusion_during_flow",
+  "name": "Ownership is confused during live flow",
+  "description": "The team hesitates, re-asks, or duplicates effort because ownership of the next move is not obvious in the moment.",
+  "status": "published",
+  "owner": "execution-program",
+  "source_ref": "universal-signal-gold-set-01: ownership confusion during flow expressed through restaurant live service",
+  "updated_at": "2026-03-15T17:17:16.783683Z",
+  "domain": "leadership",
+  "module": "role_clarity",
+  "indicator_type": "leading",
+  "evidence_types": [
+    "team members ask who owns the next step",
+    "two people assume the same work or no one assumes it",
+    "flow pauses while ownership is clarified"
+  ],
+  "source_types": [
+    "service observation",
+    "manager notes",
+    "post-shift review"
+  ],
+  "temporal_behavior": "event-driven",
+  "likely_co_signals": [
+    "sig_staff_confusion",
+    "sig_work_dies_between_roles"
+  ],
+  "adapter_aliases": [
+    "nobody clearly owns it",
+    "ownership confusion on shift"
+  ]
+}

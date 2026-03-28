@@ -1,0 +1,85 @@
+{
+  "identification": {
+    "tool_id": "T002-02",
+    "tool_name": "Cold Chain SOP & Fridge Layout Guide",
+    "block_id": "B002"
+  },
+  "tool_design": {
+    "format": "SOP",
+    "role_in_intervention": "House operating standard for delivery, storage, hierarchy, FIFO, and cold-hold control.",
+    "adaptation_variables": [
+      "fridge_layout",
+      "stock_types",
+      "display_model"
+    ],
+    "usage_moment": "At rollout, onboarding, and whenever the cold-chain setup changes",
+    "expected_output": "Issued cold-chain SOP with site-specific hierarchy and sign-off",
+    "linked_blocks": [
+      "B002",
+      "B001",
+      "B003",
+      "B004"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "SOP is issued but not briefed or practiced.",
+        "what_can_go_wrong": "The standard exists on paper only.",
+        "early_signals": [
+          "Users cannot describe steps",
+          "Workarounds appear"
+        ],
+        "prevention": [
+          "Brief every user",
+          "Pair with the live tool"
+        ],
+        "mitigation": [
+          "Reissue with short briefing",
+          "Audit real behaviour"
+        ],
+        "if_occurs_next_signals": [
+          "standard_not_embedded"
+        ],
+        "possible_successor_blocks": [
+          "B002",
+          "B001",
+          "B003",
+          "B004"
+        ]
+      },
+      {
+        "warning": "SOP no longer matches reality.",
+        "what_can_go_wrong": "People bypass it because it feels outdated.",
+        "early_signals": [
+          "Users say it no longer fits",
+          "Handwritten amendments appear"
+        ],
+        "prevention": [
+          "Review after changes",
+          "Keep one update owner"
+        ],
+        "mitigation": [
+          "Refresh and re-brief",
+          "Remove outdated copies"
+        ],
+        "if_occurs_next_signals": [
+          "standard_drift"
+        ],
+        "possible_successor_blocks": [
+          "B002",
+          "B001",
+          "B003",
+          "B004"
+        ]
+      }
+    ]
+  },
+  "content": "# Cold Chain SOP & Fridge Layout Guide\n\n**Tool ID:** T002-02  \n**Block:** B002 (Cold Chain Management SOP)  \n**Domain:** Food Safety & Hygiene (D01_food_safety)  \n**Level:** L2  \n**Format:** SOP  \n**Role:** Manager / Food Safety Lead  \n**Time Required:** 20 minutes to issue, 10 minutes to brief each team member  \n**Version:** 2.0\n\n---\n## What This Tool Is For\n\nUse this SOP to define how chilled and frozen stock moves safely from delivery to storage to service.\n\nThis is the house standard for:\n- delivery acceptance\n- 15-minute put-away discipline\n- fridge hierarchy and product placement\n- FIFO and date labelling\n- cold-hold display rules\n- escalation when the cold chain is broken\n\n---\n## Core House Rules\n\n1. No chilled delivery is accepted without checks.\n2. No accepted chilled delivery stays out of refrigeration longer than **15 minutes**.\n3. Raw items never sit above ready-to-eat items.\n4. Every opened or decanted high-risk item gets a date label.\n5. Cold-hold display items are time-labelled and discarded at the agreed limit.\n\n---\n## Roles And Ownership\n\n| Role | Responsibility |\n|---|---|\n| Receiver | Complete [T002-01] before signing any delivery |\n| Shift lead | Make sure accepted stock is put away and labelled correctly |\n| Manager | Maintain this SOP, review incidents, and close audit actions |\n| Owner | Support supplier escalation and refrigeration capacity decisions |\n\n---\n## Delivery To Storage Flow\n\n| Stage | Standard | Evidence Tool |\n|---|---|---|\n| Arrival | Check condition, dates, temperatures before signing | T002-01 |\n| Acceptance | Reject or flag anything unsafe or out of spec | T002-01 / T002-03 |\n| Put-away | Refrigerate within 15 minutes | T002-01 |\n| Storage | Place stock by hierarchy and FIFO | T002-04 |\n| Service / display | Time-label any cold-hold item | T002-05 |\n| Review | Track supplier issues and audit findings | T002-03 / T002-04 |\n\n---\n## Fridge Hierarchy Guide\n\nUse this as the default layout unless your brand or site-specific risk assessment requires tighter controls.\n\n| Shelf / Zone | Store Here | Never Store Here |\n|---|---|---|\n| Top shelf | Ready-to-eat items, cakes, desserts, wrapped sandwiches | Raw ingredients, dirty containers |\n| Middle shelf | Dairy, prepped fillings, labelled opened items | Unlabelled decanted tubs |\n| Bottom shelf | Raw products or highest-risk spill items if used on site | Ready-to-eat foods |\n| Door area | Low-risk sealed drinks or condiments only | Milk, high-risk fillings, sensitive stock |\n| Floor | Nothing | Everything |\n\n---\n## Date Labelling Rules\n\n| Situation | Label Required | Example |\n|---|---|---|\n| Opened original pack | Product, opened date, use-by, initials | \"Mozzarella - opened 26/03 - use by 28/03 - MK\" |\n| Decanted into house container | Product, made / decanted date, use-by, initials | \"Tuna mayo - made 26/03 - use by 27/03 - MK\" |\n| Cold-hold display item | Product, time out, discard time, initials | \"Ham toastie - out 10:15 - discard 14:15 - MK\" |\n\nUse [T002-05] for the actual labels.\n\n---\n## Cold-Hold Display Rule\n\n| Item Type | Max Time Out Of Refrigeration | Requirement |\n|---|---|---|\n| Sandwiches, salads, filled rolls | Up to 4 hours | Time-label at the moment placed out |\n| Cakes / desserts requiring chill | Follow manufacturer or site rule, never guess | Time-label if temporarily displayed |\n| Milk at bar during service | Return quickly between rushes | Do not leave out through a whole service period |\n\nIf the time limit is reached, discard. Do not re-chill and restart the clock.\n\n---\n## Weekly Verification\n\nManager or shift lead checks weekly that:\n- shelf labels still match reality\n- FIFO is actually being used\n- no out-of-date stock is present\n- all opened high-risk stock is labelled\n- display items are following cold-hold time rules\n- repeat supplier issues are being tracked\n\nUse [T002-04] for the formal audit.\n\n---\n## Escalation\n\nOpen [T002-03] when:\n- a supplier delivers warm, damaged, or short-dated stock\n- the same supplier repeats issues\n- staff had to reject product at the door\n- a fridge layout or labelling failure is becoming recurring rather than one-off\n\nUse `B003` if the issue becomes a live temperature excursion or stock safety incident after acceptance.\n\n---\n## Team Briefing Sign-Off\n\n| Team Member | Role | Briefed On | Signature / Initials | Trainer | Date |\n|---|---|---|---|---|---|\n| | | Delivery / Storage / Labels | | | |\n| | | Delivery / Storage / Labels | | | |\n| | | Delivery / Storage / Labels | | | |\n| | | Delivery / Storage / Labels | | | |\n| | | Delivery / Storage / Labels | | | |\n\n---\n## Connected Resources\n\n**Core tools in this block:**\n- T002-01 - Delivery Acceptance Checklist\n- T002-03 - Supplier Temperature Incident Log & Escalation Record\n- T002-04 - Weekly Fridge Organisation & Date Labelling Audit\n- T002-05 - Cold-Hold & Date Label Pack\n\n**Related blocks:**\n- B001 - Daily Temperature Monitoring\n- B003 - Temperature Excursion Response\n- B004 - Cold Chain Excellence Dashboard\n\n---\n\n*Tool Version 2.0 - the operating standard that keeps the cold chain intact between the van and the guest.*",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T002-02_cold_chain_sop_and_fridge_layout_guide.md",
+    "migration_method": "_generate_tools.py"
+  }
+}

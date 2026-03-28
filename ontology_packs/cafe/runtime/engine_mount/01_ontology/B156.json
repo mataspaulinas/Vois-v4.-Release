@@ -1,0 +1,166 @@
+{
+  "block_id": "B156",
+  "name": "Digital Ordering Integration",
+  "version": "v1.0",
+  "domain": "D10_technology_systems",
+  "module": "M10: Digital Tools & Customer Data",
+  "state": "enriched",
+  "purpose": "Guides the implementation and management of online and app-based ordering channels that integrate seamlessly with the cafe's existing POS and kitchen workflow. This block ensures digital ordering increases revenue without creating operational chaos, duplicate data entry, or customer experience failures.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Evaluate which digital ordering channels are appropriate for the cafe's size, location, customer base, and operational capacity",
+      "Select and implement a digital ordering solution that integrates with the existing POS system to avoid double-handling",
+      "Design the digital menu to maximise average order value through strategic item presentation, bundling, and upsell prompts",
+      "Establish clear operational workflows for receiving, preparing, and dispatching digital orders without disrupting in-store service",
+      "Set up performance tracking for digital channels including order volume, revenue, fulfilment time, and error rate"
+    ],
+    "secondary_objectives": [
+      "Capture customer data from digital orders for CRM and marketing purposes (B159)",
+      "Reduce dependency on third-party delivery platforms and their 15-35% commission rates",
+      "Extend the cafe's trading radius beyond walk-in foot traffic",
+      "Provide customers with a convenience option that builds loyalty and increases ordering frequency"
+    ]
+  },
+  "why_this_matters": "Digital ordering is no longer optional for most cafes. Post-2020, customer expectations have permanently shifted: many regulars want the ability to order ahead and collect, skip the queue during busy periods, or browse the menu before visiting. Cafes without any digital ordering presence risk losing trade to competitors who offer this convenience. However, poorly implemented digital ordering is worse than no digital ordering at all. The most common failure is operational: a cafe adds Deliveroo, UberEats, and a click-and-collect app simultaneously, and suddenly the kitchen is overwhelmed by orders appearing on three different tablets with no integration to the POS. Staff cannot distinguish in-store from digital orders, preparation times slip, in-store customers watch their queue stall, and digital customers arrive to find their order is not ready. The result is worse service for everyone. Third-party delivery platforms also present a financial trap. Commission rates of 15-35% mean that a 4 pound coffee sold through a delivery app generates only 2.60-3.40 pounds in revenue, before accounting for packaging costs. Many cafes lose money on every delivery order without realising it. The solution is not to avoid digital ordering but to implement it strategically: choose the right channels for your business, integrate them properly with your POS, set clear operational boundaries, and track performance rigorously. A well-integrated click-and-collect system can increase revenue by 10-20% with minimal additional operational cost.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Assess the cafe's readiness for digital ordering. Key questions: Does the kitchen have capacity to handle 10-20% more orders during peak? Does the POS support integration with ordering platforms? Is there a designated collection point for click-and-collect orders that does not block the regular queue? What do your customers actually want: click-and-collect, delivery, or both? Survey 20 regular customers informally to gauge demand. Research the digital ordering landscape relevant to your cafe: POS-integrated ordering (Square Online, Lightspeed Order Ahead, Toast Online Ordering), standalone click-and-collect platforms (Flipdish, Mr Yum, Vita Mojo), and third-party delivery marketplaces (Deliveroo, UberEats, Just Eat). Week 2: Calculate the true cost of each option including platform fees, commission rates, tablet costs, packaging costs, and staff time. Create a simple cost-benefit analysis comparing: doing nothing, implementing POS-integrated click-and-collect only, implementing click-and-collect plus one delivery partner, or building your own ordering page. For most independent cafes, POS-integrated click-and-collect is the highest-value, lowest-risk starting point.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Select and implement your chosen digital ordering channel. If using POS-integrated ordering, work with your POS provider to configure the online menu, set operating hours, define preparation time estimates, and establish order notification workflows. The online menu should be a curated version of your in-store menu, not an exact copy. Remove items that do not travel well, do not photograph well, or have low margins. Add bundle deals and meal combinations that increase average order value. Set up an order management workflow: how digital orders are received (printer, POS screen, dedicated tablet), how they are communicated to the kitchen, how they are staged for collection, and how the customer is notified that their order is ready. Test the complete process end-to-end during a quiet trading period before launching publicly. If implementing a delivery partnership, negotiate commission rates (always negotiable for established venues), set delivery radius limits, define which menu items are available for delivery, and establish pausing protocols for when the kitchen reaches capacity. Create a Digital Ordering Operations Guide covering all procedures for staff.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Track digital ordering performance weekly: order volume, revenue, average order value, fulfilment time, error rate, and customer ratings or feedback. Compare digital and in-store average order values to assess whether your online menu design is effective. Monitor the impact of digital orders on in-store service quality. If in-store wait times increase during peak periods when digital orders are high, implement throttling (limiting the number of digital orders accepted per 15-minute window). Evaluate your channel mix quarterly: What percentage of total revenue comes from digital orders? What is the true profitability of each channel after all costs? Should you add or remove a channel? Build a direct ordering relationship with customers by promoting your own ordering platform over third-party apps, using in-store signage, receipt messaging, and social media. Every order processed through your own platform rather than a marketplace saves 15-35% in commission. Consider a loyalty integration between in-store and online orders so customers earn rewards regardless of how they order."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Assess kitchen capacity, POS compatibility, and physical space for click-and-collect staging",
+        "Survey 20 regular customers about their interest in online ordering and click-and-collect",
+        "Research digital ordering platforms compatible with your POS system",
+        "Calculate the true cost of each ordering channel including fees, commission, and packaging",
+        "Create a cost-benefit analysis comparing available options",
+        "Decide on the initial channel strategy (typically POS-integrated click-and-collect first)"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Configure the chosen digital ordering platform with curated online menu",
+        "Set up order management workflow: receiving, kitchen communication, staging, customer notification",
+        "Test end-to-end ordering process during quiet trading period",
+        "Create a Digital Ordering Operations Guide for all staff",
+        "Train all staff on digital order handling procedures",
+        "Launch digital ordering with soft promotion to regulars before wider marketing",
+        "If using delivery partnership, negotiate terms and set operational boundaries"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track digital ordering KPIs weekly (volume, revenue, fulfilment time, errors)",
+        "Monitor impact on in-store service and implement throttling if needed",
+        "Evaluate channel mix quarterly for profitability and strategic fit",
+        "Promote direct ordering platform to reduce third-party commission costs",
+        "Consider loyalty programme integration across in-store and online channels"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Digital Ordering Readiness Assessment",
+    "Channel Cost-Benefit Analysis",
+    "Online Menu Design (curated from in-store menu)",
+    "Digital Ordering Operations Guide for staff",
+    "Weekly Digital Channel Performance Report template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T156-01",
+        "tool_name": "Digital Ordering Readiness Checklist",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Owner",
+        "description": "Assessment checklist covering kitchen capacity, POS compatibility, physical space, customer demand, and staff readiness for digital ordering implementation. Identifies blockers before any platform is selected."
+      },
+      {
+        "tool_id": "T156-02",
+        "tool_name": "Channel Cost-Benefit Calculator",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Spreadsheet comparing the true cost and projected revenue of each digital ordering channel: platform fees, commission rates, packaging costs, staff time, and expected order volume. Enables informed channel selection."
+      },
+      {
+        "tool_id": "T156-03",
+        "tool_name": "Digital Ordering Operations Guide",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Step-by-step operational procedures for handling digital orders: receiving notifications, kitchen communication, preparation prioritisation, staging for collection, customer notification, and troubleshooting common issues."
+      },
+      {
+        "tool_id": "T156-04",
+        "tool_name": "Online Menu Design Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Structured template for designing the digital menu including item selection criteria, photography requirements, description standards, bundle/upsell strategy, and pricing adjustments for delivery versus collection."
+      },
+      {
+        "tool_id": "T156-05",
+        "tool_name": "Digital Channel Performance Dashboard",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Weekly report tracking digital ordering KPIs: order volume by channel, revenue, average order value, fulfilment time, error rate, customer ratings, and commission costs. Enables data-driven channel management."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Multiple digital ordering platforms implemented simultaneously without POS integration, creating operational chaos and duplicate data entry",
+    "Third-party delivery commissions make every delivery order unprofitable but the cafe does not track true channel costs",
+    "Digital orders overwhelm the kitchen during peak periods, degrading in-store customer experience for the majority of revenue",
+    "Online menu is an unedited copy of the in-store menu, including items that do not travel well, leading to poor customer reviews"
+  ],
+  "kpis": [
+    "Digital order fulfilment time within 15 minutes of promised collection time",
+    "Digital order error rate below 2% (wrong items, missing items, quality issues)",
+    "Digital channel revenue growing month-on-month for the first 6 months post-launch",
+    "In-store service times not degraded by more than 10% during peak digital ordering periods"
+  ],
+  "dependencies": ["B155"],
+  "constraints": [
+    "POS system must support integration with chosen digital ordering platform via API or native connection",
+    "Kitchen must have sufficient capacity to handle additional digital orders without degrading in-store service",
+    "Packaging costs for takeaway and delivery orders must be factored into pricing strategy",
+    "Staff training on digital order workflows must be completed before public launch"
+  ],
+  "time_load": {
+    "L1": "5 hours (readiness assessment, research, cost-benefit analysis)",
+    "L2": "15 hours (platform setup, menu configuration, workflow design, staff training, testing)",
+    "L3": "2 hours/week (performance monitoring, channel optimisation, promotion)"
+  },
+  "review_protocol": "Digital ordering performance reviewed weekly during first 3 months, then monthly once stable. Online menu reviewed monthly for accuracy and optimisation. Channel profitability assessed quarterly. Platform contract and fees reviewed annually. Operational workflow reassessed whenever order volumes change significantly.",
+  "meta": {
+    "summary_for_humans": "This block guides the strategic implementation of digital ordering channels, ensuring they integrate with the POS system, increase revenue without creating operational chaos, and are tracked for true profitability. It starts with click-and-collect as the lowest-risk, highest-value option for most cafes.",
+    "implementation_risks": [
+      "Launching without adequate testing can create a poor first impression that discourages repeat digital ordering",
+      "Commission costs on delivery platforms may erode margins if not monitored and managed actively",
+      "Staff resistance to handling digital orders alongside in-store service requires clear protocols and training"
+    ],
+    "notes_for_engine": "Activate when signals indicate customer demand for convenience ordering, competitive pressure from digitally-enabled competitors, or owner interest in expanding revenue channels. Requires B155 POS optimisation as a foundation.",
+    "tags": ["digital_ordering", "online", "click_and_collect", "delivery", "POS_integration", "technology", "revenue", "convenience"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

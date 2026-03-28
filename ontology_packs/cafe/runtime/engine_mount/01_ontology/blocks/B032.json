@@ -1,0 +1,165 @@
+{
+  "block_id": "B032",
+  "name": "Customer Lifetime Value Strategy",
+  "version": "v1.0",
+  "domain": "D02_customer_experience",
+  "module": "M02: Customer Journey & Retention",
+  "state": "enriched",
+  "purpose": "Establishes a framework for calculating and maximising Customer Lifetime Value (CLV) — the total revenue a customer generates over their entire relationship with the cafe. This block shifts the business mindset from individual transactions to long-term customer relationships and provides the economic rationale for investing in retention.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Calculate the average Customer Lifetime Value for different customer segments",
+      "Identify the key drivers that increase CLV: visit frequency, average spend, relationship duration",
+      "Develop strategies to increase each CLV driver without increasing customer acquisition costs",
+      "Create an economic case for investing in retention over acquisition",
+      "Use CLV as a decision-making framework for marketing, pricing, and service investments"
+    ],
+    "secondary_objectives": [
+      "Justify customer experience investments by quantifying their impact on CLV",
+      "Identify the most valuable customer segments and tailor service to them",
+      "Build management financial literacy around the economics of customer relationships"
+    ]
+  },
+  "why_this_matters": "Most cafe owners think about revenue in terms of daily takings and individual transactions. A flat white costs £3.50, a croissant costs £2.80, and a good day is when the till total exceeds expectations. But this transaction-level thinking obscures the real economics of the business: the vast majority of revenue comes from a relatively small number of customers who visit repeatedly over months and years. A customer who visits 4 times a week for 3 years, spending an average of £5 per visit, generates £3,120 in revenue — far more than the cost of the occasional free coffee or the extra 30 seconds of personal service that keeps them coming back. When viewed through the CLV lens, every customer interaction is not a £3.50 transaction but a moment in a £3,000+ relationship. This fundamentally changes how a cafe thinks about service, quality, and problem resolution. A complaint about a lukewarm coffee is not about the £3.50 cost of a replacement — it is about protecting a £3,000 relationship. The 10 minutes spent training a barista to remember regulars' names is not a productivity cost — it is an investment in retention that pays back many times over. CLV thinking also reveals the catastrophic cost of losing a regular. If the cafe loses 5 regulars per month (each worth £80/month in revenue), that is £400/month or £4,800/year in lost revenue — enough to hire an additional part-time staff member. Understanding this number creates urgency around retention and justifies investment in the customer experience blocks throughout this module.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Calculate a simple CLV estimate for the cafe's average regular customer. The basic formula is: CLV = Average Spend per Visit x Visits per Week x 52 weeks x Average Relationship Duration in Years. For example: £4.50 x 3 visits/week x 52 weeks x 2.5 years = £1,755. If you do not know the exact inputs, estimate conservatively using POS data (average transaction value), return visit data (B029), and your best guess for relationship duration. Even a rough CLV figure is far more useful than no figure at all. Calculate CLV for three customer segments: daily regulars (5+ visits/week), weekly regulars (2-4 visits/week), and occasional visitors (1-4 visits/month). The difference in CLV between these segments reveals the massive value of frequency. Week 2: Share the CLV numbers with the team and the owner. Frame it simply: 'Our average daily regular is worth £2,340 per year to us. That is why every interaction with them matters — we are not just making a £4.50 coffee, we are maintaining a £2,340 relationship.' Use the CLV number to reframe common situations: a £3.50 replacement for a wrong drink is a 0.15% investment in a £2,340 relationship. A free birthday coffee worth £1.00 in ingredients is a gesture that protects a multi-thousand-pound customer relationship. This reframing changes how staff think about generosity, problem resolution, and going the extra mile.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Refine the CLV calculation with better data. Use POS reports to determine actual average transaction values by customer segment. Use return visit tracking data (B029) to calculate accurate visit frequencies. Estimate relationship duration based on how long the cafe has been open and how long known regulars have been visiting. Create a CLV calculator that the manager can update quarterly with fresh data. Identify the three levers for increasing CLV: increase average spend (upselling, food attachment, premium drinks), increase visit frequency (loyalty programmes, consistency, personal recognition), and increase relationship duration (service quality, community building, avoiding reasons to leave). For each lever, identify the current blockers and create specific initiatives. For average spend: train staff on effective, non-pushy upselling (suggesting a specific food item, offering a size upgrade). For visit frequency: strengthen loyalty and recognition programmes (B030, B031). For relationship duration: invest in complaint resolution (B033) and consistent quality. Calculate the revenue impact of a 10% improvement in each lever — this creates a business case for investment. By Week 8, the cafe should have a reliable CLV model and active initiatives targeting each lever.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). CLV should become a strategic tool for business decision-making. When considering a price increase, model the impact on visit frequency and CLV — a 10% price increase that causes a 15% drop in visit frequency actually decreases total revenue. When considering a new staff position, calculate the CLV of the additional customers that person could serve during peak periods. When evaluating the loyalty programme, measure its impact on CLV: are loyalty members' CLV higher than non-members'? By how much? Conduct annual CLV reviews with the owner, comparing current-year CLV against previous years. Is CLV growing (indicating healthy customer relationships) or declining (indicating a retention problem)? Track CLV by customer segment quarterly and share trends with the management team. Consider customer segmentation strategies: invest disproportionately in the highest-CLV segments through personalisation, recognition, and exclusive experiences."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Calculate a simple CLV estimate for the cafe's average regular customer",
+        "Calculate CLV for three segments: daily regulars, weekly regulars, occasional visitors",
+        "Share the CLV numbers with the team and owner to reframe customer interactions",
+        "Use CLV to reframe common decisions: complaint resolution, free drinks, extra service",
+        "Post the CLV figure in the staff area as a daily reminder of each customer's value",
+        "Connect CLV to retention urgency: calculate the annual cost of losing one regular",
+        "Identify the simplest CLV improvement opportunity and act on it this week"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Refine CLV calculation with actual POS data and return visit tracking",
+        "Create a CLV calculator that can be updated quarterly with fresh data",
+        "Identify the three CLV levers: average spend, visit frequency, relationship duration",
+        "Create specific initiatives targeting each CLV lever",
+        "Calculate the revenue impact of 10% improvement in each lever",
+        "Model the cost of customer churn using CLV data",
+        "Use CLV to build business cases for customer experience investments"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Use CLV as a strategic decision-making tool for pricing, staffing, and investment",
+        "Conduct annual CLV reviews comparing current-year against previous years",
+        "Track CLV by customer segment quarterly",
+        "Evaluate loyalty programme effectiveness using CLV comparisons",
+        "Consider customer segmentation strategies for highest-CLV customers"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Customer Lifetime Value Calculator (by segment)",
+    "CLV Team Briefing Document",
+    "CLV Lever Strategy Plan (spend, frequency, duration)",
+    "Quarterly CLV Report",
+    "Customer Churn Cost Calculator"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T032-01",
+        "tool_name": "Customer Lifetime Value Calculator",
+        "level": "L1",
+        "format": "calculator",
+        "owner_role": "Owner",
+        "description": "Calculator for estimating CLV by customer segment: average spend per visit, visits per week, weeks per year, and estimated relationship duration in years."
+      },
+      {
+        "tool_id": "T032-02",
+        "tool_name": "CLV Team Briefing Document",
+        "level": "L1",
+        "format": "guide",
+        "owner_role": "Manager",
+        "description": "Simple one-page document explaining CLV to the team: what it means, how much a regular customer is worth, and how this changes the way we think about service and problem resolution."
+      },
+      {
+        "tool_id": "T032-03",
+        "tool_name": "CLV Lever Strategy Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Template for planning initiatives to improve each CLV lever: current baseline, target improvement, specific actions, expected revenue impact, and investment required."
+      },
+      {
+        "tool_id": "T032-04",
+        "tool_name": "Customer Churn Cost Calculator",
+        "level": "L2",
+        "format": "calculator",
+        "owner_role": "Owner",
+        "description": "Calculator for quantifying the revenue impact of customer churn: number of regulars lost per month, their average CLV, annual revenue lost, and break-even investment in retention."
+      },
+      {
+        "tool_id": "T032-05",
+        "tool_name": "Quarterly CLV Report Template",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Quarterly report template showing CLV by segment, trends over time, lever performance (spend, frequency, duration), churn impact, and ROI of retention investments."
+      }
+    ]
+  },
+  "failure_modes": [
+    "CLV is calculated once but never updated, becoming outdated and ignored",
+    "The concept is shared with the team but not translated into actionable behaviours",
+    "Over-focus on highest-CLV customers leads to neglecting other customer segments",
+    "CLV is used to justify excessive discounting that erodes margins"
+  ],
+  "kpis": [
+    "CLV calculated and updated quarterly with fresh data",
+    "All team members can state the approximate value of a regular customer",
+    "At least one CLV improvement initiative active at all times",
+    "Year-on-year CLV showing growth or stability"
+  ],
+  "dependencies": ["B029", "B030", "B031"],
+  "constraints": [
+    "CLV calculation requires data from POS and return visit tracking — estimates are acceptable if exact data is unavailable",
+    "CLV strategies must not compromise service quality for lower-value customer segments",
+    "The CLV model should be simple enough for the owner and manager to understand and use"
+  ],
+  "time_load": {
+    "L1": "3 hours (initial calculation, team briefing, reframing exercise)",
+    "L2": "6 hours (data refinement, lever analysis, initiative planning, business case development)",
+    "L3": "2 hours/quarter (CLV update, lever review, strategic decision support)"
+  },
+  "review_protocol": "Quarterly CLV update with fresh POS and retention data. Annual strategic CLV review with the owner. Continuous use of CLV as a decision-making framework for service and investment decisions.",
+  "meta": {
+    "summary_for_humans": "This block calculates how much a regular customer is worth over their entire relationship with the cafe (typically £1,500-3,000+), uses this number to reframe how the team thinks about service, and creates strategies to increase customer value through higher spend, more frequent visits, and longer relationships.",
+    "implementation_risks": [
+      "CLV can feel abstract — make it tangible by connecting it to real customers the team knows",
+      "Data quality affects calculation accuracy — but directionally correct estimates are valuable",
+      "Risk of over-quantifying relationships — CLV is a lens, not the entire picture"
+    ],
+    "notes_for_engine": "Activate after B029, B030, and B031 are in place. This is the strategic capstone for the retention sub-module. Flag as important if signals indicate declining revenue per customer, increasing churn, or need to justify retention investments.",
+    "tags": ["customer_experience", "CLV", "lifetime_value", "retention", "strategy", "revenue", "economics", "segmentation"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

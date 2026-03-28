@@ -1,0 +1,81 @@
+{
+  "identification": {
+    "tool_id": "T005-01",
+    "tool_name": "Allergen Master Matrix Workbook",
+    "block_id": "B005"
+  },
+  "tool_design": {
+    "format": "template",
+    "role_in_intervention": "Primary source-of-truth menu matrix that maps every live item to the 14 declarable allergens and controls which version is live in service.",
+    "adaptation_variables": [
+      "menu_size",
+      "specials_frequency",
+      "service_model",
+      "bought_in_product_mix"
+    ],
+    "usage_moment": "Initial setup, weekly review, and immediately before any recipe or supplier change reaches service",
+    "expected_output": "Completed and dated allergen master matrix with release footer, version history, and verification sign-off",
+    "linked_blocks": [
+      "B005",
+      "B006",
+      "B007",
+      "B008"
+    ]
+  },
+  "tool_risk_model": {
+    "failure_warnings": [
+      {
+        "warning": "The matrix becomes a one-off spreadsheet instead of the live master record.",
+        "what_can_go_wrong": "Service copies drift away from current ingredients and staff lose trust in the document.",
+        "early_signals": [
+          "No review date is visible on the matrix",
+          "Specials are served without a matching row in the matrix"
+        ],
+        "prevention": [
+          "Print and release only from one named master file",
+          "Attach a version footer and review owner to every issued copy"
+        ],
+        "mitigation": [
+          "Withdraw all old copies and rebuild from current stock and recipes",
+          "Pause unresolved items until the matrix is current again"
+        ],
+        "if_occurs_next_signals": [
+          "matrix_version_drift"
+        ],
+        "possible_successor_blocks": [
+          "B006",
+          "B007"
+        ]
+      },
+      {
+        "warning": "Allergen calls are entered without tracing sub-ingredients or supplier data.",
+        "what_can_go_wrong": "The matrix looks complete but contains unsafe assumptions.",
+        "early_signals": [
+          "Rows are filled faster than evidence can reasonably be checked",
+          "Compound ingredients have no linked declaration sheet"
+        ],
+        "prevention": [
+          "Require recipe sheets and supplier evidence before final sign-off",
+          "Use a second-person verification step on initial build and major changes"
+        ],
+        "mitigation": [
+          "Mark uncertain cells unresolved rather than guessed",
+          "Re-check all compound ingredients and bought-in items first"
+        ],
+        "if_occurs_next_signals": [
+          "unsupported_allergen_call"
+        ],
+        "possible_successor_blocks": [
+          "B008"
+        ]
+      }
+    ]
+  },
+  "content": "# Allergen Master Matrix Workbook\n\n**Tool ID:** T005-01  \n**Block:** B005 (Allergen Identification & Labelling)  \n**Format:** Template  \n**Primary Role:** Manager  \n**Use Moment:** Initial build, weekly review, and every recipe or supplier change  \n**Output:** Dated allergen master matrix with one live service version\n\n---\n\n## What This Tool Does\n\nThis workbook is the single source of truth for allergen identification across the menu. It is the document that tells the venue, with evidence, which allergens are present in each live item.\n\nUse it to:\n- map every drink, food item, topping, syrup, dressing, garnish, and special to the 14 allergens\n- version-control which matrix is currently live in service\n- keep kitchen, counter, and customer-facing information aligned\n- show what still needs verification instead of guessing\n\nDo not use this workbook as a substitute for PPDS labels or live customer dialogue. Those blocks sit downstream.\n\n---\n\n## Release Rules\n\n<input type=\"checkbox\" disabled /> One master matrix only  \n<input type=\"checkbox\" disabled /> Every service copy shows version date  \n<input type=\"checkbox\" disabled /> Specials are added before sale, not after  \n<input type=\"checkbox\" disabled /> Unverified items are marked unresolved or removed from allergen-safe offer  \n<input type=\"checkbox\" disabled /> All old copies are replaced the same day the master changes\n\n---\n\n## Workbook Cover\n\n| Field | Complete Here |\n|---|---|\n| Venue name | |\n| Matrix version | |\n| Effective from | |\n| Prepared by | |\n| Verified by | |\n| Next review date | |\n| Covers permanent menu, specials, and modifiers? | Yes / No |\n| Linked recipe sheet folder location | |\n| Linked supplier evidence folder location | |\n\n---\n\n## 14 Allergen Codes\n\n| Code | Allergen | Typical Cafe Risk Points |\n|---|---|---|\n| CE | Celery | soups, stock, spice blends |\n| GL | Cereals containing gluten | breads, pastries, cakes, wraps, some oat products |\n| CR | Crustaceans | seafood fillings, specialist sauces |\n| EG | Eggs | cakes, mayo, brioche, pastry wash |\n| FI | Fish | tuna, anchovy dressing, Worcestershire sauce |\n| LU | Lupin | some gluten-free flour mixes |\n| MI | Milk | dairy milk, butter, cream, cheese, chocolate |\n| MO | Molluscs | specialist sauces, seafood dishes |\n| MU | Mustard | dressings, mayo blends, marinades |\n| NU | Tree nuts | cakes, pesto, praline, almond milk |\n| PE | Peanuts | peanut butter fillings, sauces, toppings |\n| SE | Sesame | bagels, hummus, breads, oils |\n| SO | Soya | soy milk, soy sauce, some chocolates |\n| SU | Sulphur dioxide / sulphites | dried fruit, cordials, vinegar, wine products |\n\n**Cell key:** `P = Present` | `MC = May contain / cross-contact warning` | `N = Not present` | `U = Unverified - do not rely on this row until resolved`\n\n---\n\n## Master Matrix\n\n| Menu Item | Category | CE | GL | CR | EG | FI | LU | MI | MO | MU | NU | PE | SE | SO | SU | Evidence Source | Last Checked |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n| | | | | | | | | | | | | | | | | Recipe / Supplier / Both | |\n| | | | | | | | | | | | | | | | | Recipe / Supplier / Both | |\n| | | | | | | | | | | | | | | | | Recipe / Supplier / Both | |\n| | | | | | | | | | | | | | | | | Recipe / Supplier / Both | |\n| | | | | | | | | | | | | | | | | Recipe / Supplier / Both | |\n| | | | | | | | | | | | | | | | | Recipe / Supplier / Both | |\n| | | | | | | | | | | | | | | | | Recipe / Supplier / Both | |\n| | | | | | | | | | | | | | | | | Recipe / Supplier / Both | |\n| | | | | | | | | | | | | | | | | Recipe / Supplier / Both | |\n| | | | | | | | | | | | | | | | | Recipe / Supplier / Both | |\n\nAdd more pages as needed. Every live item must appear here, including specials and temporary substitutions.\n\n---\n\n## Change Log\n\n| Date | Item / Ingredient Changed | What Changed | Matrix Updated By | Customer Pack Reissued? | Staff Briefed? | Old Copies Removed? |\n|---|---|---|---|---|---|---|\n| | | | | Yes / No | Yes / No | Yes / No |\n| | | | | Yes / No | Yes / No | Yes / No |\n| | | | | Yes / No | Yes / No | Yes / No |\n| | | | | Yes / No | Yes / No | Yes / No |\n\n---\n\n## Verification Checklist\n\n<input type=\"checkbox\" disabled /> Every menu item and modifier has a row  \n<input type=\"checkbox\" disabled /> Bought-in items are backed by current supplier evidence  \n<input type=\"checkbox\" disabled /> Own-made items are backed by recipe declaration sheets  \n<input type=\"checkbox\" disabled /> Counter and kitchen copies match the master version  \n<input type=\"checkbox\" disabled /> Unresolved items are clearly marked and not presented as safe  \n<input type=\"checkbox\" disabled /> Review date has been scheduled\n\n---\n\n## Common Failure Patterns\n\n### 1. Specials bypass the matrix\nUse the change log before any special or one-day substitution goes live.\n\n### 2. Counter copy and kitchen copy differ\nReplace all copies in one update cycle and destroy old versions.\n\n### 3. A bought-in cake is listed from memory\nDo not rely on previous deliveries. Check the current supplier declaration for the exact product in service.\n\n---\n\n## Connected Tools\n\n- `T005-02` provides the per-item declaration sheet behind each row\n- `T005-03` tracks supplier evidence for bought-in items\n- `T005-04` is the gate that protects this matrix from uncontrolled change\n- `T005-05` turns this matrix into the customer-facing pack\n- `T005-06` audits whether this workbook still matches reality\n",
+  "_schema_meta": {
+    "schema_name": "ToolC_v2",
+    "schema_version": "2.0.0",
+    "source_file": "T005-01_allergen_master_matrix_workbook.md",
+    "migration_method": "manual_enrichment"
+  }
+}

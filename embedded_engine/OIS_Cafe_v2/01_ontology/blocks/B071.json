@@ -1,0 +1,167 @@
+{
+  "block_id": "B071",
+  "name": "Career Progression Framework",
+  "version": "v1.0",
+  "domain": "D04_team_talent",
+  "module": "M04: Recruitment Onboarding & Development",
+  "state": "enriched",
+  "purpose": "Defines clear, visible career pathways from entry-level barista through to senior roles, so every team member understands what is required to progress, what each level brings in terms of pay, responsibility, and development, and that their growth is genuinely possible within the venue.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Design a multi-level career ladder appropriate to the venue's size, from barista to senior barista, shift lead, supervisor, and manager",
+      "Define the skills, experience, qualifications, and behaviours required to move between each level",
+      "Link career levels to pay bands established in B065, creating a transparent relationship between development and reward",
+      "Create visible progression opportunities that staff can self-assess against and work towards",
+      "Establish a promotion process that is fair, consistent, and based on demonstrated competence rather than favouritism or tenure alone"
+    ],
+    "secondary_objectives": [
+      "Reduce turnover by showing ambitious team members a future at the venue rather than elsewhere",
+      "Build internal succession planning so the venue is not dependent on external recruitment for senior roles",
+      "Attract higher-calibre candidates by advertising career development as part of the employment offer"
+    ]
+  },
+  "why_this_matters": "One of the most common reasons talented baristas leave independent cafes is the perception that there is nowhere to go. Without a visible career pathway, a skilled barista earning £11.50 per hour looks across the street and sees the same £11.50 but with a different view. There is no compelling reason to stay because staying and leaving look identical from a career perspective. A career progression framework changes this equation fundamentally. When a barista can see that reaching Senior Barista brings a pay increase to £12.50, access to SCA certification, and responsibility for training new starters — and that Shift Lead brings £13.50, rota management responsibility, and a pathway to Supervisor — the calculation shifts. They are no longer comparing hourly rates; they are comparing futures. For micro and small cafes, this does not require creating fictitious corporate ladders. Even a three-level structure — Barista, Senior Barista, Shift Lead — provides meaningful progression. What matters is that the criteria are transparent, the process is fair, and the rewards are real. The framework should be linked directly to the skills matrix (B073), performance reviews (B072), and pay bands (B065) so that progression is integrated into the broader people management system rather than existing in isolation. Career progression also solves the succession problem. When the only person who can open the cafe, manage suppliers, and handle complaints is the owner, the business has no resilience. A career framework that develops shift leads and supervisors creates the bench strength needed for the owner to take a day off, go on holiday, or eventually step back from daily operations.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Define the career levels that make sense for your venue. For most independent cafes, three to four levels work well: Barista (entry), Senior Barista, Shift Lead, and potentially Supervisor or Assistant Manager. For sole-trader kiosks or vans, even two levels (Barista, Senior Barista) provide meaningful progression. For each level, write a one-paragraph role description covering the key responsibilities, expectations, and what makes this level different from the one below. Week 2: Map current team members to the framework. Where does each person sit? Are there people already performing at a higher level but without the title or pay to match? Identify any immediate misalignments — a long-serving team member doing shift lead duties on barista pay is a retention risk that should be addressed promptly. Share the draft framework with the team for feedback. This is not a top-down decree but a tool for their development. Ask: does this make sense, is anything missing, what would motivate you to work towards the next level? Refine based on input.",
+    "L2": "SYSTEM BUILD (2-8 weeks). For each career level, define specific progression criteria across four dimensions: technical skills (coffee craft, food preparation, till operation), operational skills (opening/closing, stock management, problem-solving), people skills (customer interaction, team communication, conflict handling), and qualifications or training (SCA certifications, food safety levels, first aid). These criteria should be objective and assessable — not 'shows initiative' but 'has independently resolved at least three customer complaints without manager involvement.' Link each level to the corresponding pay band from B065 so that progression has immediate financial reward. Create a Career Progression Guide — a document or poster for the staff area showing all levels, criteria for each, and the process for requesting a progression review. Establish the progression review process: the team member self-assesses against the criteria, discusses with their manager in a dedicated meeting (not a routine performance review), provides evidence of meeting the criteria, and receives a decision within two weeks. Where criteria are not yet met, the outcome should be a development plan with specific actions and a timeline for re-assessment.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Track progression data: how many team members have moved up a level in the past year, average time at each level, and whether progression rates differ by demographic (to guard against bias). Introduce a mentoring element — Senior Baristas mentor Baristas, Shift Leads mentor Senior Baristas — creating a development culture that reinforces the framework. Celebrate progressions publicly: announce level-ups in team briefings, update the Wall of Wins, and consider a small celebration. Connect the career framework to external opportunities where appropriate — a barista aspiring to roasting, cafe management, or opening their own venue should feel that the skills they develop here are transferable. Conduct an annual review of the framework itself: are the levels still appropriate as the business evolves, are the criteria achievable but stretching, and does the pay differential between levels remain motivating? Benchmark against competitor cafes — what progression do they offer, and is your framework competitive?"
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Define three to four career levels appropriate to the venue's size and structure",
+        "Write a one-paragraph role description for each level",
+        "Map all current team members to the framework and identify misalignments",
+        "Share the draft framework with the team for feedback and refine accordingly",
+        "Address any immediate pay or title misalignments for existing staff",
+        "Display the career framework visually in the staff area",
+        "Communicate the framework in a team meeting as a development tool, not a hierarchy"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Define specific progression criteria for each level across four dimensions",
+        "Link career levels to pay bands from B065",
+        "Create a Career Progression Guide document for staff reference",
+        "Establish a fair, consistent progression review process with self-assessment",
+        "Develop individual development plans for team members not yet meeting next-level criteria",
+        "Integrate progression criteria with the skills matrix in B073",
+        "Train managers on conducting progression review conversations"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Track progression data including rates, timing, and demographic analysis",
+        "Introduce a mentoring structure linked to career levels",
+        "Celebrate progressions publicly in briefings and on the Wall of Wins",
+        "Conduct annual framework review to ensure levels and criteria remain appropriate",
+        "Benchmark the career framework against competitor and sector offerings",
+        "Connect internal progression to broader career development in coffee and hospitality"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Career Level Definitions document (role descriptions for each tier)",
+    "Progression Criteria Matrix (skills, behaviours, qualifications per level)",
+    "Career Progression Guide (staff-facing reference document or poster)",
+    "Progression Review Process and Self-Assessment Form",
+    "Individual Development Plan template"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T071-01",
+        "tool_name": "Career Level Definitions Document",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "Defines each career level (Barista, Senior Barista, Shift Lead, Supervisor/Manager) with role descriptions, key responsibilities, and what differentiates each level from the one below."
+      },
+      {
+        "tool_id": "T071-02",
+        "tool_name": "Progression Criteria Matrix",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Detailed matrix specifying objective, assessable criteria for progression across four dimensions: technical skills, operational skills, people skills, and qualifications/training."
+      },
+      {
+        "tool_id": "T071-03",
+        "tool_name": "Career Progression Self-Assessment Form",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "All Staff",
+        "description": "Self-assessment form allowing team members to evaluate themselves against the progression criteria for their target level, providing evidence and identifying development gaps."
+      },
+      {
+        "tool_id": "T071-04",
+        "tool_name": "Individual Development Plan Template",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Manager",
+        "description": "Structured plan documenting specific actions, training, and experiences needed to meet progression criteria, with timelines, support required, and review dates."
+      },
+      {
+        "tool_id": "T071-05",
+        "tool_name": "Progression Data Tracker",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Annual tracker monitoring progression rates, average time at each level, demographic analysis for bias detection, and correlation between progression and retention."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Career framework exists on paper but promotions still happen based on favouritism or availability, destroying credibility",
+    "Criteria are set too high, making progression feel unachievable and demotivating rather than aspirational",
+    "Pay bands are not linked to levels, so progression brings responsibility without financial reward",
+    "Framework is created but never communicated to the team, so it has no motivational impact"
+  ],
+  "kpis": [
+    "At least one team member progresses to a higher level per year (in venues with 5+ staff)",
+    "100% of team members can describe the career framework and their current level",
+    "Progression-related turnover (leaving because no progression available) below 10% of voluntary leavers",
+    "All progression decisions documented with evidence-based assessment against published criteria",
+    "Average tenure of staff above Barista level exceeding 18 months"
+  ],
+  "dependencies": ["B072"],
+  "constraints": [
+    "Career levels must be realistic for the venue's size — a two-person kiosk cannot have five management tiers",
+    "Pay differentials between levels must be financially sustainable within the venue's wage budget",
+    "Progression criteria must be objective and consistently applied to avoid discrimination claims"
+  ],
+  "time_load": {
+    "L1": "4 hours (level definition, team mapping, initial communication)",
+    "L2": "8 hours (criteria development, pay band linking, guide creation, process design)",
+    "L3": "2 hours/quarter (data tracking, framework review, benchmarking)"
+  },
+  "review_protocol": "Progression review meetings conducted on request with a maximum two-week response time. Quarterly review of development plans for active progression candidates. Six-monthly review of framework relevance and criteria appropriateness. Annual full framework review including pay band alignment and team feedback.",
+  "meta": {
+    "summary_for_humans": "This block creates visible career pathways within the cafe, defining levels from barista to senior roles with clear criteria, pay links, and a fair progression process that motivates ambitious team members to stay and grow.",
+    "implementation_risks": [
+      "Sole-trader venues may struggle to create meaningful progression in a very flat structure",
+      "Existing team dynamics can be disrupted when titles and levels are formalised for the first time",
+      "Progression expectations must be managed — not everyone can or will reach every level"
+    ],
+    "notes_for_engine": "Activate when signals indicate retention issues linked to lack of development, ambitious staff leaving for competitors, or absence of succession planning. Strong interdependency with B072 (performance reviews) and B065 (pay bands).",
+    "tags": ["career", "progression", "development", "promotion", "succession", "retention", "pay_bands", "skills", "pathways"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

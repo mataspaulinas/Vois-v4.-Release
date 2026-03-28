@@ -1,0 +1,157 @@
+{
+  "block_id": "B131",
+  "name": "Cash Handling Protocol",
+  "version": "v1.0",
+  "domain": "D07_financial_performance",
+  "module": "M07: Pricing Revenue & Cost Control",
+  "state": "enriched",
+  "purpose": "Establishes secure, auditable procedures for handling physical cash from the moment it enters the till to the moment it reaches the bank. This block protects the business against theft, error, and loss by creating clear accountability for every pound that passes through the cafe.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Define a clear chain of custody for cash from customer payment through to bank deposit",
+      "Establish float management procedures including standard float amounts and replenishment processes",
+      "Create accountability systems so that every cash discrepancy can be traced and investigated",
+      "Implement physical security measures for cash storage during and after trading hours",
+      "Train all cash-handling staff on correct procedures and the consequences of non-compliance"
+    ],
+    "secondary_objectives": [
+      "Reduce cash shrinkage (the unexplained disappearance of cash) to below 0.5% of cash revenue",
+      "Simplify end-of-day reconciliation by establishing consistent procedures that make counting faster and more accurate",
+      "Ensure compliance with insurance requirements for cash held on premises and in transit",
+      "Develop a procedure for handling counterfeit notes that protects staff and meets reporting obligations"
+    ]
+  },
+  "why_this_matters": "Despite the growth of card payments, cash still represents 10-25% of transactions in most UK cafes, and in some locations this figure is significantly higher. Even at 15% of a cafe turning over 300,000 pounds per year, cash handling involves 45,000 pounds flowing through the till annually. Without proper controls, this money is vulnerable to theft (both external and internal), counting errors, short-changing, and simple loss. Internal theft is an uncomfortable topic, but industry research consistently shows that employee dishonesty accounts for a significant proportion of cafe cash losses — not necessarily because staff are dishonest by nature, but because poor systems create opportunities and temptation. A cafe without proper cash handling procedures makes it easy for discrepancies to go undetected and impossible to determine whether a shortage is due to a counting error, a customer dispute, or theft. Good cash handling is about protection, not suspicion. Clear procedures protect honest staff from false accusations, protect the business from losses, and provide the audit trail needed for insurance claims, HMRC enquiries, and management decisions about whether to continue accepting cash. The procedures also support the end-of-day reconciliation process (B132), which depends on accurate cash counting and consistent float management. A cafe that cannot reconcile its till at the end of each day is a cafe that does not truly know its financial position.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Define the standard float for each till point. The float should be sufficient to provide change for the day's first customers without being excessive. For most cafes, 100-150 pounds is appropriate, comprising a defined mix of notes and coins. Write down the exact denomination breakdown (e.g., 1x20, 2x10, 2x5, 1x2 in pounds, 1x1 pound, and assorted coins). Ensure the float is counted and verified at the start of every trading day by the opening team member, who signs a float count sheet. Establish basic rules: only authorised staff operate the till, the till drawer stays closed between transactions, large notes (50 pound notes) are checked under UV light, and no personal money is kept in the till. Week 2: Set up a secure cash storage process. During the day, excess cash should be removed from the till at regular intervals (mid-morning and mid-afternoon at minimum) and placed in a locked drop safe that cannot be opened by staff. Only the manager or owner should have the combination or key to the main safe. At close of trade, all cash is counted by the closing team member, recorded on a cash count sheet, and secured in the safe. Bank deposits should be made at least twice per week — daily if cash volumes justify it. Never allow large amounts of cash to accumulate on the premises overnight. Check your business insurance policy for the maximum cash cover on premises and in transit, and ensure your procedures keep cash within these limits.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Cash Handling SOP document covering every aspect: float preparation, till operation, mid-shift cash drops, end-of-day counting, safe management, bank deposit procedures, and counterfeit note handling. Train all staff who handle cash on this SOP, with signed acknowledgement that they understand and agree to follow it. Implement a dual-count policy for end-of-day cash: two different staff members count independently and their figures must agree before the cash is secured. If figures differ, a recount is required. Introduce a Cash Discrepancy Log where any difference between expected and actual cash is recorded, investigated, and signed off. Define tolerance thresholds: discrepancies under 2 pounds may be noted and monitored for patterns, while discrepancies over 5 pounds require immediate investigation and owner notification. Set up a simple cash tracking spreadsheet that records daily cash revenue (from POS), cash counted, float carried forward, and any discrepancies. Review this weekly for patterns — recurring shortages on specific days, shifts, or staff members warrant investigation. Establish a procedure for handling counterfeit notes: suspected counterfeits are retained, the customer is asked to provide alternative payment, and the incident is reported to the police using the National Crime Agency's reporting process.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Cash handling should be a matter of professional pride, not resentment. Recognise staff who consistently achieve zero-discrepancy counts. Review cash handling procedures quarterly, adapting for any changes in trading patterns or staffing. Consider whether the business would benefit from a cash management service (such as Loomis or G4S) for secure collection and banking if cash volumes are high enough to justify the cost. Evaluate whether to actively reduce cash acceptance — some cafes have moved to card-only or card-preferred, which eliminates cash handling risk entirely while potentially alienating some customers. If pursuing this route, communicate clearly and provide sufficient notice. Monitor the overall trend in cash vs card payments and adjust staffing and procedures accordingly. Integrate cash handling compliance into the overall financial control framework alongside B132 (End-of-Day Reconciliation)."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Define the standard float amount and denomination breakdown for each till point",
+        "Implement a float count sheet signed by the opening team member each day",
+        "Establish basic till operation rules: authorised staff only, drawer closed between transactions, large note checks",
+        "Set up a locked drop safe for mid-shift cash drops",
+        "Define bank deposit frequency and ensure cash on premises stays within insurance limits",
+        "Implement end-of-day cash count with a signed cash count sheet"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a comprehensive Cash Handling SOP document",
+        "Train all cash-handling staff on the SOP with signed acknowledgement",
+        "Implement a dual-count policy for end-of-day cash",
+        "Establish a Cash Discrepancy Log with defined tolerance thresholds",
+        "Set up a daily cash tracking spreadsheet and review weekly for patterns",
+        "Create a counterfeit note handling procedure"
+      ],
+      "responsible": "Manager, Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Recognise staff who consistently achieve zero-discrepancy counts",
+        "Review cash handling procedures quarterly",
+        "Evaluate whether a cash management service is cost-effective for the business",
+        "Consider whether to move toward card-only or card-preferred trading",
+        "Monitor cash vs card payment trends and adjust procedures accordingly",
+        "Integrate cash handling into the overall financial control framework"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Cash Handling SOP document",
+    "Float Count Sheet (daily sign-off template)",
+    "Cash Count Sheet for end-of-day reconciliation",
+    "Cash Discrepancy Log and Investigation Template",
+    "Counterfeit Note Handling Procedure"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T131-01",
+        "tool_name": "Float Count Sheet",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "A daily form recording the float denomination breakdown at the start of trade, signed by the team member who counted and verified it. Includes space for notes about any discrepancies or issues."
+      },
+      {
+        "tool_id": "T131-02",
+        "tool_name": "End-of-Day Cash Count Sheet",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "All Staff",
+        "description": "A detailed form for recording the end-of-day cash count by denomination, calculating total cash, subtracting the float, and comparing to POS cash revenue. Signed by the counting staff member."
+      },
+      {
+        "tool_id": "T131-03",
+        "tool_name": "Cash Discrepancy Log",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Manager",
+        "description": "A log recording every cash discrepancy with date, shift, staff on duty, amount over or short, investigation notes, and resolution. Used to identify patterns and take corrective action."
+      },
+      {
+        "tool_id": "T131-04",
+        "tool_name": "Cash Handling SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Comprehensive standard operating procedure covering all aspects of cash management: float preparation, till operation, mid-shift drops, end-of-day counting, safe management, bank deposits, and counterfeit handling."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Float is not counted at the start of the day, making end-of-day reconciliation meaningless because the starting point is unknown",
+    "Cash drops to the safe are skipped during busy periods, leaving excessive cash in the till and increasing theft risk",
+    "Discrepancies are noted but never investigated, sending a signal that cash controls are not taken seriously",
+    "Only one person counts the cash at close, removing the dual-control safeguard against error or dishonesty"
+  ],
+  "kpis": [
+    "Float counted and verified with a signed sheet at the start of every trading day",
+    "Cash discrepancy rate below 0.5% of total cash revenue per month",
+    "All discrepancies above 5 pounds investigated and documented within 24 hours",
+    "Bank deposits made at least twice weekly, with cash on premises never exceeding insurance limits"
+  ],
+  "dependencies": ["B132"],
+  "constraints": [
+    "Requires a secure safe on premises rated for the amount of cash being stored",
+    "Insurance policy limits on cash held on premises and in transit must be checked and respected",
+    "Staff must be briefed that cash handling procedures exist for everyone's protection, not as an expression of distrust"
+  ],
+  "time_load": {
+    "L1": "3 hours (float definition, count sheet setup, basic rules implementation)",
+    "L2": "6 hours (SOP writing, staff training, tracking setup, counterfeit procedure)",
+    "L3": "30 minutes/week (reviewing cash tracking, investigating discrepancies)"
+  },
+  "review_protocol": "Daily float verification and end-of-day cash count. Weekly review of cash tracking spreadsheet for patterns. Monthly discrepancy trend analysis. Quarterly SOP review and compliance check. Annual insurance policy review for cash cover adequacy.",
+  "meta": {
+    "summary_for_humans": "This block establishes secure cash handling procedures from till to bank, including float management, mid-shift drops, end-of-day counting, discrepancy investigation, and counterfeit note handling. It protects the business from loss and creates accountability for every pound.",
+    "implementation_risks": [
+      "Introducing cash controls can feel like an accusation of dishonesty if communicated poorly",
+      "Dual-count procedures require two staff members at close of trade, which may not always be available in small teams",
+      "Cash handling adds time to opening and closing procedures, which staff may resist"
+    ],
+    "notes_for_engine": "Activate when signals indicate unexplained cash shortages, when there is no formal cash handling procedure in place, or when the cafe handles significant cash volume without proper controls. This block works in tandem with B132 (End-of-Day Reconciliation). Approach sensitively — cash handling touches on trust and can be emotionally charged.",
+    "tags": ["finance", "cash", "security", "float", "reconciliation", "theft_prevention", "compliance", "audit"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

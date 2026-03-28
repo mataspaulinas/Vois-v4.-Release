@@ -1,0 +1,157 @@
+{
+  "block_id": "B101",
+  "name": "Delivery Workflow Integration",
+  "version": "v1.0",
+  "domain": "D05_operations_workflow",
+  "module": "M05: Service Flow & Peak Management",
+  "state": "enriched",
+  "purpose": "Integrates delivery order fulfilment into the cafe's existing operational workflow so that Deliveroo, Uber Eats, and Just Eat orders are processed smoothly alongside dine-in and takeaway service without cannibalising in-store capacity or creating chaos during peak periods.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Design a delivery order workflow that slots into existing kitchen and bar operations without disruption",
+      "Establish a dedicated delivery staging area where orders are assembled and collected by riders",
+      "Create clear order prioritisation rules balancing delivery, dine-in, and takeaway during peak periods",
+      "Manage delivery tablet alerts and order acceptance so the team is never overwhelmed by simultaneous orders",
+      "Ensure delivery orders maintain the same quality standards as dine-in orders despite the packaging and transit requirements"
+    ],
+    "secondary_objectives": [
+      "Reduce delivery order errors (wrong items, missing items) to below 2% of total delivery orders",
+      "Minimise rider wait time to maintain strong platform ratings and avoid penalties",
+      "Protect dine-in customer experience from being degraded by delivery order volume"
+    ]
+  },
+  "why_this_matters": "Delivery has become a significant revenue channel for UK cafes, with Deliveroo, Uber Eats, and Just Eat collectively processing millions of orders daily. For many independent cafes, delivery now represents 15-30% of total revenue. But adding delivery to a cafe that was designed for dine-in and takeaway creates operational friction that, if unmanaged, damages both channels. The kitchen receives three order streams — dine-in tickets, till-based takeaways, and tablet-based deliveries — with no single system coordinating them. During peak periods, delivery orders stack up while the team prioritises the visible queue of in-store customers, causing delivery times to spike, platform ratings to drop, and commission charges to feel increasingly unjustifiable. Meanwhile, delivery riders cluster near the counter, blocking flow and creating congestion. Food sits waiting for collection, losing quality by the minute. Staff feel overwhelmed because they have no clear protocol for how to balance the competing demands. The solution is not to limit delivery volume but to integrate it properly. This means a designated staging area, a clear priority sequence, controlled order acceptance during peak, and team members who understand their role in the delivery workflow. A well-integrated delivery operation adds revenue without adding chaos. A poorly integrated one drains margin, stresses staff, and degrades the experience for every customer — in-store and delivery alike.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Designate a Delivery Staging Area — a specific counter, shelf, or table where all delivery orders are placed once prepared, clearly separated from the dine-in and takeaway collection points. This area should be near the door or a secondary entrance to minimise rider traffic through the cafe. Label the area clearly and brief all riders on where to collect. Place the delivery platform tablets (Deliveroo, Uber Eats, Just Eat) in a single location visible to the person managing orders — not scattered around the cafe. Assign responsibility for delivery order management to a specific team member during each shift (this can be the same person doing other tasks during quiet periods, but they own the delivery flow). Establish a simple priority rule for peak periods: dine-in orders first, then takeaway, then delivery. This can be adjusted based on the cafe's revenue mix, but having a default prevents arguments and confusion. Week 2: Time the delivery process from order acceptance to rider collection. Identify where delays occur: is it in preparation (kitchen or bar), assembly (putting the order together with correct packaging), or staging (order sitting waiting for the rider)? Address the largest delay first. Set a target: all delivery orders prepared and staged within 12 minutes of acceptance.",
+    "L2": "SYSTEM BUILD (2-8 weeks). Create a Delivery Order SOP covering: how to accept orders on each platform, how to communicate delivery orders to the kitchen/bar (printed ticket vs verbal), how to assemble and package orders (linking to B102 Delivery Packaging Standards), how to manage rider collection, and how to handle order issues (missing items, customer complaints through the platform). Implement order throttling during extreme peak periods — all major delivery platforms allow cafes to increase prep time or pause ordering temporarily. Define the triggers for throttling: 'If the in-store queue exceeds 8 people, increase delivery prep time to 25 minutes. If it exceeds 12, pause delivery for 15 minutes.' Train the team to use these tools proactively rather than drowning under orders. Introduce a delivery order tracking system — even a simple whiteboard listing current delivery orders, their status, and expected collection time — so the whole team has visibility. Track delivery performance metrics weekly: order accuracy, average prep time, rider wait time, platform ratings, and delivery revenue as a percentage of total.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Delivery should be a fully integrated revenue channel, not an afterthought. Optimise the delivery menu separately from the dine-in menu — not all items travel well, and the delivery menu should feature items that maintain quality through packaging and transit (see B102). Negotiate platform commission rates based on volume data — cafes doing 50+ orders per week on a single platform have leverage to negotiate reduced commission. Explore direct ordering (via the cafe's own website or app) to capture delivery revenue without platform commissions. Analyse delivery profitability per item — some items may generate revenue but zero profit after commission and packaging costs. Use delivery data to identify new customer acquisition: how many delivery customers have never visited the physical cafe, and what would convert them? Review the delivery workflow quarterly, adjusting for seasonal demand, menu changes, and platform policy updates."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Designate a delivery staging area near the door, clearly labelled and separate from dine-in collection",
+        "Consolidate all delivery platform tablets in a single visible location",
+        "Assign delivery order ownership to a specific team member per shift",
+        "Establish a default priority sequence: dine-in, takeaway, delivery during peak",
+        "Brief riders on the designated staging area and collection process",
+        "Time the delivery process end-to-end and identify the primary delay point",
+        "Set a target of 12 minutes from order acceptance to staged and ready"
+      ],
+      "responsible": "Cafe Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Create a Delivery Order SOP covering acceptance, communication, assembly, and issue handling",
+        "Implement order throttling triggers for extreme peak periods",
+        "Create a delivery order tracking system (whiteboard or digital)",
+        "Train team on platform tools for adjusting prep time and pausing orders",
+        "Track weekly delivery metrics: accuracy, prep time, rider wait, platform ratings",
+        "Link delivery workflow to packaging standards (B102)",
+        "Develop a process for handling delivery order complaints and refunds"
+      ],
+      "responsible": "Manager, Shift Lead"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Optimise the delivery menu separately from the dine-in menu for travel suitability",
+        "Negotiate platform commission rates based on volume data",
+        "Explore direct ordering channels to reduce commission dependency",
+        "Analyse delivery profitability per item including commission and packaging costs",
+        "Review the delivery workflow quarterly for seasonal and platform changes"
+      ],
+      "responsible": "Owner, Manager"
+    }
+  },
+  "deliverables": [
+    "Delivery Staging Area setup and signage",
+    "Delivery Order SOP document",
+    "Peak Period Throttling Protocol",
+    "Weekly Delivery Performance Metrics report",
+    "Delivery Menu Optimisation analysis"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T101-01",
+        "tool_name": "Delivery Order Workflow SOP",
+        "level": "L2",
+        "format": "SOP",
+        "owner_role": "Manager",
+        "description": "Standard Operating Procedure covering the full delivery order lifecycle: tablet management, order acceptance, kitchen/bar communication, packaging, staging, rider collection, and complaint handling."
+      },
+      {
+        "tool_id": "T101-02",
+        "tool_name": "Delivery Order Tracking Board",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Shift Lead",
+        "description": "Simple whiteboard or digital display listing all active delivery orders with order number, platform, items, status (preparing/ready/collected), and expected rider arrival time."
+      },
+      {
+        "tool_id": "T101-03",
+        "tool_name": "Peak Period Throttling Protocol",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Shift Lead",
+        "description": "Quick-reference card defining when and how to adjust delivery prep times or pause delivery platforms based on in-store queue length and kitchen capacity."
+      },
+      {
+        "tool_id": "T101-04",
+        "tool_name": "Delivery Performance Dashboard",
+        "level": "L3",
+        "format": "dashboard",
+        "owner_role": "Owner",
+        "description": "Weekly dashboard tracking delivery order accuracy, average prep time, rider wait time, platform ratings, commission costs, and delivery revenue as a percentage of total turnover."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Delivery orders are accepted during peak without throttling, overwhelming the kitchen and degrading dine-in service quality",
+    "No designated staging area means delivery orders sit on the counter alongside dine-in orders, causing mix-ups and congestion",
+    "Riders are not briefed on the collection process and wander through the cafe looking for their order, disrupting customers",
+    "Platform ratings drop due to slow prep times, triggering reduced visibility and lower order volumes in a downward spiral"
+  ],
+  "kpis": [
+    "Delivery order accuracy above 98% (correct items, correct quantities)",
+    "Average delivery order prep time under 12 minutes from acceptance to staged",
+    "Rider wait time at staging area under 3 minutes on average",
+    "Platform ratings maintained at 4.5 or above across all delivery partners"
+  ],
+  "dependencies": ["B102"],
+  "constraints": [
+    "Platform commission rates (typically 25-35%) must be factored into delivery menu pricing to maintain margins",
+    "Delivery staging area must not obstruct fire exits, customer flow, or accessibility routes",
+    "Delivery order throttling during peak must be agreed with platform account managers to avoid penalties"
+  ],
+  "time_load": {
+    "L1": "2 hours (staging area setup, tablet consolidation, staff briefing)",
+    "L2": "4 hours (SOP creation, throttling protocol, tracking system, team training)",
+    "L3": "2 hours/month (performance review, menu optimisation, commission negotiation)"
+  },
+  "review_protocol": "Daily delivery order accuracy check by shift lead. Weekly delivery performance metrics review by manager. Monthly delivery revenue and profitability review. Quarterly delivery workflow and platform relationship review.",
+  "meta": {
+    "summary_for_humans": "This block integrates delivery order fulfilment (Deliveroo, Uber Eats, Just Eat) into the cafe's workflow with a dedicated staging area, clear priority rules, throttling protocols for peak periods, and performance tracking. It prevents delivery from cannibalising dine-in quality while capturing significant incremental revenue.",
+    "implementation_risks": [
+      "Platform commission rates can erode margins if delivery menu pricing does not account for them",
+      "Staff may resent delivery orders as 'extra work' if the workflow is not properly integrated and delivery is not positioned as a valuable revenue stream",
+      "Pausing deliveries during peak may harm platform rankings — negotiate with platform managers before implementing"
+    ],
+    "notes_for_engine": "Activate alongside B102 (Delivery Packaging Standards) as a pair. Flag as urgent if signals indicate poor platform ratings, high delivery complaint rates, or delivery orders disrupting in-store service quality.",
+    "tags": ["operations", "delivery", "Deliveroo", "Uber_Eats", "Just_Eat", "workflow", "peak_management", "platform_management"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "block_id": "B149",
+  "name": "Seating Layout Optimisation",
+  "version": "v1.0",
+  "domain": "D09_physical_environment",
+  "module": "M09: Cafe Design & Atmosphere",
+  "state": "enriched",
+  "purpose": "Optimises the cafe's seating layout to maximise both revenue capacity and customer comfort, ensuring the space works hard for the business while creating an environment where customers want to linger, return, and spend. This block treats seating as a strategic asset that directly affects revenue per square foot.",
+  "purpose_extended": {
+    "detailed_objectives": [
+      "Analyse the current seating layout against customer behaviour patterns: who sits where, for how long, and at what times",
+      "Optimise covers (total seats available) without creating a cramped or uncomfortable environment",
+      "Design seating zones that serve different customer needs: quick coffee, laptop working, social groups, and lingering couples",
+      "Ensure seating layout supports efficient service flow: staff can reach all tables, clear efficiently, and deliver without obstacles",
+      "Calculate and improve revenue per seat and revenue per square foot as key performance metrics"
+    ],
+    "secondary_objectives": [
+      "Create a layout that flexes for different trading periods: morning commuters need quick perching spots, afternoon workers need plug access, weekend groups need pushed-together tables",
+      "Ensure compliance with accessibility requirements including wheelchair access to all seating areas",
+      "Evaluate outdoor seating potential and, where possible, add or optimise it for seasonal revenue",
+      "Design furniture selection to match the brand identity while being durable, comfortable, and commercially appropriate"
+    ]
+  },
+  "why_this_matters": "Seating capacity directly determines a cafe's revenue ceiling. A cafe with 30 seats that turns each seat 3 times per day at an average spend of 8 pounds generates 720 pounds. The same cafe with an optimised layout of 36 seats generating the same turnover and spend achieves 864 pounds — a 20% increase — with no additional staff, no marketing, and no new products. This is pure layout value. But maximising seats at the expense of comfort is counterproductive. Cramming in extra chairs creates an unpleasant environment where customers feel crowded, visit less frequently, and stay for shorter periods. The skill is in optimising — finding the sweet spot where the cafe has enough seats to meet demand during peak periods without sacrificing the atmosphere that makes customers choose this cafe over a competitor. Customer needs vary dramatically by time of day and type. A 7:30am commuter wants a stool at the window with their takeaway within reach — they are gone in 10 minutes. A 10am remote worker wants a table with a power socket and room for a laptop — they may stay 3 hours. A Saturday brunch group of four wants a table they can all face each other around — they will stay 90 minutes and spend 50 pounds. An optimised layout serves all these needs without any single use case dominating. Accessibility is both a legal requirement and good business practice. The Equality Act 2010 requires reasonable adjustments for disabled customers, including wheelchair-accessible routes and seating. Beyond compliance, accessible cafes serve a wider customer base.",
+  "application_logic": {
+    "L1": "IMMEDIATE (0-2 weeks). Week 1: Count and map the current layout. Draw a simple floor plan showing every table, chair, sofa, bench, stool, and counter seat. Note the number of covers (total seats), the types of seating (tables for 2, tables for 4, bar stools, sofas), and the spacing between tables. Observe customer behaviour during three different trading periods: morning rush, midday, and afternoon. Note which seats fill first (these are the most desirable), which seats are consistently empty (these have a problem — poor location, uncomfortable, or awkward access), and where bottlenecks occur (doorways, counter area, toilet queue). Week 2: Make low-cost adjustments based on the observations. If certain tables are always avoided, investigate why — is it too close to the toilet, in a draught, or facing a wall? Moving a table 30 centimetres or changing its orientation can transform its desirability. If groups are regularly rearranging furniture to sit together, consider whether permanent grouped seating would serve better. If single customers are occupying 4-seat tables during busy periods, add more 2-tops or counter seating for solo visitors. Ensure there is at least one wheelchair-accessible route from the entrance to a seating area and that accessible seating is not in an undesirable location (by the door, next to the toilet, hidden in a corner).",
+    "L2": "SYSTEM BUILD (2-8 weeks). Calculate revenue per seat by dividing daily revenue by the number of available seats. Track this metric weekly — it reveals whether the seating layout is working hard enough. If revenue per seat is low, the issue is either too many seats for the demand or poor table turnover. Calculate revenue per square foot by dividing annual revenue by the total customer floor area (excluding kitchen, storage, and staff areas). UK cafe industry benchmarks suggest 500-800 pounds per square foot per year for a well-performing independent cafe — significantly below this suggests the space is underutilised. Design distinct seating zones with different characteristics: a quick-service zone near the counter with high stools for takeaway customers who stay briefly, a working zone with power sockets and comfortable chairs for laptop users, a social zone with larger tables and bench seating for groups, and if space allows, a cosy zone with sofas or armchairs for those who want to linger. Each zone serves a different customer need and contributes to revenue differently. Review furniture for durability, comfort, and brand alignment. Cafe furniture takes enormous punishment — choose commercial-grade seating that withstands daily heavy use. Stack-able chairs provide flexibility for events. Bench seating maximises covers along walls. Consider outdoor seating if the premises allow it: even 4-6 outdoor covers can increase capacity by 10-15% during warmer months and create kerb appeal. Check with the local council regarding pavement licences.",
+    "L3": "CULTURE & EXCELLENCE (8+ weeks). Seating layout should be reviewed seasonally and adjusted based on trading data. Summer layouts may prioritise outdoor seating and lighter, more open arrangements. Winter layouts may cluster seating for warmth and cosiness. Monitor table turnover rates during peak periods: if there are frequently empty seats during busy times, the layout may need adjustment. If there is always a queue while seats are occupied by lingering laptop users, consider strategies for managing dwell time (limiting Wi-Fi during peaks, offering takeaway incentives). Develop a furniture replacement plan so that worn, broken, or brand-inappropriate furniture is replaced proactively rather than when it becomes embarrassing. Budget for furniture as an ongoing operational cost, not a one-off capital expense. Track the relationship between layout changes and revenue: does adding the outdoor seats in May generate a measurable revenue increase? Does reconfiguring the back area for group bookings improve weekend turnover? Use data to justify future investments. Consider investing in a professional interior designer for a layout review — a one-off consultation (300-600 pounds) can identify improvements that a cafe owner, too close to the daily operation, would never see."
+  },
+  "execution_framework": {
+    "L1_setup": {
+      "title": "Immediate Actions",
+      "actions": [
+        "Draw a floor plan mapping every seat, table, and seating type",
+        "Count total covers and note the seating type mix (2-tops, 4-tops, stools, sofas)",
+        "Observe customer behaviour during morning, midday, and afternoon and note patterns",
+        "Identify consistently empty or avoided seats and investigate the reasons",
+        "Make low-cost adjustments: move, reorient, or replace problem seating",
+        "Verify at least one wheelchair-accessible route to desirable seating"
+      ],
+      "responsible": "Owner, Manager"
+    },
+    "L2_build": {
+      "title": "System Development",
+      "actions": [
+        "Calculate revenue per seat and revenue per square foot as baseline metrics",
+        "Design distinct seating zones for different customer types and needs",
+        "Review furniture for durability, comfort, and brand alignment",
+        "Evaluate outdoor seating potential and check local council licensing requirements",
+        "Install power sockets in the working zone if not already available",
+        "Create a furniture condition log tracking wear and replacement needs"
+      ],
+      "responsible": "Owner"
+    },
+    "L3_embed": {
+      "title": "Culture Embedding",
+      "actions": [
+        "Review seating layout seasonally and adjust based on trading data",
+        "Monitor table turnover rates during peaks and develop dwell time management strategies",
+        "Budget for ongoing furniture replacement as an operational cost",
+        "Track the revenue impact of layout changes to justify future investments",
+        "Consider a professional interior designer consultation for layout optimisation",
+        "Coordinate layout changes with seasonal marketing and menu adjustments"
+      ],
+      "responsible": "Owner"
+    }
+  },
+  "deliverables": [
+    "Floor Plan with seating map and cover count",
+    "Customer Behaviour Observation Report",
+    "Revenue Per Seat and Revenue Per Square Foot Calculator",
+    "Seating Zone Design Plan",
+    "Furniture Condition and Replacement Log"
+  ],
+  "embedded_tools": [],
+  "tool_definitions": {
+    "tools": [
+      {
+        "tool_id": "T149-01",
+        "tool_name": "Seating Layout Floor Plan Template",
+        "level": "L1",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A template for drawing the cafe floor plan showing all seating, tables, counter, service areas, and customer flow paths. Includes a cover count calculator and seating type breakdown."
+      },
+      {
+        "tool_id": "T149-02",
+        "tool_name": "Customer Behaviour Observation Guide",
+        "level": "L1",
+        "format": "checklist",
+        "owner_role": "Manager",
+        "description": "A structured observation guide for recording how customers use the space during different trading periods: which seats fill first, which are avoided, where bottlenecks occur, and how groups arrange themselves."
+      },
+      {
+        "tool_id": "T149-03",
+        "tool_name": "Revenue Per Seat Calculator",
+        "level": "L2",
+        "format": "tracker",
+        "owner_role": "Owner",
+        "description": "A weekly calculator dividing daily revenue by available covers to determine revenue per seat. Tracks this metric over time and benchmarks against industry averages and the cafe's own target."
+      },
+      {
+        "tool_id": "T149-04",
+        "tool_name": "Seating Zone Design Worksheet",
+        "level": "L2",
+        "format": "template",
+        "owner_role": "Owner",
+        "description": "A planning worksheet for designing distinct seating zones within the cafe, specifying the purpose of each zone, furniture type, power access, target customer, expected dwell time, and contribution to overall capacity."
+      }
+    ]
+  },
+  "failure_modes": [
+    "Seating is maximised for capacity at the expense of comfort, creating a cramped environment that deters repeat visits",
+    "The layout never changes despite changing customer patterns, because furniture is heavy and staff do not see layout as their concern",
+    "Outdoor seating is added without proper furniture, shelter, or maintenance, creating a shabby impression",
+    "Solo laptop users occupy 4-seat tables during peak Saturday brunch, blocking group revenue, with no management strategy to address it"
+  ],
+  "kpis": [
+    "Revenue per seat tracked weekly and trending upward or stable",
+    "Seating layout reviewed and adjusted at least seasonally (4 times per year)",
+    "No consistently empty or avoided seats remaining after optimisation",
+    "Accessibility compliance confirmed with at least one wheelchair-accessible seating route"
+  ],
+  "dependencies": ["B098"],
+  "constraints": [
+    "Structural elements (pillars, stairs, fixed counters) limit layout flexibility",
+    "Fire safety regulations dictate minimum aisle widths and maximum occupancy",
+    "Landlord consent may be needed for structural changes or outdoor seating installation"
+  ],
+  "time_load": {
+    "L1": "4 hours (floor plan, observation, initial adjustments)",
+    "L2": "6 hours (zone design, furniture review, outdoor evaluation, metrics setup)",
+    "L3": "2 hours/quarter (seasonal review, data analysis, furniture assessment)"
+  },
+  "review_protocol": "Weekly revenue per seat tracking. Monthly check for avoided seats and customer flow issues. Seasonal layout review and adjustment. Annual furniture condition assessment and replacement planning.",
+  "meta": {
+    "summary_for_humans": "This block optimises the cafe's seating layout to maximise revenue capacity while maintaining customer comfort. It covers layout mapping, customer behaviour observation, revenue per seat analysis, seating zone design, and seasonal layout adjustments.",
+    "implementation_risks": [
+      "Layout changes can be disruptive and may confuse regular customers who have favourite spots",
+      "Adding outdoor seating involves council permissions, furniture cost, and ongoing maintenance",
+      "The optimal layout may conflict with the owner's personal aesthetic preferences"
+    ],
+    "notes_for_engine": "Activate when signals indicate poor space utilisation, regular queuing despite empty seats, customer complaints about seating comfort or availability, or when the cafe is planning a refurbishment. Connects to B098 (customer experience layout) and feeds into revenue targets (B123). Particularly valuable for cafes in expensive locations where every square foot must justify its rent.",
+    "tags": ["environment", "seating", "layout", "capacity", "revenue_per_seat", "accessibility", "zones", "furniture"]
+  },
+  "applicability": {
+    "venue_types": ["independent_cafe", "specialty_coffee", "chain_cafe", "franchise_cafe", "drive_through", "kiosk", "coffee_van", "bakery_cafe"],
+    "team_size_min": 1,
+    "team_size_max": 99
+  },
+  "enrichment_status": {
+    "level": "gold",
+    "enriched_at": "2026-03-04T12:00:00Z",
+    "enriched_by": "claude_direct_v2",
+    "source_quality": "ai_generated"
+  }
+}

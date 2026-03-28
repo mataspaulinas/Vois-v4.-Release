@@ -1,0 +1,22 @@
+{
+  "name": "LOIE Pocket",
+  "short_name": "Pocket",
+  "description": "Your shift companion — tasks, standards, and help at your fingertips.",
+  "start_url": "/#/pocket",
+  "display": "standalone",
+  "background_color": "#FAFAF8",
+  "theme_color": "#FF6B5A",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

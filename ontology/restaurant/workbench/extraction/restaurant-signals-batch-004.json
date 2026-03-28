@@ -1,0 +1,375 @@
+{
+  "vertical": "restaurant",
+  "signals": [
+    {
+      "id": "sig_work_intake_not_prioritized",
+      "name": "Work intake is not prioritized in flow",
+      "description": "Tickets, guest asks, and exception work enter the operation without a clear priority rule, so the team fights over what matters first.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: intake and demand priority failure expressed through restaurant live flow",
+      "status": "review",
+      "domain": "kitchen_operations",
+      "module": "production_flow",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "tickets worked in the wrong order",
+        "urgent work mixed with routine work without triage",
+        "team members disagree on what should move first"
+      ],
+      "source_types": [
+        "service observation",
+        "manager notes",
+        "post-shift review"
+      ],
+      "temporal_behavior": "throughput-sensitive",
+      "likely_co_signals": [
+        "sig_ticket_bottleneck",
+        "sig_service_delay"
+      ],
+      "adapter_aliases": [
+        "priority fight on shift",
+        "work enters without order"
+      ]
+    },
+    {
+      "id": "sig_scope_or_offer_misaligned",
+      "name": "Scope or offer is misaligned to execution reality",
+      "description": "The live offer asks the team to deliver more complexity, variation, or customization than the current operation can execute reliably.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: scope or offer misalignment expressed through restaurant menu and service complexity",
+      "status": "review",
+      "domain": "service_delivery",
+      "module": "production_flow",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "offer complexity slows the core flow",
+        "modifier load overwhelms the line or bar",
+        "low-frequency items repeatedly disrupt execution"
+      ],
+      "source_types": [
+        "service observation",
+        "menu review",
+        "manager notes"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_ticket_bottleneck",
+        "sig_output_quality_inconsistent"
+      ],
+      "adapter_aliases": [
+        "menu scope too heavy",
+        "offer outpaces execution"
+      ]
+    },
+    {
+      "id": "sig_customer_expectation_surprise",
+      "name": "Guest expectation surprise appears in service",
+      "description": "Guests react as though the venue's timing, offer, or service experience is materially different from what they expected coming in.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: customer expectation surprise expressed through restaurant guest reactions",
+      "status": "review",
+      "domain": "guest_experience",
+      "module": "host_flow",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "guest says this is not what they expected",
+        "surprise about wait, offer, or service conditions",
+        "promise and actual experience visibly diverge"
+      ],
+      "source_types": [
+        "guest complaint",
+        "service observation",
+        "manager notes"
+      ],
+      "temporal_behavior": "event-driven",
+      "likely_co_signals": [
+        "sig_promised_time_missed",
+        "sig_guest_complaints"
+      ],
+      "adapter_aliases": [
+        "guests were surprised",
+        "expectation mismatch at the table"
+      ]
+    },
+    {
+      "id": "sig_opening_or_reset_incomplete",
+      "name": "Opening or reset is incomplete",
+      "description": "A venue reset starts, but key steps remain half-done, leaving the next service window exposed to avoidable misses.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: opening or reset incomplete expressed through restaurant open-close discipline",
+      "status": "review",
+      "domain": "operations",
+      "module": "open_close_controls",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "reset begins but is not closed cleanly",
+        "stations reopen half-restocked or half-checked",
+        "handoff into the next period happens with unfinished basics"
+      ],
+      "source_types": [
+        "opening review",
+        "closing review",
+        "manager notes"
+      ],
+      "temporal_behavior": "shift-bound",
+      "likely_co_signals": [
+        "sig_opening_checklist_drift",
+        "sig_closing_reset_failures"
+      ],
+      "adapter_aliases": [
+        "reset left half-done",
+        "open-close incomplete"
+      ]
+    },
+    {
+      "id": "sig_checker_or_qc_absent",
+      "name": "Checker or QC step is absent",
+      "description": "No one is visibly checking quality, completeness, or readiness before work reaches the guest or the next role.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: quality-check absence expressed through restaurant live execution",
+      "status": "review",
+      "domain": "service_quality",
+      "module": "standard_execution",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "no final check before handoff or send",
+        "quality escapes because nobody checks",
+        "readiness or completeness left to chance"
+      ],
+      "source_types": [
+        "service observation",
+        "quality observation",
+        "manager notes"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_output_quality_inconsistent",
+        "sig_standard_steps_skipped"
+      ],
+      "adapter_aliases": [
+        "no QC step",
+        "nobody checks before send"
+      ]
+    },
+    {
+      "id": "sig_exception_repeats_without_containment",
+      "name": "Exception repeats without containment",
+      "description": "A known exception keeps happening again without the venue putting in a temporary containment rule or a stable correction.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: exception repeating without containment expressed through restaurant issue handling",
+      "status": "review",
+      "domain": "service_delivery",
+      "module": "service_recovery",
+      "indicator_type": "lagging",
+      "evidence_types": [
+        "same breakdown repeats within days",
+        "known issue returns with no temporary guardrail",
+        "recurring exception treated as isolated every time"
+      ],
+      "source_types": [
+        "manager notes",
+        "post-shift review",
+        "incident log"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_issue_resolution_slow_or_unclear",
+        "sig_problem_discussed_not_closed"
+      ],
+      "adapter_aliases": [
+        "repeat exception with no containment",
+        "known problem keeps returning"
+      ]
+    },
+    {
+      "id": "sig_stock_or_input_inaccuracy",
+      "name": "Stock or input information is inaccurate",
+      "description": "The count, availability, or readiness information the team is using does not match reality closely enough to make clean decisions.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: stock or input inaccuracy expressed through restaurant availability and count control",
+      "status": "review",
+      "domain": "financial_controls",
+      "module": "inventory_accuracy",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "recorded stock does not match actual stock",
+        "team relies on availability information that proves wrong",
+        "count-based decisions fail because the inputs are inaccurate"
+      ],
+      "source_types": [
+        "count review",
+        "manager notes",
+        "service observation"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_86_surprise",
+        "sig_count_variance"
+      ],
+      "adapter_aliases": [
+        "inventory reality mismatch",
+        "bad input data on shift"
+      ]
+    },
+    {
+      "id": "sig_problem_discussed_not_closed",
+      "name": "Problem is discussed but not closed",
+      "description": "The venue talks about a recurring problem, but nobody assigns ownership, closes the action, or verifies the fix afterward.",
+      "owner": "execution-program",
+      "source_ref": "universal-signal-gold-set-01: problem discussed but not closed expressed through restaurant follow-through failure",
+      "status": "review",
+      "domain": "leadership",
+      "module": "management_follow_through",
+      "indicator_type": "leading",
+      "evidence_types": [
+        "same issue appears in repeated conversations",
+        "action named without an owner or closeout",
+        "review happens but closure and verification do not"
+      ],
+      "source_types": [
+        "manager notes",
+        "post-shift review",
+        "team huddle"
+      ],
+      "temporal_behavior": "recurring",
+      "likely_co_signals": [
+        "sig_follow_through_missing",
+        "sig_no_postmortem_after_breakdown"
+      ],
+      "adapter_aliases": [
+        "talked about but not closed",
+        "same problem keeps coming back"
+      ]
+    }
+  ],
+  "signal_failure_map": [
+    {
+      "source_id": "sig_work_intake_not_prioritized",
+      "target_id": "fm_undefined_workflow",
+      "weight": 0.91,
+      "owner": "execution-program",
+      "source_ref": "incoming restaurant work with no clear priority rule is a direct workflow-design failure signal",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_work_intake_not_prioritized",
+      "target_id": "fm_role_ownership_blur",
+      "weight": 0.68,
+      "owner": "execution-program",
+      "source_ref": "priority fights also show that role boundaries around triage and ownership are blurred",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_scope_or_offer_misaligned",
+      "target_id": "fm_menu_complexity",
+      "weight": 0.94,
+      "owner": "execution-program",
+      "source_ref": "offer scope that outpaces execution reality is the live operating signature of menu complexity",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_scope_or_offer_misaligned",
+      "target_id": "fm_undefined_workflow",
+      "weight": 0.67,
+      "owner": "execution-program",
+      "source_ref": "when scope and flow do not fit, workflow design usually fails alongside offer complexity",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_customer_expectation_surprise",
+      "target_id": "fm_host_flow_breakdown",
+      "weight": 0.82,
+      "owner": "execution-program",
+      "source_ref": "guest surprise around timing and conditions often starts with broken promise-setting in the host flow",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_customer_expectation_surprise",
+      "target_id": "fm_guest_recovery_breakdown",
+      "weight": 0.71,
+      "owner": "execution-program",
+      "source_ref": "once the expectation gap is visible, the recovery path has to absorb it or the issue escalates",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_opening_or_reset_incomplete",
+      "target_id": "fm_open_close_control_gap",
+      "weight": 0.93,
+      "owner": "execution-program",
+      "source_ref": "an incomplete opening or reset is a direct restaurant open-close control failure",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_opening_or_reset_incomplete",
+      "target_id": "fm_shift_readiness_gap",
+      "weight": 0.74,
+      "owner": "execution-program",
+      "source_ref": "half-finished resets also leave the next shift underprepared in practice",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_checker_or_qc_absent",
+      "target_id": "fm_service_standard_drift",
+      "weight": 0.89,
+      "owner": "execution-program",
+      "source_ref": "when nobody checks the work before send, standards drift becomes inevitable",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_checker_or_qc_absent",
+      "target_id": "fm_controls_gap",
+      "weight": 0.73,
+      "owner": "execution-program",
+      "source_ref": "missing QC is also a practical control-loop failure because the venue is not catching avoidable misses",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_exception_repeats_without_containment",
+      "target_id": "fm_learning_loop_absence",
+      "weight": 0.86,
+      "owner": "execution-program",
+      "source_ref": "repeat exceptions with no containment show that the operation is not learning fast enough from known pain",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_exception_repeats_without_containment",
+      "target_id": "fm_guest_recovery_breakdown",
+      "weight": 0.72,
+      "owner": "execution-program",
+      "source_ref": "when the same guest-facing issue repeats, the recovery system is also failing to absorb and stabilize it",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_stock_or_input_inaccuracy",
+      "target_id": "fm_inventory_accuracy_gap",
+      "weight": 0.94,
+      "owner": "execution-program",
+      "source_ref": "incorrect stock or readiness information is the clearest direct signal of inventory accuracy failure",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_stock_or_input_inaccuracy",
+      "target_id": "fm_controls_gap",
+      "weight": 0.78,
+      "owner": "execution-program",
+      "source_ref": "bad inputs also point to a wider control-loop gap because decisions are being made off the wrong picture",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_problem_discussed_not_closed",
+      "target_id": "fm_learning_loop_absence",
+      "weight": 0.89,
+      "owner": "execution-program",
+      "source_ref": "a problem that keeps getting discussed without closure is a direct signal of a missing learning loop",
+      "status": "review"
+    },
+    {
+      "source_id": "sig_problem_discussed_not_closed",
+      "target_id": "fm_manager_presence_gap",
+      "weight": 0.67,
+      "owner": "execution-program",
+      "source_ref": "closure failures also reveal weak managerial ownership of follow-through",
+      "status": "review"
+    }
+  ]
+}

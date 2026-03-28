@@ -1,0 +1,4847 @@
+{
+  "L1_tasks": [
+    {
+      "task_id": "L1_001",
+      "item_id": "B081",
+      "item_type": "block",
+      "title": "Owner Role Clarity & Delegation",
+      "source_rp": "RP023",
+      "rp_name": "Owner Role & Leadership Development",
+      "module_id": "M13",
+      "timeline": "Days 1–30",
+      "priority": "critical",
+      "description": "If you are the owner and you are working every shift making every decision and handling every problem you are the bottleneck. Block out two hours of protected management time this week — away from the bar away from customers — for planning and strategic thinking. Identify the three tasks you do that someone else could be trained to do and start delegating them.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP023",
+        "rp_name": "Owner Role & Leadership Development",
+        "failure_modes": [
+          {
+            "fm_id": "FM037",
+            "fm_title": "Owner overwork and delegation failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_002",
+      "item_id": "B082",
+      "item_type": "block",
+      "title": "Protected Management Time",
+      "source_rp": "RP023",
+      "rp_name": "Owner Role & Leadership Development",
+      "module_id": "M13",
+      "timeline": "Days 1–30",
+      "priority": "critical",
+      "description": "If you are the owner and you are working every shift making every decision and handling every problem you are the bottleneck. Block out two hours of protected management time this week — away from the bar away from customers — for planning and strategic thinking. Identify the three tasks you do that someone else could be trained to do and start delegating them.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP023",
+        "rp_name": "Owner Role & Leadership Development",
+        "failure_modes": [
+          {
+            "fm_id": "FM037",
+            "fm_title": "Owner overwork and delegation failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_003",
+      "item_id": "B083",
+      "item_type": "block",
+      "title": "Leadership Development",
+      "source_rp": "RP023",
+      "rp_name": "Owner Role & Leadership Development",
+      "module_id": "M13",
+      "timeline": "Days 1–30",
+      "priority": "critical",
+      "description": "If you are the owner and you are working every shift making every decision and handling every problem you are the bottleneck. Block out two hours of protected management time this week — away from the bar away from customers — for planning and strategic thinking. Identify the three tasks you do that someone else could be trained to do and start delegating them.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP023",
+        "rp_name": "Owner Role & Leadership Development",
+        "failure_modes": [
+          {
+            "fm_id": "FM037",
+            "fm_title": "Owner overwork and delegation failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_004",
+      "item_id": "B077",
+      "item_type": "block",
+      "title": "Key Person Risk Assessment",
+      "source_rp": "RP022",
+      "rp_name": "Key Person Risk & Cross-Training",
+      "module_id": "M04",
+      "timeline": "Days 1–30",
+      "priority": "critical",
+      "description": "Identify your key person dependencies today. Who is the only person who can do the banking the ordering the espresso machine maintenance or the rota? What happens if they are ill for two weeks or resign? If the answer is chaos you have a critical vulnerability. Start documenting their knowledge this week.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP022",
+        "rp_name": "Key Person Risk & Cross-Training",
+        "failure_modes": [
+          {
+            "fm_id": "FM034",
+            "fm_title": "Key person dependency and cover failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_005",
+      "item_id": "B078",
+      "item_type": "block",
+      "title": "Cross-Training Programme",
+      "source_rp": "RP022",
+      "rp_name": "Key Person Risk & Cross-Training",
+      "module_id": "M04",
+      "timeline": "Days 1–30",
+      "priority": "critical",
+      "description": "Identify your key person dependencies today. Who is the only person who can do the banking the ordering the espresso machine maintenance or the rota? What happens if they are ill for two weeks or resign? If the answer is chaos you have a critical vulnerability. Start documenting their knowledge this week.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP022",
+        "rp_name": "Key Person Risk & Cross-Training",
+        "failure_modes": [
+          {
+            "fm_id": "FM034",
+            "fm_title": "Key person dependency and cover failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_006",
+      "item_id": "B079",
+      "item_type": "block",
+      "title": "Absence Cover Protocol",
+      "source_rp": "RP022",
+      "rp_name": "Key Person Risk & Cross-Training",
+      "module_id": "M04",
+      "timeline": "Days 1–30",
+      "priority": "critical",
+      "description": "Identify your key person dependencies today. Who is the only person who can do the banking the ordering the espresso machine maintenance or the rota? What happens if they are ill for two weeks or resign? If the answer is chaos you have a critical vulnerability. Start documenting their knowledge this week.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP022",
+        "rp_name": "Key Person Risk & Cross-Training",
+        "failure_modes": [
+          {
+            "fm_id": "FM034",
+            "fm_title": "Key person dependency and cover failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_007",
+      "item_id": "B063",
+      "item_type": "block",
+      "title": "Exit Interview & Turnover Analysis",
+      "source_rp": "RP018",
+      "rp_name": "Staff Retention & Engagement",
+      "module_id": "M04",
+      "timeline": "Days 1–30",
+      "priority": "critical",
+      "description": "Check your staff turnover rate for the past 12 months. If you have lost more than 30% of your team something is systemically wrong. Conduct informal one-to-one conversations with every team member this week to understand their satisfaction engagement and concerns. Identify your flight risks — who is most likely to leave next and why?",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP018",
+        "rp_name": "Staff Retention & Engagement",
+        "failure_modes": [
+          {
+            "fm_id": "FM036",
+            "fm_title": "Team morale and wellbeing failure"
+          }
+        ],
+        "signal_ids": [
+          "S056"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_008",
+      "item_id": "B064",
+      "item_type": "block",
+      "title": "Retention Strategy & Engagement Plan",
+      "source_rp": "RP018",
+      "rp_name": "Staff Retention & Engagement",
+      "module_id": "M04",
+      "timeline": "Days 1–30",
+      "priority": "critical",
+      "description": "Check your staff turnover rate for the past 12 months. If you have lost more than 30% of your team something is systemically wrong. Conduct informal one-to-one conversations with every team member this week to understand their satisfaction engagement and concerns. Identify your flight risks — who is most likely to leave next and why?",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP018",
+        "rp_name": "Staff Retention & Engagement",
+        "failure_modes": [
+          {
+            "fm_id": "FM036",
+            "fm_title": "Team morale and wellbeing failure"
+          }
+        ],
+        "signal_ids": [
+          "S056"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_009",
+      "item_id": "B065",
+      "item_type": "block",
+      "title": "Compensation Benchmarking",
+      "source_rp": "RP018",
+      "rp_name": "Staff Retention & Engagement",
+      "module_id": "M04",
+      "timeline": "Days 1–30",
+      "priority": "critical",
+      "description": "Check your staff turnover rate for the past 12 months. If you have lost more than 30% of your team something is systemically wrong. Conduct informal one-to-one conversations with every team member this week to understand their satisfaction engagement and concerns. Identify your flight risks — who is most likely to leave next and why?",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP018",
+        "rp_name": "Staff Retention & Engagement",
+        "failure_modes": [
+          {
+            "fm_id": "FM036",
+            "fm_title": "Team morale and wellbeing failure"
+          }
+        ],
+        "signal_ids": [
+          "S056"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_010",
+      "item_id": "B085",
+      "item_type": "block",
+      "title": "Peak Staffing Model",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Review your staffing levels against your transaction data for the past four weeks. Are you adequately staffed during peak hours (typically 7-10am and 12-2pm)? If ticket times exceed 5 minutes during peak you are either understaffed or your workflow is broken. Observe your team during the next morning rush and identify every point of delay or confusion.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_011",
+      "item_id": "B086",
+      "item_type": "block",
+      "title": "Morning Rush Workflow",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Review your staffing levels against your transaction data for the past four weeks. Are you adequately staffed during peak hours (typically 7-10am and 12-2pm)? If ticket times exceed 5 minutes during peak you are either understaffed or your workflow is broken. Observe your team during the next morning rush and identify every point of delay or confusion.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_012",
+      "item_id": "B087",
+      "item_type": "block",
+      "title": "Pre-Rush Mise-en-Place",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Review your staffing levels against your transaction data for the past four weeks. Are you adequately staffed during peak hours (typically 7-10am and 12-2pm)? If ticket times exceed 5 minutes during peak you are either understaffed or your workflow is broken. Observe your team during the next morning rush and identify every point of delay or confusion.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_013",
+      "item_id": "B172",
+      "item_type": "block",
+      "title": "Cafe Values Definition",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Can every team member articulate your cafe's values and standards? Ask them today. If responses are vague or inconsistent your values exist in your head but not in your culture. Check whether you have a staff handbook that documents expectations standards and policies. If not the gap between your intentions and your team's understanding is growing daily.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166",
+          "S169"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_014",
+      "item_id": "B173",
+      "item_type": "block",
+      "title": "Staff Handbook & Policies",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Can every team member articulate your cafe's values and standards? Ask them today. If responses are vague or inconsistent your values exist in your head but not in your culture. Check whether you have a staff handbook that documents expectations standards and policies. If not the gap between your intentions and your team's understanding is growing daily.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166",
+          "S169"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_015",
+      "item_id": "B174",
+      "item_type": "block",
+      "title": "Toxic Dynamics Intervention",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Can every team member articulate your cafe's values and standards? Ask them today. If responses are vague or inconsistent your values exist in your head but not in your culture. Check whether you have a staff handbook that documents expectations standards and policies. If not the gap between your intentions and your team's understanding is growing daily.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166",
+          "S169"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_016",
+      "item_id": "B092",
+      "item_type": "block",
+      "title": "Opening Checklist",
+      "source_rp": "RP026",
+      "rp_name": "Daily Routines & Shift Handover",
+      "module_id": "M05",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Do you have written opening and closing checklists? If not create them today covering every task from unlocking the door and switching on equipment to cashing up and setting the alarm. Check whether shift handovers include a structured information transfer — what happened during the shift what needs attention and what is prepared for tomorrow.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP026",
+        "rp_name": "Daily Routines & Shift Handover",
+        "failure_modes": [
+          {
+            "fm_id": "FM039",
+            "fm_title": "Opening and closing routine failure"
+          },
+          {
+            "fm_id": "FM045",
+            "fm_title": "Shift handover and communication failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_017",
+      "item_id": "B093",
+      "item_type": "block",
+      "title": "Closing Checklist",
+      "source_rp": "RP026",
+      "rp_name": "Daily Routines & Shift Handover",
+      "module_id": "M05",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Do you have written opening and closing checklists? If not create them today covering every task from unlocking the door and switching on equipment to cashing up and setting the alarm. Check whether shift handovers include a structured information transfer — what happened during the shift what needs attention and what is prepared for tomorrow.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP026",
+        "rp_name": "Daily Routines & Shift Handover",
+        "failure_modes": [
+          {
+            "fm_id": "FM039",
+            "fm_title": "Opening and closing routine failure"
+          },
+          {
+            "fm_id": "FM045",
+            "fm_title": "Shift handover and communication failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_018",
+      "item_id": "B094",
+      "item_type": "block",
+      "title": "Shift Handover System",
+      "source_rp": "RP026",
+      "rp_name": "Daily Routines & Shift Handover",
+      "module_id": "M05",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Do you have written opening and closing checklists? If not create them today covering every task from unlocking the door and switching on equipment to cashing up and setting the alarm. Check whether shift handovers include a structured information transfer — what happened during the shift what needs attention and what is prepared for tomorrow.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP026",
+        "rp_name": "Daily Routines & Shift Handover",
+        "failure_modes": [
+          {
+            "fm_id": "FM039",
+            "fm_title": "Opening and closing routine failure"
+          },
+          {
+            "fm_id": "FM045",
+            "fm_title": "Shift handover and communication failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_019",
+      "item_id": "B021",
+      "item_type": "block",
+      "title": "Peak Queue Management",
+      "source_rp": "RP006",
+      "rp_name": "Queue Management & Service Speed",
+      "module_id": "M02",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Measure your peak queue times this week. Time how long customers wait from joining the queue to receiving their order during morning rush (7-10am) and lunchtime peak. If any customer waits more than 5 minutes to order or more than 8 minutes for a coffee something is wrong. Identify the bottleneck immediately — is it the till the espresso machine the food prep or the team capacity?",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "failure_modes": [
+          {
+            "fm_id": "FM011",
+            "fm_title": "Queue management and wait time failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_020",
+      "item_id": "B022",
+      "item_type": "block",
+      "title": "Order-Taking Speed Protocol",
+      "source_rp": "RP006",
+      "rp_name": "Queue Management & Service Speed",
+      "module_id": "M02",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Measure your peak queue times this week. Time how long customers wait from joining the queue to receiving their order during morning rush (7-10am) and lunchtime peak. If any customer waits more than 5 minutes to order or more than 8 minutes for a coffee something is wrong. Identify the bottleneck immediately — is it the till the espresso machine the food prep or the team capacity?",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "failure_modes": [
+          {
+            "fm_id": "FM011",
+            "fm_title": "Queue management and wait time failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_021",
+      "item_id": "B023",
+      "item_type": "block",
+      "title": "Queue Communication Experience",
+      "source_rp": "RP006",
+      "rp_name": "Queue Management & Service Speed",
+      "module_id": "M02",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Measure your peak queue times this week. Time how long customers wait from joining the queue to receiving their order during morning rush (7-10am) and lunchtime peak. If any customer waits more than 5 minutes to order or more than 8 minutes for a coffee something is wrong. Identify the bottleneck immediately — is it the till the espresso machine the food prep or the team capacity?",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "failure_modes": [
+          {
+            "fm_id": "FM011",
+            "fm_title": "Queue management and wait time failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_022",
+      "item_id": "B074",
+      "item_type": "block",
+      "title": "Daily Team Briefing Protocol",
+      "source_rp": "RP020",
+      "rp_name": "Team Communication & Meetings",
+      "module_id": "M04",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Are you holding daily team briefings before each shift? If not start tomorrow. A 5-minute huddle covering the day's targets any specials or changes and any issues from yesterday transforms team alignment. Check whether you have a weekly team meeting — if not schedule one. Communication gaps create errors waste and frustration.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP020",
+        "rp_name": "Team Communication & Meetings",
+        "failure_modes": [
+          {
+            "fm_id": "FM032",
+            "fm_title": "Team communication and meeting failure"
+          }
+        ],
+        "signal_ids": [
+          "S056",
+          "S071"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_023",
+      "item_id": "B075",
+      "item_type": "block",
+      "title": "Weekly Team Meeting Structure",
+      "source_rp": "RP020",
+      "rp_name": "Team Communication & Meetings",
+      "module_id": "M04",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Are you holding daily team briefings before each shift? If not start tomorrow. A 5-minute huddle covering the day's targets any specials or changes and any issues from yesterday transforms team alignment. Check whether you have a weekly team meeting — if not schedule one. Communication gaps create errors waste and frustration.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP020",
+        "rp_name": "Team Communication & Meetings",
+        "failure_modes": [
+          {
+            "fm_id": "FM032",
+            "fm_title": "Team communication and meeting failure"
+          }
+        ],
+        "signal_ids": [
+          "S056",
+          "S071"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_024",
+      "item_id": "B179",
+      "item_type": "block",
+      "title": "Daily Prep List Protocol",
+      "source_rp": "RP053",
+      "rp_name": "Operational Rhythm & Daily Discipline",
+      "module_id": "M14",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Review your daily operational discipline. Are prep lists being used? Is the waste log completed every day? Is the maintenance log up to date? Are daily targets communicated to the team? If any of these basic disciplines have lapsed recommit to them this week. Operational discipline is the foundation everything else is built on.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "failure_modes": [
+          {
+            "fm_id": "FM097",
+            "fm_title": "Operational discipline and daily routine failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S071",
+          "S175",
+          "S178",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_025",
+      "item_id": "B180",
+      "item_type": "block",
+      "title": "Machine Maintenance Log",
+      "source_rp": "RP053",
+      "rp_name": "Operational Rhythm & Daily Discipline",
+      "module_id": "M14",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Review your daily operational discipline. Are prep lists being used? Is the waste log completed every day? Is the maintenance log up to date? Are daily targets communicated to the team? If any of these basic disciplines have lapsed recommit to them this week. Operational discipline is the foundation everything else is built on.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "failure_modes": [
+          {
+            "fm_id": "FM097",
+            "fm_title": "Operational discipline and daily routine failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S071",
+          "S175",
+          "S178",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_026",
+      "item_id": "B181",
+      "item_type": "block",
+      "title": "Waste Log & Reconciliation",
+      "source_rp": "RP053",
+      "rp_name": "Operational Rhythm & Daily Discipline",
+      "module_id": "M14",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Review your daily operational discipline. Are prep lists being used? Is the waste log completed every day? Is the maintenance log up to date? Are daily targets communicated to the team? If any of these basic disciplines have lapsed recommit to them this week. Operational discipline is the foundation everything else is built on.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "failure_modes": [
+          {
+            "fm_id": "FM097",
+            "fm_title": "Operational discipline and daily routine failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S071",
+          "S175",
+          "S178",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_027",
+      "item_id": "B118",
+      "item_type": "block",
+      "title": "Menu Pricing Strategy",
+      "source_rp": "RP034",
+      "rp_name": "Revenue Growth & Pricing Strategy",
+      "module_id": "M07",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Pull your revenue per hour data for the past four weeks. Identify your most and least productive hours. Is your average transaction value (ATV) growing or stagnant? When did you last review your prices? If it has been more than 12 months your prices are almost certainly too low given ingredient and wage inflation. Compare your prices to three local competitors this week.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "failure_modes": [
+          {
+            "fm_id": "FM059",
+            "fm_title": "Revenue per hour and sales productivity failure"
+          }
+        ],
+        "signal_ids": [
+          "S160",
+          "S175"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_028",
+      "item_id": "B119",
+      "item_type": "block",
+      "title": "Revenue Per Hour Tracking",
+      "source_rp": "RP034",
+      "rp_name": "Revenue Growth & Pricing Strategy",
+      "module_id": "M07",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Pull your revenue per hour data for the past four weeks. Identify your most and least productive hours. Is your average transaction value (ATV) growing or stagnant? When did you last review your prices? If it has been more than 12 months your prices are almost certainly too low given ingredient and wage inflation. Compare your prices to three local competitors this week.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "failure_modes": [
+          {
+            "fm_id": "FM059",
+            "fm_title": "Revenue per hour and sales productivity failure"
+          }
+        ],
+        "signal_ids": [
+          "S160",
+          "S175"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_029",
+      "item_id": "B120",
+      "item_type": "block",
+      "title": "Upselling & Add-On Training",
+      "source_rp": "RP034",
+      "rp_name": "Revenue Growth & Pricing Strategy",
+      "module_id": "M07",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Pull your revenue per hour data for the past four weeks. Identify your most and least productive hours. Is your average transaction value (ATV) growing or stagnant? When did you last review your prices? If it has been more than 12 months your prices are almost certainly too low given ingredient and wage inflation. Compare your prices to three local competitors this week.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "failure_modes": [
+          {
+            "fm_id": "FM059",
+            "fm_title": "Revenue per hour and sales productivity failure"
+          }
+        ],
+        "signal_ids": [
+          "S160",
+          "S175"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_030",
+      "item_id": "B005",
+      "item_type": "block",
+      "title": "Allergen Identification & Labelling",
+      "source_rp": "RP002",
+      "rp_name": "Allergen Management & PPDS Compliance",
+      "module_id": "M01",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Audit your allergen information immediately. Every menu item must have the 14 declarable allergens documented and available to customers on request. If you sell any pre-packed for direct sale items check Natasha's Law PPDS compliance now — every wrapped sandwich cake or salad must carry a full ingredient list with allergens emphasised. Fix any gaps today.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP002",
+        "rp_name": "Allergen Management & PPDS Compliance",
+        "failure_modes": [
+          {
+            "fm_id": "FM002",
+            "fm_title": "Allergen management and PPDS compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_031",
+      "item_id": "B006",
+      "item_type": "block",
+      "title": "PPDS Compliance System",
+      "source_rp": "RP002",
+      "rp_name": "Allergen Management & PPDS Compliance",
+      "module_id": "M01",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Audit your allergen information immediately. Every menu item must have the 14 declarable allergens documented and available to customers on request. If you sell any pre-packed for direct sale items check Natasha's Law PPDS compliance now — every wrapped sandwich cake or salad must carry a full ingredient list with allergens emphasised. Fix any gaps today.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP002",
+        "rp_name": "Allergen Management & PPDS Compliance",
+        "failure_modes": [
+          {
+            "fm_id": "FM002",
+            "fm_title": "Allergen management and PPDS compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_032",
+      "item_id": "B007",
+      "item_type": "block",
+      "title": "Allergen Customer Dialogue Script",
+      "source_rp": "RP002",
+      "rp_name": "Allergen Management & PPDS Compliance",
+      "module_id": "M01",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Audit your allergen information immediately. Every menu item must have the 14 declarable allergens documented and available to customers on request. If you sell any pre-packed for direct sale items check Natasha's Law PPDS compliance now — every wrapped sandwich cake or salad must carry a full ingredient list with allergens emphasised. Fix any gaps today.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP002",
+        "rp_name": "Allergen Management & PPDS Compliance",
+        "failure_modes": [
+          {
+            "fm_id": "FM002",
+            "fm_title": "Allergen management and PPDS compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_033",
+      "item_id": "B025",
+      "item_type": "block",
+      "title": "Order Accuracy Checklist",
+      "source_rp": "RP007",
+      "rp_name": "Order Accuracy & Service Quality",
+      "module_id": "M02",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Track order accuracy for the next five days. Record every wrong drink incorrect food order or missed modification. If errors exceed 5% of orders the problem is systemic not individual. Check whether your ordering process has clear handoff points between taking the order making the drink and presenting it to the customer. Ensure customer names or order numbers are used consistently.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP007",
+        "rp_name": "Order Accuracy & Service Quality",
+        "failure_modes": [
+          {
+            "fm_id": "FM012",
+            "fm_title": "Order accuracy and fulfilment failure"
+          }
+        ],
+        "signal_ids": [
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_034",
+      "item_id": "B026",
+      "item_type": "block",
+      "title": "Customer Greeting Standard",
+      "source_rp": "RP007",
+      "rp_name": "Order Accuracy & Service Quality",
+      "module_id": "M02",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Track order accuracy for the next five days. Record every wrong drink incorrect food order or missed modification. If errors exceed 5% of orders the problem is systemic not individual. Check whether your ordering process has clear handoff points between taking the order making the drink and presenting it to the customer. Ensure customer names or order numbers are used consistently.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP007",
+        "rp_name": "Order Accuracy & Service Quality",
+        "failure_modes": [
+          {
+            "fm_id": "FM012",
+            "fm_title": "Order accuracy and fulfilment failure"
+          }
+        ],
+        "signal_ids": [
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_035",
+      "item_id": "B027",
+      "item_type": "block",
+      "title": "Drink Handoff Quality Check",
+      "source_rp": "RP007",
+      "rp_name": "Order Accuracy & Service Quality",
+      "module_id": "M02",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Track order accuracy for the next five days. Record every wrong drink incorrect food order or missed modification. If errors exceed 5% of orders the problem is systemic not individual. Check whether your ordering process has clear handoff points between taking the order making the drink and presenting it to the customer. Ensure customer names or order numbers are used consistently.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP007",
+        "rp_name": "Order Accuracy & Service Quality",
+        "failure_modes": [
+          {
+            "fm_id": "FM012",
+            "fm_title": "Order accuracy and fulfilment failure"
+          }
+        ],
+        "signal_ids": [
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_036",
+      "item_id": "B060",
+      "item_type": "block",
+      "title": "Dietary Options Audit",
+      "source_rp": "RP017",
+      "rp_name": "Dietary Inclusivity & Alternative Options",
+      "module_id": "M03",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Audit your menu for dietary inclusivity today. Can a vegan customer get a satisfying meal and drink? Can a gluten-free customer eat safely? Can a dairy-free customer have their coffee made well? If any dietary group is underserved or feels like an afterthought that is a revenue and reputation gap. Check that your alternative milk range covers at least oat soy and almond.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP017",
+        "rp_name": "Dietary Inclusivity & Alternative Options",
+        "failure_modes": [
+          {
+            "fm_id": "FM028",
+            "fm_title": "Dietary inclusivity and alternative options failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_037",
+      "item_id": "B061",
+      "item_type": "block",
+      "title": "Vegan/GF Menu Development",
+      "source_rp": "RP017",
+      "rp_name": "Dietary Inclusivity & Alternative Options",
+      "module_id": "M03",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Audit your menu for dietary inclusivity today. Can a vegan customer get a satisfying meal and drink? Can a gluten-free customer eat safely? Can a dairy-free customer have their coffee made well? If any dietary group is underserved or feels like an afterthought that is a revenue and reputation gap. Check that your alternative milk range covers at least oat soy and almond.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP017",
+        "rp_name": "Dietary Inclusivity & Alternative Options",
+        "failure_modes": [
+          {
+            "fm_id": "FM028",
+            "fm_title": "Dietary inclusivity and alternative options failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_038",
+      "item_id": "B089",
+      "item_type": "block",
+      "title": "Workflow Layout Audit",
+      "source_rp": "RP025",
+      "rp_name": "Workflow Layout & Station Design",
+      "module_id": "M05",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Stand behind your counter during a busy period and watch the workflow. Where do people collide? Where do they wait? Where do they walk unnecessarily? Map the physical journey of a cup from order to handoff and count the steps. If your barista is taking more than three steps to complete a drink your layout needs attention. Check that all frequently used items are within arm's reach.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP025",
+        "rp_name": "Workflow Layout & Station Design",
+        "failure_modes": [
+          {
+            "fm_id": "FM041",
+            "fm_title": "Workflow layout and station design failure"
+          }
+        ],
+        "signal_ids": [
+          "S073"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_039",
+      "item_id": "B090",
+      "item_type": "block",
+      "title": "Station Design Optimisation",
+      "source_rp": "RP025",
+      "rp_name": "Workflow Layout & Station Design",
+      "module_id": "M05",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Stand behind your counter during a busy period and watch the workflow. Where do people collide? Where do they wait? Where do they walk unnecessarily? Map the physical journey of a cup from order to handoff and count the steps. If your barista is taking more than three steps to complete a drink your layout needs attention. Check that all frequently used items are within arm's reach.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP025",
+        "rp_name": "Workflow Layout & Station Design",
+        "failure_modes": [
+          {
+            "fm_id": "FM041",
+            "fm_title": "Workflow layout and station design failure"
+          }
+        ],
+        "signal_ids": [
+          "S073"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_040",
+      "item_id": "B168",
+      "item_type": "block",
+      "title": "Catering & Events Revenue",
+      "source_rp": "RP050",
+      "rp_name": "Revenue Diversification & Expansion",
+      "module_id": "M11",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Identify revenue opportunities you are not currently pursuing. Could you offer catering for local offices? Sell retail coffee beans or merchandise? Develop an evening trade? Host events? Launch a subscription model? List five potential revenue streams and assess each for feasibility and margin. Start with the one that requires the least investment.",
+      "depends_on_modules": [
+        "M07"
+      ],
+      "trace": {
+        "rp_id": "RP050",
+        "rp_name": "Revenue Diversification & Expansion",
+        "failure_modes": [
+          {
+            "fm_id": "FM088",
+            "fm_title": "Revenue diversification failure"
+          }
+        ],
+        "signal_ids": [
+          "S160"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_041",
+      "item_id": "B169",
+      "item_type": "block",
+      "title": "Retail Coffee & Merchandise",
+      "source_rp": "RP050",
+      "rp_name": "Revenue Diversification & Expansion",
+      "module_id": "M11",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Identify revenue opportunities you are not currently pursuing. Could you offer catering for local offices? Sell retail coffee beans or merchandise? Develop an evening trade? Host events? Launch a subscription model? List five potential revenue streams and assess each for feasibility and margin. Start with the one that requires the least investment.",
+      "depends_on_modules": [
+        "M07"
+      ],
+      "trace": {
+        "rp_id": "RP050",
+        "rp_name": "Revenue Diversification & Expansion",
+        "failure_modes": [
+          {
+            "fm_id": "FM088",
+            "fm_title": "Revenue diversification failure"
+          }
+        ],
+        "signal_ids": [
+          "S160"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_042",
+      "item_id": "B013",
+      "item_type": "block",
+      "title": "HACCP Food Safety System",
+      "source_rp": "RP004",
+      "rp_name": "HACCP & Food Safety Management System",
+      "module_id": "M01",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Check whether you have a documented HACCP-based food safety management system. If you are using Safer Food Better Business or an equivalent it must be current and actively used not filed away. Identify your critical control points — cooking temperatures cooling times hot holding — and confirm they are being monitored and recorded. Any gaps must be addressed this week.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP004",
+        "rp_name": "HACCP & Food Safety Management System",
+        "failure_modes": [
+          {
+            "fm_id": "FM007",
+            "fm_title": "Food safety management system (HACCP) failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_043",
+      "item_id": "B014",
+      "item_type": "block",
+      "title": "Critical Control Point Monitoring",
+      "source_rp": "RP004",
+      "rp_name": "HACCP & Food Safety Management System",
+      "module_id": "M01",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Check whether you have a documented HACCP-based food safety management system. If you are using Safer Food Better Business or an equivalent it must be current and actively used not filed away. Identify your critical control points — cooking temperatures cooling times hot holding — and confirm they are being monitored and recorded. Any gaps must be addressed this week.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP004",
+        "rp_name": "HACCP & Food Safety Management System",
+        "failure_modes": [
+          {
+            "fm_id": "FM007",
+            "fm_title": "Food safety management system (HACCP) failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_044",
+      "item_id": "B015",
+      "item_type": "block",
+      "title": "Supplier Due Diligence",
+      "source_rp": "RP004",
+      "rp_name": "HACCP & Food Safety Management System",
+      "module_id": "M01",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Check whether you have a documented HACCP-based food safety management system. If you are using Safer Food Better Business or an equivalent it must be current and actively used not filed away. Identify your critical control points — cooking temperatures cooling times hot holding — and confirm they are being monitored and recorded. Any gaps must be addressed this week.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP004",
+        "rp_name": "HACCP & Food Safety Management System",
+        "failure_modes": [
+          {
+            "fm_id": "FM007",
+            "fm_title": "Food safety management system (HACCP) failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_045",
+      "item_id": "B050",
+      "item_type": "block",
+      "title": "Food Prep Standards & Consistency",
+      "source_rp": "RP014",
+      "rp_name": "Food Quality & Menu Innovation",
+      "module_id": "M03",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Taste every food item on your menu this week with fresh eyes. Is the quality consistent day to day? Are portion sizes uniform? Check your bakery and food supplier delivery quality — are you accepting items that do not meet your standards? Identify your three best-selling and three worst-selling items. Any item that is not selling or not meeting quality standards should be flagged for removal or replacement.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP014",
+        "rp_name": "Food Quality & Menu Innovation",
+        "failure_modes": [
+          {
+            "fm_id": "FM024",
+            "fm_title": "Menu stagnation and innovation failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_046",
+      "item_id": "B051",
+      "item_type": "block",
+      "title": "Seasonal Menu Development",
+      "source_rp": "RP014",
+      "rp_name": "Food Quality & Menu Innovation",
+      "module_id": "M03",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Taste every food item on your menu this week with fresh eyes. Is the quality consistent day to day? Are portion sizes uniform? Check your bakery and food supplier delivery quality — are you accepting items that do not meet your standards? Identify your three best-selling and three worst-selling items. Any item that is not selling or not meeting quality standards should be flagged for removal or replacement.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP014",
+        "rp_name": "Food Quality & Menu Innovation",
+        "failure_modes": [
+          {
+            "fm_id": "FM024",
+            "fm_title": "Menu stagnation and innovation failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_047",
+      "item_id": "B052",
+      "item_type": "block",
+      "title": "Food Supplier Quality Assessment",
+      "source_rp": "RP014",
+      "rp_name": "Food Quality & Menu Innovation",
+      "module_id": "M03",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Taste every food item on your menu this week with fresh eyes. Is the quality consistent day to day? Are portion sizes uniform? Check your bakery and food supplier delivery quality — are you accepting items that do not meet your standards? Identify your three best-selling and three worst-selling items. Any item that is not selling or not meeting quality standards should be flagged for removal or replacement.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP014",
+        "rp_name": "Food Quality & Menu Innovation",
+        "failure_modes": [
+          {
+            "fm_id": "FM024",
+            "fm_title": "Menu stagnation and innovation failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_048",
+      "item_id": "B125",
+      "item_type": "block",
+      "title": "Payroll Cost Optimisation",
+      "source_rp": "RP036",
+      "rp_name": "Cost Structure & Payroll Control",
+      "module_id": "M07",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Calculate your payroll percentage — total staff costs divided by revenue. For cafes this should be between 30-40%. If it is above 40% you are either overstaffed during quiet periods or your revenue is too low. Review your cost structure: rent utilities insurance supplies. Identify your top three cost-reduction opportunities without compromising quality.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP036",
+        "rp_name": "Cost Structure & Payroll Control",
+        "failure_modes": [
+          {
+            "fm_id": "FM064",
+            "fm_title": "Payroll cost management failure"
+          }
+        ],
+        "signal_ids": [
+          "S083"
+        ]
+      }
+    },
+    {
+      "task_id": "L1_049",
+      "item_id": "B126",
+      "item_type": "block",
+      "title": "Occupancy Cost Strategy",
+      "source_rp": "RP036",
+      "rp_name": "Cost Structure & Payroll Control",
+      "module_id": "M07",
+      "timeline": "Days 1–30",
+      "priority": "high",
+      "description": "Calculate your payroll percentage — total staff costs divided by revenue. For cafes this should be between 30-40%. If it is above 40% you are either overstaffed during quiet periods or your revenue is too low. Review your cost structure: rent utilities insurance supplies. Identify your top three cost-reduction opportunities without compromising quality.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP036",
+        "rp_name": "Cost Structure & Payroll Control",
+        "failure_modes": [
+          {
+            "fm_id": "FM064",
+            "fm_title": "Payroll cost management failure"
+          }
+        ],
+        "signal_ids": [
+          "S083"
+        ]
+      }
+    }
+  ],
+  "L2_tasks": [
+    {
+      "task_id": "L2_001",
+      "item_id": "B081",
+      "item_type": "block",
+      "title": "Owner Role Clarity & Delegation",
+      "source_rp": "RP023",
+      "rp_name": "Owner Role & Leadership Development",
+      "module_id": "M13",
+      "timeline": "Days 31–60",
+      "priority": "critical",
+      "description": "Define your role as owner clearly distinguishing between working IN the business and working ON it. Create a delegation plan transferring operational tasks to trained team members. Develop your leadership skills through training coaching or peer groups. Establish protected management time as a non-negotiable weekly commitment. Build a leadership pipeline by developing your shift leads.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP023",
+        "rp_name": "Owner Role & Leadership Development",
+        "failure_modes": [
+          {
+            "fm_id": "FM037",
+            "fm_title": "Owner overwork and delegation failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_002",
+      "item_id": "B082",
+      "item_type": "block",
+      "title": "Protected Management Time",
+      "source_rp": "RP023",
+      "rp_name": "Owner Role & Leadership Development",
+      "module_id": "M13",
+      "timeline": "Days 31–60",
+      "priority": "critical",
+      "description": "Define your role as owner clearly distinguishing between working IN the business and working ON it. Create a delegation plan transferring operational tasks to trained team members. Develop your leadership skills through training coaching or peer groups. Establish protected management time as a non-negotiable weekly commitment. Build a leadership pipeline by developing your shift leads.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP023",
+        "rp_name": "Owner Role & Leadership Development",
+        "failure_modes": [
+          {
+            "fm_id": "FM037",
+            "fm_title": "Owner overwork and delegation failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_003",
+      "item_id": "B083",
+      "item_type": "block",
+      "title": "Leadership Development",
+      "source_rp": "RP023",
+      "rp_name": "Owner Role & Leadership Development",
+      "module_id": "M13",
+      "timeline": "Days 31–60",
+      "priority": "critical",
+      "description": "Define your role as owner clearly distinguishing between working IN the business and working ON it. Create a delegation plan transferring operational tasks to trained team members. Develop your leadership skills through training coaching or peer groups. Establish protected management time as a non-negotiable weekly commitment. Build a leadership pipeline by developing your shift leads.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP023",
+        "rp_name": "Owner Role & Leadership Development",
+        "failure_modes": [
+          {
+            "fm_id": "FM037",
+            "fm_title": "Owner overwork and delegation failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_004",
+      "item_id": "B084",
+      "item_type": "block",
+      "title": "Owner Wellbeing & Balance",
+      "source_rp": "RP023",
+      "rp_name": "Owner Role & Leadership Development",
+      "module_id": "M13",
+      "timeline": "Days 31–60",
+      "priority": "critical",
+      "description": "Define your role as owner clearly distinguishing between working IN the business and working ON it. Create a delegation plan transferring operational tasks to trained team members. Develop your leadership skills through training coaching or peer groups. Establish protected management time as a non-negotiable weekly commitment. Build a leadership pipeline by developing your shift leads.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP023",
+        "rp_name": "Owner Role & Leadership Development",
+        "failure_modes": [
+          {
+            "fm_id": "FM037",
+            "fm_title": "Owner overwork and delegation failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_005",
+      "item_id": "B077",
+      "item_type": "block",
+      "title": "Key Person Risk Assessment",
+      "source_rp": "RP022",
+      "rp_name": "Key Person Risk & Cross-Training",
+      "module_id": "M04",
+      "timeline": "Days 31–60",
+      "priority": "critical",
+      "description": "Implement a cross-training programme ensuring at least two people can perform every critical function. Create a skills coverage matrix showing who can cover what and identifying gaps. Develop an absence cover protocol with emergency contact procedures and minimum staffing requirements. Document all key processes in a simple operations manual accessible to the whole team.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP022",
+        "rp_name": "Key Person Risk & Cross-Training",
+        "failure_modes": [
+          {
+            "fm_id": "FM034",
+            "fm_title": "Key person dependency and cover failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_006",
+      "item_id": "B078",
+      "item_type": "block",
+      "title": "Cross-Training Programme",
+      "source_rp": "RP022",
+      "rp_name": "Key Person Risk & Cross-Training",
+      "module_id": "M04",
+      "timeline": "Days 31–60",
+      "priority": "critical",
+      "description": "Implement a cross-training programme ensuring at least two people can perform every critical function. Create a skills coverage matrix showing who can cover what and identifying gaps. Develop an absence cover protocol with emergency contact procedures and minimum staffing requirements. Document all key processes in a simple operations manual accessible to the whole team.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP022",
+        "rp_name": "Key Person Risk & Cross-Training",
+        "failure_modes": [
+          {
+            "fm_id": "FM034",
+            "fm_title": "Key person dependency and cover failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_007",
+      "item_id": "B079",
+      "item_type": "block",
+      "title": "Absence Cover Protocol",
+      "source_rp": "RP022",
+      "rp_name": "Key Person Risk & Cross-Training",
+      "module_id": "M04",
+      "timeline": "Days 31–60",
+      "priority": "critical",
+      "description": "Implement a cross-training programme ensuring at least two people can perform every critical function. Create a skills coverage matrix showing who can cover what and identifying gaps. Develop an absence cover protocol with emergency contact procedures and minimum staffing requirements. Document all key processes in a simple operations manual accessible to the whole team.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP022",
+        "rp_name": "Key Person Risk & Cross-Training",
+        "failure_modes": [
+          {
+            "fm_id": "FM034",
+            "fm_title": "Key person dependency and cover failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_008",
+      "item_id": "B080",
+      "item_type": "block",
+      "title": "Knowledge Capture System",
+      "source_rp": "RP022",
+      "rp_name": "Key Person Risk & Cross-Training",
+      "module_id": "M04",
+      "timeline": "Days 31–60",
+      "priority": "critical",
+      "description": "Implement a cross-training programme ensuring at least two people can perform every critical function. Create a skills coverage matrix showing who can cover what and identifying gaps. Develop an absence cover protocol with emergency contact procedures and minimum staffing requirements. Document all key processes in a simple operations manual accessible to the whole team.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP022",
+        "rp_name": "Key Person Risk & Cross-Training",
+        "failure_modes": [
+          {
+            "fm_id": "FM034",
+            "fm_title": "Key person dependency and cover failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_009",
+      "item_id": "B063",
+      "item_type": "block",
+      "title": "Exit Interview & Turnover Analysis",
+      "source_rp": "RP018",
+      "rp_name": "Staff Retention & Engagement",
+      "module_id": "M04",
+      "timeline": "Days 31–60",
+      "priority": "critical",
+      "description": "Develop a staff retention strategy addressing the top three reasons baristas leave: pay progression opportunity and work-life balance. Implement a structured engagement programme including regular one-to-ones team social events and recognition. Create a compensation review process benchmarked against local hospitality market rates. Conduct exit interviews for every leaver and analyse the data for patterns.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP018",
+        "rp_name": "Staff Retention & Engagement",
+        "failure_modes": [
+          {
+            "fm_id": "FM036",
+            "fm_title": "Team morale and wellbeing failure"
+          }
+        ],
+        "signal_ids": [
+          "S056"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_010",
+      "item_id": "B064",
+      "item_type": "block",
+      "title": "Retention Strategy & Engagement Plan",
+      "source_rp": "RP018",
+      "rp_name": "Staff Retention & Engagement",
+      "module_id": "M04",
+      "timeline": "Days 31–60",
+      "priority": "critical",
+      "description": "Develop a staff retention strategy addressing the top three reasons baristas leave: pay progression opportunity and work-life balance. Implement a structured engagement programme including regular one-to-ones team social events and recognition. Create a compensation review process benchmarked against local hospitality market rates. Conduct exit interviews for every leaver and analyse the data for patterns.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP018",
+        "rp_name": "Staff Retention & Engagement",
+        "failure_modes": [
+          {
+            "fm_id": "FM036",
+            "fm_title": "Team morale and wellbeing failure"
+          }
+        ],
+        "signal_ids": [
+          "S056"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_011",
+      "item_id": "B065",
+      "item_type": "block",
+      "title": "Compensation Benchmarking",
+      "source_rp": "RP018",
+      "rp_name": "Staff Retention & Engagement",
+      "module_id": "M04",
+      "timeline": "Days 31–60",
+      "priority": "critical",
+      "description": "Develop a staff retention strategy addressing the top three reasons baristas leave: pay progression opportunity and work-life balance. Implement a structured engagement programme including regular one-to-ones team social events and recognition. Create a compensation review process benchmarked against local hospitality market rates. Conduct exit interviews for every leaver and analyse the data for patterns.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP018",
+        "rp_name": "Staff Retention & Engagement",
+        "failure_modes": [
+          {
+            "fm_id": "FM036",
+            "fm_title": "Team morale and wellbeing failure"
+          }
+        ],
+        "signal_ids": [
+          "S056"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_012",
+      "item_id": "B066",
+      "item_type": "block",
+      "title": "Retention Culture Programme",
+      "source_rp": "RP018",
+      "rp_name": "Staff Retention & Engagement",
+      "module_id": "M04",
+      "timeline": "Days 31–60",
+      "priority": "critical",
+      "description": "Develop a staff retention strategy addressing the top three reasons baristas leave: pay progression opportunity and work-life balance. Implement a structured engagement programme including regular one-to-ones team social events and recognition. Create a compensation review process benchmarked against local hospitality market rates. Conduct exit interviews for every leaver and analyse the data for patterns.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP018",
+        "rp_name": "Staff Retention & Engagement",
+        "failure_modes": [
+          {
+            "fm_id": "FM036",
+            "fm_title": "Team morale and wellbeing failure"
+          }
+        ],
+        "signal_ids": [
+          "S056"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_016",
+      "item_id": "B085",
+      "item_type": "block",
+      "title": "Peak Staffing Model",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_017",
+      "item_id": "B086",
+      "item_type": "block",
+      "title": "Morning Rush Workflow",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_018",
+      "item_id": "B087",
+      "item_type": "block",
+      "title": "Pre-Rush Mise-en-Place",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_019",
+      "item_id": "B088",
+      "item_type": "block",
+      "title": "Peak Performance Analysis",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_020",
+      "item_id": "B203",
+      "item_type": "block",
+      "title": "Drive-Through Workflow",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_021",
+      "item_id": "B204",
+      "item_type": "block",
+      "title": "Kiosk Operations",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_022",
+      "item_id": "B205",
+      "item_type": "block",
+      "title": "Coffee Van Operations",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Create a data-driven staffing model showing the optimal number of team members for each hour based on historical transaction volumes. Design role assignments for peak periods — dedicated till barista food prep and runner positions. Develop a mise-en-place checklist ensuring everything is prepared before the rush begins. Implement pre-rush routines that start 30 minutes before peak.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_023",
+      "item_id": "B092",
+      "item_type": "block",
+      "title": "Opening Checklist",
+      "source_rp": "RP026",
+      "rp_name": "Daily Routines & Shift Handover",
+      "module_id": "M05",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Develop comprehensive opening mid-shift and closing checklists with sign-off requirements. Create a shift handover protocol including a written handover note template. Implement a daily reconciliation process covering cash stock levels waste and any incidents. Train all shift-capable team members on the full opening and closing procedure. Conduct quarterly reviews of your routines to ensure they remain current.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP026",
+        "rp_name": "Daily Routines & Shift Handover",
+        "failure_modes": [
+          {
+            "fm_id": "FM039",
+            "fm_title": "Opening and closing routine failure"
+          },
+          {
+            "fm_id": "FM045",
+            "fm_title": "Shift handover and communication failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_024",
+      "item_id": "B093",
+      "item_type": "block",
+      "title": "Closing Checklist",
+      "source_rp": "RP026",
+      "rp_name": "Daily Routines & Shift Handover",
+      "module_id": "M05",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Develop comprehensive opening mid-shift and closing checklists with sign-off requirements. Create a shift handover protocol including a written handover note template. Implement a daily reconciliation process covering cash stock levels waste and any incidents. Train all shift-capable team members on the full opening and closing procedure. Conduct quarterly reviews of your routines to ensure they remain current.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP026",
+        "rp_name": "Daily Routines & Shift Handover",
+        "failure_modes": [
+          {
+            "fm_id": "FM039",
+            "fm_title": "Opening and closing routine failure"
+          },
+          {
+            "fm_id": "FM045",
+            "fm_title": "Shift handover and communication failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_025",
+      "item_id": "B094",
+      "item_type": "block",
+      "title": "Shift Handover System",
+      "source_rp": "RP026",
+      "rp_name": "Daily Routines & Shift Handover",
+      "module_id": "M05",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Develop comprehensive opening mid-shift and closing checklists with sign-off requirements. Create a shift handover protocol including a written handover note template. Implement a daily reconciliation process covering cash stock levels waste and any incidents. Train all shift-capable team members on the full opening and closing procedure. Conduct quarterly reviews of your routines to ensure they remain current.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP026",
+        "rp_name": "Daily Routines & Shift Handover",
+        "failure_modes": [
+          {
+            "fm_id": "FM039",
+            "fm_title": "Opening and closing routine failure"
+          },
+          {
+            "fm_id": "FM045",
+            "fm_title": "Shift handover and communication failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_029",
+      "item_id": "B179",
+      "item_type": "block",
+      "title": "Daily Prep List Protocol",
+      "source_rp": "RP053",
+      "rp_name": "Operational Rhythm & Daily Discipline",
+      "module_id": "M14",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Create a comprehensive daily discipline framework covering prep lists waste logs maintenance logs cash reconciliation temperature checks and target tracking. Implement an operational rhythm dashboard that gives you a daily snapshot of compliance. Train all shift-capable team members on the full discipline framework. Conduct weekly discipline audits and address gaps immediately.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "failure_modes": [
+          {
+            "fm_id": "FM097",
+            "fm_title": "Operational discipline and daily routine failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S071",
+          "S175",
+          "S178",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_030",
+      "item_id": "B180",
+      "item_type": "block",
+      "title": "Machine Maintenance Log",
+      "source_rp": "RP053",
+      "rp_name": "Operational Rhythm & Daily Discipline",
+      "module_id": "M14",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Create a comprehensive daily discipline framework covering prep lists waste logs maintenance logs cash reconciliation temperature checks and target tracking. Implement an operational rhythm dashboard that gives you a daily snapshot of compliance. Train all shift-capable team members on the full discipline framework. Conduct weekly discipline audits and address gaps immediately.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "failure_modes": [
+          {
+            "fm_id": "FM097",
+            "fm_title": "Operational discipline and daily routine failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S071",
+          "S175",
+          "S178",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_031",
+      "item_id": "B181",
+      "item_type": "block",
+      "title": "Waste Log & Reconciliation",
+      "source_rp": "RP053",
+      "rp_name": "Operational Rhythm & Daily Discipline",
+      "module_id": "M14",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Create a comprehensive daily discipline framework covering prep lists waste logs maintenance logs cash reconciliation temperature checks and target tracking. Implement an operational rhythm dashboard that gives you a daily snapshot of compliance. Train all shift-capable team members on the full discipline framework. Conduct weekly discipline audits and address gaps immediately.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "failure_modes": [
+          {
+            "fm_id": "FM097",
+            "fm_title": "Operational discipline and daily routine failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S071",
+          "S175",
+          "S178",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_032",
+      "item_id": "B182",
+      "item_type": "block",
+      "title": "Operational Rhythm Dashboard",
+      "source_rp": "RP053",
+      "rp_name": "Operational Rhythm & Daily Discipline",
+      "module_id": "M14",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Create a comprehensive daily discipline framework covering prep lists waste logs maintenance logs cash reconciliation temperature checks and target tracking. Implement an operational rhythm dashboard that gives you a daily snapshot of compliance. Train all shift-capable team members on the full discipline framework. Conduct weekly discipline audits and address gaps immediately.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "failure_modes": [
+          {
+            "fm_id": "FM097",
+            "fm_title": "Operational discipline and daily routine failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S071",
+          "S175",
+          "S178",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_033",
+      "item_id": "B118",
+      "item_type": "block",
+      "title": "Menu Pricing Strategy",
+      "source_rp": "RP034",
+      "rp_name": "Revenue Growth & Pricing Strategy",
+      "module_id": "M07",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Implement a structured pricing review process conducted every 6-12 months. Develop an upselling programme training baristas to suggest add-ons naturally — extra shot cake with coffee larger size. Track ATV daily and set improvement targets. Create revenue targets for each shift and share them with the team. Analyse your highest-margin items and position them prominently.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "failure_modes": [
+          {
+            "fm_id": "FM059",
+            "fm_title": "Revenue per hour and sales productivity failure"
+          }
+        ],
+        "signal_ids": [
+          "S160",
+          "S175"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_034",
+      "item_id": "B119",
+      "item_type": "block",
+      "title": "Revenue Per Hour Tracking",
+      "source_rp": "RP034",
+      "rp_name": "Revenue Growth & Pricing Strategy",
+      "module_id": "M07",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Implement a structured pricing review process conducted every 6-12 months. Develop an upselling programme training baristas to suggest add-ons naturally — extra shot cake with coffee larger size. Track ATV daily and set improvement targets. Create revenue targets for each shift and share them with the team. Analyse your highest-margin items and position them prominently.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "failure_modes": [
+          {
+            "fm_id": "FM059",
+            "fm_title": "Revenue per hour and sales productivity failure"
+          }
+        ],
+        "signal_ids": [
+          "S160",
+          "S175"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_035",
+      "item_id": "B120",
+      "item_type": "block",
+      "title": "Upselling & Add-On Training",
+      "source_rp": "RP034",
+      "rp_name": "Revenue Growth & Pricing Strategy",
+      "module_id": "M07",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Implement a structured pricing review process conducted every 6-12 months. Develop an upselling programme training baristas to suggest add-ons naturally — extra shot cake with coffee larger size. Track ATV daily and set improvement targets. Create revenue targets for each shift and share them with the team. Analyse your highest-margin items and position them prominently.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "failure_modes": [
+          {
+            "fm_id": "FM059",
+            "fm_title": "Revenue per hour and sales productivity failure"
+          }
+        ],
+        "signal_ids": [
+          "S160",
+          "S175"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_036",
+      "item_id": "B121",
+      "item_type": "block",
+      "title": "Revenue Growth Strategy",
+      "source_rp": "RP034",
+      "rp_name": "Revenue Growth & Pricing Strategy",
+      "module_id": "M07",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Implement a structured pricing review process conducted every 6-12 months. Develop an upselling programme training baristas to suggest add-ons naturally — extra shot cake with coffee larger size. Track ATV daily and set improvement targets. Create revenue targets for each shift and share them with the team. Analyse your highest-margin items and position them prominently.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "failure_modes": [
+          {
+            "fm_id": "FM059",
+            "fm_title": "Revenue per hour and sales productivity failure"
+          }
+        ],
+        "signal_ids": [
+          "S160",
+          "S175"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_037",
+      "item_id": "B125",
+      "item_type": "block",
+      "title": "Payroll Cost Optimisation",
+      "source_rp": "RP036",
+      "rp_name": "Cost Structure & Payroll Control",
+      "module_id": "M07",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Implement a labour scheduling system that matches staffing levels to demand patterns. Create a cost structure dashboard tracking rent payroll cost-of-goods and utilities as percentages of revenue. Develop a payroll optimisation strategy using flexible scheduling split shifts and cross-training. Review all fixed costs annually and negotiate where possible.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP036",
+        "rp_name": "Cost Structure & Payroll Control",
+        "failure_modes": [
+          {
+            "fm_id": "FM064",
+            "fm_title": "Payroll cost management failure"
+          }
+        ],
+        "signal_ids": [
+          "S083"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_038",
+      "item_id": "B126",
+      "item_type": "block",
+      "title": "Occupancy Cost Strategy",
+      "source_rp": "RP036",
+      "rp_name": "Cost Structure & Payroll Control",
+      "module_id": "M07",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Implement a labour scheduling system that matches staffing levels to demand patterns. Create a cost structure dashboard tracking rent payroll cost-of-goods and utilities as percentages of revenue. Develop a payroll optimisation strategy using flexible scheduling split shifts and cross-training. Review all fixed costs annually and negotiate where possible.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP036",
+        "rp_name": "Cost Structure & Payroll Control",
+        "failure_modes": [
+          {
+            "fm_id": "FM064",
+            "fm_title": "Payroll cost management failure"
+          }
+        ],
+        "signal_ids": [
+          "S083"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_039",
+      "item_id": "B127",
+      "item_type": "block",
+      "title": "Cost Structure Excellence",
+      "source_rp": "RP036",
+      "rp_name": "Cost Structure & Payroll Control",
+      "module_id": "M07",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Implement a labour scheduling system that matches staffing levels to demand patterns. Create a cost structure dashboard tracking rent payroll cost-of-goods and utilities as percentages of revenue. Develop a payroll optimisation strategy using flexible scheduling split shifts and cross-training. Review all fixed costs annually and negotiate where possible.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP036",
+        "rp_name": "Cost Structure & Payroll Control",
+        "failure_modes": [
+          {
+            "fm_id": "FM064",
+            "fm_title": "Payroll cost management failure"
+          }
+        ],
+        "signal_ids": [
+          "S083"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_040",
+      "item_id": "B005",
+      "item_type": "block",
+      "title": "Allergen Identification & Labelling",
+      "source_rp": "RP002",
+      "rp_name": "Allergen Management & PPDS Compliance",
+      "module_id": "M01",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Create an allergen matrix covering every item on your menu including specials and seasonal items. Implement a system for updating allergen information when recipes or suppliers change. Train every team member to handle allergen enquiries confidently and to escalate when uncertain. Develop a customer allergen dialogue script and ensure it is used consistently.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP002",
+        "rp_name": "Allergen Management & PPDS Compliance",
+        "failure_modes": [
+          {
+            "fm_id": "FM002",
+            "fm_title": "Allergen management and PPDS compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_041",
+      "item_id": "B006",
+      "item_type": "block",
+      "title": "PPDS Compliance System",
+      "source_rp": "RP002",
+      "rp_name": "Allergen Management & PPDS Compliance",
+      "module_id": "M01",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Create an allergen matrix covering every item on your menu including specials and seasonal items. Implement a system for updating allergen information when recipes or suppliers change. Train every team member to handle allergen enquiries confidently and to escalate when uncertain. Develop a customer allergen dialogue script and ensure it is used consistently.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP002",
+        "rp_name": "Allergen Management & PPDS Compliance",
+        "failure_modes": [
+          {
+            "fm_id": "FM002",
+            "fm_title": "Allergen management and PPDS compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_042",
+      "item_id": "B007",
+      "item_type": "block",
+      "title": "Allergen Customer Dialogue Script",
+      "source_rp": "RP002",
+      "rp_name": "Allergen Management & PPDS Compliance",
+      "module_id": "M01",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Create an allergen matrix covering every item on your menu including specials and seasonal items. Implement a system for updating allergen information when recipes or suppliers change. Train every team member to handle allergen enquiries confidently and to escalate when uncertain. Develop a customer allergen dialogue script and ensure it is used consistently.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP002",
+        "rp_name": "Allergen Management & PPDS Compliance",
+        "failure_modes": [
+          {
+            "fm_id": "FM002",
+            "fm_title": "Allergen management and PPDS compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_043",
+      "item_id": "B008",
+      "item_type": "block",
+      "title": "Allergen Prevention Programme",
+      "source_rp": "RP002",
+      "rp_name": "Allergen Management & PPDS Compliance",
+      "module_id": "M01",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Create an allergen matrix covering every item on your menu including specials and seasonal items. Implement a system for updating allergen information when recipes or suppliers change. Train every team member to handle allergen enquiries confidently and to escalate when uncertain. Develop a customer allergen dialogue script and ensure it is used consistently.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP002",
+        "rp_name": "Allergen Management & PPDS Compliance",
+        "failure_modes": [
+          {
+            "fm_id": "FM002",
+            "fm_title": "Allergen management and PPDS compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_044",
+      "item_id": "B013",
+      "item_type": "block",
+      "title": "HACCP Food Safety System",
+      "source_rp": "RP004",
+      "rp_name": "HACCP & Food Safety Management System",
+      "module_id": "M01",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Build or update your HACCP system to cover all food processes in your cafe from goods receipt through storage preparation cooking display and service. Document each critical control point with target parameters monitoring frequency corrective actions and responsible person. Train all kitchen and food preparation staff on the HACCP system and their specific responsibilities within it.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP004",
+        "rp_name": "HACCP & Food Safety Management System",
+        "failure_modes": [
+          {
+            "fm_id": "FM007",
+            "fm_title": "Food safety management system (HACCP) failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_045",
+      "item_id": "B014",
+      "item_type": "block",
+      "title": "Critical Control Point Monitoring",
+      "source_rp": "RP004",
+      "rp_name": "HACCP & Food Safety Management System",
+      "module_id": "M01",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Build or update your HACCP system to cover all food processes in your cafe from goods receipt through storage preparation cooking display and service. Document each critical control point with target parameters monitoring frequency corrective actions and responsible person. Train all kitchen and food preparation staff on the HACCP system and their specific responsibilities within it.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP004",
+        "rp_name": "HACCP & Food Safety Management System",
+        "failure_modes": [
+          {
+            "fm_id": "FM007",
+            "fm_title": "Food safety management system (HACCP) failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_046",
+      "item_id": "B015",
+      "item_type": "block",
+      "title": "Supplier Due Diligence",
+      "source_rp": "RP004",
+      "rp_name": "HACCP & Food Safety Management System",
+      "module_id": "M01",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Build or update your HACCP system to cover all food processes in your cafe from goods receipt through storage preparation cooking display and service. Document each critical control point with target parameters monitoring frequency corrective actions and responsible person. Train all kitchen and food preparation staff on the HACCP system and their specific responsibilities within it.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP004",
+        "rp_name": "HACCP & Food Safety Management System",
+        "failure_modes": [
+          {
+            "fm_id": "FM007",
+            "fm_title": "Food safety management system (HACCP) failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_047",
+      "item_id": "B016",
+      "item_type": "block",
+      "title": "Food Safety Record-Keeping",
+      "source_rp": "RP004",
+      "rp_name": "HACCP & Food Safety Management System",
+      "module_id": "M01",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Build or update your HACCP system to cover all food processes in your cafe from goods receipt through storage preparation cooking display and service. Document each critical control point with target parameters monitoring frequency corrective actions and responsible person. Train all kitchen and food preparation staff on the HACCP system and their specific responsibilities within it.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP004",
+        "rp_name": "HACCP & Food Safety Management System",
+        "failure_modes": [
+          {
+            "fm_id": "FM007",
+            "fm_title": "Food safety management system (HACCP) failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_048",
+      "item_id": "B021",
+      "item_type": "block",
+      "title": "Peak Queue Management",
+      "source_rp": "RP006",
+      "rp_name": "Queue Management & Service Speed",
+      "module_id": "M02",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Design a peak period workflow that assigns specific roles: dedicated till operator barista food runner and floor support. Create a peak staffing model based on transaction data showing exactly how many team members you need for each hour of the day. Implement a queue management communication strategy where team members acknowledge waiting customers and provide time estimates.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "failure_modes": [
+          {
+            "fm_id": "FM011",
+            "fm_title": "Queue management and wait time failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_049",
+      "item_id": "B022",
+      "item_type": "block",
+      "title": "Order-Taking Speed Protocol",
+      "source_rp": "RP006",
+      "rp_name": "Queue Management & Service Speed",
+      "module_id": "M02",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Design a peak period workflow that assigns specific roles: dedicated till operator barista food runner and floor support. Create a peak staffing model based on transaction data showing exactly how many team members you need for each hour of the day. Implement a queue management communication strategy where team members acknowledge waiting customers and provide time estimates.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "failure_modes": [
+          {
+            "fm_id": "FM011",
+            "fm_title": "Queue management and wait time failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_050",
+      "item_id": "B023",
+      "item_type": "block",
+      "title": "Queue Communication Experience",
+      "source_rp": "RP006",
+      "rp_name": "Queue Management & Service Speed",
+      "module_id": "M02",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Design a peak period workflow that assigns specific roles: dedicated till operator barista food runner and floor support. Create a peak staffing model based on transaction data showing exactly how many team members you need for each hour of the day. Implement a queue management communication strategy where team members acknowledge waiting customers and provide time estimates.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "failure_modes": [
+          {
+            "fm_id": "FM011",
+            "fm_title": "Queue management and wait time failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_051",
+      "item_id": "B024",
+      "item_type": "block",
+      "title": "Throughput Optimisation System",
+      "source_rp": "RP006",
+      "rp_name": "Queue Management & Service Speed",
+      "module_id": "M02",
+      "timeline": "Days 31–60",
+      "priority": "high",
+      "description": "Design a peak period workflow that assigns specific roles: dedicated till operator barista food runner and floor support. Create a peak staffing model based on transaction data showing exactly how many team members you need for each hour of the day. Implement a queue management communication strategy where team members acknowledge waiting customers and provide time estimates.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "failure_modes": [
+          {
+            "fm_id": "FM011",
+            "fm_title": "Queue management and wait time failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_013",
+      "item_id": "B074",
+      "item_type": "block",
+      "title": "Daily Team Briefing Protocol",
+      "source_rp": "RP020",
+      "rp_name": "Team Communication & Meetings",
+      "module_id": "M04",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Implement a structured communication framework: daily pre-shift briefings weekly team meetings and monthly all-hands sessions. Create agenda templates for each format. Establish a digital communication channel (WhatsApp group or similar) for operational updates. Develop a rota publication policy ensuring at least two weeks advance notice. Track meeting attendance and action completion.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP020",
+        "rp_name": "Team Communication & Meetings",
+        "failure_modes": [
+          {
+            "fm_id": "FM032",
+            "fm_title": "Team communication and meeting failure"
+          }
+        ],
+        "signal_ids": [
+          "S056",
+          "S071"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_014",
+      "item_id": "B075",
+      "item_type": "block",
+      "title": "Weekly Team Meeting Structure",
+      "source_rp": "RP020",
+      "rp_name": "Team Communication & Meetings",
+      "module_id": "M04",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Implement a structured communication framework: daily pre-shift briefings weekly team meetings and monthly all-hands sessions. Create agenda templates for each format. Establish a digital communication channel (WhatsApp group or similar) for operational updates. Develop a rota publication policy ensuring at least two weeks advance notice. Track meeting attendance and action completion.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP020",
+        "rp_name": "Team Communication & Meetings",
+        "failure_modes": [
+          {
+            "fm_id": "FM032",
+            "fm_title": "Team communication and meeting failure"
+          }
+        ],
+        "signal_ids": [
+          "S056",
+          "S071"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_015",
+      "item_id": "B076",
+      "item_type": "block",
+      "title": "Communication Culture & Feedback",
+      "source_rp": "RP020",
+      "rp_name": "Team Communication & Meetings",
+      "module_id": "M04",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Implement a structured communication framework: daily pre-shift briefings weekly team meetings and monthly all-hands sessions. Create agenda templates for each format. Establish a digital communication channel (WhatsApp group or similar) for operational updates. Develop a rota publication policy ensuring at least two weeks advance notice. Track meeting attendance and action completion.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP020",
+        "rp_name": "Team Communication & Meetings",
+        "failure_modes": [
+          {
+            "fm_id": "FM032",
+            "fm_title": "Team communication and meeting failure"
+          }
+        ],
+        "signal_ids": [
+          "S056",
+          "S071"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_026",
+      "item_id": "B089",
+      "item_type": "block",
+      "title": "Workflow Layout Audit",
+      "source_rp": "RP025",
+      "rp_name": "Workflow Layout & Station Design",
+      "module_id": "M05",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Conduct a formal workflow audit mapping movement patterns during peak service. Redesign station layouts to minimise movement and eliminate crossover. Implement the 3-step rule: every item needed for a drink should be within three steps of the espresso machine. Ensure equipment placement supports a logical left-to-right workflow. Address equipment reliability issues that cause workflow disruption.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP025",
+        "rp_name": "Workflow Layout & Station Design",
+        "failure_modes": [
+          {
+            "fm_id": "FM041",
+            "fm_title": "Workflow layout and station design failure"
+          }
+        ],
+        "signal_ids": [
+          "S073"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_027",
+      "item_id": "B090",
+      "item_type": "block",
+      "title": "Station Design Optimisation",
+      "source_rp": "RP025",
+      "rp_name": "Workflow Layout & Station Design",
+      "module_id": "M05",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Conduct a formal workflow audit mapping movement patterns during peak service. Redesign station layouts to minimise movement and eliminate crossover. Implement the 3-step rule: every item needed for a drink should be within three steps of the espresso machine. Ensure equipment placement supports a logical left-to-right workflow. Address equipment reliability issues that cause workflow disruption.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP025",
+        "rp_name": "Workflow Layout & Station Design",
+        "failure_modes": [
+          {
+            "fm_id": "FM041",
+            "fm_title": "Workflow layout and station design failure"
+          }
+        ],
+        "signal_ids": [
+          "S073"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_028",
+      "item_id": "B091",
+      "item_type": "block",
+      "title": "Workflow Excellence",
+      "source_rp": "RP025",
+      "rp_name": "Workflow Layout & Station Design",
+      "module_id": "M05",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Conduct a formal workflow audit mapping movement patterns during peak service. Redesign station layouts to minimise movement and eliminate crossover. Implement the 3-step rule: every item needed for a drink should be within three steps of the espresso machine. Ensure equipment placement supports a logical left-to-right workflow. Address equipment reliability issues that cause workflow disruption.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP025",
+        "rp_name": "Workflow Layout & Station Design",
+        "failure_modes": [
+          {
+            "fm_id": "FM041",
+            "fm_title": "Workflow layout and station design failure"
+          }
+        ],
+        "signal_ids": [
+          "S073"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_052",
+      "item_id": "B025",
+      "item_type": "block",
+      "title": "Order Accuracy Checklist",
+      "source_rp": "RP007",
+      "rp_name": "Order Accuracy & Service Quality",
+      "module_id": "M02",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Implement a standardised order-taking process with clear call-out protocols between the till and the bar. Create a drink modifier checklist covering milk alternatives syrups temperature preferences and dietary requirements. Develop a quality check step before handoff where the barista confirms the drink matches the order. Train all team members on your greeting standard and customer interaction expectations.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP007",
+        "rp_name": "Order Accuracy & Service Quality",
+        "failure_modes": [
+          {
+            "fm_id": "FM012",
+            "fm_title": "Order accuracy and fulfilment failure"
+          }
+        ],
+        "signal_ids": [
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_053",
+      "item_id": "B026",
+      "item_type": "block",
+      "title": "Customer Greeting Standard",
+      "source_rp": "RP007",
+      "rp_name": "Order Accuracy & Service Quality",
+      "module_id": "M02",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Implement a standardised order-taking process with clear call-out protocols between the till and the bar. Create a drink modifier checklist covering milk alternatives syrups temperature preferences and dietary requirements. Develop a quality check step before handoff where the barista confirms the drink matches the order. Train all team members on your greeting standard and customer interaction expectations.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP007",
+        "rp_name": "Order Accuracy & Service Quality",
+        "failure_modes": [
+          {
+            "fm_id": "FM012",
+            "fm_title": "Order accuracy and fulfilment failure"
+          }
+        ],
+        "signal_ids": [
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_054",
+      "item_id": "B027",
+      "item_type": "block",
+      "title": "Drink Handoff Quality Check",
+      "source_rp": "RP007",
+      "rp_name": "Order Accuracy & Service Quality",
+      "module_id": "M02",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Implement a standardised order-taking process with clear call-out protocols between the till and the bar. Create a drink modifier checklist covering milk alternatives syrups temperature preferences and dietary requirements. Develop a quality check step before handoff where the barista confirms the drink matches the order. Train all team members on your greeting standard and customer interaction expectations.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP007",
+        "rp_name": "Order Accuracy & Service Quality",
+        "failure_modes": [
+          {
+            "fm_id": "FM012",
+            "fm_title": "Order accuracy and fulfilment failure"
+          }
+        ],
+        "signal_ids": [
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_055",
+      "item_id": "B028",
+      "item_type": "block",
+      "title": "Order Accuracy Tracking",
+      "source_rp": "RP007",
+      "rp_name": "Order Accuracy & Service Quality",
+      "module_id": "M02",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Implement a standardised order-taking process with clear call-out protocols between the till and the bar. Create a drink modifier checklist covering milk alternatives syrups temperature preferences and dietary requirements. Develop a quality check step before handoff where the barista confirms the drink matches the order. Train all team members on your greeting standard and customer interaction expectations.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP007",
+        "rp_name": "Order Accuracy & Service Quality",
+        "failure_modes": [
+          {
+            "fm_id": "FM012",
+            "fm_title": "Order accuracy and fulfilment failure"
+          }
+        ],
+        "signal_ids": [
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_056",
+      "item_id": "B172",
+      "item_type": "block",
+      "title": "Cafe Values Definition",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Define and document your cafe's core values in clear specific terms that guide daily behaviour. Create a staff handbook covering values standards policies and procedures. Implement a values-based onboarding process where new starters learn what matters to your cafe not just what tasks to perform. Address any toxic dynamics or cultural issues directly — they will not resolve themselves.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166",
+          "S169"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_057",
+      "item_id": "B173",
+      "item_type": "block",
+      "title": "Staff Handbook & Policies",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Define and document your cafe's core values in clear specific terms that guide daily behaviour. Create a staff handbook covering values standards policies and procedures. Implement a values-based onboarding process where new starters learn what matters to your cafe not just what tasks to perform. Address any toxic dynamics or cultural issues directly — they will not resolve themselves.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166",
+          "S169"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_058",
+      "item_id": "B174",
+      "item_type": "block",
+      "title": "Toxic Dynamics Intervention",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Define and document your cafe's core values in clear specific terms that guide daily behaviour. Create a staff handbook covering values standards policies and procedures. Implement a values-based onboarding process where new starters learn what matters to your cafe not just what tasks to perform. Address any toxic dynamics or cultural issues directly — they will not resolve themselves.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166",
+          "S169"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_059",
+      "item_id": "B175",
+      "item_type": "block",
+      "title": "Culture Excellence",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Define and document your cafe's core values in clear specific terms that guide daily behaviour. Create a staff handbook covering values standards policies and procedures. Implement a values-based onboarding process where new starters learn what matters to your cafe not just what tasks to perform. Address any toxic dynamics or cultural issues directly — they will not resolve themselves.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166",
+          "S169"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_060",
+      "item_id": "B168",
+      "item_type": "block",
+      "title": "Catering & Events Revenue",
+      "source_rp": "RP050",
+      "rp_name": "Revenue Diversification & Expansion",
+      "module_id": "M11",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Develop a revenue diversification plan evaluating each opportunity against investment required margin potential and operational impact. Create a pilot programme for your most promising new revenue stream. Assess expansion readiness — do your systems team and finances support a second location? If considering expansion ensure your first site runs independently before opening a second.",
+      "depends_on_modules": [
+        "M07"
+      ],
+      "trace": {
+        "rp_id": "RP050",
+        "rp_name": "Revenue Diversification & Expansion",
+        "failure_modes": [
+          {
+            "fm_id": "FM088",
+            "fm_title": "Revenue diversification failure"
+          }
+        ],
+        "signal_ids": [
+          "S160"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_061",
+      "item_id": "B169",
+      "item_type": "block",
+      "title": "Retail Coffee & Merchandise",
+      "source_rp": "RP050",
+      "rp_name": "Revenue Diversification & Expansion",
+      "module_id": "M11",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Develop a revenue diversification plan evaluating each opportunity against investment required margin potential and operational impact. Create a pilot programme for your most promising new revenue stream. Assess expansion readiness — do your systems team and finances support a second location? If considering expansion ensure your first site runs independently before opening a second.",
+      "depends_on_modules": [
+        "M07"
+      ],
+      "trace": {
+        "rp_id": "RP050",
+        "rp_name": "Revenue Diversification & Expansion",
+        "failure_modes": [
+          {
+            "fm_id": "FM088",
+            "fm_title": "Revenue diversification failure"
+          }
+        ],
+        "signal_ids": [
+          "S160"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_062",
+      "item_id": "B170",
+      "item_type": "block",
+      "title": "Evening Trade Development",
+      "source_rp": "RP050",
+      "rp_name": "Revenue Diversification & Expansion",
+      "module_id": "M11",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Develop a revenue diversification plan evaluating each opportunity against investment required margin potential and operational impact. Create a pilot programme for your most promising new revenue stream. Assess expansion readiness — do your systems team and finances support a second location? If considering expansion ensure your first site runs independently before opening a second.",
+      "depends_on_modules": [
+        "M07"
+      ],
+      "trace": {
+        "rp_id": "RP050",
+        "rp_name": "Revenue Diversification & Expansion",
+        "failure_modes": [
+          {
+            "fm_id": "FM088",
+            "fm_title": "Revenue diversification failure"
+          }
+        ],
+        "signal_ids": [
+          "S160"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_063",
+      "item_id": "B171",
+      "item_type": "block",
+      "title": "Subscription & Membership Model",
+      "source_rp": "RP050",
+      "rp_name": "Revenue Diversification & Expansion",
+      "module_id": "M11",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Develop a revenue diversification plan evaluating each opportunity against investment required margin potential and operational impact. Create a pilot programme for your most promising new revenue stream. Assess expansion readiness — do your systems team and finances support a second location? If considering expansion ensure your first site runs independently before opening a second.",
+      "depends_on_modules": [
+        "M07"
+      ],
+      "trace": {
+        "rp_id": "RP050",
+        "rp_name": "Revenue Diversification & Expansion",
+        "failure_modes": [
+          {
+            "fm_id": "FM088",
+            "fm_title": "Revenue diversification failure"
+          }
+        ],
+        "signal_ids": [
+          "S160"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_064",
+      "item_id": "B208",
+      "item_type": "block",
+      "title": "Pop-Up & Market Operations",
+      "source_rp": "RP050",
+      "rp_name": "Revenue Diversification & Expansion",
+      "module_id": "M11",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Develop a revenue diversification plan evaluating each opportunity against investment required margin potential and operational impact. Create a pilot programme for your most promising new revenue stream. Assess expansion readiness — do your systems team and finances support a second location? If considering expansion ensure your first site runs independently before opening a second.",
+      "depends_on_modules": [
+        "M07"
+      ],
+      "trace": {
+        "rp_id": "RP050",
+        "rp_name": "Revenue Diversification & Expansion",
+        "failure_modes": [
+          {
+            "fm_id": "FM088",
+            "fm_title": "Revenue diversification failure"
+          }
+        ],
+        "signal_ids": [
+          "S160"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_065",
+      "item_id": "B060",
+      "item_type": "block",
+      "title": "Dietary Options Audit",
+      "source_rp": "RP017",
+      "rp_name": "Dietary Inclusivity & Alternative Options",
+      "module_id": "M03",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Develop a comprehensive dietary options strategy covering vegan vegetarian gluten-free dairy-free and other common dietary requirements. Ensure your menu clearly labels dietary suitability. Train your team to discuss dietary options knowledgeably and enthusiastically. Create dedicated dietary menus or sections that feel considered not token.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP017",
+        "rp_name": "Dietary Inclusivity & Alternative Options",
+        "failure_modes": [
+          {
+            "fm_id": "FM028",
+            "fm_title": "Dietary inclusivity and alternative options failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_066",
+      "item_id": "B061",
+      "item_type": "block",
+      "title": "Vegan/GF Menu Development",
+      "source_rp": "RP017",
+      "rp_name": "Dietary Inclusivity & Alternative Options",
+      "module_id": "M03",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Develop a comprehensive dietary options strategy covering vegan vegetarian gluten-free dairy-free and other common dietary requirements. Ensure your menu clearly labels dietary suitability. Train your team to discuss dietary options knowledgeably and enthusiastically. Create dedicated dietary menus or sections that feel considered not token.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP017",
+        "rp_name": "Dietary Inclusivity & Alternative Options",
+        "failure_modes": [
+          {
+            "fm_id": "FM028",
+            "fm_title": "Dietary inclusivity and alternative options failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_067",
+      "item_id": "B062",
+      "item_type": "block",
+      "title": "Dietary Inclusivity Marketing",
+      "source_rp": "RP017",
+      "rp_name": "Dietary Inclusivity & Alternative Options",
+      "module_id": "M03",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Develop a comprehensive dietary options strategy covering vegan vegetarian gluten-free dairy-free and other common dietary requirements. Ensure your menu clearly labels dietary suitability. Train your team to discuss dietary options knowledgeably and enthusiastically. Create dedicated dietary menus or sections that feel considered not token.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP017",
+        "rp_name": "Dietary Inclusivity & Alternative Options",
+        "failure_modes": [
+          {
+            "fm_id": "FM028",
+            "fm_title": "Dietary inclusivity and alternative options failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_068",
+      "item_id": "B050",
+      "item_type": "block",
+      "title": "Food Prep Standards & Consistency",
+      "source_rp": "RP014",
+      "rp_name": "Food Quality & Menu Innovation",
+      "module_id": "M03",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Develop a structured menu review process conducted quarterly. Track food item sales performance cost margins and customer feedback. Create a seasonal menu calendar that introduces new items and retires underperformers. Establish food quality standards with your suppliers including reject criteria. Conduct food supplier quality assessments annually and maintain at least two backup suppliers for key items.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP014",
+        "rp_name": "Food Quality & Menu Innovation",
+        "failure_modes": [
+          {
+            "fm_id": "FM024",
+            "fm_title": "Menu stagnation and innovation failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_069",
+      "item_id": "B051",
+      "item_type": "block",
+      "title": "Seasonal Menu Development",
+      "source_rp": "RP014",
+      "rp_name": "Food Quality & Menu Innovation",
+      "module_id": "M03",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Develop a structured menu review process conducted quarterly. Track food item sales performance cost margins and customer feedback. Create a seasonal menu calendar that introduces new items and retires underperformers. Establish food quality standards with your suppliers including reject criteria. Conduct food supplier quality assessments annually and maintain at least two backup suppliers for key items.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP014",
+        "rp_name": "Food Quality & Menu Innovation",
+        "failure_modes": [
+          {
+            "fm_id": "FM024",
+            "fm_title": "Menu stagnation and innovation failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_070",
+      "item_id": "B052",
+      "item_type": "block",
+      "title": "Food Supplier Quality Assessment",
+      "source_rp": "RP014",
+      "rp_name": "Food Quality & Menu Innovation",
+      "module_id": "M03",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Develop a structured menu review process conducted quarterly. Track food item sales performance cost margins and customer feedback. Create a seasonal menu calendar that introduces new items and retires underperformers. Establish food quality standards with your suppliers including reject criteria. Conduct food supplier quality assessments annually and maintain at least two backup suppliers for key items.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP014",
+        "rp_name": "Food Quality & Menu Innovation",
+        "failure_modes": [
+          {
+            "fm_id": "FM024",
+            "fm_title": "Menu stagnation and innovation failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_071",
+      "item_id": "B053",
+      "item_type": "block",
+      "title": "Food Excellence Programme",
+      "source_rp": "RP014",
+      "rp_name": "Food Quality & Menu Innovation",
+      "module_id": "M03",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Develop a structured menu review process conducted quarterly. Track food item sales performance cost margins and customer feedback. Create a seasonal menu calendar that introduces new items and retires underperformers. Establish food quality standards with your suppliers including reject criteria. Conduct food supplier quality assessments annually and maintain at least two backup suppliers for key items.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP014",
+        "rp_name": "Food Quality & Menu Innovation",
+        "failure_modes": [
+          {
+            "fm_id": "FM024",
+            "fm_title": "Menu stagnation and innovation failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_072",
+      "item_id": "B199",
+      "item_type": "block",
+      "title": "Cold Drink Programme",
+      "source_rp": "RP014",
+      "rp_name": "Food Quality & Menu Innovation",
+      "module_id": "M03",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Develop a structured menu review process conducted quarterly. Track food item sales performance cost margins and customer feedback. Create a seasonal menu calendar that introduces new items and retires underperformers. Establish food quality standards with your suppliers including reject criteria. Conduct food supplier quality assessments annually and maintain at least two backup suppliers for key items.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP014",
+        "rp_name": "Food Quality & Menu Innovation",
+        "failure_modes": [
+          {
+            "fm_id": "FM024",
+            "fm_title": "Menu stagnation and innovation failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L2_073",
+      "item_id": "B201",
+      "item_type": "block",
+      "title": "Seasonal Specials Playbook",
+      "source_rp": "RP014",
+      "rp_name": "Food Quality & Menu Innovation",
+      "module_id": "M03",
+      "timeline": "Days 31–60",
+      "priority": "medium",
+      "description": "Develop a structured menu review process conducted quarterly. Track food item sales performance cost margins and customer feedback. Create a seasonal menu calendar that introduces new items and retires underperformers. Establish food quality standards with your suppliers including reject criteria. Conduct food supplier quality assessments annually and maintain at least two backup suppliers for key items.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP014",
+        "rp_name": "Food Quality & Menu Innovation",
+        "failure_modes": [
+          {
+            "fm_id": "FM024",
+            "fm_title": "Menu stagnation and innovation failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    }
+  ],
+  "L3_tasks": [
+    {
+      "task_id": "L3_001",
+      "item_id": "B085",
+      "item_type": "block",
+      "title": "Peak Staffing Model",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_002",
+      "item_id": "B088",
+      "item_type": "block",
+      "title": "Peak Performance Analysis",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_003",
+      "item_id": "B203",
+      "item_type": "block",
+      "title": "Drive-Through Workflow",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_004",
+      "item_id": "B204",
+      "item_type": "block",
+      "title": "Kiosk Operations",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_005",
+      "item_id": "B205",
+      "item_type": "block",
+      "title": "Coffee Van Operations",
+      "source_rp": "RP024",
+      "rp_name": "Peak Staffing & Rush Management",
+      "module_id": "M05",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Master the morning rush. Your peak period should feel like a well-rehearsed performance — fast energised and controlled. Track peak period metrics daily and continuously optimise. Study the best high-volume cafes and learn from their workflows. Your team should anticipate demand not react to it.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP024",
+        "rp_name": "Peak Staffing & Rush Management",
+        "failure_modes": [
+          {
+            "fm_id": "FM040",
+            "fm_title": "Morning rush and peak management failure"
+          },
+          {
+            "fm_id": "FM042",
+            "fm_title": "Ticket time and service speed failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S070",
+          "S073",
+          "S083",
+          "S178"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_006",
+      "item_id": "B172",
+      "item_type": "block",
+      "title": "Cafe Values Definition",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a culture where your values are lived not laminated. Your standards should be maintained through shared commitment not surveillance. Celebrate team members who embody your values and address those who do not. Your culture is what happens when you are not watching — make it strong enough to sustain itself.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166",
+          "S169"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_007",
+      "item_id": "B175",
+      "item_type": "block",
+      "title": "Culture Excellence",
+      "source_rp": "RP051",
+      "rp_name": "Values Alignment & Standards Culture",
+      "module_id": "M12",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a culture where your values are lived not laminated. Your standards should be maintained through shared commitment not surveillance. Celebrate team members who embody your values and address those who do not. Your culture is what happens when you are not watching — make it strong enough to sustain itself.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP051",
+        "rp_name": "Values Alignment & Standards Culture",
+        "failure_modes": [
+          {
+            "fm_id": "FM092",
+            "fm_title": "Values articulation and alignment failure"
+          },
+          {
+            "fm_id": "FM093",
+            "fm_title": "Standards consistency and culture failure"
+          }
+        ],
+        "signal_ids": [
+          "S166",
+          "S169"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_008",
+      "item_id": "B092",
+      "item_type": "block",
+      "title": "Opening Checklist",
+      "source_rp": "RP026",
+      "rp_name": "Daily Routines & Shift Handover",
+      "module_id": "M05",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Your daily routines should run like clockwork. Every shift should start and end consistently regardless of who is working. Build a culture where checklists are respected not resented. Your operational rhythm should be so reliable that you can identify anomalies immediately when something is not right.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP026",
+        "rp_name": "Daily Routines & Shift Handover",
+        "failure_modes": [
+          {
+            "fm_id": "FM039",
+            "fm_title": "Opening and closing routine failure"
+          },
+          {
+            "fm_id": "FM045",
+            "fm_title": "Shift handover and communication failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_009",
+      "item_id": "B094",
+      "item_type": "block",
+      "title": "Shift Handover System",
+      "source_rp": "RP026",
+      "rp_name": "Daily Routines & Shift Handover",
+      "module_id": "M05",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Your daily routines should run like clockwork. Every shift should start and end consistently regardless of who is working. Build a culture where checklists are respected not resented. Your operational rhythm should be so reliable that you can identify anomalies immediately when something is not right.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP026",
+        "rp_name": "Daily Routines & Shift Handover",
+        "failure_modes": [
+          {
+            "fm_id": "FM039",
+            "fm_title": "Opening and closing routine failure"
+          },
+          {
+            "fm_id": "FM045",
+            "fm_title": "Shift handover and communication failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_010",
+      "item_id": "B021",
+      "item_type": "block",
+      "title": "Peak Queue Management",
+      "source_rp": "RP006",
+      "rp_name": "Queue Management & Service Speed",
+      "module_id": "M02",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a service speed culture where the team takes pride in fast smooth service without sacrificing quality. Track average service times daily and display them to the team. Study your workflow during peak and continuously optimise. Your morning rush should feel energised and efficient not chaotic. Customers should never feel ignored even when you are busy.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "failure_modes": [
+          {
+            "fm_id": "FM011",
+            "fm_title": "Queue management and wait time failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_011",
+      "item_id": "B024",
+      "item_type": "block",
+      "title": "Throughput Optimisation System",
+      "source_rp": "RP006",
+      "rp_name": "Queue Management & Service Speed",
+      "module_id": "M02",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a service speed culture where the team takes pride in fast smooth service without sacrificing quality. Track average service times daily and display them to the team. Study your workflow during peak and continuously optimise. Your morning rush should feel energised and efficient not chaotic. Customers should never feel ignored even when you are busy.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP006",
+        "rp_name": "Queue Management & Service Speed",
+        "failure_modes": [
+          {
+            "fm_id": "FM011",
+            "fm_title": "Queue management and wait time failure"
+          }
+        ],
+        "signal_ids": [
+          "S019",
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_012",
+      "item_id": "B074",
+      "item_type": "block",
+      "title": "Daily Team Briefing Protocol",
+      "source_rp": "RP020",
+      "rp_name": "Team Communication & Meetings",
+      "module_id": "M04",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a communication culture where information flows freely and everyone feels heard. Your team should understand the cafe's goals challenges and successes. Use meetings as opportunities for recognition and skill sharing not just task allocation. Excellent communication is the foundation of team performance.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP020",
+        "rp_name": "Team Communication & Meetings",
+        "failure_modes": [
+          {
+            "fm_id": "FM032",
+            "fm_title": "Team communication and meeting failure"
+          }
+        ],
+        "signal_ids": [
+          "S056",
+          "S071"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_013",
+      "item_id": "B076",
+      "item_type": "block",
+      "title": "Communication Culture & Feedback",
+      "source_rp": "RP020",
+      "rp_name": "Team Communication & Meetings",
+      "module_id": "M04",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a communication culture where information flows freely and everyone feels heard. Your team should understand the cafe's goals challenges and successes. Use meetings as opportunities for recognition and skill sharing not just task allocation. Excellent communication is the foundation of team performance.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP020",
+        "rp_name": "Team Communication & Meetings",
+        "failure_modes": [
+          {
+            "fm_id": "FM032",
+            "fm_title": "Team communication and meeting failure"
+          }
+        ],
+        "signal_ids": [
+          "S056",
+          "S071"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_014",
+      "item_id": "B179",
+      "item_type": "block",
+      "title": "Daily Prep List Protocol",
+      "source_rp": "RP053",
+      "rp_name": "Operational Rhythm & Daily Discipline",
+      "module_id": "M14",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Operational discipline should be invisible because it is automatic. Your daily routines should be so embedded that they happen without thinking. Build a culture where discipline is respected and lapses are noticed by the team not just by management. Your operational rhythm should be the heartbeat of your cafe.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "failure_modes": [
+          {
+            "fm_id": "FM097",
+            "fm_title": "Operational discipline and daily routine failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S071",
+          "S175",
+          "S178",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_015",
+      "item_id": "B182",
+      "item_type": "block",
+      "title": "Operational Rhythm Dashboard",
+      "source_rp": "RP053",
+      "rp_name": "Operational Rhythm & Daily Discipline",
+      "module_id": "M14",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Operational discipline should be invisible because it is automatic. Your daily routines should be so embedded that they happen without thinking. Build a culture where discipline is respected and lapses are noticed by the team not just by management. Your operational rhythm should be the heartbeat of your cafe.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP053",
+        "rp_name": "Operational Rhythm & Daily Discipline",
+        "failure_modes": [
+          {
+            "fm_id": "FM097",
+            "fm_title": "Operational discipline and daily routine failure"
+          }
+        ],
+        "signal_ids": [
+          "S069",
+          "S071",
+          "S175",
+          "S178",
+          "S180"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_016",
+      "item_id": "B118",
+      "item_type": "block",
+      "title": "Menu Pricing Strategy",
+      "source_rp": "RP034",
+      "rp_name": "Revenue Growth & Pricing Strategy",
+      "module_id": "M07",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a revenue growth culture where the team understands the connection between their service and the cafe's financial health. Your pricing should reflect your value not just your costs. Develop premium offerings that increase ATV without alienating core customers. Track revenue per hour as your primary productivity metric.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "failure_modes": [
+          {
+            "fm_id": "FM059",
+            "fm_title": "Revenue per hour and sales productivity failure"
+          }
+        ],
+        "signal_ids": [
+          "S160",
+          "S175"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_017",
+      "item_id": "B121",
+      "item_type": "block",
+      "title": "Revenue Growth Strategy",
+      "source_rp": "RP034",
+      "rp_name": "Revenue Growth & Pricing Strategy",
+      "module_id": "M07",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a revenue growth culture where the team understands the connection between their service and the cafe's financial health. Your pricing should reflect your value not just your costs. Develop premium offerings that increase ATV without alienating core customers. Track revenue per hour as your primary productivity metric.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP034",
+        "rp_name": "Revenue Growth & Pricing Strategy",
+        "failure_modes": [
+          {
+            "fm_id": "FM059",
+            "fm_title": "Revenue per hour and sales productivity failure"
+          }
+        ],
+        "signal_ids": [
+          "S160",
+          "S175"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_018",
+      "item_id": "B005",
+      "item_type": "block",
+      "title": "Allergen Identification & Labelling",
+      "source_rp": "RP002",
+      "rp_name": "Allergen Management & PPDS Compliance",
+      "module_id": "M01",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Establish allergen management as a non-negotiable part of your food safety culture. Conduct quarterly allergen audits including mystery customer tests. Your allergen processes should be thorough enough that a customer with a severe allergy feels genuinely safe eating with you. Track allergen near-misses and use them to strengthen your system.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP002",
+        "rp_name": "Allergen Management & PPDS Compliance",
+        "failure_modes": [
+          {
+            "fm_id": "FM002",
+            "fm_title": "Allergen management and PPDS compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_019",
+      "item_id": "B008",
+      "item_type": "block",
+      "title": "Allergen Prevention Programme",
+      "source_rp": "RP002",
+      "rp_name": "Allergen Management & PPDS Compliance",
+      "module_id": "M01",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Establish allergen management as a non-negotiable part of your food safety culture. Conduct quarterly allergen audits including mystery customer tests. Your allergen processes should be thorough enough that a customer with a severe allergy feels genuinely safe eating with you. Track allergen near-misses and use them to strengthen your system.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP002",
+        "rp_name": "Allergen Management & PPDS Compliance",
+        "failure_modes": [
+          {
+            "fm_id": "FM002",
+            "fm_title": "Allergen management and PPDS compliance failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_020",
+      "item_id": "B025",
+      "item_type": "block",
+      "title": "Order Accuracy Checklist",
+      "source_rp": "RP007",
+      "rp_name": "Order Accuracy & Service Quality",
+      "module_id": "M02",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Create a service culture where every customer interaction feels personal and attentive. Track order accuracy as a key metric and celebrate perfect days. Develop your team's ability to remember regular customers and their preferences. Your service quality should be a primary reason customers choose your cafe over alternatives.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP007",
+        "rp_name": "Order Accuracy & Service Quality",
+        "failure_modes": [
+          {
+            "fm_id": "FM012",
+            "fm_title": "Order accuracy and fulfilment failure"
+          }
+        ],
+        "signal_ids": [
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_021",
+      "item_id": "B028",
+      "item_type": "block",
+      "title": "Order Accuracy Tracking",
+      "source_rp": "RP007",
+      "rp_name": "Order Accuracy & Service Quality",
+      "module_id": "M02",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Create a service culture where every customer interaction feels personal and attentive. Track order accuracy as a key metric and celebrate perfect days. Develop your team's ability to remember regular customers and their preferences. Your service quality should be a primary reason customers choose your cafe over alternatives.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP007",
+        "rp_name": "Order Accuracy & Service Quality",
+        "failure_modes": [
+          {
+            "fm_id": "FM012",
+            "fm_title": "Order accuracy and fulfilment failure"
+          }
+        ],
+        "signal_ids": [
+          "S020"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_022",
+      "item_id": "B060",
+      "item_type": "block",
+      "title": "Dietary Options Audit",
+      "source_rp": "RP017",
+      "rp_name": "Dietary Inclusivity & Alternative Options",
+      "module_id": "M03",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Position dietary inclusivity as a strength not an accommodation. Develop signature vegan and gluten-free items that are genuinely excellent not compromises. Market your dietary options proactively and ensure your online presence reflects your inclusivity. Your cafe should be a destination for dietary-restricted customers not just tolerable.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP017",
+        "rp_name": "Dietary Inclusivity & Alternative Options",
+        "failure_modes": [
+          {
+            "fm_id": "FM028",
+            "fm_title": "Dietary inclusivity and alternative options failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_023",
+      "item_id": "B062",
+      "item_type": "block",
+      "title": "Dietary Inclusivity Marketing",
+      "source_rp": "RP017",
+      "rp_name": "Dietary Inclusivity & Alternative Options",
+      "module_id": "M03",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Position dietary inclusivity as a strength not an accommodation. Develop signature vegan and gluten-free items that are genuinely excellent not compromises. Market your dietary options proactively and ensure your online presence reflects your inclusivity. Your cafe should be a destination for dietary-restricted customers not just tolerable.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP017",
+        "rp_name": "Dietary Inclusivity & Alternative Options",
+        "failure_modes": [
+          {
+            "fm_id": "FM028",
+            "fm_title": "Dietary inclusivity and alternative options failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_024",
+      "item_id": "B081",
+      "item_type": "block",
+      "title": "Owner Role Clarity & Delegation",
+      "source_rp": "RP023",
+      "rp_name": "Owner Role & Leadership Development",
+      "module_id": "M13",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Evolve from operator to leader. Your cafe should run smoothly when you are not there — if it cannot your systems and team are not strong enough. Invest in your own development as a business leader. Build a leadership team that shares your vision and can make decisions autonomously. Your wellbeing and sustainability as an owner is critical to the business.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP023",
+        "rp_name": "Owner Role & Leadership Development",
+        "failure_modes": [
+          {
+            "fm_id": "FM037",
+            "fm_title": "Owner overwork and delegation failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_025",
+      "item_id": "B084",
+      "item_type": "block",
+      "title": "Owner Wellbeing & Balance",
+      "source_rp": "RP023",
+      "rp_name": "Owner Role & Leadership Development",
+      "module_id": "M13",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Evolve from operator to leader. Your cafe should run smoothly when you are not there — if it cannot your systems and team are not strong enough. Invest in your own development as a business leader. Build a leadership team that shares your vision and can make decisions autonomously. Your wellbeing and sustainability as an owner is critical to the business.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP023",
+        "rp_name": "Owner Role & Leadership Development",
+        "failure_modes": [
+          {
+            "fm_id": "FM037",
+            "fm_title": "Owner overwork and delegation failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_026",
+      "item_id": "B089",
+      "item_type": "block",
+      "title": "Workflow Layout Audit",
+      "source_rp": "RP025",
+      "rp_name": "Workflow Layout & Station Design",
+      "module_id": "M05",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Optimise your workspace like a kitchen brigade — every station designed for efficiency and every tool placed for speed. Review and refine your layout seasonally as your menu and service patterns evolve. Invest in equipment and layout changes that measurably improve throughput. Your workflow should be smooth enough that a new team member can follow it intuitively.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP025",
+        "rp_name": "Workflow Layout & Station Design",
+        "failure_modes": [
+          {
+            "fm_id": "FM041",
+            "fm_title": "Workflow layout and station design failure"
+          }
+        ],
+        "signal_ids": [
+          "S073"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_027",
+      "item_id": "B091",
+      "item_type": "block",
+      "title": "Workflow Excellence",
+      "source_rp": "RP025",
+      "rp_name": "Workflow Layout & Station Design",
+      "module_id": "M05",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Optimise your workspace like a kitchen brigade — every station designed for efficiency and every tool placed for speed. Review and refine your layout seasonally as your menu and service patterns evolve. Invest in equipment and layout changes that measurably improve throughput. Your workflow should be smooth enough that a new team member can follow it intuitively.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP025",
+        "rp_name": "Workflow Layout & Station Design",
+        "failure_modes": [
+          {
+            "fm_id": "FM041",
+            "fm_title": "Workflow layout and station design failure"
+          }
+        ],
+        "signal_ids": [
+          "S073"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_028",
+      "item_id": "B168",
+      "item_type": "block",
+      "title": "Catering & Events Revenue",
+      "source_rp": "RP050",
+      "rp_name": "Revenue Diversification & Expansion",
+      "module_id": "M11",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a diversified revenue model that reduces dependence on walk-in coffee sales. Each new revenue stream should be tested with a minimum viable approach before full commitment. If pursuing expansion create a site-opening playbook that captures everything you have learned. Growth should be strategic not opportunistic.",
+      "depends_on_modules": [
+        "M07"
+      ],
+      "trace": {
+        "rp_id": "RP050",
+        "rp_name": "Revenue Diversification & Expansion",
+        "failure_modes": [
+          {
+            "fm_id": "FM088",
+            "fm_title": "Revenue diversification failure"
+          }
+        ],
+        "signal_ids": [
+          "S160"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_029",
+      "item_id": "B171",
+      "item_type": "block",
+      "title": "Subscription & Membership Model",
+      "source_rp": "RP050",
+      "rp_name": "Revenue Diversification & Expansion",
+      "module_id": "M11",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a diversified revenue model that reduces dependence on walk-in coffee sales. Each new revenue stream should be tested with a minimum viable approach before full commitment. If pursuing expansion create a site-opening playbook that captures everything you have learned. Growth should be strategic not opportunistic.",
+      "depends_on_modules": [
+        "M07"
+      ],
+      "trace": {
+        "rp_id": "RP050",
+        "rp_name": "Revenue Diversification & Expansion",
+        "failure_modes": [
+          {
+            "fm_id": "FM088",
+            "fm_title": "Revenue diversification failure"
+          }
+        ],
+        "signal_ids": [
+          "S160"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_030",
+      "item_id": "B208",
+      "item_type": "block",
+      "title": "Pop-Up & Market Operations",
+      "source_rp": "RP050",
+      "rp_name": "Revenue Diversification & Expansion",
+      "module_id": "M11",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a diversified revenue model that reduces dependence on walk-in coffee sales. Each new revenue stream should be tested with a minimum viable approach before full commitment. If pursuing expansion create a site-opening playbook that captures everything you have learned. Growth should be strategic not opportunistic.",
+      "depends_on_modules": [
+        "M07"
+      ],
+      "trace": {
+        "rp_id": "RP050",
+        "rp_name": "Revenue Diversification & Expansion",
+        "failure_modes": [
+          {
+            "fm_id": "FM088",
+            "fm_title": "Revenue diversification failure"
+          }
+        ],
+        "signal_ids": [
+          "S160"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_031",
+      "item_id": "B013",
+      "item_type": "block",
+      "title": "HACCP Food Safety System",
+      "source_rp": "RP004",
+      "rp_name": "HACCP & Food Safety Management System",
+      "module_id": "M01",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Your food safety management system should be a living document that evolves with your menu and operations. Conduct internal food safety audits quarterly and use findings to update procedures. Maintain supplier due diligence records and traceability systems. Aim for consistent EHO rating of 5 and use food safety excellence as a customer trust signal.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP004",
+        "rp_name": "HACCP & Food Safety Management System",
+        "failure_modes": [
+          {
+            "fm_id": "FM007",
+            "fm_title": "Food safety management system (HACCP) failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_032",
+      "item_id": "B016",
+      "item_type": "block",
+      "title": "Food Safety Record-Keeping",
+      "source_rp": "RP004",
+      "rp_name": "HACCP & Food Safety Management System",
+      "module_id": "M01",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Your food safety management system should be a living document that evolves with your menu and operations. Conduct internal food safety audits quarterly and use findings to update procedures. Maintain supplier due diligence records and traceability systems. Aim for consistent EHO rating of 5 and use food safety excellence as a customer trust signal.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP004",
+        "rp_name": "HACCP & Food Safety Management System",
+        "failure_modes": [
+          {
+            "fm_id": "FM007",
+            "fm_title": "Food safety management system (HACCP) failure"
+          }
+        ],
+        "signal_ids": [
+          "S002"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_033",
+      "item_id": "B050",
+      "item_type": "block",
+      "title": "Food Prep Standards & Consistency",
+      "source_rp": "RP014",
+      "rp_name": "Food Quality & Menu Innovation",
+      "module_id": "M03",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a menu that tells your cafe's story and evolves with the seasons. Develop signature items that customers cannot get elsewhere. Create a food development programme that tests new items systematically before full launch. Your menu should balance commercial performance with creative expression and dietary inclusivity.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP014",
+        "rp_name": "Food Quality & Menu Innovation",
+        "failure_modes": [
+          {
+            "fm_id": "FM024",
+            "fm_title": "Menu stagnation and innovation failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_034",
+      "item_id": "B053",
+      "item_type": "block",
+      "title": "Food Excellence Programme",
+      "source_rp": "RP014",
+      "rp_name": "Food Quality & Menu Innovation",
+      "module_id": "M03",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a menu that tells your cafe's story and evolves with the seasons. Develop signature items that customers cannot get elsewhere. Create a food development programme that tests new items systematically before full launch. Your menu should balance commercial performance with creative expression and dietary inclusivity.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP014",
+        "rp_name": "Food Quality & Menu Innovation",
+        "failure_modes": [
+          {
+            "fm_id": "FM024",
+            "fm_title": "Menu stagnation and innovation failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_035",
+      "item_id": "B199",
+      "item_type": "block",
+      "title": "Cold Drink Programme",
+      "source_rp": "RP014",
+      "rp_name": "Food Quality & Menu Innovation",
+      "module_id": "M03",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a menu that tells your cafe's story and evolves with the seasons. Develop signature items that customers cannot get elsewhere. Create a food development programme that tests new items systematically before full launch. Your menu should balance commercial performance with creative expression and dietary inclusivity.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP014",
+        "rp_name": "Food Quality & Menu Innovation",
+        "failure_modes": [
+          {
+            "fm_id": "FM024",
+            "fm_title": "Menu stagnation and innovation failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_036",
+      "item_id": "B201",
+      "item_type": "block",
+      "title": "Seasonal Specials Playbook",
+      "source_rp": "RP014",
+      "rp_name": "Food Quality & Menu Innovation",
+      "module_id": "M03",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a menu that tells your cafe's story and evolves with the seasons. Develop signature items that customers cannot get elsewhere. Create a food development programme that tests new items systematically before full launch. Your menu should balance commercial performance with creative expression and dietary inclusivity.",
+      "depends_on_modules": [
+        "M01"
+      ],
+      "trace": {
+        "rp_id": "RP014",
+        "rp_name": "Food Quality & Menu Innovation",
+        "failure_modes": [
+          {
+            "fm_id": "FM024",
+            "fm_title": "Menu stagnation and innovation failure"
+          }
+        ],
+        "signal_ids": [
+          "S046"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_037",
+      "item_id": "B077",
+      "item_type": "block",
+      "title": "Key Person Risk Assessment",
+      "source_rp": "RP022",
+      "rp_name": "Key Person Risk & Cross-Training",
+      "module_id": "M04",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build organisational resilience through deep cross-training and knowledge sharing. No single person's departure should threaten your cafe's operation. Create a knowledge capture system where processes are documented and regularly updated. Your team's collective capability should exceed any individual's contribution.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP022",
+        "rp_name": "Key Person Risk & Cross-Training",
+        "failure_modes": [
+          {
+            "fm_id": "FM034",
+            "fm_title": "Key person dependency and cover failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_038",
+      "item_id": "B080",
+      "item_type": "block",
+      "title": "Knowledge Capture System",
+      "source_rp": "RP022",
+      "rp_name": "Key Person Risk & Cross-Training",
+      "module_id": "M04",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build organisational resilience through deep cross-training and knowledge sharing. No single person's departure should threaten your cafe's operation. Create a knowledge capture system where processes are documented and regularly updated. Your team's collective capability should exceed any individual's contribution.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP022",
+        "rp_name": "Key Person Risk & Cross-Training",
+        "failure_modes": [
+          {
+            "fm_id": "FM034",
+            "fm_title": "Key person dependency and cover failure"
+          }
+        ],
+        "signal_ids": [
+          "S061"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_039",
+      "item_id": "B063",
+      "item_type": "block",
+      "title": "Exit Interview & Turnover Analysis",
+      "source_rp": "RP018",
+      "rp_name": "Staff Retention & Engagement",
+      "module_id": "M04",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a workplace culture where people want to stay and grow. Your cafe should be known locally as a great place to work. Track engagement alongside turnover and invest in the relationship between the two. The best cafes retain their baristas for years not months — aim for that standard.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP018",
+        "rp_name": "Staff Retention & Engagement",
+        "failure_modes": [
+          {
+            "fm_id": "FM036",
+            "fm_title": "Team morale and wellbeing failure"
+          }
+        ],
+        "signal_ids": [
+          "S056"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_040",
+      "item_id": "B066",
+      "item_type": "block",
+      "title": "Retention Culture Programme",
+      "source_rp": "RP018",
+      "rp_name": "Staff Retention & Engagement",
+      "module_id": "M04",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Build a workplace culture where people want to stay and grow. Your cafe should be known locally as a great place to work. Track engagement alongside turnover and invest in the relationship between the two. The best cafes retain their baristas for years not months — aim for that standard.",
+      "depends_on_modules": [
+        "M13"
+      ],
+      "trace": {
+        "rp_id": "RP018",
+        "rp_name": "Staff Retention & Engagement",
+        "failure_modes": [
+          {
+            "fm_id": "FM036",
+            "fm_title": "Team morale and wellbeing failure"
+          }
+        ],
+        "signal_ids": [
+          "S056"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_041",
+      "item_id": "B125",
+      "item_type": "block",
+      "title": "Payroll Cost Optimisation",
+      "source_rp": "RP036",
+      "rp_name": "Cost Structure & Payroll Control",
+      "module_id": "M07",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Master your cost structure so that margin is protected without sacrificing the customer or team experience. Your payroll model should be responsive to demand while providing team members with stable predictable hours. Build a cost-conscious culture where waste in any form is identified and addressed.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP036",
+        "rp_name": "Cost Structure & Payroll Control",
+        "failure_modes": [
+          {
+            "fm_id": "FM064",
+            "fm_title": "Payroll cost management failure"
+          }
+        ],
+        "signal_ids": [
+          "S083"
+        ]
+      }
+    },
+    {
+      "task_id": "L3_042",
+      "item_id": "B127",
+      "item_type": "block",
+      "title": "Cost Structure Excellence",
+      "source_rp": "RP036",
+      "rp_name": "Cost Structure & Payroll Control",
+      "module_id": "M07",
+      "timeline": "Days 61–90",
+      "priority": "standard",
+      "description": "Master your cost structure so that margin is protected without sacrificing the customer or team experience. Your payroll model should be responsive to demand while providing team members with stable predictable hours. Build a cost-conscious culture where waste in any form is identified and addressed.",
+      "depends_on_modules": [],
+      "trace": {
+        "rp_id": "RP036",
+        "rp_name": "Cost Structure & Payroll Control",
+        "failure_modes": [
+          {
+            "fm_id": "FM064",
+            "fm_title": "Payroll cost management failure"
+          }
+        ],
+        "signal_ids": [
+          "S083"
+        ]
+      }
+    }
+  ],
+  "blocks_used": [
+    "B005",
+    "B006",
+    "B007",
+    "B008",
+    "B013",
+    "B014",
+    "B015",
+    "B016",
+    "B021",
+    "B022",
+    "B023",
+    "B024",
+    "B025",
+    "B026",
+    "B027",
+    "B028",
+    "B050",
+    "B051",
+    "B052",
+    "B053",
+    "B060",
+    "B061",
+    "B062",
+    "B063",
+    "B064",
+    "B065",
+    "B066",
+    "B074",
+    "B075",
+    "B076",
+    "B077",
+    "B078",
+    "B079",
+    "B080",
+    "B081",
+    "B082",
+    "B083",
+    "B084",
+    "B085",
+    "B086",
+    "B087",
+    "B088",
+    "B089",
+    "B090",
+    "B091",
+    "B092",
+    "B093",
+    "B094",
+    "B118",
+    "B119",
+    "B120",
+    "B121",
+    "B125",
+    "B126",
+    "B127",
+    "B168",
+    "B169",
+    "B170",
+    "B171",
+    "B172",
+    "B173",
+    "B174",
+    "B175",
+    "B179",
+    "B180",
+    "B181",
+    "B182",
+    "B199",
+    "B201",
+    "B203",
+    "B204",
+    "B205",
+    "B208"
+  ],
+  "tools_used": [],
+  "priority_bands": [
+    {
+      "band": "CRITICAL",
+      "timeline": "Days 1–30",
+      "rp_ids": [
+        "RP018",
+        "RP022",
+        "RP023"
+      ]
+    },
+    {
+      "band": "HIGH",
+      "timeline": "Days 31–60",
+      "rp_ids": [
+        "RP006",
+        "RP053",
+        "RP026",
+        "RP034",
+        "RP004",
+        "RP024",
+        "RP036",
+        "RP002"
+      ]
+    },
+    {
+      "band": "STANDARD",
+      "timeline": "Days 61–90",
+      "rp_ids": [
+        "RP017",
+        "RP020",
+        "RP026",
+        "RP014",
+        "RP050",
+        "RP007",
+        "RP025",
+        "RP051"
+      ]
+    }
+  ],
+  "confidence": {
+    "state": "PROVISIONAL",
+    "note": "This plan is based on partial data. Some areas may need verification before L2 implementation.",
+    "signal_count": 17,
+    "domain_coverage": 8
+  },
+  "strengths": [
+    "Supply chain resilience",
+    "Brand and marketing",
+    "Physical environment",
+    "Technology adoption"
+  ],
+  "dependency_notes": [
+    "**Recruitment Onboarding & Development** runs alongside **Coffee Craft & Menu Excellence** — Team stability enables coffee craft excellence",
+    "**Operational Rhythm & Daily Discipline** runs alongside **Coffee Craft & Menu Excellence** — Daily discipline supports coffee craft delivery",
+    "**Food Safety & Hygiene Compliance** must precede **Customer Journey & Retention** — Food safety compliance before customer experience improvements",
+    "**Food Safety & Hygiene Compliance** must precede **Coffee Craft & Menu Excellence** — Safety protocols before coffee craft and menu changes",
+    "**Recruitment Onboarding & Development** runs alongside **Service Flow & Peak Management** — Team capacity affects service flow optimisation",
+    "**Leadership & Team Culture** must precede **Recruitment Onboarding & Development** — Leadership culture before recruitment and development",
+    "**Pricing Revenue & Cost Control** must precede **Expansion & Market Positioning** — Financial health before growth initiatives",
+    "**Leadership & Team Culture** must precede **Values Identity & Community** — Leadership must model the cafe culture",
+    "**Recruitment Onboarding & Development** runs alongside **Leadership & Team Culture** — Team development and leadership culture reinforce each other"
+  ],
+  "summary": {
+    "total_tasks": 164,
+    "total_blocks": 73,
+    "total_tools": 0,
+    "critical_items": 21,
+    "dependencies_enforced": 5
+  }
+}

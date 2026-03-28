@@ -1,0 +1,44 @@
+{
+  "id": "blk_standard_work_observation_loop",
+  "name": "Install standard work observation loop",
+  "description": "Choose a small number of critical service standards, observe them live, coach misses in the moment, and review drift at the end of the shift.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: standards only tighten when they are observed and coached in live service",
+  "updated_at": "2026-03-14T00:41:10.334560Z",
+  "effort_hours": 2.5,
+  "dependencies": [
+    "blk_build_floor_training"
+  ],
+  "tool_ids": [
+    "tool_standard_work_observation_sheet"
+  ],
+  "response_pattern_ids": [
+    "rp_standard_work_reset"
+  ],
+  "entry_conditions": [
+    "A few critical standards are worth protecting because drift is visible and costly.",
+    "A leader can observe and coach during live service without disappearing into admin."
+  ],
+  "contraindications": [
+    "Do not observe ten standards at once when the team can only absorb two or three.",
+    "Do not treat the loop as punitive scorekeeping instead of live correction."
+  ],
+  "owner_role": "floor_lead",
+  "expected_time_to_effect_days": 2,
+  "proof_of_completion": [
+    "A short standard observation sheet exists for live service use.",
+    "At least one shift has completed observe, coach, and review against the chosen standards.",
+    "The venue can point to repeated drift patterns and the coaching responses used."
+  ],
+  "successor_block_ids": [],
+  "service_module_ids": [
+    "quality_and_standards",
+    "live_execution",
+    "team_capability_and_training"
+  ],
+  "failure_family_ids": [
+    "standards_drift",
+    "capability_gap"
+  ]
+}

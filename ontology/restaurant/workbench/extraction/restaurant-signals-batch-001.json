@@ -1,0 +1,137 @@
+{
+  "vertical": "restaurant",
+  "signals": [
+    {
+      "id": "sig_table_turn_stall",
+      "name": "Table turn stall",
+      "description": "Tables remain uncleared or unseated long enough to slow service capacity.",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: symptom blindness in service flow",
+      "status": "review",
+      "domain": "service_delivery",
+      "module": "seating_flow",
+      "indicator_type": "lagging"
+    },
+    {
+      "id": "sig_waitlist_mismatch",
+      "name": "Waitlist estimate mismatch",
+      "description": "Quoted wait times do not match actual seating readiness.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: operator trust depends on transparent signals",
+      "status": "review",
+      "domain": "guest_experience",
+      "module": "host_flow",
+      "indicator_type": "lagging"
+    },
+    {
+      "id": "sig_reservation_pacing_breakdown",
+      "name": "Reservation pacing breakdown",
+      "description": "Reservation waves hit the floor without pacing rules or release logic.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: intake examples and venue pressure points",
+      "status": "review",
+      "domain": "service_delivery",
+      "module": "reservation_flow",
+      "indicator_type": "leading"
+    },
+    {
+      "id": "sig_section_imbalance",
+      "name": "Section imbalance",
+      "description": "Some service sections overload while others remain underused.",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: labor inefficiency and execution drag",
+      "status": "review",
+      "domain": "workforce",
+      "module": "deployment",
+      "indicator_type": "leading"
+    },
+    {
+      "id": "sig_expo_calls_missing",
+      "name": "Expo calls missing",
+      "description": "The pass lacks consistent verbal callouts for timing, fire, and pickup.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: root-cause transparency between stations",
+      "status": "review",
+      "domain": "kitchen_operations",
+      "module": "pass_communication",
+      "indicator_type": "leading"
+    },
+    {
+      "id": "sig_86_surprise",
+      "name": "Mid-shift 86 surprise",
+      "description": "Items go unavailable mid-service without early warning or substitution planning.",
+      "owner": "recovery-team",
+      "source_ref": "compass-market-analysis: intervention planning over fragmented tools",
+      "status": "review",
+      "domain": "financial_controls",
+      "module": "item_availability",
+      "indicator_type": "lagging"
+    },
+    {
+      "id": "sig_opening_checklist_drift",
+      "name": "Opening checklist drift",
+      "description": "Opening standards vary enough that readiness depends on who opened the venue.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: operator memory should not be the system",
+      "status": "review",
+      "domain": "leadership_rhythm",
+      "module": "open_close_controls",
+      "indicator_type": "leading"
+    },
+    {
+      "id": "sig_closing_reset_failures",
+      "name": "Closing reset failures",
+      "description": "The closing shift leaves unresolved prep, cleaning, or stock problems for the next day.",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: recurring operational drag between shifts",
+      "status": "review",
+      "domain": "leadership_rhythm",
+      "module": "open_close_controls",
+      "indicator_type": "lagging"
+    },
+    {
+      "id": "sig_bar_ticket_delay",
+      "name": "Bar ticket delay",
+      "description": "Drink production holds back table progression or guest satisfaction.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: service bottlenecks and throughput signals",
+      "status": "review",
+      "domain": "beverage_execution",
+      "module": "bar_flow",
+      "indicator_type": "lagging"
+    },
+    {
+      "id": "sig_count_variance",
+      "name": "Inventory count variance",
+      "description": "Actual counts regularly differ from expected stock on hand.",
+      "owner": "recovery-team",
+      "source_ref": "compass-market-analysis: control loops and operator trust",
+      "status": "review",
+      "domain": "financial_controls",
+      "module": "inventory_accuracy",
+      "indicator_type": "lagging"
+    },
+    {
+      "id": "sig_line_check_missing",
+      "name": "Line check missing",
+      "description": "The line opens without a complete readiness check across product, equipment, and station setup.",
+      "owner": "recovery-team",
+      "source_ref": "deep-dive: diagnostic engine from opening risk to response",
+      "status": "review",
+      "domain": "kitchen_operations",
+      "module": "shift_readiness",
+      "indicator_type": "leading"
+    },
+    {
+      "id": "sig_manager_floor_absence",
+      "name": "Manager floor absence",
+      "description": "Managers are not visibly present during the venue's most critical service windows.",
+      "owner": "recovery-team",
+      "source_ref": "pre-seed-business-case: execution decays without leadership presence",
+      "status": "review",
+      "domain": "leadership_rhythm",
+      "module": "floor_presence",
+      "indicator_type": "leading"
+    }
+  ]
+}

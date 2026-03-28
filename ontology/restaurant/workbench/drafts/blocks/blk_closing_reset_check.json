@@ -1,0 +1,45 @@
+{
+  "id": "blk_closing_reset_check",
+  "name": "Run closing reset check",
+  "description": "Install a non-negotiable closing reset across prep, stock, cleanliness, and unresolved issues so the next service cycle does not begin with inherited fragility.",
+  "status": "published",
+  "owner": "ontology-gold-set",
+  "source_ref": "core-v2: restore readiness by turning the close into a true reset loop",
+  "updated_at": "2026-03-14T00:24:42.965056Z",
+  "effort_hours": 2.0,
+  "dependencies": [],
+  "tool_ids": [
+    "tool_closing_reset_checklist"
+  ],
+  "response_pattern_ids": [
+    "rp_open_close_reset"
+  ],
+  "entry_conditions": [
+    "The next shift inherits missing prep, poor cleanliness, stock gaps, or unresolved actions.",
+    "A close owner can verify reset completion before people leave."
+  ],
+  "contraindications": [
+    "Do not rely on self-attestation without a visible check and ownership loop.",
+    "Do not close unresolved blockers without explicitly passing them into the next operating cycle."
+  ],
+  "owner_role": "closing_manager",
+  "expected_time_to_effect_days": 1,
+  "proof_of_completion": [
+    "A closing reset checklist exists with named ownership and verification.",
+    "Unresolved issues are either fixed before close or passed forward explicitly.",
+    "The next open shows reduced inherited friction from the previous shift."
+  ],
+  "successor_block_ids": [
+    "blk_opening_line_readiness_check"
+  ],
+  "service_module_ids": [
+    "readiness_and_setup",
+    "commercial_and_control_loops",
+    "tools_and_asset_reliability"
+  ],
+  "failure_family_ids": [
+    "readiness_failure",
+    "control_loop_failure",
+    "accountability_failure"
+  ]
+}
