@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS Deep Comparison — 3 Directions × 4 Screens</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0A0A0A;
+    color: #EDEDED;
+    min-height: 100vh;
+    padding: 60px 24px 80px;
+  }
+  .header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 48px;
+  }
+  .header .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6C5CE7;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  .header p {
+    font-size: 15px;
+    color: #888;
+    line-height: 1.6;
+  }
+  .how-to {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    background: #141414;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 24px 28px;
+  }
+  .how-to h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #6C5CE7;
+  }
+  .how-to p {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+  }
+
+  .matrix {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .screen-section {
+    margin-bottom: 48px;
+  }
+  .screen-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .screen-section .screen-desc {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .direction-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  .direction-card {
+    background: #141414;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .direction-card:hover {
+    border-color: #6C5CE7;
+    background: #1A1A1A;
+    transform: translateY(-1px);
+  }
+  .direction-card .dir-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .direction-card .dir-label.canvas { color: #A29BFE; }
+  .direction-card .dir-label.command { color: #6366F1; }
+  .direction-card .dir-label.glance { color: #007AFF; }
+
+  .direction-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .direction-card .best-for {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+  }
+  .direction-card .open {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6C5CE7;
+    margin-top: auto;
+  }
+  .direction-card .open::after { content: ' →'; }
+
+  .spine-note {
+    max-width: 720px;
+    margin: 48px auto 0;
+    text-align: center;
+    padding: 32px;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    background: #141414;
+  }
+  .spine-note h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .spine-note p {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+  }
+  .spine-table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .spine-table th {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid #333;
+    color: #6C5CE7;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .spine-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #1A1A1A;
+    color: #AAA;
+  }
+  .spine-table td:first-child {
+    color: #EDEDED;
+    font-weight: 500;
+  }
+
+  .back-link {
+    display: block;
+    text-align: center;
+    margin-top: 48px;
+    font-size: 13px;
+    color: #666;
+  }
+  .back-link a {
+    color: #6C5CE7;
+    text-decoration: none;
+  }
+  .back-link a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .direction-row {
+      grid-template-columns: 1fr;
+    }
+    .header h1 { font-size: 28px; }
+    body { padding: 32px 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="eyebrow">Deep Comparison</div>
+  <h1>3 Directions × 4 Screens</h1>
+  <p>Compare how each design direction handles different content types. Browse each screen to find the right approach per page — then stitch together your spine.</p>
+</div>
+
+<div class="how-to">
+  <h3>How to use this</h3>
+  <p>Browse by ROW to compare how one screen looks across all 3 directions. Browse by COLUMN to see how one direction handles all screen types. Look for which direction feels right for each content type — the answer may be different per screen.</p>
+</div>
+
+<div class="matrix">
+
+  <!-- PLAN VIEW -->
+  <div class="screen-section">
+    <h2>Plan View</h2>
+    <div class="screen-desc">Task execution lanes, dependencies, progress tracking. Tests: density handling, operational complexity.</div>
+    <div class="direction-row">
+      <a href="plan-canvas.html" class="direction-card">
+        <div class="dir-label canvas">Canvas</div>
+        <h3>Plan — Calm Lanes</h3>
+        <div class="best-for">3-column lanes with generous cards. Inspector for depth. Whitespace separates priorities.</div>
+        <div class="open">Browse</div>
+      </a>
+      <a href="plan-command.html" class="direction-card">
+        <div class="dir-label command">Command</div>
+        <h3>Plan — Dense List</h3>
+        <div class="best-for">Flat table with grouped sections. No lanes — pure list. Maximum info per row. Keyboard nav.</div>
+        <div class="open">Browse</div>
+      </a>
+      <a href="plan-glance.html" class="direction-card">
+        <div class="dir-label glance">Glance</div>
+        <h3>Plan — Card Grid</h3>
+        <div class="best-for">Hero progress ring + filterable card grid. Expandable cards. Mobile-native pill navigation.</div>
+        <div class="open">Browse</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- POCKET VIEW -->
+  <div class="screen-section">
+    <h2>Pocket: My Shift</h2>
+    <div class="screen-desc">Barista shift view — tasks, checklists, help requests. Tests: mobile simplicity, touch targets, zero cognitive load.</div>
+    <div class="direction-row">
+      <a href="pocket-canvas.html" class="direction-card">
+        <div class="dir-label canvas">Canvas</div>
+        <h3>Pocket — Clean Cards</h3>
+        <div class="best-for">Stacked task cards with large targets. Action buttons at bottom. Professional but warm.</div>
+        <div class="open">Browse</div>
+      </a>
+      <a href="pocket-command.html" class="direction-card">
+        <div class="dir-label command">Command</div>
+        <h3>Pocket — Compact List</h3>
+        <div class="best-for">Dense rows with expandable checklists. Functional but less mobile-native. Tests direction limits.</div>
+        <div class="open">Browse</div>
+      </a>
+      <a href="pocket-glance.html" class="direction-card">
+        <div class="dir-label glance">Glance</div>
+        <h3>Pocket — Mobile Native</h3>
+        <div class="best-for">Large rounded cards, iOS-style toggles, big action grid. Maximum mobile delight. This is its home turf.</div>
+        <div class="open">Browse</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- OWNER COMMAND CENTER -->
+  <div class="screen-section">
+    <h2>Owner: Command Center</h2>
+    <div class="screen-desc">Strategic overview — attention items, venue health, delegations. Tests: hierarchy, multi-venue overview, severity signaling.</div>
+    <div class="direction-row">
+      <a href="command-canvas.html" class="direction-card">
+        <div class="dir-label canvas">Canvas</div>
+        <h3>Command — Professional Overview</h3>
+        <div class="best-for">Clean sections with filter pills. Venue pulse cards in grid. Inspector for detail. Trust-building.</div>
+        <div class="open">Browse</div>
+      </a>
+      <a href="command-command.html" class="direction-card">
+        <div class="dir-label command">Command</div>
+        <h3>Command — Dense Tables</h3>
+        <div class="best-for">Table-first display. Maximum venues per screen. Inline severity. Power-user density.</div>
+        <div class="open">Browse</div>
+      </a>
+      <a href="command-glance.html" class="direction-card">
+        <div class="dir-label glance">Glance</div>
+        <h3>Command — Widget Dashboard</h3>
+        <div class="best-for">Hero metrics + severity cards + scrollable venue widgets. Glanceable at leadership level.</div>
+        <div class="open">Browse</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ASSESSMENT -->
+  <div class="screen-section">
+    <h2>Assessment Intake</h2>
+    <div class="screen-desc">Evidence writing + AI signal review. Tests: content-heavy input, writing comfort, review workflow, accept/reject interaction.</div>
+    <div class="direction-row">
+      <a href="assessment-canvas.html" class="direction-card">
+        <div class="dir-label canvas">Canvas</div>
+        <h3>Assessment — Split Editor</h3>
+        <div class="best-for">Two-panel: evidence editor left, signal review right. Clean document feel. Stripe-like actions.</div>
+        <div class="open">Browse</div>
+      </a>
+      <a href="assessment-command.html" class="direction-card">
+        <div class="dir-label command">Command</div>
+        <h3>Assessment — Stacked Sections</h3>
+        <div class="best-for">Single-column intake then table-format signal review. Compact, efficient, diagnostic feel.</div>
+        <div class="open">Browse</div>
+      </a>
+      <a href="assessment-glance.html" class="direction-card">
+        <div class="dir-label glance">Glance</div>
+        <h3>Assessment — Step Wizard</h3>
+        <div class="best-for">Step indicator, evidence card, then signal cards with toggle accept/reject. iOS wizard feel.</div>
+        <div class="open">Browse</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="spine-note">
+  <h3>Finding the Spine</h3>
+  <p>After browsing, consider which direction works best per screen type. The spine might look like this:</p>
+  <table class="spine-table">
+    <tr><th>Screen Type</th><th>Best Direction?</th><th>Why</th></tr>
+    <tr><td>Plan (operational)</td><td>Canvas or Command?</td><td>Density vs clarity trade-off</td></tr>
+    <tr><td>Pocket (frontline)</td><td>Glance?</td><td>Mobile-native, large targets</td></tr>
+    <tr><td>Owner Command</td><td>Canvas?</td><td>Trust, hierarchy, calm authority</td></tr>
+    <tr><td>Assessment (writing)</td><td>Canvas?</td><td>Writing comfort, split panel</td></tr>
+    <tr><td>Today (daily hub)</td><td>?</td><td>Your call — see original mockups</td></tr>
+  </table>
+  <p style="margin-top: 16px; font-size: 12px; color: #555;">The original 5-direction Today view mockups are in the <a href="../index.html" style="color: #6C5CE7;">parent directory</a>.</p>
+</div>
+
+<div class="back-link">
+  <a href="../index.html">← Back to original 5-direction overview</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!-- Deep mockup: Owner Command Center — Canvas direction -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS Canvas — Owner Command Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #FAFAFA; color: #1a1a2e; line-height: 1.5; }
+
+  /* Sidebar */
+  .sidebar {
+    position: fixed; left: 0; top: 0; bottom: 0; width: 240px;
+    background: #fff; border-right: 1px solid #E5E7EB; padding: 24px 0;
+    display: flex; flex-direction: column; z-index: 10;
+    transition: transform 0.2s;
+  }
+  .sidebar-brand { padding: 0 20px 24px; border-bottom: 1px solid #E5E7EB; }
+  .sidebar-brand h1 { font-size: 18px; font-weight: 700; color: #6C5CE7; letter-spacing: -0.5px; }
+  .sidebar-brand p { font-size: 12px; color: #6B7280; margin-top: 2px; }
+  .sidebar-nav { padding: 16px 12px; flex: 1; }
+  .nav-item {
+    display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 8px;
+    font-size: 13px; font-weight: 500; color: #6B7280; cursor: pointer; transition: all 0.15s;
+    margin-bottom: 2px;
+  }
+  .nav-item:hover { background: #F3F4F6; color: #374151; }
+  .nav-item.active { background: #F0EDFC; color: #6C5CE7; font-weight: 600; }
+  .nav-item .icon { width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+  .nav-sep { height: 1px; background: #E5E7EB; margin: 12px 12px; }
+  .nav-section-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: #9CA3AF; padding: 8px 12px 4px; }
+  .venue-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .venue-dot.green { background: #10B981; }
+  .venue-dot.red { background: #EF4444; }
+  .venue-dot.yellow { background: #F59E0B; }
+  .venue-dot.blue { background: #6366F1; }
+
+  /* Main */
+  .main { margin-left: 240px; padding: 32px 40px 60px; max-width: 1100px; }
+  .breadcrumb { font-size: 12px; color: #9CA3AF; margin-bottom: 4px; }
+  .breadcrumb span { color: #6B7280; }
+  .page-header { margin-bottom: 28px; }
+  .page-title { font-size: 28px; font-weight: 700; color: #111827; letter-spacing: -0.5px; }
+  .page-subtitle { font-size: 14px; color: #6B7280; margin-top: 4px; }
+
+  /* Filter pills */
+  .filter-bar { display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap; }
+  .filter-pill {
+    padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 500;
+    border: 1px solid #E5E7EB; background: #fff; color: #6B7280; cursor: pointer; transition: all 0.15s;
+  }
+  .filter-pill:hover { border-color: #C4B5FD; color: #6C5CE7; }
+  .filter-pill.active { background: #6C5CE7; color: #fff; border-color: #6C5CE7; }
+  .filter-pill .count { font-weight: 600; }
+
+  /* Cards */
+  .card { background: #fff; border: 1px solid #E5E7EB; border-radius: 12px; }
+  .section-heading { font-size: 15px; font-weight: 600; color: #111827; margin: 32px 0 12px; display: flex; align-items: center; gap: 8px; }
+  .section-heading .badge { font-size: 11px; background: #F3F4F6; color: #6B7280; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+
+  /* Attention list */
+  .attention-list { overflow: hidden; }
+  .attention-item {
+    display: grid; grid-template-columns: 10px 1fr auto; gap: 12px; align-items: start;
+    padding: 14px 20px; border-bottom: 1px solid #F3F4F6; cursor: pointer; transition: background 0.1s;
+  }
+  .attention-item:last-child { border-bottom: none; }
+  .attention-item:hover { background: #FAFAFA; }
+  .attention-item.selected { background: #F8F7FF; }
+  .severity-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+  .severity-dot.critical { background: #EF4444; }
+  .severity-dot.high { background: #F59E0B; }
+  .severity-dot.medium { background: #3B82F6; }
+  .severity-dot.low { background: #10B981; }
+  .attention-content { min-width: 0; }
+  .attention-venue { display: inline-block; font-size: 11px; font-weight: 600; background: #F3F4F6; color: #374151; padding: 1px 8px; border-radius: 4px; margin-bottom: 4px; }
+  .attention-desc { font-size: 13px; color: #111827; font-weight: 500; }
+  .attention-meta { font-size: 11px; color: #9CA3AF; margin-top: 3px; }
+  .attention-meta span { margin-right: 8px; }
+  .attention-time { font-size: 11px; color: #9CA3AF; white-space: nowrap; margin-top: 4px; }
+  .attention-detail {
+    display: none; padding: 12px 20px 16px 42px; background: #F9FAFB; border-bottom: 1px solid #F3F4F6;
+    font-size: 12px; color: #6B7280; line-height: 1.6;
+  }
+  .attention-detail.open { display: block; }
+  .attention-detail .detail-label { font-weight: 600; color: #374151; }
+
+  /* Venue grid */
+  .venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .venue-card {
+    padding: 18px 20px; cursor: pointer; transition: all 0.15s;
+  }
+  .venue-card:hover { border-color: #C4B5FD; box-shadow: 0 2px 8px rgba(108,92,231,0.08); }
+  .venue-card.selected { border-color: #6C5CE7; box-shadow: 0 0 0 2px rgba(108,92,231,0.15); }
+  .venue-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .venue-name { font-size: 14px; font-weight: 600; color: #111827; }
+  .venue-status { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 10px; }
+  .venue-status.on-track { background: #D1FAE5; color: #065F46; }
+  .venue-status.needs-attention { background: #FEF3C7; color: #92400E; }
+  .venue-status.critical { background: #FEE2E2; color: #991B1B; }
+  .venue-status.setting-up { background: #DBEAFE; color: #1E40AF; }
+  .venue-progress { margin-bottom: 8px; }
+  .venue-progress-bar { height: 6px; background: #E5E7EB; border-radius: 3px; overflow: hidden; }
+  .venue-progress-fill { height: 100%; border-radius: 3px; transition: width 0.5s; }
+  .venue-progress-fill.green { background: #10B981; }
+  .venue-progress-fill.yellow { background: #F59E0B; }
+  .venue-progress-fill.red { background: #EF4444; }
+  .venue-progress-fill.blue { background: #6366F1; }
+  .venue-stats { display: flex; gap: 16px; font-size: 12px; color: #6B7280; }
+  .venue-stats strong { color: #111827; font-weight: 600; }
+  .venue-link { font-size: 12px; color: #6C5CE7; font-weight: 500; margin-top: 10px; display: inline-block; text-decoration: none; }
+  .venue-link:hover { text-decoration: underline; }
+
+  /* Delegations */
+  .delegation-row {
+    display: grid; grid-template-columns: 1fr 140px 100px 100px; gap: 12px; align-items: center;
+    padding: 12px 20px; border-bottom: 1px solid #F3F4F6; font-size: 13px;
+  }
+  .delegation-row:last-child { border-bottom: none; }
+  .delegation-task { font-weight: 500; color: #111827; }
+  .delegation-assignee { color: #6B7280; }
+  .delegation-due { color: #6B7280; font-size: 12px; }
+  .delegation-status { font-size: 11px; font-weight: 500; padding: 2px 10px; border-radius: 10px; display: inline-block; text-align: center; }
+  .delegation-status.pending { background: #FEF3C7; color: #92400E; }
+  .delegation-status.overdue { background: #FEE2E2; color: #991B1B; }
+
+  /* Inspector */
+  .inspector {
+    position: fixed; right: 0; top: 0; bottom: 0; width: 360px;
+    background: #fff; border-left: 1px solid #E5E7EB; padding: 28px 24px;
+    transform: translateX(100%); transition: transform 0.25s ease;
+    overflow-y: auto; z-index: 10;
+  }
+  .inspector.open { transform: translateX(0); }
+  .inspector-close { position: absolute; top: 16px; right: 16px; width: 28px; height: 28px; border: none; background: #F3F4F6; border-radius: 6px; cursor: pointer; font-size: 14px; color: #6B7280; display: flex; align-items: center; justify-content: center; }
+  .inspector-close:hover { background: #E5E7EB; }
+  .inspector-severity { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 10px; margin-bottom: 8px; }
+  .inspector-severity.critical { background: #FEE2E2; color: #991B1B; }
+  .inspector-severity.high { background: #FEF3C7; color: #92400E; }
+  .inspector-severity.medium { background: #DBEAFE; color: #1E40AF; }
+  .inspector-severity.low { background: #D1FAE5; color: #065F46; }
+  .inspector-title { font-size: 16px; font-weight: 600; color: #111827; margin-bottom: 16px; line-height: 1.4; }
+  .inspector-field { margin-bottom: 14px; }
+  .inspector-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #9CA3AF; margin-bottom: 3px; }
+  .inspector-value { font-size: 13px; color: #374151; }
+  .inspector-actions { margin-top: 24px; display: flex; gap: 8px; }
+  .btn { padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; transition: all 0.15s; }
+  .btn-primary { background: #6C5CE7; color: #fff; }
+  .btn-primary:hover { background: #5B4BD5; }
+  .btn-secondary { background: #F3F4F6; color: #374151; }
+  .btn-secondary:hover { background: #E5E7EB; }
+
+  /* Mobile sidebar toggle */
+  .sidebar-toggle {
+    display: none; position: fixed; top: 12px; left: 12px; z-index: 20;
+    width: 36px; height: 36px; background: #fff; border: 1px solid #E5E7EB; border-radius: 8px;
+    cursor: pointer; font-size: 18px; align-items: center; justify-content: center;
+  }
+  .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 9; }
+
+  @media (max-width: 900px) {
+    .sidebar { transform: translateX(-100%); }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-toggle { display: flex; }
+    .sidebar-overlay.open { display: block; }
+    .main { margin-left: 0; padding: 24px 16px 60px; }
+    .venue-grid { grid-template-columns: 1fr; }
+    .delegation-row { grid-template-columns: 1fr; gap: 4px; }
+    .inspector { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<button class="sidebar-toggle" onclick="toggleSidebar()">&#9776;</button>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <h1>VOIS</h1>
+    <p>Sunrise Hospitality</p>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-item active"><span class="icon">&#9673;</span> Command</div>
+    <div class="nav-item"><span class="icon">&#8644;</span> Delegations</div>
+    <div class="nav-item"><span class="icon">&#9775;</span> People</div>
+    <div class="nav-item"><span class="icon">&#9733;</span> Intelligence</div>
+    <div class="nav-sep"></div>
+    <div class="nav-section-label">Venues</div>
+    <div class="nav-item"><span class="venue-dot yellow"></span> Sunrise Cafe</div>
+    <div class="nav-item"><span class="venue-dot red"></span> Harbor Bistro</div>
+    <div class="nav-item"><span class="venue-dot green"></span> Rooftop Lounge</div>
+    <div class="nav-item"><span class="venue-dot blue"></span> Downtown Kiosk</div>
+  </nav>
+</aside>
+
+<main class="main" id="mainContent">
+  <div class="breadcrumb">Organization / <span>Command Center</span></div>
+  <div class="page-header">
+    <div class="page-title">Command Center</div>
+    <div class="page-subtitle">4 venues &middot; 5 items need attention</div>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-pill active" data-filter="all">All <span class="count">(5)</span></button>
+    <button class="filter-pill" data-filter="critical">Critical <span class="count">(1)</span></button>
+    <button class="filter-pill" data-filter="high">High <span class="count">(2)</span></button>
+    <button class="filter-pill" data-filter="medium">Medium <span class="count">(1)</span></button>
+    <button class="filter-pill" data-filter="low">Low <span class="count">(1)</span></button>
+  </div>
+
+  <div class="card attention-list" id="attentionList">
+    <div class="attention-item" data-severity="critical" onclick="selectAttention(this, 0)">
+      <div class="severity-dot critical"></div>
+      <div class="attention-content">
+        <span class="attention-venue">Sunrise Cafe</span>
+        <div class="attention-desc">Espresso machine down for 3 days &mdash; service impact detected</div>
+        <div class="attention-meta"><span>Escalated by Maria S.</span></div>
+      </div>
+      <div class="attention-time">2h ago</div>
+    </div>
+    <div class="attention-detail" id="detail-0">
+      <p><span class="detail-label">Impact:</span> Espresso-based drinks unavailable, estimated 15% revenue loss for affected period.</p>
+      <p style="margin-top:6px"><span class="detail-label">Recommendation:</span> Escalate to vendor service or arrange temporary replacement unit.</p>
+    </div>
+
+    <div class="attention-item" data-severity="high" onclick="selectAttention(this, 1)">
+      <div class="severity-dot high"></div>
+      <div class="attention-content">
+        <span class="attention-venue">Harbor Bistro</span>
+        <div class="attention-desc">Health inspection in 5 days &mdash; 3 prep tasks blocked</div>
+        <div class="attention-meta"><span>Auto-surfaced</span></div>
+      </div>
+      <div class="attention-time">6h ago</div>
+    </div>
+    <div class="attention-detail" id="detail-1">
+      <p><span class="detail-label">Blocked tasks:</span> Deep clean walk-in cooler, Update allergen documentation, Replace fire extinguisher.</p>
+      <p style="margin-top:6px"><span class="detail-label">Risk:</span> Failure to complete may result in inspection penalties.</p>
+    </div>
+
+    <div class="attention-item" data-severity="high" onclick="selectAttention(this, 2)">
+      <div class="severity-dot high"></div>
+      <div class="attention-content">
+        <span class="attention-venue">Sunrise Cafe</span>
+        <div class="attention-desc">Staff overtime trending 20% above budget</div>
+        <div class="attention-meta"><span>Signal intelligence</span></div>
+      </div>
+      <div class="attention-time">1d ago</div>
+    </div>
+    <div class="attention-detail" id="detail-2">
+      <p><span class="detail-label">Trend:</span> Overtime hours increased 20% over budget for past 2 weeks.</p>
+      <p style="margin-top:6px"><span class="detail-label">Drivers:</span> Short-staffed on morning shift, two callouts this week.</p>
+    </div>
+
+    <div class="attention-item" data-severity="medium" onclick="selectAttention(this, 3)">
+      <div class="severity-dot medium"></div>
+      <div class="attention-content">
+        <span class="attention-venue">Rooftop Lounge</span>
+        <div class="attention-desc">New menu rollout 60% complete &mdash; on track</div>
+        <div class="attention-meta"><span>Progress update</span></div>
+      </div>
+      <div class="attention-time">1d ago</div>
+    </div>
+    <div class="attention-detail" id="detail-3">
+      <p><span class="detail-label">Progress:</span> 12 of 20 menu items finalized. Photography scheduled for Friday.</p>
+    </div>
+
+    <div class="attention-item" data-severity="low" onclick="selectAttention(this, 4)">
+      <div class="severity-dot low"></div>
+      <div class="attention-content">
+        <span class="attention-venue">Harbor Bistro</span>
+        <div class="attention-desc">Customer satisfaction score improved +4pts</div>
+        <div class="attention-meta"><span>Signal intelligence</span></div>
+      </div>
+      <div class="attention-time">2d ago</div>
+    </div>
+    <div class="attention-detail" id="detail-4">
+      <p><span class="detail-label">Score:</span> 82 &rarr; 86 (30-day rolling average). Positive trend driven by improved wait times.</p>
+    </div>
+  </div>
+
+  <!-- Venue Health -->
+  <div class="section-heading">Venue Health <span class="badge">4 venues</span></div>
+  <div class="venue-grid">
+    <div class="card venue-card" onclick="selectVenue(this)">
+      <div class="venue-card-header">
+        <div class="venue-name">Sunrise Cafe</div>
+        <span class="venue-status needs-attention">Needs attention</span>
+      </div>
+      <div class="venue-progress">
+        <div class="venue-progress-bar"><div class="venue-progress-fill yellow" style="width:78%"></div></div>
+      </div>
+      <div class="venue-stats">
+        <span><strong>78%</strong> plan</span>
+        <span><strong>2</strong> blocked</span>
+        <span><strong>3</strong> overdue</span>
+      </div>
+      <a href="#" class="venue-link" onclick="event.stopPropagation()">View Venue &rarr;</a>
+    </div>
+    <div class="card venue-card" onclick="selectVenue(this)">
+      <div class="venue-card-header">
+        <div class="venue-name">Harbor Bistro</div>
+        <span class="venue-status critical">Critical</span>
+      </div>
+      <div class="venue-progress">
+        <div class="venue-progress-bar"><div class="venue-progress-fill red" style="width:65%"></div></div>
+      </div>
+      <div class="venue-stats">
+        <span><strong>65%</strong> plan</span>
+        <span><strong>3</strong> blocked</span>
+        <span><strong>1</strong> overdue</span>
+      </div>
+      <a href="#" class="venue-link" onclick="event.stopPropagation()">View Venue &rarr;</a>
+    </div>
+    <div class="card venue-card" onclick="selectVenue(this)">
+      <div class="venue-card-header">
+        <div class="venue-name">Rooftop Lounge</div>
+        <span class="venue-status on-track">On track</span>
+      </div>
+      <div class="venue-progress">
+        <div class="venue-progress-bar"><div class="venue-progress-fill green" style="width:88%"></div></div>
+      </div>
+      <div class="venue-stats">
+        <span><strong>88%</strong> plan</span>
+        <span><strong>0</strong> blocked</span>
+        <span><strong>0</strong> overdue</span>
+      </div>
+      <a href="#" class="venue-link" onclick="event.stopPropagation()">View Venue &rarr;</a>
+    </div>
+    <div class="card venue-card" onclick="selectVenue(this)">
+      <div class="venue-card-header">
+        <div class="venue-name">Downtown Kiosk</div>
+        <span class="venue-status setting-up">Setting up</span>
+      </div>
+      <div class="venue-progress">
+        <div class="venue-progress-bar"><div class="venue-progress-fill blue" style="width:40%"></div></div>
+      </div>
+      <div class="venue-stats">
+        <span><strong>40%</strong> setup</span>
+        <span>Onboarding</span>
+      </div>
+      <a href="#" class="venue-link" onclick="event.stopPropagation()">View Venue &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Delegations -->
+  <div class="section-heading">Delegations <span class="badge">3 active &middot; 1 overdue</span></div>
+  <div class="card">
+    <div class="delegation-row">
+      <div class="delegation-task">Review staffing proposal</div>
+      <div class="delegation-assignee">Manager Jamie</div>
+      <div class="delegation-due">Due today</div>
+      <div><span class="delegation-status pending">Pending</span></div>
+    </div>
+    <div class="delegation-row">
+      <div class="delegation-task">Approve vendor contract</div>
+      <div class="delegation-assignee">Manager Li</div>
+      <div class="delegation-due">Due Mar 30</div>
+      <div><span class="delegation-status pending">Pending</span></div>
+    </div>
+    <div class="delegation-row">
+      <div class="delegation-task">Review Q1 performance report</div>
+      <div class="delegation-assignee">Manager Jamie</div>
+      <div class="delegation-due">Due Mar 27</div>
+      <div><span class="delegation-status overdue">Overdue</span></div>
+    </div>
+  </div>
+</main>
+
+<!-- Inspector Panel -->
+<aside class="inspector" id="inspector">
+  <button class="inspector-close" onclick="closeInspector()">&times;</button>
+  <div id="inspectorContent"></div>
+</aside>
+
+<script>
+const attentionData = [
+  { severity: 'critical', venue: 'Sunrise Cafe', desc: 'Espresso machine down for 3 days — service impact detected', source: 'Escalated by Maria S.', time: '2h ago', impact: 'Espresso-based drinks unavailable, estimated 15% revenue loss.', recommendation: 'Escalate to vendor service or arrange temporary replacement unit.' },
+  { severity: 'high', venue: 'Harbor Bistro', desc: 'Health inspection in 5 days — 3 prep tasks blocked', source: 'Auto-surfaced', time: '6h ago', impact: '3 preparation tasks blocked: deep clean, allergen docs, fire extinguisher.', recommendation: 'Unblock tasks immediately and assign owners.' },
+  { severity: 'high', venue: 'Sunrise Cafe', desc: 'Staff overtime trending 20% above budget', source: 'Signal intelligence', time: '1d ago', impact: 'Overtime costs exceeding budget by 20% over 2-week period.', recommendation: 'Review scheduling and consider temporary staffing.' },
+  { severity: 'medium', venue: 'Rooftop Lounge', desc: 'New menu rollout 60% complete — on track', source: 'Progress update', time: '1d ago', impact: '12 of 20 items finalized. On schedule for launch.', recommendation: 'No action needed. Monitor progress.' },
+  { severity: 'low', venue: 'Harbor Bistro', desc: 'Customer satisfaction score improved +4pts', source: 'Signal intelligence', time: '2d ago', impact: 'Score rose from 82 to 86 (30-day rolling average).', recommendation: 'Acknowledge team effort. Continue monitoring.' }
+];
+
+function selectAttention(el, idx) {
+  // Toggle detail
+  document.querySelectorAll('.attention-detail').forEach(d => d.classList.remove('open'));
+  document.querySelectorAll('.attention-item').forEach(i => i.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('detail-' + idx).classList.toggle('open');
+  document.getElementById('detail-' + idx).classList.add('open');
+
+  // Open inspector
+  const d = attentionData[idx];
+  const sev = d.severity.charAt(0).toUpperCase() + d.severity.slice(1);
+  document.getElementById('inspectorContent').innerHTML = `
+    <span class="inspector-severity ${d.severity}">${sev}</span>
+    <div class="inspector-title">${d.desc}</div>
+    <div class="inspector-field"><div class="inspector-label">Venue</div><div class="inspector-value">${d.venue}</div></div>
+    <div class="inspector-field"><div class="inspector-label">Source</div><div class="inspector-value">${d.source}</div></div>
+    <div class="inspector-field"><div class="inspector-label">Time</div><div class="inspector-value">${d.time}</div></div>
+    <div class="inspector-field"><div class="inspector-label">Impact</div><div class="inspector-value">${d.impact}</div></div>
+    <div class="inspector-field"><div class="inspector-label">Recommendation</div><div class="inspector-value">${d.recommendation}</div></div>
+    <div class="inspector-actions">
+      <button class="btn btn-primary">Take Action</button>
+      <button class="btn btn-secondary">Dismiss</button>
+    </div>
+  `;
+  document.getElementById('inspector').classList.add('open');
+}
+
+function closeInspector() {
+  document.getElementById('inspector').classList.remove('open');
+  document.querySelectorAll('.attention-item').forEach(i => i.classList.remove('selected'));
+}
+
+function selectVenue(el) {
+  document.querySelectorAll('.venue-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+// Filter pills
+document.querySelectorAll('.filter-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    const filter = pill.dataset.filter;
+    document.querySelectorAll('.attention-item').forEach(item => {
+      const detail = item.nextElementSibling;
+      if (filter === 'all' || item.dataset.severity === filter) {
+        item.style.display = '';
+        if (detail && detail.classList.contains('attention-detail')) detail.style.display = '';
+      } else {
+        item.style.display = 'none';
+        if (detail && detail.classList.contains('attention-detail')) detail.style.display = 'none';
+      }
+    });
+  });
+});
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sidebarOverlay').classList.toggle('open');
+}
+</script>
+</body>
+</html>

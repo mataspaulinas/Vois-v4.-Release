@@ -1,0 +1,982 @@
+<!-- VOIS Design Investigation — Option E: Canvas (Stripe-inspired, RECOMMENDED) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS — Option E: Canvas (Recommended)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --bg: #FAFAFA;
+    --surface: #FFFFFF;
+    --text-primary: #0A0A0A;
+    --text-secondary: #525252;
+    --text-muted: #A3A3A3;
+    --accent: #6C5CE7;
+    --accent-gradient: linear-gradient(135deg, #6C5CE7, #A29BFE);
+    --green: #10B981;
+    --amber: #F59E0B;
+    --red: #EF4444;
+    --indigo: #6366F1;
+    --border: #E5E5E5;
+    --radius-card: 12px;
+    --radius-btn: 8px;
+    --radius-pill: 24px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.04);
+    --shadow-hover: 0 2px 6px rgba(0,0,0,0.06), 0 8px 20px rgba(0,0,0,0.06);
+    --sidebar-width: 240px;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    font-size: 15px;
+    line-height: 1.5;
+    display: flex;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ============================================
+     SIDEBAR
+     ============================================ */
+  .sidebar {
+    width: var(--sidebar-width);
+    min-height: 100vh;
+    background: var(--bg);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+
+  .sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    padding: 0 8px;
+  }
+
+  .sidebar-brand .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    flex-shrink: 0;
+  }
+
+  .sidebar-brand .brand-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .sidebar-venue {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 8px;
+    margin-bottom: 28px;
+  }
+
+  .sidebar-venue .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+  }
+
+  .sidebar-venue .venue-name {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  .nav-section-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    padding: 0 8px;
+    margin-top: 20px;
+    margin-bottom: 6px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-decoration: none;
+    user-select: none;
+  }
+
+  .nav-item:hover {
+    background: rgba(0,0,0,0.04);
+    color: var(--text-primary);
+  }
+
+  .nav-item.active {
+    background: rgba(108, 92, 231, 0.08);
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .sidebar-spacer {
+    flex: 1;
+  }
+
+  .sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .sidebar-bottom .nav-item {
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  .sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 8px;
+    margin-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .sidebar-user .avatar {
+    background: var(--accent-gradient);
+  }
+
+  .sidebar-user-info .user-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .sidebar-user-info .user-role {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  /* Mobile hamburger */
+  .hamburger {
+    display: none;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-btn);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+  }
+
+  .hamburger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--text-primary);
+    position: relative;
+  }
+
+  .hamburger span::before,
+  .hamburger span::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background: var(--text-primary);
+    left: 0;
+  }
+
+  .hamburger span::before { top: -6px; }
+  .hamburger span::after { top: 6px; }
+
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 90;
+  }
+
+  /* ============================================
+     MAIN CONTENT
+     ============================================ */
+  .main {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    padding: 32px 48px 64px 48px;
+    max-width: 1280px;
+    width: 100%;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+
+  .page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+
+  .page-title .date-suffix {
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 28px;
+  }
+
+  .page-subtitle {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+  }
+
+  /* ============================================
+     METRICS ROW
+     ============================================ */
+  .metrics-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .metric-card {
+    background: var(--surface);
+    border-radius: var(--radius-card);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    transition: all 0.2s ease;
+    cursor: default;
+  }
+
+  .metric-card:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .metric-number {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .metric-number.red { color: var(--red); }
+  .metric-number.indigo { color: var(--indigo); }
+  .metric-number.green { color: var(--green); }
+
+  .metric-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  /* ============================================
+     TWO-COLUMN LAYOUT
+     ============================================ */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .col-left, .col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* ============================================
+     SECTION HEADERS
+     ============================================ */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .section-count {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* ============================================
+     CARDS
+     ============================================ */
+  .card {
+    background: var(--surface);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .card-item {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    gap: 12px;
+  }
+
+  .card-item + .card-item {
+    border-top: 1px solid var(--border);
+  }
+
+  .status-dot-sm {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .status-dot-sm.red { background: var(--red); }
+  .status-dot-sm.amber { background: var(--amber); }
+  .status-dot-sm.blue { background: var(--indigo); }
+  .status-dot-sm.gray { background: var(--text-muted); }
+
+  .card-item-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .card-item-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .card-item-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 1px;
+  }
+
+  .card-item-right {
+    font-size: 12px;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  /* Pills */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 10px;
+    border-radius: var(--radius-pill);
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .pill.red {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--red);
+  }
+
+  .pill.amber {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--amber);
+  }
+
+  .pill.green {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green);
+  }
+
+  .pill.indigo {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--indigo);
+  }
+
+  .amber-text {
+    color: var(--amber);
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* Progress bar */
+  .progress-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .progress-bar {
+    flex: 1;
+    height: 4px;
+    background: #F0F0F0;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: var(--accent-gradient);
+    transition: width 0.4s ease;
+  }
+
+  .progress-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  /* ============================================
+     SIGNALS
+     ============================================ */
+  .signal-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 14px 20px;
+    gap: 12px;
+  }
+
+  .signal-item + .signal-item {
+    border-top: 1px solid var(--border);
+  }
+
+  .signal-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .signal-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+
+  .signal-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .signal-time {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ============================================
+     TEAM
+     ============================================ */
+  .team-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    gap: 12px;
+  }
+
+  .team-item + .team-item {
+    border-top: 1px solid var(--border);
+  }
+
+  .team-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .team-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .team-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .team-tasks {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .team-status {
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .team-status.warn { color: var(--amber); }
+  .team-status.blocked { color: var(--red); }
+  .team-status.ok { color: var(--green); }
+
+  /* ============================================
+     QUICK ACTIONS
+     ============================================ */
+  .quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: var(--radius-btn);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    background: var(--accent-gradient);
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(108, 92, 231, 0.3);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 2px 8px rgba(108, 92, 231, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+
+  .btn-outline:hover {
+    background: rgba(108, 92, 231, 0.05);
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 1024px) {
+    .sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      z-index: 100;
+      background: var(--bg);
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
+    }
+
+    .sidebar-overlay.open {
+      display: block;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .main {
+      margin-left: 0;
+      padding: 32px 24px 64px 24px;
+      padding-top: 72px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .main {
+      padding: 24px 16px 48px 16px;
+      padding-top: 72px;
+    }
+
+    .metrics-row {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .two-col {
+      grid-template-columns: 1fr;
+    }
+
+    .page-title {
+      font-size: 24px;
+    }
+
+    .page-title .date-suffix {
+      font-size: 24px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Hamburger for mobile -->
+<button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle menu">
+  <span></span>
+</button>
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<!-- ============================================
+     SIDEBAR
+     ============================================ -->
+<nav class="sidebar">
+  <div class="sidebar-brand">
+    <div class="dot"></div>
+    <span class="brand-name">VOIS</span>
+  </div>
+  <div class="sidebar-venue">
+    <span class="status-dot"></span>
+    <span class="venue-name">Sunrise Cafe</span>
+  </div>
+
+  <div class="nav-section-label">Workspace</div>
+  <a class="nav-item active" href="#">Today</a>
+  <a class="nav-item" href="#">My Tasks</a>
+  <a class="nav-item" href="#">Execution</a>
+
+  <div class="nav-section-label">Venue</div>
+  <a class="nav-item" href="#">Assessment</a>
+  <a class="nav-item" href="#">Signals</a>
+  <a class="nav-item" href="#">Plan</a>
+  <a class="nav-item" href="#">Report</a>
+
+  <div class="nav-section-label">Reference</div>
+  <a class="nav-item" href="#">Knowledge Base</a>
+  <a class="nav-item" href="#">Standards</a>
+
+  <div class="sidebar-spacer"></div>
+
+  <div class="sidebar-bottom">
+    <a class="nav-item" href="#">Settings</a>
+    <a class="nav-item" href="#">Help</a>
+  </div>
+
+  <div class="sidebar-user">
+    <div class="avatar">JM</div>
+    <div class="sidebar-user-info">
+      <div class="user-name">Jamie M.</div>
+      <div class="user-role">Manager</div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================
+     MAIN CONTENT
+     ============================================ -->
+<main class="main">
+
+  <div class="eyebrow">Workspace</div>
+  <h1 class="page-title">Today <span class="date-suffix">March 29, 2026</span></h1>
+  <p class="page-subtitle">Here's what needs your attention today.</p>
+
+  <!-- METRICS ROW -->
+  <div class="metrics-row">
+    <div class="metric-card">
+      <div class="metric-number red">3</div>
+      <div class="metric-label">Overdue</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-number indigo">2</div>
+      <div class="metric-label">In Progress</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-number green">2</div>
+      <div class="metric-label">On Track</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-number">78%</div>
+      <div class="metric-label">Plan Complete</div>
+    </div>
+  </div>
+
+  <!-- TWO-COLUMN LAYOUT -->
+  <div class="two-col">
+
+    <!-- LEFT COLUMN (60%) -->
+    <div class="col-left">
+
+      <!-- Attention Required -->
+      <div>
+        <div class="section-header">
+          <h2 class="section-title">Attention Required</h2>
+          <span class="section-count">2 items</span>
+        </div>
+        <div class="card">
+          <div class="card-item">
+            <span class="status-dot-sm red"></span>
+            <div class="card-item-content">
+              <div class="card-item-title">Espresso machine calibration</div>
+              <span class="pill red">Overdue by 2 days</span>
+            </div>
+            <div class="card-item-right">Alex T.</div>
+          </div>
+          <div class="card-item">
+            <span class="status-dot-sm red"></span>
+            <div class="card-item-content">
+              <div class="card-item-title">Health inspection prep checklist</div>
+              <span class="pill amber">Blocked</span>
+            </div>
+            <div class="card-item-right">Maria S.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Due Today -->
+      <div>
+        <div class="section-header">
+          <h2 class="section-title">Due Today</h2>
+        </div>
+        <div class="card">
+          <div class="card-item">
+            <span class="status-dot-sm amber"></span>
+            <div class="card-item-content">
+              <div class="card-item-title">Morning rush staffing review</div>
+              <span class="amber-text">Due today</span>
+            </div>
+            <div class="card-item-right">Assigned to you</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- In Progress -->
+      <div>
+        <div class="section-header">
+          <h2 class="section-title">In Progress</h2>
+        </div>
+        <div class="card">
+          <div class="card-item">
+            <span class="status-dot-sm blue"></span>
+            <div class="card-item-content">
+              <div class="card-item-title">Menu item training rollout</div>
+              <div class="progress-bar-container">
+                <div class="progress-bar">
+                  <div class="progress-bar-fill" style="width: 60%"></div>
+                </div>
+                <span class="progress-label">60%</span>
+              </div>
+            </div>
+            <div class="card-item-right">Jordan K.</div>
+          </div>
+          <div class="card-item">
+            <span class="status-dot-sm blue"></span>
+            <div class="card-item-content">
+              <div class="card-item-title">Customer feedback response protocol</div>
+              <div class="progress-bar-container">
+                <div class="progress-bar">
+                  <div class="progress-bar-fill" style="width: 30%"></div>
+                </div>
+                <span class="progress-label">30%</span>
+              </div>
+            </div>
+            <div class="card-item-right">Alex T.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coming Up -->
+      <div>
+        <div class="section-header">
+          <h2 class="section-title">Coming Up</h2>
+        </div>
+        <div class="card">
+          <div class="card-item">
+            <span class="status-dot-sm gray"></span>
+            <div class="card-item-content">
+              <div class="card-item-title">Weekly inventory count</div>
+              <div class="card-item-meta">Mar 31</div>
+            </div>
+            <div class="card-item-right">Sam P.</div>
+          </div>
+          <div class="card-item">
+            <span class="status-dot-sm gray"></span>
+            <div class="card-item-content">
+              <div class="card-item-title">Barista certification renewal</div>
+              <div class="card-item-meta">Apr 3</div>
+            </div>
+            <div class="card-item-right">Maria S.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN (40%) -->
+    <div class="col-right">
+
+      <!-- Active Signals -->
+      <div>
+        <div class="section-header">
+          <h2 class="section-title">Active Signals</h2>
+        </div>
+        <div class="card">
+          <div class="signal-item">
+            <div class="signal-content">
+              <div class="signal-title">Service speed declining</div>
+              <div class="signal-meta">
+                <span class="pill red">High impact</span>
+                <span class="signal-time">2h ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <div class="signal-content">
+              <div class="signal-title">Overtime trending up</div>
+              <div class="signal-meta">
+                <span class="pill amber">Medium impact</span>
+                <span class="signal-time">5h ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="signal-item">
+            <div class="signal-content">
+              <div class="signal-title">Satisfaction stable</div>
+              <div class="signal-meta">
+                <span class="pill green">Low impact</span>
+                <span class="signal-time">1d ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Today -->
+      <div>
+        <div class="section-header">
+          <h2 class="section-title">Team Today</h2>
+        </div>
+        <div class="card">
+          <div class="team-item">
+            <div class="team-avatar" style="background: #6366F1">AT</div>
+            <div class="team-info">
+              <div class="team-name">Alex T.</div>
+              <div class="team-tasks">2 tasks</div>
+            </div>
+            <div class="team-status warn">Near capacity</div>
+          </div>
+          <div class="team-item">
+            <div class="team-avatar" style="background: #EC4899">MS</div>
+            <div class="team-info">
+              <div class="team-name">Maria S.</div>
+              <div class="team-tasks">2 tasks</div>
+            </div>
+            <div class="team-status blocked">Blocked item</div>
+          </div>
+          <div class="team-item">
+            <div class="team-avatar" style="background: #10B981">JK</div>
+            <div class="team-info">
+              <div class="team-name">Jordan K.</div>
+              <div class="team-tasks">1 task</div>
+            </div>
+            <div class="team-status ok">On track</div>
+          </div>
+          <div class="team-item">
+            <div class="team-avatar" style="background: #F59E0B">SP</div>
+            <div class="team-info">
+              <div class="team-name">Sam P.</div>
+              <div class="team-tasks">1 task</div>
+            </div>
+            <div class="team-status ok">On track</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div>
+        <div class="section-header">
+          <h2 class="section-title">Quick Actions</h2>
+        </div>
+        <div class="card">
+          <div class="quick-actions">
+            <button class="btn btn-primary">Start Assessment</button>
+            <button class="btn btn-outline">View Full Plan</button>
+            <button class="btn btn-outline">Open Copilot</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<script>
+  function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('open');
+    document.querySelector('.sidebar-overlay').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

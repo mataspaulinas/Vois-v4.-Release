@@ -1,0 +1,355 @@
+<!-- Deep mockup: Plan View — Canvas direction -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS Canvas — Plan View</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #1a1a2e; display: flex; min-height: 100vh; font-size: 14px; line-height: 1.5; }
+
+  /* Sidebar */
+  .sidebar { width: 240px; background: #F3F3F6; border-right: 1px solid #E8E8ED; display: flex; flex-direction: column; flex-shrink: 0; position: fixed; top: 0; left: 0; bottom: 0; z-index: 10; }
+  .sidebar-logo { padding: 24px 20px 20px; font-weight: 700; font-size: 18px; color: #6C5CE7; letter-spacing: -0.5px; }
+  .sidebar-logo span { color: #999; font-weight: 400; font-size: 12px; display: block; margin-top: 2px; }
+  .sidebar-nav { flex: 1; padding: 0 12px; }
+  .sidebar-nav a { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; color: #555; text-decoration: none; font-size: 13px; font-weight: 500; transition: all 0.15s; margin-bottom: 2px; }
+  .sidebar-nav a:hover { background: #E8E8ED; color: #333; }
+  .sidebar-nav a.active { background: #6C5CE7; color: #fff; }
+  .sidebar-nav a .icon { width: 18px; text-align: center; font-size: 14px; opacity: 0.7; }
+  .sidebar-nav a.active .icon { opacity: 1; }
+  .sidebar-bottom { padding: 16px 20px; border-top: 1px solid #E8E8ED; }
+  .sidebar-bottom .user { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #666; }
+  .sidebar-bottom .avatar { width: 28px; height: 28px; border-radius: 50%; background: #6C5CE7; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; }
+
+  /* Main area */
+  .main-wrapper { margin-left: 240px; flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .top-bar { padding: 12px 48px; border-bottom: 1px solid #E8E8ED; background: #fff; display: flex; align-items: center; justify-content: space-between; }
+  .breadcrumb { font-size: 12px; color: #999; }
+  .breadcrumb span { color: #333; }
+  .top-actions { display: flex; gap: 8px; }
+  .top-actions button { padding: 6px 14px; border-radius: 8px; border: 1px solid #ddd; background: #fff; font-size: 12px; font-family: 'Inter', sans-serif; cursor: pointer; color: #555; transition: all 0.15s; }
+  .top-actions button:hover { border-color: #6C5CE7; color: #6C5CE7; }
+  .top-actions button.primary { background: #6C5CE7; color: #fff; border-color: #6C5CE7; }
+  .top-actions button.primary:hover { background: #5a4bd6; }
+
+  .content-area { display: flex; flex: 1; overflow: hidden; }
+  .main-content { flex: 1; padding: 32px 48px; overflow-y: auto; min-width: 0; }
+
+  /* Header */
+  .plan-header { margin-bottom: 28px; }
+  .plan-title { font-size: 28px; font-weight: 700; color: #111; letter-spacing: -0.5px; }
+  .plan-subtitle { font-size: 14px; color: #888; margin-top: 4px; }
+  .plan-subtitle strong { color: #6C5CE7; font-weight: 600; }
+  .progress-bar-wrap { margin-top: 16px; background: #E8E8ED; border-radius: 4px; height: 6px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #6C5CE7, #a29bfe); transition: width 0.6s ease; }
+
+  /* Lanes */
+  .lanes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .lane { min-width: 0; }
+  .lane-header { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .lane-header h3 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #888; }
+  .lane-header .count { background: #E8E8ED; color: #666; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
+  .lane-header.blocked h3 { color: #e74c3c; }
+  .lane-header.blocked .count { background: #fde8e8; color: #e74c3c; }
+  .lane-header.active h3 { color: #6C5CE7; }
+  .lane-header.active .count { background: #ede8fd; color: #6C5CE7; }
+
+  /* Cards */
+  .card { background: #fff; border-radius: 12px; padding: 16px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02); border: 1px solid #f0f0f0; cursor: pointer; transition: all 0.15s; position: relative; }
+  .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); border-color: #ddd; transform: translateY(-1px); }
+  .card.selected { border-color: #6C5CE7; box-shadow: 0 0 0 2px rgba(108,92,231,0.15); }
+  .card.blocked-card { border-left: 3px solid #e74c3c; }
+  .card.active-card { border-left: 3px solid #6C5CE7; }
+  .card-name { font-size: 14px; font-weight: 600; color: #222; margin-bottom: 8px; line-height: 1.4; }
+  .card-meta { display: flex; align-items: center; gap: 12px; font-size: 12px; color: #999; flex-wrap: wrap; }
+  .card-meta .assignee { display: flex; align-items: center; gap: 5px; }
+  .card-meta .avatar-sm { width: 18px; height: 18px; border-radius: 50%; background: #ddd; display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; color: #666; }
+  .card-meta .avatar-sm.you { background: #6C5CE7; color: #fff; }
+  .card-meta .due { color: #999; }
+  .card-meta .due.today { color: #e67e22; font-weight: 600; }
+  .card-meta .due.overdue { color: #e74c3c; font-weight: 600; }
+  .card-priority { display: inline-block; font-size: 10px; font-weight: 600; text-transform: uppercase; padding: 2px 6px; border-radius: 4px; margin-top: 8px; }
+  .card-priority.high { background: #fff3e6; color: #e67e22; }
+  .card-priority.medium { background: #f0f0f5; color: #888; }
+  .card-priority.low { background: #e8f8f0; color: #27ae60; }
+  .card-progress { margin-top: 10px; }
+  .card-progress-label { font-size: 11px; color: #999; margin-bottom: 4px; }
+  .card-progress-bar { height: 4px; background: #f0f0f0; border-radius: 2px; overflow: hidden; }
+  .card-progress-bar .fill { height: 100%; background: #6C5CE7; border-radius: 2px; transition: width 0.4s; }
+  .card-blocked-reason { margin-top: 8px; font-size: 12px; color: #e74c3c; background: #fef5f5; padding: 6px 10px; border-radius: 6px; }
+  .card-blocked-reason .label { font-weight: 600; }
+  .card-dependency { margin-top: 6px; font-size: 11px; color: #aaa; }
+  .card-dependency span { color: #6C5CE7; }
+  .card-escalation { margin-top: 4px; font-size: 11px; color: #e67e22; font-weight: 500; }
+
+  /* Completed section */
+  .completed-section { margin-top: 32px; border-top: 1px solid #E8E8ED; padding-top: 16px; }
+  .completed-toggle { display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 10px 0; color: #999; font-size: 13px; font-weight: 500; transition: color 0.15s; }
+  .completed-toggle:hover { color: #666; }
+  .completed-toggle .arrow { font-size: 10px; transition: transform 0.2s; }
+  .completed-toggle.open .arrow { transform: rotate(90deg); }
+  .completed-toggle .count-badge { background: #e8f8e8; color: #27ae60; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
+  .completed-list { display: none; padding-top: 8px; }
+  .completed-list.visible { display: block; }
+  .completed-item { padding: 8px 0; font-size: 13px; color: #bbb; text-decoration: line-through; border-bottom: 1px solid #f5f5f5; }
+
+  /* Inspector */
+  .inspector { width: 320px; background: #fff; border-left: 1px solid #E8E8ED; padding: 28px 24px; overflow-y: auto; flex-shrink: 0; transition: transform 0.2s; }
+  .inspector-empty { display: flex; align-items: center; justify-content: center; height: 100%; color: #ccc; font-size: 13px; text-align: center; }
+  .inspector h2 { font-size: 16px; font-weight: 700; color: #111; margin-bottom: 4px; line-height: 1.4; }
+  .inspector .section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-top: 20px; margin-bottom: 8px; }
+  .inspector .detail-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 13px; border-bottom: 1px solid #f5f5f5; }
+  .inspector .detail-row .label { color: #999; }
+  .inspector .detail-row .value { color: #333; font-weight: 500; }
+  .inspector .detail-row .value.overdue { color: #e74c3c; }
+  .inspector .detail-row .value.today { color: #e67e22; }
+  .inspector .progress-section { margin-top: 16px; }
+  .inspector .progress-section .bar { height: 6px; background: #f0f0f0; border-radius: 3px; overflow: hidden; margin-top: 6px; }
+  .inspector .progress-section .bar .fill { height: 100%; background: linear-gradient(90deg, #6C5CE7, #a29bfe); border-radius: 3px; }
+  .inspector .progress-section .pct { font-size: 24px; font-weight: 700; color: #6C5CE7; }
+  .inspector .log-entry { padding: 8px 0; border-bottom: 1px solid #f5f5f5; font-size: 12px; }
+  .inspector .log-entry .time { color: #bbb; }
+  .inspector .log-entry .text { color: #555; margin-top: 2px; }
+  .inspector .copilot-link { margin-top: 20px; display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #f8f7ff; border-radius: 10px; color: #6C5CE7; font-size: 13px; font-weight: 500; cursor: pointer; transition: background 0.15s; text-decoration: none; }
+  .inspector .copilot-link:hover { background: #ede8fd; }
+
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .inspector { width: 280px; }
+  }
+  @media (max-width: 1024px) {
+    .sidebar { display: none; }
+    .main-wrapper { margin-left: 0; }
+    .lanes { grid-template-columns: 1fr; }
+    .inspector { position: fixed; right: 0; top: 0; bottom: 0; width: 320px; z-index: 20; box-shadow: -4px 0 20px rgba(0,0,0,0.08); transform: translateX(100%); }
+    .inspector.open { transform: translateX(0); }
+    .main-content { padding: 24px; }
+  }
+  @media (max-width: 640px) {
+    .main-content { padding: 16px; }
+    .top-bar { padding: 12px 16px; }
+    .plan-title { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+  <div class="sidebar-logo">VOIS <span>Sunrise Cafe</span></div>
+  <nav class="sidebar-nav">
+    <a href="#"><span class="icon">&#9737;</span> Today</a>
+    <a href="#"><span class="icon">&#9745;</span> My Tasks</a>
+    <a href="#"><span class="icon">&#9654;</span> Execution</a>
+    <a href="#"><span class="icon">&#9733;</span> Assessment</a>
+    <a href="#"><span class="icon">&#9881;</span> Signals</a>
+    <a href="#" class="active"><span class="icon">&#9776;</span> Plan</a>
+    <a href="#"><span class="icon">&#9635;</span> Report</a>
+    <a href="#"><span class="icon">&#9783;</span> Knowledge Base</a>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="user">
+      <div class="avatar">MT</div>
+      <span>Matas T.</span>
+    </div>
+  </div>
+</aside>
+
+<!-- Main -->
+<div class="main-wrapper">
+  <div class="top-bar">
+    <div class="breadcrumb">Workspace / <span>Plan</span></div>
+    <div class="top-actions">
+      <button>Filter</button>
+      <button>Sort</button>
+      <button class="primary">+ Add task</button>
+    </div>
+  </div>
+
+  <div class="content-area">
+    <div class="main-content">
+      <div class="plan-header">
+        <div class="plan-title">Plan</div>
+        <div class="plan-subtitle">Q1 2026 Operations Improvement &mdash; <strong>78% complete</strong> &mdash; 14 of 18 tasks done</div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" style="width: 78%"></div>
+        </div>
+      </div>
+
+      <div class="lanes">
+        <!-- Ready Lane -->
+        <div class="lane">
+          <div class="lane-header">
+            <h3>Ready</h3>
+            <span class="count">2</span>
+          </div>
+          <div class="card" data-task="inventory" onclick="selectTask(this, 'inventory')">
+            <div class="card-name">Weekly inventory count</div>
+            <div class="card-meta">
+              <span class="assignee"><span class="avatar-sm">SP</span> Sam P.</span>
+              <span class="due">Due Mar 31</span>
+            </div>
+            <span class="card-priority medium">Medium</span>
+          </div>
+          <div class="card" data-task="barista" onclick="selectTask(this, 'barista')">
+            <div class="card-name">Barista certification renewal</div>
+            <div class="card-meta">
+              <span class="assignee"><span class="avatar-sm">MS</span> Maria S.</span>
+              <span class="due">Due Apr 3</span>
+            </div>
+            <div class="card-dependency">Depends on: <span>Training rollout</span></div>
+            <span class="card-priority low">Low</span>
+          </div>
+        </div>
+
+        <!-- Active Lane -->
+        <div class="lane">
+          <div class="lane-header active">
+            <h3>Active</h3>
+            <span class="count">3</span>
+          </div>
+          <div class="card active-card" data-task="menu" onclick="selectTask(this, 'menu')">
+            <div class="card-name">Menu item training rollout</div>
+            <div class="card-meta">
+              <span class="assignee"><span class="avatar-sm">JK</span> Jordan K.</span>
+              <span class="due">Due Mar 30</span>
+            </div>
+            <div class="card-progress">
+              <div class="card-progress-label">60% &middot; Started Mar 20</div>
+              <div class="card-progress-bar"><div class="fill" style="width:60%"></div></div>
+            </div>
+            <span class="card-priority high">High</span>
+          </div>
+          <div class="card active-card" data-task="feedback" onclick="selectTask(this, 'feedback')">
+            <div class="card-name">Customer feedback response protocol</div>
+            <div class="card-meta">
+              <span class="assignee"><span class="avatar-sm">AT</span> Alex T.</span>
+              <span class="due">Due Apr 1</span>
+            </div>
+            <div class="card-progress">
+              <div class="card-progress-label">30% &middot; Started Mar 25</div>
+              <div class="card-progress-bar"><div class="fill" style="width:30%"></div></div>
+            </div>
+            <span class="card-priority medium">Medium</span>
+          </div>
+          <div class="card active-card selected" data-task="staffing" onclick="selectTask(this, 'staffing')">
+            <div class="card-name">Morning rush staffing review</div>
+            <div class="card-meta">
+              <span class="assignee"><span class="avatar-sm you">MT</span> You</span>
+              <span class="due today">Due today</span>
+            </div>
+            <div class="card-progress">
+              <div class="card-progress-label">45%</div>
+              <div class="card-progress-bar"><div class="fill" style="width:45%"></div></div>
+            </div>
+            <span class="card-priority high">High</span>
+          </div>
+        </div>
+
+        <!-- Blocked Lane -->
+        <div class="lane">
+          <div class="lane-header blocked">
+            <h3>Blocked</h3>
+            <span class="count">2</span>
+          </div>
+          <div class="card blocked-card" data-task="espresso" onclick="selectTask(this, 'espresso')">
+            <div class="card-name">Espresso machine calibration</div>
+            <div class="card-meta">
+              <span class="assignee"><span class="avatar-sm">AT</span> Alex T.</span>
+              <span class="due overdue">Due Mar 27 (overdue)</span>
+            </div>
+            <div class="card-blocked-reason"><span class="label">Blocked:</span> Parts order from supplier</div>
+            <div class="card-escalation">Escalated to owner</div>
+          </div>
+          <div class="card blocked-card" data-task="health" onclick="selectTask(this, 'health')">
+            <div class="card-name">Health inspection prep checklist</div>
+            <div class="card-meta">
+              <span class="assignee"><span class="avatar-sm">MS</span> Maria S.</span>
+              <span class="due overdue">Due Mar 28 (overdue)</span>
+            </div>
+            <div class="card-blocked-reason"><span class="label">Blocked:</span> Fire extinguisher replacement</div>
+            <div class="card-escalation">Waiting on vendor</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Completed -->
+      <div class="completed-section">
+        <div class="completed-toggle" onclick="toggleCompleted(this)">
+          <span class="arrow">&#9654;</span>
+          Completed
+          <span class="count-badge">11</span>
+        </div>
+        <div class="completed-list">
+          <div class="completed-item">Staff schedule template creation</div>
+          <div class="completed-item">POS system update to v3.2</div>
+          <div class="completed-item">New menu pricing analysis</div>
+          <div class="completed-item">Supplier contract renewal — Bean Co.</div>
+          <div class="completed-item">Deep clean schedule establishment</div>
+          <div class="completed-item">Customer loyalty program launch</div>
+          <div class="completed-item">Wi-Fi upgrade installation</div>
+          <div class="completed-item">New hire onboarding — Casey R.</div>
+          <div class="completed-item">Morning pastry vendor switch</div>
+          <div class="completed-item">Insurance renewal paperwork</div>
+          <div class="completed-item">Social media content calendar Q1</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inspector -->
+    <aside class="inspector" id="inspector">
+      <h2>Morning rush staffing review</h2>
+      <div class="section-label">Status</div>
+      <div class="detail-row"><span class="label">Lane</span><span class="value">Active</span></div>
+      <div class="detail-row"><span class="label">Priority</span><span class="value" style="color:#e67e22;">High</span></div>
+      <div class="detail-row"><span class="label">Assignee</span><span class="value">You</span></div>
+      <div class="detail-row"><span class="label">Due date</span><span class="value today">Mar 29 (today)</span></div>
+      <div class="detail-row"><span class="label">Dependencies</span><span class="value">None</span></div>
+
+      <div class="progress-section">
+        <div class="section-label">Progress</div>
+        <div class="pct">45%</div>
+        <div class="bar"><div class="fill" style="width:45%"></div></div>
+      </div>
+
+      <div class="section-label">Description</div>
+      <p style="font-size:13px; color:#555; line-height:1.6;">Review current morning rush (6:30-9:30 AM) staffing levels against customer traffic data. Identify gaps, propose schedule adjustments, and get team lead sign-off before next rotation.</p>
+
+      <div class="section-label">Activity log</div>
+      <div class="log-entry">
+        <div class="time">Mar 28, 3:15 PM</div>
+        <div class="text">Pulled traffic data from POS for last 4 weeks. Peak identified at 7:45 AM.</div>
+      </div>
+      <div class="log-entry">
+        <div class="time">Mar 27, 11:00 AM</div>
+        <div class="text">Discussed preliminary findings with Jordan K. regarding barista coverage.</div>
+      </div>
+      <div class="log-entry">
+        <div class="time">Mar 26, 9:30 AM</div>
+        <div class="text">Task created and assigned. Review window: Mar 26-29.</div>
+      </div>
+
+      <a class="copilot-link" href="#">&#10024; Ask Copilot about this</a>
+    </aside>
+  </div>
+</div>
+
+<script>
+function selectTask(el, taskId) {
+  document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  const inspector = document.getElementById('inspector');
+  inspector.classList.add('open');
+}
+function toggleCompleted(el) {
+  el.classList.toggle('open');
+  const list = el.nextElementSibling;
+  list.classList.toggle('visible');
+}
+</script>
+</body>
+</html>

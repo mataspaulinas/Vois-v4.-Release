@@ -1,0 +1,264 @@
+<!-- Deep mockup: Assessment Intake — Command direction -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS Command — Assessment</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #FAFAFA; color: #111827; min-height: 100vh; display: flex; }
+
+  /* Left rail */
+  .rail { width: 48px; background: #111827; display: flex; flex-direction: column; align-items: center; padding: 12px 0; position: fixed; top: 0; left: 0; bottom: 0; z-index: 20; }
+  .rail-icon { width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #6B7280; cursor: pointer; transition: all 0.15s; margin-bottom: 4px; font-size: 14px; }
+  .rail-icon:hover { background: #1F2937; color: #D1D5DB; }
+  .rail-icon.active { background: #6366F1; color: #fff; }
+  .rail-icon.logo { color: #6366F1; font-weight: 800; font-size: 13px; margin-bottom: 16px; background: none; }
+
+  /* Main */
+  .main { margin-left: 48px; flex: 1; min-height: 100vh; }
+
+  /* Top bar */
+  .topbar { height: 44px; background: #fff; border-bottom: 1px solid #E5E7EB; display: flex; align-items: center; padding: 0 20px; gap: 8px; }
+  .topbar-brand { font-size: 12px; font-weight: 700; color: #6366F1; letter-spacing: -0.3px; }
+  .topbar-sep { color: #D1D5DB; font-size: 11px; }
+  .topbar-venue { font-size: 12px; color: #6B7280; font-weight: 500; }
+  .topbar-page { font-size: 12px; color: #111827; font-weight: 600; }
+  .topbar-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+  .topbar-status { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #9CA3AF; }
+
+  /* Content */
+  .content { max-width: 920px; margin: 0 auto; padding: 20px 24px 100px; }
+
+  /* Section headers */
+  .section-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; margin-top: 24px; }
+  .section-header:first-child { margin-top: 0; }
+  .section-num { width: 20px; height: 20px; border-radius: 4px; background: #E5E7EB; color: #6B7280; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .section-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #374151; }
+  .section-count { font-size: 11px; color: #9CA3AF; margin-left: auto; }
+
+  /* Evidence textarea */
+  .evidence-wrap { background: #fff; border: 1px solid #E5E7EB; border-radius: 6px; overflow: hidden; }
+  .evidence-textarea { width: 100%; min-height: 220px; border: none; outline: none; padding: 16px 18px; font-family: 'Inter', sans-serif; font-size: 13.5px; line-height: 1.65; color: #1F2937; resize: vertical; background: transparent; }
+  .evidence-textarea::placeholder { color: #C0C0C0; }
+  .evidence-bar { display: flex; align-items: center; gap: 16px; padding: 10px 18px; border-top: 1px solid #F3F4F6; background: #FAFAFA; }
+  .evidence-meta { font-size: 12px; color: #6B7280; display: flex; align-items: center; gap: 6px; }
+  .evidence-meta strong { font-weight: 600; color: #374151; }
+  .btn-preview { margin-left: auto; padding: 6px 14px; background: #6366F1; color: #fff; border: none; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.15s; }
+  .btn-preview:hover { background: #4F46E5; }
+
+  /* Signal table */
+  .signal-table-wrap { background: #fff; border: 1px solid #E5E7EB; border-radius: 6px; overflow: hidden; }
+  .signal-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .signal-table thead th { text-align: left; padding: 8px 12px; background: #F9FAFB; border-bottom: 1px solid #E5E7EB; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #9CA3AF; }
+  .signal-table thead th:last-child { text-align: center; }
+  .signal-table tbody tr { border-bottom: 1px solid #F3F4F6; transition: background 0.1s; }
+  .signal-table tbody tr:last-child { border-bottom: none; }
+  .signal-table tbody tr:hover { background: #FAFBFF; }
+  .signal-table td { padding: 10px 12px; vertical-align: top; }
+
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .status-dot.accepted { background: #22C55E; }
+  .status-dot.rejected { background: #EF4444; }
+  .status-dot.pending { background: #D1D5DB; }
+
+  .signal-name-cell { font-weight: 600; color: #111827; }
+  .signal-name-cell.rejected-text { text-decoration: line-through; color: #9CA3AF; }
+  .signal-reject-inline { display: block; font-size: 11px; color: #9CA3AF; font-style: italic; font-weight: 400; margin-top: 2px; }
+
+  .dim-pill { font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px; white-space: nowrap; }
+  .dim-operations { background: #EEF2FF; color: #6366F1; }
+  .dim-infrastructure { background: #FFF7ED; color: #EA580C; }
+  .dim-people { background: #F0FDF4; color: #16A34A; }
+  .dim-quality { background: #FDF4FF; color: #A855F7; }
+
+  .impact-text { font-weight: 500; }
+  .impact-text.high { color: #DC2626; }
+  .impact-text.medium { color: #D97706; }
+  .impact-text.low { color: #16A34A; }
+
+  .conf-text { color: #6B7280; font-variant-numeric: tabular-nums; }
+
+  .action-btns { display: flex; gap: 3px; justify-content: center; }
+  .action-btn { width: 24px; height: 24px; border-radius: 4px; border: 1px solid #E5E7EB; background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #9CA3AF; transition: all 0.1s; }
+  .action-btn:hover { background: #F3F4F6; }
+  .action-btn.accept-on { background: #DCFCE7; border-color: #86EFAC; color: #16A34A; }
+  .action-btn.reject-on { background: #FEE2E2; border-color: #FECACA; color: #DC2626; }
+
+  /* Bottom */
+  .bottom-bar { position: fixed; bottom: 0; left: 48px; right: 0; background: #fff; border-top: 1px solid #E5E7EB; padding: 10px 24px; display: flex; align-items: center; justify-content: flex-end; gap: 8px; z-index: 10; }
+  .btn-compact { padding: 7px 16px; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.15s; }
+  .btn-compact.outline { background: #fff; border: 1px solid #D1D5DB; color: #374151; }
+  .btn-compact.outline:hover { border-color: #9CA3AF; background: #F9FAFB; }
+  .btn-compact.primary { background: #6366F1; border: 1px solid #6366F1; color: #fff; }
+  .btn-compact.primary:hover { background: #4F46E5; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .rail { display: none; }
+    .main { margin-left: 0; }
+    .bottom-bar { left: 0; }
+    .signal-table { font-size: 11px; }
+    .signal-table thead th, .signal-table td { padding: 8px 8px; }
+    .content { padding: 16px 12px 100px; }
+  }
+  @media (max-width: 520px) {
+    .signal-table .hide-sm { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="rail">
+  <div class="rail-icon logo">V</div>
+  <div class="rail-icon" title="Dashboard">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/></svg>
+  </div>
+  <div class="rail-icon active" title="Assessment">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2h10a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1zm1 2v3h8V4H4zm0 5v3h8V9H4z"/></svg>
+  </div>
+  <div class="rail-icon" title="Signals">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.5 5 5.5.8-4 3.9.9 5.3L8 13.5 3.1 16l.9-5.3-4-3.9L5.5 6z"/></svg>
+  </div>
+  <div class="rail-icon" title="Plan">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 3h12v1H2zm0 3h12v1H2zm0 3h8v1H2zm0 3h10v1H2z"/></svg>
+  </div>
+</nav>
+
+<main class="main">
+  <div class="topbar">
+    <span class="topbar-brand">VOIS</span>
+    <span class="topbar-sep">/</span>
+    <span class="topbar-venue">Sunrise Cafe</span>
+    <span class="topbar-sep">/</span>
+    <span class="topbar-page">Assessment</span>
+    <div class="topbar-right">
+      <span class="topbar-status">Draft</span>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="section-header">
+      <span class="section-num">1</span>
+      <span class="section-title">Evidence Intake</span>
+    </div>
+    <div class="evidence-wrap">
+      <textarea class="evidence-textarea" id="evidenceText">Morning rush continues to exceed capacity between 7:30-9:00 AM. We're averaging 45 customers per hour but station setup only supports 35 efficiently. Espresso machine on station 2 has been intermittently failing since Tuesday — parts on order but no ETA from supplier.
+
+Staff overtime is trending up. Alex worked 6 extra hours this week, Maria 4. We haven't been able to fill the Thursday evening shift for 3 weeks.
+
+On the positive side, customer feedback scores improved this week. Multiple comments about latte art quality. New cold brew recipe is well received.</textarea>
+      <div class="evidence-bar">
+        <span class="evidence-meta">Hours: <strong>8</strong>/wk</span>
+        <span class="evidence-meta" style="color:#9CA3AF;">|</span>
+        <span class="evidence-meta" id="wordCount">62 words</span>
+        <button class="btn-preview" id="previewBtn" onclick="showSignals()">Preview</button>
+      </div>
+    </div>
+
+    <div id="signalSection" style="display:none;">
+      <div class="section-header" style="margin-top:28px;">
+        <span class="section-num">2</span>
+        <span class="section-title">Signal Review</span>
+        <span class="section-count" id="signalCount"></span>
+      </div>
+      <div class="signal-table-wrap">
+        <table class="signal-table">
+          <thead>
+            <tr>
+              <th style="width:32px;"></th>
+              <th>Signal</th>
+              <th>Dimension</th>
+              <th class="hide-sm">Impact</th>
+              <th class="hide-sm">Conf.</th>
+              <th style="width:64px;">Action</th>
+            </tr>
+          </thead>
+          <tbody id="signalBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="bottom-bar">
+  <button class="btn-compact outline">Save</button>
+  <button class="btn-compact primary">Run Engine</button>
+</div>
+
+<script>
+const signals = [
+  { id: 1, name: "Service capacity exceeded", dim: "Operations", dimClass: "dim-operations", impact: "High", confidence: 92, status: "accepted", rejectReason: "" },
+  { id: 2, name: "Equipment reliability risk", dim: "Infrastructure", dimClass: "dim-infrastructure", impact: "High", confidence: 88, status: "accepted", rejectReason: "" },
+  { id: 3, name: "Staff overtime trending", dim: "People", dimClass: "dim-people", impact: "Medium", confidence: 85, status: "accepted", rejectReason: "" },
+  { id: 4, name: "Recruitment pipeline gap", dim: "People", dimClass: "dim-people", impact: "Medium", confidence: 71, status: "rejected", rejectReason: "Not a recruitment issue, it's scheduling" },
+  { id: 5, name: "Customer satisfaction improving", dim: "Quality", dimClass: "dim-quality", impact: "Low", confidence: 79, status: "pending", rejectReason: "" },
+];
+
+// Word count
+const ta = document.getElementById('evidenceText');
+const wc = document.getElementById('wordCount');
+ta.addEventListener('input', () => {
+  const words = ta.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+  wc.textContent = words + ' words';
+});
+
+function updateSignalCount() {
+  const accepted = signals.filter(s => s.status === 'accepted').length;
+  const total = signals.length;
+  document.getElementById('signalCount').textContent = `${accepted}/${total} accepted`;
+}
+
+function renderRow(s) {
+  const isRej = s.status === 'rejected';
+  return `<tr id="row-${s.id}">
+    <td><span class="status-dot ${s.status}"></span></td>
+    <td><span class="signal-name-cell ${isRej ? 'rejected-text' : ''}">${s.name}</span>${isRej && s.rejectReason ? `<span class="signal-reject-inline">${s.rejectReason}</span>` : ''}</td>
+    <td><span class="dim-pill ${s.dimClass}">${s.dim}</span></td>
+    <td class="hide-sm"><span class="impact-text ${s.impact.toLowerCase()}">${s.impact}</span></td>
+    <td class="hide-sm"><span class="conf-text">${s.confidence}%</span></td>
+    <td>
+      <div class="action-btns">
+        <button class="action-btn ${s.status === 'accepted' ? 'accept-on' : ''}" onclick="toggle(${s.id},'accepted')" title="Accept">&#10003;</button>
+        <button class="action-btn ${s.status === 'rejected' ? 'reject-on' : ''}" onclick="toggle(${s.id},'rejected')" title="Reject">&#10007;</button>
+      </div>
+    </td>
+  </tr>`;
+}
+
+function showSignals() {
+  document.getElementById('signalSection').style.display = 'block';
+  const body = document.getElementById('signalBody');
+  body.innerHTML = '';
+  signals.forEach((s, i) => {
+    setTimeout(() => {
+      body.insertAdjacentHTML('beforeend', renderRow(s));
+      updateSignalCount();
+    }, i * 80);
+  });
+}
+
+function toggle(id, newStatus) {
+  const s = signals.find(x => x.id === id);
+  if (!s) return;
+  if (s.status === newStatus) {
+    s.status = 'pending';
+    s.rejectReason = '';
+  } else if (newStatus === 'rejected' && s.status !== 'rejected') {
+    const reason = prompt('Rejection reason (optional):');
+    s.status = 'rejected';
+    s.rejectReason = reason || '';
+  } else {
+    s.status = newStatus;
+    s.rejectReason = '';
+  }
+  const row = document.getElementById(`row-${id}`);
+  row.outerHTML = renderRow(s);
+  updateSignalCount();
+}
+</script>
+
+</body>
+</html>

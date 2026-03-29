@@ -1,0 +1,327 @@
+<!-- Deep mockup: Owner Command Center — Command direction -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS Command — Owner Command Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #FAFAFA; color: #111827; line-height: 1.5; font-size: 13px; }
+
+  /* Left Rail */
+  .rail {
+    position: fixed; left: 0; top: 0; bottom: 0; width: 48px;
+    background: #111827; display: flex; flex-direction: column; align-items: center;
+    padding: 12px 0; z-index: 20;
+  }
+  .rail-icon {
+    width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: #6B7280; cursor: pointer; margin-bottom: 4px;
+    transition: all 0.15s; position: relative;
+  }
+  .rail-icon:hover { background: #1F2937; color: #D1D5DB; }
+  .rail-icon.active { background: #6366F1; color: #fff; }
+  .rail-icon .tooltip {
+    display: none; position: absolute; left: 44px; top: 50%; transform: translateY(-50%);
+    background: #111827; color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 11px;
+    white-space: nowrap; font-weight: 500; z-index: 30;
+  }
+  .rail-icon:hover .tooltip { display: block; }
+  .rail-brand { font-size: 11px; font-weight: 700; color: #6366F1; margin-bottom: 16px; letter-spacing: -0.3px; }
+
+  /* Top bar */
+  .topbar {
+    position: fixed; top: 0; left: 48px; right: 0; height: 44px;
+    background: #fff; border-bottom: 1px solid #E5E7EB; display: flex; align-items: center;
+    padding: 0 20px; z-index: 10; gap: 16px;
+  }
+  .topbar-brand { font-size: 13px; font-weight: 700; color: #6366F1; }
+  .topbar-sep { width: 1px; height: 20px; background: #E5E7EB; }
+  .topbar-org { font-size: 12px; color: #6B7280; font-weight: 500; }
+  .topbar-spacer { flex: 1; }
+  .topbar-search {
+    display: flex; align-items: center; gap: 6px; padding: 5px 12px;
+    background: #F3F4F6; border-radius: 6px; font-size: 12px; color: #9CA3AF; cursor: pointer;
+  }
+  .topbar-search kbd { font-family: 'Inter', sans-serif; font-size: 10px; background: #E5E7EB; padding: 1px 5px; border-radius: 3px; color: #6B7280; }
+
+  /* Main layout */
+  .main { margin-left: 48px; margin-top: 44px; display: flex; min-height: calc(100vh - 44px); }
+  .content { flex: 1; padding: 20px 24px 60px; min-width: 0; }
+  .inspector-panel {
+    width: 340px; border-left: 1px solid #E5E7EB; background: #fff; padding: 20px;
+    overflow-y: auto; flex-shrink: 0; transition: width 0.2s;
+  }
+  .inspector-panel.collapsed { width: 0; padding: 0; overflow: hidden; border: none; }
+
+  /* Section headers */
+  .section-header {
+    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    color: #9CA3AF; margin: 20px 0 8px; padding-bottom: 6px; border-bottom: 1px solid #F3F4F6;
+  }
+  .section-header:first-child { margin-top: 0; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #9CA3AF; text-align: left; padding: 6px 10px; border-bottom: 1px solid #E5E7EB;
+  }
+  td { padding: 8px 10px; border-bottom: 1px solid #F3F4F6; vertical-align: middle; }
+  tr { cursor: pointer; transition: background 0.1s; }
+  tbody tr:hover { background: #F9FAFB; }
+  tr.selected { background: #EEF2FF; }
+
+  /* Severity */
+  .sev-cell { display: flex; align-items: center; gap: 6px; }
+  .sev-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .sev-dot.critical { background: #EF4444; }
+  .sev-dot.high { background: #F59E0B; }
+  .sev-dot.medium { background: #3B82F6; }
+  .sev-dot.low { background: #10B981; }
+  .sev-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
+  .sev-label.critical { color: #EF4444; }
+  .sev-label.high { color: #D97706; }
+  .sev-label.medium { color: #3B82F6; }
+  .sev-label.low { color: #10B981; }
+
+  .severity-bg-critical { background: #FEF2F2; }
+  .severity-bg-high { background: #FFFBEB; }
+
+  .venue-pill { font-size: 11px; font-weight: 500; color: #374151; }
+  .issue-text { font-size: 12px; color: #111827; font-weight: 500; }
+  .source-text { font-size: 11px; color: #9CA3AF; }
+  .age-text { font-size: 11px; color: #9CA3AF; white-space: nowrap; }
+
+  /* Status dots */
+  .status-inline { display: flex; align-items: center; gap: 5px; font-size: 12px; }
+  .status-dot { width: 7px; height: 7px; border-radius: 50%; }
+  .status-dot.on-track { background: #10B981; }
+  .status-dot.needs-attention { background: #F59E0B; }
+  .status-dot.critical { background: #EF4444; }
+  .status-dot.setting-up { background: #6366F1; }
+
+  .pct-bar { display: inline-block; width: 60px; height: 4px; background: #E5E7EB; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+  .pct-fill { height: 100%; border-radius: 2px; }
+  .pct-fill.green { background: #10B981; }
+  .pct-fill.yellow { background: #F59E0B; }
+  .pct-fill.red { background: #EF4444; }
+  .pct-fill.blue { background: #6366F1; }
+
+  .overdue-text { color: #EF4444; font-weight: 600; }
+  .pending-text { color: #D97706; }
+
+  /* Inspector content */
+  .insp-empty { color: #9CA3AF; font-size: 12px; text-align: center; margin-top: 60px; }
+  .insp-severity { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; }
+  .insp-severity.critical { background: #FEE2E2; color: #991B1B; }
+  .insp-severity.high { background: #FEF3C7; color: #92400E; }
+  .insp-severity.medium { background: #DBEAFE; color: #1E40AF; }
+  .insp-severity.low { background: #D1FAE5; color: #065F46; }
+  .insp-title { font-size: 14px; font-weight: 600; color: #111827; margin-bottom: 14px; line-height: 1.4; }
+  .insp-field { margin-bottom: 10px; }
+  .insp-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #9CA3AF; margin-bottom: 2px; }
+  .insp-value { font-size: 12px; color: #374151; }
+  .insp-actions { margin-top: 20px; display: flex; gap: 6px; }
+  .btn-sm { padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 500; cursor: pointer; border: none; transition: all 0.1s; }
+  .btn-sm.primary { background: #6366F1; color: #fff; }
+  .btn-sm.primary:hover { background: #4F46E5; }
+  .btn-sm.ghost { background: transparent; color: #6B7280; border: 1px solid #E5E7EB; }
+  .btn-sm.ghost:hover { background: #F3F4F6; }
+
+  @media (max-width: 900px) {
+    .rail { display: none; }
+    .topbar { left: 0; }
+    .main { margin-left: 0; flex-direction: column; }
+    .inspector-panel { width: 100%; border-left: none; border-top: 1px solid #E5E7EB; }
+    .inspector-panel.collapsed { height: 0; }
+    table { font-size: 12px; }
+    th, td { padding: 6px 6px; }
+  }
+  @media (max-width: 600px) {
+    .content { padding: 12px 10px; }
+    .topbar-search { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Left Rail -->
+<nav class="rail">
+  <div class="rail-brand">V</div>
+  <div class="rail-icon active">O<span class="tooltip">Owner</span></div>
+  <div class="rail-icon">M<span class="tooltip">Manager</span></div>
+  <div class="rail-icon">P<span class="tooltip">Planner</span></div>
+</nav>
+
+<!-- Top Bar -->
+<header class="topbar">
+  <span class="topbar-brand">VOIS</span>
+  <div class="topbar-sep"></div>
+  <span class="topbar-org">Sunrise Hospitality Group</span>
+  <div class="topbar-spacer"></div>
+  <div class="topbar-search"><span>Search...</span> <kbd>Cmd</kbd><kbd>K</kbd></div>
+</header>
+
+<div class="main">
+  <div class="content">
+
+    <!-- Attention Queue -->
+    <div class="section-header">Attention Queue</div>
+    <table id="attentionTable">
+      <thead>
+        <tr><th style="width:90px">Severity</th><th style="width:110px">Venue</th><th>Issue</th><th style="width:110px">Source</th><th style="width:60px">Age</th></tr>
+      </thead>
+      <tbody>
+        <tr class="severity-bg-critical" data-idx="0" onclick="selectRow(this, 0)">
+          <td><div class="sev-cell"><span class="sev-dot critical"></span><span class="sev-label critical">Critical</span></div></td>
+          <td class="venue-pill">Sunrise Cafe</td>
+          <td class="issue-text">Espresso machine down for 3 days &mdash; service impact detected</td>
+          <td class="source-text">Escalated by Maria S.</td>
+          <td class="age-text">2h ago</td>
+        </tr>
+        <tr class="severity-bg-high" data-idx="1" onclick="selectRow(this, 1)">
+          <td><div class="sev-cell"><span class="sev-dot high"></span><span class="sev-label high">High</span></div></td>
+          <td class="venue-pill">Harbor Bistro</td>
+          <td class="issue-text">Health inspection in 5 days &mdash; 3 prep tasks blocked</td>
+          <td class="source-text">Auto-surfaced</td>
+          <td class="age-text">6h ago</td>
+        </tr>
+        <tr class="severity-bg-high" data-idx="2" onclick="selectRow(this, 2)">
+          <td><div class="sev-cell"><span class="sev-dot high"></span><span class="sev-label high">High</span></div></td>
+          <td class="venue-pill">Sunrise Cafe</td>
+          <td class="issue-text">Staff overtime trending 20% above budget</td>
+          <td class="source-text">Signal intelligence</td>
+          <td class="age-text">1d ago</td>
+        </tr>
+        <tr data-idx="3" onclick="selectRow(this, 3)">
+          <td><div class="sev-cell"><span class="sev-dot medium"></span><span class="sev-label medium">Medium</span></div></td>
+          <td class="venue-pill">Rooftop Lounge</td>
+          <td class="issue-text">New menu rollout 60% complete &mdash; on track</td>
+          <td class="source-text">Progress update</td>
+          <td class="age-text">1d ago</td>
+        </tr>
+        <tr data-idx="4" onclick="selectRow(this, 4)">
+          <td><div class="sev-cell"><span class="sev-dot low"></span><span class="sev-label low">Low</span></div></td>
+          <td class="venue-pill">Harbor Bistro</td>
+          <td class="issue-text">Customer satisfaction score improved +4pts</td>
+          <td class="source-text">Signal intelligence</td>
+          <td class="age-text">2d ago</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Venue Status -->
+    <div class="section-header">Venue Status</div>
+    <table>
+      <thead>
+        <tr><th>Venue</th><th style="width:160px">Plan %</th><th style="width:70px">Blocked</th><th style="width:70px">Overdue</th><th style="width:130px">Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:500">Sunrise Cafe</td>
+          <td><span class="pct-bar"><span class="pct-fill yellow" style="width:78%"></span></span>78%</td>
+          <td>2</td>
+          <td>3</td>
+          <td><div class="status-inline"><span class="status-dot needs-attention"></span> Needs attention</div></td>
+        </tr>
+        <tr>
+          <td style="font-weight:500">Harbor Bistro</td>
+          <td><span class="pct-bar"><span class="pct-fill red" style="width:65%"></span></span>65%</td>
+          <td>3</td>
+          <td>1</td>
+          <td><div class="status-inline"><span class="status-dot critical"></span> Critical</div></td>
+        </tr>
+        <tr>
+          <td style="font-weight:500">Rooftop Lounge</td>
+          <td><span class="pct-bar"><span class="pct-fill green" style="width:88%"></span></span>88%</td>
+          <td>0</td>
+          <td>0</td>
+          <td><div class="status-inline"><span class="status-dot on-track"></span> On track</div></td>
+        </tr>
+        <tr>
+          <td style="font-weight:500">Downtown Kiosk</td>
+          <td><span class="pct-bar"><span class="pct-fill blue" style="width:40%"></span></span>40%</td>
+          <td>&mdash;</td>
+          <td>&mdash;</td>
+          <td><div class="status-inline"><span class="status-dot setting-up"></span> Setting up</div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Delegations -->
+    <div class="section-header">Delegations</div>
+    <table>
+      <thead>
+        <tr><th>Task</th><th style="width:130px">Assigned To</th><th style="width:100px">Due</th><th style="width:90px">Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:500">Review staffing proposal</td>
+          <td>Manager Jamie</td>
+          <td>Due today</td>
+          <td><span class="pending-text">Pending</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:500">Approve vendor contract</td>
+          <td>Manager Li</td>
+          <td>Due Mar 30</td>
+          <td><span class="pending-text">Pending</span></td>
+        </tr>
+        <tr>
+          <td style="font-weight:500">Review Q1 performance report</td>
+          <td>Manager Jamie</td>
+          <td>Due Mar 27</td>
+          <td><span class="overdue-text">Overdue</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <!-- Inspector Panel -->
+  <div class="inspector-panel" id="inspectorPanel">
+    <div class="insp-empty" id="inspEmpty">Select an attention item to inspect</div>
+    <div id="inspContent" style="display:none"></div>
+  </div>
+</div>
+
+<script>
+const data = [
+  { severity:'critical', venue:'Sunrise Cafe', desc:'Espresso machine down for 3 days — service impact detected', source:'Escalated by Maria S.', time:'2h ago', impact:'Espresso-based drinks unavailable. Estimated 15% revenue loss for affected period.', rec:'Escalate to vendor service or arrange temporary replacement unit.' },
+  { severity:'high', venue:'Harbor Bistro', desc:'Health inspection in 5 days — 3 prep tasks blocked', source:'Auto-surfaced', time:'6h ago', impact:'3 tasks blocked: deep clean walk-in cooler, update allergen docs, replace fire extinguisher.', rec:'Unblock tasks immediately and assign owners with deadlines.' },
+  { severity:'high', venue:'Sunrise Cafe', desc:'Staff overtime trending 20% above budget', source:'Signal intelligence', time:'1d ago', impact:'Overtime costs exceeding budget by 20% over a 2-week rolling period.', rec:'Review morning shift scheduling. Consider temp staffing.' },
+  { severity:'medium', venue:'Rooftop Lounge', desc:'New menu rollout 60% complete — on track', source:'Progress update', time:'1d ago', impact:'12 of 20 menu items finalized. Photography session scheduled Friday.', rec:'No action needed. Monitor progress through launch.' },
+  { severity:'low', venue:'Harbor Bistro', desc:'Customer satisfaction score improved +4pts', source:'Signal intelligence', time:'2d ago', impact:'Score rose from 82 to 86 (30-day rolling average). Driven by improved wait times.', rec:'Acknowledge team. Continue monitoring trends.' }
+];
+
+function selectRow(el, idx) {
+  document.querySelectorAll('#attentionTable tbody tr').forEach(r => r.classList.remove('selected'));
+  el.classList.add('selected');
+  const d = data[idx];
+  const sev = d.severity.charAt(0).toUpperCase() + d.severity.slice(1);
+  document.getElementById('inspEmpty').style.display = 'none';
+  const c = document.getElementById('inspContent');
+  c.style.display = 'block';
+  c.innerHTML = `
+    <span class="insp-severity ${d.severity}">${sev}</span>
+    <div class="insp-title">${d.desc}</div>
+    <div class="insp-field"><div class="insp-label">Venue</div><div class="insp-value">${d.venue}</div></div>
+    <div class="insp-field"><div class="insp-label">Source</div><div class="insp-value">${d.source}</div></div>
+    <div class="insp-field"><div class="insp-label">Detected</div><div class="insp-value">${d.time}</div></div>
+    <div class="insp-field"><div class="insp-label">Impact Assessment</div><div class="insp-value">${d.impact}</div></div>
+    <div class="insp-field"><div class="insp-label">Recommendation</div><div class="insp-value">${d.rec}</div></div>
+    <div class="insp-actions">
+      <button class="btn-sm primary">Take Action</button>
+      <button class="btn-sm ghost">Dismiss</button>
+      <button class="btn-sm ghost">Delegate</button>
+    </div>
+  `;
+}
+</script>
+</body>
+</html>

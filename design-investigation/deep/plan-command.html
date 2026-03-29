@@ -1,0 +1,359 @@
+<!-- Deep mockup: Plan View — Command direction -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS Command — Plan View</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #FAFAFA; color: #111827; display: flex; min-height: 100vh; font-size: 13px; line-height: 1.5; }
+
+  /* Ultra-narrow rail */
+  .rail { width: 48px; background: #1F2937; display: flex; flex-direction: column; align-items: center; padding-top: 16px; gap: 4px; flex-shrink: 0; position: fixed; top: 0; left: 0; bottom: 0; z-index: 10; }
+  .rail-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #9CA3AF; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.15s; text-decoration: none; }
+  .rail-icon:hover { background: #374151; color: #E5E7EB; }
+  .rail-icon.active { background: #6366F1; color: #fff; }
+  .rail-logo { color: #6366F1; font-size: 16px; font-weight: 800; margin-bottom: 12px; letter-spacing: -1px; }
+  .rail-spacer { flex: 1; }
+  .rail-bottom { margin-bottom: 16px; }
+  .rail-bottom .rail-icon { font-size: 11px; }
+
+  /* Main */
+  .main-wrapper { margin-left: 48px; flex: 1; display: flex; flex-direction: column; min-width: 0; }
+
+  /* Header bar */
+  .header-bar { padding: 20px 32px 0; }
+  .header-title { font-size: 20px; font-weight: 700; color: #111827; letter-spacing: -0.3px; display: flex; align-items: center; gap: 12px; }
+  .header-title .badge { font-size: 12px; font-weight: 600; color: #6366F1; background: #EEF2FF; padding: 3px 10px; border-radius: 6px; }
+  .header-sub { font-size: 12px; color: #9CA3AF; margin-top: 4px; }
+  .header-sub strong { color: #6366F1; }
+  .progress-thin { margin-top: 12px; height: 3px; background: #E5E7EB; border-radius: 2px; overflow: hidden; }
+  .progress-thin .fill { height: 100%; background: #6366F1; border-radius: 2px; }
+
+  /* Filter bar */
+  .filter-bar { display: flex; align-items: center; gap: 8px; padding: 16px 32px 12px; border-bottom: 1px solid #E5E7EB; flex-wrap: wrap; }
+  .search-input { padding: 6px 12px; border: 1px solid #E5E7EB; border-radius: 6px; font-size: 12px; font-family: 'Inter', sans-serif; width: 220px; background: #fff; color: #111827; outline: none; transition: border-color 0.15s; }
+  .search-input:focus { border-color: #6366F1; }
+  .search-input::placeholder { color: #D1D5DB; }
+  .filter-pill { padding: 5px 12px; border-radius: 6px; border: 1px solid #E5E7EB; background: #fff; font-size: 11px; font-weight: 500; color: #6B7280; cursor: pointer; transition: all 0.15s; font-family: 'Inter', sans-serif; }
+  .filter-pill:hover { border-color: #6366F1; color: #6366F1; }
+  .filter-pill.active { background: #6366F1; color: #fff; border-color: #6366F1; }
+  .filter-spacer { flex: 1; }
+  .filter-count { font-size: 11px; color: #9CA3AF; }
+
+  /* Content area */
+  .content-split { display: flex; flex: 1; overflow: hidden; }
+  .list-area { flex: 1; overflow-y: auto; min-width: 0; }
+
+  /* Table header */
+  .table-head { display: grid; grid-template-columns: 32px 1fr 120px 100px 100px 80px; padding: 0 32px; height: 32px; align-items: center; border-bottom: 1px solid #E5E7EB; background: #FAFAFA; position: sticky; top: 0; z-index: 2; }
+  .table-head span { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #9CA3AF; }
+
+  /* Section header */
+  .section-header { display: flex; align-items: center; gap: 8px; padding: 8px 32px; background: #F9FAFB; border-bottom: 1px solid #F3F4F6; cursor: pointer; user-select: none; }
+  .section-header:hover { background: #F3F4F6; }
+  .section-header .arrow { font-size: 9px; color: #9CA3AF; transition: transform 0.2s; width: 12px; }
+  .section-header.collapsed .arrow { transform: rotate(-90deg); }
+  .section-header .section-name { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
+  .section-header .section-count { font-size: 11px; color: #9CA3AF; font-weight: 500; }
+  .section-header.blocked-h .section-name { color: #EF4444; }
+  .section-header.active-h .section-name { color: #6366F1; }
+  .section-header.ready-h .section-name { color: #10B981; }
+  .section-header.done-h .section-name { color: #9CA3AF; }
+
+  /* Rows */
+  .task-row { display: grid; grid-template-columns: 32px 1fr 120px 100px 100px 80px; padding: 0 32px; height: 36px; align-items: center; border-bottom: 1px solid #F3F4F6; cursor: pointer; transition: background 0.1s; }
+  .task-row:hover { background: #F9FAFB; }
+  .task-row.selected { background: #EEF2FF; }
+  .section-content.collapsed { display: none; }
+
+  /* Status dot */
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .status-dot.blocked { background: #EF4444; }
+  .status-dot.active { background: #6366F1; }
+  .status-dot.ready { background: #10B981; }
+  .status-dot.done { background: #D1D5DB; }
+
+  /* Row cells */
+  .task-name { font-size: 13px; font-weight: 500; color: #111827; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .task-owner { font-size: 12px; color: #6B7280; }
+  .task-due { font-size: 12px; color: #6B7280; }
+  .task-due.overdue { color: #EF4444; font-weight: 500; }
+  .task-due.today { color: #F59E0B; font-weight: 500; }
+  .task-progress { font-size: 12px; color: #6B7280; display: flex; align-items: center; gap: 6px; }
+  .task-progress .mini-bar { width: 40px; height: 3px; background: #E5E7EB; border-radius: 2px; overflow: hidden; }
+  .task-progress .mini-bar .fill { height: 100%; background: #6366F1; border-radius: 2px; }
+  .task-priority-cell { font-size: 10px; font-weight: 600; text-transform: uppercase; }
+  .task-priority-cell.high { color: #F59E0B; }
+  .task-priority-cell.medium { color: #9CA3AF; }
+  .task-priority-cell.low { color: #10B981; }
+
+  /* Inspector */
+  .inspector { width: 280px; background: #fff; border-left: 1px solid #E5E7EB; padding: 24px 20px; overflow-y: auto; flex-shrink: 0; font-size: 12px; }
+  .inspector h2 { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 16px; line-height: 1.4; }
+  .insp-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #9CA3AF; margin-top: 16px; margin-bottom: 6px; }
+  .insp-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 12px; }
+  .insp-row .k { color: #9CA3AF; }
+  .insp-row .v { color: #111827; font-weight: 500; }
+  .insp-row .v.overdue { color: #EF4444; }
+  .insp-row .v.today { color: #F59E0B; }
+  .insp-desc { font-size: 12px; color: #4B5563; line-height: 1.6; margin-top: 4px; }
+  .insp-progress { margin-top: 12px; }
+  .insp-progress .pct { font-size: 20px; font-weight: 700; color: #6366F1; }
+  .insp-progress .bar { height: 4px; background: #E5E7EB; border-radius: 2px; overflow: hidden; margin-top: 6px; }
+  .insp-progress .bar .fill { height: 100%; background: #6366F1; border-radius: 2px; }
+  .insp-log { margin-top: 4px; }
+  .insp-log-entry { padding: 6px 0; border-bottom: 1px solid #F3F4F6; }
+  .insp-log-entry .time { font-size: 10px; color: #D1D5DB; }
+  .insp-log-entry .text { font-size: 11px; color: #6B7280; margin-top: 1px; }
+  .insp-copilot { margin-top: 16px; padding: 8px 12px; background: #EEF2FF; border-radius: 6px; color: #6366F1; font-size: 12px; font-weight: 500; cursor: pointer; text-align: center; text-decoration: none; display: block; transition: background 0.15s; }
+  .insp-copilot:hover { background: #E0E7FF; }
+  .insp-blocked-badge { margin-top: 8px; padding: 6px 10px; background: #FEF2F2; border-radius: 6px; font-size: 11px; color: #EF4444; }
+  .insp-blocked-badge strong { font-weight: 600; }
+
+  /* Keyboard hints */
+  .keyboard-hints { padding: 8px 32px; border-top: 1px solid #E5E7EB; background: #FAFAFA; display: flex; gap: 16px; font-size: 11px; color: #D1D5DB; flex-shrink: 0; }
+  .keyboard-hints kbd { background: #E5E7EB; color: #9CA3AF; padding: 1px 5px; border-radius: 3px; font-family: 'Inter', sans-serif; font-size: 10px; }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .inspector { position: fixed; right: 0; top: 0; bottom: 0; width: 300px; z-index: 20; box-shadow: -4px 0 20px rgba(0,0,0,0.08); transform: translateX(100%); transition: transform 0.2s; }
+    .inspector.open { transform: translateX(0); }
+  }
+  @media (max-width: 768px) {
+    .rail { display: none; }
+    .main-wrapper { margin-left: 0; }
+    .table-head, .task-row { grid-template-columns: 28px 1fr 100px 80px; }
+    .table-head span:nth-child(5), .table-head span:nth-child(6),
+    .task-row > *:nth-child(5), .task-row > *:nth-child(6) { display: none; }
+    .filter-bar, .header-bar { padding-left: 16px; padding-right: 16px; }
+    .table-head, .task-row, .section-header { padding-left: 16px; padding-right: 16px; }
+    .keyboard-hints { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Rail -->
+<nav class="rail">
+  <div class="rail-logo">V</div>
+  <a class="rail-icon" title="Today">T</a>
+  <a class="rail-icon" title="My Tasks">M</a>
+  <a class="rail-icon" title="Execution">E</a>
+  <a class="rail-icon" title="Assessment">A</a>
+  <a class="rail-icon" title="Signals">S</a>
+  <a class="rail-icon active" title="Plan">P</a>
+  <a class="rail-icon" title="Report">R</a>
+  <a class="rail-icon" title="Knowledge Base">K</a>
+  <div class="rail-spacer"></div>
+  <div class="rail-bottom">
+    <a class="rail-icon" title="Settings">&#9881;</a>
+  </div>
+</nav>
+
+<!-- Main -->
+<div class="main-wrapper">
+  <div class="header-bar">
+    <div class="header-title">Plan <span class="badge">Q1 2026</span></div>
+    <div class="header-sub">Q1 2026 Operations Improvement &mdash; <strong>78%</strong> &mdash; 14 of 18 tasks</div>
+    <div class="progress-thin"><div class="fill" style="width:78%"></div></div>
+  </div>
+
+  <!-- Filter bar -->
+  <div class="filter-bar">
+    <input class="search-input" placeholder="Search tasks..." type="text">
+    <button class="filter-pill active">All</button>
+    <button class="filter-pill" onclick="filterPill(this)">Ready</button>
+    <button class="filter-pill" onclick="filterPill(this)">Active</button>
+    <button class="filter-pill" onclick="filterPill(this)">Blocked</button>
+    <button class="filter-pill" onclick="filterPill(this)">Completed</button>
+    <div class="filter-spacer"></div>
+    <span class="filter-count">18 tasks</span>
+  </div>
+
+  <div class="content-split">
+    <div class="list-area">
+      <!-- Table head -->
+      <div class="table-head">
+        <span></span>
+        <span>Task</span>
+        <span>Owner</span>
+        <span>Due</span>
+        <span>Progress</span>
+        <span>Priority</span>
+      </div>
+
+      <!-- Blocked -->
+      <div class="section-header blocked-h" onclick="toggleSection(this)">
+        <span class="arrow">&#9660;</span>
+        <span class="section-name">Blocked</span>
+        <span class="section-count">(2)</span>
+      </div>
+      <div class="section-content">
+        <div class="task-row" onclick="selectRow(this, 'espresso')">
+          <div><span class="status-dot blocked"></span></div>
+          <div class="task-name">Espresso machine calibration</div>
+          <div class="task-owner">Alex T.</div>
+          <div class="task-due overdue">Mar 27</div>
+          <div class="task-progress">&mdash;</div>
+          <div class="task-priority-cell high">High</div>
+        </div>
+        <div class="task-row" onclick="selectRow(this, 'health')">
+          <div><span class="status-dot blocked"></span></div>
+          <div class="task-name">Health inspection prep checklist</div>
+          <div class="task-owner">Maria S.</div>
+          <div class="task-due overdue">Mar 28</div>
+          <div class="task-progress">&mdash;</div>
+          <div class="task-priority-cell high">High</div>
+        </div>
+      </div>
+
+      <!-- Active -->
+      <div class="section-header active-h" onclick="toggleSection(this)">
+        <span class="arrow">&#9660;</span>
+        <span class="section-name">Active</span>
+        <span class="section-count">(3)</span>
+      </div>
+      <div class="section-content">
+        <div class="task-row" onclick="selectRow(this, 'menu')">
+          <div><span class="status-dot active"></span></div>
+          <div class="task-name">Menu item training rollout</div>
+          <div class="task-owner">Jordan K.</div>
+          <div class="task-due">Mar 30</div>
+          <div class="task-progress">60% <span class="mini-bar"><span class="fill" style="width:60%"></span></span></div>
+          <div class="task-priority-cell high">High</div>
+        </div>
+        <div class="task-row" onclick="selectRow(this, 'feedback')">
+          <div><span class="status-dot active"></span></div>
+          <div class="task-name">Customer feedback response protocol</div>
+          <div class="task-owner">Alex T.</div>
+          <div class="task-due">Apr 1</div>
+          <div class="task-progress">30% <span class="mini-bar"><span class="fill" style="width:30%"></span></span></div>
+          <div class="task-priority-cell medium">Med</div>
+        </div>
+        <div class="task-row selected" onclick="selectRow(this, 'staffing')">
+          <div><span class="status-dot active"></span></div>
+          <div class="task-name">Morning rush staffing review</div>
+          <div class="task-owner">You</div>
+          <div class="task-due today">Today</div>
+          <div class="task-progress">45% <span class="mini-bar"><span class="fill" style="width:45%"></span></span></div>
+          <div class="task-priority-cell high">High</div>
+        </div>
+      </div>
+
+      <!-- Ready -->
+      <div class="section-header ready-h" onclick="toggleSection(this)">
+        <span class="arrow">&#9660;</span>
+        <span class="section-name">Ready</span>
+        <span class="section-count">(2)</span>
+      </div>
+      <div class="section-content">
+        <div class="task-row" onclick="selectRow(this, 'inventory')">
+          <div><span class="status-dot ready"></span></div>
+          <div class="task-name">Weekly inventory count</div>
+          <div class="task-owner">Sam P.</div>
+          <div class="task-due">Mar 31</div>
+          <div class="task-progress">&mdash;</div>
+          <div class="task-priority-cell medium">Med</div>
+        </div>
+        <div class="task-row" onclick="selectRow(this, 'barista')">
+          <div><span class="status-dot ready"></span></div>
+          <div class="task-name">Barista certification renewal</div>
+          <div class="task-owner">Maria S.</div>
+          <div class="task-due">Apr 3</div>
+          <div class="task-progress">&mdash;</div>
+          <div class="task-priority-cell low">Low</div>
+        </div>
+      </div>
+
+      <!-- Completed -->
+      <div class="section-header done-h collapsed" onclick="toggleSection(this)">
+        <span class="arrow">&#9660;</span>
+        <span class="section-name">Completed</span>
+        <span class="section-count">(11)</span>
+      </div>
+      <div class="section-content collapsed">
+        <div class="task-row"><div><span class="status-dot done"></span></div><div class="task-name" style="color:#9CA3AF; text-decoration:line-through;">Staff schedule template creation</div><div class="task-owner" style="color:#D1D5DB;">Sam P.</div><div class="task-due" style="color:#D1D5DB;">Mar 10</div><div class="task-progress" style="color:#D1D5DB;">Done</div><div class="task-priority-cell" style="color:#D1D5DB;">Med</div></div>
+        <div class="task-row"><div><span class="status-dot done"></span></div><div class="task-name" style="color:#9CA3AF; text-decoration:line-through;">POS system update to v3.2</div><div class="task-owner" style="color:#D1D5DB;">Jordan K.</div><div class="task-due" style="color:#D1D5DB;">Mar 8</div><div class="task-progress" style="color:#D1D5DB;">Done</div><div class="task-priority-cell" style="color:#D1D5DB;">High</div></div>
+        <div class="task-row"><div><span class="status-dot done"></span></div><div class="task-name" style="color:#9CA3AF; text-decoration:line-through;">New menu pricing analysis</div><div class="task-owner" style="color:#D1D5DB;">Alex T.</div><div class="task-due" style="color:#D1D5DB;">Mar 5</div><div class="task-progress" style="color:#D1D5DB;">Done</div><div class="task-priority-cell" style="color:#D1D5DB;">High</div></div>
+        <div class="task-row"><div><span class="status-dot done"></span></div><div class="task-name" style="color:#9CA3AF; text-decoration:line-through;">Supplier contract renewal</div><div class="task-owner" style="color:#D1D5DB;">Maria S.</div><div class="task-due" style="color:#D1D5DB;">Mar 3</div><div class="task-progress" style="color:#D1D5DB;">Done</div><div class="task-priority-cell" style="color:#D1D5DB;">Med</div></div>
+        <div class="task-row"><div><span class="status-dot done"></span></div><div class="task-name" style="color:#9CA3AF; text-decoration:line-through;">Deep clean schedule establishment</div><div class="task-owner" style="color:#D1D5DB;">Sam P.</div><div class="task-due" style="color:#D1D5DB;">Feb 28</div><div class="task-progress" style="color:#D1D5DB;">Done</div><div class="task-priority-cell" style="color:#D1D5DB;">Med</div></div>
+        <div class="task-row"><div><span class="status-dot done"></span></div><div class="task-name" style="color:#9CA3AF; text-decoration:line-through;">Customer loyalty program launch</div><div class="task-owner" style="color:#D1D5DB;">Jordan K.</div><div class="task-due" style="color:#D1D5DB;">Feb 25</div><div class="task-progress" style="color:#D1D5DB;">Done</div><div class="task-priority-cell" style="color:#D1D5DB;">High</div></div>
+        <div class="task-row"><div><span class="status-dot done"></span></div><div class="task-name" style="color:#9CA3AF; text-decoration:line-through;">Wi-Fi upgrade installation</div><div class="task-owner" style="color:#D1D5DB;">Alex T.</div><div class="task-due" style="color:#D1D5DB;">Feb 20</div><div class="task-progress" style="color:#D1D5DB;">Done</div><div class="task-priority-cell" style="color:#D1D5DB;">Low</div></div>
+        <div class="task-row"><div><span class="status-dot done"></span></div><div class="task-name" style="color:#9CA3AF; text-decoration:line-through;">New hire onboarding — Casey R.</div><div class="task-owner" style="color:#D1D5DB;">Maria S.</div><div class="task-due" style="color:#D1D5DB;">Feb 15</div><div class="task-progress" style="color:#D1D5DB;">Done</div><div class="task-priority-cell" style="color:#D1D5DB;">High</div></div>
+        <div class="task-row"><div><span class="status-dot done"></span></div><div class="task-name" style="color:#9CA3AF; text-decoration:line-through;">Morning pastry vendor switch</div><div class="task-owner" style="color:#D1D5DB;">Sam P.</div><div class="task-due" style="color:#D1D5DB;">Feb 10</div><div class="task-progress" style="color:#D1D5DB;">Done</div><div class="task-priority-cell" style="color:#D1D5DB;">Med</div></div>
+        <div class="task-row"><div><span class="status-dot done"></span></div><div class="task-name" style="color:#9CA3AF; text-decoration:line-through;">Insurance renewal paperwork</div><div class="task-owner" style="color:#D1D5DB;">You</div><div class="task-due" style="color:#D1D5DB;">Feb 5</div><div class="task-progress" style="color:#D1D5DB;">Done</div><div class="task-priority-cell" style="color:#D1D5DB;">Med</div></div>
+        <div class="task-row"><div><span class="status-dot done"></span></div><div class="task-name" style="color:#9CA3AF; text-decoration:line-through;">Social media content calendar Q1</div><div class="task-owner" style="color:#D1D5DB;">Jordan K.</div><div class="task-due" style="color:#D1D5DB;">Jan 30</div><div class="task-progress" style="color:#D1D5DB;">Done</div><div class="task-priority-cell" style="color:#D1D5DB;">Low</div></div>
+      </div>
+    </div>
+
+    <!-- Inspector -->
+    <aside class="inspector" id="inspector">
+      <h2>Morning rush staffing review</h2>
+
+      <div class="insp-label">Details</div>
+      <div class="insp-row"><span class="k">Status</span><span class="v">Active</span></div>
+      <div class="insp-row"><span class="k">Priority</span><span class="v" style="color:#F59E0B;">High</span></div>
+      <div class="insp-row"><span class="k">Assignee</span><span class="v">You</span></div>
+      <div class="insp-row"><span class="k">Due</span><span class="v today">Mar 29 (today)</span></div>
+      <div class="insp-row"><span class="k">Dependencies</span><span class="v">None</span></div>
+
+      <div class="insp-progress">
+        <div class="insp-label">Progress</div>
+        <div class="pct">45%</div>
+        <div class="bar"><div class="fill" style="width:45%"></div></div>
+      </div>
+
+      <div class="insp-label">Description</div>
+      <div class="insp-desc">Review current morning rush (6:30-9:30 AM) staffing levels against customer traffic data. Identify gaps, propose schedule adjustments, and get team lead sign-off.</div>
+
+      <div class="insp-label">Activity</div>
+      <div class="insp-log">
+        <div class="insp-log-entry">
+          <div class="time">Mar 28, 3:15 PM</div>
+          <div class="text">Pulled traffic data from POS for last 4 weeks.</div>
+        </div>
+        <div class="insp-log-entry">
+          <div class="time">Mar 27, 11:00 AM</div>
+          <div class="text">Discussed findings with Jordan K.</div>
+        </div>
+        <div class="insp-log-entry">
+          <div class="time">Mar 26, 9:30 AM</div>
+          <div class="text">Task created. Review window: Mar 26-29.</div>
+        </div>
+      </div>
+
+      <a class="insp-copilot" href="#">Ask Copilot about this</a>
+    </aside>
+  </div>
+
+  <!-- Keyboard hints -->
+  <div class="keyboard-hints">
+    <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span>
+    <span><kbd>Enter</kbd> open</span>
+    <span><kbd>.</kbd> more</span>
+    <span><kbd>&#8984;K</kbd> search</span>
+  </div>
+</div>
+
+<script>
+function toggleSection(el) {
+  el.classList.toggle('collapsed');
+  const content = el.nextElementSibling;
+  content.classList.toggle('collapsed');
+}
+function selectRow(el, taskId) {
+  document.querySelectorAll('.task-row').forEach(r => r.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('inspector').classList.add('open');
+}
+function filterPill(el) {
+  document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>

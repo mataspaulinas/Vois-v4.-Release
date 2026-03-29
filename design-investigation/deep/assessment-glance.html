@@ -1,0 +1,319 @@
+<!-- Deep mockup: Assessment Intake — Glance direction -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS Glance — Assessment</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #F2F2F7; color: #1C1C1E; min-height: 100vh; }
+
+  /* Top nav */
+  .topnav { background: #fff; border-bottom: 1px solid #E5E5EA; padding: 0 24px; display: flex; align-items: center; height: 52px; position: sticky; top: 0; z-index: 20; }
+  .topnav-logo { font-size: 17px; font-weight: 700; color: #007AFF; letter-spacing: -0.5px; margin-right: 20px; }
+  .topnav-venue { font-size: 14px; color: #8E8E93; font-weight: 500; margin-right: auto; }
+  .topnav-tabs { display: flex; gap: 4px; }
+  .topnav-tab { padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 500; color: #8E8E93; cursor: pointer; transition: all 0.15s; }
+  .topnav-tab:hover { background: #F2F2F7; }
+  .topnav-tab.active { background: #007AFF; color: #fff; }
+
+  /* Content */
+  .content { max-width: 720px; margin: 0 auto; padding: 24px 16px 140px; }
+
+  /* Step indicator */
+  .steps { display: flex; align-items: center; justify-content: center; gap: 0; margin-bottom: 28px; padding: 16px 0; }
+  .step { display: flex; align-items: center; gap: 8px; }
+  .step-dot { width: 10px; height: 10px; border-radius: 50%; background: #D1D1D6; transition: all 0.2s; flex-shrink: 0; }
+  .step-dot.completed { background: #34C759; }
+  .step-dot.active { background: #007AFF; box-shadow: 0 0 0 3px rgba(0,122,255,0.2); }
+  .step-label { font-size: 12px; font-weight: 500; color: #8E8E93; white-space: nowrap; }
+  .step-label.active { color: #007AFF; font-weight: 600; }
+  .step-label.completed { color: #34C759; }
+  .step-line { width: 32px; height: 1px; background: #D1D1D6; margin: 0 8px; flex-shrink: 0; }
+  .step-line.done { background: #34C759; }
+
+  /* Cards */
+  .card { background: #fff; border-radius: 16px; overflow: hidden; margin-bottom: 16px; }
+  .card-header { padding: 18px 20px 0; display: flex; align-items: center; justify-content: space-between; }
+  .card-title { font-size: 16px; font-weight: 700; color: #1C1C1E; }
+  .card-subtitle { font-size: 13px; color: #8E8E93; margin-top: 2px; }
+  .card-link { font-size: 13px; color: #007AFF; font-weight: 500; cursor: pointer; text-decoration: none; }
+  .card-link:hover { text-decoration: underline; }
+  .card-body { padding: 14px 20px 20px; }
+
+  /* Evidence display (read mode) */
+  .evidence-display { font-size: 15px; line-height: 1.7; color: #3A3A3C; }
+  .evidence-display p { margin-bottom: 12px; }
+  .evidence-display p:last-child { margin-bottom: 0; }
+
+  /* Evidence edit mode */
+  .evidence-edit { display: none; }
+  .evidence-textarea { width: 100%; min-height: 220px; border: 2px solid #007AFF; border-radius: 12px; outline: none; padding: 16px; font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; color: #3A3A3C; resize: vertical; background: #F9F9FB; }
+  .evidence-edit-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px; }
+
+  /* Pill */
+  .hours-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: #F2F2F7; border-radius: 20px; font-size: 13px; font-weight: 600; color: #3A3A3C; margin-top: 14px; }
+  .hours-pill span { color: #8E8E93; font-weight: 400; }
+
+  /* Signal heading */
+  .signal-heading { padding: 20px 20px 4px; }
+  .signal-heading-title { font-size: 16px; font-weight: 700; color: #1C1C1E; }
+  .signal-heading-sub { font-size: 13px; color: #8E8E93; margin-top: 2px; }
+
+  /* Signal cards */
+  .signal-stack { padding: 8px 12px 12px; display: flex; flex-direction: column; gap: 8px; }
+  .signal-card { border-radius: 12px; padding: 14px 16px; background: #F9F9FB; position: relative; overflow: hidden; transition: all 0.2s; }
+  .signal-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; border-radius: 4px 0 0 4px; }
+  .signal-card.accepted::before { background: #34C759; }
+  .signal-card.rejected::before { background: #FF3B30; }
+  .signal-card.pending::before { background: #007AFF; }
+
+  .signal-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .signal-card-info { flex: 1; min-width: 0; }
+  .signal-card-name { font-size: 15px; font-weight: 600; color: #1C1C1E; }
+  .signal-card.rejected .signal-card-name { text-decoration: line-through; color: #8E8E93; }
+  .signal-card-meta { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .dim-pill { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; padding: 3px 8px; border-radius: 6px; }
+  .dim-operations { background: #EEF2FF; color: #6366F1; }
+  .dim-infrastructure { background: #FFF7ED; color: #EA580C; }
+  .dim-people { background: #F0FDF4; color: #16A34A; }
+  .dim-quality { background: #FDF4FF; color: #A855F7; }
+
+  /* Impact indicator — filled dots */
+  .impact-dots { display: flex; align-items: center; gap: 3px; }
+  .impact-dots .dot { width: 6px; height: 6px; border-radius: 50%; background: #D1D1D6; }
+  .impact-dots.high .dot:nth-child(-n+3) { background: #FF3B30; }
+  .impact-dots.medium .dot:nth-child(-n+2) { background: #FF9500; }
+  .impact-dots.low .dot:nth-child(1) { background: #34C759; }
+  .impact-label { font-size: 11px; color: #8E8E93; margin-left: 4px; }
+
+  /* Confidence bar */
+  .conf-bar-wrap { display: flex; align-items: center; gap: 6px; }
+  .conf-bar { width: 40px; height: 4px; background: #E5E5EA; border-radius: 2px; overflow: hidden; }
+  .conf-bar-fill { height: 100%; border-radius: 2px; background: #007AFF; }
+  .conf-text { font-size: 11px; color: #8E8E93; font-variant-numeric: tabular-nums; }
+
+  /* Toggle switch */
+  .toggle-wrap { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; flex-shrink: 0; }
+  .toggle-label { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; text-align: center; }
+  .toggle-label.accepted-label { color: #34C759; }
+  .toggle-label.rejected-label { color: #FF3B30; }
+  .toggle-label.pending-label { color: #8E8E93; }
+
+  .toggle-group { display: flex; background: #E5E5EA; border-radius: 8px; overflow: hidden; }
+  .toggle-btn { width: 40px; height: 32px; border: none; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 15px; color: #8E8E93; transition: all 0.2s; }
+  .toggle-btn.accept-on { background: #34C759; color: #fff; border-radius: 8px; }
+  .toggle-btn.reject-on { background: #FF3B30; color: #fff; border-radius: 8px; }
+
+  .signal-reject-note { font-size: 12px; color: #8E8E93; font-style: italic; margin-top: 8px; padding-left: 2px; }
+
+  /* Action buttons */
+  .actions { display: flex; gap: 10px; margin-top: 8px; }
+  .btn-action { flex: 1; padding: 14px; border-radius: 12px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s; text-align: center; }
+  .btn-action.outline { background: #fff; border: 1.5px solid #D1D1D6; color: #3A3A3C; }
+  .btn-action.outline:hover { background: #F2F2F7; border-color: #C7C7CC; }
+  .btn-action.primary { background: #007AFF; border: 1.5px solid #007AFF; color: #fff; }
+  .btn-action.primary:hover { background: #0066DD; }
+
+  /* Edit mode buttons */
+  .btn-sm { padding: 8px 18px; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; border: none; }
+  .btn-sm.cancel { background: #E5E5EA; color: #3A3A3C; }
+  .btn-sm.save { background: #007AFF; color: #fff; }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .content { padding: 16px 10px 140px; }
+    .topnav-tabs { display: none; }
+    .steps { flex-wrap: wrap; gap: 4px; }
+    .step-line { width: 16px; }
+    .signal-card-meta { gap: 6px; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <span class="topnav-logo">VOIS</span>
+  <span class="topnav-venue">Sunrise Cafe</span>
+  <div class="topnav-tabs">
+    <div class="topnav-tab">Dashboard</div>
+    <div class="topnav-tab active">Assessment</div>
+    <div class="topnav-tab">Signals</div>
+    <div class="topnav-tab">Plan</div>
+  </div>
+</nav>
+
+<div class="content">
+
+  <!-- Step indicator -->
+  <div class="steps">
+    <div class="step">
+      <div class="step-dot completed"></div>
+      <span class="step-label completed">Write Evidence</span>
+    </div>
+    <div class="step-line done"></div>
+    <div class="step">
+      <div class="step-dot active"></div>
+      <span class="step-label active">Review Signals</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <div class="step-dot"></div>
+      <span class="step-label">Save & Run</span>
+    </div>
+  </div>
+
+  <!-- Evidence card (read mode) -->
+  <div class="card" id="evidenceCard">
+    <div class="card-header">
+      <div>
+        <div class="card-title">Evidence</div>
+        <div class="card-subtitle">Weekly operational review</div>
+      </div>
+      <a class="card-link" onclick="toggleEdit()">Edit Evidence</a>
+    </div>
+    <div class="card-body">
+      <div class="evidence-display" id="evidenceDisplay">
+        <p>Morning rush continues to exceed capacity between 7:30-9:00 AM. We're averaging 45 customers per hour but station setup only supports 35 efficiently. Espresso machine on station 2 has been intermittently failing since Tuesday — parts on order but no ETA from supplier.</p>
+        <p>Staff overtime is trending up. Alex worked 6 extra hours this week, Maria 4. We haven't been able to fill the Thursday evening shift for 3 weeks.</p>
+        <p>On the positive side, customer feedback scores improved this week. Multiple comments about latte art quality. New cold brew recipe is well received.</p>
+      </div>
+      <div class="evidence-edit" id="evidenceEdit">
+        <textarea class="evidence-textarea" id="evidenceTextarea">Morning rush continues to exceed capacity between 7:30-9:00 AM. We're averaging 45 customers per hour but station setup only supports 35 efficiently. Espresso machine on station 2 has been intermittently failing since Tuesday — parts on order but no ETA from supplier.
+
+Staff overtime is trending up. Alex worked 6 extra hours this week, Maria 4. We haven't been able to fill the Thursday evening shift for 3 weeks.
+
+On the positive side, customer feedback scores improved this week. Multiple comments about latte art quality. New cold brew recipe is well received.</textarea>
+        <div class="evidence-edit-actions">
+          <button class="btn-sm cancel" onclick="cancelEdit()">Cancel</button>
+          <button class="btn-sm save" onclick="saveEdit()">Save Changes</button>
+        </div>
+      </div>
+      <div class="hours-pill" id="hoursPill">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#8E8E93" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 4.5V8l2.5 1.5"/></svg>
+        8h <span>/ week</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signal preview section -->
+  <div class="card" id="signalCard">
+    <div class="signal-heading">
+      <div class="signal-heading-title">AI Signal Preview</div>
+      <div class="signal-heading-sub" id="signalSub">5 signals detected</div>
+    </div>
+    <div class="signal-stack" id="signalStack"></div>
+  </div>
+
+  <!-- Actions -->
+  <div class="actions">
+    <button class="btn-action outline">Save Assessment</button>
+    <button class="btn-action primary">Run Engine</button>
+  </div>
+
+</div>
+
+<script>
+const signals = [
+  { id: 1, name: "Service capacity exceeded", dim: "Operations", dimClass: "dim-operations", impact: "High", confidence: 92, status: "accepted", rejectReason: "" },
+  { id: 2, name: "Equipment reliability risk", dim: "Infrastructure", dimClass: "dim-infrastructure", impact: "High", confidence: 88, status: "accepted", rejectReason: "" },
+  { id: 3, name: "Staff overtime trending", dim: "People", dimClass: "dim-people", impact: "Medium", confidence: 85, status: "accepted", rejectReason: "" },
+  { id: 4, name: "Recruitment pipeline gap", dim: "People", dimClass: "dim-people", impact: "Medium", confidence: 71, status: "rejected", rejectReason: "Not a recruitment issue, it's scheduling" },
+  { id: 5, name: "Customer satisfaction improving", dim: "Quality", dimClass: "dim-quality", impact: "Low", confidence: 79, status: "pending", rejectReason: "" },
+];
+
+function renderSignals() {
+  const stack = document.getElementById('signalStack');
+  stack.innerHTML = '';
+  signals.forEach((s, i) => {
+    const impactLevel = s.impact.toLowerCase();
+    const statusLabel = s.status === 'accepted' ? 'Accepted' : s.status === 'rejected' ? 'Rejected' : 'Pending';
+    const labelClass = s.status + '-label';
+    const card = document.createElement('div');
+    card.className = `signal-card ${s.status}`;
+    card.id = `sig-${s.id}`;
+    card.innerHTML = `
+      <div class="signal-card-top">
+        <div class="signal-card-info">
+          <div class="signal-card-name">${s.name}</div>
+          <div class="signal-card-meta">
+            <span class="dim-pill ${s.dimClass}">${s.dim}</span>
+            <div class="impact-dots ${impactLevel}">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+            <span class="impact-label">${s.impact}</span>
+            <div class="conf-bar-wrap">
+              <div class="conf-bar"><div class="conf-bar-fill" style="width:${s.confidence}%"></div></div>
+              <span class="conf-text">${s.confidence}%</span>
+            </div>
+          </div>
+        </div>
+        <div class="toggle-wrap">
+          <span class="toggle-label ${labelClass}">${statusLabel}</span>
+          <div class="toggle-group">
+            <button class="toggle-btn ${s.status === 'accepted' ? 'accept-on' : ''}" onclick="toggleSig(${s.id},'accepted')">&#10003;</button>
+            <button class="toggle-btn ${s.status === 'rejected' ? 'reject-on' : ''}" onclick="toggleSig(${s.id},'rejected')">&#10007;</button>
+          </div>
+        </div>
+      </div>
+      ${s.status === 'rejected' && s.rejectReason ? `<div class="signal-reject-note">"${s.rejectReason}"</div>` : ''}
+    `;
+    stack.appendChild(card);
+  });
+  updateSub();
+}
+
+function updateSub() {
+  const accepted = signals.filter(s => s.status === 'accepted').length;
+  const rejected = signals.filter(s => s.status === 'rejected').length;
+  const pending = signals.filter(s => s.status === 'pending').length;
+  document.getElementById('signalSub').textContent =
+    `${signals.length} signals detected \u2022 ${accepted} accepted, ${rejected} rejected, ${pending} pending`;
+}
+
+function toggleSig(id, newStatus) {
+  const s = signals.find(x => x.id === id);
+  if (!s) return;
+  if (s.status === newStatus) {
+    s.status = 'pending';
+    s.rejectReason = '';
+  } else if (newStatus === 'rejected' && s.status !== 'rejected') {
+    const reason = prompt('Rejection reason (optional):');
+    s.status = 'rejected';
+    s.rejectReason = reason || '';
+  } else {
+    s.status = newStatus;
+    s.rejectReason = '';
+  }
+  renderSignals();
+}
+
+// Edit evidence toggle
+function toggleEdit() {
+  document.getElementById('evidenceDisplay').style.display = 'none';
+  document.getElementById('hoursPill').style.display = 'none';
+  document.getElementById('evidenceEdit').style.display = 'block';
+  document.querySelector('.card-link').style.display = 'none';
+}
+function cancelEdit() {
+  document.getElementById('evidenceDisplay').style.display = 'block';
+  document.getElementById('hoursPill').style.display = 'inline-flex';
+  document.getElementById('evidenceEdit').style.display = 'none';
+  document.querySelector('.card-link').style.display = 'inline';
+}
+function saveEdit() {
+  const text = document.getElementById('evidenceTextarea').value;
+  const paragraphs = text.split('\n\n').filter(p => p.trim());
+  document.getElementById('evidenceDisplay').innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
+  cancelEdit();
+}
+
+// Initial render
+renderSignals();
+</script>
+
+</body>
+</html>

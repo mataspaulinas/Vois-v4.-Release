@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS Design Investigation — 5 Directions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #FAFAFA;
+    color: #0A0A0A;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 24px 60px;
+  }
+  .header {
+    text-align: center;
+    max-width: 640px;
+    margin-bottom: 64px;
+  }
+  .header .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6C5CE7;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .header p {
+    font-size: 17px;
+    color: #525252;
+    line-height: 1.6;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    width: 100%;
+    margin-bottom: 48px;
+  }
+  .card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.06);
+  }
+  .card .accent-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+  }
+  .card .option {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #A3A3A3;
+    margin-bottom: 8px;
+  }
+  .card h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .card .inspiration {
+    font-size: 13px;
+    color: #6C5CE7;
+    margin-bottom: 12px;
+  }
+  .card p {
+    font-size: 14px;
+    color: #525252;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .card .traits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .card .trait {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #F5F5F5;
+    color: #525252;
+  }
+  .card .cta {
+    font-size: 13px;
+    font-weight: 600;
+    color: #6C5CE7;
+  }
+  .card .cta::after {
+    content: ' \2192';
+  }
+  .recommended {
+    border: 2px solid #6C5CE7;
+  }
+  .recommended .badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #6C5CE7, #A29BFE);
+    color: white;
+  }
+  .report-link {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #6C5CE7;
+    text-decoration: none;
+    padding: 12px 28px;
+    border: 2px solid #6C5CE7;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    margin-top: 16px;
+  }
+  .report-link:hover {
+    background: #6C5CE7;
+    color: white;
+  }
+  .footer {
+    margin-top: 48px;
+    text-align: center;
+    font-size: 13px;
+    color: #A3A3A3;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="eyebrow">Design Investigation</div>
+  <h1>VOIS Global Debut</h1>
+  <p>Five design directions for a light, minimalist interface that lets users focus on what matters. Each mockup shows the Manager's Today view with real VOIS content.</p>
+</div>
+
+<div class="grid">
+
+  <a href="mockup-a-command.html" class="card">
+    <div class="accent-bar" style="background: #6366F1;"></div>
+    <div class="option">Option A</div>
+    <h2>Command</h2>
+    <div class="inspiration">Linear, Raycast, Arc</div>
+    <p>Keyboard-first, dense information, zero chrome. Every interaction is a command. Built for people who live in the tool.</p>
+    <div class="traits">
+      <span class="trait">Cmd+K navigation</span>
+      <span class="trait">Ultra-dense</span>
+      <span class="trait">Monochrome</span>
+      <span class="trait">Lists over cards</span>
+    </div>
+    <div class="cta">View Mockup</div>
+  </a>
+
+  <a href="mockup-b-blocks.html" class="card">
+    <div class="accent-bar" style="background: #EB5757;"></div>
+    <div class="option">Option B</div>
+    <h2>Blocks</h2>
+    <div class="inspiration">Notion, Coda, Slite</div>
+    <p>Everything is a composable block. Typography-first. Users arrange their workspace their way.</p>
+    <div class="traits">
+      <span class="trait">Draggable blocks</span>
+      <span class="trait">Page tree nav</span>
+      <span class="trait">Inline editing</span>
+      <span class="trait">Customizable</span>
+    </div>
+    <div class="cta">View Mockup</div>
+  </a>
+
+  <a href="mockup-c-glance.html" class="card">
+    <div class="accent-bar" style="background: #007AFF;"></div>
+    <div class="option">Option C</div>
+    <h2>Glance</h2>
+    <div class="inspiration">Apple Health, Craft, Things 3</div>
+    <p>See everything at a glance. Card-native intelligence. Summary first, drill down when needed.</p>
+    <div class="traits">
+      <span class="trait">Card grid</span>
+      <span class="trait">Mobile-first</span>
+      <span class="trait">Widget-style</span>
+      <span class="trait">Expandable</span>
+    </div>
+    <div class="cta">View Mockup</div>
+  </a>
+
+  <a href="mockup-d-control.html" class="card">
+    <div class="accent-bar" style="background: #00DC82;"></div>
+    <div class="option">Option D</div>
+    <h2>Control</h2>
+    <div class="inspiration">Vercel, GitHub, Railway</div>
+    <p>Dark-first command center. Terminal meets design. Real-time awareness. Status is everything.</p>
+    <div class="traits">
+      <span class="trait">Dark mode</span>
+      <span class="trait">Monospace data</span>
+      <span class="trait">Table-dense</span>
+      <span class="trait">Real-time</span>
+    </div>
+    <div class="cta">View Mockup</div>
+  </a>
+
+  <a href="mockup-e-canvas.html" class="card recommended">
+    <span class="badge">Recommended</span>
+    <div class="accent-bar" style="background: linear-gradient(90deg, #6C5CE7, #A29BFE);"></div>
+    <div class="option">Option E</div>
+    <h2>Canvas</h2>
+    <div class="inspiration">Stripe, Resend, Clerk</div>
+    <p>Trust through whitespace. Confidence through restraint. Ultra-clean, professional. The strongest choice for global debut.</p>
+    <div class="traits">
+      <span class="trait">Generous space</span>
+      <span class="trait">Type hierarchy</span>
+      <span class="trait">Professional</span>
+      <span class="trait">Low learning curve</span>
+    </div>
+    <div class="cta">View Mockup</div>
+  </a>
+
+</div>
+
+<a href="REPORT.md" class="report-link">Read Full Investigation Report</a>
+
+<div class="footer">
+  VOIS Design Investigation &middot; March 2026 &middot; All options preserve full app functionality
+</div>
+
+</body>
+</html>

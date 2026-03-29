@@ -1,0 +1,266 @@
+<!-- Deep mockup: Assessment Intake — Canvas direction -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS Canvas — Assessment</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #FAFAFA; color: #1a1a2e; min-height: 100vh; display: flex; }
+
+  /* Sidebar */
+  .sidebar { width: 240px; background: #fff; border-right: 1px solid #E5E5EA; padding: 24px 0; display: flex; flex-direction: column; position: fixed; top: 0; left: 0; bottom: 0; z-index: 10; }
+  .sidebar-logo { padding: 0 24px 24px; font-size: 18px; font-weight: 700; color: #6C5CE7; letter-spacing: -0.5px; }
+  .sidebar-section { padding: 0 12px; margin-bottom: 8px; }
+  .sidebar-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: #999; padding: 0 12px; margin-bottom: 8px; }
+  .sidebar-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; color: #666; cursor: pointer; transition: all 0.15s; }
+  .sidebar-item:hover { background: #F5F3FF; color: #6C5CE7; }
+  .sidebar-item.active { background: #F0EDFF; color: #6C5CE7; font-weight: 600; }
+  .sidebar-item svg { width: 16px; height: 16px; opacity: 0.6; }
+  .sidebar-item.active svg { opacity: 1; }
+  .sidebar-venue { margin-top: auto; padding: 16px 24px; border-top: 1px solid #E5E5EA; }
+  .sidebar-venue-name { font-size: 13px; font-weight: 600; color: #333; }
+  .sidebar-venue-type { font-size: 11px; color: #999; margin-top: 2px; }
+
+  /* Main */
+  .main { margin-left: 240px; flex: 1; min-height: 100vh; }
+  .topbar { padding: 16px 32px; border-bottom: 1px solid #E5E5EA; background: #fff; }
+  .breadcrumb { font-size: 12px; color: #999; display: flex; align-items: center; gap: 6px; }
+  .breadcrumb a { color: #999; text-decoration: none; }
+  .breadcrumb a:hover { color: #6C5CE7; }
+  .breadcrumb .sep { color: #ccc; }
+  .breadcrumb .current { color: #333; font-weight: 500; }
+
+  .page-header { padding: 24px 32px 0; }
+  .page-title { font-size: 28px; font-weight: 700; color: #111; letter-spacing: -0.5px; }
+  .page-subtitle { font-size: 14px; color: #888; margin-top: 4px; }
+
+  /* Two-panel */
+  .panels { display: flex; gap: 24px; padding: 24px 32px 120px; }
+  .panel-left { flex: 0 0 60%; min-width: 0; }
+  .panel-right { flex: 0 0 calc(40% - 24px); min-width: 0; }
+
+  .section-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: #999; margin-bottom: 12px; }
+
+  /* Evidence card */
+  .evidence-card { background: #fff; border-radius: 12px; border: 1px solid #E5E5EA; padding: 0; overflow: hidden; }
+  .evidence-textarea { width: 100%; min-height: 280px; border: none; outline: none; padding: 24px 28px; font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; color: #333; resize: vertical; background: transparent; }
+  .evidence-textarea::placeholder { color: #bbb; }
+  .evidence-footer { padding: 16px 24px; border-top: 1px solid #f0f0f0; display: flex; align-items: center; justify-content: space-between; background: #FCFCFD; }
+  .hours-input-group { display: flex; align-items: center; gap: 8px; }
+  .hours-label { font-size: 13px; color: #888; }
+  .hours-input { width: 56px; padding: 6px 10px; border: 1px solid #ddd; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 13px; text-align: center; color: #333; background: #fff; }
+  .hours-unit { font-size: 12px; color: #999; }
+  .btn-preview { padding: 9px 20px; background: linear-gradient(135deg, #6C5CE7, #7C6CF7); color: #fff; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+  .btn-preview:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(108,92,231,0.3); }
+
+  /* Signal preview */
+  .signal-empty { background: #fff; border-radius: 12px; border: 1px solid #E5E5EA; padding: 48px 32px; text-align: center; }
+  .signal-empty-icon { font-size: 32px; margin-bottom: 12px; opacity: 0.4; }
+  .signal-empty-text { font-size: 14px; color: #999; line-height: 1.5; }
+
+  .signal-list { display: flex; flex-direction: column; gap: 10px; }
+  .signal-card { background: #fff; border-radius: 10px; border: 1px solid #E5E5EA; padding: 16px 18px; transition: all 0.2s; }
+  .signal-card.accepted { border-left: 3px solid #22C55E; background: #FAFFF9; }
+  .signal-card.rejected { border-left: 3px solid #EF4444; opacity: 0.75; }
+  .signal-card.pending { border-left: 3px solid #D1D5DB; }
+
+  .signal-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .signal-info { flex: 1; min-width: 0; }
+  .signal-name { font-size: 14px; font-weight: 600; color: #222; }
+  .signal-card.rejected .signal-name { text-decoration: line-through; color: #999; }
+  .signal-meta { display: flex; align-items: center; gap: 8px; margin-top: 6px; flex-wrap: wrap; }
+  .signal-dim { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 8px; border-radius: 4px; }
+  .dim-operations { background: #EEF2FF; color: #6366F1; }
+  .dim-infrastructure { background: #FFF7ED; color: #EA580C; }
+  .dim-people { background: #F0FDF4; color: #16A34A; }
+  .dim-quality { background: #FDF4FF; color: #A855F7; }
+  .signal-impact { font-size: 11px; font-weight: 500; color: #888; }
+  .signal-impact.high { color: #DC2626; }
+  .signal-impact.medium { color: #D97706; }
+  .signal-impact.low { color: #16A34A; }
+  .signal-confidence { font-size: 11px; color: #aaa; }
+  .signal-actions { display: flex; gap: 4px; flex-shrink: 0; }
+  .signal-btn { width: 30px; height: 30px; border-radius: 6px; border: 1px solid #ddd; background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; transition: all 0.15s; }
+  .signal-btn:hover { background: #f5f5f5; }
+  .signal-btn.accept-active { background: #DCFCE7; border-color: #22C55E; color: #16A34A; }
+  .signal-btn.reject-active { background: #FEE2E2; border-color: #EF4444; color: #DC2626; }
+  .signal-reject-reason { font-size: 12px; color: #999; margin-top: 8px; font-style: italic; }
+
+  /* Bottom bar */
+  .bottom-bar { position: fixed; bottom: 0; left: 240px; right: 0; background: #fff; border-top: 1px solid #E5E5EA; padding: 14px 32px; display: flex; align-items: center; justify-content: flex-end; gap: 12px; z-index: 10; }
+  .btn-save { padding: 10px 24px; border: 1px solid #ddd; background: #fff; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: #555; cursor: pointer; transition: all 0.15s; }
+  .btn-save:hover { border-color: #bbb; background: #f9f9f9; }
+  .btn-run { padding: 10px 24px; background: #6C5CE7; color: #fff; border: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; position: relative; }
+  .btn-run:hover { background: #5B4BD5; }
+  .btn-run .tooltip { display: none; position: absolute; bottom: calc(100% + 8px); right: 0; background: #222; color: #fff; padding: 8px 12px; border-radius: 6px; font-size: 11px; font-weight: 400; white-space: nowrap; }
+  .btn-run:hover .tooltip { display: block; }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; }
+    .bottom-bar { left: 0; }
+    .panels { flex-direction: column; }
+    .panel-left, .panel-right { flex: 1 1 100%; }
+  }
+  @media (max-width: 640px) {
+    .panels { padding: 16px; }
+    .page-header { padding: 16px 16px 0; }
+    .topbar { padding: 12px 16px; }
+    .bottom-bar { padding: 12px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sidebar-logo">VOIS</div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Workspace</div>
+    <div class="sidebar-item">
+      <svg viewBox="0 0 16 16" fill="currentColor"><rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/></svg>
+      Dashboard
+    </div>
+    <div class="sidebar-item active">
+      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 2h10a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1zm1 2v3h8V4H4zm0 5v3h8V9H4z"/></svg>
+      Assessment
+    </div>
+    <div class="sidebar-item">
+      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l2.5 5 5.5.8-4 3.9.9 5.3L8 13.5 3.1 16l.9-5.3-4-3.9L5.5 6z"/></svg>
+      Signals
+    </div>
+    <div class="sidebar-item">
+      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 3h12v1H2zm0 3h12v1H2zm0 3h8v1H2zm0 3h10v1H2z"/></svg>
+      Plan
+    </div>
+    <div class="sidebar-item">
+      <svg viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 4v4l3 2"/></svg>
+      History
+    </div>
+  </div>
+  <div class="sidebar-venue">
+    <div class="sidebar-venue-name">Sunrise Cafe</div>
+    <div class="sidebar-venue-type">Weekly operational review</div>
+  </div>
+</aside>
+
+<main class="main">
+  <div class="topbar">
+    <div class="breadcrumb">
+      <a href="#">Venue: Sunrise Cafe</a>
+      <span class="sep">/</span>
+      <span class="current">Assessment</span>
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h1 class="page-title">Assessment</h1>
+    <p class="page-subtitle">Weekly operational review &mdash; Sunrise Cafe</p>
+  </div>
+
+  <div class="panels">
+    <div class="panel-left">
+      <div class="section-label">Evidence</div>
+      <div class="evidence-card">
+        <textarea class="evidence-textarea" id="evidenceText">Morning rush continues to exceed capacity between 7:30-9:00 AM. We're averaging 45 customers per hour but station setup only supports 35 efficiently. Espresso machine on station 2 has been intermittently failing since Tuesday — parts on order but no ETA from supplier.
+
+Staff overtime is trending up. Alex worked 6 extra hours this week, Maria 4. We haven't been able to fill the Thursday evening shift for 3 weeks.
+
+On the positive side, customer feedback scores improved this week. Multiple comments about latte art quality. New cold brew recipe is well received.</textarea>
+        <div class="evidence-footer">
+          <div class="hours-input-group">
+            <span class="hours-label">Management hours</span>
+            <input type="number" class="hours-input" value="8" min="0" max="80">
+            <span class="hours-unit">h / week</span>
+          </div>
+          <button class="btn-preview" id="previewBtn" onclick="showSignals()">Preview Signals</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-right">
+      <div class="section-label">Signal Preview</div>
+      <div id="signalEmpty" class="signal-empty">
+        <div class="signal-empty-icon">&#9672;</div>
+        <div class="signal-empty-text">Write your evidence, then preview<br>AI-suggested signals</div>
+      </div>
+      <div id="signalList" class="signal-list" style="display:none;"></div>
+    </div>
+  </div>
+</main>
+
+<div class="bottom-bar">
+  <button class="btn-save">Save Assessment</button>
+  <button class="btn-run">Run Engine<span class="tooltip">Generates diagnostic report and draft plan</span></button>
+</div>
+
+<script>
+const signals = [
+  { id: 1, name: "Service capacity exceeded", dim: "Operations", dimClass: "dim-operations", impact: "High", confidence: 92, status: "accepted", rejectReason: "" },
+  { id: 2, name: "Equipment reliability risk", dim: "Infrastructure", dimClass: "dim-infrastructure", impact: "High", confidence: 88, status: "accepted", rejectReason: "" },
+  { id: 3, name: "Staff overtime trending", dim: "People", dimClass: "dim-people", impact: "Medium", confidence: 85, status: "accepted", rejectReason: "" },
+  { id: 4, name: "Recruitment pipeline gap", dim: "People", dimClass: "dim-people", impact: "Medium", confidence: 71, status: "rejected", rejectReason: "Not a recruitment issue, it's scheduling" },
+  { id: 5, name: "Customer satisfaction improving", dim: "Quality", dimClass: "dim-quality", impact: "Low", confidence: 79, status: "pending", rejectReason: "" },
+];
+
+function showSignals() {
+  document.getElementById('signalEmpty').style.display = 'none';
+  const list = document.getElementById('signalList');
+  list.style.display = 'flex';
+  list.innerHTML = '';
+  signals.forEach((s, i) => {
+    setTimeout(() => {
+      list.appendChild(createSignalCard(s));
+    }, i * 120);
+  });
+}
+
+function createSignalCard(s) {
+  const card = document.createElement('div');
+  card.className = `signal-card ${s.status}`;
+  card.id = `signal-${s.id}`;
+  card.innerHTML = `
+    <div class="signal-top">
+      <div class="signal-info">
+        <div class="signal-name">${s.name}</div>
+        <div class="signal-meta">
+          <span class="signal-dim ${s.dimClass}">${s.dim}</span>
+          <span class="signal-impact ${s.impact.toLowerCase()}">${s.impact} impact</span>
+          <span class="signal-confidence">${s.confidence}%</span>
+        </div>
+      </div>
+      <div class="signal-actions">
+        <button class="signal-btn ${s.status === 'accepted' ? 'accept-active' : ''}" onclick="toggleSignal(${s.id}, 'accepted')" title="Accept">&#10003;</button>
+        <button class="signal-btn ${s.status === 'rejected' ? 'reject-active' : ''}" onclick="toggleSignal(${s.id}, 'rejected')" title="Reject">&#10007;</button>
+      </div>
+    </div>
+    ${s.status === 'rejected' && s.rejectReason ? `<div class="signal-reject-reason">"${s.rejectReason}"</div>` : ''}
+  `;
+  return card;
+}
+
+function toggleSignal(id, newStatus) {
+  const s = signals.find(x => x.id === id);
+  if (!s) return;
+  if (s.status === newStatus) {
+    s.status = 'pending';
+    s.rejectReason = '';
+  } else if (newStatus === 'rejected' && s.status !== 'rejected') {
+    const reason = prompt('Rejection reason (optional):');
+    s.status = 'rejected';
+    s.rejectReason = reason || '';
+  } else {
+    s.status = newStatus;
+    s.rejectReason = '';
+  }
+  const card = document.getElementById(`signal-${id}`);
+  const newCard = createSignalCard(s);
+  card.replaceWith(newCard);
+}
+</script>
+
+</body>
+</html>

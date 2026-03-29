@@ -1,0 +1,409 @@
+<!-- Deep mockup: Owner Command Center — Glance direction -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS Glance — Owner Command Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #F2F2F7; color: #1C1C1E; line-height: 1.5; }
+
+  /* Top nav */
+  .topnav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(242,242,247,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    padding: 12px 20px; display: flex; align-items: center; gap: 16px;
+    border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  }
+  .topnav-brand { font-size: 18px; font-weight: 700; color: #6366F1; letter-spacing: -0.5px; }
+  .topnav-org { font-size: 13px; color: #8E8E93; font-weight: 500; }
+  .topnav-spacer { flex: 1; }
+  .tab-pills { display: flex; background: rgba(0,0,0,0.05); border-radius: 10px; padding: 2px; gap: 0; }
+  .tab-pill {
+    padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: 500;
+    color: #8E8E93; cursor: pointer; transition: all 0.2s; border: none; background: transparent;
+  }
+  .tab-pill:hover { color: #3A3A3C; }
+  .tab-pill.active { background: #fff; color: #1C1C1E; box-shadow: 0 1px 3px rgba(0,0,0,0.08); font-weight: 600; }
+
+  /* Content */
+  .content { max-width: 720px; margin: 0 auto; padding: 20px 16px 100px; }
+
+  /* Hero card */
+  .hero-card {
+    background: #fff; border-radius: 16px; padding: 24px; margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .hero-greeting { font-size: 24px; font-weight: 700; color: #1C1C1E; }
+  .hero-sub { font-size: 14px; color: #8E8E93; margin-top: 4px; }
+
+  /* Severity bubbles */
+  .severity-bubbles { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+  .sev-bubble {
+    display: flex; align-items: center; gap: 8px; padding: 8px 16px;
+    border-radius: 14px; font-size: 12px; font-weight: 600; cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .sev-bubble:hover { transform: scale(1.03); }
+  .sev-bubble:active { transform: scale(0.98); }
+  .sev-bubble .num { font-size: 22px; font-weight: 700; line-height: 1; }
+  .sev-bubble.critical { background: #FEE2E2; color: #991B1B; }
+  .sev-bubble.high { background: #FEF3C7; color: #92400E; }
+  .sev-bubble.medium { background: #DBEAFE; color: #1E40AF; }
+  .sev-bubble.low { background: #D1FAE5; color: #065F46; }
+
+  /* Section labels */
+  .section-label { font-size: 20px; font-weight: 700; color: #1C1C1E; margin: 28px 0 12px; }
+
+  /* Attention cards */
+  .attention-card {
+    background: #fff; border-radius: 16px; padding: 0; margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04); overflow: hidden; cursor: pointer;
+    display: flex; transition: box-shadow 0.15s;
+  }
+  .attention-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .attention-accent { width: 5px; flex-shrink: 0; }
+  .attention-accent.critical { background: #EF4444; }
+  .attention-accent.high { background: #F59E0B; }
+  .attention-accent.medium { background: #3B82F6; }
+  .attention-accent.low { background: #10B981; }
+  .attention-body { padding: 14px 16px; flex: 1; min-width: 0; }
+  .attention-venue-name { font-size: 13px; font-weight: 700; color: #1C1C1E; }
+  .attention-desc { font-size: 13px; color: #3A3A3C; margin-top: 3px; }
+  .attention-footer { display: flex; gap: 8px; margin-top: 6px; font-size: 11px; color: #8E8E93; }
+  .attention-expand {
+    display: none; padding: 0 16px 14px; font-size: 12px; color: #636366; line-height: 1.6;
+  }
+  .attention-expand.open { display: block; }
+  .attention-expand .exp-label { font-weight: 600; color: #3A3A3C; }
+
+  /* Venue pulse - horizontal scroll */
+  .venue-scroll-wrapper { overflow-x: auto; margin: 0 -16px; padding: 0 16px 8px; -webkit-overflow-scrolling: touch; }
+  .venue-scroll { display: flex; gap: 12px; min-width: min-content; }
+  .venue-pulse-card {
+    background: #fff; border-radius: 16px; padding: 18px; min-width: 200px; width: 200px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04); cursor: pointer; flex-shrink: 0;
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .venue-pulse-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); transform: translateY(-2px); }
+  .venue-pulse-card.selected { box-shadow: 0 0 0 2px #6366F1, 0 3px 12px rgba(99,102,241,0.15); }
+  .vpc-name { font-size: 14px; font-weight: 700; color: #1C1C1E; margin-bottom: 12px; }
+
+  /* Circular progress */
+  .circle-progress { position: relative; width: 64px; height: 64px; margin: 0 auto 12px; }
+  .circle-progress svg { transform: rotate(-90deg); }
+  .circle-bg { fill: none; stroke: #E5E7EB; stroke-width: 5; }
+  .circle-fill { fill: none; stroke-width: 5; stroke-linecap: round; transition: stroke-dashoffset 0.6s ease; }
+  .circle-fill.green { stroke: #10B981; }
+  .circle-fill.yellow { stroke: #F59E0B; }
+  .circle-fill.red { stroke: #EF4444; }
+  .circle-fill.blue { stroke: #6366F1; }
+  .circle-text {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700; color: #1C1C1E;
+  }
+
+  .vpc-stats { text-align: center; font-size: 11px; color: #8E8E93; }
+  .vpc-stats strong { color: #3A3A3C; }
+  .vpc-status {
+    display: flex; align-items: center; justify-content: center; gap: 5px;
+    font-size: 11px; font-weight: 600; margin-top: 8px;
+  }
+  .vpc-status-dot { width: 7px; height: 7px; border-radius: 50%; }
+  .vpc-status-dot.on-track { background: #10B981; }
+  .vpc-status-dot.needs-attention { background: #F59E0B; }
+  .vpc-status-dot.critical { background: #EF4444; }
+  .vpc-status-dot.setting-up { background: #6366F1; }
+
+  /* Delegation cards */
+  .deleg-card {
+    background: #fff; border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04); display: flex; align-items: center; gap: 12px;
+  }
+  .deleg-avatar {
+    width: 36px; height: 36px; border-radius: 50%; background: #E5E7EB;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; color: #6B7280; flex-shrink: 0;
+  }
+  .deleg-info { flex: 1; min-width: 0; }
+  .deleg-task { font-size: 13px; font-weight: 600; color: #1C1C1E; }
+  .deleg-meta { font-size: 11px; color: #8E8E93; margin-top: 2px; }
+  .deleg-status { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 10px; white-space: nowrap; }
+  .deleg-status.pending { background: #FEF3C7; color: #92400E; }
+  .deleg-status.overdue { background: #FEE2E2; color: #991B1B; }
+
+  /* Bottom tab bar */
+  .bottom-bar {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-top: 0.5px solid rgba(0,0,0,0.08);
+    display: flex; justify-content: space-around; padding: 6px 0 max(6px, env(safe-area-inset-bottom));
+    z-index: 20;
+  }
+  .btab {
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    font-size: 10px; color: #8E8E93; cursor: pointer; padding: 4px 8px; border: none; background: transparent;
+    transition: color 0.15s;
+  }
+  .btab.active { color: #6366F1; }
+  .btab-icon { font-size: 18px; line-height: 1; }
+
+  @media (min-width: 768px) {
+    .content { padding: 28px 24px 100px; }
+    .bottom-bar { display: none; }
+    .venue-pulse-card { min-width: 180px; width: 180px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<nav class="topnav">
+  <span class="topnav-brand">VOIS</span>
+  <span class="topnav-org">Sunrise Hospitality</span>
+  <div class="topnav-spacer"></div>
+  <div class="tab-pills">
+    <button class="tab-pill active">Command</button>
+    <button class="tab-pill">Delegations</button>
+    <button class="tab-pill">People</button>
+    <button class="tab-pill">Intelligence</button>
+  </div>
+</nav>
+
+<div class="content">
+
+  <!-- Hero -->
+  <div class="hero-card">
+    <div class="hero-greeting">Good morning, Owner</div>
+    <div class="hero-sub">5 items across 4 venues</div>
+    <div class="severity-bubbles">
+      <div class="sev-bubble critical" onclick="filterCards('critical')"><span class="num">1</span> Critical</div>
+      <div class="sev-bubble high" onclick="filterCards('high')"><span class="num">2</span> High</div>
+      <div class="sev-bubble medium" onclick="filterCards('medium')"><span class="num">1</span> Medium</div>
+      <div class="sev-bubble low" onclick="filterCards('low')"><span class="num">1</span> Low</div>
+    </div>
+  </div>
+
+  <!-- Attention Items -->
+  <div class="section-label">Attention</div>
+
+  <div id="attentionCards">
+    <div class="attention-card" data-severity="critical" onclick="toggleExpand(this)">
+      <div class="attention-accent critical"></div>
+      <div style="flex:1">
+        <div class="attention-body">
+          <div class="attention-venue-name">Sunrise Cafe</div>
+          <div class="attention-desc">Espresso machine down for 3 days &mdash; service impact detected</div>
+          <div class="attention-footer"><span>Escalated by Maria S.</span><span>&middot;</span><span>2h ago</span></div>
+        </div>
+        <div class="attention-expand">
+          <p><span class="exp-label">Impact:</span> Espresso-based drinks unavailable. Estimated 15% revenue loss for affected period.</p>
+          <p style="margin-top:6px"><span class="exp-label">Recommendation:</span> Escalate to vendor service or arrange temporary replacement unit.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="attention-card" data-severity="high" onclick="toggleExpand(this)">
+      <div class="attention-accent high"></div>
+      <div style="flex:1">
+        <div class="attention-body">
+          <div class="attention-venue-name">Harbor Bistro</div>
+          <div class="attention-desc">Health inspection in 5 days &mdash; 3 prep tasks blocked</div>
+          <div class="attention-footer"><span>Auto-surfaced</span><span>&middot;</span><span>6h ago</span></div>
+        </div>
+        <div class="attention-expand">
+          <p><span class="exp-label">Blocked tasks:</span> Deep clean walk-in cooler, Update allergen documentation, Replace fire extinguisher.</p>
+          <p style="margin-top:6px"><span class="exp-label">Risk:</span> Failure to complete may result in inspection penalties.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="attention-card" data-severity="high" onclick="toggleExpand(this)">
+      <div class="attention-accent high"></div>
+      <div style="flex:1">
+        <div class="attention-body">
+          <div class="attention-venue-name">Sunrise Cafe</div>
+          <div class="attention-desc">Staff overtime trending 20% above budget</div>
+          <div class="attention-footer"><span>Signal intelligence</span><span>&middot;</span><span>1d ago</span></div>
+        </div>
+        <div class="attention-expand">
+          <p><span class="exp-label">Trend:</span> Overtime hours increased 20% over budget for past 2 weeks.</p>
+          <p style="margin-top:6px"><span class="exp-label">Drivers:</span> Short-staffed on morning shift, two callouts this week.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="attention-card" data-severity="medium" onclick="toggleExpand(this)">
+      <div class="attention-accent medium"></div>
+      <div style="flex:1">
+        <div class="attention-body">
+          <div class="attention-venue-name">Rooftop Lounge</div>
+          <div class="attention-desc">New menu rollout 60% complete &mdash; on track</div>
+          <div class="attention-footer"><span>Progress update</span><span>&middot;</span><span>1d ago</span></div>
+        </div>
+        <div class="attention-expand">
+          <p><span class="exp-label">Progress:</span> 12 of 20 menu items finalized. Photography scheduled for Friday.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="attention-card" data-severity="low" onclick="toggleExpand(this)">
+      <div class="attention-accent low"></div>
+      <div style="flex:1">
+        <div class="attention-body">
+          <div class="attention-venue-name">Harbor Bistro</div>
+          <div class="attention-desc">Customer satisfaction score improved +4pts</div>
+          <div class="attention-footer"><span>Signal intelligence</span><span>&middot;</span><span>2d ago</span></div>
+        </div>
+        <div class="attention-expand">
+          <p><span class="exp-label">Score:</span> 82 &rarr; 86 (30-day rolling average). Positive trend driven by improved wait times.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Venue Pulse -->
+  <div class="section-label">Venue Pulse</div>
+  <div class="venue-scroll-wrapper">
+    <div class="venue-scroll">
+      <div class="venue-pulse-card" onclick="selectVenueCard(this)">
+        <div class="vpc-name">Sunrise Cafe</div>
+        <div class="circle-progress">
+          <svg width="64" height="64" viewBox="0 0 64 64">
+            <circle class="circle-bg" cx="32" cy="32" r="28"/>
+            <circle class="circle-fill yellow" cx="32" cy="32" r="28" stroke-dasharray="175.9" stroke-dashoffset="38.7"/>
+          </svg>
+          <div class="circle-text">78%</div>
+        </div>
+        <div class="vpc-stats"><strong>2</strong> blocked &middot; <strong>3</strong> overdue</div>
+        <div class="vpc-status"><span class="vpc-status-dot needs-attention"></span> Needs attention</div>
+      </div>
+
+      <div class="venue-pulse-card" onclick="selectVenueCard(this)">
+        <div class="vpc-name">Harbor Bistro</div>
+        <div class="circle-progress">
+          <svg width="64" height="64" viewBox="0 0 64 64">
+            <circle class="circle-bg" cx="32" cy="32" r="28"/>
+            <circle class="circle-fill red" cx="32" cy="32" r="28" stroke-dasharray="175.9" stroke-dashoffset="61.6"/>
+          </svg>
+          <div class="circle-text">65%</div>
+        </div>
+        <div class="vpc-stats"><strong>3</strong> blocked &middot; <strong>1</strong> overdue</div>
+        <div class="vpc-status"><span class="vpc-status-dot critical"></span> Critical</div>
+      </div>
+
+      <div class="venue-pulse-card" onclick="selectVenueCard(this)">
+        <div class="vpc-name">Rooftop Lounge</div>
+        <div class="circle-progress">
+          <svg width="64" height="64" viewBox="0 0 64 64">
+            <circle class="circle-bg" cx="32" cy="32" r="28"/>
+            <circle class="circle-fill green" cx="32" cy="32" r="28" stroke-dasharray="175.9" stroke-dashoffset="21.1"/>
+          </svg>
+          <div class="circle-text">88%</div>
+        </div>
+        <div class="vpc-stats"><strong>0</strong> blocked &middot; <strong>0</strong> overdue</div>
+        <div class="vpc-status"><span class="vpc-status-dot on-track"></span> On track</div>
+      </div>
+
+      <div class="venue-pulse-card" onclick="selectVenueCard(this)">
+        <div class="vpc-name">Downtown Kiosk</div>
+        <div class="circle-progress">
+          <svg width="64" height="64" viewBox="0 0 64 64">
+            <circle class="circle-bg" cx="32" cy="32" r="28"/>
+            <circle class="circle-fill blue" cx="32" cy="32" r="28" stroke-dasharray="175.9" stroke-dashoffset="105.5"/>
+          </svg>
+          <div class="circle-text">40%</div>
+        </div>
+        <div class="vpc-stats">Onboarding</div>
+        <div class="vpc-status"><span class="vpc-status-dot setting-up"></span> Setting up</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delegations -->
+  <div class="section-label">Delegations</div>
+  <div class="deleg-card">
+    <div class="deleg-avatar">JM</div>
+    <div class="deleg-info">
+      <div class="deleg-task">Review staffing proposal</div>
+      <div class="deleg-meta">Manager Jamie &middot; Due today</div>
+    </div>
+    <span class="deleg-status pending">Pending</span>
+  </div>
+  <div class="deleg-card">
+    <div class="deleg-avatar">LI</div>
+    <div class="deleg-info">
+      <div class="deleg-task">Approve vendor contract</div>
+      <div class="deleg-meta">Manager Li &middot; Due Mar 30</div>
+    </div>
+    <span class="deleg-status pending">Pending</span>
+  </div>
+  <div class="deleg-card">
+    <div class="deleg-avatar">JM</div>
+    <div class="deleg-info">
+      <div class="deleg-task">Review Q1 performance report</div>
+      <div class="deleg-meta">Manager Jamie &middot; Due Mar 27</div>
+    </div>
+    <span class="deleg-status overdue">Overdue</span>
+  </div>
+
+</div>
+
+<!-- Bottom Tab Bar -->
+<nav class="bottom-bar">
+  <button class="btab active"><span class="btab-icon">&#9673;</span>Command</button>
+  <button class="btab"><span class="btab-icon">&#9632;</span>Venues</button>
+  <button class="btab"><span class="btab-icon">&#8644;</span>Delegations</button>
+  <button class="btab"><span class="btab-icon">&#9775;</span>People</button>
+  <button class="btab"><span class="btab-icon">&#9733;</span>Copilot</button>
+</nav>
+
+<script>
+// Toggle attention expand
+function toggleExpand(card) {
+  const expand = card.querySelector('.attention-expand');
+  expand.classList.toggle('open');
+}
+
+// Filter cards by severity bubble click
+let activeFilter = null;
+function filterCards(severity) {
+  if (activeFilter === severity) {
+    activeFilter = null;
+    document.querySelectorAll('.attention-card').forEach(c => c.style.display = '');
+    return;
+  }
+  activeFilter = severity;
+  document.querySelectorAll('.attention-card').forEach(c => {
+    c.style.display = c.dataset.severity === severity ? '' : 'none';
+  });
+}
+
+// Select venue card
+function selectVenueCard(el) {
+  document.querySelectorAll('.venue-pulse-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+// Tab pills interaction
+document.querySelectorAll('.tab-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.tab-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+  });
+});
+
+// Bottom tab interaction
+document.querySelectorAll('.btab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.btab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

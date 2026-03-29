@@ -1,0 +1,673 @@
+<!-- Deep mockup: Pocket My Shift — Glance direction -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>VOIS Glance — Pocket: My Shift</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: #F2F2F7;
+            color: #1C1C1E;
+            min-height: 100vh;
+            max-width: 480px;
+            margin: 0 auto;
+            padding-bottom: 100px;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            background: #F2F2F7;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-bar-logo {
+            font-weight: 800;
+            font-size: 20px;
+            color: #007AFF;
+            letter-spacing: -0.5px;
+        }
+
+        .top-bar-venue {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1C1C1E;
+        }
+
+        .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #007AFF, #5856D6);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* Content */
+        .content {
+            padding: 0 16px;
+        }
+
+        /* Hero Card */
+        .hero-card {
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            border-radius: 20px;
+            padding: 24px;
+            color: #fff;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::after {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+
+        .hero-label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+            margin-bottom: 6px;
+        }
+
+        .hero-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .hero-time {
+            font-size: 16px;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .hero-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-ready {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(8px);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Progress Ring */
+        .progress-ring-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .progress-ring {
+            width: 48px;
+            height: 48px;
+            position: relative;
+        }
+
+        .progress-ring svg {
+            transform: rotate(-90deg);
+        }
+
+        .progress-ring-bg {
+            fill: none;
+            stroke: rgba(255,255,255,0.2);
+            stroke-width: 4;
+        }
+
+        .progress-ring-fill {
+            fill: none;
+            stroke: #fff;
+            stroke-width: 4;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.4s ease;
+        }
+
+        .progress-ring-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .progress-label {
+            font-size: 13px;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        /* Section Label */
+        .section-label {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1C1C1E;
+            margin-bottom: 14px;
+        }
+
+        /* Task Cards */
+        .task-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .task-card:active {
+            transform: scale(0.98);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+        }
+
+        .task-card-top {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        /* Status indicators */
+        .status-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+
+        .status-circle.done {
+            background: #34C759;
+            color: #fff;
+        }
+
+        .status-circle.active {
+            background: #007AFF;
+            color: #fff;
+            position: relative;
+        }
+
+        .status-circle.active::after {
+            content: '';
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid #007AFF;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .status-circle.pending {
+            background: #E5E5EA;
+            color: #8E8E93;
+        }
+
+        .task-card-info {
+            flex: 1;
+        }
+
+        .task-card-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1C1C1E;
+            margin-bottom: 4px;
+        }
+
+        .task-card.completed-card .task-card-title {
+            color: #8E8E93;
+        }
+
+        .task-card-subtitle {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .task-card-subtitle.green { color: #34C759; }
+        .task-card-subtitle.blue { color: #007AFF; }
+        .task-card-subtitle.gray { color: #8E8E93; }
+
+        .task-progress-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #007AFF;
+            background: #EBF5FF;
+            padding: 3px 10px;
+            border-radius: 100px;
+            margin-top: 4px;
+        }
+
+        .task-card-expand {
+            color: #C7C7CC;
+            font-size: 14px;
+            padding: 4px;
+            transition: transform 0.2s;
+        }
+
+        .task-card.expanded .task-card-expand {
+            transform: rotate(90deg);
+        }
+
+        /* Checklist inside card */
+        .task-checklist {
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid #F2F2F7;
+            display: none;
+        }
+
+        .task-card.expanded .task-checklist {
+            display: block;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 10px 0;
+            min-height: 48px;
+        }
+
+        /* iOS-style toggle checkbox */
+        .check-toggle {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2.5px solid #D1D1D6;
+            flex-shrink: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .check-toggle.checked {
+            background: #007AFF;
+            border-color: #007AFF;
+        }
+
+        .check-toggle.checked::after {
+            content: '';
+            width: 10px;
+            height: 6px;
+            border-left: 2.5px solid #fff;
+            border-bottom: 2.5px solid #fff;
+            transform: rotate(-45deg);
+            margin-top: -2px;
+        }
+
+        .check-label {
+            font-size: 16px;
+            color: #1C1C1E;
+        }
+
+        .check-item.done .check-label {
+            color: #8E8E93;
+            text-decoration: line-through;
+        }
+
+        /* Action Grid */
+        .action-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .action-card {
+            border-radius: 16px;
+            padding: 18px 16px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            min-height: 64px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            transition: transform 0.1s;
+        }
+
+        .action-card:active {
+            transform: scale(0.96);
+        }
+
+        .action-card.blue {
+            background: #007AFF;
+            color: #fff;
+        }
+
+        .action-card.amber {
+            background: #FF9500;
+            color: #fff;
+        }
+
+        .action-card.light {
+            background: #fff;
+            color: #1C1C1E;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+        }
+
+        .action-card-icon {
+            font-size: 22px;
+        }
+
+        .action-card-label {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Fixed Bottom Tab Bar */
+        .tab-bar {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 480px;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 0.5px solid rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-around;
+            padding: 8px 0 calc(8px + env(safe-area-inset-bottom, 0px));
+            z-index: 100;
+        }
+
+        .tab-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            text-decoration: none;
+            padding: 4px 12px;
+            min-width: 56px;
+        }
+
+        .tab-icon {
+            font-size: 22px;
+        }
+
+        .tab-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: #8E8E93;
+        }
+
+        .tab-item.active .tab-label {
+            color: #007AFF;
+        }
+
+        /* Desktop scale */
+        @media (min-width: 481px) {
+            body {
+                border-left: 1px solid #E5E5EA;
+                border-right: 1px solid #E5E5EA;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span class="top-bar-logo">VOIS</span>
+        <span class="top-bar-venue">Sunrise Cafe</span>
+        <div class="avatar">B</div>
+    </div>
+
+    <div class="content">
+
+        <!-- Hero Card -->
+        <div class="hero-card">
+            <div class="hero-label">Your Shift</div>
+            <div class="hero-title">Saturday Morning</div>
+            <div class="hero-time">8:00 AM &ndash; 2:00 PM</div>
+            <div class="hero-bottom">
+                <div class="hero-ready">&#10003; Ready</div>
+                <div class="progress-ring-container">
+                    <div class="progress-ring">
+                        <svg width="48" height="48" viewBox="0 0 48 48">
+                            <circle class="progress-ring-bg" cx="24" cy="24" r="20" />
+                            <circle class="progress-ring-fill" cx="24" cy="24" r="20"
+                                stroke-dasharray="125.66"
+                                stroke-dashoffset="83.78" />
+                        </svg>
+                        <span class="progress-ring-text">1/3</span>
+                    </div>
+                    <span class="progress-label">tasks<br>done</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tasks -->
+        <div class="section-label">Tasks</div>
+
+        <!-- Task 1: Completed -->
+        <div class="task-card completed-card" onclick="toggleCard(this)">
+            <div class="task-card-top">
+                <div class="status-circle done">&#10003;</div>
+                <div class="task-card-info">
+                    <div class="task-card-title">Morning station prep</div>
+                    <div class="task-card-subtitle green">Done &middot; 7:45 AM</div>
+                </div>
+                <span class="task-card-expand">&#9654;</span>
+            </div>
+            <div class="task-checklist">
+                <div class="check-item done">
+                    <div class="check-toggle checked"></div>
+                    <span class="check-label">Clean espresso machine</span>
+                </div>
+                <div class="check-item done">
+                    <div class="check-toggle checked"></div>
+                    <span class="check-label">Stock cups and lids</span>
+                </div>
+                <div class="check-item done">
+                    <div class="check-toggle checked"></div>
+                    <span class="check-label">Check milk inventory</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task 2: Active -->
+        <div class="task-card" onclick="toggleCard(this)">
+            <div class="task-card-top">
+                <div class="status-circle active">&#9679;</div>
+                <div class="task-card-info">
+                    <div class="task-card-title">Midday inventory check</div>
+                    <div class="task-card-subtitle blue">In Progress</div>
+                    <div class="task-progress-pill">1/3 complete</div>
+                </div>
+                <span class="task-card-expand">&#9654;</span>
+            </div>
+            <div class="task-checklist">
+                <div class="check-item done" onclick="event.stopPropagation()">
+                    <div class="check-toggle checked" onclick="toggleCheck(this)"></div>
+                    <span class="check-label">Count pastry display items</span>
+                </div>
+                <div class="check-item" onclick="event.stopPropagation()">
+                    <div class="check-toggle" onclick="toggleCheck(this)"></div>
+                    <span class="check-label">Check cold brew levels</span>
+                </div>
+                <div class="check-item" onclick="event.stopPropagation()">
+                    <div class="check-toggle" onclick="toggleCheck(this)"></div>
+                    <span class="check-label">Note any shortages</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task 3: Upcoming -->
+        <div class="task-card" onclick="toggleCard(this)">
+            <div class="task-card-top">
+                <div class="status-circle pending">&#9201;</div>
+                <div class="task-card-info">
+                    <div class="task-card-title">End of shift cleanup</div>
+                    <div class="task-card-subtitle gray">Starts at 1:30 PM</div>
+                </div>
+                <span class="task-card-expand">&#9654;</span>
+            </div>
+            <div class="task-checklist">
+                <div class="check-item" onclick="event.stopPropagation()">
+                    <div class="check-toggle" onclick="toggleCheck(this)"></div>
+                    <span class="check-label">Wipe down all surfaces</span>
+                </div>
+                <div class="check-item" onclick="event.stopPropagation()">
+                    <div class="check-toggle" onclick="toggleCheck(this)"></div>
+                    <span class="check-label">Empty grounds knock box</span>
+                </div>
+                <div class="check-item" onclick="event.stopPropagation()">
+                    <div class="check-toggle" onclick="toggleCheck(this)"></div>
+                    <span class="check-label">Restock for afternoon shift</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Grid -->
+        <div class="action-grid">
+            <button class="action-card blue">
+                <span class="action-card-icon">&#127384;</span>
+                <span class="action-card-label">Ask for Help</span>
+            </button>
+            <button class="action-card amber">
+                <span class="action-card-icon">&#128221;</span>
+                <span class="action-card-label">Report Something</span>
+            </button>
+            <button class="action-card light">
+                <span class="action-card-icon">&#128203;</span>
+                <span class="action-card-label">My Standards</span>
+            </button>
+            <button class="action-card light">
+                <span class="action-card-icon">&#128211;</span>
+                <span class="action-card-label">My Log</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Fixed Bottom Tab Bar -->
+    <div class="tab-bar">
+        <a href="#" class="tab-item active">
+            <span class="tab-icon">&#9776;</span>
+            <span class="tab-label">Shift</span>
+        </a>
+        <a href="#" class="tab-item">
+            <span class="tab-icon">&#128203;</span>
+            <span class="tab-label">Standards</span>
+        </a>
+        <a href="#" class="tab-item">
+            <span class="tab-icon">&#127384;</span>
+            <span class="tab-label">Help</span>
+        </a>
+        <a href="#" class="tab-item">
+            <span class="tab-icon">&#128211;</span>
+            <span class="tab-label">Log</span>
+        </a>
+    </div>
+
+    <script>
+        function toggleCard(card) {
+            card.classList.toggle('expanded');
+        }
+
+        function toggleCheck(toggle) {
+            toggle.classList.toggle('checked');
+            const item = toggle.parentElement;
+            item.classList.toggle('done');
+            updateRing();
+            updatePill();
+        }
+
+        function updateRing() {
+            const allChecks = document.querySelectorAll('.task-card .check-toggle');
+            let totalTasks = 3;
+            // Count tasks that have all items checked
+            const cards = document.querySelectorAll('.task-card');
+            let doneTasks = 0;
+            cards.forEach(card => {
+                const checks = card.querySelectorAll('.check-toggle');
+                const checked = card.querySelectorAll('.check-toggle.checked');
+                if (checks.length > 0 && checks.length === checked.length) {
+                    doneTasks++;
+                }
+            });
+            const circumference = 2 * Math.PI * 20; // r=20
+            const offset = circumference - (doneTasks / totalTasks) * circumference;
+            const ring = document.querySelector('.progress-ring-fill');
+            const text = document.querySelector('.progress-ring-text');
+            if (ring) ring.setAttribute('stroke-dashoffset', offset);
+            if (text) text.textContent = doneTasks + '/' + totalTasks;
+        }
+
+        function updatePill() {
+            const activeCard = document.querySelectorAll('.task-card')[1]; // second card is active
+            if (!activeCard) return;
+            const checks = activeCard.querySelectorAll('.check-toggle');
+            const done = activeCard.querySelectorAll('.check-toggle.checked').length;
+            const pill = activeCard.querySelector('.task-progress-pill');
+            if (pill) pill.textContent = done + '/' + checks.length + ' complete';
+        }
+    </script>
+</body>
+</html>

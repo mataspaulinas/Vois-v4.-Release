@@ -1,0 +1,956 @@
+<!-- VOIS Design Investigation — Option C: Glance (Apple Health / Craft-inspired) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS — Option C: Glance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --bg: #F2F2F7;
+    --card-bg: #FFFFFF;
+    --text-primary: #1C1C1E;
+    --text-secondary: #3A3A3C;
+    --text-muted: #8E8E93;
+    --accent: #007AFF;
+    --green: #34C759;
+    --amber: #FF9500;
+    --red: #FF3B30;
+    --purple: #5856D6;
+    --card-radius: 16px;
+    --btn-radius: 12px;
+    --hero-radius: 20px;
+    --shadow: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-lg: 0 4px 16px rgba(0,0,0,0.10);
+    --card-padding: 20px;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-bottom: 100px;
+  }
+
+  /* ── TOP NAV ── */
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 60px;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-logo {
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    color: var(--accent);
+  }
+
+  .nav-venue {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-left: 1.5px solid #E5E5EA;
+    padding-left: 10px;
+  }
+
+  .nav-tabs {
+    display: flex;
+    gap: 4px;
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 3px;
+  }
+
+  .nav-tab {
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+  }
+
+  .nav-tab:hover {
+    color: var(--text-secondary);
+    background: rgba(0,0,0,0.03);
+  }
+
+  .nav-tab.active {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .nav-bell {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    transition: background 0.2s;
+  }
+
+  .nav-bell:hover { background: #E5E5EA; }
+
+  .nav-bell svg { width: 18px; height: 18px; fill: var(--text-secondary); }
+
+  .bell-dot {
+    position: absolute;
+    top: 6px;
+    right: 7px;
+    width: 8px;
+    height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
+
+  .nav-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  /* ── MAIN CONTENT ── */
+  .main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 16px;
+  }
+
+  /* ── HERO CARD ── */
+  .hero-card {
+    background: linear-gradient(135deg, #EBF2FF 0%, #FFFFFF 70%);
+    border-radius: var(--hero-radius);
+    box-shadow: var(--shadow);
+    padding: 28px 28px 24px;
+    margin-bottom: 20px;
+  }
+
+  .hero-greeting {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  .hero-metrics {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .metric-bubble {
+    flex: 1;
+    min-width: 100px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 14px 16px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+  }
+
+  .metric-bubble:hover {
+    transform: translateY(-2px);
+  }
+
+  .metric-number {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .metric-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .metric-red .metric-number { color: var(--red); }
+  .metric-blue .metric-number { color: var(--accent); }
+  .metric-green .metric-number { color: var(--green); }
+  .metric-purple .metric-number { color: var(--purple); }
+
+  /* ── CARD GRID ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* ── BASE CARD ── */
+  .card {
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+    padding: var(--card-padding);
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+  }
+
+  .card-red::before { background: var(--red); }
+  .card-amber::before { background: var(--amber); }
+  .card-blue::before { background: var(--accent); }
+  .card-purple::before { background: var(--purple); }
+  .card-green::before { background: var(--green); }
+
+  .card-gradient {
+    background: linear-gradient(135deg, #EEF0FF 0%, #F3EEFF 100%);
+  }
+  .card-gradient::before { background: linear-gradient(to bottom, var(--accent), var(--purple)); }
+
+  .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+    letter-spacing: -0.2px;
+  }
+
+  .card-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+
+  .card-items {
+    list-style: none;
+  }
+
+  .card-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #F2F2F7;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .card-item:last-child { border-bottom: none; }
+
+  .item-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .item-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-red { background: var(--red); }
+  .dot-amber { background: var(--amber); }
+  .dot-green { background: var(--green); }
+  .dot-blue { background: var(--accent); }
+
+  .item-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    flex: 1;
+  }
+
+  .item-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 16px;
+  }
+
+  .item-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+
+  .tag-red { background: #FFF0EF; color: var(--red); }
+  .tag-amber { background: #FFF6E9; color: var(--amber); }
+  .tag-green { background: #EAFFF0; color: var(--green); }
+  .tag-blue { background: #EAF2FF; color: var(--accent); }
+
+  .view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .view-all:hover { opacity: 0.7; }
+
+  /* ── PROGRESS BAR ── */
+  .progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #F2F2F7;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 6px;
+  }
+
+  .progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+  }
+
+  .progress-fill-blue { background: var(--accent); }
+  .progress-fill-amber { background: var(--amber); }
+  .progress-fill-green { background: var(--green); }
+
+  .progress-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  /* ── TEAM PULSE ── */
+  .team-avatars {
+    display: flex;
+    gap: -4px;
+    margin-bottom: 12px;
+  }
+
+  .team-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    border: 3px solid #fff;
+    margin-right: -6px;
+    position: relative;
+  }
+
+  .team-avatar:nth-child(1) { background: #5856D6; z-index: 4; }
+  .team-avatar:nth-child(2) { background: #FF9500; z-index: 3; }
+  .team-avatar:nth-child(3) { background: #34C759; z-index: 2; }
+  .team-avatar:nth-child(4) { background: #007AFF; z-index: 1; }
+
+  .avatar-status {
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
+
+  .team-info {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-top: 8px;
+  }
+
+  .team-capacity {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--amber);
+    margin-top: 4px;
+  }
+
+  /* ── SIGNALS TIME AGO ── */
+  .signal-time {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .signal-severity {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .severity-high { color: var(--red); }
+  .severity-medium { color: var(--amber); }
+  .severity-low { color: var(--green); }
+
+  /* ── CARD EXPAND ── */
+  .card-expandable {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .card-expand-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .card-expandable.expanded .card-expand-content {
+    max-height: 400px;
+    opacity: 1;
+  }
+
+  .expand-detail {
+    padding-top: 14px;
+    border-top: 1px solid #F2F2F7;
+    margin-top: 12px;
+  }
+
+  .expand-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 13px;
+  }
+
+  .expand-detail-label {
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .expand-detail-value {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .expand-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .btn-primary {
+    padding: 8px 16px;
+    border-radius: var(--btn-radius);
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .btn-primary:hover { filter: brightness(1.1); }
+
+  .btn-secondary {
+    padding: 8px 16px;
+    border-radius: var(--btn-radius);
+    font-size: 13px;
+    font-weight: 600;
+    border: 1.5px solid #E5E5EA;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #fff;
+    color: var(--text-secondary);
+  }
+
+  .btn-secondary:hover { border-color: #C7C7CC; }
+
+  .expand-hint {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 6px;
+    transition: opacity 0.2s;
+  }
+
+  .card-expandable.expanded .expand-hint { opacity: 0; }
+
+  /* ── BOTTOM TABS ── */
+  .bottom-tabs {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid #E5E5EA;
+    display: flex;
+    justify-content: space-around;
+    padding: 6px 0 env(safe-area-inset-bottom, 8px);
+    height: 68px;
+  }
+
+  .bottom-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 6px 12px;
+    border: none;
+    background: none;
+    transition: color 0.2s;
+  }
+
+  .bottom-tab svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-muted);
+    transition: fill 0.2s;
+  }
+
+  .bottom-tab.active {
+    color: var(--accent);
+  }
+
+  .bottom-tab.active svg {
+    fill: var(--accent);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (min-width: 769px) {
+    .bottom-tabs {
+      opacity: 0.4;
+      transition: opacity 0.3s;
+    }
+    .bottom-tabs:hover { opacity: 1; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-tabs { display: none; }
+    .nav-venue { display: none; }
+
+    .main { padding: 12px; }
+
+    .hero-card { padding: 20px; }
+    .hero-greeting { font-size: 20px; }
+    .hero-subtitle { font-size: 13px; }
+
+    .metric-bubble { min-width: 70px; padding: 10px 8px; }
+    .metric-number { font-size: 36px; }
+    .metric-label { font-size: 11px; }
+
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .card { padding: 16px; }
+
+    .bottom-tabs {
+      opacity: 1;
+    }
+
+    .top-nav { padding: 0 12px; }
+  }
+
+  @media (max-width: 400px) {
+    .hero-metrics { gap: 8px; }
+    .metric-number { font-size: 30px; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .card, .hero-card {
+    animation: fadeInUp 0.4s ease forwards;
+  }
+
+  .card:nth-child(1) { animation-delay: 0.05s; }
+  .card:nth-child(2) { animation-delay: 0.10s; }
+  .card:nth-child(3) { animation-delay: 0.15s; }
+  .card:nth-child(4) { animation-delay: 0.20s; }
+  .card:nth-child(5) { animation-delay: 0.25s; }
+  .card:nth-child(6) { animation-delay: 0.30s; }
+</style>
+</head>
+<body>
+
+<!-- ── TOP NAVIGATION BAR ── -->
+<nav class="top-nav">
+  <div class="nav-left">
+    <span class="nav-logo">VOIS</span>
+    <span class="nav-venue">Sunrise Cafe</span>
+  </div>
+  <div class="nav-tabs">
+    <button class="nav-tab active">Today</button>
+    <button class="nav-tab">Plan</button>
+    <button class="nav-tab">Signals</button>
+    <button class="nav-tab">Team</button>
+    <button class="nav-tab">More</button>
+  </div>
+  <div class="nav-right">
+    <button class="nav-bell">
+      <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+      <span class="bell-dot"></span>
+    </button>
+    <div class="nav-avatar">MK</div>
+  </div>
+</nav>
+
+<!-- ── MAIN CONTENT ── -->
+<main class="main">
+
+  <!-- ── HERO CARD ── -->
+  <div class="hero-card">
+    <div class="hero-greeting">Good morning, Manager</div>
+    <div class="hero-subtitle">Saturday, March 29 &mdash; 7 items need attention</div>
+    <div class="hero-metrics">
+      <div class="metric-bubble metric-red">
+        <div class="metric-number">3</div>
+        <div class="metric-label">Overdue</div>
+      </div>
+      <div class="metric-bubble metric-blue">
+        <div class="metric-number">2</div>
+        <div class="metric-label">In Progress</div>
+      </div>
+      <div class="metric-bubble metric-green">
+        <div class="metric-number">2</div>
+        <div class="metric-label">On Track</div>
+      </div>
+      <div class="metric-bubble metric-purple">
+        <div class="metric-number">78%</div>
+        <div class="metric-label">Complete</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CARD GRID ── -->
+  <div class="card-grid">
+
+    <!-- CRITICAL ACTIONS (expandable) -->
+    <div class="card card-red card-expandable" onclick="toggleExpand(this)">
+      <div class="card-title">Critical Actions</div>
+      <div class="card-subtitle">2 items need immediate attention</div>
+      <ul class="card-items">
+        <li class="card-item">
+          <div class="item-row">
+            <span class="item-dot dot-red"></span>
+            <span class="item-name">Espresso machine calibration</span>
+          </div>
+          <div class="item-meta">
+            <span class="item-tag tag-red">Overdue by 2 days</span>
+            <span>Alex T.</span>
+          </div>
+        </li>
+        <li class="card-item">
+          <div class="item-row">
+            <span class="item-dot dot-red"></span>
+            <span class="item-name">Health inspection prep</span>
+          </div>
+          <div class="item-meta">
+            <span class="item-tag tag-amber">Blocked</span>
+            <span>Maria S.</span>
+          </div>
+        </li>
+      </ul>
+      <div class="card-expand-content">
+        <div class="expand-detail">
+          <div class="expand-detail-row">
+            <span class="expand-detail-label">Espresso machine &mdash; last calibrated</span>
+            <span class="expand-detail-value">Mar 22</span>
+          </div>
+          <div class="expand-detail-row">
+            <span class="expand-detail-label">Required frequency</span>
+            <span class="expand-detail-value">Every 5 days</span>
+          </div>
+          <div class="expand-detail-row">
+            <span class="expand-detail-label">Inspection prep &mdash; blocker</span>
+            <span class="expand-detail-value">Awaiting supplier docs</span>
+          </div>
+          <div class="expand-detail-row">
+            <span class="expand-detail-label">Inspection date</span>
+            <span class="expand-detail-value">Apr 2</span>
+          </div>
+          <div class="expand-actions">
+            <button class="btn-primary" onclick="event.stopPropagation()">Reassign</button>
+            <button class="btn-secondary" onclick="event.stopPropagation()">Send Reminder</button>
+          </div>
+        </div>
+      </div>
+      <a class="view-all">View All &rarr;</a>
+      <div class="expand-hint">Tap to expand</div>
+    </div>
+
+    <!-- TODAY'S FOCUS -->
+    <div class="card card-amber">
+      <div class="card-title">Today's Focus</div>
+      <div class="card-subtitle">1 item due today</div>
+      <ul class="card-items">
+        <li class="card-item">
+          <div class="item-row">
+            <span class="item-dot dot-amber"></span>
+            <span class="item-name">Morning rush staffing review</span>
+          </div>
+          <div class="item-meta">
+            <span class="item-tag tag-amber">Due today</span>
+            <span>Assigned to you</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;margin-top:8px;">
+            <div class="progress-bar" style="flex:1;">
+              <div class="progress-fill progress-fill-amber" style="width:45%;"></div>
+            </div>
+            <span class="progress-label">45%</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- IN PROGRESS -->
+    <div class="card card-blue">
+      <div class="card-title">In Progress</div>
+      <div class="card-subtitle">2 active items</div>
+      <ul class="card-items">
+        <li class="card-item">
+          <div class="item-row">
+            <span class="item-dot dot-blue"></span>
+            <span class="item-name">Menu item training</span>
+          </div>
+          <div class="item-meta">
+            <span>Jordan K.</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;margin-top:6px;">
+            <div class="progress-bar" style="flex:1;">
+              <div class="progress-fill progress-fill-blue" style="width:60%;"></div>
+            </div>
+            <span class="progress-label">60%</span>
+          </div>
+        </li>
+        <li class="card-item">
+          <div class="item-row">
+            <span class="item-dot dot-blue"></span>
+            <span class="item-name">Feedback response protocol</span>
+          </div>
+          <div class="item-meta">
+            <span>Alex T.</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;margin-top:6px;">
+            <div class="progress-bar" style="flex:1;">
+              <div class="progress-fill progress-fill-blue" style="width:30%;"></div>
+            </div>
+            <span class="progress-label">30%</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- SIGNALS -->
+    <div class="card card-purple">
+      <div class="card-title">Signals</div>
+      <div class="card-subtitle">3 active signals</div>
+      <ul class="card-items">
+        <li class="card-item">
+          <div class="item-row">
+            <span class="item-dot dot-red"></span>
+            <span class="item-name">Service speed &#8595;</span>
+            <span class="signal-time">2h ago</span>
+          </div>
+          <div class="item-meta">
+            <span class="signal-severity severity-high">High</span>
+          </div>
+        </li>
+        <li class="card-item">
+          <div class="item-row">
+            <span class="item-dot dot-amber"></span>
+            <span class="item-name">Overtime trending &#8593;</span>
+            <span class="signal-time">5h ago</span>
+          </div>
+          <div class="item-meta">
+            <span class="signal-severity severity-medium">Medium</span>
+          </div>
+        </li>
+        <li class="card-item">
+          <div class="item-row">
+            <span class="item-dot dot-green"></span>
+            <span class="item-name">Satisfaction stable</span>
+            <span class="signal-time">1d ago</span>
+          </div>
+          <div class="item-meta">
+            <span class="signal-severity severity-low">Low</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- COMING UP -->
+    <div class="card card-green">
+      <div class="card-title">Coming Up</div>
+      <div class="card-subtitle">Next on the horizon</div>
+      <ul class="card-items">
+        <li class="card-item">
+          <div class="item-row">
+            <span class="item-dot dot-green"></span>
+            <span class="item-name">Weekly inventory</span>
+          </div>
+          <div class="item-meta">
+            <span class="item-tag tag-green">Mar 31</span>
+            <span>Sam P.</span>
+          </div>
+        </li>
+        <li class="card-item">
+          <div class="item-row">
+            <span class="item-dot dot-blue"></span>
+            <span class="item-name">Barista certification</span>
+          </div>
+          <div class="item-meta">
+            <span class="item-tag tag-blue">Apr 3</span>
+            <span>Maria S.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- TEAM PULSE -->
+    <div class="card card-gradient">
+      <div class="card-title">Team Pulse</div>
+      <div class="card-subtitle">Today's workforce</div>
+      <div class="team-avatars">
+        <div class="team-avatar">
+          AT
+          <span class="avatar-status" style="background:var(--green);"></span>
+        </div>
+        <div class="team-avatar">
+          MS
+          <span class="avatar-status" style="background:var(--green);"></span>
+        </div>
+        <div class="team-avatar">
+          JK
+          <span class="avatar-status" style="background:var(--amber);"></span>
+        </div>
+        <div class="team-avatar">
+          SP
+          <span class="avatar-status" style="background:var(--green);"></span>
+        </div>
+      </div>
+      <div class="team-info">4 team members active today</div>
+      <div class="team-capacity">1 nearing capacity</div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ── BOTTOM TAB BAR ── -->
+<div class="bottom-tabs">
+  <button class="bottom-tab active">
+    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg>
+    <span>Today</span>
+  </button>
+  <button class="bottom-tab">
+    <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+    <span>Plan</span>
+  </button>
+  <button class="bottom-tab">
+    <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z"/></svg>
+    <span>Signals</span>
+  </button>
+  <button class="bottom-tab">
+    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+    <span>Team</span>
+  </button>
+  <button class="bottom-tab">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/><circle cx="12" cy="10" r="1.5"/><circle cx="8" cy="10" r="1.5"/><circle cx="16" cy="10" r="1.5"/></svg>
+    <span>Copilot</span>
+  </button>
+</div>
+
+<script>
+  function toggleExpand(card) {
+    card.classList.toggle('expanded');
+  }
+</script>
+
+</body>
+</html>

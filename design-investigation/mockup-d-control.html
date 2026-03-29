@@ -1,0 +1,806 @@
+<!-- VOIS Design Investigation — Option D: Control (Vercel-inspired Dark Command Center) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS — Option D: Control</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #0A0A0A;
+    --surface: #141414;
+    --elevated: #1A1A1A;
+    --border: #262626;
+    --text-primary: #EDEDED;
+    --text-secondary: #888888;
+    --text-muted: #555555;
+    --accent: #00DC82;
+    --green: #00DC82;
+    --amber: #F5A623;
+    --red: #EE4444;
+    --blue: #0070F3;
+    --radius: 8px;
+    --font-ui: 'Inter', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+
+  html { font-size: 12px; }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-ui);
+    line-height: 1.5;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* 1. STATUS STRIP */
+  .status-strip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--green);
+    z-index: 1000;
+    animation: strip-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes strip-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  /* 2. TOP NAVIGATION */
+  .top-nav {
+    position: sticky;
+    top: 2px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 48px;
+    z-index: 100;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+
+  .version-pill {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 5px;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-center {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nav-link {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 14px 16px;
+    position: relative;
+    transition: color 0.15s;
+    white-space: nowrap;
+  }
+
+  .nav-link:hover { color: var(--text-secondary); }
+
+  .nav-link.active {
+    color: var(--text-primary);
+  }
+
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background: var(--green);
+    border-radius: 1px;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .venue-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: transparent;
+    transition: border-color 0.15s;
+  }
+
+  .venue-selector:hover { border-color: var(--text-muted); }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+  }
+
+  .status-dot.pulse {
+    animation: dot-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes dot-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .user-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--elevated);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+  }
+
+  /* 3. SUB-HEADER */
+  .sub-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 20px 24px 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .sub-header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .page-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .page-date {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .sub-header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .sync-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--text-muted);
+  }
+
+  .sync-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: dot-pulse 2s ease-in-out infinite;
+  }
+
+  .active-count {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--text-muted);
+  }
+
+  /* 4. MAIN CONTENT */
+  .main-content {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 0;
+    padding: 0 24px 24px;
+  }
+
+  .left-column { padding-right: 20px; }
+  .right-column { padding-left: 20px; border-left: 1px solid var(--border); }
+
+  .section-heading {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    margin-top: 24px;
+  }
+
+  .section-heading:first-child { margin-top: 0; }
+
+  /* ACTION QUEUE TABLE */
+  .action-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .action-table thead th {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  .action-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s;
+    cursor: default;
+  }
+
+  .action-table tbody tr:hover {
+    background: var(--elevated);
+  }
+
+  .action-table tbody td {
+    padding: 10px 10px;
+    vertical-align: middle;
+    font-size: 12px;
+  }
+
+  .status-cell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .status-cell .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .status-overdue .dot { background: var(--red); }
+  .status-overdue { color: var(--red); }
+
+  .status-blocked .dot { background: var(--red); }
+  .status-blocked { color: var(--red); }
+
+  .status-at-risk .dot { background: var(--amber); }
+  .status-at-risk { color: var(--amber); }
+
+  .status-active .dot { background: var(--blue); }
+  .status-active { color: var(--blue); }
+
+  .status-on-track .dot { background: var(--green); }
+  .status-on-track { color: var(--green); }
+
+  .task-name { color: var(--text-primary); font-weight: 500; }
+
+  .assignee-cell {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .due-cell {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+
+  .due-cell.overdue { color: var(--red); }
+
+  .priority-pill {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  .priority-critical { background: rgba(238, 68, 68, 0.15); color: var(--red); }
+  .priority-high { background: rgba(245, 166, 35, 0.15); color: var(--amber); }
+  .priority-medium { background: rgba(0, 112, 243, 0.12); color: var(--blue); }
+  .priority-low { background: rgba(0, 220, 130, 0.1); color: var(--green); }
+
+  /* SIGNAL FEED */
+  .signal-feed { margin-top: 8px; }
+
+  .signal-entry {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .signal-time { color: var(--text-muted); flex-shrink: 0; }
+  .signal-icon { flex-shrink: 0; }
+  .signal-name { color: var(--accent); }
+  .signal-detail { color: var(--text-secondary); }
+  .signal-impact { color: var(--text-muted); }
+  .signal-impact-high { color: var(--amber); font-weight: 600; }
+  .signal-impact-med { color: var(--amber); }
+  .signal-impact-low { color: var(--text-muted); }
+
+  /* RIGHT COLUMN — SYSTEM HEALTH */
+  .health-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+  }
+
+  .health-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .health-metric {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .health-value {
+    font-family: var(--font-mono);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .health-value.red { color: var(--red); }
+  .health-value.blue { color: var(--blue); }
+  .health-value.green { color: var(--green); }
+  .health-value.white { color: var(--text-primary); }
+
+  .health-label {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* EXECUTION VELOCITY */
+  .velocity-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-top: 12px;
+  }
+
+  .velocity-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+  }
+
+  .velocity-label {
+    color: var(--text-muted);
+    width: 56px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  .velocity-bar-track {
+    flex: 1;
+    display: flex;
+    height: 14px;
+    letter-spacing: -1px;
+    font-size: 12px;
+    line-height: 14px;
+    overflow: hidden;
+  }
+
+  .velocity-filled { color: var(--green); }
+  .velocity-empty { color: #1E1E1E; }
+
+  .velocity-pct {
+    color: var(--text-secondary);
+    width: 32px;
+    text-align: right;
+    flex-shrink: 0;
+    letter-spacing: 0;
+  }
+
+  /* TEAM STATUS */
+  .team-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-top: 12px;
+  }
+
+  .team-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 11px;
+  }
+
+  .team-row:last-child { border-bottom: none; }
+
+  .team-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .team-name { color: var(--text-primary); }
+  .team-count { color: var(--text-muted); }
+
+  .team-status {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+  }
+
+  .team-status.warning { color: var(--amber); }
+  .team-status.danger { color: var(--red); }
+  .team-status.ok { color: var(--green); }
+
+  /* 5. FOOTER */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+  }
+
+  .footer-sep { color: #333; }
+
+  /* RESPONSIVE */
+  @media (max-width: 860px) {
+    .main-content {
+      grid-template-columns: 1fr;
+    }
+
+    .left-column { padding-right: 0; }
+
+    .right-column {
+      padding-left: 0;
+      border-left: none;
+      border-top: 1px solid var(--border);
+      margin-top: 16px;
+      padding-top: 8px;
+    }
+
+    .nav-center { display: none; }
+
+    .action-table { font-size: 11px; }
+
+    .action-table thead th,
+    .action-table tbody td { padding: 8px 6px; }
+
+    .top-nav { padding: 0 12px; }
+    .sub-header { padding: 16px 12px 8px; }
+    .main-content { padding: 0 12px 16px; }
+    .footer { padding: 10px 12px; }
+
+    .hide-mobile { display: none; }
+  }
+
+  @media (max-width: 540px) {
+    .venue-selector { display: none; }
+    .sub-header-right { gap: 10px; }
+    .health-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. STATUS STRIP -->
+<div class="status-strip"></div>
+
+<!-- 2. TOP NAVIGATION -->
+<nav class="top-nav">
+  <div class="nav-left">
+    <span class="logo">VOIS</span>
+    <span class="version-pill">v4</span>
+  </div>
+
+  <div class="nav-center">
+    <a href="#" class="nav-link">Overview</a>
+    <a href="#" class="nav-link active">Today</a>
+    <a href="#" class="nav-link">Plan</a>
+    <a href="#" class="nav-link">Signals</a>
+    <a href="#" class="nav-link">Console</a>
+  </div>
+
+  <div class="nav-right">
+    <button class="venue-selector">
+      <span class="status-dot"></span>
+      Sunrise Cafe
+      <span style="color:var(--text-muted); margin-left:2px;">&#9662;</span>
+    </button>
+    <div class="user-avatar">MK</div>
+  </div>
+</nav>
+
+<!-- 3. SUB-HEADER -->
+<div class="sub-header">
+  <div class="sub-header-left">
+    <h1 class="page-title">Today</h1>
+    <span class="page-date">March 29, 2026</span>
+  </div>
+  <div class="sub-header-right">
+    <div class="sync-indicator">
+      <span class="sync-dot"></span>
+      Last sync 2m ago
+    </div>
+    <span class="active-count">7 active items</span>
+  </div>
+</div>
+
+<!-- 4. MAIN CONTENT -->
+<div class="main-content">
+
+  <!-- LEFT COLUMN -->
+  <div class="left-column">
+    <div class="section-heading">Action Queue</div>
+    <table class="action-table">
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Task</th>
+          <th class="hide-mobile">Assignee</th>
+          <th>Due</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="status-cell status-overdue"><span class="dot"></span>Overdue</div></td>
+          <td class="task-name">Espresso machine calibration</td>
+          <td class="assignee-cell hide-mobile">alex.t</td>
+          <td class="due-cell overdue">Mar 27</td>
+          <td><span class="priority-pill priority-critical">critical</span></td>
+        </tr>
+        <tr>
+          <td><div class="status-cell status-blocked"><span class="dot"></span>Blocked</div></td>
+          <td class="task-name">Health inspection prep</td>
+          <td class="assignee-cell hide-mobile">maria.s</td>
+          <td class="due-cell overdue">Mar 28</td>
+          <td><span class="priority-pill priority-critical">critical</span></td>
+        </tr>
+        <tr>
+          <td><div class="status-cell status-at-risk"><span class="dot"></span>At Risk</div></td>
+          <td class="task-name">Morning rush staffing review</td>
+          <td class="assignee-cell hide-mobile">you</td>
+          <td class="due-cell">Mar 29</td>
+          <td><span class="priority-pill priority-high">high</span></td>
+        </tr>
+        <tr>
+          <td><div class="status-cell status-active"><span class="dot"></span>Active</div></td>
+          <td class="task-name">Menu item training rollout</td>
+          <td class="assignee-cell hide-mobile">jordan.k</td>
+          <td class="due-cell">Mar 30</td>
+          <td><span class="priority-pill priority-medium">medium</span></td>
+        </tr>
+        <tr>
+          <td><div class="status-cell status-active"><span class="dot"></span>Active</div></td>
+          <td class="task-name">Feedback response protocol</td>
+          <td class="assignee-cell hide-mobile">alex.t</td>
+          <td class="due-cell">Apr 01</td>
+          <td><span class="priority-pill priority-medium">medium</span></td>
+        </tr>
+        <tr>
+          <td><div class="status-cell status-on-track"><span class="dot"></span>On Track</div></td>
+          <td class="task-name">Weekly inventory count</td>
+          <td class="assignee-cell hide-mobile">sam.p</td>
+          <td class="due-cell">Mar 31</td>
+          <td><span class="priority-pill priority-low">low</span></td>
+        </tr>
+        <tr>
+          <td><div class="status-cell status-on-track"><span class="dot"></span>On Track</div></td>
+          <td class="task-name">Barista certification renewal</td>
+          <td class="assignee-cell hide-mobile">maria.s</td>
+          <td class="due-cell">Apr 03</td>
+          <td><span class="priority-pill priority-low">low</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-heading" style="margin-top:28px;">Signal Feed</div>
+    <div class="signal-feed">
+      <div class="signal-entry">
+        <span class="signal-time">[2h ago]</span>
+        <span class="signal-icon">&#9888;</span>
+        <span class="signal-name">service_speed</span>
+        <span class="signal-detail">&mdash; threshold breach &mdash;</span>
+        <span class="signal-impact signal-impact-high">impact: HIGH</span>
+      </div>
+      <div class="signal-entry">
+        <span class="signal-time">[5h ago]</span>
+        <span class="signal-icon">&#9888;</span>
+        <span class="signal-name">staff_overtime</span>
+        <span class="signal-detail">&mdash; trending up &mdash;</span>
+        <span class="signal-impact signal-impact-med">impact: MEDIUM</span>
+      </div>
+      <div class="signal-entry">
+        <span class="signal-time">[1d ago]</span>
+        <span class="signal-icon">&#10003;</span>
+        <span class="signal-name">customer_satisfaction</span>
+        <span class="signal-detail">&mdash; stable &mdash;</span>
+        <span class="signal-impact signal-impact-low">impact: LOW</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="right-column">
+    <div class="section-heading">System Health</div>
+    <div class="health-card">
+      <div class="health-grid">
+        <div class="health-metric">
+          <span class="health-value red">3</span>
+          <span class="health-label">Overdue</span>
+        </div>
+        <div class="health-metric">
+          <span class="health-value blue">2</span>
+          <span class="health-label">Active</span>
+        </div>
+        <div class="health-metric">
+          <span class="health-value green">2</span>
+          <span class="health-label">On Track</span>
+        </div>
+        <div class="health-metric">
+          <span class="health-value white">78%</span>
+          <span class="health-label">Complete</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-heading">Execution Velocity</div>
+    <div class="velocity-card">
+      <div class="velocity-row">
+        <span class="velocity-label">Week 12</span>
+        <span class="velocity-bar-track"><span class="velocity-filled">&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;</span><span class="velocity-empty">&#9608;&#9608;&#9608;&#9608;</span></span>
+        <span class="velocity-pct">78%</span>
+      </div>
+      <div class="velocity-row">
+        <span class="velocity-label">Week 11</span>
+        <span class="velocity-bar-track"><span class="velocity-filled">&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;</span><span class="velocity-empty">&#9608;&#9608;&#9608;&#9608;&#9608;</span></span>
+        <span class="velocity-pct">73%</span>
+      </div>
+      <div class="velocity-row">
+        <span class="velocity-label">Week 10</span>
+        <span class="velocity-bar-track"><span class="velocity-filled">&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;</span><span class="velocity-empty">&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;</span></span>
+        <span class="velocity-pct">68%</span>
+      </div>
+    </div>
+
+    <div class="section-heading">Team Status</div>
+    <div class="team-card">
+      <div class="team-row">
+        <div class="team-left">
+          <span class="team-name">alex.t</span>
+          <span class="team-count">&mdash; 2 tasks</span>
+        </div>
+        <div class="team-status warning">&#9888; at capacity</div>
+      </div>
+      <div class="team-row">
+        <div class="team-left">
+          <span class="team-name">maria.s</span>
+          <span class="team-count">&mdash; 2 tasks</span>
+        </div>
+        <div class="team-status danger">&#9679; blocked</div>
+      </div>
+      <div class="team-row">
+        <div class="team-left">
+          <span class="team-name">jordan.k</span>
+          <span class="team-count">&mdash; 1 task</span>
+        </div>
+        <div class="team-status ok">&#10003; ok</div>
+      </div>
+      <div class="team-row">
+        <div class="team-left">
+          <span class="team-name">sam.p</span>
+          <span class="team-count">&mdash; 1 task</span>
+        </div>
+        <div class="team-status ok">&#10003; ok</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 5. FOOTER -->
+<footer class="footer">
+  <span>System: operational</span>
+  <span class="footer-sep">&middot;</span>
+  <span>API: healthy</span>
+  <span class="footer-sep">&middot;</span>
+  <span>Last engine run: 2h ago</span>
+</footer>
+
+</body>
+</html>

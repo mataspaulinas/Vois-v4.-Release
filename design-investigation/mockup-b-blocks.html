@@ -1,0 +1,930 @@
+<!-- VOIS Design Investigation — Option B: Blocks (Notion-inspired) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS — Option B: Blocks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #FFFFFF;
+    --sidebar-bg: #FBFBFA;
+    --text-primary: #37352F;
+    --text-secondary: #787774;
+    --text-muted: #B4B4B0;
+    --accent: #EB5757;
+    --border: #E8E8E4;
+    --mention-bg: #D3E5EF;
+    --mention-text: #2B6CB0;
+    --date-bg: #F1F1EF;
+    --callout-warning: #FFF8E1;
+    --callout-critical: #FDECEC;
+    --callout-success: #E8F5E9;
+    --sidebar-width: 240px;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg);
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 12px 8px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    overflow-y: auto;
+  }
+
+  .sidebar-brand {
+    padding: 8px 12px 16px;
+  }
+  .sidebar-brand-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+  }
+  .sidebar-venue {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* Tree */
+  .tree { flex: 1; }
+  .tree-section {
+    margin-bottom: 2px;
+  }
+  .tree-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 4px;
+    user-select: none;
+    transition: background 0.1s;
+  }
+  .tree-toggle:hover {
+    background: rgba(55, 53, 47, 0.04);
+  }
+  .tree-arrow {
+    font-size: 10px;
+    width: 16px;
+    text-align: center;
+    transition: transform 0.15s;
+    color: var(--text-muted);
+  }
+  .tree-section.open > .tree-toggle > .tree-arrow {
+    transform: rotate(90deg);
+  }
+  .tree-children {
+    display: none;
+    padding-left: 16px;
+  }
+  .tree-section.open > .tree-children {
+    display: block;
+  }
+  .tree-item {
+    display: flex;
+    align-items: center;
+    padding: 4px 12px 4px 28px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.1s;
+  }
+  .tree-item:hover {
+    background: rgba(55, 53, 47, 0.04);
+  }
+  .tree-item.active {
+    background: rgba(55, 53, 47, 0.06);
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  /* Sidebar bottom */
+  .sidebar-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 8px;
+    margin-top: 8px;
+  }
+  .sidebar-bottom-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 12px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.1s;
+  }
+  .sidebar-bottom-item:hover {
+    background: rgba(55, 53, 47, 0.04);
+  }
+  .sidebar-avatar {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .content-wrapper {
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px 48px 80px;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .breadcrumb span {
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  .breadcrumb span:hover {
+    color: var(--text-secondary);
+  }
+  .breadcrumb .sep { cursor: default; }
+
+  /* Page title */
+  .page-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .page-title .emoji { font-size: 28px; }
+  .page-date {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+  }
+
+  /* ── BLOCKS ── */
+  .block {
+    position: relative;
+    padding: 6px 0 6px 28px;
+    border-top: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+  .block + .block {
+    border-top-color: var(--border);
+    margin-top: 4px;
+    padding-top: 18px;
+  }
+  .block:hover > .drag-handle {
+    opacity: 1;
+  }
+  .drag-handle {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 20px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--text-muted);
+    opacity: 0;
+    cursor: grab;
+    border-radius: 3px;
+    transition: opacity 0.15s, background 0.1s;
+    user-select: none;
+    letter-spacing: -2px;
+  }
+  .drag-handle:hover {
+    background: rgba(55, 53, 47, 0.06);
+    color: var(--text-secondary);
+  }
+  .block + .block > .drag-handle { top: 20px; }
+
+  .block-heading {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .block-type-badge {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: var(--date-bg);
+    padding: 1px 7px;
+    border-radius: 3px;
+  }
+
+  /* Toggle list */
+  .toggle-list { list-style: none; }
+  .toggle-item {
+    padding: 5px 0;
+  }
+  .toggle-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .toggle-arrow {
+    font-size: 10px;
+    width: 18px;
+    min-width: 18px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: transform 0.15s;
+    border-radius: 3px;
+  }
+  .toggle-arrow:hover { background: rgba(55,53,47,0.06); }
+  .toggle-item.open > .toggle-header > .toggle-arrow {
+    transform: rotate(90deg);
+  }
+  .toggle-content {
+    padding-left: 24px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    display: none;
+  }
+  .toggle-item.open > .toggle-content {
+    display: block;
+    margin-top: 4px;
+  }
+  .toggle-text {
+    line-height: 1.5;
+  }
+  .toggle-text .icon { margin-right: 4px; }
+
+  /* Inline tags */
+  .mention {
+    background: var(--mention-bg);
+    color: var(--mention-text);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .mention:hover { opacity: 0.85; }
+  .date-pill {
+    background: var(--date-bg);
+    color: var(--text-secondary);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .date-pill.overdue {
+    background: #FDECEC;
+    color: #EB5757;
+  }
+  .date-pill.today {
+    background: #FFF3E0;
+    color: #E65100;
+  }
+  .status-blocked {
+    background: #FDECEC;
+    color: #EB5757;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* Checklist */
+  .checklist { list-style: none; }
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 5px 0;
+  }
+  .checklist-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    border: 1.5px solid var(--text-muted);
+    border-radius: 3px;
+    margin-top: 3px;
+    cursor: pointer;
+    transition: all 0.15s;
+    position: relative;
+  }
+  .checklist-item input[type="checkbox"]:hover {
+    border-color: var(--accent);
+    background: rgba(235, 87, 87, 0.04);
+  }
+  .checklist-item input[type="checkbox"]:checked {
+    background: #2EAADC;
+    border-color: #2EAADC;
+  }
+  .checklist-item input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 9px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .checklist-label {
+    line-height: 1.5;
+  }
+
+  /* Simple list */
+  .simple-list { list-style: none; }
+  .simple-list li {
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+  }
+  .simple-list li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  /* Callout blocks */
+  .callout {
+    padding: 12px 14px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .callout-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .callout.warning { background: var(--callout-warning); }
+  .callout.critical { background: var(--callout-critical); }
+  .callout.success { background: var(--callout-success); }
+  .callout-impact {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    padding-left: 16px;
+  }
+
+  /* Inline table */
+  .inline-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .inline-table th {
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--text-secondary);
+    padding: 6px 12px;
+    border-bottom: 1px solid var(--border);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .inline-table td {
+    padding: 7px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-primary);
+  }
+  .inline-table tr:last-child td { border-bottom: none; }
+  .inline-table .trend { font-size: 14px; }
+  .trend-up { color: #EB5757; }
+  .trend-flat { color: var(--text-muted); }
+  .trend-good { color: #27AE60; }
+
+  /* Notes placeholder */
+  .notes-placeholder {
+    padding: 12px 14px;
+    border: 1px dashed var(--border);
+    border-radius: 4px;
+    color: var(--text-muted);
+    font-size: 14px;
+    cursor: text;
+    min-height: 60px;
+    transition: border-color 0.15s, background 0.15s;
+    outline: none;
+  }
+  .notes-placeholder:hover {
+    border-color: #CCC;
+  }
+  .notes-placeholder:focus {
+    border-color: var(--accent);
+    border-style: solid;
+    background: rgba(235, 87, 87, 0.01);
+  }
+  .notes-placeholder:focus:empty::before {
+    content: attr(data-placeholder);
+  }
+  .notes-placeholder:empty::before {
+    content: attr(data-placeholder);
+    color: var(--text-muted);
+  }
+
+  /* Add block button */
+  .add-block-area {
+    padding: 16px 0 16px 28px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .content-wrapper:hover .add-block-area {
+    opacity: 1;
+  }
+  .add-block-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    font-size: 13px;
+    color: var(--text-muted);
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: inherit;
+    transition: background 0.1s, color 0.15s;
+  }
+  .add-block-btn:hover {
+    background: rgba(55, 53, 47, 0.06);
+    color: var(--text-secondary);
+  }
+  .add-block-btn .plus {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  /* Slash command menu */
+  .slash-menu {
+    position: fixed;
+    bottom: 48px;
+    left: calc(var(--sidebar-width) + 100px);
+    width: 240px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+    padding: 4px;
+    z-index: 200;
+    display: none;
+  }
+  .slash-menu.visible { display: block; }
+  .slash-menu-header {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 10px 4px;
+  }
+  .slash-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 10px;
+    font-size: 13px;
+    color: var(--text-primary);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.08s;
+  }
+  .slash-menu-item:hover,
+  .slash-menu-item.active {
+    background: rgba(55, 53, 47, 0.06);
+  }
+  .slash-menu-item .icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 16px;
+    background: var(--date-bg);
+    flex-shrink: 0;
+  }
+  .slash-menu-item .label { font-weight: 500; }
+  .slash-menu-item .desc {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; }
+    .content-wrapper { padding: 20px 24px 60px; }
+  }
+  @media (max-width: 600px) {
+    .content-wrapper { padding: 16px 16px 60px; }
+    .page-title { font-size: 26px; }
+    .block { padding-left: 0; }
+    .drag-handle { display: none; }
+    .block + .block > .drag-handle { display: none; }
+    .add-block-area { padding-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── SIDEBAR ── -->
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <div class="sidebar-brand-name">VOIS</div>
+    <div class="sidebar-venue">Sunrise Cafe</div>
+  </div>
+
+  <nav class="tree">
+    <!-- My Workspace -->
+    <div class="tree-section open">
+      <div class="tree-toggle" onclick="toggleSection(this)">
+        <span class="tree-arrow">&#9654;</span>My Workspace
+      </div>
+      <div class="tree-children">
+        <div class="tree-item active">Today</div>
+        <div class="tree-item">My Tasks</div>
+        <div class="tree-item">My Notes</div>
+      </div>
+    </div>
+
+    <!-- Venue -->
+    <div class="tree-section">
+      <div class="tree-toggle" onclick="toggleSection(this)">
+        <span class="tree-arrow">&#9654;</span>Venue: Sunrise Cafe
+      </div>
+      <div class="tree-children">
+        <div class="tree-item">Assessment</div>
+        <div class="tree-item">Signals</div>
+        <div class="tree-item">Plan</div>
+        <div class="tree-item">Report</div>
+      </div>
+    </div>
+
+    <!-- Reference -->
+    <div class="tree-section">
+      <div class="tree-toggle" onclick="toggleSection(this)">
+        <span class="tree-arrow">&#9654;</span>Reference
+      </div>
+      <div class="tree-children">
+        <div class="tree-item">Blocks</div>
+        <div class="tree-item">Tools</div>
+        <div class="tree-item">Signals</div>
+      </div>
+    </div>
+
+    <!-- Knowledge Base -->
+    <div class="tree-section">
+      <div class="tree-toggle" onclick="toggleSection(this)">
+        <span class="tree-arrow">&#9654;</span>Knowledge Base
+      </div>
+      <div class="tree-children">
+        <div class="tree-item">Guides</div>
+        <div class="tree-item">Templates</div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="sidebar-bottom">
+    <div class="sidebar-bottom-item">
+      <span style="font-size:15px">&#9881;</span> Settings
+    </div>
+    <div class="sidebar-bottom-item">
+      <span style="font-size:15px">&#63;</span> Help
+    </div>
+    <div class="sidebar-bottom-item">
+      <span class="sidebar-avatar">JM</span> Jamie M.
+    </div>
+  </div>
+</aside>
+
+<!-- ── MAIN CONTENT ── -->
+<main class="main">
+  <div class="content-wrapper">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <span>My Workspace</span>
+      <span class="sep">/</span>
+      <span>Today</span>
+    </div>
+
+    <!-- Page Title -->
+    <h1 class="page-title"><span class="emoji">&#128203;</span> Today</h1>
+    <div class="page-date">Saturday, March 29, 2026</div>
+
+    <!-- BLOCK 1: Priority Actions -->
+    <div class="block">
+      <div class="drag-handle" title="Drag to reorder">&#8942;&#8942;</div>
+      <div class="block-heading">Priority Actions</div>
+      <ul class="toggle-list">
+        <li class="toggle-item">
+          <div class="toggle-header" onclick="toggleItem(this)">
+            <span class="toggle-arrow">&#9654;</span>
+            <span class="toggle-text">
+              <span class="icon">&#9888;&#65039;</span>
+              Espresso machine calibration overdue &mdash;
+              <span class="mention">@Alex T.</span>
+              <span class="date-pill overdue">DUE Mar 27</span>
+            </span>
+          </div>
+          <div class="toggle-content">
+            The espresso machine has not been calibrated since March 20. This is past the weekly calibration schedule. Contact the maintenance team or run the calibration protocol.
+          </div>
+        </li>
+        <li class="toggle-item">
+          <div class="toggle-header" onclick="toggleItem(this)">
+            <span class="toggle-arrow">&#9654;</span>
+            <span class="toggle-text">
+              <span class="icon">&#128308;</span>
+              Health inspection prep checklist &mdash;
+              <span class="mention">@Maria S.</span>
+              <span class="status-blocked">BLOCKED</span>
+            </span>
+          </div>
+          <div class="toggle-content">
+            Waiting on updated health code documentation from the regional office. Follow up with compliance@sunrisecafe.com for the latest requirements.
+          </div>
+        </li>
+        <li class="toggle-item">
+          <div class="toggle-header" onclick="toggleItem(this)">
+            <span class="toggle-arrow">&#9654;</span>
+            <span class="toggle-text">
+              <span class="icon">&#9889;</span>
+              Morning rush staffing review &mdash;
+              <span class="mention">@You</span>
+              <span class="date-pill today">DUE TODAY</span>
+            </span>
+          </div>
+          <div class="toggle-content">
+            Review the staffing schedule for the 7&ndash;10 AM window. Last week's data shows a 12% increase in morning traffic. Consider adding one barista to the floor.
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- BLOCK 2: In Progress -->
+    <div class="block">
+      <div class="drag-handle" title="Drag to reorder">&#8942;&#8942;</div>
+      <div class="block-heading">In Progress</div>
+      <ul class="checklist">
+        <li class="checklist-item">
+          <input type="checkbox" id="c1">
+          <label class="checklist-label" for="c1">
+            New menu item training rollout &mdash;
+            <span class="mention">@Jordan K.</span>
+            <span class="date-pill">Mar 30</span>
+          </label>
+        </li>
+        <li class="checklist-item">
+          <input type="checkbox" id="c2">
+          <label class="checklist-label" for="c2">
+            Customer feedback response protocol &mdash;
+            <span class="mention">@Alex T.</span>
+            <span class="date-pill">Apr 1</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <!-- BLOCK 3: Coming Up -->
+    <div class="block">
+      <div class="drag-handle" title="Drag to reorder">&#8942;&#8942;</div>
+      <div class="block-heading">Coming Up</div>
+      <ul class="simple-list">
+        <li>
+          Weekly inventory count &mdash;
+          <span class="mention">@Sam P.</span>
+          <span class="date-pill">Mar 31</span>
+        </li>
+        <li>
+          Barista certification renewal &mdash;
+          <span class="mention">@Maria S.</span>
+          <span class="date-pill">Apr 3</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- BLOCK 4: Signals -->
+    <div class="block">
+      <div class="drag-handle" title="Drag to reorder">&#8942;&#8942;</div>
+      <div class="block-heading">
+        Signals
+        <span class="block-type-badge">/signal</span>
+      </div>
+      <div class="callout warning">
+        <span class="callout-icon">&#128312;</span>
+        <span>Service speed dropping below threshold</span>
+        <span class="callout-impact">High impact</span>
+      </div>
+      <div class="callout warning">
+        <span class="callout-icon">&#128312;</span>
+        <span>Staff overtime trending up</span>
+        <span class="callout-impact">Medium impact</span>
+      </div>
+      <div class="callout success">
+        <span class="callout-icon">&#9989;</span>
+        <span>Customer satisfaction score stable</span>
+        <span class="callout-impact">Low impact</span>
+      </div>
+    </div>
+
+    <!-- BLOCK 5: Quick Stats -->
+    <div class="block">
+      <div class="drag-handle" title="Drag to reorder">&#8942;&#8942;</div>
+      <div class="block-heading">Quick Stats</div>
+      <table class="inline-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Value</th>
+            <th>Trend</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Overdue Tasks</td>
+            <td><strong>3</strong></td>
+            <td class="trend trend-up">&uarr;</td>
+          </tr>
+          <tr>
+            <td>In Progress</td>
+            <td><strong>2</strong></td>
+            <td class="trend trend-flat">&rarr;</td>
+          </tr>
+          <tr>
+            <td>On Track</td>
+            <td><strong>2</strong></td>
+            <td class="trend trend-flat">&rarr;</td>
+          </tr>
+          <tr>
+            <td>Plan Completion</td>
+            <td><strong>78%</strong></td>
+            <td class="trend trend-good">&uarr;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BLOCK 6: Notes -->
+    <div class="block">
+      <div class="drag-handle" title="Drag to reorder">&#8942;&#8942;</div>
+      <div class="block-heading">Notes</div>
+      <div class="notes-placeholder"
+           contenteditable="true"
+           data-placeholder="Click to add notes for today..."
+           role="textbox"
+           aria-label="Today's notes"></div>
+    </div>
+
+    <!-- Add block -->
+    <div class="add-block-area">
+      <button class="add-block-btn" onclick="toggleSlashMenu()" title="Add a block">
+        <span class="plus">+</span> Add a block
+      </button>
+    </div>
+
+  </div>
+</main>
+
+<!-- Slash command menu -->
+<div class="slash-menu" id="slashMenu">
+  <div class="slash-menu-header">Basic Blocks</div>
+  <div class="slash-menu-item active">
+    <span class="icon">Aa</span>
+    <div><div class="label">Text</div><div class="desc">Plain text block</div></div>
+  </div>
+  <div class="slash-menu-item">
+    <span class="icon">H</span>
+    <div><div class="label">Heading</div><div class="desc">Section heading</div></div>
+  </div>
+  <div class="slash-menu-item">
+    <span class="icon">&#9744;</span>
+    <div><div class="label">To-do</div><div class="desc">Checkbox item</div></div>
+  </div>
+  <div class="slash-menu-item">
+    <span class="icon">&#9654;</span>
+    <div><div class="label">Toggle</div><div class="desc">Collapsible content</div></div>
+  </div>
+  <div class="slash-menu-item">
+    <span class="icon">&#128172;</span>
+    <div><div class="label">Callout</div><div class="desc">Highlighted block</div></div>
+  </div>
+  <div class="slash-menu-item">
+    <span class="icon">&#9638;</span>
+    <div><div class="label">Table</div><div class="desc">Inline database</div></div>
+  </div>
+  <div class="slash-menu-item">
+    <span class="icon">&mdash;</span>
+    <div><div class="label">Divider</div><div class="desc">Horizontal rule</div></div>
+  </div>
+</div>
+
+<script>
+  // Toggle sidebar tree sections
+  function toggleSection(el) {
+    el.parentElement.classList.toggle('open');
+  }
+
+  // Toggle list items (expand/collapse)
+  function toggleItem(el) {
+    el.parentElement.classList.toggle('open');
+  }
+
+  // Slash command menu
+  function toggleSlashMenu() {
+    document.getElementById('slashMenu').classList.toggle('visible');
+  }
+
+  // Close slash menu on outside click
+  document.addEventListener('click', function(e) {
+    var menu = document.getElementById('slashMenu');
+    var btn = document.querySelector('.add-block-btn');
+    if (menu.classList.contains('visible') && !menu.contains(e.target) && !btn.contains(e.target)) {
+      menu.classList.remove('visible');
+    }
+  });
+
+  // Make tree items clickable (visual feedback)
+  document.querySelectorAll('.tree-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+      document.querySelectorAll('.tree-item.active').forEach(function(a) {
+        a.classList.remove('active');
+      });
+      this.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
