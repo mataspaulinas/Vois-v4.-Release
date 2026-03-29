@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- VOIS Golden Page: Pocket My Shift — Pocket Layout Template -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>VOIS Golden Page — Pocket: My Shift</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ========================================
+     DESIGN TOKENS — Pocket Adapted
+     ======================================== */
+  :root {
+    --accent: #6C5CE7;
+    --accent-light: #A29BFE;
+    --accent-bg: rgba(108, 92, 231, 0.08);
+    --green: #10B981;
+    --green-bg: rgba(16, 185, 129, 0.1);
+    --warning: #F59E0B;
+    --warning-bg: rgba(245, 158, 11, 0.08);
+    --danger: #EF4444;
+    --gray-50: #FAFAFA;
+    --gray-100: #F5F5F5;
+    --gray-200: #E5E5E5;
+    --gray-300: #D4D4D4;
+    --gray-400: #A3A3A3;
+    --gray-500: #737373;
+    --gray-600: #525252;
+    --gray-700: #404040;
+    --gray-800: #262626;
+    --gray-900: #171717;
+    --white: #FFFFFF;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    --radius-card: 16px;
+    --radius-pill: 24px;
+    --radius-checkbox: 6px;
+    --page-pad: 20px;
+    --card-pad: 20px;
+    --body-size: 16px;
+    --card-title: 18px;
+    --min-tap: 48px;
+  }
+
+  /* ========================================
+     RESET & BASE
+     ======================================== */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: var(--body-size);
+    line-height: 1.5;
+    color: var(--gray-900);
+    background: var(--gray-50);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  /* ========================================
+     POCKET FRAME — Center on large screens
+     ======================================== */
+  .pocket-frame {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: var(--white);
+    position: relative;
+  }
+
+  @media (min-width: 641px) {
+    body {
+      background: var(--gray-100);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 24px 0;
+    }
+    .pocket-frame {
+      min-height: calc(100vh - 48px);
+      border-radius: 24px;
+      box-shadow: 0 0 0 1px var(--gray-200), 0 8px 32px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+  }
+
+  /* ========================================
+     TOP BAR
+     ======================================== */
+  .top-bar {
+    height: 56px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--page-pad);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .top-bar-brand {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gray-900);
+    letter-spacing: -0.3px;
+  }
+
+  .brand-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #a29bfe);
+  }
+
+  .top-bar-location {
+    font-size: 15px;
+    color: var(--gray-500);
+    font-weight: 500;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .top-bar-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* ========================================
+     SCROLLABLE CONTENT AREA
+     ======================================== */
+  .content {
+    padding: var(--page-pad);
+    padding-bottom: calc(64px + 32px); /* bottom tabs + breathing */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* ========================================
+     HERO CARD
+     ======================================== */
+  .hero-card {
+    background: var(--white);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-md);
+    padding: var(--card-pad);
+  }
+
+  .hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  .hero-greeting {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gray-900);
+    line-height: 1.2;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--green);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .hero-date {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-top: 2px;
+  }
+
+  .hero-shift {
+    font-size: 16px;
+    color: var(--gray-600);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  .hero-progress {
+    margin-top: 16px;
+  }
+
+  .hero-progress-label {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-bottom: 6px;
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--gray-100);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ========================================
+     TASK CARDS
+     ======================================== */
+  .task-card {
+    background: var(--white);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-sm);
+    padding: var(--card-pad);
+    border-left: 4px solid var(--gray-400);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .task-card:active {
+    transform: scale(0.98);
+  }
+
+  .task-card.completed {
+    border-left-color: var(--green);
+    opacity: 0.7;
+  }
+
+  .task-card.active {
+    border-left-color: var(--accent);
+    box-shadow: var(--shadow-md);
+    opacity: 1;
+  }
+
+  .task-card.pending {
+    border-left-color: var(--gray-300);
+  }
+
+  .task-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: var(--min-tap);
+  }
+
+  .task-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .task-icon.done {
+    background: var(--green);
+    color: var(--white);
+  }
+
+  .task-icon.done svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .task-icon.in-progress {
+    position: relative;
+  }
+
+  .pulse-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  .task-icon.not-started {
+    border: 2px solid var(--gray-300);
+  }
+
+  .task-title-area {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .task-title {
+    font-size: var(--card-title);
+    font-weight: 600;
+    color: var(--gray-900);
+    line-height: 1.3;
+  }
+
+  .task-card.completed .task-title {
+    opacity: 0.5;
+    text-decoration: line-through;
+    text-decoration-color: var(--gray-400);
+  }
+
+  .task-card.pending .task-title {
+    color: var(--gray-600);
+  }
+
+  .task-subtitle {
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  .task-subtitle.green { color: var(--green); }
+  .task-subtitle.accent { color: var(--accent); }
+  .task-subtitle.muted { color: var(--gray-500); }
+
+  .task-subtitle .clock-icon {
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: -1px;
+  }
+
+  .task-expand-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--gray-400);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .task-card[data-expanded="true"] .task-expand-icon {
+    transform: rotate(180deg);
+  }
+
+  /* Task progress inline */
+  .task-progress {
+    margin-top: 8px;
+  }
+
+  /* Checklist */
+  .task-body {
+    overflow: hidden;
+    transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+    max-height: 0;
+    opacity: 0;
+  }
+
+  .task-card[data-expanded="true"] .task-body {
+    max-height: 600px;
+    opacity: 1;
+  }
+
+  .checklist {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 52px;
+    padding: 6px 0;
+    cursor: pointer;
+    border-bottom: 1px solid var(--gray-100);
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .checklist-item:last-child {
+    border-bottom: none;
+  }
+
+  .checkbox {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: var(--radius-checkbox);
+    border: 2px solid var(--gray-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+    /* Ensure 48px tap target */
+    position: relative;
+  }
+
+  .checkbox::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+  }
+
+  .checkbox.checked {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .checkbox.checked svg {
+    color: var(--white);
+  }
+
+  .checkbox svg {
+    width: 16px;
+    height: 16px;
+    color: transparent;
+    transition: color 0.15s ease;
+  }
+
+  .checklist-label {
+    font-size: 16px;
+    color: var(--gray-800);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .checklist-item.checked .checklist-label {
+    text-decoration: line-through;
+    text-decoration-color: var(--gray-400);
+    color: var(--gray-500);
+    font-weight: 400;
+  }
+
+  /* Note input */
+  .note-input {
+    margin-top: 12px;
+    width: 100%;
+    height: 44px;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 0 14px;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--gray-800);
+    background: var(--gray-50);
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+
+  .note-input::placeholder {
+    color: var(--gray-400);
+  }
+
+  .note-input:focus {
+    border-color: var(--accent);
+    background: var(--white);
+  }
+
+  /* ========================================
+     QUICK ACTIONS
+     ======================================== */
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 12px;
+    margin-top: 8px;
+  }
+
+  .quick-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  @media (max-width: 359px) {
+    .quick-actions {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 72px;
+    border-radius: var(--radius-card);
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .action-btn:active {
+    transform: scale(0.98);
+  }
+
+  .action-btn.accent-outline {
+    background: var(--white);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .action-btn.warning-outline {
+    background: var(--white);
+    border-color: var(--warning);
+    color: #D97706;
+  }
+
+  .action-btn.neutral {
+    background: var(--gray-100);
+    color: var(--gray-600);
+  }
+
+  .action-btn-icon {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .action-btn-label {
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  /* ========================================
+     BOTTOM TAB BAR
+     ======================================== */
+  .bottom-tabs {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    height: 64px;
+    background: var(--white);
+    border-top: 1px solid var(--gray-200);
+    display: flex;
+    align-items: stretch;
+    z-index: 200;
+  }
+
+  @media (min-width: 641px) {
+    .bottom-tabs {
+      border-radius: 0 0 24px 24px;
+    }
+  }
+
+  .tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+    color: var(--gray-400);
+    position: relative;
+    transition: color 0.15s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    border: none;
+    background: none;
+    font-family: inherit;
+    padding: 0;
+  }
+
+  .tab.active {
+    color: var(--accent);
+  }
+
+  .tab.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 0 0 3px 3px;
+  }
+
+  .tab-icon {
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .tab-label {
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  /* ========================================
+     BOTTOM SHEET OVERLAY
+     ======================================== */
+  .sheet-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 300;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  .sheet-backdrop.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .sheet {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    width: 100%;
+    max-width: 480px;
+    height: 80vh;
+    background: var(--white);
+    border-radius: 20px 20px 0 0;
+    z-index: 301;
+    transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .sheet-backdrop.visible + .sheet,
+  .sheet.visible {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .sheet-handle-area {
+    display: flex;
+    justify-content: center;
+    padding: 12px 0 4px;
+    flex-shrink: 0;
+  }
+
+  .sheet-handle {
+    width: 40px;
+    height: 4px;
+    background: var(--gray-300);
+    border-radius: 2px;
+  }
+
+  .sheet-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px var(--page-pad) 16px;
+    flex-shrink: 0;
+  }
+
+  .sheet-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gray-900);
+  }
+
+  .sheet-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: var(--gray-100);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--gray-600);
+    font-size: 18px;
+    font-family: inherit;
+  }
+
+  .sheet-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 var(--page-pad) var(--page-pad);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sheet-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sheet-section-title .icon {
+    font-size: 18px;
+  }
+
+  .sheet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .sheet-list li {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.6;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .sheet-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ========================================
+     SVG ICONS (inline)
+     ======================================== */
+  .icon-check {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  /* ========================================
+     UTILITY
+     ======================================== */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="pocket-frame">
+
+  <!-- ===== TOP BAR ===== -->
+  <header class="top-bar">
+    <div class="top-bar-brand">
+      VOIS
+      <span class="brand-dot"></span>
+    </div>
+    <span class="top-bar-location">Sunrise Cafe</span>
+    <div class="top-bar-avatar" aria-label="User profile">JM</div>
+  </header>
+
+  <!-- ===== SCROLLABLE CONTENT ===== -->
+  <main class="content">
+
+    <!-- HERO CARD -->
+    <div class="hero-card">
+      <div class="hero-top">
+        <div>
+          <div class="hero-greeting">Good morning</div>
+          <div class="hero-date">Saturday, March 30 &mdash; Sunrise Cafe</div>
+          <div class="hero-shift">08:00 &ndash; 14:00</div>
+        </div>
+        <div class="hero-badge">&#10003; Shift Ready</div>
+      </div>
+      <div class="hero-progress">
+        <div class="hero-progress-label" id="heroProgressLabel">1 of 3 tasks complete</div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="heroProgressFill" style="width: 33%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TASK 1 — Completed -->
+    <div class="task-card completed" data-expanded="false" data-task="1" onclick="toggleTask(this)">
+      <div class="task-header">
+        <div class="task-icon done">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="task-title-area">
+          <div class="task-title">Morning station prep</div>
+          <div class="task-subtitle green">Completed at 07:45</div>
+        </div>
+        <svg class="task-expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="task-body">
+        <div class="checklist">
+          <div class="checklist-item checked">
+            <div class="checkbox checked">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="checklist-label">Clean espresso machine</span>
+          </div>
+          <div class="checklist-item checked">
+            <div class="checkbox checked">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="checklist-label">Stock cups and lids</span>
+          </div>
+          <div class="checklist-item checked">
+            <div class="checkbox checked">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="checklist-label">Check milk inventory</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TASK 2 — Active -->
+    <div class="task-card active" data-expanded="true" data-task="2">
+      <div class="task-header" onclick="toggleTask(this.closest('.task-card'))">
+        <div class="task-icon in-progress">
+          <div class="pulse-dot"></div>
+        </div>
+        <div class="task-title-area">
+          <div class="task-title">Midday inventory check</div>
+          <div class="task-subtitle accent" id="task2Subtitle">1 of 3 items done</div>
+        </div>
+        <svg class="task-expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="task-progress" id="task2Progress">
+        <div class="progress-bar">
+          <div class="progress-fill" id="task2ProgressFill" style="width: 33%"></div>
+        </div>
+      </div>
+      <div class="task-body">
+        <div class="checklist" id="task2Checklist">
+          <div class="checklist-item checked" onclick="toggleCheckbox(event, this)">
+            <div class="checkbox checked">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="checklist-label">Count pastry display items</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheckbox(event, this)">
+            <div class="checkbox">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="checklist-label">Check cold brew levels</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheckbox(event, this)">
+            <div class="checkbox">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="checklist-label">Note any shortages</span>
+          </div>
+        </div>
+        <input type="text" class="note-input" placeholder="Add a note..." onclick="event.stopPropagation()">
+      </div>
+    </div>
+
+    <!-- TASK 3 — Not Started -->
+    <div class="task-card pending" data-expanded="false" data-task="3" onclick="toggleTask(this)">
+      <div class="task-header">
+        <div class="task-icon not-started"></div>
+        <div class="task-title-area">
+          <div class="task-title">End of shift cleanup</div>
+          <div class="task-subtitle muted">Due at 13:30</div>
+        </div>
+        <svg class="task-expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="task-body">
+        <div class="checklist" id="task3Checklist">
+          <div class="checklist-item" onclick="toggleCheckbox(event, this)">
+            <div class="checkbox">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="checklist-label">Wipe down all surfaces</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheckbox(event, this)">
+            <div class="checkbox">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="checklist-label">Empty grounds knock box</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheckbox(event, this)">
+            <div class="checkbox">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="checklist-label">Restock for afternoon shift</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK ACTIONS -->
+    <div>
+      <div class="section-eyebrow">Need something?</div>
+      <div class="quick-actions">
+        <button class="action-btn accent-outline" onclick="/* no-op for mockup */">
+          <span class="action-btn-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </span>
+          <span class="action-btn-label">Ask for Help</span>
+        </button>
+        <button class="action-btn warning-outline" onclick="/* no-op */">
+          <span class="action-btn-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          </span>
+          <span class="action-btn-label">Report Something</span>
+        </button>
+        <button class="action-btn neutral" id="openStandardsBtn" onclick="openSheet()">
+          <span class="action-btn-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+          </span>
+          <span class="action-btn-label">My Standards</span>
+        </button>
+        <button class="action-btn neutral" onclick="/* no-op */">
+          <span class="action-btn-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4z"/></svg>
+          </span>
+          <span class="action-btn-label">My Log</span>
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== BOTTOM TAB BAR ===== -->
+  <nav class="bottom-tabs" aria-label="Main navigation">
+    <button class="tab active" data-tab="shift" onclick="switchTab(this)">
+      <span class="tab-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg>
+      </span>
+      <span class="tab-label">Shift</span>
+    </button>
+    <button class="tab" data-tab="standards" onclick="switchTab(this)">
+      <span class="tab-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+      </span>
+      <span class="tab-label">Standards</span>
+    </button>
+    <button class="tab" data-tab="help" onclick="switchTab(this)">
+      <span class="tab-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </span>
+      <span class="tab-label">Help</span>
+    </button>
+    <button class="tab" data-tab="log" onclick="switchTab(this)">
+      <span class="tab-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4z"/></svg>
+      </span>
+      <span class="tab-label">Log</span>
+    </button>
+  </nav>
+
+</div>
+
+<!-- ===== BOTTOM SHEET — Standards ===== -->
+<div class="sheet-backdrop" id="sheetBackdrop" onclick="closeSheet()"></div>
+<div class="sheet" id="sheet">
+  <div class="sheet-handle-area">
+    <div class="sheet-handle"></div>
+  </div>
+  <div class="sheet-header">
+    <div class="sheet-title">Operating Standards</div>
+    <button class="sheet-close" onclick="closeSheet()" aria-label="Close">&times;</button>
+  </div>
+  <div class="sheet-content">
+
+    <div class="sheet-section-title">
+      <span class="icon">&bull;</span> Espresso Machine Operation
+    </div>
+    <ul class="sheet-list">
+      <li>Purge group head before and after every shot to remove residual grounds and oils</li>
+      <li>Dose 18&ndash;20g for a double shot; tamp evenly at ~30lbs of pressure</li>
+      <li>Target extraction time: 25&ndash;30 seconds for 36&ndash;40ml yield</li>
+      <li>Backflush with cleaner at end of each shift; use water-only backflush every 2 hours during service</li>
+      <li>Report any unusual sounds, pressure drops, or channelling to shift lead immediately</li>
+    </ul>
+
+    <div class="sheet-section-title">
+      <span class="icon">&bull;</span> Milk Steaming
+    </div>
+    <ul class="sheet-list">
+      <li>Use fresh cold milk; do not re-steam leftover milk</li>
+      <li>Target 55&ndash;65&deg;C for lattes and flat whites; never exceed 70&deg;C</li>
+      <li>Purge steam wand before and after each use; wipe with a damp cloth immediately</li>
+      <li>For oat milk: lower steam pressure, keep tip slightly deeper to reduce foam</li>
+    </ul>
+
+    <div class="sheet-section-title">
+      <span class="icon">&bull;</span> Station Cleanliness
+    </div>
+    <ul class="sheet-list">
+      <li>Wipe counters and drip trays every 30 minutes during peak service</li>
+      <li>Keep knock box less than half full at all times</li>
+      <li>Clean grinder hopper and dosing chamber at end of shift</li>
+      <li>All surfaces food-safe sanitized before and after each shift</li>
+    </ul>
+
+  </div>
+</div>
+
+<script>
+  /* ========================================
+     INTERACTIONS
+     ======================================== */
+
+  // Toggle task card expand/collapse
+  function toggleTask(card) {
+    const expanded = card.getAttribute('data-expanded') === 'true';
+    card.setAttribute('data-expanded', expanded ? 'false' : 'true');
+  }
+
+  // Toggle individual checklist checkbox
+  function toggleCheckbox(event, item) {
+    event.stopPropagation();
+    const checkbox = item.querySelector('.checkbox');
+    const isChecked = checkbox.classList.contains('checked');
+
+    if (isChecked) {
+      checkbox.classList.remove('checked');
+      item.classList.remove('checked');
+    } else {
+      checkbox.classList.add('checked');
+      item.classList.add('checked');
+    }
+
+    // Update task progress
+    const card = item.closest('.task-card');
+    updateTaskProgress(card);
+    updateHeroProgress();
+  }
+
+  // Update task-level progress
+  function updateTaskProgress(card) {
+    const taskId = card.getAttribute('data-task');
+    const items = card.querySelectorAll('.checklist-item');
+    const checked = card.querySelectorAll('.checklist-item.checked');
+    const total = items.length;
+    const done = checked.length;
+
+    if (taskId === '2') {
+      const subtitle = document.getElementById('task2Subtitle');
+      const fill = document.getElementById('task2ProgressFill');
+      subtitle.textContent = done + ' of ' + total + ' items done';
+      fill.style.width = (done / total * 100) + '%';
+
+      // If all done, transition to completed
+      if (done === total) {
+        card.classList.remove('active');
+        card.classList.add('completed');
+        card.style.borderLeftColor = 'var(--green)';
+        subtitle.classList.remove('accent');
+        subtitle.classList.add('green');
+        subtitle.textContent = 'Completed';
+        // Replace pulse dot with checkmark
+        const icon = card.querySelector('.task-icon');
+        icon.classList.remove('in-progress');
+        icon.classList.add('done');
+        icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+      } else {
+        // Revert if unchecked
+        if (card.classList.contains('completed')) {
+          card.classList.remove('completed');
+          card.classList.add('active');
+          card.style.borderLeftColor = '';
+          subtitle.classList.remove('green');
+          subtitle.classList.add('accent');
+          const icon = card.querySelector('.task-icon');
+          icon.classList.remove('done');
+          icon.classList.add('in-progress');
+          icon.innerHTML = '<div class="pulse-dot"></div>';
+        }
+      }
+    }
+
+    if (taskId === '3') {
+      if (done === total && done > 0) {
+        card.classList.remove('pending');
+        card.classList.add('completed');
+        card.style.borderLeftColor = 'var(--green)';
+        const sub = card.querySelector('.task-subtitle');
+        sub.classList.remove('muted');
+        sub.classList.add('green');
+        sub.textContent = 'Completed';
+        const icon = card.querySelector('.task-icon');
+        icon.classList.remove('not-started');
+        icon.classList.add('done');
+        icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+      } else if (done > 0) {
+        card.classList.remove('pending', 'completed');
+        card.classList.add('active');
+        card.style.borderLeftColor = '';
+        const sub = card.querySelector('.task-subtitle');
+        sub.className = 'task-subtitle accent';
+        sub.textContent = done + ' of ' + total + ' items done';
+        const icon = card.querySelector('.task-icon');
+        icon.className = 'task-icon in-progress';
+        icon.innerHTML = '<div class="pulse-dot"></div>';
+      } else {
+        card.classList.remove('active', 'completed');
+        card.classList.add('pending');
+        card.style.borderLeftColor = '';
+        const sub = card.querySelector('.task-subtitle');
+        sub.className = 'task-subtitle muted';
+        sub.innerHTML = 'Due at 13:30';
+        const icon = card.querySelector('.task-icon');
+        icon.className = 'task-icon not-started';
+        icon.innerHTML = '';
+      }
+    }
+  }
+
+  // Update hero progress bar
+  function updateHeroProgress() {
+    const allCards = document.querySelectorAll('.task-card');
+    let completedTasks = 0;
+    const totalTasks = allCards.length;
+
+    allCards.forEach(function(card) {
+      const items = card.querySelectorAll('.checklist-item');
+      const checked = card.querySelectorAll('.checklist-item.checked');
+      if (items.length > 0 && checked.length === items.length) {
+        completedTasks++;
+      }
+    });
+
+    var label = document.getElementById('heroProgressLabel');
+    var fill = document.getElementById('heroProgressFill');
+    label.textContent = completedTasks + ' of ' + totalTasks + ' tasks complete';
+    fill.style.width = (completedTasks / totalTasks * 100) + '%';
+  }
+
+  // Tab switching
+  function switchTab(tab) {
+    document.querySelectorAll('.tab').forEach(function(t) {
+      t.classList.remove('active');
+    });
+    tab.classList.add('active');
+  }
+
+  // Bottom sheet
+  function openSheet() {
+    document.getElementById('sheetBackdrop').classList.add('visible');
+    document.getElementById('sheet').classList.add('visible');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSheet() {
+    document.getElementById('sheetBackdrop').classList.remove('visible');
+    document.getElementById('sheet').classList.remove('visible');
+    document.body.style.overflow = '';
+  }
+</script>
+
+</body>
+</html>

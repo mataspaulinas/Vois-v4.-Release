@@ -1,0 +1,1431 @@
+<!-- VOIS Golden Page: Stacking Panel System v2 — drawers push canvas left, no fixed inspector -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS Golden Page — Stacking Panel System (Corrected)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #FAFAFA;
+  --surface: #FFFFFF;
+  --text-primary: #0A0A0A;
+  --text-secondary: #525252;
+  --text-muted: #A3A3A3;
+  --accent: #6C5CE7;
+  --accent-soft: #F0EDFF;
+  --border: #E5E5E5;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --radius-pill: 6px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 260ms;
+  --sidebar-full: 240px;
+  --sidebar-collapsed: 48px;
+  --canvas-min: 300px;
+  --drawer-min: 180px;
+
+  /* Ontology */
+  --block-bg: #F0EDFF; --block-text: #6C5CE7;
+  --tool-bg: #EFF6FF; --tool-text: #3B82F6;
+  --signal-bg: #ECFDF5; --signal-text: #10B981;
+  --failure-bg: #FEF2F2; --failure-text: #EF4444;
+  --response-bg: #FFFBEB; --response-text: #F59E0B;
+}
+
+html { font-size: 15px; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ── Control Bar ── */
+.control-bar {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 48px;
+  background: #1A1A1A;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+  gap: 16px;
+}
+.control-bar__title {
+  font-size: 14px; font-weight: 700; color: #FFF;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.control-bar__center {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+.control-bar__buttons {
+  display: flex; gap: 6px; flex-wrap: nowrap;
+}
+.state-btn {
+  font-family: inherit;
+  font-size: 12px; font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--dur) var(--ease);
+}
+.state-btn:hover { border-color: rgba(255,255,255,0.3); color: #FFF; }
+.state-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #FFF;
+}
+.control-bar__desc {
+  font-size: 11px; color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 700px;
+}
+.control-bar__right { width: 100px; flex-shrink: 0; }
+
+/* ── Main Layout ── */
+.app {
+  display: flex;
+  height: calc(100vh - 48px);
+  margin-top: 48px;
+  overflow: hidden;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: var(--sidebar-full);
+  min-width: var(--sidebar-collapsed);
+  background: var(--bg);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  transition: width var(--dur) var(--ease), background var(--dur) var(--ease);
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+}
+.sidebar.collapsed {
+  width: var(--sidebar-collapsed);
+  background: #1A1A1A;
+}
+.sidebar__resize-handle {
+  position: absolute; top: 0; right: -2px; bottom: 0; width: 4px;
+  cursor: col-resize;
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+.sidebar:hover .sidebar__resize-handle { opacity: 1; }
+.sidebar__resize-handle:hover { background: var(--accent); opacity: 0.4; }
+
+/* Sidebar expanded content */
+.sidebar__full {
+  display: flex; flex-direction: column; height: 100%;
+  padding: 20px 16px 16px;
+  opacity: 1;
+  transition: opacity calc(var(--dur) * 0.4) ease;
+  min-width: 200px;
+}
+.sidebar.collapsed .sidebar__full { opacity: 0; pointer-events: none; position: absolute; }
+
+.sidebar__brand {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 20px;
+}
+.sidebar__brand-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #A29BFE);
+  flex-shrink: 0;
+}
+.sidebar__brand-text { font-size: 18px; font-weight: 700; }
+
+.sidebar__venue {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px;
+  background: var(--surface);
+  border-radius: var(--radius-btn);
+  margin-bottom: 24px;
+  font-size: 13px; font-weight: 500;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.sidebar__venue:hover { background: var(--border); }
+.venue-dot { width: 6px; height: 6px; border-radius: 50%; background: #10B981; flex-shrink: 0; }
+.venue-chevron { margin-left: auto; color: var(--text-muted); font-size: 11px; }
+
+.sidebar__group { margin-bottom: 20px; }
+.sidebar__group-label {
+  font-size: 11px; font-weight: 600; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.05em;
+  padding: 0 10px; margin-bottom: 4px;
+}
+.sidebar__nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 10px;
+  border-radius: var(--radius-btn);
+  font-size: 14px; font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 120ms ease;
+  white-space: nowrap;
+}
+.sidebar__nav-item:hover { background: var(--surface); color: var(--text-primary); }
+.sidebar__nav-item.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.sidebar__nav-item .icon { width: 18px; text-align: center; font-size: 14px; flex-shrink: 0; }
+
+.sidebar__spacer { flex: 1; }
+
+.sidebar__bottom { border-top: 1px solid var(--border); padding-top: 12px; }
+.sidebar__user {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+}
+.sidebar__user:hover { background: var(--surface); }
+.sidebar__avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #A29BFE);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: #FFF;
+  flex-shrink: 0;
+}
+.sidebar__user-name { font-size: 13px; font-weight: 500; white-space: nowrap; }
+
+/* Sidebar collapsed (icon rail) */
+.sidebar__icons {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 0;
+  height: 100%;
+  gap: 4px;
+}
+.sidebar.collapsed .sidebar__icons { display: flex; }
+.sidebar__icon-item {
+  width: 36px; height: 36px;
+  border-radius: var(--radius-btn);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 120ms ease;
+  position: relative;
+}
+.sidebar__icon-item:hover {
+  background: rgba(255,255,255,0.1);
+  color: #FFF;
+}
+.sidebar__icon-item.active {
+  background: rgba(108,92,231,0.3);
+  color: var(--accent);
+}
+.sidebar__icon-item .tooltip {
+  position: absolute; left: 52px; top: 50%; transform: translateY(-50%);
+  background: #1A1A1A; color: #FFF; font-size: 12px; font-weight: 500;
+  padding: 4px 10px; border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0; pointer-events: none;
+  transition: opacity 150ms ease;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.sidebar__icon-item:hover .tooltip { opacity: 1; }
+.sidebar__icon-spacer { flex: 1; }
+.sidebar__icon-expand {
+  color: rgba(255,255,255,0.3);
+  font-size: 12px; cursor: pointer;
+  padding: 6px;
+  transition: color 120ms ease;
+}
+.sidebar__icon-expand:hover { color: rgba(255,255,255,0.7); }
+
+/* ── Primary Canvas ── */
+.canvas {
+  flex: 1;
+  min-width: var(--canvas-min);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 48px;
+  transition: padding var(--dur) var(--ease);
+  background: var(--bg);
+}
+.canvas.narrow { padding: 32px 24px; }
+
+.canvas__header { margin-bottom: 32px; }
+.canvas__title { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+.canvas__subtitle { font-size: 15px; color: var(--text-muted); }
+
+/* Task Card */
+.task-card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  padding: 24px;
+  margin-bottom: 16px;
+  border-left: 3px solid transparent;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.task-card.highlighted {
+  border-left-color: var(--accent);
+  box-shadow: 0 2px 8px rgba(108,92,231,0.1), 0 1px 3px rgba(0,0,0,0.06);
+}
+.task-card__header {
+  display: flex; align-items: center; gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.task-card__title { font-size: 18px; font-weight: 600; }
+.task-card__status {
+  font-size: 12px; font-weight: 600;
+  padding: 3px 10px; border-radius: 20px;
+  background: #EEF2FF; color: #4F46E5;
+}
+.task-card__assignee {
+  font-size: 13px; color: var(--text-secondary);
+  display: flex; align-items: center; gap: 6px;
+}
+.task-card__assignee-dot {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: linear-gradient(135deg, #F59E0B, #FBBF24);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; font-weight: 700; color: #FFF;
+  flex-shrink: 0;
+}
+.task-card__desc {
+  font-size: 15px; line-height: 1.7; color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+.task-card__progress { margin-bottom: 16px; }
+.task-card__progress-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 6px;
+}
+.task-card__progress-label { font-size: 13px; font-weight: 500; }
+.task-card__progress-pct { font-size: 13px; font-weight: 600; color: var(--accent); }
+.task-card__progress-bar {
+  height: 6px; background: #F0F0F0; border-radius: 3px; overflow: hidden;
+}
+.task-card__progress-fill {
+  height: 100%; width: 45%; border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), #A29BFE);
+}
+.task-card__meta {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  font-size: 13px; color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.task-card__meta-item { display: flex; align-items: center; gap: 6px; }
+.task-card__footer { border-top: 1px solid var(--border); padding-top: 16px; }
+.task-card__copilot-btn {
+  font-family: inherit;
+  font-size: 14px; font-weight: 500;
+  color: var(--accent);
+  background: none; border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+.task-card__copilot-btn:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+/* Collapsed task cards */
+.task-card--collapsed {
+  padding: 16px 24px;
+  display: flex; align-items: center; gap: 12px;
+  flex-wrap: wrap;
+}
+.task-card--collapsed .task-card__title { font-size: 15px; }
+
+/* ── Ontology Pills ── */
+.pill {
+  display: inline-flex; align-items: center;
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 13px; font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  line-height: 1.6;
+}
+.pill:hover { transform: scale(1.03); }
+
+.pill--block { background: var(--block-bg); color: var(--block-text); }
+.pill--block:hover { background: #E4DEFF; }
+.pill--block.active { background: var(--block-text); color: #FFF; }
+
+.pill--tool { background: var(--tool-bg); color: var(--tool-text); }
+.pill--tool:hover { background: #DBEAFE; }
+.pill--tool.active { background: var(--tool-text); color: #FFF; }
+
+.pill--signal { background: var(--signal-bg); color: var(--signal-text); }
+.pill--signal:hover { background: #D1FAE5; }
+.pill--signal.active { background: var(--signal-text); color: #FFF; }
+
+.pill--failure { background: var(--failure-bg); color: var(--failure-text); }
+.pill--failure:hover { background: #FEE2E2; }
+.pill--failure.active { background: var(--failure-text); color: #FFF; }
+
+.pill--response { background: var(--response-bg); color: var(--response-text); }
+.pill--response:hover { background: #FEF3C7; }
+.pill--response.active { background: var(--response-text); color: #FFF; }
+
+.pill--copilot {
+  background: linear-gradient(135deg, #6C5CE7, #A29BFE);
+  color: #FFF;
+}
+.pill--copilot:hover { opacity: 0.9; }
+
+.pill--badge {
+  font-size: 11px; padding: 2px 8px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.03em;
+  cursor: default;
+}
+.pill--badge:hover { transform: none; }
+.pill--muted { opacity: 0.5; cursor: default; }
+.pill--muted:hover { transform: none; }
+
+/* ── Drawers ── */
+.drawers {
+  display: flex;
+  flex-shrink: 0;
+  height: 100%;
+}
+.drawer {
+  height: 100%;
+  background: var(--surface);
+  border-left: 4px solid transparent;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: width var(--dur) var(--ease);
+  position: relative;
+}
+.drawer.hidden { display: none; }
+.drawer--block { border-left-color: var(--block-text); }
+.drawer--tool { border-left-color: var(--tool-text); }
+.drawer--signal { border-left-color: var(--signal-text); }
+.drawer--failure { border-left-color: var(--failure-text); }
+.drawer--response { border-left-color: var(--response-text); }
+.drawer--copilot { border-left: 4px solid; border-image: linear-gradient(to bottom, #6C5CE7, #A29BFE) 1; }
+
+.drawer__header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  min-width: 0;
+}
+.drawer__code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px; color: var(--text-muted);
+  flex-shrink: 0;
+}
+.drawer__title {
+  font-size: 17px; font-weight: 600;
+  flex: 1; min-width: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.drawer__close {
+  width: 28px; height: 28px;
+  border-radius: var(--radius-btn);
+  border: none; background: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted);
+  font-size: 18px;
+  transition: all 120ms ease;
+  flex-shrink: 0;
+  font-family: inherit;
+}
+.drawer__close:hover { background: #F5F5F5; color: var(--text-primary); }
+
+.drawer__content {
+  flex: 1; overflow-y: auto;
+  padding: 16px;
+}
+.drawer__section { margin-bottom: 20px; }
+.drawer__eyebrow {
+  font-size: 11px; font-weight: 600; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.drawer__text { font-size: 14px; line-height: 1.6; color: var(--text-secondary); }
+.drawer__list { list-style: none; padding: 0; }
+.drawer__list li {
+  font-size: 14px; line-height: 1.7; color: var(--text-secondary);
+  padding: 2px 0;
+}
+.drawer__list li::before {
+  content: attr(data-num) ". ";
+  font-weight: 600; color: var(--text-primary);
+}
+.drawer__footer-link {
+  display: block;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  font-size: 13px; font-weight: 500;
+  color: var(--accent);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 120ms ease;
+}
+.drawer__footer-link:hover { background: var(--accent-soft); }
+
+/* Compact drawer */
+.drawer.compact .drawer__content { display: none; }
+.drawer.compact .drawer__footer-link { display: none; }
+.drawer__expand-link {
+  display: none;
+  font-size: 12px; color: var(--accent); cursor: pointer;
+  padding: 8px 16px;
+  transition: color 120ms ease;
+}
+.drawer__expand-link:hover { color: #5A4BD1; }
+.drawer.compact .drawer__expand-link { display: block; }
+.drawer__compact-preview {
+  display: none;
+  padding: 8px 16px;
+  font-size: 13px; color: var(--text-muted);
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.drawer:not(.compact) .drawer__compact-preview { display: none; }
+.drawer.compact .drawer__compact-preview { display: -webkit-box; }
+
+/* Minimal drawer (identity only) */
+.drawer.minimal .drawer__content,
+.drawer.minimal .drawer__footer-link,
+.drawer.minimal .drawer__compact-preview { display: none; }
+.drawer.minimal .drawer__expand-link { display: block; }
+.drawer.minimal .drawer__header { border-bottom: none; padding-bottom: 8px; }
+
+/* ── Copilot Drawer ── */
+.drawer--copilot .drawer__header {
+  background: linear-gradient(135deg, rgba(108,92,231,0.03), rgba(162,155,254,0.03));
+}
+.copilot__resize-handle {
+  position: absolute; top: 0; left: -4px; bottom: 0; width: 8px;
+  cursor: col-resize;
+  z-index: 20;
+  transition: background 150ms ease;
+}
+.copilot__resize-handle:hover {
+  background: linear-gradient(to bottom, rgba(108,92,231,0.25), rgba(162,155,254,0.25));
+}
+.copilot__resize-handle:active {
+  background: linear-gradient(to bottom, rgba(108,92,231,0.4), rgba(162,155,254,0.4));
+}
+
+.copilot__brand-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: linear-gradient(135deg, #6C5CE7, #A29BFE);
+  flex-shrink: 0;
+}
+
+.copilot__context {
+  background: #F5F5F5;
+  border-radius: var(--radius-btn);
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  font-size: 11px; color: var(--text-muted);
+  display: flex; align-items: center; gap: 6px;
+  flex-wrap: wrap;
+}
+.copilot__context-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  flex-shrink: 0;
+}
+.copilot__context-item { display: inline-flex; align-items: center; gap: 4px; }
+
+.copilot__messages {
+  flex: 1; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 12px;
+  margin-bottom: 12px;
+}
+.copilot__msg {
+  max-width: 92%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.copilot__msg--user {
+  align-self: flex-end;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-bottom-right-radius: 4px;
+  font-weight: 500;
+}
+.copilot__msg--ai {
+  align-self: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  border-bottom-left-radius: 4px;
+}
+.copilot__msg ol { padding-left: 18px; margin: 8px 0; }
+.copilot__msg ol li { margin-bottom: 4px; }
+
+.copilot__input-area {
+  display: flex; gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--surface);
+}
+.copilot__input {
+  flex: 1;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  outline: none;
+  transition: border-color 150ms ease;
+}
+.copilot__input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(108,92,231,0.1); }
+.copilot__send {
+  font-family: inherit;
+  padding: 10px 16px;
+  background: var(--accent);
+  color: #FFF;
+  border: none;
+  border-radius: var(--radius-btn);
+  font-size: 14px; font-weight: 600;
+  cursor: pointer;
+  transition: opacity 150ms ease;
+  white-space: nowrap;
+}
+.copilot__send:hover { opacity: 0.85; }
+
+/* Copilot table */
+.copilot__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 12px 0;
+}
+.copilot__table th, .copilot__table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.copilot__table th {
+  font-weight: 600;
+  color: var(--text-primary);
+  background: #F9F9F9;
+  font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em;
+}
+.copilot__table td { color: var(--text-secondary); }
+.copilot__table .approaching { color: var(--signal-text); font-weight: 600; }
+
+/* ── Reference Section ── */
+.reference-section {
+  background: var(--bg);
+  padding: 64px 48px;
+  border-top: 1px solid var(--border);
+}
+.ref-card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  padding: 32px;
+  margin-bottom: 32px;
+  max-width: 960px;
+}
+.ref-card__title {
+  font-size: 20px; font-weight: 700;
+  margin-bottom: 24px;
+}
+.ref-rule {
+  display: flex; gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #F5F5F5;
+  font-size: 14px; line-height: 1.6;
+}
+.ref-rule:last-child { border-bottom: none; }
+.ref-rule__num {
+  font-weight: 700; color: var(--accent);
+  min-width: 28px; flex-shrink: 0;
+}
+.ref-rule__label { font-weight: 600; }
+.ref-rule__text { color: var(--text-secondary); }
+
+.ref-links-demo {
+  font-size: 15px; line-height: 2.2;
+  color: var(--text-secondary);
+}
+
+/* ── Utility ── */
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D4D4D4; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #A3A3A3; }
+
+/* Selection on resize */
+.no-select { user-select: none !important; }
+.no-select * { user-select: none !important; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .control-bar { padding: 0 8px; }
+  .state-btn { font-size: 11px; padding: 3px 8px; }
+  .canvas { padding: 24px 16px !important; }
+  .reference-section { padding: 32px 16px; }
+  .ref-card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- CONTROL BAR -->
+<div class="control-bar">
+  <div class="control-bar__title">Stacking Panel System v2</div>
+  <div class="control-bar__center">
+    <div class="control-bar__buttons">
+      <button class="state-btn active" data-state="1">Base</button>
+      <button class="state-btn" data-state="2">+ Block</button>
+      <button class="state-btn" data-state="3">+ Tool</button>
+      <button class="state-btn" data-state="4">+ Copilot</button>
+      <button class="state-btn" data-state="5">Copilot Wide</button>
+      <button class="state-btn" data-state="6">Reset</button>
+    </div>
+    <div class="control-bar__desc" id="stateDesc">State 1: Base layout &mdash; sidebar expanded, full canvas, no drawers open</div>
+  </div>
+  <div class="control-bar__right"></div>
+</div>
+
+<!-- APP LAYOUT -->
+<div class="app" id="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__resize-handle"></div>
+
+    <!-- Expanded -->
+    <div class="sidebar__full">
+      <div class="sidebar__brand">
+        <div class="sidebar__brand-dot"></div>
+        <div class="sidebar__brand-text">VOIS</div>
+      </div>
+
+      <div class="sidebar__venue">
+        <span class="venue-dot"></span>
+        <span>Sunrise Cafe</span>
+        <span class="venue-chevron">&#9662;</span>
+      </div>
+
+      <div class="sidebar__group">
+        <div class="sidebar__group-label">Workspace</div>
+        <div class="sidebar__nav-item"><span class="icon">&#9737;</span> Today</div>
+        <div class="sidebar__nav-item"><span class="icon">&#9745;</span> My Tasks</div>
+        <div class="sidebar__nav-item"><span class="icon">&#9654;</span> Execution</div>
+      </div>
+
+      <div class="sidebar__group">
+        <div class="sidebar__group-label">Venue</div>
+        <div class="sidebar__nav-item"><span class="icon">&#9678;</span> Assessment</div>
+        <div class="sidebar__nav-item"><span class="icon">&#8767;</span> Signals</div>
+        <div class="sidebar__nav-item active"><span class="icon">&#9776;</span> Plan</div>
+        <div class="sidebar__nav-item"><span class="icon">&#9634;</span> Report</div>
+        <div class="sidebar__nav-item"><span class="icon">&#8634;</span> History</div>
+      </div>
+
+      <div class="sidebar__group">
+        <div class="sidebar__group-label">Reference</div>
+        <div class="sidebar__nav-item"><span class="icon">&#9733;</span> Knowledge Base</div>
+        <div class="sidebar__nav-item"><span class="icon">&#9670;</span> Standards</div>
+      </div>
+
+      <div class="sidebar__spacer"></div>
+
+      <div class="sidebar__bottom">
+        <div class="sidebar__nav-item"><span class="icon">&#9881;</span> Settings</div>
+        <div class="sidebar__nav-item"><span class="icon">?</span> Help</div>
+        <div class="sidebar__user">
+          <div class="sidebar__avatar">JM</div>
+          <div class="sidebar__user-name">Jamie M.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsed (Icon Rail) -->
+    <div class="sidebar__icons">
+      <div class="sidebar__icon-item" style="margin-bottom: 8px;">&#9776;<span class="tooltip">Menu</span></div>
+      <div class="sidebar__icon-item">&#9737;<span class="tooltip">Today</span></div>
+      <div class="sidebar__icon-item">&#9745;<span class="tooltip">My Tasks</span></div>
+      <div class="sidebar__icon-item">&#9678;<span class="tooltip">Assessment</span></div>
+      <div class="sidebar__icon-item">&#8767;<span class="tooltip">Signals</span></div>
+      <div class="sidebar__icon-item active">&#9776;<span class="tooltip">Plan</span></div>
+      <div class="sidebar__icon-item">&#9634;<span class="tooltip">Report</span></div>
+      <div class="sidebar__icon-item">&#9733;<span class="tooltip">Reference</span></div>
+      <div class="sidebar__icon-spacer"></div>
+      <div class="sidebar__icon-item">&#9881;<span class="tooltip">Settings</span></div>
+      <div class="sidebar__icon-expand" id="sidebarExpand" title="Expand sidebar">&#9654;</div>
+    </div>
+  </aside>
+
+  <!-- PRIMARY CANVAS -->
+  <main class="canvas" id="canvas">
+    <div class="canvas__header">
+      <h1 class="canvas__title">Plan</h1>
+      <p class="canvas__subtitle">Q1 2026 Operations Improvement</p>
+    </div>
+
+    <!-- Main task card -->
+    <div class="task-card" id="mainTaskCard">
+      <div class="task-card__header">
+        <span class="task-card__title">Redesign morning station workflow</span>
+        <span class="task-card__status">Active</span>
+        <span class="task-card__assignee">
+          <span class="task-card__assignee-dot">JK</span>
+          Jordan K.
+        </span>
+      </div>
+
+      <div class="task-card__desc" id="taskDesc">
+        Implement the <span class="pill pill--block" data-entity="B105" data-type="block">B105 Service Flow Block</span> recommendations to reduce queue time during peak morning hours. This involves restructuring the dual-station layout and using the <span class="pill pill--tool" data-entity="T042" data-type="tool">T042 Timer Protocol Tool</span> for baseline measurement.<br><br>
+        Monitor the <span class="pill pill--signal" data-entity="S008" data-type="signal">S008 Speed Signal</span> and <span class="pill pill--signal" data-entity="S012" data-type="signal">S012 Throughput Signal</span> for improvement indicators. Be aware of the <span class="pill pill--failure" data-entity="FM003" data-type="failure">FM003 Queue Cascade Failure</span> mode which can trigger during transition. If triggered, apply the <span class="pill pill--response" data-entity="RP007" data-type="response">RP007 Surge Staffing Protocol</span> as immediate response.<br><br>
+        Expected outcome: 30% reduction in average service time within 2 weeks of full implementation.
+      </div>
+
+      <div class="task-card__progress">
+        <div class="task-card__progress-header">
+          <span class="task-card__progress-label">Progress</span>
+          <span class="task-card__progress-pct">45%</span>
+        </div>
+        <div class="task-card__progress-bar">
+          <div class="task-card__progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="task-card__meta">
+        <span class="task-card__meta-item">Due: Mar 15, 2026</span>
+        <span class="task-card__meta-item">Depends on: Station equipment delivery</span>
+      </div>
+
+      <div class="task-card__footer">
+        <button class="task-card__copilot-btn" id="copilotBtn">Ask Copilot about this task</button>
+      </div>
+    </div>
+
+    <!-- Collapsed task cards -->
+    <div class="task-card task-card--collapsed">
+      <span class="task-card__title">Update supplier inventory schedule</span>
+      <span class="task-card__status">Planned</span>
+      <span class="task-card__assignee">
+        <span class="task-card__assignee-dot" style="background: linear-gradient(135deg, #3B82F6, #60A5FA);">AS</span>
+        Alex S.
+      </span>
+    </div>
+
+    <div class="task-card task-card--collapsed">
+      <span class="task-card__title">Train staff on new POS module</span>
+      <span class="task-card__status" style="background: #ECFDF5; color: #10B981;">Complete</span>
+      <span class="task-card__assignee">
+        <span class="task-card__assignee-dot" style="background: linear-gradient(135deg, #10B981, #34D399);">MR</span>
+        Morgan R.
+      </span>
+    </div>
+  </main>
+
+  <!-- DRAWERS -->
+  <div class="drawers" id="drawers">
+
+    <!-- Block Drawer -->
+    <div class="drawer drawer--block hidden" id="drawerBlock" style="width: 380px;">
+      <div class="drawer__header">
+        <span class="drawer__code mono">B105</span>
+        <span class="drawer__title">Service Flow Block</span>
+        <span class="pill pill--block pill--badge">Block</span>
+        <button class="drawer__close" data-close="block">&times;</button>
+      </div>
+      <div class="drawer__compact-preview">Restructure service station layout and workflow to reduce customer wait time during peak hours&hellip;</div>
+      <div class="drawer__content">
+        <div class="drawer__section">
+          <div class="drawer__eyebrow">Purpose</div>
+          <p class="drawer__text">Restructure service station layout and workflow to reduce customer wait time during peak hours.</p>
+        </div>
+        <div class="drawer__section">
+          <div class="drawer__eyebrow">Key Interventions</div>
+          <ol class="drawer__list">
+            <li data-num="1">Implement dual-station espresso setup</li>
+            <li data-num="2">Pre-stage supplies using <span class="pill pill--tool" data-entity="T042" data-type="tool">T042 Timer Protocol Tool</span></li>
+            <li data-num="3">Monitor throughput via <span class="pill pill--signal" data-entity="S008" data-type="signal">S008 Speed Signal</span></li>
+          </ol>
+        </div>
+        <div class="drawer__section">
+          <div class="drawer__eyebrow">Expected Outcome</div>
+          <p class="drawer__text">30% reduction in average service time</p>
+        </div>
+        <div class="drawer__section">
+          <div class="drawer__eyebrow">Failure Modes</div>
+          <p class="drawer__text"><span class="pill pill--failure" data-entity="FM003" data-type="failure">FM003 Queue Cascade Failure</span></p>
+        </div>
+        <div class="drawer__section">
+          <div class="drawer__eyebrow">Response</div>
+          <p class="drawer__text"><span class="pill pill--response" data-entity="RP007" data-type="response">RP007 Surge Staffing Protocol</span></p>
+        </div>
+        <div class="drawer__section">
+          <div class="drawer__eyebrow">Measurement</div>
+          <p class="drawer__text">Use <span class="pill pill--tool" data-entity="T042" data-type="tool">T042 Timer Protocol Tool</span> to validate improvement</p>
+        </div>
+      </div>
+      <div class="drawer__expand-link">Expand &rarr;</div>
+      <div class="drawer__footer-link">Open in Reference Library &rarr;</div>
+    </div>
+
+    <!-- Tool Drawer -->
+    <div class="drawer drawer--tool hidden" id="drawerTool" style="width: 340px;">
+      <div class="drawer__header">
+        <span class="drawer__code mono">T042</span>
+        <span class="drawer__title">Timer Protocol Tool</span>
+        <span class="pill pill--tool pill--badge">Tool</span>
+        <button class="drawer__close" data-close="tool">&times;</button>
+      </div>
+      <div class="drawer__compact-preview">Structured timing protocol for measuring service speed at each station&hellip;</div>
+      <div class="drawer__content">
+        <div class="drawer__section">
+          <div class="drawer__eyebrow">What it does</div>
+          <p class="drawer__text">Structured timing protocol for measuring service speed at each station.</p>
+        </div>
+        <div class="drawer__section">
+          <div class="drawer__eyebrow">How to use</div>
+          <ol class="drawer__list">
+            <li data-num="1">Start timer when customer reaches counter</li>
+            <li data-num="2">Mark each stage: order, prep, serve</li>
+            <li data-num="3">Log results in <span class="pill pill--signal" data-entity="S008" data-type="signal">S008 Speed Signal</span> tracker</li>
+          </ol>
+        </div>
+        <div class="drawer__section">
+          <div class="drawer__eyebrow">When to use</div>
+          <p class="drawer__text">Peak hours (7:30 &ndash; 9:00 AM), daily for first 2 weeks after B105 implementation</p>
+        </div>
+        <div class="drawer__section">
+          <div class="drawer__eyebrow">What good looks like</div>
+          <p class="drawer__text">Average total &lt; 3 minutes per customer</p>
+        </div>
+        <div class="drawer__section">
+          <div class="drawer__eyebrow">Related Block</div>
+          <p class="drawer__text"><span class="pill pill--block pill--muted" data-entity="B105" data-type="block">B105 Service Flow Block</span></p>
+        </div>
+      </div>
+      <div class="drawer__expand-link">Expand &rarr;</div>
+      <div class="drawer__footer-link">Open in Reference Library &rarr;</div>
+    </div>
+
+    <!-- Copilot Drawer -->
+    <div class="drawer drawer--copilot hidden" id="drawerCopilot" style="width: 360px;">
+      <div class="copilot__resize-handle" id="copilotResizeHandle"></div>
+      <div class="drawer__header">
+        <span class="copilot__brand-dot"></span>
+        <span class="drawer__title">Copilot</span>
+        <span class="pill pill--copilot pill--badge">AI</span>
+        <button class="drawer__close" data-close="copilot">&times;</button>
+      </div>
+      <div class="drawer__content" id="copilotContent" style="display: flex; flex-direction: column;">
+        <div class="copilot__context" id="copilotContext">
+          <span style="font-weight:600;">Context:</span>
+          <span class="copilot__context-item"><span class="copilot__context-dot" style="background:var(--accent);"></span> Plan Task</span>
+        </div>
+        <div class="copilot__messages" id="copilotMessages"></div>
+      </div>
+      <div class="copilot__input-area">
+        <input class="copilot__input" type="text" placeholder="Ask about these items...">
+        <button class="copilot__send">Send</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- REFERENCE SECTION -->
+<div class="reference-section" id="referenceSection">
+  <div class="ref-card">
+    <h2 class="ref-card__title">Panel Rules</h2>
+    <div class="ref-rule"><span class="ref-rule__num">1.</span><div><span class="ref-rule__label">Direction</span><br><span class="ref-rule__text">Drawers open from the right, pushing Primary Canvas to the left.</span></div></div>
+    <div class="ref-rule"><span class="ref-rule__num">2.</span><div><span class="ref-rule__label">No fixed inspector</span><br><span class="ref-rule__text">Drawers replace the inspector concept. Context is accessed by clicking links.</span></div></div>
+    <div class="ref-rule"><span class="ref-rule__num">3.</span><div><span class="ref-rule__label">Canvas minimum</span><br><span class="ref-rule__text">Primary canvas never goes below 300px width.</span></div></div>
+    <div class="ref-rule"><span class="ref-rule__num">4.</span><div><span class="ref-rule__label">Sidebar auto-collapse</span><br><span class="ref-rule__text">When canvas approaches minimum, sidebar collapses to 48px icon rail automatically. Reopens when space becomes available.</span></div></div>
+    <div class="ref-rule"><span class="ref-rule__num">5.</span><div><span class="ref-rule__label">Max drawers</span><br><span class="ref-rule__text">3 content drawers + Copilot. If a 4th content drawer would open, oldest auto-closes.</span></div></div>
+    <div class="ref-rule"><span class="ref-rule__num">6.</span><div><span class="ref-rule__label">Close order</span><br><span class="ref-rule__text">Right-to-left. Closing a drawer expands everything to its left.</span></div></div>
+    <div class="ref-rule"><span class="ref-rule__num">7.</span><div><span class="ref-rule__label">Copilot resize</span><br><span class="ref-rule__text">Copilot's left edge is draggable. Can take up to 70% of viewport width.</span></div></div>
+    <div class="ref-rule"><span class="ref-rule__num">8.</span><div><span class="ref-rule__label">Identity</span><br><span class="ref-rule__text">Each drawer has a 4px colored left border &mdash; purple (blocks), blue (tools), green (signals), red (failure modes), amber (response patterns), gradient (copilot).</span></div></div>
+    <div class="ref-rule"><span class="ref-rule__num">9.</span><div><span class="ref-rule__label">Ontology links</span><br><span class="ref-rule__text">B105, T042, S008, FM003, RP007 etc. are ALWAYS clickable inline pills in any text throughout the app. Color-coded by type.</span></div></div>
+    <div class="ref-rule"><span class="ref-rule__num">10.</span><div><span class="ref-rule__label">Context passing</span><br><span class="ref-rule__text">Copilot automatically knows which drawers are open and includes their content as context.</span></div></div>
+    <div class="ref-rule"><span class="ref-rule__num">11.</span><div><span class="ref-rule__label">Mobile</span><br><span class="ref-rule__text">On mobile (&lt;768px), drawers open as full-screen sheets with back navigation. No side-by-side.</span></div></div>
+    <div class="ref-rule"><span class="ref-rule__num">12.</span><div><span class="ref-rule__label">Keyboard</span><br><span class="ref-rule__text">Esc = close rightmost drawer. Cmd+\ = toggle sidebar. Cmd+K = command palette.</span></div></div>
+  </div>
+
+  <div class="ref-card">
+    <h2 class="ref-card__title">Link Styles</h2>
+    <p class="ref-links-demo">
+      Implement <span class="pill pill--block">B105 Service Flow Block</span> using <span class="pill pill--tool">T042 Timer Protocol Tool</span>. Monitor <span class="pill pill--signal">S008 Speed Signal</span> for progress. Watch for <span class="pill pill--failure">FM003 Queue Cascade Failure</span> and apply <span class="pill pill--response">RP007 Surge Staffing Protocol</span> if needed. Ask <span class="pill pill--copilot">Copilot</span> for guidance.
+    </p>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Element refs ── */
+  const sidebar      = document.getElementById('sidebar');
+  const canvas        = document.getElementById('canvas');
+  const drawerBlock   = document.getElementById('drawerBlock');
+  const drawerTool    = document.getElementById('drawerTool');
+  const drawerCopilot = document.getElementById('drawerCopilot');
+  const mainTaskCard  = document.getElementById('mainTaskCard');
+  const copilotBtn    = document.getElementById('copilotBtn');
+  const stateDesc     = document.getElementById('stateDesc');
+  const copilotMessages = document.getElementById('copilotMessages');
+  const copilotContext  = document.getElementById('copilotContext');
+  const copilotResizeHandle = document.getElementById('copilotResizeHandle');
+  const sidebarExpand = document.getElementById('sidebarExpand');
+  const stateButtons  = document.querySelectorAll('.state-btn');
+
+  const CANVAS_MIN     = 300;
+  const SIDEBAR_FULL   = 240;
+  const SIDEBAR_COLL   = 48;
+  const DRAWER_MIN     = 180;
+  const COPILOT_MIN    = 280;
+
+  let currentState     = 1;
+  let sidebarCollapsed = false;
+
+  const stateDescs = {
+    1: 'State 1: Base layout \u2014 sidebar expanded, full canvas, no drawers open',
+    2: 'State 2: Block drawer open \u2014 B105 Service Flow Block context on right',
+    3: 'State 3: Block + Tool stacked \u2014 T042 Timer Protocol Tool added, block compacted',
+    4: 'State 4: Block + Tool + Copilot \u2014 sidebar auto-collapsed to icon rail',
+    5: 'State 5: Copilot wide \u2014 dragged to ~50%, charts & tables visible, drawers minimal',
+    6: 'State 6: Reset \u2014 all drawers closed, sidebar expanded'
+  };
+
+  /* ── Sidebar helpers ── */
+  function collapseSidebar() {
+    sidebar.classList.add('collapsed');
+    sidebarCollapsed = true;
+  }
+  function expandSidebar() {
+    sidebar.classList.remove('collapsed');
+    sidebarCollapsed = false;
+  }
+  function sidebarWidth() { return sidebarCollapsed ? SIDEBAR_COLL : SIDEBAR_FULL; }
+
+  sidebarExpand.addEventListener('click', () => { if (sidebarCollapsed) expandSidebar(); });
+
+  /* ── Pill helpers ── */
+  function resetPillStates() {
+    document.querySelectorAll('.pill.active').forEach(p => p.classList.remove('active'));
+  }
+  function activatePill(entity) {
+    document.querySelectorAll('.pill[data-entity="' + entity + '"]').forEach(p => {
+      if (!p.classList.contains('pill--muted') && !p.classList.contains('pill--badge'))
+        p.classList.add('active');
+    });
+  }
+
+  /* ── Copilot content ── */
+  function copilotStandard() {
+    copilotMessages.innerHTML =
+      '<div class="copilot__msg copilot__msg--user">How should I measure the improvement after implementing the service flow changes?</div>' +
+      '<div class="copilot__msg copilot__msg--ai">' +
+        'Based on the <span class="pill pill--tool pill--muted" data-entity="T042" data-type="tool">T042 Timer Protocol Tool</span>, I recommend:<br><br>' +
+        '<ol>' +
+          '<li>Take baseline measurements this week (before changes)</li>' +
+          '<li>Implement <span class="pill pill--block pill--muted" data-entity="B105" data-type="block">B105</span> changes next Monday</li>' +
+          '<li>Measure daily for 2 weeks using the timer protocol</li>' +
+          '<li>Compare the <span class="pill pill--signal" data-entity="S008" data-type="signal">S008 Speed Signal</span> trend</li>' +
+        '</ol><br>' +
+        'The block expects 30% reduction &mdash; if you see &lt; 15% after week 1, consider checking for <span class="pill pill--failure" data-entity="FM003" data-type="failure">FM003 Queue Cascade Failure</span>.' +
+      '</div>';
+  }
+
+  function copilotWide() {
+    copilotMessages.innerHTML =
+      '<div class="copilot__msg copilot__msg--user">How should I measure the improvement after implementing the service flow changes?</div>' +
+      '<div class="copilot__msg copilot__msg--ai">' +
+        'Based on the <span class="pill pill--tool pill--muted" data-entity="T042" data-type="tool">T042 Timer Protocol Tool</span>, I recommend:<br><br>' +
+        '<ol>' +
+          '<li>Take baseline measurements this week (before changes)</li>' +
+          '<li>Implement <span class="pill pill--block pill--muted" data-entity="B105" data-type="block">B105</span> changes next Monday</li>' +
+          '<li>Measure daily for 2 weeks using the timer protocol</li>' +
+          '<li>Compare the <span class="pill pill--signal" data-entity="S008" data-type="signal">S008 Speed Signal</span> trend</li>' +
+        '</ol><br>' +
+        'Here are your first 3 days of measurements:<br>' +
+        '<table class="copilot__table">' +
+          '<thead><tr><th>Day</th><th>Avg Service Time</th><th>Target</th><th>Status</th></tr></thead>' +
+          '<tbody>' +
+            '<tr><td>Monday</td><td>4:20</td><td>3:00</td><td style="color:var(--failure-text);font-weight:600;">Above target</td></tr>' +
+            '<tr><td>Tuesday</td><td>3:45</td><td>3:00</td><td style="color:var(--response-text);font-weight:600;">Improving</td></tr>' +
+            '<tr><td>Wednesday</td><td class="approaching">3:15</td><td>3:00</td><td class="approaching">Near target</td></tr>' +
+          '</tbody>' +
+        '</table><br>' +
+        'You\'re trending in the right direction. Day 3 is already close to target. If this trend holds, you should hit the 30% reduction goal by end of week 1. No signs of <span class="pill pill--failure" data-entity="FM003" data-type="failure">FM003 Queue Cascade Failure</span> so far.' +
+      '</div>';
+  }
+
+  function updateCopilotContext(items) {
+    var colors = {
+      'Plan Task': 'var(--accent)',
+      'B105 Service Flow Block': 'var(--block-text)',
+      'T042 Timer Protocol Tool': 'var(--tool-text)'
+    };
+    copilotContext.innerHTML = '<span style="font-weight:600;">Context:</span> ' +
+      items.map(function (item) {
+        return '<span class="copilot__context-item"><span class="copilot__context-dot" style="background:' + (colors[item] || 'var(--accent)') + ';"></span> ' + item + '</span>';
+      }).join('');
+  }
+
+  /* ── Drawer visibility ── */
+  function showDrawer(el) { el.classList.remove('hidden'); }
+  function hideDrawer(el) { el.classList.add('hidden'); }
+  function isOpen(el) { return !el.classList.contains('hidden'); }
+
+  function setDrawerMode(el, mode) {
+    el.classList.remove('compact', 'minimal');
+    if (mode === 'compact') el.classList.add('compact');
+    if (mode === 'minimal') el.classList.add('minimal');
+  }
+
+  /* ── State Machine ── */
+  function setState(n) {
+    currentState = n;
+
+    stateButtons.forEach(function (btn) {
+      btn.classList.toggle('active', parseInt(btn.dataset.state) === n);
+    });
+    stateDesc.textContent = stateDescs[n] || '';
+
+    if (n === 6) n = 1;
+
+    // Hide everything
+    hideDrawer(drawerBlock);
+    hideDrawer(drawerTool);
+    hideDrawer(drawerCopilot);
+    setDrawerMode(drawerBlock, '');
+    setDrawerMode(drawerTool, '');
+    mainTaskCard.classList.remove('highlighted');
+    resetPillStates();
+    canvas.classList.remove('narrow');
+    copilotStandard();
+
+    switch (n) {
+      case 1:
+        expandSidebar();
+        drawerBlock.style.width = '380px';
+        drawerTool.style.width = '340px';
+        drawerCopilot.style.width = '360px';
+        break;
+
+      case 2:
+        expandSidebar();
+        showDrawer(drawerBlock);
+        drawerBlock.style.width = '380px';
+        mainTaskCard.classList.add('highlighted');
+        activatePill('B105');
+        break;
+
+      case 3:
+        expandSidebar();
+        showDrawer(drawerBlock);
+        showDrawer(drawerTool);
+        drawerBlock.style.width = '260px';
+        drawerTool.style.width = '340px';
+        setDrawerMode(drawerBlock, 'compact');
+        mainTaskCard.classList.add('highlighted');
+        canvas.classList.add('narrow');
+        activatePill('B105');
+        activatePill('T042');
+        break;
+
+      case 4:
+        collapseSidebar();
+        showDrawer(drawerBlock);
+        showDrawer(drawerTool);
+        showDrawer(drawerCopilot);
+        drawerBlock.style.width = '220px';
+        drawerTool.style.width = '220px';
+        drawerCopilot.style.width = '360px';
+        setDrawerMode(drawerBlock, 'compact');
+        setDrawerMode(drawerTool, 'compact');
+        mainTaskCard.classList.add('highlighted');
+        canvas.classList.add('narrow');
+        activatePill('B105');
+        activatePill('T042');
+        updateCopilotContext(['Plan Task', 'B105 Service Flow Block', 'T042 Timer Protocol Tool']);
+        break;
+
+      case 5:
+        collapseSidebar();
+        showDrawer(drawerBlock);
+        showDrawer(drawerTool);
+        showDrawer(drawerCopilot);
+        drawerBlock.style.width = '180px';
+        drawerTool.style.width = '180px';
+        var cw = Math.max(480, Math.floor(window.innerWidth * 0.50));
+        drawerCopilot.style.width = cw + 'px';
+        setDrawerMode(drawerBlock, 'minimal');
+        setDrawerMode(drawerTool, 'minimal');
+        mainTaskCard.classList.add('highlighted');
+        canvas.classList.add('narrow');
+        activatePill('B105');
+        activatePill('T042');
+        updateCopilotContext(['Plan Task', 'B105 Service Flow Block', 'T042 Timer Protocol Tool']);
+        copilotWide();
+        break;
+    }
+  }
+
+  /* ── State button clicks ── */
+  stateButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setState(parseInt(btn.dataset.state));
+    });
+  });
+
+  /* ── Close drawers ── */
+  function closeDrawer(which) {
+    switch (which) {
+      case 'copilot':
+        hideDrawer(drawerCopilot);
+        if (isOpen(drawerBlock) && isOpen(drawerTool)) { setState(3); return; }
+        if (isOpen(drawerBlock)) { setState(2); return; }
+        setState(1);
+        return;
+
+      case 'tool':
+        hideDrawer(drawerTool);
+        hideDrawer(drawerCopilot);
+        if (isOpen(drawerBlock)) { setState(2); return; }
+        setState(1);
+        return;
+
+      case 'block':
+        hideDrawer(drawerBlock);
+        hideDrawer(drawerTool);
+        hideDrawer(drawerCopilot);
+        setState(1);
+        return;
+    }
+  }
+
+  document.querySelectorAll('.drawer__close').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      closeDrawer(btn.dataset.close);
+    });
+  });
+
+  /* ── Escape key ── */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      if (isOpen(drawerCopilot)) { closeDrawer('copilot'); }
+      else if (isOpen(drawerTool)) { closeDrawer('tool'); }
+      else if (isOpen(drawerBlock)) { closeDrawer('block'); }
+    }
+  });
+
+  /* ── Pill clicks ── */
+  document.addEventListener('click', function (e) {
+    var pill = e.target.closest('.pill');
+    if (!pill) return;
+    if (pill.classList.contains('pill--muted') || pill.classList.contains('pill--badge')) return;
+
+    var entity = pill.dataset.entity;
+    var type   = pill.dataset.type;
+    if (!entity || !type) return;
+
+    // If already active, flash the drawer
+    if (pill.classList.contains('active')) {
+      var drawer = type === 'block' ? drawerBlock : type === 'tool' ? drawerTool : null;
+      if (drawer && isOpen(drawer)) {
+        drawer.style.boxShadow = '0 0 0 3px rgba(108,92,231,0.25)';
+        setTimeout(function () { drawer.style.boxShadow = ''; }, 350);
+      }
+      return;
+    }
+
+    // Navigate to appropriate state
+    if (entity === 'B105' && type === 'block') {
+      if (currentState < 2) setState(2);
+    } else if (entity === 'T042' && type === 'tool') {
+      if (currentState < 3) setState(3);
+    }
+  });
+
+  /* ── Copilot button ── */
+  copilotBtn.addEventListener('click', function () {
+    if (currentState < 4) setState(4);
+  });
+
+  /* ── Expand links in compact drawers ── */
+  document.querySelectorAll('.drawer__expand-link').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var drawer = link.closest('.drawer');
+      if (drawer.classList.contains('minimal')) {
+        setDrawerMode(drawer, 'compact');
+      } else if (drawer.classList.contains('compact')) {
+        setDrawerMode(drawer, '');
+      }
+    });
+  });
+
+  /* ── Copilot Resize (drag) ── */
+  var isResizing = false;
+  var resizeStartX = 0;
+  var resizeStartW = 0;
+
+  copilotResizeHandle.addEventListener('mousedown', function (e) {
+    isResizing = true;
+    resizeStartX = e.clientX;
+    resizeStartW = drawerCopilot.offsetWidth;
+    document.body.classList.add('no-select');
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', function (e) {
+    if (!isResizing) return;
+
+    var dx = resizeStartX - e.clientX; // drag left = wider
+    var newW = resizeStartW + dx;
+    var maxW = Math.floor(window.innerWidth * 0.7);
+    newW = Math.max(COPILOT_MIN, Math.min(newW, maxW));
+
+    // Ensure sidebar collapses if needed
+    var totalOther = 0;
+    if (isOpen(drawerBlock)) totalOther += parseInt(drawerBlock.style.width) || 0;
+    if (isOpen(drawerTool))  totalOther += parseInt(drawerTool.style.width) || 0;
+
+    var canvasLeft = sidebarWidth() + totalOther + newW;
+    var canvasW = window.innerWidth - canvasLeft;
+
+    // Step 1: collapse sidebar if needed
+    if (canvasW < CANVAS_MIN && !sidebarCollapsed) {
+      collapseSidebar();
+      canvasLeft = SIDEBAR_COLL + totalOther + newW;
+      canvasW = window.innerWidth - canvasLeft;
+    }
+
+    // Step 2: compress other drawers if needed
+    if (canvasW < CANVAS_MIN && (isOpen(drawerBlock) || isOpen(drawerTool))) {
+      var availForOther = window.innerWidth - sidebarWidth() - CANVAS_MIN - newW;
+      var openCount = (isOpen(drawerBlock) ? 1 : 0) + (isOpen(drawerTool) ? 1 : 0);
+
+      if (openCount === 2) {
+        var each = Math.floor(availForOther / 2);
+        if (each < DRAWER_MIN) {
+          // Close oldest (block)
+          hideDrawer(drawerBlock);
+          each = Math.max(DRAWER_MIN, availForOther);
+          drawerTool.style.width = each + 'px';
+        } else {
+          drawerBlock.style.width = each + 'px';
+          drawerTool.style.width = each + 'px';
+        }
+      } else if (openCount === 1) {
+        var d = isOpen(drawerBlock) ? drawerBlock : drawerTool;
+        var w = Math.max(DRAWER_MIN, availForOther);
+        if (w < DRAWER_MIN) {
+          hideDrawer(d);
+        } else {
+          d.style.width = w + 'px';
+        }
+      }
+    }
+
+    // Step 3: recheck final canvas width and clamp copilot if needed
+    var finalOther = 0;
+    if (isOpen(drawerBlock)) finalOther += parseInt(drawerBlock.style.width) || 0;
+    if (isOpen(drawerTool))  finalOther += parseInt(drawerTool.style.width) || 0;
+    var finalCanvas = window.innerWidth - sidebarWidth() - finalOther - newW;
+    if (finalCanvas < CANVAS_MIN) {
+      newW = window.innerWidth - sidebarWidth() - finalOther - CANVAS_MIN;
+    }
+
+    newW = Math.max(COPILOT_MIN, newW);
+    drawerCopilot.style.width = newW + 'px';
+
+    // Update drawer compaction modes
+    if (isOpen(drawerBlock)) {
+      var bw = parseInt(drawerBlock.style.width) || 380;
+      if (bw <= 200) setDrawerMode(drawerBlock, 'minimal');
+      else if (bw < 320) setDrawerMode(drawerBlock, 'compact');
+      else setDrawerMode(drawerBlock, '');
+    }
+    if (isOpen(drawerTool)) {
+      var tw = parseInt(drawerTool.style.width) || 340;
+      if (tw <= 200) setDrawerMode(drawerTool, 'minimal');
+      else if (tw < 300) setDrawerMode(drawerTool, 'compact');
+      else setDrawerMode(drawerTool, '');
+    }
+
+    // Switch copilot content
+    if (newW > 480) { copilotWide(); }
+    else { copilotStandard(); }
+  });
+
+  document.addEventListener('mouseup', function () {
+    if (isResizing) {
+      isResizing = false;
+      document.body.classList.remove('no-select');
+    }
+  });
+
+  /* ── Window resize ── */
+  window.addEventListener('resize', function () {
+    if (currentState >= 4) {
+      var total = 0;
+      if (isOpen(drawerBlock)) total += parseInt(drawerBlock.style.width) || 0;
+      if (isOpen(drawerTool))  total += parseInt(drawerTool.style.width) || 0;
+      if (isOpen(drawerCopilot)) total += parseInt(drawerCopilot.style.width) || 0;
+
+      if (window.innerWidth - SIDEBAR_FULL - total < CANVAS_MIN) {
+        collapseSidebar();
+      } else if (sidebarCollapsed && window.innerWidth - SIDEBAR_FULL - total >= CANVAS_MIN) {
+        expandSidebar();
+      }
+    }
+  });
+
+  /* ── Init ── */
+  setState(1);
+
+})();
+</script>
+</body>
+</html>

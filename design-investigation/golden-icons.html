@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- VOIS Icon Library — Custom SVG icons, no emojis, no text symbols -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS Design System — Icon Library</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#FAFAFA;--surface:#FFFFFF;--border:#E5E5E5;--text:#171717;--text-muted:#737373;--text-faint:#A3A3A3;
+    --accent:#6366F1;--success:#10B981;--warning:#F59E0B;--error:#EF4444;--blocked:#EF4444;
+    --purple:#6C5CE7;--blue:#3B82F6;--nav-w:220px;
+    --icon-stroke:#525252;
+  }
+  html{font-family:'Inter',system-ui,sans-serif;font-size:14px;background:var(--bg);color:var(--text);scroll-behavior:smooth}
+  body{display:flex;min-height:100vh}
+
+  /* ── NAV ── */
+  nav{position:fixed;top:0;left:0;width:var(--nav-w);height:100vh;background:var(--surface);border-right:1px solid var(--border);padding:24px 16px;overflow-y:auto;z-index:100}
+  nav h2{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-faint);margin-bottom:12px}
+  nav a{display:block;padding:6px 10px;font-size:12.5px;font-weight:500;color:var(--text-muted);text-decoration:none;border-radius:6px;margin-bottom:2px;transition:all .15s}
+  nav a:hover{background:#F0F0F0;color:var(--text)}
+  nav .logo{font-size:15px;font-weight:700;color:var(--accent);margin-bottom:20px;letter-spacing:-.02em}
+  nav .count{font-size:10px;color:var(--text-faint);margin-left:4px}
+
+  /* ── MAIN ── */
+  main{margin-left:var(--nav-w);flex:1;padding:32px 40px 80px}
+  .header{position:sticky;top:0;background:var(--bg);z-index:50;padding:16px 0 20px;border-bottom:1px solid var(--border);margin-bottom:32px}
+  .header h1{font-size:22px;font-weight:700;letter-spacing:-.03em;margin-bottom:4px}
+  .header p{font-size:12.5px;color:var(--text-muted);margin-bottom:16px}
+
+  /* ── TABS ── */
+  .tabs{display:flex;gap:4px;background:#F0F0F0;border-radius:8px;padding:3px;width:fit-content}
+  .tabs button{padding:7px 18px;font-size:12px;font-weight:600;border:none;background:transparent;border-radius:6px;cursor:pointer;color:var(--text-muted);transition:all .15s;font-family:inherit}
+  .tabs button.active{background:var(--surface);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+
+  /* ── INTERACTION NOTE ── */
+  .interaction-note{display:none;font-size:11.5px;color:var(--text-muted);background:#F5F3FF;border:1px solid #E0DDFF;border-radius:8px;padding:8px 14px;margin-top:12px;width:fit-content}
+  body.mode-interactive .interaction-note{display:block}
+
+  /* ── SECTIONS ── */
+  .section{margin-bottom:48px}
+  .section-title{font-size:15px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+  .section-title .badge{font-size:10px;font-weight:600;background:#F0F0F0;color:var(--text-muted);padding:2px 8px;border-radius:10px}
+  .section-desc{font-size:12px;color:var(--text-muted);margin-bottom:16px}
+
+  /* ── GRID ── */
+  .icon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}
+  .icon-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 8px 12px;border-radius:10px;cursor:pointer;transition:all .15s;position:relative;background:transparent;border:1px solid transparent}
+  .icon-cell:hover{background:var(--surface);border-color:var(--border);box-shadow:0 2px 8px rgba(0,0,0,.05)}
+  .icon-cell svg{width:32px;height:32px;flex-shrink:0}
+  .icon-cell .label{font-size:10.5px;color:var(--text-muted);margin-top:8px;text-align:center;line-height:1.3;font-weight:500;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+  /* ── BASE: all icons monochrome ── */
+  .icon-cell svg{stroke:#525252;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:stroke .3s ease-out, transform .3s ease-out}
+
+  /* ── ALWAYS-ON PERSISTENT ANIMATIONS ── */
+  /* Loading spinner always spins + colored */
+  [data-name="loading"] svg{stroke:#6C5CE7;animation:spin-fast .8s linear infinite}
+
+  /* ══════════════════════════════════════════════════════════════
+     INTERACTIVE MODE — hover / click / active animations
+     ══════════════════════════════════════════════════════════════ */
+
+  /* ── CLICK PRESS (all icons) ── */
+  body.mode-interactive .icon-cell:active svg{transform:scale(0.9)!important;transition:transform .06s ease!important}
+
+  /* ── NAVIGATION: gentle scale up ── */
+  body.mode-interactive [data-cat="nav"] svg{transition:stroke .3s ease-out, transform .3s ease}
+  body.mode-interactive [data-cat="nav"]:hover svg{transform:scale(1.15)}
+
+  /* ── ACTIONS: quick lift ── */
+  body.mode-interactive [data-cat="action"] svg{transition:stroke .3s ease-out, transform .2s ease}
+  body.mode-interactive [data-cat="action"]:hover svg{transform:translateY(-2px)}
+
+  /* ── STATUS: color fade in + slight pulse ── */
+  body.mode-interactive [data-cat="status"] svg{transition:stroke .3s ease, transform .3s ease}
+  body.mode-interactive [data-cat="status"][data-color]:hover svg{stroke:var(--icon-color);transform:scale(1.1)}
+
+  /* ── ONTOLOGY: color fade in + subtle rotate ── */
+  body.mode-interactive [data-cat="ontology"] svg{transition:stroke .3s ease, transform .3s ease}
+  body.mode-interactive [data-cat="ontology"][data-color]:hover svg{stroke:var(--icon-color);transform:rotate(5deg)}
+
+  /* ── ROLES: color fade in ── */
+  body.mode-interactive [data-cat="role"] svg{transition:stroke .3s ease}
+  body.mode-interactive [data-cat="role"]:hover svg{stroke:#6C5CE7}
+
+  /* ── DATA/CHARTS: gentle scale up ── */
+  body.mode-interactive [data-cat="data"] svg{transition:stroke .3s ease-out, transform .2s ease}
+  body.mode-interactive [data-cat="data"]:hover svg{transform:scale(1.1)}
+
+  /* ── SYSTEM: gentle scale up ── */
+  body.mode-interactive [data-cat="system"] svg{transition:stroke .3s ease-out, transform .2s ease}
+  body.mode-interactive [data-cat="system"]:hover svg{transform:scale(1.1)}
+
+  /* ── FEATURE: default gentle scale ── */
+  body.mode-interactive [data-cat="feature"] svg{transition:stroke .3s ease-out, transform .2s ease}
+  body.mode-interactive [data-cat="feature"]:hover svg{transform:scale(1.1)}
+
+  /* ── COLORED FEATURE ICONS on hover ── */
+  body.mode-interactive [data-name="copilot"]:hover svg{stroke:#6C5CE7}
+  body.mode-interactive [data-name="escalation"]:hover svg{stroke:#EF4444}
+  body.mode-interactive [data-name="trending-up"]:hover svg{stroke:#10B981}
+  body.mode-interactive [data-name="trending-down"]:hover svg{stroke:#EF4444}
+
+  /* notification-dot: dot is always red (handled in SVG), stroke stays default */
+
+  /* ══════════════════════════════════════════════════════════════
+     SPECIAL HOVER ANIMATIONS (Interactive mode)
+     ══════════════════════════════════════════════════════════════ */
+
+  /* Settings gear: slow rotate 90deg */
+  body.mode-interactive [data-name="settings"]:hover svg{transform:rotate(90deg);transition:transform .4s ease}
+
+  /* Refresh: quarter spin 90deg */
+  body.mode-interactive [data-name="refresh"]:hover svg{transform:rotate(90deg);transition:transform .3s ease}
+
+  /* Search: scale up */
+  body.mode-interactive [data-name="search"]:hover svg{transform:scale(1.2);transition:transform .2s ease}
+
+  /* Delete (trash): slight tilt */
+  body.mode-interactive [data-name="delete"]:hover svg{animation:tilt-trash .2s ease forwards}
+
+  /* Notification (bell): shake side-to-side */
+  body.mode-interactive [data-name="notification"]:hover svg{animation:bell-shake .4s ease}
+
+  /* Copilot (sparkles): twinkle continuous while hovered */
+  body.mode-interactive [data-name="copilot"]:hover svg .star1{animation:twinkle1 1.5s ease infinite}
+  body.mode-interactive [data-name="copilot"]:hover svg .star2{animation:twinkle2 1.5s ease infinite .3s}
+  body.mode-interactive [data-name="copilot"]:hover svg .star3{animation:twinkle1 1.5s ease infinite .7s}
+
+  /* Send (paper plane): translateX +3px */
+  body.mode-interactive [data-name="send"]:hover svg{transform:translateX(3px);transition:transform .2s ease}
+
+  /* In-progress: slow spin when hovered, colored */
+  body.mode-interactive [data-name="in-progress"]:hover svg{stroke:#6366F1;animation:spin 3s linear infinite}
+
+  /* ══════════════════════════════════════════════════════════════
+     KEYFRAMES
+     ══════════════════════════════════════════════════════════════ */
+  @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+  @keyframes spin-fast{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+  @keyframes twinkle1{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.6);opacity:.4}}
+  @keyframes twinkle2{0%,100%{transform:scale(.7);opacity:.5}50%{transform:scale(1);opacity:1}}
+  @keyframes bell-shake{0%{transform:translateX(0)}25%{transform:translateX(-2px)}50%{transform:translateX(2px)}75%{transform:translateX(-1px)}100%{transform:translateX(0)}}
+  @keyframes tilt-trash{0%{transform:rotate(0deg)}50%{transform:rotate(10deg)}100%{transform:rotate(0deg)}}
+  @keyframes pulse-line{0%{stroke-dashoffset:80}100%{stroke-dashoffset:0}}
+
+  /* ── TOOLTIP ── */
+  .tooltip{position:fixed;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;box-shadow:0 8px 32px rgba(0,0,0,.12);z-index:200;pointer-events:none;opacity:0;transition:opacity .15s;min-width:260px}
+  .tooltip.show{opacity:1}
+  .tooltip .sizes{display:flex;align-items:end;gap:16px;margin-bottom:12px}
+  .tooltip .sizes .sz{display:flex;flex-direction:column;align-items:center;gap:4px}
+  .tooltip .sizes .sz span{font-size:9px;color:var(--text-faint)}
+  .tooltip .sizes svg{stroke:#525252;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .tooltip .code-label{font-size:10px;font-weight:600;color:var(--text-muted);margin-bottom:4px}
+  .tooltip pre{font-size:10px;background:#F5F5F5;border-radius:6px;padding:8px 10px;overflow-x:auto;max-width:320px;max-height:120px;line-height:1.4;color:#525252;font-family:'Menlo','Monaco',monospace}
+  .tooltip .icon-name{font-size:13px;font-weight:600;margin-bottom:10px}
+
+  /* ── COPY TOAST ── */
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#171717;color:#fff;padding:8px 20px;border-radius:8px;font-size:12px;font-weight:500;opacity:0;transition:opacity .2s;z-index:300;pointer-events:none}
+  .toast.show{opacity:1}
+
+  /* Responsive */
+  @media(max-width:900px){
+    nav{display:none}
+    main{margin-left:0}
+  }
+</style>
+</head>
+<body class="mode-static">
+
+<nav>
+  <div class="logo">VOIS Icons</div>
+  <h2>Sections</h2>
+  <a href="#nav-icons">Navigation <span class="count">20</span></a>
+  <a href="#action-icons">Actions <span class="count">20</span></a>
+  <a href="#status-icons">Status <span class="count">12</span></a>
+  <a href="#ontology-icons">Ontology <span class="count">6</span></a>
+  <a href="#role-icons">Roles <span class="count">6</span></a>
+  <a href="#feature-icons">Features <span class="count">16</span></a>
+  <a href="#data-icons">Data/Charts <span class="count">8</span></a>
+  <a href="#system-icons">System <span class="count">18</span></a>
+  <h2 style="margin-top:24px">Info</h2>
+  <a href="#" style="pointer-events:none;color:var(--text-faint)">106 icons total</a>
+  <a href="#" style="pointer-events:none;color:var(--text-faint)">2 view modes</a>
+  <a href="#" style="pointer-events:none;color:var(--text-faint)">24px viewBox</a>
+  <a href="#" style="pointer-events:none;color:var(--text-faint)">1.5px stroke</a>
+</nav>
+
+<main>
+  <div class="header">
+    <h1>VOIS Design System — Icon Library</h1>
+    <p>106 custom SVG icons. Stroke only, 24px viewBox, 1.5px weight, round caps. Click any icon to copy SVG.</p>
+    <div class="tabs" id="tabs">
+      <button class="active" data-mode="static">Static</button>
+      <button data-mode="interactive">Interactive</button>
+    </div>
+    <div class="interaction-note">Hover over any icon to see its animation. Click to see press feedback.</div>
+  </div>
+
+  <!-- SECTION 1: NAVIGATION -->
+  <div class="section" id="nav-icons">
+    <div class="section-title">Navigation <span class="badge">20</span></div>
+    <div class="section-desc">Sidebar, tabs, breadcrumbs, and page navigation</div>
+    <div class="icon-grid" id="grid-nav"></div>
+  </div>
+
+  <!-- SECTION 2: ACTIONS -->
+  <div class="section" id="action-icons">
+    <div class="section-title">Actions <span class="badge">20</span></div>
+    <div class="section-desc">CRUD operations, clipboard, and common interactions</div>
+    <div class="icon-grid" id="grid-action"></div>
+  </div>
+
+  <!-- SECTION 3: STATUS -->
+  <div class="section" id="status-icons">
+    <div class="section-title">Status <span class="badge">12</span></div>
+    <div class="section-desc">Task and process status indicators</div>
+    <div class="icon-grid" id="grid-status"></div>
+  </div>
+
+  <!-- SECTION 4: ONTOLOGY -->
+  <div class="section" id="ontology-icons">
+    <div class="section-title">Ontology <span class="badge">6</span></div>
+    <div class="section-desc">Blocks, tools, signals, failure modes, response patterns</div>
+    <div class="icon-grid" id="grid-ontology"></div>
+  </div>
+
+  <!-- SECTION 5: ROLES -->
+  <div class="section" id="role-icons">
+    <div class="section-title">Roles <span class="badge">6</span></div>
+    <div class="section-desc">User roles and team members</div>
+    <div class="icon-grid" id="grid-role"></div>
+  </div>
+
+  <!-- SECTION 6: FEATURES -->
+  <div class="section" id="feature-icons">
+    <div class="section-title">Features <span class="badge">16</span></div>
+    <div class="section-desc">Product features and capabilities</div>
+    <div class="icon-grid" id="grid-feature"></div>
+  </div>
+
+  <!-- SECTION 7: DATA -->
+  <div class="section" id="data-icons">
+    <div class="section-title">Data / Charts <span class="badge">8</span></div>
+    <div class="section-desc">Visualizations and analytics</div>
+    <div class="icon-grid" id="grid-data"></div>
+  </div>
+
+  <!-- SECTION 8: SYSTEM -->
+  <div class="section" id="system-icons">
+    <div class="section-title">System <span class="badge">18</span></div>
+    <div class="section-desc">UI chrome, navigation arrows, and utility icons</div>
+    <div class="icon-grid" id="grid-system"></div>
+  </div>
+</main>
+
+<div class="tooltip" id="tooltip"></div>
+<div class="toast" id="toast">SVG copied to clipboard</div>
+
+<script>
+// ─── ICON DATA ───
+// Each icon: [name, svgInner, color (optional), anim (optional)]
+// All SVGs use viewBox="0 0 24 24"
+
+const ICONS = {
+  nav: [
+    ["home", '<path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21V14h6v7"/>'],
+    ["today", '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M8 2v4"/><path d="M16 2v4"/><circle cx="12" cy="15" r="1.5" fill="currentColor" stroke="none"/>'],
+    ["tasks", '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 11l2 2 4-4"/>'],
+    ["execution", '<circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5z"/>'],
+    ["assessment", '<path d="M16 3H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M10 3V1"/><path d="M14 3V1"/><path d="M9 10h6"/><path d="M9 14h4"/><path d="M17 7l2.5 2.5"/><path d="M19.5 7L17 9.5"/>'],
+    ["signals", '<circle cx="5" cy="18" r="1.5" fill="currentColor" stroke="none"/><path d="M8.5 14.5a5 5 0 0 1 0 7"/><path d="M12 11a9 9 0 0 1 0 14"/><path d="M15.5 7.5a13 13 0 0 1 0 21"/>'],
+    ["plan", '<rect x="2" y="3" width="5.5" height="18" rx="1"/><rect x="9.25" y="3" width="5.5" height="18" rx="1"/><rect x="16.5" y="3" width="5.5" height="18" rx="1"/><rect x="3.5" y="6" width="2.5" height="2" rx=".5" fill="currentColor" stroke="none"/><rect x="10.75" y="6" width="2.5" height="2" rx=".5" fill="currentColor" stroke="none"/><rect x="10.75" y="10" width="2.5" height="2" rx=".5" fill="currentColor" stroke="none"/><rect x="18" y="6" width="2.5" height="2" rx=".5" fill="currentColor" stroke="none"/><rect x="3.5" y="10" width="2.5" height="2" rx=".5" fill="currentColor" stroke="none"/>'],
+    ["report", '<path d="M6 2h8l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M14 2v5h5"/><path d="M8 16l2-3 2 2 3-4"/>'],
+    ["history", '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 1.5"/><path d="M4.5 5.5L4 9l3.5-.5"/>'],
+    ["reference", '<path d="M2 4a2 2 0 0 1 2-2h5l3 3 3-3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/><path d="M12 5v17"/>'],
+    ["knowledge", '<path d="M9 21h6"/><path d="M12 17v4"/><path d="M12 3a5 5 0 0 1 3.5 8.5L14 14H10l-1.5-2.5A5 5 0 0 1 12 3z"/>'],
+    ["standards", '<path d="M12 2l8 4.5v5c0 5.25-3.5 9.75-8 11-4.5-1.25-8-5.75-8-11v-5z"/><path d="M9 12l2 2 4-4"/>'],
+    ["settings", '<circle cx="12" cy="12" r="3"/><path d="M12 1v2"/><path d="M12 21v2"/><path d="M4.22 4.22l1.42 1.42"/><path d="M18.36 18.36l1.42 1.42"/><path d="M1 12h2"/><path d="M21 12h2"/><path d="M4.22 19.78l1.42-1.42"/><path d="M18.36 5.64l1.42-1.42"/>'],
+    ["help", '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.75 1c0 1.5-2.25 2-2.25 3.5"/><circle cx="12" cy="16.5" r=".5" fill="currentColor" stroke="none"/>'],
+    ["search", '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/>'],
+    ["menu", '<path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/>'],
+    ["collapse", '<path d="M13 7l-5 5 5 5"/><path d="M19 7l-5 5 5 5"/>'],
+    ["expand", '<path d="M5 7l5 5-5 5"/><path d="M11 7l5 5-5 5"/>'],
+    ["back", '<path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/>'],
+    ["forward", '<path d="M5 12h14"/><path d="M12 5l7 7-7 7"/>'],
+  ],
+  action: [
+    ["add", '<circle cx="12" cy="12" r="9"/><path d="M12 8v8"/><path d="M8 12h8"/>'],
+    ["edit", '<path d="M17 3a2.83 2.83 0 0 1 4 4L7.5 20.5 2 22l1.5-5.5z"/>'],
+    ["delete", '<path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/>'],
+    ["save", '<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h10l6 6v10a2 2 0 0 1-2 2z"/><path d="M17 21v-6H7v6"/><path d="M7 3v4h7"/>'],
+    ["duplicate", '<rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 3H6a2 2 0 0 0-2 2v10"/>'],
+    ["export", '<path d="M12 3v12"/><path d="M17 8l-5-5-5 5"/><path d="M3 17v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2"/>'],
+    ["import", '<path d="M12 15V3"/><path d="M7 10l5 5 5-5"/><path d="M3 17v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2"/>'],
+    ["send", '<path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4z"/>'],
+    ["attach", '<path d="M21.44 11.05l-9.19 9.19a5 5 0 0 1-7.07-7.07l9.19-9.19a3.33 3.33 0 0 1 4.72 4.72l-9.2 9.19a1.67 1.67 0 0 1-2.36-2.36l8.49-8.49"/>'],
+    ["more", '<circle cx="5" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1" fill="currentColor" stroke="none"/>'],
+    ["more-vertical", '<circle cx="12" cy="5" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="19" r="1" fill="currentColor" stroke="none"/>'],
+    ["close", '<path d="M18 6L6 18"/><path d="M6 6l12 12"/>'],
+    ["check", '<path d="M20 6L9 17l-5-5"/>'],
+    ["refresh", '<path d="M1 4v6h6"/><path d="M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10"/><path d="M3.51 15A9 9 0 0 0 18.36 18.36L23 14"/>'],
+    ["undo", '<path d="M3 7v6h6"/><path d="M3 13A9 9 0 0 1 21 12c0 5-4 9-9 9a9 9 0 0 1-8.1-5"/>'],
+    ["filter", '<path d="M3 4h18l-7 8.5V18l-4 2v-7.5z"/>'],
+    ["sort", '<path d="M7 3v18"/><path d="M4 7l3-4 3 4"/><path d="M17 21V3"/><path d="M14 17l3 4 3-4"/>'],
+    ["drag", '<circle cx="8" cy="4" r="1.2" fill="currentColor" stroke="none"/><circle cx="16" cy="4" r="1.2" fill="currentColor" stroke="none"/><circle cx="8" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="16" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="8" cy="20" r="1.2" fill="currentColor" stroke="none"/><circle cx="16" cy="20" r="1.2" fill="currentColor" stroke="none"/>'],
+    ["link", '<path d="M10 13a4.5 4.5 0 0 0 6.36 0l3.18-3.18a4.5 4.5 0 0 0-6.36-6.36l-1.59 1.59"/><path d="M14 11a4.5 4.5 0 0 0-6.36 0L4.46 14.18a4.5 4.5 0 0 0 6.36 6.36l1.59-1.59"/>'],
+    ["unlink", '<path d="M10 13a4.5 4.5 0 0 0 5.5.5"/><path d="M14 11a4.5 4.5 0 0 0-5.5-.5"/><path d="M16 4l3-3"/><path d="M19.46 6.54l3.18-3.18"/><path d="M8 20l-3 3"/><path d="M4.54 17.46l-3.18 3.18"/>'],
+  ],
+  status: [
+    ["success", '<circle cx="12" cy="12" r="9"/><path class="draw" d="M9 12l2 2 4-4"/>', "#10B981"],
+    ["warning", '<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4"/><circle cx="12" cy="16" r=".5" fill="currentColor" stroke="none"/>', "#F59E0B"],
+    ["error", '<circle cx="12" cy="12" r="9"/><path d="M15 9l-6 6"/><path d="M9 9l6 6"/>', "#EF4444"],
+    ["info", '<circle cx="12" cy="12" r="9"/><path d="M12 8h.01"/><path d="M12 11v5"/>', "#6366F1"],
+    ["blocked", '<circle cx="12" cy="12" r="9"/><path d="M8 12h8"/>', "#EF4444"],
+    ["in-progress", '<circle cx="12" cy="12" r="9"/><path d="M12 6v6l3 3"/>', "#6366F1"],
+    ["on-track", '<circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/>', "#10B981"],
+    ["overdue", '<circle cx="12" cy="12" r="9"/><path d="M12 7v4"/><circle cx="12" cy="14" r=".5" fill="currentColor" stroke="none"/><path d="M19 4l1.5-1.5"/>', "#EF4444"],
+    ["at-risk", '<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>', "#F59E0B"],
+    ["pending", '<circle cx="12" cy="12" r="9"/>', "#A3A3A3"],
+    ["completed", '<circle cx="12" cy="12" r="9" fill="currentColor" stroke="currentColor"/><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2"/>', "#10B981"],
+    ["critical", '<circle cx="12" cy="12" r="9"/><path d="M10 8v5"/><path d="M14 8v5"/><circle cx="10" cy="16" r=".5" fill="currentColor" stroke="none"/><circle cx="14" cy="16" r=".5" fill="currentColor" stroke="none"/>', "#EF4444"],
+  ],
+  ontology: [
+    ["block", '<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12l8.73-5.04"/><path d="M12 22V12"/>', "#6C5CE7"],
+    ["tool", '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"/>', "#3B82F6"],
+    ["signal", '<path class="pulse" d="M2 12h3l3-7 4 14 4-10 3 3h3"/>', "#10B981"],
+    ["failure-mode", '<path d="M13 2L3 14h9l-1 8 10-12h-9z"/>', "#EF4444"],
+    ["response-pattern", '<path d="M12 2l8 4.5v5c0 5.25-3.5 9.75-8 11-4.5-1.25-8-5.75-8-11v-5z"/><path d="M12 10v4"/><path d="M12 14l4 4"/>', "#F59E0B"],
+    ["ontology", '<circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="19" r="2.5"/><path d="M8.5 7l3 9.5"/><path d="M15.5 7l-3 9.5"/><path d="M8.5 6h7"/>', "#6C5CE7"],
+  ],
+  role: [
+    ["owner", '<path d="M3 18l3-6 3 3 3-6 3 6 3-3 3 6"/><circle cx="12" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="6" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="18" cy="14" r="1" fill="currentColor" stroke="none"/>'],
+    ["manager", '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/>'],
+    ["barista", '<path d="M5 8h10a1 1 0 0 1 1 1v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9a1 1 0 0 1 1-1z"/><path d="M16 10h1a3 3 0 0 1 0 6h-1"/><path d="M6 3s1 2 4 2 4-2 4-2"/>'],
+    ["developer", '<path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/>'],
+    ["team", '<circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M17 14a3 3 0 0 1 3 3v4"/>'],
+    ["person", '<circle cx="12" cy="7" r="4"/><path d="M5 21v-2a5 5 0 0 1 10 0v2"/><path d="M19 21v-2"/>'],
+  ],
+  feature: [
+    ["copilot", '<circle class="star1" cx="12" cy="5" r="1.5" fill="currentColor" stroke="none"/><circle class="star2" cx="6" cy="14" r="1" fill="currentColor" stroke="none"/><circle class="star3" cx="18" cy="12" r="1.2" fill="currentColor" stroke="none"/><path class="star1" d="M12 3l.7 1.5 1.6.2-1.15 1.1.27 1.6L12 6.8l-1.42.6.27-1.6-1.15-1.1 1.6-.2z"/><path class="star2" d="M6 12.5l.4.8.9.15-.65.6.15.9L6 14.5l-.8.45.15-.9-.65-.6.9-.15z"/><path class="star3" d="M18 10.5l.5 1 1.1.15-.8.75.2 1.1L18 12.9l-.98.55.2-1.1-.8-.75 1.1-.15z"/>', "#6C5CE7"],
+    ["notification", '<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>'],
+    ["notification-dot", '<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/><circle cx="18" cy="5" r="3" fill="#EF4444" stroke="#EF4444"/>'],
+    ["escalation", '<circle cx="12" cy="12" r="9"/><path d="M12 16V8"/><path d="M8 12l4-4 4 4"/>', "#EF4444"],
+    ["delegation", '<circle cx="8" cy="10" r="3"/><path d="M8 15a5 5 0 0 0-5 5"/><path d="M13 10h8"/><path d="M18 7l3 3-3 3"/>'],
+    ["evidence", '<circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M2 12h2"/><path d="M20 12h2"/>'],
+    ["proof", '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="M12 8v1"/><path d="M12 15v1"/><path d="M8 12h1"/><path d="M15 12h1"/>'],
+    ["comment", '<path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 8.7 3.9 8.4 8.4 0 0 1 12.5 3h.5a8.5 8.5 0 0 1 8 8v.5z"/>'],
+    ["progress", '<path d="M3 17l4-4 4 4 4-6 6 2"/>'],
+    ["velocity", '<path d="M12 21a9 9 0 1 1 0-18"/><path d="M12 12l4-6"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>'],
+    ["calendar", '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M8 2v4"/><path d="M16 2v4"/><path d="M7 13h2"/><path d="M11 13h2"/><path d="M15 13h2"/><path d="M7 17h2"/><path d="M11 17h2"/>'],
+    ["clock", '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>'],
+    ["shift", '<circle cx="12" cy="12" r="5"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.93 19.07l1.41-1.41"/><path d="M17.66 6.34l1.41-1.41"/>'],
+    ["log", '<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8"/><path d="M8 10h8"/><path d="M8 14h5"/>'],
+    ["report-issue", '<path d="M4 21V5a2 2 0 0 1 2-2h4l2 2h4"/><path d="M4 15h16"/>'],
+    ["ask-help", '<circle cx="12" cy="12" r="9"/><path d="M12 8v1"/><path d="M12 12v5"/><path d="M8 11h8"/>'],
+  ],
+  data: [
+    ["chart-bar", '<rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="6" width="4" height="15" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/>'],
+    ["chart-line", '<path d="M3 20h18"/><path d="M3 20L7 13l4 4 3-6 4 3 3-7"/>'],
+    ["chart-pie", '<path d="M12 2a10 10 0 1 0 10 10h-10z"/><path d="M20 10a8 8 0 0 0-8-8v8z"/>'],
+    ["trending-up", '<path d="M3 17l5-5 4 4L22 6"/><path d="M16 6h6v6"/>', "#10B981"],
+    ["trending-down", '<path d="M3 7l5 5 4-4L22 18"/><path d="M16 18h6v-6"/>', "#EF4444"],
+    ["trending-flat", '<path d="M3 12h18"/><path d="M17 8l4 4-4 4"/>'],
+    ["heatmap", '<rect x="2" y="2" width="5.5" height="5.5" rx="1" opacity=".3" fill="currentColor"/><rect x="9.25" y="2" width="5.5" height="5.5" rx="1" opacity=".7" fill="currentColor"/><rect x="16.5" y="2" width="5.5" height="5.5" rx="1" opacity="1" fill="currentColor"/><rect x="2" y="9.25" width="5.5" height="5.5" rx="1" opacity=".6" fill="currentColor"/><rect x="9.25" y="9.25" width="5.5" height="5.5" rx="1" opacity=".4" fill="currentColor"/><rect x="16.5" y="9.25" width="5.5" height="5.5" rx="1" opacity=".8" fill="currentColor"/><rect x="2" y="16.5" width="5.5" height="5.5" rx="1" opacity=".9" fill="currentColor"/><rect x="9.25" y="16.5" width="5.5" height="5.5" rx="1" opacity=".5" fill="currentColor"/><rect x="16.5" y="16.5" width="5.5" height="5.5" rx="1" opacity=".2" fill="currentColor"/>'],
+    ["metrics", '<path d="M12 21a9 9 0 1 1 0-18"/><path d="M12 12l5-3"/><circle cx="12" cy="12" r="1.5"/><path d="M3 12h2"/><path d="M19 12h2"/>'],
+  ],
+  system: [
+    ["theme-light", '<circle cx="12" cy="12" r="5"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.93 19.07l1.41-1.41"/><path d="M17.66 6.34l1.41-1.41"/>'],
+    ["theme-dark", '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>'],
+    ["fullscreen", '<path d="M3 8V3h5"/><path d="M21 8V3h-5"/><path d="M3 16v5h5"/><path d="M21 16v5h-5"/>'],
+    ["minimize", '<path d="M8 3v5H3"/><path d="M16 3v5h5"/><path d="M8 21v-5H3"/><path d="M16 21v-5h5"/>'],
+    ["external", '<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/>'],
+    ["download", '<path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M3 17v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2"/>'],
+    ["upload", '<path d="M12 15V3"/><path d="M17 8l-5-5-5 5"/><path d="M3 17v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2"/>'],
+    ["lock", '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'],
+    ["unlock", '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>'],
+    ["eye", '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>'],
+    ["eye-off", '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><path d="M1 1l22 22"/>'],
+    ["chevron-down", '<path d="M6 9l6 6 6-6"/>'],
+    ["chevron-up", '<path d="M18 15l-6-6-6 6"/>'],
+    ["chevron-left", '<path d="M15 18l-6-6 6-6"/>'],
+    ["chevron-right", '<path d="M9 18l6-6-6-6"/>'],
+    ["arrow-up", '<path d="M12 19V5"/><path d="M5 12l7-7 7 7"/>'],
+    ["arrow-down", '<path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/>'],
+    ["loading", '<path d="M12 2a10 10 0 0 1 10 10"/>'],
+  ]
+};
+
+// ─── RENDER ───
+function makeSVG(inner, size) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${inner}</svg>`;
+}
+
+function renderGrid(gridId, iconArr, category) {
+  const grid = document.getElementById(gridId);
+  iconArr.forEach(([name, inner, color]) => {
+    const cell = document.createElement('div');
+    cell.className = 'icon-cell';
+    cell.setAttribute('data-name', name);
+    cell.setAttribute('data-svg', inner);
+    cell.setAttribute('data-cat', category);
+    if (color) {
+      cell.setAttribute('data-color', color);
+      cell.style.setProperty('--icon-color', color);
+    }
+    cell.innerHTML = makeSVG(inner, 32) + `<span class="label">${name}</span>`;
+    grid.appendChild(cell);
+  });
+}
+
+renderGrid('grid-nav', ICONS.nav, 'nav');
+renderGrid('grid-action', ICONS.action, 'action');
+renderGrid('grid-status', ICONS.status, 'status');
+renderGrid('grid-ontology', ICONS.ontology, 'ontology');
+renderGrid('grid-role', ICONS.role, 'role');
+renderGrid('grid-feature', ICONS.feature, 'feature');
+renderGrid('grid-data', ICONS.data, 'data');
+renderGrid('grid-system', ICONS.system, 'system');
+
+// ─── TABS ───
+document.getElementById('tabs').addEventListener('click', e => {
+  if (e.target.tagName !== 'BUTTON') return;
+  document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+  e.target.classList.add('active');
+  document.body.className = 'mode-' + e.target.dataset.mode;
+});
+
+// ─── TOOLTIP ───
+const tooltip = document.getElementById('tooltip');
+let ttTimeout;
+
+document.addEventListener('mouseover', e => {
+  const cell = e.target.closest('.icon-cell');
+  if (!cell) return;
+  clearTimeout(ttTimeout);
+  const name = cell.dataset.name;
+  const inner = cell.dataset.svg;
+  const svgCode = makeSVG(inner, 24);
+  const escaped = svgCode.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+  tooltip.innerHTML = `
+    <div class="icon-name">${name}</div>
+    <div class="sizes">
+      <div class="sz">${makeSVG(inner, 16)}<span>16</span></div>
+      <div class="sz">${makeSVG(inner, 20)}<span>20</span></div>
+      <div class="sz">${makeSVG(inner, 24)}<span>24</span></div>
+      <div class="sz">${makeSVG(inner, 32)}<span>32</span></div>
+    </div>
+    <div class="code-label">SVG Code</div>
+    <pre>${escaped}</pre>
+  `;
+
+  const r = cell.getBoundingClientRect();
+  let left = r.right + 12;
+  let top = r.top - 20;
+  if (left + 300 > window.innerWidth) left = r.left - 300;
+  if (top + 280 > window.innerHeight) top = window.innerHeight - 290;
+  if (top < 10) top = 10;
+  tooltip.style.left = left + 'px';
+  tooltip.style.top = top + 'px';
+  tooltip.classList.add('show');
+});
+
+document.addEventListener('mouseout', e => {
+  const cell = e.target.closest('.icon-cell');
+  if (!cell) return;
+  ttTimeout = setTimeout(() => tooltip.classList.remove('show'), 120);
+});
+
+// ─── CLICK TO COPY ───
+const toast = document.getElementById('toast');
+let toastTimeout;
+
+document.addEventListener('click', e => {
+  const cell = e.target.closest('.icon-cell');
+  if (!cell) return;
+  const inner = cell.dataset.svg;
+  const svgCode = makeSVG(inner, 24);
+  navigator.clipboard.writeText(svgCode).then(() => {
+    toast.classList.add('show');
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => toast.classList.remove('show'), 1800);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- VOIS Design System Reference — Canvas spine with Pocket exception -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS Design System — Global Debut</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     RESET & BASE
+     ============================================================ */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 15px; -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #FAFAFA;
+    color: #0A0A0A;
+    line-height: 1.5;
+  }
+
+  /* ============================================================
+     DESIGN TOKENS AS CSS CUSTOM PROPERTIES
+     ============================================================ */
+  :root {
+    /* Backgrounds */
+    --bg-page: #FAFAFA;
+    --bg-surface: #FFFFFF;
+    --bg-muted: #F5F5F5;
+    --bg-dark: #0F0F0F;
+
+    /* Text */
+    --text-primary: #0A0A0A;
+    --text-secondary: #525252;
+    --text-muted: #A3A3A3;
+    --text-inverse: #FAFAFA;
+
+    /* Accent */
+    --accent: #6C5CE7;
+    --accent-hover: #5B4BD5;
+    --accent-soft: rgba(108, 92, 231, 0.08);
+    --accent-gradient: linear-gradient(135deg, #6C5CE7, #A29BFE);
+
+    /* Status */
+    --success: #10B981;
+    --success-soft: rgba(16, 185, 129, 0.08);
+    --warning: #F59E0B;
+    --warning-soft: rgba(245, 158, 11, 0.08);
+    --danger: #EF4444;
+    --danger-soft: rgba(239, 68, 68, 0.08);
+    --info: #6366F1;
+    --info-soft: rgba(99, 102, 241, 0.08);
+
+    /* Borders */
+    --border-subtle: #E5E5E5;
+    --border-strong: #D4D4D4;
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-lg: 0 12px 32px rgba(0,0,0,0.08);
+
+    /* Motion */
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --duration-fast: 120ms;
+    --duration-base: 180ms;
+    --duration-slow: 260ms;
+
+    /* Z-index */
+    --z-base: 1;
+    --z-sticky: 50;
+    --z-sidebar: 60;
+    --z-inspector: 70;
+    --z-drawer: 90;
+    --z-modal: 120;
+    --z-command: 130;
+    --z-toast: 140;
+
+    /* Layout */
+    --nav-width: 220px;
+  }
+
+  /* ============================================================
+     PAGE STRUCTURE
+     ============================================================ */
+  .page-layout {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* Sticky side navigation */
+  .side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--nav-width);
+    height: 100vh;
+    overflow-y: auto;
+    background: var(--bg-surface);
+    border-right: 1px solid var(--border-subtle);
+    padding: 32px 20px;
+    z-index: var(--z-sidebar);
+  }
+  .side-nav::-webkit-scrollbar { width: 3px; }
+  .side-nav::-webkit-scrollbar-thumb { background: var(--border-subtle); border-radius: 4px; }
+
+  .side-nav .logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .side-nav .logo .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+  }
+  .side-nav .subtitle {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+
+  .nav-group { margin-bottom: 20px; }
+  .nav-group-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    padding-left: 10px;
+  }
+  .nav-group a {
+    display: block;
+    padding: 7px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: all var(--duration-fast) var(--ease);
+  }
+  .nav-group a:hover {
+    background: var(--bg-muted);
+    color: var(--text-primary);
+  }
+  .nav-group a.active,
+  .nav-group a:focus {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* Main content */
+  .main-content {
+    margin-left: var(--nav-width);
+    flex: 1;
+    min-width: 0;
+    padding: 48px;
+    max-width: 1100px;
+  }
+
+  /* ============================================================
+     PAGE HEADER
+     ============================================================ */
+  .page-header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .page-header .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .page-header h1 {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .page-header .desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    max-width: 540px;
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     SECTIONS
+     ============================================================ */
+  .section {
+    margin-bottom: 64px;
+  }
+  .section-title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .section-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    max-width: 600px;
+  }
+
+  .subsection {
+    margin-bottom: 48px;
+  }
+  .subsection-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .subsection-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  /* ============================================================
+     COLOR SWATCHES
+     ============================================================ */
+  .color-group { margin-bottom: 28px; }
+  .color-group-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+  }
+  .swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .swatch {
+    width: 120px;
+  }
+  .swatch-box {
+    width: 100%;
+    height: 56px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-subtle);
+    margin-bottom: 6px;
+  }
+  .swatch-box.dark-bg { border-color: transparent; }
+  .swatch-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.3;
+  }
+  .swatch-hex {
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-muted);
+  }
+
+  /* ============================================================
+     TYPOGRAPHY SAMPLES
+     ============================================================ */
+  .type-sample {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .type-sample:last-child { border-bottom: none; }
+  .type-meta {
+    flex-shrink: 0;
+    width: 160px;
+  }
+  .type-token {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .type-spec {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .type-rendered {
+    flex: 1;
+  }
+  .type-use {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* ============================================================
+     SPACING BARS
+     ============================================================ */
+  .spacing-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .spacing-label {
+    width: 100px;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-secondary);
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .spacing-bar {
+    height: 20px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    transition: width var(--duration-base) var(--ease);
+  }
+  .spacing-name {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-left: 8px;
+  }
+
+  /* ============================================================
+     RADIUS EXAMPLES
+     ============================================================ */
+  .radius-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .radius-item {
+    text-align: center;
+  }
+  .radius-box {
+    width: 80px;
+    height: 80px;
+    background: var(--bg-surface);
+    border: 2px solid var(--accent);
+    margin-bottom: 8px;
+  }
+  .radius-value {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .radius-name {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  /* ============================================================
+     SHADOW EXAMPLES
+     ============================================================ */
+  .shadow-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .shadow-card {
+    width: 160px;
+    height: 100px;
+    background: var(--bg-surface);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .shadow-card .label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .shadow-card .spec {
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-muted);
+    margin-top: 4px;
+    text-align: center;
+    padding: 0 12px;
+  }
+
+  /* ============================================================
+     MOTION & Z-INDEX TABLES
+     ============================================================ */
+  .token-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .token-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .token-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border-subtle);
+    vertical-align: middle;
+  }
+  .token-table td:first-child { font-weight: 600; }
+  .token-table code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: var(--bg-muted);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--accent);
+  }
+
+  /* ============================================================
+     COMPONENT SHOWCASE
+     ============================================================ */
+  .component-stage {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 32px;
+    margin-bottom: 16px;
+  }
+  .component-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  /* Buttons */
+  .btn-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 16px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    padding: 0 16px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--accent-gradient);
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(108,92,231,0.25);
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(108,92,231,0.3); }
+  .btn-secondary {
+    background: var(--bg-surface);
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+  }
+  .btn-secondary:hover { background: var(--accent-soft); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--accent);
+  }
+  .btn-ghost:hover { background: var(--accent-soft); }
+  .btn-danger {
+    background: var(--danger);
+    color: #fff;
+  }
+  .btn-danger:hover { background: #DC2626; }
+  .btn[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .btn-sm { height: 28px; padding: 0 12px; font-size: 12px; }
+  .btn-lg { height: 44px; padding: 0 24px; font-size: 15px; }
+
+  /* Status dots */
+  .dot-row { display: flex; flex-wrap: wrap; gap: 20px; }
+  .dot-item { display: flex; align-items: center; gap: 8px; }
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .dot-label { font-size: 13px; color: var(--text-secondary); }
+
+  /* Pills / Badges */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .pill-overdue { background: var(--danger-soft); color: var(--danger); }
+  .pill-blocked { background: var(--danger-soft); color: var(--danger); }
+  .pill-at-risk { background: var(--warning-soft); color: #B45309; }
+  .pill-in-progress { background: var(--info-soft); color: var(--info); }
+  .pill-on-track { background: var(--success-soft); color: #059669; }
+  .pill-completed { background: var(--success-soft); color: #059669; }
+  .pill-count {
+    background: var(--bg-muted);
+    color: var(--text-muted);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  .pill-role {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+
+  /* Cards */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--bg-surface);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--duration-base) var(--ease);
+  }
+  .card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+  .card-title { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .card-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+  .card-footer { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border-subtle); font-size: 12px; color: var(--text-muted); }
+
+  .card-status { border-left: 4px solid var(--success); }
+  .card-status.danger { border-left-color: var(--danger); }
+  .card-status.warning { border-left-color: var(--warning); }
+
+  .card-metric { text-align: center; }
+  .card-metric .metric-value {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .card-metric .metric-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* List rows */
+  .list-container {
+    background: var(--bg-surface);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+    overflow: hidden;
+  }
+  .list-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 20px;
+    height: 52px;
+    border-bottom: 1px solid var(--border-subtle);
+    transition: background var(--duration-fast) var(--ease);
+    cursor: default;
+  }
+  .list-row:last-child { border-bottom: none; }
+  .list-row:hover { background: var(--bg-muted); }
+  .list-row.selected {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    padding-left: 17px;
+  }
+  .list-row .task-name { flex: 1; font-size: 15px; font-weight: 500; }
+  .list-row .assignee { font-size: 13px; color: var(--text-muted); min-width: 80px; }
+  .list-row .due { font-size: 13px; color: var(--text-muted); min-width: 80px; }
+
+  /* Inputs */
+  .input-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+  .input-field {
+    font-family: inherit;
+    font-size: 15px;
+    height: 40px;
+    padding: 0 14px;
+    background: var(--bg-surface);
+    border: 1.5px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color var(--duration-fast) var(--ease), box-shadow var(--duration-fast) var(--ease);
+    width: 240px;
+  }
+  .input-field:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+  .input-field::placeholder { color: var(--text-muted); }
+  textarea.input-field { height: auto; min-height: 120px; padding: 12px 14px; resize: vertical; }
+  .input-search {
+    padding-left: 38px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23A3A3A3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+  }
+  select.input-field {
+    appearance: none;
+    padding-right: 36px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23525252' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+
+  /* Section header pattern */
+  .section-header-demo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+  }
+  .section-header-demo .left { display: flex; align-items: center; gap: 10px; }
+  .section-header-demo .sh-title { font-size: 20px; font-weight: 600; }
+
+  /* Page header pattern */
+  .page-header-demo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 24px 0;
+  }
+
+  /* Empty state */
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .empty-state .empty-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: var(--bg-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 22px;
+  }
+  .empty-state .empty-title { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+  .empty-state .empty-desc { font-size: 15px; color: var(--text-muted); max-width: 360px; margin: 0 auto 20px; line-height: 1.6; }
+
+  /* Avatar */
+  .avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    color: #fff;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .avatar-sm { width: 28px; height: 28px; font-size: 11px; }
+  .avatar-md { width: 36px; height: 36px; font-size: 13px; }
+  .avatar-lg { width: 48px; height: 48px; font-size: 16px; }
+  .avatar .avatar-status {
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--bg-surface);
+  }
+
+  /* Progress bar */
+  .progress-bar-track {
+    width: 100%;
+    height: 4px;
+    background: var(--bg-muted);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: var(--accent-gradient);
+    border-radius: var(--radius-full);
+    transition: width var(--duration-slow) var(--ease);
+  }
+  .progress-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .progress-label { font-size: 12px; font-family: 'JetBrains Mono', monospace; color: var(--text-muted); width: 36px; text-align: right; flex-shrink: 0; }
+
+  /* More menu */
+  .more-menu-demo { position: relative; display: inline-block; }
+  .more-trigger {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: background var(--duration-fast) var(--ease);
+  }
+  .more-trigger:hover { background: var(--bg-muted); }
+  .more-dropdown {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    background: var(--bg-surface);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    min-width: 180px;
+    padding: 6px;
+    z-index: 10;
+  }
+  .more-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background var(--duration-fast) var(--ease);
+    color: var(--text-primary);
+  }
+  .more-item:hover { background: var(--bg-muted); }
+  .more-separator { height: 1px; background: var(--border-subtle); margin: 4px 0; }
+  .more-item.danger-text { color: var(--danger); }
+
+  /* ============================================================
+     LAYOUT DIAGRAMS
+     ============================================================ */
+  .layout-diagram {
+    border: 2px dashed var(--border-strong);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+  .layout-diagram .area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed var(--border-subtle);
+    padding: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 11px;
+  }
+
+  /* Standard layout */
+  .layout-standard {
+    display: grid;
+    grid-template-columns: 240px 1fr 320px;
+    grid-template-rows: 48px 1fr 48px;
+    height: 340px;
+  }
+  .layout-standard .sidebar { grid-row: 1 / 4; background: rgba(108,92,231,0.03); }
+  .layout-standard .topbar { grid-column: 2 / 4; background: rgba(108,92,231,0.02); }
+  .layout-standard .canvas { background: rgba(108,92,231,0.01); }
+  .layout-standard .inspector { grid-row: 2 / 4; background: rgba(108,92,231,0.04); }
+  .layout-standard .drawer { background: rgba(108,92,231,0.06); }
+
+  /* Focused layout */
+  .layout-focused {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 48px 1fr 48px;
+    height: 300px;
+  }
+  .layout-focused .sidebar { grid-row: 1 / 4; background: rgba(108,92,231,0.03); }
+  .layout-focused .topbar { background: rgba(108,92,231,0.02); }
+  .layout-focused .canvas { background: rgba(108,92,231,0.01); }
+  .layout-focused .drawer { background: rgba(108,92,231,0.06); }
+
+  /* Pocket layout */
+  .layout-pocket {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 56px 1fr 56px;
+    height: 340px;
+    max-width: 375px;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+  }
+  .layout-pocket .topbar { background: rgba(108,92,231,0.02); }
+  .layout-pocket .cards { background: rgba(108,92,231,0.01); }
+  .layout-pocket .tabs { background: rgba(108,92,231,0.04); }
+
+  /* ============================================================
+     SIDEBAR SPEC
+     ============================================================ */
+  .sidebar-spec {
+    width: 240px;
+    background: var(--bg-page);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 24px 16px;
+    font-size: 13px;
+  }
+  .sidebar-spec .sb-logo {
+    font-size: 18px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .sidebar-spec .sb-logo .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+  }
+  .sidebar-spec .sb-venue {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+  }
+  .sidebar-spec .sb-venue .online-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--success);
+  }
+  .sidebar-spec .sb-group { margin-bottom: 16px; }
+  .sidebar-spec .sb-group-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    padding-left: 8px;
+  }
+  .sidebar-spec .sb-item {
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sidebar-spec .sb-item.active {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .sidebar-spec .sb-item.muted-item { color: var(--text-muted); }
+  .sidebar-spec .sb-divider { height: 1px; background: var(--border-subtle); margin: 12px 0; }
+
+  /* ============================================================
+     DARK MODE PREVIEW
+     ============================================================ */
+  .dark-preview {
+    background: #0F0F0F;
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    color: #EDEDED;
+  }
+  .dark-preview .dark-token-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .dark-preview .dark-token {
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+  }
+  .dark-preview .dark-token .dt-name { font-weight: 600; margin-bottom: 2px; }
+  .dark-preview .dark-token .dt-hex { font-family: 'JetBrains Mono', monospace; font-size: 11px; opacity: 0.6; }
+  .dark-card-preview {
+    background: #1A1A1A;
+    border-radius: var(--radius-md);
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    max-width: 300px;
+  }
+  .dark-card-preview .dcp-title { font-size: 16px; font-weight: 600; color: #EDEDED; margin-bottom: 6px; }
+  .dark-card-preview .dcp-desc { font-size: 13px; color: #999999; line-height: 1.5; }
+  .dark-card-preview .dcp-footer { margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .dark-card-preview .dcp-accent { color: #A29BFE; font-size: 13px; font-weight: 600; }
+
+  /* ============================================================
+     USAGE NOTES
+     ============================================================ */
+  .usage-note {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 12px 16px;
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .usage-note strong { color: var(--text-primary); }
+  .key-rules li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    list-style: disc;
+    margin-left: 20px;
+    line-height: 1.5;
+  }
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width: 900px) {
+    .side-nav { display: none; }
+    .main-content { margin-left: 0; padding: 20px; }
+    .layout-standard { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; }
+    .layout-standard .sidebar, .layout-standard .inspector { display: none; }
+    .card-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     SIDE NAVIGATION
+     ============================================================ -->
+<nav class="side-nav">
+  <div class="logo">VOIS <span class="dot"></span></div>
+  <div class="subtitle">Design System</div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Tokens</div>
+    <a href="#colors">Colors</a>
+    <a href="#typography">Typography</a>
+    <a href="#spacing">Spacing</a>
+    <a href="#radius">Border Radius</a>
+    <a href="#shadows">Shadows</a>
+    <a href="#motion">Motion</a>
+    <a href="#zindex">Z-Index</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Components</div>
+    <a href="#buttons">Buttons</a>
+    <a href="#status-dots">Status Dots</a>
+    <a href="#pills">Pills / Badges</a>
+    <a href="#cards">Cards</a>
+    <a href="#list-rows">List Rows</a>
+    <a href="#inputs">Inputs</a>
+    <a href="#section-header">Section Header</a>
+    <a href="#page-header-comp">Page Header</a>
+    <a href="#empty-state">Empty State</a>
+    <a href="#avatars">Avatar</a>
+    <a href="#progress">Progress Bar</a>
+    <a href="#more-menu">More Menu</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Layout</div>
+    <a href="#layout-standard">Standard Layout</a>
+    <a href="#layout-focused">Focused Layout</a>
+    <a href="#layout-pocket">Pocket Layout</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Spec</div>
+    <a href="#sidebar-spec">Sidebar</a>
+    <a href="#dark-mode">Dark Mode</a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<main class="main-content">
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="eyebrow">Reference Document</div>
+    <h1>VOIS Design System</h1>
+    <p class="desc">The single source of truth for every visual decision. Tokens, components, and layout templates that all pages must follow.</p>
+  </header>
+
+  <!-- =========================================================
+       SECTION 1: DESIGN TOKENS
+       ========================================================= -->
+  <section class="section" id="tokens">
+    <h2 class="section-title">Design Tokens</h2>
+    <p class="section-desc">Primitive values that drive every surface, text, and interaction across VOIS.</p>
+
+    <!-- 1.1 Colors -->
+    <div class="subsection" id="colors">
+      <h3 class="subsection-title">1.1 Colors</h3>
+      <p class="subsection-desc">Organized into semantic groups. Every color used in the product must come from this palette.</p>
+
+      <div class="color-group">
+        <div class="color-group-label">Backgrounds</div>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-box" style="background:#FAFAFA;"></div><div class="swatch-label">Page</div><div class="swatch-hex">#FAFAFA</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:#FFFFFF;"></div><div class="swatch-label">Surface</div><div class="swatch-hex">#FFFFFF</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:#FFFFFF; box-shadow: 0 4px 12px rgba(0,0,0,0.06);"></div><div class="swatch-label">Surface Elevated</div><div class="swatch-hex">#FFFFFF + shadow</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:#F5F5F5;"></div><div class="swatch-label">Muted</div><div class="swatch-hex">#F5F5F5</div></div>
+          <div class="swatch"><div class="swatch-box dark-bg" style="background:#0F0F0F;"></div><div class="swatch-label">Dark</div><div class="swatch-hex">#0F0F0F</div></div>
+        </div>
+      </div>
+
+      <div class="color-group">
+        <div class="color-group-label">Text</div>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-box" style="background:#0A0A0A;"></div><div class="swatch-label">Primary</div><div class="swatch-hex">#0A0A0A</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:#525252;"></div><div class="swatch-label">Secondary</div><div class="swatch-hex">#525252</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:#A3A3A3;"></div><div class="swatch-label">Muted</div><div class="swatch-hex">#A3A3A3</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:#FAFAFA; border-color:#D4D4D4;"></div><div class="swatch-label">Inverse</div><div class="swatch-hex">#FAFAFA</div></div>
+        </div>
+      </div>
+
+      <div class="color-group">
+        <div class="color-group-label">Accent</div>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-box dark-bg" style="background:#6C5CE7;"></div><div class="swatch-label">Primary</div><div class="swatch-hex">#6C5CE7</div></div>
+          <div class="swatch"><div class="swatch-box dark-bg" style="background:#5B4BD5;"></div><div class="swatch-label">Primary Hover</div><div class="swatch-hex">#5B4BD5</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:rgba(108,92,231,0.08);"></div><div class="swatch-label">Primary Soft</div><div class="swatch-hex">rgba(108,92,231,0.08)</div></div>
+          <div class="swatch"><div class="swatch-box dark-bg" style="background:linear-gradient(135deg,#6C5CE7,#A29BFE);"></div><div class="swatch-label">Gradient</div><div class="swatch-hex">135deg #6C5CE7 &rarr; #A29BFE</div></div>
+        </div>
+      </div>
+
+      <div class="color-group">
+        <div class="color-group-label">Status</div>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-box dark-bg" style="background:#10B981;"></div><div class="swatch-label">Success</div><div class="swatch-hex">#10B981</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:rgba(16,185,129,0.08);"></div><div class="swatch-label">Success Soft</div><div class="swatch-hex">rgba(..., 0.08)</div></div>
+          <div class="swatch"><div class="swatch-box dark-bg" style="background:#F59E0B;"></div><div class="swatch-label">Warning</div><div class="swatch-hex">#F59E0B</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:rgba(245,158,11,0.08);"></div><div class="swatch-label">Warning Soft</div><div class="swatch-hex">rgba(..., 0.08)</div></div>
+          <div class="swatch"><div class="swatch-box dark-bg" style="background:#EF4444;"></div><div class="swatch-label">Danger</div><div class="swatch-hex">#EF4444</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:rgba(239,68,68,0.08);"></div><div class="swatch-label">Danger Soft</div><div class="swatch-hex">rgba(..., 0.08)</div></div>
+          <div class="swatch"><div class="swatch-box dark-bg" style="background:#6366F1;"></div><div class="swatch-label">Info</div><div class="swatch-hex">#6366F1</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:rgba(99,102,241,0.08);"></div><div class="swatch-label">Info Soft</div><div class="swatch-hex">rgba(..., 0.08)</div></div>
+        </div>
+      </div>
+
+      <div class="color-group">
+        <div class="color-group-label">Borders</div>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-box" style="background:#E5E5E5;"></div><div class="swatch-label">Subtle</div><div class="swatch-hex">#E5E5E5</div></div>
+          <div class="swatch"><div class="swatch-box" style="background:#D4D4D4;"></div><div class="swatch-label">Strong</div><div class="swatch-hex">#D4D4D4</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1.2 Typography -->
+    <div class="subsection" id="typography">
+      <h3 class="subsection-title">1.2 Typography</h3>
+      <p class="subsection-desc">Inter is the primary typeface. JetBrains Mono for data and code values.</p>
+
+      <div class="component-stage">
+        <div class="type-sample">
+          <div class="type-meta"><div class="type-token">Display</div><div class="type-spec">36px / 800 / -0.02em / 1.15</div></div>
+          <div class="type-rendered"><span style="font-size:36px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;">Today's Agenda</span><div class="type-use">Page titles on hero/landing</div></div>
+        </div>
+        <div class="type-sample">
+          <div class="type-meta"><div class="type-token">Page</div><div class="type-spec">28px / 700 / -0.02em / 1.15</div></div>
+          <div class="type-rendered"><span style="font-size:28px;font-weight:700;letter-spacing:-0.02em;line-height:1.15;">Today</span><div class="type-use">Page titles (Today, Plan, etc.)</div></div>
+        </div>
+        <div class="type-sample">
+          <div class="type-meta"><div class="type-token">Section</div><div class="type-spec">20px / 600 / normal / 1.4</div></div>
+          <div class="type-rendered"><span style="font-size:20px;font-weight:600;">Active Escalations</span><div class="type-use">Section headings</div></div>
+        </div>
+        <div class="type-sample">
+          <div class="type-meta"><div class="type-token">Card</div><div class="type-spec">16px / 600 / normal / 1.4</div></div>
+          <div class="type-rendered"><span style="font-size:16px;font-weight:600;">Deep-clean walk-in fridge</span><div class="type-use">Card titles, list item names</div></div>
+        </div>
+        <div class="type-sample">
+          <div class="type-meta"><div class="type-token">Body</div><div class="type-spec">15px / 400 / normal / 1.5</div></div>
+          <div class="type-rendered"><span style="font-size:15px;font-weight:400;line-height:1.5;">Temperature reading was 3.2 degrees above threshold during afternoon check. Requires immediate corrective action.</span><div class="type-use">Body text, descriptions</div></div>
+        </div>
+        <div class="type-sample">
+          <div class="type-meta"><div class="type-token">Small</div><div class="type-spec">13px / 400 / normal / 1.6</div></div>
+          <div class="type-rendered"><span style="font-size:13px;font-weight:400;color:var(--text-muted);line-height:1.6;">Assigned to Maria &middot; Due Mar 29 &middot; Updated 2 h ago</span><div class="type-use">Labels, metadata, timestamps</div></div>
+        </div>
+        <div class="type-sample">
+          <div class="type-meta"><div class="type-token">Eyebrow</div><div class="type-spec">11px / 600 / 0.08em / 1.4</div></div>
+          <div class="type-rendered"><span style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);">WORKSPACE</span><div class="type-use">Section labels, uppercase tracking</div></div>
+        </div>
+        <div class="type-sample">
+          <div class="type-meta"><div class="type-token">Mono</div><div class="type-spec">13px / 400 / normal / 1.5</div></div>
+          <div class="type-rendered"><span style="font-size:13px;font-weight:400;font-family:'JetBrains Mono',monospace;">score: 78 &middot; threshold: 85 &middot; delta: -7</span><div class="type-use">Code, data values</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1.3 Spacing -->
+    <div class="subsection" id="spacing">
+      <h3 class="subsection-title">1.3 Spacing</h3>
+      <p class="subsection-desc">A consistent spatial scale. All spacing derives from 4px base.</p>
+
+      <div class="component-stage">
+        <div class="spacing-row"><span class="spacing-label">4px</span><div class="spacing-bar" style="width:4px;"></div><span class="spacing-name">micro</span></div>
+        <div class="spacing-row"><span class="spacing-label">8px</span><div class="spacing-bar" style="width:8px;"></div><span class="spacing-name">xs</span></div>
+        <div class="spacing-row"><span class="spacing-label">12px</span><div class="spacing-bar" style="width:12px;"></div><span class="spacing-name">sm</span></div>
+        <div class="spacing-row"><span class="spacing-label">16px</span><div class="spacing-bar" style="width:16px;"></div><span class="spacing-name">md</span></div>
+        <div class="spacing-row"><span class="spacing-label">20px</span><div class="spacing-bar" style="width:20px;"></div><span class="spacing-name"></span></div>
+        <div class="spacing-row"><span class="spacing-label">24px</span><div class="spacing-bar" style="width:24px;"></div><span class="spacing-name">lg</span></div>
+        <div class="spacing-row"><span class="spacing-label">32px</span><div class="spacing-bar" style="width:32px;"></div><span class="spacing-name">xl</span></div>
+        <div class="spacing-row"><span class="spacing-label">40px</span><div class="spacing-bar" style="width:40px;"></div><span class="spacing-name"></span></div>
+        <div class="spacing-row"><span class="spacing-label">48px</span><div class="spacing-bar" style="width:48px;"></div><span class="spacing-name">2xl</span></div>
+        <div class="spacing-row"><span class="spacing-label">64px</span><div class="spacing-bar" style="width:64px;"></div><span class="spacing-name">3xl</span></div>
+      </div>
+
+      <div class="usage-note">
+        <strong>Key rules:</strong>
+        <ul class="key-rules" style="margin-top:6px;">
+          <li>Page margins: 48px desktop, 20px mobile</li>
+          <li>Section gap: 32px</li>
+          <li>Card padding: 20-24px</li>
+          <li>Between cards: 16px</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 1.4 Border Radius -->
+    <div class="subsection" id="radius">
+      <h3 class="subsection-title">1.4 Border Radius</h3>
+      <p class="subsection-desc">Consistent rounding across all surfaces.</p>
+
+      <div class="component-stage">
+        <div class="radius-row">
+          <div class="radius-item"><div class="radius-box" style="border-radius:8px;"></div><div class="radius-value">8px</div><div class="radius-name">sm &mdash; buttons, pills</div></div>
+          <div class="radius-item"><div class="radius-box" style="border-radius:12px;"></div><div class="radius-value">12px</div><div class="radius-name">md &mdash; cards, inputs</div></div>
+          <div class="radius-item"><div class="radius-box" style="border-radius:16px;"></div><div class="radius-value">16px</div><div class="radius-name">lg &mdash; modals, hero</div></div>
+          <div class="radius-item"><div class="radius-box" style="border-radius:24px;"></div><div class="radius-value">24px</div><div class="radius-name">xl &mdash; pills, tags</div></div>
+          <div class="radius-item"><div class="radius-box" style="border-radius:9999px; width:80px; height:80px;"></div><div class="radius-value">9999px</div><div class="radius-name">full &mdash; avatars, dots</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1.5 Shadows -->
+    <div class="subsection" id="shadows">
+      <h3 class="subsection-title">1.5 Shadows</h3>
+      <p class="subsection-desc">Elevation expressed through shadow intensity.</p>
+
+      <div class="component-stage">
+        <div class="shadow-row">
+          <div class="shadow-card" style="box-shadow:none; border:1px solid var(--border-subtle);"><span class="label">None</span><span class="spec">flat (list items)</span></div>
+          <div class="shadow-card" style="box-shadow:var(--shadow-sm);"><span class="label">sm</span><span class="spec">0 1px 3px rgba(0,0,0,0.04)</span></div>
+          <div class="shadow-card" style="box-shadow:var(--shadow-md);"><span class="label">md</span><span class="spec">0 4px 12px rgba(0,0,0,0.06)</span></div>
+          <div class="shadow-card" style="box-shadow:var(--shadow-lg);"><span class="label">lg</span><span class="spec">0 12px 32px rgba(0,0,0,0.08)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1.6 Motion -->
+    <div class="subsection" id="motion">
+      <h3 class="subsection-title">1.6 Motion</h3>
+      <p class="subsection-desc">Timing and easing for all transitions.</p>
+
+      <div class="component-stage">
+        <table class="token-table">
+          <thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead>
+          <tbody>
+            <tr><td>Fast</td><td><code>120ms</code></td><td>Micro-interactions, toggles</td></tr>
+            <tr><td>Base</td><td><code>180ms</code></td><td>Hover states, reveals</td></tr>
+            <tr><td>Slow</td><td><code>260ms</code></td><td>Page transitions, drawers</td></tr>
+            <tr><td>Easing</td><td><code>cubic-bezier(0.22, 1, 0.36, 1)</code></td><td>All transitions</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 1.7 Z-Index -->
+    <div class="subsection" id="zindex">
+      <h3 class="subsection-title">1.7 Z-Index</h3>
+      <p class="subsection-desc">Layer ordering for overlapping surfaces.</p>
+
+      <div class="component-stage">
+        <table class="token-table">
+          <thead><tr><th>Layer</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>Base</td><td><code>1</code></td></tr>
+            <tr><td>Sticky</td><td><code>50</code></td></tr>
+            <tr><td>Sidebar</td><td><code>60</code></td></tr>
+            <tr><td>Inspector</td><td><code>70</code></td></tr>
+            <tr><td>Drawer</td><td><code>90</code></td></tr>
+            <tr><td>Modal</td><td><code>120</code></td></tr>
+            <tr><td>Command Palette</td><td><code>130</code></td></tr>
+            <tr><td>Toast</td><td><code>140</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 2: COMPONENTS
+       ========================================================= -->
+  <section class="section" id="components">
+    <h2 class="section-title">Components</h2>
+    <p class="section-desc">Live-rendered component library. Each component shown with multiple states and variants.</p>
+
+    <!-- 2.1 Buttons -->
+    <div class="subsection" id="buttons">
+      <h3 class="subsection-title">2.1 Buttons</h3>
+      <p class="subsection-desc">Primary, Secondary, Ghost, Danger variants with three sizes.</p>
+
+      <div class="component-stage">
+        <div class="component-label">Variants</div>
+        <div class="btn-row">
+          <button class="btn btn-primary">Primary</button>
+          <button class="btn btn-secondary">Secondary</button>
+          <button class="btn btn-ghost">Ghost</button>
+          <button class="btn btn-danger">Danger</button>
+        </div>
+        <div class="component-label" style="margin-top:16px;">Disabled</div>
+        <div class="btn-row">
+          <button class="btn btn-primary" disabled>Primary</button>
+          <button class="btn btn-secondary" disabled>Secondary</button>
+          <button class="btn btn-ghost" disabled>Ghost</button>
+          <button class="btn btn-danger" disabled>Danger</button>
+        </div>
+        <div class="component-label" style="margin-top:16px;">Sizes</div>
+        <div class="btn-row">
+          <button class="btn btn-primary btn-sm">Small 28px</button>
+          <button class="btn btn-primary">Default 36px</button>
+          <button class="btn btn-primary btn-lg">Large 44px</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.2 Status Dots -->
+    <div class="subsection" id="status-dots">
+      <h3 class="subsection-title">2.2 Status Dots</h3>
+      <p class="subsection-desc">Tiny inline indicators (8px circles).</p>
+
+      <div class="component-stage">
+        <div class="dot-row">
+          <div class="dot-item"><span class="status-dot" style="background:#EF4444;"></span><span class="dot-label">Critical / Overdue</span></div>
+          <div class="dot-item"><span class="status-dot" style="background:#F59E0B;"></span><span class="dot-label">At Risk / Warning</span></div>
+          <div class="dot-item"><span class="status-dot" style="background:#6366F1;"></span><span class="dot-label">In Progress / Active</span></div>
+          <div class="dot-item"><span class="status-dot" style="background:#10B981;"></span><span class="dot-label">On Track / Success</span></div>
+          <div class="dot-item"><span class="status-dot" style="background:#A3A3A3;"></span><span class="dot-label">Neutral / Pending</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.3 Pills / Badges -->
+    <div class="subsection" id="pills">
+      <h3 class="subsection-title">2.3 Pills / Badges</h3>
+      <p class="subsection-desc">Status, count, and role pills.</p>
+
+      <div class="component-stage">
+        <div class="component-label">Status pills</div>
+        <div class="btn-row" style="margin-bottom:16px;">
+          <span class="pill pill-overdue">Overdue</span>
+          <span class="pill pill-blocked">Blocked</span>
+          <span class="pill pill-at-risk">At Risk</span>
+          <span class="pill pill-in-progress">In Progress</span>
+          <span class="pill pill-on-track">On Track</span>
+          <span class="pill pill-completed">Completed</span>
+        </div>
+        <div class="component-label">Count pills</div>
+        <div class="btn-row" style="margin-bottom:16px;">
+          <span class="pill-count">3</span>
+          <span class="pill-count">12</span>
+          <span class="pill-count">247</span>
+        </div>
+        <div class="component-label">Role pills</div>
+        <div class="btn-row">
+          <span class="pill-role">Manager</span>
+          <span class="pill-role">Owner</span>
+          <span class="pill-role">Barista</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.4 Cards -->
+    <div class="subsection" id="cards">
+      <h3 class="subsection-title">2.4 Cards</h3>
+      <p class="subsection-desc">Default, status-bordered, and metric card variants.</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">Default Card</div>
+          <div class="card-desc">White surface, sm shadow, 12px radius, 20px padding. Hover lifts to md shadow.</div>
+          <div class="card-footer">Updated 2 hours ago</div>
+        </div>
+        <div class="card card-status">
+          <div class="card-title">Status Card (Success)</div>
+          <div class="card-desc">Same as default but with a colored 4px left border indicating status.</div>
+          <div class="card-footer">Completed Mar 28</div>
+        </div>
+        <div class="card card-status danger">
+          <div class="card-title">Status Card (Danger)</div>
+          <div class="card-desc">Red left border signals an overdue or critical item requiring attention.</div>
+          <div class="card-footer">Overdue by 3 days</div>
+        </div>
+        <div class="card card-status warning">
+          <div class="card-title">Status Card (Warning)</div>
+          <div class="card-desc">Amber left border signals items at risk or approaching a deadline.</div>
+          <div class="card-footer">Due tomorrow</div>
+        </div>
+        <div class="card card-metric">
+          <div class="metric-value">78%</div>
+          <div class="metric-label">Overall Compliance Score</div>
+        </div>
+        <div class="card card-metric">
+          <div class="metric-value">12</div>
+          <div class="metric-label">Open Escalations</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.5 List Rows -->
+    <div class="subsection" id="list-rows">
+      <h3 class="subsection-title">2.5 List Rows</h3>
+      <p class="subsection-desc">Task list pattern with status, name, assignee, date, and pill. 52px row height.</p>
+
+      <div class="list-container">
+        <div class="list-row selected">
+          <span class="status-dot" style="background:#6366F1;"></span>
+          <span class="task-name">Review morning prep checklist</span>
+          <span class="assignee">Maria S.</span>
+          <span class="due">Today</span>
+          <span class="pill pill-in-progress">In Progress</span>
+        </div>
+        <div class="list-row">
+          <span class="status-dot" style="background:#EF4444;"></span>
+          <span class="task-name">Fix cold storage temperature alarm</span>
+          <span class="assignee">James T.</span>
+          <span class="due">Mar 27</span>
+          <span class="pill pill-overdue">Overdue</span>
+        </div>
+        <div class="list-row">
+          <span class="status-dot" style="background:#10B981;"></span>
+          <span class="task-name">Complete health &amp; safety training</span>
+          <span class="assignee">Aisha K.</span>
+          <span class="due">Mar 30</span>
+          <span class="pill pill-on-track">On Track</span>
+        </div>
+        <div class="list-row">
+          <span class="status-dot" style="background:#A3A3A3;"></span>
+          <span class="task-name">Order new espresso machine filters</span>
+          <span class="assignee">Unassigned</span>
+          <span class="due">Apr 2</span>
+          <span class="pill" style="background:var(--bg-muted);color:var(--text-muted);">Pending</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.6 Inputs -->
+    <div class="subsection" id="inputs">
+      <h3 class="subsection-title">2.6 Inputs</h3>
+      <p class="subsection-desc">Text, textarea, select, and search input variants. Focus state adds accent border ring.</p>
+
+      <div class="component-stage">
+        <div class="input-row">
+          <input class="input-field" type="text" placeholder="Text input">
+          <input class="input-field input-search" type="text" placeholder="Search...">
+          <select class="input-field">
+            <option>Select option</option>
+            <option>Option A</option>
+            <option>Option B</option>
+          </select>
+        </div>
+        <div style="margin-top:16px;">
+          <textarea class="input-field" placeholder="Textarea input with min-height 120px..." style="width:100%;max-width:480px;"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.7 Section Header -->
+    <div class="subsection" id="section-header">
+      <h3 class="subsection-title">2.7 Section Header</h3>
+      <p class="subsection-desc">Standard section header with title, count pill, and trailing action.</p>
+
+      <div class="component-stage">
+        <div class="section-header-demo">
+          <div class="left">
+            <span class="sh-title">Active Escalations</span>
+            <span class="pill-count">5</span>
+          </div>
+          <button class="btn btn-ghost" style="font-size:13px;">View all &rarr;</button>
+        </div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:-4px;">Items that need your immediate attention or decision.</div>
+      </div>
+    </div>
+
+    <!-- 2.8 Page Header -->
+    <div class="subsection" id="page-header-comp">
+      <h3 class="subsection-title">2.8 Page Header</h3>
+      <p class="subsection-desc">Standard page header with eyebrow, title, subtitle, and action.</p>
+
+      <div class="component-stage">
+        <div class="page-header-demo">
+          <div>
+            <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:6px;">WORKSPACE</div>
+            <div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;line-height:1.15;">Today <span style="font-weight:400;color:var(--text-muted);font-size:20px;">&middot; Mar 29</span></div>
+            <div style="font-size:15px;color:var(--text-secondary);margin-top:6px;">Here's what needs your attention.</div>
+          </div>
+          <button class="btn btn-primary">New Task</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.9 Empty State -->
+    <div class="subsection" id="empty-state">
+      <h3 class="subsection-title">2.9 Empty State</h3>
+      <p class="subsection-desc">Centered placeholder for empty lists or first-run screens.</p>
+
+      <div class="component-stage">
+        <div class="empty-state">
+          <div class="empty-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="empty-title">No tasks yet</div>
+          <div class="empty-desc">Start by creating your first task or importing a checklist template to get up and running.</div>
+          <button class="btn btn-primary">Create Task</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.10 Avatar -->
+    <div class="subsection" id="avatars">
+      <h3 class="subsection-title">2.10 Avatar</h3>
+      <p class="subsection-desc">Circle with colored initials fallback. Three sizes with optional status overlay.</p>
+
+      <div class="component-stage">
+        <div class="btn-row">
+          <div class="avatar avatar-sm" style="background:#6C5CE7;">MS</div>
+          <div class="avatar avatar-md" style="background:#10B981;">AK<span class="avatar-status" style="background:#10B981;"></span></div>
+          <div class="avatar avatar-lg" style="background:#EF4444;">JT<span class="avatar-status" style="background:#A3A3A3;"></span></div>
+          <div class="avatar avatar-md" style="background:#F59E0B;">RD<span class="avatar-status" style="background:#EF4444;"></span></div>
+          <div class="avatar avatar-sm" style="background:#6366F1;">PL</div>
+        </div>
+        <div style="margin-top:12px;font-size:12px;color:var(--text-muted);">sm (28px) &nbsp;&middot;&nbsp; md (36px) &nbsp;&middot;&nbsp; lg (48px) &mdash; status dot overlays bottom-right</div>
+      </div>
+    </div>
+
+    <!-- 2.11 Progress Bar -->
+    <div class="subsection" id="progress">
+      <h3 class="subsection-title">2.11 Progress Bar</h3>
+      <p class="subsection-desc">Thin (4px) track with accent gradient fill.</p>
+
+      <div class="component-stage">
+        <div class="progress-row"><span class="progress-label">30%</span><div class="progress-bar-track" style="max-width:400px;"><div class="progress-bar-fill" style="width:30%;"></div></div></div>
+        <div class="progress-row"><span class="progress-label">60%</span><div class="progress-bar-track" style="max-width:400px;"><div class="progress-bar-fill" style="width:60%;"></div></div></div>
+        <div class="progress-row"><span class="progress-label">78%</span><div class="progress-bar-track" style="max-width:400px;"><div class="progress-bar-fill" style="width:78%;"></div></div></div>
+        <div class="progress-row"><span class="progress-label">100%</span><div class="progress-bar-track" style="max-width:400px;"><div class="progress-bar-fill" style="width:100%;"></div></div></div>
+      </div>
+    </div>
+
+    <!-- 2.12 More Menu -->
+    <div class="subsection" id="more-menu">
+      <h3 class="subsection-title">2.12 More Menu</h3>
+      <p class="subsection-desc">Ghost trigger with dropdown. 12px radius, lg shadow, grouped items.</p>
+
+      <div class="component-stage">
+        <div class="more-menu-demo">
+          <button class="more-trigger">&middot;&middot;&middot;</button>
+          <div class="more-dropdown">
+            <div class="more-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              Edit
+            </div>
+            <div class="more-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Duplicate
+            </div>
+            <div class="more-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+              Move to...
+            </div>
+            <div class="more-separator"></div>
+            <div class="more-item danger-text">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+              Delete
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 3: LAYOUT TEMPLATES
+       ========================================================= -->
+  <section class="section" id="layouts">
+    <h2 class="section-title">Layout Templates</h2>
+    <p class="section-desc">Three layout structures govern all pages. Every screen falls into one of these.</p>
+
+    <!-- 3.1 Standard Layout -->
+    <div class="subsection" id="layout-standard">
+      <h3 class="subsection-title">3.1 Standard Layout</h3>
+      <p class="subsection-desc">Three-column: Sidebar (240px) + Primary Canvas + Inspector (320px, optional). Drawer overlays from bottom.</p>
+
+      <div class="layout-diagram layout-standard">
+        <div class="area sidebar">Sidebar<br>240px</div>
+        <div class="area topbar">Top Bar</div>
+        <div class="area canvas" style="min-height:180px;">Primary Canvas<br>(scrollable)</div>
+        <div class="area inspector">Inspector<br>320px<br>(optional)</div>
+        <div class="area drawer">Drawer (overlay)</div>
+      </div>
+
+      <div class="usage-note">
+        <strong>Used by:</strong> Today, Plan, Workspace, Command Center, Evidence, Escalations, Team, Portfolio, Settings, Reference
+      </div>
+    </div>
+
+    <!-- 3.2 Focused Layout -->
+    <div class="subsection" id="layout-focused">
+      <h3 class="subsection-title">3.2 Focused Layout</h3>
+      <p class="subsection-desc">Two-column: No inspector. Canvas is narrower (max-width 800px, centered) for reading/writing comfort.</p>
+
+      <div class="layout-diagram layout-focused">
+        <div class="area sidebar">Sidebar<br>240px</div>
+        <div class="area topbar">Top Bar</div>
+        <div class="area canvas" style="min-height:160px;">Primary Canvas<br>(max-width: 800px, centered)</div>
+        <div class="area drawer">Drawer (overlay)</div>
+      </div>
+
+      <div class="usage-note">
+        <strong>Used by:</strong> Assessment, Report, Knowledge Base, Owner Setup
+      </div>
+    </div>
+
+    <!-- 3.3 Pocket Layout -->
+    <div class="subsection" id="layout-pocket">
+      <h3 class="subsection-title">3.3 Pocket Layout</h3>
+      <p class="subsection-desc">Mobile-first: No sidebar. Bottom tabs for primary nav. Cards as primary content. Sheet overlays for detail.</p>
+
+      <div class="layout-diagram layout-pocket">
+        <div class="area topbar">Top Bar &mdash; Logo + Venue + Avatar</div>
+        <div class="area cards">Card Stack<br>(full width, padded, scrollable)</div>
+        <div class="area tabs">Bottom Tabs &mdash; Shift | Standards | Help</div>
+      </div>
+
+      <div class="usage-note">
+        <strong>Used by:</strong> My Shift, Standards, Help, Report, Log
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 4: SIDEBAR SPECIFICATION
+       ========================================================= -->
+  <section class="section" id="sidebar-spec">
+    <h2 class="section-title">Sidebar Specification</h2>
+    <p class="section-desc">Width 240px (86px collapsed). Background matches page (#FAFAFA). Right border 1px #E5E5E5.</p>
+
+    <div class="sidebar-spec">
+      <div class="sb-logo">VOIS <span class="dot"></span></div>
+      <div class="sb-venue"><span class="online-dot"></span> Sunrise Cafe</div>
+
+      <div class="sb-group">
+        <div class="sb-group-label">Workspace</div>
+        <div class="sb-item active">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Today
+        </div>
+        <div class="sb-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          My Tasks
+        </div>
+        <div class="sb-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Execution
+        </div>
+      </div>
+
+      <div class="sb-group">
+        <div class="sb-group-label">Venue</div>
+        <div class="sb-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Assessment
+        </div>
+        <div class="sb-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          Signals
+        </div>
+        <div class="sb-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Plan
+        </div>
+        <div class="sb-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          Report
+        </div>
+        <div class="sb-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          History
+        </div>
+      </div>
+
+      <div class="sb-group">
+        <div class="sb-group-label">Reference</div>
+        <div class="sb-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          Knowledge Base
+        </div>
+        <div class="sb-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Standards
+        </div>
+      </div>
+
+      <div class="sb-divider"></div>
+
+      <div class="sb-item muted-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        Settings
+      </div>
+      <div class="sb-item muted-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Help
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SECTION 5: DARK MODE TOKENS
+       ========================================================= -->
+  <section class="section" id="dark-mode">
+    <h2 class="section-title">Dark Mode Tokens</h2>
+    <p class="section-desc">Inverted palette for low-light contexts. Accent shifts lighter for contrast.</p>
+
+    <div class="dark-preview">
+      <div class="dark-token-grid">
+        <div class="dark-token" style="background:#0F0F0F; border:1px solid rgba(255,255,255,0.08);"><div class="dt-name">Page</div><div class="dt-hex">#0F0F0F</div></div>
+        <div class="dark-token" style="background:#1A1A1A;"><div class="dt-name">Surface</div><div class="dt-hex">#1A1A1A</div></div>
+        <div class="dark-token" style="background:#252525;"><div class="dt-name">Surface Elevated</div><div class="dt-hex">#252525</div></div>
+        <div class="dark-token" style="background:#1A1A1A;"><div class="dt-name" style="color:#EDEDED;">Text Primary</div><div class="dt-hex" style="color:#EDEDED;">#EDEDED</div></div>
+        <div class="dark-token" style="background:#1A1A1A;"><div class="dt-name" style="color:#999999;">Text Secondary</div><div class="dt-hex" style="color:#999999;">#999999</div></div>
+        <div class="dark-token" style="background:#1A1A1A;"><div class="dt-name" style="color:#666666;">Text Muted</div><div class="dt-hex" style="color:#666666;">#666666</div></div>
+        <div class="dark-token" style="background:#1A1A1A; border:1px solid rgba(255,255,255,0.08);"><div class="dt-name" style="color:#999;">Border</div><div class="dt-hex" style="color:#666;">rgba(255,255,255,0.08)</div></div>
+        <div class="dark-token" style="background:#A29BFE; color:#0F0F0F;"><div class="dt-name">Accent</div><div class="dt-hex">#A29BFE</div></div>
+      </div>
+
+      <div style="font-size:13px; font-weight:600; color:#999; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.06em;">Card Preview</div>
+      <div class="dark-card-preview">
+        <div class="dcp-title">Weekly compliance report</div>
+        <div class="dcp-desc">All 14 standards passed with a combined score of 91%. Two items flagged for follow-up next cycle.</div>
+        <div class="dcp-footer">
+          <span class="dcp-accent">View full report &rarr;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     NAV HIGHLIGHT SCRIPT
+     ============================================================ -->
+<script>
+  // Highlight active nav item on scroll
+  const sections = document.querySelectorAll('[id]');
+  const navLinks = document.querySelectorAll('.side-nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -60% 0px' });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>

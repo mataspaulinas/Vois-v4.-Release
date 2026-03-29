@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- VOIS Design System: Custom Controls, Calendars, Dialogs, Confirmations -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS Design System — Controls, Dialogs & Calendars</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ========================================
+   DESIGN TOKENS
+   ======================================== */
+:root {
+  /* Colors */
+  --page-bg: #FAFAFA;
+  --surface: #FFFFFF;
+  --text-primary: #0A0A0A;
+  --text-secondary: #525252;
+  --text-muted: #A3A3A3;
+  --accent: #6C5CE7;
+  --accent-hover: #5B4BD5;
+  --accent-soft: rgba(108,92,231,0.08);
+  --success: #10B981;
+  --success-soft: rgba(16,185,129,0.08);
+  --warning: #F59E0B;
+  --warning-soft: rgba(245,158,11,0.08);
+  --danger: #EF4444;
+  --danger-soft: rgba(239,68,68,0.08);
+  --info: #6366F1;
+  --info-soft: rgba(99,102,241,0.08);
+  --border: #E5E5E5;
+  --border-strong: #D4D4D4;
+  /* Radius */
+  --radius-btn: 8px;
+  --radius-card: 12px;
+  --radius-modal: 16px;
+  --radius-pill: 24px;
+  /* Shadow */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.08);
+  /* Transitions */
+  --transition-base: 180ms ease;
+  --transition-slow: 260ms ease;
+  /* Sidebar */
+  --sidebar-width: 240px;
+}
+
+/* ========================================
+   RESET & BASE
+   ======================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--page-bg);
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.6;
+}
+code, .mono { font-family: 'JetBrains Mono', monospace; }
+
+/* ========================================
+   LAYOUT
+   ======================================== */
+.page-wrapper { display: flex; min-height: 100vh; }
+
+/* Sidebar Navigation */
+.sidebar {
+  position: fixed; top: 0; left: 0; bottom: 0;
+  width: var(--sidebar-width);
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 32px 0;
+  overflow-y: auto;
+  z-index: 100;
+}
+.sidebar-title {
+  padding: 0 24px 24px;
+  font-size: 14px; font-weight: 700; letter-spacing: -0.02em;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+.sidebar-title span { display: block; font-size: 11px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+.sidebar nav { display: flex; flex-direction: column; gap: 2px; padding: 0 12px; }
+.sidebar nav a {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px;
+  font-size: 13px; font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-btn);
+  transition: all var(--transition-base);
+}
+.sidebar nav a:hover { background: var(--accent-soft); color: var(--accent); }
+.sidebar nav a .nav-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px;
+  font-size: 11px; font-weight: 600;
+  background: var(--page-bg);
+  border-radius: 6px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.sidebar nav a:hover .nav-num { background: var(--accent-soft); color: var(--accent); }
+
+/* Main Content */
+.main-content {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  padding: 48px 56px 120px;
+  max-width: 1100px;
+}
+
+/* Page Header */
+.page-header { margin-bottom: 56px; }
+.page-header h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 8px; }
+.page-header p { font-size: 16px; color: var(--text-secondary); max-width: 600px; }
+
+/* Section */
+.section { margin-bottom: 72px; scroll-margin-top: 32px; }
+.section-title { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 6px; }
+.section-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: 32px; }
+.subsection { margin-bottom: 48px; }
+.subsection-title { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.subsection-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+
+/* Demo Row */
+.demo-row { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+.demo-item { display: flex; flex-direction: column; gap: 8px; }
+.demo-label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ========================================
+   SECTION 1: CUSTOM SELECT / DROPDOWN
+   ======================================== */
+.custom-select {
+  position: relative;
+  width: 260px;
+  user-select: none;
+}
+.custom-select.small { width: 180px; }
+.custom-select.small .select-trigger { height: 32px; font-size: 13px; border-radius: var(--radius-btn); padding: 0 10px; }
+.custom-select.small .select-trigger .chevron { font-size: 11px; }
+
+.select-trigger {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 44px;
+  padding: 0 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  font-size: 15px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  gap: 8px;
+}
+.select-trigger:hover { border-color: var(--border-strong); }
+.select-trigger.focused, .custom-select.open .select-trigger {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(108,92,231,0.1);
+}
+.select-trigger .placeholder { color: var(--text-muted); }
+.select-trigger .chevron {
+  color: var(--text-muted);
+  font-size: 13px;
+  transition: transform var(--transition-base);
+  flex-shrink: 0;
+}
+.custom-select.open .select-trigger .chevron { transform: rotate(180deg); }
+
+/* Multi-select pills */
+.select-pills { display: flex; flex-wrap: wrap; gap: 4px; flex: 1; min-width: 0; }
+.select-pill {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 8px 2px 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: var(--radius-pill);
+  font-size: 12px; font-weight: 500;
+}
+.select-pill .pill-remove {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 16px; height: 16px;
+  font-size: 14px; line-height: 1;
+  cursor: pointer; border-radius: 50%;
+  transition: background var(--transition-base);
+}
+.select-pill .pill-remove:hover { background: rgba(108,92,231,0.15); }
+.select-clear { font-size: 12px; color: var(--accent); cursor: pointer; padding: 2px 4px; }
+.select-clear:hover { text-decoration: underline; }
+
+/* Dropdown */
+.select-dropdown {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-lg);
+  z-index: 50;
+  overflow: hidden;
+  display: none;
+  animation: dropdownIn 180ms ease;
+}
+.custom-select.open .select-dropdown { display: block; }
+@keyframes dropdownIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
+.select-search {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.select-search svg { width: 16px; height: 16px; color: var(--text-muted); flex-shrink: 0; }
+.select-search input {
+  flex: 1; border: none; outline: none; background: none;
+  font-size: 13px; color: var(--text-primary);
+  font-family: inherit;
+}
+.select-search input::placeholder { color: var(--text-muted); }
+
+.select-options { max-height: 240px; overflow-y: auto; padding: 4px; }
+.select-option {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 44px; padding: 0 12px;
+  font-size: 15px; cursor: pointer;
+  border-radius: var(--radius-btn);
+  transition: background var(--transition-base);
+}
+.select-option:hover { background: #F5F5F5; }
+.select-option.selected { background: var(--accent-soft); color: var(--accent); font-weight: 500; }
+.select-option.disabled { color: var(--text-muted); cursor: default; }
+.select-option.disabled:hover { background: transparent; }
+.select-option .check { font-size: 14px; color: var(--accent); }
+.select-option .option-checkbox {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px;
+  border: 2px solid var(--border-strong);
+  border-radius: 4px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+}
+.select-option.selected .option-checkbox {
+  background: var(--accent); border-color: var(--accent);
+}
+.select-option.selected .option-checkbox::after {
+  content: ''; display: block;
+  width: 8px; height: 5px;
+  border-left: 2px solid white; border-bottom: 2px solid white;
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+/* ========================================
+   SECTION 2: DATE PICKER / CALENDAR
+   ======================================== */
+.date-input-wrapper { position: relative; width: 260px; }
+.date-input {
+  display: flex; align-items: center; gap: 10px;
+  height: 44px; padding: 0 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+.date-input:hover { border-color: var(--border-strong); }
+.date-input.focused { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(108,92,231,0.1); }
+.date-input .date-icon { color: var(--text-muted); flex-shrink: 0; }
+.date-input .date-value { flex: 1; font-size: 15px; }
+.date-input .date-placeholder { color: var(--text-muted); }
+.date-input .date-clear {
+  display: flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px; font-size: 14px;
+  color: var(--text-muted); cursor: pointer;
+  border-radius: 50%; transition: all var(--transition-base);
+}
+.date-input .date-clear:hover { background: #F5F5F5; color: var(--text-primary); }
+
+/* Calendar Popup */
+.calendar-popup {
+  position: absolute; top: calc(100% + 4px); left: 0;
+  width: 320px;
+  background: var(--surface);
+  border-radius: var(--radius-modal);
+  box-shadow: var(--shadow-lg);
+  z-index: 50;
+  padding: 20px;
+  display: none;
+  animation: dropdownIn 180ms ease;
+}
+.calendar-popup.show { display: block; }
+.calendar-popup.static-demo {
+  position: relative; top: auto; left: auto;
+  display: block;
+  box-shadow: var(--shadow-md);
+}
+
+.calendar-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px;
+}
+.calendar-nav {
+  display: flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
+  border-radius: 50%; border: none; background: none;
+  cursor: pointer; font-size: 14px; color: var(--text-secondary);
+  transition: background var(--transition-base);
+}
+.calendar-nav:hover { background: #F5F5F5; }
+.calendar-month-label { font-size: 15px; font-weight: 600; cursor: pointer; }
+.calendar-month-label:hover { color: var(--accent); }
+
+.calendar-weekdays {
+  display: grid; grid-template-columns: repeat(7, 1fr);
+  text-align: center; margin-bottom: 4px;
+}
+.calendar-weekdays span {
+  font-size: 11px; font-weight: 600;
+  color: var(--text-muted); text-transform: uppercase;
+  padding: 4px 0;
+}
+
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+.calendar-day {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 50%; font-size: 14px;
+  cursor: pointer; border: none; background: none;
+  color: var(--text-primary);
+  transition: all var(--transition-base);
+  margin: 0 auto;
+}
+.calendar-day:hover { background: #F5F5F5; }
+.calendar-day.today { box-shadow: inset 0 0 0 2px var(--accent); }
+.calendar-day.selected { background: var(--accent); color: white; }
+.calendar-day.selected.today { box-shadow: none; }
+.calendar-day.outside { color: var(--text-muted); }
+.calendar-day.disabled { color: var(--border-strong); cursor: default; }
+.calendar-day.disabled:hover { background: transparent; }
+.calendar-day.in-range { background: var(--accent-soft); border-radius: 0; }
+.calendar-day.range-start { background: var(--accent); color: white; border-radius: 50% 0 0 50%; }
+.calendar-day.range-end { background: var(--accent); color: white; border-radius: 0 50% 50% 0; }
+
+.calendar-footer {
+  display: flex; justify-content: space-between;
+  margin-top: 12px; padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.calendar-footer-link {
+  font-size: 13px; font-weight: 500; cursor: pointer;
+  border: none; background: none; padding: 4px 8px;
+  border-radius: var(--radius-btn);
+  transition: all var(--transition-base);
+}
+.calendar-footer-link.accent { color: var(--accent); }
+.calendar-footer-link.accent:hover { background: var(--accent-soft); }
+.calendar-footer-link.muted { color: var(--text-muted); }
+.calendar-footer-link.muted:hover { background: #F5F5F5; color: var(--text-secondary); }
+
+/* Date Range */
+.date-range-wrapper {
+  display: flex; gap: 24px;
+  background: var(--surface);
+  border-radius: var(--radius-modal);
+  box-shadow: var(--shadow-md);
+  padding: 20px;
+}
+.date-range-wrapper .calendar-popup.static-demo { box-shadow: none; padding: 0; }
+
+/* Time Picker */
+.time-picker-popup {
+  width: 320px;
+  background: var(--surface);
+  border-radius: var(--radius-modal);
+  box-shadow: var(--shadow-md);
+  padding: 16px;
+  overflow: hidden;
+}
+.time-presets { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.time-preset-btn {
+  padding: 6px 12px; font-size: 12px; font-weight: 500;
+  background: var(--page-bg); border: 1px solid var(--border);
+  border-radius: var(--radius-pill); cursor: pointer;
+  transition: all var(--transition-base);
+  font-family: inherit;
+}
+.time-preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+.time-preset-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+.time-columns { display: flex; gap: 8px; }
+.time-column { flex: 1; }
+.time-column-label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px; text-align: center; }
+.time-scroll {
+  height: 180px; overflow-y: auto; border: 1px solid var(--border);
+  border-radius: var(--radius-btn); padding: 4px;
+}
+.time-scroll::-webkit-scrollbar { width: 4px; }
+.time-scroll::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
+.time-option {
+  display: flex; align-items: center; justify-content: center;
+  height: 32px; font-size: 14px;
+  border-radius: 6px; cursor: pointer;
+  transition: all var(--transition-base);
+}
+.time-option:hover { background: #F5F5F5; }
+.time-option.selected { background: var(--accent); color: white; font-weight: 500; }
+
+.ampm-toggle { display: flex; flex-direction: column; gap: 4px; justify-content: center; }
+.ampm-btn {
+  padding: 8px 14px; font-size: 13px; font-weight: 600;
+  border: 1px solid var(--border); background: var(--surface);
+  border-radius: var(--radius-btn); cursor: pointer;
+  transition: all var(--transition-base);
+  font-family: inherit;
+}
+.ampm-btn:hover { border-color: var(--accent); }
+.ampm-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+/* ========================================
+   SECTION 3: CONFIRMATION DIALOGS
+   ======================================== */
+.dialog-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: none;
+  align-items: center; justify-content: center;
+  animation: fadeIn 180ms ease;
+}
+.dialog-backdrop.show { display: flex; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.dialog {
+  background: var(--surface);
+  border-radius: var(--radius-modal);
+  box-shadow: var(--shadow-lg);
+  max-width: 420px; width: 90%;
+  padding: 32px;
+  animation: dialogIn 260ms ease;
+}
+@keyframes dialogIn { from { opacity: 0; transform: translateY(8px) scale(0.97); } to { opacity: 1; transform: none; } }
+
+.dialog-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  font-size: 22px;
+}
+.dialog-icon.warning { background: var(--warning-soft); }
+.dialog-icon.danger { background: var(--danger-soft); }
+.dialog-icon.success { background: var(--success-soft); }
+.dialog-icon.info { background: var(--info-soft); }
+
+.dialog-title { text-align: center; font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+.dialog-desc { text-align: center; font-size: 15px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 24px; }
+
+.dialog-input {
+  width: 100%; height: 44px; padding: 0 16px;
+  border: 1px solid var(--border); border-radius: var(--radius-card);
+  font-size: 15px; font-family: inherit; color: var(--text-primary);
+  outline: none; margin-bottom: 20px;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+.dialog-input::placeholder { color: var(--text-muted); }
+.dialog-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(108,92,231,0.1); }
+
+.dialog-actions { display: flex; justify-content: flex-end; gap: 12px; }
+
+/* Demo modal inline (non-overlay version) */
+.dialog-demo {
+  background: var(--surface);
+  border-radius: var(--radius-modal);
+  box-shadow: var(--shadow-md);
+  max-width: 420px;
+  padding: 32px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  height: 36px; padding: 0 18px;
+  font-size: 14px; font-weight: 500;
+  border-radius: var(--radius-btn);
+  border: none; cursor: pointer;
+  font-family: inherit;
+  transition: all var(--transition-base);
+}
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-secondary { background: var(--surface); color: var(--text-primary); border: 1px solid var(--border); }
+.btn-secondary:hover { border-color: var(--border-strong); background: #FAFAFA; }
+.btn-danger { background: var(--danger); color: white; }
+.btn-danger:hover { background: #DC2626; }
+.btn-success { background: var(--success); color: white; }
+.btn-success:hover { background: #059669; }
+
+/* Demo trigger buttons */
+.demo-trigger {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 18px;
+  font-size: 13px; font-weight: 500;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-btn); cursor: pointer;
+  font-family: inherit;
+  transition: all var(--transition-base);
+}
+.demo-trigger:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ========================================
+   SECTION 4: TOAST NOTIFICATIONS
+   ======================================== */
+.toast-stack {
+  display: flex; flex-direction: column; gap: 12px;
+  width: 380px;
+}
+.toast {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-md);
+  padding: 14px 16px;
+  border-left: 4px solid;
+  position: relative;
+  overflow: hidden;
+  animation: toastIn 260ms ease;
+}
+@keyframes toastIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: none; } }
+.toast.toast-success { border-left-color: var(--success); }
+.toast.toast-error { border-left-color: var(--danger); }
+.toast.toast-warning { border-left-color: var(--warning); }
+.toast.toast-info { border-left-color: var(--info); }
+
+.toast-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px;
+  border-radius: 50%; flex-shrink: 0;
+  font-size: 12px; margin-top: 1px;
+}
+.toast-success .toast-icon { background: var(--success-soft); color: var(--success); }
+.toast-error .toast-icon { background: var(--danger-soft); color: var(--danger); }
+.toast-warning .toast-icon { background: var(--warning-soft); color: var(--warning); }
+.toast-info .toast-icon { background: var(--info-soft); color: var(--info); }
+
+.toast-content { flex: 1; min-width: 0; }
+.toast-title { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+.toast-desc { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+.toast-link { font-size: 13px; font-weight: 500; color: var(--accent); cursor: pointer; display: inline-block; margin-top: 4px; }
+.toast-link:hover { text-decoration: underline; }
+
+.toast-close {
+  display: flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px;
+  font-size: 16px; color: var(--text-muted);
+  cursor: pointer; border-radius: 4px; flex-shrink: 0;
+  transition: all var(--transition-base);
+}
+.toast-close:hover { color: var(--text-primary); background: #F5F5F5; }
+
+.toast-progress {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px;
+}
+.toast-progress-bar {
+  height: 100%;
+  border-radius: 0 2px 2px 0;
+}
+.toast-success .toast-progress-bar { background: var(--success); animation: toastDismiss 5s linear forwards; }
+.toast-warning .toast-progress-bar { background: var(--warning); animation: toastDismiss 8s linear forwards; }
+.toast-info .toast-progress-bar { background: var(--info); animation: toastDismiss 6s linear forwards; }
+@keyframes toastDismiss { from { width: 100%; } to { width: 0%; } }
+
+/* ========================================
+   SECTION 5: INLINE ALERTS / BANNERS
+   ======================================== */
+.banner {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px;
+  border-left: 4px solid;
+  border-radius: 0;
+  font-size: 14px; font-weight: 500;
+  margin-bottom: 12px;
+}
+.banner.rounded { border-radius: var(--radius-card); }
+.banner-success { background: var(--success-soft); border-left-color: var(--success); color: #065F46; }
+.banner-warning { background: var(--warning-soft); border-left-color: var(--warning); color: #92400E; }
+.banner-error { background: var(--danger-soft); border-left-color: var(--danger); color: #991B1B; }
+.banner-info { background: var(--info-soft); border-left-color: var(--info); color: #3730A3; }
+.banner-icon { font-size: 16px; flex-shrink: 0; }
+.banner-text { flex: 1; }
+.banner-text a { font-weight: 600; text-decoration: underline; cursor: pointer; color: inherit; }
+.banner-dismiss {
+  display: flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px; font-size: 16px;
+  cursor: pointer; border-radius: 4px; flex-shrink: 0;
+  transition: background var(--transition-base);
+  opacity: 0.6;
+}
+.banner-dismiss:hover { opacity: 1; background: rgba(0,0,0,0.05); }
+
+.inline-alert {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px;
+  border-radius: var(--radius-card);
+  font-size: 13px;
+  border-left: 4px solid;
+}
+.inline-alert.alert-warning { background: var(--warning-soft); border-left-color: var(--warning); color: #92400E; }
+.inline-alert.alert-error { background: var(--danger-soft); border-left-color: var(--danger); color: #991B1B; }
+.inline-alert.alert-info { background: var(--info-soft); border-left-color: var(--info); color: #3730A3; }
+
+/* ========================================
+   SECTION 6: TOOLTIPS & POPOVERS
+   ======================================== */
+.tooltip-demo-area {
+  display: flex; gap: 40px; align-items: center;
+  padding: 32px;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border);
+}
+.tooltip-trigger {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 8px 16px;
+  background: var(--page-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  font-size: 13px; cursor: pointer;
+  transition: all var(--transition-base);
+}
+.tooltip-trigger:hover { border-color: var(--border-strong); }
+
+.tooltip {
+  position: absolute;
+  background: #1A1A1A;
+  color: white;
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: var(--radius-btn);
+  max-width: 240px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 200ms ease;
+  white-space: nowrap;
+  z-index: 60;
+}
+.tooltip::after {
+  content: '';
+  position: absolute;
+  width: 8px; height: 8px;
+  background: #1A1A1A;
+  transform: rotate(45deg);
+}
+.tooltip.top { bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); }
+.tooltip.top::after { bottom: -4px; left: 50%; transform: translateX(-50%) rotate(45deg); }
+.tooltip.bottom { top: calc(100% + 8px); left: 50%; transform: translateX(-50%); }
+.tooltip.bottom::after { top: -4px; left: 50%; transform: translateX(-50%) rotate(45deg); }
+.tooltip.left { right: calc(100% + 8px); top: 50%; transform: translateY(-50%); }
+.tooltip.left::after { right: -4px; top: 50%; transform: translateY(-50%) rotate(45deg); }
+.tooltip.right { left: calc(100% + 8px); top: 50%; transform: translateY(-50%); }
+.tooltip.right::after { left: -4px; top: 50%; transform: translateY(-50%) rotate(45deg); }
+.tooltip-trigger:hover .tooltip { opacity: 1; }
+
+/* Popover */
+.popover-wrapper { position: relative; display: inline-block; }
+.popover {
+  position: absolute; top: calc(100% + 8px); left: 0;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-lg);
+  padding: 8px;
+  min-width: 180px;
+  z-index: 50;
+  display: none;
+  animation: dropdownIn 180ms ease;
+}
+.popover.show { display: block; }
+.popover-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px;
+  font-size: 14px; cursor: pointer;
+  border-radius: var(--radius-btn);
+  transition: background var(--transition-base);
+}
+.popover-item:hover { background: #F5F5F5; }
+.popover-item.danger { color: var(--danger); }
+.popover-divider { height: 1px; background: var(--border); margin: 4px 0; }
+
+/* ========================================
+   SECTION 7: TOGGLE / SWITCH
+   ======================================== */
+.toggle-row { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+.toggle-wrapper { display: flex; align-items: center; gap: 12px; }
+.toggle {
+  position: relative;
+  width: 44px; height: 24px;
+  border-radius: 12px;
+  background: var(--border-strong);
+  cursor: pointer;
+  transition: background var(--transition-base);
+  flex-shrink: 0;
+}
+.toggle.on { background: var(--accent); }
+.toggle.disabled { opacity: 0.4; cursor: default; }
+.toggle-thumb {
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base);
+}
+.toggle.on .toggle-thumb { transform: translateX(20px); }
+.toggle-label { font-size: 15px; color: var(--text-primary); }
+
+/* ========================================
+   SECTION 8: CHECKBOX & RADIO
+   ======================================== */
+.check-group { display: flex; flex-direction: column; gap: 12px; }
+.check-row { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+
+.checkbox-wrapper { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.checkbox-wrapper.disabled { opacity: 0.5; cursor: default; }
+.custom-checkbox {
+  position: relative;
+  width: 20px; height: 20px;
+  border: 2px solid var(--border-strong);
+  border-radius: 4px;
+  background: white;
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+  display: flex; align-items: center; justify-content: center;
+}
+.checkbox-wrapper:hover:not(.disabled) .custom-checkbox { border-color: var(--text-muted); }
+.custom-checkbox.checked { background: var(--accent); border-color: var(--accent); }
+.custom-checkbox.checked::after {
+  content: '';
+  width: 10px; height: 6px;
+  border-left: 2px solid white; border-bottom: 2px solid white;
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+.custom-checkbox.indeterminate { background: var(--accent); border-color: var(--accent); }
+.custom-checkbox.indeterminate::after {
+  content: '';
+  width: 10px; height: 2px;
+  background: white;
+  border-radius: 1px;
+}
+.custom-checkbox.disabled-checked { background: var(--border-strong); border-color: var(--border-strong); }
+.custom-checkbox.disabled-unchecked { background: #F5F5F5; }
+.check-label { font-size: 15px; }
+
+/* Radio */
+.radio-wrapper { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.custom-radio {
+  position: relative;
+  width: 20px; height: 20px;
+  border: 2px solid var(--border-strong);
+  border-radius: 50%;
+  background: white;
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+  display: flex; align-items: center; justify-content: center;
+}
+.radio-wrapper:hover .custom-radio { border-color: var(--text-muted); }
+.custom-radio.selected { border-color: var(--accent); }
+.custom-radio.selected::after {
+  content: '';
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.radio-label { font-size: 15px; }
+.radio-group { display: flex; align-items: center; gap: 24px; }
+.radio-group-label { font-size: 15px; font-weight: 500; margin-right: 4px; }
+
+/* ========================================
+   SECTION 9: PROGRESS & LOADING
+   ======================================== */
+.progress-bar-track {
+  width: 100%; max-width: 400px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #8B7CF7);
+  border-radius: 2px;
+  transition: width var(--transition-slow);
+}
+
+/* Spinner */
+.spinner {
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  animation: spin 0.8s linear infinite;
+}
+.spinner.sm { width: 16px; height: 16px; border-width: 2px; }
+.spinner.md { width: 24px; height: 24px; }
+.spinner.lg { width: 40px; height: 40px; border-width: 4px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner-with-label { display: flex; align-items: center; gap: 10px; }
+.spinner-label { font-size: 13px; color: var(--text-muted); }
+
+/* Skeleton */
+.skeleton-card {
+  width: 340px;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border);
+  padding: 20px;
+}
+.skeleton-line {
+  height: 12px;
+  background: var(--border);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.skeleton-line.title { width: 60%; height: 16px; margin-bottom: 16px; }
+.skeleton-line.full { width: 100%; }
+.skeleton-line.medium { width: 80%; }
+.skeleton-row { display: flex; gap: 12px; margin-top: 16px; align-items: center; }
+.skeleton-pill { width: 64px; height: 24px; border-radius: var(--radius-pill); background: var(--border); position: relative; overflow: hidden; }
+.skeleton-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--border); position: relative; overflow: hidden; flex-shrink: 0; }
+
+.skeleton-line::after, .skeleton-pill::after, .skeleton-avatar::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+@keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+
+/* Progress Steps */
+.progress-steps {
+  display: flex; align-items: flex-start;
+  max-width: 500px;
+}
+.step-item {
+  display: flex; flex-direction: column; align-items: center;
+  flex: 1; position: relative;
+}
+.step-circle {
+  display: flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  font-size: 13px; font-weight: 600;
+  border: 2px solid;
+  z-index: 1;
+  background: white;
+}
+.step-item.completed .step-circle { background: var(--success); border-color: var(--success); color: white; }
+.step-item.active .step-circle { background: white; border-color: var(--accent); color: var(--accent); }
+.step-item.upcoming .step-circle { background: white; border-color: var(--border-strong); color: var(--text-muted); }
+.step-label { font-size: 12px; color: var(--text-secondary); margin-top: 8px; text-align: center; white-space: nowrap; }
+.step-item.completed .step-label { color: var(--success); }
+.step-item.active .step-label { color: var(--accent); font-weight: 600; }
+.step-item.upcoming .step-label { color: var(--text-muted); }
+.step-connector {
+  position: absolute;
+  top: 16px; left: calc(50% + 18px); right: calc(-50% + 18px);
+  height: 2px; background: var(--border-strong);
+}
+.step-item.completed .step-connector { background: var(--success); }
+.step-item.active .step-connector { background: linear-gradient(90deg, var(--accent), var(--border-strong)); }
+
+/* ========================================
+   SECTION 10: BADGES
+   ======================================== */
+.badge-demo-row { display: flex; gap: 40px; align-items: center; }
+.badge-wrapper { position: relative; display: inline-flex; }
+.badge-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  background: var(--page-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  font-size: 18px;
+}
+.count-badge {
+  position: absolute; top: -6px; right: -6px;
+  min-width: 18px; height: 18px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--danger);
+  color: white;
+  font-size: 11px; font-weight: 700;
+  border-radius: 9px;
+  padding: 0 5px;
+  border: 2px solid white;
+}
+.dot-badge {
+  position: absolute; top: -2px; right: -2px;
+  width: 8px; height: 8px;
+  background: var(--danger);
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/* ========================================
+   SCROLLBAR STYLING
+   ======================================== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ========================================
+   SVG ICONS (inline helpers)
+   ======================================== */
+.icon { display: inline-flex; align-items: center; justify-content: center; }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <div class="sidebar-title">
+      <span>VOIS Design System</span>
+      Controls & Dialogs
+    </div>
+    <nav>
+      <a href="#selects"><span class="nav-num">1</span>Selects / Dropdowns</a>
+      <a href="#datepicker"><span class="nav-num">2</span>Date & Time Pickers</a>
+      <a href="#dialogs"><span class="nav-num">3</span>Confirmation Dialogs</a>
+      <a href="#toasts"><span class="nav-num">4</span>Toasts & Notifications</a>
+      <a href="#banners"><span class="nav-num">5</span>Alerts & Banners</a>
+      <a href="#tooltips"><span class="nav-num">6</span>Tooltips & Popovers</a>
+      <a href="#toggles"><span class="nav-num">7</span>Toggle / Switch</a>
+      <a href="#checkradio"><span class="nav-num">8</span>Checkbox & Radio</a>
+      <a href="#progress"><span class="nav-num">9</span>Progress & Loading</a>
+      <a href="#badges"><span class="nav-num">10</span>Badges & Dots</a>
+    </nav>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main class="main-content">
+
+    <header class="page-header">
+      <h1>Controls, Dialogs & Calendars</h1>
+      <p>Every interactive control in the VOIS system, fully custom-styled with zero default browser chrome. Form elements, pickers, modals, toasts, and system messages.</p>
+    </header>
+
+    <!-- =============================================
+         SECTION 1: CUSTOM SELECT / DROPDOWN
+         ============================================= -->
+    <section class="section" id="selects">
+      <h2 class="section-title">Custom Select / Dropdown</h2>
+      <p class="section-desc">Fully styled dropdowns replacing native &lt;select&gt; elements. Supports single, multi, and compact variants with search filtering.</p>
+
+      <!-- 1.1 Single Select -->
+      <div class="subsection">
+        <h3 class="subsection-title">Single Select</h3>
+        <p class="subsection-desc">Three states: placeholder, value selected, and open with options list.</p>
+        <div class="demo-row">
+          <!-- Default placeholder -->
+          <div class="demo-item">
+            <span class="demo-label">Default</span>
+            <div class="custom-select" data-select="single" id="select-default">
+              <div class="select-trigger">
+                <span class="placeholder">Select venue</span>
+                <span class="chevron">&#9662;</span>
+              </div>
+              <div class="select-dropdown">
+                <div class="select-options">
+                  <div class="select-option" data-value="sunrise">Sunrise Cafe</div>
+                  <div class="select-option" data-value="harbor">Harbor Bistro</div>
+                  <div class="select-option" data-value="rooftop">Rooftop Lounge</div>
+                  <div class="select-option" data-value="downtown">Downtown Kiosk</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- With value -->
+          <div class="demo-item">
+            <span class="demo-label">Selected</span>
+            <div class="custom-select" data-select="single" id="select-selected">
+              <div class="select-trigger">
+                <span>Sunrise Cafe</span>
+                <span class="chevron">&#9662;</span>
+              </div>
+              <div class="select-dropdown">
+                <div class="select-options">
+                  <div class="select-option selected" data-value="sunrise">Sunrise Cafe <span class="check">&#10003;</span></div>
+                  <div class="select-option" data-value="harbor">Harbor Bistro</div>
+                  <div class="select-option" data-value="rooftop">Rooftop Lounge</div>
+                  <div class="select-option" data-value="downtown">Downtown Kiosk</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Open state -->
+          <div class="demo-item">
+            <span class="demo-label">Open State</span>
+            <div class="custom-select open" id="select-open-demo">
+              <div class="select-trigger">
+                <span>Sunrise Cafe</span>
+                <span class="chevron">&#9662;</span>
+              </div>
+              <div class="select-dropdown">
+                <div class="select-search">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                  <input type="text" placeholder="Filter...">
+                </div>
+                <div class="select-options">
+                  <div class="select-option selected" data-value="sunrise">Sunrise Cafe <span class="check">&#10003;</span></div>
+                  <div class="select-option" data-value="harbor">Harbor Bistro</div>
+                  <div class="select-option" data-value="rooftop">Rooftop Lounge</div>
+                  <div class="select-option disabled" data-value="downtown">Downtown Kiosk (closed)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1.2 Multi Select -->
+      <div class="subsection">
+        <h3 class="subsection-title">Multi-Select</h3>
+        <p class="subsection-desc">Selected values shown as removable pills. Checkboxes in the dropdown, with a "Clear all" action.</p>
+        <div class="demo-row">
+          <div class="demo-item">
+            <span class="demo-label">Multiple Selected</span>
+            <div class="custom-select" data-select="multi" id="select-multi">
+              <div class="select-trigger" style="height:auto; min-height:44px; padding:8px 12px;">
+                <div class="select-pills">
+                  <span class="select-pill">Sunrise Cafe <span class="pill-remove" data-remove="sunrise">&times;</span></span>
+                  <span class="select-pill">Rooftop Lounge <span class="pill-remove" data-remove="rooftop">&times;</span></span>
+                </div>
+                <span class="chevron">&#9662;</span>
+              </div>
+              <div class="select-dropdown">
+                <div style="display:flex; justify-content:flex-end; padding:8px 12px 4px;">
+                  <span class="select-clear">Clear all</span>
+                </div>
+                <div class="select-options">
+                  <div class="select-option selected" data-value="sunrise"><span class="option-checkbox"></span>Sunrise Cafe</div>
+                  <div class="select-option" data-value="harbor"><span class="option-checkbox"></span>Harbor Bistro</div>
+                  <div class="select-option selected" data-value="rooftop"><span class="option-checkbox"></span>Rooftop Lounge</div>
+                  <div class="select-option" data-value="downtown"><span class="option-checkbox"></span>Downtown Kiosk</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1.3 Small Select -->
+      <div class="subsection">
+        <h3 class="subsection-title">Small Select</h3>
+        <p class="subsection-desc">Compact variant (32px height) for filter bars and table headers.</p>
+        <div class="demo-row">
+          <div class="demo-item">
+            <span class="demo-label">Compact</span>
+            <div class="custom-select small" data-select="single" id="select-small">
+              <div class="select-trigger">
+                <span>All statuses</span>
+                <span class="chevron">&#9662;</span>
+              </div>
+              <div class="select-dropdown">
+                <div class="select-options">
+                  <div class="select-option selected" data-value="all">All statuses <span class="check">&#10003;</span></div>
+                  <div class="select-option" data-value="active">Active</div>
+                  <div class="select-option" data-value="draft">Draft</div>
+                  <div class="select-option" data-value="archived">Archived</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SECTION 2: DATE PICKER / CALENDAR
+         ============================================= -->
+    <section class="section" id="datepicker">
+      <h2 class="section-title">Date & Time Pickers</h2>
+      <p class="section-desc">Custom date inputs, calendar popups, range selectors, and time pickers. All fully styled with zero browser chrome.</p>
+
+      <!-- 2.1 Date Input -->
+      <div class="subsection">
+        <h3 class="subsection-title">Date Input</h3>
+        <p class="subsection-desc">Calendar trigger with icon, formatted value, and clear action.</p>
+        <div class="demo-row">
+          <div class="demo-item">
+            <span class="demo-label">Placeholder</span>
+            <div class="date-input-wrapper">
+              <div class="date-input" id="date-trigger-1">
+                <svg class="date-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                <span class="date-value date-placeholder">Select date</span>
+              </div>
+            </div>
+          </div>
+          <div class="demo-item">
+            <span class="demo-label">With Value</span>
+            <div class="date-input-wrapper">
+              <div class="date-input focused" id="date-trigger-2">
+                <svg class="date-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                <span class="date-value">Mar 30, 2026</span>
+                <span class="date-clear">&times;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.2 Calendar Popup -->
+      <div class="subsection">
+        <h3 class="subsection-title">Calendar Popup</h3>
+        <p class="subsection-desc">March 2026 with today (29th) ringed and a selected date (April 3) highlighted. Fully interactive day selection.</p>
+        <div class="demo-row">
+          <div class="demo-item" id="calendar-single-demo">
+            <span class="demo-label">Single Date Calendar</span>
+            <div class="calendar-popup static-demo" id="calendar-main">
+              <div class="calendar-header">
+                <button class="calendar-nav" id="cal-prev">&#9666;</button>
+                <span class="calendar-month-label" id="cal-month-label">March 2026</span>
+                <button class="calendar-nav" id="cal-next">&#9656;</button>
+              </div>
+              <div class="calendar-weekdays">
+                <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+              </div>
+              <div class="calendar-grid" id="cal-grid">
+                <!-- Filled by JS -->
+              </div>
+              <div class="calendar-footer">
+                <button class="calendar-footer-link accent" id="cal-today-btn">Today</button>
+                <button class="calendar-footer-link muted" id="cal-clear-btn">Clear</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.3 Date Range -->
+      <div class="subsection">
+        <h3 class="subsection-title">Date Range Picker</h3>
+        <p class="subsection-desc">Side-by-side two-month calendars with a connected range selection.</p>
+        <div class="date-range-wrapper" id="date-range-demo">
+          <div>
+            <div style="font-size:12px;font-weight:600;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;">Start Date</div>
+            <div class="calendar-popup static-demo" id="range-cal-left"></div>
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:600;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;">End Date</div>
+            <div class="calendar-popup static-demo" id="range-cal-right"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.4 Time Picker -->
+      <div class="subsection">
+        <h3 class="subsection-title">Time Picker</h3>
+        <p class="subsection-desc">Scrollable hour/minute columns with format toggle (12h/24h) and quick preset buttons.</p>
+        <div class="demo-row">
+          <div class="demo-item">
+            <span class="demo-label">Time Selector (24h default)</span>
+            <div class="time-picker-popup">
+              <div class="time-format-toggle" style="display:flex;gap:4px;margin-bottom:12px;padding:0 12px;">
+                <button class="ampm-btn active" id="fmt-24" onclick="setTimeFormat(24)" style="flex:1;">24h</button>
+                <button class="ampm-btn" id="fmt-12" onclick="setTimeFormat(12)" style="flex:1;">12h</button>
+              </div>
+              <div class="time-presets">
+                <button class="time-preset-btn" data-time="9:00">Morning (09:00)</button>
+                <button class="time-preset-btn active" data-time="12:00">Noon (12:00)</button>
+                <button class="time-preset-btn" data-time="17:00">Evening (17:00)</button>
+              </div>
+              <div class="time-columns">
+                <div class="time-column">
+                  <div class="time-column-label">Hour</div>
+                  <div class="time-scroll" id="hour-scroll">
+                    <!-- Filled by JS -->
+                  </div>
+                </div>
+                <div class="time-column">
+                  <div class="time-column-label">Minute</div>
+                  <div class="time-scroll" id="minute-scroll">
+                    <!-- Filled by JS -->
+                  </div>
+                </div>
+                <div class="ampm-toggle" id="ampm-toggle-container" style="display:none;">
+                  <button class="ampm-btn" id="ampm-am">AM</button>
+                  <button class="ampm-btn active" id="ampm-pm">PM</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SECTION 3: CONFIRMATION DIALOGS
+         ============================================= -->
+    <section class="section" id="dialogs">
+      <h2 class="section-title">Confirmation Dialogs</h2>
+      <p class="section-desc">Modal dialogs for confirmations, destructive actions, success states, and input prompts. Click the buttons below to see them live.</p>
+
+      <div class="demo-row" style="margin-bottom:32px;">
+        <button class="demo-trigger" onclick="showDialog('dialog-standard')">Standard Confirmation</button>
+        <button class="demo-trigger" onclick="showDialog('dialog-destructive')">Destructive Confirmation</button>
+        <button class="demo-trigger" onclick="showDialog('dialog-success')">Success Confirmation</button>
+        <button class="demo-trigger" onclick="showDialog('dialog-info')">Info Confirmation</button>
+        <button class="demo-trigger" onclick="showDialog('dialog-input')">Input Confirmation</button>
+      </div>
+
+      <div class="demo-row" style="flex-wrap:wrap;gap:32px;">
+        <!-- 3.1 Standard -->
+        <div class="demo-item">
+          <span class="demo-label">3.1 Standard</span>
+          <div class="dialog-demo">
+            <div class="dialog-icon warning">&#9888;</div>
+            <div class="dialog-title">Are you sure?</div>
+            <div class="dialog-desc">This will activate the plan and make it the execution truth. Draft changes will be locked.</div>
+            <div class="dialog-actions">
+              <button class="btn btn-secondary">Cancel</button>
+              <button class="btn btn-primary">Activate Plan</button>
+            </div>
+          </div>
+        </div>
+        <!-- 3.2 Destructive -->
+        <div class="demo-item">
+          <span class="demo-label">3.2 Destructive</span>
+          <div class="dialog-demo">
+            <div class="dialog-icon danger">&#9888;</div>
+            <div class="dialog-title">Delete this assessment?</div>
+            <div class="dialog-desc">This action cannot be undone. All signals and evidence associated with this assessment will be permanently removed.</div>
+            <div class="dialog-actions">
+              <button class="btn btn-secondary">Cancel</button>
+              <button class="btn btn-danger">Delete Assessment</button>
+            </div>
+          </div>
+        </div>
+        <!-- 3.3 Success -->
+        <div class="demo-item">
+          <span class="demo-label">3.3 Success</span>
+          <div class="dialog-demo">
+            <div class="dialog-icon success">&#10003;</div>
+            <div class="dialog-title">Assessment saved</div>
+            <div class="dialog-desc">Your assessment has been saved. You can now run the engine to generate a diagnostic report.</div>
+            <div class="dialog-actions">
+              <button class="btn btn-secondary">Back to Plan</button>
+              <button class="btn btn-primary">Run Engine</button>
+            </div>
+          </div>
+        </div>
+        <!-- 3.4 Info -->
+        <div class="demo-item">
+          <span class="demo-label">3.4 Info</span>
+          <div class="dialog-demo">
+            <div class="dialog-icon info">&#8505;</div>
+            <div class="dialog-title">Switch to active plan?</div>
+            <div class="dialog-desc">You're currently viewing the draft plan. Switch to the active plan to see execution progress.</div>
+            <div class="dialog-actions">
+              <button class="btn btn-secondary">Stay on Draft</button>
+              <button class="btn btn-primary">View Active Plan</button>
+            </div>
+          </div>
+        </div>
+        <!-- 3.5 Input -->
+        <div class="demo-item">
+          <span class="demo-label">3.5 Input</span>
+          <div class="dialog-demo">
+            <div class="dialog-icon danger">&#9888;</div>
+            <div class="dialog-title">Add rejection reason</div>
+            <div class="dialog-desc">Why are you rejecting this signal?</div>
+            <input class="dialog-input" placeholder="Enter reason...">
+            <div class="dialog-actions">
+              <button class="btn btn-secondary">Cancel</button>
+              <button class="btn btn-danger">Reject Signal</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live dialog overlays -->
+    <div class="dialog-backdrop" id="dialog-standard" onclick="if(event.target===this)hideDialog('dialog-standard')">
+      <div class="dialog">
+        <div class="dialog-icon warning">&#9888;</div>
+        <div class="dialog-title">Are you sure?</div>
+        <div class="dialog-desc">This will activate the plan and make it the execution truth. Draft changes will be locked.</div>
+        <div class="dialog-actions">
+          <button class="btn btn-secondary" onclick="hideDialog('dialog-standard')">Cancel</button>
+          <button class="btn btn-primary" onclick="hideDialog('dialog-standard')">Activate Plan</button>
+        </div>
+      </div>
+    </div>
+    <div class="dialog-backdrop" id="dialog-destructive" onclick="if(event.target===this)hideDialog('dialog-destructive')">
+      <div class="dialog">
+        <div class="dialog-icon danger">&#9888;</div>
+        <div class="dialog-title">Delete this assessment?</div>
+        <div class="dialog-desc">This action cannot be undone. All signals and evidence associated with this assessment will be permanently removed.</div>
+        <div class="dialog-actions">
+          <button class="btn btn-secondary" onclick="hideDialog('dialog-destructive')">Cancel</button>
+          <button class="btn btn-danger" onclick="hideDialog('dialog-destructive')">Delete Assessment</button>
+        </div>
+      </div>
+    </div>
+    <div class="dialog-backdrop" id="dialog-success" onclick="if(event.target===this)hideDialog('dialog-success')">
+      <div class="dialog">
+        <div class="dialog-icon success">&#10003;</div>
+        <div class="dialog-title">Assessment saved</div>
+        <div class="dialog-desc">Your assessment has been saved. You can now run the engine to generate a diagnostic report.</div>
+        <div class="dialog-actions">
+          <button class="btn btn-secondary" onclick="hideDialog('dialog-success')">Back to Plan</button>
+          <button class="btn btn-primary" onclick="hideDialog('dialog-success')">Run Engine</button>
+        </div>
+      </div>
+    </div>
+    <div class="dialog-backdrop" id="dialog-info" onclick="if(event.target===this)hideDialog('dialog-info')">
+      <div class="dialog">
+        <div class="dialog-icon info">&#8505;</div>
+        <div class="dialog-title">Switch to active plan?</div>
+        <div class="dialog-desc">You're currently viewing the draft plan. Switch to the active plan to see execution progress.</div>
+        <div class="dialog-actions">
+          <button class="btn btn-secondary" onclick="hideDialog('dialog-info')">Stay on Draft</button>
+          <button class="btn btn-primary" onclick="hideDialog('dialog-info')">View Active Plan</button>
+        </div>
+      </div>
+    </div>
+    <div class="dialog-backdrop" id="dialog-input" onclick="if(event.target===this)hideDialog('dialog-input')">
+      <div class="dialog">
+        <div class="dialog-icon danger">&#9888;</div>
+        <div class="dialog-title">Add rejection reason</div>
+        <div class="dialog-desc">Why are you rejecting this signal?</div>
+        <input class="dialog-input" placeholder="Enter reason...">
+        <div class="dialog-actions">
+          <button class="btn btn-secondary" onclick="hideDialog('dialog-input')">Cancel</button>
+          <button class="btn btn-danger" onclick="hideDialog('dialog-input')">Reject Signal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- =============================================
+         SECTION 4: TOAST NOTIFICATIONS
+         ============================================= -->
+    <section class="section" id="toasts">
+      <h2 class="section-title">Toast / Notification Messages</h2>
+      <p class="section-desc">Auto-dismissing notifications with progress bars for success, error, warning, and info states. Stacked with 12px gaps.</p>
+
+      <div class="toast-stack" id="toast-demo-stack">
+        <!-- Success -->
+        <div class="toast toast-success">
+          <div class="toast-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <div class="toast-content">
+            <div class="toast-title">Task completed</div>
+            <div class="toast-desc">Morning station prep has been marked as done.</div>
+          </div>
+          <div class="toast-close">&times;</div>
+          <div class="toast-progress"><div class="toast-progress-bar"></div></div>
+        </div>
+        <!-- Error -->
+        <div class="toast toast-error">
+          <div class="toast-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </div>
+          <div class="toast-content">
+            <div class="toast-title">Failed to save</div>
+            <div class="toast-desc">Connection lost. Your changes were not saved. Please try again.</div>
+            <span class="toast-link">Retry</span>
+          </div>
+          <div class="toast-close">&times;</div>
+        </div>
+        <!-- Warning -->
+        <div class="toast toast-warning">
+          <div class="toast-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+          </div>
+          <div class="toast-content">
+            <div class="toast-title">Plan not yet activated</div>
+            <div class="toast-desc">This is a draft plan. Changes won't affect execution until activated.</div>
+          </div>
+          <div class="toast-close">&times;</div>
+          <div class="toast-progress"><div class="toast-progress-bar"></div></div>
+        </div>
+        <!-- Info -->
+        <div class="toast toast-info">
+          <div class="toast-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          </div>
+          <div class="toast-content">
+            <div class="toast-title">New signal detected</div>
+            <div class="toast-desc">AI detected a new signal from your latest assessment. Review it in Signals.</div>
+            <span class="toast-link">View Signal &rarr;</span>
+          </div>
+          <div class="toast-close">&times;</div>
+          <div class="toast-progress"><div class="toast-progress-bar"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SECTION 5: INLINE ALERTS / BANNERS
+         ============================================= -->
+    <section class="section" id="banners">
+      <h2 class="section-title">Inline Alerts & Banners</h2>
+      <p class="section-desc">Full-width banners for page-level messages and compact inline alerts for use within cards and sections.</p>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Page Banners</h3>
+        <p class="subsection-desc">Full-width, below the top bar. Dismissible with an X button.</p>
+        <div>
+          <div class="banner banner-success">
+            <span class="banner-icon">&#10003;</span>
+            <span class="banner-text">Engine run complete &mdash; diagnostic report generated. <a href="#">View Report &rarr;</a></span>
+            <span class="banner-dismiss" onclick="this.parentElement.style.display='none'">&times;</span>
+          </div>
+          <div class="banner banner-warning">
+            <span class="banner-icon">&#9888;</span>
+            <span class="banner-text">This plan is in draft mode. Activate it to begin execution.</span>
+            <span class="banner-dismiss" onclick="this.parentElement.style.display='none'">&times;</span>
+          </div>
+          <div class="banner banner-error">
+            <span class="banner-icon">&#10007;</span>
+            <span class="banner-text">Connection to AI provider failed. Some features may be unavailable.</span>
+            <span class="banner-dismiss" onclick="this.parentElement.style.display='none'">&times;</span>
+          </div>
+          <div class="banner banner-info">
+            <span class="banner-icon">&#8505;</span>
+            <span class="banner-text">Your organization has a pending ontology update. <a href="#">Review changes &rarr;</a></span>
+            <span class="banner-dismiss" onclick="this.parentElement.style.display='none'">&times;</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Inline Alerts</h3>
+        <p class="subsection-desc">Smaller alerts used inside cards and content sections.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;max-width:500px;">
+          <div class="inline-alert alert-warning">
+            <span>&#9888;</span>
+            <span>This task is blocked by a dependency.</span>
+          </div>
+          <div class="inline-alert alert-error">
+            <span>&#10007;</span>
+            <span>Assessment failed validation. Check required fields.</span>
+          </div>
+          <div class="inline-alert alert-info">
+            <span>&#8505;</span>
+            <span>This signal was auto-detected by the AI engine.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SECTION 6: TOOLTIPS & POPOVERS
+         ============================================= -->
+    <section class="section" id="tooltips">
+      <h2 class="section-title">Tooltips & Popovers</h2>
+      <p class="section-desc">Dark tooltips on hover and interactive popovers on click. Four directional positions for tooltips.</p>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Tooltips</h3>
+        <p class="subsection-desc">Hover over each element to see the tooltip. 200ms delay, dark background, max 240px.</p>
+        <div class="tooltip-demo-area">
+          <div class="tooltip-trigger">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            <span class="tooltip top">Show help information</span>
+          </div>
+          <div class="tooltip-trigger">
+            <span style="width:8px;height:8px;border-radius:50%;background:#10B981;display:inline-block;"></span>&nbsp;Active
+            <span class="tooltip bottom">Status: Active since Mar 1</span>
+          </div>
+          <div class="tooltip-trigger">
+            Save
+            <span class="tooltip left">Save changes (Ctrl+S)</span>
+          </div>
+          <div class="tooltip-trigger" style="max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+            Very long assessment name...
+            <span class="tooltip right" style="white-space:normal;">Very long assessment name that was truncated</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Popovers</h3>
+        <p class="subsection-desc">Click to open, click outside or press Escape to close. Contains interactive elements.</p>
+        <div class="demo-row">
+          <div class="demo-item">
+            <span class="demo-label">Menu Popover</span>
+            <div class="popover-wrapper">
+              <button class="demo-trigger" id="popover-trigger-1">More actions &#9662;</button>
+              <div class="popover" id="popover-1">
+                <div class="popover-item">Edit assessment</div>
+                <div class="popover-item">Duplicate</div>
+                <div class="popover-item">Export as PDF</div>
+                <div class="popover-divider"></div>
+                <div class="popover-item danger">Delete</div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-item">
+            <span class="demo-label">Profile Popover</span>
+            <div class="popover-wrapper">
+              <button class="demo-trigger" id="popover-trigger-2" style="border-radius:50%;width:36px;height:36px;padding:0;background:var(--accent);color:white;font-weight:600;font-size:14px;border:none;">MK</button>
+              <div class="popover" id="popover-2" style="min-width:220px;padding:16px;">
+                <div style="font-weight:600;font-size:15px;margin-bottom:2px;">Matas K.</div>
+                <div style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">matas@vois.app</div>
+                <div class="popover-divider" style="margin:0 -16px 8px;"></div>
+                <div class="popover-item">Settings</div>
+                <div class="popover-item">Help & Support</div>
+                <div class="popover-divider"></div>
+                <div class="popover-item danger">Sign out</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SECTION 7: TOGGLE / SWITCH
+         ============================================= -->
+    <section class="section" id="toggles">
+      <h2 class="section-title">Toggle / Switch</h2>
+      <p class="section-desc">Custom toggle switches replacing native checkboxes. 44x24px track with smooth 180ms slide animation.</p>
+
+      <div class="toggle-row">
+        <div class="toggle-wrapper">
+          <div class="demo-item" style="gap:4px">
+            <span class="demo-label">Off</span>
+            <div class="toggle" data-toggle>
+              <div class="toggle-thumb"></div>
+            </div>
+          </div>
+        </div>
+        <div class="toggle-wrapper">
+          <div class="demo-item" style="gap:4px">
+            <span class="demo-label">On</span>
+            <div class="toggle on" data-toggle>
+              <div class="toggle-thumb"></div>
+            </div>
+          </div>
+        </div>
+        <div class="toggle-wrapper">
+          <div class="demo-item" style="gap:4px">
+            <span class="demo-label">With Label</span>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div class="toggle on" data-toggle>
+                <div class="toggle-thumb"></div>
+              </div>
+              <span class="toggle-label">Show completed tasks</span>
+            </div>
+          </div>
+        </div>
+        <div class="toggle-wrapper">
+          <div class="demo-item" style="gap:4px">
+            <span class="demo-label">Disabled</span>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div class="toggle disabled">
+                <div class="toggle-thumb"></div>
+              </div>
+              <span class="toggle-label" style="opacity:0.4;">Dark mode</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SECTION 8: CHECKBOX & RADIO
+         ============================================= -->
+    <section class="section" id="checkradio">
+      <h2 class="section-title">Checkbox & Radio</h2>
+      <p class="section-desc">Custom-styled checkboxes and radio buttons. 20x20px, accent fill on check, focus rings, and disabled states.</p>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Checkboxes</h3>
+        <div class="check-row">
+          <div class="checkbox-wrapper" data-checkbox>
+            <div class="custom-checkbox"></div>
+            <span class="check-label">Unchecked</span>
+          </div>
+          <div class="checkbox-wrapper" data-checkbox>
+            <div class="custom-checkbox checked"></div>
+            <span class="check-label">Checked</span>
+          </div>
+          <div class="checkbox-wrapper" data-checkbox>
+            <div class="custom-checkbox indeterminate"></div>
+            <span class="check-label">Indeterminate</span>
+          </div>
+          <div class="checkbox-wrapper disabled">
+            <div class="custom-checkbox disabled-unchecked"></div>
+            <span class="check-label">Disabled</span>
+          </div>
+          <div class="checkbox-wrapper disabled">
+            <div class="custom-checkbox disabled-checked checked"></div>
+            <span class="check-label">Disabled Checked</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">Radio Buttons</h3>
+        <div class="radio-group" id="radio-priority">
+          <span class="radio-group-label">Priority:</span>
+          <div class="radio-wrapper" data-radio="priority" data-value="low">
+            <div class="custom-radio"></div>
+            <span class="radio-label">Low</span>
+          </div>
+          <div class="radio-wrapper" data-radio="priority" data-value="medium">
+            <div class="custom-radio selected"></div>
+            <span class="radio-label">Medium</span>
+          </div>
+          <div class="radio-wrapper" data-radio="priority" data-value="high">
+            <div class="custom-radio"></div>
+            <span class="radio-label">High</span>
+          </div>
+          <div class="radio-wrapper" data-radio="priority" data-value="critical">
+            <div class="custom-radio"></div>
+            <span class="radio-label">Critical</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SECTION 9: PROGRESS & LOADING
+         ============================================= -->
+    <section class="section" id="progress">
+      <h2 class="section-title">Progress & Loading</h2>
+      <p class="section-desc">Progress bars, spinners, skeleton loaders, and multi-step progress indicators.</p>
+
+      <!-- 9.1 Progress Bar -->
+      <div class="subsection">
+        <h3 class="subsection-title">Progress Bar</h3>
+        <div class="demo-row" style="flex-direction:column;gap:16px;">
+          <div class="demo-item" style="width:100%;max-width:400px;">
+            <span class="demo-label">25%</span>
+            <div class="progress-bar-track"><div class="progress-bar-fill" style="width:25%"></div></div>
+          </div>
+          <div class="demo-item" style="width:100%;max-width:400px;">
+            <span class="demo-label">60%</span>
+            <div class="progress-bar-track"><div class="progress-bar-fill" style="width:60%"></div></div>
+          </div>
+          <div class="demo-item" style="width:100%;max-width:400px;">
+            <span class="demo-label">100%</span>
+            <div class="progress-bar-track"><div class="progress-bar-fill" style="width:100%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9.2 Spinners -->
+      <div class="subsection">
+        <h3 class="subsection-title">Spinners</h3>
+        <div class="demo-row">
+          <div class="demo-item">
+            <span class="demo-label">Small (16px)</span>
+            <div class="spinner sm"></div>
+          </div>
+          <div class="demo-item">
+            <span class="demo-label">Medium (24px)</span>
+            <div class="spinner md"></div>
+          </div>
+          <div class="demo-item">
+            <span class="demo-label">Large (40px)</span>
+            <div class="spinner lg"></div>
+          </div>
+          <div class="demo-item">
+            <span class="demo-label">With Label</span>
+            <div class="spinner-with-label">
+              <div class="spinner md"></div>
+              <span class="spinner-label">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9.3 Skeleton -->
+      <div class="subsection">
+        <h3 class="subsection-title">Skeleton Loader</h3>
+        <p class="subsection-desc">Shimmer animation runs continuously. Shows a placeholder task card shape.</p>
+        <div class="skeleton-card">
+          <div class="skeleton-line title"></div>
+          <div class="skeleton-line full"></div>
+          <div class="skeleton-line medium"></div>
+          <div class="skeleton-row">
+            <div class="skeleton-pill"></div>
+            <div style="flex:1"></div>
+            <div class="skeleton-avatar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9.4 Progress Steps -->
+      <div class="subsection">
+        <h3 class="subsection-title">Progress Steps</h3>
+        <p class="subsection-desc">Horizontal step indicator with completed, active, and upcoming states.</p>
+        <div class="progress-steps">
+          <div class="step-item completed">
+            <div class="step-circle">&#10003;</div>
+            <div class="step-label">1. Write Evidence</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-item active">
+            <div class="step-circle">2</div>
+            <div class="step-label">2. Review Signals</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-item upcoming">
+            <div class="step-circle">3</div>
+            <div class="step-label">3. Save & Run</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SECTION 10: BADGES & NOTIFICATION DOTS
+         ============================================= -->
+    <section class="section" id="badges">
+      <h2 class="section-title">Badge / Notification Dot</h2>
+      <p class="section-desc">Count badges and dot indicators for notifications, unread states, and activity alerts.</p>
+
+      <div class="badge-demo-row">
+        <div class="demo-item">
+          <span class="demo-label">Count Badge</span>
+          <div class="badge-wrapper">
+            <div class="badge-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>
+            </div>
+            <span class="count-badge">3</span>
+          </div>
+        </div>
+        <div class="demo-item">
+          <span class="demo-label">Overflow</span>
+          <div class="badge-wrapper">
+            <div class="badge-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>
+            </div>
+            <span class="count-badge">9+</span>
+          </div>
+        </div>
+        <div class="demo-item">
+          <span class="demo-label">Dot Badge</span>
+          <div class="badge-wrapper">
+            <div class="badge-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <span class="dot-badge"></span>
+          </div>
+        </div>
+        <div class="demo-item">
+          <span class="demo-label">Nav Item</span>
+          <div style="display:flex;align-items:center;gap:10px;padding:8px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-btn);font-size:14px;font-weight:500;position:relative;">
+            Signals
+            <span style="display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;background:var(--danger);color:white;font-size:11px;font-weight:700;border-radius:9px;padding:0 5px;">5</span>
+          </div>
+        </div>
+        <div class="demo-item">
+          <span class="demo-label">Avatar Dot</span>
+          <div class="badge-wrapper">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:14px;">MK</div>
+            <span class="dot-badge" style="top:0;right:0;"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT — All Interactive Behavior
+     ============================================================ -->
+<script>
+(function() {
+  'use strict';
+
+  // ============ DROPDOWN / SELECT ============
+  document.querySelectorAll('.custom-select[data-select]').forEach(function(sel) {
+    var trigger = sel.querySelector('.select-trigger');
+    if (!sel.id.includes('open-demo')) {
+      trigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        // Close all other selects
+        document.querySelectorAll('.custom-select.open').forEach(function(s) {
+          if (s !== sel) s.classList.remove('open');
+        });
+        sel.classList.toggle('open');
+      });
+    }
+    // Option click
+    sel.querySelectorAll('.select-option:not(.disabled)').forEach(function(opt) {
+      opt.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var isMulti = sel.getAttribute('data-select') === 'multi';
+        if (isMulti) {
+          opt.classList.toggle('selected');
+        } else {
+          sel.querySelectorAll('.select-option').forEach(function(o) { o.classList.remove('selected'); o.querySelector('.check') && o.querySelector('.check').remove(); });
+          opt.classList.add('selected');
+          var check = document.createElement('span');
+          check.className = 'check';
+          check.textContent = '\u2713';
+          opt.appendChild(check);
+          // Update trigger text
+          var valSpan = trigger.querySelector('span:not(.chevron):not(.placeholder)') || trigger.querySelector('.placeholder');
+          if (valSpan) {
+            valSpan.textContent = opt.textContent.replace('\u2713', '').trim();
+            valSpan.classList.remove('placeholder');
+          }
+          sel.classList.remove('open');
+        }
+      });
+    });
+    // Pill remove
+    sel.querySelectorAll('.pill-remove').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        btn.parentElement.remove();
+      });
+    });
+    // Clear all
+    var clearAll = sel.querySelector('.select-clear');
+    if (clearAll) {
+      clearAll.addEventListener('click', function(e) {
+        e.stopPropagation();
+        sel.querySelectorAll('.select-option.selected').forEach(function(o) { o.classList.remove('selected'); });
+        sel.querySelectorAll('.select-pill').forEach(function(p) { p.remove(); });
+      });
+    }
+    // Search filter
+    var searchInput = sel.querySelector('.select-search input');
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        var val = this.value.toLowerCase();
+        sel.querySelectorAll('.select-option').forEach(function(opt) {
+          opt.style.display = opt.textContent.toLowerCase().includes(val) ? '' : 'none';
+        });
+      });
+    }
+  });
+  // Close selects on outside click
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.custom-select.open').forEach(function(s) {
+      if (!s.id.includes('open-demo')) s.classList.remove('open');
+    });
+  });
+
+  // ============ CALENDAR ============
+  var calState = { year: 2026, month: 2, selected: null }; // month is 0-indexed (2 = March)
+  var todayDate = new Date(2026, 2, 29); // March 29, 2026
+
+  function renderCalendar(container, year, month, opts) {
+    opts = opts || {};
+    var grid = container.querySelector('.calendar-grid') || container;
+    var label = container.querySelector('.calendar-month-label');
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    if (label) label.textContent = months[month] + ' ' + year;
+
+    var firstDay = new Date(year, month, 1).getDay();
+    var shift = (firstDay === 0) ? 6 : firstDay - 1; // Monday start
+    var daysInMonth = new Date(year, month + 1, 0).getDate();
+    var daysInPrev = new Date(year, month, 0).getDate();
+
+    var html = '';
+    // Previous month days
+    for (var i = shift - 1; i >= 0; i--) {
+      html += '<button class="calendar-day outside disabled">' + (daysInPrev - i) + '</button>';
+    }
+    // Current month days
+    for (var d = 1; d <= daysInMonth; d++) {
+      var cls = 'calendar-day';
+      var thisDate = new Date(year, month, d);
+      if (thisDate.getTime() === todayDate.getTime()) cls += ' today';
+      if (opts.selected && opts.selected.getTime() === thisDate.getTime()) cls += ' selected';
+      if (opts.rangeStart && opts.rangeEnd) {
+        if (thisDate.getTime() === opts.rangeStart.getTime()) cls += ' range-start selected';
+        else if (thisDate.getTime() === opts.rangeEnd.getTime()) cls += ' range-end selected';
+        else if (thisDate > opts.rangeStart && thisDate < opts.rangeEnd) cls += ' in-range';
+      }
+      html += '<button class="' + cls + '" data-day="' + d + '">' + d + '</button>';
+    }
+    // Next month days
+    var total = shift + daysInMonth;
+    var remaining = (7 - (total % 7)) % 7;
+    for (var j = 1; j <= remaining; j++) {
+      html += '<button class="calendar-day outside disabled">' + j + '</button>';
+    }
+    grid.innerHTML = html;
+
+    // Click handler for day selection
+    grid.querySelectorAll('.calendar-day:not(.outside):not(.disabled)').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var day = parseInt(this.getAttribute('data-day'));
+        calState.selected = new Date(year, month, day);
+        renderCalendar(container, year, month, { selected: calState.selected });
+      });
+    });
+  }
+
+  // Main calendar
+  var mainCal = document.getElementById('calendar-main');
+  calState.selected = new Date(2026, 3, 3); // April 3 pre-selected
+  renderCalendar(mainCal, 2026, 2, { selected: calState.selected });
+
+  document.getElementById('cal-prev').addEventListener('click', function() {
+    calState.month--;
+    if (calState.month < 0) { calState.month = 11; calState.year--; }
+    renderCalendar(mainCal, calState.year, calState.month, { selected: calState.selected });
+  });
+  document.getElementById('cal-next').addEventListener('click', function() {
+    calState.month++;
+    if (calState.month > 11) { calState.month = 0; calState.year++; }
+    renderCalendar(mainCal, calState.year, calState.month, { selected: calState.selected });
+  });
+  document.getElementById('cal-today-btn').addEventListener('click', function() {
+    calState.year = 2026; calState.month = 2;
+    calState.selected = todayDate;
+    renderCalendar(mainCal, 2026, 2, { selected: calState.selected });
+  });
+  document.getElementById('cal-clear-btn').addEventListener('click', function() {
+    calState.selected = null;
+    renderCalendar(mainCal, calState.year, calState.month, {});
+  });
+
+  // Range calendar
+  function buildRangeCal(containerId, year, month, opts) {
+    var container = document.getElementById(containerId);
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    container.innerHTML =
+      '<div class="calendar-header">' +
+        '<button class="calendar-nav range-prev">&#9666;</button>' +
+        '<span class="calendar-month-label">' + months[month] + ' ' + year + '</span>' +
+        '<button class="calendar-nav range-next">&#9656;</button>' +
+      '</div>' +
+      '<div class="calendar-weekdays"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div>' +
+      '<div class="calendar-grid"></div>';
+    renderCalendar(container, year, month, opts);
+  }
+  var rangeStart = new Date(2026, 2, 23);
+  var rangeEnd = new Date(2026, 3, 5);
+  buildRangeCal('range-cal-left', 2026, 2, { rangeStart: rangeStart, rangeEnd: rangeEnd });
+  buildRangeCal('range-cal-right', 2026, 3, { rangeStart: rangeStart, rangeEnd: rangeEnd });
+
+  // Time Picker
+  var hourScroll = document.getElementById('hour-scroll');
+  var minuteScroll = document.getElementById('minute-scroll');
+  for (var h = 1; h <= 12; h++) {
+    var hDiv = document.createElement('div');
+    hDiv.className = 'time-option' + (h === 12 ? ' selected' : '');
+    hDiv.textContent = h;
+    hDiv.addEventListener('click', function() {
+      hourScroll.querySelectorAll('.time-option').forEach(function(o) { o.classList.remove('selected'); });
+      this.classList.add('selected');
+    });
+    hourScroll.appendChild(hDiv);
+  }
+  for (var m = 0; m < 60; m += 5) {
+    var mDiv = document.createElement('div');
+    mDiv.className = 'time-option' + (m === 0 ? ' selected' : '');
+    mDiv.textContent = m < 10 ? '0' + m : m;
+    mDiv.addEventListener('click', function() {
+      minuteScroll.querySelectorAll('.time-option').forEach(function(o) { o.classList.remove('selected'); });
+      this.classList.add('selected');
+    });
+    minuteScroll.appendChild(mDiv);
+  }
+  // Scroll to selected
+  setTimeout(function() {
+    var selHour = hourScroll.querySelector('.selected');
+    if (selHour) selHour.scrollIntoView({ block: 'center' });
+  }, 100);
+
+  // Time format toggle (24h / 12h)
+  function setTimeFormat(fmt) {
+    const ampmContainer = document.getElementById('ampm-toggle-container');
+    const fmt24 = document.getElementById('fmt-24');
+    const fmt12 = document.getElementById('fmt-12');
+    const hourScroll = document.getElementById('hour-scroll');
+    if (fmt === 24) {
+      fmt24.classList.add('active');
+      fmt12.classList.remove('active');
+      ampmContainer.style.display = 'none';
+      hourScroll.innerHTML = '';
+      for (let h = 0; h < 24; h++) {
+        const div = document.createElement('div');
+        div.className = 'time-option' + (h === 12 ? ' active' : '');
+        div.textContent = String(h).padStart(2, '0');
+        hourScroll.appendChild(div);
+      }
+    } else {
+      fmt12.classList.add('active');
+      fmt24.classList.remove('active');
+      ampmContainer.style.display = 'flex';
+      hourScroll.innerHTML = '';
+      for (let h = 1; h <= 12; h++) {
+        const div = document.createElement('div');
+        div.className = 'time-option' + (h === 12 ? ' active' : '');
+        div.textContent = String(h);
+        hourScroll.appendChild(div);
+      }
+    }
+  }
+
+  // AM/PM toggle
+  document.getElementById('ampm-am').addEventListener('click', function() {
+    this.classList.add('active');
+    document.getElementById('ampm-pm').classList.remove('active');
+  });
+  document.getElementById('ampm-pm').addEventListener('click', function() {
+    this.classList.add('active');
+    document.getElementById('ampm-am').classList.remove('active');
+  });
+
+  // Time presets
+  document.querySelectorAll('.time-preset-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.time-preset-btn').forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+
+  // ============ DIALOGS ============
+  window.showDialog = function(id) {
+    document.getElementById(id).classList.add('show');
+    document.body.style.overflow = 'hidden';
+  };
+  window.hideDialog = function(id) {
+    document.getElementById(id).classList.remove('show');
+    document.body.style.overflow = '';
+  };
+  // Escape key closes dialogs
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.dialog-backdrop.show').forEach(function(d) {
+        d.classList.remove('show');
+      });
+      document.body.style.overflow = '';
+      // Close popovers
+      document.querySelectorAll('.popover.show').forEach(function(p) { p.classList.remove('show'); });
+    }
+  });
+
+  // ============ TOAST CLOSE ============
+  document.querySelectorAll('.toast-close').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var toast = this.closest('.toast');
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateX(20px)';
+      toast.style.transition = 'all 200ms ease';
+      setTimeout(function() { toast.style.display = 'none'; }, 200);
+    });
+  });
+
+  // ============ POPOVERS ============
+  function setupPopover(triggerId, popoverId) {
+    var trigger = document.getElementById(triggerId);
+    var popover = document.getElementById(popoverId);
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var wasOpen = popover.classList.contains('show');
+      document.querySelectorAll('.popover.show').forEach(function(p) { p.classList.remove('show'); });
+      if (!wasOpen) popover.classList.add('show');
+    });
+  }
+  setupPopover('popover-trigger-1', 'popover-1');
+  setupPopover('popover-trigger-2', 'popover-2');
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.popover.show').forEach(function(p) { p.classList.remove('show'); });
+  });
+  document.querySelectorAll('.popover').forEach(function(p) {
+    p.addEventListener('click', function(e) { e.stopPropagation(); });
+  });
+
+  // ============ TOGGLES ============
+  document.querySelectorAll('.toggle[data-toggle]').forEach(function(toggle) {
+    toggle.addEventListener('click', function() {
+      if (this.classList.contains('disabled')) return;
+      this.classList.toggle('on');
+    });
+  });
+
+  // ============ CHECKBOXES ============
+  document.querySelectorAll('.checkbox-wrapper[data-checkbox]').forEach(function(wrapper) {
+    wrapper.addEventListener('click', function() {
+      if (this.classList.contains('disabled')) return;
+      var box = this.querySelector('.custom-checkbox');
+      if (box.classList.contains('indeterminate')) {
+        box.classList.remove('indeterminate');
+        box.classList.add('checked');
+      } else {
+        box.classList.toggle('checked');
+      }
+    });
+  });
+
+  // ============ RADIOS ============
+  document.querySelectorAll('.radio-wrapper[data-radio]').forEach(function(wrapper) {
+    wrapper.addEventListener('click', function() {
+      var group = this.getAttribute('data-radio');
+      document.querySelectorAll('.radio-wrapper[data-radio="' + group + '"] .custom-radio').forEach(function(r) {
+        r.classList.remove('selected');
+      });
+      this.querySelector('.custom-radio').classList.add('selected');
+    });
+  });
+
+})();
+</script>
+</body>
+</html>

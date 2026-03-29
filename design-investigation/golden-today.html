@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- VOIS Golden Page: Manager Today — Standard Layout Template -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOIS Golden Page — Manager Today</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ========================================
+   VOIS Design Tokens
+   ======================================== */
+:root {
+  /* Colors */
+  --page-bg: #FAFAFA;
+  --surface: #FFFFFF;
+  --text-primary: #0A0A0A;
+  --text-secondary: #525252;
+  --text-muted: #A3A3A3;
+  --accent: #6C5CE7;
+  --accent-hover: #5B4BD5;
+  --accent-soft: rgba(108, 92, 231, 0.08);
+  --success: #10B981;
+  --success-soft: rgba(16, 185, 129, 0.08);
+  --warning: #F59E0B;
+  --warning-soft: rgba(245, 158, 11, 0.08);
+  --danger: #EF4444;
+  --danger-soft: rgba(239, 68, 68, 0.08);
+  --info: #6366F1;
+  --info-soft: rgba(99, 102, 241, 0.08);
+  --border: #E5E5E5;
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --page-title: 28px;
+  --section-heading: 20px;
+  --card-title: 16px;
+  --body: 15px;
+  --small: 13px;
+  --eyebrow: 11px;
+
+  /* Spacing */
+  --page-margin: 48px;
+  --section-gap: 32px;
+  --card-padding: 24px;
+  --card-gap: 16px;
+
+  /* Radius */
+  --radius-btn: 8px;
+  --radius-card: 12px;
+  --radius-pill: 24px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+
+  /* Layout */
+  --sidebar-width: 240px;
+  --inspector-width: 320px;
+  --topbar-height: 56px;
+}
+
+/* ========================================
+   Reset & Base
+   ======================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--page-bg);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* ========================================
+   App Shell
+   ======================================== */
+.app-shell {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* ========================================
+   Sidebar
+   ======================================== */
+.sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  background: var(--page-bg);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 20;
+}
+
+.sidebar-inner {
+  padding: 20px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4px;
+  margin-bottom: 16px;
+}
+
+.brand-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #a78bfa);
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.venue-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: background 180ms ease;
+  margin-bottom: 32px;
+}
+
+.venue-selector:hover {
+  background: #F0F0F0;
+}
+
+.venue-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  flex-shrink: 0;
+}
+
+.venue-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.venue-chevron {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.nav-section {
+  margin-bottom: 24px;
+}
+
+.nav-label {
+  font-size: var(--eyebrow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding: 0 12px;
+  margin-bottom: 4px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-btn);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 180ms ease;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  background: #F0F0F0;
+}
+
+.nav-item.active {
+  color: var(--accent);
+  background: rgba(108, 92, 231, 0.06);
+}
+
+.nav-item-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.nav-item.active .nav-item-icon {
+  opacity: 1;
+}
+
+/* Sidebar bottom */
+.sidebar-bottom {
+  padding: 0 4px;
+  margin-top: auto;
+}
+
+.sidebar-bottom-link {
+  display: block;
+  padding: 6px 12px;
+  font-size: var(--small);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 180ms ease;
+  text-decoration: none;
+}
+
+.sidebar-bottom-link:hover {
+  color: var(--text-secondary);
+}
+
+.sidebar-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 12px 0;
+}
+
+.user-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 8px;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #a78bfa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.user-role {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* ========================================
+   Main Area (topbar + canvas + inspector)
+   ======================================== */
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100vh;
+}
+
+/* ========================================
+   Top Bar
+   ======================================== */
+.topbar {
+  height: var(--topbar-height);
+  min-height: var(--topbar-height);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 10;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--small);
+}
+
+.breadcrumb-muted {
+  color: var(--text-muted);
+}
+
+.breadcrumb-sep {
+  color: var(--text-muted);
+  margin: 0 2px;
+}
+
+.breadcrumb-current {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-right: 8px;
+  color: var(--text-secondary);
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  font-size: var(--small);
+  color: var(--text-muted);
+  width: 200px;
+  cursor: pointer;
+  transition: all 180ms ease;
+  background: var(--surface);
+}
+
+.search-pill:hover {
+  border-color: #ccc;
+  box-shadow: var(--shadow-sm);
+}
+
+.search-pill svg {
+  width: 14px;
+  height: 14px;
+  opacity: 0.5;
+}
+
+.notification-btn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: var(--text-secondary);
+  transition: color 180ms ease;
+}
+
+.notification-btn:hover {
+  color: var(--text-primary);
+}
+
+.notification-dot {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--danger);
+  border: 2px solid var(--surface);
+}
+
+.copilot-btn {
+  font-family: var(--font-family);
+  font-size: var(--small);
+  font-weight: 500;
+  color: var(--accent);
+  background: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.copilot-btn:hover {
+  background: var(--accent-soft);
+}
+
+/* ========================================
+   Content Area (canvas + inspector)
+   ======================================== */
+.content-area {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+/* ========================================
+   Primary Canvas
+   ======================================== */
+.canvas {
+  flex: 1;
+  overflow-y: auto;
+  padding: 32px var(--page-margin) 80px;
+  min-width: 0;
+}
+
+/* Page Header */
+.page-header {
+  margin-bottom: var(--section-gap);
+}
+
+.page-eyebrow {
+  font-size: var(--eyebrow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.page-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.page-title {
+  font-size: var(--page-title);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.page-date {
+  font-size: var(--page-title);
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: -0.02em;
+}
+
+.page-subtitle {
+  font-size: var(--body);
+  color: var(--text-secondary);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: white;
+  border: none;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 180ms ease;
+  box-shadow: 0 1px 3px rgba(108, 92, 231, 0.3);
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.35);
+}
+
+/* ========================================
+   Metrics Row
+   ======================================== */
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--card-gap);
+  margin-bottom: var(--section-gap);
+}
+
+.metric-card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+  cursor: default;
+  transition: all 180ms ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.metric-value {
+  font-family: var(--font-mono);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.metric-value.danger { color: var(--danger); }
+.metric-value.info { color: var(--info); }
+.metric-value.success { color: var(--success); }
+.metric-value.primary { color: var(--text-primary); }
+
+.metric-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ========================================
+   Task Sections
+   ======================================== */
+.task-section {
+  margin-bottom: 24px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: var(--section-heading);
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.count-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 11px;
+  background: #F0F0F0;
+  font-size: var(--eyebrow);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.task-card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+/* Task Item */
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 180ms ease;
+  position: relative;
+}
+
+.task-item:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+
+.task-item:hover {
+  background: #F5F5F5;
+}
+
+.task-item.selected {
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  padding-left: 17px;
+}
+
+.task-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 7px;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+.task-dot.danger { background: var(--danger); }
+.task-dot.warning { background: var(--warning); }
+.task-dot.info { background: var(--info); }
+.task-dot.muted { background: #D4D4D4; }
+
+.task-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-name {
+  font-size: var(--card-title);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 2px;
+}
+
+.task-meta {
+  font-size: var(--small);
+  line-height: 1.4;
+}
+
+.task-meta.danger { color: var(--danger); }
+.task-meta.warning { color: var(--warning); }
+.task-meta.info { color: var(--info); }
+.task-meta.muted { color: var(--text-muted); }
+
+.task-progress {
+  height: 4px;
+  background: #F0F0F0;
+  border-radius: 2px;
+  margin-top: 8px;
+  overflow: hidden;
+  max-width: 240px;
+}
+
+.task-progress-bar {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), #a78bfa);
+  transition: width 400ms ease;
+}
+
+.task-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  margin-left: 16px;
+  flex-shrink: 0;
+}
+
+.task-assignee {
+  font-size: var(--small);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.task-due {
+  font-size: var(--small);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.task-chevron {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin-left: 8px;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.task-item:hover .task-chevron {
+  opacity: 1;
+}
+
+/* ========================================
+   Right Inspector
+   ======================================== */
+.inspector {
+  width: var(--inspector-width);
+  min-width: var(--inspector-width);
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.inspector.hidden {
+  display: none;
+}
+
+.inspector-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.inspector-title {
+  font-size: var(--card-title);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.inspector-close {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 16px;
+  transition: all 180ms ease;
+}
+
+.inspector-close:hover {
+  background: #F0F0F0;
+  color: var(--text-primary);
+}
+
+.inspector-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.inspector-task-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.inspector-section {
+  margin-bottom: 20px;
+}
+
+.inspector-label {
+  font-size: var(--eyebrow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-pill.danger {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.inspector-status-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.inspector-due {
+  font-size: var(--small);
+  color: var(--text-muted);
+}
+
+.inspector-assignee-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inspector-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.inspector-assignee-name {
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.inspector-text {
+  font-size: var(--small);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.blocked-callout {
+  border-left: 3px solid var(--danger);
+  padding: 10px 14px;
+  background: var(--danger-soft);
+  border-radius: 0 6px 6px 0;
+  font-size: var(--small);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.inspector-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-inspector-primary {
+  width: 100%;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: white;
+  border: none;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.btn-inspector-primary:hover {
+  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+}
+
+.btn-inspector-secondary {
+  width: 100%;
+  padding: 10px 16px;
+  background: var(--surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.btn-inspector-secondary:hover {
+  background: #F5F5F5;
+}
+
+.btn-inspector-more {
+  width: 100%;
+  padding: 8px 16px;
+  background: none;
+  color: var(--text-muted);
+  border: none;
+  font-family: var(--font-family);
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 180ms ease;
+  letter-spacing: 0.1em;
+}
+
+.btn-inspector-more:hover {
+  color: var(--text-secondary);
+}
+
+.proof-empty {
+  padding: 12px 14px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-btn);
+  font-size: var(--small);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.inspector-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 20px 0;
+}
+
+.copilot-inspector-btn {
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  color: var(--accent);
+  border: 1px solid transparent;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 180ms ease;
+  text-align: center;
+}
+
+.copilot-inspector-btn:hover {
+  background: var(--accent-soft);
+}
+
+/* ========================================
+   Mobile Bottom Tab Bar
+   ======================================== */
+.bottom-tabs {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  z-index: 50;
+}
+
+.bottom-tabs-inner {
+  display: flex;
+  height: 100%;
+}
+
+.bottom-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 180ms ease;
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-family: var(--font-family);
+}
+
+.bottom-tab.active {
+  color: var(--accent);
+}
+
+.bottom-tab svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ========================================
+   Sidebar Overlay (mobile)
+   ======================================== */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 19;
+}
+
+.sidebar-overlay.visible {
+  display: block;
+}
+
+/* ========================================
+   Inspector Overlay (tablet)
+   ======================================== */
+.inspector-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 29;
+}
+
+/* ========================================
+   Responsive: < 1200px
+   ======================================== */
+@media (max-width: 1199px) {
+  .inspector:not(.hidden) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.1);
+  }
+
+  .inspector-overlay.visible {
+    display: block;
+  }
+}
+
+/* ========================================
+   Responsive: < 1024px
+   ======================================== */
+@media (max-width: 1023px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    z-index: 20;
+    transition: transform 250ms ease;
+    box-shadow: none;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0,0,0,0.1);
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .canvas {
+    padding: 24px 32px 80px;
+  }
+}
+
+/* ========================================
+   Responsive: < 768px
+   ======================================== */
+@media (max-width: 767px) {
+  .metrics-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .canvas {
+    padding: 20px 20px 100px;
+  }
+
+  .page-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .page-title,
+  .page-date {
+    font-size: 24px;
+  }
+
+  .task-item {
+    padding: 18px 16px;
+  }
+
+  .task-progress {
+    max-width: 100%;
+  }
+
+  .search-pill {
+    display: none;
+  }
+
+  .bottom-tabs {
+    display: block;
+  }
+
+  .topbar-right {
+    gap: 10px;
+  }
+}
+
+/* ========================================
+   Scrollbar
+   ======================================== */
+.canvas::-webkit-scrollbar,
+.inspector-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.canvas::-webkit-scrollbar-track,
+.inspector-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.canvas::-webkit-scrollbar-thumb,
+.inspector-body::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.canvas::-webkit-scrollbar-thumb:hover,
+.inspector-body::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+</style>
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ====== SIDEBAR ====== -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-brand">
+        <span class="brand-dot"></span>
+        <span class="brand-name">VOIS</span>
+      </div>
+
+      <div class="venue-selector">
+        <span class="venue-dot"></span>
+        <span class="venue-name">Sunrise Cafe</span>
+        <span class="venue-chevron">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-label">Workspace</div>
+        <a class="nav-item active" href="#">
+          <span class="nav-item-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2.25 9L9 2.25L15.75 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 7.5V14.25C4.5 14.6642 4.83579 15 5.25 15H7.5V11.25H10.5V15H12.75C13.1642 15 13.5 14.6642 13.5 14.25V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          Today
+        </a>
+        <a class="nav-item" href="#">
+          <span class="nav-item-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 5.25H15M3 9H10.5M3 12.75H7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          My Tasks
+        </a>
+        <a class="nav-item" href="#">
+          <span class="nav-item-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M6.75 2.25V4.5M11.25 2.25V4.5M2.25 7.5H15.75M3.75 3.375H14.25C15.0784 3.375 15.75 4.04657 15.75 4.875V14.25C15.75 15.0784 15.0784 15.75 14.25 15.75H3.75C2.92157 15.75 2.25 15.0784 2.25 14.25V4.875C2.25 4.04657 2.92157 3.375 3.75 3.375Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          Execution
+        </a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-label">Venue</div>
+        <a class="nav-item" href="#">
+          <span class="nav-item-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 6V9L11.25 11.25M15.75 9C15.75 12.7279 12.7279 15.75 9 15.75C5.27208 15.75 2.25 12.7279 2.25 9C2.25 5.27208 5.27208 2.25 9 2.25C12.7279 2.25 15.75 5.27208 15.75 9Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          Assessment
+        </a>
+        <a class="nav-item" href="#">
+          <span class="nav-item-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2.25 13.5L6 5.25L9.75 9.75L15.75 2.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          Signals
+        </a>
+        <a class="nav-item" href="#">
+          <span class="nav-item-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9.75 2.25H5.25C4.42157 2.25 3.75 2.92157 3.75 3.75V14.25C3.75 15.0784 4.42157 15.75 5.25 15.75H12.75C13.5784 15.75 14.25 15.0784 14.25 14.25V6.75M9.75 2.25L14.25 6.75M9.75 2.25V6.75H14.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          Plan
+        </a>
+        <a class="nav-item" href="#">
+          <span class="nav-item-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2.25" y="2.25" width="5.25" height="5.25" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="10.5" y="2.25" width="5.25" height="5.25" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="2.25" y="10.5" width="5.25" height="5.25" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="10.5" y="10.5" width="5.25" height="5.25" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+          </span>
+          Report
+        </a>
+        <a class="nav-item" href="#">
+          <span class="nav-item-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M12.75 2.25H5.25C4.42157 2.25 3.75 2.92157 3.75 3.75V15.75L6.75 13.5L9 15.75L11.25 13.5L14.25 15.75V3.75C14.25 2.92157 13.5784 2.25 12.75 2.25Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          History
+        </a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-label">Reference</div>
+        <a class="nav-item" href="#">
+          <span class="nav-item-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 2.25H6.75C7.57843 2.25 8.25 2.92157 8.25 3.75V15.75L8.25 15C8.25 14.1716 7.57843 13.5 6.75 13.5H3V2.25Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 2.25H11.25C10.4216 2.25 9.75 2.92157 9.75 3.75V15.75L9.75 15C9.75 14.1716 10.4216 13.5 11.25 13.5H15V2.25Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          Knowledge Base
+        </a>
+        <a class="nav-item" href="#">
+          <span class="nav-item-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M6 9L8.25 11.25L12.75 6.75M15.75 9C15.75 12.7279 12.7279 15.75 9 15.75C5.27208 15.75 2.25 12.7279 2.25 9C2.25 5.27208 5.27208 2.25 9 2.25C12.7279 2.25 15.75 5.27208 15.75 9Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          Standards
+        </a>
+      </div>
+
+      <!-- Spacer to push bottom content down -->
+      <div style="flex:1"></div>
+
+      <div class="sidebar-bottom">
+        <a class="sidebar-bottom-link" href="#">Settings</a>
+        <a class="sidebar-bottom-link" href="#">Help</a>
+        <div class="sidebar-divider"></div>
+        <div class="user-row">
+          <div class="user-avatar">JM</div>
+          <div class="user-info">
+            <span class="user-name">Jamie Mitchell</span>
+            <span class="user-role">Manager</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar overlay for mobile -->
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+  <!-- ====== MAIN AREA ====== -->
+  <div class="main-area">
+
+    <!-- ====== TOP BAR ====== -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleSidebar()" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5H17M3 10H17M3 15H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <span class="breadcrumb-muted">Workspace</span>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">Today</span>
+      </div>
+      <div class="topbar-right">
+        <div class="search-pill">
+          <svg viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M11 11L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span>Search or &#8984;K</span>
+        </div>
+        <button class="notification-btn" aria-label="Notifications">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2.5C7.23858 2.5 5 4.73858 5 7.5V10.8333L3.75 13.3333H16.25L15 10.8333V7.5C15 4.73858 12.7614 2.5 10 2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 13.3333C8 14.4379 8.89543 15.3333 10 15.3333C11.1046 15.3333 12 14.4379 12 13.3333" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span class="notification-dot"></span>
+        </button>
+        <button class="copilot-btn">Ask Copilot</button>
+      </div>
+    </header>
+
+    <!-- ====== CONTENT AREA ====== -->
+    <div class="content-area">
+
+      <!-- ====== PRIMARY CANVAS ====== -->
+      <main class="canvas" id="canvas">
+
+        <!-- Page Header -->
+        <div class="page-header">
+          <div class="page-eyebrow">Workspace</div>
+          <div class="page-title-row">
+            <div>
+              <span class="page-title">Today</span>
+              <span class="page-date">&nbsp;&nbsp;March 30, 2026</span>
+            </div>
+            <button class="btn-primary">Start Assessment</button>
+          </div>
+          <div class="page-subtitle">7 items need your attention today.</div>
+        </div>
+
+        <!-- Metrics Row -->
+        <div class="metrics-row">
+          <div class="metric-card">
+            <div class="metric-value danger">3</div>
+            <div class="metric-label">Overdue</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value info">2</div>
+            <div class="metric-label">In Progress</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value success">2</div>
+            <div class="metric-label">On Track</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value primary">78%</div>
+            <div class="metric-label">Plan Complete</div>
+          </div>
+        </div>
+
+        <!-- Attention Required -->
+        <div class="task-section">
+          <div class="section-header">
+            <h2 class="section-title">Attention Required</h2>
+            <span class="count-pill">2</span>
+          </div>
+          <div class="task-card">
+            <div class="task-item selected" data-task="espresso" onclick="selectTask('espresso')">
+              <span class="task-dot danger"></span>
+              <div class="task-content">
+                <div class="task-name">Espresso machine calibration</div>
+                <div class="task-meta danger">Overdue by 3 days</div>
+              </div>
+              <div class="task-right">
+                <span class="task-assignee">Alex T.</span>
+                <span class="task-chevron">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="task-item" data-task="health" onclick="selectTask('health')">
+              <span class="task-dot danger"></span>
+              <div class="task-content">
+                <div class="task-name">Health inspection prep checklist</div>
+                <div class="task-meta danger">Blocked &mdash; waiting on vendor</div>
+              </div>
+              <div class="task-right">
+                <span class="task-assignee">Maria S.</span>
+                <span class="task-chevron">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Due Today -->
+        <div class="task-section">
+          <div class="section-header">
+            <h2 class="section-title">Due Today</h2>
+            <span class="count-pill">1</span>
+          </div>
+          <div class="task-card">
+            <div class="task-item" data-task="staffing" onclick="selectTask('staffing')">
+              <span class="task-dot warning"></span>
+              <div class="task-content">
+                <div class="task-name">Morning rush staffing review</div>
+                <div class="task-meta warning">Due today &mdash; assigned to you</div>
+                <div class="task-progress">
+                  <div class="task-progress-bar" style="width: 45%"></div>
+                </div>
+              </div>
+              <div class="task-right">
+                <span class="task-chevron">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- In Progress -->
+        <div class="task-section">
+          <div class="section-header">
+            <h2 class="section-title">In Progress</h2>
+            <span class="count-pill">2</span>
+          </div>
+          <div class="task-card">
+            <div class="task-item" data-task="menu" onclick="selectTask('menu')">
+              <span class="task-dot info"></span>
+              <div class="task-content">
+                <div class="task-name">Menu item training rollout</div>
+                <div class="task-progress">
+                  <div class="task-progress-bar" style="width: 60%"></div>
+                </div>
+                <div class="task-meta muted" style="margin-top:4px">Due Mar 30</div>
+              </div>
+              <div class="task-right">
+                <span class="task-assignee">Jordan K.</span>
+                <span class="task-chevron">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="task-item" data-task="feedback" onclick="selectTask('feedback')">
+              <span class="task-dot info"></span>
+              <div class="task-content">
+                <div class="task-name">Customer feedback response protocol</div>
+                <div class="task-progress">
+                  <div class="task-progress-bar" style="width: 30%"></div>
+                </div>
+                <div class="task-meta muted" style="margin-top:4px">Due Apr 1</div>
+              </div>
+              <div class="task-right">
+                <span class="task-assignee">Alex T.</span>
+                <span class="task-chevron">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coming Up -->
+        <div class="task-section">
+          <div class="section-header">
+            <h2 class="section-title">Coming Up</h2>
+            <span class="count-pill">2</span>
+          </div>
+          <div class="task-card">
+            <div class="task-item" data-task="inventory" onclick="selectTask('inventory')">
+              <span class="task-dot muted"></span>
+              <div class="task-content">
+                <div class="task-name">Weekly inventory count</div>
+              </div>
+              <div class="task-right">
+                <span class="task-assignee">Sam P.</span>
+                <span class="task-due">Mar 31</span>
+                <span class="task-chevron">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="task-item" data-task="barista" onclick="selectTask('barista')">
+              <span class="task-dot muted"></span>
+              <div class="task-content">
+                <div class="task-name">Barista certification renewal</div>
+              </div>
+              <div class="task-right">
+                <span class="task-assignee">Maria S.</span>
+                <span class="task-due">Apr 3</span>
+                <span class="task-chevron">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- Inspector Overlay -->
+      <div class="inspector-overlay" id="inspectorOverlay" onclick="closeInspector()"></div>
+
+      <!-- ====== RIGHT INSPECTOR ====== -->
+      <aside class="inspector" id="inspector">
+        <div class="inspector-header">
+          <span class="inspector-title">Task Detail</span>
+          <button class="inspector-close" onclick="closeInspector()" aria-label="Close inspector">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div class="inspector-body">
+          <div class="inspector-task-name">Espresso machine calibration</div>
+
+          <div class="inspector-section">
+            <div class="inspector-label">Status</div>
+            <div class="inspector-status-row">
+              <span class="status-pill danger">Overdue</span>
+              <span class="inspector-due">Due Mar 27</span>
+            </div>
+          </div>
+
+          <div class="inspector-section">
+            <div class="inspector-label">Assignee</div>
+            <div class="inspector-assignee-row">
+              <div class="inspector-avatar">AT</div>
+              <span class="inspector-assignee-name">Alex T.</span>
+            </div>
+          </div>
+
+          <div class="inspector-section">
+            <div class="inspector-label">Why Surfaced</div>
+            <p class="inspector-text">Machine has been non-functional for 3 days. Service speed signal detected downstream impact.</p>
+          </div>
+
+          <div class="inspector-section">
+            <div class="inspector-label">Blocked By</div>
+            <div class="blocked-callout">Parts order from supplier &mdash; no ETA</div>
+          </div>
+
+          <div class="inspector-section">
+            <div class="inspector-label">Actions</div>
+            <div class="inspector-actions">
+              <button class="btn-inspector-primary">Escalate to Owner</button>
+              <button class="btn-inspector-secondary">Add Progress Note</button>
+              <button class="btn-inspector-more">&middot;&middot;&middot;</button>
+            </div>
+          </div>
+
+          <div class="inspector-section">
+            <div class="inspector-label">Proof</div>
+            <div class="proof-empty">No evidence attached yet</div>
+          </div>
+
+          <div class="inspector-divider"></div>
+
+          <button class="copilot-inspector-btn">Ask Copilot about this</button>
+        </div>
+      </aside>
+
+    </div><!-- /content-area -->
+  </div><!-- /main-area -->
+
+</div><!-- /app-shell -->
+
+<!-- ====== MOBILE BOTTOM TAB BAR ====== -->
+<div class="bottom-tabs" id="bottomTabs">
+  <div class="bottom-tabs-inner">
+    <button class="bottom-tab active">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M3 10L10 3L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 8.5V16C5 16.5523 5.44772 17 6 17H8.5V12.5H11.5V17H14C14.5523 17 15 16.5523 15 16V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Today</span>
+    </button>
+    <button class="bottom-tab">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M10.5 2.5H5.5C4.67157 2.5 4 3.17157 4 4V16C4 16.8284 4.67157 17.5 5.5 17.5H14.5C15.3284 17.5 16 16.8284 16 16V8M10.5 2.5L16 8M10.5 2.5V8H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Plan</span>
+    </button>
+    <button class="bottom-tab">
+      <svg viewBox="0 0 20 20" fill="none"><circle cx="8" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M2 17C2 14.2386 4.68629 12 8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="14" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 17C11 14.7909 12.3431 13 14 13C15.6569 13 17 14.7909 17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span>Team</span>
+    </button>
+    <button class="bottom-tab">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M2 14L6.5 6L10.5 10.5L17 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Signals</span>
+    </button>
+    <button class="bottom-tab">
+      <svg viewBox="0 0 20 20" fill="none"><path d="M10 3V10L14 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      <span>Copilot</span>
+    </button>
+  </div>
+</div>
+
+<script>
+// ========================================
+// Interactions
+// ========================================
+
+function selectTask(taskId) {
+  // Deselect all items
+  document.querySelectorAll('.task-item').forEach(item => {
+    item.classList.remove('selected');
+  });
+
+  // Select clicked item
+  const clicked = document.querySelector(`.task-item[data-task="${taskId}"]`);
+  if (clicked) {
+    clicked.classList.add('selected');
+  }
+
+  // Show inspector
+  const inspector = document.getElementById('inspector');
+  inspector.classList.remove('hidden');
+
+  // Show overlay on smaller screens
+  if (window.innerWidth < 1200) {
+    document.getElementById('inspectorOverlay').classList.add('visible');
+  }
+}
+
+function closeInspector() {
+  const inspector = document.getElementById('inspector');
+  inspector.classList.add('hidden');
+  document.getElementById('inspectorOverlay').classList.remove('visible');
+
+  // Optionally deselect
+  document.querySelectorAll('.task-item').forEach(item => {
+    item.classList.remove('selected');
+  });
+}
+
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  sidebar.classList.toggle('open');
+  overlay.classList.toggle('visible');
+}
+
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('visible');
+}
+
+// Close inspector when clicking on canvas background (not on a task)
+document.getElementById('canvas').addEventListener('click', function(e) {
+  if (!e.target.closest('.task-item')) {
+    closeInspector();
+  }
+});
+
+// Handle resize — show/hide overlay states
+window.addEventListener('resize', function() {
+  const inspector = document.getElementById('inspector');
+  const inspectorOverlay = document.getElementById('inspectorOverlay');
+
+  if (window.innerWidth >= 1200) {
+    inspectorOverlay.classList.remove('visible');
+  } else if (!inspector.classList.contains('hidden')) {
+    inspectorOverlay.classList.add('visible');
+  }
+
+  // Close sidebar on desktop
+  if (window.innerWidth >= 1024) {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('sidebarOverlay').classList.remove('visible');
+  }
+});
+</script>
+
+</body>
+</html>
