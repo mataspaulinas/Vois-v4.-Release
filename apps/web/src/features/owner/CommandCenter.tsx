@@ -1,4 +1,10 @@
+import { useState } from "react";
 import { SectionCard } from "../../components/SectionCard";
+import { SurfaceHeader } from "../../components/SurfaceHeader";
+import { PrimaryCanvas } from "../../components/PrimaryCanvas";
+import { ContextInspector } from "../../components/ContextInspector";
+import { DeepDrawer } from "../../components/DeepDrawer";
+import { LoadingState } from "../../components/LoadingState";
 import { AttentionItem, ExecutionVelocity } from "../../lib/api";
 
 type CommandCenterProps = {
@@ -45,17 +51,30 @@ export function CommandCenter({
   formatTimestamp,
   onOpenVenue,
 }: CommandCenterProps) {
+  const [selectedVenueId, setSelectedVenueId] = useState<string | null>(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const top3 = attentionItems.slice(0, 3);
 
   return (
     <div className="view-stack">
+      <SurfaceHeader
+        title="Command"
+        subtitle={`${attentionItems.length} attention item${attentionItems.length !== 1 ? "s" : ""} across your venues`}
+        status={attentionItems.filter(i => i.severity === "critical").length > 0 ? "Critical" : undefined}
+        statusTone="danger"
+        moreActions={[
+          { label: "View delegation health", onClick: () => setDrawerOpen(true) },
+          { label: "View all escalations", onClick: () => setDrawerOpen(true) },
+        ]}
+      />
+      <PrimaryCanvas>
       <SectionCard
         eyebrow="Owner"
         title="Command center"
         description="Top attention items across your venues. Deal with the top 3 first."
       >
         {loading ? (
-          <div className="empty-state"><p>Loading command center...</p></div>
+          <LoadingState variant="list" />
         ) : (
           <>
             {/* Top 3 attention items */}
@@ -149,6 +168,43 @@ export function CommandCenter({
           </>
         )}
       </SectionCard>
+      </PrimaryCanvas>
+
+      {/* Inspector: selected venue pressure context */}
+      <ContextInspector
+        open={selectedVenueId !== null}
+        title="Venue pressure"
+        onClose={() => setSelectedVenueId(null)}
+      >
+        {selectedVenueId && (() => {
+          const items = attentionItems.filter((i) => i.venue_id === selectedVenueId);
+          const venueVelocity = velocities.find((v) => v.venue_id === selectedVenueId);
+          return (
+            <div style={{ fontSize: "var(--text-small)" }}>
+              <div style={{ marginBottom: "var(--spacing-md)" }}>
+                <h4 style={{ fontSize: "var(--text-small)", marginBottom: "var(--spacing-xs)" }}>Attention items</h4>
+                <div>{items.length} item{items.length !== 1 ? "s" : ""}</div>
+              </div>
+              {venueVelocity && (
+                <div style={{ marginBottom: "var(--spacing-md)" }}>
+                  <h4 style={{ fontSize: "var(--text-small)", marginBottom: "var(--spacing-xs)" }}>Velocity</h4>
+                  <div>{venueVelocity.completion_percentage?.toFixed(0) ?? 0}% complete · {venueVelocity.velocity_label}</div>
+                </div>
+              )}
+              <button className="btn btn-primary btn-sm" onClick={() => onOpenVenue(selectedVenueId)}>Open venue</button>
+            </div>
+          );
+        })()}
+      </ContextInspector>
+
+      {/* Drawer: delegation + escalation depth */}
+      <DeepDrawer open={drawerOpen} title="Delegation and escalation depth" onClose={() => setDrawerOpen(false)}>
+        <div>
+          <p style={{ color: "var(--color-text-muted)", fontSize: "var(--text-small)" }}>
+            Delegation health, escalation thread history, and cross-venue trend data.
+          </p>
+        </div>
+      </DeepDrawer>
     </div>
   );
 }

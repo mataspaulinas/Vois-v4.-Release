@@ -39,12 +39,16 @@ class AIRuntimePolicy:
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
+    model_config = SettingsConfigDict(
+        env_file=str(Path(__file__).resolve().parent.parent.parent / ".env"),
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
 
     app_name: str = "OIS API"
     api_v1_prefix: str = "/api/v1"
-    database_url: str = "postgresql+psycopg://postgres:postgres@localhost:5432/ois"
-    auto_create_schema: bool = False
+    database_url: str = "sqlite:///ois.db"
+    auto_create_schema: bool = True
     ontology_root: Path = Field(default_factory=lambda: ROOT_DIR / "ontology")
     ontology_packs_root: Path = Field(default_factory=lambda: ROOT_DIR / "ontology_packs")
     ontology_shared_root: Path = Field(default_factory=lambda: ROOT_DIR / "ontology_shared")
@@ -52,15 +56,15 @@ class Settings(BaseSettings):
     default_data_residency: str = "eu-central"
     cors_origins: list[str] = ["http://localhost:5173", "http://localhost:5174"]
     upload_backend: str = "local_disk"
-    ai_provider: str = "openai"
+    ai_provider: str = "anthropic"
     ai_model: str = "claude-sonnet-4-20250514"
     ai_mock_model: str = "vois-mock-1"
-    ai_api_key: str | None = None
+    ai_api_key: str | None = None  # Set via VOIS_AI_API_KEY environment variable
     ai_api_base: str | None = None
     ai_mock_fallback_enabled: bool = False
     ai_secret_backend: str = "environment"
     auth_provider: str = "firebase"
-    allow_local_password_auth: bool = False
+    allow_local_password_auth: bool = True
     session_cookie_name: str = "ois_session"
     session_cookie_secure: bool = False
     session_cookie_samesite: str = "lax"

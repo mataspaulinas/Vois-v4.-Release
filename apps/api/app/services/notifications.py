@@ -186,3 +186,85 @@ def dispatch_venue_notification(
         )
         count += 1
     return count
+
+
+# ─── Proactive notification triggers ───
+
+
+def check_due_soon_tasks(db: Session) -> int:
+    """Create IN_APP notifications for tasks due within 24 hours that haven't been notified."""
+    from app.models.domain import PlanTask, OperationalPlan, PlanStatus, TaskStatus
+
+    cutoff = _utc_now() + __import__("datetime").timedelta(hours=24)
+    tasks = list(db.scalars(
+        select(PlanTask)
+        .join(OperationalPlan, PlanTask.plan_id == OperationalPlan.id)
+        .where(OperationalPlan.status == PlanStatus.ACTIVE)
+        .where(PlanTask.status.in_([TaskStatus.NOT_STARTED, TaskStatus.IN_PROGRESS]))
+        .where(PlanTask.due_at.isnot(None))
+        .where(PlanTask.due_at <= cutoff)
+        .where(PlanTask.due_at > _utc_now())
+    ).all())
+
+    count = 0
+    for task in tasks:
+        if not task.assignee_user_id:
+            continue
+        existing = db.scalar(
+            select(NotificationEvent)
+            .where(NotificationEvent.entity_type == "plan_task_due_soon")
+            .where(NotificationEvent.entity_id == task.id)
+        )
+        if existing:
+            continue
+        db.add(NotificationEvent(
+            user_id=task.assignee_user_id,
+            channel=NotificationChannel.IN_APP,
+            level=NotificationLevel.WARNING,
+            title=f"Due soon: {task.title}",
+            body=f"This task is due within 24 hours.",
+            entity_type="plan_task_due_soon",
+            entity_id=task.id,
+        ))
+        count += 1
+    if count:
+        db.commit()
+    logger.info("Due-soon check: %d notifications created", count)
+    return count
+
+
+def check_overdue_follow_ups(db: Session) -> int:
+    """Create IN_APP notifications for overdue follow-ups."""
+    from app.models.domain import FollowUp, FollowUpStatus
+
+    overdue = list(db.scalars(
+        select(FollowUp)
+        .where(FollowUp.status.in_([FollowUpStatus.PENDING, FollowUpStatus.ACKNOWLEDGED]))
+        .where(FollowUp.due_at < _utc_now())
+    ).all())
+
+    count = 0
+    for fu in overdue:
+        if not fu.assigned_to:
+            continue
+        existing = db.scalar(
+            select(NotificationEvent)
+            .where(NotificationEvent.entity_type == "follow_up_overdue")
+            .where(NotificationEvent.entity_id == fu.id)
+        )
+        if existing:
+            continue
+        db.add(NotificationEvent(
+            user_id=fu.assigned_to,
+            channel=NotificationChannel.IN_APP,
+            level=NotificationLevel.CRITICAL,
+            title=f"Overdue: {fu.title}",
+            body=f"This follow-up is past its due date.",
+            entity_type="follow_up_overdue",
+            entity_id=fu.id,
+        ))
+        count += 1
+    if count:
+        db.commit()
+    logger.info("Overdue follow-up check: %d notifications created", count)
+    return count

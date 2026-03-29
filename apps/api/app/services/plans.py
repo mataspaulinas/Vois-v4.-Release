@@ -172,12 +172,71 @@ def execution_summary_for_plan(db: Session, plan: OperationalPlan) -> PlanExecut
     )
 
 
+def create_task_from_block(
+    db: Session,
+    plan_id: str,
+    *,
+    block_id: str,
+    title: str,
+    effort_hours: float = 4.0,
+    assigned_to: str | None = None,
+    actor_user_id: str | None = None,
+) -> PlanTask:
+    """Add a task to an active plan from an ontology block reference."""
+    plan = db.get(OperationalPlan, plan_id)
+    if plan is None:
+        raise LookupError("Plan not found")
+    _require_execution_plan_active(plan)
+    max_order = max((t.order_index for t in db.scalars(select(PlanTask).where(PlanTask.plan_id == plan_id)).all()), default=-1)
+    task = PlanTask(
+        plan_id=plan_id,
+        block_id=block_id,
+        title=title,
+        status=TaskStatus.NOT_STARTED,
+        order_index=max_order + 1,
+        effort_hours=effort_hours,
+        rationale=f"Added manually from block {block_id}.",
+        dependencies=[],
+        trace={"source": "manual_add_from_block"},
+        assigned_to=assigned_to,
+        layer="L2",
+        priority="normal",
+        sub_actions=[],
+        deliverables=[],
+    )
+    db.add(task)
+    db.flush()
+    record_task_event(
+        db,
+        task_id=task.id,
+        event_type=TaskEventType.STATUS_CHANGED,
+        status=TaskStatus.NOT_STARTED,
+        actor_user_id=actor_user_id,
+        note=f"Task created from block {block_id}.",
+    )
+    venue = db.get(Venue, plan.venue_id)
+    record_audit_entry(
+        db,
+        organization_id=venue.organization_id if venue else None,
+        actor_user_id=actor_user_id,
+        entity_type="plan_task",
+        entity_id=task.id,
+        action="created_from_block",
+        payload={"block_id": block_id, "plan_id": plan_id},
+    )
+    db.commit()
+    return task
+
+
 def update_task(
     db: Session,
     task_id: str,
     *,
     status: TaskStatus | None = None,
     notes: str | None = ...,  # type: ignore[assignment]  # sentinel
+    assigned_to: str | None = ...,  # type: ignore[assignment]  # sentinel
+    priority: str | None = ...,  # type: ignore[assignment]  # sentinel
+    due_at: object = ...,  # sentinel — use object to allow None as a real value
     sub_action_completions: list[bool] | None = None,
     deliverable_completions: list[bool] | None = None,
     actor_user_id: str | None = None,
@@ -246,6 +305,21 @@ def update_task(
                 actor_user_id=actor_user_id,
                 note=notes,
             )
+        changed = True
+
+    if assigned_to is not ...:
+        task.assigned_to = assigned_to
+        task.updated_by = actor_user_id
+        changed = True
+
+    if priority is not ...:
+        task.priority = priority
+        task.updated_by = actor_user_id
+        changed = True
+
+    if due_at is not ...:
+        task.due_at = due_at
+        task.updated_by = actor_user_id
         changed = True
 
     if sub_action_completions is not None:

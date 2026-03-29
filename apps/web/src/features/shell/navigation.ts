@@ -207,7 +207,7 @@ function isPocketView(value: string | undefined): value is PocketView {
 }
 
 function isOwnerView(value: string | undefined): value is OwnerView {
-  return value === "command" || value === "delegations" || value === "people" || value === "copilot";
+  return value === "command" || value === "delegations" || value === "people" || value === "intelligence" || value === "copilot";
 }
 
 function isSkinId(value: string | null): value is SkinId {

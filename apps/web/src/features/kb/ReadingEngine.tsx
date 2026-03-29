@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { SectionCard } from "../../components/SectionCard";
+import { fetchKBReadingState, saveKBReadingState } from "../../lib/api";
 
 // ─── Article types ───
 
@@ -52,8 +53,35 @@ export function ReadingEngine({ articles }: ReadingEngineProps) {
   const [tagFilter, setTagFilter] = useState<string>("all");
   const [focusMode, setFocusMode] = useState(false);
   const [notesDraft, setNotesDraft] = useState("");
+  const backendSynced = useRef(false);
 
-  useEffect(() => { saveReadingState(state); }, [state]);
+  // Load from backend on mount, then merge with localStorage
+  useEffect(() => {
+    fetchKBReadingState().then((remote) => {
+      if (remote) {
+        setState((local) => ({
+          bookmarkedIds: remote.bookmarked_ids.length ? remote.bookmarked_ids : local.bookmarkedIds,
+          readIds: [...new Set([...local.readIds, ...remote.read_ids])],
+          notes: { ...local.notes, ...remote.notes },
+          struggles: [...new Set([...local.struggles, ...remote.struggles])],
+        }));
+        backendSynced.current = true;
+      }
+    }).catch(() => { /* offline fallback to localStorage */ });
+  }, []);
+
+  // Save to localStorage + backend on state change
+  useEffect(() => {
+    saveReadingState(state);
+    if (backendSynced.current) {
+      saveKBReadingState({
+        bookmarked_ids: state.bookmarkedIds,
+        read_ids: state.readIds,
+        notes: state.notes,
+        struggles: state.struggles,
+      }).catch(() => { /* silent — localStorage is the fallback */ });
+    }
+  }, [state]);
 
   const selectedArticle = articles.find((a) => a.id === selectedId) ?? null;
 

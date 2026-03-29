@@ -1,9 +1,14 @@
+import { useState } from "react";
 import { SectionCard } from "../../components/SectionCard";
+import { SurfaceHeader } from "../../components/SurfaceHeader";
+import { PrimaryCanvas } from "../../components/PrimaryCanvas";
+import { TransitionSuggestion } from "../../components/TransitionSuggestion";
 import {
   EnhancedReportResponse,
   EngineRunResponse,
   PersistedEngineRunDetailRecord,
   PersistedEngineRunRecord,
+  exportEngineRun,
 } from "../../lib/api";
 import { ReportComparison } from "./reportInsights";
 
@@ -44,6 +49,24 @@ export function ReportView({
   onOpenPlan,
   linkedPlanTitle,
 }: ReportViewProps) {
+  const [exporting, setExporting] = useState(false);
+
+  async function handleExport(format: "markdown" | "json") {
+    if (!selectedEngineRunId) return;
+    setExporting(true);
+    try {
+      const content = await exportEngineRun(selectedEngineRunId, format);
+      const blob = new Blob([content], { type: format === "json" ? "application/json" : "text/markdown" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `report-${selectedEngineRunId.slice(0, 8)}.${format === "json" ? "json" : "md"}`;
+      link.click();
+      URL.revokeObjectURL(url);
+    } catch { /* silently fail */ }
+    setExporting(false);
+  }
+
   const currentSessionReport =
     engineResult && (!selectedEngineRunId || engineResult.engine_run_id === selectedEngineRunId) ? engineResult : null;
   const topFailureMode = currentSessionReport?.failure_modes[0]?.name ?? "Historical report selected";
@@ -56,6 +79,26 @@ export function ReportView({
   );
 
   return (
+    <div className="view-stack">
+    <SurfaceHeader
+      title="Diagnostic report"
+      subtitle={currentSessionReport ? "Current session report" : selectedEngineRunId ? "Persisted engine run" : "No report loaded"}
+      primaryAction={{ label: linkedPlanTitle ? "Open linked plan" : "Move to plan", onClick: onOpenPlan }}
+      moreActions={[
+        { label: "Revisit assessment", onClick: onOpenAssessment },
+        { label: "Export MD", onClick: () => handleExport("markdown") },
+        { label: "Export JSON", onClick: () => handleExport("json") },
+      ]}
+    />
+    {(currentSessionReport || selectedEngineRunId) && (
+      <TransitionSuggestion
+        message="Report reviewed? Move to the plan to shape execution, or check escalations for blocked truth."
+        actionLabel={linkedPlanTitle ? "Open linked plan" : "Move to plan"}
+        onAction={onOpenPlan}
+        autoHideMs={12000}
+      />
+    )}
+    <PrimaryCanvas>
     <SectionCard
       eyebrow="Report"
       title="Diagnostic output"
@@ -210,6 +253,12 @@ export function ReportView({
               <button className="btn btn-secondary" onClick={onGenerateEnhancedReport} disabled={loadingEnhancedReport}>
                 {loadingEnhancedReport ? "Generating..." : "AI narrative"}
               </button>
+              <button className="btn btn-secondary" onClick={() => handleExport("markdown")} disabled={exporting}>
+                {exporting ? "..." : "Export MD"}
+              </button>
+              <button className="btn btn-secondary" onClick={() => handleExport("json")} disabled={exporting}>
+                {exporting ? "..." : "Export JSON"}
+              </button>
               <span>{formatTimestamp(selectedEngineRun.created_at)}</span>
             </div>
           </div>
@@ -336,5 +385,7 @@ export function ReportView({
         </div>
       )}
     </SectionCard>
+    </PrimaryCanvas>
+    </div>
   );
 }

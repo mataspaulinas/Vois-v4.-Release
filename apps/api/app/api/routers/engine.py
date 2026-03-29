@@ -126,6 +126,35 @@ def get_enhanced_report(
     return response
 
 
+@router.get("/runs/{engine_run_id}/export")
+def export_engine_run(
+    engine_run_id: str,
+    format: str = "markdown",
+    db: Session = Depends(get_db),
+    current_user: AuthenticatedActor = Depends(get_current_user),
+):
+    """Export a persisted engine run as markdown or JSON."""
+    engine_run = require_engine_run_access(db, engine_run_id=engine_run_id, user=current_user)
+    if format == "json":
+        return {
+            "engine_run_id": engine_run.id,
+            "venue_id": engine_run.venue_id,
+            "ontology_version": engine_run.ontology_version,
+            "ontology_id": engine_run.ontology_id,
+            "load_classification": engine_run.plan_load_classification,
+            "created_at": engine_run.created_at.isoformat() if engine_run.created_at else None,
+            "report_markdown": engine_run.report_markdown,
+            "normalized_signals": engine_run.normalized_signals_json,
+            "diagnostic_snapshot": engine_run.diagnostic_snapshot_json,
+            "plan_snapshot": engine_run.plan_snapshot_json,
+            "report_json": engine_run.report_json,
+        }
+    # Default: markdown
+    from fastapi.responses import PlainTextResponse
+    markdown = engine_run.report_markdown or "# No report markdown persisted for this run.\n"
+    return PlainTextResponse(content=markdown, media_type="text/markdown")
+
+
 @router.post("/run-legacy")
 def run_legacy_engine_bridge(
     payload: dict,

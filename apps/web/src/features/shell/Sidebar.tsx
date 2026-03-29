@@ -88,7 +88,7 @@ export function Sidebar({
         </div>
       ) : null}
 
-      <div className="sidebar-section-label">Reference</div>
+      <div className="sidebar-section-label sidebar-section--secondary">Reference</div>
       {referenceViews.map((view) => (
         <button
           key={view}
@@ -131,7 +131,7 @@ export function Sidebar({
         </button>
       ) : null}
 
-      <div className="sidebar-section-label">Guidance</div>
+      <div className="sidebar-section-label sidebar-section--secondary">Guidance</div>
       <button className={`sidebar-item ${activeTopLevel === "kb" ? "active" : ""}`} onClick={onShowKnowledgeBase}>
         <span className="sb-icon">KB</span>
         <span className="sb-label">Knowledge Base</span>
@@ -150,7 +150,7 @@ export function Sidebar({
 
       <div className="sb-spacer" />
 
-      <div className="sidebar-section-label">System</div>
+      <div className="sidebar-section-label sidebar-section--secondary">System</div>
       <button
         className={`sidebar-item ${activeTopLevel === "settings" ? "active" : ""}`}
         onClick={onShowSettings}

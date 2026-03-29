@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 
 from app.api.routers import (
+    activity,
     ai,
     audit,
     auth,
@@ -10,6 +11,7 @@ from app.api.routers import (
     engine,
     execution,
     files,
+    kb,
     notifications,
     people,
     pocket,
@@ -23,6 +25,7 @@ from app.api.routers import (
     portfolio,
     progress,
     setup,
+    systemic_flags,
     venues,
 )
 
@@ -52,3 +55,6 @@ api_router.include_router(pocket.router, prefix="/pocket", tags=["pocket"])
 api_router.include_router(people.router, prefix="/people", tags=["people"])
 api_router.include_router(scheduler.router, prefix="/scheduler", tags=["scheduler"])
 api_router.include_router(notifications.router, prefix="/notifications", tags=["notifications"])
+api_router.include_router(kb.router, prefix="/kb", tags=["kb"])
+api_router.include_router(activity.router, prefix="/activity", tags=["activity"])
+api_router.include_router(systemic_flags.router, tags=["systemic-flags"])

@@ -28,10 +28,27 @@ def list_active_memberships(
 
 
 def get_primary_membership(db: Session, *, user: User) -> OrganizationMembership | None:
+    """Return the user's primary organization membership.
+
+    Tries the user's current ``organization_id`` first.  If no active
+    membership is found there (edge case during org migration or data
+    repair), falls back to any active membership the user holds.
+
+    COMPATIBILITY NOTE (Law 8): the fallback path is intentional for
+    robustness during ownership transitions.  A warning is logged when
+    it fires so operators can investigate.
+    """
     memberships = list_active_memberships(db, user_id=user.id, organization_id=user.organization_id)
     if memberships:
         return memberships[0]
+    import logging
     fallback_memberships = list_active_memberships(db, user_id=user.id)
+    if fallback_memberships:
+        logging.getLogger("app.access").warning(
+            "Membership fallback: user %s has no membership in org %s, "
+            "falling back to membership in org %s",
+            user.id, user.organization_id, fallback_memberships[0].organization_id,
+        )
     return fallback_memberships[0] if fallback_memberships else None
 
 

@@ -299,7 +299,16 @@ def _create_import_thread(
 
 
 def _binding_from_fixture(venue_context: dict) -> tuple[str, str]:
-    """Infer an explicit ontology binding for dev-only fixture imports."""
+    """COMPATIBILITY-ONLY: infer ontology binding from fixture venue context.
+
+    Owner: dev-only fixture import script (``phase3_fixture_import``)
+    Retirement: remove when fixture import is replaced by a proper
+    ontology-aware import tool that reads binding from the fixture payload
+    directly rather than inferring from venue type string.
+
+    This function is NOT used in normal runtime.  It only runs during
+    ``python -m app.scripts.import_recovery_batch`` or similar dev paths.
+    """
     venue_type = str(venue_context.get("type", "")).lower()
     if "cafe" in venue_type:
         return ("cafe", "v1")

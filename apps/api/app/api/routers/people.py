@@ -12,6 +12,7 @@ from app.db.session import get_db
 from app.models.domain import AuthRole, Venue
 from app.services.auth import AuthenticatedActor
 from app.services.people_intelligence import (
+    compute_delegation_health,
     get_active_delegations,
     get_attention_items,
     get_flight_risk_indicators,
@@ -97,3 +98,19 @@ def attention_items(
     ).all()
     venue_ids = [v.id for v in venues]
     return get_attention_items(db, venue_ids)
+
+
+@router.get("/delegation-health")
+def delegation_health(
+    db: Session = Depends(get_db),
+    current_user: AuthenticatedActor = Depends(
+        require_roles(AuthRole.OWNER)
+    ),
+) -> dict:
+    """Delegation health score across all venues."""
+    from sqlalchemy import select
+    venues = db.scalars(
+        select(Venue).where(Venue.organization_id == current_user.organization_id)
+    ).all()
+    venue_ids = [v.id for v in venues]
+    return compute_delegation_health(db, venue_ids)

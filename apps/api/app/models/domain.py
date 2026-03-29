@@ -86,6 +86,20 @@ class PlanStatus(StrEnum):
     ARCHIVED = "archived"
 
 
+class PlanReviewStatus(StrEnum):
+    NONE = "none"
+    REQUESTED = "requested"
+    APPROVED = "approved"
+    REJECTED = "rejected"
+    CHANGES_REQUESTED = "changes_requested"
+
+
+class EvidenceTrustLevel(StrEnum):
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"
+
+
 class ProgressEntryType(StrEnum):
     NOTE = "note"
     UPDATE = "update"
@@ -246,6 +260,7 @@ class Assessment(Base):
     manifest_digest: Mapped[str] = mapped_column(String(64))
     management_hours_available: Mapped[float] = mapped_column(Float, default=8.0)
     weekly_effort_budget: Mapped[float] = mapped_column(Float, default=8.0)
+    prior_assessment_id: Mapped[str | None] = mapped_column(ForeignKey("assessments.id"), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
 
 
@@ -288,6 +303,12 @@ class OperationalPlan(Base):
     adapter_id: Mapped[str] = mapped_column(String(128))
     manifest_digest: Mapped[str] = mapped_column(String(64))
     snapshot_json: Mapped[dict] = mapped_column(JSON, default=dict)
+    review_status: Mapped[PlanReviewStatus] = mapped_column(Enum(PlanReviewStatus), default=PlanReviewStatus.NONE)
+    reviewed_by: Mapped[str | None] = mapped_column(ForeignKey("users.id"), nullable=True)
+    review_notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    review_requested_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    review_completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    archived_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now, onupdate=utc_now)
 
@@ -550,6 +571,8 @@ class Evidence(Base):
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
     evidence_type: Mapped[str] = mapped_column(String(64), default="observation")
     file_asset_id: Mapped[str | None] = mapped_column(ForeignKey("file_assets.id"), nullable=True)
+    quality_score: Mapped[int] = mapped_column(Integer, default=50)
+    trust_level: Mapped[EvidenceTrustLevel] = mapped_column(Enum(EvidenceTrustLevel), default=EvidenceTrustLevel.MEDIUM)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
 
 
@@ -607,6 +630,32 @@ class DeliverableProof(Base):
     note: Mapped[str | None] = mapped_column(Text, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
     verified_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+
+
+class KBReadingState(Base):
+    """Per-user knowledge-base reading state (bookmarks, progress, notes)."""
+    __tablename__ = "kb_reading_states"
+
+    user_id: Mapped[str] = mapped_column(ForeignKey("users.id"), primary_key=True)
+    bookmarked_ids: Mapped[list[str]] = mapped_column(JSON, default=list)
+    read_ids: Mapped[list[str]] = mapped_column(JSON, default=list)
+    notes: Mapped[dict] = mapped_column(JSON, default=dict)
+    struggles: Mapped[list[str]] = mapped_column(JSON, default=list)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now, onupdate=utc_now)
+
+
+class SystemicFlag(Base):
+    """Flags a signal or pattern as systemically significant."""
+    __tablename__ = "systemic_flags"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid4()))
+    venue_id: Mapped[str] = mapped_column(ForeignKey("venues.id"), index=True)
+    signal_id: Mapped[str] = mapped_column(String(64), index=True)
+    signal_name: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    flagged_by: Mapped[str | None] = mapped_column(ForeignKey("users.id"), nullable=True)
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    resolved_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
 
 
 class NotificationEvent(Base):

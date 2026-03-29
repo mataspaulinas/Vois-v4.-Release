@@ -6,7 +6,9 @@ import {
   AuthManagedSessionRecord,
   AuthSecurityPosture,
   AuthSessionInventory,
+  OntologyBundleResponse,
   OrganizationExportSummary,
+  VenueOntologyBindingRecord,
 } from "../../lib/api";
 
 type SettingsViewProps = {
@@ -33,6 +35,8 @@ type SettingsViewProps = {
   loadingBackupReadiness: boolean;
   loadingDeleteReadiness: boolean;
   exportingOrganization: boolean;
+  ontologyBundle: OntologyBundleResponse | null;
+  venueBindings: VenueOntologyBindingRecord[];
   loginEmail: string;
   loginPassword: string;
   loginBusy: boolean;
@@ -77,6 +81,8 @@ export function SettingsView({
   loadingBackupReadiness,
   loadingDeleteReadiness,
   exportingOrganization,
+  ontologyBundle,
+  venueBindings,
   loginEmail,
   loginPassword,
   loginBusy,
@@ -229,6 +235,53 @@ export function SettingsView({
           </div>
         ) : null}
       </SectionCard>
+
+      {(authUserRole === "owner" || authUserRole === "developer") && ontologyBundle ? (
+        <SectionCard
+          eyebrow="Ontology"
+          title="Mounted ontology posture"
+          description="The operational vocabulary driving signals, failure modes, and intervention blocks across your venues."
+        >
+          <div className="settings-grid settings-grid-compact">
+            <div className="focus-card focus-card-primary">
+              <strong>Active bundle</strong>
+              <span>{ontologyBundle.meta.ontology_id} {ontologyBundle.meta.version}</span>
+            </div>
+            <div className="focus-card">
+              <strong>Signals</strong>
+              <span>{ontologyBundle.signals.length}</span>
+            </div>
+            <div className="focus-card">
+              <strong>Failure modes</strong>
+              <span>{ontologyBundle.failure_modes.length}</span>
+            </div>
+            <div className="focus-card">
+              <strong>Response patterns</strong>
+              <span>{ontologyBundle.response_patterns.length}</span>
+            </div>
+            <div className="focus-card">
+              <strong>Blocks</strong>
+              <span>{ontologyBundle.blocks.length}</span>
+            </div>
+            <div className="focus-card">
+              <strong>Tools</strong>
+              <span>{ontologyBundle.tools.length}</span>
+            </div>
+          </div>
+          {venueBindings.length > 0 ? (
+            <div style={{ marginTop: "var(--spacing-sm, 8px)" }}>
+              <p className="section-eyebrow">Venue bindings</p>
+              <div className="dependency-list">
+                {venueBindings.map((binding) => (
+                  <span key={binding.venue_id}>
+                    {binding.ontology_id}@{binding.ontology_version} ({binding.binding_status})
+                  </span>
+                ))}
+              </div>
+            </div>
+          ) : null}
+        </SectionCard>
+      ) : null}
 
       <SectionCard
         eyebrow="Data portability"

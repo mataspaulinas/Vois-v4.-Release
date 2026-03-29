@@ -102,6 +102,7 @@ export type BootstrapResponse = {
     full_name: string;
     email: string;
     role: string;
+    venue_id: string | null;
   };
   setup_state: OwnerSetupState;
   requires_owner_claim: boolean;
@@ -548,6 +549,9 @@ export type PlanTaskRecord = {
   effort_hours: number;
   rationale: string;
   notes: string | null;
+  assigned_to: string | null;
+  priority: string | null;
+  due_at: string | null;
   dependencies: string[];
   trace: Record<string, unknown>;
   sub_actions: SubActionItem[];
@@ -1284,6 +1288,9 @@ export async function fetchPlanExecutionSummary(planId: string): Promise<PlanExe
 export type PlanTaskUpdatePayload = {
   status?: string;
   notes?: string | null;
+  assigned_to?: string | null;
+  priority?: string | null;
+  due_at?: string | null;
   sub_action_completions?: boolean[];
   deliverable_completions?: boolean[];
 };
@@ -1401,6 +1408,98 @@ export async function fetchLatestEngineRun(venueId: string): Promise<PersistedEn
     throw new Error(await readErrorMessage(response, "Failed to load latest engine run"));
   }
   return response.json();
+}
+
+export type NotificationRecord = {
+  id: string;
+  title: string;
+  body: string;
+  channel: string;
+  level: string;
+  entity_type: string | null;
+  entity_id: string | null;
+  read_at: string | null;
+  created_at: string;
+};
+
+export async function fetchNotifications(limit = 20): Promise<NotificationRecord[]> {
+  const response = await apiFetch(`/api/v1/notifications?limit=${limit}`);
+  if (!response.ok) return [];
+  return response.json();
+}
+
+export async function fetchUnreadCount(): Promise<number> {
+  const response = await apiFetch("/api/v1/notifications/unread-count");
+  if (!response.ok) return 0;
+  const data = await response.json();
+  return data.unread_count ?? 0;
+}
+
+export async function markNotificationRead(notificationId: string): Promise<void> {
+  await apiFetch(`/api/v1/notifications/${encodeURIComponent(notificationId)}/read`, { method: "PATCH" });
+}
+
+export type SystemicFlagRecord = {
+  id: string;
+  venue_id: string;
+  signal_id: string;
+  signal_name: string | null;
+  flagged_by: string | null;
+  notes: string | null;
+  resolved_at: string | null;
+  created_at: string;
+};
+
+export async function fetchSystemicFlags(venueId: string): Promise<SystemicFlagRecord[]> {
+  const response = await apiFetch(`/api/v1/venues/${encodeURIComponent(venueId)}/systemic-flags`);
+  if (!response.ok) return [];
+  return response.json();
+}
+
+export async function createSystemicFlag(venueId: string, signalId: string, signalName: string | null, notes: string | null): Promise<SystemicFlagRecord | null> {
+  const response = await apiFetch(`/api/v1/venues/${encodeURIComponent(venueId)}/systemic-flags`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ signal_id: signalId, signal_name: signalName, notes }),
+  });
+  if (!response.ok) return null;
+  return response.json();
+}
+
+export async function resolveSystemicFlag(flagId: string): Promise<void> {
+  await apiFetch(`/api/v1/systemic-flags/${encodeURIComponent(flagId)}/resolve`, { method: "PATCH" });
+}
+
+export type KBReadingStatePayload = {
+  bookmarked_ids: string[];
+  read_ids: string[];
+  notes: Record<string, string>;
+  struggles: string[];
+};
+
+export async function fetchKBReadingState(): Promise<KBReadingStatePayload | null> {
+  const response = await apiFetch("/api/v1/kb/reading-state");
+  if (!response.ok) return null;
+  return response.json();
+}
+
+export async function saveKBReadingState(payload: KBReadingStatePayload): Promise<void> {
+  await apiFetch("/api/v1/kb/reading-state", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+}
+
+export async function exportEngineRun(engineRunId: string, format: "markdown" | "json" = "markdown"): Promise<string> {
+  const response = await apiFetch(`/api/v1/engine/runs/${encodeURIComponent(engineRunId)}/export?format=${format}`);
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to export report"));
+  }
+  if (format === "json") {
+    return JSON.stringify(await response.json(), null, 2);
+  }
+  return response.text();
 }
 
 export async function fetchEngineRunDetail(engineRunId: string): Promise<PersistedEngineRunDetailRecord | null> {

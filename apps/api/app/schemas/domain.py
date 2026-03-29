@@ -331,6 +331,9 @@ class PlanTaskStatusUpdateRequest(BaseModel):
 class PlanTaskUpdateRequest(BaseModel):
     status: TaskStatus | None = None
     notes: str | None = None
+    assigned_to: str | None = None
+    priority: str | None = None
+    due_at: datetime | None = None
     sub_action_completions: list[bool] | None = None
     deliverable_completions: list[bool] | None = None
 
@@ -407,6 +410,7 @@ class BootstrapUser(BaseModel):
     full_name: str
     email: str
     role: str
+    venue_id: str | None = None
 
 
 class BootstrapThread(BaseModel):

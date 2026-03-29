@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { SectionCard } from "../../components/SectionCard";
+import { SurfaceHeader } from "../../components/SurfaceHeader";
+import { PrimaryCanvas } from "../../components/PrimaryCanvas";
 
 type ReportSomethingProps = {
   venueId: string;

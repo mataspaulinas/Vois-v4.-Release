@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
 import { SectionCard } from "../../components/SectionCard";
+import { SurfaceHeader } from "../../components/SurfaceHeader";
+import { PrimaryCanvas } from "../../components/PrimaryCanvas";
+import { ContextInspector } from "../../components/ContextInspector";
+import { DeepDrawer } from "../../components/DeepDrawer";
+import { LoadingState } from "../../components/LoadingState";
+import { EmptyState } from "../../components/EmptyState";
 import { PlanExecutionSummary, PlanRecord, PlanTaskUpdatePayload, ProgressEntryRecord, TaskCommentRecord, fetchTaskComments, createTaskComment } from "../../lib/api";
 
 const ALL_STATUSES = ["not_started", "in_progress", "completed", "blocked", "on_hold", "deferred"];
@@ -23,6 +29,7 @@ type PlanViewProps = {
   formatTimestamp: (isoTimestamp: string) => string;
   onOpenReport: () => void;
   onOpenHistory: () => void;
+  onOpenWorkspace?: (taskId: string) => void;
 };
 
 export function PlanView({
@@ -44,8 +51,11 @@ export function PlanView({
   venueId,
   onOpenReport,
   onOpenHistory,
+  onOpenWorkspace,
 }: PlanViewProps) {
   const [expandedTaskId, setExpandedTaskId] = useState<string | null>(null);
+  const [inspectedTaskId, setInspectedTaskId] = useState<string | null>(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const [taskComments, setTaskComments] = useState<TaskCommentRecord[]>([]);
   const [loadingComments, setLoadingComments] = useState(false);
   const [commentDraft, setCommentDraft] = useState("");
@@ -92,31 +102,28 @@ export function PlanView({
       : "No immediate dependency pressure is visible in the current execution summary.";
 
   return (
-    <div className="view-stack">
-      <SectionCard
-        eyebrow="Plan"
+    <div className="page-layout">
+      <SurfaceHeader
         title={plan?.title ?? "Operational plan board"}
-        description={
-          plan
-            ? `${plan.summary} Load: ${plan.load_classification ?? "unknown"}.`
-            : "Dependency-ordered tasks trimmed to fit the venue's execution capacity."
-        }
-        actions={
-          <>
-            <button className="btn btn-secondary" onClick={onOpenReport}>
-              Review report
-            </button>
-            <button className="btn btn-secondary" onClick={onOpenHistory}>
-              Timeline
-            </button>
-          </>
-        }
-      >
+        subtitle={plan ? `${plan.summary} Load: ${plan.load_classification ?? "unknown"}.` : undefined}
+        status={plan?.status === "active" ? "Active" : plan?.status === "archived" ? "Archived" : plan?.status === "draft" ? "Draft" : undefined}
+        statusTone={plan?.status === "active" ? "success" : plan?.status === "archived" ? "neutral" : "warning"}
+        primaryAction={selectedTask && onOpenWorkspace ? { label: "Open workspace", onClick: () => onOpenWorkspace(selectedTask.id) } : undefined}
+        moreActions={[
+          { label: "Review report", onClick: onOpenReport },
+          { label: "Timeline", onClick: onOpenHistory },
+          { label: "Compare versions", onClick: () => setDrawerOpen(true) },
+        ]}
+      />
+      <PrimaryCanvas>
         {loadingExecution ? (
-          <div className="empty-state">
-            <p>Loading execution workspace...</p>
-          </div>
-        ) : plan ? (
+          <LoadingState variant="list" />
+        ) : !plan ? (
+          <EmptyState
+            title="No plan available"
+            description="Run an assessment and engine to generate an operational plan for this venue."
+          />
+        ) : (
           <>
             {/* Completion progress bar */}
             <div style={{ marginBottom: "var(--spacing-md, 16px)" }}>
@@ -285,7 +292,12 @@ export function PlanView({
                             >
                               {task.title}
                             </h3>
-                            <span className="badge">{task.effort_hours}h</span>
+                            <div style={{ display: "flex", gap: "var(--space-2, 8px)", alignItems: "center" }}>
+                              {task.assigned_to && <span className="badge" style={{ opacity: 0.7 }}>{task.assigned_to}</span>}
+                              {task.priority && <span className="badge" style={{ opacity: 0.7 }}>{task.priority}</span>}
+                              {task.due_at && <span className="badge" style={{ opacity: 0.7 }}>{new Date(task.due_at).toLocaleDateString()}</span>}
+                              <span className="badge">{task.effort_hours}h</span>
+                            </div>
                           </div>
                           <p>{task.rationale}</p>
                           <div className="task-status-row">
@@ -391,6 +403,59 @@ export function PlanView({
                           {/* Expanded inline editing section */}
                           {isExpanded && (
                             <div style={{ marginTop: "var(--space-3)", borderTop: "1px solid var(--border)", paddingTop: "var(--space-3)" }}>
+                              {/* Assignment and priority */}
+                              <div style={{ display: "flex", gap: "var(--space-3)", marginBottom: "var(--space-3)", flexWrap: "wrap" }}>
+                                <label style={{ fontSize: "var(--text-sm)", display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
+                                  <strong>Assigned to</strong>
+                                  <input
+                                    type="text"
+                                    className="progress-input"
+                                    value={task.assigned_to ?? ""}
+                                    placeholder="Unassigned"
+                                    style={{ width: 160, fontSize: "var(--text-sm)" }}
+                                    disabled={updatingTaskId === task.id || isExecutionLocked}
+                                    onBlur={(e) => {
+                                      const value = e.target.value.trim() || null;
+                                      if (value !== task.assigned_to) {
+                                        onUpdateTask(task.id, { assigned_to: value });
+                                      }
+                                    }}
+                                    onKeyDown={(e) => {
+                                      if (e.key === "Enter") (e.target as HTMLInputElement).blur();
+                                    }}
+                                    defaultValue={task.assigned_to ?? ""}
+                                  />
+                                </label>
+                                <label style={{ fontSize: "var(--text-sm)", display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
+                                  <strong>Due date</strong>
+                                  <input
+                                    type="date"
+                                    value={task.due_at ? task.due_at.slice(0, 10) : ""}
+                                    disabled={updatingTaskId === task.id || isExecutionLocked}
+                                    onChange={(e) => {
+                                      const value = e.target.value ? new Date(e.target.value).toISOString() : null;
+                                      onUpdateTask(task.id, { due_at: value });
+                                    }}
+                                    style={{ background: "var(--surface-2, #f5f5f5)", border: "1px solid var(--border, #e0e0e0)", borderRadius: "var(--radius-sm, 4px)", padding: "4px 8px", fontSize: "var(--text-sm)" }}
+                                  />
+                                </label>
+                                <label style={{ fontSize: "var(--text-sm)", display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
+                                  <strong>Priority</strong>
+                                  <select
+                                    value={task.priority ?? ""}
+                                    disabled={updatingTaskId === task.id || isExecutionLocked}
+                                    onChange={(e) => onUpdateTask(task.id, { priority: e.target.value || null })}
+                                    style={{ background: "var(--surface-2, #f5f5f5)", border: "1px solid var(--border, #e0e0e0)", borderRadius: "var(--radius-sm, 4px)", padding: "4px 8px", fontSize: "var(--text-sm)" }}
+                                  >
+                                    <option value="">No priority</option>
+                                    <option value="critical">Critical</option>
+                                    <option value="high">High</option>
+                                    <option value="normal">Normal</option>
+                                    <option value="low">Low</option>
+                                  </select>
+                                </label>
+                              </div>
+
                               <label style={{ fontWeight: "bold", display: "block", marginBottom: "var(--space-2)", fontSize: "var(--text-sm)" }}>
                                 Task notes
                               </label>
@@ -456,12 +521,8 @@ export function PlanView({
               })()}
             </div>
           </>
-        ) : (
-          <div className="empty-state">
-            <p>No persisted plan yet. Run the engine to materialize the current operating plan.</p>
-          </div>
         )}
-      </SectionCard>
+      </PrimaryCanvas>
 
       <SectionCard
         eyebrow="Progress"
@@ -503,6 +564,43 @@ export function PlanView({
           ) : null}
         </div>
       </SectionCard>
+
+      {/* ─── Inspector: selected task context ─── */}
+      <ContextInspector
+        open={inspectedTaskId !== null}
+        title="Task context"
+        onClose={() => setInspectedTaskId(null)}
+      >
+        {(() => { const t = plan?.tasks.find((task) => task.id === inspectedTaskId); return t ? (
+          <div>
+            <h4 style={{ margin: "0 0 var(--spacing-xs) 0" }}>{t.title}</h4>
+            <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)", margin: "0 0 var(--spacing-md) 0" }}>{t.rationale}</p>
+            <div style={{ fontSize: "var(--text-small)", marginBottom: "var(--spacing-md)" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "var(--spacing-4)" }}><span style={{ color: "var(--color-text-muted)" }}>Status</span><span>{t.status.replace(/_/g, " ")}</span></div>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "var(--spacing-4)" }}><span style={{ color: "var(--color-text-muted)" }}>Assigned</span><span>{t.assigned_to ?? "Unassigned"}</span></div>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "var(--spacing-4)" }}><span style={{ color: "var(--color-text-muted)" }}>Priority</span><span>{t.priority ?? "Normal"}</span></div>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "var(--spacing-4)" }}><span style={{ color: "var(--color-text-muted)" }}>Effort</span><span>{t.effort_hours}h</span></div>
+              {t.dependencies.length > 0 && (
+                <div style={{ display: "flex", justifyContent: "space-between" }}><span style={{ color: "var(--color-text-muted)" }}>Dependencies</span><span>{t.dependencies.length} tasks</span></div>
+              )}
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "var(--spacing-xs)" }}>
+              <button className="btn btn-primary btn-sm" onClick={() => { setInspectedTaskId(null); setExpandedTaskId(t.id); }}>Expand full detail</button>
+              {onOpenWorkspace && <button className="btn btn-secondary btn-sm" onClick={() => onOpenWorkspace(t.id)}>Open workspace</button>}
+            </div>
+          </div>
+        ) : null; })()}
+      </ContextInspector>
+
+      {/* ─── Drawer: compare + history ─── */}
+      <DeepDrawer open={drawerOpen} title="Plan history and compare" onClose={() => setDrawerOpen(false)}>
+        <div>
+          <p style={{ color: "var(--color-text-muted)", fontSize: "var(--text-small)", marginBottom: "var(--spacing-md)" }}>
+            Plan version history and comparison view. View prior plan versions and track how the execution sequence has evolved.
+          </p>
+          <button className="btn btn-secondary btn-sm" onClick={onOpenHistory}>Open full timeline</button>
+        </div>
+      </DeepDrawer>
     </div>
   );
 }

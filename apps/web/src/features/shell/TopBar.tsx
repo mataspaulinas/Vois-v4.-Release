@@ -1,4 +1,5 @@
 import { PortfolioSummaryResponse, Venue } from "../../lib/api";
+import { NotificationBell } from "./NotificationBell";
 import { SkinId, ThemeMode } from "./types";
 
 type TopBarProps = {
@@ -15,6 +16,8 @@ type TopBarProps = {
   onSelectSkin: (skin: SkinId) => void;
   onToggleCopilot: () => void;
   copilotOpen: boolean;
+  formatTimestamp: (iso: string) => string;
+  onNavigateToVenue?: (venueId: string) => void;
 };
 
 const skins: SkinId[] = ["ocean", "forest", "ember", "midnight"];
@@ -33,6 +36,8 @@ export function TopBar({
   onSelectSkin,
   onToggleCopilot,
   copilotOpen,
+  formatTimestamp,
+  onNavigateToVenue,
 }: TopBarProps) {
   const heartbeat = portfolioSummary
     ? `${portfolioSummary.totals.ready_tasks} ready · ${portfolioSummary.totals.blocked_tasks} blocked · ${portfolioSummary.totals.progress_entries} logs`
@@ -101,6 +106,7 @@ export function TopBar({
             />
           ))}
         </div>
+        <NotificationBell formatTimestamp={formatTimestamp} onNavigateToVenue={onNavigateToVenue} />
         <button className={`topbar-btn ${copilotOpen ? "active" : ""}`} onClick={onToggleCopilot}>
           vOIS
         </button>

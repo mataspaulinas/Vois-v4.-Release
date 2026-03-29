@@ -1,4 +1,10 @@
+import { useState } from "react";
 import { SectionCard } from "../../components/SectionCard";
+import { SurfaceHeader } from "../../components/SurfaceHeader";
+import { PrimaryCanvas } from "../../components/PrimaryCanvas";
+import { ContextInspector } from "../../components/ContextInspector";
+import { DeepDrawer } from "../../components/DeepDrawer";
+import { TransitionSuggestion } from "../../components/TransitionSuggestion";
 import {
   AssessmentHistoryItem,
   AssessmentRecord,
@@ -46,6 +52,7 @@ export function VenueOverviewView({
   onOpenReport,
   onOpenPlan,
 }: VenueOverviewViewProps) {
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const nextMove = describeVenueNextMove({
     savedAssessment,
     selectedEngineRun,
@@ -55,17 +62,19 @@ export function VenueOverviewView({
 
   return (
     <div className="view-stack">
-      <section className="venue-hero compact">
-        <div>
-          <p className="hero-badge">{venue.status}</p>
-          <h1>{venue.name}</h1>
-          <p className="hero-copy">
-            {venue.concept ?? "Operational workspace"} {venue.location ? `| ${venue.location}` : ""}{" "}
-            {venue.size_note ? `| ${venue.size_note}` : ""}
-          </p>
-        </div>
-      </section>
-
+      <SurfaceHeader
+        title={venue.name}
+        subtitle={[venue.concept, venue.location, venue.size_note].filter(Boolean).join(" · ")}
+        status={venue.status}
+        statusTone={venue.status === "active" ? "success" : venue.status === "critical" ? "danger" : "neutral"}
+        primaryAction={{ label: "Start assessment", onClick: onOpenAssessment }}
+        moreActions={[
+          { label: "Open signals", onClick: onOpenSignals },
+          { label: "Open report", onClick: onOpenReport },
+          { label: "Open plan", onClick: onOpenPlan },
+        ]}
+      />
+      <PrimaryCanvas>
       <div className="view-grid">
         <SectionCard
           eyebrow="Overview"
@@ -218,6 +227,32 @@ export function VenueOverviewView({
           </div>
         </SectionCard>
       </div>
+      </PrimaryCanvas>
+
+      {/* Transition suggestion based on venue state */}
+      {!savedAssessment && (
+        <TransitionSuggestion
+          message="No assessment saved yet. Start by capturing operational observations."
+          actionLabel="Start assessment"
+          onAction={onOpenAssessment}
+        />
+      )}
+
+      {/* Deep drawer for history */}
+      <DeepDrawer open={drawerOpen} title="Venue history" onClose={() => setDrawerOpen(false)}>
+        <div>
+          {assessmentHistory.length > 0 ? (
+            assessmentHistory.slice(0, 5).map((a) => (
+              <div key={a.id} style={{ padding: "var(--spacing-xs) var(--spacing-sm)", borderLeft: "3px solid var(--color-border-subtle)", marginBottom: "var(--spacing-xs)", borderRadius: "var(--radius-sm)" }}>
+                <div style={{ fontWeight: 500 }}>{a.selected_signal_count} signals detected</div>
+                <div style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)" }}>{formatTimestamp(a.created_at)}</div>
+              </div>
+            ))
+          ) : (
+            <p style={{ color: "var(--color-text-muted)" }}>No assessment history yet.</p>
+          )}
+        </div>
+      </DeepDrawer>
     </div>
   );
 }

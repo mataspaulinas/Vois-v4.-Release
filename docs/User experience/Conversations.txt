@@ -1,0 +1,3180 @@
+The prototype generation hit a template-string escaping error. I’m correcting that now and rebuilding the pack cleanly.
+
+Thought for 7s
+
+Done.
+
+Start here: VOIS v4 UI workflow pack
+
+Archive:
+vois_ui_workflow_pack.zip
+
+Included:
+Workflow decisions
+Complete sitemap
+Workflow maps
+Browsable prototype
+
+What’s inside:
+It maps the shared VOIS spine, the Owner, Manager, and Pocket shells, the recommended high-efficiency workflows, and a browsable role-based prototype with desktop/mobile switching and realistic venue contexts.
+
+What I optimized for:
+one clear focus surface,
+role-appropriate altitude,
+manager-first operational efficiency,
+Pocket confidence at point of work,
+and making blocked truth visible early instead of burying it in task noise.
+
+One honest limitation:
+the prototype is a realistic UI exploration layer, not the real app runtime. It is grounded in the inspected VOIS route structure and product logic, but it is still a design/prototype artifact rather than a live coded product build. 
+
+If you were a really picky journalist or a skeptic critic of software of such a type, project management or whatever, and you went through a trial, let's say, period, you ran those three companies that I hope you found in the archive that I sent, you know, what would your report be? What would your expectations to be for the user experience of such type of application? What I'm trying to achieve here is an optimized user interface, you know, with preserved functionality, of course, but, you know, the whole dashboard and everything and all the functions and options and settings and the functions should be set up in such a smooth way that the management of everything is so easy and so logical, you know, and so simple, again, you know, not overcrowded. I think it should be set up in a way that you get on your screen the thing you're focusing on in like almost full screen, so there's no distractions, so there's no chaos on the screen where you're trying to understand what you should do and so on, so like one thing leads to another kind of experience, but once needed, you know, everything else is very accessible. So this has to become a groundbreaking technology, you know, a breakthrough in service industry management and really very simple workflows, I think, is key here, because, you know, it's meant to simplify management of multiple venues and for managers to manage development of operations of those venues. And it should be very easy and intuitive as well in many ways, especially for those lower rank employees that actually do the job on the floor in the field. So I'm looking for, you know, the perfect setup, so management is actually easy and beautiful, modern. Yeah, so it's really amazing to use, encouraging, involving, intuitive, almost like you're always tempted to use it. It's so nice, you fucking wanna spend a lot of time on that application and use it and delegate and manage it and be productive in such an easy way.
+
+I’m reading the actual archive structure now so the critique is anchored in what exists, not in generic SaaS opinions.
+
+Thought for 25s
+
+Here is the report I would write if I were a skeptical, picky software critic trialing this for a few weeks across multiple venues.
+
+VOIS v4 — skeptical product review
+
+This product is not trying to be “project management for restaurants.” It is trying to become an operating intelligence layer for messy service businesses. That is a much harder ambition, and it changes the standard by which the interface should be judged.
+
+If I used it across several venues, my first conclusion would be this: the value is real, but the product will live or die on whether it can protect clarity under pressure. Not whether it has enough features. Not whether the ontology is impressive. Not whether the screens look advanced. The real test is whether a tired owner, an overloaded manager, and a shift worker under live service conditions can each enter the system and immediately feel more oriented, less burdened, and more capable of acting correctly.
+
+Right now, the danger is obvious. This kind of product can become one of two bad things very easily. It can become a beautiful control room that managers admire but don’t truly live in, or it can become a heavy operating admin layer that asks people to feed the system instead of helping them govern reality. If that happens, the entire promise collapses.
+
+The product should therefore be judged against a very severe standard:
+
+Can it make a venue easier to read, easier to govern, and harder to lie about?
+
+If yes, it is category-defining.
+If not, it is just a smarter-looking PM tool.
+
+What I would expect from the user experience
+
+I would expect the interface to feel almost unnaturally calm for the amount of complexity underneath it.
+
+That means when I open it, I should not feel the weight of the whole system. I should feel the precision of the next correct layer.
+
+For the owner, I should feel that the app knows I do not need the whole venue. I need pressure, drift, delegation failure, people risk, and the specific points where my decision or intervention is actually required. If the owner shell lets me get dragged into operational detail too easily, it has failed.
+
+For the manager, I should feel that the app is protecting me from fragmentation. I should open the system and instantly see: what can move, what cannot move, what is lying to us, what needs proof, and what must be escalated. If I still feel like I am privately carrying the real venue while the software is only reflecting parts of it, the product has failed.
+
+For the frontline user, I should feel almost no software at all. I should feel orientation, confidence, and support. One task. One standard. One help path. One report path. No clutter. No management residue. No admin burden disguised as empowerment.
+
+That is the bar.
+
+My main critique of software in this category
+
+Most software for operations fails because it confuses visibility with usability.
+
+It shows everything.
+It tracks everything.
+It records everything.
+It surfaces everything.
+
+And then the user has to do the hard work of deciding what matters.
+
+That is exactly what this product must not do.
+
+VOIS should not behave like an exposed database with a polished skin.
+It should behave like a disciplined operating environment.
+
+The user should almost never feel like they are navigating a system.
+They should feel like the system is staging the next correct field of action.
+
+That means:
+one dominant surface at a time,
+secondary context nearby but quiet,
+deep detail one click away,
+no dashboard soup,
+no ten panels competing for attention,
+no “look how much data we have” design.
+
+If this product is really trying to break through, then its great UX advantage will not be feature richness. It will be clarity sequencing.
+
+The interface philosophy I would demand
+
+I would demand a “one thing leads to another” interface.
+
+Not in a childish wizard way.
+In a disciplined operational way.
+
+You open the product.
+It gives you the right altitude.
+That altitude gives you the right object.
+That object gives you the right next move.
+That move opens the right depth.
+That depth exposes the right truth.
+That truth leads to one of a few meaningful actions:
+continue,
+verify,
+escalate,
+reassess,
+or step back up.
+
+That should be the whole feel of the system.
+
+The user should not need to think:
+“Where do I go now?”
+They should think:
+“Yes, this is the right layer.”
+
+That is the difference between workflow software and operational design.
+
+What the UI should feel like
+
+It should feel closer to a premium thinking tool than to conventional enterprise software.
+
+Not flashy.
+Not playful.
+Not cluttered.
+Not dense for the sake of density.
+
+It should feel:
+clean,
+serious,
+elegant,
+focused,
+fast,
+high-trust,
+and strangely inviting.
+
+You should want to open it because it reduces confusion.
+You should want to stay in it because it keeps giving you useful shape.
+You should not feel punished for using it.
+
+That is especially important for managers. If the manager opens the app and feels cognitive load rising, you already lost them. Managers in real venues do not need more digital seriousness. They need better operational leverage.
+
+What I would say is missing if I were brutal
+
+I would say the biggest unresolved challenge is not feature coverage. It is tension management between depth and calm.
+
+This system wants:
+portfolio intelligence,
+venue intelligence,
+assessment logic,
+report logic,
+plan logic,
+execution logic,
+evidence,
+escalations,
+people,
+copilot,
+history,
+reference,
+knowledge,
+settings,
+and mobile task support.
+
+That is a lot.
+
+So the real design challenge is not “where do these pages go.”
+It is:
+how do all of these exist without the user ever feeling the full burden of them at once?
+
+That is where most ambitious software fails.
+It preserves everything and overloads the screen.
+Or it oversimplifies and kills operational power.
+
+VOIS has to do something harder:
+preserve depth while staging it gently.
+
+My expectations for the shell structure
+
+I would expect three extremely disciplined shells.
+
+Owner should feel like a strategic command layer.
+Not a dashboard.
+Not a BI panel.
+Not a task app.
+
+Manager should feel like an execution cockpit.
+Not a PM board.
+Not a reporting portal.
+Not a cluttered operations suite.
+
+Pocket should feel like a work companion.
+Not a reduced desktop UI.
+
+And all three should still clearly belong to the same product.
+
+That means shared visual language, shared venue identity, shared truth model, shared route logic under the hood.
+But each shell must feel purpose-built for its layer of responsibility.
+
+My expectations for the screen model
+
+I would expect almost every major screen to obey the same logic:
+
+One central canvas.
+One optional contextual side surface.
+One optional deeper support drawer.
+No more than that by default.
+
+That is the correct model for a system like this.
+
+The central canvas is the current truth.
+The side surface is the context for that truth.
+The drawer is secondary depth when needed.
+
+That lets the user focus almost full-screen on the thing they are actually doing while keeping everything else near enough to feel powerful rather than hidden.
+
+This is exactly what you described, and I agree with it.
+
+The mistake would be to keep too many support surfaces permanently visible.
+That creates enterprise anxiety.
+The correct move is staged access with extremely low-friction reveal.
+
+If I were rewriting the UX doctrine in one sentence
+
+VOIS should feel like:
+“one clear operational truth at a time, with the rest of the system always one calm step away.”
+
+That is the standard.
+
+What I would prioritize hardest
+
+If I were driving product design brutally, I would prioritize these in order:
+
+First, the manager experience.
+Because this is where the product either becomes indispensable or dies as theory.
+
+Second, the quality of the transition between Today, Plan, Workspace, Evidence, and Escalation.
+Because that is the real operating loop.
+
+Third, the owner’s ability to intervene without drowning in detail.
+Because most systems of this kind are ruined by ownership misuse.
+
+Fourth, Pocket simplicity.
+Because frontline adoption determines whether the product becomes real or remains managerial theater.
+
+Fifth, removal of all screen clutter that does not directly improve decision quality.
+
+The strongest UX rule I would impose
+
+No screen should make the user ask both of these at once:
+
+“What am I looking at?”
+and
+“What should I do?”
+
+One of those questions is acceptable.
+Both together means the page is failing.
+
+The system should always bias toward one answer being obvious.
+
+If I were the critic writing the closing line
+
+I would say this:
+
+VOIS has the bones of something unusually serious. It is aiming above ordinary task software and above ordinary hospitality tooling. That is its strength and its danger. The breakthrough will not come from adding more intelligence, more panels, or more system richness. It will come from making a very deep product feel almost frictionlessly legible. If the team can reduce the user experience to a sequence of calm, powerful, role-correct decisions—while preserving the system’s real structural intelligence—then this could become one of the few operational products in the category that people do not merely use, but actually trust.
+
+And that trust is the real product.
+
+If you want, the next best move is for me to turn this into a hard-nosed UX audit scorecard with exact criteria like clarity, navigation burden, cognitive load, role fidelity, action latency, screen density, trust signals, and adoption likelihood.
+
+Proceed
+
+I’m turning that critique into a hard UX audit framework now, with scoring criteria and product-level pass/fail standards rather than general opinions.
+
+Thought for 24s
+
+Here is the hard-nosed scorecard.
+
+I am judging it as a skeptical software critic looking at the current VOIS structure, routes, and surfaced product logic from the archive, not as a fully verified live-production runtime. Also, I found four clear venue contexts in the material I worked with, not only three: Kalvos, The Living Room, Lola, and Paukščių Takas.
+
+VOIS v4 — UX audit scorecard
+
+This is the standard I would use:
+
+The product passes only if it makes a venue easier to read, easier to govern, and harder to lie about, while still feeling lighter than the operational chaos it is trying to organize.
+
+1. Clarity of entry
+
+Score now: 7/10
+Target: 10/10
+
+When I open the product, do I instantly know where I am, what this shell is for, and what kind of action belongs here?
+
+Owner is fairly strong because Command is conceptually clear. Manager is strong if Today remains the home and does not get diluted. Pocket can be excellent if it stays brutally simple.
+
+Where it can still fail is if too many adjacent surfaces compete with the primary page and make the user feel the full system too early.
+
+2. Role fidelity
+
+Score now: 8/10
+Target: 10/10
+
+Does each role feel like it is using the right altitude of the same system?
+
+VOIS is strong here in theory. Owner, Manager, and Pocket have distinct default homes and distinct jobs. That is correct.
+
+The risk is drift. Owner can still become too operational. Manager can become too spread. Pocket can become too administrative. The UI must actively prevent that, not just allow the right behavior.
+
+3. Cognitive load
+
+Score now: 6.5/10
+Target: 9.5/10
+
+Does the user feel guided, or do they feel the weight of the system?
+
+This is the biggest danger. The product has a lot of legitimate surfaces: portfolio, overview, assessment, report, plan, console, workspace, evidence, team, escalations, copilot, reference, KB, settings. That is enough to easily become enterprise clutter.
+
+To reach breakthrough level, the interface must stage depth with extreme discipline:
+one main canvas,
+one quiet contextual side layer,
+one optional deeper drawer.
+
+Anything beyond that by default is probably too much.
+
+4. Workflow legibility
+
+Score now: 8/10
+Target: 10/10
+
+Can a user feel that one thing naturally leads to the next?
+
+This is one of the strongest qualities in the current architecture. The real operating spine exists:
+Portfolio / Venue Overview -> Assessment -> Report -> Plan -> Workspace / Evidence / Escalation -> History / Reassessment.
+
+That is good product logic.
+
+The design challenge is to make this feel inevitable rather than merely available.
+
+5. Action latency
+
+Score now: 7/10
+Target: 9.5/10
+
+How quickly can the user move from “I see the issue” to “I am acting correctly”?
+
+Manager needs this most. Today must let them enter live work with almost no hesitation. Pocket must let staff act in seconds, not in software mode. Owner must be able to intervene without spelunking.
+
+Any page that makes the user pause too long before understanding the right next move is too slow.
+
+6. Trustworthiness of status
+
+Score now: 7.5/10
+Target: 10/10
+
+Do statuses, readiness, blockage, and completion feel credible?
+
+The product is conceptually strong here because it explicitly distinguishes ready, blocked, evidence, escalation, and history. That is excellent.
+
+But credibility will collapse instantly if:
+ready tasks are not truly ready,
+blocked tasks remain soft,
+evidence is decorative,
+or review states are weakly enforced.
+
+This is a UX issue as much as a logic issue. The interface must make false readiness feel awkward and obvious.
+
+7. Managerial leverage
+
+Score now: 8.5/10
+Target: 10/10
+
+Does the product actually reduce private coordination burden for managers?
+
+This is the heart of the whole system. If VOIS works, managers should carry less of the venue privately. If it fails, they will still be the real operating system while VOIS becomes a high-class reflection layer.
+
+The product is pointed in the right direction. But to truly win, Manager Today, Plan, Workspace, Evidence, and Escalations have to feel like one disciplined operating loop, not separate areas.
+
+8. Pocket usability
+
+Score now: 8/10
+Target: 10/10
+
+Does the frontline experience reduce uncertainty at the point of work?
+
+Pocket has the potential to be a major differentiator if it stays light. My Shift, Task Detail, Standards, Help, Report, and Log is the correct structure.
+
+The main danger is overloading Pocket with management residue, too much language, or too many options.
+
+Frontline UX should feel almost aggressively clean.
+
+9. Portfolio usability for multi-venue management
+
+Score now: 7/10
+Target: 9/10
+
+Can ownership or senior management actually run multiple venues without drowning?
+
+The portfolio concept is right, but this category is where many products fail. Multi-venue oversight often becomes too dashboard-like or too abstract.
+
+Portfolio must remain a pressure map, not a reporting graveyard.
+It should answer:
+where attention belongs,
+what is drifting,
+what is blocked by leadership,
+and where human risk is rising.
+
+Nothing more should dominate.
+
+10. Beauty / desirability / product pull
+
+Score now: 7/10
+Target: 10/10
+
+Do I want to spend time here because it feels powerful and clean, not because I have to?
+
+This matters more than many people admit. If the product feels heavy, dutiful, or corporate, adoption weakens even if the logic is good.
+
+For this to become “you actually want to be in it,” the interface has to feel:
+premium,
+calm,
+focused,
+responsive,
+and emotionally relieving.
+
+That means no screen clutter, no dead visual weight, no dashboard soup, no gratuitous UI furniture.
+
+Overall critical verdict
+
+Current structural potential: 8/10
+Current likely user-experience risk: high
+Current likely category potential if executed correctly: 9.5/10
+
+My skeptic verdict would be:
+
+VOIS is unusually serious in its logic and much stronger than ordinary PM software in its operating model. The weakness is not conceptual ambition. The weakness is the danger of overexposure. If the product shows too much of itself at once, it will feel like an advanced system that users respect but do not truly relax into. If the interface is reduced to a sequence of calm, role-correct, high-trust surfaces, it has a real chance to become category-defining.
+
+Non-negotiable UX standards
+
+I would impose these as hard pass/fail rules.
+
+First: every role must have one unmistakable home.
+Owner = Command.
+Manager = Today.
+Pocket = My Shift.
+
+Second: every page must answer one dominant question only.
+Not three. Not five. One.
+
+Third: the user should almost never need to decide both “where am I?” and “what should I do?” at the same time.
+
+Fourth: the central canvas must dominate.
+Everything else should feel nearby, not noisy.
+
+Fifth: blocked truth must always be easier to see than decorative activity.
+
+Sixth: mobile must be role-specific, not a squeezed desktop.
+
+Seventh: no screen should try to prove how powerful the product is by showing too much.
+
+The redesign commandments I would give the team
+Keep one main focus surface on screen at all times.
+Hide depth until it is needed, but make it instantly reachable.
+Reduce permanent chrome.
+Treat sidebar navigation as access, not as content.
+Make Today, Plan, and Workspace feel like one loop.
+Make Pocket feel native, not “responsive.”
+Make Owner feel powerful through precision, not volume.
+Make every status feel trustworthy or remove it.
+Kill all decorative panels that do not improve decision quality.
+Design every transition so the user feels guided, not routed.
+The ideal structural model
+
+If I were forcing the UI model into one clear sentence, it would be:
+
+One calm primary canvas, one quiet contextual side layer, one optional deep drawer, and one role-correct next move.
+
+That is the shape I would chase relentlessly.
+
+What I would test in a trial immediately
+
+I would run a brutal live UX test on these questions:
+
+Can an owner enter, identify where they are genuinely needed, intervene, and leave in under five minutes?
+
+Can a manager start the day, identify one true priority, enter execution, attach proof, and escalate blockage without browsing five different surfaces?
+
+Can a frontline user open Pocket and complete a task correctly without asking where to go next?
+
+Can a blocked truth become visible earlier than it would in WhatsApp, memory, or verbal coordination?
+
+Can the product reduce the manager’s private cognitive load after two weeks, not increase it?
+
+If those tests pass, the system is real.
+
+Final critic line
+
+If I were writing the sharp closing paragraph, it would be this:
+
+VOIS should not aspire to be the most feature-rich operations platform in the category. It should aspire to be the clearest-thinking one. Its breakthrough will come when a very deep operating system feels calmer, more intuitive, and more trustworthy than the messy reality it is trying to govern. If it can do that, people won’t just use it because they have to. They’ll use it because it makes them feel sharper, calmer, and more in control than they are without it.
+
+Next, I can turn this into a brutal red/yellow/green UX audit matrix with exact pass-fail checkpoints for every major screen and role.
+
+Yes please
+Thought for 9s
+VOIS v4 — red / yellow / green UX audit matrix
+
+This is the kind of audit sheet I would use if I were trying to break the product honestly.
+
+The grading logic is simple.
+
+Green means the screen is doing its real job with low friction.
+Yellow means it is usable, but still leaking confusion, drag, or overexposure.
+Red means the screen is structurally failing its role, even if it still “works.”
+
+The key principle behind all of this is:
+
+A deep system only becomes great when every screen has one dominant job, one clear next move, and one trustworthy relationship to the rest of the product.
+
+1. Product-wide standards
+1.1 Entry clarity
+
+Green:
+The user knows within 3–5 seconds what shell they are in, what this screen is for, and what kind of action belongs here.
+
+Yellow:
+The user understands the screen after scanning multiple panels, reading labels, or mentally parsing UI regions.
+
+Red:
+The user asks, even briefly, “what is this page actually for?” or “why am I here?”
+
+1.2 Focus discipline
+
+Green:
+There is one dominant visual surface. Secondary context is present but quiet. Deep detail is hidden until asked for.
+
+Yellow:
+The main surface exists, but one or two side regions still compete for attention.
+
+Red:
+The screen feels like a dashboard collage. The user’s eye does not know where to land first.
+
+1.3 Next-step legibility
+
+Green:
+The next meaningful move is obvious without hunting.
+
+Yellow:
+The user can find the next move, but only after scanning or thinking.
+
+Red:
+The user sees information but does not know what to do with it.
+
+1.4 Status trust
+
+Green:
+Ready means ready. Blocked means blocked. Done means done enough to trust.
+
+Yellow:
+Statuses exist but sometimes feel optimistic or soft.
+
+Red:
+Users learn not to trust what statuses claim.
+
+1.5 Navigation burden
+
+Green:
+The user reaches the needed screen in one move from their home surface, or at most two.
+
+Yellow:
+The user occasionally has to browse or remember structure.
+
+Red:
+The user routinely navigates by trial and error or memory gymnastics.
+
+1.6 Cognitive density
+
+Green:
+The screen feels light relative to the complexity underneath.
+
+Yellow:
+The screen is understandable but slightly mentally tiring.
+
+Red:
+The user feels the burden of the entire system while trying to do one thing.
+
+2. Owner shell audit
+Owner home: Command
+
+This screen should answer one question:
+Where is my intervention genuinely needed?
+
+Green:
+The page surfaces only high-value pressure: attention, escalations, delegation risk, people risk, venue drift.
+A venue can be opened from here with a clear reason.
+The owner does not feel invited into task noise.
+
+Yellow:
+The page is useful, but still mixes strategic pressure with too much operational texture.
+It feels slightly too tempting to keep drilling.
+
+Red:
+Command behaves like a general dashboard or operational feed.
+The owner can easily start micromanaging from the first screen.
+
+Pass-fail checkpoints:
+If an owner cannot identify top 1–3 intervention points in under one minute, fail.
+If Command encourages “checking everything,” fail.
+If the owner needs other screens just to understand where pressure is, fail.
+
+Portfolio
+
+This should answer:
+Which venues deserve attention, and why?
+
+Green:
+Portfolio behaves like a pressure map.
+Cross-venue comparison is legible.
+The owner can sense readiness, blockage, escalation, and strategic drift quickly.
+
+Yellow:
+Useful, but too informational and not decisive enough.
+
+Red:
+Portfolio becomes a reporting wall.
+It shows many facts but weak action meaning.
+
+Pass-fail checkpoints:
+If the owner cannot compare venues at a glance, fail.
+If the portfolio requires reading too much card text to understand pressure, fail.
+If portfolio rewards passive observation more than decisive routing, fail.
+
+Delegations
+
+This should answer:
+What have I handed off, and what is slipping?
+
+Green:
+Delegations expose follow-through quality immediately.
+Overdue or weak delegations are obvious.
+The owner can inspect without entering full venue detail.
+
+Yellow:
+The page is readable but doesn’t quickly reveal where delegation is structurally weak.
+
+Red:
+It is just a list of assigned things, not a delegation intelligence surface.
+
+Pass-fail checkpoints:
+If overdue delegation does not visually stand out, fail.
+If the page cannot tell me who is repeatedly weak on follow-through, fail.
+
+People
+
+This should answer:
+Where is human structure becoming operational risk?
+
+Green:
+People risk, overload, or role ambiguity is visible without gossip-feel.
+The page supports judgment, not voyeurism.
+
+Yellow:
+The page works but feels slightly too descriptive and not enough like a risk surface.
+
+Red:
+It becomes a people dashboard with too much data and too little managerial meaning.
+
+Pass-fail checkpoints:
+If I cannot tell what human issue has operational consequence, fail.
+If the page invites personality reading more than structural reading, fail.
+
+3. Manager shell audit
+Manager home: Today
+
+This screen should answer:
+What should move now, what cannot move, and what kind of day is this?
+
+Green:
+Today makes the shape of the day obvious.
+Ready work, blocked work, and meaningful next actions are clearly separated.
+The manager feels immediately less fragmented.
+
+Yellow:
+Today is useful, but still feels partly like a task list rather than an operating lens.
+
+Red:
+Today is just another board or feed.
+It does not reduce chaos.
+
+Pass-fail checkpoints:
+If the manager cannot identify one real priority in under 30 seconds, fail.
+If blocked truth is visually weaker than active task noise, fail.
+If Today causes scanning fatigue, fail.
+
+Plan
+
+This should answer:
+What is the believable order of movement?
+
+Green:
+The plan feels credible.
+Ready, blocked, active, and dependent work are clearly distinct.
+The manager trusts it.
+The team would trust it.
+
+Yellow:
+The plan is structurally correct but still slightly too full or too abstract.
+
+Red:
+The plan feels inflated, political, or decoratively comprehensive.
+
+Pass-fail checkpoints:
+If a manager sees tasks labeled ready that are not truly moveable, fail.
+If blocked work is not obvious, fail.
+If the plan cannot be explained plainly without apologizing, fail.
+
+Execution Workspace
+
+This should answer:
+How do I move this task honestly right now?
+
+Green:
+The workspace creates focus.
+Rationale, steps, deliverables, proof, and dependency truth are all close enough.
+The manager can actually work from it.
+
+Yellow:
+The task can be moved here, but the space still feels slightly like a documentation screen rather than an execution chamber.
+
+Red:
+It is a detail page with controls, not a true operational workspace.
+
+Pass-fail checkpoints:
+If the manager cannot understand why this task matters within a few seconds, fail.
+If the space encourages status updates more than execution quality, fail.
+If comments start becoming the real system here, fail.
+
+Evidence
+
+This should answer:
+What proof makes this work trustworthy?
+
+Green:
+Evidence is meaningful, proportional, and tied to trust.
+It helps the manager verify reality quickly.
+
+Yellow:
+Evidence exists but the page risks becoming a storage area rather than a trust surface.
+
+Red:
+The evidence area rewards uploads more than meaningful proof.
+
+Pass-fail checkpoints:
+If I cannot tell what evidence actually supports which claim, fail.
+If decorative uploads look equal to strong verification, fail.
+
+Team / Pulse
+
+This should answer:
+What actually moved, what is dragging, and where is human strain showing?
+
+Green:
+The page reveals pattern, not just chronology.
+Progress, follow-ups, and people burden become interpretable.
+
+Yellow:
+Useful, but still slightly too timeline-like.
+
+Red:
+It is a historical feed with weak operational meaning.
+
+Pass-fail checkpoints:
+If recurring follow-up pressure is hard to spot, fail.
+If hidden overload is not visible through the page, fail.
+
+Escalations
+
+This should answer:
+What can no longer move honestly at this level?
+
+Green:
+Escalations are clean, specific, and legible.
+The page feels serious, not dramatic.
+Blocked truth is respected.
+
+Yellow:
+The page works, but the escalation logic still feels slightly too generic.
+
+Red:
+Escalations look like complaints, inbox tickets, or generic issue reporting.
+
+Pass-fail checkpoints:
+If ownership-required issues are not clearly differentiated from ordinary friction, fail.
+If escalations can sit open without visual consequence, fail.
+
+4. Pocket shell audit
+Pocket home: My Shift
+
+This should answer:
+What do I need to do now?
+
+Green:
+The shift opens with immediate clarity.
+The user sees current work, one priority note if needed, and no management noise.
+
+Yellow:
+The shift is usable but still slightly too descriptive.
+
+Red:
+The user has to interpret too much or browse too much.
+
+Pass-fail checkpoints:
+If a frontline user cannot begin correct action in under 10 seconds, fail.
+If too many things compete visually, fail.
+
+Task Detail
+
+This should answer:
+What is this task, what does good look like, and what do I do if something is wrong?
+
+Green:
+Task detail is crystal clear and thumb-friendly.
+Objective, checklist, and quick support paths are obvious.
+
+Yellow:
+The task is understandable, but a bit too wordy or slightly too administrative.
+
+Red:
+The user still has to guess what correct completion means.
+
+Pass-fail checkpoints:
+If the user cannot distinguish task objective from support actions quickly, fail.
+If the screen feels like a mini manager UI, fail.
+
+Standards
+
+This should answer:
+How do we do this here?
+
+Green:
+Standards are concise, practical, and fast to scan.
+
+Yellow:
+Useful, but a bit too text-heavy or buried.
+
+Red:
+Standards are present but not actually usable at point of work.
+
+Pass-fail checkpoints:
+If the user cannot get a usable answer fast, fail.
+If standards feel like documentation instead of action guidance, fail.
+
+Help
+
+This should answer:
+How do I resolve uncertainty before it becomes waste?
+
+Green:
+Help feels safe, quick, and context-aware.
+
+Yellow:
+It works, but feels one step too detached from live work.
+
+Red:
+Help feels like messaging for its own sake.
+
+Pass-fail checkpoints:
+If asking for help feels slower than guessing, fail.
+
+Report
+
+This should answer:
+What needs to become visible beyond this moment?
+
+Green:
+Reporting is clear, fast, and serious without being heavy.
+
+Yellow:
+The reporting path exists but feels a bit formal.
+
+Red:
+Reporting feels burdensome, vague, or unlikely to matter.
+
+Pass-fail checkpoints:
+If users cannot distinguish “ask for help” from “report issue,” fail.
+If reporting feels like paperwork, fail.
+
+Log
+
+This should answer:
+What useful trace should the venue retain from this shift?
+
+Green:
+Logging is quick and meaningful.
+
+Yellow:
+Usable, but slightly too open-ended.
+
+Red:
+It becomes a text dump or gets ignored.
+
+Pass-fail checkpoints:
+If logs invite essays, fail.
+If the log cannot communicate meaningful small work, fail.
+
+5. Cross-device audit
+Desktop
+
+Green:
+Desktop supports thought, sequence, review, and concentrated action.
+
+Yellow:
+Desktop is usable, but still too panel-heavy.
+
+Red:
+Desktop shows too much at once and creates strategy fatigue.
+
+Mobile
+
+Green:
+Mobile simplifies and clarifies.
+It never tries to be a full desktop clone.
+
+Yellow:
+Mostly okay, but still carrying some desktop residue.
+
+Red:
+Mobile feels like squeezed admin software.
+
+Pass-fail checkpoints:
+If mobile tries to expose too many system layers at once, fail.
+If desktop cannot support deep focus on one object, fail.
+
+6. Brutal red/yellow/green review questions
+
+These are the questions I would ask screen by screen.
+
+Green if yes, red if no, yellow if partial.
+
+Can I tell where I am immediately?
+Can I tell what this page is for immediately?
+Can I tell what the next meaningful move is immediately?
+Can I trust the statuses shown here?
+Can I act without browsing elsewhere first?
+Does this screen reduce or increase cognitive load?
+Is there one dominant visual surface?
+Is secondary detail present but quiet?
+Would a tired user still understand this?
+Would a first-week user still understand this?
+Does this page protect the user’s role altitude?
+Would this screen still feel good after repeated daily use?
+Does this feel like management leverage rather than admin burden?
+
+If more than 3 of those are “no,” the screen is failing.
+
+7. What must be green for the product to truly win
+
+If I were ruthless, these would be non-negotiable.
+
+Manager Today must be green.
+Manager Plan must be green.
+Manager Workspace must be green.
+Pocket My Shift must be green.
+Pocket Task Detail must be green.
+Owner Command must be green.
+Portfolio must be at least high yellow moving toward green.
+Status trust must be green across the whole system.
+Blocked truth visibility must be green across the whole system.
+
+If those are green, the product can survive some imperfections elsewhere and still feel breakthrough-level.
+
+If those are not green, the rest of the polish barely matters.
+
+8. Final audit judgment model
+
+I would judge the whole product like this:
+
+Green product:
+It makes users feel sharper, calmer, and more capable than reality normally allows.
+
+Yellow product:
+It is clearly valuable, but still feels heavier than it should.
+
+Red product:
+It may be intelligent, but users still privately manage around it.
+
+That is the real test.
+
+Next step: I can turn this into a screen-by-screen redesign brief for Command, Today, Plan, Workspace, and Pocket Task Detail, with exact recommendations on what should be visible, hidden, drawer-based, or removed.
+
+Absolutely, go ahead. Im very inspired by the simplicity of apple and open ai systems. Clear, obvious routes you have to take to get to where you want, nothing that you dont need at that moment but accessable effortlessly like you said - side panels or smth, drawers for more depth, etc. just my comments. You’re on the right path. Continue
+Thought for 7s
+
+Good. Then I would lock the redesign around one strict principle:
+
+VOIS should feel like a calm, premium operating instrument, not like a software suite.
+
+That means Apple/OpenAI-style simplicity at the interaction level, while the real system depth stays underneath and comes forward only when invited.
+
+Here is the redesign brief.
+
+VOIS redesign brief — core UX model
+
+The product should be built around one primary canvas, one contextual side layer, and one optional deep drawer.
+
+The user should almost always experience only one dominant thing at a time:
+the venue,
+the report,
+the plan,
+the task,
+the shift.
+
+Everything else should be nearby, not competing.
+
+So the global shell logic becomes:
+
+On desktop:
+left rail for navigation and venue switching,
+center canvas for the current object,
+right inspector for quiet context,
+bottom drawer for deeper detail when explicitly opened.
+
+On mobile:
+one primary screen only,
+bottom nav only where needed,
+sheet/drawer overlays for support depth,
+no persistent side complexity.
+
+That is the foundation.
+
+The five screens that matter most
+
+If these five are not perfect, the whole product will feel heavier than it should:
+
+Owner Command
+Manager Today
+Manager Plan
+Manager Workspace
+Pocket Task Detail
+
+Everything else can be good. These five must be exceptional.
+
+1. Owner Command — redesign brief
+What it should feel like
+
+A strategic pressure lens.
+Not a dashboard.
+Not a reporting wall.
+Not a venue feed.
+
+When the owner opens it, they should feel:
+“I know where my intervention is actually needed.”
+
+What should be visible
+
+Only four things belong on first view:
+
+top pressure strip:
+venues needing attention,
+open escalations,
+overdue delegations,
+people risk count
+
+main attention list:
+top 3–5 intervention points across all venues
+
+secondary grouped surfaces:
+delegation weakness
+people risk / overload signals
+
+one action path:
+open venue
+
+What should be hidden by default
+
+No detailed task lists.
+No long analytics areas.
+No broad activity feed.
+No full venue cards with too much text.
+No dense comparison tables.
+
+What belongs in the right inspector
+
+Selected venue summary,
+why it needs attention,
+last meaningful change,
+recommended next layer:
+Venue Overview, Report, Delegations, or People.
+
+What belongs in the bottom drawer
+
+Portfolio compare mode,
+recent history,
+raw escalation thread,
+deeper trend view.
+
+What to remove
+
+Anything that makes the owner feel invited to “check everything.”
+
+Pass condition
+
+The owner can identify the top intervention in under 30 seconds.
+
+2. Manager Today — redesign brief
+What it should feel like
+
+The shape of the day.
+This is the most important screen in the product.
+
+When the manager opens it, they should feel:
+“Okay. This is the day.”
+
+What should be visible
+
+Three zones only.
+
+Top summary strip:
+completion pressure,
+blocked count,
+follow-up pressure,
+one short venue health line
+
+Main zone:
+Next executable work
+This is the hero area.
+
+Second zone:
+Tasks you can move now
+
+Third zone:
+Blocked / waiting on dependencies
+
+That is enough.
+
+What should be hidden by default
+
+No giant task table.
+No mixed feed of everything.
+No comments preview.
+No evidence preview.
+No people analytics panel.
+No over-detailed metrics.
+
+What belongs in the right inspector
+
+Selected task rationale,
+why this is surfacing now,
+dependency preview,
+proof expectation,
+one-click route to Plan or Workspace.
+
+What belongs in the bottom drawer
+
+Fast compare:
+today vs prior day,
+blocked pattern,
+follow-up residue,
+team pressure snapshot.
+
+Key interaction rule
+
+Clicking a task should not “open another page feeling.”
+It should feel like dropping one layer deeper into the same operating object.
+
+What to remove
+
+Any visual treatment that makes Today feel like a task manager instead of a managerial decision surface.
+
+Pass condition
+
+The manager can choose one correct next move almost instantly.
+
+3. Manager Plan — redesign brief
+What it should feel like
+
+Believable action structure.
+
+When the manager opens it, they should feel:
+“This is what can move. This is what cannot. This is why.”
+
+What should be visible
+
+The plan should be grouped into only three default columns or stacked sections:
+
+Ready
+Active
+Blocked
+
+Not more.
+
+Dependencies should not dominate the main layout.
+They should appear only on selection.
+
+What should be visible inside a task row/card
+
+task title,
+owner,
+state,
+due rhythm,
+one-line rationale,
+one-line dependency flag if relevant.
+
+That’s it.
+
+What belongs in the right inspector
+
+This is where dependency truth lives.
+
+When a task is selected:
+full rationale,
+dependency chain,
+linked block/tool references,
+evidence expectation,
+escalation status,
+review state.
+
+What belongs in the bottom drawer
+
+Plan compare,
+plan version diff,
+history of changes,
+older blocked patterns.
+
+What to remove
+
+Too much task metadata on the main canvas.
+Multiple nested chips.
+Visual complexity trying to show the whole ontology at once.
+Dependency maps always visible.
+
+Key interaction rule
+
+The plan must feel smaller and more trustworthy than the venue’s total complexity.
+
+Pass condition
+
+A manager trusts the plan at a glance.
+Not every task, the plan itself.
+
+4. Manager Workspace — redesign brief
+What it should feel like
+
+Focused operational depth.
+This is the execution chamber.
+
+When the manager opens it, they should feel:
+“I can work here.”
+
+Main layout
+
+One large central task canvas.
+
+Inside it:
+task title,
+rationale,
+status,
+sub-actions,
+deliverables,
+comments,
+evidence trigger,
+escalation trigger.
+
+These should appear in that order.
+
+What belongs in the right inspector
+
+Dependency context,
+linked signals,
+linked tools/blocks,
+owner context if blocked,
+recent evidence,
+history of movement.
+
+This is support context, not the main work.
+
+What belongs in the bottom drawer
+
+Deep evidence,
+full comments thread,
+audit trail,
+compare current task state vs prior state.
+
+What should be hidden by default
+
+No unrelated venue content.
+No sidebar inside the workspace itself.
+No multiple adjacent task cards.
+No split attention.
+
+Important rule
+
+Workspace should feel nearly full-screen.
+This is exactly where your instinct is correct.
+
+The manager should feel protected from the rest of the system while inside one task.
+
+What to remove
+
+Anything that reminds the user of the whole app while they are trying to execute one thing.
+
+Pass condition
+
+The manager can stay in the task long enough to think clearly instead of skimming.
+
+5. Pocket Task Detail — redesign brief
+What it should feel like
+
+Thumb-native confidence.
+
+When the user opens it, they should feel:
+“I know what to do.”
+
+What should be visible
+
+Only four things:
+
+objective
+checklist
+quick support actions
+completion action
+
+That’s it.
+
+What should be secondary
+
+Standards link
+Help
+Report issue
+Proof upload
+
+These should be available, but they should not visually compete with the main task.
+
+Ideal mobile structure
+
+Header:
+task name + short objective
+
+Body:
+checklist items,
+one-line standard reminder if relevant,
+one clear completion button
+
+Sticky footer:
+Help,
+Report,
+Add proof
+
+What to remove
+
+Extra admin details,
+timestamps unless critical,
+managerial metadata,
+too much explanatory copy,
+multiple competing action buttons.
+
+Pass condition
+
+A tired staff user understands the task in seconds and is not forced to interpret management logic.
+
+Cross-screen structural rules
+
+These rules should govern the whole product.
+
+Rule 1
+
+Every screen gets one primary question.
+
+Examples:
+
+Command:
+Where is my intervention needed?
+
+Today:
+What should move now?
+
+Plan:
+What is believable?
+
+Workspace:
+How do I move this honestly?
+
+Task Detail:
+What do I do right now?
+
+If a screen answers more than one dominant question, it is too broad.
+
+Rule 2
+
+Secondary information must never overpower the current object.
+
+The object is always the center:
+venue,
+plan,
+task,
+report,
+shift.
+
+Everything else is contextual.
+
+Rule 3
+
+The right inspector should never become a second page.
+
+It should clarify, not compete.
+
+Rule 4
+
+The bottom drawer should be the home for deep detail.
+
+Not the main canvas.
+Not a second visible content column.
+Only when invited.
+
+Rule 5
+
+Navigation should be stable, but content should feel progressive.
+
+The app should not feel like jumping between unrelated modules.
+It should feel like moving deeper or stepping upward in one system.
+
+Visual style direction
+
+If you want Apple/OpenAI-level simplicity, then visually I would insist on:
+
+large quiet surfaces,
+very few borders,
+gentle grouping,
+excellent spacing,
+high typography clarity,
+soft contrast,
+subtle shadow only where useful,
+almost no decorative color,
+color reserved for status and meaning only.
+
+Avoid:
+too many chips,
+too many nested cards,
+too many visible dividers,
+too many floating controls,
+too much permanent chrome.
+
+The UI should feel expensive because it is restrained.
+
+Not because it is dressed up.
+
+Information density rules
+Owner
+
+Sparse by default.
+Dense only on demand.
+
+Manager
+
+Moderate density.
+One strong task/plan focus at a time.
+
+Pocket
+
+Low density always.
+
+That should be enforced intentionally.
+
+Navigation redesign rule
+
+The left rail should not try to “show the whole product.”
+It should only show:
+role home,
+core pages for that role,
+venue switcher,
+support areas,
+settings/help.
+
+Reference and KB should stay secondary.
+They should not visually compete with the operating loop.
+
+My strongest recommendations, bluntly
+
+Command should be simplified harder.
+Today should become more opinionated.
+Plan should show less, but mean more.
+Workspace should become more immersive and isolated.
+Pocket should be stripped even further toward confidence-first execution.
+
+That is where the breakthrough UX will come from.
+
+Not from inventing more clever panels.
+
+If I were turning this into build priorities
+
+Priority 1:
+Redesign Today, Plan, and Workspace as one unified manager loop.
+
+Priority 2:
+Redesign Command to become less dashboard-like and more pressure-led.
+
+Priority 3:
+Reduce Pocket to its cleanest possible form.
+
+Priority 4:
+Standardize inspector and drawer behavior across the entire product.
+
+Priority 5:
+Remove permanent visual complexity across all shells.
+
+The sentence I would hand to the design/dev team
+
+Design VOIS so the user always feels one calm step away from everything they need, but never forced to see it before it matters.
+
+That is the product.
+
+The next useful move is for me to convert this into a page-by-page wireframe spec for those five critical screens, with exact section order, what is visible by default, what opens in inspector, and what opens in drawer.
+
+Yes please
+Thought for 6s
+
+Good. Here is the page-by-page wireframe spec for the five critical screens.
+
+This is written as a build brief, not inspiration text.
+
+1. Owner Command
+Core purpose
+
+Show the owner exactly where intervention is required, without inviting operational wandering.
+
+Primary question
+
+Where am I genuinely needed?
+
+Desktop layout
+
+Left rail:
+role home,
+portfolio,
+command,
+delegations,
+people,
+venue switcher,
+help/settings.
+
+Center canvas:
+one dominant command surface.
+
+Right inspector:
+selected venue / selected pressure point.
+
+Bottom drawer:
+compare, trend, escalation thread, recent movement.
+
+Section order on the main canvas
+
+First, a compact pressure strip across the top.
+It contains only:
+venues needing attention,
+open escalations,
+overdue delegations,
+people risk count.
+
+Second, the main “attention list.”
+This is the true centerpiece.
+Show only 3 to 5 highest-value intervention items across the portfolio.
+Each item should contain:
+venue name,
+issue title,
+why it matters,
+what is blocked or drifting,
+one action: open venue.
+
+Third, a secondary split zone below.
+Left side:
+delegation weakness.
+Right side:
+people risk / overload signals.
+
+Nothing else on the first screen.
+
+What should be visible by default
+
+Only high-value pressure.
+No detailed task activity.
+No report fragments.
+No long venue descriptions.
+No dense analytics.
+
+What opens in the right inspector
+
+When an attention item is clicked:
+venue summary,
+current status,
+last meaningful change,
+why this surfaced,
+recommended next layer:
+Venue Overview, Report, Delegations, or People.
+
+What opens in the bottom drawer
+
+Portfolio compare mode,
+historical pressure trend,
+full escalation thread,
+cross-venue risk view.
+
+Desktop interaction rules
+
+Clicking an attention item should not feel like leaving the system.
+It should feel like narrowing the lens.
+
+Mobile version
+
+Owner mobile should not be full-featured.
+It should be a compact pressure interface.
+
+Mobile screen order:
+pressure strip,
+top attention list,
+one compact venue card,
+one “open deeper on desktop” or “open venue” path.
+
+Bottom nav:
+Command,
+Portfolio,
+Delegations,
+People,
+More.
+
+Success condition
+
+The owner can identify the top 1 to 3 interventions in under 30 seconds.
+
+2. Manager Today
+Core purpose
+
+Shape the day before interruption shapes it.
+
+Primary question
+
+What should move now, and what cannot?
+
+Desktop layout
+
+Left rail:
+Today,
+Plan,
+Workspace,
+Evidence,
+Team,
+Escalations,
+venue switcher.
+
+Center canvas:
+Today.
+
+Right inspector:
+selected task context.
+
+Bottom drawer:
+blocked pattern, recent movement, residue, compare.
+
+Section order on the main canvas
+
+First, a tight operating summary strip.
+Show:
+ready count,
+blocked count,
+follow-ups due,
+venue pressure note.
+
+Second, the main hero block:
+Next executable work.
+This is the dominant visual area.
+Show only 3 to 5 items.
+Each item contains:
+task title,
+one-line rationale,
+dependency note if relevant,
+one clear button: Open task.
+
+Third, a smaller section:
+Tasks you can move now.
+These are honest ready tasks, lighter than hero tasks.
+
+Fourth, a clearly separated blocked section:
+Waiting on dependencies.
+These should be visually quieter than the hero area but sharper in status language.
+
+What should be visible by default
+
+Only these four layers.
+No large feeds.
+No evidence panel.
+No team timeline.
+No comments.
+No knowledge base prompts.
+
+What opens in the right inspector
+
+Selected task:
+why this surfaced,
+what it unlocks,
+dependency preview,
+proof expectation,
+owner/escalation state,
+quick link to Plan or Workspace.
+
+What opens in the bottom drawer
+
+Blocked pattern,
+follow-up residue,
+yesterday vs today comparison,
+recent unresolved shifts in pressure.
+
+Desktop interaction rules
+
+Clicking hero task should open Workspace directly.
+Clicking dependency note should open Plan with that task selected.
+Clicking blocked item should offer Escalate or Open Plan.
+
+Mobile version
+
+Manager mobile is not for analysis-heavy work.
+It is for practical continuity.
+
+Screen order:
+summary strip,
+next executable work,
+blocked items,
+one quick button to open Plan or Escalations.
+
+Bottom nav:
+Today,
+Plan,
+Task,
+Team,
+Escalations.
+
+Success condition
+
+A manager can decide the first real move in under 20 seconds.
+
+3. Manager Plan
+Core purpose
+
+Make action believable.
+
+Primary question
+
+What is the truthful order of movement?
+
+Desktop layout
+
+Left rail:
+same manager shell.
+
+Center canvas:
+plan groups only.
+
+Right inspector:
+selected task dependency and rationale context.
+
+Bottom drawer:
+plan history, version diff, compare.
+
+Section order on the main canvas
+
+The default plan view should only show three sections:
+Ready,
+Active,
+Blocked.
+
+Not more.
+
+Each section is stacked vertically or column-based depending on width, but the logic stays the same.
+
+Task card content
+
+Each task card should show only:
+title,
+owner,
+state,
+short rationale,
+due rhythm,
+dependency marker if relevant.
+
+No heavy metadata on the surface.
+
+What should be visible by default
+
+The structure of movement.
+Not the whole ontology.
+Not linked tools in full.
+Not report reasoning in full.
+Not all dependencies expanded.
+
+What opens in the right inspector
+
+When a task is selected:
+full rationale,
+dependency chain,
+linked block/tool references,
+evidence expectation,
+review state,
+escalation state,
+history of changes.
+
+This is where depth belongs.
+
+What opens in the bottom drawer
+
+Plan diff from previous version,
+blocked trend,
+resolved vs unresolved tasks over time,
+older plan history.
+
+Desktop interaction rules
+
+Selecting a task should not remove the plan from view.
+The user should feel they are inspecting one task inside the living structure, not leaving it.
+
+Double action options:
+Open in Workspace,
+Open escalation,
+Open evidence.
+
+Mobile version
+
+Manager mobile plan should be simpler.
+Show three stacked sections:
+Ready,
+Active,
+Blocked.
+
+Tap a task to open a compact task detail sheet.
+Dependency context should appear in a sheet, not inline.
+
+Bottom nav:
+Today,
+Plan,
+Task,
+Team,
+Escalations.
+
+Success condition
+
+The manager trusts the plan at a glance and can explain why something is blocked without opening five things.
+
+4. Manager Workspace
+Core purpose
+
+Create focused execution depth.
+
+Primary question
+
+How do I move this task honestly right now?
+
+Desktop layout
+
+Left rail:
+same manager shell.
+
+Center canvas:
+full immersive task view.
+
+Right inspector:
+dependency / context / support.
+
+Bottom drawer:
+evidence, audit trail, comments, compare.
+
+Section order on the main canvas
+
+Top:
+task title,
+one-line rationale,
+status control,
+back to Today / Plan.
+
+Then:
+sub-actions.
+
+Then:
+deliverables.
+
+Then:
+comments / notes.
+
+Then:
+quick action row:
+Add evidence,
+Escalate,
+Open linked tool/block.
+
+That order matters.
+
+What should be visible by default
+
+Only the task and what is necessary to move it honestly.
+No venue-level clutter.
+No extra modules competing visually.
+No broad dashboard elements.
+
+What opens in the right inspector
+
+Dependencies,
+linked signals,
+linked tools/blocks,
+owner decision context,
+related evidence summary,
+recent movement history.
+
+What opens in the bottom drawer
+
+Full evidence gallery,
+full comments thread,
+audit trail,
+prior state comparison,
+related report excerpt if needed.
+
+Desktop interaction rules
+
+Workspace should feel nearly full-screen.
+This is where chrome must disappear the most.
+The task must dominate.
+
+Status changes should require enough friction to remain meaningful, but not so much that updates become annoying.
+
+Evidence and Escalation should feel one step away, not like leaving the task.
+
+Mobile version
+
+Manager mobile workspace should be a simplified task execution surface, not the full desktop equivalent.
+
+Order:
+title,
+objective,
+status,
+sub-actions,
+deliverables,
+quick evidence,
+quick escalate,
+comments collapsed by default.
+
+Bottom sheet for:
+dependencies,
+history,
+linked tools.
+
+Success condition
+
+The user feels protected from the rest of the app while doing one meaningful task.
+
+5. Pocket Task Detail
+Core purpose
+
+Turn uncertainty into confident action.
+
+Primary question
+
+What do I do right now, and what do I do if something is wrong?
+
+Mobile-first layout
+
+This is the most important mobile screen in the product.
+
+Top:
+task name,
+short objective,
+venue context if needed.
+
+Middle:
+checklist.
+
+Below checklist:
+one-line standard reminder if relevant.
+
+Sticky bottom action area:
+Complete,
+Help,
+Report,
+Add proof.
+
+That is the whole screen.
+
+What should be visible by default
+
+Objective,
+checklist,
+completion path.
+
+Nothing else should compete.
+
+What should be secondary
+
+Standards,
+help,
+report,
+proof.
+
+They should be easy to reach, but not visually louder than the task itself.
+
+What opens in sheets
+
+Standards open in a bottom sheet.
+Help opens in a conversation sheet.
+Report opens in a form sheet.
+Proof opens in a capture/upload sheet.
+
+This keeps the main task clean.
+
+What should never be present
+
+Managerial metadata,
+over-explaining text,
+large time/history sections,
+complex status logic,
+multiple competing buttons,
+too much venue context.
+
+Desktop version
+
+Pocket desktop should exist only if useful for kiosk/tablet use or staff support environment.
+If shown, it should still keep mobile logic:
+one narrow central task area,
+support actions in side sheet or bottom drawer.
+
+Do not redesign it as desktop admin.
+
+Success condition
+
+A tired user understands the task in seconds and can act correctly without guessing.
+
+Shared inspector rules
+
+The right inspector should always follow the same rules across desktop:
+
+It is never the main event.
+It clarifies the selected object.
+It contains secondary truth:
+why this matters,
+dependency context,
+ownership context,
+recent evidence,
+history snapshot,
+recommended next layer.
+
+It should never become a second full page squeezed onto the screen.
+
+Maximum use:
+supporting the current object.
+Not replacing it.
+
+Shared bottom drawer rules
+
+The bottom drawer is the home for deep detail.
+
+Use it for:
+compare,
+full thread,
+audit trail,
+history,
+evidence gallery,
+dependency graph,
+older versions,
+raw trace.
+
+Do not use it for:
+primary actions,
+core task logic,
+main reading surfaces.
+
+It should feel like “deeper if needed,” not “necessary to understand the page.”
+
+Navigation rules
+Left rail
+
+Must stay very stable.
+
+Owner:
+Command,
+Portfolio,
+Delegations,
+People,
+venue switcher,
+settings/help.
+
+Manager:
+Today,
+Plan,
+Workspace,
+Evidence,
+Team,
+Escalations,
+venue switcher,
+settings/help.
+
+Pocket:
+bottom nav only, not left rail in primary usage.
+
+Important rule
+
+Reference and KB must stay secondary.
+They should not visually compete with the operating loop.
+
+Visual restraint rules
+
+Across all five screens:
+
+Use fewer cards.
+Use stronger whitespace.
+Use typography hierarchy instead of many borders.
+Use color only for meaning.
+Use one dominant call to action per screen area.
+Avoid nested visual furniture.
+
+If in doubt, remove one more visible thing.
+
+Screen-by-screen pass/fail test
+Command fails if:
+
+owner feels invited to micromanage.
+
+Today fails if:
+
+manager still feels the whole venue at once.
+
+Plan fails if:
+
+it looks more complete than believable.
+
+Workspace fails if:
+
+it feels like a detail page instead of a focus environment.
+
+Pocket Task Detail fails if:
+
+a frontline user has to interpret anything managerial to act.
+
+Recommended build order
+Manager Today
+Manager Plan
+Manager Workspace
+Owner Command
+Pocket Task Detail
+
+Because if the manager loop is not exceptional, the rest of the system will not feel revolutionary.
+
+What remains after this
+
+After these five are designed, the next layer should be:
+Venue Overview,
+Assessment,
+Report,
+Portfolio,
+Pocket My Shift,
+Escalations,
+Evidence.
+
+Those should be redesigned to match the exact same philosophy.
+
+If you want, I’ll do the next pass as an even more concrete component contract spec for these five screens:
+header,
+content zones,
+actions,
+inspector contents,
+drawer contents,
+and mobile adaptation rules in strict product language.
+
+Proceed. And dont forget the details, useful buttons, scrollbars, more, back, back to - jump to, ask copilot, info, tooltips, etc etc etc located intelligently in every zone and page, component etc. basicaly you have what we need but have to gently refine it and push that last little step forward that makes it “wow they really thougjt that through”
+
+I’m refining it into strict product contracts now: page chrome, action placement, inspector behavior, drawer rules, scroll behavior, tooltips, back/jump logic, and “small intelligence” details that make it feel truly thought through.
+
+Thought for 11s
+
+Good. Here is the refined layer.
+
+This is the step where the product stops being “well structured” and starts feeling deeply considered.
+
+VOIS — component contract spec for the five critical screens
+
+This document defines:
+page chrome,
+zone behavior,
+button placement,
+back logic,
+jump logic,
+copilot entry,
+info/tooltips,
+scroll behavior,
+drawer behavior,
+mobile adaptation,
+and the “small intelligence” details that make the product feel premium and obvious.
+
+The governing principle stays the same:
+
+One dominant object.
+One calm path forward.
+Everything else accessible without polluting focus.
+
+GLOBAL PRODUCT CONTRACTS
+1. Global page chrome
+
+Every desktop screen should use the same basic frame:
+
+Left rail
+Top bar
+Primary canvas
+Optional right inspector
+Optional bottom drawer
+
+Left rail rules
+
+The left rail is for location and switching, not work.
+
+It contains:
+role home,
+core routes for that shell,
+venue switcher,
+secondary tools,
+settings/help.
+
+It should never contain:
+live task detail,
+feeds,
+dense stats,
+or operational content the user is supposed to work from.
+
+Top bar rules
+
+Top bar is for orientation and global controls only.
+
+Left side:
+page title,
+venue name,
+small subtitle that states the current object.
+
+Right side:
+Search,
+Ask Copilot,
+Notifications,
+theme/profile.
+
+Never overload this area.
+
+Top bar action priority
+
+Only one action in the top bar should look primary.
+Usually:
+Run assessment,
+Open in workspace,
+Create escalation,
+Save,
+or similar.
+
+Everything else should be neutral or tucked into “More”.
+
+2. Global interaction rules
+Back behavior
+
+Back should never feel ambiguous.
+
+Every deep page should show:
+Back to Today
+Back to Plan
+Back to Venue Overview
+Back to Command
+
+Use explicit labels, not just an arrow, whenever the parent matters.
+
+Examples:
+“Back to Today”
+“Back to Plan”
+“Back to Kalvos”
+
+Do not rely only on browser back logic.
+
+Jump-to behavior
+
+If a user is on a page where another layer is obviously relevant, show a quiet jump path.
+
+Examples:
+From Today task preview -> “Jump to Plan”
+From blocked item -> “Jump to Escalations”
+From Workspace -> “Jump to Report rationale”
+From Pocket Task -> “Jump to Standards”
+
+These should be small, intelligent links, not giant buttons.
+
+“More” behavior
+
+Use “More” only when a page has secondary actions that are useful but not central.
+
+“More” should open a small menu, never a heavy modal.
+
+Typical “More” contents:
+Copy link
+Open history
+Compare with previous
+View raw trace
+Pin for review
+Mark for follow-up
+
+“More” should not hide the main action.
+
+Ask Copilot behavior
+
+Copilot should always be available, but rarely dominant.
+
+Desktop:
+top bar chip or button,
+plus contextual “Ask Copilot about this” inside inspector.
+
+Mobile:
+bottom sheet entry,
+or sticky helper chip on some screens.
+
+Important:
+Copilot should inherit context from the current object automatically.
+The user should not have to explain what page they’re on.
+
+Info / tooltip behavior
+
+Use tooltips only where a label might not be self-evident.
+
+Good tooltip targets:
+blocked status meaning
+evidence expectation
+dependency icon
+review state
+why this task surfaced
+what “ready” actually means here
+
+Bad tooltip use:
+explaining obvious buttons
+explaining every icon
+turning the UI into training wheels
+
+Tooltips should be short.
+One sentence.
+Not mini-docs.
+
+3. Scroll and overflow rules
+
+This matters a lot.
+
+Desktop scroll rules
+
+Only one major vertical scroll container should exist in the center canvas.
+The user should not be trapped in scrollable chaos.
+
+Right inspector may scroll independently if content is long.
+Bottom drawer may scroll independently when open.
+But the default experience should feel stable.
+
+Mobile scroll rules
+
+One scrollable page at a time.
+Sheets can scroll only after opened.
+Avoid stacked scroll regions inside mobile.
+
+Scrollbar behavior
+
+Scrollbars should be visible when needed.
+They should not disappear entirely if content overflows.
+Subtle is fine.
+Invisible is not.
+
+The user should never have to guess that more content exists below the fold.
+
+Sticky behavior
+
+Sticky top bars: yes.
+Sticky bottom action bars on mobile: yes.
+Sticky full-card internals: generally no, unless critical.
+
+4. Right inspector contract
+
+The inspector is always contextual, never primary.
+
+It should contain only:
+
+selected object summary
+why it matters
+dependency/support context
+recent evidence snapshot
+history snippet
+recommended next jump
+
+It should never contain:
+
+the entire content of another page
+long feeds
+full comments thread
+full report text
+the main action controls
+
+Inspector behavior
+
+Collapsed by default on smaller desktop widths.
+Open by default on large desktop if object selection exists.
+Closable by user.
+State remembered per session.
+
+Inspector header
+
+Should always show:
+object name
+object type
+one-line reason it matters
+
+Inspector footer
+
+Should always allow:
+Open deeper
+Ask Copilot about this
+Copy link
+
+5. Bottom drawer contract
+
+The bottom drawer is for deep support surfaces.
+
+Allowed drawer content
+
+Audit trail
+History
+Evidence gallery
+Thread
+Compare mode
+Dependency map
+Version diff
+Raw trace
+
+Not allowed
+
+Main page actions
+Primary navigation
+Core task execution
+Core reading content
+
+Drawer behavior
+
+Closed by default.
+Slide up smoothly.
+Resizable to 3 stops:
+peek,
+half,
+deep.
+
+Drawer tabs
+
+Allowed if necessary, but max 3 tabs.
+Example:
+History / Evidence / Compare
+
+More than that becomes noise.
+
+Drawer trigger placement
+
+Triggers should be near the part of the page they relate to.
+
+Example:
+Plan -> “Compare”
+Workspace -> “Evidence”
+Command -> “Trend”
+Today -> “Residue”
+
+Not all packed in one generic bottom corner.
+
+SCREEN 1 — OWNER COMMAND
+Core contract
+
+The owner opens this to locate true intervention points, not to browse the business.
+
+Desktop layout
+Header area
+
+Title: Command
+Subtitle: “Strategic pressure, not operational noise.”
+
+Right actions:
+Search
+Ask Copilot
+More
+
+More menu:
+Open Portfolio compare
+View all escalations
+View all delegations
+Export snapshot
+
+Main canvas zones
+Zone A — Pressure strip
+
+Top horizontal compact strip.
+
+Cards:
+Attention venues
+Open escalations
+Overdue delegations
+People risk
+
+Each card is clickable.
+Click opens filtered list in center, not a modal.
+
+Useful small details:
+hover summary tooltip
+small delta from last review
+tiny arrow if trend worsening
+
+Zone B — Attention list
+
+The dominant center object.
+
+Each item contains:
+venue name
+issue title
+one-line impact explanation
+why surfaced now
+primary action button: Open venue
+secondary inline links:
+Open report
+Open delegations
+Open people
+Ask Copilot
+
+Useful small details:
+“Jump to venue”
+“Jump to last escalation”
+“View last change”
+
+Zone C — Secondary intelligence split
+
+Left:
+Delegation weakness
+
+Right:
+People risk / overload
+
+Each row should contain:
+label
+why it matters
+linked venue
+jump link
+
+Right inspector
+
+When attention item selected:
+venue summary
+current stage
+what is blocked
+what the owner most likely needs to do
+recommended next route
+
+Inspector buttons:
+Open Venue Overview
+Open Report
+Ask Copilot
+Copy venue link
+
+Bottom drawer
+
+Tabs:
+Trend
+Escalation thread
+Compare
+
+Scroll rules
+
+Command center main list scrolls.
+Pressure strip stays fixed.
+Inspector scrolls independently if long.
+
+Mobile adaptation
+
+One-column feed.
+Pressure strip becomes 2x2 compact cards.
+Attention list becomes stacked cards.
+Bottom nav:
+Command / Portfolio / Delegations / People / More
+
+Mobile action details
+
+Swipe left on attention card:
+Save for review
+Copy link
+
+Long press:
+Open context menu
+
+“Wow they thought of it” details
+
+When owner hovers or taps a blocked issue, small inline note:
+“Blocked by decision”
+“Blocked by budget”
+“Blocked by unresolved ownership”
+This is better than generic blocked state.
+
+SCREEN 2 — MANAGER TODAY
+Core contract
+
+The manager enters and immediately understands the operational shape of the day.
+
+Desktop layout
+Header area
+
+Title: Today
+Subtitle: venue + one-sentence pressure summary.
+
+Right actions:
+Ask Copilot
+Jump to Plan
+More
+
+More menu:
+Open Team Pulse
+Open yesterday comparison
+Open all blocked work
+Pin today snapshot
+
+Main canvas zones
+Zone A — Daily summary strip
+
+Cards:
+Ready now
+Blocked
+Follow-ups due
+Pressure note
+
+Each card clickable to filter below.
+
+Useful details:
+micro trend vs yesterday
+tiny tooltip:
+“Ready = can move honestly now”
+“Blocked = cannot move without dependency or intervention”
+
+Zone B — Next executable work
+
+Hero zone.
+3 to 5 items max.
+
+Each item contains:
+task title
+one-line rationale
+dependency note if any
+primary button: Open task
+secondary links:
+Jump to Plan
+Ask Copilot
+More
+
+More menu per item:
+Copy task link
+Mark for review
+Open report rationale
+Open history
+
+Zone C — Tasks you can move
+
+Cleaner, lighter list.
+Same card style, smaller.
+
+Zone D — Waiting on dependencies
+
+Clearly separated visually.
+Do not hide this too much.
+
+Each blocked row contains:
+task title
+blocked-by line
+primary button: Open escalation
+secondary links:
+Jump to Plan
+Ask Copilot
+View dependency
+
+Right inspector
+
+Selected task shows:
+why surfaced now
+what it unlocks
+readiness confidence
+linked dependency
+proof expectation
+quick next jumps
+
+Buttons:
+Open in Workspace
+Jump to Plan
+Ask Copilot
+Copy link
+
+Bottom drawer
+
+Tabs:
+Residue
+Yesterday vs Today
+Blocked pattern
+
+Scroll rules
+
+Main center scroll only.
+Summary strip stays fixed within top of page.
+Blocked section must still be visible without hunting.
+
+Mobile adaptation
+
+One-column.
+Today cards compact.
+Hero task first.
+Then blocked list.
+Then ready list.
+
+Sticky bottom nav:
+Today / Plan / Task / Team / Escalations
+
+Sticky action chip:
+Ask Copilot
+
+Mobile details
+
+Swipe on task:
+Open
+Save
+Escalate if blocked
+
+“Wow they thought of it” details
+
+If the manager spends too long on Today without opening anything, show subtle prompt:
+“Need the broader sequence? Jump to Plan.”
+Not as a pop-up.
+As a quiet inline suggestion.
+
+SCREEN 3 — MANAGER PLAN
+Core contract
+
+The plan must feel believable, not comprehensive.
+
+Desktop layout
+Header area
+
+Title: Plan
+Subtitle: “Believable movement and visible blockage.”
+
+Right actions:
+Compare
+Ask Copilot
+More
+
+More menu:
+Open history
+Export current plan snapshot
+Show stale tasks
+Show dependency-only view
+
+Main canvas zones
+Zone A — Plan filter row
+
+Small and quiet.
+
+Filters:
+All
+Ready
+Active
+Blocked
+Mine
+Needs review
+
+Also:
+search task
+sort by sequence / urgency / due rhythm
+
+Zone B — Main plan body
+
+Three vertical sections or responsive stacked sections:
+Ready
+Active
+Blocked
+
+No extra default sections.
+
+Task card structure
+
+Task title
+owner
+short rationale
+due rhythm
+small state chip
+dependency marker if relevant
+
+Small action row on hover/select:
+Open Workspace
+Quick escalate
+Add evidence
+More
+
+What “More” contains per task
+
+Copy link
+Open history
+View report rationale
+Mark stale
+Split task
+Archive / remove from live plan
+
+Right inspector
+
+Selected task:
+full rationale
+dependency chain
+linked block/tool
+evidence expectation
+review state
+owner dependency if any
+last change
+
+Buttons:
+Open Workspace
+Ask Copilot
+Open Escalation
+Copy link
+
+Bottom drawer
+
+Tabs:
+Version diff
+Task history
+Dependency chain
+
+Scroll rules
+
+Center plan scrolls.
+Each section should not have independent scrollbars unless absolutely necessary.
+Independent column scroll is usually bad here.
+
+Mobile adaptation
+
+Stacked sections only.
+Task tap opens slide-up task sheet.
+Inspector becomes bottom sheet.
+Drawer becomes full-height sheet for compare/history.
+
+Mobile task sheet
+
+Header:
+task title
+state
+
+Body:
+rationale
+dependency marker
+owner
+quick actions
+
+Actions:
+Open Task
+Escalate
+Add proof
+Ask Copilot
+
+“Wow they thought of it” details
+
+If a task is selected and blocked by ownership, the inspector should offer:
+“Jump to owner-dependent tasks”
+This is a tiny but very intelligent filter jump.
+
+SCREEN 4 — MANAGER WORKSPACE
+Core contract
+
+This is the concentration chamber.
+It should feel like the whole system quieted down to let one task become real.
+
+Desktop layout
+Header area
+
+Back to Today or Back to Plan
+Task title
+small rationale line
+
+Right actions:
+Add evidence
+Escalate
+Ask Copilot
+More
+
+More menu:
+Open audit trail
+Open full history
+Copy task link
+Compare previous state
+
+Main canvas zones
+Zone A — Task identity
+
+Title
+status
+rationale
+current owner
+light dependency notice if relevant
+
+Zone B — Sub-actions
+
+Checklist-style but elegant.
+Each action clearly tappable/clickable.
+No clutter.
+
+Zone C — Deliverables
+
+More concrete than sub-actions.
+This area should make completion visible.
+
+Zone D — Comments / notes
+
+Collapsed by default if empty.
+Expanded if active.
+Comments should feel secondary.
+
+Right inspector
+
+Dependencies
+linked tools/blocks
+owner decision context
+recent evidence
+history snippet
+report excerpt if needed
+
+Buttons:
+Jump to Plan
+Jump to Report
+Ask Copilot
+
+Bottom drawer
+
+Tabs:
+Evidence
+Audit
+Comments thread
+
+Optional fourth only if truly needed:
+Compare
+
+Scroll rules
+
+Workspace main canvas scroll only.
+Inspector independent scroll allowed.
+Comments thread inside drawer, not main page, if long.
+
+Status control rules
+
+Status control must be visible but not screaming.
+It belongs near the title/rationale area.
+
+Changing status to completed should prompt:
+“Add proof now?” if evidence expected.
+
+Mobile adaptation
+
+This should feel like a near full-screen task page.
+
+Order:
+task identity
+sub-actions
+deliverables
+status
+sticky footer actions
+
+Sticky footer:
+Complete / Update
+Help
+Escalate
+Proof
+
+Comments hidden behind tap.
+
+“Wow they thought of it” details
+
+If user tries to mark complete without finishing required deliverables, show calm inline blocker:
+“2 deliverables still open.”
+No angry modal.
+Just good guidance.
+
+SCREEN 5 — POCKET TASK DETAIL
+Core contract
+
+This must be so obvious and calm that a tired staff user almost enjoys using it.
+
+Mobile-first layout
+Header
+
+Task title
+one-sentence objective
+small venue or area context
+
+Optional tiny info icon:
+“What good looks like”
+This opens a short standards sheet.
+
+Main body
+Zone A — Objective
+
+One sentence only.
+No essay.
+
+Zone B — Checklist
+
+Large tap targets.
+Clear spacing.
+No tiny rows.
+
+Zone C — Standard reminder
+
+One short reminder card only if truly relevant.
+
+Example:
+“Check tray symmetry before marking complete.”
+
+Sticky footer
+
+Primary:
+Complete task
+
+Secondary:
+Help
+Report
+Add proof
+
+These open sheets, not new full pages if possible.
+
+Sheets
+Standards sheet
+
+Short actionable standard.
+Can jump to full standards page if needed.
+
+Help sheet
+
+Simple ask/help interaction.
+
+Report sheet
+
+Fast structured report.
+
+Proof sheet
+
+Photo / note / checklist proof.
+
+What should never be present
+
+Long history
+manager notes
+complex state chips
+multiple admin fields
+dependency explanations
+too many timestamps
+
+Desktop / tablet adaptation
+
+Same logic, just centered in a narrow readable canvas.
+Do not expand it into a manager-like layout.
+
+Scroll rules
+
+Single page scroll.
+Sticky footer always visible.
+No inner scroll zones unless in sheets.
+
+“Wow they thought of it” details
+
+If user opens task and has not acted for a while, subtle helper line appears:
+“Need clarity? Open Help or Standards.”
+Not a nag.
+A calming aid.
+
+MICRO-COMPONENT CONTRACTS
+Buttons
+Primary buttons
+
+One per zone max.
+Must represent the most meaningful action.
+
+Secondary buttons
+
+Neutral style.
+Always visually lower than primary.
+
+Danger actions
+
+Only for delete/archive/remove.
+Never overload with warning colors elsewhere.
+
+Tooltips
+
+Use only for:
+statuses
+dependency markers
+review state
+special terms
+
+Tooltip max:
+one sentence.
+
+Inline links
+
+Use for:
+Jump to Plan
+Back to Today
+Open Report
+Open Evidence
+Ask Copilot
+
+Inline links should do the lightweight navigation work that big buttons would overstate.
+
+Empty states
+
+Should never be generic.
+
+Bad:
+“No items.”
+
+Good:
+“No blocked tasks right now. The current plan can move without external dependency.”
+
+Loading states
+
+Should preserve layout shape.
+Skeletons okay, but calm.
+No jitter.
+
+Search
+
+Search should be global from top bar.
+It should find:
+venues
+tasks
+reports
+signals
+blocks/tools
+people where relevant
+
+Search results should route the user directly into the correct object, not just to a generic results page.
+
+Notifications
+
+Notifications should be quiet, grouped, and meaningful.
+Not noisy.
+Not real-time chaos.
+
+Good categories:
+Blocked truth
+Review needed
+Escalation response
+Follow-up due
+Evidence awaiting verification
+
+Copy link / share
+
+Should exist on all major objects:
+venue
+task
+report
+escalation
+
+This is small but important.
+
+Final pass/fail question for every component
+
+Ask:
+Does this make the current object easier to understand or act on?
+
+If no, it should probably be hidden, moved to inspector, moved to drawer, or removed.
+
+What remains after this refinement
+
+You now have:
+the philosophy,
+the audit logic,
+the redesign rules,
+and the strict wireframe/component contract for the five critical screens.

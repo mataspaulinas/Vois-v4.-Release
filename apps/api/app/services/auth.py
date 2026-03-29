@@ -161,9 +161,24 @@ def resolve_legacy_user(db: Session, *, user_id: str) -> AuthenticatedActor | No
 
 
 def fallback_bootstrap_user(db: Session) -> AuthenticatedActor | None:
+    """COMPATIBILITY-ONLY bootstrap fallback (Law 8 documented).
+
+    Owner: platform bootstrap path
+    Retirement: remove when ``ALLOW_BOOTSTRAP_FALLBACK`` is permanently
+    ``false`` in all environments (including local dev).
+    Purpose: allows unauthenticated access during early development before
+    Firebase auth is configured.  Must never be enabled in hosted or
+    production environments.
+    """
+    import logging
+
     user = db.scalar(select(User).order_by(User.created_at.asc()))
     if user is None:
         return None
+    logging.getLogger("app.auth").warning(
+        "Bootstrap fallback activated — returning first user as actor. "
+        "This path should be disabled in production (ALLOW_BOOTSTRAP_FALLBACK=false)."
+    )
     return build_local_actor_with_db(db, user=user, session=None, authentication_mode="bootstrap_local")
 
 

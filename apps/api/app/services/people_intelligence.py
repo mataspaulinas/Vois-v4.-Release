@@ -70,7 +70,7 @@ def get_team_profiles(db: Session, venue_id: str) -> list[dict[str, Any]]:
             .where(FollowUp.assigned_to == user.id)
         ).all()
         now = utc_now()
-        overdue_count = sum(1 for fu in follow_ups if fu.status in ("pending", "acknowledged") and fu.due_at <= now)
+        overdue_count = sum(1 for fu in follow_ups if fu.status in ("pending", "acknowledged") and fu.due_at and fu.due_at.replace(tzinfo=now.tzinfo) <= now)
         completed_fus = sum(1 for fu in follow_ups if fu.status == "completed")
 
         # Escalation stats
@@ -268,7 +268,7 @@ def get_active_delegations(db: Session, venue_id: str) -> list[dict[str, Any]]:
             "status": fu.status.value,
             "assigned_to": fu.assigned_to,
             "due_at": fu.due_at.isoformat(),
-            "is_overdue": fu.due_at <= now,
+            "is_overdue": fu.due_at.replace(tzinfo=now.tzinfo) <= now if fu.due_at else False,
             "evidence_count": evidence_count,
         })
 
@@ -342,3 +342,46 @@ def get_attention_items(db: Session, venue_ids: list[str]) -> list[dict[str, Any
 
     items.sort(key=lambda x: x["priority"])
     return items[:10]  # Top 10, show top 3 prominently
+
+
+def compute_delegation_health(db: Session, venue_ids: list[str]) -> dict[str, Any]:
+    """Compute a 0-100 delegation health score across venues.
+
+    Based on: follow-up completion rate, escalation frequency, overdue rate.
+    """
+    from app.models.domain import FollowUp, FollowUpStatus, Escalation, EscalationStatus
+
+    total_follow_ups = 0
+    completed_follow_ups = 0
+    overdue_follow_ups = 0
+    total_escalations = 0
+    resolved_escalations = 0
+    now = utc_now()
+
+    for venue_id in venue_ids:
+        fus = list(db.scalars(select(FollowUp).where(FollowUp.venue_id == venue_id)).all())
+        total_follow_ups += len(fus)
+        completed_follow_ups += sum(1 for f in fus if f.status == FollowUpStatus.COMPLETED)
+        overdue_follow_ups += sum(1 for f in fus if f.due_at and f.due_at.replace(tzinfo=now.tzinfo) < now and f.status not in (FollowUpStatus.COMPLETED,))
+
+        escs = list(db.scalars(select(Escalation).where(Escalation.venue_id == venue_id)).all())
+        total_escalations += len(escs)
+        resolved_escalations += sum(1 for e in escs if e.status == EscalationStatus.RESOLVED)
+
+    # Score components (each 0-100)
+    completion_rate = (completed_follow_ups / max(total_follow_ups, 1)) * 100
+    overdue_penalty = max(0, 100 - (overdue_follow_ups * 15))  # -15 per overdue
+    escalation_resolution = (resolved_escalations / max(total_escalations, 1)) * 100 if total_escalations else 100
+
+    score = int((completion_rate * 0.5) + (overdue_penalty * 0.3) + (escalation_resolution * 0.2))
+    score = max(0, min(100, score))
+
+    return {
+        "score": score,
+        "completion_rate": round(completion_rate, 1),
+        "overdue_count": overdue_follow_ups,
+        "escalation_resolution_rate": round(escalation_resolution, 1),
+        "total_follow_ups": total_follow_ups,
+        "total_escalations": total_escalations,
+        "label": "strong" if score >= 70 else "moderate" if score >= 40 else "weak",
+    }

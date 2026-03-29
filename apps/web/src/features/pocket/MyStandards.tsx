@@ -1,5 +1,8 @@
 import { useState } from "react";
-import { SectionCard } from "../../components/SectionCard";
+import { SurfaceHeader } from "../../components/SurfaceHeader";
+import { PrimaryCanvas } from "../../components/PrimaryCanvas";
+import { LoadingState } from "../../components/LoadingState";
+import { EmptyState } from "../../components/EmptyState";
 import { StandardItem } from "../../lib/api";
 
 type MyStandardsProps = {
@@ -10,27 +13,14 @@ type MyStandardsProps = {
 export function MyStandards({ standards, loading }: MyStandardsProps) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-  if (loading) {
-    return (
-      <div className="pocket-view">
-        <SectionCard eyebrow="Standards" title="Loading...">
-          <div className="empty-state"><p>Loading your procedures...</p></div>
-        </SectionCard>
-      </div>
-    );
-  }
-
   return (
     <div className="pocket-view">
-      <SectionCard
-        eyebrow="Standards"
-        title="My standards"
-        description="What good looks like. Tap any item to see the steps."
-      >
-        {standards.length === 0 ? (
-          <div className="empty-state">
-            <p>No standards loaded yet. Your manager will set these up.</p>
-          </div>
+      <SurfaceHeader title="Standards" subtitle="What good looks like. Tap to see steps." />
+      <PrimaryCanvas>
+        {loading ? (
+          <LoadingState variant="list" />
+        ) : standards.length === 0 ? (
+          <EmptyState title="No standards loaded" description="Your manager will set these up." />
         ) : (
           <div className="pocket-task-list">
             {standards.map((item, i) => (
@@ -40,49 +30,48 @@ export function MyStandards({ standards, loading }: MyStandardsProps) {
                 onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
                 style={{ cursor: "pointer" }}
               >
-                <div className="pocket-task-header">
-                  <span className="pocket-task-title">{item.title}</span>
-                  <span style={{ color: "var(--text-muted)", fontSize: "0.8rem" }}>
-                    {expandedIndex === i ? "−" : "+"}
-                  </span>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <span style={{ fontWeight: 500 }}>{item.title}</span>
+                  <span style={{ color: "var(--color-text-muted)", fontSize: "var(--text-small)" }}>{expandedIndex === i ? "−" : "+"}</span>
                 </div>
 
-                {expandedIndex === i ? (
+                {expandedIndex === i && (
                   <div style={{ marginTop: "var(--spacing-sm)" }}>
-                    <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", lineHeight: 1.5, marginBottom: "var(--spacing-sm)" }}>
-                      {item.rationale}
-                    </p>
+                    {item.rationale && (
+                      <p style={{ color: "var(--color-text-secondary)", fontSize: "var(--text-small)", lineHeight: "var(--lh-normal)", marginBottom: "var(--spacing-sm)" }}>
+                        {item.rationale}
+                      </p>
+                    )}
 
-                    {item.sub_actions.length > 0 ? (
+                    {item.sub_actions.length > 0 && (
                       <div style={{ marginBottom: "var(--spacing-sm)" }}>
-                        <p style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--text-muted)", marginBottom: "var(--spacing-xs)" }}>Steps</p>
+                        <p style={{ fontSize: 10, fontWeight: 600, color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "var(--spacing-xs)" }}>Steps</p>
                         {item.sub_actions.map((sa, j) => (
-                          <div key={j} style={{ display: "flex", alignItems: "center", gap: "var(--spacing-xs)", padding: "var(--spacing-xs) 0", fontSize: "0.875rem" }}>
-                            <span style={{ color: "var(--text-muted)" }}>{j + 1}.</span>
+                          <div key={j} style={{ display: "flex", gap: "var(--spacing-xs)", padding: "2px 0", fontSize: "var(--text-small)" }}>
+                            <span style={{ color: "var(--color-text-muted)", width: 16, flexShrink: 0 }}>{j + 1}.</span>
                             <span>{sa.label}</span>
                           </div>
                         ))}
                       </div>
-                    ) : null}
+                    )}
 
-                    {item.deliverables.length > 0 ? (
+                    {item.deliverables.length > 0 && (
                       <div>
-                        <p style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--text-muted)", marginBottom: "var(--spacing-xs)" }}>Deliverables</p>
+                        <p style={{ fontSize: 10, fontWeight: 600, color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "var(--spacing-xs)" }}>What to do if wrong</p>
                         {item.deliverables.map((d, j) => (
-                          <div key={j} style={{ display: "flex", alignItems: "center", gap: "var(--spacing-xs)", padding: "var(--spacing-xs) 0", fontSize: "0.875rem" }}>
-                            <span style={{ color: "var(--text-muted)" }}>•</span>
-                            <span>{d.label}</span>
+                          <div key={j} style={{ display: "flex", gap: "var(--spacing-xs)", padding: "2px 0", fontSize: "var(--text-small)", color: "var(--color-text-secondary)" }}>
+                            <span>•</span><span>{d.label}</span>
                           </div>
                         ))}
                       </div>
-                    ) : null}
+                    )}
                   </div>
-                ) : null}
+                )}
               </div>
             ))}
           </div>
         )}
-      </SectionCard>
+      </PrimaryCanvas>
     </div>
   );
 }

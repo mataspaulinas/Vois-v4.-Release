@@ -138,8 +138,12 @@ import {
 import { firebaseConfigured } from "./lib/firebase";
 import { SectionCard } from "./components/SectionCard";
 import { CopilotDrawer } from "./features/copilot/CopilotDrawer";
+import { TourOverlay } from "./features/tours/TourOverlay";
+import { tourForRole } from "./features/tours/tourDefinitions";
+import { useTour } from "./features/tours/useTour";
 import { RoleCopilotState } from "./features/copilot/RoleCopilotState";
 import { MobileTabStrip } from "./features/shell/MobileTabStrip";
+import { NotificationBell } from "./features/shell/NotificationBell";
 import {
   buildHash,
   loadShellPreferences,
@@ -182,6 +186,7 @@ import { MyStandards } from "./features/pocket/MyStandards";
 import { AskForHelp } from "./features/pocket/AskForHelp";
 import { ReportSomething } from "./features/pocket/ReportSomething";
 import { MyLog } from "./features/pocket/MyLog";
+import { SignalIntelligenceMap } from "./features/intelligence/SignalIntelligenceMap";
 import { OwnerAdministrationView } from "./features/owner/OwnerAdministrationView";
 import { CommandCenter } from "./features/owner/CommandCenter";
 import { DelegationConsole } from "./features/owner/DelegationConsole";
@@ -263,8 +268,12 @@ export default function App() {
   const [executionSummary, setExecutionSummary] = useState<PlanExecutionSummary | null>(null);
   const [livePlan, setLivePlan] = useState<PlanRecord | null>(null);
   const [liveExecutionSummary, setLiveExecutionSummary] = useState<PlanExecutionSummary | null>(null);
-  const [activePlan, setActivePlan] = useState<PlanRecord | null>(null);
-  const [activeExecutionSummary, setActiveExecutionSummary] = useState<PlanExecutionSummary | null>(null);
+  // "viewedPlan" is the currently displayed plan — may be the live active plan,
+  // the latest generated draft, or a historical selection.  Execution mutations
+  // are gated by plan.status === "active" (enforced in PlanView and backend).
+  // Law 1: only the active plan is execution truth.
+  const [viewedPlan, setViewedPlan] = useState<PlanRecord | null>(null);
+  const [viewedExecutionSummary, setViewedExecutionSummary] = useState<PlanExecutionSummary | null>(null);
   const [selectedPlanId, setSelectedPlanId] = useState<string | null>(null);
   const [progressEntries, setProgressEntries] = useState<ProgressEntryRecord[]>([]);
   const [engineRunHistory, setEngineRunHistory] = useState<PersistedEngineRunRecord[]>([]);
@@ -359,6 +368,8 @@ export default function App() {
   }, [bootstrap, selectedVenueId]);
 
   const activeRole = authSession?.user.role ?? bootstrap?.current_user.role ?? null;
+  const roleTour = useMemo(() => tourForRole(activeRole), [activeRole]);
+  const tour = useTour(roleTour ?? { id: "none", steps: [] });
   const organizationId = bootstrap?.organization?.id ?? null;
   const ownerSetupState = bootstrap?.setup_state ?? authSession?.setup_state ?? null;
   const requiresOwnerClaim = activeRole === "owner" && Boolean(bootstrap?.requires_owner_claim ?? authSession?.requires_owner_claim);
@@ -500,12 +511,12 @@ export default function App() {
     Promise.all([
       fetchOntologyBundle(selectedOntologyVersion, selectedOntologyId),
       fetchOntologyAlignment(selectedOntologyId, selectedOntologyVersion),
-      fetchOntologyGovernance(selectedOntologyId, selectedOntologyVersion),
-      fetchOntologyAuthoringBrief(selectedOntologyId, selectedOntologyVersion),
-      fetchOntologyEvaluationPacks(selectedOntologyId),
-      fetchIntegrationConnectors(),
-      fetchIntegrationSummary(),
-      fetchIntegrationEvents({ limit: 12 }),
+      fetchOntologyGovernance(selectedOntologyId, selectedOntologyVersion).catch(() => null),
+      fetchOntologyAuthoringBrief(selectedOntologyId, selectedOntologyVersion).catch(() => null),
+      fetchOntologyEvaluationPacks(selectedOntologyId).catch(() => []),
+      fetchIntegrationConnectors().catch(() => []),
+      fetchIntegrationSummary().catch(() => null),
+      fetchIntegrationEvents({ limit: 12 }).catch(() => []),
     ])
       .then(([bundle, alignment, governance, authoringBrief, evaluationPacks, connectors, connectorSummary, connectorEvents]) => {
         setOntologyBundle(bundle);
@@ -706,7 +717,11 @@ export default function App() {
       return;
     }
 
-    const fallbackVenueId = bootstrap.venues[0]?.id ?? null;
+    // Prefer the user's assigned venue, then fall back to first available
+    const userVenueId = bootstrap.current_user.venue_id ?? null;
+    const fallbackVenueId = userVenueId
+      ? (bootstrap.venues.find((v) => v.id === userVenueId)?.id ?? bootstrap.venues[0]?.id ?? null)
+      : (bootstrap.venues[0]?.id ?? null);
 
     if (activeRole === "manager" && window.location.hash.trim() === "" && fallbackVenueId) {
       const managerRoute: ShellRoute = { topLevelView: "manager", venueId: fallbackVenueId, managerView: "today" };
@@ -834,8 +849,8 @@ export default function App() {
             ? "Venue"
             : "Portfolio";
   const scopedCopilotThreads = useMemo(
-    () => filterThreadsForScope(copilotThreads, copilotVenueContext),
-    [copilotThreads, copilotVenueContext]
+    () => filterThreadsForScope(copilotThreads, copilotVenueContext, activeRole),
+    [copilotThreads, copilotVenueContext, activeRole]
   );
   const copilotContextLabel = copilotVenueContext
     ? `${copilotRoleContext}: ${displayedVenue?.name ?? "Venue"}`
@@ -918,6 +933,12 @@ export default function App() {
               navigate({ topLevelView: "portfolio" });
             }
           },
+        },
+        {
+          key: "intelligence",
+          label: "Intelligence",
+          active: shellRoute.topLevelView === "owner" && (shellRoute as { ownerView?: string }).ownerView === "intelligence",
+          onClick: () => workspaceVenue && navigate({ topLevelView: "owner", venueId: workspaceVenue.id, ownerView: "intelligence" }),
         },
         {
           key: "reference",
@@ -1023,8 +1044,8 @@ export default function App() {
         setExecutionSummary(latestSummary);
         setLivePlan(live);
         setLiveExecutionSummary(liveSummary);
-        setActivePlan(live);
-        setActiveExecutionSummary(liveSummary);
+        setViewedPlan(live);
+        setViewedExecutionSummary(liveSummary);
         setSelectedPlanId(live?.id ?? null);
         setProgressEntries(progress);
       })
@@ -1062,28 +1083,28 @@ export default function App() {
 
   useEffect(() => {
     if (!selectedPlanId) {
-      setActivePlan(livePlan);
-      setActiveExecutionSummary(liveExecutionSummary);
+      setViewedPlan(livePlan);
+      setViewedExecutionSummary(liveExecutionSummary);
       return;
     }
 
     if (selectedPlanId === livePlan?.id) {
-      setActivePlan(livePlan);
-      setActiveExecutionSummary(liveExecutionSummary);
+      setViewedPlan(livePlan);
+      setViewedExecutionSummary(liveExecutionSummary);
       return;
     }
 
     if (selectedPlanId === latestPlan?.id) {
-      setActivePlan(latestPlan);
-      setActiveExecutionSummary(executionSummary);
+      setViewedPlan(latestPlan);
+      setViewedExecutionSummary(executionSummary);
       return;
     }
 
     setLoadingPlanSelection(true);
     Promise.all([fetchPlan(selectedPlanId), fetchPlanExecutionSummary(selectedPlanId)])
       .then(([plan, summary]) => {
-        setActivePlan(plan);
-        setActiveExecutionSummary(summary);
+        setViewedPlan(plan);
+        setViewedExecutionSummary(summary);
       })
       .catch((err: Error) => {
         setError(err.message);
@@ -1325,8 +1346,8 @@ export default function App() {
     setLivePlan(live);
     setLiveExecutionSummary(liveSummary);
     if (!selectedPlanId || selectedPlanId === latest?.id || selectedPlanId === live?.id) {
-      setActivePlan(live);
-      setActiveExecutionSummary(liveSummary);
+      setViewedPlan(live);
+      setViewedExecutionSummary(liveSummary);
       setSelectedPlanId(live?.id ?? null);
     }
     setProgressEntries(progress);
@@ -1334,26 +1355,26 @@ export default function App() {
 
   async function refreshSelectedPlanWorkspace() {
     if (!selectedPlanId) {
-      setActivePlan(livePlan);
-      setActiveExecutionSummary(liveExecutionSummary);
+      setViewedPlan(livePlan);
+      setViewedExecutionSummary(liveExecutionSummary);
       return;
     }
 
     if (selectedPlanId === livePlan?.id) {
-      setActivePlan(livePlan);
-      setActiveExecutionSummary(liveExecutionSummary);
+      setViewedPlan(livePlan);
+      setViewedExecutionSummary(liveExecutionSummary);
       return;
     }
 
     if (selectedPlanId === latestPlan?.id) {
-      setActivePlan(latestPlan);
-      setActiveExecutionSummary(executionSummary);
+      setViewedPlan(latestPlan);
+      setViewedExecutionSummary(executionSummary);
       return;
     }
 
     const [plan, summary] = await Promise.all([fetchPlan(selectedPlanId), fetchPlanExecutionSummary(selectedPlanId)]);
-    setActivePlan(plan);
-    setActiveExecutionSummary(summary);
+    setViewedPlan(plan);
+    setViewedExecutionSummary(summary);
   }
 
   async function refreshEngineRunHistory(preferredRunId?: string | null) {
@@ -2062,12 +2083,12 @@ export default function App() {
     setOwnLoading(true);
     try {
       const [attention, profiles, overload, risk, velocity, delegations] = await Promise.all([
-        fetchAttentionItems(),
-        fetchTeamProfiles(venueId),
-        fetchOverloadMap(venueId),
+        fetchAttentionItems().catch(() => []),
+        fetchTeamProfiles(venueId).catch(() => []),
+        fetchOverloadMap(venueId).catch(() => []),
         fetchFlightRisk(venueId).catch(() => [] as FlightRiskEntry[]),
-        fetchExecutionVelocity(venueId),
-        fetchDelegations(venueId),
+        fetchExecutionVelocity(venueId).catch(() => ({ venue_id: venueId, has_plan: false, total_tasks: 0, completed_tasks: 0, in_progress_tasks: 0, blocked_tasks: 0, completion_percentage: 0, velocity_label: "unknown" })),
+        fetchDelegations(venueId).catch(() => []),
       ]);
       setOwnAttentionItems(attention);
       setOwnTeamProfiles(profiles);
@@ -2467,7 +2488,7 @@ export default function App() {
   if (requiresOwnerClaim && bootstrap) {
     return (
       <div className="ois-shell">
-        {error ? <div className="toast error">{error}</div> : null}
+        {error ? <div className="toast error">{error}<button className="toast-dismiss" onClick={() => setError(null)} aria-label="Dismiss">x</button></div> : null}
         <OwnerSetupView
           ownerName={authSession?.user.full_name ?? bootstrap.current_user.full_name}
           ownerEmail={authSession?.user.email ?? bootstrap.current_user.email}
@@ -2485,7 +2506,7 @@ export default function App() {
   if (ownerNeedsVenueOnboarding && bootstrap && organizationId) {
     return (
       <div className="ois-shell">
-        {error ? <div className="toast error">{error}</div> : null}
+        {error ? <div className="toast error">{error}<button className="toast-dismiss" onClick={() => setError(null)} aria-label="Dismiss">x</button></div> : null}
         <RoleWorkspaceFrame
           roleLabel="Owner workspace"
           title={bootstrap.organization?.name ?? "Owner workspace"}
@@ -2523,7 +2544,7 @@ export default function App() {
   if (!userHasVenueAccess && (activeRole === "manager" || activeRole === "barista")) {
     return (
       <div className="ois-shell">
-        {error ? <div className="toast error">{error}</div> : null}
+        {error ? <div className="toast error">{error}<button className="toast-dismiss" onClick={() => setError(null)} aria-label="Dismiss">x</button></div> : null}
         <RoleWorkspaceFrame
           roleLabel={activeRole === "manager" ? "Manager workspace" : "Pocket workspace"}
           title="Access pending"
@@ -2570,7 +2591,7 @@ export default function App() {
         onEnterKnowledgeBase={() => dismissWelcome({ topLevelView: "kb" })}
       />
 
-      {error ? <div className="toast error">{error}</div> : null}
+      {error ? <div className="toast error">{error}<button className="toast-dismiss" onClick={() => setError(null)} aria-label="Dismiss">x</button></div> : null}
 
       {bootstrap ? (
         <>
@@ -2594,6 +2615,8 @@ export default function App() {
               onSelectSkin={(skin) => setPreferences((current) => ({ ...current, skin: skin as SkinId }))}
               onToggleCopilot={() => setCopilotOpen((current) => !current)}
               copilotOpen={copilotOpen}
+              formatTimestamp={formatTimestamp}
+              onNavigateToVenue={(venueId) => navigate({ topLevelView: "venue", venueId, venueView: "overview" })}
             />
           ) : isDeveloperRole ? (
             <button className="developer-chrome-toggle" onClick={() => setDeveloperChromeHidden(false)}>
@@ -2687,6 +2710,7 @@ export default function App() {
                       </label>
                     ) : null}
                     <div className="role-workspace-actions">
+                      <NotificationBell formatTimestamp={formatTimestamp} onNavigateToVenue={(venueId) => navigate({ topLevelView: "venue", venueId, venueView: "overview" })} />
                       <button className="btn btn-secondary" onClick={() => setCopilotOpen(true)}>
                         Open VOIS
                       </button>
@@ -2833,9 +2857,9 @@ export default function App() {
                     {shellRoute.venueView === "plan" ? (
                       <PlanView
                         loadingExecution={loadingExecution || loadingPlanSelection}
-                        plan={activePlan}
-                        executionSummary={activeExecutionSummary}
-                        isHistoricalSelection={Boolean(activePlan && livePlan && activePlan.id !== livePlan.id)}
+                        plan={viewedPlan}
+                        executionSummary={viewedExecutionSummary}
+                        isHistoricalSelection={Boolean(viewedPlan && livePlan && viewedPlan.id !== livePlan.id)}
                         progressEntries={progressEntries}
                         progressSummary={progressSummary}
                         progressDetail={progressDetail}
@@ -2870,7 +2894,7 @@ export default function App() {
                         formatTimestamp={formatTimestamp}
                         onOpenAssessment={() => handleSelectVenueView("assessment")}
                         onOpenPlan={() => handleSelectVenueView("plan")}
-                        linkedPlanTitle={activePlan?.title ?? null}
+                        linkedPlanTitle={viewedPlan?.title ?? null}
                       />
                     ) : null}
 
@@ -2961,6 +2985,8 @@ export default function App() {
                     loadingBackupReadiness={loadingBackupReadiness}
                     loadingDeleteReadiness={loadingDeleteReadiness}
                     exportingOrganization={exportingOrganization}
+                    ontologyBundle={ontologyBundle}
+                    venueBindings={venueOntologyBindings}
                     loginEmail={loginEmail}
                     loginPassword={loginPassword}
                     loginBusy={loggingIn}
@@ -3027,6 +3053,8 @@ export default function App() {
                         onOpenTask={(taskId) => { setMgrSelectedTaskId(taskId); handleSelectManagerView("workspace"); }}
                         onOpenFollowUp={() => handleSelectManagerView("workspace")}
                         onOpenEscalation={() => handleSelectManagerView("escalations")}
+                        onOpenPlan={() => handleSelectManagerView("plan")}
+                        onOpenWorkspace={(taskId) => { setMgrSelectedTaskId(taskId); handleSelectManagerView("workspace"); }}
                       />
                     ) : null}
 
@@ -3250,6 +3278,17 @@ export default function App() {
                       />
                     ) : null}
 
+                    {(shellRoute as { ownerView: string }).ownerView === "intelligence" ? (
+                      <SignalIntelligenceMap
+                        bundle={ontologyBundle}
+                        venuePulses={portfolioSummary?.venue_pulses ?? []}
+                        assessmentHistory={assessmentHistory}
+                        loading={loadingOntology || loadingHistory}
+                        venueId={workspaceVenue?.id ?? null}
+                        onOpenVenue={(venueId) => navigate({ topLevelView: "venue", venueId, venueView: "overview" })}
+                      />
+                    ) : null}
+
                     {!selectedOntologyIssue && (shellRoute as { ownerView: string }).ownerView === "copilot" ? (
                       <RoleCopilotState
                         roleLabel="Owner"
@@ -3290,6 +3329,16 @@ export default function App() {
             onApplySignalSuggestion={handleApplySignalSuggestion}
             onDismissSignalSuggestion={handleDismissSignalSuggestion}
           />
+          {tour.active && roleTour ? (
+            <TourOverlay
+              step={tour.currentStep}
+              stepIndex={tour.stepIndex}
+              totalSteps={tour.totalSteps}
+              isLast={tour.isLast}
+              onNext={tour.next}
+              onDismiss={tour.dismiss}
+            />
+          ) : null}
         </>
       ) : null}
     </div>
@@ -3393,7 +3442,20 @@ function formatTimestamp(isoTimestamp: string) {
   }).format(new Date(isoTimestamp));
 }
 
-function filterThreadsForScope(threads: CopilotThreadSummary[], activeVenueId: string | null) {
+function filterThreadsForScope(threads: CopilotThreadSummary[], activeVenueId: string | null, role: string | null = null) {
+  // Baristas only see help_request threads (their own support conversations)
+  if (role === "barista") {
+    return threads.filter((thread) => thread.scope === "help_request");
+  }
+
+  // Managers see venue threads + help requests for their venue, not global
+  if (role === "manager" && activeVenueId) {
+    return threads.filter((thread) =>
+      thread.venue_id === activeVenueId || thread.scope === "help_request"
+    );
+  }
+
+  // Owners see everything
   if (activeVenueId) {
     return threads;
   }

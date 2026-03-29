@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, status
+from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
 from app.api.deps.auth import get_current_user, require_plan_access, require_roles, require_venue_access
@@ -28,6 +29,7 @@ from app.services.plans import (
     update_plan as update_plan_service,
     update_task,
     update_task_status,
+    create_task_from_block,
 )
 from app.services.auth import AuthenticatedActor
 
@@ -134,6 +136,12 @@ def update_plan_task(
         kwargs["sub_action_completions"] = payload.sub_action_completions
     if payload.deliverable_completions is not None:
         kwargs["deliverable_completions"] = payload.deliverable_completions
+    if payload.assigned_to is not None:
+        kwargs["assigned_to"] = payload.assigned_to
+    if payload.priority is not None:
+        kwargs["priority"] = payload.priority
+    if payload.due_at is not None:
+        kwargs["due_at"] = payload.due_at
 
     try:
         task = update_task(db, task_id, **kwargs)
@@ -222,3 +230,35 @@ def post_task_comment(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(exc)) from exc
     except DraftPlanMutationError as exc:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=str(exc)) from exc
+
+
+class AddBlockRequest(BaseModel):
+    block_id: str
+    title: str
+    effort_hours: float = 4.0
+    assigned_to: str | None = None
+
+
+@router.post("/{plan_id}/add-block", response_model=PlanTaskRead)
+def add_block_to_plan(
+    plan_id: str,
+    payload: AddBlockRequest,
+    db: Session = Depends(get_db),
+    current_user: AuthenticatedActor = Depends(
+        require_roles(AuthRole.OWNER, AuthRole.MANAGER)
+    ),
+) -> PlanTaskRead:
+    try:
+        task = create_task_from_block(
+            db, plan_id,
+            block_id=payload.block_id,
+            title=payload.title,
+            effort_hours=payload.effort_hours,
+            assigned_to=payload.assigned_to,
+            actor_user_id=current_user.id,
+        )
+    except LookupError as exc:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(exc)) from exc
+    except (DraftPlanMutationError, ValueError) as exc:
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=str(exc)) from exc
+    return _serialize_task(task)

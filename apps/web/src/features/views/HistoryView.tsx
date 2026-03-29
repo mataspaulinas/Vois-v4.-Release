@@ -1,4 +1,6 @@
 import { SectionCard } from "../../components/SectionCard";
+import { SurfaceHeader } from "../../components/SurfaceHeader";
+import { PrimaryCanvas } from "../../components/PrimaryCanvas";
 import { AssessmentHistoryItem } from "../../lib/api";
 import { HistoryComparison } from "./historyInsights";
 
@@ -30,6 +32,16 @@ export function HistoryView({
   const latestAssessment = assessments[0] ?? null;
 
   return (
+    <div className="view-stack">
+    <SurfaceHeader
+      title="Assessment timeline"
+      subtitle={`${assessments.length} assessment${assessments.length !== 1 ? "s" : ""} recorded`}
+      moreActions={[
+        { label: "New assessment", onClick: onOpenAssessment },
+        { label: "Open plan", onClick: onOpenPlan },
+      ]}
+    />
+    <PrimaryCanvas>
     <SectionCard
       eyebrow="History"
       title="Assessment timeline"
@@ -175,5 +187,7 @@ export function HistoryView({
         </div>
       )}
     </SectionCard>
+    </PrimaryCanvas>
+    </div>
   );
 }

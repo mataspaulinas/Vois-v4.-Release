@@ -79,6 +79,7 @@ def bootstrap_data(
             full_name=current_user.full_name,
             email=current_user.email,
             role=current_user.role.value,
+            venue_id=current_user.user.venue_id if hasattr(current_user, "user") else None,
         ),
         setup_state=setup_state,
         requires_owner_claim=setup_state.requires_owner_claim,
