@@ -1,7 +1,6 @@
 import { FormEvent, useMemo, useState } from "react";
 
 import { OntologyMountSummary, OwnerClaimPayload } from "../../lib/api";
-import { SectionCard } from "../../components/SectionCard";
 
 type OwnerSetupViewProps = {
   ownerName: string;
@@ -13,6 +12,14 @@ type OwnerSetupViewProps = {
   onClaim: (payload: OwnerClaimPayload) => Promise<void> | void;
   onLogout: () => void;
 };
+
+/* ---- Shared inline-style fragments ---- */
+const labelSpan: React.CSSProperties = { display: "block", fontSize: 13, fontWeight: 500, color: "#0A0A0A", marginBottom: 4 };
+const inputStyle: React.CSSProperties = {
+  width: "100%", height: 44, borderRadius: 12, border: "1.5px solid #E5E5E5",
+  padding: "0 14px", fontSize: 15, color: "#0A0A0A", outline: "none", boxSizing: "border-box",
+};
+const selectStyle: React.CSSProperties = { ...inputStyle, appearance: "auto" as const };
 
 export function OwnerSetupView({
   ownerName,
@@ -66,104 +73,146 @@ export function OwnerSetupView({
   }
 
   return (
-    <div className="setup-shell">
-      <div className="setup-hero">
-        <p className="hero-badge">Owner setup</p>
-        <h1>Claim your workspace</h1>
-        <p className="hero-copy">
+    <div style={{ display: "flex", flexDirection: "column", gap: 32, padding: "48px", maxWidth: 720, margin: "0 auto" }}>
+      {/* ---- Hero header ---- */}
+      <div style={{ textAlign: "center" as const }}>
+        <div style={{
+          display: "inline-block", padding: "4px 14px", borderRadius: 999,
+          background: "#6C5CE7", color: "#FFFFFF",
+          fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em",
+          marginBottom: 12,
+        }}>
+          SETUP
+        </div>
+        <h1 style={{ fontSize: 28, fontWeight: 700, color: "#0A0A0A", margin: "0 0 8px" }}>
+          Claim your workspace
+        </h1>
+        <p style={{ fontSize: 15, color: "#737373", margin: 0, lineHeight: 1.5 }}>
           {ownerName} ({ownerEmail}) is authenticated, but VOIS has not been claimed yet. Create the organization for
           this workspace and optionally attach the first venue now.
         </p>
-        {statusMessage ? <p className="history-note">{statusMessage}</p> : null}
+        {statusMessage ? (
+          <p style={{ fontSize: 13, color: "#A3A3A3", marginTop: 8 }}>{statusMessage}</p>
+        ) : null}
       </div>
 
-      <SectionCard
-        eyebrow="Setup"
-        title="Create the first real workspace"
-        description="This replaces the old seeded demo boot. VOIS stays empty until an owner claims it."
-        actions={
-          <button className="btn btn-secondary" onClick={onLogout} disabled={submitting}>
+      {/* ---- Main form card ---- */}
+      <div style={{
+        background: "#FFFFFF", borderRadius: 12, padding: "24px 28px",
+        boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+      }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
+          <div>
+            <div style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A3A3A3", marginBottom: 4 }}>
+              SETUP
+            </div>
+            <h2 style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", margin: "0 0 4px" }}>
+              Create the first real workspace
+            </h2>
+            <p style={{ fontSize: 13, color: "#737373", margin: 0 }}>
+              This replaces the old seeded demo boot. VOIS stays empty until an owner claims it.
+            </p>
+          </div>
+          <button
+            style={{
+              background: "#FFFFFF", color: "#0A0A0A", border: "1.5px solid #E5E5E5", borderRadius: 8,
+              padding: "8px 18px", fontSize: 13, fontWeight: 600, cursor: "pointer",
+              opacity: submitting ? 0.5 : 1, flexShrink: 0,
+            }}
+            onClick={onLogout}
+            disabled={submitting}
+          >
             Sign out
           </button>
-        }
-      >
-        <form className="setup-form-grid" onSubmit={handleSubmit}>
-          <label className="auth-field">
-            <span>Organization name</span>
+        </div>
+
+        <form onSubmit={handleSubmit} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+          <label>
+            <span style={labelSpan}>Organization name</span>
             <input
+              style={inputStyle}
               value={organizationName}
-              onChange={(event) => setOrganizationName(event.target.value)}
+              onChange={(e) => setOrganizationName(e.target.value)}
               placeholder="Your operating group"
               required
+              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
             />
           </label>
-
-          <label className="auth-field">
-            <span>Organization slug</span>
+          <label>
+            <span style={labelSpan}>Organization slug</span>
             <input
+              style={inputStyle}
               value={organizationSlug}
-              onChange={(event) => setOrganizationSlug(event.target.value)}
+              onChange={(e) => setOrganizationSlug(e.target.value)}
               placeholder="your-operating-group"
               required
+              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+            />
+          </label>
+          <label>
+            <span style={labelSpan}>Region</span>
+            <input style={inputStyle} value={region} onChange={(e) => setRegion(e.target.value)}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+            />
+          </label>
+          <label>
+            <span style={labelSpan}>Data residency</span>
+            <input style={inputStyle} value={dataResidency} onChange={(e) => setDataResidency(e.target.value)}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
             />
           </label>
 
-          <label className="auth-field">
-            <span>Region</span>
-            <input value={region} onChange={(event) => setRegion(event.target.value)} />
-          </label>
-
-          <label className="auth-field">
-            <span>Data residency</span>
-            <input value={dataResidency} onChange={(event) => setDataResidency(event.target.value)} />
-          </label>
-
-          <div className="setup-divider">
-            <p className="section-eyebrow">Optional first venue</p>
-            <p className="section-description">
+          {/* ---- Divider ---- */}
+          <div style={{ gridColumn: "1 / -1", padding: "12px 0 4px" }}>
+            <div style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A3A3A3", marginBottom: 4 }}>
+              Optional first venue
+            </div>
+            <p style={{ fontSize: 13, color: "#737373", margin: 0 }}>
               You can claim the organization first and add venues later, or create the first venue right now.
             </p>
           </div>
 
-          <label className="auth-field">
-            <span>Venue name</span>
-            <input
-              value={venueName}
-              onChange={(event) => setVenueName(event.target.value)}
-              placeholder="First venue"
+          <label>
+            <span style={labelSpan}>Venue name</span>
+            <input style={inputStyle} value={venueName} onChange={(e) => setVenueName(e.target.value)} placeholder="First venue"
+              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+            />
+          </label>
+          <label>
+            <span style={labelSpan}>Venue slug</span>
+            <input style={inputStyle} value={venueSlug} onChange={(e) => setVenueSlug(e.target.value)} placeholder="first-venue"
+              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+            />
+          </label>
+          <label>
+            <span style={labelSpan}>Concept</span>
+            <input style={inputStyle} value={venueConcept} onChange={(e) => setVenueConcept(e.target.value)} placeholder="Concept or service model"
+              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+            />
+          </label>
+          <label>
+            <span style={labelSpan}>Location</span>
+            <input style={inputStyle} value={venueLocation} onChange={(e) => setVenueLocation(e.target.value)} placeholder="City / site"
+              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
             />
           </label>
 
-          <label className="auth-field">
-            <span>Venue slug</span>
-            <input
-              value={venueSlug}
-              onChange={(event) => setVenueSlug(event.target.value)}
-              placeholder="first-venue"
-            />
-          </label>
-
-          <label className="auth-field">
-            <span>Concept</span>
-            <input
-              value={venueConcept}
-              onChange={(event) => setVenueConcept(event.target.value)}
-              placeholder="Concept or service model"
-            />
-          </label>
-
-          <label className="auth-field">
-            <span>Location</span>
-            <input
-              value={venueLocation}
-              onChange={(event) => setVenueLocation(event.target.value)}
-              placeholder="City / site"
-            />
-          </label>
-
-          <label className="auth-field auth-field-span-2">
-            <span>Ontology pack</span>
-            <select value={selectedMount} onChange={(event) => setSelectedMount(event.target.value)} disabled={!availableMounts.length}>
+          <label style={{ gridColumn: "1 / -1" }}>
+            <span style={labelSpan}>Ontology pack</span>
+            <select
+              style={selectStyle}
+              value={selectedMount}
+              onChange={(e) => setSelectedMount(e.target.value)}
+              disabled={!availableMounts.length}
+            >
               {availableMounts.length ? (
                 availableMounts.map((mount) => (
                   <option key={`${mount.ontology_id}@${mount.version}`} value={`${mount.ontology_id}@${mount.version}`}>
@@ -176,12 +225,24 @@ export function OwnerSetupView({
             </select>
           </label>
 
-          {error ? <p className="setup-inline-error">{error}</p> : null}
+          {error ? (
+            <p style={{ gridColumn: "1 / -1", fontSize: 13, color: "#EF4444", margin: 0 }}>{error}</p>
+          ) : null}
 
-          <div className="auth-actions">
+          <div style={{ gridColumn: "1 / -1", marginTop: 8 }}>
             <button
               type="submit"
-              className="btn btn-primary"
+              style={{
+                background: "#6C5CE7", color: "#FFFFFF", border: "none", borderRadius: 8,
+                padding: "10px 24px", fontSize: 15, fontWeight: 600, cursor: "pointer",
+                opacity:
+                  submitting ||
+                  !organizationName.trim() ||
+                  !organizationSlug.trim() ||
+                  (!!venueName.trim() && (!venueSlug.trim() || !selectedMount))
+                    ? 0.5
+                    : 1,
+              }}
               disabled={
                 submitting ||
                 !organizationName.trim() ||
@@ -193,7 +254,7 @@ export function OwnerSetupView({
             </button>
           </div>
         </form>
-      </SectionCard>
+      </div>
     </div>
   );
 }

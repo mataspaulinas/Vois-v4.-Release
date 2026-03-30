@@ -16,11 +16,11 @@ type SignalHeatmapGridProps = {
 type HeatmapCell = { signalId: string; venueId: string; count: number; maxCount: number };
 
 const SEVERITY_COLORS = [
-  "var(--color-success)",      // 0-20% frequency
-  "#65a30d",                   // 20-40%
-  "var(--color-warning)",      // 40-60%
-  "#ea580c",                   // 60-80%
-  "var(--color-danger)",       // 80-100%
+  "#10B981",   // 0-20% frequency (success)
+  "#65a30d",   // 20-40%
+  "#F59E0B",   // 40-60% (warning)
+  "#ea580c",   // 60-80%
+  "#EF4444",   // 80-100% (danger)
 ];
 
 function intensityColor(ratio: number): string {
@@ -79,7 +79,16 @@ export function SignalHeatmapGrid({ assessments, venuePulses, onSelectSignal }: 
   }, [venuePulses]);
 
   if (!signals.length || !venues.length) {
-    return <p style={{ color: "var(--color-text-muted)", textAlign: "center", padding: "var(--spacing-xl)" }}>Not enough assessment data for heatmap. Run assessments across multiple venues.</p>;
+    return (
+      <p style={{
+        color: "#999",
+        textAlign: "center",
+        padding: "32px 16px",
+        fontSize: 13,
+      }}>
+        Not enough assessment data for heatmap. Run assessments across multiple venues.
+      </p>
+    );
   }
 
   const cellSize = 28;
@@ -89,8 +98,18 @@ export function SignalHeatmapGrid({ assessments, venuePulses, onSelectSignal }: 
   const svgHeight = headerHeight + signals.length * cellSize + 10;
 
   return (
-    <div style={{ overflowX: "auto" }}>
-      <svg width={svgWidth} height={svgHeight} style={{ fontFamily: "var(--font-sans)", fontSize: 11 }}>
+    <div style={{
+      overflowX: "auto",
+      borderRadius: 12,
+      background: "#FFFFFF",
+      padding: "16px",
+      boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+    }}>
+      <svg
+        width={svgWidth}
+        height={svgHeight}
+        style={{ fontFamily: "inherit", fontSize: 11 }}
+      >
         {/* Column headers (venue names, rotated) */}
         {venues.map((venueId, col) => (
           <text
@@ -99,7 +118,7 @@ export function SignalHeatmapGrid({ assessments, venuePulses, onSelectSignal }: 
             y={headerHeight - 6}
             textAnchor="end"
             transform={`rotate(-45, ${labelWidth + col * cellSize + cellSize / 2}, ${headerHeight - 6})`}
-            fill="var(--color-text-secondary)"
+            fill="#777"
             style={{ fontSize: 10 }}
           >
             {(venueNames.get(venueId) ?? venueId).slice(0, 16)}
@@ -114,7 +133,7 @@ export function SignalHeatmapGrid({ assessments, venuePulses, onSelectSignal }: 
               x={labelWidth - 8}
               y={headerHeight + row * cellSize + cellSize / 2 + 4}
               textAnchor="end"
-              fill="var(--color-text-secondary)"
+              fill="#777"
               style={{ fontSize: 10, cursor: "pointer" }}
               onClick={() => onSelectSignal(sigId)}
             >
@@ -132,10 +151,10 @@ export function SignalHeatmapGrid({ assessments, venuePulses, onSelectSignal }: 
                   y={headerHeight + row * cellSize + 1}
                   width={cellSize - 2}
                   height={cellSize - 2}
-                  rx={3}
-                  fill={ratio > 0 ? intensityColor(ratio) : "var(--color-bg-muted)"}
-                  opacity={ratio > 0 ? 0.3 + ratio * 0.7 : 0.15}
-                  style={{ cursor: "pointer", transition: "opacity var(--motion-fast)" }}
+                  rx={4}
+                  fill={ratio > 0 ? intensityColor(ratio) : "#F5F5F5"}
+                  opacity={ratio > 0 ? 0.3 + ratio * 0.7 : 0.25}
+                  style={{ cursor: "pointer", transition: "opacity 180ms ease" }}
                   onClick={() => onSelectSignal(sigId)}
                 >
                   <title>{`${sigId} at ${venueNames.get(venueId) ?? venueId}: ${cell?.count ?? 0} occurrences`}</title>

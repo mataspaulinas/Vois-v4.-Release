@@ -66,38 +66,139 @@ export function Glossary() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search terms..."
-          style={{ background: "var(--surface-2, #f5f5f5)", border: "1px solid var(--border, #e0e0e0)", borderRadius: "var(--radius-sm, 4px)", padding: "4px 12px", fontSize: "var(--text-sm, 14px)", width: 200 }}
+          style={{
+            height: 44,
+            padding: "0 var(--spacing-16)",
+            fontSize: "var(--text-body, 15px)",
+            fontFamily: "var(--font-sans)",
+            color: "var(--color-text-primary, #0A0A0A)",
+            background: "var(--color-bg-muted, #F5F5F5)",
+            border: "1px solid var(--color-border-subtle, #E5E5E5)",
+            borderRadius: "var(--radius-md, 12px)",
+            outline: "none",
+            width: 220,
+            boxSizing: "border-box" as const,
+          }}
         />
       }
     >
-      <div style={{ display: "flex", gap: "var(--space-2, 8px)", marginBottom: "var(--space-4, 16px)", flexWrap: "wrap" }}>
-        <button className={`status-pill ${categoryFilter === "all" ? "active" : ""}`} onClick={() => setCategoryFilter("all")}>
+      {/* Category filter pills */}
+      <div
+        style={{
+          display: "flex",
+          gap: "var(--spacing-8)",
+          marginBottom: "var(--spacing-16)",
+          flexWrap: "wrap",
+        }}
+      >
+        <button
+          onClick={() => setCategoryFilter("all")}
+          style={{
+            fontSize: "var(--text-small, 13px)",
+            fontWeight: categoryFilter === "all" ? "var(--weight-semibold, 600)" as any : "var(--weight-regular, 400)" as any,
+            color: categoryFilter === "all" ? "var(--color-accent, #6C5CE7)" : "var(--color-text-secondary, #525252)",
+            background: categoryFilter === "all" ? "var(--color-accent-soft, rgba(108,92,231,0.08))" : "transparent",
+            border: `1px solid ${categoryFilter === "all" ? "var(--color-accent, #6C5CE7)" : "var(--color-border-subtle, #E5E5E5)"}`,
+            borderRadius: "var(--radius-full, 9999px)",
+            padding: "6px 14px",
+            cursor: "pointer",
+            transition: "all var(--motion-fast) var(--easing-standard)",
+          }}
+        >
           All ({GLOSSARY_TERMS.length})
         </button>
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            className={`status-pill ${categoryFilter === cat ? "active" : ""}`}
-            onClick={() => setCategoryFilter(cat)}
-          >
-            {CATEGORY_LABELS[cat] ?? cat} ({GLOSSARY_TERMS.filter((t) => t.category === cat).length})
-          </button>
-        ))}
+        {categories.map((cat) => {
+          const isActive = categoryFilter === cat;
+          return (
+            <button
+              key={cat}
+              onClick={() => setCategoryFilter(cat)}
+              style={{
+                fontSize: "var(--text-small, 13px)",
+                fontWeight: isActive ? "var(--weight-semibold, 600)" as any : "var(--weight-regular, 400)" as any,
+                color: isActive ? "var(--color-accent, #6C5CE7)" : "var(--color-text-secondary, #525252)",
+                background: isActive ? "var(--color-accent-soft, rgba(108,92,231,0.08))" : "transparent",
+                border: `1px solid ${isActive ? "var(--color-accent, #6C5CE7)" : "var(--color-border-subtle, #E5E5E5)"}`,
+                borderRadius: "var(--radius-full, 9999px)",
+                padding: "6px 14px",
+                cursor: "pointer",
+                transition: "all var(--motion-fast) var(--easing-standard)",
+              }}
+            >
+              {CATEGORY_LABELS[cat] ?? cat} ({GLOSSARY_TERMS.filter((t) => t.category === cat).length})
+            </button>
+          );
+        })}
       </div>
 
-      <div className="thread-list">
+      {/* Term list */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "var(--spacing-8)" }}>
         {filtered.map((item) => (
-          <div className="history-card" key={item.term}>
-            <div className="thread-row">
-              <strong>{item.term}</strong>
-              <em style={{ textTransform: "capitalize" }}>{CATEGORY_LABELS[item.category] ?? item.category}</em>
+          <div
+            key={item.term}
+            style={{
+              padding: "var(--spacing-16) var(--spacing-20)",
+              background: "var(--color-surface, #FFFFFF)",
+              borderRadius: "var(--radius-md, 12px)",
+              border: "1px solid var(--color-border-subtle, #E5E5E5)",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginBottom: "var(--spacing-4)",
+              }}
+            >
+              <strong
+                style={{
+                  fontSize: "var(--text-body, 15px)",
+                  fontWeight: "var(--weight-semibold, 600)",
+                  color: "var(--color-text-primary, #0A0A0A)",
+                }}
+              >
+                {item.term}
+              </strong>
+              <span
+                style={{
+                  fontSize: "var(--text-eyebrow, 11px)",
+                  fontWeight: "var(--weight-medium, 500)",
+                  textTransform: "uppercase" as const,
+                  letterSpacing: "0.08em",
+                  color: "var(--color-text-muted, #A3A3A3)",
+                }}
+              >
+                {CATEGORY_LABELS[item.category] ?? item.category}
+              </span>
             </div>
-            <p className="history-note">{item.definition}</p>
+            <p
+              style={{
+                fontSize: "var(--text-small, 13px)",
+                lineHeight: "var(--lh-loose, 1.6)",
+                color: "var(--color-text-secondary, #525252)",
+                margin: 0,
+              }}
+            >
+              {item.definition}
+            </p>
           </div>
         ))}
         {!filtered.length && (
-          <div className="empty-state compact">
-            <p>No terms match your search.</p>
+          <div
+            style={{
+              padding: "var(--spacing-32) var(--spacing-24)",
+              textAlign: "center",
+            }}
+          >
+            <p
+              style={{
+                fontSize: "var(--text-small, 13px)",
+                color: "var(--color-text-muted, #A3A3A3)",
+              }}
+            >
+              No terms match your search.
+            </p>
           </div>
         )}
       </div>

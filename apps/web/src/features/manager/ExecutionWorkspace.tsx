@@ -30,13 +30,44 @@ type ExecutionWorkspaceProps = {
 
 const STATUS_OPTIONS = ["not_started", "in_progress", "completed", "blocked", "on_hold", "deferred"];
 const STATUS_COLORS: Record<string, string> = {
-  not_started: "var(--color-text-muted)",
-  in_progress: "var(--color-info)",
-  completed: "var(--color-success)",
-  blocked: "var(--color-danger)",
-  on_hold: "var(--color-warning)",
-  deferred: "var(--color-text-muted)",
+  not_started: "#9CA3AF",
+  in_progress: "#6366F1",
+  completed: "#10B981",
+  blocked: "#EF4444",
+  on_hold: "#F59E0B",
+  deferred: "#9CA3AF",
 };
+
+const STATUS_BG: Record<string, string> = {
+  not_started: "#F3F4F6",
+  in_progress: "#EEF2FF",
+  completed: "#ECFDF5",
+  blocked: "#FEF2F2",
+  on_hold: "#FFFBEB",
+  deferred: "#F3F4F6",
+};
+
+function StatusPill({ status }: { status: string }) {
+  const color = STATUS_COLORS[status] ?? "#9CA3AF";
+  const bg = STATUS_BG[status] ?? "#F3F4F6";
+  return (
+    <span
+      style={{
+        display: "inline-block",
+        fontSize: 13,
+        fontWeight: 500,
+        color,
+        background: bg,
+        borderRadius: 24,
+        padding: "3px 12px",
+        lineHeight: "20px",
+        whiteSpace: "nowrap",
+      }}
+    >
+      {status.replace(/_/g, " ")}
+    </span>
+  );
+}
 
 export function ExecutionWorkspace({
   plan,
@@ -61,7 +92,7 @@ export function ExecutionWorkspace({
 
   if (!plan) {
     return (
-      <div className="view-stack">
+      <div style={{ padding: 48 }}>
         <SurfaceHeader title="Task workspace" subtitle="Select a task to begin execution." />
         <EmptyState title="No operational plan" description="Run the engine first to generate tasks." />
       </div>
@@ -69,117 +100,250 @@ export function ExecutionWorkspace({
   }
 
   return (
-    <div className="view-stack">
-      <SurfaceHeader
-        title={selectedTask ? selectedTask.title : "Task workspace"}
-        subtitle={selectedTask ? `${selectedTask.effort_hours}h · ${selectedTask.status.replace(/_/g, " ")}` : `${tasks.length} tasks in plan`}
-        status={selectedTask?.status.replace(/_/g, " ")}
-        statusTone={selectedTask?.status === "completed" ? "success" : selectedTask?.status === "blocked" ? "danger" : selectedTask?.status === "in_progress" ? "info" : "neutral"}
-        onBack={selectedTask ? () => onSelectTask(null) : onBackToToday}
-        backLabel={selectedTask ? "Back to list" : "Back to Today"}
-        moreActions={[
-          ...(onBackToPlan ? [{ label: "Back to Plan", onClick: onBackToPlan }] : []),
-          ...(onBackToToday ? [{ label: "Back to Today", onClick: onBackToToday }] : []),
-          ...(selectedTask ? [{ label: "View evidence & audit", onClick: () => setDrawerOpen(true) }] : []),
-        ]}
-      />
+    <div style={{ display: "flex", flexDirection: "column", height: "100%", background: "#F9FAFB" }}>
+      {/* ── Page header ── */}
+      <div style={{ padding: "48px 48px 0 48px" }}>
+        {/* Nav links row */}
+        <div style={{ display: "flex", gap: 16, marginBottom: 20 }}>
+          {!selectedTask && onBackToToday && (
+            <button
+              onClick={onBackToToday}
+              style={{
+                background: "white",
+                border: "1px solid #E5E7EB",
+                borderRadius: 8,
+                padding: "6px 14px",
+                fontSize: 13,
+                fontWeight: 500,
+                color: "#374151",
+                cursor: "pointer",
+              }}
+            >
+              Back to Today
+            </button>
+          )}
+          {selectedTask && (
+            <button
+              onClick={() => onSelectTask(null)}
+              style={{
+                background: "white",
+                border: "1px solid #E5E7EB",
+                borderRadius: 8,
+                padding: "6px 14px",
+                fontSize: 13,
+                fontWeight: 500,
+                color: "#374151",
+                cursor: "pointer",
+              }}
+            >
+              Back to list
+            </button>
+          )}
+          {onBackToPlan && (
+            <button
+              onClick={onBackToPlan}
+              style={{
+                background: "white",
+                border: "1px solid #E5E7EB",
+                borderRadius: 8,
+                padding: "6px 14px",
+                fontSize: 13,
+                fontWeight: 500,
+                color: "#374151",
+                cursor: "pointer",
+              }}
+            >
+              Back to Plan
+            </button>
+          )}
+        </div>
 
-      <div style={{ display: "flex", flex: 1, minHeight: 0 }}>
-        {/* Task list (left rail when no task selected, or hidden when task is selected on narrow screens) */}
+        {/* Eyebrow + title */}
+        <div style={{ marginBottom: 32 }}>
+          <div
+            style={{
+              fontSize: 11,
+              fontWeight: 600,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: "#9CA3AF",
+              marginBottom: 6,
+            }}
+          >
+            EXECUTION
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <h1 style={{ fontSize: 28, fontWeight: 700, color: "#111827", margin: 0 }}>
+              {selectedTask ? selectedTask.title : "Task workspace"}
+            </h1>
+            {selectedTask && <StatusPill status={selectedTask.status} />}
+          </div>
+          <div style={{ fontSize: 13, color: "#6B7280", marginTop: 4 }}>
+            {selectedTask
+              ? `${selectedTask.effort_hours}h effort${selectedTask.assigned_to ? ` \u00B7 ${selectedTask.assigned_to}` : ""}`
+              : `${tasks.length} tasks in plan`}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Main content ── */}
+      <div style={{ display: "flex", flex: 1, minHeight: 0, padding: "0 48px 48px 48px", gap: 24 }}>
         {!selectedTask ? (
-          <div className="primary-canvas">
+          /* ── Task list ── */
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 8 }}>
             {tasks.map((task) => (
               <div
                 key={task.id}
-                className="clickable-row"
                 onClick={() => onSelectTask(task.id)}
                 style={{
-                  padding: "var(--spacing-sm) var(--spacing-md)",
-                  borderLeft: `3px solid ${STATUS_COLORS[task.status] ?? "var(--color-text-muted)"}`,
-                  borderRadius: "var(--radius-sm)",
-                  marginBottom: "var(--spacing-xs)",
+                  background: "white",
+                  borderRadius: 12,
+                  boxShadow: "0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)",
+                  padding: "16px 20px",
                   cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: 16,
+                  borderLeft: `4px solid ${STATUS_COLORS[task.status] ?? "#9CA3AF"}`,
+                  transition: "box-shadow 0.15s ease",
                 }}
               >
-                <div style={{ fontWeight: 500, fontSize: "var(--text-body)" }}>{task.title}</div>
-                <div style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)" }}>
-                  {task.status.replace(/_/g, " ")} · {task.effort_hours}h
-                  {task.assigned_to ? ` · ${task.assigned_to}` : ""}
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: 15, fontWeight: 500, color: "#111827" }}>{task.title}</div>
+                  <div style={{ fontSize: 13, color: "#6B7280", marginTop: 2 }}>
+                    {task.effort_hours}h{task.assigned_to ? ` \u00B7 ${task.assigned_to}` : ""}
+                  </div>
                 </div>
+                <StatusPill status={task.status} />
               </div>
             ))}
           </div>
         ) : (
-          <div className="primary-canvas">
-            <TaskDetail
-              task={selectedTask}
-              followUps={taskFollowUps}
-              evidence={taskEvidence}
-              updating={updatingTaskId === selectedTask.id}
-              formatTimestamp={formatTimestamp}
-              onUpdateTask={onUpdateTask}
-            />
-            <ActionBar
-              primaryAction={{ label: "Set follow-up", onClick: () => onCreateFollowUp(selectedTask.id) }}
-              secondaryActions={[
-                { label: "Attach evidence", onClick: () => onCreateEvidence(selectedTask.id) },
-                { label: "Escalate", onClick: () => onEscalateTask(selectedTask.id) },
-              ]}
-              sticky
-            />
+          /* ── Task detail ── */
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", minHeight: 0 }}>
+            <div style={{ flex: 1, overflowY: "auto" }}>
+              <TaskDetail
+                task={selectedTask}
+                followUps={taskFollowUps}
+                evidence={taskEvidence}
+                updating={updatingTaskId === selectedTask.id}
+                formatTimestamp={formatTimestamp}
+                onUpdateTask={onUpdateTask}
+              />
+            </div>
+            <div style={{ paddingTop: 16 }}>
+              <ActionBar
+                primaryAction={{ label: "Set follow-up", onClick: () => onCreateFollowUp(selectedTask.id) }}
+                secondaryActions={[
+                  { label: "Attach evidence", onClick: () => onCreateEvidence(selectedTask.id) },
+                  { label: "Escalate", onClick: () => onEscalateTask(selectedTask.id) },
+                ]}
+                sticky
+              />
+            </div>
           </div>
         )}
 
-        {/* ─── Inspector: dependency + linked context ─── */}
+        {/* ── Inspector sidebar ── */}
         {selectedTask && (
           <ContextInspector open={true} title="Execution context" width={280}>
-            <div style={{ fontSize: "var(--text-small)" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               {selectedTask.dependencies.length > 0 && (
-                <div style={{ marginBottom: "var(--spacing-md)" }}>
-                  <h4 style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", marginBottom: "var(--spacing-xs)" }}>Dependencies</h4>
+                <div>
+                  <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#9CA3AF", marginBottom: 8 }}>
+                    Dependencies
+                  </div>
                   {selectedTask.dependencies.map((dep) => (
-                    <div key={dep} style={{ padding: "2px 0", color: "var(--color-text-muted)" }}>{dep}</div>
+                    <div key={dep} style={{ fontSize: 13, color: "#6B7280", padding: "2px 0" }}>{dep}</div>
                   ))}
                 </div>
               )}
-              <div style={{ marginBottom: "var(--spacing-md)" }}>
-                <h4 style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", marginBottom: "var(--spacing-xs)" }}>Block</h4>
-                <div>{selectedTask.block_id}</div>
+              <div>
+                <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#9CA3AF", marginBottom: 8 }}>
+                  Block
+                </div>
+                <div style={{ fontSize: 13, color: "#374151" }}>{selectedTask.block_id}</div>
               </div>
               {selectedTask.assigned_to && (
-                <div style={{ marginBottom: "var(--spacing-md)" }}>
-                  <h4 style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", marginBottom: "var(--spacing-xs)" }}>Assigned to</h4>
-                  <div>{selectedTask.assigned_to}</div>
+                <div>
+                  <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#9CA3AF", marginBottom: 8 }}>
+                    Assigned to
+                  </div>
+                  <div style={{ fontSize: 13, color: "#374151" }}>{selectedTask.assigned_to}</div>
                 </div>
               )}
-              <div style={{ marginBottom: "var(--spacing-md)" }}>
-                <h4 style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", marginBottom: "var(--spacing-xs)" }}>Evidence</h4>
-                <div>{taskEvidence.length} item{taskEvidence.length !== 1 ? "s" : ""}</div>
+              <div style={{ borderTop: "1px solid #F3F4F6", paddingTop: 16 }}>
+                <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#9CA3AF", marginBottom: 8 }}>
+                  Evidence
+                </div>
+                <div style={{ fontSize: 13, color: "#374151" }}>{taskEvidence.length} item{taskEvidence.length !== 1 ? "s" : ""}</div>
               </div>
               <div>
-                <h4 style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", marginBottom: "var(--spacing-xs)" }}>Follow-ups</h4>
-                <div>{taskFollowUps.length} active</div>
+                <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#9CA3AF", marginBottom: 8 }}>
+                  Follow-ups
+                </div>
+                <div style={{ fontSize: 13, color: "#374151" }}>{taskFollowUps.length} active</div>
               </div>
+              {/* Drawer trigger */}
+              <button
+                onClick={() => setDrawerOpen(true)}
+                style={{
+                  background: "#6C5CE7",
+                  color: "white",
+                  border: "none",
+                  borderRadius: 8,
+                  padding: "8px 16px",
+                  fontSize: 13,
+                  fontWeight: 500,
+                  cursor: "pointer",
+                  marginTop: 4,
+                }}
+              >
+                View evidence &amp; audit
+              </button>
             </div>
           </ContextInspector>
         )}
       </div>
 
-      {/* ─── Drawer: evidence + audit ─── */}
+      {/* ── Drawer: evidence + audit ── */}
       <DeepDrawer open={drawerOpen} title="Evidence and audit trail" onClose={() => setDrawerOpen(false)}>
-        <div>
+        <div style={{ padding: 4 }}>
           {taskEvidence.length > 0 ? (
-            <div style={{ marginBottom: "var(--spacing-lg)" }}>
-              <h4 style={{ marginBottom: "var(--spacing-sm)" }}>Evidence ({taskEvidence.length})</h4>
-              {taskEvidence.map((ev) => (
-                <div key={ev.id} style={{ padding: "var(--spacing-xs) var(--spacing-sm)", borderLeft: "3px solid var(--color-success)", marginBottom: "var(--spacing-xs)", borderRadius: "var(--radius-sm)" }}>
-                  <div style={{ fontWeight: 500 }}>{ev.title}</div>
-                  <div style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)" }}>{ev.evidence_type} · {formatTimestamp(ev.created_at)}</div>
-                </div>
-              ))}
+            <div>
+              <div
+                style={{
+                  fontSize: 20,
+                  fontWeight: 600,
+                  color: "#111827",
+                  marginBottom: 16,
+                }}
+              >
+                Evidence ({taskEvidence.length})
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                {taskEvidence.map((ev) => (
+                  <div
+                    key={ev.id}
+                    style={{
+                      background: "white",
+                      borderRadius: 12,
+                      boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
+                      padding: "14px 20px",
+                      borderLeft: "4px solid #10B981",
+                    }}
+                  >
+                    <div style={{ fontSize: 15, fontWeight: 500, color: "#111827" }}>{ev.title}</div>
+                    <div style={{ fontSize: 13, color: "#6B7280", marginTop: 2 }}>
+                      {ev.evidence_type} \u00B7 {formatTimestamp(ev.created_at)}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           ) : (
-            <p style={{ color: "var(--color-text-muted)" }}>No evidence attached yet.</p>
+            <p style={{ fontSize: 13, color: "#9CA3AF" }}>No evidence attached yet.</p>
           )}
         </div>
       </DeepDrawer>
@@ -187,6 +351,10 @@ export function ExecutionWorkspace({
   );
 }
 
+
+/* ═══════════════════════════════════════════
+   TaskDetail  (internal component)
+   ═══════════════════════════════════════════ */
 
 function TaskDetail({
   task,
@@ -207,119 +375,287 @@ function TaskDetail({
   const [editingNotes, setEditingNotes] = useState(false);
 
   return (
-    <div style={{ paddingBottom: "var(--spacing-xl)" }}>
-      {/* Status selector */}
-      <div style={{ marginBottom: "var(--spacing-md)" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+      {/* ── Status selector card ── */}
+      <div
+        style={{
+          background: "white",
+          borderRadius: 12,
+          boxShadow: "0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)",
+          padding: 24,
+        }}
+      >
+        <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#9CA3AF", marginBottom: 10 }}>
+          Status
+        </div>
         <select
           value={task.status}
           disabled={updating}
           onChange={(e) => onUpdateTask(task.id, { status: e.target.value })}
-          className="select-input"
+          style={{
+            width: "100%",
+            padding: "8px 12px",
+            fontSize: 15,
+            borderRadius: 8,
+            border: "1px solid #E5E7EB",
+            background: "white",
+            color: STATUS_COLORS[task.status] ?? "#374151",
+            fontWeight: 500,
+            cursor: "pointer",
+            outline: "none",
+          }}
         >
           {STATUS_OPTIONS.map((s) => (
             <option key={s} value={s}>{s.replace(/_/g, " ")}</option>
           ))}
         </select>
+
+        {/* Rationale */}
+        {task.rationale && (
+          <p style={{ fontSize: 15, color: "#6B7280", lineHeight: 1.6, marginTop: 16, marginBottom: 0 }}>
+            {task.rationale}
+          </p>
+        )}
       </div>
 
-      {/* Rationale — why this task matters */}
-      {task.rationale && (
-        <p style={{ color: "var(--color-text-secondary)", marginBottom: "var(--spacing-md)", lineHeight: "var(--lh-normal)" }}>
-          {task.rationale}
-        </p>
-      )}
-
-      {/* Sub-actions */}
+      {/* ── Sub-actions card ── */}
       {task.sub_actions.length > 0 && (
-        <div style={{ marginBottom: "var(--spacing-md)" }}>
-          <h4 style={{ marginBottom: "var(--spacing-xs)", fontSize: "var(--text-small)", color: "var(--color-text-secondary)", fontWeight: "var(--weight-semibold)" }}>Sub-actions</h4>
-          {task.sub_actions.map((sa, i) => (
-            <label key={i} style={{ display: "flex", alignItems: "center", gap: "var(--spacing-xs)", padding: "4px 0", cursor: "pointer" }}>
-              <input
-                type="checkbox"
-                checked={sa.completed}
-                disabled={updating}
-                onChange={() => {
-                  const completions = task.sub_actions.map((item, idx) => idx === i ? !item.completed : item.completed);
-                  onUpdateTask(task.id, { sub_action_completions: completions });
+        <div
+          style={{
+            background: "white",
+            borderRadius: 12,
+            boxShadow: "0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)",
+            padding: 24,
+          }}
+        >
+          <div style={{ fontSize: 20, fontWeight: 600, color: "#111827", marginBottom: 16 }}>Sub-actions</div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+            {task.sub_actions.map((sa, i) => (
+              <label
+                key={i}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  padding: "6px 0",
+                  cursor: "pointer",
+                  fontSize: 15,
                 }}
-              />
-              <span style={{ textDecoration: sa.completed ? "line-through" : "none", opacity: sa.completed ? 0.6 : 1 }}>
-                {sa.text}
-              </span>
-            </label>
-          ))}
+              >
+                <input
+                  type="checkbox"
+                  checked={sa.completed}
+                  disabled={updating}
+                  onChange={() => {
+                    const completions = task.sub_actions.map((item, idx) => idx === i ? !item.completed : item.completed);
+                    onUpdateTask(task.id, { sub_action_completions: completions });
+                  }}
+                  style={{ width: 16, height: 16, accentColor: "#6C5CE7" }}
+                />
+                <span style={{ textDecoration: sa.completed ? "line-through" : "none", opacity: sa.completed ? 0.5 : 1, color: "#374151" }}>
+                  {sa.text}
+                </span>
+              </label>
+            ))}
+          </div>
         </div>
       )}
 
-      {/* Deliverables */}
+      {/* ── Deliverables card ── */}
       {task.deliverables.length > 0 && (
-        <div style={{ marginBottom: "var(--spacing-md)" }}>
-          <h4 style={{ marginBottom: "var(--spacing-xs)", fontSize: "var(--text-small)", color: "var(--color-text-secondary)", fontWeight: "var(--weight-semibold)" }}>Deliverables</h4>
-          {task.deliverables.map((d, i) => (
-            <label key={i} style={{ display: "flex", alignItems: "center", gap: "var(--spacing-xs)", padding: "4px 0", cursor: "pointer" }}>
-              <input
-                type="checkbox"
-                checked={d.completed}
-                disabled={updating}
-                onChange={() => {
-                  const completions = task.deliverables.map((item, idx) => idx === i ? !item.completed : item.completed);
-                  onUpdateTask(task.id, { deliverable_completions: completions });
+        <div
+          style={{
+            background: "white",
+            borderRadius: 12,
+            boxShadow: "0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)",
+            padding: 24,
+          }}
+        >
+          <div style={{ fontSize: 20, fontWeight: 600, color: "#111827", marginBottom: 16 }}>Deliverables</div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+            {task.deliverables.map((d, i) => (
+              <label
+                key={i}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  padding: "6px 0",
+                  cursor: "pointer",
+                  fontSize: 15,
                 }}
-              />
-              <span style={{ textDecoration: d.completed ? "line-through" : "none", opacity: d.completed ? 0.6 : 1 }}>
-                {d.name}
-              </span>
-            </label>
-          ))}
+              >
+                <input
+                  type="checkbox"
+                  checked={d.completed}
+                  disabled={updating}
+                  onChange={() => {
+                    const completions = task.deliverables.map((item, idx) => idx === i ? !item.completed : item.completed);
+                    onUpdateTask(task.id, { deliverable_completions: completions });
+                  }}
+                  style={{ width: 16, height: 16, accentColor: "#6C5CE7" }}
+                />
+                <span style={{ textDecoration: d.completed ? "line-through" : "none", opacity: d.completed ? 0.5 : 1, color: "#374151" }}>
+                  {d.name}
+                </span>
+              </label>
+            ))}
+          </div>
         </div>
       )}
 
-      {/* Notes */}
-      <div style={{ marginBottom: "var(--spacing-md)" }}>
-        <h4 style={{ marginBottom: "var(--spacing-xs)", fontSize: "var(--text-small)", color: "var(--color-text-secondary)", fontWeight: "var(--weight-semibold)" }}>Notes</h4>
+      {/* ── Notes card ── */}
+      <div
+        style={{
+          background: "white",
+          borderRadius: 12,
+          boxShadow: "0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)",
+          padding: 24,
+        }}
+      >
+        <div style={{ fontSize: 20, fontWeight: 600, color: "#111827", marginBottom: 16 }}>Notes</div>
         {editingNotes ? (
           <div>
-            <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={3} style={{ width: "100%", resize: "vertical" }} className="input-text" />
-            <div style={{ display: "flex", gap: "var(--spacing-xs)", marginTop: "var(--spacing-xs)" }}>
-              <button className="btn btn-primary btn-sm" disabled={updating} onClick={() => { onUpdateTask(task.id, { notes }); setEditingNotes(false); }}>Save</button>
-              <button className="btn btn-secondary btn-sm" onClick={() => { setNotes(task.notes ?? ""); setEditingNotes(false); }}>Cancel</button>
+            <textarea
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              rows={3}
+              style={{
+                width: "100%",
+                resize: "vertical",
+                padding: "10px 12px",
+                fontSize: 15,
+                borderRadius: 8,
+                border: "1px solid #E5E7EB",
+                outline: "none",
+                fontFamily: "inherit",
+                lineHeight: 1.6,
+                boxSizing: "border-box",
+              }}
+            />
+            <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
+              <button
+                disabled={updating}
+                onClick={() => { onUpdateTask(task.id, { notes }); setEditingNotes(false); }}
+                style={{
+                  background: "#6C5CE7",
+                  color: "white",
+                  border: "none",
+                  borderRadius: 8,
+                  padding: "8px 18px",
+                  fontSize: 13,
+                  fontWeight: 500,
+                  cursor: "pointer",
+                  opacity: updating ? 0.6 : 1,
+                }}
+              >
+                Save
+              </button>
+              <button
+                onClick={() => { setNotes(task.notes ?? ""); setEditingNotes(false); }}
+                style={{
+                  background: "white",
+                  color: "#374151",
+                  border: "1px solid #E5E7EB",
+                  borderRadius: 8,
+                  padding: "8px 18px",
+                  fontSize: 13,
+                  fontWeight: 500,
+                  cursor: "pointer",
+                }}
+              >
+                Cancel
+              </button>
             </div>
           </div>
         ) : (
-          <p className="clickable-row" onClick={() => setEditingNotes(true)} style={{ color: task.notes ? "var(--color-text-primary)" : "var(--color-text-muted)", cursor: "pointer", minHeight: "2em" }}>
+          <p
+            onClick={() => setEditingNotes(true)}
+            style={{
+              fontSize: 15,
+              color: task.notes ? "#374151" : "#9CA3AF",
+              cursor: "pointer",
+              minHeight: "2em",
+              lineHeight: 1.6,
+              margin: 0,
+              padding: "8px 12px",
+              borderRadius: 8,
+              border: "1px dashed #E5E7EB",
+            }}
+          >
             {task.notes || "Click to add notes..."}
           </p>
         )}
       </div>
 
-      {/* Follow-ups */}
+      {/* ── Follow-ups card ── */}
       {followUps.length > 0 && (
-        <div style={{ marginBottom: "var(--spacing-md)" }}>
-          <h4 style={{ marginBottom: "var(--spacing-xs)", fontSize: "var(--text-small)", color: "var(--color-text-secondary)", fontWeight: "var(--weight-semibold)" }}>Follow-ups ({followUps.length})</h4>
-          {followUps.map((fu) => (
-            <div key={fu.id} style={{ padding: "var(--spacing-xs) var(--spacing-sm)", borderLeft: `3px solid ${fu.is_overdue ? "var(--color-danger)" : "var(--color-info)"}`, marginBottom: "var(--spacing-xs)", borderRadius: "var(--radius-sm)", background: "var(--color-bg-muted)" }}>
-              <div style={{ fontWeight: 500 }}>{fu.title}</div>
-              <div style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)" }}>
-                {fu.status} · due {formatTimestamp(fu.due_at)}{fu.is_overdue ? " (overdue)" : ""}
+        <div
+          style={{
+            background: "white",
+            borderRadius: 12,
+            boxShadow: "0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)",
+            padding: 24,
+          }}
+        >
+          <div style={{ fontSize: 20, fontWeight: 600, color: "#111827", marginBottom: 16 }}>
+            Follow-ups ({followUps.length})
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            {followUps.map((fu) => (
+              <div
+                key={fu.id}
+                style={{
+                  padding: "12px 16px",
+                  borderLeft: `4px solid ${fu.is_overdue ? "#EF4444" : "#6366F1"}`,
+                  borderRadius: 8,
+                  background: fu.is_overdue ? "#FEF2F2" : "#F9FAFB",
+                }}
+              >
+                <div style={{ fontSize: 15, fontWeight: 500, color: "#111827" }}>{fu.title}</div>
+                <div style={{ fontSize: 13, color: "#6B7280", marginTop: 2 }}>
+                  {fu.status} \u00B7 due {formatTimestamp(fu.due_at)}
+                  {fu.is_overdue && (
+                    <span style={{ color: "#EF4444", fontWeight: 500 }}> (overdue)</span>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       )}
 
-      {/* Evidence */}
+      {/* ── Evidence card ── */}
       {evidence.length > 0 && (
-        <div>
-          <h4 style={{ marginBottom: "var(--spacing-xs)", fontSize: "var(--text-small)", color: "var(--color-text-secondary)", fontWeight: "var(--weight-semibold)" }}>Evidence ({evidence.length})</h4>
-          {evidence.map((ev) => (
-            <div key={ev.id} style={{ padding: "var(--spacing-xs) var(--spacing-sm)", borderLeft: "3px solid var(--color-success)", marginBottom: "var(--spacing-xs)", borderRadius: "var(--radius-sm)", background: "var(--color-bg-muted)" }}>
-              <div style={{ fontWeight: 500 }}>{ev.title}</div>
-              <div style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)" }}>
-                {ev.evidence_type} · {formatTimestamp(ev.created_at)}
+        <div
+          style={{
+            background: "white",
+            borderRadius: 12,
+            boxShadow: "0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)",
+            padding: 24,
+          }}
+        >
+          <div style={{ fontSize: 20, fontWeight: 600, color: "#111827", marginBottom: 16 }}>
+            Evidence ({evidence.length})
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            {evidence.map((ev) => (
+              <div
+                key={ev.id}
+                style={{
+                  padding: "12px 16px",
+                  borderLeft: "4px solid #10B981",
+                  borderRadius: 8,
+                  background: "#ECFDF5",
+                }}
+              >
+                <div style={{ fontSize: 15, fontWeight: 500, color: "#111827" }}>{ev.title}</div>
+                <div style={{ fontSize: 13, color: "#6B7280", marginTop: 2 }}>
+                  {ev.evidence_type} \u00B7 {formatTimestamp(ev.created_at)}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       )}
     </div>

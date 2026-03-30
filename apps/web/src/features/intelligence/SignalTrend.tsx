@@ -18,11 +18,41 @@ export function computeSignalTrend(signalId: string, history: AssessmentHistoryI
   return "stable";
 }
 
-const TREND_STYLES: Record<TrendDirection, { symbol: string; color: string; label: string }> = {
-  improving: { symbol: "\u2193", color: "var(--color-success)", label: "Improving" },
-  stable: { symbol: "\u2014", color: "var(--color-text-muted)", label: "Stable" },
-  worsening: { symbol: "\u2191", color: "var(--color-danger)", label: "Worsening" },
+const TREND_STYLES: Record<TrendDirection, { label: string; color: string; arrow: "down" | "flat" | "up" }> = {
+  improving: { label: "Improving", color: "#10B981", arrow: "down" },
+  stable: { label: "Stable", color: "#A3A3A3", arrow: "flat" },
+  worsening: { label: "Worsening", color: "#EF4444", arrow: "up" },
 };
+
+/** CSS-based arrow indicators */
+function TrendArrow({ direction }: { direction: "down" | "flat" | "up" }) {
+  if (direction === "flat") {
+    return (
+      <span style={{
+        display: "inline-block",
+        width: 10,
+        height: 2,
+        background: "currentColor",
+        borderRadius: 1,
+        verticalAlign: "middle",
+      }} />
+    );
+  }
+  const isUp = direction === "up";
+  return (
+    <span style={{
+      display: "inline-block",
+      width: 0,
+      height: 0,
+      borderLeft: "4px solid transparent",
+      borderRight: "4px solid transparent",
+      ...(isUp
+        ? { borderBottom: "6px solid currentColor" }
+        : { borderTop: "6px solid currentColor" }),
+      verticalAlign: "middle",
+    }} />
+  );
+}
 
 export function SignalTrendBadge({ direction }: { direction: TrendDirection }) {
   const style = TREND_STYLES[direction];
@@ -31,12 +61,15 @@ export function SignalTrendBadge({ direction }: { direction: TrendDirection }) {
       title={style.label}
       style={{
         color: style.color,
-        fontWeight: 700,
-        fontSize: "var(--text-small)",
-        marginLeft: "var(--spacing-4)",
+        fontWeight: 600,
+        fontSize: 13,
+        marginLeft: 6,
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 4,
       }}
     >
-      {style.symbol}
+      <TrendArrow direction={style.arrow} />
     </span>
   );
 }

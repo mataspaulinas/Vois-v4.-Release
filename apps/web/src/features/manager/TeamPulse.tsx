@@ -1,4 +1,3 @@
-import { SectionCard } from "../../components/SectionCard";
 import {
   EscalationRecord,
   FollowUpRecord,
@@ -58,91 +57,120 @@ export function TeamPulse({
   }
 
   const SEVERITY_COLORS: Record<string, string> = {
-    critical: "var(--sunrise)",
-    high: "var(--sunrise)",
-    medium: "var(--gold)",
-    low: "var(--sky)",
+    critical: "#EF4444",
+    high: "#EF4444",
+    medium: "#F59E0B",
+    low: "#6366F1",
   };
 
-  return (
-    <div className="view-stack">
-      <SectionCard
-        eyebrow="Team"
-        title="Team pulse"
-        description="Who did what, where the friction is, and what needs attention."
-      >
-        {loading ? (
-          <div className="empty-state"><p>Loading team pulse...</p></div>
-        ) : (
-          <>
-            <div className="highlight-grid">
-              <div className="focus-card">
-                <div className="focus-card-value">{completedCount}</div>
-                <div className="focus-card-label">Completed</div>
-              </div>
-              <div className="focus-card">
-                <div className="focus-card-value">{inProgressCount}</div>
-                <div className="focus-card-label">In progress</div>
-              </div>
-              <div className="focus-card" style={{ borderLeft: blockedCount > 0 ? "3px solid var(--sunrise)" : undefined }}>
-                <div className="focus-card-value">{blockedCount}</div>
-                <div className="focus-card-label">Blocked</div>
-              </div>
-              <div className="focus-card" style={{ borderLeft: frictionItems.length > 0 ? "3px solid var(--gold)" : undefined }}>
-                <div className="focus-card-value">{frictionItems.length}</div>
-                <div className="focus-card-label">Friction flags</div>
-              </div>
-            </div>
+  const statCards: { value: number; label: string; accent?: string }[] = [
+    { value: completedCount, label: "Completed", accent: "#10B981" },
+    { value: inProgressCount, label: "In progress", accent: "#6C5CE7" },
+    { value: blockedCount, label: "Blocked", accent: blockedCount > 0 ? "#EF4444" : undefined },
+    { value: frictionItems.length, label: "Friction flags", accent: frictionItems.length > 0 ? "#F59E0B" : undefined },
+  ];
 
-            {/* Friction flags */}
-            {frictionItems.length > 0 ? (
-              <div style={{ marginTop: "var(--spacing-lg)" }}>
-                <h4 style={{ marginBottom: "var(--spacing-sm)", color: "var(--text-secondary)" }}>Friction flags</h4>
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 32, padding: "48px" }}>
+      {/* ---- Page header ---- */}
+      <div>
+        <div style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A3A3A3", marginBottom: 4 }}>
+          EXECUTION
+        </div>
+        <h1 style={{ fontSize: 28, fontWeight: 700, color: "#0A0A0A", margin: 0 }}>
+          Team pulse
+        </h1>
+        <p style={{ fontSize: 15, color: "#737373", margin: "4px 0 0" }}>
+          Who did what, where the friction is, and what needs attention.
+        </p>
+      </div>
+
+      {loading ? (
+        <div style={{
+          background: "#FFFFFF", borderRadius: 12, padding: 40,
+          boxShadow: "0 1px 3px rgba(0,0,0,0.04)", textAlign: "center" as const,
+          fontSize: 15, color: "#A3A3A3",
+        }}>
+          Loading team pulse...
+        </div>
+      ) : (
+        <>
+          {/* ---- Stat cards ---- */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 16 }}>
+            {statCards.map((card) => (
+              <div
+                key={card.label}
+                style={{
+                  background: "#FFFFFF", borderRadius: 12, padding: "20px 24px",
+                  boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+                  borderLeft: card.accent ? `3px solid ${card.accent}` : undefined,
+                }}
+              >
+                <div style={{ fontSize: 28, fontWeight: 700, color: "#0A0A0A" }}>{card.value}</div>
+                <div style={{ fontSize: 13, color: "#A3A3A3", marginTop: 4 }}>{card.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* ---- Friction flags ---- */}
+          {frictionItems.length > 0 ? (
+            <div style={{
+              background: "#FFFFFF", borderRadius: 12, padding: "20px 24px",
+              boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+            }}>
+              <h2 style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", margin: "0 0 16px" }}>
+                Friction flags
+              </h2>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 {frictionItems.map((item, i) => (
                   <div
                     key={i}
                     style={{
-                      padding: "var(--spacing-sm) var(--spacing-md)",
-                      borderLeft: `3px solid ${SEVERITY_COLORS[item.severity] ?? "var(--muted)"}`,
-                      marginBottom: "var(--spacing-xs)",
-                      borderRadius: "var(--radius-sm)",
-                      background: "var(--bg-raised)",
+                      padding: "12px 16px",
+                      borderLeft: `3px solid ${SEVERITY_COLORS[item.severity] ?? "#A3A3A3"}`,
+                      borderRadius: 8,
+                      background: "#FAFAFA",
                     }}
                   >
-                    <div style={{ fontWeight: 500 }}>{item.label}</div>
-                    <div style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>{item.detail}</div>
+                    <div style={{ fontSize: 15, fontWeight: 500, color: "#0A0A0A" }}>{item.label}</div>
+                    <div style={{ fontSize: 13, color: "#737373", marginTop: 2 }}>{item.detail}</div>
                   </div>
                 ))}
               </div>
-            ) : null}
+            </div>
+          ) : null}
 
-            {/* Recent activity */}
-            {recentActivity.length > 0 ? (
-              <div style={{ marginTop: "var(--spacing-lg)" }}>
-                <h4 style={{ marginBottom: "var(--spacing-sm)", color: "var(--text-secondary)" }}>Recent activity</h4>
+          {/* ---- Recent activity ---- */}
+          {recentActivity.length > 0 ? (
+            <div style={{
+              background: "#FFFFFF", borderRadius: 12, padding: "20px 24px",
+              boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+            }}>
+              <h2 style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", margin: "0 0 16px" }}>
+                Recent activity
+              </h2>
+              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                 {recentActivity.map((entry) => (
                   <div
                     key={entry.id}
-                    style={{
-                      padding: "var(--spacing-xs) var(--spacing-sm)",
-                      marginBottom: "var(--spacing-xs)",
-                      borderRadius: "var(--radius-sm)",
-                    }}
+                    style={{ padding: "8px 12px", borderRadius: 8 }}
                   >
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                      <span style={{ fontWeight: 500, fontSize: "0.9rem" }}>{entry.summary}</span>
-                      <span style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>{formatTimestamp(entry.created_at)}</span>
+                      <span style={{ fontSize: 15, fontWeight: 500, color: "#0A0A0A" }}>{entry.summary}</span>
+                      <span style={{ fontSize: 13, color: "#A3A3A3", flexShrink: 0, marginLeft: 12 }}>
+                        {formatTimestamp(entry.created_at)}
+                      </span>
                     </div>
                     {entry.detail ? (
-                      <div style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>{entry.detail}</div>
+                      <div style={{ fontSize: 13, color: "#737373", marginTop: 2 }}>{entry.detail}</div>
                     ) : null}
                   </div>
                 ))}
               </div>
-            ) : null}
-          </>
-        )}
-      </SectionCard>
+            </div>
+          ) : null}
+        </>
+      )}
     </div>
   );
 }

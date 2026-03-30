@@ -19,6 +19,47 @@ type SignalIntelligenceMapProps = {
 
 type Lens = "concentration" | "domains" | "chain" | "timeline" | "heatmap";
 
+const lensOptions: { id: Lens; label: string }[] = [
+  { id: "concentration", label: "Signal concentration" },
+  { id: "domains", label: "Domain distribution" },
+  { id: "chain", label: "Causal chain" },
+  { id: "timeline", label: "Assessment timeline" },
+  { id: "heatmap", label: "Portfolio heatmap" },
+];
+
+/* ── design tokens ─────────────────────────────────── */
+const ds = {
+  eyebrow: { fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#A3A3A3", margin: 0 },
+  pageTitle: { fontSize: 28, fontWeight: 700, color: "#0A0A0A", margin: "4px 0 0" },
+  sectionTitle: { fontSize: 20, fontWeight: 600, color: "#0A0A0A", margin: 0 },
+  body: { fontSize: 15, color: "#525252", lineHeight: 1.55, margin: 0 },
+  small: { fontSize: 13, color: "#737373", lineHeight: 1.5, margin: 0 },
+  card: { background: "#FFFFFF", borderRadius: 12, boxShadow: "0 1px 3px rgba(0,0,0,0.04)", padding: "20px 24px" } as React.CSSProperties,
+  accent: "#6C5CE7",
+  success: "#10B981",
+  warning: "#F59E0B",
+  danger: "#EF4444",
+  info: "#6366F1",
+  btnPrimary: { background: "#6C5CE7", color: "#FFFFFF", border: "none", borderRadius: 8, padding: "8px 18px", fontSize: 13, fontWeight: 600, cursor: "pointer", transition: "all 180ms ease" } as React.CSSProperties,
+  btnSecondary: { background: "#FFFFFF", color: "#0A0A0A", border: "1px solid #E5E5E5", borderRadius: 8, padding: "8px 18px", fontSize: 13, fontWeight: 500, cursor: "pointer", transition: "all 180ms ease" } as React.CSSProperties,
+  pill: (active: boolean) => ({
+    display: "inline-flex", alignItems: "center", gap: 6, padding: "6px 14px", borderRadius: 8, fontSize: 13,
+    fontWeight: active ? 600 : 400, cursor: "pointer", minHeight: 32,
+    border: active ? `1.5px solid #6C5CE7` : "1px solid rgba(0,0,0,0.08)",
+    background: active ? "#6C5CE7" : "#FFFFFF",
+    color: active ? "#FFFFFF" : "#525252",
+    transition: "all 180ms ease",
+  }) as React.CSSProperties,
+  interactiveCard: {
+    background: "#FFFFFF", borderRadius: 12, border: "1px solid #E5E5E5",
+    boxShadow: "0 1px 3px rgba(0,0,0,0.04)", padding: "14px 20px",
+    cursor: "pointer", transition: "all 180ms ease",
+  } as React.CSSProperties,
+  grid: "#E5E5E5",
+} as const;
+
+const frequencyColor = (freq: number) => freq > 0.5 ? ds.danger : freq > 0.25 ? ds.warning : ds.success;
+
 export function SignalIntelligenceMap({
   bundle,
   venuePulses,
@@ -67,7 +108,6 @@ export function SignalIntelligenceMap({
       if (!domains.has(domain)) domains.set(domain, { signalCount: 0, fmCount: 0, blockCount: 0 });
       domains.get(domain)!.fmCount++;
     }
-    // Blocks don't have domains directly, count by response patterns that link to them
     return [...domains.entries()]
       .sort(([, a], [, b]) => b.signalCount - a.signalCount)
       .map(([domain, counts]) => ({ domain, ...counts }));
@@ -123,80 +163,85 @@ export function SignalIntelligenceMap({
 
   if (!bundle && !loading) {
     return (
-      <SectionCard eyebrow="Intelligence" title="Signal intelligence map" description="Load an ontology bundle to explore signal patterns and relationships.">
-        <div className="empty-state"><p>No ontology data available.</p></div>
-      </SectionCard>
+      <div style={{ padding: 48, display: "flex", flexDirection: "column", gap: 32 }}>
+        <section style={ds.card}>
+          <p style={ds.eyebrow}>VENUE</p>
+          <h2 style={ds.sectionTitle}>Signal intelligence map</h2>
+          <p style={{ ...ds.small, marginTop: 8 }}>Load an ontology bundle to explore signal patterns and relationships.</p>
+          <p style={{ ...ds.small, textAlign: "center", padding: 32, color: "#A3A3A3" }}>No ontology data available.</p>
+        </section>
+      </div>
     );
   }
 
   return (
-    <div className="view-stack">
-      <SectionCard
-        eyebrow="Intelligence"
-        title="Signal intelligence map"
-        description="Explore operational signal patterns, domain concentration, causal chains, and assessment evolution. This is the advanced analytical surface."
-      >
+    <div style={{ padding: 48, display: "flex", flexDirection: "column", gap: 32 }}>
+      {/* ── Intelligence hero ─────────────────────── */}
+      <section style={ds.card}>
+        <p style={ds.eyebrow}>VENUE</p>
+        <h2 style={ds.sectionTitle}>Signal intelligence map</h2>
+        <p style={{ ...ds.small, marginTop: 4, maxWidth: 720 }}>
+          Explore operational signal patterns, domain concentration, causal chains, and assessment evolution.
+        </p>
+
         {/* Lens selector */}
-        <div style={{ display: "flex", gap: "var(--space-2, 8px)", marginBottom: "var(--space-4, 16px)", flexWrap: "wrap" }}>
-          {([
-            { id: "concentration" as Lens, label: "Signal concentration" },
-            { id: "domains" as Lens, label: "Domain distribution" },
-            { id: "chain" as Lens, label: "Causal chain" },
-            { id: "timeline" as Lens, label: "Assessment timeline" },
-            { id: "heatmap" as Lens, label: "Portfolio heatmap" },
-          ]).map((l) => (
-            <button
-              key={l.id}
-              className={`status-pill ${lens === l.id ? "active" : ""}`}
-              onClick={() => setLens(l.id)}
-            >
+        <div style={{ display: "flex", gap: 8, marginTop: 20, flexWrap: "wrap" }}>
+          {lensOptions.map((l) => (
+            <button key={l.id} onClick={() => setLens(l.id)} style={ds.pill(lens === l.id)}>
               {l.label}
             </button>
           ))}
         </div>
 
         {loading ? (
-          <div className="empty-state"><p>Loading intelligence data...</p></div>
+          <p style={{ ...ds.small, textAlign: "center", padding: 32, color: "#A3A3A3" }}>Loading intelligence data...</p>
         ) : null}
-      </SectionCard>
+      </section>
 
-      {/* ─── Concentration lens ─── */}
+      {/* ── Concentration lens ────────────────────── */}
       {lens === "concentration" && !loading && (
-        <SectionCard
-          eyebrow="Concentration"
-          title="Most frequent signals across assessment history"
-          description="Signals that appear repeatedly across assessments indicate systemic patterns, not one-time events."
-        >
+        <section style={ds.card}>
+          <p style={ds.eyebrow}>CONCENTRATION</p>
+          <h2 style={ds.sectionTitle}>Most frequent signals across assessment history</h2>
+          <p style={{ ...ds.small, marginTop: 4, maxWidth: 720 }}>
+            Signals that appear repeatedly across assessments indicate systemic patterns, not one-time events.
+          </p>
+
           {signalConcentration.length ? (
-            <div className="inference-list">
+            <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 20 }}>
               {signalConcentration.slice(0, 20).map((item) => (
-                <div className="inference-card" key={item.name} style={{ cursor: "pointer" }} onClick={() => {
-                  const sig = bundle?.signals.find((s) => s.name === item.name);
-                  if (sig) { setSelectedSignalId(sig.id); setLens("chain"); }
-                }}>
-                  <div className="inference-head">
-                    <h3 style={{ margin: 0 }}>{item.name}</h3>
-                    <div style={{ display: "flex", gap: "var(--space-2, 8px)", alignItems: "center" }}>
-                      <span className={`confidence-badge ${item.frequency > 0.5 ? "confidence-high" : item.frequency > 0.25 ? "confidence-medium" : "confidence-low"}`}>
+                <div
+                  key={item.name}
+                  style={ds.interactiveCard}
+                  onClick={() => {
+                    const sig = bundle?.signals.find((s) => s.name === item.name);
+                    if (sig) { setSelectedSignalId(sig.id); setLens("chain"); }
+                  }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A" }}>{item.name}</span>
+                    <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+                      <span style={{
+                        padding: "2px 10px", borderRadius: 10, fontSize: 11, fontWeight: 600,
+                        color: "#FFFFFF", background: frequencyColor(item.frequency),
+                      }}>
                         {Math.round(item.frequency * 100)}%
                       </span>
-                      <span style={{ fontSize: "var(--text-sm, 13px)", opacity: 0.6 }}>{item.count}× across {assessmentHistory.length} assessments</span>
+                      <span style={{ fontSize: 13, color: "#A3A3A3" }}>
+                        {item.count}x across {assessmentHistory.length} assessments
+                      </span>
                     </div>
                   </div>
-                  {/* Visual bar + flag action */}
-                  <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2, 8px)", marginTop: "var(--space-2, 8px)" }}>
-                    <div style={{ flex: 1, height: 4, borderRadius: 2, background: "var(--surface-2, #f0f0f0)" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 10 }}>
+                    <div style={{ flex: 1, height: 4, borderRadius: 2, background: "#F5F5F5" }}>
                       <div style={{
-                        height: "100%",
-                        width: `${Math.round(item.frequency * 100)}%`,
-                        background: item.frequency > 0.5 ? "var(--danger, #dc2626)" : item.frequency > 0.25 ? "var(--warning, #f59e0b)" : "var(--success, #16a34a)",
-                        borderRadius: 2,
+                        height: "100%", width: `${Math.round(item.frequency * 100)}%`,
+                        background: frequencyColor(item.frequency), borderRadius: 2, transition: "width 180ms ease",
                       }} />
                     </div>
                     {venueId && item.frequency > 0.25 && (
                       <button
-                        className="btn btn-secondary"
-                        style={{ fontSize: "var(--text-xs, 11px)", padding: "2px 8px", whiteSpace: "nowrap" }}
+                        style={{ ...ds.btnSecondary, fontSize: 11, padding: "3px 12px", whiteSpace: "nowrap" }}
                         onClick={(e) => {
                           e.stopPropagation();
                           const sig = bundle?.signals.find((s) => s.name === item.name);
@@ -211,29 +256,37 @@ export function SignalIntelligenceMap({
               ))}
             </div>
           ) : (
-            <div className="empty-state compact"><p>No assessment history to analyze. Run assessments to build signal concentration data.</p></div>
+            <p style={{ ...ds.small, textAlign: "center", padding: 32, color: "#A3A3A3" }}>
+              No assessment history to analyze. Run assessments to build signal concentration data.
+            </p>
           )}
 
           {/* Cross-venue signal density */}
           {venuePulses.length > 1 ? (
-            <div style={{ marginTop: "var(--space-4, 16px)" }}>
-              <p className="section-eyebrow">Cross-venue signal density</p>
-              <div className="venue-card-grid">
+            <div style={{ marginTop: 28 }}>
+              <p style={{ ...ds.eyebrow, color: ds.accent, marginBottom: 12 }}>Cross-venue signal density</p>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 12 }}>
                 {venuePulses.filter((p) => p.latest_signal_count > 0).sort((a, b) => b.latest_signal_count - a.latest_signal_count).map((pulse) => (
-                  <div className="venue-selector-card" key={pulse.venue_id} style={{ cursor: "pointer" }} onClick={() => onOpenVenue(pulse.venue_id)}>
-                    <h3>{pulse.venue_name}</h3>
-                    <div className="readiness-list compact-list">
-                      <div className="readiness-row">
-                        <strong>Signals</strong>
-                        <span>{pulse.latest_signal_count}</span>
+                  <div
+                    key={pulse.venue_id}
+                    style={ds.interactiveCard}
+                    onClick={() => onOpenVenue(pulse.venue_id)}
+                  >
+                    <span style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A", display: "block", marginBottom: 10 }}>
+                      {pulse.venue_name}
+                    </span>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
+                        <span style={{ color: "#737373", fontWeight: 500 }}>Signals</span>
+                        <span style={{ color: "#0A0A0A" }}>{pulse.latest_signal_count}</span>
                       </div>
-                      <div className="readiness-row">
-                        <strong>Tasks</strong>
-                        <span>{pulse.latest_plan_task_count}</span>
+                      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
+                        <span style={{ color: "#737373", fontWeight: 500 }}>Tasks</span>
+                        <span style={{ color: "#0A0A0A" }}>{pulse.latest_plan_task_count}</span>
                       </div>
-                      <div className="readiness-row">
-                        <strong>Load</strong>
-                        <span>{pulse.plan_load_classification ?? "unknown"}</span>
+                      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
+                        <span style={{ color: "#737373", fontWeight: 500 }}>Load</span>
+                        <span style={{ color: "#0A0A0A" }}>{pulse.plan_load_classification ?? "unknown"}</span>
                       </div>
                     </div>
                   </div>
@@ -241,54 +294,55 @@ export function SignalIntelligenceMap({
               </div>
             </div>
           ) : null}
-        </SectionCard>
+        </section>
       )}
 
-      {/* ─── Domain distribution lens ─── */}
+      {/* ── Domain distribution lens ──────────────── */}
       {lens === "domains" && !loading && bundle && (
-        <SectionCard
-          eyebrow="Domains"
-          title="Ontology domain distribution"
-          description="How signals and failure modes are distributed across operational domains."
-        >
-          <div className="inference-list">
+        <section style={ds.card}>
+          <p style={ds.eyebrow}>DOMAINS</p>
+          <h2 style={ds.sectionTitle}>Ontology domain distribution</h2>
+          <p style={{ ...ds.small, marginTop: 4 }}>How signals and failure modes are distributed across operational domains.</p>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 20 }}>
             {domainDistribution.map((item) => (
-              <div className="inference-card" key={item.domain}>
-                <div className="inference-head">
-                  <h3 style={{ margin: 0, textTransform: "capitalize" }}>{item.domain.replace(/_/g, " ")}</h3>
-                </div>
-                <div className="dependency-list">
+              <div key={item.domain} style={{ ...ds.card, padding: "14px 20px" }}>
+                <span style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A", textTransform: "capitalize", display: "block", marginBottom: 6 }}>
+                  {item.domain.replace(/_/g, " ")}
+                </span>
+                <div style={{ display: "flex", gap: 20, fontSize: 13, color: "#737373", marginBottom: 10 }}>
                   <span>{item.signalCount} signals</span>
                   <span>{item.fmCount} failure modes</span>
                 </div>
-                {/* Proportional bar */}
-                <div style={{ height: 4, borderRadius: 2, background: "var(--surface-2, #f0f0f0)", marginTop: "var(--space-2, 8px)" }}>
+                <div style={{ height: 4, borderRadius: 2, background: "#F5F5F5" }}>
                   <div style={{
-                    height: "100%",
-                    width: `${Math.round((item.signalCount / Math.max(1, bundle.signals.length)) * 100)}%`,
-                    background: "var(--ois-coral, #3b82f6)",
-                    borderRadius: 2,
+                    height: "100%", width: `${Math.round((item.signalCount / Math.max(1, bundle.signals.length)) * 100)}%`,
+                    background: ds.accent, borderRadius: 2, transition: "width 180ms ease",
                   }} />
                 </div>
               </div>
             ))}
           </div>
-        </SectionCard>
+        </section>
       )}
 
-      {/* ─── Causal chain lens ─── */}
+      {/* ── Causal chain lens ─────────────────────── */}
       {lens === "chain" && !loading && bundle && (
-        <SectionCard
-          eyebrow="Causal chain"
-          title={selectedChain ? `Chain: ${selectedChain.signal.name}` : "Select a signal to trace"}
-          description="Trace from signal through failure modes, response patterns, and intervention blocks."
-        >
+        <section style={ds.card}>
+          <p style={ds.eyebrow}>CAUSAL CHAIN</p>
+          <h2 style={ds.sectionTitle}>{selectedChain ? `Chain: ${selectedChain.signal.name}` : "Select a signal to trace"}</h2>
+          <p style={{ ...ds.small, marginTop: 4 }}>Trace from signal through failure modes, response patterns, and intervention blocks.</p>
+
           {/* Signal selector */}
-          <div style={{ marginBottom: "var(--space-4, 16px)" }}>
+          <div style={{ marginTop: 16, marginBottom: 20 }}>
             <select
               value={selectedSignalId ?? ""}
               onChange={(e) => setSelectedSignalId(e.target.value || null)}
-              style={{ background: "var(--surface-2, #f5f5f5)", border: "1px solid var(--border, #e0e0e0)", borderRadius: "var(--radius-sm, 4px)", padding: "6px 12px", fontSize: "var(--text-sm, 14px)", width: "100%", maxWidth: 400 }}
+              style={{
+                background: "#FFFFFF", border: "1px solid #E5E5E5", borderRadius: 8,
+                padding: "8px 14px", fontSize: 13, width: "100%", maxWidth: 420,
+                color: "#0A0A0A", minHeight: 36, cursor: "pointer",
+              }}
             >
               <option value="">Choose a signal to trace...</option>
               {bundle.signals.map((s) => (
@@ -298,13 +352,13 @@ export function SignalIntelligenceMap({
           </div>
 
           {selectedChain ? (
-            <div className="inference-list">
-              {/* Signal */}
-              <div className="focus-card focus-card-primary">
-                <p className="section-eyebrow">Signal</p>
-                <h3>{selectedChain.signal.name}</h3>
-                <p style={{ opacity: 0.7 }}>{selectedChain.signal.description}</p>
-                <div className="dependency-list">
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {/* Signal node */}
+              <div style={{ padding: "16px 20px", borderRadius: 12, background: "rgba(108,92,231,0.06)", border: "1px solid rgba(108,92,231,0.15)" }}>
+                <p style={{ ...ds.eyebrow, color: ds.accent, marginBottom: 4 }}>SIGNAL</p>
+                <span style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A", display: "block" }}>{selectedChain.signal.name}</span>
+                <p style={{ ...ds.small, marginTop: 4 }}>{selectedChain.signal.description}</p>
+                <div style={{ display: "flex", gap: 16, fontSize: 13, color: "#A3A3A3", marginTop: 8 }}>
                   <span>{selectedChain.signal.domain}</span>
                   <span>{selectedChain.signal.indicator_type}</span>
                 </div>
@@ -313,26 +367,26 @@ export function SignalIntelligenceMap({
               {/* Failure modes */}
               {selectedChain.failureModes.map((fm) => (
                 <div key={fm.id}>
-                  <div className="focus-card" style={{ borderLeft: "3px solid var(--danger, #dc2626)" }}>
-                    <p className="section-eyebrow">Failure mode (weight: {fm.weight})</p>
-                    <h3>{fm.name}</h3>
+                  <div style={{ padding: "14px 20px", borderRadius: 12, background: "#FFFFFF", borderLeft: `3px solid ${ds.danger}`, border: "1px solid #E5E5E5", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+                    <p style={{ ...ds.eyebrow, color: ds.danger, marginBottom: 4 }}>FAILURE MODE (weight: {fm.weight})</p>
+                    <span style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A" }}>{fm.name}</span>
                   </div>
 
                   {/* Response patterns */}
                   {fm.responsePatterns.map((rp) => (
-                    <div key={rp.id} style={{ marginLeft: "var(--space-4, 16px)" }}>
-                      <div className="focus-card" style={{ borderLeft: "3px solid var(--warning, #f59e0b)" }}>
-                        <p className="section-eyebrow">Response pattern (weight: {rp.weight})</p>
-                        <h3>{rp.name}</h3>
+                    <div key={rp.id} style={{ marginLeft: 20, marginTop: 10 }}>
+                      <div style={{ padding: "14px 20px", borderRadius: 12, background: "#FFFFFF", borderLeft: `3px solid ${ds.warning}`, border: "1px solid #E5E5E5", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+                        <p style={{ ...ds.eyebrow, color: ds.warning, marginBottom: 4 }}>RESPONSE PATTERN (weight: {rp.weight})</p>
+                        <span style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A" }}>{rp.name}</span>
                       </div>
 
                       {/* Blocks */}
                       {rp.blocks.map((block: any) => (
-                        <div key={block.id} style={{ marginLeft: "var(--space-4, 16px)" }}>
-                          <div className="focus-card" style={{ borderLeft: "3px solid var(--success, #16a34a)" }}>
-                            <p className="section-eyebrow">Intervention block</p>
-                            <h3>{block.name}</h3>
-                            <div className="dependency-list">
+                        <div key={block.id} style={{ marginLeft: 20, marginTop: 10 }}>
+                          <div style={{ padding: "14px 20px", borderRadius: 12, background: "#FFFFFF", borderLeft: `3px solid ${ds.success}`, border: "1px solid #E5E5E5", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+                            <p style={{ ...ds.eyebrow, color: ds.success, marginBottom: 4 }}>INTERVENTION BLOCK</p>
+                            <span style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A", display: "block", marginBottom: 6 }}>{block.name}</span>
+                            <div style={{ display: "flex", gap: 16, fontSize: 13, color: "#A3A3A3" }}>
                               <span>{block.effort_hours}h effort</span>
                               {block.owner_role && <span>{block.owner_role}</span>}
                             </div>
@@ -345,80 +399,93 @@ export function SignalIntelligenceMap({
               ))}
 
               {selectedChain.failureModes.length === 0 && (
-                <div className="empty-state compact"><p>No downstream failure modes mapped for this signal in the current ontology.</p></div>
+                <p style={{ ...ds.small, textAlign: "center", padding: 24, color: "#A3A3A3" }}>
+                  No downstream failure modes mapped for this signal in the current ontology.
+                </p>
               )}
             </div>
           ) : (
-            <div className="empty-state compact"><p>Select a signal above to trace its causal chain through the ontology.</p></div>
+            <p style={{ ...ds.small, textAlign: "center", padding: 24, color: "#A3A3A3" }}>
+              Select a signal above to trace its causal chain through the ontology.
+            </p>
           )}
-        </SectionCard>
+        </section>
       )}
 
-      {/* ─── Timeline lens ─── */}
+      {/* ── Timeline lens ─────────────────────────── */}
       {lens === "timeline" && !loading && (
-        <SectionCard
-          eyebrow="Timeline"
-          title="Assessment evolution"
-          description="How the venue's signal landscape and execution load changed over time."
-        >
+        <section style={ds.card}>
+          <p style={ds.eyebrow}>TIMELINE</p>
+          <h2 style={ds.sectionTitle}>Assessment evolution</h2>
+          <p style={{ ...ds.small, marginTop: 4 }}>How the venue's signal landscape and execution load changed over time.</p>
+
           {timelineData.length ? (
-            <div className="thread-list">
+            <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 20 }}>
               {timelineData.map((entry) => (
-                <div className="history-card" key={entry.id}>
-                  <div className="thread-row">
-                    <span>{new Date(entry.date).toLocaleDateString()}</span>
-                    <em>{entry.load ?? "saved only"}</em>
+                <div key={entry.id} style={{ ...ds.card, padding: "14px 20px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+                    <span style={{ fontSize: 13, fontWeight: 500, color: "#0A0A0A" }}>
+                      {new Date(entry.date).toLocaleDateString()}
+                    </span>
+                    <span style={{ fontSize: 13, color: "#737373" }}>{entry.load ?? "saved only"}</span>
                   </div>
-                  <div className="readiness-list compact-list">
-                    <div className="readiness-row">
-                      <strong>Signals</strong>
-                      <span>{entry.signalCount}</span>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
+                      <span style={{ color: "#737373", fontWeight: 500 }}>Signals</span>
+                      <span style={{ color: "#0A0A0A" }}>{entry.signalCount}</span>
                     </div>
-                    <div className="readiness-row">
-                      <strong>Plan tasks</strong>
-                      <span>{entry.taskCount}</span>
+                    <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
+                      <span style={{ color: "#737373", fontWeight: 500 }}>Plan tasks</span>
+                      <span style={{ color: "#0A0A0A" }}>{entry.taskCount}</span>
                     </div>
                     {entry.ontology && (
-                      <div className="readiness-row">
-                        <strong>Ontology</strong>
-                        <span style={{ opacity: 0.6 }}>{entry.ontology}</span>
+                      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
+                        <span style={{ color: "#737373", fontWeight: 500 }}>Ontology</span>
+                        <span style={{ color: "#A3A3A3" }}>{entry.ontology}</span>
                       </div>
                     )}
                   </div>
                   {entry.topSignals.length > 0 && (
-                    <div className="dependency-list">
-                      {entry.topSignals.map((name) => <span key={name}>{name}</span>)}
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 10 }}>
+                      {entry.topSignals.map((name) => (
+                        <span key={name} style={{ padding: "2px 10px", borderRadius: 10, background: "#F5F5F5", fontSize: 11, color: "#737373", fontWeight: 500 }}>
+                          {name}
+                        </span>
+                      ))}
                     </div>
                   )}
                 </div>
               ))}
             </div>
           ) : (
-            <div className="empty-state compact"><p>No assessment history to visualize. Run assessments to build timeline data.</p></div>
+            <p style={{ ...ds.small, textAlign: "center", padding: 24, color: "#A3A3A3" }}>
+              No assessment history to visualize. Run assessments to build timeline data.
+            </p>
           )}
-        </SectionCard>
+        </section>
       )}
 
-      {/* ─── Heatmap lens ─── */}
+      {/* ── Heatmap lens ──────────────────────────── */}
       {lens === "heatmap" && (
-        <SectionCard
-          eyebrow="Heatmap"
-          title="Signal-venue matrix"
-          description="Cross-tabular view: rows are signals sorted by frequency, columns are venues. Cell intensity shows occurrence rate."
-        >
-          <SignalHeatmapGrid
-            assessments={venuePulses.flatMap((pulse) =>
-              assessmentHistory
-                .filter(() => true) // all assessments contribute
-                .map((a) => ({ venue_id: pulse.venue_id, signal_names: a.active_signal_names ?? [] }))
-            )}
-            venuePulses={venuePulses}
-            onSelectSignal={(sigId) => {
-              setSelectedSignalId(sigId);
-              setLens("chain");
-            }}
-          />
-        </SectionCard>
+        <section style={ds.card}>
+          <p style={ds.eyebrow}>HEATMAP</p>
+          <h2 style={ds.sectionTitle}>Signal-venue matrix</h2>
+          <p style={{ ...ds.small, marginTop: 4 }}>Cross-tabular view: rows are signals sorted by frequency, columns are venues. Cell intensity shows occurrence rate.</p>
+          <div style={{ marginTop: 20 }}>
+            <SignalHeatmapGrid
+              assessments={venuePulses.flatMap((pulse) =>
+                assessmentHistory
+                  .filter(() => true)
+                  .map((a) => ({ venue_id: pulse.venue_id, signal_names: a.active_signal_names ?? [] }))
+              )}
+              venuePulses={venuePulses}
+              onSelectSignal={(sigId) => {
+                setSelectedSignalId(sigId);
+                setLens("chain");
+              }}
+            />
+          </div>
+        </section>
       )}
     </div>
   );

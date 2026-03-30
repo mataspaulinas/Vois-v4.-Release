@@ -52,11 +52,45 @@ export function Sidebar({
   return (
     <nav className={`sidebar ${collapsed ? "collapsed" : ""}`} aria-label="Main navigation">
       <div className="sb-brand">
-        <button className="sb-logo" onClick={onShowPortfolio}>
-          OIS
+        <button className="sb-logo" onClick={onShowPortfolio} title="Portfolio">
+          <span
+            style={{
+              display: "inline-block",
+              width: 6,
+              height: 6,
+              borderRadius: "50%",
+              background: "var(--color-accent)",
+              marginRight: collapsed ? 0 : 6,
+              flexShrink: 0,
+            }}
+          />
+          {!collapsed && (
+            <span style={{ fontSize: 18, fontWeight: 700, color: "var(--color-text-primary)" }}>
+              VOIS
+            </span>
+          )}
         </button>
-        <button className="sb-collapse-btn" onClick={onToggleCollapsed} aria-label="Toggle sidebar">
-          {collapsed ? ">" : "<"}
+        <button
+          className="sb-collapse-btn"
+          onClick={onToggleCollapsed}
+          aria-label="Toggle sidebar"
+          style={{
+            width: 24,
+            height: 24,
+            borderRadius: "50%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            border: "none",
+            background: "transparent",
+            cursor: "pointer",
+            color: "var(--color-text-muted)",
+            fontSize: 16,
+            lineHeight: 1,
+            transition: `background var(--motion-fast) var(--easing-standard)`,
+          }}
+        >
+          {collapsed ? "\u203A" : "\u2039"}
         </button>
       </div>
 
@@ -66,8 +100,9 @@ export function Sidebar({
           <button
             className={`sidebar-item ${activeTopLevel === "portfolio" ? "active" : ""}`}
             onClick={onShowPortfolio}
+            title={collapsed ? "Portfolio" : undefined}
           >
-            <span className="sb-icon">PF</span>
+            <SbIcon code="PF" active={activeTopLevel === "portfolio"} />
             <span className="sb-label">Portfolio</span>
           </button>
         </>
@@ -81,7 +116,9 @@ export function Sidebar({
               key={view}
               className={`venue-nav-item ${activeVenueView === view ? "active" : ""}`}
               onClick={() => onSelectVenueView(view)}
+              title={collapsed ? titleCase(view) : undefined}
             >
+              <SbIcon code={venueIcon(view)} active={activeVenueView === view} />
               <span className="sb-label">{titleCase(view)}</span>
             </button>
           ))}
@@ -96,8 +133,12 @@ export function Sidebar({
             activeTopLevel === "reference" && activeReferenceView === view ? "active" : ""
           }`}
           onClick={() => onSelectReferenceView(view)}
+          title={collapsed ? titleCase(view) : undefined}
         >
-          <span className="sb-icon">{referenceIcon(view)}</span>
+          <SbIcon
+            code={referenceIcon(view)}
+            active={activeTopLevel === "reference" && activeReferenceView === view}
+          />
           <span className="sb-label">{titleCase(view)}</span>
         </button>
       ))}
@@ -107,8 +148,9 @@ export function Sidebar({
         <button
           className={`sidebar-item ${activeTopLevel === "manager" ? "active" : ""}`}
           onClick={onShowManager}
+          title={collapsed ? "Manager shell" : undefined}
         >
-          <span className="sb-icon">MG</span>
+          <SbIcon code="MG" active={activeTopLevel === "manager"} />
           <span className="sb-label">Manager shell</span>
         </button>
       ) : null}
@@ -116,8 +158,9 @@ export function Sidebar({
         <button
           className={`sidebar-item ${activeTopLevel === "pocket" ? "active" : ""}`}
           onClick={onShowPocket}
+          title={collapsed ? "Pocket shell" : undefined}
         >
-          <span className="sb-icon">PK</span>
+          <SbIcon code="PK" active={activeTopLevel === "pocket"} />
           <span className="sb-label">Pocket shell</span>
         </button>
       ) : null}
@@ -125,23 +168,58 @@ export function Sidebar({
         <button
           className={`sidebar-item ${activeTopLevel === "owner" ? "active" : ""}`}
           onClick={onShowOwner}
+          title={collapsed ? "Owner shell" : undefined}
         >
-          <span className="sb-icon">OW</span>
+          <SbIcon code="OW" active={activeTopLevel === "owner"} />
           <span className="sb-label">Owner shell</span>
         </button>
       ) : null}
 
       <div className="sidebar-section-label sidebar-section--secondary">Guidance</div>
-      <button className={`sidebar-item ${activeTopLevel === "kb" ? "active" : ""}`} onClick={onShowKnowledgeBase}>
-        <span className="sb-icon">KB</span>
+      <button
+        className={`sidebar-item ${activeTopLevel === "kb" ? "active" : ""}`}
+        onClick={onShowKnowledgeBase}
+        title={collapsed ? "Knowledge Base" : undefined}
+      >
+        <SbIcon code="KB" active={activeTopLevel === "kb"} />
         <span className="sb-label">Knowledge Base</span>
       </button>
 
       {!collapsed && portfolioSummary ? (
-        <div className="sidebar-pulse-card">
-          <p className="section-eyebrow">Portfolio pulse</p>
-          <strong>{portfolioSummary.resume_reason ?? "Portfolio is ready."}</strong>
-          <div className="dependency-list">
+        <div
+          className="sidebar-pulse-card"
+          style={{
+            margin: "var(--spacing-12) var(--spacing-12) 0",
+            padding: "var(--spacing-12)",
+            background: "var(--color-bg-muted)",
+            borderRadius: "var(--radius-sm)",
+            fontSize: "var(--text-small)",
+          }}
+        >
+          <p
+            style={{
+              fontSize: "var(--text-eyebrow)",
+              fontWeight: 600,
+              textTransform: "uppercase",
+              letterSpacing: "0.08em",
+              color: "var(--color-text-muted)",
+              margin: "0 0 var(--spacing-4)",
+            }}
+          >
+            Portfolio pulse
+          </p>
+          <strong style={{ fontSize: "var(--text-small)", color: "var(--color-text-primary)" }}>
+            {portfolioSummary.resume_reason ?? "Portfolio is ready."}
+          </strong>
+          <div
+            style={{
+              display: "flex",
+              gap: "var(--spacing-8)",
+              marginTop: "var(--spacing-4)",
+              color: "var(--color-text-secondary)",
+              fontSize: "var(--text-eyebrow)",
+            }}
+          >
             <span>{portfolioSummary.totals.ready_tasks} ready</span>
             <span>{portfolioSummary.totals.blocked_tasks} blocked</span>
           </div>
@@ -154,17 +232,51 @@ export function Sidebar({
       <button
         className={`sidebar-item ${activeTopLevel === "settings" ? "active" : ""}`}
         onClick={onShowSettings}
+        title={collapsed ? "Settings" : undefined}
       >
-        <span className="sb-icon">ST</span>
+        <SbIcon code="ST" active={activeTopLevel === "settings"} />
         <span className="sb-label">Settings</span>
       </button>
-      <button className={`sidebar-item ${copilotOpen ? "active" : ""}`} onClick={onToggleCopilot}>
-        <span className="sb-icon">AI</span>
-        <span className="sb-label">vOIS</span>
+      <button
+        className={`sidebar-item ${copilotOpen ? "active" : ""}`}
+        onClick={onToggleCopilot}
+        title={collapsed ? "Copilot" : undefined}
+      >
+        <SbIcon code="AI" active={copilotOpen} />
+        <span className="sb-label">Copilot</span>
       </button>
     </nav>
   );
 }
+
+/* ── Icon badge component ── */
+
+function SbIcon({ code, active }: { code: string; active: boolean }) {
+  return (
+    <span
+      className="sb-icon"
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: 24,
+        height: 24,
+        borderRadius: 6,
+        background: active ? "var(--color-accent)" : "#F0F0F0",
+        color: active ? "var(--color-accent-foreground)" : "var(--color-text-secondary)",
+        fontSize: 11,
+        fontWeight: 600,
+        fontFamily: "var(--font-mono)",
+        flexShrink: 0,
+        transition: `background var(--motion-fast) var(--easing-standard), color var(--motion-fast) var(--easing-standard)`,
+      }}
+    >
+      {code}
+    </span>
+  );
+}
+
+/* ── Helpers ── */
 
 function titleCase(value: string) {
   return value.replace(/_/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
@@ -178,5 +290,26 @@ function referenceIcon(view: ReferenceView) {
       return "TL";
     case "signals":
       return "SG";
+  }
+}
+
+function venueIcon(view: VenueSubview) {
+  switch (view) {
+    case "overview":
+      return "OV";
+    case "assessment":
+      return "AS";
+    case "signals":
+      return "SG";
+    case "plan":
+      return "PL";
+    case "report":
+      return "RP";
+    case "history":
+      return "HI";
+    case "console":
+      return "CO";
+    default:
+      return "??";
   }
 }

@@ -106,144 +106,274 @@ export function AssessmentView({
 
   const busy = analyzingIntake || savingAssessment || runningEngine;
 
+  // -- shared inline style helpers --
+  const cardBase: React.CSSProperties = {
+    background: "#FFFFFF", borderRadius: 12, padding: 24,
+    boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+  };
+  const eyebrowStyle: React.CSSProperties = {
+    fontSize: 11, fontWeight: 600, textTransform: "uppercase",
+    letterSpacing: "0.08em", color: "#A3A3A3", marginBottom: 4,
+  };
+  const sectionTitle: React.CSSProperties = {
+    fontSize: 20, fontWeight: 600, color: "#0A0A0A", margin: "0 0 4px",
+  };
+  const descStyle: React.CSSProperties = {
+    fontSize: 13, color: "#737373", margin: "0 0 16px", lineHeight: 1.5,
+  };
+  const btnPrimary: React.CSSProperties = {
+    background: "#6C5CE7", color: "#fff", border: "none", borderRadius: 8,
+    padding: "8px 18px", fontSize: 13, fontWeight: 600, cursor: "pointer",
+  };
+  const btnSecondary: React.CSSProperties = {
+    background: "#fff", color: "#6C5CE7", border: "1.5px solid #6C5CE7",
+    borderRadius: 8, padding: "8px 18px", fontSize: 13, fontWeight: 600, cursor: "pointer",
+  };
+  const btnSmSecondary: React.CSSProperties = {
+    ...btnSecondary, padding: "4px 12px", fontSize: 11,
+  };
+  const rowStyle: React.CSSProperties = {
+    display: "flex", justifyContent: "space-between", alignItems: "center",
+    padding: "6px 0", borderBottom: "1px solid #F3F4F6",
+  };
+
   return (
-    <div className="view-stack">
-      <SectionCard
-        eyebrow="Flow"
-        title="Assessment operating loop"
-        description="The old app felt good because the path was obvious. This view is now organized around the actual loop."
-      >
+    <div style={{ display: "flex", flexDirection: "column", gap: 32, padding: "48px", maxWidth: 960, margin: "0 auto" }}>
+      {/* ---- Page header ---- */}
+      <div>
+        <div style={eyebrowStyle}>VENUE</div>
+        <h1 style={{ fontSize: 28, fontWeight: 700, color: "#0A0A0A", margin: 0 }}>
+          Assessment
+        </h1>
+        <p style={{ fontSize: 15, color: "#737373", margin: "4px 0 0" }}>
+          The operating loop: observe, infer, review, save, run.
+        </p>
+      </div>
+
+      {/* ---- Assessment operating loop card ---- */}
+      <div style={cardBase}>
+        <div style={eyebrowStyle}>Flow</div>
+        <div style={sectionTitle}>Assessment operating loop</div>
+        <p style={descStyle}>
+          The old app felt good because the path was obvious. This view is now organized around the actual loop.
+        </p>
+
+        {/* Loaded snapshot banner */}
         {loadedFromHistory && savedAssessment ? (
-          <div className="focus-card focus-card-primary">
-            <p className="section-eyebrow">Loaded snapshot</p>
-            <h3>{formatTimestamp(savedAssessment.created_at)}</h3>
-            <p>This assessment was reloaded from the timeline so you can continue from a real saved operating record.</p>
+          <div style={{
+            ...cardBase, borderLeft: "4px solid #6C5CE7", marginBottom: 16,
+            background: "#F5F3FF", padding: "16px 20px",
+          }}>
+            <div style={{ ...eyebrowStyle, color: "#6C5CE7" }}>Loaded snapshot</div>
+            <div style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", marginBottom: 4 }}>
+              {formatTimestamp(savedAssessment.created_at)}
+            </div>
+            <p style={{ fontSize: 13, color: "#525252", margin: 0 }}>
+              This assessment was reloaded from the timeline so you can continue from a real saved operating record.
+            </p>
           </div>
         ) : null}
+
+        {/* Staged draft plan banner */}
         {reviewPlan?.status === "draft" ? (
-          <div className="focus-card" style={{ borderLeft: "4px solid var(--gold)", marginBottom: "var(--spacing-md)" }}>
-            <p className="section-eyebrow">Staged Draft</p>
-            <h3>{reviewPlan.title}</h3>
-            <p>
+          <div style={{
+            ...cardBase, borderLeft: "4px solid #F59E0B", marginBottom: 16,
+            background: "#FFFBEB", padding: "16px 20px",
+          }}>
+            <div style={{ ...eyebrowStyle, color: "#F59E0B" }}>Staged Draft</div>
+            <div style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", marginBottom: 4 }}>
+              {reviewPlan.title}
+            </div>
+            <p style={{ fontSize: 13, color: "#525252", margin: "0 0 12px" }}>
               The engine has generated a preliminary intervention plan. Review the report and approve the draft to begin execution.
               {activePlan?.status === "active" ? " The current active plan remains live until you approve this draft." : ""}
             </p>
-            <div style={{ marginTop: "var(--spacing-md)", display: "flex", gap: "var(--spacing-sm)" }}>
-              <button className="btn btn-primary" onClick={() => onApprovePlan(reviewPlan.id)} disabled={busy}>
+            <div style={{ display: "flex", gap: 8 }}>
+              <button style={btnPrimary} onClick={() => onApprovePlan(reviewPlan.id)} disabled={busy}>
                 Activate Operational Plan
               </button>
-              <button className="btn btn-secondary" onClick={onOpenReport}>
+              <button style={btnSecondary} onClick={onOpenReport}>
                 Review Draft Details
               </button>
             </div>
           </div>
         ) : null}
-        <div className="journey-strip">
+
+        {/* Journey strip */}
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
           {stages.map((stage) => (
-            <div className={`journey-step ${stage.done ? "done" : ""}`} key={stage.label}>
-              <span className="journey-step-index">{stage.done ? "OK" : stage.label.slice(0, 1)}</span>
+            <div
+              key={stage.label}
+              style={{
+                flex: "1 1 140px", display: "flex", alignItems: "flex-start", gap: 10,
+                padding: "10px 14px", borderRadius: 10,
+                background: stage.done ? "#F0FDF4" : "#F9FAFB",
+                border: stage.done ? "1px solid #BBF7D0" : "1px solid #E5E7EB",
+              }}
+            >
+              <span style={{
+                width: 28, height: 28, borderRadius: "50%", flexShrink: 0,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontSize: 11, fontWeight: 700, color: "#fff",
+                background: stage.done ? "#10B981" : "#D1D5DB",
+              }}>
+                {stage.done ? "\u2713" : stage.label.slice(0, 1)}
+              </span>
               <div>
-                <strong>{stage.label}</strong>
-                <p>{stage.note}</p>
+                <div style={{ fontSize: 13, fontWeight: 600, color: "#0A0A0A" }}>{stage.label}</div>
+                <div style={{ fontSize: 11, color: "#737373", lineHeight: 1.4 }}>{stage.note}</div>
               </div>
             </div>
           ))}
         </div>
-      </SectionCard>
+      </div>
 
-      <div className="view-grid">
-        <SectionCard
-          eyebrow="Assessment"
-          title="Observed evidence"
-          description="Paste what actually happened. OIS stages the evidence through AI intake first, then saves a reviewable assessment."
-          actions={
-            <>
-              <button className="btn btn-primary" onClick={onAnalyze} disabled={busy}>
-                {analyzingIntake ? "Running AI intake..." : "Run AI intake"}
-              </button>
-              <button
-                className="btn btn-secondary"
-                onClick={onSaveAssessment}
-                disabled={savingAssessment || analyzingIntake || runningEngine || inferredSignalCount === 0}
-              >
-                {savingAssessment ? "Saving..." : "Save assessment"}
-              </button>
-              <button
-                className="btn btn-secondary"
-                onClick={onRunEngine}
-                disabled={runningEngine || analyzingIntake || savingAssessment || inferredSignalCount === 0}
-              >
-                {runningEngine ? "Running..." : "Run engine"}
-              </button>
-            </>
-          }
-        >
-          <div className="intake-panel">
-            <textarea
-              className="intake-textarea"
-              value={intakeText}
-              onChange={(event) => onIntakeChange(event.target.value)}
-              placeholder="Paste reviews, audit notes, consultant observations, complaints, or field reports..."
-            />
-            <IntakeQualityBar text={intakeText} />
-            {sampleIntakeNotes.length ? (
-              <div className="sample-actions">
-                {sampleIntakeNotes.map((sample) => (
-                  <button
-                    key={sample.id}
-                    className="btn btn-secondary"
-                    onClick={() => onLoadSample(sample.text)}
-                    disabled={busy}
-                  >
-                    Load {sample.label}
-                  </button>
-                ))}
-              </div>
-            ) : null}
+      {/* ---- Two-column: Evidence + Signal intake ---- */}
+      <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 16, alignItems: "start" }}>
+        {/* Observed evidence -- wider canvas */}
+        <div style={cardBase}>
+          <div style={eyebrowStyle}>Assessment</div>
+          <div style={sectionTitle}>Observed evidence</div>
+          <p style={descStyle}>
+            Paste what actually happened. OIS stages the evidence through AI intake first, then saves a reviewable assessment.
+          </p>
+
+          {/* Action buttons */}
+          <div style={{ display: "flex", gap: 8, marginBottom: 16 }}>
+            <button style={btnPrimary} onClick={onAnalyze} disabled={busy}>
+              {analyzingIntake ? "Running AI intake..." : "Run AI intake"}
+            </button>
+            <button
+              style={btnSecondary}
+              onClick={onSaveAssessment}
+              disabled={savingAssessment || analyzingIntake || runningEngine || inferredSignalCount === 0}
+            >
+              {savingAssessment ? "Saving..." : "Save assessment"}
+            </button>
+            <button
+              style={btnSecondary}
+              onClick={onRunEngine}
+              disabled={runningEngine || analyzingIntake || savingAssessment || inferredSignalCount === 0}
+            >
+              {runningEngine ? "Running..." : "Run engine"}
+            </button>
           </div>
-        </SectionCard>
 
-        <SectionCard
-          eyebrow="Signal Intake"
-          title="Inferred signal set"
-          description="Review each AI-detected signal. Confirm or reject before saving. Use the dedicated Signals Review page for deeper inspection."
-          actions={
-            intakePreview ? (
-              <button className="btn btn-secondary" onClick={onOpenSignalsReview}>
+          {/* Textarea -- focused layout */}
+          <textarea
+            value={intakeText}
+            onChange={(event) => onIntakeChange(event.target.value)}
+            placeholder="Paste reviews, audit notes, consultant observations, complaints, or field reports..."
+            style={{
+              width: "100%", minHeight: 220, resize: "vertical",
+              fontFamily: "inherit", fontSize: 15, lineHeight: 1.6,
+              padding: 16, borderRadius: 10,
+              border: "1.5px solid #E5E7EB", background: "#FAFAFA",
+              color: "#0A0A0A", outline: "none", boxSizing: "border-box",
+            }}
+          />
+          <IntakeQualityBar text={intakeText} />
+
+          {/* Sample notes */}
+          {sampleIntakeNotes.length ? (
+            <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 10 }}>
+              {sampleIntakeNotes.map((sample) => (
+                <button
+                  key={sample.id}
+                  style={btnSmSecondary}
+                  onClick={() => onLoadSample(sample.text)}
+                  disabled={busy}
+                >
+                  Load {sample.label}
+                </button>
+              ))}
+            </div>
+          ) : null}
+        </div>
+
+        {/* Inferred signal set */}
+        <div style={cardBase}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
+            <div>
+              <div style={eyebrowStyle}>Signal Intake</div>
+              <div style={sectionTitle}>Inferred signal set</div>
+              <p style={{ ...descStyle, marginBottom: 0 }}>
+                Review each AI-detected signal. Confirm or reject before saving.
+              </p>
+            </div>
+            {intakePreview ? (
+              <button style={btnSmSecondary} onClick={onOpenSignalsReview}>
                 Open full review
               </button>
-            ) : null
-          }
-        >
+            ) : null}
+          </div>
+
           {intakePreview ? (
-            <div className="inference-list">
-              <div className="focus-card">
-                <p className="section-eyebrow">Intake posture</p>
-                <div className="dependency-list">
-                  <span>{intakePreview.provider ?? "deterministic"} </span>
-                  <span>{intakePreview.model ?? intakePreview.ontology_version}</span>
-                  {intakePreview.venue_context?.venue_type ? <span>{intakePreview.venue_context.venue_type}</span> : null}
-                  {intakePreview.venue_context?.team_size_note ? <span>{intakePreview.venue_context.team_size_note}</span> : null}
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {/* Intake posture */}
+              <div style={{
+                padding: "10px 14px", background: "#F5F3FF", borderRadius: 10,
+                borderLeft: "3px solid #6C5CE7",
+              }}>
+                <div style={{ ...eyebrowStyle, color: "#6C5CE7", marginBottom: 6 }}>Intake posture</div>
+                <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                  {[
+                    intakePreview.provider ?? "deterministic",
+                    intakePreview.model ?? intakePreview.ontology_version,
+                    intakePreview.venue_context?.venue_type,
+                    intakePreview.venue_context?.team_size_note,
+                  ].filter(Boolean).map((tag, i) => (
+                    <span key={i} style={{
+                      fontSize: 11, padding: "2px 10px", borderRadius: 24,
+                      background: "#EDE9FE", color: "#6C5CE7", fontWeight: 500,
+                    }}>
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
+
+              {/* Signal cards */}
               {intakePreview.detected_signals.map((signal) => {
                 const rejected = rejectedSignalIds.has(signal.signal_id);
                 return (
-                  <article
-                    className={`inference-card${rejected ? " inference-card-rejected" : ""}`}
+                  <div
                     key={signal.signal_id}
+                    style={{
+                      padding: "12px 14px", borderRadius: 10,
+                      background: rejected ? "#FAFAFA" : "#FFFFFF",
+                      border: rejected ? "1px solid #E5E7EB" : "1px solid #D1D5DB",
+                      borderLeft: rejected ? "4px solid #D1D5DB" : "4px solid #10B981",
+                      opacity: rejected ? 0.6 : 1,
+                      transition: "all 0.15s ease",
+                    }}
                   >
-                    <div className="inference-head">
-                      <h3 style={{ opacity: rejected ? 0.45 : 1 }}>{signal.signal_name}</h3>
-                      <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: rejected ? 0 : 6 }}>
+                      <span style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A" }}>{signal.signal_name}</span>
+                      <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                         {!rejected && (
-                          <span className={`confidence-badge confidence-${signal.confidence}`}>{signal.confidence}</span>
+                          <span style={{
+                            fontSize: 11, padding: "2px 8px", borderRadius: 24, fontWeight: 600,
+                            background:
+                              signal.confidence === "high" ? "#D1FAE5" :
+                              signal.confidence === "medium" ? "#FEF3C7" : "#FEE2E2",
+                            color:
+                              signal.confidence === "high" ? "#065F46" :
+                              signal.confidence === "medium" ? "#92400E" : "#991B1B",
+                          }}>
+                            {signal.confidence}
+                          </span>
                         )}
                         <button
-                          className={`btn btn-secondary${rejected ? "" : " btn-destructive-subtle"}`}
-                          style={{ padding: "2px 10px", fontSize: "var(--text-xs)" }}
                           onClick={() => onToggleSignalRejection(signal.signal_id)}
                           title={rejected ? "Restore signal" : "Reject signal"}
+                          style={{
+                            fontSize: 11, padding: "2px 10px", borderRadius: 6, cursor: "pointer",
+                            background: rejected ? "#F0FDF4" : "#FEF2F2",
+                            color: rejected ? "#065F46" : "#991B1B",
+                            border: rejected ? "1px solid #BBF7D0" : "1px solid #FECACA",
+                            fontWeight: 500,
+                          }}
                         >
                           {rejected ? "Restore" : "Reject"}
                         </button>
@@ -251,33 +381,44 @@ export function AssessmentView({
                     </div>
                     {!rejected && (
                       <>
-                        <p className="evidence-quote">&quot;{signal.evidence_snippet}&quot;</p>
-                        <div className="dependency-list">
+                        <p style={{ fontSize: 13, color: "#525252", margin: "0 0 6px", fontStyle: "italic" }}>
+                          &quot;{signal.evidence_snippet}&quot;
+                        </p>
+                        <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
                           {signal.match_reasons.map((reason) => (
-                            <span key={reason}>{reason}</span>
+                            <span key={reason} style={{
+                              fontSize: 11, padding: "1px 8px", borderRadius: 24,
+                              background: "#F3F4F6", color: "#525252",
+                            }}>
+                              {reason}
+                            </span>
                           ))}
                         </div>
                       </>
                     )}
-                  </article>
+                  </div>
                 );
               })}
+
+              {/* Unmapped observations */}
               {intakePreview.unmapped_observations.length ? (
-                <div className="diagnostic-column">
-                  <h3>Unmapped observations</h3>
-                  <ul className="spine-list">
+                <div style={{ marginTop: 8 }}>
+                  <div style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A", marginBottom: 6 }}>Unmapped observations</div>
+                  <ul style={{ listStyle: "disc", paddingLeft: 20, margin: 0 }}>
                     {intakePreview.unmapped_observations.map((item) => (
-                      <li key={item}>{item}</li>
+                      <li key={item} style={{ fontSize: 13, color: "#525252", marginBottom: 3 }}>{item}</li>
                     ))}
                   </ul>
                 </div>
               ) : null}
+
+              {/* Quantitative evidence */}
               {intakePreview.quantitative_evidence?.length ? (
-                <div className="diagnostic-column">
-                  <h3>Quantitative evidence</h3>
-                  <ul className="spine-list">
+                <div style={{ marginTop: 8 }}>
+                  <div style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A", marginBottom: 6 }}>Quantitative evidence</div>
+                  <ul style={{ listStyle: "disc", paddingLeft: 20, margin: 0 }}>
                     {intakePreview.quantitative_evidence.map((item) => (
-                      <li key={`${item.label}-${item.value}-${item.evidence_snippet}`}>
+                      <li key={`${item.label}-${item.value}-${item.evidence_snippet}`} style={{ fontSize: 13, color: "#525252", marginBottom: 3 }}>
                         {item.value}: {item.evidence_snippet}
                       </li>
                     ))}
@@ -286,148 +427,197 @@ export function AssessmentView({
               ) : null}
             </div>
           ) : (
-            <div className="empty-state">
-              <p>No inferred signals yet. Run AI intake to stage the diagnostic set.</p>
+            <div style={{ padding: "24px 0", textAlign: "center", color: "#A3A3A3", fontSize: 13 }}>
+              No inferred signals yet. Run AI intake to stage the diagnostic set.
             </div>
           )}
-        </SectionCard>
+        </div>
       </div>
 
-      {/* Signal browse — domain-grouped browse for full ontology */}
+      {/* ---- Signal browse ---- */}
       {ontologyBundle && (
-        <SectionCard
-          eyebrow="Signal Browse"
-          title="Add signals manually"
-          description={`Browse all ${ontologyBundle.signals.length} signals grouped by domain. Toggle to include in the assessment alongside AI-detected signals.`}
-          actions={
-            <button
-              className="btn btn-secondary"
-              onClick={() => setSignalBrowseOpen((v) => !v)}
-            >
+        <div style={cardBase}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
+            <div>
+              <div style={eyebrowStyle}>Signal Browse</div>
+              <div style={sectionTitle}>Add signals manually</div>
+              <p style={{ ...descStyle, marginBottom: 0 }}>
+                Browse all {ontologyBundle.signals.length} signals grouped by domain. Toggle to include in the assessment alongside AI-detected signals.
+              </p>
+            </div>
+            <button style={btnSecondary} onClick={() => setSignalBrowseOpen((v) => !v)}>
               {signalBrowseOpen ? "Collapse browse" : "Expand browse"}
             </button>
-          }
-        >
+          </div>
+
           {manuallyAddedSignalIds.size > 0 && (
-            <div className="readiness-row" style={{ marginBottom: "var(--space-3)" }}>
-              <strong>Manually added</strong>
-              <span>{manuallyAddedSignalIds.size} signal{manuallyAddedSignalIds.size !== 1 ? "s" : ""}</span>
+            <div style={{ ...rowStyle, marginBottom: 12 }}>
+              <span style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>Manually added</span>
+              <span style={{
+                fontSize: 11, padding: "2px 10px", borderRadius: 24,
+                background: "#EDE9FE", color: "#6C5CE7", fontWeight: 600,
+              }}>
+                {manuallyAddedSignalIds.size} signal{manuallyAddedSignalIds.size !== 1 ? "s" : ""}
+              </span>
             </div>
           )}
+
           {signalBrowseOpen && (
             <>
               <input
                 type="text"
-                className="intake-textarea"
-                style={{ minHeight: "unset", height: "var(--space-10)", marginBottom: "var(--space-4)" }}
                 placeholder="Search signals by name or description..."
                 value={signalSearch}
                 onChange={(e) => setSignalSearch(e.target.value)}
+                style={{
+                  width: "100%", padding: "8px 14px", fontSize: 13,
+                  border: "1.5px solid #E5E7EB", borderRadius: 8,
+                  background: "#FAFAFA", color: "#0A0A0A",
+                  outline: "none", marginBottom: 16, boxSizing: "border-box",
+                }}
               />
-              <div className="inference-list">
+              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                 {[...signalsByDomain.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([domain, signals]) => (
-                  <div key={domain} className="diagnostic-column">
-                    <h3 style={{ textTransform: "capitalize", marginBottom: "var(--space-2)" }}>
-                      {domain.replace(/_/g, " ")}
-                      <span style={{ fontWeight: "normal", opacity: 0.6, marginLeft: "var(--space-2)", fontSize: "var(--text-sm)" }}>
-                        ({signals.length})
+                  <div key={domain}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+                      <span style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A", textTransform: "capitalize" }}>
+                        {domain.replace(/_/g, " ")}
                       </span>
-                    </h3>
-                    <div className="inference-list" style={{ gap: "var(--space-2)" }}>
+                      <span style={{
+                        fontSize: 11, padding: "1px 8px", borderRadius: 24,
+                        background: "#F3F4F6", color: "#737373", fontWeight: 500,
+                      }}>
+                        {signals.length}
+                      </span>
+                    </div>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
                       {signals.map((signal: any) => {
                         const isDetected = detectedSignalIds.has(signal.id);
                         const isAdded = manuallyAddedSignalIds.has(signal.id);
                         const isRejected = rejectedSignalIds.has(signal.id);
                         const isActive = isAdded || (isDetected && !isRejected);
                         return (
-                          <article
+                          <div
                             key={signal.id}
-                            className={`inference-card${isActive ? " inference-card-selected" : ""}${isDetected && !isAdded ? " inference-card-ai" : ""}`}
-                            style={{ padding: "var(--space-2) var(--space-3)", cursor: "pointer" }}
                             onClick={() => {
                               if (isDetected) {
-                                // For AI-detected: use rejection toggle
                                 onToggleSignalRejection(signal.id);
                               } else {
                                 onToggleManualSignal(signal.id);
                               }
                             }}
+                            style={{
+                              display: "flex", justifyContent: "space-between", alignItems: "center",
+                              padding: "6px 12px", borderRadius: 8, cursor: "pointer",
+                              background: isActive ? "#F5F3FF" : "#F9FAFB",
+                              border: isActive ? "1px solid #C4B5FD" : "1px solid #E5E7EB",
+                              transition: "all 0.1s ease",
+                            }}
                           >
-                            <div className="inference-head">
-                              <span style={{ fontSize: "var(--text-sm)", opacity: isActive ? 1 : 0.7 }}>{signal.name}</span>
-                              <div style={{ display: "flex", gap: "var(--space-2)", alignItems: "center" }}>
-                                {isDetected && (
-                                  <span className="confidence-badge confidence-medium" style={{ fontSize: "var(--text-xs)" }}>AI</span>
-                                )}
-                                {isRejected && (
-                                  <span className="confidence-badge" style={{ fontSize: "var(--text-xs)", opacity: 0.5 }}>rejected</span>
-                                )}
+                            <span style={{ fontSize: 13, color: isActive ? "#0A0A0A" : "#737373" }}>
+                              {signal.name}
+                            </span>
+                            <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+                              {isDetected && (
                                 <span style={{
-                                  width: 18, height: 18, borderRadius: "50%",
-                                  background: isActive ? "var(--ois-coral)" : "var(--surface-2)",
-                                  border: "2px solid var(--ois-coral)",
-                                  display: "inline-block",
-                                  flexShrink: 0,
-                                }} />
-                              </div>
+                                  fontSize: 11, padding: "1px 6px", borderRadius: 24,
+                                  background: "#EDE9FE", color: "#6C5CE7", fontWeight: 600,
+                                }}>
+                                  AI
+                                </span>
+                              )}
+                              {isRejected && (
+                                <span style={{
+                                  fontSize: 11, padding: "1px 6px", borderRadius: 24,
+                                  background: "#F3F4F6", color: "#A3A3A3",
+                                }}>
+                                  rejected
+                                </span>
+                              )}
+                              <span style={{
+                                width: 16, height: 16, borderRadius: "50%", flexShrink: 0,
+                                background: isActive ? "#6C5CE7" : "#E5E7EB",
+                                border: "2px solid #6C5CE7",
+                                display: "inline-block",
+                              }} />
                             </div>
-                          </article>
+                          </div>
                         );
                       })}
                     </div>
                   </div>
                 ))}
                 {signalsByDomain.size === 0 && (
-                  <p style={{ opacity: 0.5 }}>No signals match your search.</p>
+                  <p style={{ color: "#A3A3A3", fontSize: 13 }}>No signals match your search.</p>
                 )}
               </div>
             </>
           )}
-        </SectionCard>
+        </div>
       )}
 
-      <SectionCard
-        eyebrow="Assessment State"
-        title="Review gate"
-        description="Set effort parameters, review the signal count, then save the assessment before the engine fires."
-        actions={
-          <>
-            <button className="btn btn-secondary" onClick={onOpenHistory}>
-              Open history
-            </button>
+      {/* ---- Review gate ---- */}
+      <div style={cardBase}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
+          <div>
+            <div style={eyebrowStyle}>Assessment State</div>
+            <div style={sectionTitle}>Review gate</div>
+            <p style={{ ...descStyle, marginBottom: 0 }}>
+              Set effort parameters, review the signal count, then save the assessment before the engine fires.
+            </p>
+          </div>
+          <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
+            <button style={btnSecondary} onClick={onOpenHistory}>Open history</button>
             <button
-              className="btn btn-primary"
+              style={{ ...btnPrimary, opacity: latestEngineRunAt ? 1 : 0.5 }}
               onClick={onOpenReport}
               disabled={!latestEngineRunAt}
             >
               Open report
             </button>
-          </>
-        }
-      >
-        <div className="readiness-list">
-          <div className="readiness-row">
-            <strong>Confirmed signals</strong>
-            <span>{inferredSignalCount}</span>
           </div>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          {/* Confirmed signals */}
+          <div style={rowStyle}>
+            <span style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>Confirmed signals</span>
+            <span style={{
+              fontSize: 13, fontWeight: 600, padding: "2px 10px", borderRadius: 24,
+              background: inferredSignalCount > 0 ? "#D1FAE5" : "#F3F4F6",
+              color: inferredSignalCount > 0 ? "#065F46" : "#A3A3A3",
+            }}>
+              {inferredSignalCount}
+            </span>
+          </div>
+
+          {/* Rejected signals */}
           {rejectedSignalIds.size > 0 && (
-            <div className="readiness-row">
-              <strong>Rejected signals</strong>
-              <span style={{ opacity: 0.6 }}>{rejectedSignalIds.size} excluded</span>
+            <div style={rowStyle}>
+              <span style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>Rejected signals</span>
+              <span style={{ fontSize: 13, color: "#A3A3A3" }}>{rejectedSignalIds.size} excluded</span>
             </div>
           )}
+
+          {/* Manually added */}
           {manuallyAddedSignalIds.size > 0 && (
-            <div className="readiness-row">
-              <strong>Manually added</strong>
-              <span>{manuallyAddedSignalIds.size}</span>
+            <div style={rowStyle}>
+              <span style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>Manually added</span>
+              <span style={{ fontSize: 13, color: "#0A0A0A" }}>{manuallyAddedSignalIds.size}</span>
             </div>
           )}
-          <div className="readiness-row">
-            <strong>Ontology version</strong>
-            <span>{intakePreview?.ontology_version ?? "pending"}</span>
+
+          {/* Ontology version */}
+          <div style={rowStyle}>
+            <span style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>Ontology version</span>
+            <span style={{ fontSize: 13, color: "#0A0A0A" }}>{intakePreview?.ontology_version ?? "pending"}</span>
           </div>
-          <div className="readiness-row">
-            <label htmlFor="mgmt-hours" style={{ fontWeight: "bold" }}>Management hours / week</label>
+
+          {/* Management hours */}
+          <div style={rowStyle}>
+            <label htmlFor="mgmt-hours" style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>
+              Management hours / week
+            </label>
             <input
               id="mgmt-hours"
               type="number"
@@ -436,19 +626,19 @@ export function AssessmentView({
               value={managementHours}
               onChange={(e) => onManagementHoursChange(Math.max(1, parseInt(e.target.value, 10) || 1))}
               style={{
-                width: 72,
-                textAlign: "right",
-                background: "var(--surface-2)",
-                border: "1px solid var(--border)",
-                borderRadius: "var(--radius-sm)",
-                padding: "2px 8px",
-                color: "var(--text-primary)",
-                fontSize: "var(--text-sm)",
+                width: 72, textAlign: "right",
+                background: "#FAFAFA", border: "1.5px solid #E5E7EB",
+                borderRadius: 8, padding: "4px 8px",
+                color: "#0A0A0A", fontSize: 13, outline: "none",
               }}
             />
           </div>
-          <div className="readiness-row">
-            <label htmlFor="weekly-budget" style={{ fontWeight: "bold" }}>Weekly effort budget (hours)</label>
+
+          {/* Weekly budget */}
+          <div style={rowStyle}>
+            <label htmlFor="weekly-budget" style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>
+              Weekly effort budget (hours)
+            </label>
             <input
               id="weekly-budget"
               type="number"
@@ -457,27 +647,36 @@ export function AssessmentView({
               value={weeklyBudget}
               onChange={(e) => onWeeklyBudgetChange(Math.max(1, parseInt(e.target.value, 10) || 1))}
               style={{
-                width: 72,
-                textAlign: "right",
-                background: "var(--surface-2)",
-                border: "1px solid var(--border)",
-                borderRadius: "var(--radius-sm)",
-                padding: "2px 8px",
-                color: "var(--text-primary)",
-                fontSize: "var(--text-sm)",
+                width: 72, textAlign: "right",
+                background: "#FAFAFA", border: "1.5px solid #E5E7EB",
+                borderRadius: 8, padding: "4px 8px",
+                color: "#0A0A0A", fontSize: 13, outline: "none",
               }}
             />
           </div>
-          <div className="readiness-row">
-            <strong>Status</strong>
-            <span>{savedAssessment ? "Saved and reviewable" : "Unsaved inference"}</span>
+
+          {/* Status */}
+          <div style={rowStyle}>
+            <span style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>Status</span>
+            <span style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13 }}>
+              <span style={{
+                width: 8, height: 8, borderRadius: "50%",
+                background: savedAssessment ? "#10B981" : "#F59E0B",
+                display: "inline-block",
+              }} />
+              {savedAssessment ? "Saved and reviewable" : "Unsaved inference"}
+            </span>
           </div>
-          <div className="readiness-row">
-            <strong>Latest run</strong>
-            <span>{latestEngineRunAt ? formatTimestamp(latestEngineRunAt) : "not run yet"}</span>
+
+          {/* Latest run */}
+          <div style={{ ...rowStyle, borderBottom: "none" }}>
+            <span style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>Latest run</span>
+            <span style={{ fontSize: 13, color: "#0A0A0A" }}>
+              {latestEngineRunAt ? formatTimestamp(latestEngineRunAt) : "not run yet"}
+            </span>
           </div>
         </div>
-      </SectionCard>
+      </div>
     </div>
   );
 }
@@ -497,18 +696,18 @@ function IntakeQualityBar({ text }: { text: string }) {
 
   const barWidth = Math.min(100, Math.round((wordCount / 200) * 100));
   const barColor =
-    quality.level === "empty" ? "var(--border, #ccc)"
-      : quality.level === "thin" ? "var(--danger, #dc2626)"
-        : quality.level === "minimal" ? "var(--warning, #f59e0b)"
-          : "var(--success, #16a34a)";
+    quality.level === "empty" ? "#D1D5DB"
+      : quality.level === "thin" ? "#EF4444"
+        : quality.level === "minimal" ? "#F59E0B"
+          : "#10B981";
 
   return (
-    <div style={{ marginTop: "var(--space-2, 8px)" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", fontSize: "var(--text-xs, 11px)", opacity: 0.7, marginBottom: 4 }}>
+    <div style={{ marginTop: 8 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#A3A3A3", marginBottom: 4 }}>
         <span>{quality.label} ({wordCount} words)</span>
         <span>{quality.hint}</span>
       </div>
-      <div style={{ height: 4, borderRadius: 2, background: "var(--surface-2, #f0f0f0)", overflow: "hidden" }}>
+      <div style={{ height: 4, borderRadius: 2, background: "#F3F4F6", overflow: "hidden" }}>
         <div style={{ height: "100%", width: `${barWidth}%`, background: barColor, borderRadius: 2, transition: "width 0.3s ease" }} />
       </div>
     </div>

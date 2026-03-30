@@ -27,10 +27,82 @@ type HelpCard = {
   tone: "friendly" | "tip" | "heads-up";
 };
 
-const TONE_STYLES: Record<HelpCard["tone"], { border: string; icon: string }> = {
-  friendly: { border: "var(--sky)", icon: "?" },
-  tip: { border: "var(--leaf)", icon: "i" },
-  "heads-up": { border: "var(--gold)", icon: "!" },
+const TONE_COLORS: Record<HelpCard["tone"], { border: string; icon: string; bg: string }> = {
+  friendly: { border: "#6366F1", icon: "?", bg: "#EEF2FF" },
+  tip: { border: "#10B981", icon: "i", bg: "#ECFDF5" },
+  "heads-up": { border: "#F59E0B", icon: "!", bg: "#FFFBEB" },
+};
+
+const sectionPadding: React.CSSProperties = { padding: 20 };
+
+const sectionHeading: React.CSSProperties = {
+  fontSize: 20,
+  fontWeight: 600,
+  color: "#1a1a2e",
+  marginBottom: 4,
+};
+
+const sectionDesc: React.CSSProperties = {
+  fontSize: 14,
+  color: "#666",
+  marginBottom: 16,
+  lineHeight: 1.4,
+};
+
+const inputStyle: React.CSSProperties = {
+  width: "100%",
+  height: 48,
+  borderRadius: 12,
+  border: "1px solid #e0e0e0",
+  padding: "0 16px",
+  fontSize: 16,
+  outline: "none",
+  boxSizing: "border-box",
+};
+
+const textareaStyle: React.CSSProperties = {
+  width: "100%",
+  borderRadius: 12,
+  border: "1px solid #e0e0e0",
+  padding: 16,
+  fontSize: 16,
+  outline: "none",
+  resize: "vertical",
+  minHeight: 100,
+  lineHeight: 1.5,
+  boxSizing: "border-box",
+};
+
+const primaryBtnStyle: React.CSSProperties = {
+  width: "100%",
+  height: 48,
+  borderRadius: 8,
+  border: "none",
+  background: "#6C5CE7",
+  color: "#fff",
+  fontSize: 16,
+  fontWeight: 600,
+  cursor: "pointer",
+};
+
+const secondaryBtnStyle: React.CSSProperties = {
+  height: 48,
+  borderRadius: 8,
+  border: "1px solid #e0e0e0",
+  background: "#fff",
+  color: "#1a1a2e",
+  fontSize: 14,
+  fontWeight: 500,
+  cursor: "pointer",
+  padding: "0 16px",
+};
+
+const cardStyle: React.CSSProperties = {
+  background: "#fff",
+  borderRadius: 16,
+  padding: 20,
+  marginBottom: 12,
+  boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
 };
 
 export function AskForHelp({
@@ -63,60 +135,88 @@ export function AskForHelp({
 
   return (
     <div className="pocket-view">
-      <SectionCard
-        eyebrow="Help"
-        title="Request support"
-        description="Create a real help request, then continue the linked thread with grounded context."
-      >
-        <div className="progress-form">
+      {/* ---- Request support form ---- */}
+      <div style={sectionPadding}>
+        <div style={sectionHeading}>Request support</div>
+        <div style={sectionDesc}>
+          Create a real help request, then continue the linked thread with grounded context.
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <input
-            className="progress-input"
+            style={inputStyle}
             value={title}
             onChange={(event) => setTitle(event.target.value)}
             placeholder="What do you need help with?"
           />
           <textarea
-            className="progress-textarea"
+            style={textareaStyle}
             value={prompt}
             onChange={(event) => setPrompt(event.target.value)}
             placeholder="Describe what is confusing, blocked, or risky on this shift..."
           />
-          <button className="btn btn-primary" onClick={handleSubmit} disabled={submitting || !title.trim() || !prompt.trim()}>
+          <button
+            style={{
+              ...primaryBtnStyle,
+              opacity: submitting || !title.trim() || !prompt.trim() ? 0.5 : 1,
+              cursor: submitting || !title.trim() || !prompt.trim() ? "not-allowed" : "pointer",
+            }}
+            onClick={handleSubmit}
+            disabled={submitting || !title.trim() || !prompt.trim()}
+          >
             {submitting ? "Sending..." : "Create help request"}
           </button>
         </div>
-      </SectionCard>
+      </div>
 
-      <SectionCard
-        eyebrow="Requests"
-        title="Open and recent help"
-        description="Help is now its own operational lane. Open the linked thread to continue the conversation."
-      >
+      {/* ---- Open and recent help ---- */}
+      <div style={sectionPadding}>
+        <div style={sectionHeading}>Open and recent help</div>
+        <div style={sectionDesc}>
+          Help is now its own operational lane. Open the linked thread to continue the conversation.
+        </div>
+
         {loading ? (
-          <div className="empty-state">
-            <p>Loading help requests...</p>
+          <div style={{ padding: 20, textAlign: "center", color: "#888", fontSize: 16 }}>
+            Loading help requests...
           </div>
         ) : (
-          <div className="thread-list">
+          <div>
             {[...openRequests, ...recentRequests.slice(0, 4)].map((request) => (
-              <div className="history-card" key={request.id}>
-                <div className="thread-row">
-                  <strong>{request.title}</strong>
-                  <em>{request.status}</em>
+              <div key={request.id} style={cardStyle}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                  <span style={{ fontSize: 18, fontWeight: 600, color: "#1a1a2e" }}>{request.title}</span>
+                  <span style={{
+                    fontSize: 12,
+                    fontWeight: 600,
+                    padding: "4px 10px",
+                    borderRadius: 6,
+                    background: request.status === "closed" ? "#ECFDF5" : "#EEF2FF",
+                    color: request.status === "closed" ? "#10B981" : "#6366F1",
+                    textTransform: "uppercase",
+                  }}>
+                    {request.status}
+                  </span>
                 </div>
-                <p className="history-note">{request.prompt}</p>
-                <div className="dependency-list">
+                <p style={{ fontSize: 16, color: "#555", lineHeight: 1.4, marginBottom: 10 }}>
+                  {request.prompt}
+                </p>
+                <div style={{ display: "flex", gap: 12, fontSize: 13, color: "#888", marginBottom: 12 }}>
                   <span>{new Date(request.created_at).toLocaleString()}</span>
                   {request.channel ? <span>{request.channel}</span> : null}
                 </div>
-                <div className="sample-actions">
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                   {request.linked_thread_id ? (
-                    <button className="btn btn-secondary" onClick={() => onOpenThread(request.linked_thread_id!)}>
+                    <button style={secondaryBtnStyle} onClick={() => onOpenThread(request.linked_thread_id!)}>
                       Open linked thread
                     </button>
                   ) : null}
                   {request.status !== "closed" ? (
-                    <button className="btn btn-secondary" onClick={() => onCloseHelpRequest(request.id)} disabled={submitting}>
+                    <button
+                      style={{ ...secondaryBtnStyle, opacity: submitting ? 0.5 : 1 }}
+                      onClick={() => onCloseHelpRequest(request.id)}
+                      disabled={submitting}
+                    >
                       Mark closed
                     </button>
                   ) : null}
@@ -124,56 +224,69 @@ export function AskForHelp({
               </div>
             ))}
             {!helpRequests.length ? (
-              <div className="empty-state">
-                <p>No help requests yet. Use this when you need clarification, not just when something breaks.</p>
+              <div style={{ padding: 20, textAlign: "center", color: "#888", fontSize: 16 }}>
+                No help requests yet. Use this when you need clarification, not just when something breaks.
               </div>
             ) : null}
           </div>
         )}
-      </SectionCard>
+      </div>
 
-      <SectionCard
-        eyebrow="Tips"
-        title="Shift guidance"
-        description="Passive coaching stays here, but it no longer replaces a real support request."
-      >
+      {/* ---- Shift guidance tips ---- */}
+      <div style={sectionPadding}>
+        <div style={sectionHeading}>Shift guidance</div>
+        <div style={sectionDesc}>
+          Passive coaching stays here, but it no longer replaces a real support request.
+        </div>
+
         {cards.length === 0 ? (
-          <div className="empty-state">
-            <p>No tasks loaded yet, so there is nothing specific to coach right now.</p>
+          <div style={{ padding: 20, textAlign: "center", color: "#888", fontSize: 16 }}>
+            No tasks loaded yet, so there is nothing specific to coach right now.
           </div>
         ) : (
           <div>
             {cards.map((card, index) => {
-              const style = TONE_STYLES[card.tone];
+              const tone = TONE_COLORS[card.tone];
               return (
                 <div
                   key={`${card.title}-${index}`}
                   style={{
-                    padding: "var(--spacing-md)",
-                    borderLeft: `3px solid ${style.border}`,
-                    marginBottom: "var(--spacing-sm)",
-                    borderRadius: "var(--radius-sm)",
-                    background: "var(--bg-raised)",
+                    padding: 20,
+                    borderLeft: `4px solid ${tone.border}`,
+                    marginBottom: 12,
+                    borderRadius: 16,
+                    background: tone.bg,
                     cursor: "pointer",
+                    minHeight: 48,
                   }}
                   onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
                 >
-                  <div style={{ display: "flex", alignItems: "center", gap: "var(--spacing-sm)" }}>
-                    <span style={{ fontWeight: 700, fontSize: "1rem", color: style.border, width: 20, textAlign: "center" }}>
-                      {style.icon}
+                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                    <span style={{
+                      fontWeight: 700,
+                      fontSize: 18,
+                      color: tone.border,
+                      width: 28,
+                      height: 28,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: "50%",
+                      background: "#fff",
+                      flexShrink: 0,
+                    }}>
+                      {tone.icon}
                     </span>
-                    <span style={{ fontWeight: 500 }}>{card.title}</span>
+                    <span style={{ fontWeight: 600, fontSize: 16, color: "#1a1a2e" }}>{card.title}</span>
                   </div>
                   {expandedIndex === index ? (
-                    <div
-                      style={{
-                        marginTop: "var(--spacing-sm)",
-                        paddingLeft: 28,
-                        color: "var(--text-secondary)",
-                        lineHeight: 1.5,
-                        fontSize: "0.9rem",
-                      }}
-                    >
+                    <div style={{
+                      marginTop: 12,
+                      paddingLeft: 40,
+                      color: "#555",
+                      lineHeight: 1.5,
+                      fontSize: 16,
+                    }}>
                       {card.body}
                     </div>
                   ) : null}
@@ -182,7 +295,7 @@ export function AskForHelp({
             })}
           </div>
         )}
-      </SectionCard>
+      </div>
     </div>
   );
 }

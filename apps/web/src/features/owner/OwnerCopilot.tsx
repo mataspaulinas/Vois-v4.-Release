@@ -23,10 +23,25 @@ type StrategicInsight = {
   tone: "strategic" | "warning" | "opportunity";
 };
 
-const TONE_STYLES: Record<string, { border: string; icon: string }> = {
-  strategic: { border: "var(--ois-coral, #FF6B5A)", icon: "S" },
-  warning: { border: "var(--sunrise)", icon: "!" },
-  opportunity: { border: "var(--leaf)", icon: "+" },
+const TONE_COLORS: Record<string, { border: string; badge: string; badgeBg: string; icon: string }> = {
+  strategic: {
+    border: "var(--color-accent, #6C5CE7)",
+    badge: "var(--color-accent, #6C5CE7)",
+    badgeBg: "var(--color-accent-soft, rgba(108,92,231,0.08))",
+    icon: "S",
+  },
+  warning: {
+    border: "var(--color-warning, #F59E0B)",
+    badge: "var(--color-warning, #F59E0B)",
+    badgeBg: "var(--color-warning-soft, rgba(245,158,11,0.08))",
+    icon: "!",
+  },
+  opportunity: {
+    border: "var(--color-success, #10B981)",
+    badge: "var(--color-success, #10B981)",
+    badgeBg: "var(--color-success-soft, rgba(16,185,129,0.08))",
+    icon: "+",
+  },
 };
 
 export function OwnerCopilot({
@@ -56,34 +71,86 @@ export function OwnerCopilot({
         description="Direct, strategic guidance for portfolio-level decisions."
       >
         {insights.length === 0 ? (
-          <div className="empty-state">
-            <p>Portfolio is stable. No strategic actions needed right now.</p>
+          <div
+            style={{
+              padding: "var(--spacing-48) var(--spacing-24)",
+              textAlign: "center",
+            }}
+          >
+            <p
+              style={{
+                fontSize: "var(--text-body, 15px)",
+                color: "var(--color-text-muted, #A3A3A3)",
+              }}
+            >
+              Portfolio is stable. No strategic actions needed right now.
+            </p>
           </div>
         ) : (
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "var(--spacing-12)" }}>
             {insights.map((insight, i) => {
-              const style = TONE_STYLES[insight.tone] ?? TONE_STYLES.strategic;
+              const tone = TONE_COLORS[insight.tone] ?? TONE_COLORS.strategic;
+              const isOpen = expandedIndex === i;
               return (
                 <div
                   key={i}
+                  onClick={() => setExpandedIndex(isOpen ? null : i)}
                   style={{
-                    padding: "var(--spacing-md)",
-                    borderLeft: `3px solid ${style.border}`,
-                    marginBottom: "var(--spacing-sm)",
-                    borderRadius: "var(--radius-sm)",
-                    background: "var(--bg-raised)",
+                    padding: "var(--spacing-20)",
+                    borderRadius: "var(--radius-md, 12px)",
+                    background: "var(--color-surface, #FFFFFF)",
+                    border: "1px solid var(--color-border-subtle, #E5E5E5)",
+                    borderLeftWidth: 3,
+                    borderLeftColor: tone.border,
+                    boxShadow: "var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.04))",
                     cursor: "pointer",
+                    transition: "box-shadow var(--motion-fast) var(--easing-standard)",
                   }}
-                  onClick={() => setExpandedIndex(expandedIndex === i ? null : i)}
                 >
-                  <div style={{ display: "flex", alignItems: "center", gap: "var(--spacing-sm)" }}>
-                    <span style={{ fontWeight: 700, fontSize: "1rem", color: style.border, width: 20, textAlign: "center" }}>
-                      {style.icon}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "var(--spacing-12)",
+                    }}
+                  >
+                    <span
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        width: 24,
+                        height: 24,
+                        borderRadius: "var(--radius-full, 9999px)",
+                        background: tone.badgeBg,
+                        color: tone.badge,
+                        fontWeight: "var(--weight-bold, 700)" as any,
+                        fontSize: "var(--text-small, 13px)",
+                        flexShrink: 0,
+                      }}
+                    >
+                      {tone.icon}
                     </span>
-                    <span style={{ fontWeight: 500 }}>{insight.title}</span>
+                    <span
+                      style={{
+                        fontSize: "var(--text-body, 15px)",
+                        fontWeight: "var(--weight-medium, 500)",
+                        color: "var(--color-text-primary, #0A0A0A)",
+                      }}
+                    >
+                      {insight.title}
+                    </span>
                   </div>
-                  {expandedIndex === i ? (
-                    <div style={{ marginTop: "var(--spacing-sm)", paddingLeft: 28, color: "var(--text-secondary)", lineHeight: 1.5 }}>
+                  {isOpen ? (
+                    <div
+                      style={{
+                        marginTop: "var(--spacing-12)",
+                        paddingLeft: 36,
+                        fontSize: "var(--text-body, 15px)",
+                        lineHeight: "var(--lh-loose, 1.6)",
+                        color: "var(--color-text-secondary, #525252)",
+                      }}
+                    >
                       {insight.body}
                     </div>
                   ) : null}

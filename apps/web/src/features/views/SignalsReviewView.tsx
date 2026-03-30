@@ -19,6 +19,37 @@ type SignalsReviewViewProps = {
 
 type FilterMode = "all" | "confirmed" | "rejected" | "manual";
 
+/* ── design tokens ─────────────────────────────────── */
+const ds = {
+  eyebrow: { fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#A3A3A3", margin: 0 },
+  pageTitle: { fontSize: 28, fontWeight: 700, color: "#0A0A0A", margin: "4px 0 0" },
+  body: { fontSize: 15, color: "#525252", lineHeight: 1.55, margin: 0 },
+  small: { fontSize: 13, color: "#737373", lineHeight: 1.5, margin: 0 },
+  sectionTitle: { fontSize: 20, fontWeight: 600, color: "#0A0A0A", margin: 0 },
+  card: { background: "#FFFFFF", borderRadius: 12, boxShadow: "0 1px 3px rgba(0,0,0,0.04)", padding: "20px 24px" } as React.CSSProperties,
+  accent: "#6C5CE7",
+  success: "#10B981",
+  warning: "#F59E0B",
+  danger: "#EF4444",
+  info: "#6366F1",
+  btnPrimary: { background: "#6C5CE7", color: "#FFFFFF", border: "none", borderRadius: 8, padding: "8px 18px", fontSize: 13, fontWeight: 600, cursor: "pointer" } as React.CSSProperties,
+  btnSecondary: { background: "#FFFFFF", color: "#0A0A0A", border: "1px solid #E5E5E5", borderRadius: 8, padding: "8px 18px", fontSize: 13, fontWeight: 500, cursor: "pointer" } as React.CSSProperties,
+  btnSmall: { background: "#FFFFFF", color: "#0A0A0A", border: "1px solid #E5E5E5", borderRadius: 6, padding: "2px 10px", fontSize: 11, fontWeight: 500, cursor: "pointer" } as React.CSSProperties,
+  btnSmallDanger: { background: "#FFFFFF", color: "#EF4444", border: "1px solid #FECACA", borderRadius: 6, padding: "2px 10px", fontSize: 11, fontWeight: 500, cursor: "pointer" } as React.CSSProperties,
+  countPill: { display: "inline-flex", alignItems: "center", padding: "2px 8px", borderRadius: 10, fontSize: 11, fontWeight: 600, background: "#F5F5F5", color: "#737373" } as React.CSSProperties,
+  select: { background: "#FAFAFA", border: "1px solid #E5E5E5", borderRadius: 8, padding: "6px 12px", fontSize: 13, color: "#0A0A0A", outline: "none", cursor: "pointer" } as React.CSSProperties,
+  searchInput: { width: "100%", padding: "10px 14px", fontSize: 14, border: "1px solid #E5E5E5", borderRadius: 8, background: "#FAFAFA", outline: "none", boxSizing: "border-box" as const },
+} as const;
+
+const confidenceColor = (confidence: string) => {
+  switch (confidence) {
+    case "high": return ds.success;
+    case "medium": return ds.warning;
+    case "low": return ds.danger;
+    default: return "#A3A3A3";
+  }
+};
+
 export function SignalsReviewView({
   intakePreview,
   ontologyBundle,
@@ -48,7 +79,7 @@ export function SignalsReviewView({
     return map;
   }, [ontologyBundle]);
 
-  // Build downstream impact map: signal → failure modes → response patterns → blocks
+  // Build downstream impact map: signal -> failure modes -> response patterns -> blocks
   const signalImpact = useMemo(() => {
     if (!ontologyBundle) return new Map<string, { failureModes: string[]; responsePatterns: string[]; blocks: string[] }>();
     const fmLookup = new Map(ontologyBundle.failure_modes.map((fm) => [fm.id, fm.name]));
@@ -193,239 +224,235 @@ export function SignalsReviewView({
 
   if (!intakePreview && manuallyAddedSignalIds.size === 0) {
     return (
-      <div className="view-stack">
-        <SectionCard
-          eyebrow="Signals Review"
-          title="No signals to review"
-          description="Run AI intake from the Assessment page first, or manually add signals to begin review."
-          actions={
-            <button className="btn btn-primary" onClick={onOpenAssessment}>
-              Go to Assessment
-            </button>
-          }
-        >
-          <div className="empty-state">
-            <p>The machine proposes, the human reviews. Start by capturing evidence in the Assessment page.</p>
-          </div>
-        </SectionCard>
+      <div style={{ padding: 48, display: "flex", flexDirection: "column", gap: 32 }}>
+        <div>
+          <p style={ds.eyebrow}>VENUE</p>
+          <h1 style={ds.pageTitle}>Signals review</h1>
+        </div>
+        <section style={ds.card}>
+          <p style={ds.eyebrow}>Signals Review</p>
+          <h2 style={ds.sectionTitle}>No signals to review</h2>
+          <p style={{ ...ds.small, marginTop: 4, marginBottom: 16 }}>Run AI intake from the Assessment page first, or manually add signals to begin review.</p>
+          <button style={ds.btnPrimary} onClick={onOpenAssessment}>Go to Assessment</button>
+          <p style={{ ...ds.small, textAlign: "center", padding: "24px 0 8px" }}>The machine proposes, the human reviews. Start by capturing evidence in the Assessment page.</p>
+        </section>
       </div>
     );
   }
 
   return (
-    <div className="view-stack">
-      {/* Summary strip */}
-      <SectionCard
-        eyebrow="Signals Review"
-        title="The machine proposes, the human reviews"
-        description="Confirm or reject each signal before it drives downstream diagnosis. Reviewed signals become the authoritative interpreted set for this assessment cycle."
-        actions={
-          <>
-            <button className="btn btn-secondary" onClick={onOpenAssessment}>
-              Back to Assessment
-            </button>
-            <button className="btn btn-primary" onClick={onOpenReport} disabled={confirmedCount === 0}>
+    <div style={{ padding: 48, display: "flex", flexDirection: "column", gap: 32 }}>
+      {/* ── Page header ────────────────────────── */}
+      <div>
+        <p style={ds.eyebrow}>VENUE</p>
+        <h1 style={ds.pageTitle}>Signals review</h1>
+      </div>
+
+      {/* ── Summary strip ──────────────────────── */}
+      <section style={ds.card}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16, marginBottom: 20 }}>
+          <div>
+            <p style={ds.eyebrow}>Signals Review</p>
+            <h2 style={ds.sectionTitle}>The machine proposes, the human reviews</h2>
+            <p style={{ ...ds.small, marginTop: 4 }}>Confirm or reject each signal before it drives downstream diagnosis. Reviewed signals become the authoritative interpreted set for this assessment cycle.</p>
+          </div>
+          <div style={{ display: "flex", gap: 8 }}>
+            <button style={ds.btnSecondary} onClick={onOpenAssessment}>Back to Assessment</button>
+            <button style={{ ...ds.btnPrimary, ...(confirmedCount === 0 ? { opacity: 0.5, cursor: "not-allowed" } : {}) }} onClick={onOpenReport} disabled={confirmedCount === 0}>
               Continue to Report
             </button>
-          </>
-        }
-      >
-        <div className="readiness-list">
-          <div className="readiness-row">
-            <strong>Confirmed signals</strong>
-            <span style={{ color: "var(--success, #16a34a)" }}>{confirmedCount}</span>
-          </div>
-          <div className="readiness-row">
-            <strong>Rejected signals</strong>
-            <span style={{ opacity: 0.6 }}>{rejectedCount}</span>
-          </div>
-          {manualCount > 0 && (
-            <div className="readiness-row">
-              <strong>Manually added</strong>
-              <span>{manualCount}</span>
-            </div>
-          )}
-          <div className="readiness-row">
-            <strong>Total proposed</strong>
-            <span>{reviewSignals.length}</span>
           </div>
         </div>
-      </SectionCard>
 
-      {/* Filters */}
-      <div className="filter-strip" style={{ display: "flex", gap: "var(--space-3, 12px)", flexWrap: "wrap", padding: "0 var(--space-4, 16px)" }}>
-        <select
-          value={filterMode}
-          onChange={(e) => setFilterMode(e.target.value as FilterMode)}
-          style={{ background: "var(--surface-2, #f5f5f5)", border: "1px solid var(--border, #e0e0e0)", borderRadius: "var(--radius-sm, 4px)", padding: "4px 12px", fontSize: "var(--text-sm, 14px)" }}
-        >
+        <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
+            <span style={{ color: "#737373", fontWeight: 500 }}>Confirmed signals</span>
+            <span style={{ color: ds.success, fontWeight: 600 }}>{confirmedCount}</span>
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
+            <span style={{ color: "#737373", fontWeight: 500 }}>Rejected signals</span>
+            <span style={{ color: "#A3A3A3", fontWeight: 500 }}>{rejectedCount}</span>
+          </div>
+          {manualCount > 0 && (
+            <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
+              <span style={{ color: "#737373", fontWeight: 500 }}>Manually added</span>
+              <span style={{ color: "#0A0A0A", fontWeight: 500 }}>{manualCount}</span>
+            </div>
+          )}
+          <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
+            <span style={{ color: "#737373", fontWeight: 500 }}>Total proposed</span>
+            <span style={{ color: "#0A0A0A", fontWeight: 600 }}>{reviewSignals.length}</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Filters ────────────────────────────── */}
+      <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
+        <select value={filterMode} onChange={(e) => setFilterMode(e.target.value as FilterMode)} style={ds.select}>
           <option value="all">All signals ({reviewSignals.length})</option>
           <option value="confirmed">Confirmed ({confirmedCount})</option>
           <option value="rejected">Rejected ({rejectedCount})</option>
           {manualCount > 0 && <option value="manual">Manual ({manualCount})</option>}
         </select>
         {allDomains.length > 1 && (
-          <select
-            value={domainFilter}
-            onChange={(e) => setDomainFilter(e.target.value)}
-            style={{ background: "var(--surface-2, #f5f5f5)", border: "1px solid var(--border, #e0e0e0)", borderRadius: "var(--radius-sm, 4px)", padding: "4px 12px", fontSize: "var(--text-sm, 14px)" }}
-          >
+          <select value={domainFilter} onChange={(e) => setDomainFilter(e.target.value)} style={ds.select}>
             <option value="all">All domains</option>
             {allDomains.map((d) => (
               <option key={d} value={d}>{d.replace(/_/g, " ")}</option>
             ))}
           </select>
         )}
-        <button className="btn btn-secondary" onClick={() => setBrowseOpen((v) => !v)}>
+        <button style={ds.btnSecondary} onClick={() => setBrowseOpen((v) => !v)}>
           {browseOpen ? "Close browse" : "Add signals manually"}
         </button>
       </div>
 
-      {/* Signal review list */}
-      <div className="view-grid">
-        <SectionCard
-          eyebrow="Reviewed Signals"
-          title={`${filteredSignals.length} signal${filteredSignals.length !== 1 ? "s" : ""}`}
-          description="Each signal represents a detected operational condition. Confirm to include in downstream diagnosis, or reject to exclude."
-        >
-          <div className="inference-list">
-            {filteredSignals.map((signal) => {
-              const impact = signalImpact.get(signal.signalId);
-              const isExpanded = expandedSignalId === signal.signalId;
-              return (
-                <article
-                  className={`inference-card${signal.rejected ? " inference-card-rejected" : ""}${signal.source === "manual" ? " inference-card-selected" : ""}`}
-                  key={signal.signalId}
-                >
-                  <div className="inference-head">
-                    <div style={{ flex: 1 }}>
-                      <h3 style={{ opacity: signal.rejected ? 0.45 : 1, margin: 0 }}>{signal.name}</h3>
-                      <span style={{ fontSize: "var(--text-xs, 11px)", opacity: 0.6, textTransform: "capitalize" }}>
-                        {signal.domain.replace(/_/g, " ")}
-                      </span>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2, 8px)" }}>
-                      {signal.source === "ai" && !signal.rejected && (
-                        <span className={`confidence-badge confidence-${signal.confidence}`}>{signal.confidence}</span>
-                      )}
-                      {signal.source === "manual" && (
-                        <span className="confidence-badge" style={{ fontSize: "var(--text-xs, 11px)" }}>manual</span>
-                      )}
-                      <button
-                        className={`btn btn-secondary${signal.rejected ? "" : " btn-destructive-subtle"}`}
-                        style={{ padding: "2px 10px", fontSize: "var(--text-xs, 11px)" }}
-                        onClick={() => {
-                          if (signal.source === "ai") {
-                            onToggleSignalRejection(signal.signalId);
-                          } else {
-                            onToggleManualSignal(signal.signalId);
-                          }
-                        }}
-                      >
-                        {signal.rejected ? "Restore" : signal.source === "manual" ? "Remove" : "Reject"}
-                      </button>
-                      {impact && (
-                        <button
-                          className="btn btn-secondary"
-                          style={{ padding: "2px 10px", fontSize: "var(--text-xs, 11px)" }}
-                          onClick={() => setExpandedSignalId(isExpanded ? null : signal.signalId)}
-                        >
-                          {isExpanded ? "Hide impact" : "Show impact"}
-                        </button>
-                      )}
-                    </div>
+      {/* ── Signal review list ─────────────────── */}
+      <section style={ds.card}>
+        <p style={ds.eyebrow}>Reviewed Signals</p>
+        <h2 style={ds.sectionTitle}>{filteredSignals.length} signal{filteredSignals.length !== 1 ? "s" : ""}</h2>
+        <p style={{ ...ds.small, marginTop: 4, marginBottom: 20 }}>Each signal represents a detected operational condition. Confirm to include in downstream diagnosis, or reject to exclude.</p>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          {filteredSignals.map((signal) => {
+            const impact = signalImpact.get(signal.signalId);
+            const isExpanded = expandedSignalId === signal.signalId;
+            return (
+              <article
+                key={signal.signalId}
+                style={{
+                  ...ds.card,
+                  padding: "16px 20px",
+                  borderLeft: `4px solid ${signal.rejected ? "#E5E5E5" : signal.source === "manual" ? ds.info : ds.accent}`,
+                  ...(signal.rejected ? { opacity: 0.6 } : {}),
+                }}
+              >
+                {/* Head */}
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
+                  <div style={{ flex: 1 }}>
+                    <h3 style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A", margin: 0, ...(signal.rejected ? { opacity: 0.45 } : {}) }}>{signal.name}</h3>
+                    <span style={{ fontSize: 11, color: "#A3A3A3", textTransform: "capitalize" }}>{signal.domain.replace(/_/g, " ")}</span>
                   </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
+                    {signal.source === "ai" && !signal.rejected && (
+                      <span style={{
+                        padding: "2px 8px", borderRadius: 10, fontSize: 11, fontWeight: 600,
+                        background: `${confidenceColor(signal.confidence)}15`,
+                        color: confidenceColor(signal.confidence),
+                      }}>
+                        {signal.confidence}
+                      </span>
+                    )}
+                    {signal.source === "manual" && (
+                      <span style={ds.countPill}>manual</span>
+                    )}
+                    <button
+                      style={signal.rejected ? ds.btnSmall : ds.btnSmallDanger}
+                      onClick={() => {
+                        if (signal.source === "ai") {
+                          onToggleSignalRejection(signal.signalId);
+                        } else {
+                          onToggleManualSignal(signal.signalId);
+                        }
+                      }}
+                    >
+                      {signal.rejected ? "Restore" : signal.source === "manual" ? "Remove" : "Reject"}
+                    </button>
+                    {impact && (
+                      <button
+                        style={ds.btnSmall}
+                        onClick={() => setExpandedSignalId(isExpanded ? null : signal.signalId)}
+                      >
+                        {isExpanded ? "Hide impact" : "Show impact"}
+                      </button>
+                    )}
+                  </div>
+                </div>
 
-                  {!signal.rejected && signal.evidenceSnippet && (
-                    <p className="evidence-quote">&quot;{signal.evidenceSnippet}&quot;</p>
-                  )}
+                {/* Evidence */}
+                {!signal.rejected && signal.evidenceSnippet && (
+                  <p style={{ fontSize: 13, color: "#525252", fontStyle: "italic", marginTop: 8, paddingLeft: 12, borderLeft: "2px solid #E5E5E5" }}>
+                    &quot;{signal.evidenceSnippet}&quot;
+                  </p>
+                )}
 
-                  {!signal.rejected && signal.matchReasons.length > 0 && (
-                    <div className="dependency-list">
-                      {signal.matchReasons.map((reason) => (
-                        <span key={reason}>{reason}</span>
-                      ))}
-                    </div>
-                  )}
+                {/* Match reasons */}
+                {!signal.rejected && signal.matchReasons.length > 0 && (
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>
+                    {signal.matchReasons.map((reason) => (
+                      <span key={reason} style={ds.countPill}>{reason}</span>
+                    ))}
+                  </div>
+                )}
 
-                  {!signal.rejected && signal.description && (
-                    <p style={{ fontSize: "var(--text-sm, 13px)", opacity: 0.7, marginTop: "var(--space-2, 8px)" }}>
-                      {signal.description}
-                    </p>
-                  )}
+                {/* Description */}
+                {!signal.rejected && signal.description && (
+                  <p style={{ fontSize: 13, color: "#737373", marginTop: 8 }}>{signal.description}</p>
+                )}
 
-                  {/* Downstream impact panel */}
-                  {isExpanded && impact && !signal.rejected && (
-                    <div style={{ marginTop: "var(--space-3, 12px)", padding: "var(--space-3, 12px)", background: "var(--surface-2, #f8f8f8)", borderRadius: "var(--radius-sm, 4px)" }}>
-                      <p style={{ fontWeight: 600, fontSize: "var(--text-sm, 13px)", marginBottom: "var(--space-2, 8px)" }}>
-                        Downstream impact
-                      </p>
-                      {impact.failureModes.length > 0 && (
-                        <div style={{ marginBottom: "var(--space-2, 8px)" }}>
-                          <p style={{ fontSize: "var(--text-xs, 11px)", fontWeight: 600, opacity: 0.6 }}>Failure modes</p>
-                          <div className="dependency-list">
-                            {impact.failureModes.map((fm) => <span key={fm}>{fm}</span>)}
-                          </div>
+                {/* Downstream impact panel */}
+                {isExpanded && impact && !signal.rejected && (
+                  <div style={{ marginTop: 12, padding: 14, background: "#FAFAFA", borderRadius: 8 }}>
+                    <p style={{ fontSize: 13, fontWeight: 600, color: "#0A0A0A", marginBottom: 8 }}>Downstream impact</p>
+                    {impact.failureModes.length > 0 && (
+                      <div style={{ marginBottom: 8 }}>
+                        <p style={{ fontSize: 11, fontWeight: 600, color: "#A3A3A3", marginBottom: 4 }}>Failure modes</p>
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                          {impact.failureModes.map((fm) => <span key={fm} style={ds.countPill}>{fm}</span>)}
                         </div>
-                      )}
-                      {impact.responsePatterns.length > 0 && (
-                        <div style={{ marginBottom: "var(--space-2, 8px)" }}>
-                          <p style={{ fontSize: "var(--text-xs, 11px)", fontWeight: 600, opacity: 0.6 }}>Response patterns</p>
-                          <div className="dependency-list">
-                            {impact.responsePatterns.map((rp) => <span key={rp}>{rp}</span>)}
-                          </div>
+                      </div>
+                    )}
+                    {impact.responsePatterns.length > 0 && (
+                      <div style={{ marginBottom: 8 }}>
+                        <p style={{ fontSize: 11, fontWeight: 600, color: "#A3A3A3", marginBottom: 4 }}>Response patterns</p>
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                          {impact.responsePatterns.map((rp) => <span key={rp} style={ds.countPill}>{rp}</span>)}
                         </div>
-                      )}
-                      {impact.blocks.length > 0 && (
-                        <div>
-                          <p style={{ fontSize: "var(--text-xs, 11px)", fontWeight: 600, opacity: 0.6 }}>Intervention blocks</p>
-                          <div className="dependency-list">
-                            {impact.blocks.map((b) => <span key={b}>{b}</span>)}
-                          </div>
+                      </div>
+                    )}
+                    {impact.blocks.length > 0 && (
+                      <div>
+                        <p style={{ fontSize: 11, fontWeight: 600, color: "#A3A3A3", marginBottom: 4 }}>Intervention blocks</p>
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                          {impact.blocks.map((b) => <span key={b} style={ds.countPill}>{b}</span>)}
                         </div>
-                      )}
-                      {impact.failureModes.length === 0 && impact.blocks.length === 0 && (
-                        <p style={{ fontSize: "var(--text-sm, 13px)", opacity: 0.5 }}>No mapped downstream impact in current ontology.</p>
-                      )}
-                    </div>
-                  )}
-                </article>
-              );
-            })}
-            {filteredSignals.length === 0 && (
-              <div className="empty-state compact">
-                <p>No signals match the current filter.</p>
-              </div>
-            )}
-          </div>
-        </SectionCard>
-      </div>
+                      </div>
+                    )}
+                    {impact.failureModes.length === 0 && impact.blocks.length === 0 && (
+                      <p style={{ fontSize: 13, color: "#A3A3A3" }}>No mapped downstream impact in current ontology.</p>
+                    )}
+                  </div>
+                )}
+              </article>
+            );
+          })}
+          {filteredSignals.length === 0 && (
+            <p style={{ ...ds.small, textAlign: "center", padding: 24 }}>No signals match the current filter.</p>
+          )}
+        </div>
+      </section>
 
-      {/* Signal browse for manual additions */}
+      {/* ── Signal browse for manual additions ── */}
       {browseOpen && ontologyBundle && (
-        <SectionCard
-          eyebrow="Signal Browse"
-          title="Add signals manually"
-          description={`Browse all ${ontologyBundle.signals.length} signals grouped by domain.`}
-        >
+        <section style={ds.card}>
+          <p style={ds.eyebrow}>Signal Browse</p>
+          <h2 style={ds.sectionTitle}>Add signals manually</h2>
+          <p style={{ ...ds.small, marginTop: 4, marginBottom: 16 }}>Browse all {ontologyBundle.signals.length} signals grouped by domain.</p>
           <input
             type="text"
-            className="intake-textarea"
-            style={{ minHeight: "unset", height: "var(--space-10, 40px)", marginBottom: "var(--space-4, 16px)" }}
+            style={ds.searchInput}
             placeholder="Search signals by name or description..."
             value={browseSearch}
             onChange={(e) => setBrowseSearch(e.target.value)}
           />
-          <div className="inference-list">
+          <div style={{ display: "flex", flexDirection: "column", gap: 20, marginTop: 16 }}>
             {[...signalsByDomain.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([domain, signals]) => (
-              <div key={domain} className="diagnostic-column">
-                <h3 style={{ textTransform: "capitalize", marginBottom: "var(--space-2, 8px)" }}>
+              <div key={domain}>
+                <h3 style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A", textTransform: "capitalize", margin: "0 0 8px" }}>
                   {domain.replace(/_/g, " ")}
-                  <span style={{ fontWeight: "normal", opacity: 0.6, marginLeft: "var(--space-2, 8px)", fontSize: "var(--text-sm, 13px)" }}>
-                    ({signals.length})
-                  </span>
+                  <span style={{ fontWeight: 400, color: "#A3A3A3", marginLeft: 8, fontSize: 13 }}>({signals.length})</span>
                 </h3>
-                <div className="inference-list" style={{ gap: "var(--space-2, 8px)" }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                   {signals.map((signal: OntologySignalRecord) => {
                     const isDetected = detectedSignalIds.has(signal.id);
                     const isAdded = manuallyAddedSignalIds.has(signal.id);
@@ -434,8 +461,13 @@ export function SignalsReviewView({
                     return (
                       <article
                         key={signal.id}
-                        className={`inference-card${isActive ? " inference-card-selected" : ""}${isDetected && !isAdded ? " inference-card-ai" : ""}`}
-                        style={{ padding: "var(--space-2, 8px) var(--space-3, 12px)", cursor: "pointer" }}
+                        style={{
+                          display: "flex", justifyContent: "space-between", alignItems: "center",
+                          padding: "8px 14px", borderRadius: 8, cursor: "pointer",
+                          background: isActive ? "#F0EDFD" : "#FAFAFA",
+                          border: isActive ? `1px solid ${ds.accent}` : "1px solid transparent",
+                          transition: "background 0.1s ease",
+                        }}
                         onClick={() => {
                           if (isDetected) {
                             onToggleSignalRejection(signal.id);
@@ -444,23 +476,20 @@ export function SignalsReviewView({
                           }
                         }}
                       >
-                        <div className="inference-head">
-                          <span style={{ fontSize: "var(--text-sm, 13px)", opacity: isActive ? 1 : 0.7 }}>{signal.name}</span>
-                          <div style={{ display: "flex", gap: "var(--space-2, 8px)", alignItems: "center" }}>
-                            {isDetected && (
-                              <span className="confidence-badge confidence-medium" style={{ fontSize: "var(--text-xs, 11px)" }}>AI</span>
-                            )}
-                            {isRejected && (
-                              <span className="confidence-badge" style={{ fontSize: "var(--text-xs, 11px)", opacity: 0.5 }}>rejected</span>
-                            )}
-                            <span style={{
-                              width: 18, height: 18, borderRadius: "50%",
-                              background: isActive ? "var(--ois-coral, #e74c3c)" : "var(--surface-2, #f5f5f5)",
-                              border: "2px solid var(--ois-coral, #e74c3c)",
-                              display: "inline-block",
-                              flexShrink: 0,
-                            }} />
-                          </div>
+                        <span style={{ fontSize: 13, color: isActive ? "#0A0A0A" : "#737373" }}>{signal.name}</span>
+                        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                          {isDetected && (
+                            <span style={{ padding: "1px 6px", borderRadius: 8, fontSize: 10, fontWeight: 600, background: `${ds.warning}20`, color: ds.warning }}>AI</span>
+                          )}
+                          {isRejected && (
+                            <span style={{ ...ds.countPill, opacity: 0.5, fontSize: 10 }}>rejected</span>
+                          )}
+                          <span style={{
+                            width: 18, height: 18, borderRadius: "50%",
+                            background: isActive ? ds.accent : "#F5F5F5",
+                            border: `2px solid ${ds.accent}`,
+                            display: "inline-block", flexShrink: 0,
+                          }} />
                         </div>
                       </article>
                     );
@@ -469,10 +498,10 @@ export function SignalsReviewView({
               </div>
             ))}
             {signalsByDomain.size === 0 && (
-              <p style={{ opacity: 0.5 }}>No signals match your search.</p>
+              <p style={{ ...ds.small, color: "#A3A3A3" }}>No signals match your search.</p>
             )}
           </div>
-        </SectionCard>
+        </section>
       )}
     </div>
   );

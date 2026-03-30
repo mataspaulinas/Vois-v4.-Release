@@ -10,6 +10,68 @@ import { PlanExecutionSummary, PlanRecord, PlanTaskUpdatePayload, ProgressEntryR
 
 const ALL_STATUSES = ["not_started", "in_progress", "completed", "blocked", "on_hold", "deferred"];
 
+/* ── Design system tokens (inline) ── */
+const ds = {
+  accent: "#6C5CE7",
+  accentSoft: "rgba(108,92,231,0.08)",
+  success: "#10B981",
+  warning: "#F59E0B",
+  danger: "#EF4444",
+  info: "#6366F1",
+  cardBg: "#FFFFFF",
+  cardRadius: 12,
+  cardShadow: "0 1px 3px rgba(0,0,0,0.04)",
+  cardShadowHover: "0 4px 12px rgba(0,0,0,0.08)",
+  cardPadding: "20px 24px",
+  textBody: 15,
+  textSmall: 13,
+  textEyebrow: 11,
+  textHeading: 20,
+  textTitle: 28,
+  textCardTitle: 16,
+  sectionGap: 32,
+  cardGap: 16,
+  pageMargin: 48,
+  muted: "#8B8FA3",
+  textPrimary: "#1A1D2E",
+  textSecondary: "#5A5E73",
+  border: "#E8E9EF",
+  surfaceBg: "#F7F7FA",
+  statusDot: 8,
+} as const;
+
+const statusColor = (status: string) => {
+  switch (status) {
+    case "not_started": return ds.muted;
+    case "in_progress": return ds.info;
+    case "completed": return ds.success;
+    case "blocked": return ds.danger;
+    case "on_hold": return ds.warning;
+    case "deferred": return "#9CA3AF";
+    default: return ds.muted;
+  }
+};
+
+const laneColor = (status: string) => {
+  switch (status) {
+    case "ready": return ds.success;
+    case "active": return ds.info;
+    case "blocked": return ds.danger;
+    case "completed": return ds.success;
+    default: return ds.muted;
+  }
+};
+
+const priorityColor = (priority: string | null | undefined) => {
+  switch (priority) {
+    case "critical": return ds.danger;
+    case "high": return ds.warning;
+    case "normal": return ds.info;
+    case "low": return ds.muted;
+    default: return ds.muted;
+  }
+};
+
 type PlanViewProps = {
   loadingExecution: boolean;
   plan: PlanRecord | null;
@@ -60,6 +122,7 @@ export function PlanView({
   const [loadingComments, setLoadingComments] = useState(false);
   const [commentDraft, setCommentDraft] = useState("");
   const [submittingComment, setSubmittingComment] = useState(false);
+  const [completedCollapsed, setCompletedCollapsed] = useState(true);
 
   // Load comments when task is expanded
   useEffect(() => {
@@ -101,8 +164,459 @@ export function PlanView({
       ? "Critical path is clear enough to move the next executable tasks immediately."
       : "No immediate dependency pressure is visible in the current execution summary.";
 
+  /* ── Lane classification ── */
+  const readyTaskIds = new Set((executionSummary?.next_executable_tasks ?? []).map((t) => t.task_id));
+  const blockedTaskIds = new Set((executionSummary?.blocked_tasks ?? []).map((t) => t.task_id));
+
+  const classifyTask = (task: { id: string; status: string }) => {
+    if (task.status === "completed") return "completed";
+    if (blockedTaskIds.has(task.id) || task.status === "blocked") return "blocked";
+    if (task.status === "in_progress") return "active";
+    if (readyTaskIds.has(task.id)) return "ready";
+    return "ready"; // not_started, on_hold, deferred default to ready lane
+  };
+
+  const lanes = {
+    ready: plan?.tasks.filter((t) => classifyTask(t) === "ready") ?? [],
+    active: plan?.tasks.filter((t) => classifyTask(t) === "active") ?? [],
+    blocked: plan?.tasks.filter((t) => classifyTask(t) === "blocked") ?? [],
+    completed: plan?.tasks.filter((t) => classifyTask(t) === "completed") ?? [],
+  };
+
+  /* ── Shared card style factory ── */
+  const cardStyle = (borderColor?: string): React.CSSProperties => ({
+    background: ds.cardBg,
+    borderRadius: ds.cardRadius,
+    boxShadow: ds.cardShadow,
+    padding: ds.cardPadding,
+    borderLeft: borderColor ? `4px solid ${borderColor}` : undefined,
+    transition: "transform 0.15s ease, box-shadow 0.15s ease",
+  });
+
+  const eyebrowStyle: React.CSSProperties = {
+    fontSize: ds.textEyebrow,
+    fontWeight: 600,
+    textTransform: "uppercase",
+    letterSpacing: "0.06em",
+    color: ds.muted,
+    margin: 0,
+    lineHeight: 1,
+  };
+
+  const sectionHeadingStyle: React.CSSProperties = {
+    fontSize: ds.textHeading,
+    fontWeight: 600,
+    color: ds.textPrimary,
+    margin: 0,
+  };
+
+  const countPillStyle = (color: string): React.CSSProperties => ({
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    minWidth: 24,
+    height: 24,
+    borderRadius: 12,
+    background: color + "14",
+    color: color,
+    fontSize: ds.textSmall,
+    fontWeight: 600,
+    padding: "0 8px",
+  });
+
+  const dotStyle = (color: string): React.CSSProperties => ({
+    width: ds.statusDot,
+    height: ds.statusDot,
+    borderRadius: "50%",
+    background: color,
+    flexShrink: 0,
+  });
+
+  /* ── Render task card ── */
+  const renderTaskCard = (task: typeof plan extends { tasks: (infer T)[] } | null ? T : never, lane: string) => {
+    const isExpanded = expandedTaskId === task.id;
+    const blockedDependencies = blockedTaskMap.get(task.id) ?? [];
+    const borderColor = laneColor(lane);
+    const isSelected = expandedTaskId === task.id;
+
+    return (
+      <article
+        key={task.id}
+        style={{
+          ...cardStyle(borderColor),
+          marginBottom: ds.cardGap,
+          cursor: "pointer",
+          ...(isSelected
+            ? { background: ds.accentSoft, borderLeftColor: ds.accent, borderLeftWidth: 3 }
+            : {}),
+        }}
+        onMouseEnter={(e) => {
+          if (!isSelected) {
+            e.currentTarget.style.transform = "translateY(-1px)";
+            e.currentTarget.style.boxShadow = ds.cardShadowHover;
+          }
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "translateY(0)";
+          e.currentTarget.style.boxShadow = ds.cardShadow;
+        }}
+      >
+        {/* Card face */}
+        <div
+          style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}
+          onClick={() => setExpandedTaskId(isExpanded ? null : task.id)}
+        >
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontSize: ds.textCardTitle, fontWeight: 600, color: ds.textPrimary, marginBottom: 4, lineHeight: 1.3 }}>
+              {task.title}
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginTop: 6 }}>
+              {task.assigned_to && (
+                <span style={{ fontSize: ds.textSmall, color: ds.muted }}>{task.assigned_to}</span>
+              )}
+              <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                <span style={dotStyle(statusColor(task.status))} />
+                <span style={{ fontSize: ds.textSmall, color: ds.textSecondary }}>{task.status.replace(/_/g, " ")}</span>
+              </div>
+              {task.dependencies.length > 0 && (
+                <span style={{
+                  fontSize: ds.textEyebrow,
+                  fontWeight: 500,
+                  color: ds.muted,
+                  background: ds.surfaceBg,
+                  borderRadius: 4,
+                  padding: "2px 6px",
+                }}>
+                  {task.dependencies.length} dep{task.dependencies.length > 1 ? "s" : ""}
+                </span>
+              )}
+            </div>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4, flexShrink: 0 }}>
+            <span style={{ fontSize: ds.textSmall, fontWeight: 600, color: ds.textSecondary }}>{task.effort_hours}h</span>
+            {task.priority && (
+              <span style={{
+                fontSize: ds.textEyebrow,
+                fontWeight: 600,
+                textTransform: "uppercase",
+                letterSpacing: "0.04em",
+                color: priorityColor(task.priority),
+              }}>
+                {task.priority}
+              </span>
+            )}
+            {task.due_at && (
+              <span style={{ fontSize: ds.textEyebrow, color: ds.muted }}>{new Date(task.due_at).toLocaleDateString()}</span>
+            )}
+          </div>
+        </div>
+
+        {/* Rationale */}
+        <p style={{ fontSize: ds.textSmall, color: ds.textSecondary, margin: "8px 0 0", lineHeight: 1.5 }}>{task.rationale}</p>
+
+        {/* Status pills row */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 12 }}>
+          {ALL_STATUSES.map((status) => {
+            const blockedForStatus =
+              blockedDependencies.length > 0 && (status === "in_progress" || status === "completed");
+            const isActive = task.status === status;
+            return (
+              <button
+                key={status}
+                onClick={(e) => { e.stopPropagation(); onUpdateTaskStatus(task.id, status); }}
+                disabled={updatingTaskId === task.id || blockedForStatus || isExecutionLocked}
+                title={
+                  isExecutionLocked
+                    ? "Only the active plan can be mutated."
+                    : blockedForStatus
+                      ? `Blocked by: ${blockedDependencies.join(", ")}`
+                      : undefined
+                }
+                style={{
+                  padding: "4px 10px",
+                  fontSize: ds.textEyebrow,
+                  fontWeight: 600,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.04em",
+                  border: isActive ? "none" : `1px solid ${ds.border}`,
+                  borderRadius: 6,
+                  background: isActive ? statusColor(status) + "18" : "transparent",
+                  color: isActive ? statusColor(status) : ds.muted,
+                  cursor: (updatingTaskId === task.id || blockedForStatus || isExecutionLocked) ? "not-allowed" : "pointer",
+                  opacity: (updatingTaskId === task.id || blockedForStatus || isExecutionLocked) ? 0.4 : 1,
+                  transition: "all 0.15s ease",
+                }}
+              >
+                {status.replace(/_/g, " ")}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Blocked notice */}
+        {blockedDependencies.length > 0 && (
+          <div style={{
+            marginTop: 10,
+            padding: "8px 12px",
+            borderRadius: 8,
+            background: ds.danger + "0A",
+            border: `1px solid ${ds.danger}20`,
+            fontSize: ds.textSmall,
+            color: ds.danger,
+            fontWeight: 500,
+          }}>
+            Blocked by: {blockedDependencies.join(", ")}
+          </div>
+        )}
+
+        {/* Sub-actions and deliverables */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 14 }}>
+          <div>
+            <div style={{ fontSize: ds.textEyebrow, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: ds.muted, marginBottom: 6 }}>Sub-actions</div>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              {task.sub_actions.map((action, idx) => (
+                <li
+                  key={`${action.text}-${idx}`}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 6,
+                    fontSize: ds.textSmall,
+                    color: action.completed ? ds.muted : ds.textPrimary,
+                    textDecoration: action.completed ? "line-through" : "none",
+                    opacity: action.completed ? 0.6 : 1,
+                    padding: "3px 0",
+                  }}
+                >
+                  <input
+                    type="checkbox"
+                    checked={action.completed}
+                    disabled={updatingTaskId === task.id || isExecutionLocked}
+                    onChange={() => {
+                      const completions = task.sub_actions.map((a, i) =>
+                        i === idx ? !a.completed : a.completed
+                      );
+                      onUpdateTask(task.id, { sub_action_completions: completions });
+                    }}
+                    style={{ accentColor: ds.accent, flexShrink: 0, width: 14, height: 14 }}
+                  />
+                  {action.text}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <div style={{ fontSize: ds.textEyebrow, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: ds.muted, marginBottom: 6 }}>Deliverables</div>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              {task.deliverables.map((deliverable, idx) => (
+                <li
+                  key={`${deliverable.name}-${idx}`}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 6,
+                    fontSize: ds.textSmall,
+                    color: deliverable.completed ? ds.muted : ds.textPrimary,
+                    textDecoration: deliverable.completed ? "line-through" : "none",
+                    opacity: deliverable.completed ? 0.6 : 1,
+                    padding: "3px 0",
+                  }}
+                >
+                  <input
+                    type="checkbox"
+                    checked={deliverable.completed}
+                    disabled={updatingTaskId === task.id || isExecutionLocked}
+                    onChange={() => {
+                      const completions = task.deliverables.map((d, i) =>
+                        i === idx ? !d.completed : d.completed
+                      );
+                      onUpdateTask(task.id, { deliverable_completions: completions });
+                    }}
+                    style={{ accentColor: ds.accent, flexShrink: 0, width: 14, height: 14 }}
+                  />
+                  {deliverable.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Dependency chips */}
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 10 }}>
+          {task.dependencies.length ? (
+            task.dependencies.map((dependency) => (
+              <span
+                key={dependency}
+                style={{
+                  fontSize: ds.textEyebrow,
+                  background: ds.surfaceBg,
+                  border: `1px solid ${ds.border}`,
+                  borderRadius: 4,
+                  padding: "2px 8px",
+                  color: ds.textSecondary,
+                }}
+              >
+                {dependency}
+              </span>
+            ))
+          ) : (
+            <span style={{ fontSize: ds.textEyebrow, color: ds.muted }}>Independent start</span>
+          )}
+        </div>
+
+        {/* Expanded inline editing section */}
+        {isExpanded && (
+          <div style={{ marginTop: 16, borderTop: `1px solid ${ds.border}`, paddingTop: 16 }}>
+            {/* Assignment and priority */}
+            <div style={{ display: "flex", gap: 16, marginBottom: 16, flexWrap: "wrap" }}>
+              <label style={{ fontSize: ds.textSmall, display: "flex", alignItems: "center", gap: 8, color: ds.textSecondary }}>
+                <strong style={{ color: ds.textPrimary }}>Assigned to</strong>
+                <input
+                  type="text"
+                  className="progress-input"
+                  value={task.assigned_to ?? ""}
+                  placeholder="Unassigned"
+                  style={{ width: 160, fontSize: ds.textSmall, borderRadius: 8, border: `1px solid ${ds.border}`, padding: "6px 10px" }}
+                  disabled={updatingTaskId === task.id || isExecutionLocked}
+                  onBlur={(e) => {
+                    const value = e.target.value.trim() || null;
+                    if (value !== task.assigned_to) {
+                      onUpdateTask(task.id, { assigned_to: value });
+                    }
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") (e.target as HTMLInputElement).blur();
+                  }}
+                  defaultValue={task.assigned_to ?? ""}
+                />
+              </label>
+              <label style={{ fontSize: ds.textSmall, display: "flex", alignItems: "center", gap: 8, color: ds.textSecondary }}>
+                <strong style={{ color: ds.textPrimary }}>Due date</strong>
+                <input
+                  type="date"
+                  value={task.due_at ? task.due_at.slice(0, 10) : ""}
+                  disabled={updatingTaskId === task.id || isExecutionLocked}
+                  onChange={(e) => {
+                    const value = e.target.value ? new Date(e.target.value).toISOString() : null;
+                    onUpdateTask(task.id, { due_at: value });
+                  }}
+                  style={{ background: ds.surfaceBg, border: `1px solid ${ds.border}`, borderRadius: 8, padding: "6px 10px", fontSize: ds.textSmall }}
+                />
+              </label>
+              <label style={{ fontSize: ds.textSmall, display: "flex", alignItems: "center", gap: 8, color: ds.textSecondary }}>
+                <strong style={{ color: ds.textPrimary }}>Priority</strong>
+                <select
+                  value={task.priority ?? ""}
+                  disabled={updatingTaskId === task.id || isExecutionLocked}
+                  onChange={(e) => onUpdateTask(task.id, { priority: e.target.value || null })}
+                  style={{ background: ds.surfaceBg, border: `1px solid ${ds.border}`, borderRadius: 8, padding: "6px 10px", fontSize: ds.textSmall }}
+                >
+                  <option value="">No priority</option>
+                  <option value="critical">Critical</option>
+                  <option value="high">High</option>
+                  <option value="normal">Normal</option>
+                  <option value="low">Low</option>
+                </select>
+              </label>
+            </div>
+
+            <div style={{ fontSize: ds.textSmall, fontWeight: 600, color: ds.textPrimary, marginBottom: 6 }}>Task notes</div>
+            <TaskNotesEditor
+              taskId={task.id}
+              initialNotes={task.notes ?? ""}
+              disabled={updatingTaskId === task.id || isExecutionLocked}
+              onSave={(notes) => onUpdateTask(task.id, { notes })}
+            />
+
+            {/* Task comments */}
+            <div style={{ marginTop: 16, borderTop: `1px solid ${ds.border}`, paddingTop: 16 }}>
+              <div style={{ fontSize: ds.textSmall, fontWeight: 600, color: ds.textPrimary, marginBottom: 8 }}>
+                Comments ({taskComments.length})
+              </div>
+              {loadingComments ? (
+                <p style={{ fontSize: ds.textSmall, color: ds.muted }}>Loading comments...</p>
+              ) : (
+                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                  {taskComments.map((comment) => (
+                    <div
+                      key={comment.id}
+                      style={{
+                        background: ds.surfaceBg,
+                        borderRadius: 8,
+                        padding: "10px 14px",
+                      }}
+                    >
+                      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                        <span style={{ fontSize: ds.textSmall, fontWeight: 600, color: ds.textPrimary }}>{comment.author_name ?? "System"}</span>
+                        <span style={{ fontSize: ds.textEyebrow, color: ds.muted }}>{formatTimestamp(comment.created_at)}</span>
+                      </div>
+                      <p style={{ fontSize: ds.textSmall, color: ds.textSecondary, margin: 0, lineHeight: 1.5 }}>{comment.body}</p>
+                    </div>
+                  ))}
+                  {!taskComments.length && !loadingComments && (
+                    <p style={{ fontSize: ds.textSmall, color: ds.muted }}>No comments on this task yet.</p>
+                  )}
+                </div>
+              )}
+              {venueId && !isExecutionLocked && (
+                <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
+                  <input
+                    type="text"
+                    className="progress-input"
+                    value={commentDraft}
+                    onChange={(e) => setCommentDraft(e.target.value)}
+                    placeholder="Add a comment..."
+                    style={{ flex: 1, fontSize: ds.textSmall, borderRadius: 8, border: `1px solid ${ds.border}`, padding: "6px 10px" }}
+                    onKeyDown={(e) => { if (e.key === "Enter" && !submittingComment) handleSubmitComment(); }}
+                  />
+                  <button
+                    onClick={handleSubmitComment}
+                    disabled={submittingComment || !commentDraft.trim()}
+                    style={{
+                      fontSize: ds.textSmall,
+                      fontWeight: 600,
+                      padding: "6px 14px",
+                      borderRadius: 8,
+                      border: "none",
+                      background: ds.accent,
+                      color: "#fff",
+                      cursor: (submittingComment || !commentDraft.trim()) ? "not-allowed" : "pointer",
+                      opacity: (submittingComment || !commentDraft.trim()) ? 0.5 : 1,
+                    }}
+                  >
+                    {submittingComment ? "..." : "Comment"}
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      </article>
+    );
+  };
+
+  /* ── Lane section renderer ── */
+  const renderLane = (label: string, tasks: typeof lanes.ready, color: string) => {
+    if (tasks.length === 0) return null;
+    return (
+      <div style={{ marginBottom: ds.sectionGap }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: ds.cardGap }}>
+          <h2 style={sectionHeadingStyle}>{label}</h2>
+          <span style={countPillStyle(color)}>{tasks.length}</span>
+        </div>
+        {tasks.map((task) => renderTaskCard(task, label.toLowerCase()))}
+      </div>
+    );
+  };
+
   return (
-    <div className="page-layout">
+    <div style={{ padding: ds.pageMargin }}>
+      {/* ── Page header ── */}
+      <div style={{ marginBottom: ds.sectionGap }}>
+        <p style={eyebrowStyle}>VENUE</p>
+        <h1 style={{ fontSize: ds.textTitle, fontWeight: 700, color: ds.textPrimary, margin: "4px 0 0" }}>Plan</h1>
+      </div>
+
       <SurfaceHeader
         title={plan?.title ?? "Operational plan board"}
         subtitle={plan ? `${plan.summary} Load: ${plan.load_classification ?? "unknown"}.` : undefined}
@@ -115,6 +629,7 @@ export function PlanView({
           { label: "Compare versions", onClick: () => setDrawerOpen(true) },
         ]}
       />
+
       <PrimaryCanvas>
         {loadingExecution ? (
           <LoadingState variant="list" />
@@ -124,29 +639,32 @@ export function PlanView({
             description="Run an assessment and engine to generate an operational plan for this venue."
           />
         ) : (
-          <>
-            {/* Completion progress bar */}
-            <div style={{ marginBottom: "var(--spacing-md, 16px)" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", fontSize: "var(--text-sm, 13px)", marginBottom: 4 }}>
-                <span style={{ fontWeight: 600 }}>Execution progress</span>
-                <span>{Math.round(executionSummary?.completion_percentage ?? 0)}% complete</span>
+          <div style={{ display: "flex", flexDirection: "column", gap: ds.sectionGap }}>
+
+            {/* ── Completion progress bar ── */}
+            <div style={cardStyle()}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+                <span style={{ fontSize: ds.textBody, fontWeight: 600, color: ds.textPrimary }}>Execution progress</span>
+                <span style={{ fontSize: ds.textSmall, fontWeight: 600, color: (executionSummary?.completion_percentage ?? 0) >= 80 ? ds.success : ds.accent }}>
+                  {Math.round(executionSummary?.completion_percentage ?? 0)}%
+                </span>
               </div>
-              <div style={{ height: 6, borderRadius: 3, background: "var(--surface-2, #f0f0f0)", overflow: "hidden" }}>
+              <div style={{ height: 6, borderRadius: 3, background: ds.surfaceBg, overflow: "hidden" }}>
                 <div style={{
                   height: "100%",
                   width: `${Math.round(executionSummary?.completion_percentage ?? 0)}%`,
-                  background: (executionSummary?.completion_percentage ?? 0) >= 80 ? "var(--success, #16a34a)" : "var(--ois-coral, #3b82f6)",
+                  background: (executionSummary?.completion_percentage ?? 0) >= 80 ? ds.success : ds.accent,
                   borderRadius: 3,
                   transition: "width 0.3s ease",
                 }} />
               </div>
             </div>
 
-            {/* Provenance strip */}
+            {/* ── Provenance strip ── */}
             {plan && (
-              <div className="focus-card" style={{ marginBottom: "var(--spacing-md, 16px)", fontSize: "var(--text-sm, 13px)" }}>
-                <p className="section-eyebrow">Provenance</p>
-                <div className="dependency-list">
+              <div style={{ ...cardStyle(), borderLeft: `4px solid ${ds.info}` }}>
+                <p style={{ ...eyebrowStyle, marginBottom: 8 }}>Provenance</p>
+                <div style={{ display: "flex", gap: 16, flexWrap: "wrap", fontSize: ds.textSmall, color: ds.textSecondary }}>
                   <span>Plan: {plan.status}</span>
                   <span>Load: {plan.load_classification ?? "unknown"}</span>
                   <span>{plan.tasks.length} tasks</span>
@@ -156,416 +674,229 @@ export function PlanView({
               </div>
             )}
 
-            <div className="highlight-grid">
-              <div className="focus-card focus-card-primary">
-                <p className="section-eyebrow">Execution stance</p>
-                <h3>{executionSummary?.next_executable_tasks.length ? "Move ready work" : "Resolve bottlenecks"}</h3>
-                <p>
+            {/* ── Summary cards grid ── */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: ds.cardGap }}>
+              {/* Execution stance */}
+              <div style={{ ...cardStyle(ds.accent) }}>
+                <p style={{ ...eyebrowStyle, marginBottom: 8 }}>Execution stance</p>
+                <h3 style={{ fontSize: 18, fontWeight: 600, color: ds.textPrimary, margin: "0 0 6px" }}>
+                  {executionSummary?.next_executable_tasks.length ? "Move ready work" : "Resolve bottlenecks"}
+                </h3>
+                <p style={{ fontSize: ds.textSmall, color: ds.textSecondary, margin: 0, lineHeight: 1.5 }}>
                   {executionSummary?.next_executable_tasks.length
                     ? "There is executable work waiting now. The plan view should push action, not analysis drift."
                     : "The queue is being constrained by dependencies. Clear the blocked path before adding new noise."}
                 </p>
               </div>
-              <div className="focus-card">
-                <p className="section-eyebrow">Status mix</p>
-                <div className="dependency-list">
-                  <span>{countsByStatus.not_started ?? 0} not started</span>
-                  <span>{countsByStatus.in_progress ?? 0} in progress</span>
-                  <span>{countsByStatus.completed ?? 0} completed</span>
-                  {(countsByStatus.blocked ?? 0) > 0 && <span>{countsByStatus.blocked} blocked</span>}
-                  {(countsByStatus.on_hold ?? 0) > 0 && <span>{countsByStatus.on_hold} on hold</span>}
-                  {(countsByStatus.deferred ?? 0) > 0 && <span>{countsByStatus.deferred} deferred</span>}
+
+              {/* Status mix */}
+              <div style={cardStyle()}>
+                <p style={{ ...eyebrowStyle, marginBottom: 10 }}>Status mix</p>
+                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                  {[
+                    { label: "Not started", count: countsByStatus.not_started ?? 0, color: ds.muted },
+                    { label: "In progress", count: countsByStatus.in_progress ?? 0, color: ds.info },
+                    { label: "Completed", count: countsByStatus.completed ?? 0, color: ds.success },
+                    ...(countsByStatus.blocked ? [{ label: "Blocked", count: countsByStatus.blocked, color: ds.danger }] : []),
+                    ...(countsByStatus.on_hold ? [{ label: "On hold", count: countsByStatus.on_hold, color: ds.warning }] : []),
+                    ...(countsByStatus.deferred ? [{ label: "Deferred", count: countsByStatus.deferred, color: "#9CA3AF" }] : []),
+                  ].map(({ label, count, color }) => (
+                    <div key={label} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: ds.textSmall }}>
+                      <span style={dotStyle(color)} />
+                      <span style={{ color: ds.textSecondary }}>{label}</span>
+                      <span style={{ marginLeft: "auto", fontWeight: 600, color: ds.textPrimary }}>{count}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
+
+              {/* Historical selection (conditional) */}
               {isHistoricalSelection ? (
-                <div className="focus-card">
-                  <p className="section-eyebrow">Selection</p>
-                  <h3>Historical plan</h3>
-                  <p>You are viewing the plan linked to an older report selection, not necessarily the latest venue plan.</p>
+                <div style={{ ...cardStyle(ds.warning) }}>
+                  <p style={{ ...eyebrowStyle, marginBottom: 8 }}>Selection</p>
+                  <h3 style={{ fontSize: 18, fontWeight: 600, color: ds.textPrimary, margin: "0 0 6px" }}>Historical plan</h3>
+                  <p style={{ fontSize: ds.textSmall, color: ds.textSecondary, margin: 0, lineHeight: 1.5 }}>
+                    You are viewing the plan linked to an older report selection, not necessarily the latest venue plan.
+                  </p>
                 </div>
               ) : null}
-              <div className="focus-card">
-                <p className="section-eyebrow">Dependencies</p>
-                <div className="dependency-list">
-                  <span>{totalDependencyCount} dependency links</span>
-                  <span>{executionSummary?.blocked_tasks.length ?? 0} blocked tasks</span>
+
+              {/* Dependencies */}
+              <div style={cardStyle()}>
+                <p style={{ ...eyebrowStyle, marginBottom: 10 }}>Dependencies</p>
+                <div style={{ display: "flex", gap: 20, marginBottom: 8 }}>
+                  <div>
+                    <div style={{ fontSize: 22, fontWeight: 700, color: ds.textPrimary }}>{totalDependencyCount}</div>
+                    <div style={{ fontSize: ds.textEyebrow, color: ds.muted, textTransform: "uppercase" }}>links</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 22, fontWeight: 700, color: (executionSummary?.blocked_tasks.length ?? 0) > 0 ? ds.danger : ds.textPrimary }}>
+                      {executionSummary?.blocked_tasks.length ?? 0}
+                    </div>
+                    <div style={{ fontSize: ds.textEyebrow, color: ds.muted, textTransform: "uppercase" }}>blocked</div>
+                  </div>
                 </div>
-                <p>{criticalPathSummary}</p>
+                <p style={{ fontSize: ds.textSmall, color: ds.textSecondary, margin: 0, lineHeight: 1.5 }}>{criticalPathSummary}</p>
               </div>
             </div>
-            <div className="execution-summary-grid">
-              <div className="diagnostic-column">
-                <h3>Next executable</h3>
-                <ul className="spine-list">
+
+            {/* ── Next executable / Blocked split ── */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: ds.cardGap }}>
+              <div style={cardStyle(ds.success)}>
+                <p style={{ ...eyebrowStyle, marginBottom: 10 }}>Next executable</p>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {(executionSummary?.next_executable_tasks ?? []).map((task) => (
-                    <li key={task.task_id}>{task.title}</li>
-                  ))}
-                  {!executionSummary?.next_executable_tasks.length ? <li>No ready tasks.</li> : null}
-                </ul>
-              </div>
-              <div className="diagnostic-column">
-                <h3>Blocked tasks</h3>
-                <ul className="spine-list">
-                  {(executionSummary?.blocked_tasks ?? []).slice(0, 4).map((task) => (
-                    <li key={task.task_id}>
-                      {task.title}: {task.blocking_dependency_ids.join(", ")}
+                    <li key={task.task_id} style={{ fontSize: ds.textSmall, color: ds.textPrimary, padding: "4px 0", borderBottom: `1px solid ${ds.border}` }}>
+                      {task.title}
                     </li>
                   ))}
-                  {!executionSummary?.blocked_tasks.length ? <li>No blocked tasks.</li> : null}
+                  {!executionSummary?.next_executable_tasks.length ? <li style={{ fontSize: ds.textSmall, color: ds.muted }}>No ready tasks.</li> : null}
+                </ul>
+              </div>
+              <div style={cardStyle(ds.danger)}>
+                <p style={{ ...eyebrowStyle, marginBottom: 10 }}>Blocked tasks</p>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                  {(executionSummary?.blocked_tasks ?? []).slice(0, 4).map((task) => (
+                    <li key={task.task_id} style={{ fontSize: ds.textSmall, color: ds.textPrimary, padding: "4px 0", borderBottom: `1px solid ${ds.border}` }}>
+                      {task.title}: <span style={{ color: ds.muted }}>{task.blocking_dependency_ids.join(", ")}</span>
+                    </li>
+                  ))}
+                  {!executionSummary?.blocked_tasks.length ? <li style={{ fontSize: ds.textSmall, color: ds.muted }}>No blocked tasks.</li> : null}
                 </ul>
               </div>
             </div>
+
+            {/* ── Dependency view section ── */}
             <SectionCard
               eyebrow="Dependencies"
               title="Dependency view"
               description="Graph is folded into Plan until there is a real visualization surface."
             >
-              <div className="timeline-split">
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
                 <div>
-                  <h3 className="subsection-title">Critical path</h3>
-                  <p className="history-note">{criticalPathSummary}</p>
+                  <div style={{ fontSize: ds.textBody, fontWeight: 600, color: ds.textPrimary, marginBottom: 8 }}>Critical path</div>
+                  <p style={{ fontSize: ds.textSmall, color: ds.textSecondary, lineHeight: 1.5 }}>{criticalPathSummary}</p>
                 </div>
                 <div>
-                  <h3 className="subsection-title">Selected task links</h3>
+                  <div style={{ fontSize: ds.textBody, fontWeight: 600, color: ds.textPrimary, marginBottom: 8 }}>Selected task links</div>
                   {selectedTask ? (
-                    <div className="thread-list compact-list">
-                      <div className="history-card compact-card">
-                        <div className="thread-row">
-                          <span>Upstream</span>
-                          <em>{selectedTask.block_id}</em>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                      <div style={{ ...cardStyle(), padding: "12px 16px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                          <span style={{ fontSize: ds.textSmall, fontWeight: 600 }}>Upstream</span>
+                          <span style={{ fontSize: ds.textEyebrow, color: ds.muted }}>{selectedTask.block_id}</span>
                         </div>
-                        <p className="history-note">
+                        <p style={{ fontSize: ds.textSmall, color: ds.textSecondary, margin: 0 }}>
                           {selectedTask.dependencies.length ? selectedTask.dependencies.join(", ") : "Independent start"}
                         </p>
                       </div>
-                      <div className="history-card compact-card">
-                        <div className="thread-row">
-                          <span>Downstream</span>
-                          <em>{downstreamTaskTitles.length} linked</em>
+                      <div style={{ ...cardStyle(), padding: "12px 16px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                          <span style={{ fontSize: ds.textSmall, fontWeight: 600 }}>Downstream</span>
+                          <span style={{ fontSize: ds.textEyebrow, color: ds.muted }}>{downstreamTaskTitles.length} linked</span>
                         </div>
-                        <p className="history-note">
+                        <p style={{ fontSize: ds.textSmall, color: ds.textSecondary, margin: 0 }}>
                           {downstreamTaskTitles.length ? downstreamTaskTitles.join(", ") : "No downstream tasks derived from the current plan data."}
                         </p>
                       </div>
                     </div>
                   ) : (
-                    <p className="history-note">Expand a task to inspect its upstream and downstream links.</p>
+                    <p style={{ fontSize: ds.textSmall, color: ds.muted }}>Expand a task to inspect its upstream and downstream links.</p>
                   )}
                 </div>
               </div>
             </SectionCard>
-            <div className="plan-list">
-              {(() => {
-                const groups: Record<string, typeof plan.tasks> = {};
-                plan.tasks.forEach((task) => {
-                  const blockPrefix = task.block_id?.split("-")[0] || "Other";
-                  if (!groups[blockPrefix]) groups[blockPrefix] = [];
-                  groups[blockPrefix].push(task);
-                });
 
-                return Object.entries(groups).sort().map(([prefix, tasks]) => (
-                  <div key={prefix} className="plan-block-group" style={{ marginBottom: "var(--spacing-lg)" }}>
-                    <h2 style={{ 
-                      padding: "var(--spacing-sm) var(--spacing-md)", 
-                      background: "var(--bg-raised)", 
-                      borderRadius: "var(--radius-sm)",
-                      borderLeft: `5px solid ${prefix === "L1" ? "var(--sky)" : prefix === "L2" ? "var(--gold)" : prefix === "L3" ? "var(--leaf)" : "var(--muted)"}`,
-                      marginBottom: "var(--spacing-md)",
-                      fontSize: "1.1rem",
-                      fontWeight: 600,
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "var(--spacing-sm)"
-                    }}>
-                      <span className="badge" style={{ background: "transparent", color: "inherit", border: "1px solid currentColor" }}>{prefix}</span>
-                      {prefix === "L1" ? "Standardization & Layer 1" : prefix === "L2" ? "Infrastructure & Layer 2" : prefix === "L3" ? "Optimization & Layer 3" : "Additional Tasks"}
-                    </h2>
-                    {tasks.map((task) => {
-                      const isExpanded = expandedTaskId === task.id;
-                      const blockedDependencies = blockedTaskMap.get(task.id) ?? [];
-                      return (
-                        <article className="plan-task" key={task.id} style={{ marginLeft: "var(--spacing-md)", marginBottom: "var(--spacing-md)" }}>
-                          <div className="plan-task-top">
-                            <h3
-                              style={{ cursor: "pointer" }}
-                              onClick={() => setExpandedTaskId(isExpanded ? null : task.id)}
-                            >
-                              {task.title}
-                            </h3>
-                            <div style={{ display: "flex", gap: "var(--space-2, 8px)", alignItems: "center" }}>
-                              {task.assigned_to && <span className="badge" style={{ opacity: 0.7 }}>{task.assigned_to}</span>}
-                              {task.priority && <span className="badge" style={{ opacity: 0.7 }}>{task.priority}</span>}
-                              {task.due_at && <span className="badge" style={{ opacity: 0.7 }}>{new Date(task.due_at).toLocaleDateString()}</span>}
-                              <span className="badge">{task.effort_hours}h</span>
-                            </div>
-                          </div>
-                          <p>{task.rationale}</p>
-                          <div className="task-status-row">
-                            {ALL_STATUSES.map((status) => {
-                              const blockedForStatus =
-                                blockedDependencies.length > 0 && (status === "in_progress" || status === "completed");
-                              return (
-                                <button
-                                  key={status}
-                                  className={`status-pill ${task.status === status ? "active" : ""}`}
-                                  onClick={() => onUpdateTaskStatus(task.id, status)}
-                                  disabled={updatingTaskId === task.id || blockedForStatus || isExecutionLocked}
-                                  title={
-                                    isExecutionLocked
-                                      ? "Only the active plan can be mutated."
-                                      : blockedForStatus
-                                        ? `Blocked by: ${blockedDependencies.join(", ")}`
-                                        : undefined
-                                  }
-                                >
-                                  {status.replace(/_/g, " ")}
-                                </button>
-                              );
-                            })}
-                          </div>
-                          {blockedDependencies.length > 0 && (
-                            <p className="blocking-note">
-                              Blocked by dependencies: {blockedDependencies.join(", ")}
-                            </p>
-                          )}
-                          <div className="task-detail-grid">
-                            <div>
-                              <strong>Sub-actions</strong>
-                              <ul className="mini-list">
-                                {task.sub_actions.map((action, idx) => (
-                                  <li
-                                    key={`${action.text}-${idx}`}
-                                    style={{
-                                      display: "flex",
-                                      alignItems: "center",
-                                      gap: "var(--space-2)",
-                                      textDecoration: action.completed ? "line-through" : "none",
-                                      opacity: action.completed ? 0.6 : 1,
-                                    }}
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      checked={action.completed}
-                                      disabled={updatingTaskId === task.id || isExecutionLocked}
-                                      onChange={() => {
-                                        const completions = task.sub_actions.map((a, i) =>
-                                          i === idx ? !a.completed : a.completed
-                                        );
-                                        onUpdateTask(task.id, { sub_action_completions: completions });
-                                      }}
-                                      style={{ accentColor: "var(--ois-coral)", flexShrink: 0 }}
-                                    />
-                                    {action.text}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div>
-                              <strong>Deliverables</strong>
-                              <ul className="mini-list">
-                                {task.deliverables.map((deliverable, idx) => (
-                                  <li
-                                    key={`${deliverable.name}-${idx}`}
-                                    style={{
-                                      display: "flex",
-                                      alignItems: "center",
-                                      gap: "var(--space-2)",
-                                      textDecoration: deliverable.completed ? "line-through" : "none",
-                                      opacity: deliverable.completed ? 0.6 : 1,
-                                    }}
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      checked={deliverable.completed}
-                                      disabled={updatingTaskId === task.id || isExecutionLocked}
-                                      onChange={() => {
-                                        const completions = task.deliverables.map((d, i) =>
-                                          i === idx ? !d.completed : d.completed
-                                        );
-                                        onUpdateTask(task.id, { deliverable_completions: completions });
-                                      }}
-                                      style={{ accentColor: "var(--ois-coral)", flexShrink: 0 }}
-                                    />
-                                    {deliverable.name}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
-                          <div className="dependency-list">
-                            {task.dependencies.length ? (
-                              task.dependencies.map((dependency) => <span key={dependency}>{dependency}</span>)
-                            ) : (
-                              <span>Independent start</span>
-                            )}
-                          </div>
+            {/* ── Plan lanes ── */}
+            {renderLane("Ready", lanes.ready, ds.success)}
+            {renderLane("Active", lanes.active, ds.info)}
+            {renderLane("Blocked", lanes.blocked, ds.danger)}
 
-                          {/* Expanded inline editing section */}
-                          {isExpanded && (
-                            <div style={{ marginTop: "var(--space-3)", borderTop: "1px solid var(--border)", paddingTop: "var(--space-3)" }}>
-                              {/* Assignment and priority */}
-                              <div style={{ display: "flex", gap: "var(--space-3)", marginBottom: "var(--space-3)", flexWrap: "wrap" }}>
-                                <label style={{ fontSize: "var(--text-sm)", display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
-                                  <strong>Assigned to</strong>
-                                  <input
-                                    type="text"
-                                    className="progress-input"
-                                    value={task.assigned_to ?? ""}
-                                    placeholder="Unassigned"
-                                    style={{ width: 160, fontSize: "var(--text-sm)" }}
-                                    disabled={updatingTaskId === task.id || isExecutionLocked}
-                                    onBlur={(e) => {
-                                      const value = e.target.value.trim() || null;
-                                      if (value !== task.assigned_to) {
-                                        onUpdateTask(task.id, { assigned_to: value });
-                                      }
-                                    }}
-                                    onKeyDown={(e) => {
-                                      if (e.key === "Enter") (e.target as HTMLInputElement).blur();
-                                    }}
-                                    defaultValue={task.assigned_to ?? ""}
-                                  />
-                                </label>
-                                <label style={{ fontSize: "var(--text-sm)", display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
-                                  <strong>Due date</strong>
-                                  <input
-                                    type="date"
-                                    value={task.due_at ? task.due_at.slice(0, 10) : ""}
-                                    disabled={updatingTaskId === task.id || isExecutionLocked}
-                                    onChange={(e) => {
-                                      const value = e.target.value ? new Date(e.target.value).toISOString() : null;
-                                      onUpdateTask(task.id, { due_at: value });
-                                    }}
-                                    style={{ background: "var(--surface-2, #f5f5f5)", border: "1px solid var(--border, #e0e0e0)", borderRadius: "var(--radius-sm, 4px)", padding: "4px 8px", fontSize: "var(--text-sm)" }}
-                                  />
-                                </label>
-                                <label style={{ fontSize: "var(--text-sm)", display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
-                                  <strong>Priority</strong>
-                                  <select
-                                    value={task.priority ?? ""}
-                                    disabled={updatingTaskId === task.id || isExecutionLocked}
-                                    onChange={(e) => onUpdateTask(task.id, { priority: e.target.value || null })}
-                                    style={{ background: "var(--surface-2, #f5f5f5)", border: "1px solid var(--border, #e0e0e0)", borderRadius: "var(--radius-sm, 4px)", padding: "4px 8px", fontSize: "var(--text-sm)" }}
-                                  >
-                                    <option value="">No priority</option>
-                                    <option value="critical">Critical</option>
-                                    <option value="high">High</option>
-                                    <option value="normal">Normal</option>
-                                    <option value="low">Low</option>
-                                  </select>
-                                </label>
-                              </div>
-
-                              <label style={{ fontWeight: "bold", display: "block", marginBottom: "var(--space-2)", fontSize: "var(--text-sm)" }}>
-                                Task notes
-                              </label>
-                              <TaskNotesEditor
-                                taskId={task.id}
-                                initialNotes={task.notes ?? ""}
-                                disabled={updatingTaskId === task.id || isExecutionLocked}
-                                onSave={(notes) => onUpdateTask(task.id, { notes })}
-                              />
-
-                              {/* Task comments */}
-                              <div style={{ marginTop: "var(--space-3)", borderTop: "1px solid var(--border)", paddingTop: "var(--space-3)" }}>
-                                <label style={{ fontWeight: "bold", display: "block", marginBottom: "var(--space-2)", fontSize: "var(--text-sm)" }}>
-                                  Comments ({taskComments.length})
-                                </label>
-                                {loadingComments ? (
-                                  <p style={{ fontSize: "var(--text-sm)", opacity: 0.5 }}>Loading comments...</p>
-                                ) : (
-                                  <div className="thread-list compact-list">
-                                    {taskComments.map((comment) => (
-                                      <div className="history-card compact-card" key={comment.id}>
-                                        <div className="thread-row">
-                                          <span>{comment.author_name ?? "System"}</span>
-                                          <em>{formatTimestamp(comment.created_at)}</em>
-                                        </div>
-                                        <p className="history-note">{comment.body}</p>
-                                      </div>
-                                    ))}
-                                    {!taskComments.length && !loadingComments && (
-                                      <p style={{ fontSize: "var(--text-sm)", opacity: 0.5 }}>No comments on this task yet.</p>
-                                    )}
-                                  </div>
-                                )}
-                                {venueId && !isExecutionLocked && (
-                                  <div style={{ display: "flex", gap: "var(--space-2)", marginTop: "var(--space-2)" }}>
-                                    <input
-                                      type="text"
-                                      className="progress-input"
-                                      value={commentDraft}
-                                      onChange={(e) => setCommentDraft(e.target.value)}
-                                      placeholder="Add a comment..."
-                                      style={{ flex: 1, fontSize: "var(--text-sm)" }}
-                                      onKeyDown={(e) => { if (e.key === "Enter" && !submittingComment) handleSubmitComment(); }}
-                                    />
-                                    <button
-                                      className="btn btn-secondary"
-                                      style={{ fontSize: "var(--text-sm)" }}
-                                      onClick={handleSubmitComment}
-                                      disabled={submittingComment || !commentDraft.trim()}
-                                    >
-                                      {submittingComment ? "..." : "Comment"}
-                                    </button>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          )}
-                        </article>
-                      );
-                    })}
-                  </div>
-                ));
-              })()}
-            </div>
-          </>
+            {/* Completed section: collapsible */}
+            {lanes.completed.length > 0 && (
+              <div style={{ marginBottom: ds.sectionGap }}>
+                <div
+                  style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: ds.cardGap, cursor: "pointer" }}
+                  onClick={() => setCompletedCollapsed(!completedCollapsed)}
+                >
+                  <h2 style={sectionHeadingStyle}>Completed</h2>
+                  <span style={countPillStyle(ds.success)}>{lanes.completed.length}</span>
+                  <span style={{ fontSize: ds.textSmall, color: ds.muted, marginLeft: 4 }}>
+                    {completedCollapsed ? "Show" : "Hide"}
+                  </span>
+                </div>
+                {!completedCollapsed && lanes.completed.map((task) => renderTaskCard(task, "completed"))}
+              </div>
+            )}
+          </div>
         )}
       </PrimaryCanvas>
 
-      <SectionCard
-        eyebrow="Progress"
-        title="Progress feed"
-        description="Operators log real movement, not just plans."
-      >
-        <div className="progress-form">
-          <input
-            className="progress-input"
-            value={progressSummary}
-            onChange={(event) => onProgressSummaryChange(event.target.value)}
-            placeholder="What changed operationally?"
-          />
-          <textarea
-            className="progress-textarea"
-            value={progressDetail}
-            onChange={(event) => onProgressDetailChange(event.target.value)}
-            placeholder="Add detail, blockers, or evidence..."
-          />
-          <button className="btn btn-secondary" onClick={onCreateProgressEntry} disabled={savingProgress}>
-            {savingProgress ? "Logging..." : "Log progress"}
-          </button>
-        </div>
-        <div className="thread-list">
-          {progressEntries.map((entry) => (
-            <div className="history-card" key={entry.id}>
-              <div className="thread-row">
-                <span>{formatTimestamp(entry.created_at)}</span>
-                <em>{entry.status}</em>
+      {/* ── Progress feed ── */}
+      <div style={{ marginTop: ds.sectionGap }}>
+        <SectionCard
+          eyebrow="Progress"
+          title="Progress feed"
+          description="Operators log real movement, not just plans."
+        >
+          <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 20 }}>
+            <input
+              className="progress-input"
+              value={progressSummary}
+              onChange={(event) => onProgressSummaryChange(event.target.value)}
+              placeholder="What changed operationally?"
+              style={{ fontSize: ds.textBody, borderRadius: 8, border: `1px solid ${ds.border}`, padding: "10px 14px" }}
+            />
+            <textarea
+              className="progress-textarea"
+              value={progressDetail}
+              onChange={(event) => onProgressDetailChange(event.target.value)}
+              placeholder="Add detail, blockers, or evidence..."
+              style={{ fontSize: ds.textBody, borderRadius: 8, border: `1px solid ${ds.border}`, padding: "10px 14px", minHeight: 80 }}
+            />
+            <button
+              onClick={onCreateProgressEntry}
+              disabled={savingProgress}
+              style={{
+                alignSelf: "flex-start",
+                padding: "8px 20px",
+                fontSize: ds.textSmall,
+                fontWeight: 600,
+                borderRadius: 8,
+                border: "none",
+                background: ds.accent,
+                color: "#fff",
+                cursor: savingProgress ? "not-allowed" : "pointer",
+                opacity: savingProgress ? 0.6 : 1,
+              }}
+            >
+              {savingProgress ? "Logging..." : "Log progress"}
+            </button>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: ds.cardGap }}>
+            {progressEntries.map((entry) => (
+              <div key={entry.id} style={{ ...cardStyle(), padding: "14px 18px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
+                  <span style={{ fontSize: ds.textSmall, color: ds.muted }}>{formatTimestamp(entry.created_at)}</span>
+                  <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                    <span style={dotStyle(statusColor(entry.status))} />
+                    <span style={{ fontSize: ds.textEyebrow, fontWeight: 600, color: ds.textSecondary }}>{entry.status}</span>
+                  </div>
+                </div>
+                <p style={{ fontSize: ds.textBody, color: ds.textPrimary, margin: 0, fontWeight: 500 }}>{entry.summary}</p>
+                {entry.detail ? <p style={{ fontSize: ds.textSmall, color: ds.textSecondary, margin: "6px 0 0", lineHeight: 1.5 }}>{entry.detail}</p> : null}
               </div>
-              <p className="history-note">{entry.summary}</p>
-              {entry.detail ? <p className="history-detail">{entry.detail}</p> : null}
-            </div>
-          ))}
-          {!progressEntries.length ? (
-            <div className="empty-state">
-              <p>No progress logged yet. Start capturing real execution movement here.</p>
-            </div>
-          ) : null}
-        </div>
-      </SectionCard>
+            ))}
+            {!progressEntries.length ? (
+              <div style={{ textAlign: "center", padding: "24px 0" }}>
+                <p style={{ fontSize: ds.textSmall, color: ds.muted }}>No progress logged yet. Start capturing real execution movement here.</p>
+              </div>
+            ) : null}
+          </div>
+        </SectionCard>
+      </div>
 
-      {/* ─── Inspector: selected task context ─── */}
+      {/* ── Inspector: selected task context ── */}
       <ContextInspector
         open={inspectedTaskId !== null}
         title="Task context"
@@ -573,32 +904,62 @@ export function PlanView({
       >
         {(() => { const t = plan?.tasks.find((task) => task.id === inspectedTaskId); return t ? (
           <div>
-            <h4 style={{ margin: "0 0 var(--spacing-xs) 0" }}>{t.title}</h4>
-            <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)", margin: "0 0 var(--spacing-md) 0" }}>{t.rationale}</p>
-            <div style={{ fontSize: "var(--text-small)", marginBottom: "var(--spacing-md)" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "var(--spacing-4)" }}><span style={{ color: "var(--color-text-muted)" }}>Status</span><span>{t.status.replace(/_/g, " ")}</span></div>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "var(--spacing-4)" }}><span style={{ color: "var(--color-text-muted)" }}>Assigned</span><span>{t.assigned_to ?? "Unassigned"}</span></div>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "var(--spacing-4)" }}><span style={{ color: "var(--color-text-muted)" }}>Priority</span><span>{t.priority ?? "Normal"}</span></div>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "var(--spacing-4)" }}><span style={{ color: "var(--color-text-muted)" }}>Effort</span><span>{t.effort_hours}h</span></div>
+            <h4 style={{ margin: "0 0 4px 0", fontSize: ds.textCardTitle, fontWeight: 600, color: ds.textPrimary }}>{t.title}</h4>
+            <p style={{ fontSize: ds.textSmall, color: ds.muted, margin: "0 0 16px 0", lineHeight: 1.5 }}>{t.rationale}</p>
+            <div style={{ fontSize: ds.textSmall, marginBottom: 16 }}>
+              {[
+                { label: "Status", value: t.status.replace(/_/g, " ") },
+                { label: "Assigned", value: t.assigned_to ?? "Unassigned" },
+                { label: "Priority", value: t.priority ?? "Normal" },
+                { label: "Effort", value: `${t.effort_hours}h` },
+              ].map(({ label, value }) => (
+                <div key={label} style={{ display: "flex", justifyContent: "space-between", padding: "6px 0", borderBottom: `1px solid ${ds.border}` }}>
+                  <span style={{ color: ds.muted }}>{label}</span>
+                  <span style={{ color: ds.textPrimary, fontWeight: 500 }}>{value}</span>
+                </div>
+              ))}
               {t.dependencies.length > 0 && (
-                <div style={{ display: "flex", justifyContent: "space-between" }}><span style={{ color: "var(--color-text-muted)" }}>Dependencies</span><span>{t.dependencies.length} tasks</span></div>
+                <div style={{ display: "flex", justifyContent: "space-between", padding: "6px 0" }}>
+                  <span style={{ color: ds.muted }}>Dependencies</span>
+                  <span style={{ color: ds.textPrimary, fontWeight: 500 }}>{t.dependencies.length} tasks</span>
+                </div>
               )}
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "var(--spacing-xs)" }}>
-              <button className="btn btn-primary btn-sm" onClick={() => { setInspectedTaskId(null); setExpandedTaskId(t.id); }}>Expand full detail</button>
-              {onOpenWorkspace && <button className="btn btn-secondary btn-sm" onClick={() => onOpenWorkspace(t.id)}>Open workspace</button>}
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              <button
+                className="btn btn-primary btn-sm"
+                onClick={() => { setInspectedTaskId(null); setExpandedTaskId(t.id); }}
+                style={{ background: ds.accent, color: "#fff", border: "none", borderRadius: 8, padding: "8px 16px", fontSize: ds.textSmall, fontWeight: 600, cursor: "pointer" }}
+              >
+                Expand full detail
+              </button>
+              {onOpenWorkspace && (
+                <button
+                  className="btn btn-secondary btn-sm"
+                  onClick={() => onOpenWorkspace(t.id)}
+                  style={{ background: "transparent", color: ds.accent, border: `1px solid ${ds.accent}`, borderRadius: 8, padding: "8px 16px", fontSize: ds.textSmall, fontWeight: 600, cursor: "pointer" }}
+                >
+                  Open workspace
+                </button>
+              )}
             </div>
           </div>
         ) : null; })()}
       </ContextInspector>
 
-      {/* ─── Drawer: compare + history ─── */}
+      {/* ── Drawer: compare + history ── */}
       <DeepDrawer open={drawerOpen} title="Plan history and compare" onClose={() => setDrawerOpen(false)}>
         <div>
-          <p style={{ color: "var(--color-text-muted)", fontSize: "var(--text-small)", marginBottom: "var(--spacing-md)" }}>
+          <p style={{ color: ds.muted, fontSize: ds.textSmall, marginBottom: 16, lineHeight: 1.5 }}>
             Plan version history and comparison view. View prior plan versions and track how the execution sequence has evolved.
           </p>
-          <button className="btn btn-secondary btn-sm" onClick={onOpenHistory}>Open full timeline</button>
+          <button
+            className="btn btn-secondary btn-sm"
+            onClick={onOpenHistory}
+            style={{ background: "transparent", color: ds.accent, border: `1px solid ${ds.accent}`, borderRadius: 8, padding: "8px 16px", fontSize: ds.textSmall, fontWeight: 600, cursor: "pointer" }}
+          >
+            Open full timeline
+          </button>
         </div>
       </DeepDrawer>
     </div>
@@ -626,15 +987,33 @@ function TaskNotesEditor({
         value={draft}
         onChange={(e) => setDraft(e.target.value)}
         placeholder="Evidence, blockers, observations..."
-        style={{ minHeight: 60, fontSize: "var(--text-sm)" }}
+        style={{
+          minHeight: 60,
+          fontSize: ds.textSmall,
+          borderRadius: 8,
+          border: `1px solid ${ds.border}`,
+          padding: "10px 14px",
+          width: "100%",
+          boxSizing: "border-box",
+        }}
         disabled={disabled}
       />
       {dirty && (
         <button
-          className="btn btn-secondary"
           onClick={() => onSave(draft)}
           disabled={disabled}
-          style={{ marginTop: "var(--space-2)", fontSize: "var(--text-sm)" }}
+          style={{
+            marginTop: 8,
+            fontSize: ds.textSmall,
+            fontWeight: 600,
+            padding: "6px 14px",
+            borderRadius: 8,
+            border: "none",
+            background: ds.accent,
+            color: "#fff",
+            cursor: disabled ? "not-allowed" : "pointer",
+            opacity: disabled ? 0.5 : 1,
+          }}
         >
           Save notes
         </button>

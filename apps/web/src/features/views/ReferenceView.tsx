@@ -32,6 +32,53 @@ type ReferenceViewProps = {
   onSearchChange: (value: string) => void;
 };
 
+/* ── Shared style constants ── */
+
+const eyebrowSt: React.CSSProperties = {
+  fontSize: "var(--text-eyebrow, 11px)",
+  fontWeight: 600,
+  textTransform: "uppercase",
+  letterSpacing: "0.08em",
+  color: "var(--color-text-muted, #A3A3A3)",
+  margin: "0 0 var(--spacing-8)",
+};
+
+const cardSt: React.CSSProperties = {
+  background: "var(--color-surface, #FFFFFF)",
+  borderRadius: "var(--radius-md, 12px)",
+  border: "1px solid var(--color-border-subtle, #E5E5E5)",
+  boxShadow: "var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.04))",
+  padding: "var(--spacing-20)",
+};
+
+const cardPrimarySt: React.CSSProperties = {
+  ...cardSt,
+  background: "var(--color-accent-soft, rgba(108,92,231,0.08))",
+  borderColor: "var(--color-accent, #6C5CE7)",
+};
+
+const h3St: React.CSSProperties = {
+  fontSize: "var(--text-section, 20px)",
+  fontWeight: 600,
+  color: "var(--color-text-primary, #0A0A0A)",
+  margin: "0 0 var(--spacing-4)",
+};
+
+const bodySt: React.CSSProperties = {
+  fontSize: "var(--text-small, 13px)",
+  lineHeight: "var(--lh-normal, 1.5)",
+  color: "var(--color-text-secondary, #525252)",
+  margin: 0,
+};
+
+const tagSt: React.CSSProperties = {
+  fontSize: "var(--text-eyebrow, 11px)",
+  color: "var(--color-text-muted, #A3A3A3)",
+  background: "var(--color-bg-muted, #F5F5F5)",
+  padding: "3px 8px",
+  borderRadius: "var(--radius-full, 9999px)",
+};
+
 export function ReferenceView({
   view,
   bundle,
@@ -84,111 +131,203 @@ export function ReferenceView({
 
   return (
     <SectionCard
-      eyebrow="Reference"
+      eyebrow="REFERENCE"
       title={`${labelFor(view)} library`}
       description="These are current library/reference surfaces. They are here to inform the rebuild, not to freeze the next ontology in place."
       actions={
         <input
-          className="library-search"
           value={search}
           onChange={(event) => onSearchChange(event.target.value)}
           placeholder={`Search ${labelFor(view).toLowerCase()}...`}
+          style={{
+            height: 44,
+            padding: "0 var(--spacing-16)",
+            fontSize: "var(--text-body, 15px)",
+            fontFamily: "var(--font-sans)",
+            color: "var(--color-text-primary, #0A0A0A)",
+            background: "var(--color-bg-muted, #F5F5F5)",
+            border: "1px solid var(--color-border-subtle, #E5E5E5)",
+            borderRadius: "var(--radius-md, 12px)",
+            outline: "none",
+            width: 260,
+            boxSizing: "border-box" as const,
+          }}
         />
       }
     >
-      <div className="highlight-grid">
-        <div className="focus-card focus-card-primary">
-          <p className="section-eyebrow">Published bundle</p>
-          <h3>{bundle ? `${bundle.meta.ontology_id} ${bundle.meta.version}` : "Loading..."}</h3>
-          <p>This is read-only product memory while the next intervention library is authored more intentionally.</p>
+      {/* Summary cards */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+          gap: "var(--spacing-16)",
+          marginBottom: "var(--spacing-24)",
+        }}
+      >
+        <div style={cardPrimarySt}>
+          <p style={eyebrowSt}>Published bundle</p>
+          <h3 style={h3St}>{bundle ? `${bundle.meta.ontology_id} ${bundle.meta.version}` : "Loading..."}</h3>
+          <p style={bodySt}>This is read-only product memory while the next intervention library is authored more intentionally.</p>
         </div>
-        <div className="focus-card">
-          <p className="section-eyebrow">Filtered count</p>
-          <h3>{items.length}</h3>
-          <p>Matching {labelFor(view).toLowerCase()} visible under the current filter.</p>
+        <div style={cardSt}>
+          <p style={eyebrowSt}>Filtered count</p>
+          <h3 style={h3St}>{items.length}</h3>
+          <p style={bodySt}>Matching {labelFor(view).toLowerCase()} visible under the current filter.</p>
         </div>
-        <div className="focus-card">
-          <p className="section-eyebrow">Live posture</p>
-          <h3>{posture.title}</h3>
-          <p>{posture.detail}</p>
+        <div style={cardSt}>
+          <p style={eyebrowSt}>Live posture</p>
+          <h3 style={h3St}>{posture.title}</h3>
+          <p style={bodySt}>{posture.detail}</p>
         </div>
       </div>
 
       {loading ? (
-        <div className="empty-state">
-          <p>Loading {labelFor(view).toLowerCase()} library...</p>
+        <div style={{ padding: "var(--spacing-48) var(--spacing-24)", textAlign: "center" }}>
+          <p style={{ fontSize: "var(--text-body, 15px)", color: "var(--color-text-muted, #A3A3A3)" }}>
+            Loading {labelFor(view).toLowerCase()} library...
+          </p>
         </div>
       ) : (
         <>
-          <div className="timeline-split comparison-grid">
-            {posture.metrics.map((metric) => (
-              <div className="focus-card" key={metric.label}>
-                <p className="section-eyebrow">{metric.label}</p>
-                <h3>{metric.value}</h3>
-                <p>{metric.note}</p>
-              </div>
-            ))}
-          </div>
+          {/* Posture metrics */}
+          {posture.metrics.length > 0 && (
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: `repeat(${Math.min(posture.metrics.length, 3)}, 1fr)`,
+                gap: "var(--spacing-16)",
+                marginBottom: "var(--spacing-24)",
+              }}
+            >
+              {posture.metrics.map((metric) => (
+                <div style={cardSt} key={metric.label}>
+                  <p style={eyebrowSt}>{metric.label}</p>
+                  <h3 style={h3St}>{metric.value}</h3>
+                  <p style={bodySt}>{metric.note}</p>
+                </div>
+              ))}
+            </div>
+          )}
 
-          <div className="library-layout">
-            <div className="library-grid">
+          {/* Library layout: grid + detail */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 380px",
+              gap: "var(--spacing-24)",
+              alignItems: "start",
+            }}
+          >
+            {/* Item grid */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+                gap: "var(--spacing-16)",
+              }}
+            >
               {items.map((item) => (
                 <button
-                  className={`library-card library-card-selectable ${selectedItem?.id === item.id ? "selected" : ""}`}
                   key={item.id}
                   onClick={() => setSelectedItemId(item.id)}
+                  style={{
+                    ...cardSt,
+                    textAlign: "left" as const,
+                    cursor: "pointer",
+                    outline: selectedItem?.id === item.id ? "2px solid var(--color-accent, #6C5CE7)" : "none",
+                    outlineOffset: -2,
+                    transition: "box-shadow var(--motion-fast) var(--easing-standard)",
+                  }}
                 >
-                  <div className="thread-row">
-                    <span>{item.id}</span>
-                    <em>Reference</em>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "var(--spacing-8)" }}>
+                    <span style={{ fontSize: "var(--text-eyebrow, 11px)", fontWeight: 500, color: "var(--color-text-muted, #A3A3A3)", fontFamily: "var(--font-mono)" }}>
+                      {item.id}
+                    </span>
+                    <span style={{ fontSize: "var(--text-eyebrow, 11px)", textTransform: "uppercase" as const, letterSpacing: "0.08em", color: "var(--color-text-muted, #A3A3A3)" }}>
+                      Reference
+                    </span>
                   </div>
-                  <h3>{item.title}</h3>
-                  <p>{item.detail}</p>
-                  <div className="dependency-list">
+                  <h3 style={{ fontSize: "var(--text-card, 16px)", fontWeight: 600, color: "var(--color-text-primary, #0A0A0A)", margin: "0 0 var(--spacing-8)", lineHeight: "var(--lh-tight, 1.15)" }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ ...bodySt, marginBottom: "var(--spacing-12)" }}>{item.detail}</p>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--spacing-4)" }}>
                     {item.meta.slice(0, 5).map((entry) => (
-                      <span key={`${item.id}-${entry}`}>{entry}</span>
+                      <span key={`${item.id}-${entry}`} style={tagSt}>{entry}</span>
                     ))}
                   </div>
                 </button>
               ))}
               {!items.length ? (
-                <div className="empty-state">
-                  <p>No matching {labelFor(view).toLowerCase()} found.</p>
+                <div style={{ gridColumn: "1 / -1", padding: "var(--spacing-32) var(--spacing-24)", textAlign: "center" }}>
+                  <p style={{ fontSize: "var(--text-body, 15px)", color: "var(--color-text-muted, #A3A3A3)" }}>
+                    No matching {labelFor(view).toLowerCase()} found.
+                  </p>
                 </div>
               ) : null}
             </div>
 
-            <aside className="reference-detail-card">
+            {/* Detail aside */}
+            <aside
+              style={{
+                ...cardSt,
+                position: "sticky" as const,
+                top: "var(--spacing-24)",
+                maxHeight: "calc(100vh - 120px)",
+                overflowY: "auto" as const,
+              }}
+            >
               {selectedItem ? (
                 <>
-                  <div className="thread-row">
-                    <span>{selectedItem.id}</span>
-                    <em>Pinned detail</em>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "var(--spacing-8)" }}>
+                    <span style={{ fontSize: "var(--text-eyebrow, 11px)", fontWeight: 500, color: "var(--color-text-muted, #A3A3A3)", fontFamily: "var(--font-mono)" }}>
+                      {selectedItem.id}
+                    </span>
+                    <span style={{ fontSize: "var(--text-eyebrow, 11px)", textTransform: "uppercase" as const, letterSpacing: "0.08em", color: "var(--color-accent, #6C5CE7)" }}>
+                      Pinned detail
+                    </span>
                   </div>
-                  <h3>{selectedItem.title}</h3>
-                  <p className="history-note">{selectedItem.detail}</p>
-                  <p className="history-detail">{selectedItem.note}</p>
+                  <h3 style={{ fontSize: "var(--text-section, 20px)", fontWeight: 600, color: "var(--color-text-primary, #0A0A0A)", margin: "0 0 var(--spacing-8)" }}>
+                    {selectedItem.title}
+                  </h3>
+                  <p style={{ fontSize: "var(--text-small, 13px)", lineHeight: "var(--lh-loose, 1.6)", color: "var(--color-text-secondary, #525252)", margin: "0 0 var(--spacing-8)" }}>
+                    {selectedItem.detail}
+                  </p>
+                  <p style={{ fontSize: "var(--text-body, 15px)", lineHeight: "var(--lh-loose, 1.6)", color: "var(--color-text-primary, #0A0A0A)", margin: "0 0 var(--spacing-16)", maxWidth: 720 }}>
+                    {selectedItem.note}
+                  </p>
 
-                  <div className="dependency-list">
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--spacing-4)", marginBottom: "var(--spacing-16)" }}>
                     {selectedItem.meta.map((entry) => (
-                      <span key={`${selectedItem.id}-meta-${entry}`}>{entry}</span>
+                      <span key={`${selectedItem.id}-meta-${entry}`} style={tagSt}>{entry}</span>
                     ))}
                   </div>
 
-                  <div className="reference-detail-list">
+                  <div style={{ display: "flex", flexDirection: "column", gap: "var(--spacing-12)" }}>
                     {selectedItem.related.map((group) => (
-                      <div className="focus-card" key={`${selectedItem.id}-${group.label}`}>
-                        <p className="section-eyebrow">{group.label}</p>
-                        <div className="dependency-list">
-                          {group.values.length ? group.values.map((value) => <span key={value}>{value}</span>) : <span>None linked yet</span>}
+                      <div
+                        key={`${selectedItem.id}-${group.label}`}
+                        style={{
+                          padding: "var(--spacing-12) var(--spacing-16)",
+                          background: "var(--color-bg-muted, #F5F5F5)",
+                          borderRadius: "var(--radius-sm, 8px)",
+                        }}
+                      >
+                        <p style={{ ...eyebrowSt, marginBottom: "var(--spacing-8)" }}>{group.label}</p>
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--spacing-4)" }}>
+                          {group.values.length
+                            ? group.values.map((value) => <span key={value} style={tagSt}>{value}</span>)
+                            : <span style={{ fontSize: "var(--text-small, 13px)", color: "var(--color-text-muted, #A3A3A3)" }}>None linked yet</span>}
                         </div>
                       </div>
                     ))}
                   </div>
                 </>
               ) : (
-                <div className="empty-state compact">
-                  <p>Select a reference item to inspect its linked relationships.</p>
+                <div style={{ padding: "var(--spacing-24)", textAlign: "center" }}>
+                  <p style={{ fontSize: "var(--text-small, 13px)", color: "var(--color-text-muted, #A3A3A3)" }}>
+                    Select a reference item to inspect its linked relationships.
+                  </p>
                 </div>
               )}
             </aside>

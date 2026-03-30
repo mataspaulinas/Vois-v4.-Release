@@ -60,136 +60,474 @@ export function CopilotDrawer({
   onDismissSignalSuggestion,
 }: CopilotDrawerProps) {
   return (
-    <aside className={`copilot-drawer ${open ? "open" : ""}`} aria-hidden={!open}>
-      <div className="copilot-drawer-header">
+    <aside
+      className={`copilot-drawer ${open ? "open" : ""}`}
+      aria-hidden={!open}
+      style={{
+        borderLeft: "3px solid transparent",
+        borderImage: "linear-gradient(180deg, #6C5CE7, #A29BFE) 1",
+      }}
+    >
+      {/* ── Header ── */}
+      <div
+        className="copilot-drawer-header"
+        style={{
+          padding: "var(--spacing-24) var(--spacing-24) var(--spacing-16)",
+          borderBottom: "1px solid var(--color-border-subtle, #E5E5E5)",
+        }}
+      >
         <div>
-          <p className="section-eyebrow">vOIS</p>
-          <h2>Working conversations</h2>
-          <p className="history-note">
+          <h2
+            style={{
+              fontSize: "var(--text-section, 20px)",
+              fontWeight: "var(--weight-semibold, 600)",
+              color: "var(--color-text-primary, #0A0A0A)",
+              margin: 0,
+              lineHeight: "var(--lh-tight, 1.15)",
+            }}
+          >
+            Working conversations
+          </h2>
+          <p
+            style={{
+              fontSize: "var(--text-small, 13px)",
+              color: "var(--color-text-muted, #A3A3A3)",
+              margin: "var(--spacing-4) 0 0",
+            }}
+          >
             {contextLabel}: {contextSummary}
           </p>
         </div>
-        <button className="topbar-btn" onClick={onClose}>
+        <button
+          onClick={onClose}
+          style={{
+            fontSize: "var(--text-small, 13px)",
+            fontWeight: "var(--weight-medium, 500)",
+            color: "var(--color-text-secondary, #525252)",
+            background: "var(--color-surface, #FFFFFF)",
+            border: "1px solid var(--color-border-subtle, #E5E5E5)",
+            borderRadius: "var(--radius-sm, 8px)",
+            padding: "6px 14px",
+            cursor: "pointer",
+          }}
+        >
           Close
         </button>
       </div>
 
-      <div className="copilot-layout">
-        <div className="copilot-thread-list">
+      {/* ── Layout: thread list + conversation ── */}
+      <div className="copilot-layout" style={{ display: "flex", flex: 1, overflow: "hidden" }}>
+        {/* Thread sidebar */}
+        <div
+          className="copilot-thread-list"
+          style={{
+            width: 240,
+            minWidth: 200,
+            borderRight: "1px solid var(--color-border-subtle, #E5E5E5)",
+            overflowY: "auto",
+            padding: "var(--spacing-8)",
+          }}
+        >
           {threads.map((thread) => (
             <button
               key={thread.id}
               className={`copilot-thread-button ${selectedThreadId === thread.id ? "selected" : ""}`}
               onClick={() => onSelectThread(thread.id)}
               disabled={loading || sending}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+                width: "100%",
+                textAlign: "left",
+                padding: "var(--spacing-12)",
+                marginBottom: "var(--spacing-4)",
+                borderRadius: "var(--radius-md, 12px)",
+                border: "1px solid transparent",
+                background:
+                  selectedThreadId === thread.id
+                    ? "var(--color-accent-soft, rgba(108,92,231,0.08))"
+                    : "transparent",
+                cursor: "pointer",
+                transition: "background var(--motion-fast, 120ms) var(--easing-standard)",
+              }}
             >
-              <strong>{thread.title}</strong>
-              <span>{thread.scope}</span>
-              <span>
+              <strong
+                style={{
+                  fontSize: "var(--text-body, 15px)",
+                  fontWeight: "var(--weight-medium, 500)",
+                  color: "var(--color-text-primary, #0A0A0A)",
+                  lineHeight: "var(--lh-tight, 1.15)",
+                }}
+              >
+                {thread.title}
+              </strong>
+              <span
+                style={{
+                  fontSize: "var(--text-small, 13px)",
+                  color: "var(--color-text-secondary, #525252)",
+                }}
+              >
+                {thread.scope}
+              </span>
+              <span
+                style={{
+                  fontSize: "var(--text-eyebrow, 11px)",
+                  color: "var(--color-text-muted, #A3A3A3)",
+                }}
+              >
                 {thread.message_count} messages
                 {thread.latest_message_at ? ` | ${formatTimestamp(thread.latest_message_at)}` : ""}
               </span>
             </button>
           ))}
           {!threads.length ? (
-            <div className="empty-state compact">
-              <p>No copilot threads available yet.</p>
+            <div style={{ padding: "var(--spacing-24)", textAlign: "center" }}>
+              <p
+                style={{
+                  fontSize: "var(--text-small, 13px)",
+                  color: "var(--color-text-muted, #A3A3A3)",
+                }}
+              >
+                No copilot threads available yet.
+              </p>
             </div>
           ) : null}
         </div>
 
-        <div className="copilot-conversation">
+        {/* Conversation area */}
+        <div
+          className="copilot-conversation"
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            overflow: "hidden",
+          }}
+        >
           {unavailableMessage ? (
-            <div className="empty-state">
-              <p>{unavailableMessage}</p>
+            <div
+              style={{
+                flex: 1,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "var(--spacing-48)",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "var(--text-body, 15px)",
+                  color: "var(--color-text-muted, #A3A3A3)",
+                  textAlign: "center",
+                }}
+              >
+                {unavailableMessage}
+              </p>
             </div>
           ) : null}
           {loading ? (
-            <div className="empty-state compact">
-              <p>Loading copilot thread...</p>
+            <div
+              style={{
+                flex: 1,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "var(--spacing-48)",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "var(--text-small, 13px)",
+                  color: "var(--color-text-muted, #A3A3A3)",
+                }}
+              >
+                Loading copilot thread...
+              </p>
             </div>
           ) : !unavailableMessage && selectedThread ? (
             <>
-              <div className="copilot-message-list">
-                {selectedThread.messages.map((message) => (
-                  <article
-                    className={`copilot-message ${message.author_role === "assistant" ? "assistant" : "user"}`}
-                    key={message.id}
-                  >
-                    <div className="thread-row">
-                      <span>{message.author_role === "assistant" ? "VOIS" : "You"}</span>
-                      <em>
-                        {message.source_mode} · {formatTimestamp(message.created_at)}
-                      </em>
-                    </div>
-                    <p className="copilot-message-body">{message.content}</p>
-                    {fileReferencesForMessage(message.references).length ? (
-                      <div className="copilot-file-list">
-                        {fileReferencesForMessage(message.references).map((reference) => (
-                          <a
-                            className="copilot-file-chip"
-                            href={contentUrlFromReference(reference) ?? "#"}
-                            key={`${message.id}-${reference.id ?? reference.label}`}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            {reference.label}
-                          </a>
-                        ))}
+              {/* Message list */}
+              <div
+                className="copilot-message-list"
+                style={{
+                  flex: 1,
+                  overflowY: "auto",
+                  padding: "var(--spacing-24)",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "var(--spacing-12)",
+                }}
+              >
+                {selectedThread.messages.map((message) => {
+                  const isUser = message.author_role !== "assistant";
+                  return (
+                    <article
+                      className={`copilot-message ${message.author_role === "assistant" ? "assistant" : "user"}`}
+                      key={message.id}
+                      style={{
+                        alignSelf: isUser ? "flex-end" : "flex-start",
+                        maxWidth: "80%",
+                        padding: "var(--spacing-16)",
+                        borderRadius: "var(--radius-md, 12px)",
+                        background: isUser
+                          ? "var(--color-accent-soft, rgba(108,92,231,0.08))"
+                          : "var(--color-surface, #FFFFFF)",
+                        border: isUser ? "none" : "1px solid var(--color-border-subtle, #E5E5E5)",
+                        boxShadow: isUser ? "none" : "var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.04))",
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          marginBottom: "var(--spacing-8)",
+                        }}
+                      >
+                        <span
+                          style={{
+                            fontSize: "var(--text-eyebrow, 11px)",
+                            fontWeight: "var(--weight-semibold, 600)",
+                            textTransform: "uppercase" as const,
+                            letterSpacing: "0.08em",
+                            color: isUser
+                              ? "var(--color-accent, #6C5CE7)"
+                              : "var(--color-text-muted, #A3A3A3)",
+                          }}
+                        >
+                          {message.author_role === "assistant" ? "VOIS" : "You"}
+                        </span>
+                        <span
+                          style={{
+                            fontSize: "var(--text-eyebrow, 11px)",
+                            color: "var(--color-text-muted, #A3A3A3)",
+                          }}
+                        >
+                          {message.source_mode} · {formatTimestamp(message.created_at)}
+                        </span>
                       </div>
-                    ) : null}
-                    {message.attachments.length ? (
-                      <div className="dependency-list">
-                        {message.attachments.map((attachment) => (
-                          <span key={`${message.id}-${attachment.file_asset_id ?? attachment.file_name}`}>
-                            attachment: {attachment.file_name}
-                          </span>
-                        ))}
-                      </div>
-                    ) : null}
-                    {nonFileReferencesForMessage(message.references).length ? (
-                      <div className="dependency-list">
-                        {nonFileReferencesForMessage(message.references).map((reference) => (
-                          <span key={`${message.id}-${reference.type}-${reference.label}`}>
-                            {reference.type}: {reference.label}
-                          </span>
-                        ))}
-                      </div>
-                    ) : null}
-                  </article>
-                ))}
+                      <p
+                        className="copilot-message-body"
+                        style={{
+                          fontSize: "var(--text-body, 15px)",
+                          lineHeight: "var(--lh-loose, 1.6)",
+                          color: "var(--color-text-primary, #0A0A0A)",
+                          margin: 0,
+                          whiteSpace: "pre-wrap",
+                        }}
+                      >
+                        {message.content}
+                      </p>
+                      {fileReferencesForMessage(message.references).length ? (
+                        <div
+                          style={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            gap: "var(--spacing-8)",
+                            marginTop: "var(--spacing-12)",
+                          }}
+                        >
+                          {fileReferencesForMessage(message.references).map((reference) => (
+                            <a
+                              href={contentUrlFromReference(reference) ?? "#"}
+                              key={`${message.id}-${reference.id ?? reference.label}`}
+                              target="_blank"
+                              rel="noreferrer"
+                              style={{
+                                fontSize: "var(--text-small, 13px)",
+                                fontWeight: "var(--weight-medium, 500)",
+                                color: "var(--color-accent, #6C5CE7)",
+                                background: "var(--color-accent-soft, rgba(108,92,231,0.08))",
+                                padding: "4px 10px",
+                                borderRadius: "var(--radius-full, 9999px)",
+                                textDecoration: "none",
+                                transition: "background var(--motion-fast) var(--easing-standard)",
+                              }}
+                            >
+                              {reference.label}
+                            </a>
+                          ))}
+                        </div>
+                      ) : null}
+                      {message.attachments.length ? (
+                        <div
+                          style={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            gap: "var(--spacing-8)",
+                            marginTop: "var(--spacing-8)",
+                          }}
+                        >
+                          {message.attachments.map((attachment) => (
+                            <span
+                              key={`${message.id}-${attachment.file_asset_id ?? attachment.file_name}`}
+                              style={{
+                                fontSize: "var(--text-small, 13px)",
+                                color: "var(--color-text-secondary, #525252)",
+                                background: "var(--color-bg-muted, #F5F5F5)",
+                                padding: "4px 10px",
+                                borderRadius: "var(--radius-full, 9999px)",
+                              }}
+                            >
+                              {attachment.file_name}
+                            </span>
+                          ))}
+                        </div>
+                      ) : null}
+                      {nonFileReferencesForMessage(message.references).length ? (
+                        <div
+                          style={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            gap: "var(--spacing-8)",
+                            marginTop: "var(--spacing-8)",
+                          }}
+                        >
+                          {nonFileReferencesForMessage(message.references).map((reference) => (
+                            <span
+                              key={`${message.id}-${reference.type}-${reference.label}`}
+                              style={{
+                                fontSize: "var(--text-small, 13px)",
+                                color: "var(--color-text-secondary, #525252)",
+                                background: "var(--color-bg-muted, #F5F5F5)",
+                                padding: "4px 10px",
+                                borderRadius: "var(--radius-full, 9999px)",
+                              }}
+                            >
+                              {reference.type}: {reference.label}
+                            </span>
+                          ))}
+                        </div>
+                      ) : null}
+                    </article>
+                  );
+                })}
               </div>
+
+              {/* Signal suggestion card */}
               {signalSuggestion ? (
-                <div className="focus-card">
-                  <p className="section-eyebrow">Signal update suggestion</p>
-                  <div className="dependency-list">
+                <div
+                  style={{
+                    margin: "0 var(--spacing-24)",
+                    padding: "var(--spacing-20)",
+                    background: "var(--color-surface, #FFFFFF)",
+                    borderRadius: "var(--radius-md, 12px)",
+                    border: "1px solid var(--color-border-subtle, #E5E5E5)",
+                    boxShadow: "var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.04))",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontSize: "var(--text-eyebrow, 11px)",
+                      fontWeight: "var(--weight-semibold, 600)",
+                      textTransform: "uppercase" as const,
+                      letterSpacing: "0.08em",
+                      color: "var(--color-text-muted, #A3A3A3)",
+                      margin: "0 0 var(--spacing-12)",
+                    }}
+                  >
+                    Signal update suggestion
+                  </p>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--spacing-8)", marginBottom: "var(--spacing-12)" }}>
                     {signalSuggestion.suggestion.add.map((item) => (
-                      <span key={`add-${item.signal_id}`}>add {item.signal_name ?? item.signal_id}</span>
+                      <span
+                        key={`add-${item.signal_id}`}
+                        style={{
+                          fontSize: "var(--text-small, 13px)",
+                          color: "var(--color-success, #10B981)",
+                          background: "var(--color-success-soft, rgba(16,185,129,0.08))",
+                          padding: "4px 10px",
+                          borderRadius: "var(--radius-full, 9999px)",
+                        }}
+                      >
+                        + {item.signal_name ?? item.signal_id}
+                      </span>
                     ))}
                     {signalSuggestion.suggestion.remove.map((signalId) => (
-                      <span key={`remove-${signalId}`}>remove {signalId}</span>
+                      <span
+                        key={`remove-${signalId}`}
+                        style={{
+                          fontSize: "var(--text-small, 13px)",
+                          color: "var(--color-danger, #EF4444)",
+                          background: "var(--color-danger-soft, rgba(239,68,68,0.08))",
+                          padding: "4px 10px",
+                          borderRadius: "var(--radius-full, 9999px)",
+                        }}
+                      >
+                        - {signalId}
+                      </span>
                     ))}
                   </div>
-                  <p className="history-note">
+                  <p
+                    style={{
+                      fontSize: "var(--text-small, 13px)",
+                      color: "var(--color-text-muted, #A3A3A3)",
+                      margin: "0 0 var(--spacing-16)",
+                    }}
+                  >
                     Review before applying. Accepted changes update the saved assessment, not hidden system state.
                   </p>
-                  <div className="sample-actions">
+                  <div style={{ display: "flex", gap: "var(--spacing-8)" }}>
                     <button
-                      className="btn btn-primary"
                       onClick={onApplySignalSuggestion}
                       disabled={!canApplySignalSuggestion || applyingSignalSuggestion}
+                      style={{
+                        fontSize: "var(--text-small, 13px)",
+                        fontWeight: "var(--weight-semibold, 600)",
+                        color: "var(--color-accent-foreground, #FFFFFF)",
+                        background: "var(--color-accent, #6C5CE7)",
+                        border: "none",
+                        borderRadius: "var(--radius-sm, 8px)",
+                        padding: "8px 16px",
+                        cursor: !canApplySignalSuggestion || applyingSignalSuggestion ? "not-allowed" : "pointer",
+                        opacity: !canApplySignalSuggestion || applyingSignalSuggestion ? 0.5 : 1,
+                      }}
                     >
                       {applyingSignalSuggestion ? "Applying..." : "Apply to assessment"}
                     </button>
-                    <button className="btn btn-secondary" onClick={onDismissSignalSuggestion} disabled={applyingSignalSuggestion}>
+                    <button
+                      onClick={onDismissSignalSuggestion}
+                      disabled={applyingSignalSuggestion}
+                      style={{
+                        fontSize: "var(--text-small, 13px)",
+                        fontWeight: "var(--weight-medium, 500)",
+                        color: "var(--color-text-secondary, #525252)",
+                        background: "var(--color-surface, #FFFFFF)",
+                        border: "1px solid var(--color-border-subtle, #E5E5E5)",
+                        borderRadius: "var(--radius-sm, 8px)",
+                        padding: "8px 16px",
+                        cursor: applyingSignalSuggestion ? "not-allowed" : "pointer",
+                        opacity: applyingSignalSuggestion ? 0.5 : 1,
+                      }}
+                    >
                       Dismiss
                     </button>
                   </div>
                 </div>
               ) : null}
-              <div className="progress-form">
-                <div className="copilot-attachments-toolbar">
-                  <label className="btn btn-secondary attachment-picker">
+
+              {/* Input area */}
+              <div
+                style={{
+                  padding: "var(--spacing-16) var(--spacing-24) var(--spacing-24)",
+                  borderTop: "1px solid var(--color-border-subtle, #E5E5E5)",
+                  background: "var(--color-surface, #FFFFFF)",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "var(--spacing-8)", marginBottom: "var(--spacing-12)" }}>
+                  <label
+                    style={{
+                      fontSize: "var(--text-small, 13px)",
+                      fontWeight: "var(--weight-medium, 500)",
+                      color: "var(--color-text-secondary, #525252)",
+                      background: "var(--color-bg-muted, #F5F5F5)",
+                      border: "1px solid var(--color-border-subtle, #E5E5E5)",
+                      borderRadius: "var(--radius-sm, 8px)",
+                      padding: "6px 14px",
+                      cursor: "pointer",
+                    }}
+                  >
                     <input
                       type="file"
                       multiple
@@ -197,17 +535,26 @@ export function CopilotDrawer({
                         onAttachFiles(event.target.files);
                         event.currentTarget.value = "";
                       }}
+                      style={{ display: "none" }}
                     />
                     Attach files
                   </label>
                   {attachments.length ? (
-                    <div className="dependency-list">
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--spacing-4)" }}>
                       {attachments.map((attachment) => (
                         <button
                           key={attachment.file_name}
-                          className="attachment-chip"
                           onClick={() => onRemoveAttachment(attachment.file_name)}
                           disabled={sending}
+                          style={{
+                            fontSize: "var(--text-eyebrow, 11px)",
+                            color: "var(--color-text-secondary, #525252)",
+                            background: "var(--color-bg-muted, #F5F5F5)",
+                            border: "1px solid var(--color-border-subtle, #E5E5E5)",
+                            borderRadius: "var(--radius-full, 9999px)",
+                            padding: "3px 10px",
+                            cursor: sending ? "not-allowed" : "pointer",
+                          }}
                         >
                           {attachment.file_name} x
                         </button>
@@ -216,19 +563,68 @@ export function CopilotDrawer({
                   ) : null}
                 </div>
                 <textarea
-                  className="progress-textarea"
                   value={input}
                   onChange={(event) => onInputChange(event.target.value)}
                   placeholder={inputPlaceholder}
+                  style={{
+                    width: "100%",
+                    minHeight: 72,
+                    padding: "var(--spacing-12)",
+                    fontSize: "var(--text-body, 15px)",
+                    fontFamily: "var(--font-sans)",
+                    lineHeight: "var(--lh-normal, 1.5)",
+                    color: "var(--color-text-primary, #0A0A0A)",
+                    background: "var(--color-bg-muted, #F5F5F5)",
+                    border: "1px solid var(--color-border-subtle, #E5E5E5)",
+                    borderRadius: "var(--radius-md, 12px)",
+                    resize: "vertical",
+                    outline: "none",
+                    boxSizing: "border-box",
+                  }}
                 />
-                <button className="btn btn-secondary" onClick={onSend} disabled={sending || !selectedThreadId}>
-                  {sending ? "Sending..." : "Send to VOIS"}
-                </button>
+                <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "var(--spacing-12)" }}>
+                  <button
+                    onClick={onSend}
+                    disabled={sending || !selectedThreadId}
+                    style={{
+                      fontSize: "var(--text-body, 15px)",
+                      fontWeight: "var(--weight-semibold, 600)",
+                      color: "var(--color-accent-foreground, #FFFFFF)",
+                      background: "var(--color-accent, #6C5CE7)",
+                      border: "none",
+                      borderRadius: "var(--radius-sm, 8px)",
+                      padding: "10px 20px",
+                      cursor: sending || !selectedThreadId ? "not-allowed" : "pointer",
+                      opacity: sending || !selectedThreadId ? 0.5 : 1,
+                      transition: "background var(--motion-fast) var(--easing-standard)",
+                    }}
+                  >
+                    {sending ? "Sending..." : "Send to VOIS"}
+                  </button>
+                </div>
               </div>
             </>
           ) : (
-            <div className="empty-state compact">
-              <p>{unavailableMessage ? "VOIS is blocked until the live AI runtime is configured." : "Select a thread to inspect the persisted conversation."}</p>
+            <div
+              style={{
+                flex: 1,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "var(--spacing-48)",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "var(--text-body, 15px)",
+                  color: "var(--color-text-muted, #A3A3A3)",
+                  textAlign: "center",
+                }}
+              >
+                {unavailableMessage
+                  ? "VOIS is blocked until the live AI runtime is configured."
+                  : "Select a thread to inspect the persisted conversation."}
+              </p>
             </div>
           )}
         </div>
