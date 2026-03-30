@@ -193,6 +193,9 @@ import { DelegationConsole } from "./features/owner/DelegationConsole";
 import { OwnerSetupView } from "./features/setup/OwnerSetupView";
 import { buildHistoryComparison } from "./features/views/historyInsights";
 import { buildReportComparison } from "./features/views/reportInsights";
+import { ToastProvider } from "./components/Toast";
+import { DrawerProvider, StackingDrawerHost } from "./components/StackingDrawer";
+import { CommandPalette, useCommandPalette } from "./components/CommandPalette";
 
 const sampleIntakeNotes: Array<{ id: string; label: string; text: string }> = [];
 
@@ -370,6 +373,7 @@ export default function App() {
   const activeRole = authSession?.user.role ?? bootstrap?.current_user.role ?? null;
   const roleTour = useMemo(() => tourForRole(activeRole), [activeRole]);
   const tour = useTour(roleTour ?? { id: "none", steps: [] });
+  const { open: cmdPaletteOpen, setOpen: setCmdPaletteOpen } = useCommandPalette();
   const organizationId = bootstrap?.organization?.id ?? null;
   const ownerSetupState = bootstrap?.setup_state ?? authSession?.setup_state ?? null;
   const requiresOwnerClaim = activeRole === "owner" && Boolean(bootstrap?.requires_owner_claim ?? authSession?.requires_owner_claim);
@@ -1007,6 +1011,33 @@ export default function App() {
     () => extractPendingSignalSuggestion(selectedThread, dismissedSignalSuggestionIds),
     [dismissedSignalSuggestionIds, selectedThread]
   );
+
+  const commandItems = useMemo(() => {
+    const items: Array<{ id: string; label: string; description?: string; group: string; shortcut?: string; onSelect: () => void }> = [];
+
+    // Navigation commands
+    items.push({ id: "nav-today", label: "Today", group: "Navigation", shortcut: "T", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "manager", venueId: displayedVenue.id, managerView: "today" }); } });
+    items.push({ id: "nav-plan", label: "Plan", group: "Navigation", shortcut: "P", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "plan" }); } });
+    items.push({ id: "nav-assessment", label: "Assessment", group: "Navigation", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "assessment" }); } });
+    items.push({ id: "nav-signals", label: "Signals", group: "Navigation", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "signals" }); } });
+    items.push({ id: "nav-report", label: "Report", group: "Navigation", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "report" }); } });
+    items.push({ id: "nav-portfolio", label: "Portfolio", group: "Navigation", onSelect: () => navigate({ topLevelView: "portfolio" }) });
+    items.push({ id: "nav-settings", label: "Settings", group: "Navigation", onSelect: () => navigate({ topLevelView: "settings" }) });
+    items.push({ id: "nav-kb", label: "Knowledge Base", group: "Navigation", onSelect: () => navigate({ topLevelView: "kb" }) });
+
+    // Venue commands
+    if (bootstrap) {
+      bootstrap.venues.forEach((v) => {
+        items.push({ id: `venue-${v.id}`, label: v.name, group: "Venues", onSelect: () => handleSelectVenue(v.id) });
+      });
+    }
+
+    // Actions
+    items.push({ id: "action-copilot", label: "Open Copilot", group: "Actions", shortcut: "C", onSelect: () => setCopilotOpen(true) });
+    items.push({ id: "action-theme", label: "Toggle Theme", group: "Actions", onSelect: () => setPreferences((c) => ({ ...c, theme: (c.theme === "dark" ? "light" : "dark") as ThemeMode })) });
+
+    return items;
+  }, [bootstrap, displayedVenue, navigate, handleSelectVenue]);
 
   useEffect(() => {
     if (!workspaceVenue) {
@@ -2571,7 +2602,12 @@ export default function App() {
   }
 
   return (
-    <div className="ois-shell">
+    <ToastProvider>
+      <DrawerProvider
+        sidebarWidth={preferences.sidebarCollapsed ? 48 : 240}
+        onSidebarAutoCollapse={() => setPreferences((c) => ({ ...c, sidebarCollapsed: true }))}
+      >
+        <div className="ois-shell">
       <WelcomeOverlay
         open={!preferences.welcomeDismissed}
         resumeVenueName={resumePulse?.venue_name ?? null}
@@ -3341,7 +3377,19 @@ export default function App() {
           ) : null}
         </>
       ) : null}
+      <CommandPalette
+        open={cmdPaletteOpen}
+        onClose={() => setCmdPaletteOpen(false)}
+        items={commandItems}
+        onAskCopilot={(query) => {
+          setCmdPaletteOpen(false);
+          setCopilotOpen(true);
+        }}
+      />
+      <StackingDrawerHost />
     </div>
+    </DrawerProvider>
+    </ToastProvider>
   );
 }
 
