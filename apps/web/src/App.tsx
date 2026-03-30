@@ -2631,42 +2631,33 @@ export default function App() {
 
       {bootstrap ? (
         <>
-          {showDeveloperChrome ? (
-            <TopBar
-              venues={bootstrap.venues}
-              activeVenue={displayedVenue}
-              portfolioSummary={portfolioSummary}
-              theme={preferences.theme}
-              skin={preferences.skin}
-              userName={authSession?.user.full_name ?? bootstrap.current_user.full_name}
-              authMode={authSession?.session.authentication_mode ?? "firebase_id_token"}
-              onSelectVenue={handleSelectVenue}
-              onShowPortfolio={() => navigate({ topLevelView: "portfolio" })}
-              onToggleTheme={() =>
-                setPreferences((current) => ({
-                  ...current,
-                  theme: (current.theme === "dark" ? "light" : "dark") as ThemeMode,
-                }))
-              }
-              onSelectSkin={(skin) => setPreferences((current) => ({ ...current, skin: skin as SkinId }))}
-              onToggleCopilot={() => setCopilotOpen((current) => !current)}
-              copilotOpen={copilotOpen}
-              formatTimestamp={formatTimestamp}
-              onNavigateToVenue={(venueId) => navigate({ topLevelView: "venue", venueId, venueView: "overview" })}
-            />
-          ) : isDeveloperRole ? (
-            <button className="developer-chrome-toggle" onClick={() => setDeveloperChromeHidden(false)}>
-              Show developer chrome
-            </button>
-          ) : null}
+          <TopBar
+            venues={bootstrap.venues}
+            activeVenue={displayedVenue}
+            portfolioSummary={portfolioSummary}
+            theme={preferences.theme}
+            skin={preferences.skin}
+            userName={authSession?.user.full_name ?? bootstrap.current_user.full_name}
+            authMode={authSession?.session.authentication_mode ?? "firebase_id_token"}
+            onSelectVenue={handleSelectVenue}
+            onShowPortfolio={() => navigate({ topLevelView: "portfolio" })}
+            onToggleTheme={() =>
+              setPreferences((current) => ({
+                ...current,
+                theme: (current.theme === "dark" ? "light" : "dark") as ThemeMode,
+              }))
+            }
+            onSelectSkin={(skin) => setPreferences((current) => ({ ...current, skin: skin as SkinId }))}
+            onToggleCopilot={() => setCopilotOpen((current) => !current)}
+            copilotOpen={copilotOpen}
+            formatTimestamp={formatTimestamp}
+            onNavigateToVenue={(venueId) => navigate({ topLevelView: "venue", venueId, venueView: "overview" })}
+          />
 
           <div
-            className={`main-layout ${preferences.sidebarCollapsed ? "sidebar-collapsed" : ""} ${
-              !isDeveloperRole ? "role-main-layout" : ""
-            } ${isDeveloperRole && !showDeveloperChrome ? "developer-chrome-hidden" : ""}`}
+            className={`main-layout ${preferences.sidebarCollapsed ? "sidebar-collapsed" : ""}`}
           >
-            {showDeveloperChrome ? (
-              <Sidebar
+            <Sidebar
                 collapsed={preferences.sidebarCollapsed}
                 activeTopLevel={shellRoute.topLevelView}
                 authRole={activeRole}
@@ -2694,82 +2685,12 @@ export default function App() {
                 onToggleCopilot={() => setCopilotOpen((current) => !current)}
                 copilotOpen={copilotOpen}
               />
-            ) : null}
-
             <div className="content-area">
-              {isDeveloperRole && showDeveloperChrome ? (
-                <div className="developer-chrome-actions">
-                  <button className="btn btn-secondary btn-sm" onClick={() => setDeveloperChromeHidden(true)}>
-                    Hide developer chrome
-                  </button>
-                </div>
-              ) : null}
-              {isDeveloperRole ? (
-                <MobileTabStrip
+              <MobileTabStrip
                   visible={shellRoute.topLevelView === "venue"}
                   activeView={shellRoute.topLevelView === "venue" ? shellRoute.venueView : "overview"}
                   onSelectView={handleSelectVenueView}
                 />
-              ) : (
-                <div className="role-frame-header">
-                  <div>
-                    <p className="section-eyebrow">{activeRole === "owner" ? "Owner workspace" : activeRole === "manager" ? "Manager workspace" : "Pocket workspace"}</p>
-                    <h1>{roleFrameTitle}</h1>
-                    <p className="section-description">{roleFrameSubtitle}</p>
-                  </div>
-                  <div className="role-frame-toolbar">
-                    {bootstrap.venues.length ? (
-                      <label className="role-workspace-venue-picker">
-                        <span>Venue</span>
-                        <select
-                          value={workspaceVenue?.id ?? bootstrap.venues[0]?.id ?? ""}
-                          onChange={(event) => {
-                            const venueId = event.target.value;
-                            setSelectedVenueId(venueId);
-                            if (activeRole === "manager") {
-                              navigate({ topLevelView: "manager", venueId, managerView: "today" });
-                              return;
-                            }
-                            if (activeRole === "barista") {
-                              navigate({ topLevelView: "pocket", venueId, pocketView: "shift" });
-                              return;
-                            }
-                            navigate({ topLevelView: "owner", venueId, ownerView: "command" });
-                          }}
-                        >
-                          {bootstrap.venues.map((venue) => (
-                            <option key={venue.id} value={venue.id}>
-                              {venue.name}
-                            </option>
-                          ))}
-                        </select>
-                      </label>
-                    ) : null}
-                    <div className="role-workspace-actions">
-                      <NotificationBell formatTimestamp={formatTimestamp} onNavigateToVenue={(venueId) => navigate({ topLevelView: "venue", venueId, venueView: "overview" })} />
-                      <button className="btn btn-secondary" onClick={() => setCopilotOpen(true)}>
-                        Open VOIS
-                      </button>
-                      <button className="btn btn-secondary" onClick={handleLogout} disabled={loggingOut}>
-                        {loggingOut ? "Signing out..." : "Sign out"}
-                      </button>
-                    </div>
-                  </div>
-                  {realRoleNavItems.length ? (
-                    <nav className="role-workspace-nav" aria-label="Workspace navigation">
-                      {realRoleNavItems.map((item) => (
-                        <button
-                          key={item.key}
-                          className={`role-workspace-nav-item ${item.active ? "active" : ""}`}
-                          onClick={item.onClick}
-                        >
-                          {item.label}
-                        </button>
-                      ))}
-                    </nav>
-                  ) : null}
-                </div>
-              )}
 
               <main className="view-panel">
                 {shellRoute.topLevelView === "portfolio" && bootstrap.organization ? (
