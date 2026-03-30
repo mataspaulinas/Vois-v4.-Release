@@ -300,34 +300,36 @@ button {
 
 .ois-shell {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-layout {
-  display: grid;
-  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
-  min-height: calc(100vh - 88px);
+  display: flex;
+  flex: 1;
+  min-height: 0;
 }
 
-.main-layout.sidebar-collapsed {
-  grid-template-columns: var(--sidebar-width-collapsed) minmax(0, 1fr);
+.main-layout.sidebar-collapsed .sidebar {
+  width: var(--sidebar-width-collapsed);
 }
 
 .topbar {
   position: sticky;
   top: 0;
   z-index: var(--z-sticky);
+  height: var(--topbar-height);
   display: grid;
-  grid-template-columns: 1fr minmax(320px, 1.4fr) 1fr;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: var(--spacing-16);
-  padding: var(--spacing-16) var(--spacing-24);
-  backdrop-filter: blur(18px);
-  background: rgba(248, 250, 252, 0.82);
+  padding: 0 var(--spacing-16);
+  background: var(--color-surface);
   border-bottom: 1px solid var(--border);
 }
 
 [data-theme="dark"] .topbar {
-  background: rgba(15, 23, 42, 0.82);
+  background: var(--bg-elevated);
 }
 
 .topbar-left,
@@ -340,7 +342,6 @@ button {
 
 .topbar-center {
   justify-content: center;
-  flex-direction: column;
 }
 
 .topbar-right {
@@ -348,13 +349,13 @@ button {
 }
 
 .topbar-session-pill {
-  display: grid;
-  gap: 4px;
-  padding: 0.72rem 0.92rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--bg-elevated) 92%, #ffffff 8%);
-  text-align: right;
+  padding: 4px 12px;
+  border-radius: var(--radius-xl);
+  background: var(--bg);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
 }
 
 .topbar-session-pill strong,
@@ -530,17 +531,25 @@ button {
 }
 
 .sidebar {
+  width: var(--sidebar-width);
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: var(--spacing-20) var(--spacing-16);
+  gap: 4px;
+  padding: var(--spacing-16) 0;
   border-right: 1px solid var(--border);
-  background: rgba(248, 250, 252, 0.78);
-  backdrop-filter: blur(16px);
+  background: var(--bg);
+  flex-shrink: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width var(--motion-slow) var(--easing-standard);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: var(--z-sidebar);
 }
 
 [data-theme="dark"] .sidebar {
-  background: rgba(15, 23, 42, 0.82);
+  background: var(--bg);
 }
 
 .sidebar.collapsed {
