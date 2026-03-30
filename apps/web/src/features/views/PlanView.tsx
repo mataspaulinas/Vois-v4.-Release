@@ -4,6 +4,7 @@ import { ContextInspector } from "../../components/ContextInspector";
 import { DeepDrawer } from "../../components/DeepDrawer";
 import { LoadingState } from "../../components/LoadingState";
 import { EmptyState } from "../../components/EmptyState";
+import Icon from "../../components/Icon";
 import { PlanExecutionSummary, PlanRecord, PlanTaskRecord, PlanTaskUpdatePayload, ProgressEntryRecord, TaskCommentRecord, fetchTaskComments, createTaskComment, reviewPlan, PlanReviewItem } from "../../lib/api";
 
 const ALL_STATUSES = ["not_started", "in_progress", "completed", "blocked", "on_hold", "deferred"];
@@ -351,12 +352,12 @@ export function PlanView({
   const planVersion = plan?.ontology_version ?? "v1";
 
   /* ── Tab definitions ── */
-  const tabs: Array<{ key: PlanTab; label: string; icon: string; badge?: number }> = [
-    { key: "tasks", label: "Tasks", icon: "\u2611" },
-    { key: "signals", label: "Signals", icon: "\u26A1", badge: signalCount || undefined },
-    { key: "report", label: "Report", icon: "\uD83D\uDCC4" },
-    { key: "assessments", label: "Assessments", icon: "\uD83D\uDCCB" },
-    { key: "timeline", label: "Timeline", icon: "\uD83D\uDCCA" },
+  const tabs: Array<{ key: PlanTab; label: string; icon: React.ReactNode; badge?: number }> = [
+    { key: "tasks", label: "Tasks", icon: <Icon name="tasks" size={16} /> },
+    { key: "signals", label: "Signals", icon: <Icon name="signals" size={16} />, badge: signalCount || undefined },
+    { key: "report", label: "Report", icon: <Icon name="report" size={16} /> },
+    { key: "assessments", label: "Assessments", icon: <Icon name="assessment" size={16} /> },
+    { key: "timeline", label: "Timeline", icon: <Icon name="chart-line" size={16} /> },
   ];
 
   /* ── Filter definitions ── */
@@ -376,7 +377,7 @@ export function PlanView({
       <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap", fontSize: ds.textSmall, marginBottom: 12 }}>
         {chain.map((item, i) => (
           <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
-            {i > 0 && <span style={{ color: ds.muted, margin: "0 2px" }}>{"\u2192"}</span>}
+            {i > 0 && <span style={{ color: ds.muted, margin: "0 2px" }}><Icon name="forward" size={12} /></span>}
             <span style={{
               color: chainTypeColor(item.type),
               fontWeight: 600,
@@ -474,18 +475,18 @@ export function PlanView({
             )}
             {totalSubActions > 0 && (
               <span style={{ fontSize: ds.textSmall, color: ds.muted, fontWeight: 500 }}>
-                {"\u2713"}{completedSubActions}/{totalSubActions}
+                <Icon name="check" size={14} />{completedSubActions}/{totalSubActions}
               </span>
             )}
             <span style={{ fontSize: 14, color: ds.muted, transform: isExpanded ? "rotate(180deg)" : "rotate(0)", transition: "transform 0.15s ease" }}>
-              {"\u25BE"}
+              <Icon name="chevron-down" size={14} />
             </span>
           </div>
           {/* Row 2: assignee, task ID, due date */}
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 4, marginLeft: 26, fontSize: ds.textSmall, color: ds.muted }}>
             {task.assigned_to && (
               <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
-                {"\uD83D\uDC64"} {task.assigned_to}
+                <Icon name="person" size={14} /> {task.assigned_to}
               </span>
             )}
             <span style={{ fontFamily: "monospace", fontSize: ds.textEyebrow, color: ds.textSecondary }}>
@@ -493,7 +494,7 @@ export function PlanView({
             </span>
             {task.due_at && (
               <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
-                {"\uD83D\uDCC5"} {new Date(task.due_at).toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "numeric" })}
+                <Icon name="calendar" size={14} /> {new Date(task.due_at).toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "numeric" })}
               </span>
             )}
             {task.effort_hours > 0 && (
@@ -728,7 +729,7 @@ export function PlanView({
                   Comments ({taskComments.length})
                 </span>
                 <span style={{ fontSize: 12, color: ds.muted, transform: commentsOpen ? "rotate(180deg)" : "rotate(0)", transition: "transform 0.15s ease" }}>
-                  {"\u25BE"}
+                  <Icon name="chevron-down" size={14} />
                 </span>
               </div>
               {commentsOpen && (
@@ -860,7 +861,7 @@ export function PlanView({
               {progress}%
             </span>
             <span style={{ fontSize: 14, color: ds.muted, transform: isCollapsed ? "rotate(-90deg)" : "rotate(0)", transition: "transform 0.15s ease" }}>
-              {"\u25BE"}
+              <Icon name="chevron-down" size={14} />
             </span>
           </div>
           {lane.description && (

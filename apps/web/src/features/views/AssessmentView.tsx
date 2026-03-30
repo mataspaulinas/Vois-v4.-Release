@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { SectionCard } from "../../components/SectionCard";
 import { AssessmentRecord, IntakePreviewResponse, OntologyBundleResponse } from "../../lib/api";
+import Icon from "../../components/Icon";
 
 type SampleIntakeNote = {
   id: string;
@@ -219,7 +220,7 @@ export function AssessmentView({
                 fontSize: 11, fontWeight: 700, color: "#fff",
                 background: stage.done ? "#10B981" : "#D1D5DB",
               }}>
-                {stage.done ? "\u2713" : stage.label.slice(0, 1)}
+                {stage.done ? <Icon name="check" size={14} color="#fff" /> : stage.label.slice(0, 1)}
               </span>
               <div>
                 <div style={{ fontSize: 13, fontWeight: 600, color: "#0A0A0A" }}>{stage.label}</div>

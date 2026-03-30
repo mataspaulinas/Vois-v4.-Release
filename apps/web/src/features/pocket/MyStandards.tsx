@@ -4,6 +4,7 @@ import { PrimaryCanvas } from "../../components/PrimaryCanvas";
 import { LoadingState } from "../../components/LoadingState";
 import { EmptyState } from "../../components/EmptyState";
 import { StandardItem } from "../../lib/api";
+import Icon from "../../components/Icon";
 
 type MyStandardsProps = {
   standards: StandardItem[];
@@ -123,7 +124,7 @@ export function MyStandards({ standards, loading }: MyStandardsProps) {
                 >
                   <div style={titleRowStyle}>
                     <span style={cardTitleStyle}>{item.title}</span>
-                    <span style={toggleStyle}>{expandedIndex === i ? "\u2212" : "+"}</span>
+                    <span style={toggleStyle}>{expandedIndex === i ? <Icon name="chevron-up" size={14} /> : <Icon name="chevron-down" size={14} />}</span>
                   </div>
 
                   {expandedIndex === i && (
@@ -151,7 +152,7 @@ export function MyStandards({ standards, loading }: MyStandardsProps) {
                           <p style={sectionLabelStyle}>What to do if wrong</p>
                           {item.deliverables.map((d, j) => (
                             <div key={j} style={bulletRowStyle}>
-                              <span style={{ color: "#6C5CE7" }}>{"\u2022"}</span>
+                              <span style={{ display: "inline-block", width: 6, height: 6, borderRadius: "50%", background: "var(--color-accent)", marginRight: 8, flexShrink: 0 }} />
                               <span>{d.label}</span>
                             </div>
                           ))}

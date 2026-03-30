@@ -1,4 +1,5 @@
 import { PortfolioSummaryResponse } from "../../lib/api";
+import Icon from "../../components/Icon";
 import {
   ManagerView,
   OwnerView,
@@ -227,7 +228,7 @@ export function Sidebar(props: SidebarProps) {
             transition: "background var(--motion-fast, 120ms) var(--easing-standard, ease)",
           }}
         >
-          {collapsed ? "\u203A" : "\u2039"}
+          {collapsed ? <Icon name="chevron-right" size={14} /> : <Icon name="chevron-left" size={14} />}
         </button>
       </div>
 

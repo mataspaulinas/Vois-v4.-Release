@@ -23,7 +23,7 @@ const STATUS_COLORS: Record<string, string> = {
 
 const STATUS_BORDER: Record<string, string> = {
   not_started: "#999",
-  in_progress: "#6C5CE7",
+  in_progress: "var(--color-accent)",
   blocked: "var(--color-danger)",
   completed: "#27ae60",
 };
@@ -48,7 +48,7 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
 
   if (loading) {
     return (
-      <div style={{ padding: 20, minHeight: "100vh", background: "#fafafa" }}>
+      <div style={{ padding: 20, minHeight: "100vh", background: "var(--color-bg)" }}>
         <SurfaceHeader title="My Shift" subtitle="Getting your shift ready..." />
         <PrimaryCanvas><LoadingState variant="card" /></PrimaryCanvas>
       </div>
@@ -57,7 +57,7 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
 
   if (!shift) {
     return (
-      <div style={{ padding: 20, minHeight: "100vh", background: "#fafafa" }}>
+      <div style={{ padding: 20, minHeight: "100vh", background: "var(--color-bg)" }}>
         <SurfaceHeader title="My Shift" />
         <PrimaryCanvas>
           <EmptyState title="No shift data" description="Your manager will assign tasks when your shift begins." />
@@ -71,7 +71,7 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
   const blockedTasks = shift.tasks.filter((t) => t.status === "blocked").length;
 
   return (
-    <div style={{ padding: 20, minHeight: "100vh", background: "#fafafa" }}>
+    <div style={{ padding: 20, minHeight: "100vh", background: "var(--color-bg)" }}>
       {/* Readiness check — shows once per day */}
       {showReadiness && (
         <ShiftReadinessCheck
@@ -89,7 +89,7 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
         <p style={{
           fontSize: 16,
           fontStyle: "italic",
-          color: "#6C5CE7",
+          color: "var(--color-accent)",
           margin: "8px 20px 0",
           lineHeight: 1.5,
         }}>
@@ -181,7 +181,7 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
                         width: 10,
                         height: 10,
                         borderRadius: "50%",
-                        background: "#6C5CE7",
+                        background: "var(--color-accent)",
                         flexShrink: 0,
                         animation: "pocket-pulse 1.8s ease-in-out infinite",
                       }} />
@@ -259,8 +259,8 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
                       }}
                       style={{
                         background: "none",
-                        border: "1px solid #6C5CE7",
-                        color: "#6C5CE7",
+                        border: "1px solid var(--color-accent)",
+                        color: "var(--color-accent)",
                         fontSize: 14,
                         fontWeight: 600,
                         padding: "8px 16px",
@@ -304,7 +304,7 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
                 padding: "12px 20px",
                 transition: "all 180ms ease",
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; e.currentTarget.style.color = "#6C5CE7"; }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; e.currentTarget.style.color = "var(--color-accent)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#D4D4D4"; e.currentTarget.style.color = "#525252"; }}
             >
               {generatingHandover ? "Generating handover..." : "Generate Shift Handover"}

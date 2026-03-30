@@ -1,6 +1,7 @@
 import { PortfolioSummaryResponse, Venue } from "../../lib/api";
 import { NotificationBell } from "./NotificationBell";
 import { SkinId, ThemeMode } from "./types";
+import Icon from "../../components/Icon";
 
 type TopBarProps = {
   venues: Venue[];
@@ -174,7 +175,7 @@ export function TopBar({
           }}
           aria-label="Open search"
         >
-          <span style={{ opacity: 0.5 }}>&#x2315;</span>
+          <Icon name="search" size={14} color="#A3A3A3" />
           Search or Cmd+K
         </button>
 
@@ -202,7 +203,7 @@ export function TopBar({
             transition: `background var(--motion-fast) var(--easing-standard)`,
           }}
         >
-          {theme === "dark" ? "\u2600" : "\u263E"}
+          {theme === "dark" ? <Icon name="theme-light" size={16} /> : <Icon name="theme-dark" size={16} />}
         </button>
 
         {/* Session pill (user name only) */}
