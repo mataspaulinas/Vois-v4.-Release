@@ -3,7 +3,7 @@ import { SurfaceHeader } from "../../components/SurfaceHeader";
 import { PrimaryCanvas } from "../../components/PrimaryCanvas";
 import { LoadingState } from "../../components/LoadingState";
 import { EmptyState } from "../../components/EmptyState";
-import { MyShiftResponse } from "../../lib/api";
+import { MyShiftResponse, generateShiftHandover, ShiftHandoverResponse } from "../../lib/api";
 import { ShiftReadinessCheck, shouldShowReadinessCheck, markReadinessComplete } from "./ShiftReadinessCheck";
 
 type MyShiftProps = {
@@ -12,6 +12,7 @@ type MyShiftProps = {
   onOpenTask: (taskId: string) => void;
   greeting?: string | null;
   onAskCopilot?: (context: string) => void;
+  venueId?: string | null;
 };
 
 const STATUS_COLORS: Record<string, string> = {
@@ -27,8 +28,23 @@ const STATUS_BORDER: Record<string, string> = {
   completed: "#27ae60",
 };
 
-export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot }: MyShiftProps) {
+export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, venueId }: MyShiftProps) {
   const [showReadiness, setShowReadiness] = useState(shouldShowReadinessCheck);
+  const [handover, setHandover] = useState<ShiftHandoverResponse | null>(null);
+  const [generatingHandover, setGeneratingHandover] = useState(false);
+
+  async function handleGenerateHandover() {
+    if (!venueId) return;
+    setGeneratingHandover(true);
+    try {
+      const result = await generateShiftHandover(venueId);
+      setHandover(result);
+    } catch (e) {
+      console.error("Handover failed", e);
+    } finally {
+      setGeneratingHandover(false);
+    }
+  }
 
   if (loading) {
     return (
@@ -267,6 +283,65 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot }: 
           </div>
         )}
       </PrimaryCanvas>
+
+      {/* ── Shift Handover ── */}
+      {venueId && (
+        <div style={{ margin: "20px 0", padding: "0 20px" }}>
+          {!handover ? (
+            <button
+              onClick={handleGenerateHandover}
+              disabled={generatingHandover}
+              style={{
+                width: "100%",
+                minHeight: 48,
+                background: "none",
+                border: "1px dashed #D4D4D4",
+                borderRadius: 16,
+                color: "#525252",
+                fontSize: 14,
+                fontWeight: 500,
+                cursor: generatingHandover ? "wait" : "pointer",
+                padding: "12px 20px",
+                transition: "all 180ms ease",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; e.currentTarget.style.color = "#6C5CE7"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#D4D4D4"; e.currentTarget.style.color = "#525252"; }}
+            >
+              {generatingHandover ? "Generating handover..." : "Generate Shift Handover"}
+            </button>
+          ) : (
+            <div style={{
+              background: "#FFFFFF",
+              borderRadius: 16,
+              boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+              padding: 20,
+              borderLeft: "4px solid #10B981",
+            }}>
+              <div style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A3A3A3", marginBottom: 8 }}>
+                Shift Handover
+              </div>
+              <div style={{ display: "flex", gap: 12, marginBottom: 12, flexWrap: "wrap" }}>
+                <span style={{ fontSize: 24, fontWeight: 700, color: "#10B981" }}>{handover.completed_tasks}</span>
+                <span style={{ fontSize: 13, color: "#525252", alignSelf: "center" }}>done</span>
+                <span style={{ fontSize: 24, fontWeight: 700, color: "#F59E0B" }}>{handover.remaining_tasks}</span>
+                <span style={{ fontSize: 13, color: "#525252", alignSelf: "center" }}>remaining</span>
+              </div>
+              <ul style={{ margin: 0, padding: "0 0 0 16px", fontSize: 14, color: "#525252", lineHeight: 1.6 }}>
+                {handover.highlights.map((h, i) => <li key={i}>{h}</li>)}
+              </ul>
+              <p style={{ marginTop: 12, fontSize: 14, color: "#0A0A0A", fontWeight: 500, lineHeight: 1.5 }}>
+                {handover.handover_notes}
+              </p>
+              <button
+                onClick={() => setHandover(null)}
+                style={{ marginTop: 8, background: "none", border: "none", color: "#A3A3A3", fontSize: 12, cursor: "pointer" }}
+              >
+                Dismiss
+              </button>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Pulse animation keyframes */}
       <style>{`

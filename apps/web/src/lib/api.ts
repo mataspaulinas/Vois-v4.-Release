@@ -2385,3 +2385,47 @@ export async function fetchOverdueReminders(): Promise<OverdueReminder[]> {
   if (!response.ok) throw new Error(await readErrorMessage(response, "Failed to load overdue reminders"));
   return response.json();
 }
+
+/* ── Plan Review AI ── */
+
+export type PlanReviewItem = {
+  severity: "warning" | "info" | "suggestion";
+  title: string;
+  detail: string;
+};
+
+export type PlanReviewResponse = {
+  plan_id: string;
+  items: PlanReviewItem[];
+  summary: string;
+};
+
+export async function reviewPlan(planId: string): Promise<PlanReviewResponse> {
+  const response = await apiFetch("/api/v1/plan-review", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ plan_id: planId }),
+  });
+  if (!response.ok) throw new Error(await readErrorMessage(response, "Plan review failed"));
+  return response.json();
+}
+
+/* ── Shift Handover AI ── */
+
+export type ShiftHandoverResponse = {
+  summary: string;
+  completed_tasks: number;
+  remaining_tasks: number;
+  issues_reported: number;
+  help_requests: number;
+  highlights: string[];
+  handover_notes: string;
+};
+
+export async function generateShiftHandover(venueId: string): Promise<ShiftHandoverResponse> {
+  const response = await apiFetch(`/api/v1/shift-handover?venue_id=${encodeURIComponent(venueId)}`, {
+    method: "POST",
+  });
+  if (!response.ok) throw new Error(await readErrorMessage(response, "Shift handover failed"));
+  return response.json();
+}

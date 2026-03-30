@@ -59,7 +59,7 @@ class Settings(BaseSettings):
     ai_provider: str = "anthropic"
     ai_model: str = "claude-sonnet-4-20250514"
     ai_mock_model: str = "vois-mock-1"
-    ai_api_key: str | None = None  # Set via VOIS_AI_API_KEY env var — local dev: restore from .env.local
+    ai_api_key: str | None = None  # Set via VOIS_AI_API_KEY env var
     ai_api_base: str | None = None
     ai_mock_fallback_enabled: bool = False
     ai_secret_backend: str = "environment"

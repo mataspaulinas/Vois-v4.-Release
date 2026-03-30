@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import { SectionCard } from "../../components/SectionCard";
 import { SurfaceHeader } from "../../components/SurfaceHeader";
 import { PrimaryCanvas } from "../../components/PrimaryCanvas";
@@ -49,6 +50,33 @@ export function HistoryView({
   onOpenReportRecord,
   onLoadAssessmentRecord,
 }: HistoryViewProps) {
+  const [showTrends, setShowTrends] = useState(false);
+
+  const signalTrends = useMemo(() => {
+    if (!assessments || assessments.length < 2) return [];
+
+    const signalCounts: Record<string, { count: number; firstSeen: string; lastSeen: string }> = {};
+
+    for (const assessment of assessments) {
+      const signals = assessment.active_signal_names ?? [];
+      for (const name of signals) {
+        if (!name) continue;
+        if (!signalCounts[name]) {
+          signalCounts[name] = { count: 0, firstSeen: assessment.created_at ?? "", lastSeen: "" };
+        }
+        signalCounts[name].count++;
+        signalCounts[name].lastSeen = assessment.created_at ?? "";
+      }
+    }
+
+    return Object.entries(signalCounts)
+      .map(([name, data]) => ({ signalName: name, ...data, frequency: data.count / assessments.length }))
+      .sort((a, b) => b.count - a.count);
+  }, [assessments]);
+
+  const recurringSignals = signalTrends.filter(s => s.count >= 2);
+  const persistentSignals = signalTrends.filter(s => s.frequency >= 0.5);
+
   const latestAssessment = assessments[0] ?? null;
 
   return (
@@ -213,6 +241,79 @@ export function HistoryView({
               <p style={{ ...ds.small, textAlign: "center", padding: 32 }}>No saved assessments yet. Analyze intake and save the first operational record.</p>
             )}
           </section>
+
+          {/* ── Signal Trends ──────────────────────── */}
+          <div style={{ marginTop: 32 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
+              <h2 style={{ fontSize: 20, fontWeight: 600, margin: 0, color: "#0A0A0A" }}>Signal Trends</h2>
+              <button
+                onClick={() => setShowTrends(!showTrends)}
+                style={{
+                  background: showTrends ? "#6C5CE7" : "none",
+                  border: showTrends ? "none" : "1px solid #E5E5E5",
+                  color: showTrends ? "white" : "#525252",
+                  fontSize: 13,
+                  fontWeight: 600,
+                  padding: "6px 14px",
+                  borderRadius: 8,
+                  cursor: "pointer",
+                }}
+              >
+                {showTrends ? "Hide Trends" : "Show Trends"}
+              </button>
+            </div>
+
+            {showTrends && (
+              <div>
+                {recurringSignals.length === 0 ? (
+                  <p style={{ fontSize: 13, color: "#A3A3A3" }}>Not enough assessment data to detect trends. Run at least 2 assessments.</p>
+                ) : (
+                  <>
+                    {persistentSignals.length > 0 && (
+                      <div style={{
+                        padding: "12px 16px",
+                        borderRadius: 8,
+                        background: "rgba(239, 68, 68, 0.04)",
+                        borderLeft: "4px solid #EF4444",
+                        marginBottom: 16,
+                        fontSize: 13,
+                        color: "#525252",
+                      }}>
+                        <div style={{ fontWeight: 600, color: "#EF4444", marginBottom: 4 }}>
+                          Persistent signals detected
+                        </div>
+                        {persistentSignals.map(s => (
+                          <div key={s.signalName}>
+                            {s.signalName} — appeared in {s.count} of {assessments.length} assessments ({(s.frequency * 100).toFixed(0)}%)
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    <div style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A3A3A3", marginBottom: 8 }}>
+                      Signal frequency
+                    </div>
+                    {recurringSignals.map(s => (
+                      <div key={s.signalName} style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 12,
+                        padding: "8px 0",
+                        borderBottom: "1px solid #F5F5F5",
+                        fontSize: 13,
+                      }}>
+                        <span style={{ flex: 1, color: "#0A0A0A" }}>{s.signalName}</span>
+                        <div style={{ width: 80, height: 6, background: "#F5F5F5", borderRadius: 3 }}>
+                          <div style={{ width: `${s.frequency * 100}%`, height: "100%", background: s.frequency >= 0.5 ? "#EF4444" : s.frequency >= 0.3 ? "#F59E0B" : "#6C5CE7", borderRadius: 3 }} />
+                        </div>
+                        <span style={{ fontSize: 11, color: "#A3A3A3", minWidth: 30, textAlign: "right" }}>{s.count}x</span>
+                      </div>
+                    ))}
+                  </>
+                )}
+              </div>
+            )}
+          </div>
         </div>
       </PrimaryCanvas>
     </div>

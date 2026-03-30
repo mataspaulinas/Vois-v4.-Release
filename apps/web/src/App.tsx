@@ -3186,6 +3186,7 @@ export default function App() {
                         onOpenTask={(taskId) => { handleSelectPocketView("standards"); }}
                         greeting={proactiveGreeting}
                         onAskCopilot={askCopilotAbout}
+                        venueId={workspaceVenue?.id ?? null}
                       />
                     ) : null}
 

@@ -15,6 +15,7 @@ type OwnerCopilotProps = {
   overloadMap: OverloadEntry[];
   flightRisk: FlightRiskEntry[];
   venueName: string;
+  onAskCopilot?: (context: string) => void;
 };
 
 type StrategicInsight = {
@@ -51,6 +52,7 @@ export function OwnerCopilot({
   overloadMap,
   flightRisk,
   venueName,
+  onAskCopilot,
 }: OwnerCopilotProps) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
@@ -70,6 +72,52 @@ export function OwnerCopilot({
         title="Strategic advisor"
         description="Direct, strategic guidance for portfolio-level decisions."
       >
+        {onAskCopilot && (
+          <div style={{
+            marginBottom: 20,
+            padding: "14px 16px",
+            borderRadius: 12,
+            background: "rgba(108, 92, 231, 0.04)",
+            border: "1px solid rgba(108, 92, 231, 0.1)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 12,
+          }}>
+            <div style={{ fontSize: 13, color: "#525252" }}>
+              Get live AI strategic analysis of attention items, delegations, and people risk.
+            </div>
+            <button
+              onClick={() => {
+                const criticalCount = attentionItems.filter(a => a.severity === "critical").length;
+                const overdueDelegations = delegations.filter(d => d.is_overdue).length;
+                const riskCount = flightRisk.length;
+                onAskCopilot(
+                  `Strategic analysis for ${venueName ?? "the organization"}:\n` +
+                  `- Critical attention items: ${criticalCount}\n` +
+                  `- Total attention items: ${attentionItems.length}\n` +
+                  `- Overdue delegations: ${overdueDelegations}\n` +
+                  `- Flight risk signals: ${riskCount}\n` +
+                  `- Venues with velocity data: ${velocities.length}\n` +
+                  `What are my top 3 strategic priorities right now? Where is pressure building that I might be missing?`
+                );
+              }}
+              style={{
+                background: "#6C5CE7",
+                border: "none",
+                color: "white",
+                fontSize: 12,
+                fontWeight: 600,
+                padding: "8px 16px",
+                borderRadius: 8,
+                cursor: "pointer",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Get strategic analysis
+            </button>
+          </div>
+        )}
         {insights.length === 0 ? (
           <div
             style={{

@@ -4,7 +4,7 @@ import { ContextInspector } from "../../components/ContextInspector";
 import { DeepDrawer } from "../../components/DeepDrawer";
 import { LoadingState } from "../../components/LoadingState";
 import { EmptyState } from "../../components/EmptyState";
-import { PlanExecutionSummary, PlanRecord, PlanTaskRecord, PlanTaskUpdatePayload, ProgressEntryRecord, TaskCommentRecord, fetchTaskComments, createTaskComment } from "../../lib/api";
+import { PlanExecutionSummary, PlanRecord, PlanTaskRecord, PlanTaskUpdatePayload, ProgressEntryRecord, TaskCommentRecord, fetchTaskComments, createTaskComment, reviewPlan, PlanReviewItem } from "../../lib/api";
 
 const ALL_STATUSES = ["not_started", "in_progress", "completed", "blocked", "on_hold", "deferred"];
 
@@ -199,6 +199,8 @@ export function PlanView({
   const [filterMode, setFilterMode] = useState<FilterMode>("all");
   const [collapsedLanes, setCollapsedLanes] = useState<Set<number>>(new Set());
   const [commentsOpen, setCommentsOpen] = useState(false);
+  const [reviewItems, setReviewItems] = useState<PlanReviewItem[]>([]);
+  const [reviewingPlan, setReviewingPlan] = useState(false);
 
   /* ── Effects ── */
   useEffect(() => {
@@ -222,6 +224,19 @@ export function PlanView({
       setCommentDraft("");
     } catch { /* silently fail */ }
     setSubmittingComment(false);
+  }
+
+  async function handleReviewPlan() {
+    if (!plan) return;
+    setReviewingPlan(true);
+    try {
+      const result = await reviewPlan(plan.id);
+      setReviewItems(result.items);
+    } catch (e) {
+      console.error("Plan review failed", e);
+    } finally {
+      setReviewingPlan(false);
+    }
   }
 
   /* ── Derived data ── */
@@ -919,6 +934,26 @@ export function PlanView({
               <span>Owner: <strong style={{ color: ds.textSecondary }}>Lead Consultant</strong></span>
               <span>Reviewer: <strong style={{ color: ds.textSecondary }}>Portfolio Lead</strong></span>
               <span>Review requested {planDate}</span>
+              {plan?.status === "draft" && (
+                <button
+                  onClick={handleReviewPlan}
+                  disabled={reviewingPlan}
+                  style={{
+                    background: "none",
+                    border: `1px solid ${ds.accent}`,
+                    color: ds.accent,
+                    fontSize: 13,
+                    fontWeight: 600,
+                    padding: "6px 14px",
+                    borderRadius: 8,
+                    cursor: reviewingPlan ? "wait" : "pointer",
+                    opacity: reviewingPlan ? 0.6 : 1,
+                    marginLeft: "auto",
+                  }}
+                >
+                  {reviewingPlan ? "Reviewing..." : "Review Plan"}
+                </button>
+              )}
             </div>
 
             {/* Plan title */}
@@ -931,6 +966,28 @@ export function PlanView({
               </p>
             )}
           </div>
+
+          {/* ═══ PLAN REVIEW RESULTS ═══ */}
+          {reviewItems.length > 0 && (
+            <div style={{ marginBottom: 24 }}>
+              <div style={{ fontSize: ds.textEyebrow, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: ds.muted, marginBottom: 8 }}>
+                Plan Review
+              </div>
+              {reviewItems.map((item, i) => (
+                <div key={i} style={{
+                  padding: "10px 14px",
+                  borderRadius: 8,
+                  marginBottom: 8,
+                  borderLeft: `4px solid ${item.severity === "warning" ? ds.warning : item.severity === "suggestion" ? ds.accent : ds.info}`,
+                  background: item.severity === "warning" ? "rgba(245,158,11,0.04)" : "rgba(99,102,241,0.04)",
+                  fontSize: ds.textSmall,
+                }}>
+                  <div style={{ fontWeight: 600, color: ds.textPrimary, marginBottom: 2 }}>{item.title}</div>
+                  <div style={{ color: ds.textSecondary }}>{item.detail}</div>
+                </div>
+              ))}
+            </div>
+          )}
 
           {/* ═══ STATUS DOT BAR ═══ */}
           <div style={{

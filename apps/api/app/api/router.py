@@ -15,7 +15,9 @@ from app.api.routers import (
     notifications,
     people,
     pocket,
+    plan_review,
     scheduler,
+    shift_handover,
     health,
     intake,
     integrations,
@@ -58,3 +60,5 @@ api_router.include_router(notifications.router, prefix="/notifications", tags=["
 api_router.include_router(kb.router, prefix="/kb", tags=["kb"])
 api_router.include_router(activity.router, prefix="/activity", tags=["activity"])
 api_router.include_router(systemic_flags.router, tags=["systemic-flags"])
+api_router.include_router(plan_review.router, tags=["plan-review"])
+api_router.include_router(shift_handover.router, tags=["shift-handover"])

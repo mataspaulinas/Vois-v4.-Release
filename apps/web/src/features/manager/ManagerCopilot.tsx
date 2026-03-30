@@ -15,6 +15,7 @@ type ManagerCopilotProps = {
   plan: PlanRecord | null;
   executionSummary: PlanExecutionSummary | null;
   venueName: string;
+  onAskCopilot?: (context: string) => void;
 };
 
 type InsightCard = {
@@ -51,6 +52,7 @@ export function ManagerCopilot({
   plan,
   executionSummary,
   venueName,
+  onAskCopilot,
 }: ManagerCopilotProps) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
@@ -70,6 +72,55 @@ export function ManagerCopilot({
         title="Execution advisor"
         description="Supportive, practical guidance grounded in your venue's current execution state."
       >
+        {onAskCopilot && (
+          <div style={{
+            marginBottom: 20,
+            padding: "14px 16px",
+            borderRadius: 12,
+            background: "rgba(108, 92, 231, 0.04)",
+            border: "1px solid rgba(108, 92, 231, 0.1)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 12,
+          }}>
+            <div style={{ fontSize: 13, color: "#525252" }}>
+              Get live AI analysis of your current execution state, follow-ups, and team pressure.
+            </div>
+            <button
+              onClick={() => {
+                const completionPct = executionSummary?.completion_percentage ?? 0;
+                const overdue = followUps.filter(fu => fu.is_overdue).length;
+                const escalationCount = escalations.filter(e => e.status === "open").length;
+                const actionCount = nextActions.length;
+                onAskCopilot(
+                  `Analyze my current manager execution state for ${venueName ?? "this venue"}:\n` +
+                  `- Plan completion: ${completionPct.toFixed(0)}%\n` +
+                  `- Actions pending: ${actionCount}\n` +
+                  `- Overdue follow-ups: ${overdue}\n` +
+                  `- Open escalations: ${escalationCount}\n` +
+                  `What should I focus on right now? What risks am I not seeing? Give me 3 actionable priorities.`
+                );
+              }}
+              style={{
+                background: "#6C5CE7",
+                border: "none",
+                color: "white",
+                fontSize: 12,
+                fontWeight: 600,
+                padding: "8px 16px",
+                borderRadius: 8,
+                cursor: "pointer",
+                whiteSpace: "nowrap",
+                transition: "opacity 180ms ease",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.85"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
+            >
+              Get live analysis
+            </button>
+          </div>
+        )}
         {insights.length === 0 ? (
           <div
             style={{
