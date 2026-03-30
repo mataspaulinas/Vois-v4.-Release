@@ -781,7 +781,9 @@ class AnthropicProvider:
                 "You are VOIS AI intake. Convert messy operational evidence into signal suggestions using only the "
                 "provided signal catalog. Every detected signal must cite an exact evidence snippet from the input. "
                 "Never invent signal IDs. Use varied confidence; if everything is high, you are being lazy. "
-                "Put unmatched but important facts into unmapped_observations."
+                "Put unmatched but important facts into unmapped_observations.\n\n"
+                "IMPORTANT: Return a JSON object with exactly this structure:\n"
+                '{"detected_signals": [{"signal_id": "sig_...", "evidence_snippet": "...", "confidence": "low|medium|high", "score": 0.0-1.0, "match_reasons": ["..."]}], "unmapped_observations": ["..."]}'
             ),
             input_payload=(
                 f"Ontology: {ontology_id}\n"
@@ -793,10 +795,23 @@ class AnthropicProvider:
             max_output_tokens=2200,
         )
 
+        import logging as _logging
+        _intake_log = _logging.getLogger("app.ai.intake")
+        # Normalize: Claude may return "signal_ids" (list of strings) or "detected_signals" (list of objects)
+        raw_signals = payload.get("detected_signals", [])
+        if not raw_signals and "signal_ids" in payload:
+            # Claude returned simple ID list — wrap into expected format
+            raw_signals = [
+                {"signal_id": sid, "confidence": "medium", "score": 0.7, "evidence_snippet": "", "match_reasons": []}
+                for sid in payload["signal_ids"]
+                if isinstance(sid, str)
+            ]
+
         deduped: dict[str, dict[str, object]] = {}
-        for item in payload.get("detected_signals", []):
+        for item in raw_signals:
             signal_id = str(item.get("signal_id", "")).strip()
             if signal_id not in signal_lookup:
+                _intake_log.warning("Signal ID '%s' NOT in ontology lookup (%d signals available)", signal_id, len(signal_lookup))
                 continue
             score = _normalize_score(item.get("score", 0.0))
             existing = deduped.get(signal_id)
