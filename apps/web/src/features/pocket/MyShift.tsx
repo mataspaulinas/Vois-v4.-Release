@@ -10,6 +10,7 @@ type MyShiftProps = {
   shift: MyShiftResponse | null;
   loading: boolean;
   onOpenTask: (taskId: string) => void;
+  greeting?: string | null;
 };
 
 const STATUS_COLORS: Record<string, string> = {
@@ -25,7 +26,7 @@ const STATUS_BORDER: Record<string, string> = {
   completed: "#27ae60",
 };
 
-export function MyShift({ shift, loading, onOpenTask }: MyShiftProps) {
+export function MyShift({ shift, loading, onOpenTask, greeting }: MyShiftProps) {
   const [showReadiness, setShowReadiness] = useState(shouldShowReadinessCheck);
 
   if (loading) {
@@ -67,6 +68,17 @@ export function MyShift({ shift, loading, onOpenTask }: MyShiftProps) {
         title={`Hi, ${shift.employee_name.split(" ")[0]}`}
         subtitle={`${shift.venue_name} — ${totalTasks} task${totalTasks !== 1 ? "s" : ""} today`}
       />
+      {greeting && (
+        <p style={{
+          fontSize: 16,
+          fontStyle: "italic",
+          color: "#6C5CE7",
+          margin: "8px 20px 0",
+          lineHeight: 1.5,
+        }}>
+          {greeting}
+        </p>
+      )}
       <PrimaryCanvas>
         {/* Quick pulse — stat cards */}
         <div style={{

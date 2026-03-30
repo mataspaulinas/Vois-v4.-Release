@@ -13,6 +13,8 @@ type CommandCenterProps = {
   loading: boolean;
   formatTimestamp: (iso: string) => string;
   onOpenVenue: (venueId: string) => void;
+  onAskCopilot?: (context: string) => void;
+  greeting?: string | null;
 };
 
 const SEVERITY_STYLES: Record<string, { accent: string; badgeBackground: string; badgeForeground: string }> = {
@@ -52,6 +54,8 @@ export function CommandCenter({
   loading,
   formatTimestamp,
   onOpenVenue,
+  onAskCopilot,
+  greeting,
 }: CommandCenterProps) {
   const [selectedVenueId, setSelectedVenueId] = useState<string | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -100,6 +104,17 @@ export function CommandCenter({
           }}>
             Command Center
           </div>
+          {greeting && (
+            <p style={{
+              fontSize: 14,
+              fontStyle: "italic",
+              color: "#6C5CE7",
+              margin: "8px 0 0",
+              lineHeight: 1.5,
+            }}>
+              {greeting}
+            </p>
+          )}
         </div>
 
         {/* Metric summary cards */}
@@ -296,14 +311,38 @@ export function CommandCenter({
                         }}>
                           {item.detail}
                         </p>
-                        <span style={{
-                          fontSize: 11,
-                          color: "#94A3B8",
-                          marginLeft: 16,
-                          fontWeight: 500,
-                        }}>
-                          {item.venue_name} — {formatTimestamp(item.created_at)}
-                        </span>
+                        <div style={{ display: "flex", alignItems: "center", gap: 12, marginLeft: 16 }}>
+                          <span style={{
+                            fontSize: 11,
+                            color: "#94A3B8",
+                            fontWeight: 500,
+                          }}>
+                            {item.venue_name} — {formatTimestamp(item.created_at)}
+                          </span>
+                          {onAskCopilot && (
+                            <button
+                              style={{
+                                background: "none",
+                                border: "none",
+                                color: "#6C5CE7",
+                                fontSize: 12,
+                                fontWeight: 600,
+                                cursor: "pointer",
+                                padding: "4px 8px",
+                                borderRadius: 6,
+                                transition: "background 180ms ease",
+                              }}
+                              onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(108,92,231,0.06)"; }}
+                              onMouseLeave={(e) => { e.currentTarget.style.background = "none"; }}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onAskCopilot(`Attention item: "${item.title}" — Severity: ${item.severity}, Venue: ${item.venue_name}${item.detail ? `, Detail: ${item.detail}` : ""}`);
+                              }}
+                            >
+                              Ask Copilot
+                            </button>
+                          )}
+                        </div>
                       </div>
                     );
                   })}

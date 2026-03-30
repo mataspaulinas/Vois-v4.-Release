@@ -27,6 +27,8 @@ type TodayBoardProps = {
   onOpenEscalation: (escalationId: string) => void;
   onOpenPlan: () => void;
   onOpenWorkspace: (taskId: string) => void;
+  onAskCopilot?: (context: string) => void;
+  greeting?: string | null;
 };
 
 const PRIORITY_LABELS: Record<string, string> = {
@@ -84,6 +86,8 @@ export function TodayBoard({
   onOpenEscalation,
   onOpenPlan,
   onOpenWorkspace,
+  onAskCopilot,
+  greeting,
 }: TodayBoardProps) {
   const [selectedActionIdx, setSelectedActionIdx] = useState<number | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -171,6 +175,17 @@ export function TodayBoard({
                 }}>
                   {dayShape}
                 </p>
+                {greeting && (
+                  <p style={{
+                    fontSize: 14,
+                    fontStyle: "italic",
+                    color: "#6C5CE7",
+                    margin: "8px 0 0",
+                    lineHeight: 1.5,
+                  }}>
+                    {greeting}
+                  </p>
+                )}
               </div>
 
               {/* ─── Metric cards (4-column flex) ─── */}
@@ -362,6 +377,30 @@ export function TodayBoard({
                           >
                             Open
                           </button>
+
+                          {onAskCopilot && (
+                            <button
+                              style={{
+                                background: "none",
+                                border: "none",
+                                color: "#6C5CE7",
+                                fontSize: 12,
+                                fontWeight: 600,
+                                cursor: "pointer",
+                                padding: "4px 8px",
+                                borderRadius: 6,
+                                transition: "background 180ms ease",
+                              }}
+                              onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(108,92,231,0.06)"; }}
+                              onMouseLeave={(e) => { e.currentTarget.style.background = "none"; }}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onAskCopilot(`Tell me about: "${action.title}" — Type: ${PRIORITY_LABELS[action.action_type] ?? action.action_type}, Context: ${action.context}${action.due_at ? `, Due: ${formatTimestamp(action.due_at)}` : ""}`);
+                              }}
+                            >
+                              Ask Copilot
+                            </button>
+                          )}
                         </div>
                       );
                     })}

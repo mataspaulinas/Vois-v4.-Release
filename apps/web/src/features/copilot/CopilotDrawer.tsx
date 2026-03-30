@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { CopilotAttachment, CopilotThreadDetail, CopilotThreadSummary } from "../../lib/api";
 
 type CopilotDrawerProps = {
@@ -31,6 +32,10 @@ type CopilotDrawerProps = {
   applyingSignalSuggestion: boolean;
   onApplySignalSuggestion: () => void;
   onDismissSignalSuggestion: () => void;
+  preFillMessage?: string | null;
+  onPreFillConsumed?: () => void;
+  screenContext?: string | null;
+  drawerContext?: string | null;
 };
 
 export function CopilotDrawer({
@@ -58,7 +63,18 @@ export function CopilotDrawer({
   applyingSignalSuggestion,
   onApplySignalSuggestion,
   onDismissSignalSuggestion,
+  preFillMessage,
+  onPreFillConsumed,
+  screenContext,
+  drawerContext,
 }: CopilotDrawerProps) {
+  // Pre-fill the input when an "Ask Copilot" button is clicked
+  useEffect(() => {
+    if (preFillMessage && onPreFillConsumed) {
+      onInputChange(preFillMessage);
+      onPreFillConsumed();
+    }
+  }, [preFillMessage]);
   return (
     <aside
       className={`copilot-drawer ${open ? "open" : ""}`}
@@ -205,6 +221,21 @@ export function CopilotDrawer({
             overflow: "hidden",
           }}
         >
+          {/* Screen / drawer context card */}
+          {(screenContext || drawerContext) && (
+            <div style={{
+              padding: "8px 12px",
+              margin: "12px 24px 0",
+              borderRadius: 8,
+              background: "#F5F5F5",
+              fontSize: 11,
+              color: "#666",
+              lineHeight: 1.5,
+            }}>
+              {screenContext && <div>Seeing: {screenContext}</div>}
+              {drawerContext && <div>Viewing: {drawerContext}</div>}
+            </div>
+          )}
           {unavailableMessage ? (
             <div
               style={{

@@ -162,6 +162,7 @@ type PlanViewProps = {
   onOpenReport: () => void;
   onOpenHistory: () => void;
   onOpenWorkspace?: (taskId: string) => void;
+  onAskCopilot?: (context: string) => void;
 };
 
 export function PlanView({
@@ -184,6 +185,7 @@ export function PlanView({
   onOpenReport,
   onOpenHistory,
   onOpenWorkspace,
+  onAskCopilot,
 }: PlanViewProps) {
   /* ── State ── */
   const [expandedTaskId, setExpandedTaskId] = useState<string | null>(null);
@@ -467,6 +469,29 @@ export function PlanView({
 
             {/* Signal chain */}
             {renderSignalChain(task)}
+
+            {/* Ask Copilot */}
+            {onAskCopilot && (
+              <button
+                style={{
+                  background: "none",
+                  border: "none",
+                  color: "#6C5CE7",
+                  fontSize: 12,
+                  fontWeight: 600,
+                  cursor: "pointer",
+                  padding: "4px 8px",
+                  borderRadius: 6,
+                  transition: "background 180ms ease",
+                  marginBottom: 12,
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(108,92,231,0.06)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = "none"; }}
+                onClick={() => onAskCopilot(`Tell me about plan task: "${task.title}" (${task.block_id}) — Status: ${task.status}, Priority: ${task.priority ?? "normal"}${task.rationale ? `, Rationale: ${task.rationale.slice(0, 200)}` : ""}`)}
+              >
+                Ask Copilot about this task
+              </button>
+            )}
 
             {/* Guidance / Rationale */}
             {task.rationale && (

@@ -6,7 +6,7 @@ export type ManagerView = "today" | "workspace" | "plan" | "evidence" | "team" |
 
 export type PocketView = "shift" | "standards" | "help" | "report" | "log";
 
-export type OwnerView = "command" | "delegations" | "people" | "intelligence" | "copilot";
+export type OwnerView = "command" | "delegations" | "people" | "intelligence" | "administration" | "copilot";
 
 export type TopLevelView = "portfolio" | "venue" | "reference" | "kb" | "settings" | "manager" | "pocket" | "owner";
 

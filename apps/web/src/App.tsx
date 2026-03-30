@@ -236,6 +236,7 @@ export default function App() {
     preferences.lastRoute.topLevelView === "venue" ? preferences.lastRoute.venueId : null
   );
   const [copilotOpen, setCopilotOpen] = useState(false);
+  const [copilotPreFill, setCopilotPreFill] = useState<string | null>(null);
   const [referenceSearch, setReferenceSearch] = useState("");
   const [authSession, setAuthSession] = useState<AuthSessionResponse | null>(null);
   const [securityPosture, setSecurityPosture] = useState<AuthSecurityPosture | null>(null);
@@ -877,6 +878,31 @@ export default function App() {
           ? "Ask VOIS where pressure is building here, who needs intervention, or what deserves owner attention."
           : "Ask VOIS what changed, what is blocked, or what deserves attention in this venue."
     : "Ask VOIS what patterns are showing up across the portfolio, where pressure is building, or what deserves attention next.";
+
+  const askCopilotAbout = (context: string) => {
+    setCopilotPreFill(context);
+    setCopilotOpen(true);
+  };
+
+  function titleCase(s: string) {
+    return s.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  }
+
+  const copilotScreenContext = useMemo(() => {
+    const route = shellRoute;
+    if (route.topLevelView === "portfolio") return "Portfolio overview";
+    if (route.topLevelView === "venue") return `${displayedVenue?.name ?? "Venue"} — ${titleCase(route.venueView)}`;
+    if (route.topLevelView === "manager") return `Manager — ${titleCase((route as any).managerView ?? "today")}`;
+    if (route.topLevelView === "pocket") return `Shift — ${titleCase((route as any).pocketView ?? "shift")}`;
+    if (route.topLevelView === "owner") return `Owner — ${titleCase((route as any).ownerView ?? "command")}`;
+    if (route.topLevelView === "kb") return "Knowledge Base";
+    if (route.topLevelView === "settings") return "Settings";
+    if (route.topLevelView === "reference") return `Reference — ${titleCase((route as any).referenceView ?? "blocks")}`;
+    return null;
+  }, [shellRoute, displayedVenue]);
+
+  // TODO: drawerContext requires a consumer for DrawerProvider state — skipping for now (Feature 1.3)
+
   const resumePulse =
     portfolioSummary?.venue_pulses.find((pulse) => pulse.venue_id === portfolioSummary.resume_venue_id) ?? null;
   const selectedEngineRun = useMemo(
@@ -2857,6 +2883,7 @@ export default function App() {
                         formatTimestamp={formatTimestamp}
                         onOpenReport={() => handleSelectVenueView("report")}
                         onOpenHistory={() => handleSelectVenueView("history")}
+                        onAskCopilot={askCopilotAbout}
                       />
                     ) : null}
 
@@ -3038,6 +3065,8 @@ export default function App() {
                         onOpenEscalation={() => handleSelectManagerView("escalations")}
                         onOpenPlan={() => handleSelectManagerView("plan")}
                         onOpenWorkspace={(taskId) => { setMgrSelectedTaskId(taskId); handleSelectManagerView("workspace"); }}
+                        onAskCopilot={askCopilotAbout}
+                        greeting={proactiveGreeting}
                       />
                     ) : null}
 
@@ -3054,6 +3083,7 @@ export default function App() {
                         onCreateFollowUp={handleMgrCreateFollowUp}
                         onCreateEvidence={(taskId) => handleMgrCreateEvidence(taskId)}
                         onEscalateTask={handleMgrEscalateTask}
+                        onAskCopilot={askCopilotAbout}
                       />
                     ) : null}
 
@@ -3077,6 +3107,7 @@ export default function App() {
                         formatTimestamp={formatTimestamp}
                         onOpenReport={() => handleSelectVenueView("report")}
                         onOpenHistory={() => handleSelectVenueView("history")}
+                        onAskCopilot={askCopilotAbout}
                       />
                     ) : null}
 
@@ -3152,6 +3183,7 @@ export default function App() {
                         shift={pktShift}
                         loading={pktLoading}
                         onOpenTask={(taskId) => { handleSelectPocketView("standards"); }}
+                        greeting={proactiveGreeting}
                       />
                     ) : null}
 
@@ -3229,6 +3261,8 @@ export default function App() {
                         loading={ownLoading}
                         formatTimestamp={formatTimestamp}
                         onOpenVenue={(venueId) => navigate({ topLevelView: "venue", venueId, venueView: "overview" })}
+                        onAskCopilot={askCopilotAbout}
+                        greeting={proactiveGreeting}
                       />
                     ) : null}
 

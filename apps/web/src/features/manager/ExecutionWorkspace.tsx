@@ -26,6 +26,7 @@ type ExecutionWorkspaceProps = {
   onEscalateTask: (taskId: string) => void;
   onBackToToday?: () => void;
   onBackToPlan?: () => void;
+  onAskCopilot?: (context: string) => void;
 };
 
 const STATUS_OPTIONS = ["not_started", "in_progress", "completed", "blocked", "on_hold", "deferred"];
@@ -83,6 +84,7 @@ export function ExecutionWorkspace({
   onEscalateTask,
   onBackToToday,
   onBackToPlan,
+  onAskCopilot,
 }: ExecutionWorkspaceProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const tasks = plan?.tasks ?? [];
@@ -222,6 +224,28 @@ export function ExecutionWorkspace({
         ) : (
           /* ── Task detail ── */
           <div style={{ flex: 1, display: "flex", flexDirection: "column", minHeight: 0 }}>
+            {onAskCopilot && selectedTask && (
+              <div style={{ marginBottom: 12 }}>
+                <button
+                  style={{
+                    background: "none",
+                    border: "none",
+                    color: "#6C5CE7",
+                    fontSize: 12,
+                    fontWeight: 600,
+                    cursor: "pointer",
+                    padding: "4px 8px",
+                    borderRadius: 6,
+                    transition: "background 180ms ease",
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(108,92,231,0.06)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "none"; }}
+                  onClick={() => onAskCopilot(`Tell me about task: "${selectedTask.title}" (${selectedTask.block_id}) — Status: ${selectedTask.status}, Effort: ${selectedTask.effort_hours}h${selectedTask.assigned_to ? `, Assigned: ${selectedTask.assigned_to}` : ""}${selectedTask.rationale ? `, Rationale: ${selectedTask.rationale.slice(0, 200)}` : ""}`)}
+                >
+                  Ask Copilot about this task
+                </button>
+              </div>
+            )}
             <div style={{ flex: 1, overflowY: "auto" }}>
               <TaskDetail
                 task={selectedTask}
