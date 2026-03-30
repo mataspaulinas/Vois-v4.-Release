@@ -2693,9 +2693,29 @@ export default function App() {
               />
             <div className="content-area">
               <MobileTabStrip
-                  visible={shellRoute.topLevelView === "venue"}
-                  activeView={shellRoute.topLevelView === "venue" ? shellRoute.venueView : "overview"}
-                  onSelectView={handleSelectVenueView}
+                  visible={
+                    activeRole === "barista" ||
+                    (activeRole === "manager" && shellRoute.topLevelView === "manager") ||
+                    (activeRole === "owner" && shellRoute.topLevelView === "owner") ||
+                    shellRoute.topLevelView === "venue"
+                  }
+                  authRole={activeRole}
+                  activeTopLevel={shellRoute.topLevelView}
+                  activeView={
+                    shellRoute.topLevelView === "venue"
+                      ? (shellRoute as { venueView: string }).venueView ?? "overview"
+                      : shellRoute.topLevelView === "manager"
+                        ? (shellRoute as { managerView: string }).managerView ?? "today"
+                        : shellRoute.topLevelView === "pocket"
+                          ? (shellRoute as { pocketView: string }).pocketView ?? "shift"
+                          : shellRoute.topLevelView === "owner"
+                            ? (shellRoute as { ownerView: string }).ownerView ?? "command"
+                            : "overview"
+                  }
+                  onSelectView={handleSelectVenueView as (view: string) => void}
+                  onSelectManagerView={handleSelectManagerView as (view: string) => void}
+                  onSelectPocketView={handleSelectPocketView as (view: string) => void}
+                  onSelectOwnerView={handleSelectOwnerView as (view: string) => void}
                 />
 
               <main className="view-panel">

@@ -1,70 +1,197 @@
 import { PortfolioSummaryResponse } from "../../lib/api";
-import { ManagerView, OwnerView, PocketView, ReferenceView, TopLevelView, VenueSubview } from "./types";
+import {
+  ManagerView,
+  OwnerView,
+  PocketView,
+  ReferenceView,
+  TopLevelView,
+  VenueSubview,
+} from "./types";
+
+/* ── Props ── */
 
 type SidebarProps = {
   collapsed: boolean;
   activeTopLevel: TopLevelView;
-  authRole: string | null;
+  authRole: string | null; // "owner" | "manager" | "barista" | "developer"
   activeVenueName: string | null;
   activeVenueView: VenueSubview;
   activeReferenceView: ReferenceView;
+  activeManagerView?: ManagerView;
+  activePocketView?: PocketView;
+  activeOwnerView?: OwnerView;
   onToggleCollapsed: () => void;
   onShowPortfolio: () => void;
   onSelectVenueView: (view: VenueSubview) => void;
   onSelectReferenceView: (view: ReferenceView) => void;
+  onSelectManagerView?: (view: ManagerView) => void;
+  onSelectPocketView?: (view: PocketView) => void;
+  onSelectOwnerView?: (view: OwnerView) => void;
   onShowKnowledgeBase: () => void;
   onShowSettings: () => void;
   onShowManager: () => void;
   onShowPocket: () => void;
   onShowOwner: () => void;
-  onSelectManagerView?: (view: ManagerView) => void;
-  onSelectPocketView?: (view: PocketView) => void;
-  onSelectOwnerView?: (view: OwnerView) => void;
-  activeManagerView?: ManagerView;
-  activePocketView?: PocketView;
-  activeOwnerView?: OwnerView;
   onToggleCopilot: () => void;
   copilotOpen: boolean;
   portfolioSummary: PortfolioSummaryResponse | null;
 };
 
-const venueViews: VenueSubview[] = ["overview", "assessment", "signals", "plan", "report", "history", "console"];
-const referenceViews: ReferenceView[] = ["blocks", "tools", "signals"];
+/* ── Role-specific nav definitions ── */
 
-export function Sidebar({
-  collapsed,
-  activeTopLevel,
-  authRole,
-  activeVenueName,
-  activeVenueView,
-  activeReferenceView,
-  onToggleCollapsed,
-  onShowPortfolio,
-  onSelectVenueView,
-  onSelectReferenceView,
-  onShowKnowledgeBase,
-  onShowSettings,
-  onShowManager,
-  onShowPocket,
-  onShowOwner,
-  onSelectManagerView,
-  onSelectPocketView,
-  onSelectOwnerView,
-  activeManagerView,
-  activePocketView,
-  activeOwnerView,
-  onToggleCopilot,
-  copilotOpen,
-  portfolioSummary,
-}: SidebarProps) {
-  const canSeePortfolio = authRole === "owner" || authRole === "developer";
-  const canSeeManager = authRole === "owner" || authRole === "manager";
-  const canSeePocket = authRole === "owner" || authRole === "manager" || authRole === "barista";
-  const canSeeOwner = authRole === "owner";
+type NavItem<V extends string = string> = { code: string; label: string; view: V };
+
+const ownerOrgItems: NavItem<OwnerView>[] = [
+  { code: "CM", label: "Command Center", view: "command" },
+  { code: "DL", label: "Delegations", view: "delegations" },
+  { code: "PP", label: "People", view: "people" },
+  { code: "IN", label: "Intelligence", view: "intelligence" },
+  { code: "AD", label: "Administration", view: "administration" },
+];
+
+const managerWorkspaceItems: NavItem<ManagerView>[] = [
+  { code: "TD", label: "Today", view: "today" },
+  { code: "WS", label: "Execution", view: "workspace" },
+  { code: "PL", label: "Plan", view: "plan" },
+  { code: "EV", label: "Evidence", view: "evidence" },
+  { code: "TM", label: "Team Pulse", view: "team" },
+  { code: "ES", label: "Escalations", view: "escalations" },
+];
+
+const pocketShiftItems: NavItem<PocketView>[] = [
+  { code: "SH", label: "Shift", view: "shift" },
+  { code: "SD", label: "Standards", view: "standards" },
+  { code: "HP", label: "Help", view: "help" },
+  { code: "RP", label: "Report", view: "report" },
+  { code: "LG", label: "Log", view: "log" },
+];
+
+const venueItems: NavItem<VenueSubview>[] = [
+  { code: "OV", label: "Overview", view: "overview" },
+  { code: "AS", label: "Assessment", view: "assessment" },
+  { code: "SG", label: "Signals", view: "signals" },
+  { code: "PL", label: "Plan", view: "plan" },
+  { code: "RP", label: "Report", view: "report" },
+  { code: "HI", label: "History", view: "history" },
+];
+
+const venueConsoleItem: NavItem<VenueSubview> = { code: "CO", label: "Console", view: "console" };
+
+const referenceItems: NavItem<ReferenceView>[] = [
+  { code: "BL", label: "Blocks", view: "blocks" },
+  { code: "TL", label: "Tools", view: "tools" },
+  { code: "SG", label: "Signals", view: "signals" },
+];
+
+/* ── Styles ── */
+
+const sectionLabelStyle: React.CSSProperties = {
+  fontSize: 11,
+  fontWeight: 600,
+  textTransform: "uppercase",
+  letterSpacing: "0.08em",
+  color: "var(--color-text-muted)",
+  padding: "16px 12px 4px",
+  userSelect: "none",
+};
+
+const itemStyle = (active: boolean): React.CSSProperties => ({
+  display: "flex",
+  alignItems: "center",
+  gap: 8,
+  width: "100%",
+  padding: "6px 12px",
+  border: "none",
+  borderRadius: 6,
+  background: active ? "var(--color-accent-soft, rgba(0,122,255,0.08))" : "transparent",
+  color: active ? "var(--color-accent)" : "var(--color-text-secondary)",
+  fontSize: 14,
+  fontWeight: 500,
+  cursor: "pointer",
+  textAlign: "left" as const,
+  transition: "background var(--motion-fast, 120ms) var(--easing-standard, ease)",
+});
+
+const itemHoverBg = "#F0F0F0";
+
+/* ── Component ── */
+
+export function Sidebar(props: SidebarProps) {
+  const {
+    collapsed,
+    activeTopLevel,
+    authRole,
+    activeVenueName,
+    activeVenueView,
+    activeReferenceView,
+    activeManagerView,
+    activePocketView,
+    activeOwnerView,
+    onToggleCollapsed,
+    onShowPortfolio,
+    onSelectVenueView,
+    onSelectReferenceView,
+    onSelectManagerView,
+    onSelectPocketView,
+    onSelectOwnerView,
+    onShowKnowledgeBase,
+    onShowSettings,
+    onShowManager,
+    onShowPocket,
+    onShowOwner,
+    onToggleCopilot,
+    copilotOpen,
+    portfolioSummary,
+  } = props;
+
+  const isOwner = authRole === "owner";
+  const isManager = authRole === "manager";
+  const isBarista = authRole === "barista";
+  const isDeveloper = authRole === "developer";
+
+  const canSeePortfolio = isOwner || isDeveloper;
+  const canSeeVenue = isOwner || isManager || isDeveloper;
+  const showVenue = canSeeVenue && !!activeVenueName;
+
   return (
-    <nav className={`sidebar ${collapsed ? "collapsed" : ""}`} aria-label="Main navigation">
-      <div className="sb-brand">
-        <button className="sb-logo" onClick={onShowPortfolio} title="Portfolio">
+    <nav
+      aria-label="Main navigation"
+      style={{
+        width: collapsed ? 48 : 240,
+        minWidth: collapsed ? 48 : 240,
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        background: "var(--bg, var(--color-bg, #FAFAFA))",
+        borderRight: "1px solid var(--border, var(--color-border, #E5E5E5))",
+        overflowY: "auto",
+        overflowX: "hidden",
+        transition: "width var(--motion-fast, 120ms) var(--easing-standard, ease)",
+      }}
+    >
+      {/* ── Brand ── */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: collapsed ? "12px 12px" : "12px 12px",
+          minHeight: 48,
+        }}
+      >
+        <button
+          onClick={canSeePortfolio ? onShowPortfolio : undefined}
+          title="VOIS"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: collapsed ? 0 : 6,
+            background: "none",
+            border: "none",
+            cursor: canSeePortfolio ? "pointer" : "default",
+            padding: 0,
+          }}
+        >
           <span
             style={{
               display: "inline-block",
@@ -72,7 +199,6 @@ export function Sidebar({
               height: 6,
               borderRadius: "50%",
               background: "var(--color-accent)",
-              marginRight: collapsed ? 0 : 6,
               flexShrink: 0,
             }}
           />
@@ -83,7 +209,6 @@ export function Sidebar({
           )}
         </button>
         <button
-          className="sb-collapse-btn"
           onClick={onToggleCollapsed}
           aria-label="Toggle sidebar"
           style={{
@@ -99,213 +224,339 @@ export function Sidebar({
             color: "var(--color-text-muted)",
             fontSize: 16,
             lineHeight: 1,
-            transition: `background var(--motion-fast) var(--easing-standard)`,
+            transition: "background var(--motion-fast, 120ms) var(--easing-standard, ease)",
           }}
         >
           {collapsed ? "\u203A" : "\u2039"}
         </button>
       </div>
 
-      {canSeePortfolio ? (
+      {/* ── Owner: Organization section ── */}
+      {isOwner && (
         <>
-          <div className="sidebar-section-label">Portfolio</div>
-          <button
-            className={`sidebar-item ${activeTopLevel === "portfolio" ? "active" : ""}`}
-            onClick={onShowPortfolio}
-            title={collapsed ? "Portfolio" : undefined}
-          >
-            <SbIcon code="PF" active={activeTopLevel === "portfolio"} />
-            <span className="sb-label">Portfolio</span>
-          </button>
-        </>
-      ) : null}
-
-      {activeTopLevel === "venue" && activeVenueName && (authRole === "owner" || authRole === "manager" || authRole === "developer") ? (
-        <div className="venue-nav">
-          <div className="sidebar-section-label">{activeVenueName}</div>
-          {venueViews.map((view) => (
-            <button
-              key={view}
-              className={`venue-nav-item ${activeVenueView === view ? "active" : ""}`}
-              onClick={() => onSelectVenueView(view)}
-              title={collapsed ? titleCase(view) : undefined}
-            >
-              <SbIcon code={venueIcon(view)} active={activeVenueView === view} />
-              <span className="sb-label">{titleCase(view)}</span>
-            </button>
+          <SectionLabel collapsed={collapsed}>Organization</SectionLabel>
+          {ownerOrgItems.map((item) => (
+            <SidebarItem
+              key={item.view}
+              code={item.code}
+              label={item.label}
+              active={activeTopLevel === "owner" && activeOwnerView === item.view}
+              collapsed={collapsed}
+              onClick={() => onSelectOwnerView?.(item.view)}
+            />
           ))}
-        </div>
-      ) : null}
+        </>
+      )}
 
-      <div className="sidebar-section-label sidebar-section--secondary">Reference</div>
-      {referenceViews.map((view) => (
-        <button
-          key={view}
-          className={`sidebar-item ${
-            activeTopLevel === "reference" && activeReferenceView === view ? "active" : ""
-          }`}
-          onClick={() => onSelectReferenceView(view)}
-          title={collapsed ? titleCase(view) : undefined}
-        >
-          <SbIcon
-            code={referenceIcon(view)}
-            active={activeTopLevel === "reference" && activeReferenceView === view}
+      {/* ── Manager: Workspace section ── */}
+      {isManager && (
+        <>
+          <SectionLabel collapsed={collapsed}>Workspace</SectionLabel>
+          {managerWorkspaceItems.map((item) => (
+            <SidebarItem
+              key={item.view}
+              code={item.code}
+              label={item.label}
+              active={activeTopLevel === "manager" && activeManagerView === item.view}
+              collapsed={collapsed}
+              onClick={() => onSelectManagerView?.(item.view)}
+            />
+          ))}
+        </>
+      )}
+
+      {/* ── Barista: My Shift section ── */}
+      {isBarista && (
+        <>
+          <SectionLabel collapsed={collapsed}>My Shift</SectionLabel>
+          {pocketShiftItems.map((item) => (
+            <SidebarItem
+              key={item.view}
+              code={item.code}
+              label={item.label}
+              active={activeTopLevel === "pocket" && activePocketView === item.view}
+              collapsed={collapsed}
+              onClick={() => onSelectPocketView?.(item.view)}
+            />
+          ))}
+        </>
+      )}
+
+      {/* ── Developer: Portfolio section ── */}
+      {isDeveloper && (
+        <>
+          <SectionLabel collapsed={collapsed}>Portfolio</SectionLabel>
+          <SidebarItem
+            code="PF"
+            label="Portfolio"
+            active={activeTopLevel === "portfolio"}
+            collapsed={collapsed}
+            onClick={onShowPortfolio}
           />
-          <span className="sb-label">{titleCase(view)}</span>
-        </button>
-      ))}
+        </>
+      )}
 
-      <div className="sidebar-section-label">Workspace</div>
-      {canSeeManager ? (
+      {/* ── Owner: Portfolio section (no separate label, just Portfolio item) ── */}
+      {isOwner && (
         <>
-          <button
-            className={`sidebar-item ${activeTopLevel === "manager" ? "active" : ""}`}
+          <SectionLabel collapsed={collapsed}>Portfolio</SectionLabel>
+          <SidebarItem
+            code="PF"
+            label="Portfolio"
+            active={activeTopLevel === "portfolio"}
+            collapsed={collapsed}
+            onClick={onShowPortfolio}
+          />
+        </>
+      )}
+
+      {/* ── Venue section (owner, manager, developer) ── */}
+      {showVenue && (
+        <>
+          <SectionLabel collapsed={collapsed}>
+            {"Venue: " + activeVenueName}
+          </SectionLabel>
+          {venueItems.map((item) => (
+            <SidebarItem
+              key={item.view}
+              code={item.code}
+              label={item.label}
+              active={activeTopLevel === "venue" && activeVenueView === item.view}
+              collapsed={collapsed}
+              onClick={() => onSelectVenueView(item.view)}
+            />
+          ))}
+          {isDeveloper && (
+            <SidebarItem
+              code={venueConsoleItem.code}
+              label={venueConsoleItem.label}
+              active={activeTopLevel === "venue" && activeVenueView === "console"}
+              collapsed={collapsed}
+              onClick={() => onSelectVenueView("console")}
+            />
+          )}
+        </>
+      )}
+
+      {/* ── Reference section (owner, manager, developer -- NOT barista) ── */}
+      {!isBarista && (
+        <>
+          <SectionLabel collapsed={collapsed}>Reference</SectionLabel>
+          {referenceItems.map((item) => (
+            <SidebarItem
+              key={item.view}
+              code={item.code}
+              label={item.label}
+              active={activeTopLevel === "reference" && activeReferenceView === item.view}
+              collapsed={collapsed}
+              onClick={() => onSelectReferenceView(item.view)}
+            />
+          ))}
+        </>
+      )}
+
+      {/* ── Developer: Workspace section (expandable role shells) ── */}
+      {isDeveloper && (
+        <>
+          <SectionLabel collapsed={collapsed}>Workspace</SectionLabel>
+
+          {/* Manager shell */}
+          <SidebarItem
+            code="MG"
+            label="Manager"
+            active={activeTopLevel === "manager"}
+            collapsed={collapsed}
             onClick={onShowManager}
-            title={collapsed ? "Manager" : undefined}
-          >
-            <SbIcon code="MG" active={activeTopLevel === "manager"} />
-            <span className="sb-label">Manager</span>
-          </button>
-          {activeTopLevel === "manager" && !collapsed && onSelectManagerView ? (
-            <div className="venue-nav">
-              {(["today", "workspace", "plan", "evidence", "team", "escalations", "copilot"] as ManagerView[]).map((view) => (
-                <button
-                  key={view}
-                  className={`venue-nav-item ${activeManagerView === view ? "active" : ""}`}
-                  onClick={() => onSelectManagerView(view)}
-                >
-                  <SbIcon code={managerIcon(view)} active={activeManagerView === view} />
-                  <span className="sb-label">{titleCase(view)}</span>
-                </button>
+          />
+          {activeTopLevel === "manager" && !collapsed && onSelectManagerView && (
+            <div style={{ paddingLeft: 12 }}>
+              {managerWorkspaceItems.map((item) => (
+                <SidebarItem
+                  key={item.view}
+                  code={item.code}
+                  label={item.label}
+                  active={activeManagerView === item.view}
+                  collapsed={collapsed}
+                  onClick={() => onSelectManagerView(item.view)}
+                />
               ))}
             </div>
-          ) : null}
-        </>
-      ) : null}
-      {canSeePocket ? (
-        <>
-          <button
-            className={`sidebar-item ${activeTopLevel === "pocket" ? "active" : ""}`}
+          )}
+
+          {/* Pocket shell */}
+          <SidebarItem
+            code="PK"
+            label="Pocket"
+            active={activeTopLevel === "pocket"}
+            collapsed={collapsed}
             onClick={onShowPocket}
-            title={collapsed ? "Pocket" : undefined}
-          >
-            <SbIcon code="PK" active={activeTopLevel === "pocket"} />
-            <span className="sb-label">Pocket</span>
-          </button>
-          {activeTopLevel === "pocket" && !collapsed && onSelectPocketView ? (
-            <div className="venue-nav">
-              {(["shift", "standards", "help", "report", "log"] as PocketView[]).map((view) => (
-                <button
-                  key={view}
-                  className={`venue-nav-item ${activePocketView === view ? "active" : ""}`}
-                  onClick={() => onSelectPocketView(view)}
-                >
-                  <SbIcon code={pocketIcon(view)} active={activePocketView === view} />
-                  <span className="sb-label">{titleCase(view)}</span>
-                </button>
+          />
+          {activeTopLevel === "pocket" && !collapsed && onSelectPocketView && (
+            <div style={{ paddingLeft: 12 }}>
+              {pocketShiftItems.map((item) => (
+                <SidebarItem
+                  key={item.view}
+                  code={item.code}
+                  label={item.label}
+                  active={activePocketView === item.view}
+                  collapsed={collapsed}
+                  onClick={() => onSelectPocketView(item.view)}
+                />
               ))}
             </div>
-          ) : null}
-        </>
-      ) : null}
-      {canSeeOwner ? (
-        <>
-          <button
-            className={`sidebar-item ${activeTopLevel === "owner" ? "active" : ""}`}
+          )}
+
+          {/* Owner shell */}
+          <SidebarItem
+            code="OW"
+            label="Owner"
+            active={activeTopLevel === "owner"}
+            collapsed={collapsed}
             onClick={onShowOwner}
-            title={collapsed ? "Owner" : undefined}
-          >
-            <SbIcon code="OW" active={activeTopLevel === "owner"} />
-            <span className="sb-label">Owner</span>
-          </button>
-          {activeTopLevel === "owner" && !collapsed && onSelectOwnerView ? (
-            <div className="venue-nav">
-              {(["command", "delegations", "people", "intelligence", "copilot"] as OwnerView[]).map((view) => (
-                <button
-                  key={view}
-                  className={`venue-nav-item ${activeOwnerView === view ? "active" : ""}`}
-                  onClick={() => onSelectOwnerView(view)}
-                >
-                  <SbIcon code={ownerIcon(view)} active={activeOwnerView === view} />
-                  <span className="sb-label">{titleCase(view)}</span>
-                </button>
+          />
+          {activeTopLevel === "owner" && !collapsed && onSelectOwnerView && (
+            <div style={{ paddingLeft: 12 }}>
+              {ownerOrgItems.map((item) => (
+                <SidebarItem
+                  key={item.view}
+                  code={item.code}
+                  label={item.label}
+                  active={activeOwnerView === item.view}
+                  collapsed={collapsed}
+                  onClick={() => onSelectOwnerView(item.view)}
+                />
               ))}
             </div>
-          ) : null}
+          )}
         </>
-      ) : null}
+      )}
 
-      <div className="sidebar-section-label sidebar-section--secondary">Guidance</div>
-      <button
-        className={`sidebar-item ${activeTopLevel === "kb" ? "active" : ""}`}
+      {/* ── Guidance section ── */}
+      <SectionLabel collapsed={collapsed}>Guidance</SectionLabel>
+      <SidebarItem
+        code="KB"
+        label="Knowledge Base"
+        active={activeTopLevel === "kb"}
+        collapsed={collapsed}
         onClick={onShowKnowledgeBase}
-        title={collapsed ? "Knowledge Base" : undefined}
-      >
-        <SbIcon code="KB" active={activeTopLevel === "kb"} />
-        <span className="sb-label">Knowledge Base</span>
-      </button>
+      />
 
-      {!collapsed && portfolioSummary ? (
+      {/* ── Portfolio pulse card (owner + developer only) ── */}
+      {canSeePortfolio && !collapsed && portfolioSummary && (
         <div
-          className="sidebar-pulse-card"
           style={{
-            margin: "var(--spacing-12) var(--spacing-12) 0",
-            padding: "var(--spacing-12)",
-            background: "var(--color-bg-muted)",
-            borderRadius: "var(--radius-sm)",
-            fontSize: "var(--text-small)",
+            margin: "12px 12px 0",
+            padding: 12,
+            background: "var(--color-bg-muted, #F5F5F5)",
+            borderRadius: "var(--radius-sm, 6px)",
+            fontSize: "var(--text-small, 13px)",
           }}
         >
           <p
             style={{
-              fontSize: "var(--text-eyebrow)",
+              fontSize: 11,
               fontWeight: 600,
               textTransform: "uppercase",
               letterSpacing: "0.08em",
               color: "var(--color-text-muted)",
-              margin: "0 0 var(--spacing-4)",
+              margin: "0 0 4px",
             }}
           >
             Portfolio pulse
           </p>
-          <strong style={{ fontSize: "var(--text-small)", color: "var(--color-text-primary)" }}>
+          <strong style={{ fontSize: 13, color: "var(--color-text-primary)" }}>
             {portfolioSummary.resume_reason ?? "Portfolio is ready."}
           </strong>
           <div
             style={{
               display: "flex",
-              gap: "var(--spacing-8)",
-              marginTop: "var(--spacing-4)",
+              gap: 8,
+              marginTop: 4,
               color: "var(--color-text-secondary)",
-              fontSize: "var(--text-eyebrow)",
+              fontSize: 11,
             }}
           >
             <span>{portfolioSummary.totals.ready_tasks} ready</span>
             <span>{portfolioSummary.totals.blocked_tasks} blocked</span>
           </div>
         </div>
-      ) : null}
+      )}
 
-      <div className="sb-spacer" />
+      {/* ── Spacer ── */}
+      <div style={{ flex: 1 }} />
 
-      <div className="sidebar-section-label sidebar-section--secondary">System</div>
-      <button
-        className={`sidebar-item ${activeTopLevel === "settings" ? "active" : ""}`}
+      {/* ── System section ── */}
+      <SectionLabel collapsed={collapsed}>System</SectionLabel>
+      <SidebarItem
+        code="ST"
+        label="Settings"
+        active={activeTopLevel === "settings"}
+        collapsed={collapsed}
         onClick={onShowSettings}
-        title={collapsed ? "Settings" : undefined}
-      >
-        <SbIcon code="ST" active={activeTopLevel === "settings"} />
-        <span className="sb-label">Settings</span>
-      </button>
-      <button
-        className={`sidebar-item ${copilotOpen ? "active" : ""}`}
+      />
+      <SidebarItem
+        code="AI"
+        label="Copilot"
+        active={copilotOpen}
+        collapsed={collapsed}
         onClick={onToggleCopilot}
-        title={collapsed ? "Copilot" : undefined}
-      >
-        <SbIcon code="AI" active={copilotOpen} />
-        <span className="sb-label">Copilot</span>
-      </button>
+      />
+      <div style={{ height: 12 }} />
     </nav>
+  );
+}
+
+/* ── Section label component ── */
+
+function SectionLabel({
+  collapsed,
+  children,
+}: {
+  collapsed: boolean;
+  children: React.ReactNode;
+}) {
+  if (collapsed) return null;
+  return (
+    <div style={sectionLabelStyle}>
+      {children}
+    </div>
+  );
+}
+
+/* ── Sidebar item component ── */
+
+function SidebarItem({
+  code,
+  label,
+  active,
+  collapsed,
+  onClick,
+}: {
+  code: string;
+  label: string;
+  active: boolean;
+  collapsed: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      title={collapsed ? label : undefined}
+      style={itemStyle(active)}
+      onMouseEnter={(e) => {
+        if (!active) {
+          (e.currentTarget as HTMLButtonElement).style.background = itemHoverBg;
+        }
+      }}
+      onMouseLeave={(e) => {
+        (e.currentTarget as HTMLButtonElement).style.background = active
+          ? "var(--color-accent-soft, rgba(0,122,255,0.08))"
+          : "transparent";
+      }}
+    >
+      <SbIcon code={code} active={active} />
+      {!collapsed && <span>{label}</span>}
+    </button>
   );
 }
 
@@ -314,7 +565,6 @@ export function Sidebar({
 function SbIcon({ code, active }: { code: string; active: boolean }) {
   return (
     <span
-      className="sb-icon"
       style={{
         display: "inline-flex",
         alignItems: "center",
@@ -323,88 +573,16 @@ function SbIcon({ code, active }: { code: string; active: boolean }) {
         height: 24,
         borderRadius: 6,
         background: active ? "var(--color-accent)" : "#F0F0F0",
-        color: active ? "var(--color-accent-foreground)" : "var(--color-text-secondary)",
+        color: active ? "var(--color-accent-foreground, #FFFFFF)" : "var(--color-text-secondary)",
         fontSize: 11,
         fontWeight: 600,
-        fontFamily: "var(--font-mono)",
+        fontFamily: "var(--font-mono, monospace)",
         flexShrink: 0,
-        transition: `background var(--motion-fast) var(--easing-standard), color var(--motion-fast) var(--easing-standard)`,
+        transition:
+          "background var(--motion-fast, 120ms) var(--easing-standard, ease), color var(--motion-fast, 120ms) var(--easing-standard, ease)",
       }}
     >
       {code}
     </span>
   );
-}
-
-/* ── Helpers ── */
-
-function titleCase(value: string) {
-  return value.replace(/_/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
-}
-
-function referenceIcon(view: ReferenceView) {
-  switch (view) {
-    case "blocks":
-      return "BL";
-    case "tools":
-      return "TL";
-    case "signals":
-      return "SG";
-  }
-}
-
-function managerIcon(view: ManagerView): string {
-  switch (view) {
-    case "today": return "TD";
-    case "workspace": return "WS";
-    case "plan": return "PL";
-    case "evidence": return "EV";
-    case "team": return "TM";
-    case "escalations": return "ES";
-    case "copilot": return "AI";
-    default: return "??";
-  }
-}
-
-function pocketIcon(view: PocketView): string {
-  switch (view) {
-    case "shift": return "SH";
-    case "standards": return "SD";
-    case "help": return "HP";
-    case "report": return "RP";
-    case "log": return "LG";
-    default: return "??";
-  }
-}
-
-function ownerIcon(view: OwnerView): string {
-  switch (view) {
-    case "command": return "CM";
-    case "delegations": return "DL";
-    case "people": return "PP";
-    case "intelligence": return "IN";
-    case "copilot": return "AI";
-    default: return "??";
-  }
-}
-
-function venueIcon(view: VenueSubview) {
-  switch (view) {
-    case "overview":
-      return "OV";
-    case "assessment":
-      return "AS";
-    case "signals":
-      return "SG";
-    case "plan":
-      return "PL";
-    case "report":
-      return "RP";
-    case "history":
-      return "HI";
-    case "console":
-      return "CO";
-    default:
-      return "??";
-  }
 }
