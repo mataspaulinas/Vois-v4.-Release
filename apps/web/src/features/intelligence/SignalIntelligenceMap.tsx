@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import { SectionCard } from "../../components/SectionCard";
 import { SignalHeatmapGrid } from "./SignalHeatmapGrid";
 import {
   AssessmentHistoryItem,
