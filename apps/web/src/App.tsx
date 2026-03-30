@@ -181,6 +181,8 @@ import { ExecutionWorkspace } from "./features/manager/ExecutionWorkspace";
 import { EvidenceHub } from "./features/manager/EvidenceHub";
 import { TeamPulse } from "./features/manager/TeamPulse";
 import { EscalationChannel } from "./features/manager/EscalationChannel";
+import { ManagerCopilot } from "./features/manager/ManagerCopilot";
+import { OwnerCopilot } from "./features/owner/OwnerCopilot";
 import { MyShift } from "./features/pocket/MyShift";
 import { MyStandards } from "./features/pocket/MyStandards";
 import { AskForHelp } from "./features/pocket/AskForHelp";
@@ -3145,12 +3147,23 @@ export default function App() {
                     ) : null}
 
                     {!selectedOntologyIssue && (shellRoute as { managerView: string }).managerView === "copilot" ? (
-                      <RoleCopilotState
-                        roleLabel="Manager"
-                        venueName={workspaceVenue.name}
-                        unavailableMessage={copilotIssue}
-                        onOpenCopilot={() => setCopilotOpen(true)}
-                      />
+                      <>
+                        <ManagerCopilot
+                          nextActions={mgrNextActions}
+                          followUps={mgrFollowUps}
+                          escalations={mgrEscalations}
+                          plan={livePlan}
+                          executionSummary={liveExecutionSummary}
+                          venueName={workspaceVenue.name}
+                          onAskCopilot={askCopilotAbout}
+                        />
+                        <RoleCopilotState
+                          roleLabel="Manager"
+                          venueName={workspaceVenue.name}
+                          unavailableMessage={copilotIssue}
+                          onOpenCopilot={() => setCopilotOpen(true)}
+                        />
+                      </>
                     ) : null}
                   </>
                 ) : null}
@@ -3310,12 +3323,23 @@ export default function App() {
                     ) : null}
 
                     {!selectedOntologyIssue && (shellRoute as { ownerView: string }).ownerView === "copilot" ? (
-                      <RoleCopilotState
-                        roleLabel="Owner"
-                        venueName={workspaceVenue.name}
-                        unavailableMessage={copilotIssue}
-                        onOpenCopilot={() => setCopilotOpen(true)}
-                      />
+                      <>
+                        <OwnerCopilot
+                          attentionItems={ownAttentionItems}
+                          delegations={ownDelegations}
+                          velocities={portfolioVelocities}
+                          overloadMap={ownOverloadMap}
+                          flightRisk={ownFlightRisk}
+                          venueName={workspaceVenue?.name ?? null}
+                          onAskCopilot={askCopilotAbout}
+                        />
+                        <RoleCopilotState
+                          roleLabel="Owner"
+                          venueName={workspaceVenue?.name ?? ""}
+                          unavailableMessage={copilotIssue}
+                          onOpenCopilot={() => setCopilotOpen(true)}
+                        />
+                      </>
                     ) : null}
                   </>
                 ) : null}
