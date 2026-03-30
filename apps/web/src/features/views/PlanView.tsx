@@ -377,6 +377,30 @@ export function PlanView({
             )}
           </span>
         ))}
+        {chain.length > 1 && onAskCopilot && (
+          <button
+            onClick={() => onAskCopilot(
+              `Explain the causal chain for task "${task.title}": ` +
+              chain.map(c => `${c.code}${c.label ? ` (${c.label})` : ""}`).join(" \u2192 ") +
+              `. Why does this chain matter? What happens if any link breaks?`
+            )}
+            style={{
+              background: "none",
+              border: "none",
+              color: "#6C5CE7",
+              fontSize: 11,
+              fontWeight: 600,
+              cursor: "pointer",
+              padding: "4px 0",
+              marginTop: 4,
+              transition: "opacity 180ms ease",
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.7"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
+          >
+            Ask about this chain
+          </button>
+        )}
       </div>
     );
   };

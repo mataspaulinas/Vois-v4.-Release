@@ -40,6 +40,7 @@ type AssessmentViewProps = {
   reviewPlan: { id: string; status: string; title: string } | null;
   activePlan: { id: string; status: string; title: string } | null;
   onApprovePlan: (planId: string) => void;
+  onAskCopilot?: (context: string) => void;
 };
 
 export function AssessmentView({
@@ -74,6 +75,7 @@ export function AssessmentView({
   reviewPlan,
   activePlan,
   onApprovePlan,
+  onAskCopilot,
 }: AssessmentViewProps) {
   const [signalBrowseOpen, setSignalBrowseOpen] = useState(false);
   const [signalSearch, setSignalSearch] = useState("");
@@ -258,6 +260,48 @@ export function AssessmentView({
               {runningEngine ? "Running..." : "Run engine"}
             </button>
           </div>
+
+          {/* Assessment writing assistant */}
+          {onAskCopilot && (
+            <div style={{
+              marginBottom: 16,
+              padding: "12px 16px",
+              borderRadius: 12,
+              background: "rgba(108, 92, 231, 0.04)",
+              border: "1px solid rgba(108, 92, 231, 0.1)",
+            }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <div style={{ fontSize: 13, color: "#525252" }}>
+                  Need help writing your assessment? VOIS can suggest what to observe based on your current signals and plan.
+                </div>
+                <button
+                  onClick={() => onAskCopilot(
+                    `I'm about to write an operational assessment for this venue. ` +
+                    `${inferredSignalCount > 0 ? `Current signals detected: ${inferredSignalCount}. ` : ""}` +
+                    `What should I focus on observing today? What evidence would be most valuable to capture? ` +
+                    `Give me specific things to look for and write about.`
+                  )}
+                  style={{
+                    background: "#6C5CE7",
+                    border: "none",
+                    color: "white",
+                    fontSize: 12,
+                    fontWeight: 600,
+                    padding: "6px 14px",
+                    borderRadius: 6,
+                    cursor: "pointer",
+                    whiteSpace: "nowrap",
+                    marginLeft: 12,
+                    transition: "opacity 180ms ease",
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.85"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
+                >
+                  Ask VOIS
+                </button>
+              </div>
+            </div>
+          )}
 
           {/* Textarea -- focused layout */}
           <textarea

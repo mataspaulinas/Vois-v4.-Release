@@ -254,6 +254,7 @@ export function ExecutionWorkspace({
                 updating={updatingTaskId === selectedTask.id}
                 formatTimestamp={formatTimestamp}
                 onUpdateTask={onUpdateTask}
+                onAskCopilot={onAskCopilot}
               />
             </div>
             <div style={{ paddingTop: 16 }}>
@@ -387,6 +388,7 @@ function TaskDetail({
   updating,
   formatTimestamp,
   onUpdateTask,
+  onAskCopilot,
 }: {
   task: PlanTaskRecord;
   followUps: FollowUpRecord[];
@@ -394,6 +396,7 @@ function TaskDetail({
   updating: boolean;
   formatTimestamp: (iso: string) => string;
   onUpdateTask: (taskId: string, payload: PlanTaskUpdatePayload) => void;
+  onAskCopilot?: (context: string) => void;
 }) {
   const [notes, setNotes] = useState(task.notes ?? "");
   const [editingNotes, setEditingNotes] = useState(false);
@@ -439,6 +442,44 @@ function TaskDetail({
           <p style={{ fontSize: 15, color: "#6B7280", lineHeight: 1.6, marginTop: 16, marginBottom: 0 }}>
             {task.rationale}
           </p>
+        )}
+
+        {/* Blocked task suggestion */}
+        {task.status === "blocked" && onAskCopilot && (
+          <div style={{
+            margin: "12px 0 0",
+            padding: "12px 16px",
+            borderRadius: 8,
+            background: "rgba(239, 68, 68, 0.04)",
+            border: "1px solid rgba(239, 68, 68, 0.12)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 12,
+          }}>
+            <div style={{ fontSize: 13, color: "#525252" }}>
+              This task is blocked{task.dependencies?.length ? ` by ${task.dependencies.join(", ")}` : ""}. VOIS can help find a resolution path.
+            </div>
+            <button
+              onClick={() => onAskCopilot(`This task is blocked: "${task.title}" (${task.block_id}). ${task.dependencies?.length ? `Blocked by: ${task.dependencies.join(", ")}.` : ""} What are my options to unblock this? What's the fastest path to resolution?`)}
+              style={{
+                background: "none",
+                border: "1px solid #6C5CE7",
+                color: "#6C5CE7",
+                fontSize: 12,
+                fontWeight: 600,
+                padding: "6px 12px",
+                borderRadius: 6,
+                cursor: "pointer",
+                whiteSpace: "nowrap",
+                transition: "all 180ms ease",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(108,92,231,0.06)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = "none"; }}
+            >
+              Ask VOIS to help
+            </button>
+          </div>
         )}
       </div>
 

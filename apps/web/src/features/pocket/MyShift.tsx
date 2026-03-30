@@ -11,6 +11,7 @@ type MyShiftProps = {
   loading: boolean;
   onOpenTask: (taskId: string) => void;
   greeting?: string | null;
+  onAskCopilot?: (context: string) => void;
 };
 
 const STATUS_COLORS: Record<string, string> = {
@@ -26,7 +27,7 @@ const STATUS_BORDER: Record<string, string> = {
   completed: "#27ae60",
 };
 
-export function MyShift({ shift, loading, onOpenTask, greeting }: MyShiftProps) {
+export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot }: MyShiftProps) {
   const [showReadiness, setShowReadiness] = useState(shouldShowReadinessCheck);
 
   if (loading) {
@@ -227,6 +228,38 @@ export function MyShift({ shift, loading, onOpenTask, greeting }: MyShiftProps) 
                         }} />
                       </div>
                     </div>
+                  )}
+
+                  {/* Ask VOIS about this task */}
+                  {onAskCopilot && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onAskCopilot(
+                          `I'm a barista working on: "${task.title}" — Status: ${task.status.replace(/_/g, " ")}. ` +
+                          `${task.sub_actions?.length ? `Sub-actions: ${task.sub_actions.filter((a: any) => typeof a === "object" ? !a.completed : true).length} remaining. ` : ""}` +
+                          `How should I approach this? What does "good" look like? Any tips?`
+                        );
+                      }}
+                      style={{
+                        background: "none",
+                        border: "1px solid #6C5CE7",
+                        color: "#6C5CE7",
+                        fontSize: 14,
+                        fontWeight: 600,
+                        padding: "8px 16px",
+                        borderRadius: 8,
+                        cursor: "pointer",
+                        width: "100%",
+                        marginTop: 8,
+                        minHeight: 44,
+                        transition: "all 180ms ease",
+                      }}
+                      onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(108,92,231,0.06)"; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.background = "none"; }}
+                    >
+                      Ask VOIS about this task
+                    </button>
                   )}
                 </div>
               );

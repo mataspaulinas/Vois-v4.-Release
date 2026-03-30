@@ -2827,6 +2827,7 @@ export default function App() {
                           onOpenHistory={() => handleSelectVenueView("history")}
                           onOpenReport={() => handleSelectVenueView("report")}
                           onOpenSignalsReview={() => handleSelectVenueView("signals")}
+                          onAskCopilot={askCopilotAbout}
                         />
                       )
                     ) : null}
@@ -3184,6 +3185,7 @@ export default function App() {
                         loading={pktLoading}
                         onOpenTask={(taskId) => { handleSelectPocketView("standards"); }}
                         greeting={proactiveGreeting}
+                        onAskCopilot={askCopilotAbout}
                       />
                     ) : null}
 
@@ -3345,6 +3347,9 @@ export default function App() {
             applyingSignalSuggestion={applyingSignalSuggestion}
             onApplySignalSuggestion={handleApplySignalSuggestion}
             onDismissSignalSuggestion={handleDismissSignalSuggestion}
+            preFillMessage={copilotPreFill}
+            onPreFillConsumed={() => setCopilotPreFill(null)}
+            screenContext={copilotScreenContext}
           />
           {tour.active && roleTour ? (
             <TourOverlay
