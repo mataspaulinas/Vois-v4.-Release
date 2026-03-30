@@ -1,5 +1,5 @@
 import { PortfolioSummaryResponse } from "../../lib/api";
-import { ReferenceView, TopLevelView, VenueSubview } from "./types";
+import { ManagerView, OwnerView, PocketView, ReferenceView, TopLevelView, VenueSubview } from "./types";
 
 type SidebarProps = {
   collapsed: boolean;
@@ -17,6 +17,12 @@ type SidebarProps = {
   onShowManager: () => void;
   onShowPocket: () => void;
   onShowOwner: () => void;
+  onSelectManagerView?: (view: ManagerView) => void;
+  onSelectPocketView?: (view: PocketView) => void;
+  onSelectOwnerView?: (view: OwnerView) => void;
+  activeManagerView?: ManagerView;
+  activePocketView?: PocketView;
+  activeOwnerView?: OwnerView;
   onToggleCopilot: () => void;
   copilotOpen: boolean;
   portfolioSummary: PortfolioSummaryResponse | null;
@@ -41,6 +47,12 @@ export function Sidebar({
   onShowManager,
   onShowPocket,
   onShowOwner,
+  onSelectManagerView,
+  onSelectPocketView,
+  onSelectOwnerView,
+  activeManagerView,
+  activePocketView,
+  activeOwnerView,
   onToggleCopilot,
   copilotOpen,
   portfolioSummary,
@@ -143,36 +155,84 @@ export function Sidebar({
         </button>
       ))}
 
-      <div className="sidebar-section-label">Execution</div>
+      <div className="sidebar-section-label">Workspace</div>
       {canSeeManager ? (
-        <button
-          className={`sidebar-item ${activeTopLevel === "manager" ? "active" : ""}`}
-          onClick={onShowManager}
-          title={collapsed ? "Manager shell" : undefined}
-        >
-          <SbIcon code="MG" active={activeTopLevel === "manager"} />
-          <span className="sb-label">Manager shell</span>
-        </button>
+        <>
+          <button
+            className={`sidebar-item ${activeTopLevel === "manager" ? "active" : ""}`}
+            onClick={onShowManager}
+            title={collapsed ? "Manager" : undefined}
+          >
+            <SbIcon code="MG" active={activeTopLevel === "manager"} />
+            <span className="sb-label">Manager</span>
+          </button>
+          {activeTopLevel === "manager" && !collapsed && onSelectManagerView ? (
+            <div className="venue-nav">
+              {(["today", "workspace", "plan", "evidence", "team", "escalations", "copilot"] as ManagerView[]).map((view) => (
+                <button
+                  key={view}
+                  className={`venue-nav-item ${activeManagerView === view ? "active" : ""}`}
+                  onClick={() => onSelectManagerView(view)}
+                >
+                  <SbIcon code={managerIcon(view)} active={activeManagerView === view} />
+                  <span className="sb-label">{titleCase(view)}</span>
+                </button>
+              ))}
+            </div>
+          ) : null}
+        </>
       ) : null}
       {canSeePocket ? (
-        <button
-          className={`sidebar-item ${activeTopLevel === "pocket" ? "active" : ""}`}
-          onClick={onShowPocket}
-          title={collapsed ? "Pocket shell" : undefined}
-        >
-          <SbIcon code="PK" active={activeTopLevel === "pocket"} />
-          <span className="sb-label">Pocket shell</span>
-        </button>
+        <>
+          <button
+            className={`sidebar-item ${activeTopLevel === "pocket" ? "active" : ""}`}
+            onClick={onShowPocket}
+            title={collapsed ? "Pocket" : undefined}
+          >
+            <SbIcon code="PK" active={activeTopLevel === "pocket"} />
+            <span className="sb-label">Pocket</span>
+          </button>
+          {activeTopLevel === "pocket" && !collapsed && onSelectPocketView ? (
+            <div className="venue-nav">
+              {(["shift", "standards", "help", "report", "log"] as PocketView[]).map((view) => (
+                <button
+                  key={view}
+                  className={`venue-nav-item ${activePocketView === view ? "active" : ""}`}
+                  onClick={() => onSelectPocketView(view)}
+                >
+                  <SbIcon code={pocketIcon(view)} active={activePocketView === view} />
+                  <span className="sb-label">{titleCase(view)}</span>
+                </button>
+              ))}
+            </div>
+          ) : null}
+        </>
       ) : null}
       {canSeeOwner ? (
-        <button
-          className={`sidebar-item ${activeTopLevel === "owner" ? "active" : ""}`}
-          onClick={onShowOwner}
-          title={collapsed ? "Owner shell" : undefined}
-        >
-          <SbIcon code="OW" active={activeTopLevel === "owner"} />
-          <span className="sb-label">Owner shell</span>
-        </button>
+        <>
+          <button
+            className={`sidebar-item ${activeTopLevel === "owner" ? "active" : ""}`}
+            onClick={onShowOwner}
+            title={collapsed ? "Owner" : undefined}
+          >
+            <SbIcon code="OW" active={activeTopLevel === "owner"} />
+            <span className="sb-label">Owner</span>
+          </button>
+          {activeTopLevel === "owner" && !collapsed && onSelectOwnerView ? (
+            <div className="venue-nav">
+              {(["command", "delegations", "people", "intelligence", "copilot"] as OwnerView[]).map((view) => (
+                <button
+                  key={view}
+                  className={`venue-nav-item ${activeOwnerView === view ? "active" : ""}`}
+                  onClick={() => onSelectOwnerView(view)}
+                >
+                  <SbIcon code={ownerIcon(view)} active={activeOwnerView === view} />
+                  <span className="sb-label">{titleCase(view)}</span>
+                </button>
+              ))}
+            </div>
+          ) : null}
+        </>
       ) : null}
 
       <div className="sidebar-section-label sidebar-section--secondary">Guidance</div>
@@ -290,6 +350,41 @@ function referenceIcon(view: ReferenceView) {
       return "TL";
     case "signals":
       return "SG";
+  }
+}
+
+function managerIcon(view: ManagerView): string {
+  switch (view) {
+    case "today": return "TD";
+    case "workspace": return "WS";
+    case "plan": return "PL";
+    case "evidence": return "EV";
+    case "team": return "TM";
+    case "escalations": return "ES";
+    case "copilot": return "AI";
+    default: return "??";
+  }
+}
+
+function pocketIcon(view: PocketView): string {
+  switch (view) {
+    case "shift": return "SH";
+    case "standards": return "SD";
+    case "help": return "HP";
+    case "report": return "RP";
+    case "log": return "LG";
+    default: return "??";
+  }
+}
+
+function ownerIcon(view: OwnerView): string {
+  switch (view) {
+    case "command": return "CM";
+    case "delegations": return "DL";
+    case "people": return "PP";
+    case "intelligence": return "IN";
+    case "copilot": return "AI";
+    default: return "??";
   }
 }
 

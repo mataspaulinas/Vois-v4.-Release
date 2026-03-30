@@ -2682,6 +2682,12 @@ export default function App() {
                 onShowManager={handleEnterManagerShell}
                 onShowPocket={handleEnterPocketShell}
                 onShowOwner={handleEnterOwnerShell}
+                onSelectManagerView={(view) => workspaceVenue && navigate({ topLevelView: "manager", venueId: workspaceVenue.id, managerView: view })}
+                onSelectPocketView={(view) => workspaceVenue && navigate({ topLevelView: "pocket", venueId: workspaceVenue.id, pocketView: view })}
+                onSelectOwnerView={(view) => workspaceVenue && navigate({ topLevelView: "owner", venueId: workspaceVenue.id, ownerView: view })}
+                activeManagerView={shellRoute.topLevelView === "manager" ? (shellRoute as { managerView: ManagerView }).managerView : undefined}
+                activePocketView={shellRoute.topLevelView === "pocket" ? (shellRoute as { pocketView: PocketView }).pocketView : undefined}
+                activeOwnerView={shellRoute.topLevelView === "owner" ? (shellRoute as { ownerView: OwnerView }).ownerView : undefined}
                 onToggleCopilot={() => setCopilotOpen((current) => !current)}
                 copilotOpen={copilotOpen}
               />
