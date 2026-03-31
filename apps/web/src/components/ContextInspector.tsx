@@ -1,4 +1,5 @@
 import { PropsWithChildren, ReactNode } from "react";
+import Icon from "./Icon";
 
 type ContextInspectorProps = PropsWithChildren<{
   open: boolean;
@@ -20,7 +21,7 @@ export function ContextInspector({ open, title, onClose, width = 320, footer, ch
             {title && <h3 className="context-inspector__title">{title}</h3>}
             {onClose && (
               <button className="context-inspector__close" onClick={onClose} aria-label="Close">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                <Icon name="close" size={14} />
               </button>
             )}
           </div>

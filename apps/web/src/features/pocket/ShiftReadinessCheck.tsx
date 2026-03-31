@@ -7,11 +7,11 @@ type ShiftReadinessCheckProps = {
 };
 
 /* Pocket design tokens */
-const ACCENT = "#6C5CE7";
-const ACCENT_LIGHT = "#f0eeff";
-const GREEN = "#27ae60";
-const GREEN_LIGHT = "#eafaf1";
-const RADIUS = 16;
+const ACCENT = "var(--color-accent)";
+const ACCENT_LIGHT = "var(--color-accent-soft)";
+const GREEN = "var(--color-success)";
+const GREEN_LIGHT = "var(--color-success-soft)";
+const RADIUS = "var(--radius-lg)";
 
 const overlayStyle: React.CSSProperties = {
   position: "fixed",
@@ -25,8 +25,8 @@ const overlayStyle: React.CSSProperties = {
 };
 
 const cardStyle: React.CSSProperties = {
-  background: "#fff",
-  borderRadius: RADIUS + 4,
+  background: "var(--color-surface)",
+  borderRadius: 20,
   padding: 28,
   maxWidth: 420,
   width: "100%",
@@ -35,8 +35,8 @@ const cardStyle: React.CSSProperties = {
 
 const questionStyle: React.CSSProperties = {
   fontWeight: 600,
-  fontSize: 18,
-  color: "#222",
+  fontSize: "var(--text-section)",
+  color: "var(--color-text-primary)",
   marginBottom: 16,
   lineHeight: 1.4,
 };
@@ -61,12 +61,12 @@ function ChoiceButton({
       style={{
         flex: 1,
         minHeight: 52,
-        fontSize: 16,
+        fontSize: "var(--text-card)",
         fontWeight: 600,
-        borderRadius: 12,
-        border: selected ? `2px solid ${ACCENT}` : "2px solid #e0e0e0",
-        background: selected ? ACCENT : "#fff",
-        color: selected ? "#fff" : "#333",
+        borderRadius: "var(--radius-md)",
+        border: selected ? `2px solid ${ACCENT}` : "2px solid var(--color-border-subtle)",
+        background: selected ? ACCENT : "var(--color-surface)",
+        color: selected ? "var(--color-surface)" : "var(--color-text-primary)",
         cursor: "pointer",
         transition: "all 0.15s ease",
         WebkitTapHighlightColor: "transparent",
@@ -88,7 +88,7 @@ function StepDots({ current, total }: { current: number; total: number }) {
             width: 8,
             height: 8,
             borderRadius: "50%",
-            background: i <= current ? ACCENT : "#ddd",
+            background: i <= current ? ACCENT : "var(--color-border-subtle)",
             transition: "background 0.2s ease",
           }}
         />
@@ -143,16 +143,16 @@ export function ShiftReadinessCheck({ venueName, onComplete, onDismiss }: ShiftR
         <div style={{ marginBottom: 8 }}>
           <h3 style={{
             margin: 0,
-            fontSize: 22,
+            fontSize: "var(--text-page)",
             fontWeight: 700,
-            color: "#222",
+            color: "var(--color-text-primary)",
           }}>
             Shift readiness
           </h3>
           <p style={{
-            color: "#888",
+            color: "var(--color-text-muted)",
             margin: "6px 0 0 0",
-            fontSize: 15,
+            fontSize: "var(--text-body)",
             lineHeight: 1.4,
           }}>
             Quick check before starting at {venueName}
@@ -163,10 +163,10 @@ export function ShiftReadinessCheck({ venueName, onComplete, onDismiss }: ShiftR
         {finished ? (
           <div style={{ textAlign: "center", padding: "24px 0" }}>
             <ReadyMark />
-            <p style={{ fontSize: 18, fontWeight: 600, color: GREEN, margin: 0 }}>
+            <p style={{ fontSize: "var(--text-section)", fontWeight: 600, color: GREEN, margin: 0 }}>
               You are all set
             </p>
-            <p style={{ fontSize: 14, color: "#888", margin: "8px 0 0" }}>
+            <p style={{ fontSize: "var(--text-body)", color: "var(--color-text-muted)", margin: "8px 0 0" }}>
               Have a great shift.
             </p>
           </div>
@@ -218,10 +218,10 @@ export function ShiftReadinessCheck({ venueName, onComplete, onDismiss }: ShiftR
                       rows={3}
                       style={{
                         width: "100%",
-                        fontSize: 16,
+                        fontSize: "var(--text-card)",
                         padding: 14,
-                        borderRadius: 12,
-                        border: "2px solid #e0e0e0",
+                        borderRadius: "var(--radius-md)",
+                        border: "2px solid var(--color-border-subtle)",
                         resize: "vertical",
                         fontFamily: "inherit",
                         boxSizing: "border-box",
@@ -234,12 +234,12 @@ export function ShiftReadinessCheck({ venueName, onComplete, onDismiss }: ShiftR
                       style={{
                         width: "100%",
                         minHeight: 48,
-                        fontSize: 16,
+                        fontSize: "var(--text-card)",
                         fontWeight: 600,
-                        borderRadius: 12,
+                        borderRadius: "var(--radius-md)",
                         border: "none",
                         background: ACCENT,
-                        color: "#fff",
+                        color: "var(--color-surface)",
                         cursor: "pointer",
                       }}
                     >
@@ -279,9 +279,9 @@ export function ShiftReadinessCheck({ venueName, onComplete, onDismiss }: ShiftR
                 padding: "14px 0",
                 background: "none",
                 border: "none",
-                color: "#999",
+                color: "var(--color-text-muted)",
                 cursor: "pointer",
-                fontSize: 15,
+                fontSize: "var(--text-body)",
                 fontWeight: 500,
                 minHeight: 48,
                 WebkitTapHighlightColor: "transparent",

@@ -16,11 +16,11 @@ type SignalHeatmapGridProps = {
 type HeatmapCell = { signalId: string; venueId: string; count: number; maxCount: number };
 
 const SEVERITY_COLORS = [
-  "#10B981",   // 0-20% frequency (success)
+  "var(--color-success)",   // 0-20% frequency (success)
   "#65a30d",   // 20-40%
-  "#F59E0B",   // 40-60% (warning)
+  "var(--color-warning)",   // 40-60% (warning)
   "#ea580c",   // 60-80%
-  "#EF4444",   // 80-100% (danger)
+  "var(--color-danger)",   // 80-100% (danger)
 ];
 
 function intensityColor(ratio: number): string {
@@ -81,7 +81,7 @@ export function SignalHeatmapGrid({ assessments, venuePulses, onSelectSignal }: 
   if (!signals.length || !venues.length) {
     return (
       <p style={{
-        color: "#999",
+        color: "var(--color-text-muted)",
         textAlign: "center",
         padding: "32px 16px",
         fontSize: 13,
@@ -101,7 +101,7 @@ export function SignalHeatmapGrid({ assessments, venuePulses, onSelectSignal }: 
     <div style={{
       overflowX: "auto",
       borderRadius: 12,
-      background: "#FFFFFF",
+      background: "var(--color-surface)",
       padding: "16px",
       boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
     }}>

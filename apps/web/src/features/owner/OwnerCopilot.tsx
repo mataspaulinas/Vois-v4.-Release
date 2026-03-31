@@ -84,7 +84,7 @@ export function OwnerCopilot({
             justifyContent: "space-between",
             gap: 12,
           }}>
-            <div style={{ fontSize: 13, color: "#525252" }}>
+            <div style={{ fontSize: 13, color: "var(--color-text-secondary)" }}>
               Get live AI strategic analysis of attention items, delegations, and people risk.
             </div>
             <button
@@ -103,9 +103,9 @@ export function OwnerCopilot({
                 );
               }}
               style={{
-                background: "#6C5CE7",
+                background: "var(--color-accent)",
                 border: "none",
-                color: "white",
+                color: "var(--color-surface)",
                 fontSize: 12,
                 fontWeight: 600,
                 padding: "8px 16px",

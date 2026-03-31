@@ -1,6 +1,7 @@
 import { FormEvent, useMemo, useState } from "react";
 
 import { OntologyMountSummary, OwnerClaimPayload } from "../../lib/api";
+import { Select } from "../../components/ui/Select";
 
 type OwnerSetupViewProps = {
   ownerName: string;
@@ -14,10 +15,10 @@ type OwnerSetupViewProps = {
 };
 
 /* ---- Shared inline-style fragments ---- */
-const labelSpan: React.CSSProperties = { display: "block", fontSize: 13, fontWeight: 500, color: "#0A0A0A", marginBottom: 4 };
+const labelSpan: React.CSSProperties = { display: "block", fontSize: "var(--text-small)", fontWeight: 500, color: "var(--color-text-primary)", marginBottom: 4 };
 const inputStyle: React.CSSProperties = {
-  width: "100%", height: 44, borderRadius: 12, border: "1.5px solid #E5E5E5",
-  padding: "0 14px", fontSize: 15, color: "#0A0A0A", outline: "none", boxSizing: "border-box",
+  width: "100%", height: 44, borderRadius: "var(--radius-md)", border: "1.5px solid var(--color-border-subtle)",
+  padding: "0 14px", fontSize: "var(--text-body)", color: "var(--color-text-primary)", outline: "none", boxSizing: "border-box",
 };
 const selectStyle: React.CSSProperties = { ...inputStyle, appearance: "auto" as const };
 
@@ -77,46 +78,46 @@ export function OwnerSetupView({
       {/* ---- Hero header ---- */}
       <div style={{ textAlign: "center" as const }}>
         <div style={{
-          display: "inline-block", padding: "4px 14px", borderRadius: 999,
-          background: "#6C5CE7", color: "#FFFFFF",
-          fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em",
+          display: "inline-block", padding: "4px 14px", borderRadius: "var(--radius-full)",
+          background: "var(--color-accent)", color: "var(--color-surface)",
+          fontSize: "var(--text-eyebrow)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em",
           marginBottom: 12,
         }}>
           SETUP
         </div>
-        <h1 style={{ fontSize: 28, fontWeight: 700, color: "#0A0A0A", margin: "0 0 8px" }}>
+        <h1 style={{ fontSize: "var(--text-page)", fontWeight: 700, color: "var(--color-text-primary)", margin: "0 0 8px" }}>
           Claim your workspace
         </h1>
-        <p style={{ fontSize: 15, color: "#737373", margin: 0, lineHeight: 1.5 }}>
+        <p style={{ fontSize: "var(--text-body)", color: "var(--color-text-muted)", margin: 0, lineHeight: 1.5 }}>
           {ownerName} ({ownerEmail}) is authenticated, but VOIS has not been claimed yet. Create the organization for
           this workspace and optionally attach the first venue now.
         </p>
         {statusMessage ? (
-          <p style={{ fontSize: 13, color: "#A3A3A3", marginTop: 8 }}>{statusMessage}</p>
+          <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)", marginTop: 8 }}>{statusMessage}</p>
         ) : null}
       </div>
 
       {/* ---- Main form card ---- */}
       <div style={{
-        background: "#FFFFFF", borderRadius: 12, padding: "24px 28px",
+        background: "var(--color-surface)", borderRadius: "var(--radius-md)", padding: "24px 28px",
         boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
       }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
           <div>
-            <div style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A3A3A3", marginBottom: 4 }}>
+            <div style={{ fontSize: "var(--text-eyebrow)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted)", marginBottom: 4 }}>
               SETUP
             </div>
-            <h2 style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", margin: "0 0 4px" }}>
+            <h2 style={{ fontSize: "var(--text-section)", fontWeight: 600, color: "var(--color-text-primary)", margin: "0 0 4px" }}>
               Create the first real workspace
             </h2>
-            <p style={{ fontSize: 13, color: "#737373", margin: 0 }}>
+            <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)", margin: 0 }}>
               This replaces the old seeded demo boot. VOIS stays empty until an owner claims it.
             </p>
           </div>
           <button
             style={{
-              background: "#FFFFFF", color: "#0A0A0A", border: "1.5px solid #E5E5E5", borderRadius: 8,
-              padding: "8px 18px", fontSize: 13, fontWeight: 600, cursor: "pointer",
+              background: "var(--color-surface)", color: "var(--color-text-primary)", border: "1.5px solid var(--color-border-subtle)", borderRadius: "var(--radius-sm)",
+              padding: "8px 18px", fontSize: "var(--text-small)", fontWeight: 600, cursor: "pointer",
               opacity: submitting ? 0.5 : 1, flexShrink: 0,
             }}
             onClick={onLogout}
@@ -135,8 +136,8 @@ export function OwnerSetupView({
               onChange={(e) => setOrganizationName(e.target.value)}
               placeholder="Your operating group"
               required
-              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "var(--color-border-subtle)"; }}
             />
           </label>
           <label>
@@ -147,31 +148,31 @@ export function OwnerSetupView({
               onChange={(e) => setOrganizationSlug(e.target.value)}
               placeholder="your-operating-group"
               required
-              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "var(--color-border-subtle)"; }}
             />
           </label>
           <label>
             <span style={labelSpan}>Region</span>
             <input style={inputStyle} value={region} onChange={(e) => setRegion(e.target.value)}
-              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "var(--color-border-subtle)"; }}
             />
           </label>
           <label>
             <span style={labelSpan}>Data residency</span>
             <input style={inputStyle} value={dataResidency} onChange={(e) => setDataResidency(e.target.value)}
-              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "var(--color-border-subtle)"; }}
             />
           </label>
 
           {/* ---- Divider ---- */}
           <div style={{ gridColumn: "1 / -1", padding: "12px 0 4px" }}>
-            <div style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A3A3A3", marginBottom: 4 }}>
+            <div style={{ fontSize: "var(--text-eyebrow)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted)", marginBottom: 4 }}>
               Optional first venue
             </div>
-            <p style={{ fontSize: 13, color: "#737373", margin: 0 }}>
+            <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)", margin: 0 }}>
               You can claim the organization first and add venues later, or create the first venue right now.
             </p>
           </div>
@@ -179,62 +180,58 @@ export function OwnerSetupView({
           <label>
             <span style={labelSpan}>Venue name</span>
             <input style={inputStyle} value={venueName} onChange={(e) => setVenueName(e.target.value)} placeholder="First venue"
-              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "var(--color-border-subtle)"; }}
             />
           </label>
           <label>
             <span style={labelSpan}>Venue slug</span>
             <input style={inputStyle} value={venueSlug} onChange={(e) => setVenueSlug(e.target.value)} placeholder="first-venue"
-              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "var(--color-border-subtle)"; }}
             />
           </label>
           <label>
             <span style={labelSpan}>Concept</span>
             <input style={inputStyle} value={venueConcept} onChange={(e) => setVenueConcept(e.target.value)} placeholder="Concept or service model"
-              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "var(--color-border-subtle)"; }}
             />
           </label>
           <label>
             <span style={labelSpan}>Location</span>
             <input style={inputStyle} value={venueLocation} onChange={(e) => setVenueLocation(e.target.value)} placeholder="City / site"
-              onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "var(--color-border-subtle)"; }}
             />
           </label>
 
           <label style={{ gridColumn: "1 / -1" }}>
             <span style={labelSpan}>Ontology pack</span>
-            <select
-              style={selectStyle}
+            <Select
               value={selectedMount}
-              onChange={(e) => setSelectedMount(e.target.value)}
+              onChange={(v) => setSelectedMount(v)}
               disabled={!availableMounts.length}
-            >
-              {availableMounts.length ? (
-                availableMounts.map((mount) => (
-                  <option key={`${mount.ontology_id}@${mount.version}`} value={`${mount.ontology_id}@${mount.version}`}>
-                    {mount.display_name} ({mount.version})
-                  </option>
-                ))
-              ) : (
-                <option value="">No mountable ontology packs available</option>
-              )}
-            </select>
+              options={availableMounts.length
+                ? availableMounts.map((mount) => ({
+                    value: `${mount.ontology_id}@${mount.version}`,
+                    label: `${mount.display_name} (${mount.version})`,
+                  }))
+                : [{ value: "", label: "No mountable ontology packs available", disabled: true }]
+              }
+            />
           </label>
 
           {error ? (
-            <p style={{ gridColumn: "1 / -1", fontSize: 13, color: "#EF4444", margin: 0 }}>{error}</p>
+            <p style={{ gridColumn: "1 / -1", fontSize: "var(--text-small)", color: "var(--color-danger)", margin: 0 }}>{error}</p>
           ) : null}
 
           <div style={{ gridColumn: "1 / -1", marginTop: 8 }}>
             <button
               type="submit"
               style={{
-                background: "#6C5CE7", color: "#FFFFFF", border: "none", borderRadius: 8,
-                padding: "10px 24px", fontSize: 15, fontWeight: 600, cursor: "pointer",
+                background: "var(--color-accent)", color: "var(--color-surface)", border: "none", borderRadius: "var(--radius-sm)",
+                padding: "10px 24px", fontSize: "var(--text-body)", fontWeight: 600, cursor: "pointer",
                 opacity:
                   submitting ||
                   !organizationName.trim() ||

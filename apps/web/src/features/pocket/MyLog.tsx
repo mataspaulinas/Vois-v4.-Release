@@ -17,13 +17,13 @@ const sectionPadding: React.CSSProperties = { padding: 20 };
 const sectionHeading: React.CSSProperties = {
   fontSize: 20,
   fontWeight: 600,
-  color: "#1a1a2e",
+  color: "var(--color-text-primary)",
   marginBottom: 4,
 };
 
 const sectionDesc: React.CSSProperties = {
   fontSize: 14,
-  color: "#666",
+  color: "var(--color-text-muted)",
   marginBottom: 20,
   lineHeight: 1.4,
 };
@@ -32,7 +32,7 @@ const inputStyle: React.CSSProperties = {
   width: "100%",
   height: 48,
   borderRadius: 12,
-  border: "1px solid #e0e0e0",
+  border: "1px solid var(--color-border-subtle)",
   padding: "0 16px",
   fontSize: 16,
   outline: "none",
@@ -42,7 +42,7 @@ const inputStyle: React.CSSProperties = {
 const textareaStyle: React.CSSProperties = {
   width: "100%",
   borderRadius: 12,
-  border: "1px solid #e0e0e0",
+  border: "1px solid var(--color-border-subtle)",
   padding: 16,
   fontSize: 16,
   outline: "none",
@@ -57,15 +57,15 @@ const primaryBtnStyle: React.CSSProperties = {
   height: 48,
   borderRadius: 8,
   border: "none",
-  background: "#6C5CE7",
-  color: "#fff",
+  background: "var(--color-accent)",
+  color: "var(--color-surface)",
   fontSize: 16,
   fontWeight: 600,
   cursor: "pointer",
 };
 
 const entryCardStyle: React.CSSProperties = {
-  background: "#fff",
+  background: "var(--color-surface)",
   borderRadius: 16,
   padding: 20,
   marginBottom: 12,
@@ -82,20 +82,20 @@ const entryHeaderStyle: React.CSSProperties = {
 const entryTitleStyle: React.CSSProperties = {
   fontSize: 18,
   fontWeight: 600,
-  color: "#1a1a2e",
+  color: "var(--color-text-primary)",
   lineHeight: 1.3,
 };
 
 const timestampStyle: React.CSSProperties = {
   fontSize: 13,
-  color: "#888",
+  color: "var(--color-text-muted)",
   whiteSpace: "nowrap",
   flexShrink: 0,
   paddingTop: 2,
 };
 
 const entryDetailStyle: React.CSSProperties = {
-  color: "#555",
+  color: "var(--color-text-muted)",
   fontSize: 16,
   marginTop: 8,
   lineHeight: 1.4,
@@ -151,11 +151,11 @@ export function MyLog({ entries, loading, formatTimestamp, onCreateEntry, submit
 
         {/* Entries */}
         {loading ? (
-          <div style={{ padding: 20, textAlign: "center", color: "#888", fontSize: 16 }}>
+          <div style={{ padding: 20, textAlign: "center", color: "var(--color-text-muted)", fontSize: 16 }}>
             Loading diary...
           </div>
         ) : entries.length === 0 ? (
-          <div style={{ padding: 20, textAlign: "center", color: "#888", fontSize: 16 }}>
+          <div style={{ padding: 20, textAlign: "center", color: "var(--color-text-muted)", fontSize: 16 }}>
             No entries yet. Start logging what you do during your shift.
           </div>
         ) : (

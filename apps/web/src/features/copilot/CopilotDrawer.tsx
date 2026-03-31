@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { CopilotAttachment, CopilotThreadDetail, CopilotThreadSummary } from "../../lib/api";
+import Icon from "../../components/Icon";
 
 type CopilotDrawerProps = {
   open: boolean;
@@ -36,6 +37,8 @@ type CopilotDrawerProps = {
   onPreFillConsumed?: () => void;
   screenContext?: string | null;
   drawerContext?: string | null;
+  onCollapseSidebar?: () => void;
+  onExpandSidebar?: () => void;
 };
 
 export function CopilotDrawer({
@@ -67,6 +70,8 @@ export function CopilotDrawer({
   onPreFillConsumed,
   screenContext,
   drawerContext,
+  onCollapseSidebar,
+  onExpandSidebar,
 }: CopilotDrawerProps) {
   // Pre-fill the input when an "Ask Copilot" button is clicked
   useEffect(() => {
@@ -75,6 +80,47 @@ export function CopilotDrawer({
       onPreFillConsumed();
     }
   }, [preFillMessage]);
+
+  /* ── Resizable width ── */
+  const goldenMax = Math.floor(window.innerWidth * 0.618);
+  const [copilotWidth, setCopilotWidth] = useState(380);
+  const [isResizing, setIsResizing] = useState(false);
+  const collapsedSidebarRef = useRef(false);
+
+  const handleResizeStart = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsResizing(true);
+    const startX = e.clientX;
+    const startWidth = copilotWidth;
+    const maxW = Math.floor(window.innerWidth * 0.618);
+    const threshold = window.innerWidth * 0.45;
+    const onMove = (ev: MouseEvent) => {
+      const newWidth = Math.max(280, Math.min(maxW, startWidth - (ev.clientX - startX)));
+      setCopilotWidth(newWidth);
+      // Auto-collapse sidebar when copilot exceeds threshold
+      if (newWidth > threshold && !collapsedSidebarRef.current) {
+        collapsedSidebarRef.current = true;
+        onCollapseSidebar?.();
+      }
+      // Auto-expand sidebar when copilot shrinks back below threshold
+      if (newWidth <= threshold && collapsedSidebarRef.current) {
+        collapsedSidebarRef.current = false;
+        onExpandSidebar?.();
+      }
+    };
+    const onUp = () => {
+      setIsResizing(false);
+      document.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mouseup", onUp);
+      document.body.style.cursor = "";
+      document.body.style.userSelect = "";
+    };
+    document.body.style.cursor = "col-resize";
+    document.body.style.userSelect = "none";
+    document.addEventListener("mousemove", onMove);
+    document.addEventListener("mouseup", onUp);
+  }, [copilotWidth, onCollapseSidebar]);
+
   return (
     <aside
       className={`copilot-drawer ${open ? "open" : ""}`}
@@ -82,6 +128,10 @@ export function CopilotDrawer({
       style={{
         borderLeft: "3px solid transparent",
         borderImage: "linear-gradient(180deg, #6C5CE7, #A29BFE) 1",
+        width: open ? copilotWidth : 0,
+        minWidth: open ? copilotWidth : 0,
+        transition: isResizing ? "none" : "width 260ms cubic-bezier(0.22,1,0.36,1), min-width 260ms cubic-bezier(0.22,1,0.36,1)",
+        position: "relative",
       }}
     >
       {/* ── Header ── */}
@@ -116,18 +166,26 @@ export function CopilotDrawer({
         </div>
         <button
           onClick={onClose}
+          aria-label="Close"
+          title="Close"
           style={{
-            fontSize: "var(--text-small, 13px)",
-            fontWeight: "var(--weight-medium, 500)",
-            color: "var(--color-text-secondary, #525252)",
-            background: "var(--color-surface, #FFFFFF)",
-            border: "1px solid var(--color-border-subtle, #E5E5E5)",
-            borderRadius: "var(--radius-sm, 8px)",
-            padding: "6px 14px",
+            width: 28,
+            height: 28,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "var(--color-text-muted, #A3A3A3)",
+            background: "none",
+            border: "none",
+            borderRadius: "var(--radius-sm)",
             cursor: "pointer",
+            transition: "all 180ms ease",
+            flexShrink: 0,
           }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = "var(--color-bg-muted, #F5F5F5)"; e.currentTarget.style.color = "var(--color-text-primary)"; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = "none"; e.currentTarget.style.color = "var(--color-text-muted, #A3A3A3)"; }}
         >
-          Close
+          <Icon name="close" size={16} />
         </button>
       </div>
 
@@ -137,8 +195,9 @@ export function CopilotDrawer({
         <div
           className="copilot-thread-list"
           style={{
-            width: 240,
-            minWidth: 200,
+            width: "40%",
+            minWidth: 160,
+            maxWidth: 240,
             borderRight: "1px solid var(--color-border-subtle, #E5E5E5)",
             overflowY: "auto",
             padding: "var(--spacing-8)",
@@ -226,10 +285,10 @@ export function CopilotDrawer({
             <div style={{
               padding: "8px 12px",
               margin: "12px 24px 0",
-              borderRadius: 8,
-              background: "#F5F5F5",
-              fontSize: 11,
-              color: "#666",
+              borderRadius: "var(--radius-sm)",
+              background: "var(--color-surface-subtle)",
+              fontSize: "var(--text-eyebrow)",
+              color: "var(--color-text-muted)",
               lineHeight: 1.5,
             }}>
               {screenContext && <div>Seeing: {screenContext}</div>}
@@ -499,64 +558,65 @@ export function CopilotDrawer({
                   >
                     Review before applying. Accepted changes update the saved assessment, not hidden system state.
                   </p>
-                  <div style={{ display: "flex", gap: "var(--spacing-8)" }}>
+                  <div style={{ display: "flex", gap: 6 }}>
                     <button
                       onClick={onApplySignalSuggestion}
                       disabled={!canApplySignalSuggestion || applyingSignalSuggestion}
+                      aria-label="Apply to assessment"
+                      title={applyingSignalSuggestion ? "Applying..." : "Apply to assessment"}
                       style={{
-                        fontSize: "var(--text-small, 13px)",
-                        fontWeight: "var(--weight-semibold, 600)",
-                        color: "var(--color-accent-foreground, #FFFFFF)",
-                        background: "var(--color-accent, #6C5CE7)",
-                        border: "none",
-                        borderRadius: "var(--radius-sm, 8px)",
-                        padding: "8px 16px",
+                        width: 32, height: 32, display: "flex", alignItems: "center", justifyContent: "center",
+                        color: "var(--color-surface)", background: "var(--color-accent, #6C5CE7)", border: "none", borderRadius: "var(--radius-sm)",
                         cursor: !canApplySignalSuggestion || applyingSignalSuggestion ? "not-allowed" : "pointer",
-                        opacity: !canApplySignalSuggestion || applyingSignalSuggestion ? 0.5 : 1,
+                        opacity: !canApplySignalSuggestion || applyingSignalSuggestion ? 0.4 : 1,
                       }}
                     >
-                      {applyingSignalSuggestion ? "Applying..." : "Apply to assessment"}
+                      <Icon name="check" size={16} />
                     </button>
                     <button
                       onClick={onDismissSignalSuggestion}
                       disabled={applyingSignalSuggestion}
+                      aria-label="Dismiss"
+                      title="Dismiss suggestion"
                       style={{
-                        fontSize: "var(--text-small, 13px)",
-                        fontWeight: "var(--weight-medium, 500)",
-                        color: "var(--color-text-secondary, #525252)",
-                        background: "var(--color-surface, #FFFFFF)",
-                        border: "1px solid var(--color-border-subtle, #E5E5E5)",
-                        borderRadius: "var(--radius-sm, 8px)",
-                        padding: "8px 16px",
+                        width: 32, height: 32, display: "flex", alignItems: "center", justifyContent: "center",
+                        color: "var(--color-text-muted)", background: "none",
+                        border: "1px solid var(--color-border-subtle, #E5E5E5)", borderRadius: "var(--radius-sm)",
                         cursor: applyingSignalSuggestion ? "not-allowed" : "pointer",
-                        opacity: applyingSignalSuggestion ? 0.5 : 1,
+                        opacity: applyingSignalSuggestion ? 0.4 : 1,
                       }}
                     >
-                      Dismiss
+                      <Icon name="close" size={14} />
                     </button>
                   </div>
                 </div>
               ) : null}
 
-              {/* Input area */}
+              {/* Input area — pinned to bottom */}
               <div
                 style={{
+                  flexShrink: 0,
                   padding: "var(--spacing-16) var(--spacing-24) var(--spacing-24)",
                   borderTop: "1px solid var(--color-border-subtle, #E5E5E5)",
                   background: "var(--color-surface, #FFFFFF)",
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: "var(--spacing-8)", marginBottom: "var(--spacing-12)" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 8 }}>
                   <label
+                    title="Attach files"
                     style={{
-                      fontSize: "var(--text-small, 13px)",
-                      fontWeight: "var(--weight-medium, 500)",
-                      color: "var(--color-text-secondary, #525252)",
-                      background: "var(--color-bg-muted, #F5F5F5)",
-                      border: "1px solid var(--color-border-subtle, #E5E5E5)",
-                      borderRadius: "var(--radius-sm, 8px)",
-                      padding: "6px 14px",
+                      width: 28,
+                      height: 28,
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "var(--color-text-muted, #A3A3A3)",
+                      background: "none",
+                      border: "none",
+                      borderRadius: "var(--radius-sm)",
                       cursor: "pointer",
+                      transition: "all 180ms ease",
+                      flexShrink: 0,
                     }}
                   >
                     <input
@@ -568,7 +628,7 @@ export function CopilotDrawer({
                       }}
                       style={{ display: "none" }}
                     />
-                    Attach files
+                    <Icon name="attach" size={16} />
                   </label>
                   {attachments.length ? (
                     <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--spacing-4)" }}>
@@ -593,44 +653,55 @@ export function CopilotDrawer({
                     </div>
                   ) : null}
                 </div>
-                <textarea
-                  value={input}
-                  onChange={(event) => onInputChange(event.target.value)}
-                  placeholder={inputPlaceholder}
-                  style={{
-                    width: "100%",
-                    minHeight: 72,
-                    padding: "var(--spacing-12)",
-                    fontSize: "var(--text-body, 15px)",
-                    fontFamily: "var(--font-sans)",
-                    lineHeight: "var(--lh-normal, 1.5)",
-                    color: "var(--color-text-primary, #0A0A0A)",
-                    background: "var(--color-bg-muted, #F5F5F5)",
-                    border: "1px solid var(--color-border-subtle, #E5E5E5)",
-                    borderRadius: "var(--radius-md, 12px)",
-                    resize: "vertical",
-                    outline: "none",
-                    boxSizing: "border-box",
-                  }}
-                />
-                <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "var(--spacing-12)" }}>
+                <div style={{ position: "relative" }}>
+                  <textarea
+                    value={input}
+                    onChange={(event) => onInputChange(event.target.value)}
+                    onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey && !sending && selectedThreadId) { event.preventDefault(); onSend(); } }}
+                    placeholder={inputPlaceholder}
+                    style={{
+                      width: "100%",
+                      minHeight: 56,
+                      padding: "12px 48px 12px 12px",
+                      fontSize: "var(--text-body, 15px)",
+                      fontFamily: "var(--font-sans)",
+                      lineHeight: "var(--lh-normal, 1.5)",
+                      color: "var(--color-text-primary, #0A0A0A)",
+                      background: "var(--color-bg-muted, #F5F5F5)",
+                      border: "1px solid var(--color-border-subtle, #E5E5E5)",
+                      borderRadius: "var(--radius-md, 12px)",
+                      resize: "vertical",
+                      outline: "none",
+                      boxSizing: "border-box",
+                    }}
+                  />
                   <button
                     onClick={onSend}
                     disabled={sending || !selectedThreadId}
+                    aria-label="Send"
+                    title={sending ? "Sending..." : "Send (Enter)"}
                     style={{
-                      fontSize: "var(--text-body, 15px)",
-                      fontWeight: "var(--weight-semibold, 600)",
+                      position: "absolute",
+                      right: 8,
+                      bottom: 8,
+                      width: 32,
+                      height: 32,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                       color: "var(--color-accent-foreground, #FFFFFF)",
                       background: "var(--color-accent, #6C5CE7)",
                       border: "none",
-                      borderRadius: "var(--radius-sm, 8px)",
-                      padding: "10px 20px",
+                      borderRadius: "var(--radius-sm)",
                       cursor: sending || !selectedThreadId ? "not-allowed" : "pointer",
-                      opacity: sending || !selectedThreadId ? 0.5 : 1,
-                      transition: "background var(--motion-fast) var(--easing-standard)",
+                      opacity: sending || !selectedThreadId ? 0.4 : 1,
+                      transition: "all 180ms ease",
                     }}
                   >
-                    {sending ? "Sending..." : "Send to VOIS"}
+                    {sending
+                      ? <Icon name="refresh" size={16} />
+                      : <Icon name="send" size={16} />
+                    }
                   </button>
                 </div>
               </div>
@@ -660,6 +731,25 @@ export function CopilotDrawer({
           )}
         </div>
       </div>
+      {/* ── Resize handle (left edge) ── */}
+      {open && (
+        <div
+          onMouseDown={handleResizeStart}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: 4,
+            height: "100%",
+            cursor: "col-resize",
+            zIndex: 10,
+            background: isResizing ? "var(--color-accent)" : "transparent",
+            transition: "background 120ms ease",
+          }}
+          onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.background = "var(--color-border-strong, #D4D4D4)"; }}
+          onMouseLeave={(e) => { if (!isResizing) (e.currentTarget as HTMLDivElement).style.background = "transparent"; }}
+        />
+      )}
     </aside>
   );
 }

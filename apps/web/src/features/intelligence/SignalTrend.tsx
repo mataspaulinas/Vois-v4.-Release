@@ -19,9 +19,9 @@ export function computeSignalTrend(signalId: string, history: AssessmentHistoryI
 }
 
 const TREND_STYLES: Record<TrendDirection, { label: string; color: string; arrow: "down" | "flat" | "up" }> = {
-  improving: { label: "Improving", color: "#10B981", arrow: "down" },
-  stable: { label: "Stable", color: "#A3A3A3", arrow: "flat" },
-  worsening: { label: "Worsening", color: "#EF4444", arrow: "up" },
+  improving: { label: "Improving", color: "var(--color-success)", arrow: "down" },
+  stable: { label: "Stable", color: "var(--color-text-muted)", arrow: "flat" },
+  worsening: { label: "Worsening", color: "var(--color-danger)", arrow: "up" },
 };
 
 /** CSS-based arrow indicators */

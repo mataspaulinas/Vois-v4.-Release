@@ -72,9 +72,9 @@ function resolveTabs(
 /*  Styles (design tokens)                                             */
 /* ------------------------------------------------------------------ */
 
-const ACCENT = "#6C5CE7";
-const MUTED = "#A3A3A3";
-const BORDER_COLOR = "#E5E5E5";
+const ACCENT = "var(--color-accent)";
+const MUTED = "var(--color-text-muted)";
+const BORDER_COLOR = "var(--color-border-subtle)";
 
 const barStyle: React.CSSProperties = {
   position: "fixed",
@@ -82,9 +82,9 @@ const barStyle: React.CSSProperties = {
   left: 0,
   right: 0,
   height: 64,
-  background: "#FFFFFF",
+  background: "var(--color-surface)",
   borderTop: `1px solid ${BORDER_COLOR}`,
-  display: "flex",
+  /* display controlled by CSS class .mobile-tab-strip-bar */
   alignItems: "stretch",
   justifyContent: "space-around",
   zIndex: "var(--z-sticky, 50)" as unknown as number,
@@ -171,7 +171,7 @@ export function MobileTabStrip({
   };
 
   return (
-    <div style={barStyle}>
+    <div className="mobile-tab-strip-bar" style={barStyle}>
       {tabs.map((tab) => {
         const isActive = activeView === tab.key;
         return (

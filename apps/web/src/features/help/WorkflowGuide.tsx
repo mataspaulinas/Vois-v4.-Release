@@ -21,7 +21,7 @@ export function WorkflowGuide() {
               style={{
                 padding: "16px 20px",
                 borderRadius: 12,
-                background: "#FFFFFF",
+                background: "var(--color-surface)",
                 border: "1px solid rgba(0,0,0,0.06)",
                 boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
                 cursor: "pointer",
@@ -40,21 +40,21 @@ export function WorkflowGuide() {
                 margin: "0 0 6px 0",
                 fontSize: 15,
                 fontWeight: 600,
-                color: "#1a1a1a",
+                color: "var(--color-text-primary)",
               }}>
                 {wf.title}
               </h4>
               <p style={{
                 margin: 0,
                 fontSize: 13,
-                color: "#777",
+                color: "var(--color-text-muted)",
                 lineHeight: 1.4,
               }}>
                 {wf.description}
               </p>
               <span style={{
                 fontSize: 11,
-                color: "#6C5CE7",
+                color: "var(--color-accent)",
                 fontWeight: 600,
                 marginTop: 8,
                 display: "inline-block",
@@ -72,7 +72,7 @@ export function WorkflowGuide() {
               padding: "6px 14px",
               fontSize: 13,
               fontWeight: 500,
-              color: "#555",
+              color: "var(--color-text-muted)",
               background: "transparent",
               border: "1px solid rgba(0,0,0,0.12)",
               borderRadius: 8,
@@ -91,14 +91,14 @@ export function WorkflowGuide() {
                   <strong style={{
                     fontSize: 15,
                     fontWeight: 600,
-                    color: "#1a1a1a",
+                    color: "var(--color-text-primary)",
                   }}>
                     {step.title}
                   </strong>
                   <p style={{
                     margin: "4px 0 0 0",
                     fontSize: 13,
-                    color: "#777",
+                    color: "var(--color-text-muted)",
                     lineHeight: 1.5,
                   }}>
                     {step.description}

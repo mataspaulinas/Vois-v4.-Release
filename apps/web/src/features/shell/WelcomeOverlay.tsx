@@ -41,19 +41,19 @@ export function WelcomeOverlay({
         width: "100%",
         maxWidth: 520,
         margin: "0 16px",
-        background: "#FFFFFF",
-        borderRadius: 16,
+        background: "var(--color-surface)",
+        borderRadius: "var(--radius-lg)",
         boxShadow: "0 16px 48px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.04)",
         padding: "40px 32px 32px",
         textAlign: "center",
       }}>
         <p style={{
           margin: "0 0 8px",
-          fontSize: 11,
+          fontSize: "var(--text-eyebrow)",
           fontWeight: 600,
           textTransform: "uppercase",
           letterSpacing: "1.2px",
-          color: "#6C5CE7",
+          color: "var(--color-accent)",
         }}>
           vOIS
         </p>
@@ -61,19 +61,19 @@ export function WelcomeOverlay({
           id="welcome-title"
           style={{
             margin: "0 0 12px",
-            fontSize: 26,
+            fontSize: "var(--text-page)",
             fontWeight: 700,
-            color: "#1a1a1a",
+            color: "var(--color-text-primary)",
             lineHeight: 1.3,
           }}
         >
           Your operation&apos;s best days are{" "}
-          <span style={{ color: "#6C5CE7" }}>ahead.</span>
+          <span style={{ color: "var(--color-accent)" }}>ahead.</span>
         </h1>
         <p style={{
           margin: "0 0 28px",
-          fontSize: 15,
-          color: "#777",
+          fontSize: "var(--text-body)",
+          color: "var(--color-text-muted)",
           lineHeight: 1.5,
           maxWidth: 400,
           marginLeft: "auto",
@@ -91,12 +91,12 @@ export function WelcomeOverlay({
                 width: "100%",
                 maxWidth: 320,
                 padding: "12px 24px",
-                fontSize: 15,
+                fontSize: "var(--text-body)",
                 fontWeight: 600,
-                color: "#fff",
-                background: "#6C5CE7",
+                color: "var(--color-surface)",
+                background: "var(--color-accent)",
                 border: "none",
-                borderRadius: 10,
+                borderRadius: "var(--radius-md)",
                 cursor: "pointer",
                 transition: "background 180ms ease",
                 minHeight: 44,
@@ -111,12 +111,12 @@ export function WelcomeOverlay({
                 width: "100%",
                 maxWidth: 320,
                 padding: "12px 24px",
-                fontSize: 15,
+                fontSize: "var(--text-body)",
                 fontWeight: 600,
-                color: "#fff",
-                background: "#6C5CE7",
+                color: "var(--color-surface)",
+                background: "var(--color-accent)",
                 border: "none",
-                borderRadius: 10,
+                borderRadius: "var(--radius-md)",
                 cursor: "pointer",
                 transition: "background 180ms ease",
                 minHeight: 44,
@@ -131,12 +131,12 @@ export function WelcomeOverlay({
               style={{
                 flex: 1,
                 padding: "10px 16px",
-                fontSize: 13,
+                fontSize: "var(--text-small)",
                 fontWeight: 500,
-                color: "#555",
+                color: "var(--color-text-secondary)",
                 background: "transparent",
                 border: "1px solid rgba(0,0,0,0.12)",
-                borderRadius: 10,
+                borderRadius: "var(--radius-md)",
                 cursor: "pointer",
                 transition: "all 180ms ease",
                 minHeight: 44,
@@ -149,12 +149,12 @@ export function WelcomeOverlay({
               style={{
                 flex: 1,
                 padding: "10px 16px",
-                fontSize: 13,
+                fontSize: "var(--text-small)",
                 fontWeight: 500,
-                color: "#555",
+                color: "var(--color-text-secondary)",
                 background: "transparent",
                 border: "1px solid rgba(0,0,0,0.12)",
-                borderRadius: 10,
+                borderRadius: "var(--radius-md)",
                 cursor: "pointer",
                 transition: "all 180ms ease",
                 minHeight: 44,
@@ -171,22 +171,22 @@ export function WelcomeOverlay({
             {resumeReason ? (
               <div style={{
                 padding: "12px 16px",
-                borderRadius: 12,
-                background: "#F8F7FF",
+                borderRadius: "var(--radius-md)",
+                background: "var(--color-accent-soft)",
                 border: "1px solid rgba(108,92,231,0.12)",
                 textAlign: "left",
               }}>
                 <p style={{
                   margin: "0 0 4px",
-                  fontSize: 11,
+                  fontSize: "var(--text-eyebrow)",
                   fontWeight: 600,
                   textTransform: "uppercase",
                   letterSpacing: "0.4px",
-                  color: "#6C5CE7",
+                  color: "var(--color-accent)",
                 }}>
                   Resume cue
                 </p>
-                <p style={{ margin: 0, fontSize: 13, color: "#555", lineHeight: 1.4 }}>
+                <p style={{ margin: 0, fontSize: "var(--text-small)", color: "var(--color-text-secondary)", lineHeight: 1.4 }}>
                   {resumeReason}
                 </p>
               </div>
@@ -196,13 +196,13 @@ export function WelcomeOverlay({
                 key={note}
                 style={{
                   padding: "10px 16px",
-                  borderRadius: 12,
-                  background: "#FAFAFA",
+                  borderRadius: "var(--radius-md)",
+                  background: "var(--color-surface-subtle)",
                   border: "1px solid rgba(0,0,0,0.06)",
                   textAlign: "left",
                 }}
               >
-                <p style={{ margin: 0, fontSize: 13, color: "#555", lineHeight: 1.4 }}>
+                <p style={{ margin: 0, fontSize: "var(--text-small)", color: "var(--color-text-secondary)", lineHeight: 1.4 }}>
                   {note}
                 </p>
               </div>
@@ -212,8 +212,8 @@ export function WelcomeOverlay({
 
         <p style={{
           margin: "24px 0 0",
-          fontSize: 11,
-          color: "#bbb",
+          fontSize: "var(--text-eyebrow)",
+          color: "var(--color-text-muted)",
           letterSpacing: "0.4px",
           fontWeight: 500,
         }}>

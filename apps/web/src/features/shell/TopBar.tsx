@@ -2,6 +2,7 @@ import { PortfolioSummaryResponse, Venue } from "../../lib/api";
 import { NotificationBell } from "./NotificationBell";
 import { SkinId, ThemeMode } from "./types";
 import Icon from "../../components/Icon";
+import { Select } from "../../components/ui/Select";
 
 type TopBarProps = {
   venues: Venue[];
@@ -107,41 +108,22 @@ export function TopBar({
         style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
         <div className="topbar-venue-selector">
-          <select
-            className="topbar-venue-select"
+          <Select
+            options={[
+              { value: "__portfolio__", label: "Portfolio" },
+              ...venues.map((venue) => ({ value: venue.id, label: venue.name })),
+            ]}
             value={activeVenue?.id ?? "__portfolio__"}
-            onChange={(event) => {
-              if (event.target.value === "__portfolio__") {
+            onChange={(value) => {
+              if (value === "__portfolio__") {
                 onShowPortfolio();
                 return;
               }
-              onSelectVenue(event.target.value);
+              onSelectVenue(value);
             }}
             aria-label="Select venue"
-            style={{
-              appearance: "none",
-              WebkitAppearance: "none",
-              background: `var(--color-surface) url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23A3A3A3' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 12px center`,
-              border: "1px solid var(--color-border-subtle)",
-              borderRadius: "var(--radius-sm)",
-              padding: "6px 32px 6px 12px",
-              fontSize: "var(--text-card)",
-              fontWeight: 500,
-              fontFamily: "var(--font-sans)",
-              color: "var(--color-text-primary)",
-              cursor: "pointer",
-              minWidth: 180,
-              outline: "none",
-              transition: `border-color var(--motion-fast) var(--easing-standard)`,
-            }}
-          >
-            <option value="__portfolio__">Portfolio</option>
-            {venues.map((venue) => (
-              <option key={venue.id} value={venue.id}>
-                {venue.name}
-              </option>
-            ))}
-          </select>
+            size="sm"
+          />
         </div>
       </div>
 
@@ -175,7 +157,7 @@ export function TopBar({
           }}
           aria-label="Open search"
         >
-          <Icon name="search" size={14} color="#A3A3A3" />
+          <Icon name="search" size={14} color="var(--color-text-muted)" />
           Search or Cmd+K
         </button>
 
@@ -228,20 +210,24 @@ export function TopBar({
         <button
           className={`topbar-btn ${copilotOpen ? "active" : ""}`}
           onClick={onToggleCopilot}
+          aria-label="Copilot"
+          title="Copilot"
           style={{
-            padding: "6px 14px",
+            width: 32,
+            height: 32,
+            padding: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             borderRadius: "var(--radius-sm)",
             border: copilotOpen ? "1px solid var(--color-accent)" : "1px solid var(--color-border-subtle)",
             background: copilotOpen ? "var(--color-accent-soft)" : "var(--color-surface)",
             color: "var(--color-accent)",
-            fontSize: "var(--text-small)",
-            fontWeight: 600,
-            fontFamily: "var(--font-sans)",
             cursor: "pointer",
             transition: `all var(--motion-fast) var(--easing-standard)`,
           }}
         >
-          Copilot
+          <Icon name="copilot" size={16} />
         </button>
       </div>
     </header>

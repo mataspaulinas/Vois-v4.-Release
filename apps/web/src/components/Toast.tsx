@@ -1,4 +1,5 @@
 import React from "react";
+import Icon from "./Icon";
 
 /* ─── Types ─────────────────────────────────────────────────── */
 
@@ -24,10 +25,10 @@ type ToastContextValue = {
 /* ─── Constants ─────────────────────────────────────────────── */
 
 const COLORS: Record<ToastType, string> = {
-  success: "#10B981",
-  error: "#EF4444",
-  warning: "#F59E0B",
-  info: "#6366F1",
+  success: "var(--color-success)",
+  error: "var(--color-danger)",
+  warning: "var(--color-warning)",
+  info: "var(--color-info)",
 };
 
 const DEFAULT_DURATION = 5000;
@@ -189,8 +190,8 @@ function ToastItem({ toast, onDismiss }: { toast: Toast; onDismiss: (id: string)
   const containerStyle: React.CSSProperties = {
     position: "relative",
     width: 360,
-    backgroundColor: "#fff",
-    borderRadius: 12,
+    backgroundColor: "var(--color-surface)",
+    borderRadius: "var(--radius-md)",
     boxShadow: "0 4px 12px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06)",
     borderLeft: `4px solid ${color}`,
     display: "flex",
@@ -208,11 +209,11 @@ function ToastItem({ toast, onDismiss }: { toast: Toast; onDismiss: (id: string)
       <ToastIcon type={toast.type} />
 
       <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ fontSize: 14, fontWeight: 600, color: "#1a1a1a", lineHeight: "20px" }}>
+        <div style={{ fontSize: "var(--text-body)", fontWeight: 600, color: "var(--color-text-primary)", lineHeight: "20px" }}>
           {toast.title}
         </div>
         {toast.description && (
-          <div style={{ fontSize: 13, color: "#6b7280", lineHeight: "18px", marginTop: 2 }}>
+          <div style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)", lineHeight: "18px", marginTop: 2 }}>
             {toast.description}
           </div>
         )}
@@ -225,7 +226,7 @@ function ToastItem({ toast, onDismiss }: { toast: Toast; onDismiss: (id: string)
               border: "none",
               background: "none",
               color,
-              fontSize: 13,
+              fontSize: "var(--text-small)",
               fontWeight: 600,
               cursor: "pointer",
               lineHeight: "18px",
@@ -248,17 +249,15 @@ function ToastItem({ toast, onDismiss }: { toast: Toast; onDismiss: (id: string)
           justifyContent: "center",
           border: "none",
           background: "none",
-          color: "#9ca3af",
+          color: "var(--color-text-muted)",
           cursor: "pointer",
-          borderRadius: 4,
+          borderRadius: "var(--radius-sm)",
           padding: 0,
           fontSize: 16,
           lineHeight: 1,
         }}
       >
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        </svg>
+        <Icon name="close" size={14} />
       </button>
 
       {shouldAutoDismiss && (

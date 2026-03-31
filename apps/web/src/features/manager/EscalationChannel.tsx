@@ -6,6 +6,7 @@ import { DeepDrawer } from "../../components/DeepDrawer";
 import { LoadingState } from "../../components/LoadingState";
 import { EmptyState } from "../../components/EmptyState";
 import { EscalationRecord } from "../../lib/api";
+import { ds, statusDot } from "../../styles/tokens";
 
 type EscalationChannelProps = {
   escalations: EscalationRecord[];
@@ -18,11 +19,11 @@ type EscalationChannelProps = {
 };
 
 const SEVERITY_COLORS: Record<string, string> = {
-  critical: "#EF4444", high: "#EF4444", medium: "#F59E0B", low: "#6366F1",
+  critical: "var(--color-danger)", high: "var(--color-danger)", medium: "var(--color-warning)", low: "var(--color-info)",
 };
 
 const SEVERITY_BG: Record<string, string> = {
-  critical: "#FEF2F2", high: "#FEF2F2", medium: "#FFFBEB", low: "#EEF2FF",
+  critical: "var(--color-danger-soft)", high: "var(--color-danger-soft)", medium: "var(--color-warning-soft)", low: "var(--color-accent-soft)",
 };
 
 const ESCALATION_TYPE_LABELS: Record<string, string> = {
@@ -42,23 +43,12 @@ function inferEscalationType(reason: string): string {
   return "structural";
 }
 
-/* ── design-system tokens ───────────────────────────────────── */
-const ds = {
-  eyebrow: { fontSize: 11, fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.08em", color: "#A3A3A3", margin: 0 },
-  pageTitle: { fontSize: 28, fontWeight: 700, color: "#0A0A0A", margin: 0 },
-  body: { fontSize: 15, color: "#404040", lineHeight: 1.55 },
-  small: { fontSize: 13, color: "#737373" },
-  card: { background: "#FFFFFF", borderRadius: 12, boxShadow: "0 1px 3px rgba(0,0,0,0.04)", padding: 20 } as React.CSSProperties,
-  accent: "#6C5CE7",
-  success: "#10B981",
-  btnPrimary: { background: "#6C5CE7", color: "#FFFFFF", border: "none", borderRadius: 8, padding: "8px 16px", fontSize: 13, fontWeight: 600, cursor: "pointer" } as React.CSSProperties,
-  btnSecondary: { background: "#FFFFFF", color: "#404040", border: "1px solid #E5E5E5", borderRadius: 8, padding: "8px 16px", fontSize: 13, fontWeight: 500, cursor: "pointer" } as React.CSSProperties,
-  btnSmPrimary: { background: "#6C5CE7", color: "#FFFFFF", border: "none", borderRadius: 8, padding: "6px 14px", fontSize: 12, fontWeight: 600, cursor: "pointer" } as React.CSSProperties,
-  btnSmSecondary: { background: "#FFFFFF", color: "#404040", border: "1px solid #E5E5E5", borderRadius: 8, padding: "6px 14px", fontSize: 12, fontWeight: 500, cursor: "pointer" } as React.CSSProperties,
-  pill: (bg: string, fg: string) => ({ display: "inline-flex", alignItems: "center", fontSize: 11, fontWeight: 600, padding: "3px 8px", borderRadius: 10, background: bg, color: fg, textTransform: "uppercase" as const, letterSpacing: "0.03em" }) as React.CSSProperties,
-  dot: (color: string) => ({ width: 8, height: 8, borderRadius: "50%", background: color, flexShrink: 0 }) as React.CSSProperties,
-  metaRow: { display: "flex", justifyContent: "space-between", padding: "8px 0", borderBottom: "1px solid #F5F5F5", fontSize: 13 } as React.CSSProperties,
-};
+/* ── file-specific helpers ───────────────────────────────────── */
+const pillBadge = (bg: string, fg: string): React.CSSProperties => ({
+  display: "inline-flex", alignItems: "center", fontSize: "var(--text-eyebrow)", fontWeight: 600,
+  padding: "3px 8px", borderRadius: 10, background: bg, color: fg,
+  textTransform: "uppercase", letterSpacing: "0.03em",
+});
 
 export function EscalationChannel({
   escalations, loading, formatTimestamp, onResolveEscalation, onCreateEscalation, resolvingEscalationId, onOpenPlan,
@@ -101,8 +91,8 @@ export function EscalationChannel({
               <>
                 {/* eyebrow + title */}
                 <div style={{ marginBottom: 24 }}>
-                  <p style={ds.eyebrow}>EXECUTION</p>
-                  <h2 style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", margin: "4px 0 0" }}>Escalation channel</h2>
+                  <p className="eyebrow">EXECUTION</p>
+                  <h2 style={{ fontSize: "var(--text-section)", fontWeight: 600, color: "var(--color-text-primary)", margin: "4px 0 0" }}>Escalation channel</h2>
                 </div>
 
                 {/* filter tabs */}
@@ -111,7 +101,7 @@ export function EscalationChannel({
                     <button
                       key={f}
                       onClick={() => setFilter(f)}
-                      style={filter === f ? ds.btnSmPrimary : ds.btnSmSecondary}
+                      className={filter === f ? "btn btn-sm btn-primary" : "btn btn-sm btn-secondary"}
                     >
                       {f === "all" ? `All (${escalations.length})` : f === "open" ? `Open (${openCount})` : `Resolved (${escalations.length - openCount})`}
                     </button>
@@ -127,18 +117,18 @@ export function EscalationChannel({
                   <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                     {filtered.map((esc) => {
                       const escType = inferEscalationType(esc.reason);
-                      const sevColor = SEVERITY_COLORS[esc.severity] ?? "#A3A3A3";
-                      const sevBg = SEVERITY_BG[esc.severity] ?? "#F5F5F5";
+                      const sevColor = SEVERITY_COLORS[esc.severity] ?? "var(--color-text-muted)";
+                      const sevBg = SEVERITY_BG[esc.severity] ?? "var(--color-surface-subtle)";
                       const isSelected = selectedId === esc.id;
 
                       return (
                         <div
                           key={esc.id}
                           onClick={() => setSelectedId(isSelected ? null : esc.id)}
+                          className="ui-card"
                           style={{
-                            ...ds.card,
                             borderLeft: `4px solid ${sevColor}`,
-                            background: isSelected ? "#FAFAFA" : "#FFFFFF",
+                            background: isSelected ? "var(--color-surface-subtle)" : "var(--color-surface)",
                             cursor: "pointer",
                             transition: "transform 0.15s ease, box-shadow 0.15s ease",
                           }}
@@ -146,29 +136,30 @@ export function EscalationChannel({
                           onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 1px 3px rgba(0,0,0,0.04)"; }}
                         >
                           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
-                            <span style={ds.dot(sevColor)} />
-                            <span style={ds.pill(sevBg, sevColor)}>{esc.severity}</span>
-                            <span style={ds.pill(
-                              esc.status === "resolved" ? "#ECFDF5" : "#F5F5F5",
-                              esc.status === "resolved" ? "#065F46" : "#525252"
+                            <span style={statusDot(sevColor)} />
+                            <span style={pillBadge(sevBg, sevColor)}>{esc.severity}</span>
+                            <span style={pillBadge(
+                              esc.status === "resolved" ? "var(--color-success-soft)" : "var(--color-surface-subtle)",
+                              esc.status === "resolved" ? "var(--color-success)" : "var(--color-text-secondary)"
                             )}>{esc.status}</span>
-                            <span style={{ fontSize: 12, fontWeight: 500, color: "#A3A3A3" }}>{ESCALATION_TYPE_LABELS[escType] ?? escType}</span>
-                            <span style={{ fontSize: 13, color: "#A3A3A3", marginLeft: "auto" }}>{formatTimestamp(esc.created_at)}</span>
+                            <span style={{ fontSize: 12, fontWeight: 500, color: "var(--color-text-muted)" }}>{ESCALATION_TYPE_LABELS[escType] ?? escType}</span>
+                            <span style={{ fontSize: 13, color: "var(--color-text-muted)", marginLeft: "auto" }}>{formatTimestamp(esc.created_at)}</span>
                           </div>
-                          <div style={{ fontSize: 15, fontWeight: 500, color: "#0A0A0A" }}>{esc.reason}</div>
+                          <div style={{ fontSize: 15, fontWeight: 500, color: "var(--color-text-primary)" }}>{esc.reason}</div>
 
                           {/* inline resolve */}
                           {isSelected && esc.status !== "resolved" && (
-                            <div style={{ marginTop: 12, borderTop: "1px solid #F5F5F5", paddingTop: 12 }} onClick={(e) => e.stopPropagation()}>
+                            <div style={{ marginTop: 12, borderTop: "1px solid var(--color-surface-subtle)", paddingTop: 12 }} onClick={(e) => e.stopPropagation()}>
                               <textarea
                                 placeholder="Resolution notes..."
                                 value={resolutionNotes[esc.id] ?? ""}
                                 onChange={(e) => setResolutionNotes((prev) => ({ ...prev, [esc.id]: e.target.value }))}
                                 rows={2}
-                                style={{ width: "100%", resize: "vertical", borderRadius: 8, border: "1px solid #E5E5E5", padding: 10, fontSize: 13, fontFamily: "inherit" }}
+                                style={{ width: "100%", resize: "vertical", borderRadius: 8, border: "1px solid var(--color-border-subtle)", padding: 10, fontSize: "var(--text-small)", fontFamily: "inherit" }}
                               />
                               <button
-                                style={{ ...ds.btnSmPrimary, marginTop: 8 }}
+                                className="btn btn-sm btn-primary"
+                                style={{ marginTop: 8 }}
                                 disabled={!resolutionNotes[esc.id]?.trim() || resolvingEscalationId === esc.id}
                                 onClick={() => { const notes = resolutionNotes[esc.id]?.trim(); if (notes) onResolveEscalation(esc.id, notes); }}
                               >
@@ -190,42 +181,42 @@ export function EscalationChannel({
         <ContextInspector open={selected !== null} title="Escalation detail" onClose={() => setSelectedId(null)}>
           {selected && (
             <div style={{ fontSize: 13 }}>
-              <h4 style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A", margin: "0 0 16px 0" }}>{selected.reason}</h4>
+              <h4 style={{ fontSize: 15, fontWeight: 600, color: "var(--color-text-primary)", margin: "0 0 16px 0" }}>{selected.reason}</h4>
               <div style={{ marginBottom: 20 }}>
-                <div style={ds.metaRow}>
-                  <span style={{ color: "#A3A3A3" }}>Severity</span>
+                <div className="kv-row">
+                  <span style={{ color: "var(--color-text-muted)" }}>Severity</span>
                   <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                    <span style={ds.dot(SEVERITY_COLORS[selected.severity] ?? "#A3A3A3")} />
+                    <span style={statusDot(SEVERITY_COLORS[selected.severity] ?? "var(--color-text-muted)")} />
                     {selected.severity}
                   </span>
                 </div>
-                <div style={ds.metaRow}>
-                  <span style={{ color: "#A3A3A3" }}>Type</span>
+                <div className="kv-row">
+                  <span style={{ color: "var(--color-text-muted)" }}>Type</span>
                   <span>{ESCALATION_TYPE_LABELS[inferEscalationType(selected.reason)]}</span>
                 </div>
-                <div style={ds.metaRow}>
-                  <span style={{ color: "#A3A3A3" }}>Status</span>
-                  <span style={ds.pill(
-                    selected.status === "resolved" ? "#ECFDF5" : "#F5F5F5",
-                    selected.status === "resolved" ? "#065F46" : "#525252"
+                <div className="kv-row">
+                  <span style={{ color: "var(--color-text-muted)" }}>Status</span>
+                  <span style={pillBadge(
+                    selected.status === "resolved" ? "var(--color-success-soft)" : "var(--color-surface-subtle)",
+                    selected.status === "resolved" ? "var(--color-success)" : "var(--color-text-secondary)"
                   )}>{selected.status}</span>
                 </div>
-                <div style={{ ...ds.metaRow, borderBottom: "none" }}>
-                  <span style={{ color: "#A3A3A3" }}>Created</span>
+                <div className="kv-row" style={{ borderBottom: "none" }}>
+                  <span style={{ color: "var(--color-text-muted)" }}>Created</span>
                   <span>{formatTimestamp(selected.created_at)}</span>
                 </div>
               </div>
 
               {selected.resolution_notes && (
-                <div style={{ marginBottom: 20, padding: 16, background: "#F0FDF4", borderRadius: 10, borderLeft: `4px solid ${ds.success}` }}>
-                  <p style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#059669", margin: "0 0 6px" }}>Resolution</p>
-                  <div style={{ fontSize: 13, color: "#0A0A0A" }}>{selected.resolution_notes}</div>
-                  {selected.resolved_at && <div style={{ fontSize: 12, color: "#737373", marginTop: 6 }}>Resolved {formatTimestamp(selected.resolved_at)}</div>}
+                <div style={{ marginBottom: 20, padding: 16, background: "var(--color-success-soft)", borderRadius: 10, borderLeft: `4px solid ${ds.success}` }}>
+                  <p style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-success)", margin: "0 0 6px" }}>Resolution</p>
+                  <div style={{ fontSize: 13, color: "var(--color-text-primary)" }}>{selected.resolution_notes}</div>
+                  {selected.resolved_at && <div style={{ fontSize: 12, color: "var(--color-text-muted)", marginTop: 6 }}>Resolved {formatTimestamp(selected.resolved_at)}</div>}
                 </div>
               )}
 
               {onOpenPlan && (
-                <button style={ds.btnSmSecondary} onClick={onOpenPlan}>Jump to blocked task in Plan</button>
+                <button className="btn btn-sm btn-secondary" onClick={onOpenPlan}>Jump to blocked task in Plan</button>
               )}
             </div>
           )}
@@ -237,14 +228,14 @@ export function EscalationChannel({
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {escalations.filter((e) => e.status === "resolved").length > 0 ? (
             escalations.filter((e) => e.status === "resolved").map((esc) => (
-              <div key={esc.id} style={{ padding: 16, borderLeft: `4px solid ${ds.success}`, borderRadius: 10, background: "#FFFFFF", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
-                <div style={{ fontSize: 15, fontWeight: 500, color: "#0A0A0A" }}>{esc.reason}</div>
-                <div style={{ fontSize: 13, color: "#737373", marginTop: 4 }}>{esc.resolution_notes}</div>
-                {esc.resolved_at && <div style={{ fontSize: 11, color: "#A3A3A3", marginTop: 4 }}>Resolved {formatTimestamp(esc.resolved_at)}</div>}
+              <div key={esc.id} style={{ padding: 16, borderLeft: `4px solid ${ds.success}`, borderRadius: 10, background: "var(--color-surface)", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+                <div style={{ fontSize: 15, fontWeight: 500, color: "var(--color-text-primary)" }}>{esc.reason}</div>
+                <div style={{ fontSize: 13, color: "var(--color-text-muted)", marginTop: 4 }}>{esc.resolution_notes}</div>
+                {esc.resolved_at && <div style={{ fontSize: 11, color: "var(--color-text-muted)", marginTop: 4 }}>Resolved {formatTimestamp(esc.resolved_at)}</div>}
               </div>
             ))
           ) : (
-            <p style={{ color: "#A3A3A3", fontSize: 13 }}>No resolved escalations yet.</p>
+            <p style={{ color: "var(--color-text-muted)", fontSize: 13 }}>No resolved escalations yet.</p>
           )}
         </div>
       </DeepDrawer>

@@ -1,6 +1,7 @@
 import { PropsWithChildren, ReactNode } from "react";
 
 import { Venue } from "../../lib/api";
+import { Select } from "../../components/ui/Select";
 
 type RoleWorkspaceNavItem = {
   key: string;
@@ -38,7 +39,7 @@ export function RoleWorkspaceFrame({
       {/* Header */}
       <header style={{
         padding: "20px 24px 16px",
-        background: "#FFFFFF",
+        background: "var(--color-surface)",
         borderBottom: "1px solid rgba(0,0,0,0.06)",
       }}>
         <div style={{
@@ -55,7 +56,7 @@ export function RoleWorkspaceFrame({
               fontWeight: 600,
               textTransform: "uppercase",
               letterSpacing: "0.6px",
-              color: "#6C5CE7",
+              color: "var(--color-accent)",
               marginBottom: 4,
             }}>
               {roleLabel}
@@ -64,7 +65,7 @@ export function RoleWorkspaceFrame({
               margin: 0,
               fontSize: 22,
               fontWeight: 700,
-              color: "#1a1a1a",
+              color: "var(--color-text-primary)",
               lineHeight: 1.3,
             }}>
               {title}
@@ -73,7 +74,7 @@ export function RoleWorkspaceFrame({
               <p style={{
                 margin: "4px 0 0",
                 fontSize: 15,
-                color: "#777",
+                color: "var(--color-text-muted)",
                 lineHeight: 1.4,
               }}>
                 {subtitle}
@@ -83,7 +84,7 @@ export function RoleWorkspaceFrame({
               <p style={{
                 margin: "4px 0 0",
                 fontSize: 13,
-                color: "#999",
+                color: "var(--color-text-muted)",
               }}>
                 {organizationName}
               </p>
@@ -92,30 +93,16 @@ export function RoleWorkspaceFrame({
 
           <div style={{ display: "flex", alignItems: "center", gap: 12, flexShrink: 0 }}>
             {onSelectVenue && venues.length ? (
-              <label style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <span style={{ fontSize: 13, color: "#777", fontWeight: 500 }}>Venue</span>
-                <select
+              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <span style={{ fontSize: 13, color: "var(--color-text-muted)", fontWeight: 500 }}>Venue</span>
+                <Select
+                  options={venues.map((venue) => ({ value: venue.id, label: venue.name }))}
                   value={activeVenueId ?? venues[0]?.id ?? ""}
-                  onChange={(event) => onSelectVenue(event.target.value)}
-                  style={{
-                    padding: "6px 12px",
-                    fontSize: 13,
-                    borderRadius: 8,
-                    border: "1px solid rgba(0,0,0,0.12)",
-                    background: "#FFFFFF",
-                    color: "#1a1a1a",
-                    minHeight: 36,
-                    cursor: "pointer",
-                    transition: "border-color 180ms ease",
-                  }}
-                >
-                  {venues.map((venue) => (
-                    <option key={venue.id} value={venue.id}>
-                      {venue.name}
-                    </option>
-                  ))}
-                </select>
-              </label>
+                  onChange={(value) => onSelectVenue(value)}
+                  aria-label="Select venue"
+                  size="sm"
+                />
+              </div>
             ) : null}
             {actions ? <div style={{ display: "flex", gap: 8 }}>{actions}</div> : null}
           </div>
@@ -130,7 +117,7 @@ export function RoleWorkspaceFrame({
             display: "flex",
             gap: 2,
             padding: "0 24px",
-            background: "#FFFFFF",
+            background: "var(--color-surface)",
             borderBottom: "1px solid rgba(0,0,0,0.06)",
           }}
         >
@@ -142,10 +129,10 @@ export function RoleWorkspaceFrame({
                 padding: "10px 16px",
                 fontSize: 13,
                 fontWeight: item.active ? 600 : 400,
-                color: item.active ? "#6C5CE7" : "#777",
+                color: item.active ? "var(--color-accent)" : "var(--color-text-muted)",
                 background: "transparent",
                 border: "none",
-                borderBottom: item.active ? "2px solid #6C5CE7" : "2px solid transparent",
+                borderBottom: item.active ? "2px solid var(--color-accent)" : "2px solid transparent",
                 cursor: "pointer",
                 transition: "all 180ms ease",
                 minHeight: 44,

@@ -22,10 +22,10 @@ const STATUS_COLORS: Record<string, string> = {
 };
 
 const STATUS_BORDER: Record<string, string> = {
-  not_started: "#999",
+  not_started: "var(--color-text-muted)",
   in_progress: "var(--color-accent)",
   blocked: "var(--color-danger)",
-  completed: "#27ae60",
+  completed: "var(--color-success)",
 };
 
 export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, venueId }: MyShiftProps) {
@@ -87,7 +87,7 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
       />
       {greeting && (
         <p style={{
-          fontSize: 16,
+          fontSize: "var(--text-card)",
           fontStyle: "italic",
           color: "var(--color-accent)",
           margin: "8px 20px 0",
@@ -110,23 +110,23 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
             { value: blockedTasks, label: "Blocked" },
           ].map((stat) => (
             <div key={stat.label} style={{
-              background: "#fff",
-              borderRadius: 16,
+              background: "var(--color-surface)",
+              borderRadius: "var(--radius-lg)",
               padding: "16px 12px",
               textAlign: "center" as const,
               boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
             }}>
               <div style={{
-                fontSize: 28,
+                fontSize: "var(--text-page)",
                 fontWeight: 700,
-                color: stat.label === "Blocked" && stat.value > 0 ? "var(--color-danger)" : "#222",
+                color: stat.label === "Blocked" && stat.value > 0 ? "var(--color-danger)" : "var(--color-text-primary)",
                 lineHeight: 1.2,
               }}>
                 {stat.value}
               </div>
               <div style={{
-                fontSize: 13,
-                color: "#888",
+                fontSize: "var(--text-small)",
+                color: "var(--color-text-muted)",
                 marginTop: 4,
                 fontWeight: 500,
               }}>
@@ -144,7 +144,7 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
             {shift.tasks.map((task) => {
               const isCompleted = task.status === "completed";
               const isActive = task.status === "in_progress";
-              const borderColor = STATUS_BORDER[task.status] ?? "#999";
+              const borderColor = STATUS_BORDER[task.status] ?? "var(--color-text-muted)";
               const doneCount = task.sub_actions.filter((sa) => sa.completed).length;
               const totalSteps = task.sub_actions.length;
               const progress = totalSteps > 0 ? doneCount / totalSteps : 0;
@@ -154,8 +154,8 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
                   key={task.id}
                   onClick={() => onOpenTask(task.id)}
                   style={{
-                    background: "#fff",
-                    borderRadius: 16,
+                    background: "var(--color-surface)",
+                    borderRadius: "var(--radius-lg)",
                     padding: "16px 20px",
                     borderLeft: `4px solid ${borderColor}`,
                     cursor: "pointer",
@@ -192,20 +192,20 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
                         width: 10,
                         height: 10,
                         borderRadius: "50%",
-                        background: "#27ae60",
+                        background: "var(--color-success)",
                         flexShrink: 0,
                       }} />
                     )}
                     <span style={{
                       fontWeight: 600,
-                      fontSize: 16,
+                      fontSize: "var(--text-card)",
                       flex: 1,
-                      color: isCompleted ? "#999" : "#222",
+                      color: isCompleted ? "var(--color-text-muted)" : "var(--color-text-primary)",
                     }}>
                       {task.title}
                     </span>
                     <span style={{
-                      fontSize: 12,
+                      fontSize: "var(--text-small)",
                       fontWeight: 500,
                       color: STATUS_COLORS[task.status] ?? "var(--color-text-muted)",
                       textTransform: "capitalize" as const,
@@ -221,8 +221,8 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
                       <div style={{
                         display: "flex",
                         justifyContent: "space-between",
-                        fontSize: 13,
-                        color: "#888",
+                        fontSize: "var(--text-small)",
+                        color: "var(--color-text-muted)",
                         marginBottom: 6,
                       }}>
                         <span>{doneCount}/{totalSteps} steps done</span>
@@ -230,7 +230,7 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
                       <div style={{
                         height: 4,
                         borderRadius: 2,
-                        background: "#eee",
+                        background: "var(--color-border-subtle)",
                         overflow: "hidden",
                       }}>
                         <div style={{
@@ -238,8 +238,8 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
                           width: `${progress * 100}%`,
                           borderRadius: 2,
                           background: isCompleted
-                            ? "#27ae60"
-                            : "linear-gradient(90deg, #6C5CE7, #a29bfe)",
+                            ? "var(--color-success)"
+                            : "linear-gradient(90deg, var(--color-accent), #a29bfe)",
                           transition: "width 0.3s ease",
                         }} />
                       </div>
@@ -261,10 +261,10 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
                         background: "none",
                         border: "1px solid var(--color-accent)",
                         color: "var(--color-accent)",
-                        fontSize: 14,
+                        fontSize: "var(--text-body)",
                         fontWeight: 600,
                         padding: "8px 16px",
-                        borderRadius: 8,
+                        borderRadius: "var(--radius-sm)",
                         cursor: "pointer",
                         width: "100%",
                         marginTop: 8,
@@ -295,46 +295,46 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
                 width: "100%",
                 minHeight: 48,
                 background: "none",
-                border: "1px dashed #D4D4D4",
-                borderRadius: 16,
-                color: "#525252",
-                fontSize: 14,
+                border: "1px dashed var(--color-border-strong)",
+                borderRadius: "var(--radius-lg)",
+                color: "var(--color-text-secondary)",
+                fontSize: "var(--text-body)",
                 fontWeight: 500,
                 cursor: generatingHandover ? "wait" : "pointer",
                 padding: "12px 20px",
                 transition: "all 180ms ease",
               }}
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; e.currentTarget.style.color = "var(--color-accent)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#D4D4D4"; e.currentTarget.style.color = "#525252"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--color-border-strong)"; e.currentTarget.style.color = "var(--color-text-secondary)"; }}
             >
               {generatingHandover ? "Generating handover..." : "Generate Shift Handover"}
             </button>
           ) : (
             <div style={{
-              background: "#FFFFFF",
-              borderRadius: 16,
+              background: "var(--color-surface)",
+              borderRadius: "var(--radius-lg)",
               boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
               padding: 20,
-              borderLeft: "4px solid #10B981",
+              borderLeft: "4px solid var(--color-success)",
             }}>
-              <div style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A3A3A3", marginBottom: 8 }}>
+              <div style={{ fontSize: "var(--text-eyebrow)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted)", marginBottom: 8 }}>
                 Shift Handover
               </div>
               <div style={{ display: "flex", gap: 12, marginBottom: 12, flexWrap: "wrap" }}>
-                <span style={{ fontSize: 24, fontWeight: 700, color: "#10B981" }}>{handover.completed_tasks}</span>
-                <span style={{ fontSize: 13, color: "#525252", alignSelf: "center" }}>done</span>
-                <span style={{ fontSize: 24, fontWeight: 700, color: "#F59E0B" }}>{handover.remaining_tasks}</span>
-                <span style={{ fontSize: 13, color: "#525252", alignSelf: "center" }}>remaining</span>
+                <span style={{ fontSize: 24, fontWeight: 700, color: "var(--color-success)" }}>{handover.completed_tasks}</span>
+                <span style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", alignSelf: "center" }}>done</span>
+                <span style={{ fontSize: 24, fontWeight: 700, color: "var(--color-warning)" }}>{handover.remaining_tasks}</span>
+                <span style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", alignSelf: "center" }}>remaining</span>
               </div>
-              <ul style={{ margin: 0, padding: "0 0 0 16px", fontSize: 14, color: "#525252", lineHeight: 1.6 }}>
+              <ul style={{ margin: 0, padding: "0 0 0 16px", fontSize: "var(--text-body)", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
                 {handover.highlights.map((h, i) => <li key={i}>{h}</li>)}
               </ul>
-              <p style={{ marginTop: 12, fontSize: 14, color: "#0A0A0A", fontWeight: 500, lineHeight: 1.5 }}>
+              <p style={{ marginTop: 12, fontSize: "var(--text-body)", color: "var(--color-text-primary)", fontWeight: 500, lineHeight: 1.5 }}>
                 {handover.handover_notes}
               </p>
               <button
                 onClick={() => setHandover(null)}
-                style={{ marginTop: 8, background: "none", border: "none", color: "#A3A3A3", fontSize: 12, cursor: "pointer" }}
+                style={{ marginTop: 8, background: "none", border: "none", color: "var(--color-text-muted)", fontSize: "var(--text-small)", cursor: "pointer" }}
               >
                 Dismiss
               </button>

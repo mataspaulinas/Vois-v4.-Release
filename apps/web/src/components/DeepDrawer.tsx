@@ -1,4 +1,5 @@
 import { PropsWithChildren, ReactNode } from "react";
+import Icon from "./Icon";
 
 type DeepDrawerProps = PropsWithChildren<{
   open: boolean;
@@ -34,7 +35,7 @@ export function DeepDrawer({ open, title, tabs, onClose, height = "40vh", childr
             )}
           </div>
           <button className="deep-drawer__close" onClick={onClose} aria-label="Close drawer">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+            <Icon name="close" size={14} />
           </button>
         </div>
         <div className="deep-drawer__body">{children}</div>

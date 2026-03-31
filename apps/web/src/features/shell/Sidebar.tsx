@@ -1,5 +1,6 @@
+import React from "react";
 import { PortfolioSummaryResponse } from "../../lib/api";
-import Icon from "../../components/Icon";
+import Icon, { IconName } from "../../components/Icon";
 import {
   ManagerView,
   OwnerView,
@@ -14,7 +15,7 @@ import {
 type SidebarProps = {
   collapsed: boolean;
   activeTopLevel: TopLevelView;
-  authRole: string | null; // "owner" | "manager" | "barista" | "developer"
+  authRole: string | null;
   activeVenueName: string | null;
   activeVenueView: VenueSubview;
   activeReferenceView: ReferenceView;
@@ -36,84 +37,63 @@ type SidebarProps = {
   onToggleCopilot: () => void;
   copilotOpen: boolean;
   portfolioSummary: PortfolioSummaryResponse | null;
+  onWidthChange?: (width: number) => void;
+  userName?: string;
 };
 
 /* ── Role-specific nav definitions ── */
 
-type NavItem<V extends string = string> = { code: string; label: string; view: V };
+type NavItem<V extends string = string> = { icon: IconName; label: string; view: V };
 
 const ownerOrgItems: NavItem<OwnerView>[] = [
-  { code: "CM", label: "Command Center", view: "command" },
-  { code: "DL", label: "Delegations", view: "delegations" },
-  { code: "PP", label: "People", view: "people" },
-  { code: "IN", label: "Intelligence", view: "intelligence" },
-  { code: "AD", label: "Administration", view: "administration" },
+  { icon: "home", label: "Command Center", view: "command" },
+  { icon: "delegation", label: "Delegations", view: "delegations" },
+  { icon: "team", label: "People", view: "people" },
+  { icon: "chart-line", label: "Intelligence", view: "intelligence" },
+  { icon: "settings", label: "Administration", view: "administration" },
 ];
 
 const managerWorkspaceItems: NavItem<ManagerView>[] = [
-  { code: "TD", label: "Today", view: "today" },
-  { code: "WS", label: "Execution", view: "workspace" },
-  { code: "PL", label: "Plan", view: "plan" },
-  { code: "EV", label: "Evidence", view: "evidence" },
-  { code: "TM", label: "Team Pulse", view: "team" },
-  { code: "ES", label: "Escalations", view: "escalations" },
+  { icon: "today", label: "Today", view: "today" },
+  { icon: "execution", label: "Execution", view: "workspace" },
+  { icon: "plan", label: "Plan", view: "plan" },
+  { icon: "evidence", label: "Evidence", view: "evidence" },
+  { icon: "team", label: "Team Pulse", view: "team" },
+  { icon: "escalation", label: "Escalations", view: "escalations" },
 ];
 
 const pocketShiftItems: NavItem<PocketView>[] = [
-  { code: "SH", label: "Shift", view: "shift" },
-  { code: "SD", label: "Standards", view: "standards" },
-  { code: "HP", label: "Help", view: "help" },
-  { code: "RP", label: "Report", view: "report" },
-  { code: "LG", label: "Log", view: "log" },
+  { icon: "shift", label: "Shift", view: "shift" },
+  { icon: "standards", label: "Standards", view: "standards" },
+  { icon: "help", label: "Help", view: "help" },
+  { icon: "report", label: "Report", view: "report" },
+  { icon: "log", label: "Log", view: "log" },
 ];
 
 const venueItems: NavItem<VenueSubview>[] = [
-  { code: "OV", label: "Overview", view: "overview" },
-  { code: "AS", label: "Assessment", view: "assessment" },
-  { code: "SG", label: "Signals", view: "signals" },
-  { code: "PL", label: "Plan", view: "plan" },
-  { code: "RP", label: "Report", view: "report" },
-  { code: "HI", label: "History", view: "history" },
+  { icon: "home", label: "Overview", view: "overview" },
+  { icon: "assessment", label: "Assessment", view: "assessment" },
+  { icon: "signals", label: "Signals", view: "signals" },
+  { icon: "plan", label: "Plan", view: "plan" },
+  { icon: "report", label: "Report", view: "report" },
+  { icon: "history", label: "History", view: "history" },
 ];
 
-const venueConsoleItem: NavItem<VenueSubview> = { code: "CO", label: "Console", view: "console" };
+const venueConsoleItem: NavItem<VenueSubview> = { icon: "developer", label: "Console", view: "console" };
 
 const referenceItems: NavItem<ReferenceView>[] = [
-  { code: "BL", label: "Blocks", view: "blocks" },
-  { code: "TL", label: "Tools", view: "tools" },
-  { code: "SG", label: "Signals", view: "signals" },
+  { icon: "block", label: "Blocks", view: "blocks" },
+  { icon: "tool", label: "Tools", view: "tools" },
+  { icon: "signal", label: "Signals", view: "signals" },
 ];
 
-/* ── Styles ── */
+/* ── Helpers ── */
 
-const sectionLabelStyle: React.CSSProperties = {
-  fontSize: 11,
-  fontWeight: 600,
-  textTransform: "uppercase",
-  letterSpacing: "0.08em",
-  color: "var(--color-text-muted)",
-  padding: "16px 12px 4px",
-  userSelect: "none",
-};
-
-const itemStyle = (active: boolean): React.CSSProperties => ({
-  display: "flex",
-  alignItems: "center",
-  gap: 8,
-  width: "100%",
-  padding: "6px 12px",
-  border: "none",
-  borderRadius: 6,
-  background: active ? "var(--color-accent-soft, rgba(0,122,255,0.08))" : "transparent",
-  color: active ? "var(--color-accent)" : "var(--color-text-secondary)",
-  fontSize: 14,
-  fontWeight: 500,
-  cursor: "pointer",
-  textAlign: "left" as const,
-  transition: "background var(--motion-fast, 120ms) var(--easing-standard, ease)",
-});
-
-const itemHoverBg = "#F0F0F0";
+function getInitials(name: string): string {
+  const parts = name.trim().split(/\s+/);
+  if (parts.length >= 2) return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  return (parts[0]?.[0] ?? "?").toUpperCase();
+}
 
 /* ── Component ── */
 
@@ -143,397 +123,328 @@ export function Sidebar(props: SidebarProps) {
     onToggleCopilot,
     copilotOpen,
     portfolioSummary,
+    userName,
   } = props;
 
   const isOwner = authRole === "owner";
   const isManager = authRole === "manager";
   const isBarista = authRole === "barista";
   const isDeveloper = authRole === "developer";
-
   const canSeePortfolio = isOwner || isDeveloper;
   const canSeeVenue = isOwner || isManager || isDeveloper;
   const showVenue = canSeeVenue && !!activeVenueName;
 
+  /* ── Resize ── */
+  const [sidebarWidth, setSidebarWidth] = React.useState(240);
+  const [isResizing, setIsResizing] = React.useState(false);
+
+  const handleResizeStart = React.useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsResizing(true);
+    const startX = e.clientX;
+    const startWidth = sidebarWidth;
+    const onMove = (ev: MouseEvent) => {
+      const newWidth = Math.max(180, Math.min(400, startWidth + (ev.clientX - startX)));
+      setSidebarWidth(newWidth);
+      props.onWidthChange?.(newWidth);
+    };
+    const onUp = () => {
+      setIsResizing(false);
+      document.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mouseup", onUp);
+      document.body.style.cursor = "";
+      document.body.style.userSelect = "";
+    };
+    document.body.style.cursor = "col-resize";
+    document.body.style.userSelect = "none";
+    document.addEventListener("mousemove", onMove);
+    document.addEventListener("mouseup", onUp);
+  }, [sidebarWidth, props.onWidthChange]);
+
+  const effectiveWidth = collapsed ? 48 : sidebarWidth;
+
+  /* ── Track which sections rendered (for dividers) ── */
+  const sections: React.ReactNode[] = [];
+
+  // Owner org
+  if (isOwner) {
+    sections.push(
+      <NavGroup key="owner-org" label="Organization" collapsed={collapsed}>
+        {ownerOrgItems.map((item) => (
+          <SidebarNavItem
+            key={item.view}
+            icon={item.icon}
+            label={item.label}
+            active={activeTopLevel === "owner" && activeOwnerView === item.view}
+            collapsed={collapsed}
+            onClick={() => onSelectOwnerView?.(item.view)}
+          />
+        ))}
+      </NavGroup>
+    );
+  }
+
+  // Manager workspace
+  if (isManager) {
+    sections.push(
+      <NavGroup key="manager-ws" label="Workspace" collapsed={collapsed}>
+        {managerWorkspaceItems.map((item) => (
+          <SidebarNavItem
+            key={item.view}
+            icon={item.icon}
+            label={item.label}
+            active={activeTopLevel === "manager" && activeManagerView === item.view}
+            collapsed={collapsed}
+            onClick={() => onSelectManagerView?.(item.view)}
+          />
+        ))}
+      </NavGroup>
+    );
+  }
+
+  // Barista shift
+  if (isBarista) {
+    sections.push(
+      <NavGroup key="barista-shift" label="My Shift" collapsed={collapsed}>
+        {pocketShiftItems.map((item) => (
+          <SidebarNavItem
+            key={item.view}
+            icon={item.icon}
+            label={item.label}
+            active={activeTopLevel === "pocket" && activePocketView === item.view}
+            collapsed={collapsed}
+            onClick={() => onSelectPocketView?.(item.view)}
+          />
+        ))}
+      </NavGroup>
+    );
+  }
+
+  // Portfolio
+  if (canSeePortfolio) {
+    sections.push(
+      <NavGroup key="portfolio" label="Portfolio" collapsed={collapsed}>
+        <SidebarNavItem
+          icon="chart-pie"
+          label="Portfolio"
+          active={activeTopLevel === "portfolio"}
+          collapsed={collapsed}
+          onClick={onShowPortfolio}
+        />
+      </NavGroup>
+    );
+  }
+
+  // Venue
+  if (showVenue) {
+    sections.push(
+      <NavGroup key="venue" label={`Venue: ${activeVenueName}`} collapsed={collapsed}>
+        {venueItems.map((item) => (
+          <SidebarNavItem
+            key={item.view}
+            icon={item.icon}
+            label={item.label}
+            active={activeTopLevel === "venue" && activeVenueView === item.view}
+            collapsed={collapsed}
+            onClick={() => onSelectVenueView(item.view)}
+          />
+        ))}
+        {isDeveloper && (
+          <SidebarNavItem
+            icon={venueConsoleItem.icon}
+            label={venueConsoleItem.label}
+            active={activeTopLevel === "venue" && activeVenueView === "console"}
+            collapsed={collapsed}
+            onClick={() => onSelectVenueView("console")}
+          />
+        )}
+      </NavGroup>
+    );
+  }
+
+  // Reference
+  if (!isBarista) {
+    sections.push(
+      <NavGroup key="reference" label="Reference" collapsed={collapsed}>
+        {referenceItems.map((item) => (
+          <SidebarNavItem
+            key={item.view}
+            icon={item.icon}
+            label={item.label}
+            active={activeTopLevel === "reference" && activeReferenceView === item.view}
+            collapsed={collapsed}
+            onClick={() => onSelectReferenceView(item.view)}
+          />
+        ))}
+      </NavGroup>
+    );
+  }
+
+  // Developer workspace shells
+  if (isDeveloper) {
+    sections.push(
+      <NavGroup key="dev-ws" label="Workspace" collapsed={collapsed}>
+        <SidebarNavItem icon="manager" label="Manager" active={activeTopLevel === "manager"} collapsed={collapsed} onClick={onShowManager} />
+        {activeTopLevel === "manager" && !collapsed && onSelectManagerView && (
+          <div className="sidebar__sub-group">
+            {managerWorkspaceItems.map((item) => (
+              <SidebarNavItem key={item.view} icon={item.icon} label={item.label} active={activeManagerView === item.view} collapsed={collapsed} onClick={() => onSelectManagerView(item.view)} />
+            ))}
+          </div>
+        )}
+        <SidebarNavItem icon="barista" label="Pocket" active={activeTopLevel === "pocket"} collapsed={collapsed} onClick={onShowPocket} />
+        {activeTopLevel === "pocket" && !collapsed && onSelectPocketView && (
+          <div className="sidebar__sub-group">
+            {pocketShiftItems.map((item) => (
+              <SidebarNavItem key={item.view} icon={item.icon} label={item.label} active={activePocketView === item.view} collapsed={collapsed} onClick={() => onSelectPocketView(item.view)} />
+            ))}
+          </div>
+        )}
+        <SidebarNavItem icon="owner" label="Owner" active={activeTopLevel === "owner"} collapsed={collapsed} onClick={onShowOwner} />
+        {activeTopLevel === "owner" && !collapsed && onSelectOwnerView && (
+          <div className="sidebar__sub-group">
+            {ownerOrgItems.map((item) => (
+              <SidebarNavItem key={item.view} icon={item.icon} label={item.label} active={activeOwnerView === item.view} collapsed={collapsed} onClick={() => onSelectOwnerView(item.view)} />
+            ))}
+          </div>
+        )}
+      </NavGroup>
+    );
+  }
+
+  // Guidance
+  sections.push(
+    <NavGroup key="guidance" label="Guidance" collapsed={collapsed}>
+      <SidebarNavItem icon="knowledge" label="Knowledge Base" active={activeTopLevel === "kb"} collapsed={collapsed} onClick={onShowKnowledgeBase} />
+    </NavGroup>
+  );
+
+  // Interleave dividers between sections
+  const scrollContent: React.ReactNode[] = [];
+  sections.forEach((section, i) => {
+    if (i > 0 && !collapsed) scrollContent.push(<div key={`div-${i}`} className="sidebar__divider" />);
+    scrollContent.push(section);
+  });
+
+  const cn = ["sidebar", collapsed && "sidebar--collapsed", isResizing && "sidebar--resizing"].filter(Boolean).join(" ");
+
   return (
     <nav
       aria-label="Main navigation"
-      style={{
-        width: collapsed ? 48 : 240,
-        minWidth: collapsed ? 48 : 240,
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        background: "var(--bg, var(--color-bg, #FAFAFA))",
-        borderRight: "1px solid var(--border, var(--color-border, #E5E5E5))",
-        overflowY: "auto",
-        overflowX: "hidden",
-        transition: "width var(--motion-fast, 120ms) var(--easing-standard, ease)",
-      }}
+      className={cn}
+      style={{ width: effectiveWidth, minWidth: collapsed ? 48 : 180 }}
     >
       {/* ── Brand ── */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: collapsed ? "12px 12px" : "12px 12px",
-          minHeight: 48,
-        }}
-      >
+      <div className="sidebar__brand">
         <button
+          className="sidebar__brand-logo"
           onClick={canSeePortfolio ? onShowPortfolio : undefined}
           title="VOIS"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: collapsed ? 0 : 6,
-            background: "none",
-            border: "none",
-            cursor: canSeePortfolio ? "pointer" : "default",
-            padding: 0,
-          }}
+          style={{ cursor: canSeePortfolio ? "pointer" : "default" }}
         >
-          <span
-            style={{
-              display: "inline-block",
-              width: 6,
-              height: 6,
-              borderRadius: "50%",
-              background: "var(--color-accent)",
-              flexShrink: 0,
-            }}
-          />
-          {!collapsed && (
-            <span style={{ fontSize: 18, fontWeight: 700, color: "var(--color-text-primary)" }}>
-              VOIS
-            </span>
-          )}
+          <span className="sidebar__brand-dot" />
+          {!collapsed && <span className="sidebar__brand-text">VOIS</span>}
         </button>
-        <button
-          onClick={onToggleCollapsed}
-          aria-label="Toggle sidebar"
-          style={{
-            width: 24,
-            height: 24,
-            borderRadius: "50%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            border: "none",
-            background: "transparent",
-            cursor: "pointer",
-            color: "var(--color-text-muted)",
-            fontSize: 16,
-            lineHeight: 1,
-            transition: "background var(--motion-fast, 120ms) var(--easing-standard, ease)",
-          }}
-        >
-          {collapsed ? <Icon name="chevron-right" size={14} /> : <Icon name="chevron-left" size={14} />}
+        <button className="sidebar__collapse-btn" onClick={onToggleCollapsed} aria-label="Toggle sidebar">
+          <Icon name={collapsed ? "chevron-right" : "chevron-left"} size={14} />
         </button>
       </div>
 
-      {/* ── Owner: Organization section ── */}
-      {isOwner && (
-        <>
-          <SectionLabel collapsed={collapsed}>Organization</SectionLabel>
-          {ownerOrgItems.map((item) => (
-            <SidebarItem
-              key={item.view}
-              code={item.code}
-              label={item.label}
-              active={activeTopLevel === "owner" && activeOwnerView === item.view}
-              collapsed={collapsed}
-              onClick={() => onSelectOwnerView?.(item.view)}
-            />
-          ))}
-        </>
+      {/* ── Venue selector ── */}
+      {showVenue && !collapsed && (
+        <button className="sidebar__venue" title={activeVenueName ?? undefined}>
+          <span className="sidebar__venue-dot" />
+          <span className="sidebar__venue-name">{activeVenueName}</span>
+          <span className="sidebar__venue-chevron">
+            <Icon name="chevron-down" size={12} />
+          </span>
+        </button>
       )}
 
-      {/* ── Manager: Workspace section ── */}
-      {isManager && (
-        <>
-          <SectionLabel collapsed={collapsed}>Workspace</SectionLabel>
-          {managerWorkspaceItems.map((item) => (
-            <SidebarItem
-              key={item.view}
-              code={item.code}
-              label={item.label}
-              active={activeTopLevel === "manager" && activeManagerView === item.view}
-              collapsed={collapsed}
-              onClick={() => onSelectManagerView?.(item.view)}
-            />
-          ))}
-        </>
-      )}
+      {/* ── Scrollable middle ── */}
+      <div className="sidebar__scroll">
+        {scrollContent}
 
-      {/* ── Barista: My Shift section ── */}
-      {isBarista && (
-        <>
-          <SectionLabel collapsed={collapsed}>My Shift</SectionLabel>
-          {pocketShiftItems.map((item) => (
-            <SidebarItem
-              key={item.view}
-              code={item.code}
-              label={item.label}
-              active={activeTopLevel === "pocket" && activePocketView === item.view}
-              collapsed={collapsed}
-              onClick={() => onSelectPocketView?.(item.view)}
-            />
-          ))}
-        </>
-      )}
-
-      {/* ── Developer: Portfolio section ── */}
-      {isDeveloper && (
-        <>
-          <SectionLabel collapsed={collapsed}>Portfolio</SectionLabel>
-          <SidebarItem
-            code="PF"
-            label="Portfolio"
-            active={activeTopLevel === "portfolio"}
-            collapsed={collapsed}
-            onClick={onShowPortfolio}
-          />
-        </>
-      )}
-
-      {/* ── Owner: Portfolio section (no separate label, just Portfolio item) ── */}
-      {isOwner && (
-        <>
-          <SectionLabel collapsed={collapsed}>Portfolio</SectionLabel>
-          <SidebarItem
-            code="PF"
-            label="Portfolio"
-            active={activeTopLevel === "portfolio"}
-            collapsed={collapsed}
-            onClick={onShowPortfolio}
-          />
-        </>
-      )}
-
-      {/* ── Venue section (owner, manager, developer) ── */}
-      {showVenue && (
-        <>
-          <SectionLabel collapsed={collapsed}>
-            {"Venue: " + activeVenueName}
-          </SectionLabel>
-          {venueItems.map((item) => (
-            <SidebarItem
-              key={item.view}
-              code={item.code}
-              label={item.label}
-              active={activeTopLevel === "venue" && activeVenueView === item.view}
-              collapsed={collapsed}
-              onClick={() => onSelectVenueView(item.view)}
-            />
-          ))}
-          {isDeveloper && (
-            <SidebarItem
-              code={venueConsoleItem.code}
-              label={venueConsoleItem.label}
-              active={activeTopLevel === "venue" && activeVenueView === "console"}
-              collapsed={collapsed}
-              onClick={() => onSelectVenueView("console")}
-            />
-          )}
-        </>
-      )}
-
-      {/* ── Reference section (owner, manager, developer -- NOT barista) ── */}
-      {!isBarista && (
-        <>
-          <SectionLabel collapsed={collapsed}>Reference</SectionLabel>
-          {referenceItems.map((item) => (
-            <SidebarItem
-              key={item.view}
-              code={item.code}
-              label={item.label}
-              active={activeTopLevel === "reference" && activeReferenceView === item.view}
-              collapsed={collapsed}
-              onClick={() => onSelectReferenceView(item.view)}
-            />
-          ))}
-        </>
-      )}
-
-      {/* ── Developer: Workspace section (expandable role shells) ── */}
-      {isDeveloper && (
-        <>
-          <SectionLabel collapsed={collapsed}>Workspace</SectionLabel>
-
-          {/* Manager shell */}
-          <SidebarItem
-            code="MG"
-            label="Manager"
-            active={activeTopLevel === "manager"}
-            collapsed={collapsed}
-            onClick={onShowManager}
-          />
-          {activeTopLevel === "manager" && !collapsed && onSelectManagerView && (
-            <div style={{ paddingLeft: 12 }}>
-              {managerWorkspaceItems.map((item) => (
-                <SidebarItem
-                  key={item.view}
-                  code={item.code}
-                  label={item.label}
-                  active={activeManagerView === item.view}
-                  collapsed={collapsed}
-                  onClick={() => onSelectManagerView(item.view)}
-                />
-              ))}
+        {/* Pulse card */}
+        {canSeePortfolio && !collapsed && portfolioSummary && (
+          <div className="sidebar__pulse-card">
+            <p className="sidebar__pulse-label">Portfolio pulse</p>
+            <p className="sidebar__pulse-reason">
+              {portfolioSummary.resume_reason ?? "Portfolio is ready."}
+            </p>
+            <div className="sidebar__pulse-stats">
+              <span>{portfolioSummary.totals.ready_tasks} ready</span>
+              <span>{portfolioSummary.totals.blocked_tasks} blocked</span>
             </div>
-          )}
-
-          {/* Pocket shell */}
-          <SidebarItem
-            code="PK"
-            label="Pocket"
-            active={activeTopLevel === "pocket"}
-            collapsed={collapsed}
-            onClick={onShowPocket}
-          />
-          {activeTopLevel === "pocket" && !collapsed && onSelectPocketView && (
-            <div style={{ paddingLeft: 12 }}>
-              {pocketShiftItems.map((item) => (
-                <SidebarItem
-                  key={item.view}
-                  code={item.code}
-                  label={item.label}
-                  active={activePocketView === item.view}
-                  collapsed={collapsed}
-                  onClick={() => onSelectPocketView(item.view)}
-                />
-              ))}
-            </div>
-          )}
-
-          {/* Owner shell */}
-          <SidebarItem
-            code="OW"
-            label="Owner"
-            active={activeTopLevel === "owner"}
-            collapsed={collapsed}
-            onClick={onShowOwner}
-          />
-          {activeTopLevel === "owner" && !collapsed && onSelectOwnerView && (
-            <div style={{ paddingLeft: 12 }}>
-              {ownerOrgItems.map((item) => (
-                <SidebarItem
-                  key={item.view}
-                  code={item.code}
-                  label={item.label}
-                  active={activeOwnerView === item.view}
-                  collapsed={collapsed}
-                  onClick={() => onSelectOwnerView(item.view)}
-                />
-              ))}
-            </div>
-          )}
-        </>
-      )}
-
-      {/* ── Guidance section ── */}
-      <SectionLabel collapsed={collapsed}>Guidance</SectionLabel>
-      <SidebarItem
-        code="KB"
-        label="Knowledge Base"
-        active={activeTopLevel === "kb"}
-        collapsed={collapsed}
-        onClick={onShowKnowledgeBase}
-      />
-
-      {/* ── Portfolio pulse card (owner + developer only) ── */}
-      {canSeePortfolio && !collapsed && portfolioSummary && (
-        <div
-          style={{
-            margin: "12px 12px 0",
-            padding: 12,
-            background: "var(--color-bg-muted, #F5F5F5)",
-            borderRadius: "var(--radius-sm, 6px)",
-            fontSize: "var(--text-small, 13px)",
-          }}
-        >
-          <p
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              color: "var(--color-text-muted)",
-              margin: "0 0 4px",
-            }}
-          >
-            Portfolio pulse
-          </p>
-          <strong style={{ fontSize: 13, color: "var(--color-text-primary)" }}>
-            {portfolioSummary.resume_reason ?? "Portfolio is ready."}
-          </strong>
-          <div
-            style={{
-              display: "flex",
-              gap: 8,
-              marginTop: 4,
-              color: "var(--color-text-secondary)",
-              fontSize: 11,
-            }}
-          >
-            <span>{portfolioSummary.totals.ready_tasks} ready</span>
-            <span>{portfolioSummary.totals.blocked_tasks} blocked</span>
           </div>
-        </div>
+        )}
+      </div>
+
+      {/* ── Bottom ── */}
+      <div className="sidebar__bottom">
+        <button
+          className={`sidebar__bottom-link ${activeTopLevel === "settings" ? "active" : ""}`}
+          onClick={onShowSettings}
+        >
+          <span className="sidebar__nav-icon"><Icon name="settings" size={16} /></span>
+          {!collapsed && <span className="sidebar__nav-label">Settings</span>}
+          {collapsed && <span className="sidebar__tooltip">Settings</span>}
+        </button>
+        <button
+          className={`sidebar__bottom-link ${copilotOpen ? "active" : ""}`}
+          onClick={onToggleCopilot}
+        >
+          <span className="sidebar__nav-icon"><Icon name="copilot" size={16} /></span>
+          {!collapsed && <span className="sidebar__nav-label">Copilot</span>}
+          {collapsed && <span className="sidebar__tooltip">Copilot</span>}
+        </button>
+
+        {/* User avatar */}
+        {userName && (
+          <div className="sidebar__user" title={userName}>
+            <span className="sidebar__avatar">{getInitials(userName)}</span>
+            {!collapsed && (
+              <div className="sidebar__user-info">
+                <span className="sidebar__user-name">{userName}</span>
+                <span className="sidebar__user-role">{authRole ?? "user"}</span>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* ── Resize handle ── */}
+      {!collapsed && (
+        <div
+          className={`sidebar__resize-handle ${isResizing ? "sidebar__resize-handle--active" : ""}`}
+          onMouseDown={handleResizeStart}
+        />
       )}
-
-      {/* ── Spacer ── */}
-      <div style={{ flex: 1 }} />
-
-      {/* ── System section ── */}
-      <SectionLabel collapsed={collapsed}>System</SectionLabel>
-      <SidebarItem
-        code="ST"
-        label="Settings"
-        active={activeTopLevel === "settings"}
-        collapsed={collapsed}
-        onClick={onShowSettings}
-      />
-      <SidebarItem
-        code="AI"
-        label="Copilot"
-        active={copilotOpen}
-        collapsed={collapsed}
-        onClick={onToggleCopilot}
-      />
-      <div style={{ height: 12 }} />
     </nav>
   );
 }
 
-/* ── Section label component ── */
+/* ── Nav group (label + items) ── */
 
-function SectionLabel({
-  collapsed,
-  children,
-}: {
-  collapsed: boolean;
-  children: React.ReactNode;
-}) {
-  if (collapsed) return null;
+function NavGroup({ label, collapsed, children }: { label: string; collapsed: boolean; children: React.ReactNode }) {
   return (
-    <div style={sectionLabelStyle}>
+    <div>
+      {!collapsed && <div className="sidebar__group-label">{label}</div>}
       {children}
     </div>
   );
 }
 
-/* ── Sidebar item component ── */
+/* ── Nav item ── */
 
-function SidebarItem({
-  code,
+function SidebarNavItem({
+  icon,
   label,
   active,
   collapsed,
   onClick,
 }: {
-  code: string;
+  icon: IconName;
   label: string;
   active: boolean;
   collapsed: boolean;
@@ -541,49 +452,14 @@ function SidebarItem({
 }) {
   return (
     <button
+      className={`sidebar__nav-item ${active ? "active" : ""}`}
       onClick={onClick}
-      title={collapsed ? label : undefined}
-      style={itemStyle(active)}
-      onMouseEnter={(e) => {
-        if (!active) {
-          (e.currentTarget as HTMLButtonElement).style.background = itemHoverBg;
-        }
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLButtonElement).style.background = active
-          ? "var(--color-accent-soft, rgba(0,122,255,0.08))"
-          : "transparent";
-      }}
     >
-      <SbIcon code={code} active={active} />
-      {!collapsed && <span>{label}</span>}
+      <span className="sidebar__nav-icon">
+        <Icon name={icon} size={16} />
+      </span>
+      {!collapsed && <span className="sidebar__nav-label">{label}</span>}
+      {collapsed && <span className="sidebar__tooltip">{label}</span>}
     </button>
-  );
-}
-
-/* ── Icon badge component ── */
-
-function SbIcon({ code, active }: { code: string; active: boolean }) {
-  return (
-    <span
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        justifyContent: "center",
-        width: 24,
-        height: 24,
-        borderRadius: 6,
-        background: active ? "var(--color-accent)" : "#F0F0F0",
-        color: active ? "var(--color-accent-foreground, #FFFFFF)" : "var(--color-text-secondary)",
-        fontSize: 11,
-        fontWeight: 600,
-        fontFamily: "var(--font-mono, monospace)",
-        flexShrink: 0,
-        transition:
-          "background var(--motion-fast, 120ms) var(--easing-standard, ease), color var(--motion-fast, 120ms) var(--easing-standard, ease)",
-      }}
-    >
-      {code}
-    </span>
   );
 }

@@ -9,9 +9,9 @@ type PeopleIntelligenceProps = {
 };
 
 const RISK_COLORS: Record<string, string> = {
-  high: "#EF4444",
-  medium: "#F59E0B",
-  low: "#6366F1",
+  high: "var(--color-danger)",
+  medium: "var(--color-warning)",
+  low: "var(--color-info)",
 };
 
 export function PeopleIntelligence({ teamProfiles, overloadMap, flightRisk, loading }: PeopleIntelligenceProps) {
@@ -21,15 +21,15 @@ export function PeopleIntelligence({ teamProfiles, overloadMap, flightRisk, load
     return (
       <div style={{ display: "flex", flexDirection: "column", gap: 32, padding: "48px" }}>
         <div>
-          <div style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A3A3A3", marginBottom: 4 }}>
+          <div style={{ fontSize: "var(--text-eyebrow)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted)", marginBottom: 4 }}>
             ORGANIZATION
           </div>
-          <h1 style={{ fontSize: 28, fontWeight: 700, color: "#0A0A0A", margin: 0 }}>People intelligence</h1>
+          <h1 style={{ fontSize: "var(--text-page)", fontWeight: 700, color: "var(--color-text-primary)", margin: 0 }}>People intelligence</h1>
         </div>
         <div style={{
-          background: "#FFFFFF", borderRadius: 12, padding: 40,
+          background: "var(--color-surface)", borderRadius: "var(--radius-md)", padding: 40,
           boxShadow: "0 1px 3px rgba(0,0,0,0.04)", textAlign: "center" as const,
-          fontSize: 15, color: "#A3A3A3",
+          fontSize: "var(--text-body)", color: "var(--color-text-muted)",
         }}>
           Analyzing team data...
         </div>
@@ -47,13 +47,13 @@ export function PeopleIntelligence({ teamProfiles, overloadMap, flightRisk, load
     <div style={{ display: "flex", flexDirection: "column", gap: 32, padding: "48px" }}>
       {/* ---- Page header ---- */}
       <div>
-        <div style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A3A3A3", marginBottom: 4 }}>
+        <div style={{ fontSize: "var(--text-eyebrow)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted)", marginBottom: 4 }}>
           ORGANIZATION
         </div>
-        <h1 style={{ fontSize: 28, fontWeight: 700, color: "#0A0A0A", margin: 0 }}>
+        <h1 style={{ fontSize: "var(--text-page)", fontWeight: 700, color: "var(--color-text-primary)", margin: 0 }}>
           People intelligence
         </h1>
-        <p style={{ fontSize: 15, color: "#737373", margin: "4px 0 0" }}>
+        <p style={{ fontSize: "var(--text-body)", color: "var(--color-text-muted)", margin: "4px 0 0" }}>
           Team profiles, workload analysis, and retention signals.
         </p>
       </div>
@@ -67,10 +67,10 @@ export function PeopleIntelligence({ teamProfiles, overloadMap, flightRisk, load
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
               style={{
-                padding: "8px 18px", borderRadius: 8, fontSize: 13, fontWeight: 600,
-                border: isActive ? "none" : "1.5px solid #E5E5E5",
-                background: isActive ? "#6C5CE7" : "#FFFFFF",
-                color: isActive ? "#FFFFFF" : "#0A0A0A",
+                padding: "8px 18px", borderRadius: "var(--radius-sm)", fontSize: "var(--text-small)", fontWeight: 600,
+                border: isActive ? "none" : "1.5px solid var(--color-border-subtle)",
+                background: isActive ? "var(--color-accent)" : "var(--color-surface)",
+                color: isActive ? "var(--color-surface)" : "var(--color-text-primary)",
                 cursor: "pointer",
                 transition: "transform 0.15s ease, box-shadow 0.15s ease",
               }}
@@ -87,27 +87,27 @@ export function PeopleIntelligence({ teamProfiles, overloadMap, flightRisk, load
       {activeTab === "profiles" ? (
         teamProfiles.length === 0 ? (
           <div style={{
-            background: "#FFFFFF", borderRadius: 12, padding: 40,
+            background: "var(--color-surface)", borderRadius: "var(--radius-md)", padding: 40,
             boxShadow: "0 1px 3px rgba(0,0,0,0.04)", textAlign: "center" as const,
-            fontSize: 15, color: "#A3A3A3",
+            fontSize: "var(--text-body)", color: "var(--color-text-muted)",
           }}>
             No team members found for this venue.
           </div>
         ) : (
           <div style={{
-            background: "#FFFFFF", borderRadius: 12,
+            background: "var(--color-surface)", borderRadius: "var(--radius-md)",
             boxShadow: "0 1px 3px rgba(0,0,0,0.04)", overflow: "auto",
           }}>
-            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15 }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "var(--text-body)" }}>
               <thead>
-                <tr style={{ borderBottom: "1px solid #F0F0F0" }}>
+                <tr style={{ borderBottom: "1px solid var(--border)" }}>
                   {["Name", "Role", "Follow-ups", "Overdue", "Escalations", "Evidence", "Diary"].map((h) => (
                     <th
                       key={h}
                       style={{
                         textAlign: "left", padding: "12px 16px",
-                        fontSize: 11, fontWeight: 600, textTransform: "uppercase",
-                        letterSpacing: "0.08em", color: "#A3A3A3",
+                        fontSize: "var(--text-eyebrow)", fontWeight: 600, textTransform: "uppercase",
+                        letterSpacing: "0.08em", color: "var(--color-text-muted)",
                       }}
                     >
                       {h}
@@ -117,11 +117,11 @@ export function PeopleIntelligence({ teamProfiles, overloadMap, flightRisk, load
               </thead>
               <tbody>
                 {teamProfiles.map((p) => (
-                  <tr key={p.user_id} style={{ borderBottom: "1px solid #F5F5F5" }}>
-                    <td style={{ padding: "12px 16px", fontWeight: 500, color: "#0A0A0A" }}>{p.full_name}</td>
-                    <td style={{ padding: "12px 16px", color: "#A3A3A3" }}>{p.role}</td>
+                  <tr key={p.user_id} style={{ borderBottom: "1px solid var(--color-surface-subtle)" }}>
+                    <td style={{ padding: "12px 16px", fontWeight: 500, color: "var(--color-text-primary)" }}>{p.full_name}</td>
+                    <td style={{ padding: "12px 16px", color: "var(--color-text-muted)" }}>{p.role}</td>
                     <td style={{ padding: "12px 16px" }}>{p.follow_ups_completed}/{p.follow_ups_total}</td>
-                    <td style={{ padding: "12px 16px", color: p.follow_ups_overdue > 0 ? "#EF4444" : "#0A0A0A" }}>
+                    <td style={{ padding: "12px 16px", color: p.follow_ups_overdue > 0 ? "var(--color-danger)" : "var(--color-text-primary)" }}>
                       {p.follow_ups_overdue}
                     </td>
                     <td style={{ padding: "12px 16px" }}>{p.escalations_created}</td>
@@ -139,9 +139,9 @@ export function PeopleIntelligence({ teamProfiles, overloadMap, flightRisk, load
       {activeTab === "overload" ? (
         overloadMap.length === 0 ? (
           <div style={{
-            background: "#FFFFFF", borderRadius: 12, padding: 40,
+            background: "var(--color-surface)", borderRadius: "var(--radius-md)", padding: 40,
             boxShadow: "0 1px 3px rgba(0,0,0,0.04)", textAlign: "center" as const,
-            fontSize: 15, color: "#A3A3A3",
+            fontSize: "var(--text-body)", color: "var(--color-text-muted)",
           }}>
             No overload indicators detected. Team workload appears balanced.
           </div>
@@ -152,23 +152,23 @@ export function PeopleIntelligence({ teamProfiles, overloadMap, flightRisk, load
                 key={entry.user_id}
                 style={{
                   padding: "16px 20px",
-                  borderLeft: `4px solid ${RISK_COLORS[entry.risk_level] ?? "#A3A3A3"}`,
-                  borderRadius: 12,
-                  background: "#FFFFFF",
+                  borderLeft: `4px solid ${RISK_COLORS[entry.risk_level] ?? "var(--color-text-muted)"}`,
+                  borderRadius: "var(--radius-md)",
+                  background: "var(--color-surface)",
                   boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
                 }}
               >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-                  <span style={{ fontSize: 15, fontWeight: 500, color: "#0A0A0A" }}>{entry.full_name}</span>
+                  <span style={{ fontSize: "var(--text-body)", fontWeight: 500, color: "var(--color-text-primary)" }}>{entry.full_name}</span>
                   <span style={{
-                    display: "inline-block", padding: "2px 10px", borderRadius: 999,
-                    background: RISK_COLORS[entry.risk_level] ?? "#A3A3A3", color: "#FFFFFF",
-                    fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em",
+                    display: "inline-block", padding: "2px 10px", borderRadius: "var(--radius-full)",
+                    background: RISK_COLORS[entry.risk_level] ?? "var(--color-text-muted)", color: "var(--color-surface)",
+                    fontSize: "var(--text-eyebrow)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em",
                   }}>
                     {entry.risk_level}
                   </span>
                 </div>
-                <ul style={{ margin: 0, paddingLeft: 20, color: "#737373", fontSize: 13 }}>
+                <ul style={{ margin: 0, paddingLeft: 20, color: "var(--color-text-muted)", fontSize: "var(--text-small)" }}>
                   {entry.risk_factors.map((factor, i) => (
                     <li key={i} style={{ marginBottom: 2 }}>{factor}</li>
                   ))}
@@ -183,9 +183,9 @@ export function PeopleIntelligence({ teamProfiles, overloadMap, flightRisk, load
       {activeTab === "risk" ? (
         flightRisk.length === 0 ? (
           <div style={{
-            background: "#FFFFFF", borderRadius: 12, padding: 40,
+            background: "var(--color-surface)", borderRadius: "var(--radius-md)", padding: 40,
             boxShadow: "0 1px 3px rgba(0,0,0,0.04)", textAlign: "center" as const,
-            fontSize: 15, color: "#A3A3A3",
+            fontSize: "var(--text-body)", color: "var(--color-text-muted)",
           }}>
             No flight risk indicators detected. Team engagement appears healthy.
           </div>
@@ -196,23 +196,23 @@ export function PeopleIntelligence({ teamProfiles, overloadMap, flightRisk, load
                 key={entry.user_id}
                 style={{
                   padding: "16px 20px",
-                  borderLeft: `4px solid ${RISK_COLORS[entry.risk_level] ?? "#A3A3A3"}`,
-                  borderRadius: 12,
-                  background: "#FFFFFF",
+                  borderLeft: `4px solid ${RISK_COLORS[entry.risk_level] ?? "var(--color-text-muted)"}`,
+                  borderRadius: "var(--radius-md)",
+                  background: "var(--color-surface)",
                   boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
                 }}
               >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-                  <span style={{ fontSize: 15, fontWeight: 500, color: "#0A0A0A" }}>{entry.full_name}</span>
+                  <span style={{ fontSize: "var(--text-body)", fontWeight: 500, color: "var(--color-text-primary)" }}>{entry.full_name}</span>
                   <span style={{
-                    display: "inline-block", padding: "2px 10px", borderRadius: 999,
-                    background: RISK_COLORS[entry.risk_level] ?? "#A3A3A3", color: "#FFFFFF",
-                    fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em",
+                    display: "inline-block", padding: "2px 10px", borderRadius: "var(--radius-full)",
+                    background: RISK_COLORS[entry.risk_level] ?? "var(--color-text-muted)", color: "var(--color-surface)",
+                    fontSize: "var(--text-eyebrow)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em",
                   }}>
                     flight risk
                   </span>
                 </div>
-                <ul style={{ margin: 0, paddingLeft: 20, color: "#737373", fontSize: 13 }}>
+                <ul style={{ margin: 0, paddingLeft: 20, color: "var(--color-text-muted)", fontSize: "var(--text-small)" }}>
                   {entry.signals.map((signal, i) => (
                     <li key={i} style={{ marginBottom: 2 }}>{signal}</li>
                   ))}

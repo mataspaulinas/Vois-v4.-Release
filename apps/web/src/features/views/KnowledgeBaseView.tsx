@@ -112,21 +112,6 @@ type KnowledgeBaseViewProps = {
   integrationSummary: IntegrationHealthSummary | null;
 };
 
-/* ── design tokens ─────────────────────────────────── */
-const ds = {
-  eyebrow: { fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#A3A3A3", margin: 0 },
-  pageTitle: { fontSize: 28, fontWeight: 700, color: "#0A0A0A", margin: "4px 0 0" },
-  sectionTitle: { fontSize: 20, fontWeight: 600, color: "#0A0A0A", margin: 0 },
-  body: { fontSize: 15, color: "#525252", lineHeight: 1.55, margin: 0 },
-  small: { fontSize: 13, color: "#737373", lineHeight: 1.5, margin: 0 },
-  card: { background: "#FFFFFF", borderRadius: 12, boxShadow: "0 1px 3px rgba(0,0,0,0.04)", padding: "20px 24px" } as React.CSSProperties,
-  accent: "#6C5CE7",
-  success: "#10B981",
-  warning: "#F59E0B",
-  danger: "#EF4444",
-  tag: { display: "inline-block", padding: "2px 10px", borderRadius: 10, background: "#F5F5F5", fontSize: 11, color: "#737373", fontWeight: 500 } as React.CSSProperties,
-} as const;
-
 export function KnowledgeBaseView({
   bundle,
   alignment,
@@ -152,32 +137,32 @@ export function KnowledgeBaseView({
   return (
     <div style={{ padding: 48, display: "flex", flexDirection: "column", gap: 32 }}>
       {/* ── Hero ─────────────────────────────────── */}
-      <section style={{ ...ds.card, padding: "32px 32px 28px" }}>
-        <p style={ds.eyebrow}>KNOWLEDGE</p>
-        <h1 style={ds.pageTitle}>Guidance surfaces</h1>
-        <p style={{ ...ds.small, marginTop: 8, maxWidth: 720 }}>
+      <section className="ui-card" style={{ padding: "32px 32px 28px" }}>
+        <p className="eyebrow">KNOWLEDGE</p>
+        <h1 className="page-title">Guidance surfaces</h1>
+        <p className="small-text" style={{ marginTop: 8, maxWidth: 720 }}>
           Where doctrine, ontology posture, and live rebuild guardrails sit together while the new operational knowledge system is still deepening.
         </p>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16, marginTop: 24 }}>
-          <div style={{ ...ds.card, background: "rgba(108,92,231,0.06)", border: "1px solid rgba(108,92,231,0.12)" }}>
-            <p style={{ ...ds.eyebrow, marginBottom: 6 }}>Doctrine set</p>
-            <span style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", display: "block" }}>{guidanceArticles.length}</span>
-            <p style={{ ...ds.small, marginTop: 4 }}>The knowledge base carries both the product thesis and the live ontology posture.</p>
+          <div className="ui-card" style={{ background: "rgba(108,92,231,0.06)", border: "1px solid rgba(108,92,231,0.12)" }}>
+            <p className="eyebrow" style={{ marginBottom: 6 }}>Doctrine set</p>
+            <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{guidanceArticles.length}</span>
+            <p className="small-text" style={{ marginTop: 4 }}>The knowledge base carries both the product thesis and the live ontology posture.</p>
           </div>
-          <div style={ds.card}>
-            <p style={{ ...ds.eyebrow, marginBottom: 6 }}>Ontology posture</p>
-            <span style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", display: "block" }}>{bundle ? `${bundle.meta.ontology_id} ${bundle.meta.version}` : "Loading..."}</span>
-            <p style={{ ...ds.small, marginTop: 4 }}>
+          <div className="ui-card">
+            <p className="eyebrow" style={{ marginBottom: 6 }}>Ontology posture</p>
+            <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{bundle ? `${bundle.meta.ontology_id} ${bundle.meta.version}` : "Loading..."}</span>
+            <p className="small-text" style={{ marginTop: 4 }}>
               {alignment
                 ? `${alignment.counts.signals} signals, ${alignment.counts.failure_modes} failure modes, ${alignment.counts.response_patterns} response patterns aligned to the universal core.`
                 : "Loading alignment and posture data."}
             </p>
           </div>
-          <div style={ds.card}>
-            <p style={{ ...ds.eyebrow, marginBottom: 6 }}>Governance</p>
-            <span style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", display: "block" }}>{errorCount ? `${errorCount} errors` : warningCount ? `${warningCount} warnings` : "Clean"}</span>
-            <p style={{ ...ds.small, marginTop: 4 }}>
+          <div className="ui-card">
+            <p className="eyebrow" style={{ marginBottom: 6 }}>Governance</p>
+            <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{errorCount ? `${errorCount} errors` : warningCount ? `${warningCount} warnings` : "Clean"}</span>
+            <p className="small-text" style={{ marginTop: 4 }}>
               {governance ? "Reflects the published ontology bundle, not a mock placeholder." : "Governance posture is loading."}
             </p>
           </div>
@@ -185,41 +170,41 @@ export function KnowledgeBaseView({
       </section>
 
       {/* ── Ontology operating picture ────────────── */}
-      <section style={ds.card}>
-        <p style={ds.eyebrow}>LIVE POSTURE</p>
-        <h2 style={ds.sectionTitle}>Ontology operating picture</h2>
-        <p style={{ ...ds.small, marginTop: 4, maxWidth: 720 }}>
+      <section className="ui-card">
+        <p className="eyebrow">LIVE POSTURE</p>
+        <h2 className="section-title">Ontology operating picture</h2>
+        <p className="small-text" style={{ marginTop: 4, maxWidth: 720 }}>
           Connected to the real ontology APIs -- this surface tells you whether the current published library is coherent enough to trust.
         </p>
 
         {loading ? (
-          <p style={{ ...ds.small, textAlign: "center", padding: 32, color: "#A3A3A3" }}>Loading ontology posture...</p>
+          <p className="small-text" style={{ textAlign: "center", padding: 32, color: "var(--color-text-muted)" }}>Loading ontology posture...</p>
         ) : (
           <>
             {/* Top metrics */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16, marginTop: 20 }}>
-              <div style={ds.card}>
-                <p style={{ ...ds.eyebrow, marginBottom: 6 }}>Module coverage</p>
-                <span style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", display: "block" }}>{coveredModules}/{moduleCoverage.length}</span>
-                <p style={{ ...ds.small, marginTop: 4 }}>Universal service modules represented in the current published adapter.</p>
+              <div className="ui-card">
+                <p className="eyebrow" style={{ marginBottom: 6 }}>Module coverage</p>
+                <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{coveredModules}/{moduleCoverage.length}</span>
+                <p className="small-text" style={{ marginTop: 4 }}>Universal service modules represented in the current published adapter.</p>
               </div>
-              <div style={ds.card}>
-                <p style={{ ...ds.eyebrow, marginBottom: 6 }}>Unclassified entities</p>
-                <span style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", display: "block" }}>
+              <div className="ui-card">
+                <p className="eyebrow" style={{ marginBottom: 6 }}>Unclassified entities</p>
+                <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>
                   {(alignment?.unclassified_signal_ids.length ?? 0) +
                     (alignment?.unclassified_failure_mode_ids.length ?? 0) +
                     (alignment?.unclassified_response_pattern_ids.length ?? 0)}
                 </span>
-                <p style={{ ...ds.small, marginTop: 4 }}>Anything above zero here means the adapter is drifting away from the universal core.</p>
+                <p className="small-text" style={{ marginTop: 4 }}>Anything above zero here means the adapter is drifting away from the universal core.</p>
               </div>
-              <div style={ds.card}>
-                <p style={{ ...ds.eyebrow, marginBottom: 6 }}>Contract gaps</p>
-                <span style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", display: "block" }}>{countGovernanceGaps(governance)}</span>
-                <p style={{ ...ds.small, marginTop: 4 }}>Block and tool contract omissions still visible in the current published bundle.</p>
+              <div className="ui-card">
+                <p className="eyebrow" style={{ marginBottom: 6 }}>Contract gaps</p>
+                <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{countGovernanceGaps(governance)}</span>
+                <p className="small-text" style={{ marginTop: 4 }}>Block and tool contract omissions still visible in the current published bundle.</p>
               </div>
-              <div style={ds.card}>
-                <p style={{ ...ds.eyebrow, marginBottom: 6 }}>Scenario evals</p>
-                <span style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", display: "block" }}>
+              <div className="ui-card">
+                <p className="eyebrow" style={{ marginBottom: 6 }}>Scenario evals</p>
+                <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>
                   {loadingEvaluations
                     ? "Running..."
                     : evaluationResult
@@ -228,7 +213,7 @@ export function KnowledgeBaseView({
                         ? `${evaluationPacks[0].scenario_count} queued`
                         : "None"}
                 </span>
-                <p style={{ ...ds.small, marginTop: 4 }}>
+                <p className="small-text" style={{ marginTop: 4 }}>
                   {evaluationResult
                     ? `${evaluationResult.passed_scenarios}/${evaluationResult.scenario_count} baseline scenarios are passing.`
                     : "Evaluation packs turn diagnosis and sequencing quality into something testable."}
@@ -238,116 +223,116 @@ export function KnowledgeBaseView({
 
             {/* Detail panels */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginTop: 20 }}>
-              <div style={ds.card}>
-                <p style={{ ...ds.eyebrow, marginBottom: 10 }}>Strongest-covered modules</p>
+              <div className="ui-card">
+                <p className="eyebrow" style={{ marginBottom: 10 }}>Strongest-covered modules</p>
                 <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                   {topModules.map((item) => (
-                    <div key={item.id} style={{ display: "flex", justifyContent: "space-between", fontSize: 13, padding: "6px 0", borderBottom: "1px solid #F5F5F5" }}>
-                      <span style={{ fontWeight: 600, color: "#0A0A0A" }}>{item.name}</span>
-                      <span style={{ color: "#737373" }}>{item.covered_count} mapped objects</span>
+                    <div key={item.id} style={{ display: "flex", justifyContent: "space-between", fontSize: 13, padding: "6px 0", borderBottom: "1px solid var(--color-surface-subtle)" }}>
+                      <span style={{ fontWeight: 600, color: "var(--color-text-primary)" }}>{item.name}</span>
+                      <span style={{ color: "var(--color-text-muted)" }}>{item.covered_count} mapped objects</span>
                     </div>
                   ))}
                 </div>
               </div>
-              <div style={ds.card}>
-                <p style={{ ...ds.eyebrow, marginBottom: 10 }}>Contract field posture</p>
+              <div className="ui-card">
+                <p className="eyebrow" style={{ marginBottom: 10 }}>Contract field posture</p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                  <span style={ds.tag}>{authoringBrief?.signal_contract_fields.length ?? 0} signal fields</span>
-                  <span style={ds.tag}>{authoringBrief?.block_contract_fields.length ?? 0} block fields</span>
-                  <span style={ds.tag}>{authoringBrief?.tool_contract_fields.length ?? 0} tool fields</span>
+                  <span className="ui-badge ui-badge--muted">{authoringBrief?.signal_contract_fields.length ?? 0} signal fields</span>
+                  <span className="ui-badge ui-badge--muted">{authoringBrief?.block_contract_fields.length ?? 0} block fields</span>
+                  <span className="ui-badge ui-badge--muted">{authoringBrief?.tool_contract_fields.length ?? 0} tool fields</span>
                 </div>
-                <p style={{ ...ds.small, marginTop: 10 }}>
+                <p className="small-text" style={{ marginTop: 10 }}>
                   These are the authoring standards the ontology has to satisfy before it is considered trustworthy.
                 </p>
               </div>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginTop: 16 }}>
-              <div style={ds.card}>
-                <p style={{ ...ds.eyebrow, marginBottom: 10 }}>Evaluation packs</p>
+              <div className="ui-card">
+                <p className="eyebrow" style={{ marginBottom: 10 }}>Evaluation packs</p>
                 <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                   {evaluationPacks.length ? (
                     evaluationPacks.map((pack) => (
-                      <div key={pack.pack_id} style={{ display: "flex", justifyContent: "space-between", fontSize: 13, padding: "6px 0", borderBottom: "1px solid #F5F5F5" }}>
-                        <span style={{ fontWeight: 600, color: "#0A0A0A" }}>{pack.title}</span>
-                        <span style={{ color: "#737373" }}>{pack.scenario_count} scenarios -- {pack.ontology_version}</span>
+                      <div key={pack.pack_id} style={{ display: "flex", justifyContent: "space-between", fontSize: 13, padding: "6px 0", borderBottom: "1px solid var(--color-surface-subtle)" }}>
+                        <span style={{ fontWeight: 600, color: "var(--color-text-primary)" }}>{pack.title}</span>
+                        <span style={{ color: "var(--color-text-muted)" }}>{pack.scenario_count} scenarios -- {pack.ontology_version}</span>
                       </div>
                     ))
                   ) : (
-                    <p style={{ ...ds.small, color: "#A3A3A3" }}>No evaluation packs yet. Scenario pressure tests will appear here.</p>
+                    <p className="small-text" style={{ color: "var(--color-text-muted)" }}>No evaluation packs yet. Scenario pressure tests will appear here.</p>
                   )}
                 </div>
               </div>
-              <div style={ds.card}>
-                <p style={{ ...ds.eyebrow, marginBottom: 10 }}>Sensor layer</p>
+              <div className="ui-card">
+                <p className="eyebrow" style={{ marginBottom: 10 }}>Sensor layer</p>
                 {connectors.length ? (
                   <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                     {connectors.map((connector) => (
-                      <div key={connector.provider} style={{ fontSize: 13, padding: "6px 0", borderBottom: "1px solid #F5F5F5" }}>
-                        <span style={{ fontWeight: 600, color: "#0A0A0A", display: "block" }}>{connector.display_name}</span>
-                        <span style={{ color: "#737373" }}>{connector.provider} -- {connector.status}</span>
-                        <span style={{ color: "#A3A3A3", display: "block" }}>{connector.supported_event_types.length} starter event types</span>
+                      <div key={connector.provider} style={{ fontSize: 13, padding: "6px 0", borderBottom: "1px solid var(--color-surface-subtle)" }}>
+                        <span style={{ fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{connector.display_name}</span>
+                        <span style={{ color: "var(--color-text-muted)" }}>{connector.provider} -- {connector.status}</span>
+                        <span style={{ color: "var(--color-text-muted)", display: "block" }}>{connector.supported_event_types.length} starter event types</span>
                         {integrationSummary ? (
-                          <span style={{ color: "#A3A3A3", display: "block" }}>{integrationSummary.total_events} canonical events observed</span>
+                          <span style={{ color: "var(--color-text-muted)", display: "block" }}>{integrationSummary.total_events} canonical events observed</span>
                         ) : null}
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <p style={{ ...ds.small, color: "#A3A3A3" }}>Connector posture will appear here once the sensor layer is exposed.</p>
+                  <p className="small-text" style={{ color: "var(--color-text-muted)" }}>Connector posture will appear here once the sensor layer is exposed.</p>
                 )}
               </div>
-              <div style={ds.card}>
-                <p style={{ ...ds.eyebrow, marginBottom: 10 }}>Current scenario pressure</p>
+              <div className="ui-card">
+                <p className="eyebrow" style={{ marginBottom: 10 }}>Current scenario pressure</p>
                 {loadingEvaluations ? (
-                  <p style={{ ...ds.small, color: "#A3A3A3" }}>Running the baseline pack against the published ontology...</p>
+                  <p className="small-text" style={{ color: "var(--color-text-muted)" }}>Running the baseline pack against the published ontology...</p>
                 ) : weakestScenario ? (
                   <>
-                    <span style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", display: "block" }}>{weakestScenario.scenario_name}</span>
-                    <p style={{ ...ds.small, marginTop: 6 }}>
+                    <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{weakestScenario.scenario_name}</span>
+                    <p className="small-text" style={{ marginTop: 6 }}>
                       {weakestScenario.passed
                         ? "Current weakest visible scenario is still passing; this is the floor to beat as the ontology deepens."
                         : "This scenario is currently failing and should guide the next ontology or sequencing correction."}
                     </p>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 8 }}>
-                      <span style={ds.tag}>{Math.round(weakestScenario.score * 100)}% score</span>
-                      <span style={ds.tag}>{weakestScenario.load_classification} load</span>
-                      <span style={ds.tag}>{weakestScenario.plan_task_count} tasks</span>
+                      <span className="ui-badge ui-badge--muted">{Math.round(weakestScenario.score * 100)}% score</span>
+                      <span className="ui-badge ui-badge--muted">{weakestScenario.load_classification} load</span>
+                      <span className="ui-badge ui-badge--muted">{weakestScenario.plan_task_count} tasks</span>
                     </div>
                   </>
                 ) : (
-                  <p style={{ ...ds.small, color: "#A3A3A3" }}>Open this surface after packs exist to see diagnosis and sequencing quality.</p>
+                  <p className="small-text" style={{ color: "var(--color-text-muted)" }}>Open this surface after packs exist to see diagnosis and sequencing quality.</p>
                 )}
               </div>
-              <div style={ds.card}>
-                <p style={{ ...ds.eyebrow, marginBottom: 10 }}>Connector health</p>
+              <div className="ui-card">
+                <p className="eyebrow" style={{ marginBottom: 10 }}>Connector health</p>
                 {integrationSummary ? (
                   <>
-                    <span style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", display: "block" }}>
+                    <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>
                       {integrationSummary.overdue_retry_count || integrationSummary.stale_event_count
                         ? `${integrationSummary.overdue_retry_count} overdue / ${integrationSummary.stale_event_count} stale`
                         : "Stable"}
                     </span>
-                    <p style={{ ...ds.small, marginTop: 6 }}>
+                    <p className="small-text" style={{ marginTop: 6 }}>
                       {integrationSummary.total_events
                         ? `${integrationSummary.total_events} canonical event(s) observed across ${integrationSummary.counts_by_provider.length} provider surface(s).`
                         : "No canonical events have been observed yet."}
                     </p>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>
-                      <span style={ds.tag}>{integrationSummary.retryable_event_count} retryable</span>
+                      <span className="ui-badge ui-badge--muted">{integrationSummary.retryable_event_count} retryable</span>
                       {integrationSummary.counts_by_status.slice(0, 3).map((item) => (
-                        <span key={`status-${item.key}`} style={ds.tag}>{item.key}: {item.count}</span>
+                        <span key={`status-${item.key}`} className="ui-badge ui-badge--muted">{item.key}: {item.count}</span>
                       ))}
                       {integrationSummary.provider_pressure[0] ? (
-                        <span style={ds.tag}>top pressure: {integrationSummary.provider_pressure[0].provider}</span>
+                        <span className="ui-badge ui-badge--muted">top pressure: {integrationSummary.provider_pressure[0].provider}</span>
                       ) : null}
                       {integrationSummary.latest_failure_events[0] ? (
-                        <span style={ds.tag}>latest failure: {integrationSummary.latest_failure_events[0].provider}/{integrationSummary.latest_failure_events[0].event_type}</span>
+                        <span className="ui-badge ui-badge--muted">latest failure: {integrationSummary.latest_failure_events[0].provider}/{integrationSummary.latest_failure_events[0].event_type}</span>
                       ) : null}
                     </div>
                   </>
                 ) : (
-                  <p style={{ ...ds.small, color: "#A3A3A3" }}>Connector health will appear here once event ingestion is active.</p>
+                  <p className="small-text" style={{ color: "var(--color-text-muted)" }}>Connector health will appear here once event ingestion is active.</p>
                 )}
               </div>
             </div>
@@ -360,35 +345,35 @@ export function KnowledgeBaseView({
       <Glossary />
 
       {/* ── Connectors ───────────────────────────── */}
-      <section style={ds.card}>
-        <p style={ds.eyebrow}>CONNECTORS</p>
-        <h2 style={ds.sectionTitle}>Starter sensor layer</h2>
-        <p style={{ ...ds.small, marginTop: 4, maxWidth: 720 }}>
+      <section className="ui-card">
+        <p className="eyebrow">CONNECTORS</p>
+        <h2 className="section-title">Starter sensor layer</h2>
+        <p className="small-text" style={{ marginTop: 4, maxWidth: 720 }}>
           Provider-specific translation belongs outside the engine. This surface shows what the current platform can already normalize.
         </p>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 12, marginTop: 20 }}>
           {connectors.length ? (
             connectors.map((connector) => (
-              <article key={connector.provider} style={{ ...ds.card, padding: "16px 20px" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#A3A3A3", marginBottom: 6 }}>
+              <article key={connector.provider} className="ui-card" style={{ padding: "16px 20px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "var(--color-text-muted)", marginBottom: 6 }}>
                   <span>{connector.provider}</span>
                   <span>{connector.status}</span>
                 </div>
-                <h3 style={{ margin: "0 0 4px", fontSize: 15, fontWeight: 600, color: "#0A0A0A" }}>{connector.display_name}</h3>
-                <p style={{ ...ds.small, margin: "0 0 8px" }}>{connector.notes[0] ?? "Connector guidance is still being authored."}</p>
+                <h3 style={{ margin: "0 0 4px", fontSize: 15, fontWeight: 600, color: "var(--color-text-primary)" }}>{connector.display_name}</h3>
+                <p className="small-text" style={{ margin: "0 0 8px" }}>{connector.notes[0] ?? "Connector guidance is still being authored."}</p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                   {connector.ingest_modes.map((mode) => (
-                    <span key={`${connector.provider}-${mode}`} style={ds.tag}>{mode}</span>
+                    <span key={`${connector.provider}-${mode}`} className="ui-badge ui-badge--muted">{mode}</span>
                   ))}
                   {connector.supported_event_types.slice(0, 3).map((eventType) => (
-                    <span key={`${connector.provider}-${eventType}`} style={ds.tag}>{eventType}</span>
+                    <span key={`${connector.provider}-${eventType}`} className="ui-badge ui-badge--muted">{eventType}</span>
                   ))}
                 </div>
               </article>
             ))
           ) : (
-            <p style={{ ...ds.small, textAlign: "center", padding: 32, color: "#A3A3A3", gridColumn: "1 / -1" }}>No connector posture published yet.</p>
+            <p className="small-text" style={{ textAlign: "center", padding: 32, color: "var(--color-text-muted)", gridColumn: "1 / -1" }}>No connector posture published yet.</p>
           )}
         </div>
       </section>

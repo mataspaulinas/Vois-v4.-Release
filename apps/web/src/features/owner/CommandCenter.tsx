@@ -4,6 +4,7 @@ import { SurfaceHeader } from "../../components/SurfaceHeader";
 import { PrimaryCanvas } from "../../components/PrimaryCanvas";
 import { ContextInspector } from "../../components/ContextInspector";
 import { DeepDrawer } from "../../components/DeepDrawer";
+import Icon from "../../components/Icon";
 import { LoadingState } from "../../components/LoadingState";
 import { AttentionItem, ExecutionVelocity } from "../../lib/api";
 
@@ -19,31 +20,31 @@ type CommandCenterProps = {
 
 const SEVERITY_STYLES: Record<string, { accent: string; badgeBackground: string; badgeForeground: string }> = {
   critical: {
-    accent: "#EF4444",
-    badgeBackground: "#FEF2F2",
-    badgeForeground: "#EF4444",
+    accent: "var(--color-danger)",
+    badgeBackground: "var(--color-danger-soft)",
+    badgeForeground: "var(--color-danger)",
   },
   high: {
-    accent: "#F59E0B",
-    badgeBackground: "#FFFBEB",
-    badgeForeground: "#D97706",
+    accent: "var(--color-warning)",
+    badgeBackground: "var(--color-warning-soft)",
+    badgeForeground: "var(--color-warning)",
   },
   medium: {
-    accent: "#6366F1",
-    badgeBackground: "#EEF2FF",
-    badgeForeground: "#6366F1",
+    accent: "var(--color-info)",
+    badgeBackground: "var(--color-accent-soft)",
+    badgeForeground: "var(--color-info)",
   },
   low: {
-    accent: "#94A3B8",
-    badgeBackground: "#F8FAFC",
-    badgeForeground: "#64748B",
+    accent: "var(--color-text-muted)",
+    badgeBackground: "var(--color-surface-subtle)",
+    badgeForeground: "var(--color-text-secondary)",
   },
 };
 
 const VELOCITY_ACCENTS: Record<string, string> = {
-  strong: "#10B981",
-  steady: "#6366F1",
-  stalled: "#EF4444",
+  strong: "var(--color-success)",
+  steady: "var(--color-info)",
+  stalled: "var(--color-danger)",
 };
 
 const SEVERITY_ORDER = ["all", "critical", "high", "medium", "low"] as const;
@@ -87,28 +88,28 @@ export function CommandCenter({
         {/* Page title with eyebrow */}
         <div style={{ marginBottom: 32 }}>
           <div style={{
-            fontSize: 11,
+            fontSize: "var(--text-eyebrow)",
             fontWeight: 600,
             letterSpacing: "0.08em",
             textTransform: "uppercase" as const,
-            color: "#94A3B8",
+            color: "var(--color-text-muted)",
             marginBottom: 6,
           }}>
             Organization
           </div>
           <div style={{
-            fontSize: 28,
+            fontSize: "var(--text-page)",
             fontWeight: 700,
-            color: "#0F172A",
+            color: "var(--color-text-primary)",
             letterSpacing: "-0.02em",
           }}>
             Command Center
           </div>
           {greeting && (
             <p style={{
-              fontSize: 14,
+              fontSize: "var(--text-body)",
               fontStyle: "italic",
-              color: "#6C5CE7",
+              color: "var(--color-accent)",
               margin: "8px 0 0",
               lineHeight: 1.5,
             }}>
@@ -125,16 +126,16 @@ export function CommandCenter({
           marginBottom: 32,
         }}>
           {[
-            { value: attentionItems.length, label: "Total Items", color: "#6C5CE7" },
-            { value: criticalCount, label: "Critical", color: "#EF4444" },
-            { value: highCount, label: "High", color: "#F59E0B" },
-            { value: velocities.length, label: "Venues", color: "#6366F1" },
+            { value: attentionItems.length, label: "Total Items", color: "var(--color-accent)" },
+            { value: criticalCount, label: "Critical", color: "var(--color-danger)" },
+            { value: highCount, label: "High", color: "var(--color-warning)" },
+            { value: velocities.length, label: "Venues", color: "var(--color-info)" },
           ].map((metric) => (
             <div
               key={metric.label}
               style={{
-                background: "#FFFFFF",
-                borderRadius: 12,
+                background: "var(--color-surface)",
+                borderRadius: "var(--radius-md)",
                 boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
                 padding: "20px 24px",
                 display: "flex",
@@ -152,8 +153,8 @@ export function CommandCenter({
                 {metric.value}
               </div>
               <div style={{
-                fontSize: 12,
-                color: "#94A3B8",
+                fontSize: "var(--text-small)",
+                color: "var(--color-text-muted)",
                 fontWeight: 500,
                 textTransform: "uppercase" as const,
                 letterSpacing: "0.04em",
@@ -182,22 +183,22 @@ export function CommandCenter({
               }}>
                 {SEVERITY_ORDER.map((sev) => {
                   const isActive = severityFilter === sev;
-                  const pillColor = sev === "all" ? "#6C5CE7"
-                    : sev === "critical" ? "#EF4444"
-                    : sev === "high" ? "#F59E0B"
-                    : sev === "medium" ? "#6366F1"
-                    : "#94A3B8";
+                  const pillColor = sev === "all" ? "var(--color-accent)"
+                    : sev === "critical" ? "var(--color-danger)"
+                    : sev === "high" ? "var(--color-warning)"
+                    : sev === "medium" ? "var(--color-info)"
+                    : "var(--color-text-muted)";
                   return (
                     <button
                       key={sev}
                       onClick={() => setSeverityFilter(sev)}
                       style={{
                         padding: "6px 14px",
-                        borderRadius: 999,
-                        border: isActive ? "none" : "1px solid #E2E8F0",
-                        background: isActive ? pillColor : "#FFFFFF",
-                        color: isActive ? "#FFFFFF" : "#64748B",
-                        fontSize: 13,
+                        borderRadius: "var(--radius-full)",
+                        border: isActive ? "none" : "1px solid var(--color-border-subtle)",
+                        background: isActive ? pillColor : "var(--color-surface)",
+                        color: isActive ? "var(--color-surface)" : "var(--color-text-secondary)",
+                        fontSize: "var(--text-small)",
                         fontWeight: 500,
                         cursor: "pointer",
                         textTransform: "capitalize" as const,
@@ -218,19 +219,19 @@ export function CommandCenter({
                 marginBottom: 16,
               }}>
                 <h3 style={{
-                  fontSize: 20,
+                  fontSize: "var(--text-section)",
                   fontWeight: 600,
-                  color: "#0F172A",
+                  color: "var(--color-text-primary)",
                   margin: 0,
                 }}>
                   Attention Items
                 </h3>
                 <span style={{
-                  fontSize: 12,
+                  fontSize: "var(--text-small)",
                   fontWeight: 600,
-                  color: "#6C5CE7",
-                  background: "#F0EDFE",
-                  borderRadius: 999,
+                  color: "var(--color-accent)",
+                  background: "var(--color-accent-soft)",
+                  borderRadius: "var(--radius-full)",
                   padding: "2px 10px",
                   lineHeight: "20px",
                 }}>
@@ -253,8 +254,8 @@ export function CommandCenter({
                         style={{
                           padding: "16px 20px",
                           borderLeft: `4px solid ${severity.accent}`,
-                          borderRadius: 12,
-                          background: "#FFFFFF",
+                          borderRadius: "var(--radius-md)",
+                          background: "var(--color-surface)",
                           boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
                           cursor: "pointer",
                           transition: "box-shadow 0.15s ease",
@@ -284,8 +285,8 @@ export function CommandCenter({
                             }} />
                             <span style={{
                               fontWeight: 600,
-                              fontSize: 15,
-                              color: "#0F172A",
+                              fontSize: "var(--text-body)",
+                              color: "var(--color-text-primary)",
                             }}>
                               {item.title}
                             </span>
@@ -293,10 +294,10 @@ export function CommandCenter({
                           <span style={{
                             background: severity.badgeBackground,
                             color: severity.badgeForeground,
-                            fontSize: 11,
+                            fontSize: "var(--text-eyebrow)",
                             fontWeight: 600,
                             padding: "3px 10px",
-                            borderRadius: 999,
+                            borderRadius: "var(--radius-full)",
                             textTransform: "capitalize" as const,
                             letterSpacing: "0.02em",
                           }}>
@@ -304,8 +305,8 @@ export function CommandCenter({
                           </span>
                         </div>
                         <p style={{
-                          color: "#64748B",
-                          fontSize: 13,
+                          color: "var(--color-text-secondary)",
+                          fontSize: "var(--text-small)",
                           margin: "0 0 8px 16px",
                           lineHeight: 1.5,
                         }}>
@@ -313,8 +314,8 @@ export function CommandCenter({
                         </p>
                         <div style={{ display: "flex", alignItems: "center", gap: 12, marginLeft: 16 }}>
                           <span style={{
-                            fontSize: 11,
-                            color: "#94A3B8",
+                            fontSize: "var(--text-eyebrow)",
+                            color: "var(--color-text-muted)",
                             fontWeight: 500,
                           }}>
                             {item.venue_name} — {formatTimestamp(item.created_at)}
@@ -324,12 +325,12 @@ export function CommandCenter({
                               style={{
                                 background: "none",
                                 border: "none",
-                                color: "#6C5CE7",
-                                fontSize: 12,
+                                color: "var(--color-accent)",
+                                fontSize: "var(--text-small)",
                                 fontWeight: 600,
                                 cursor: "pointer",
                                 padding: "4px 8px",
-                                borderRadius: 6,
+                                borderRadius: "var(--radius-sm)",
                                 transition: "background 180ms ease",
                               }}
                               onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(108,92,231,0.06)"; }}
@@ -338,8 +339,10 @@ export function CommandCenter({
                                 e.stopPropagation();
                                 onAskCopilot(`Attention item: "${item.title}" — Severity: ${item.severity}, Venue: ${item.venue_name}${item.detail ? `, Detail: ${item.detail}` : ""}`);
                               }}
+                              aria-label="Ask Copilot"
+                              title="Ask Copilot"
                             >
-                              Ask Copilot
+                              <Icon name="copilot" size={18} />
                             </button>
                           )}
                         </div>
@@ -359,27 +362,27 @@ export function CommandCenter({
                     marginBottom: 12,
                   }}>
                     <h4 style={{
-                      fontSize: 15,
+                      fontSize: "var(--text-body)",
                       fontWeight: 600,
-                      color: "#475569",
+                      color: "var(--color-text-secondary)",
                       margin: 0,
                     }}>
                       More items
                     </h4>
                     <span style={{
-                      fontSize: 11,
+                      fontSize: "var(--text-eyebrow)",
                       fontWeight: 600,
-                      color: "#64748B",
-                      background: "#F1F5F9",
-                      borderRadius: 999,
+                      color: "var(--color-text-secondary)",
+                      background: "var(--color-surface-subtle)",
+                      borderRadius: "var(--radius-full)",
                       padding: "2px 8px",
                     }}>
                       {filteredItems.length - 3}
                     </span>
                   </div>
                   <div style={{
-                    background: "#FFFFFF",
-                    borderRadius: 12,
+                    background: "var(--color-surface)",
+                    borderRadius: "var(--radius-md)",
                     boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
                     overflow: "hidden",
                   }}>
@@ -395,11 +398,11 @@ export function CommandCenter({
                             justifyContent: "space-between",
                             alignItems: "center",
                             cursor: "pointer",
-                            borderBottom: idx < filteredItems.length - 4 ? "1px solid #F1F5F9" : "none",
+                            borderBottom: idx < filteredItems.length - 4 ? "1px solid var(--color-surface-subtle)" : "none",
                             transition: "background 0.1s ease",
                           }}
                           onMouseEnter={(e) => {
-                            (e.currentTarget as HTMLDivElement).style.background = "#F8FAFC";
+                            (e.currentTarget as HTMLDivElement).style.background = "var(--color-surface-subtle)";
                           }}
                           onMouseLeave={(e) => {
                             (e.currentTarget as HTMLDivElement).style.background = "transparent";
@@ -413,15 +416,15 @@ export function CommandCenter({
                               background: severity.accent,
                               flexShrink: 0,
                             }} />
-                            <span style={{ fontSize: 13, color: "#0F172A" }}>
+                            <span style={{ fontSize: "var(--text-small)", color: "var(--color-text-primary)" }}>
                               {item.title}
                             </span>
-                            <span style={{ fontSize: 11, color: "#94A3B8" }}>
+                            <span style={{ fontSize: "var(--text-eyebrow)", color: "var(--color-text-muted)" }}>
                               — {item.venue_name}
                             </span>
                           </div>
                           <span style={{
-                            fontSize: 11,
+                            fontSize: "var(--text-eyebrow)",
                             fontWeight: 600,
                             color: severity.badgeForeground,
                             textTransform: "capitalize" as const,
@@ -445,19 +448,19 @@ export function CommandCenter({
                     marginBottom: 16,
                   }}>
                     <h3 style={{
-                      fontSize: 20,
+                      fontSize: "var(--text-section)",
                       fontWeight: 600,
-                      color: "#0F172A",
+                      color: "var(--color-text-primary)",
                       margin: 0,
                     }}>
                       Venue Pulse
                     </h3>
                     <span style={{
-                      fontSize: 12,
+                      fontSize: "var(--text-small)",
                       fontWeight: 600,
-                      color: "#6C5CE7",
-                      background: "#F0EDFE",
-                      borderRadius: 999,
+                      color: "var(--color-accent)",
+                      background: "var(--color-accent-soft)",
+                      borderRadius: "var(--radius-full)",
                       padding: "2px 10px",
                       lineHeight: "20px",
                     }}>
@@ -470,14 +473,14 @@ export function CommandCenter({
                     gap: 16,
                   }}>
                     {velocities.map((v) => {
-                      const accentColor = VELOCITY_ACCENTS[v.velocity_label] ?? "#94A3B8";
+                      const accentColor = VELOCITY_ACCENTS[v.velocity_label] ?? "var(--color-text-muted)";
                       const pct = v.completion_percentage ?? 0;
                       return (
                         <div
                           key={v.venue_id}
                           style={{
-                            background: "#FFFFFF",
-                            borderRadius: 12,
+                            background: "var(--color-surface)",
+                            borderRadius: "var(--radius-md)",
                             boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
                             padding: "20px 24px",
                             cursor: "pointer",
@@ -507,7 +510,7 @@ export function CommandCenter({
                               {pct}%
                             </div>
                             <span style={{
-                              fontSize: 11,
+                              fontSize: "var(--text-eyebrow)",
                               fontWeight: 600,
                               textTransform: "capitalize" as const,
                               color: accentColor,
@@ -520,7 +523,7 @@ export function CommandCenter({
                           <div style={{
                             width: "100%",
                             height: 6,
-                            background: "#F1F5F9",
+                            background: "var(--color-surface-subtle)",
                             borderRadius: 3,
                             overflow: "hidden",
                           }}>
@@ -553,15 +556,15 @@ export function CommandCenter({
           const items = attentionItems.filter((i) => i.venue_id === selectedVenueId);
           const venueVelocity = velocities.find((v) => v.venue_id === selectedVenueId);
           return (
-            <div style={{ fontSize: 13 }}>
+            <div style={{ fontSize: "var(--text-small)" }}>
               <div style={{ marginBottom: 16 }}>
-                <h4 style={{ fontSize: 13, marginBottom: 6, color: "#475569", fontWeight: 600 }}>Attention items</h4>
-                <div style={{ color: "#0F172A" }}>{items.length} item{items.length !== 1 ? "s" : ""}</div>
+                <h4 style={{ fontSize: "var(--text-small)", marginBottom: 6, color: "var(--color-text-secondary)", fontWeight: 600 }}>Attention items</h4>
+                <div style={{ color: "var(--color-text-primary)" }}>{items.length} item{items.length !== 1 ? "s" : ""}</div>
               </div>
               {venueVelocity && (
                 <div style={{ marginBottom: 16 }}>
-                  <h4 style={{ fontSize: 13, marginBottom: 6, color: "#475569", fontWeight: 600 }}>Velocity</h4>
-                  <div style={{ color: "#0F172A" }}>{venueVelocity.completion_percentage?.toFixed(0) ?? 0}% complete · {venueVelocity.velocity_label}</div>
+                  <h4 style={{ fontSize: "var(--text-small)", marginBottom: 6, color: "var(--color-text-secondary)", fontWeight: 600 }}>Velocity</h4>
+                  <div style={{ color: "var(--color-text-primary)" }}>{venueVelocity.completion_percentage?.toFixed(0) ?? 0}% complete · {venueVelocity.velocity_label}</div>
                 </div>
               )}
               <button className="btn btn-primary btn-sm" onClick={() => onOpenVenue(selectedVenueId)}>Open venue</button>
@@ -573,7 +576,7 @@ export function CommandCenter({
       {/* Drawer: delegation + escalation depth */}
       <DeepDrawer open={drawerOpen} title="Delegation and escalation depth" onClose={() => setDrawerOpen(false)}>
         <div>
-          <p style={{ color: "#94A3B8", fontSize: 13 }}>
+          <p style={{ color: "var(--color-text-muted)", fontSize: "var(--text-small)" }}>
             Delegation health, escalation thread history, and cross-venue trend data.
           </p>
         </div>

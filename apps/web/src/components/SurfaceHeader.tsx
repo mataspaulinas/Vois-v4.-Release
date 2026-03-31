@@ -1,4 +1,5 @@
 import { ReactNode, useState } from "react";
+import Icon from "./Icon";
 
 export type StatusTone = "neutral" | "success" | "warning" | "danger" | "info";
 
@@ -31,8 +32,8 @@ export function SurfaceHeader({
     <header className="surface-header">
       <div className="surface-header__left">
         {onBack && (
-          <button className="surface-header__back" onClick={onBack}>
-            {backLabel ?? "Back"}
+          <button className="surface-header__back" onClick={onBack} title={backLabel ?? "Back"} aria-label={backLabel ?? "Back"}>
+            <Icon name="back" size={16} />
           </button>
         )}
         <div className="surface-header__identity">
@@ -59,8 +60,8 @@ export function SurfaceHeader({
         )}
         {moreActions?.length ? (
           <div className="surface-header__more" style={{ position: "relative" }}>
-            <button className="btn btn-secondary" onClick={() => setMoreOpen(!moreOpen)}>
-              More
+            <button className="btn btn-secondary" onClick={() => setMoreOpen(!moreOpen)} aria-label="More actions" title="More actions" style={{ width: 32, height: 32, padding: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Icon name="more-vertical" size={16} />
             </button>
             {moreOpen && (
               <div className="surface-header__menu" onClick={() => setMoreOpen(false)}>

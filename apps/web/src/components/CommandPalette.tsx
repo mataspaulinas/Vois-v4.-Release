@@ -1,4 +1,5 @@
 import React from "react";
+import Icon from "./Icon";
 
 /* ─── Types ─────────────────────────────────────────────────── */
 
@@ -30,14 +31,14 @@ const FONT_MONO =
   '"JetBrains Mono", monospace';
 
 const COLOR = {
-  textPrimary: "#0A0A0A",
-  textSecondary: "#525252",
-  textMuted: "#A3A3A3",
-  surface: "#FFFFFF",
-  bgMuted: "#F5F5F5",
-  borderSubtle: "#E5E5E5",
-  accent: "#6C5CE7",
-  accentSoft: "rgba(108, 92, 231, 0.08)",
+  textPrimary: "var(--color-text-primary)",
+  textSecondary: "var(--color-text-secondary)",
+  textMuted: "var(--color-text-muted)",
+  surface: "var(--color-surface)",
+  bgMuted: "var(--color-surface-subtle)",
+  borderSubtle: "var(--color-border-subtle)",
+  accent: "var(--color-accent)",
+  accentSoft: "var(--color-accent-soft)",
 } as const;
 
 /* ─── Keyframe Injection ────────────────────────────────────── */
@@ -70,21 +71,11 @@ function injectStyles() {
 /* ─── Icons (inline SVG) ────────────────────────────────────── */
 
 function SearchIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-      <circle cx="9" cy="9" r="5.5" stroke={COLOR.textMuted} strokeWidth="1.5" />
-      <path d="M13 13l3.5 3.5" stroke={COLOR.textMuted} strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  );
+  return <Icon name="search" size={20} />;
 }
 
 function ClearIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <circle cx="8" cy="8" r="6" fill={COLOR.bgMuted} />
-      <path d="M5.5 5.5l5 5M10.5 5.5l-5 5" stroke={COLOR.textMuted} strokeWidth="1.2" strokeLinecap="round" />
-    </svg>
-  );
+  return <Icon name="close" size={16} />;
 }
 
 function SparklesIcon() {
@@ -358,7 +349,7 @@ export function CommandPalette({ open, onClose, items, onAskCopilot }: CommandPa
     width: "100%",
     maxWidth: 560,
     backgroundColor: COLOR.surface,
-    borderRadius: 16,
+    borderRadius: "var(--radius-lg)",
     boxShadow: "0 16px 48px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08)",
     zIndex: 130,
     overflow: "hidden",
@@ -382,7 +373,7 @@ export function CommandPalette({ open, onClose, items, onAskCopilot }: CommandPa
     border: "none",
     outline: "none",
     background: "transparent",
-    fontSize: 16,
+    fontSize: "var(--text-card)",
     fontFamily: FONT_SANS,
     fontWeight: 400,
     color: COLOR.textPrimary,
@@ -397,7 +388,7 @@ export function CommandPalette({ open, onClose, items, onAskCopilot }: CommandPa
   };
 
   const groupHeaderStyle: React.CSSProperties = {
-    fontSize: 11,
+    fontSize: "var(--text-eyebrow)",
     fontWeight: 600,
     textTransform: "uppercase" as const,
     letterSpacing: "0.08em",
@@ -441,7 +432,7 @@ export function CommandPalette({ open, onClose, items, onAskCopilot }: CommandPa
         <div style={{ flex: 1, minWidth: 0 }}>
           <span
             style={{
-              fontSize: 15,
+              fontSize: "var(--text-body)",
               fontWeight: 500,
               color: COLOR.accent,
               fontFamily: FONT_SANS,
@@ -451,7 +442,7 @@ export function CommandPalette({ open, onClose, items, onAskCopilot }: CommandPa
           </span>
           <span
             style={{
-              fontSize: 15,
+              fontSize: "var(--text-body)",
               fontWeight: 400,
               color: COLOR.textPrimary,
               fontFamily: FONT_SANS,
@@ -495,7 +486,7 @@ export function CommandPalette({ open, onClose, items, onAskCopilot }: CommandPa
         <div style={{ flex: 1, minWidth: 0, display: "flex", alignItems: "baseline", gap: 8 }}>
           <span
             style={{
-              fontSize: 15,
+              fontSize: "var(--text-body)",
               fontWeight: 500,
               color: COLOR.textPrimary,
               fontFamily: FONT_SANS,
@@ -507,7 +498,7 @@ export function CommandPalette({ open, onClose, items, onAskCopilot }: CommandPa
           {item.description && (
             <span
               style={{
-                fontSize: 13,
+                fontSize: "var(--text-small)",
                 color: COLOR.textMuted,
                 fontFamily: FONT_SANS,
                 whiteSpace: "nowrap",
@@ -575,7 +566,7 @@ export function CommandPalette({ open, onClose, items, onAskCopilot }: CommandPa
                 background: "none",
                 cursor: "pointer",
                 padding: 4,
-                borderRadius: 4,
+                borderRadius: "var(--radius-sm)",
                 flexShrink: 0,
               }}
             >
@@ -602,7 +593,7 @@ export function CommandPalette({ open, onClose, items, onAskCopilot }: CommandPa
             <div style={{ padding: "32px 16px", textAlign: "center" }}>
               <div
                 style={{
-                  fontSize: 15,
+                  fontSize: "var(--text-body)",
                   color: COLOR.textMuted,
                   fontFamily: FONT_SANS,
                   marginBottom: 6,
@@ -612,7 +603,7 @@ export function CommandPalette({ open, onClose, items, onAskCopilot }: CommandPa
               </div>
               <div
                 style={{
-                  fontSize: 13,
+                  fontSize: "var(--text-small)",
                   color: COLOR.textMuted,
                   fontFamily: FONT_SANS,
                 }}
@@ -627,7 +618,7 @@ export function CommandPalette({ open, onClose, items, onAskCopilot }: CommandPa
             <div style={{ padding: "32px 16px", textAlign: "center" }}>
               <div
                 style={{
-                  fontSize: 13,
+                  fontSize: "var(--text-small)",
                   color: COLOR.textMuted,
                   fontFamily: FONT_SANS,
                 }}
@@ -664,13 +655,13 @@ function ShortcutPill({ text }: { text: string }) {
   return (
     <span
       style={{
-        fontSize: 11,
+        fontSize: "var(--text-eyebrow)",
         fontFamily: FONT_MONO,
         fontWeight: 500,
         color: COLOR.textMuted,
         backgroundColor: COLOR.bgMuted,
         padding: "2px 6px",
-        borderRadius: 4,
+        borderRadius: "var(--radius-sm)",
         lineHeight: "16px",
         whiteSpace: "nowrap",
         flexShrink: 0,
@@ -688,13 +679,13 @@ function FooterHint({ keys, label }: { keys: string[]; label: string }) {
         <span
           key={key}
           style={{
-            fontSize: 11,
+            fontSize: "var(--text-eyebrow)",
             fontFamily: FONT_MONO,
             fontWeight: 500,
             color: COLOR.textMuted,
             backgroundColor: COLOR.bgMuted,
             padding: "1px 5px",
-            borderRadius: 3,
+            borderRadius: "var(--radius-sm)",
             lineHeight: "16px",
           }}
         >
@@ -703,7 +694,7 @@ function FooterHint({ keys, label }: { keys: string[]; label: string }) {
       ))}
       <span
         style={{
-          fontSize: 11,
+          fontSize: "var(--text-eyebrow)",
           color: COLOR.textMuted,
           fontFamily: FONT_SANS,
         }}

@@ -111,33 +111,33 @@ export function AssessmentView({
 
   // -- shared inline style helpers --
   const cardBase: React.CSSProperties = {
-    background: "#FFFFFF", borderRadius: 12, padding: 24,
+    background: "var(--color-surface)", borderRadius: "var(--radius-md)", padding: 24,
     boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
   };
   const eyebrowStyle: React.CSSProperties = {
-    fontSize: 11, fontWeight: 600, textTransform: "uppercase",
-    letterSpacing: "0.08em", color: "#A3A3A3", marginBottom: 4,
+    fontSize: "var(--text-eyebrow)", fontWeight: 600, textTransform: "uppercase",
+    letterSpacing: "0.08em", color: "var(--color-text-muted)", marginBottom: 4,
   };
   const sectionTitle: React.CSSProperties = {
-    fontSize: 20, fontWeight: 600, color: "#0A0A0A", margin: "0 0 4px",
+    fontSize: "var(--text-section)", fontWeight: 600, color: "var(--color-text-primary)", margin: "0 0 4px",
   };
   const descStyle: React.CSSProperties = {
-    fontSize: 13, color: "#737373", margin: "0 0 16px", lineHeight: 1.5,
+    fontSize: "var(--text-small)", color: "var(--color-text-muted)", margin: "0 0 16px", lineHeight: 1.5,
   };
   const btnPrimary: React.CSSProperties = {
-    background: "#6C5CE7", color: "#fff", border: "none", borderRadius: 8,
-    padding: "8px 18px", fontSize: 13, fontWeight: 600, cursor: "pointer",
+    background: "var(--color-accent)", color: "var(--color-surface)", border: "none", borderRadius: "var(--radius-sm)",
+    padding: "8px 18px", fontSize: "var(--text-small)", fontWeight: 600, cursor: "pointer",
   };
   const btnSecondary: React.CSSProperties = {
-    background: "#fff", color: "#6C5CE7", border: "1.5px solid #6C5CE7",
-    borderRadius: 8, padding: "8px 18px", fontSize: 13, fontWeight: 600, cursor: "pointer",
+    background: "var(--color-surface)", color: "var(--color-accent)", border: "1.5px solid var(--color-accent)",
+    borderRadius: "var(--radius-sm)", padding: "8px 18px", fontSize: "var(--text-small)", fontWeight: 600, cursor: "pointer",
   };
   const btnSmSecondary: React.CSSProperties = {
-    ...btnSecondary, padding: "4px 12px", fontSize: 11,
+    ...btnSecondary, padding: "4px 12px", fontSize: "var(--text-eyebrow)",
   };
   const rowStyle: React.CSSProperties = {
     display: "flex", justifyContent: "space-between", alignItems: "center",
-    padding: "6px 0", borderBottom: "1px solid #F3F4F6",
+    padding: "6px 0", borderBottom: "1px solid var(--color-surface-subtle)",
   };
 
   return (
@@ -145,10 +145,10 @@ export function AssessmentView({
       {/* ---- Page header ---- */}
       <div>
         <div style={eyebrowStyle}>VENUE</div>
-        <h1 style={{ fontSize: 28, fontWeight: 700, color: "#0A0A0A", margin: 0 }}>
+        <h1 style={{ fontSize: "var(--text-page)", fontWeight: 700, color: "var(--color-text-primary)", margin: 0 }}>
           Assessment
         </h1>
-        <p style={{ fontSize: 15, color: "#737373", margin: "4px 0 0" }}>
+        <p style={{ fontSize: "var(--text-body)", color: "var(--color-text-muted)", margin: "4px 0 0" }}>
           The operating loop: observe, infer, review, save, run.
         </p>
       </div>
@@ -164,14 +164,14 @@ export function AssessmentView({
         {/* Loaded snapshot banner */}
         {loadedFromHistory && savedAssessment ? (
           <div style={{
-            ...cardBase, borderLeft: "4px solid #6C5CE7", marginBottom: 16,
-            background: "#F5F3FF", padding: "16px 20px",
+            ...cardBase, borderLeft: "4px solid var(--color-accent)", marginBottom: 16,
+            background: "var(--color-accent-soft)", padding: "16px 20px",
           }}>
-            <div style={{ ...eyebrowStyle, color: "#6C5CE7" }}>Loaded snapshot</div>
-            <div style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", marginBottom: 4 }}>
+            <div style={{ ...eyebrowStyle, color: "var(--color-accent)" }}>Loaded snapshot</div>
+            <div style={{ fontSize: "var(--text-section)", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: 4 }}>
               {formatTimestamp(savedAssessment.created_at)}
             </div>
-            <p style={{ fontSize: 13, color: "#525252", margin: 0 }}>
+            <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", margin: 0 }}>
               This assessment was reloaded from the timeline so you can continue from a real saved operating record.
             </p>
           </div>
@@ -180,14 +180,14 @@ export function AssessmentView({
         {/* Staged draft plan banner */}
         {reviewPlan?.status === "draft" ? (
           <div style={{
-            ...cardBase, borderLeft: "4px solid #F59E0B", marginBottom: 16,
-            background: "#FFFBEB", padding: "16px 20px",
+            ...cardBase, borderLeft: "4px solid var(--color-warning)", marginBottom: 16,
+            background: "var(--color-warning-soft)", padding: "16px 20px",
           }}>
-            <div style={{ ...eyebrowStyle, color: "#F59E0B" }}>Staged Draft</div>
-            <div style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", marginBottom: 4 }}>
+            <div style={{ ...eyebrowStyle, color: "var(--color-warning)" }}>Staged Draft</div>
+            <div style={{ fontSize: "var(--text-section)", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: 4 }}>
               {reviewPlan.title}
             </div>
-            <p style={{ fontSize: 13, color: "#525252", margin: "0 0 12px" }}>
+            <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", margin: "0 0 12px" }}>
               The engine has generated a preliminary intervention plan. Review the report and approve the draft to begin execution.
               {activePlan?.status === "active" ? " The current active plan remains live until you approve this draft." : ""}
             </p>
@@ -210,21 +210,21 @@ export function AssessmentView({
               style={{
                 flex: "1 1 140px", display: "flex", alignItems: "flex-start", gap: 10,
                 padding: "10px 14px", borderRadius: 10,
-                background: stage.done ? "#F0FDF4" : "#F9FAFB",
-                border: stage.done ? "1px solid #BBF7D0" : "1px solid #E5E7EB",
+                background: stage.done ? "var(--color-success-soft)" : "var(--color-surface-subtle)",
+                border: stage.done ? "1px solid var(--color-success)" : "1px solid var(--color-border-subtle)",
               }}
             >
               <span style={{
                 width: 28, height: 28, borderRadius: "50%", flexShrink: 0,
                 display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: 11, fontWeight: 700, color: "#fff",
-                background: stage.done ? "#10B981" : "#D1D5DB",
+                fontSize: "var(--text-eyebrow)", fontWeight: 700, color: "var(--color-surface)",
+                background: stage.done ? "var(--color-success)" : "var(--color-border-subtle)",
               }}>
-                {stage.done ? <Icon name="check" size={14} color="#fff" /> : stage.label.slice(0, 1)}
+                {stage.done ? <Icon name="check" size={14} color="var(--color-surface)" /> : stage.label.slice(0, 1)}
               </span>
               <div>
-                <div style={{ fontSize: 13, fontWeight: 600, color: "#0A0A0A" }}>{stage.label}</div>
-                <div style={{ fontSize: 11, color: "#737373", lineHeight: 1.4 }}>{stage.note}</div>
+                <div style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-primary)" }}>{stage.label}</div>
+                <div style={{ fontSize: "var(--text-eyebrow)", color: "var(--color-text-muted)", lineHeight: 1.4 }}>{stage.note}</div>
               </div>
             </div>
           ))}
@@ -267,12 +267,12 @@ export function AssessmentView({
             <div style={{
               marginBottom: 16,
               padding: "12px 16px",
-              borderRadius: 12,
+              borderRadius: "var(--radius-md)",
               background: "rgba(108, 92, 231, 0.04)",
               border: "1px solid rgba(108, 92, 231, 0.1)",
             }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <div style={{ fontSize: 13, color: "#525252" }}>
+                <div style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)" }}>
                   Need help writing your assessment? VOIS can suggest what to observe based on your current signals and plan.
                 </div>
                 <button
@@ -283,13 +283,13 @@ export function AssessmentView({
                     `Give me specific things to look for and write about.`
                   )}
                   style={{
-                    background: "#6C5CE7",
+                    background: "var(--color-accent)",
                     border: "none",
-                    color: "white",
-                    fontSize: 12,
+                    color: "var(--color-surface)",
+                    fontSize: "var(--text-small)",
                     fontWeight: 600,
                     padding: "6px 14px",
-                    borderRadius: 6,
+                    borderRadius: "var(--radius-sm)",
                     cursor: "pointer",
                     whiteSpace: "nowrap",
                     marginLeft: 12,
@@ -311,10 +311,10 @@ export function AssessmentView({
             placeholder="Paste reviews, audit notes, consultant observations, complaints, or field reports..."
             style={{
               width: "100%", minHeight: 220, resize: "vertical",
-              fontFamily: "inherit", fontSize: 15, lineHeight: 1.6,
+              fontFamily: "inherit", fontSize: "var(--text-body)", lineHeight: 1.6,
               padding: 16, borderRadius: 10,
-              border: "1.5px solid #E5E7EB", background: "#FAFAFA",
-              color: "#0A0A0A", outline: "none", boxSizing: "border-box",
+              border: "1.5px solid var(--color-border-subtle)", background: "var(--color-surface-subtle)",
+              color: "var(--color-text-primary)", outline: "none", boxSizing: "border-box",
             }}
           />
           <IntakeQualityBar text={intakeText} />
@@ -357,10 +357,10 @@ export function AssessmentView({
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {/* Intake posture */}
               <div style={{
-                padding: "10px 14px", background: "#F5F3FF", borderRadius: 10,
-                borderLeft: "3px solid #6C5CE7",
+                padding: "10px 14px", background: "var(--color-accent-soft)", borderRadius: 10,
+                borderLeft: "3px solid var(--color-accent)",
               }}>
-                <div style={{ ...eyebrowStyle, color: "#6C5CE7", marginBottom: 6 }}>Intake posture</div>
+                <div style={{ ...eyebrowStyle, color: "var(--color-accent)", marginBottom: 6 }}>Intake posture</div>
                 <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                   {[
                     intakePreview.provider ?? "deterministic",
@@ -369,8 +369,8 @@ export function AssessmentView({
                     intakePreview.venue_context?.team_size_note,
                   ].filter(Boolean).map((tag, i) => (
                     <span key={i} style={{
-                      fontSize: 11, padding: "2px 10px", borderRadius: 24,
-                      background: "#EDE9FE", color: "#6C5CE7", fontWeight: 500,
+                      fontSize: "var(--text-eyebrow)", padding: "2px 10px", borderRadius: 24,
+                      background: "var(--color-accent-soft)", color: "var(--color-accent)", fontWeight: 500,
                     }}>
                       {tag}
                     </span>
@@ -386,25 +386,25 @@ export function AssessmentView({
                     key={signal.signal_id}
                     style={{
                       padding: "12px 14px", borderRadius: 10,
-                      background: rejected ? "#FAFAFA" : "#FFFFFF",
-                      border: rejected ? "1px solid #E5E7EB" : "1px solid #D1D5DB",
-                      borderLeft: rejected ? "4px solid #D1D5DB" : "4px solid #10B981",
+                      background: rejected ? "var(--color-surface-subtle)" : "var(--color-surface)",
+                      border: rejected ? "1px solid var(--color-border-subtle)" : "1px solid var(--color-border-strong)",
+                      borderLeft: rejected ? "4px solid var(--color-border-strong)" : "4px solid var(--color-success)",
                       opacity: rejected ? 0.6 : 1,
                       transition: "all 0.15s ease",
                     }}
                   >
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: rejected ? 0 : 6 }}>
-                      <span style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A" }}>{signal.signal_name}</span>
+                      <span style={{ fontSize: "var(--text-body)", fontWeight: 600, color: "var(--color-text-primary)" }}>{signal.signal_name}</span>
                       <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                         {!rejected && (
                           <span style={{
-                            fontSize: 11, padding: "2px 8px", borderRadius: 24, fontWeight: 600,
+                            fontSize: "var(--text-eyebrow)", padding: "2px 8px", borderRadius: 24, fontWeight: 600,
                             background:
-                              signal.confidence === "high" ? "#D1FAE5" :
-                              signal.confidence === "medium" ? "#FEF3C7" : "#FEE2E2",
+                              signal.confidence === "high" ? "var(--color-success-soft)" :
+                              signal.confidence === "medium" ? "var(--color-warning-soft)" : "var(--color-danger-soft)",
                             color:
-                              signal.confidence === "high" ? "#065F46" :
-                              signal.confidence === "medium" ? "#92400E" : "#991B1B",
+                              signal.confidence === "high" ? "var(--color-success)" :
+                              signal.confidence === "medium" ? "var(--color-warning)" : "var(--color-danger)",
                           }}>
                             {signal.confidence}
                           </span>
@@ -413,10 +413,10 @@ export function AssessmentView({
                           onClick={() => onToggleSignalRejection(signal.signal_id)}
                           title={rejected ? "Restore signal" : "Reject signal"}
                           style={{
-                            fontSize: 11, padding: "2px 10px", borderRadius: 6, cursor: "pointer",
-                            background: rejected ? "#F0FDF4" : "#FEF2F2",
-                            color: rejected ? "#065F46" : "#991B1B",
-                            border: rejected ? "1px solid #BBF7D0" : "1px solid #FECACA",
+                            fontSize: "var(--text-eyebrow)", padding: "2px 10px", borderRadius: "var(--radius-sm)", cursor: "pointer",
+                            background: rejected ? "var(--color-success-soft)" : "var(--color-danger-soft)",
+                            color: rejected ? "var(--color-success)" : "var(--color-danger)",
+                            border: rejected ? "1px solid var(--color-success)" : "1px solid var(--color-danger)",
                             fontWeight: 500,
                           }}
                         >
@@ -426,14 +426,14 @@ export function AssessmentView({
                     </div>
                     {!rejected && (
                       <>
-                        <p style={{ fontSize: 13, color: "#525252", margin: "0 0 6px", fontStyle: "italic" }}>
+                        <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", margin: "0 0 6px", fontStyle: "italic" }}>
                           &quot;{signal.evidence_snippet}&quot;
                         </p>
                         <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
                           {signal.match_reasons.map((reason) => (
                             <span key={reason} style={{
-                              fontSize: 11, padding: "1px 8px", borderRadius: 24,
-                              background: "#F3F4F6", color: "#525252",
+                              fontSize: "var(--text-eyebrow)", padding: "1px 8px", borderRadius: 24,
+                              background: "var(--color-surface-subtle)", color: "var(--color-text-secondary)",
                             }}>
                               {reason}
                             </span>
@@ -448,10 +448,10 @@ export function AssessmentView({
               {/* Unmapped observations */}
               {intakePreview.unmapped_observations.length ? (
                 <div style={{ marginTop: 8 }}>
-                  <div style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A", marginBottom: 6 }}>Unmapped observations</div>
+                  <div style={{ fontSize: "var(--text-body)", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: 6 }}>Unmapped observations</div>
                   <ul style={{ listStyle: "disc", paddingLeft: 20, margin: 0 }}>
                     {intakePreview.unmapped_observations.map((item) => (
-                      <li key={item} style={{ fontSize: 13, color: "#525252", marginBottom: 3 }}>{item}</li>
+                      <li key={item} style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", marginBottom: 3 }}>{item}</li>
                     ))}
                   </ul>
                 </div>
@@ -460,10 +460,10 @@ export function AssessmentView({
               {/* Quantitative evidence */}
               {intakePreview.quantitative_evidence?.length ? (
                 <div style={{ marginTop: 8 }}>
-                  <div style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A", marginBottom: 6 }}>Quantitative evidence</div>
+                  <div style={{ fontSize: "var(--text-body)", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: 6 }}>Quantitative evidence</div>
                   <ul style={{ listStyle: "disc", paddingLeft: 20, margin: 0 }}>
                     {intakePreview.quantitative_evidence.map((item) => (
-                      <li key={`${item.label}-${item.value}-${item.evidence_snippet}`} style={{ fontSize: 13, color: "#525252", marginBottom: 3 }}>
+                      <li key={`${item.label}-${item.value}-${item.evidence_snippet}`} style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", marginBottom: 3 }}>
                         {item.value}: {item.evidence_snippet}
                       </li>
                     ))}
@@ -472,7 +472,7 @@ export function AssessmentView({
               ) : null}
             </div>
           ) : (
-            <div style={{ padding: "24px 0", textAlign: "center", color: "#A3A3A3", fontSize: 13 }}>
+            <div style={{ padding: "24px 0", textAlign: "center", color: "var(--color-text-muted)", fontSize: "var(--text-small)" }}>
               No inferred signals yet. Run AI intake to stage the diagnostic set.
             </div>
           )}
@@ -497,10 +497,10 @@ export function AssessmentView({
 
           {manuallyAddedSignalIds.size > 0 && (
             <div style={{ ...rowStyle, marginBottom: 12 }}>
-              <span style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>Manually added</span>
+              <span style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-secondary)" }}>Manually added</span>
               <span style={{
-                fontSize: 11, padding: "2px 10px", borderRadius: 24,
-                background: "#EDE9FE", color: "#6C5CE7", fontWeight: 600,
+                fontSize: "var(--text-eyebrow)", padding: "2px 10px", borderRadius: 24,
+                background: "var(--color-accent-soft)", color: "var(--color-accent)", fontWeight: 600,
               }}>
                 {manuallyAddedSignalIds.size} signal{manuallyAddedSignalIds.size !== 1 ? "s" : ""}
               </span>
@@ -515,9 +515,9 @@ export function AssessmentView({
                 value={signalSearch}
                 onChange={(e) => setSignalSearch(e.target.value)}
                 style={{
-                  width: "100%", padding: "8px 14px", fontSize: 13,
-                  border: "1.5px solid #E5E7EB", borderRadius: 8,
-                  background: "#FAFAFA", color: "#0A0A0A",
+                  width: "100%", padding: "8px 14px", fontSize: "var(--text-small)",
+                  border: "1.5px solid var(--color-border-subtle)", borderRadius: "var(--radius-sm)",
+                  background: "var(--color-surface-subtle)", color: "var(--color-text-primary)",
                   outline: "none", marginBottom: 16, boxSizing: "border-box",
                 }}
               />
@@ -525,12 +525,12 @@ export function AssessmentView({
                 {[...signalsByDomain.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([domain, signals]) => (
                   <div key={domain}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
-                      <span style={{ fontSize: 15, fontWeight: 600, color: "#0A0A0A", textTransform: "capitalize" }}>
+                      <span style={{ fontSize: "var(--text-body)", fontWeight: 600, color: "var(--color-text-primary)", textTransform: "capitalize" }}>
                         {domain.replace(/_/g, " ")}
                       </span>
                       <span style={{
-                        fontSize: 11, padding: "1px 8px", borderRadius: 24,
-                        background: "#F3F4F6", color: "#737373", fontWeight: 500,
+                        fontSize: "var(--text-eyebrow)", padding: "1px 8px", borderRadius: 24,
+                        background: "var(--color-surface-subtle)", color: "var(--color-text-muted)", fontWeight: 500,
                       }}>
                         {signals.length}
                       </span>
@@ -553,36 +553,36 @@ export function AssessmentView({
                             }}
                             style={{
                               display: "flex", justifyContent: "space-between", alignItems: "center",
-                              padding: "6px 12px", borderRadius: 8, cursor: "pointer",
-                              background: isActive ? "#F5F3FF" : "#F9FAFB",
-                              border: isActive ? "1px solid #C4B5FD" : "1px solid #E5E7EB",
+                              padding: "6px 12px", borderRadius: "var(--radius-sm)", cursor: "pointer",
+                              background: isActive ? "var(--color-accent-soft)" : "var(--color-surface-subtle)",
+                              border: isActive ? "1px solid var(--color-accent)" : "1px solid var(--color-border-subtle)",
                               transition: "all 0.1s ease",
                             }}
                           >
-                            <span style={{ fontSize: 13, color: isActive ? "#0A0A0A" : "#737373" }}>
+                            <span style={{ fontSize: "var(--text-small)", color: isActive ? "var(--color-text-primary)" : "var(--color-text-muted)" }}>
                               {signal.name}
                             </span>
                             <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
                               {isDetected && (
                                 <span style={{
-                                  fontSize: 11, padding: "1px 6px", borderRadius: 24,
-                                  background: "#EDE9FE", color: "#6C5CE7", fontWeight: 600,
+                                  fontSize: "var(--text-eyebrow)", padding: "1px 6px", borderRadius: 24,
+                                  background: "var(--color-accent-soft)", color: "var(--color-accent)", fontWeight: 600,
                                 }}>
                                   AI
                                 </span>
                               )}
                               {isRejected && (
                                 <span style={{
-                                  fontSize: 11, padding: "1px 6px", borderRadius: 24,
-                                  background: "#F3F4F6", color: "#A3A3A3",
+                                  fontSize: "var(--text-eyebrow)", padding: "1px 6px", borderRadius: 24,
+                                  background: "var(--color-surface-subtle)", color: "var(--color-text-muted)",
                                 }}>
                                   rejected
                                 </span>
                               )}
                               <span style={{
                                 width: 16, height: 16, borderRadius: "50%", flexShrink: 0,
-                                background: isActive ? "#6C5CE7" : "#E5E7EB",
-                                border: "2px solid #6C5CE7",
+                                background: isActive ? "var(--color-accent)" : "var(--color-border-subtle)",
+                                border: "2px solid var(--color-accent)",
                                 display: "inline-block",
                               }} />
                             </div>
@@ -593,7 +593,7 @@ export function AssessmentView({
                   </div>
                 ))}
                 {signalsByDomain.size === 0 && (
-                  <p style={{ color: "#A3A3A3", fontSize: 13 }}>No signals match your search.</p>
+                  <p style={{ color: "var(--color-text-muted)", fontSize: "var(--text-small)" }}>No signals match your search.</p>
                 )}
               </div>
             </>
@@ -626,11 +626,11 @@ export function AssessmentView({
         <div style={{ display: "flex", flexDirection: "column" }}>
           {/* Confirmed signals */}
           <div style={rowStyle}>
-            <span style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>Confirmed signals</span>
+            <span style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-secondary)" }}>Confirmed signals</span>
             <span style={{
-              fontSize: 13, fontWeight: 600, padding: "2px 10px", borderRadius: 24,
-              background: inferredSignalCount > 0 ? "#D1FAE5" : "#F3F4F6",
-              color: inferredSignalCount > 0 ? "#065F46" : "#A3A3A3",
+              fontSize: "var(--text-small)", fontWeight: 600, padding: "2px 10px", borderRadius: 24,
+              background: inferredSignalCount > 0 ? "var(--color-success-soft)" : "var(--color-surface-subtle)",
+              color: inferredSignalCount > 0 ? "var(--color-success)" : "var(--color-text-muted)",
             }}>
               {inferredSignalCount}
             </span>
@@ -639,28 +639,28 @@ export function AssessmentView({
           {/* Rejected signals */}
           {rejectedSignalIds.size > 0 && (
             <div style={rowStyle}>
-              <span style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>Rejected signals</span>
-              <span style={{ fontSize: 13, color: "#A3A3A3" }}>{rejectedSignalIds.size} excluded</span>
+              <span style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-secondary)" }}>Rejected signals</span>
+              <span style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)" }}>{rejectedSignalIds.size} excluded</span>
             </div>
           )}
 
           {/* Manually added */}
           {manuallyAddedSignalIds.size > 0 && (
             <div style={rowStyle}>
-              <span style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>Manually added</span>
-              <span style={{ fontSize: 13, color: "#0A0A0A" }}>{manuallyAddedSignalIds.size}</span>
+              <span style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-secondary)" }}>Manually added</span>
+              <span style={{ fontSize: "var(--text-small)", color: "var(--color-text-primary)" }}>{manuallyAddedSignalIds.size}</span>
             </div>
           )}
 
           {/* Ontology version */}
           <div style={rowStyle}>
-            <span style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>Ontology version</span>
-            <span style={{ fontSize: 13, color: "#0A0A0A" }}>{intakePreview?.ontology_version ?? "pending"}</span>
+            <span style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-secondary)" }}>Ontology version</span>
+            <span style={{ fontSize: "var(--text-small)", color: "var(--color-text-primary)" }}>{intakePreview?.ontology_version ?? "pending"}</span>
           </div>
 
           {/* Management hours */}
           <div style={rowStyle}>
-            <label htmlFor="mgmt-hours" style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>
+            <label htmlFor="mgmt-hours" style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-secondary)" }}>
               Management hours / week
             </label>
             <input
@@ -672,16 +672,16 @@ export function AssessmentView({
               onChange={(e) => onManagementHoursChange(Math.max(1, parseInt(e.target.value, 10) || 1))}
               style={{
                 width: 72, textAlign: "right",
-                background: "#FAFAFA", border: "1.5px solid #E5E7EB",
-                borderRadius: 8, padding: "4px 8px",
-                color: "#0A0A0A", fontSize: 13, outline: "none",
+                background: "var(--color-surface-subtle)", border: "1.5px solid var(--color-border-subtle)",
+                borderRadius: "var(--radius-sm)", padding: "4px 8px",
+                color: "var(--color-text-primary)", fontSize: "var(--text-small)", outline: "none",
               }}
             />
           </div>
 
           {/* Weekly budget */}
           <div style={rowStyle}>
-            <label htmlFor="weekly-budget" style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>
+            <label htmlFor="weekly-budget" style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-secondary)" }}>
               Weekly effort budget (hours)
             </label>
             <input
@@ -693,20 +693,20 @@ export function AssessmentView({
               onChange={(e) => onWeeklyBudgetChange(Math.max(1, parseInt(e.target.value, 10) || 1))}
               style={{
                 width: 72, textAlign: "right",
-                background: "#FAFAFA", border: "1.5px solid #E5E7EB",
-                borderRadius: 8, padding: "4px 8px",
-                color: "#0A0A0A", fontSize: 13, outline: "none",
+                background: "var(--color-surface-subtle)", border: "1.5px solid var(--color-border-subtle)",
+                borderRadius: "var(--radius-sm)", padding: "4px 8px",
+                color: "var(--color-text-primary)", fontSize: "var(--text-small)", outline: "none",
               }}
             />
           </div>
 
           {/* Status */}
           <div style={rowStyle}>
-            <span style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>Status</span>
-            <span style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13 }}>
+            <span style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-secondary)" }}>Status</span>
+            <span style={{ display: "flex", alignItems: "center", gap: 6, fontSize: "var(--text-small)" }}>
               <span style={{
                 width: 8, height: 8, borderRadius: "50%",
-                background: savedAssessment ? "#10B981" : "#F59E0B",
+                background: savedAssessment ? "var(--color-success)" : "var(--color-warning)",
                 display: "inline-block",
               }} />
               {savedAssessment ? "Saved and reviewable" : "Unsaved inference"}
@@ -715,8 +715,8 @@ export function AssessmentView({
 
           {/* Latest run */}
           <div style={{ ...rowStyle, borderBottom: "none" }}>
-            <span style={{ fontSize: 13, fontWeight: 600, color: "#525252" }}>Latest run</span>
-            <span style={{ fontSize: 13, color: "#0A0A0A" }}>
+            <span style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-secondary)" }}>Latest run</span>
+            <span style={{ fontSize: "var(--text-small)", color: "var(--color-text-primary)" }}>
               {latestEngineRunAt ? formatTimestamp(latestEngineRunAt) : "not run yet"}
             </span>
           </div>
@@ -741,18 +741,18 @@ function IntakeQualityBar({ text }: { text: string }) {
 
   const barWidth = Math.min(100, Math.round((wordCount / 200) * 100));
   const barColor =
-    quality.level === "empty" ? "#D1D5DB"
-      : quality.level === "thin" ? "#EF4444"
-        : quality.level === "minimal" ? "#F59E0B"
-          : "#10B981";
+    quality.level === "empty" ? "var(--color-border-subtle)"
+      : quality.level === "thin" ? "var(--color-danger)"
+        : quality.level === "minimal" ? "var(--color-warning)"
+          : "var(--color-success)";
 
   return (
     <div style={{ marginTop: 8 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#A3A3A3", marginBottom: 4 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: "var(--text-eyebrow)", color: "var(--color-text-muted)", marginBottom: 4 }}>
         <span>{quality.label} ({wordCount} words)</span>
         <span>{quality.hint}</span>
       </div>
-      <div style={{ height: 4, borderRadius: 2, background: "#F3F4F6", overflow: "hidden" }}>
+      <div style={{ height: 4, borderRadius: 2, background: "var(--color-surface-subtle)", overflow: "hidden" }}>
         <div style={{ height: "100%", width: `${barWidth}%`, background: barColor, borderRadius: 2, transition: "width 0.3s ease" }} />
       </div>
     </div>

@@ -7,6 +7,7 @@ import {
   Venue,
   VenueCreatePayload,
 } from "../../lib/api";
+import { Select } from "../../components/ui/Select";
 
 type OwnerAdministrationViewProps = {
   organizationName: string;
@@ -41,33 +42,33 @@ type OwnerAdministrationViewProps = {
 
 /* ---- Shared inline-style fragments ---- */
 const card: React.CSSProperties = {
-  background: "#FFFFFF", borderRadius: 12, padding: "20px 24px",
+  background: "var(--color-surface)", borderRadius: "var(--radius-md)", padding: "20px 24px",
   boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
 };
 const eyebrow: React.CSSProperties = {
-  fontSize: 11, fontWeight: 600, textTransform: "uppercase",
-  letterSpacing: "0.08em", color: "#A3A3A3", marginBottom: 4,
+  fontSize: "var(--text-eyebrow)", fontWeight: 600, textTransform: "uppercase",
+  letterSpacing: "0.08em", color: "var(--color-text-muted)", marginBottom: 4,
 };
-const sectionTitle: React.CSSProperties = { fontSize: 20, fontWeight: 600, color: "#0A0A0A", margin: "0 0 4px" };
-const sectionDesc: React.CSSProperties = { fontSize: 13, color: "#737373", margin: "0 0 16px" };
-const labelSpan: React.CSSProperties = { display: "block", fontSize: 13, fontWeight: 500, color: "#0A0A0A", marginBottom: 4 };
+const sectionTitle: React.CSSProperties = { fontSize: "var(--text-section)", fontWeight: 600, color: "var(--color-text-primary)", margin: "0 0 4px" };
+const sectionDesc: React.CSSProperties = { fontSize: "var(--text-small)", color: "var(--color-text-muted)", margin: "0 0 16px" };
+const labelSpan: React.CSSProperties = { display: "block", fontSize: "var(--text-small)", fontWeight: 500, color: "var(--color-text-primary)", marginBottom: 4 };
 const inputStyle: React.CSSProperties = {
-  width: "100%", height: 44, borderRadius: 12, border: "1.5px solid #E5E5E5",
-  padding: "0 14px", fontSize: 15, color: "#0A0A0A", outline: "none", boxSizing: "border-box",
+  width: "100%", height: 44, borderRadius: "var(--radius-md)", border: "1.5px solid var(--color-border-subtle)",
+  padding: "0 14px", fontSize: "var(--text-body)", color: "var(--color-text-primary)", outline: "none", boxSizing: "border-box",
 };
 const selectStyle: React.CSSProperties = { ...inputStyle, appearance: "auto" as const };
 const primaryBtn: React.CSSProperties = {
-  background: "#6C5CE7", color: "#FFFFFF", border: "none", borderRadius: 8,
-  padding: "8px 18px", fontSize: 13, fontWeight: 600, cursor: "pointer",
+  background: "var(--color-accent)", color: "var(--color-surface)", border: "none", borderRadius: "var(--radius-sm)",
+  padding: "8px 18px", fontSize: "var(--text-small)", fontWeight: 600, cursor: "pointer",
 };
 const secondaryBtn: React.CSSProperties = {
-  background: "#FFFFFF", color: "#0A0A0A", border: "1.5px solid #E5E5E5", borderRadius: 8,
-  padding: "8px 18px", fontSize: 13, fontWeight: 600, cursor: "pointer",
+  background: "var(--color-surface)", color: "var(--color-text-primary)", border: "1.5px solid var(--color-border-subtle)", borderRadius: "var(--radius-sm)",
+  padding: "8px 18px", fontSize: "var(--text-small)", fontWeight: 600, cursor: "pointer",
 };
 const emptyBox: React.CSSProperties = {
-  background: "#FFFFFF", borderRadius: 12, padding: 40,
+  background: "var(--color-surface)", borderRadius: "var(--radius-md)", padding: 40,
   boxShadow: "0 1px 3px rgba(0,0,0,0.04)", textAlign: "center" as const,
-  fontSize: 15, color: "#A3A3A3",
+  fontSize: "var(--text-body)", color: "var(--color-text-muted)",
 };
 
 export function OwnerAdministrationView({
@@ -150,8 +151,8 @@ export function OwnerAdministrationView({
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16 }}>
         <div>
           <div style={eyebrow}>ORGANIZATION</div>
-          <h1 style={{ fontSize: 28, fontWeight: 700, color: "#0A0A0A", margin: 0 }}>{organizationName}</h1>
-          <p style={{ fontSize: 15, color: "#737373", margin: "4px 0 0" }}>
+          <h1 style={{ fontSize: "var(--text-page)", fontWeight: 700, color: "var(--color-text-primary)", margin: 0 }}>{organizationName}</h1>
+          <p style={{ fontSize: "var(--text-body)", color: "var(--color-text-muted)", margin: "4px 0 0" }}>
             Create venues, provision operators, assign access, and rotate logins from inside VOIS.
           </p>
         </div>
@@ -162,22 +163,22 @@ export function OwnerAdministrationView({
 
       {/* ---- Summary cards ---- */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16 }}>
-        <div style={{ ...card, borderLeft: "3px solid #6C5CE7" }}>
+        <div style={{ ...card, borderLeft: "3px solid var(--color-accent)" }}>
           <div style={eyebrow}>Workspace state</div>
-          <h3 style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", margin: "4px 0 6px" }}>
+          <h3 style={{ fontSize: "var(--text-section)", fontWeight: 600, color: "var(--color-text-primary)", margin: "4px 0 6px" }}>
             {venues.length ? `${venues.length} venue${venues.length === 1 ? "" : "s"} live` : "No venues yet"}
           </h3>
-          <p style={{ fontSize: 13, color: "#737373", margin: 0 }}>
+          <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)", margin: 0 }}>
             This workspace is real now. Add the first venue, then provision managers and baristas with explicit venue
             access instead of relying on demo data.
           </p>
         </div>
         <div style={card}>
           <div style={eyebrow}>Operator access</div>
-          <h3 style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", margin: "4px 0 6px" }}>
+          <h3 style={{ fontSize: "var(--text-section)", fontWeight: 600, color: "var(--color-text-primary)", margin: "4px 0 6px" }}>
             {members.length} member{members.length === 1 ? "" : "s"}
           </h3>
-          <p style={{ fontSize: 13, color: "#737373", margin: 0 }}>
+          <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)", margin: 0 }}>
             Owners act at organization scope. Managers and baristas need venue assignments to work.
           </p>
         </div>
@@ -190,9 +191,9 @@ export function OwnerAdministrationView({
                 ["Temporary password", latestLoginPacket.temporary_password],
                 ["Reset required", latestLoginPacket.reset_required ? "yes" : "no"],
               ] as [string, string][]).map(([k, v]) => (
-                <div key={k} style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
-                  <strong style={{ color: "#0A0A0A" }}>{k}</strong>
-                  <span style={{ color: "#737373" }}>{v}</span>
+                <div key={k} style={{ display: "flex", justifyContent: "space-between", fontSize: "var(--text-small)" }}>
+                  <strong style={{ color: "var(--color-text-primary)" }}>{k}</strong>
+                  <span style={{ color: "var(--color-text-muted)" }}>{v}</span>
                 </div>
               ))}
             </div>
@@ -201,7 +202,7 @@ export function OwnerAdministrationView({
       </div>
 
       {error ? (
-        <p style={{ fontSize: 13, color: "#EF4444", margin: 0, padding: "0 4px" }}>{error}</p>
+        <p style={{ fontSize: "var(--text-small)", color: "var(--color-danger)", margin: 0, padding: "0 4px" }}>{error}</p>
       ) : null}
 
       {/* ---- Two-column forms ---- */}
@@ -215,51 +216,55 @@ export function OwnerAdministrationView({
             <label>
               <span style={labelSpan}>Name</span>
               <input style={inputStyle} value={venueName} onChange={(e) => setVenueName(e.target.value)} required
-                onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
-                onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+                onFocus={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; }}
+                onBlur={(e) => { e.currentTarget.style.borderColor = "var(--color-border-subtle)"; }}
               />
             </label>
             <label>
               <span style={labelSpan}>Slug</span>
               <input style={inputStyle} value={venueSlug} onChange={(e) => setVenueSlug(e.target.value)} required
-                onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
-                onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+                onFocus={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; }}
+                onBlur={(e) => { e.currentTarget.style.borderColor = "var(--color-border-subtle)"; }}
               />
             </label>
             <label>
               <span style={labelSpan}>Concept</span>
               <input style={inputStyle} value={venueConcept} onChange={(e) => setVenueConcept(e.target.value)}
-                onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
-                onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+                onFocus={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; }}
+                onBlur={(e) => { e.currentTarget.style.borderColor = "var(--color-border-subtle)"; }}
               />
             </label>
             <label>
               <span style={labelSpan}>Location</span>
               <input style={inputStyle} value={venueLocation} onChange={(e) => setVenueLocation(e.target.value)}
-                onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
-                onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+                onFocus={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; }}
+                onBlur={(e) => { e.currentTarget.style.borderColor = "var(--color-border-subtle)"; }}
               />
             </label>
             <label style={{ gridColumn: "1 / -1" }}>
               <span style={labelSpan}>Ontology pack</span>
-              <select style={selectStyle} value={selectedMount} onChange={(e) => setSelectedMount(e.target.value)} required>
-                {availableMounts.map((mount) => (
-                  <option key={`${mount.ontology_id}@${mount.version}`} value={`${mount.ontology_id}@${mount.version}`}>
-                    {mount.display_name} ({mount.version})
-                  </option>
-                ))}
-              </select>
+              <Select
+                value={selectedMount}
+                onChange={(v) => setSelectedMount(v)}
+                options={availableMounts.map((mount) => ({
+                  value: `${mount.ontology_id}@${mount.version}`,
+                  label: `${mount.display_name} (${mount.version})`,
+                }))}
+              />
             </label>
             <label style={{ gridColumn: "1 / -1" }}>
               <span style={labelSpan}>Initial operator assignment</span>
-              <select style={selectStyle} value={initialManagerUserId} onChange={(e) => setInitialManagerUserId(e.target.value)}>
-                <option value="">No initial operator</option>
-                {operatorCandidates.map((member) => (
-                  <option key={member.user_id} value={member.user_id}>
-                    {member.full_name} ({member.role})
-                  </option>
-                ))}
-              </select>
+              <Select
+                value={initialManagerUserId}
+                onChange={(v) => setInitialManagerUserId(v)}
+                options={[
+                  { value: "", label: "No initial operator" },
+                  ...operatorCandidates.map((member) => ({
+                    value: member.user_id,
+                    label: `${member.full_name} (${member.role})`,
+                  })),
+                ]}
+              />
             </label>
             <div style={{ gridColumn: "1 / -1", marginTop: 4 }}>
               <button
@@ -286,8 +291,8 @@ export function OwnerAdministrationView({
                   onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.08)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
                 >
-                  <strong style={{ color: "#0A0A0A" }}>{venue.name}</strong>
-                  <span style={{ color: "#A3A3A3", fontSize: 13 }}>{venue.location ?? venue.slug}</span>
+                  <strong style={{ color: "var(--color-text-primary)" }}>{venue.name}</strong>
+                  <span style={{ color: "var(--color-text-muted)", fontSize: "var(--text-small)" }}>{venue.location ?? venue.slug}</span>
                 </button>
               ))}
             </div>
@@ -305,35 +310,35 @@ export function OwnerAdministrationView({
             <label>
               <span style={labelSpan}>Full name</span>
               <input style={inputStyle} value={memberName} onChange={(e) => setMemberName(e.target.value)} required
-                onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
-                onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+                onFocus={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; }}
+                onBlur={(e) => { e.currentTarget.style.borderColor = "var(--color-border-subtle)"; }}
               />
             </label>
             <label>
               <span style={labelSpan}>Email</span>
               <input style={inputStyle} value={memberEmail} onChange={(e) => setMemberEmail(e.target.value)} placeholder="manager@company.com" required
-                onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
-                onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+                onFocus={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; }}
+                onBlur={(e) => { e.currentTarget.style.borderColor = "var(--color-border-subtle)"; }}
               />
             </label>
             <label>
               <span style={labelSpan}>Role</span>
-              <select
-                style={selectStyle}
+              <Select
                 value={memberRole}
-                onChange={(e) => setMemberRole(e.target.value as "owner" | "manager" | "barista" | "developer")}
-              >
-                <option value="owner">Owner</option>
-                <option value="manager">Manager</option>
-                <option value="barista">Barista</option>
-                <option value="developer">Developer</option>
-              </select>
+                onChange={(v) => setMemberRole(v as "owner" | "manager" | "barista" | "developer")}
+                options={[
+                  { value: "owner", label: "Owner" },
+                  { value: "manager", label: "Manager" },
+                  { value: "barista", label: "Barista" },
+                  { value: "developer", label: "Developer" },
+                ]}
+              />
             </label>
             <div style={{ gridColumn: "1 / -1" }}>
               <span style={labelSpan}>Venue access</span>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                 {venues.map((venue) => (
-                  <label key={venue.id} style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, color: "#0A0A0A", cursor: "pointer" }}>
+                  <label key={venue.id} style={{ display: "flex", alignItems: "center", gap: 6, fontSize: "var(--text-small)", color: "var(--color-text-primary)", cursor: "pointer" }}>
                     <input
                       type="checkbox"
                       checked={memberVenueIds.includes(venue.id)}
@@ -345,12 +350,12 @@ export function OwnerAdministrationView({
                             : current.filter((v) => v !== venue.id)
                         );
                       }}
-                      style={{ accentColor: "#6C5CE7" }}
+                      style={{ accentColor: "var(--color-accent)" }}
                     />
                     <span>{venue.name}</span>
                   </label>
                 ))}
-                {!venues.length ? <p style={{ fontSize: 13, color: "#A3A3A3", margin: 0 }}>Create a venue before provisioning managers or baristas.</p> : null}
+                {!venues.length ? <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)", margin: 0 }}>Create a venue before provisioning managers or baristas.</p> : null}
               </div>
             </div>
             <div style={{ gridColumn: "1 / -1", marginTop: 4 }}>
@@ -435,20 +440,20 @@ function MemberAccessCard({
 
   return (
     <article style={{
-      background: "#FAFAFA", borderRadius: 12, padding: "16px 20px",
-      border: "1px solid #F0F0F0", display: "flex", flexDirection: "column", gap: 12,
+      background: "var(--color-surface-subtle)", borderRadius: "var(--radius-md)", padding: "16px 20px",
+      border: "1px solid var(--border)", display: "flex", flexDirection: "column", gap: 12,
     }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div>
-          <strong style={{ fontSize: 15, color: "#0A0A0A" }}>{member.email}</strong>
-          <p style={{ fontSize: 11, color: "#A3A3A3", margin: "2px 0 0" }}>
+          <strong style={{ fontSize: "var(--text-body)", color: "var(--color-text-primary)" }}>{member.email}</strong>
+          <p style={{ fontSize: "var(--text-eyebrow)", color: "var(--color-text-muted)", margin: "2px 0 0" }}>
             {member.firebase_uid ?? "Firebase user will be created on provision."}
           </p>
         </div>
         <span style={{
-          display: "inline-block", padding: "2px 10px", borderRadius: 999,
-          background: active ? "#10B981" : "#A3A3A3", color: "#FFFFFF",
-          fontSize: 11, fontWeight: 600, textTransform: "uppercase",
+          display: "inline-block", padding: "2px 10px", borderRadius: "var(--radius-full)",
+          background: active ? "var(--color-success)" : "var(--color-text-muted)", color: "var(--color-surface)",
+          fontSize: "var(--text-eyebrow)", fontWeight: 600, textTransform: "uppercase",
         }}>
           {active ? "active" : "inactive"}
         </span>
@@ -456,41 +461,37 @@ function MemberAccessCard({
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
         <label>
-          <span style={{ display: "block", fontSize: 13, fontWeight: 500, color: "#0A0A0A", marginBottom: 4 }}>Name</span>
+          <span style={{ display: "block", fontSize: "var(--text-small)", fontWeight: 500, color: "var(--color-text-primary)", marginBottom: 4 }}>Name</span>
           <input
             style={{
-              width: "100%", height: 44, borderRadius: 12, border: "1.5px solid #E5E5E5",
-              padding: "0 14px", fontSize: 15, color: "#0A0A0A", outline: "none", boxSizing: "border-box",
+              width: "100%", height: 44, borderRadius: "var(--radius-md)", border: "1.5px solid var(--color-border-subtle)",
+              padding: "0 14px", fontSize: "var(--text-body)", color: "var(--color-text-primary)", outline: "none", boxSizing: "border-box",
             }}
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
-            onFocus={(e) => { e.currentTarget.style.borderColor = "#6C5CE7"; }}
-            onBlur={(e) => { e.currentTarget.style.borderColor = "#E5E5E5"; }}
+            onFocus={(e) => { e.currentTarget.style.borderColor = "var(--color-accent)"; }}
+            onBlur={(e) => { e.currentTarget.style.borderColor = "var(--color-border-subtle)"; }}
           />
         </label>
         <label>
-          <span style={{ display: "block", fontSize: 13, fontWeight: 500, color: "#0A0A0A", marginBottom: 4 }}>Role</span>
-          <select
-            style={{
-              width: "100%", height: 44, borderRadius: 12, border: "1.5px solid #E5E5E5",
-              padding: "0 14px", fontSize: 15, color: "#0A0A0A", outline: "none", boxSizing: "border-box",
-              appearance: "auto" as const,
-            }}
+          <span style={{ display: "block", fontSize: "var(--text-small)", fontWeight: 500, color: "var(--color-text-primary)", marginBottom: 4 }}>Role</span>
+          <Select
             value={role}
-            onChange={(e) => setRole(e.target.value as "owner" | "manager" | "barista" | "developer")}
-          >
-            <option value="owner">Owner</option>
-            <option value="manager">Manager</option>
-            <option value="barista">Barista</option>
-            <option value="developer">Developer</option>
-          </select>
+            onChange={(v) => setRole(v as "owner" | "manager" | "barista" | "developer")}
+            options={[
+              { value: "owner", label: "Owner" },
+              { value: "manager", label: "Manager" },
+              { value: "barista", label: "Barista" },
+              { value: "developer", label: "Developer" },
+            ]}
+          />
         </label>
       </div>
 
       {usesVenueAssignments ? (
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
           {venues.map((venue) => (
-            <label key={venue.id} style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, color: "#0A0A0A", cursor: "pointer" }}>
+            <label key={venue.id} style={{ display: "flex", alignItems: "center", gap: 6, fontSize: "var(--text-small)", color: "var(--color-text-primary)", cursor: "pointer" }}>
               <input
                 type="checkbox"
                 checked={venueIds.includes(venue.id)}
@@ -499,14 +500,14 @@ function MemberAccessCard({
                     e.target.checked ? [...current, venue.id] : current.filter((v) => v !== venue.id)
                   );
                 }}
-                style={{ accentColor: "#6C5CE7" }}
+                style={{ accentColor: "var(--color-accent)" }}
               />
               <span>{venue.name}</span>
             </label>
           ))}
         </div>
       ) : (
-        <p style={{ fontSize: 13, color: "#A3A3A3", margin: 0 }}>
+        <p style={{ fontSize: "var(--text-small)", color: "var(--color-text-muted)", margin: 0 }}>
           This role uses organization-level access and does not take venue assignments.
         </p>
       )}

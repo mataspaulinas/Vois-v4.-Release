@@ -9,6 +9,7 @@ import React, {
   type ReactNode,
   type CSSProperties,
 } from "react";
+import Icon from "./Icon";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -61,33 +62,33 @@ const ANIM_CLOSE = "200ms ease";
 const ANIM_COMPRESS = "260ms ease";
 
 const TYPE_BORDER_COLORS: Record<DrawerType, string> = {
-  block: "#6C5CE7",
-  tool: "#3B82F6",
-  signal: "#10B981",
-  "failure-mode": "#EF4444",
-  "response-pattern": "#F59E0B",
+  block: "var(--color-accent)",
+  tool: "var(--sky)",
+  signal: "var(--color-success)",
+  "failure-mode": "var(--color-danger)",
+  "response-pattern": "var(--color-warning)",
   copilot: "transparent", // uses gradient via separate style
-  custom: "#A3A3A3",
+  custom: "var(--color-text-muted)",
 };
 
 const TYPE_BADGE_BG: Record<DrawerType, string> = {
-  block: "#F0EDFF",
-  tool: "#EFF6FF",
-  signal: "#ECFDF5",
-  "failure-mode": "#FEF2F2",
-  "response-pattern": "#FFFBEB",
-  copilot: "#F0EDFF",
-  custom: "#F5F5F5",
+  block: "var(--color-accent-soft)",
+  tool: "var(--color-accent-soft)",
+  signal: "var(--color-success-soft)",
+  "failure-mode": "var(--color-danger-soft)",
+  "response-pattern": "var(--color-warning-soft)",
+  copilot: "var(--color-accent-soft)",
+  custom: "var(--color-surface-subtle)",
 };
 
 const TYPE_BADGE_TEXT: Record<DrawerType, string> = {
-  block: "#6C5CE7",
-  tool: "#3B82F6",
-  signal: "#10B981",
-  "failure-mode": "#EF4444",
-  "response-pattern": "#F59E0B",
-  copilot: "#6C5CE7",
-  custom: "#525252",
+  block: "var(--color-accent)",
+  tool: "var(--sky)",
+  signal: "var(--color-success)",
+  "failure-mode": "var(--color-danger)",
+  "response-pattern": "var(--color-warning)",
+  copilot: "var(--color-accent)",
+  custom: "var(--color-text-secondary)",
 };
 
 const TYPE_LABELS: Record<DrawerType, string> = {
@@ -488,7 +489,7 @@ function DrawerPanel({
         left: 0,
         bottom: 0,
         width: 4,
-        background: "linear-gradient(180deg, #6C5CE7, #A29BFE)",
+        background: "linear-gradient(180deg, var(--color-accent), var(--lavender))",
         borderRadius: "2px 0 0 2px",
       }
     : {
@@ -512,7 +513,7 @@ function DrawerPanel({
     width,
     minWidth: MIN_DRAWER_WIDTH,
     height: "100%",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "var(--color-surface)",
     boxShadow: "-4px 0 12px rgba(0,0,0,0.06)",
     display: "flex",
     flexDirection: "column",
@@ -590,23 +591,23 @@ function DrawerHeader({
     alignItems: "flex-start",
     justifyContent: "space-between",
     padding: isCompressed ? "12px 8px 12px 12px" : "16px 16px 12px 20px",
-    borderBottom: "1px solid #E5E5E5",
+    borderBottom: "1px solid var(--color-border-subtle)",
     gap: 8,
     flexShrink: 0,
   };
 
   const codeStyle: CSSProperties = {
     fontFamily: '"JetBrains Mono", monospace',
-    fontSize: 11,
-    color: "#A3A3A3",
+    fontSize: "var(--text-eyebrow)",
+    color: "var(--color-text-muted)",
     lineHeight: "1.2",
     marginBottom: 2,
   };
 
   const titleStyle: CSSProperties = {
-    fontSize: isCompressed ? 13 : 18,
+    fontSize: isCompressed ? "var(--text-small)" : "var(--text-section)",
     fontWeight: 600,
-    color: "#0A0A0A",
+    color: "var(--color-text-primary)",
     lineHeight: "1.25",
     margin: 0,
     overflow: "hidden",
@@ -618,8 +619,8 @@ function DrawerHeader({
     display: "inline-flex",
     alignItems: "center",
     padding: "2px 8px",
-    borderRadius: 999,
-    fontSize: 11,
+    borderRadius: "var(--radius-full)",
+    fontSize: "var(--text-eyebrow)",
     fontWeight: 500,
     lineHeight: "1.4",
     backgroundColor: TYPE_BADGE_BG[drawer.type],
@@ -636,9 +637,9 @@ function DrawerHeader({
     height: 28,
     border: "none",
     background: "transparent",
-    borderRadius: 6,
+    borderRadius: "var(--radius-sm)",
     cursor: "pointer",
-    color: "#A3A3A3",
+    color: "var(--color-text-muted)",
     flexShrink: 0,
     transition: "background 120ms ease, color 120ms ease",
   };
@@ -649,7 +650,7 @@ function DrawerHeader({
         {drawer.code && <div style={codeStyle}>{drawer.code}</div>}
         <h3 style={titleStyle}>{drawer.title}</h3>
         {drawer.subtitle && !isCompressed && (
-          <div style={{ fontSize: 13, color: "#525252", marginTop: 2, lineHeight: "1.4" }}>
+          <div style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", marginTop: 2, lineHeight: "1.4" }}>
             {drawer.subtitle}
           </div>
         )}
@@ -660,22 +661,15 @@ function DrawerHeader({
         onClick={onClose}
         aria-label="Close drawer"
         onMouseEnter={(e) => {
-          e.currentTarget.style.background = "#F5F5F5";
-          e.currentTarget.style.color = "#0A0A0A";
+          e.currentTarget.style.background = "var(--color-surface-subtle)";
+          e.currentTarget.style.color = "var(--color-text-primary)";
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.background = "transparent";
-          e.currentTarget.style.color = "#A3A3A3";
+          e.currentTarget.style.color = "var(--color-text-muted)";
         }}
       >
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path
-            d="M1 1l12 12M13 1L1 13"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-        </svg>
+        <Icon name="close" size={14} />
       </button>
     </div>
   );
@@ -693,13 +687,13 @@ function CompressedBody({ onExpand }: { onExpand: () => void }) {
     gap: 6,
     margin: "12px 8px",
     padding: "8px 12px",
-    border: "1px solid #E5E5E5",
-    borderRadius: 8,
-    background: "#FAFAFA",
+    border: "1px solid var(--color-border-subtle)",
+    borderRadius: "var(--radius-sm)",
+    background: "var(--color-surface-subtle)",
     cursor: "pointer",
-    fontSize: 12,
+    fontSize: "var(--text-small)",
     fontWeight: 500,
-    color: "#525252",
+    color: "var(--color-text-secondary)",
     transition: "background 120ms ease, border-color 120ms ease",
     width: "calc(100% - 16px)",
   };
@@ -710,22 +704,15 @@ function CompressedBody({ onExpand }: { onExpand: () => void }) {
         style={btnStyle}
         onClick={onExpand}
         onMouseEnter={(e) => {
-          e.currentTarget.style.background = "#F0F0F0";
-          e.currentTarget.style.borderColor = "#D4D4D4";
+          e.currentTarget.style.background = "var(--color-surface-subtle)";
+          e.currentTarget.style.borderColor = "var(--color-border-strong)";
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.background = "#FAFAFA";
-          e.currentTarget.style.borderColor = "#E5E5E5";
+          e.currentTarget.style.background = "var(--color-surface-subtle)";
+          e.currentTarget.style.borderColor = "var(--color-border-subtle)";
         }}
       >
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path
-            d="M2 6h8M6 2v8"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-        </svg>
+        <Icon name="add" size={12} />
         Expand
       </button>
     </div>
@@ -748,35 +735,35 @@ export function OntologyLink({ type, code, label, onClick }: OntologyLinkProps):
   const active = isOpen(code);
 
   const bgColors: Record<OntologyLinkProps["type"], string> = {
-    block: "#F0EDFF",
-    tool: "#EFF6FF",
-    signal: "#ECFDF5",
-    "failure-mode": "#FEF2F2",
-    "response-pattern": "#FFFBEB",
+    block: "var(--color-accent-soft)",
+    tool: "var(--color-accent-soft)",
+    signal: "var(--color-success-soft)",
+    "failure-mode": "var(--color-danger-soft)",
+    "response-pattern": "var(--color-warning-soft)",
   };
 
   const textColors: Record<OntologyLinkProps["type"], string> = {
-    block: "#6C5CE7",
-    tool: "#3B82F6",
-    signal: "#10B981",
-    "failure-mode": "#EF4444",
-    "response-pattern": "#F59E0B",
+    block: "var(--color-accent)",
+    tool: "var(--sky)",
+    signal: "var(--color-success)",
+    "failure-mode": "var(--color-danger)",
+    "response-pattern": "var(--color-warning)",
   };
 
   const hoverBgColors: Record<OntologyLinkProps["type"], string> = {
-    block: "#E4DEFF",
-    tool: "#DBEAFE",
-    signal: "#D1FAE5",
-    "failure-mode": "#FEE2E2",
-    "response-pattern": "#FEF3C7",
+    block: "var(--color-accent-soft)",
+    tool: "var(--color-accent-soft)",
+    signal: "var(--color-success-soft)",
+    "failure-mode": "var(--color-danger-soft)",
+    "response-pattern": "var(--color-warning-soft)",
   };
 
   const solidBgColors: Record<OntologyLinkProps["type"], string> = {
-    block: "#6C5CE7",
-    tool: "#3B82F6",
-    signal: "#10B981",
-    "failure-mode": "#EF4444",
-    "response-pattern": "#F59E0B",
+    block: "var(--color-accent)",
+    tool: "var(--sky)",
+    signal: "var(--color-success)",
+    "failure-mode": "var(--color-danger)",
+    "response-pattern": "var(--color-warning)",
   };
 
   const handleClick = () => {
@@ -801,14 +788,14 @@ export function OntologyLink({ type, code, label, onClick }: OntologyLinkProps):
     alignItems: "center",
     gap: 4,
     padding: "2px 10px",
-    borderRadius: 999,
-    fontSize: 13,
+    borderRadius: "var(--radius-full)",
+    fontSize: "var(--text-small)",
     fontWeight: 500,
     lineHeight: "1.6",
     cursor: "pointer",
     border: "none",
     background: active ? solidBgColors[type] : bgColors[type],
-    color: active ? "#FFFFFF" : textColors[type],
+    color: active ? "var(--color-surface)" : textColors[type],
     fontFamily: "inherit",
     transition: "background 120ms ease, color 120ms ease",
     verticalAlign: "middle",
@@ -832,7 +819,7 @@ export function OntologyLink({ type, code, label, onClick }: OntologyLinkProps):
       <span
         style={{
           fontFamily: '"JetBrains Mono", monospace',
-          fontSize: 11,
+          fontSize: "var(--text-eyebrow)",
           opacity: 0.8,
         }}
       >

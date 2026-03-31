@@ -18,25 +18,7 @@ type HistoryViewProps = {
   onLoadAssessmentRecord: (assessmentId: string) => void;
 };
 
-/* ── design tokens ─────────────────────────────────── */
-const ds = {
-  eyebrow: { fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#A3A3A3", margin: 0 },
-  pageTitle: { fontSize: 28, fontWeight: 700, color: "#0A0A0A", margin: "4px 0 0" },
-  body: { fontSize: 15, color: "#525252", lineHeight: 1.55, margin: 0 },
-  small: { fontSize: 13, color: "#737373", lineHeight: 1.5, margin: 0 },
-  sectionTitle: { fontSize: 20, fontWeight: 600, color: "#0A0A0A", margin: 0 },
-  card: { background: "#FFFFFF", borderRadius: 12, boxShadow: "0 1px 3px rgba(0,0,0,0.04)", padding: "20px 24px" } as React.CSSProperties,
-  metricNumber: { fontSize: 36, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: "#0A0A0A", margin: 0, lineHeight: 1.1 },
-  metricLabel: { fontSize: 12, color: "#A3A3A3", margin: 0 },
-  accent: "#6C5CE7",
-  success: "#10B981",
-  warning: "#F59E0B",
-  danger: "#EF4444",
-  info: "#6366F1",
-  btnPrimary: { background: "#6C5CE7", color: "#FFFFFF", border: "none", borderRadius: 8, padding: "8px 18px", fontSize: 13, fontWeight: 600, cursor: "pointer" } as React.CSSProperties,
-  btnSecondary: { background: "#FFFFFF", color: "#0A0A0A", border: "1px solid #E5E5E5", borderRadius: 8, padding: "8px 18px", fontSize: 13, fontWeight: 500, cursor: "pointer" } as React.CSSProperties,
-  countPill: { display: "inline-flex", alignItems: "center", padding: "2px 8px", borderRadius: 10, fontSize: 11, fontWeight: 600, background: "#F5F5F5", color: "#737373" } as React.CSSProperties,
-} as const;
+import { ds } from "../../styles/tokens";
 
 export function HistoryView({
   loading,
@@ -92,44 +74,44 @@ export function HistoryView({
       <PrimaryCanvas>
         <div style={{ padding: 48, display: "flex", flexDirection: "column", gap: 32 }}>
           {/* ── Main section ──────────────────────── */}
-          <section style={ds.card}>
+          <section className="ui-card">
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16, marginBottom: 20 }}>
               <div>
-                <p style={ds.eyebrow}>VENUE</p>
-                <h2 style={ds.sectionTitle}>Assessment timeline</h2>
-                <p style={{ ...ds.small, marginTop: 4 }}>Every analyzed venue state becomes a reviewable operational record.</p>
+                <p className="eyebrow">VENUE</p>
+                <h2 className="section-title">Assessment timeline</h2>
+                <p className="small-text" style={{ marginTop: 4 }}>Every analyzed venue state becomes a reviewable operational record.</p>
               </div>
               <div style={{ display: "flex", gap: 8 }}>
-                <button style={ds.btnSecondary} onClick={onOpenAssessment}>New assessment</button>
-                <button style={ds.btnPrimary} onClick={onOpenPlan}>Open plan</button>
+                <button className="btn btn-secondary" onClick={onOpenAssessment}>New assessment</button>
+                <button className="btn btn-primary" onClick={onOpenPlan}>Open plan</button>
               </div>
             </div>
 
             {/* Metric cards */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16, marginBottom: 24 }}>
-              <div style={{ ...ds.card, borderLeft: `4px solid ${ds.accent}` }}>
-                <p style={ds.eyebrow}>Recorded snapshots</p>
-                <p style={{ ...ds.metricNumber, marginTop: 8 }}>{assessments.length}</p>
-                <p style={{ ...ds.small, marginTop: 6 }}>The venue timeline should show how operational reality changed over time, not just what the current state says.</p>
+              <div className="ui-card" style={{ borderLeft: `4px solid ${ds.accent}` }}>
+                <p className="eyebrow">Recorded snapshots</p>
+                <p className="metric-number" style={{ marginTop: 8 }}>{assessments.length}</p>
+                <p className="small-text" style={{ marginTop: 6 }}>The venue timeline should show how operational reality changed over time, not just what the current state says.</p>
               </div>
-              <div style={ds.card}>
-                <p style={ds.eyebrow}>Latest snapshot</p>
-                <p style={{ ...ds.metricNumber, marginTop: 8, fontSize: latestAssessment ? 20 : 36, fontFamily: latestAssessment ? "inherit" : "'JetBrains Mono', monospace" }}>
+              <div className="ui-card">
+                <p className="eyebrow">Latest snapshot</p>
+                <p className="metric-number" style={{ marginTop: 8, fontSize: latestAssessment ? 20 : 36, fontFamily: latestAssessment ? "inherit" : "'JetBrains Mono', monospace" }}>
                   {latestAssessment ? formatTimestamp(latestAssessment.created_at) : "None yet"}
                 </p>
-                <p style={{ ...ds.small, marginTop: 6 }}>
+                <p className="small-text" style={{ marginTop: 6 }}>
                   {latestAssessment
                     ? `${latestAssessment.selected_signal_count} signals, ${latestAssessment.plan_task_count} plan tasks.`
                     : "Save the first assessment to create a durable operating timeline."}
                 </p>
               </div>
               {comparison ? (
-                <div style={ds.card}>
-                  <p style={ds.eyebrow}>
+                <div className="ui-card">
+                  <p className="eyebrow">
                     {comparison.mode === "selected_vs_latest" ? "Selected vs latest" : "Latest vs previous"}
                   </p>
-                  <p style={{ ...ds.metricNumber, marginTop: 8, fontSize: 20 }}>{comparison.loadShift}</p>
-                  <p style={{ ...ds.small, marginTop: 6 }}>
+                  <p className="metric-number" style={{ marginTop: 8, fontSize: 20 }}>{comparison.loadShift}</p>
+                  <p className="small-text" style={{ marginTop: 6 }}>
                     {comparison.signalDelta >= 0 ? "+" : ""}{comparison.signalDelta} signals, {comparison.taskDelta >= 0 ? "+" : ""}{comparison.taskDelta} plan tasks.
                   </p>
                 </div>
@@ -139,48 +121,48 @@ export function HistoryView({
             {/* Comparison grid */}
             {comparison ? (
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16, marginBottom: 24 }}>
-                <div style={ds.card}>
-                  <p style={ds.eyebrow}>Escalated or newly visible</p>
+                <div className="ui-card">
+                  <p className="eyebrow">Escalated or newly visible</p>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 10 }}>
                     {comparison.addedSignals.length ? (
-                      comparison.addedSignals.map((signal) => <span key={signal} style={ds.countPill}>{signal}</span>)
+                      comparison.addedSignals.map((signal) => <span key={signal} className="ui-badge ui-badge--muted">{signal}</span>)
                     ) : (
-                      <span style={ds.countPill}>No new signal families.</span>
+                      <span className="ui-badge ui-badge--muted">No new signal families.</span>
                     )}
                   </div>
                 </div>
-                <div style={ds.card}>
-                  <p style={ds.eyebrow}>Reduced or absent</p>
+                <div className="ui-card">
+                  <p className="eyebrow">Reduced or absent</p>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 10 }}>
                     {comparison.removedSignals.length ? (
-                      comparison.removedSignals.map((signal) => <span key={signal} style={ds.countPill}>{signal}</span>)
+                      comparison.removedSignals.map((signal) => <span key={signal} className="ui-badge ui-badge--muted">{signal}</span>)
                     ) : (
-                      <span style={ds.countPill}>No resolved signals surfaced yet.</span>
+                      <span className="ui-badge ui-badge--muted">No resolved signals surfaced yet.</span>
                     )}
                   </div>
                 </div>
-                <div style={ds.card}>
-                  <p style={ds.eyebrow}>Comparison anchor</p>
+                <div className="ui-card">
+                  <p className="eyebrow">Comparison anchor</p>
                   <div style={{ display: "flex", flexDirection: "column", gap: 6, marginTop: 10 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
-                      <span style={{ color: "#737373", fontWeight: 500 }}>Newest snapshot</span>
-                      <span style={{ color: "#0A0A0A", fontWeight: 500 }}>{formatTimestamp(comparison.newer.created_at)}</span>
+                      <span style={{ color: "var(--color-text-muted)", fontWeight: 500 }}>Newest snapshot</span>
+                      <span style={{ color: "var(--color-text-primary)", fontWeight: 500 }}>{formatTimestamp(comparison.newer.created_at)}</span>
                     </div>
                     <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
-                      <span style={{ color: "#737373", fontWeight: 500 }}>Baseline snapshot</span>
-                      <span style={{ color: "#0A0A0A", fontWeight: 500 }}>{formatTimestamp(comparison.baseline.created_at)}</span>
+                      <span style={{ color: "var(--color-text-muted)", fontWeight: 500 }}>Baseline snapshot</span>
+                      <span style={{ color: "var(--color-text-primary)", fontWeight: 500 }}>{formatTimestamp(comparison.baseline.created_at)}</span>
                     </div>
                   </div>
                   <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
                     <button
-                      style={ds.btnSecondary}
+                      className="btn btn-secondary"
                       onClick={() => onLoadAssessmentRecord(comparison.newer.id)}
                       disabled={loadingAssessmentId === comparison.newer.id}
                     >
                       {loadingAssessmentId === comparison.newer.id ? "Loading..." : "Load newest"}
                     </button>
                     <button
-                      style={ds.btnSecondary}
+                      className="btn btn-secondary"
                       onClick={() => onLoadAssessmentRecord(comparison.baseline.id)}
                       disabled={loadingAssessmentId === comparison.baseline.id}
                     >
@@ -193,43 +175,43 @@ export function HistoryView({
 
             {/* Assessment timeline list */}
             {loading ? (
-              <p style={{ ...ds.small, textAlign: "center", padding: 32 }}>Loading assessment history...</p>
+              <p className="small-text" style={{ textAlign: "center", padding: 32 }}>Loading assessment history...</p>
             ) : assessments.length ? (
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                 {assessments.map((assessment) => (
                   <div
                     key={assessment.id}
+                    className="ui-card"
                     style={{
-                      ...ds.card,
-                      borderLeft: `4px solid ${selectedAssessmentId === assessment.id ? ds.accent : "#E5E5E5"}`,
+                      borderLeft: `4px solid ${selectedAssessmentId === assessment.id ? ds.accent : "var(--color-border-subtle)"}`,
                       ...(selectedAssessmentId === assessment.id ? { boxShadow: `0 0 0 1.5px ${ds.accent}20, 0 1px 3px rgba(0,0,0,0.04)` } : {}),
                     }}
                   >
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
-                      <span style={{ fontSize: 13, fontWeight: 600, color: "#0A0A0A" }}>{formatTimestamp(assessment.created_at)}</span>
-                      <span style={ds.countPill}>{assessment.plan_load_classification ?? "saved_only"}</span>
+                      <span style={{ fontSize: 13, fontWeight: 600, color: "var(--color-text-primary)" }}>{formatTimestamp(assessment.created_at)}</span>
+                      <span className="ui-badge ui-badge--muted">{assessment.plan_load_classification ?? "saved_only"}</span>
                     </div>
-                    <p style={{ ...ds.small, marginBottom: 8 }}>{assessment.notes ?? "No assessment notes captured."}</p>
+                    <p className="small-text" style={{ marginBottom: 8 }}>{assessment.notes ?? "No assessment notes captured."}</p>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 10 }}>
-                      <span style={ds.countPill}>{assessment.selected_signal_count} signals</span>
-                      <span style={ds.countPill}>{assessment.plan_task_count} plan tasks</span>
+                      <span className="ui-badge ui-badge--muted">{assessment.selected_signal_count} signals</span>
+                      <span className="ui-badge ui-badge--muted">{assessment.plan_task_count} plan tasks</span>
                       {assessment.ontology_id && (
-                        <span style={{ ...ds.countPill, opacity: 0.6 }}>{assessment.ontology_id}@{assessment.ontology_version}</span>
+                        <span className="ui-badge ui-badge--muted" style={{ opacity: 0.6 }}>{assessment.ontology_id}@{assessment.ontology_version}</span>
                       )}
                       {assessment.active_signal_names.map((name) => (
-                        <span key={name} style={ds.countPill}>{name}</span>
+                        <span key={name} className="ui-badge ui-badge--muted">{name}</span>
                       ))}
                     </div>
                     <div style={{ display: "flex", gap: 8 }}>
                       <button
-                        style={ds.btnSecondary}
+                        className="btn btn-secondary"
                         onClick={() => onLoadAssessmentRecord(assessment.id)}
                         disabled={loadingAssessmentId === assessment.id}
                       >
                         {loadingAssessmentId === assessment.id ? "Loading..." : "Load snapshot"}
                       </button>
                       {assessment.engine_run_id ? (
-                        <button style={ds.btnSecondary} onClick={() => onOpenReportRecord(assessment.engine_run_id!)}>
+                        <button className="btn btn-secondary" onClick={() => onOpenReportRecord(assessment.engine_run_id!)}>
                           Open report
                         </button>
                       ) : null}
@@ -238,24 +220,24 @@ export function HistoryView({
                 ))}
               </div>
             ) : (
-              <p style={{ ...ds.small, textAlign: "center", padding: 32 }}>No saved assessments yet. Analyze intake and save the first operational record.</p>
+              <p className="small-text" style={{ textAlign: "center", padding: 32 }}>No saved assessments yet. Analyze intake and save the first operational record.</p>
             )}
           </section>
 
           {/* ── Signal Trends ──────────────────────── */}
           <div style={{ marginTop: 32 }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
-              <h2 style={{ fontSize: 20, fontWeight: 600, margin: 0, color: "#0A0A0A" }}>Signal Trends</h2>
+              <h2 style={{ fontSize: 20, fontWeight: 600, margin: 0, color: "var(--color-text-primary)" }}>Signal Trends</h2>
               <button
                 onClick={() => setShowTrends(!showTrends)}
                 style={{
-                  background: showTrends ? "#6C5CE7" : "none",
-                  border: showTrends ? "none" : "1px solid #E5E5E5",
-                  color: showTrends ? "white" : "#525252",
-                  fontSize: 13,
+                  background: showTrends ? "var(--color-accent)" : "none",
+                  border: showTrends ? "none" : "1px solid var(--color-border-subtle)",
+                  color: showTrends ? "var(--color-surface)" : "var(--color-text-secondary)",
+                  fontSize: "var(--text-small)",
                   fontWeight: 600,
                   padding: "6px 14px",
-                  borderRadius: 8,
+                  borderRadius: "var(--radius-sm)",
                   cursor: "pointer",
                 }}
               >
@@ -266,7 +248,7 @@ export function HistoryView({
             {showTrends && (
               <div>
                 {recurringSignals.length === 0 ? (
-                  <p style={{ fontSize: 13, color: "#A3A3A3" }}>Not enough assessment data to detect trends. Run at least 2 assessments.</p>
+                  <p style={{ fontSize: 13, color: "var(--color-text-muted)" }}>Not enough assessment data to detect trends. Run at least 2 assessments.</p>
                 ) : (
                   <>
                     {persistentSignals.length > 0 && (
@@ -274,12 +256,12 @@ export function HistoryView({
                         padding: "12px 16px",
                         borderRadius: 8,
                         background: "rgba(239, 68, 68, 0.04)",
-                        borderLeft: "4px solid #EF4444",
+                        borderLeft: "4px solid var(--color-danger)",
                         marginBottom: 16,
                         fontSize: 13,
-                        color: "#525252",
+                        color: "var(--color-text-secondary)",
                       }}>
-                        <div style={{ fontWeight: 600, color: "#EF4444", marginBottom: 4 }}>
+                        <div style={{ fontWeight: 600, color: "var(--color-danger)", marginBottom: 4 }}>
                           Persistent signals detected
                         </div>
                         {persistentSignals.map(s => (
@@ -290,7 +272,7 @@ export function HistoryView({
                       </div>
                     )}
 
-                    <div style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A3A3A3", marginBottom: 8 }}>
+                    <div style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted)", marginBottom: 8 }}>
                       Signal frequency
                     </div>
                     {recurringSignals.map(s => (
@@ -299,14 +281,14 @@ export function HistoryView({
                         alignItems: "center",
                         gap: 12,
                         padding: "8px 0",
-                        borderBottom: "1px solid #F5F5F5",
+                        borderBottom: "1px solid var(--color-surface-subtle)",
                         fontSize: 13,
                       }}>
-                        <span style={{ flex: 1, color: "#0A0A0A" }}>{s.signalName}</span>
-                        <div style={{ width: 80, height: 6, background: "#F5F5F5", borderRadius: 3 }}>
-                          <div style={{ width: `${s.frequency * 100}%`, height: "100%", background: s.frequency >= 0.5 ? "#EF4444" : s.frequency >= 0.3 ? "#F59E0B" : "#6C5CE7", borderRadius: 3 }} />
+                        <span style={{ flex: 1, color: "var(--color-text-primary)" }}>{s.signalName}</span>
+                        <div style={{ width: 80, height: 6, background: "var(--color-surface-subtle)", borderRadius: 3 }}>
+                          <div style={{ width: `${s.frequency * 100}%`, height: "100%", background: s.frequency >= 0.5 ? "var(--color-danger)" : s.frequency >= 0.3 ? "var(--color-warning)" : "var(--color-accent)", borderRadius: 3 }} />
                         </div>
-                        <span style={{ fontSize: 11, color: "#A3A3A3", minWidth: 30, textAlign: "right" }}>{s.count}x</span>
+                        <span style={{ fontSize: 11, color: "var(--color-text-muted)", minWidth: 30, textAlign: "right" }}>{s.count}x</span>
                       </div>
                     ))}
                   </>

@@ -16,7 +16,7 @@ const sectionStyle: React.CSSProperties = {
 };
 
 const cardStyle: React.CSSProperties = {
-  background: "#fff",
+  background: "var(--color-surface)",
   borderRadius: 16,
   padding: 20,
   marginBottom: 12,
@@ -38,14 +38,14 @@ const titleRowStyle: React.CSSProperties = {
 const cardTitleStyle: React.CSSProperties = {
   fontSize: 18,
   fontWeight: 600,
-  color: "#1a1a2e",
+  color: "var(--color-text-primary)",
   lineHeight: 1.3,
 };
 
 const toggleStyle: React.CSSProperties = {
   fontSize: 20,
   fontWeight: 600,
-  color: "#6C5CE7",
+  color: "var(--color-accent)",
   width: 32,
   height: 32,
   display: "flex",
@@ -57,7 +57,7 @@ const toggleStyle: React.CSSProperties = {
 const sectionLabelStyle: React.CSSProperties = {
   fontSize: 12,
   fontWeight: 600,
-  color: "#6C5CE7",
+  color: "var(--color-accent)",
   textTransform: "uppercase",
   letterSpacing: "0.5px",
   marginBottom: 8,
@@ -65,7 +65,7 @@ const sectionLabelStyle: React.CSSProperties = {
 
 const rationaleStyle: React.CSSProperties = {
   fontSize: 16,
-  color: "#555",
+  color: "var(--color-text-muted)",
   lineHeight: 1.5,
   marginBottom: 16,
 };
@@ -79,7 +79,7 @@ const stepRowStyle: React.CSSProperties = {
 };
 
 const stepNumberStyle: React.CSSProperties = {
-  color: "#6C5CE7",
+  color: "var(--color-accent)",
   fontWeight: 600,
   width: 20,
   flexShrink: 0,
@@ -90,14 +90,14 @@ const bulletRowStyle: React.CSSProperties = {
   gap: 8,
   padding: "4px 0",
   fontSize: 16,
-  color: "#555",
+  color: "var(--color-text-muted)",
   lineHeight: 1.4,
 };
 
 const headingStyle: React.CSSProperties = {
   fontSize: 20,
   fontWeight: 600,
-  color: "#1a1a2e",
+  color: "var(--color-text-primary)",
   marginBottom: 16,
 };
 

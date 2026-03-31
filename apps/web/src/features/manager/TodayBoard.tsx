@@ -3,6 +3,7 @@ import { SurfaceHeader } from "../../components/SurfaceHeader";
 import { PrimaryCanvas } from "../../components/PrimaryCanvas";
 import { ContextInspector } from "../../components/ContextInspector";
 import { DeepDrawer } from "../../components/DeepDrawer";
+import Icon from "../../components/Icon";
 import { LoadingState } from "../../components/LoadingState";
 import { EmptyState } from "../../components/EmptyState";
 import { TransitionSuggestion } from "../../components/TransitionSuggestion";
@@ -50,14 +51,14 @@ const PRIORITY_COLORS: Record<string, string> = {
 /* ── Inline style constants (golden page tokens) ── */
 
 const S = {
-  pageBg: "#FAFAFA",
-  surface: "#FFFFFF",
-  accent: "#6C5CE7",
+  pageBg: "var(--color-surface-subtle)",
+  surface: "var(--color-surface)",
+  accent: "var(--color-accent)",
   accentSoft: "rgba(108, 92, 231, 0.06)",
-  success: "#10B981",
-  warning: "#F59E0B",
-  danger: "#EF4444",
-  info: "#6366F1",
+  success: "var(--color-success)",
+  warning: "var(--color-warning)",
+  danger: "var(--color-danger)",
+  info: "var(--color-info)",
   textPrimary: "var(--color-text-primary, #1A1A2E)",
   textSecondary: "var(--color-text-secondary, #64748B)",
   textMuted: "var(--color-text-muted, #94A3B8)",
@@ -149,7 +150,7 @@ export function TodayBoard({
               {/* ─── Page header ─── */}
               <div style={{ marginBottom: S.sectionGap }}>
                 <div style={{
-                  fontSize: 11,
+                  fontSize: "var(--text-eyebrow)",
                   fontWeight: 600,
                   textTransform: "uppercase" as const,
                   letterSpacing: "0.08em",
@@ -159,7 +160,7 @@ export function TodayBoard({
                   Workspace
                 </div>
                 <h1 style={{
-                  fontSize: 28,
+                  fontSize: "var(--text-page)",
                   fontWeight: 700,
                   color: S.textPrimary,
                   margin: 0,
@@ -168,7 +169,7 @@ export function TodayBoard({
                   Today
                 </h1>
                 <p style={{
-                  fontSize: 15,
+                  fontSize: "var(--text-body)",
                   color: S.textSecondary,
                   margin: "6px 0 0",
                   lineHeight: 1.5,
@@ -177,9 +178,9 @@ export function TodayBoard({
                 </p>
                 {greeting && (
                   <p style={{
-                    fontSize: 14,
+                    fontSize: "var(--text-body)",
                     fontStyle: "italic",
-                    color: "#6C5CE7",
+                    color: "var(--color-accent)",
                     margin: "8px 0 0",
                     lineHeight: 1.5,
                   }}>
@@ -210,7 +211,7 @@ export function TodayBoard({
                   <div style={{ fontSize: 36, fontWeight: 700, fontFamily: S.mono, color: S.textPrimary, lineHeight: 1 }}>
                     {nextActions.length}
                   </div>
-                  <div style={{ fontSize: 12, color: S.textMuted, marginTop: 6, fontWeight: 500 }}>Actions today</div>
+                  <div style={{ fontSize: "var(--text-small)", color: S.textMuted, marginTop: 6, fontWeight: 500 }}>Actions today</div>
                 </div>
 
                 {/* Overdue */}
@@ -229,7 +230,7 @@ export function TodayBoard({
                   <div style={{ fontSize: 36, fontWeight: 700, fontFamily: S.mono, color: metricColor(overdueCount, "danger"), lineHeight: 1 }}>
                     {overdueCount}
                   </div>
-                  <div style={{ fontSize: 12, color: S.textMuted, marginTop: 6, fontWeight: 500 }}>Overdue</div>
+                  <div style={{ fontSize: "var(--text-small)", color: S.textMuted, marginTop: 6, fontWeight: 500 }}>Overdue</div>
                 </div>
 
                 {/* Escalations */}
@@ -248,7 +249,7 @@ export function TodayBoard({
                   <div style={{ fontSize: 36, fontWeight: 700, fontFamily: S.mono, color: metricColor(openEscalationCount, "danger"), lineHeight: 1 }}>
                     {openEscalationCount}
                   </div>
-                  <div style={{ fontSize: 12, color: S.textMuted, marginTop: 6, fontWeight: 500 }}>Escalations</div>
+                  <div style={{ fontSize: "var(--text-small)", color: S.textMuted, marginTop: 6, fontWeight: 500 }}>Escalations</div>
                 </div>
 
                 {/* Plan progress */}
@@ -267,7 +268,7 @@ export function TodayBoard({
                   <div style={{ fontSize: 36, fontWeight: 700, fontFamily: S.mono, color: S.textPrimary, lineHeight: 1 }}>
                     {completionPct.toFixed(0)}%
                   </div>
-                  <div style={{ fontSize: 12, color: S.textMuted, marginTop: 6, fontWeight: 500 }}>Plan progress</div>
+                  <div style={{ fontSize: "var(--text-small)", color: S.textMuted, marginTop: 6, fontWeight: 500 }}>Plan progress</div>
                 </div>
               </div>
 
@@ -283,7 +284,7 @@ export function TodayBoard({
                 <div style={{ marginBottom: S.sectionGap }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
                     <h3 style={{
-                      fontSize: 20,
+                      fontSize: "var(--text-section)",
                       fontWeight: 600,
                       color: S.textPrimary,
                       margin: 0,
@@ -291,7 +292,7 @@ export function TodayBoard({
                       Attention Required
                     </h3>
                     <span style={{
-                      fontSize: 11,
+                      fontSize: "var(--text-eyebrow)",
                       fontWeight: 600,
                       background: "var(--color-bg-muted, #F1F5F9)",
                       color: S.textMuted,
@@ -324,7 +325,7 @@ export function TodayBoard({
                             transition: S.transition,
                           }}
                           onMouseEnter={(e) => {
-                            if (!isSelected) e.currentTarget.style.background = "#F5F5F5";
+                            if (!isSelected) e.currentTarget.style.background = "var(--color-surface-subtle)";
                           }}
                           onMouseLeave={(e) => {
                             if (!isSelected) e.currentTarget.style.background = S.surface;
@@ -341,22 +342,22 @@ export function TodayBoard({
                           }} />
 
                           <div style={{ flex: 1, minWidth: 0 }}>
-                            <div style={{ fontWeight: 600, fontSize: 16, color: S.textPrimary, lineHeight: 1.3 }}>
+                            <div style={{ fontWeight: 600, fontSize: "var(--text-card)", color: S.textPrimary, lineHeight: 1.3 }}>
                               {action.title}
                             </div>
-                            <div style={{ fontSize: 13, color: S.textMuted, marginTop: 2, lineHeight: 1.4 }}>
+                            <div style={{ fontSize: "var(--text-small)", color: S.textMuted, marginTop: 2, lineHeight: 1.4 }}>
                               {action.context}
                             </div>
                           </div>
 
-                          <span style={{ fontSize: 13, color: S.textMuted, flexShrink: 0, whiteSpace: "nowrap" }}>
+                          <span style={{ fontSize: "var(--text-small)", color: S.textMuted, flexShrink: 0, whiteSpace: "nowrap" }}>
                             {action.due_at ? formatTimestamp(action.due_at) : ""}
                           </span>
 
                           <button
                             style={{
                               flexShrink: 0,
-                              fontSize: 13,
+                              fontSize: "var(--text-small)",
                               fontWeight: 500,
                               padding: "6px 14px",
                               borderRadius: S.radiusBtn,
@@ -366,7 +367,7 @@ export function TodayBoard({
                               cursor: "pointer",
                               transition: S.transition,
                             }}
-                            onMouseEnter={(e) => { e.currentTarget.style.background = "#F1F5F9"; }}
+                            onMouseEnter={(e) => { e.currentTarget.style.background = "var(--color-surface-subtle)"; }}
                             onMouseLeave={(e) => { e.currentTarget.style.background = S.surface; }}
                             onClick={(e) => {
                               e.stopPropagation();
@@ -380,25 +381,21 @@ export function TodayBoard({
 
                           {onAskCopilot && (
                             <button
+                              aria-label="Ask Copilot"
+                              title="Ask Copilot"
                               style={{
-                                background: "none",
-                                border: "none",
-                                color: "#6C5CE7",
-                                fontSize: 12,
-                                fontWeight: 600,
-                                cursor: "pointer",
-                                padding: "4px 8px",
-                                borderRadius: 6,
-                                transition: "background 180ms ease",
+                                width: 24, height: 24, display: "inline-flex", alignItems: "center", justifyContent: "center",
+                                background: "none", border: "none", color: "var(--color-accent)", cursor: "pointer",
+                                borderRadius: "var(--radius-sm)", transition: "background 180ms ease", padding: 0, flexShrink: 0,
                               }}
-                              onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(108,92,231,0.06)"; }}
+                              onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(108,92,231,0.08)"; }}
                               onMouseLeave={(e) => { e.currentTarget.style.background = "none"; }}
                               onClick={(e) => {
                                 e.stopPropagation();
                                 onAskCopilot(`Tell me about: "${action.title}" — Type: ${PRIORITY_LABELS[action.action_type] ?? action.action_type}, Context: ${action.context}${action.due_at ? `, Due: ${formatTimestamp(action.due_at)}` : ""}`);
                               }}
                             >
-                              Ask Copilot
+                              <Icon name="copilot" size={14} />
                             </button>
                           )}
                         </div>
@@ -413,7 +410,7 @@ export function TodayBoard({
                 <div style={{ marginBottom: S.sectionGap }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
                     <h3 style={{
-                      fontSize: 20,
+                      fontSize: "var(--text-section)",
                       fontWeight: 600,
                       color: S.success,
                       margin: 0,
@@ -421,7 +418,7 @@ export function TodayBoard({
                       Ready to Execute
                     </h3>
                     <span style={{
-                      fontSize: 11,
+                      fontSize: "var(--text-eyebrow)",
                       fontWeight: 600,
                       background: "var(--color-bg-muted, #F1F5F9)",
                       color: S.textMuted,
@@ -449,7 +446,7 @@ export function TodayBoard({
                           gap: 14,
                           transition: S.transition,
                         }}
-                        onMouseEnter={(e) => { e.currentTarget.style.background = "#F5F5F5"; }}
+                        onMouseEnter={(e) => { e.currentTarget.style.background = "var(--color-surface-subtle)"; }}
                         onMouseLeave={(e) => { e.currentTarget.style.background = S.surface; }}
                         onClick={() => onOpenWorkspace(task.task_id)}
                       >
@@ -463,13 +460,13 @@ export function TodayBoard({
                         }} />
 
                         <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontWeight: 600, fontSize: 16, color: S.textPrimary }}>
+                          <div style={{ fontWeight: 600, fontSize: "var(--text-card)", color: S.textPrimary }}>
                             {task.title}
                           </div>
                         </div>
 
                         <span style={{
-                          fontSize: 11,
+                          fontSize: "var(--text-eyebrow)",
                           fontWeight: 500,
                           color: S.textMuted,
                           background: "var(--color-bg-muted, #F1F5F9)",
@@ -482,7 +479,7 @@ export function TodayBoard({
                         <button
                           style={{
                             flexShrink: 0,
-                            fontSize: 13,
+                            fontSize: "var(--text-small)",
                             fontWeight: 500,
                             padding: "6px 14px",
                             borderRadius: S.radiusBtn,
@@ -492,7 +489,7 @@ export function TodayBoard({
                             cursor: "pointer",
                             transition: S.transition,
                           }}
-                          onMouseEnter={(e) => { e.currentTarget.style.background = "#F1F5F9"; }}
+                          onMouseEnter={(e) => { e.currentTarget.style.background = "var(--color-surface-subtle)"; }}
                           onMouseLeave={(e) => { e.currentTarget.style.background = S.surface; }}
                           onClick={(e) => { e.stopPropagation(); onOpenPlan(); }}
                         >
@@ -509,7 +506,7 @@ export function TodayBoard({
                 <div style={{ marginBottom: S.sectionGap }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
                     <h3 style={{
-                      fontSize: 20,
+                      fontSize: "var(--text-section)",
                       fontWeight: 600,
                       color: S.danger,
                       margin: 0,
@@ -517,7 +514,7 @@ export function TodayBoard({
                       Blocked
                     </h3>
                     <span style={{
-                      fontSize: 11,
+                      fontSize: "var(--text-eyebrow)",
                       fontWeight: 600,
                       background: "var(--color-bg-muted, #F1F5F9)",
                       color: S.textMuted,
@@ -545,7 +542,7 @@ export function TodayBoard({
                           gap: 14,
                           transition: S.transition,
                         }}
-                        onMouseEnter={(e) => { e.currentTarget.style.background = "#F5F5F5"; }}
+                        onMouseEnter={(e) => { e.currentTarget.style.background = "var(--color-surface-subtle)"; }}
                         onMouseLeave={(e) => { e.currentTarget.style.background = S.surface; }}
                         onClick={() => onOpenTask(task.task_id)}
                       >
@@ -559,10 +556,10 @@ export function TodayBoard({
                         }} />
 
                         <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontWeight: 600, fontSize: 16, color: S.textPrimary }}>
+                          <div style={{ fontWeight: 600, fontSize: "var(--text-card)", color: S.textPrimary }}>
                             {task.title}
                           </div>
-                          <div style={{ fontSize: 13, color: S.danger, marginTop: 2, lineHeight: 1.4 }}>
+                          <div style={{ fontSize: "var(--text-small)", color: S.danger, marginTop: 2, lineHeight: 1.4 }}>
                             {task.blocking_dependency_ids?.length ? `Blocked by: ${task.blocking_dependency_ids.join(", ")}` : "Dependency not resolved"}
                           </div>
                         </div>
@@ -595,14 +592,14 @@ export function TodayBoard({
             <div style={{ padding: 4 }}>
               <h4 style={{
                 margin: "0 0 8px 0",
-                fontSize: 16,
+                fontSize: "var(--text-card)",
                 fontWeight: 600,
                 color: S.textPrimary,
               }}>
                 {selectedAction.title}
               </h4>
               <p style={{
-                fontSize: 13,
+                fontSize: "var(--text-small)",
                 color: S.textMuted,
                 margin: "0 0 20px 0",
                 lineHeight: 1.5,
@@ -612,7 +609,7 @@ export function TodayBoard({
 
               {/* Metadata rows */}
               <div style={{
-                fontSize: 13,
+                fontSize: "var(--text-small)",
                 marginBottom: 20,
                 display: "flex",
                 flexDirection: "column",
@@ -632,7 +629,7 @@ export function TodayBoard({
                     background: "var(--color-bg-muted, #F1F5F9)",
                     borderRadius: S.radiusPill,
                     padding: "2px 10px",
-                    fontSize: 12,
+                    fontSize: "var(--text-small)",
                   }}>
                     {PRIORITY_LABELS[selectedAction.action_type] ?? selectedAction.action_type}
                   </span>
@@ -660,8 +657,8 @@ export function TodayBoard({
                     borderRadius: S.radiusBtn,
                     border: "none",
                     background: S.accent,
-                    color: "#FFFFFF",
-                    fontSize: 14,
+                    color: "var(--color-surface)",
+                    fontSize: "var(--text-body)",
                     fontWeight: 600,
                     cursor: "pointer",
                     transition: S.transition,
@@ -684,12 +681,12 @@ export function TodayBoard({
                     border: "1px solid var(--color-border, #E2E8F0)",
                     background: S.surface,
                     color: S.textSecondary,
-                    fontSize: 14,
+                    fontSize: "var(--text-body)",
                     fontWeight: 500,
                     cursor: "pointer",
                     transition: S.transition,
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = "#F1F5F9"; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = "var(--color-surface-subtle)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = S.surface; }}
                   onClick={onOpenPlan}
                 >
@@ -708,7 +705,7 @@ export function TodayBoard({
             <div style={{ marginBottom: S.sectionGap }}>
               <h4 style={{
                 marginBottom: 16,
-                fontSize: 16,
+                fontSize: "var(--text-card)",
                 fontWeight: 600,
                 color: S.textPrimary,
               }}>
@@ -723,8 +720,8 @@ export function TodayBoard({
                     background: S.surface,
                     boxShadow: S.shadow,
                   }}>
-                    <div style={{ fontWeight: 600, fontSize: 15, color: S.textPrimary }}>{task.title}</div>
-                    <div style={{ fontSize: 13, color: S.textMuted, marginTop: 4 }}>
+                    <div style={{ fontWeight: 600, fontSize: "var(--text-body)", color: S.textPrimary }}>{task.title}</div>
+                    <div style={{ fontSize: "var(--text-small)", color: S.textMuted, marginTop: 4 }}>
                       {task.blocking_dependency_ids?.length ? `Blocked by: ${task.blocking_dependency_ids.join(", ")}` : "Unresolved dependency"}
                     </div>
                   </div>
@@ -737,7 +734,7 @@ export function TodayBoard({
             <div>
               <h4 style={{
                 marginBottom: 16,
-                fontSize: 16,
+                fontSize: "var(--text-card)",
                 fontWeight: 600,
                 color: S.textPrimary,
               }}>
@@ -752,8 +749,8 @@ export function TodayBoard({
                     background: S.surface,
                     boxShadow: S.shadow,
                   }}>
-                    <div style={{ fontWeight: 600, fontSize: 15, color: S.textPrimary }}>{fu.title}</div>
-                    <div style={{ fontSize: 13, color: S.textMuted, marginTop: 4 }}>
+                    <div style={{ fontWeight: 600, fontSize: "var(--text-body)", color: S.textPrimary }}>{fu.title}</div>
+                    <div style={{ fontSize: "var(--text-small)", color: S.textMuted, marginTop: 4 }}>
                       Due {formatTimestamp(fu.due_at)} · {fu.status}
                     </div>
                   </div>
@@ -763,7 +760,7 @@ export function TodayBoard({
           )}
 
           {blockedTasks.length === 0 && followUps.filter((fu) => fu.is_overdue).length === 0 && (
-            <p style={{ color: S.textMuted, textAlign: "center", fontSize: 15 }}>No blocked tasks or overdue follow-ups. Execution is clear.</p>
+            <p style={{ color: S.textMuted, textAlign: "center", fontSize: "var(--text-body)" }}>No blocked tasks or overdue follow-ups. Execution is clear.</p>
           )}
         </div>
       </DeepDrawer>

@@ -28,23 +28,23 @@ type HelpCard = {
 };
 
 const TONE_COLORS: Record<HelpCard["tone"], { border: string; icon: string; bg: string }> = {
-  friendly: { border: "#6366F1", icon: "?", bg: "#EEF2FF" },
-  tip: { border: "#10B981", icon: "i", bg: "#ECFDF5" },
-  "heads-up": { border: "#F59E0B", icon: "!", bg: "#FFFBEB" },
+  friendly: { border: "var(--color-info)", icon: "?", bg: "var(--color-info-soft)" },
+  tip: { border: "var(--color-success)", icon: "i", bg: "var(--color-success-soft)" },
+  "heads-up": { border: "var(--color-warning)", icon: "!", bg: "var(--color-warning-soft)" },
 };
 
 const sectionPadding: React.CSSProperties = { padding: 20 };
 
 const sectionHeading: React.CSSProperties = {
-  fontSize: 20,
+  fontSize: "var(--text-section)",
   fontWeight: 600,
-  color: "#1a1a2e",
+  color: "var(--color-text-primary)",
   marginBottom: 4,
 };
 
 const sectionDesc: React.CSSProperties = {
-  fontSize: 14,
-  color: "#666",
+  fontSize: "var(--text-body)",
+  color: "var(--color-text-secondary)",
   marginBottom: 16,
   lineHeight: 1.4,
 };
@@ -52,20 +52,20 @@ const sectionDesc: React.CSSProperties = {
 const inputStyle: React.CSSProperties = {
   width: "100%",
   height: 48,
-  borderRadius: 12,
-  border: "1px solid #e0e0e0",
+  borderRadius: "var(--radius-md)",
+  border: "1px solid var(--color-border-subtle)",
   padding: "0 16px",
-  fontSize: 16,
+  fontSize: "var(--text-card)",
   outline: "none",
   boxSizing: "border-box",
 };
 
 const textareaStyle: React.CSSProperties = {
   width: "100%",
-  borderRadius: 12,
-  border: "1px solid #e0e0e0",
+  borderRadius: "var(--radius-md)",
+  border: "1px solid var(--color-border-subtle)",
   padding: 16,
-  fontSize: 16,
+  fontSize: "var(--text-card)",
   outline: "none",
   resize: "vertical",
   minHeight: 100,
@@ -76,30 +76,30 @@ const textareaStyle: React.CSSProperties = {
 const primaryBtnStyle: React.CSSProperties = {
   width: "100%",
   height: 48,
-  borderRadius: 8,
+  borderRadius: "var(--radius-sm)",
   border: "none",
-  background: "#6C5CE7",
-  color: "#fff",
-  fontSize: 16,
+  background: "var(--color-accent)",
+  color: "var(--color-surface)",
+  fontSize: "var(--text-card)",
   fontWeight: 600,
   cursor: "pointer",
 };
 
 const secondaryBtnStyle: React.CSSProperties = {
   height: 48,
-  borderRadius: 8,
-  border: "1px solid #e0e0e0",
-  background: "#fff",
-  color: "#1a1a2e",
-  fontSize: 14,
+  borderRadius: "var(--radius-sm)",
+  border: "1px solid var(--color-border-subtle)",
+  background: "var(--color-surface)",
+  color: "var(--color-text-primary)",
+  fontSize: "var(--text-body)",
   fontWeight: 500,
   cursor: "pointer",
   padding: "0 16px",
 };
 
 const cardStyle: React.CSSProperties = {
-  background: "#fff",
-  borderRadius: 16,
+  background: "var(--color-surface)",
+  borderRadius: "var(--radius-lg)",
   padding: 20,
   marginBottom: 12,
   boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
@@ -177,7 +177,7 @@ export function AskForHelp({
         </div>
 
         {loading ? (
-          <div style={{ padding: 20, textAlign: "center", color: "#888", fontSize: 16 }}>
+          <div style={{ padding: 20, textAlign: "center", color: "var(--color-text-muted)", fontSize: "var(--text-card)" }}>
             Loading help requests...
           </div>
         ) : (
@@ -185,23 +185,23 @@ export function AskForHelp({
             {[...openRequests, ...recentRequests.slice(0, 4)].map((request) => (
               <div key={request.id} style={cardStyle}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-                  <span style={{ fontSize: 18, fontWeight: 600, color: "#1a1a2e" }}>{request.title}</span>
+                  <span style={{ fontSize: "var(--text-section)", fontWeight: 600, color: "var(--color-text-primary)" }}>{request.title}</span>
                   <span style={{
-                    fontSize: 12,
+                    fontSize: "var(--text-small)",
                     fontWeight: 600,
                     padding: "4px 10px",
-                    borderRadius: 6,
-                    background: request.status === "closed" ? "#ECFDF5" : "#EEF2FF",
-                    color: request.status === "closed" ? "#10B981" : "#6366F1",
+                    borderRadius: "var(--radius-sm)",
+                    background: request.status === "closed" ? "var(--color-success-soft)" : "var(--color-info-soft)",
+                    color: request.status === "closed" ? "var(--color-success)" : "var(--color-info)",
                     textTransform: "uppercase",
                   }}>
                     {request.status}
                   </span>
                 </div>
-                <p style={{ fontSize: 16, color: "#555", lineHeight: 1.4, marginBottom: 10 }}>
+                <p style={{ fontSize: "var(--text-card)", color: "var(--color-text-secondary)", lineHeight: 1.4, marginBottom: 10 }}>
                   {request.prompt}
                 </p>
-                <div style={{ display: "flex", gap: 12, fontSize: 13, color: "#888", marginBottom: 12 }}>
+                <div style={{ display: "flex", gap: 12, fontSize: "var(--text-small)", color: "var(--color-text-muted)", marginBottom: 12 }}>
                   <span>{new Date(request.created_at).toLocaleString()}</span>
                   {request.channel ? <span>{request.channel}</span> : null}
                 </div>
@@ -224,7 +224,7 @@ export function AskForHelp({
               </div>
             ))}
             {!helpRequests.length ? (
-              <div style={{ padding: 20, textAlign: "center", color: "#888", fontSize: 16 }}>
+              <div style={{ padding: 20, textAlign: "center", color: "var(--color-text-muted)", fontSize: "var(--text-card)" }}>
                 No help requests yet. Use this when you need clarification, not just when something breaks.
               </div>
             ) : null}
@@ -240,7 +240,7 @@ export function AskForHelp({
         </div>
 
         {cards.length === 0 ? (
-          <div style={{ padding: 20, textAlign: "center", color: "#888", fontSize: 16 }}>
+          <div style={{ padding: 20, textAlign: "center", color: "var(--color-text-muted)", fontSize: "var(--text-card)" }}>
             No tasks loaded yet, so there is nothing specific to coach right now.
           </div>
         ) : (
@@ -254,7 +254,7 @@ export function AskForHelp({
                     padding: 20,
                     borderLeft: `4px solid ${tone.border}`,
                     marginBottom: 12,
-                    borderRadius: 16,
+                    borderRadius: "var(--radius-lg)",
                     background: tone.bg,
                     cursor: "pointer",
                     minHeight: 48,
@@ -264,7 +264,7 @@ export function AskForHelp({
                   <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                     <span style={{
                       fontWeight: 700,
-                      fontSize: 18,
+                      fontSize: "var(--text-section)",
                       color: tone.border,
                       width: 28,
                       height: 28,
@@ -272,20 +272,20 @@ export function AskForHelp({
                       alignItems: "center",
                       justifyContent: "center",
                       borderRadius: "50%",
-                      background: "#fff",
+                      background: "var(--color-surface)",
                       flexShrink: 0,
                     }}>
                       {tone.icon}
                     </span>
-                    <span style={{ fontWeight: 600, fontSize: 16, color: "#1a1a2e" }}>{card.title}</span>
+                    <span style={{ fontWeight: 600, fontSize: "var(--text-card)", color: "var(--color-text-primary)" }}>{card.title}</span>
                   </div>
                   {expandedIndex === index ? (
                     <div style={{
                       marginTop: 12,
                       paddingLeft: 40,
-                      color: "#555",
+                      color: "var(--color-text-secondary)",
                       lineHeight: 1.5,
-                      fontSize: 16,
+                      fontSize: "var(--text-card)",
                     }}>
                       {card.body}
                     </div>

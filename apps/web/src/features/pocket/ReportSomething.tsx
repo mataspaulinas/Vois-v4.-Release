@@ -12,23 +12,23 @@ type ReportSomethingProps = {
 const sectionPadding: React.CSSProperties = { padding: 20 };
 
 const sectionHeading: React.CSSProperties = {
-  fontSize: 20,
+  fontSize: "var(--text-section)",
   fontWeight: 600,
-  color: "#1a1a2e",
+  color: "var(--color-text-primary)",
   marginBottom: 4,
 };
 
 const sectionDesc: React.CSSProperties = {
-  fontSize: 14,
-  color: "#666",
+  fontSize: "var(--text-body)",
+  color: "var(--color-text-muted)",
   marginBottom: 20,
   lineHeight: 1.4,
 };
 
 const labelStyle: React.CSSProperties = {
-  fontSize: 16,
+  fontSize: "var(--text-card)",
   fontWeight: 600,
-  color: "#1a1a2e",
+  color: "var(--color-text-primary)",
   marginBottom: 8,
   display: "block",
 };
@@ -36,20 +36,20 @@ const labelStyle: React.CSSProperties = {
 const inputStyle: React.CSSProperties = {
   width: "100%",
   height: 48,
-  borderRadius: 12,
-  border: "1px solid #e0e0e0",
+  borderRadius: "var(--radius-md)",
+  border: "1px solid var(--border)",
   padding: "0 16px",
-  fontSize: 16,
+  fontSize: "var(--text-card)",
   outline: "none",
   boxSizing: "border-box",
 };
 
 const textareaStyle: React.CSSProperties = {
   width: "100%",
-  borderRadius: 12,
-  border: "1px solid #e0e0e0",
+  borderRadius: "var(--radius-md)",
+  border: "1px solid var(--border)",
   padding: 16,
-  fontSize: 16,
+  fontSize: "var(--text-card)",
   outline: "none",
   resize: "vertical",
   minHeight: 120,
@@ -60,21 +60,21 @@ const textareaStyle: React.CSSProperties = {
 const primaryBtnStyle: React.CSSProperties = {
   width: "100%",
   height: 48,
-  borderRadius: 8,
+  borderRadius: "var(--radius-sm)",
   border: "none",
-  background: "#6C5CE7",
-  color: "#fff",
-  fontSize: 16,
+  background: "var(--color-accent)",
+  color: "var(--color-surface)",
+  fontSize: "var(--text-card)",
   fontWeight: 600,
   cursor: "pointer",
 };
 
 const successCardStyle: React.CSSProperties = {
-  background: "#ECFDF5",
-  borderRadius: 16,
+  background: "var(--color-success-soft)",
+  borderRadius: "var(--radius-lg)",
   padding: 20,
   textAlign: "center",
-  border: "1px solid #10B981",
+  border: "1px solid var(--color-success)",
 };
 
 export function ReportSomething({ venueId, onSubmitReport, submitting }: ReportSomethingProps) {
@@ -103,7 +103,7 @@ export function ReportSomething({ venueId, onSubmitReport, submitting }: ReportS
 
         {submitted ? (
           <div style={successCardStyle}>
-            <p style={{ fontSize: 16, fontWeight: 600, color: "#10B981" }}>
+            <p style={{ fontSize: "var(--text-card)", fontWeight: 600, color: "var(--color-success)" }}>
               Report submitted. Thank you for speaking up.
             </p>
           </div>
@@ -145,9 +145,9 @@ export function ReportSomething({ venueId, onSubmitReport, submitting }: ReportS
               <div style={{
                 width: 24,
                 height: 24,
-                borderRadius: 6,
-                border: anonymous ? "2px solid #6C5CE7" : "2px solid #ccc",
-                background: anonymous ? "#6C5CE7" : "#fff",
+                borderRadius: "var(--radius-sm)",
+                border: anonymous ? "2px solid var(--color-accent)" : "2px solid var(--border)",
+                background: anonymous ? "var(--color-accent)" : "var(--color-surface)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -167,7 +167,7 @@ export function ReportSomething({ venueId, onSubmitReport, submitting }: ReportS
                 onChange={(e) => setAnonymous(e.target.checked)}
                 style={{ display: "none" }}
               />
-              <label htmlFor="report-anonymous" style={{ fontSize: 16, color: "#555", cursor: "pointer" }}>
+              <label htmlFor="report-anonymous" style={{ fontSize: "var(--text-card)", color: "var(--color-text-secondary)", cursor: "pointer" }}>
                 Submit anonymously
               </label>
             </div>

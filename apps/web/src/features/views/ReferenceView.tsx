@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-
 import {
   OntologyAlignmentSummaryResponse,
   OntologyAuthoringBriefResponse,
@@ -31,23 +30,12 @@ type ReferenceViewProps = {
   onSearchChange: (value: string) => void;
 };
 
-/* ── design tokens ─────────────────────────────────── */
-const ds = {
-  eyebrow: { fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#A3A3A3", margin: 0 },
-  pageTitle: { fontSize: 28, fontWeight: 700, color: "#0A0A0A", margin: "4px 0 0" },
-  sectionTitle: { fontSize: 20, fontWeight: 600, color: "#0A0A0A", margin: 0 },
-  body: { fontSize: 15, color: "#525252", lineHeight: 1.6, margin: 0 },
-  small: { fontSize: 13, color: "#737373", lineHeight: 1.5, margin: 0 },
-  card: { background: "#FFFFFF", borderRadius: 12, boxShadow: "0 1px 3px rgba(0,0,0,0.04)", padding: "20px 24px" } as React.CSSProperties,
-  accent: "#6C5CE7",
-  tag: { display: "inline-block", padding: "2px 10px", borderRadius: 10, background: "#F5F5F5", fontSize: 11, color: "#737373", fontWeight: 500 } as React.CSSProperties,
-  searchInput: { background: "#FFFFFF", border: "1px solid #E5E5E5", borderRadius: 8, padding: "8px 14px", fontSize: 13, color: "#0A0A0A", width: "100%", maxWidth: 320 } as React.CSSProperties,
-  interactiveCard: (selected: boolean) => ({
-    background: "#FFFFFF", borderRadius: 12, border: selected ? `1.5px solid #6C5CE7` : "1px solid #E5E5E5",
-    boxShadow: "0 1px 3px rgba(0,0,0,0.04)", padding: "16px 20px",
-    cursor: "pointer", transition: "all 180ms ease", textAlign: "left" as const, width: "100%",
-  }) as React.CSSProperties,
-} as const;
+/* ── file-specific helpers ─────────────────────────────────── */
+const interactiveCardExtraStyle = (selected: boolean): React.CSSProperties => ({
+  border: selected ? `1.5px solid var(--color-accent)` : "1px solid var(--color-border-subtle)",
+  padding: "16px 20px",
+  textAlign: "left", width: "100%",
+});
 
 export function ReferenceView({
   view,
@@ -102,12 +90,12 @@ export function ReferenceView({
   return (
     <div style={{ padding: 48, display: "flex", flexDirection: "column", gap: 32 }}>
       {/* ── Header ───────────────────────────────── */}
-      <section style={{ ...ds.card, padding: "32px 32px 28px" }}>
+      <section className="ui-card" style={{ padding: "32px 32px 28px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16 }}>
           <div>
-            <p style={ds.eyebrow}>REFERENCE</p>
-            <h1 style={ds.pageTitle}>{labelFor(view)} library</h1>
-            <p style={{ ...ds.small, marginTop: 8, maxWidth: 720 }}>
+            <p className="eyebrow">REFERENCE</p>
+            <h1 className="page-title">{labelFor(view)} library</h1>
+            <p className="small-text" style={{ marginTop: 8, maxWidth: 720 }}>
               Current library/reference surfaces. They are here to inform the rebuild, not to freeze the next ontology in place.
             </p>
           </div>
@@ -115,42 +103,42 @@ export function ReferenceView({
             value={search}
             onChange={(event) => onSearchChange(event.target.value)}
             placeholder={`Search ${labelFor(view).toLowerCase()}...`}
-            style={ds.searchInput}
+            className="ui-input sm" style={{ maxWidth: 320 }}
           />
         </div>
 
         {/* Posture metrics */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16, marginTop: 24 }}>
-          <div style={{ ...ds.card, background: "rgba(108,92,231,0.06)", border: "1px solid rgba(108,92,231,0.12)" }}>
-            <p style={{ ...ds.eyebrow, marginBottom: 6 }}>Published bundle</p>
-            <span style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", display: "block" }}>{bundle ? `${bundle.meta.ontology_id} ${bundle.meta.version}` : "Loading..."}</span>
-            <p style={{ ...ds.small, marginTop: 4 }}>Read-only product memory while the next intervention library is authored more intentionally.</p>
+          <div className="ui-card" style={{ background: "rgba(108,92,231,0.06)", border: "1px solid rgba(108,92,231,0.12)" }}>
+            <p className="eyebrow" style={{ marginBottom: 6 }}>Published bundle</p>
+            <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{bundle ? `${bundle.meta.ontology_id} ${bundle.meta.version}` : "Loading..."}</span>
+            <p className="small-text" style={{ marginTop: 4 }}>Read-only product memory while the next intervention library is authored more intentionally.</p>
           </div>
-          <div style={ds.card}>
-            <p style={{ ...ds.eyebrow, marginBottom: 6 }}>Filtered count</p>
-            <span style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", display: "block" }}>{items.length}</span>
-            <p style={{ ...ds.small, marginTop: 4 }}>Matching {labelFor(view).toLowerCase()} visible under the current filter.</p>
+          <div className="ui-card">
+            <p className="eyebrow" style={{ marginBottom: 6 }}>Filtered count</p>
+            <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{items.length}</span>
+            <p className="small-text" style={{ marginTop: 4 }}>Matching {labelFor(view).toLowerCase()} visible under the current filter.</p>
           </div>
-          <div style={ds.card}>
-            <p style={{ ...ds.eyebrow, marginBottom: 6 }}>Live posture</p>
-            <span style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", display: "block" }}>{posture.title}</span>
-            <p style={{ ...ds.small, marginTop: 4 }}>{posture.detail}</p>
+          <div className="ui-card">
+            <p className="eyebrow" style={{ marginBottom: 6 }}>Live posture</p>
+            <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{posture.title}</span>
+            <p className="small-text" style={{ marginTop: 4 }}>{posture.detail}</p>
           </div>
         </div>
       </section>
 
       {loading ? (
-        <p style={{ ...ds.small, textAlign: "center", padding: 32, color: "#A3A3A3" }}>Loading {labelFor(view).toLowerCase()} library...</p>
+        <p className="small-text" style={{ textAlign: "center", padding: 32, color: "var(--color-text-muted)" }}>Loading {labelFor(view).toLowerCase()} library...</p>
       ) : (
         <>
           {/* Detail metrics */}
           {posture.metrics.length > 0 && (
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
               {posture.metrics.map((metric) => (
-                <div key={metric.label} style={ds.card}>
-                  <p style={{ ...ds.eyebrow, marginBottom: 6 }}>{metric.label}</p>
-                  <span style={{ fontSize: 20, fontWeight: 600, color: "#0A0A0A", display: "block" }}>{metric.value}</span>
-                  <p style={{ ...ds.small, marginTop: 4 }}>{metric.note}</p>
+                <div key={metric.label} className="ui-card">
+                  <p className="eyebrow" style={{ marginBottom: 6 }}>{metric.label}</p>
+                  <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{metric.value}</span>
+                  <p className="small-text" style={{ marginTop: 4 }}>{metric.note}</p>
                 </div>
               ))}
             </div>
@@ -161,56 +149,56 @@ export function ReferenceView({
             {/* Item list */}
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {items.map((item) => (
-                <button key={item.id} style={ds.interactiveCard(selectedItem?.id === item.id)} onClick={() => setSelectedItemId(item.id)}>
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#A3A3A3", marginBottom: 6 }}>
+                <button key={item.id} className="ui-card ui-card--interactive" style={interactiveCardExtraStyle(selectedItem?.id === item.id)} onClick={() => setSelectedItemId(item.id)}>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "var(--color-text-muted)", marginBottom: 6 }}>
                     <span>{item.id}</span>
                     <span>Reference</span>
                   </div>
-                  <h3 style={{ margin: "0 0 4px", fontSize: 15, fontWeight: 600, color: "#0A0A0A" }}>{item.title}</h3>
-                  <p style={{ margin: "0 0 8px", fontSize: 13, color: "#737373", lineHeight: 1.45, maxWidth: 800 }}>{item.detail}</p>
+                  <h3 style={{ margin: "0 0 4px", fontSize: 15, fontWeight: 600, color: "var(--color-text-primary)" }}>{item.title}</h3>
+                  <p style={{ margin: "0 0 8px", fontSize: 13, color: "var(--color-text-muted)", lineHeight: 1.45, maxWidth: 800 }}>{item.detail}</p>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                     {item.meta.slice(0, 5).map((entry) => (
-                      <span key={`${item.id}-${entry}`} style={ds.tag}>{entry}</span>
+                      <span key={`${item.id}-${entry}`} className="ui-badge ui-badge--muted">{entry}</span>
                     ))}
                   </div>
                 </button>
               ))}
               {!items.length ? (
-                <p style={{ ...ds.small, textAlign: "center", padding: 32, color: "#A3A3A3" }}>No matching {labelFor(view).toLowerCase()} found.</p>
+                <p className="small-text" style={{ textAlign: "center", padding: 32, color: "var(--color-text-muted)" }}>No matching {labelFor(view).toLowerCase()} found.</p>
               ) : null}
             </div>
 
             {/* Detail aside */}
-            <aside style={{ ...ds.card, position: "sticky", top: 80, maxHeight: "calc(100vh - 120px)", overflowY: "auto" }}>
+            <aside className="ui-card" style={{ position: "sticky", top: 80, maxHeight: "calc(100vh - 120px)", overflowY: "auto" }}>
               {selectedItem ? (
                 <>
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#A3A3A3", marginBottom: 8 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "var(--color-text-muted)", marginBottom: 8 }}>
                     <span>{selectedItem.id}</span>
                     <span>Pinned detail</span>
                   </div>
-                  <h3 style={{ margin: "0 0 8px", fontSize: 20, fontWeight: 600, color: "#0A0A0A" }}>{selectedItem.title}</h3>
-                  <p style={{ ...ds.small, margin: "0 0 8px" }}>{selectedItem.detail}</p>
-                  <p style={{ ...ds.body, margin: "0 0 16px", lineHeight: 1.6, maxWidth: 800 }}>{selectedItem.note}</p>
+                  <h3 style={{ margin: "0 0 8px", fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)" }}>{selectedItem.title}</h3>
+                  <p className="small-text" style={{ margin: "0 0 8px" }}>{selectedItem.detail}</p>
+                  <p className="body-text" style={{ margin: "0 0 16px", lineHeight: 1.6, maxWidth: 800 }}>{selectedItem.note}</p>
 
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 16 }}>
                     {selectedItem.meta.map((entry) => (
-                      <span key={`${selectedItem.id}-meta-${entry}`} style={ds.tag}>{entry}</span>
+                      <span key={`${selectedItem.id}-meta-${entry}`} className="ui-badge ui-badge--muted">{entry}</span>
                     ))}
                   </div>
 
                   <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                     {selectedItem.related.map((group) => (
-                      <div key={`${selectedItem.id}-${group.label}`} style={{ ...ds.card, padding: "14px 16px" }}>
-                        <p style={{ ...ds.eyebrow, marginBottom: 8 }}>{group.label}</p>
+                      <div key={`${selectedItem.id}-${group.label}`} className="ui-card" style={{ padding: "14px 16px" }}>
+                        <p className="eyebrow" style={{ marginBottom: 8 }}>{group.label}</p>
                         <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                          {group.values.length ? group.values.map((value) => <span key={value} style={ds.tag}>{value}</span>) : <span style={{ ...ds.small, color: "#A3A3A3" }}>None linked yet</span>}
+                          {group.values.length ? group.values.map((value) => <span key={value} className="ui-badge ui-badge--muted">{value}</span>) : <span className="small-text" style={{ color: "var(--color-text-muted)" }}>None linked yet</span>}
                         </div>
                       </div>
                     ))}
                   </div>
                 </>
               ) : (
-                <p style={{ ...ds.small, textAlign: "center", padding: 24, color: "#A3A3A3" }}>Select a reference item to inspect its linked relationships.</p>
+                <p className="small-text" style={{ textAlign: "center", padding: 24, color: "var(--color-text-muted)" }}>Select a reference item to inspect its linked relationships.</p>
               )}
             </aside>
           </div>

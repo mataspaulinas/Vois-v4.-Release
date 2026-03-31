@@ -198,6 +198,7 @@ import { buildReportComparison } from "./features/views/reportInsights";
 import { ToastProvider } from "./components/Toast";
 import { DrawerProvider, StackingDrawerHost } from "./components/StackingDrawer";
 import { CommandPalette, useCommandPalette } from "./components/CommandPalette";
+import Icon from "./components/Icon";
 
 const sampleIntakeNotes: Array<{ id: string; label: string; text: string }> = [];
 
@@ -2547,7 +2548,7 @@ export default function App() {
   if (requiresOwnerClaim && bootstrap) {
     return (
       <div className="ois-shell">
-        {error ? <div className="toast error">{error}<button className="toast-dismiss" onClick={() => setError(null)} aria-label="Dismiss">x</button></div> : null}
+        {error ? <div className="toast error">{error}<button className="toast-dismiss" onClick={() => setError(null)} aria-label="Dismiss"><Icon name="close" size={12} /></button></div> : null}
         <OwnerSetupView
           ownerName={authSession?.user.full_name ?? bootstrap.current_user.full_name}
           ownerEmail={authSession?.user.email ?? bootstrap.current_user.email}
@@ -2565,7 +2566,7 @@ export default function App() {
   if (ownerNeedsVenueOnboarding && bootstrap && organizationId) {
     return (
       <div className="ois-shell">
-        {error ? <div className="toast error">{error}<button className="toast-dismiss" onClick={() => setError(null)} aria-label="Dismiss">x</button></div> : null}
+        {error ? <div className="toast error">{error}<button className="toast-dismiss" onClick={() => setError(null)} aria-label="Dismiss"><Icon name="close" size={12} /></button></div> : null}
         <RoleWorkspaceFrame
           roleLabel="Owner workspace"
           title={bootstrap.organization?.name ?? "Owner workspace"}
@@ -2603,7 +2604,7 @@ export default function App() {
   if (!userHasVenueAccess && (activeRole === "manager" || activeRole === "barista")) {
     return (
       <div className="ois-shell">
-        {error ? <div className="toast error">{error}<button className="toast-dismiss" onClick={() => setError(null)} aria-label="Dismiss">x</button></div> : null}
+        {error ? <div className="toast error">{error}<button className="toast-dismiss" onClick={() => setError(null)} aria-label="Dismiss"><Icon name="close" size={12} /></button></div> : null}
         <RoleWorkspaceFrame
           roleLabel={activeRole === "manager" ? "Manager workspace" : "Pocket workspace"}
           title="Access pending"
@@ -2635,7 +2636,7 @@ export default function App() {
         sidebarWidth={preferences.sidebarCollapsed ? 48 : 240}
         onSidebarAutoCollapse={() => setPreferences((c) => ({ ...c, sidebarCollapsed: true }))}
       >
-        <div className="ois-shell">
+        <div className={`ois-shell ${preferences.sidebarCollapsed ? "sidebar-collapsed" : ""}`}>
       <WelcomeOverlay
         open={!preferences.welcomeDismissed}
         resumeVenueName={resumePulse?.venue_name ?? null}
@@ -2655,37 +2656,11 @@ export default function App() {
         onEnterKnowledgeBase={() => dismissWelcome({ topLevelView: "kb" })}
       />
 
-      {error ? <div className="toast error">{error}<button className="toast-dismiss" onClick={() => setError(null)} aria-label="Dismiss">x</button></div> : null}
+      {error ? <div className="toast error">{error}<button className="toast-dismiss" onClick={() => setError(null)} aria-label="Dismiss"><Icon name="close" size={12} /></button></div> : null}
 
       {bootstrap ? (
         <>
-          <TopBar
-            venues={bootstrap.venues}
-            activeVenue={displayedVenue}
-            portfolioSummary={portfolioSummary}
-            theme={preferences.theme}
-            skin={preferences.skin}
-            userName={authSession?.user.full_name ?? bootstrap.current_user.full_name}
-            authMode={authSession?.session.authentication_mode ?? "firebase_id_token"}
-            onSelectVenue={handleSelectVenue}
-            onShowPortfolio={() => navigate({ topLevelView: "portfolio" })}
-            onToggleTheme={() =>
-              setPreferences((current) => ({
-                ...current,
-                theme: (current.theme === "dark" ? "light" : "dark") as ThemeMode,
-              }))
-            }
-            onSelectSkin={(skin) => setPreferences((current) => ({ ...current, skin: skin as SkinId }))}
-            onToggleCopilot={() => setCopilotOpen((current) => !current)}
-            copilotOpen={copilotOpen}
-            formatTimestamp={formatTimestamp}
-            onNavigateToVenue={(venueId) => navigate({ topLevelView: "venue", venueId, venueView: "overview" })}
-          />
-
-          <div
-            className={`main-layout ${preferences.sidebarCollapsed ? "sidebar-collapsed" : ""}`}
-          >
-            <Sidebar
+          <Sidebar
                 collapsed={preferences.sidebarCollapsed}
                 activeTopLevel={shellRoute.topLevelView}
                 authRole={activeRole}
@@ -2718,7 +2693,31 @@ export default function App() {
                 activeOwnerView={shellRoute.topLevelView === "owner" ? (shellRoute as { ownerView: OwnerView }).ownerView : undefined}
                 onToggleCopilot={() => setCopilotOpen((current) => !current)}
                 copilotOpen={copilotOpen}
+                userName={authSession?.user.full_name ?? bootstrap.current_user.full_name}
               />
+          <div className="main-area">
+          <TopBar
+            venues={bootstrap.venues}
+            activeVenue={displayedVenue}
+            portfolioSummary={portfolioSummary}
+            theme={preferences.theme}
+            skin={preferences.skin}
+            userName={authSession?.user.full_name ?? bootstrap.current_user.full_name}
+            authMode={authSession?.session.authentication_mode ?? "firebase_id_token"}
+            onSelectVenue={handleSelectVenue}
+            onShowPortfolio={() => navigate({ topLevelView: "portfolio" })}
+            onToggleTheme={() =>
+              setPreferences((current) => ({
+                ...current,
+                theme: (current.theme === "dark" ? "light" : "dark") as ThemeMode,
+              }))
+            }
+            onSelectSkin={(skin) => setPreferences((current) => ({ ...current, skin: skin as SkinId }))}
+            onToggleCopilot={() => setCopilotOpen((current) => !current)}
+            copilotOpen={copilotOpen}
+            formatTimestamp={formatTimestamp}
+            onNavigateToVenue={(venueId) => navigate({ topLevelView: "venue", venueId, venueView: "overview" })}
+          />
             <div className="content-area">
               <MobileTabStrip
                   visible={
@@ -3375,6 +3374,8 @@ export default function App() {
             preFillMessage={copilotPreFill}
             onPreFillConsumed={() => setCopilotPreFill(null)}
             screenContext={copilotScreenContext}
+            onCollapseSidebar={() => setPreferences((c) => ({ ...c, sidebarCollapsed: true }))}
+            onExpandSidebar={() => setPreferences((c) => ({ ...c, sidebarCollapsed: false }))}
           />
           {tour.active && roleTour ? (
             <TourOverlay
@@ -3438,14 +3439,16 @@ function sanitizeRoute(route: ShellRoute, venues: Venue[], fallbackVenueId: stri
 
 function coerceRouteForRole(route: ShellRoute, role: string | null, fallbackVenueId: string | null): ShellRoute {
   if (role === "owner") {
-    if (route.topLevelView === "pocket" || route.topLevelView === "settings") {
+    if (route.topLevelView === "settings") return route;
+    if (route.topLevelView === "pocket") {
       return fallbackVenueId ? { topLevelView: "owner", venueId: fallbackVenueId, ownerView: "command" } : { topLevelView: "portfolio" };
     }
     return route;
   }
 
   if (role === "manager") {
-    if (route.topLevelView === "portfolio" || route.topLevelView === "owner" || route.topLevelView === "settings") {
+    if (route.topLevelView === "settings") return route;
+    if (route.topLevelView === "portfolio" || route.topLevelView === "owner") {
       return fallbackVenueId ? { topLevelView: "manager", venueId: fallbackVenueId, managerView: "today" } : { topLevelView: "settings" };
     }
     if (route.topLevelView === "pocket") {

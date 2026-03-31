@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Icon from "./Icon";
 
 type TransitionSuggestionProps = {
   message: string;
@@ -24,7 +25,7 @@ export function TransitionSuggestion({ message, actionLabel, onAction, autoHideM
         {actionLabel}
       </button>
       <button className="transition-suggestion__dismiss" onClick={() => setVisible(false)} aria-label="Dismiss">
-        x
+        <Icon name="close" size={14} />
       </button>
     </div>
   );

@@ -5,41 +5,11 @@ import { DeepDrawer } from "../../components/DeepDrawer";
 import { LoadingState } from "../../components/LoadingState";
 import { EmptyState } from "../../components/EmptyState";
 import Icon from "../../components/Icon";
+import { Select } from "../../components/ui/Select";
 import { PlanExecutionSummary, PlanRecord, PlanTaskRecord, PlanTaskUpdatePayload, ProgressEntryRecord, TaskCommentRecord, fetchTaskComments, createTaskComment, reviewPlan, PlanReviewItem } from "../../lib/api";
+import { ds } from "../../styles/tokens";
 
 const ALL_STATUSES = ["not_started", "in_progress", "completed", "blocked", "on_hold", "deferred"];
-
-/* ── Design system tokens (v2) ── */
-const ds = {
-  accent: "#6C5CE7",
-  accentSoft: "rgba(108,92,231,0.08)",
-  success: "#10B981",
-  warning: "#F59E0B",
-  danger: "#EF4444",
-  info: "#6366F1",
-  cardBg: "#FFFFFF",
-  cardRadius: 12,
-  cardShadow: "0 1px 3px rgba(0,0,0,0.04)",
-  cardShadowHover: "0 4px 12px rgba(0,0,0,0.08)",
-  textBody: 15,
-  textSmall: 13,
-  textEyebrow: 11,
-  textHeading: 20,
-  textTitle: 28,
-  textCardTitle: 16,
-  sectionGap: 32,
-  cardGap: 12,
-  pageMargin: 48,
-  muted: "#8B8FA3",
-  textPrimary: "#1A1D2E",
-  textSecondary: "#5A5E73",
-  border: "#E8E9EF",
-  surfaceBg: "#F7F7FA",
-  l1Color: "#F97316",
-  l2Color: "#10B981",
-  l3Color: "#6366F1",
-  l4Color: "#8B5CF6",
-} as const;
 
 const LANE_COLORS = [ds.l1Color, ds.l2Color, ds.l3Color, ds.l4Color];
 
@@ -50,7 +20,7 @@ const statusColor = (status: string) => {
     case "completed": return ds.success;
     case "blocked": return ds.danger;
     case "on_hold": return ds.warning;
-    case "deferred": return "#9CA3AF";
+    case "deferred": return "var(--color-text-muted)";
     default: return ds.muted;
   }
 };
@@ -403,7 +373,7 @@ export function PlanView({
             style={{
               background: "none",
               border: "none",
-              color: "#6C5CE7",
+              color: "var(--color-accent)",
               fontSize: 11,
               fontWeight: 600,
               cursor: "pointer",
@@ -461,7 +431,7 @@ export function PlanView({
             {isOverdue && (
               <span style={{
                 fontSize: ds.textEyebrow, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em",
-                color: "#fff", background: ds.danger, borderRadius: 4, padding: "2px 7px",
+                color: "var(--color-surface)", background: ds.danger, borderRadius: 4, padding: "2px 7px",
               }}>
                 Overdue
               </span>
@@ -513,23 +483,18 @@ export function PlanView({
             {/* Ask Copilot */}
             {onAskCopilot && (
               <button
+                aria-label="Ask Copilot"
+                title="Ask Copilot about this task"
                 style={{
-                  background: "none",
-                  border: "none",
-                  color: "#6C5CE7",
-                  fontSize: 12,
-                  fontWeight: 600,
-                  cursor: "pointer",
-                  padding: "4px 8px",
-                  borderRadius: 6,
-                  transition: "background 180ms ease",
-                  marginBottom: 12,
+                  width: 24, height: 24, display: "inline-flex", alignItems: "center", justifyContent: "center",
+                  background: "none", border: "none", color: "var(--color-accent)", cursor: "pointer",
+                  borderRadius: 6, transition: "background 180ms ease", marginBottom: 12, padding: 0,
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(108,92,231,0.06)"; }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(108,92,231,0.08)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = "none"; }}
                 onClick={() => onAskCopilot(`Tell me about plan task: "${task.title}" (${task.block_id}) — Status: ${task.status}, Priority: ${task.priority ?? "normal"}${task.rationale ? `, Rationale: ${task.rationale.slice(0, 200)}` : ""}`)}
               >
-                Ask Copilot about this task
+                <Icon name="copilot" size={14} />
               </button>
             )}
 
@@ -580,18 +545,20 @@ export function PlanView({
                 </label>
                 <label style={{ display: "flex", flexDirection: "column", gap: 4, fontSize: ds.textSmall }}>
                   <span style={{ color: ds.muted, fontWeight: 500 }}>Priority</span>
-                  <select
+                  <Select
+                    options={[
+                      { value: "", label: "No priority" },
+                      { value: "critical", label: "Critical" },
+                      { value: "high", label: "High" },
+                      { value: "normal", label: "Normal" },
+                      { value: "low", label: "Low" },
+                    ]}
                     value={task.priority ?? ""}
                     disabled={updatingTaskId === task.id || isExecutionLocked}
-                    onChange={(e) => onUpdateTask(task.id, { priority: e.target.value || null })}
-                    style={{ fontSize: ds.textSmall, borderRadius: 8, border: `1px solid ${ds.border}`, padding: "8px 10px", background: ds.surfaceBg }}
-                  >
-                    <option value="">No priority</option>
-                    <option value="critical">Critical</option>
-                    <option value="high">High</option>
-                    <option value="normal">Normal</option>
-                    <option value="low">Low</option>
-                  </select>
+                    onChange={(value) => onUpdateTask(task.id, { priority: value || null })}
+                    aria-label="Priority"
+                    size="sm"
+                  />
                 </label>
               </div>
             </div>
@@ -768,7 +735,7 @@ export function PlanView({
                         disabled={submittingComment || !commentDraft.trim()}
                         style={{
                           fontSize: ds.textSmall, fontWeight: 600, padding: "6px 14px", borderRadius: 8, border: "none",
-                          background: ds.accent, color: "#fff",
+                          background: ds.accent, color: "var(--color-surface)",
                           cursor: (submittingComment || !commentDraft.trim()) ? "not-allowed" : "pointer",
                           opacity: (submittingComment || !commentDraft.trim()) ? 0.5 : 1,
                         }}
@@ -914,7 +881,7 @@ export function PlanView({
               </span>
               <span style={{
                 fontSize: ds.textEyebrow, fontWeight: 700, textTransform: "uppercase",
-                letterSpacing: "0.04em", color: "#fff",
+                letterSpacing: "0.04em", color: "var(--color-surface)",
                 background: plan.status === "active" ? ds.warning : plan.status === "archived" ? ds.muted : ds.accent,
                 borderRadius: 4, padding: "2px 8px",
               }}>
@@ -1046,7 +1013,7 @@ export function PlanView({
                   {tab.label}
                   {tab.badge != null && tab.badge > 0 && (
                     <span style={{
-                      fontSize: ds.textEyebrow, fontWeight: 700, color: "#fff", background: ds.accent,
+                      fontSize: ds.textEyebrow, fontWeight: 700, color: "var(--color-surface)", background: ds.accent,
                       borderRadius: 8, padding: "1px 6px", minWidth: 16, textAlign: "center",
                     }}>
                       {tab.badge}
@@ -1080,7 +1047,7 @@ export function PlanView({
                           borderRadius: 20, cursor: "pointer", transition: "all 0.15s ease",
                           border: active ? "none" : `1px solid ${ds.border}`,
                           background: active ? ds.accent : "transparent",
-                          color: active ? "#fff" : ds.textSecondary,
+                          color: active ? "var(--color-surface)" : ds.textSecondary,
                         }}
                       >
                         {f.label} ({f.count})
@@ -1190,7 +1157,7 @@ export function PlanView({
                   disabled={savingProgress}
                   style={{
                     alignSelf: "flex-start", padding: "8px 20px", fontSize: ds.textSmall, fontWeight: 600,
-                    borderRadius: 8, border: "none", background: ds.accent, color: "#fff",
+                    borderRadius: 8, border: "none", background: ds.accent, color: "var(--color-surface)",
                     cursor: savingProgress ? "not-allowed" : "pointer", opacity: savingProgress ? 0.6 : 1,
                   }}
                 >
@@ -1258,7 +1225,7 @@ export function PlanView({
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 <button
                   onClick={() => { setInspectedTaskId(null); setExpandedTaskId(t.id); }}
-                  style={{ background: ds.accent, color: "#fff", border: "none", borderRadius: 8, padding: "8px 16px", fontSize: ds.textSmall, fontWeight: 600, cursor: "pointer" }}
+                  style={{ background: ds.accent, color: "var(--color-surface)", border: "none", borderRadius: 8, padding: "8px 16px", fontSize: ds.textSmall, fontWeight: 600, cursor: "pointer" }}
                 >
                   Expand full detail
                 </button>
@@ -1329,7 +1296,7 @@ function TaskNotesEditor({
           disabled={disabled}
           style={{
             marginTop: 8, fontSize: ds.textSmall, fontWeight: 600, padding: "6px 14px",
-            borderRadius: 8, border: "none", background: ds.accent, color: "#fff",
+            borderRadius: 8, border: "none", background: ds.accent, color: "var(--color-surface)",
             cursor: disabled ? "not-allowed" : "pointer", opacity: disabled ? 0.5 : 1,
           }}
         >

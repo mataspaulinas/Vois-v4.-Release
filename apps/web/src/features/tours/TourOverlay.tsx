@@ -21,8 +21,8 @@ export function TourOverlay({ step, stepIndex, totalSteps, isLast, onNext, onDis
         zIndex: 10000,
         width: 380,
         maxWidth: "90vw",
-        background: "#FFFFFF",
-        border: "2px solid #6C5CE7",
+        background: "var(--color-surface)",
+        border: "2px solid var(--color-accent)",
         borderRadius: 12,
         boxShadow: "0 8px 32px rgba(108,92,231,0.18), 0 1px 3px rgba(0,0,0,0.04)",
         padding: 20,
@@ -42,7 +42,7 @@ export function TourOverlay({ step, stepIndex, totalSteps, isLast, onNext, onDis
           fontWeight: 600,
           textTransform: "uppercase",
           letterSpacing: "0.4px",
-          color: "#999",
+          color: "var(--color-text-muted)",
         }}>
           Step {stepIndex + 1} of {totalSteps}
         </span>
@@ -52,7 +52,7 @@ export function TourOverlay({ step, stepIndex, totalSteps, isLast, onNext, onDis
             background: "none",
             border: "none",
             cursor: "pointer",
-            color: "#999",
+            color: "var(--color-text-muted)",
             fontSize: 14,
             fontWeight: 600,
             padding: "4px 8px",
@@ -79,7 +79,7 @@ export function TourOverlay({ step, stepIndex, totalSteps, isLast, onNext, onDis
               width: 8,
               height: 8,
               borderRadius: "50%",
-              background: i === stepIndex ? "#6C5CE7" : "#E0E0E0",
+              background: i === stepIndex ? "var(--color-accent)" : "var(--color-border-subtle)",
               transition: "background 180ms ease",
             }}
           />
@@ -91,14 +91,14 @@ export function TourOverlay({ step, stepIndex, totalSteps, isLast, onNext, onDis
         margin: "0 0 8px 0",
         fontSize: 15,
         fontWeight: 600,
-        color: "#1a1a1a",
+        color: "var(--color-text-primary)",
       }}>
         {step.title}
       </h3>
       <p style={{
         margin: "0 0 16px 0",
         fontSize: 13,
-        color: "#777",
+        color: "var(--color-text-muted)",
         lineHeight: 1.5,
       }}>
         {step.body}
@@ -112,7 +112,7 @@ export function TourOverlay({ step, stepIndex, totalSteps, isLast, onNext, onDis
             padding: "8px 16px",
             fontSize: 13,
             fontWeight: 500,
-            color: "#777",
+            color: "var(--color-text-muted)",
             background: "transparent",
             border: "1px solid rgba(0,0,0,0.12)",
             borderRadius: 8,
@@ -129,8 +129,8 @@ export function TourOverlay({ step, stepIndex, totalSteps, isLast, onNext, onDis
             padding: "8px 16px",
             fontSize: 13,
             fontWeight: 600,
-            color: "#fff",
-            background: "#6C5CE7",
+            color: "var(--color-surface)",
+            background: "var(--color-accent)",
             border: "none",
             borderRadius: 8,
             cursor: "pointer",

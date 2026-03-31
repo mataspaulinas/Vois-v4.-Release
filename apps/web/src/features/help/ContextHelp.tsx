@@ -22,8 +22,8 @@ export function ContextHelp({ surface }: ContextHelpProps) {
           height: 32,
           borderRadius: "50%",
           border: "1px solid rgba(0,0,0,0.12)",
-          background: "#FFFFFF",
-          color: "#6C5CE7",
+          background: "var(--color-surface)",
+          color: "var(--color-accent)",
           fontSize: 14,
           fontWeight: 700,
           cursor: "pointer",
@@ -54,7 +54,7 @@ export function ContextHelp({ surface }: ContextHelpProps) {
             right: 0,
             width: 320,
             maxWidth: "90vw",
-            background: "#FFFFFF",
+            background: "var(--color-surface)",
             border: "1px solid rgba(0,0,0,0.06)",
             borderRadius: 12,
             boxShadow: "0 8px 24px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.04)",
@@ -69,7 +69,7 @@ export function ContextHelp({ surface }: ContextHelpProps) {
               justifyContent: "space-between",
               alignItems: "center",
             }}>
-              <h4 style={{ margin: 0, fontSize: 15, fontWeight: 600, color: "#1a1a1a" }}>
+              <h4 style={{ margin: 0, fontSize: 15, fontWeight: 600, color: "var(--color-text-primary)" }}>
                 {help.title}
               </h4>
               <button
@@ -78,7 +78,7 @@ export function ContextHelp({ surface }: ContextHelpProps) {
                   background: "none",
                   border: "none",
                   cursor: "pointer",
-                  color: "#999",
+                  color: "var(--color-text-muted)",
                   fontSize: 13,
                   fontWeight: 600,
                   padding: "4px 8px",
@@ -104,7 +104,7 @@ export function ContextHelp({ surface }: ContextHelpProps) {
                   key={i}
                   style={{
                     fontSize: 13,
-                    color: "#555",
+                    color: "var(--color-text-muted)",
                     lineHeight: 1.5,
                     marginBottom: 6,
                   }}

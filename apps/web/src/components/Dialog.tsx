@@ -20,11 +20,11 @@ type DialogProps = {
 /* ─── Constants ─────────────────────────────────────────────── */
 
 const VARIANT_COLORS: Record<DialogVariant, string> = {
-  standard: "#F59E0B",
-  destructive: "#EF4444",
-  success: "#10B981",
-  info: "#6366F1",
-  input: "#6C5CE7",
+  standard: "var(--color-warning)",
+  destructive: "var(--color-danger)",
+  success: "var(--color-success)",
+  info: "var(--color-info)",
+  input: "var(--color-accent)",
 };
 
 /* ─── Icons per variant ─────────────────────────────────────── */
@@ -286,8 +286,8 @@ export function Dialog({
   };
 
   const panelStyle: React.CSSProperties = {
-    backgroundColor: "#fff",
-    borderRadius: 16,
+    backgroundColor: "var(--color-surface)",
+    borderRadius: "var(--radius-lg)",
     boxShadow: "0 20px 60px rgba(0,0,0,0.15), 0 4px 16px rgba(0,0,0,0.08)",
     maxWidth: 420,
     width: "100%",
@@ -300,15 +300,15 @@ export function Dialog({
 
   const confirmBtnStyle: React.CSSProperties = {
     height: 36,
-    borderRadius: 8,
+    borderRadius: "var(--radius-sm)",
     border: "none",
     padding: "0 20px",
-    fontSize: 14,
+    fontSize: "var(--text-body)",
     fontWeight: 600,
     cursor:
       isInput && inputRequired && !inputValue.trim() ? "not-allowed" : "pointer",
-    color: "#fff",
-    backgroundColor: isDestructive ? "#EF4444" : color,
+    color: "var(--color-surface)",
+    backgroundColor: isDestructive ? "var(--color-danger)" : color,
     opacity: isInput && inputRequired && !inputValue.trim() ? 0.5 : 1,
     transition: "opacity 150ms, background-color 150ms",
     lineHeight: "36px",
@@ -316,14 +316,14 @@ export function Dialog({
 
   const cancelBtnStyle: React.CSSProperties = {
     height: 36,
-    borderRadius: 8,
-    border: "1px solid #e5e7eb",
+    borderRadius: "var(--radius-sm)",
+    border: "1px solid var(--color-border-subtle)",
     padding: "0 20px",
-    fontSize: 14,
+    fontSize: "var(--text-body)",
     fontWeight: 500,
     cursor: "pointer",
-    color: "#374151",
-    backgroundColor: "#fff",
+    color: "var(--color-text-secondary)",
+    backgroundColor: "var(--color-surface)",
     lineHeight: "36px",
     transition: "background-color 150ms",
   };
@@ -331,11 +331,11 @@ export function Dialog({
   const inputStyle: React.CSSProperties = {
     width: "100%",
     height: 44,
-    borderRadius: 12,
-    border: "1px solid #e5e7eb",
+    borderRadius: "var(--radius-md)",
+    border: "1px solid var(--color-border-subtle)",
     padding: "0 14px",
-    fontSize: 15,
-    color: "#1a1a1a",
+    fontSize: "var(--text-body)",
+    color: "var(--color-text-primary)",
     outline: "none",
     boxSizing: "border-box",
     marginTop: 16,
@@ -357,9 +357,9 @@ export function Dialog({
         <h2
           id="dialog-title"
           style={{
-            fontSize: 20,
+            fontSize: "var(--text-section)",
             fontWeight: 600,
-            color: "#1a1a1a",
+            color: "var(--color-text-primary)",
             textAlign: "center",
             margin: 0,
             lineHeight: "28px",
@@ -371,8 +371,8 @@ export function Dialog({
         {description && (
           <p
             style={{
-              fontSize: 15,
-              color: "#6b7280",
+              fontSize: "var(--text-body)",
+              color: "var(--color-text-muted)",
               textAlign: "center",
               margin: "8px 0 0",
               lineHeight: "22px",
@@ -393,7 +393,7 @@ export function Dialog({
               e.currentTarget.style.borderColor = color;
             }}
             onBlur={(e) => {
-              e.currentTarget.style.borderColor = "#e5e7eb";
+              e.currentTarget.style.borderColor = "var(--color-border-subtle)";
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter") handleConfirm();
@@ -413,10 +413,10 @@ export function Dialog({
             style={cancelBtnStyle}
             onClick={onClose}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#f9fafb";
+              e.currentTarget.style.backgroundColor = "var(--color-surface-subtle)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "#fff";
+              e.currentTarget.style.backgroundColor = "var(--color-surface)";
             }}
           >
             {cancelLabel}

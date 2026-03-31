@@ -20,9 +20,9 @@ function suggestView(title: string): string {
 }
 
 const levelDotColor: Record<string, string> = {
-  info: "#6366F1",
-  warning: "#F59E0B",
-  critical: "#EF4444",
+  info: "var(--color-info)",
+  warning: "var(--color-warning)",
+  critical: "var(--color-danger)",
 };
 
 export function NotificationBell({ formatTimestamp, onNavigateToVenue }: NotificationBellProps) {
@@ -85,19 +85,19 @@ export function NotificationBell({ formatTimestamp, onNavigateToVenue }: Notific
             position: "absolute",
             top: 2,
             right: -4,
-            background: "#EF4444",
-            color: "#fff",
-            borderRadius: 999,
+            background: "var(--color-danger)",
+            color: "var(--color-surface)",
+            borderRadius: "var(--radius-full)",
             minWidth: 18,
             height: 18,
             padding: "0 5px",
-            fontSize: 11,
+            fontSize: "var(--text-eyebrow)",
             fontWeight: 700,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             lineHeight: 1,
-            boxShadow: "0 0 0 2px #fff",
+            boxShadow: "0 0 0 2px var(--color-surface)",
           }}>
             {unreadCount > 9 ? "9+" : unreadCount}
           </span>
@@ -117,9 +117,9 @@ export function NotificationBell({ formatTimestamp, onNavigateToVenue }: Notific
             width: 380,
             maxHeight: 440,
             overflowY: "auto",
-            background: "#FFFFFF",
+            background: "var(--color-surface)",
             border: "1px solid rgba(0,0,0,0.06)",
-            borderRadius: 12,
+            borderRadius: "var(--radius-md)",
             boxShadow: "0 8px 24px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.04)",
             zIndex: 100,
           }}>
@@ -131,11 +131,11 @@ export function NotificationBell({ formatTimestamp, onNavigateToVenue }: Notific
               justifyContent: "space-between",
               alignItems: "center",
             }}>
-              <strong style={{ fontSize: 15, color: "#1a1a1a" }}>Notifications</strong>
+              <strong style={{ fontSize: "var(--text-body)", color: "var(--color-text-primary)" }}>Notifications</strong>
               {unreadCount > 0 && (
                 <span style={{
-                  fontSize: 13,
-                  color: "#6C5CE7",
+                  fontSize: "var(--text-small)",
+                  color: "var(--color-accent)",
                   fontWeight: 600,
                 }}>
                   {unreadCount} unread
@@ -148,8 +148,8 @@ export function NotificationBell({ formatTimestamp, onNavigateToVenue }: Notific
               <div style={{
                 padding: "32px 16px",
                 textAlign: "center",
-                fontSize: 13,
-                color: "#999",
+                fontSize: "var(--text-small)",
+                color: "var(--color-text-muted)",
               }}>
                 Loading...
               </div>
@@ -169,7 +169,7 @@ export function NotificationBell({ formatTimestamp, onNavigateToVenue }: Notific
                       alignItems: "flex-start",
                     }}
                     onClick={() => handleClick(n)}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#F8F7FF"; }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--color-accent-soft)"; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "transparent"; }}
                   >
                     {/* Status dot */}
@@ -177,7 +177,7 @@ export function NotificationBell({ formatTimestamp, onNavigateToVenue }: Notific
                       width: 8,
                       height: 8,
                       borderRadius: "50%",
-                      background: levelDotColor[n.level] ?? "#ccc",
+                      background: levelDotColor[n.level] ?? "var(--color-text-muted)",
                       flexShrink: 0,
                       marginTop: 6,
                     }} />
@@ -191,16 +191,16 @@ export function NotificationBell({ formatTimestamp, onNavigateToVenue }: Notific
                       }}>
                         <span style={{
                           fontWeight: 600,
-                          fontSize: 11,
+                          fontSize: "var(--text-eyebrow)",
                           textTransform: "uppercase",
                           letterSpacing: "0.5px",
-                          color: levelDotColor[n.level] ?? "#999",
+                          color: levelDotColor[n.level] ?? "var(--color-text-muted)",
                         }}>
                           {n.level}
                         </span>
                         <span style={{
-                          fontSize: 11,
-                          color: "#999",
+                          fontSize: "var(--text-eyebrow)",
+                          color: "var(--color-text-muted)",
                           flexShrink: 0,
                           marginLeft: 8,
                         }}>
@@ -209,9 +209,9 @@ export function NotificationBell({ formatTimestamp, onNavigateToVenue }: Notific
                       </div>
                       <p style={{
                         margin: 0,
-                        fontSize: 15,
+                        fontSize: "var(--text-body)",
                         fontWeight: n.read_at ? 400 : 600,
-                        color: "#1a1a1a",
+                        color: "var(--color-text-primary)",
                         lineHeight: 1.4,
                       }}>
                         {n.title}
@@ -219,8 +219,8 @@ export function NotificationBell({ formatTimestamp, onNavigateToVenue }: Notific
                       {n.body && (
                         <p style={{
                           margin: "3px 0 0 0",
-                          fontSize: 13,
-                          color: "#777",
+                          fontSize: "var(--text-small)",
+                          color: "var(--color-text-muted)",
                           lineHeight: 1.4,
                         }}>
                           {n.body}
@@ -228,8 +228,8 @@ export function NotificationBell({ formatTimestamp, onNavigateToVenue }: Notific
                       )}
                       {!n.read_at && (
                         <span style={{
-                          fontSize: 11,
-                          color: "#6C5CE7",
+                          fontSize: "var(--text-eyebrow)",
+                          color: "var(--color-accent)",
                           marginTop: 4,
                           display: "inline-block",
                           fontWeight: 500,
@@ -245,8 +245,8 @@ export function NotificationBell({ formatTimestamp, onNavigateToVenue }: Notific
               <div style={{
                 padding: "32px 16px",
                 textAlign: "center",
-                fontSize: 13,
-                color: "#999",
+                fontSize: "var(--text-small)",
+                color: "var(--color-text-muted)",
               }}>
                 No notifications yet.
               </div>

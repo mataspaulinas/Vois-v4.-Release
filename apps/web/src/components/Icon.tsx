@@ -280,9 +280,9 @@ const Icon: React.FC<IconProps> = ({
     return null;
   }
 
-  // Resolve color
+  // Resolve color — always currentColor unless explicitly overridden via prop
   const semanticColor = SEMANTIC_COLORS[name];
-  const resolvedColor = color ?? semanticColor ?? 'currentColor';
+  const resolvedColor = color ?? 'currentColor';
 
   // Animation
   const animCategory = animated ? getAnimationCategory(name) : 'none';
