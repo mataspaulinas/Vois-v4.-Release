@@ -2,7 +2,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
-from ..dependencies import get_db, get_current_user
+from app.api.deps.auth import get_db, get_current_user
 
 router = APIRouter(prefix="/api/v1", tags=["shift-handover"])
 

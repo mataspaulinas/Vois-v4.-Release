@@ -1,9 +1,9 @@
 """Plan review AI — reviews a draft plan before activation."""
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
-from ..dependencies import get_db, get_current_user
-from ...services.ai_runtime import get_ai_runtime_service
-from ...models.domain import Plan
+from app.api.deps.auth import get_db, get_current_user
+from app.services.ai_runtime import get_ai_runtime_service
+from app.models.domain import OperationalPlan as Plan
 from sqlalchemy.orm import Session
 
 router = APIRouter(prefix="/api/v1", tags=["plan-review"])
