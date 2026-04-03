@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -148,11 +149,37 @@ class ProvisionedLoginPacket(BaseModel):
     temporary_password: str
     reset_required: bool = True
     firebase_uid: str | None = None
+    invite_url: str | None = None
+    invite_expires_at: datetime | None = None
 
 
 class OrganizationMemberProvisionResponse(BaseModel):
     member: OrganizationMemberRead
     login_packet: ProvisionedLoginPacket
+
+
+class InvitePreviewRead(BaseModel):
+    token_status: str
+    organization_name: str
+    organization_slug: str
+    invited_by_name: str | None = None
+    email: str
+    full_name: str
+    role: AuthRole
+    venue_names: list[str] = Field(default_factory=list)
+    expires_at: datetime
+    accepted_at: datetime | None = None
+    message: str | None = None
+
+
+class InviteAcceptanceRead(BaseModel):
+    accepted: bool
+    organization_id: str
+    organization_slug: str
+    role: AuthRole
+    venue_ids: list[str] = Field(default_factory=list)
+    requires_owner_claim: bool = False
+    message: str | None = None
 
 
 class AssessmentSignalStateInput(BaseModel):
@@ -167,6 +194,8 @@ class AssessmentRunRequest(BaseModel):
     created_by: str | None = None
     notes: str | None = None
     assessment_type: str = "full_diagnostic"
+    triage_enabled: bool | None = None
+    triage_intensity: Literal["focused", "balanced", "thorough"] | None = None
     assessment_date: str | None = None
     selected_signal_ids: list[str] = Field(default_factory=list)
     signal_states: dict[str, AssessmentSignalStateInput] = Field(default_factory=dict)
@@ -182,6 +211,8 @@ class AssessmentCreateRequest(BaseModel):
     created_by: str | None = None
     notes: str | None = None
     assessment_type: str = "full_diagnostic"
+    triage_enabled: bool | None = None
+    triage_intensity: Literal["focused", "balanced", "thorough"] | None = None
     assessment_date: str | None = None
     selected_signal_ids: list[str] = Field(default_factory=list)
     signal_states: dict[str, AssessmentSignalStateInput] = Field(default_factory=dict)
@@ -200,6 +231,8 @@ class AssessmentRead(BaseModel):
     created_by: str | None = None
     notes: str | None = None
     assessment_type: str = "full_diagnostic"
+    triage_enabled: bool = False
+    triage_intensity: Literal["focused", "balanced", "thorough"] | None = None
     assessment_date: str | None = None
     selected_signal_ids: list[str]
     signal_states: dict[str, AssessmentSignalStateInput]
@@ -260,6 +293,15 @@ class PlanTaskOutput(BaseModel):
     trace: dict[str, object]
     sub_actions: list[str]
     deliverables: list[str]
+    layer: str | None = None
+    timeline_label: str | None = None
+    priority: str | None = None
+    source_response_pattern_id: str | None = None
+    source_response_pattern_name: str | None = None
+    module_id: str | None = None
+    assigned_to: str | None = None
+    verification: str | None = None
+    expected_output: str | None = None
     status: TaskStatus = TaskStatus.NOT_STARTED
 
 
@@ -283,10 +325,23 @@ class PlanTaskRead(BaseModel):
     effort_hours: float
     rationale: str
     notes: str | None = None
+    assigned_to: str | None = None
+    assignee_user_id: str | None = None
+    assignee_name: str | None = None
+    layer: str | None = None
+    timeline_label: str | None = None
+    priority: str | None = None
+    source_response_pattern_id: str | None = None
+    source_response_pattern_name: str | None = None
+    module_id: str | None = None
     dependencies: list[str]
     trace: dict[str, object]
     sub_actions: list[SubActionItem]
     deliverables: list[DeliverableItem]
+    due_at: datetime | None = None
+    verification: str | None = None
+    expected_output: str | None = None
+    review_required: bool = False
     created_at: datetime
 
 
@@ -345,6 +400,8 @@ class PlanUpdateRequest(BaseModel):
 
 
 class EngineReportOutput(BaseModel):
+    assessment_type: str = "full_diagnostic"
+    assessment_type_label: str = "Full Diagnostic"
     summary: str
     diagnostic_spine: list[str]
     investigation_threads: list[str]
@@ -366,6 +423,8 @@ class EngineRunOutput(BaseModel):
     failure_modes: list[DiagnosticFinding]
     response_patterns: list[DiagnosticFinding]
     plan_tasks: list[PlanTaskOutput]
+    constraint_report: dict[str, object] = Field(default_factory=dict)
+    generated_plan: dict[str, object] = Field(default_factory=dict)
     report: EngineReportOutput
 
 
@@ -374,6 +433,8 @@ class PersistedEngineRunRead(BaseModel):
     assessment_id: str
     venue_id: str
     plan_id: str | None = None
+    assessment_type: str = "full_diagnostic"
+    assessment_type_label: str = "Full Diagnostic"
     ontology_version: str
     ontology_id: str
     core_canon_version: str
@@ -393,6 +454,8 @@ class PersistedEngineRunDetailRead(PersistedEngineRunRead):
     normalized_signals: list[dict[str, object]] = Field(default_factory=list)
     diagnostic_snapshot: dict[str, object] = Field(default_factory=dict)
     plan_snapshot: dict[str, object] = Field(default_factory=dict)
+    constraint_report: dict[str, object] = Field(default_factory=dict)
+    generated_plan: dict[str, object] = Field(default_factory=dict)
     report_markdown: str | None = None
     report_type: str | None = None
     ai_trace: dict[str, object] = Field(default_factory=dict)

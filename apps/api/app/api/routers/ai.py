@@ -35,6 +35,7 @@ def ai_intake(
             raw_text=payload.raw_text,
             ontology_id=mount.ontology_id,
             version=mount.version,
+            assessment_type=payload.assessment_type,
         )
     except AIRuntimePolicyError as exc:
         raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=str(exc)) from exc

@@ -32,4 +32,9 @@ def intake_preview(
         )
     except (InvalidOntologyMountError, OntologyMountNotFoundError) as exc:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=str(exc)) from exc
-    return service.preview(raw_text=payload.raw_text, ontology_id=mount.ontology_id, version=mount.version)
+    return service.preview(
+        raw_text=payload.raw_text,
+        ontology_id=mount.ontology_id,
+        version=mount.version,
+        assessment_type=payload.assessment_type,
+    )

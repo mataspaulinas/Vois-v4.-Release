@@ -1,15 +1,23 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import {
   AssessmentHistoryItem,
   AssessmentRecord,
+  AuthEntryConfig,
   AuthSecurityPosture,
   AuthSessionResponse,
   AuthSessionInventory,
   AuditEntryRecord,
   BootstrapResponse,
+  CopilotActionPreview,
+  CopilotActionReceipt,
+  CopilotActionRecord,
+  CopilotActionType,
   CopilotAttachment,
+  CopilotMessageRecord,
+  CopilotSearchResponse,
   CopilotThreadDetail,
+  CopilotThreadContext,
   CopilotThreadSummary,
   EnhancedReportResponse,
   EngineRunResponse,
@@ -37,6 +45,8 @@ import {
   Venue,
   applyAssessmentSignalSuggestion,
   claimOwnerSetup,
+  commitCopilotAction,
+  fetchAuthEntryConfig,
   createAssessment,
   createOrganizationMember,
   createProgressEntry,
@@ -48,7 +58,9 @@ import {
   fetchAuditEntries,
   fetchBootstrap,
   fetchCopilotThread,
+  fetchCopilotThreadActions,
   fetchCopilotThreads,
+  fetchCopilotThreadContext,
   fetchEnhancedReport,
   fetchEngineRunDetail,
   fetchEngineRunHistory,
@@ -69,22 +81,28 @@ import {
   fetchOntologyBundle,
   fetchOntologyEvaluationPacks,
   fetchOntologyGovernance,
-  fetchProactiveGreeting,
   fetchPlan,
   fetchPlanExecutionSummary,
   fetchPortfolioSummary,
   fetchProgressEntries,
   fetchSessionInventory,
+  loginLocalSession,
   loginSession,
   logoutSession,
   previewIntake,
+  previewCopilotAction,
   retryIntegrationEvent,
   runAIIntake,
   runSavedAssessment,
   revokeManagedSession,
   sendCopilotMessage,
+  searchCopilotWorkspace,
   setAuthToken,
   subscribeToAuthTokenChanges,
+  createCopilotThread,
+  updateCopilotThread,
+  deleteCopilotThread,
+  branchCopilotThread,
   generateOrganizationExport,
   runOntologyEvaluationPack,
   updatePlan,
@@ -92,6 +110,7 @@ import {
   updatePlanTaskStatus,
   updateOrganizationMember,
   updateOrganizationMemberVenueAccess,
+  createCopilotPlanSuggestion,
   PlanUpdatePayload,
   PlanTaskUpdatePayload,
   NextActionItem,
@@ -138,6 +157,7 @@ import {
 import { firebaseConfigured } from "./lib/firebase";
 import { SectionCard } from "./components/SectionCard";
 import { CopilotDrawer } from "./features/copilot/CopilotDrawer";
+import { CopilotWorkspace } from "./features/copilot/CopilotWorkspace";
 import { TourOverlay } from "./features/tours/TourOverlay";
 import { tourForRole } from "./features/tours/tourDefinitions";
 import { useTour } from "./features/tours/useTour";
@@ -166,6 +186,13 @@ import {
   VenueSubview,
 } from "./features/shell/types";
 import { AssessmentView } from "./features/views/AssessmentView";
+import {
+  DEFAULT_ASSESSMENT_TYPE,
+  normalizeAssessmentTriageSettings,
+  type AssessmentTypeKey,
+  type TriageIntensity,
+  isAssessmentTypeKey,
+} from "./features/assessment/assessmentTypes";
 import { SignalsReviewView } from "./features/views/SignalsReviewView";
 import { ConsoleView } from "./features/views/ConsoleView";
 import { HistoryView } from "./features/views/HistoryView";
@@ -184,6 +211,7 @@ import { EscalationChannel } from "./features/manager/EscalationChannel";
 import { ManagerCopilot } from "./features/manager/ManagerCopilot";
 import { OwnerCopilot } from "./features/owner/OwnerCopilot";
 import { MyShift } from "./features/pocket/MyShift";
+import { PocketTaskDetail } from "./features/pocket/PocketTaskDetail";
 import { MyStandards } from "./features/pocket/MyStandards";
 import { AskForHelp } from "./features/pocket/AskForHelp";
 import { ReportSomething } from "./features/pocket/ReportSomething";
@@ -193,6 +221,12 @@ import { OwnerAdministrationView } from "./features/owner/OwnerAdministrationVie
 import { CommandCenter } from "./features/owner/CommandCenter";
 import { DelegationConsole } from "./features/owner/DelegationConsole";
 import { OwnerSetupView } from "./features/setup/OwnerSetupView";
+import { AuthRouterScreen } from "./features/auth/AuthRouterScreen";
+import { AuthUnavailableScreen } from "./features/auth/AuthUnavailableScreen";
+import { InviteAcceptanceScreen } from "./features/auth/InviteAcceptanceScreen";
+import { LocalBootstrapScreen } from "./features/auth/LocalBootstrapScreen";
+import { NoAccessScreen } from "./features/auth/NoAccessScreen";
+import { PasswordResetScreen } from "./features/auth/PasswordResetScreen";
 import { buildHistoryComparison } from "./features/views/historyInsights";
 import { buildReportComparison } from "./features/views/reportInsights";
 import { ToastProvider } from "./components/Toast";
@@ -224,7 +258,77 @@ function fileToCopilotAttachment(file: File): Promise<CopilotAttachment> {
   });
 }
 
+type AuthPathState = {
+  pathname: string;
+  search: string;
+  inviteToken: string | null;
+  resetToken: string | null;
+  inviteQueryToken: string | null;
+  emailHint: string;
+  isAuthRoute: boolean;
+  isAuthRoot: boolean;
+  isLocalAuth: boolean;
+  isInvite: boolean;
+  isReset: boolean;
+  isClaimOwner: boolean;
+};
+
+function readAuthPathState(): AuthPathState {
+  if (typeof window === "undefined") {
+    return {
+      pathname: "/auth",
+      search: "",
+      inviteToken: null,
+      resetToken: null,
+      inviteQueryToken: null,
+      emailHint: "",
+      isAuthRoute: true,
+      isAuthRoot: true,
+      isLocalAuth: false,
+      isInvite: false,
+      isReset: false,
+      isClaimOwner: false,
+    };
+  }
+
+  const { pathname, search } = window.location;
+  const params = new URLSearchParams(search);
+  const inviteMatch = pathname.match(/^\/auth\/invite\/([^/?#]+)$/);
+
+  return {
+    pathname,
+    search,
+    inviteToken: inviteMatch ? decodeURIComponent(inviteMatch[1]) : null,
+    resetToken: params.get("token"),
+    inviteQueryToken: params.get("invite"),
+    emailHint: params.get("email") ?? "",
+    isAuthRoute: pathname === "/auth" || pathname === "/auth/local" || pathname === "/auth/reset" || /^\/auth\/invite\/[^/?#]+$/.test(pathname),
+    isAuthRoot: pathname === "/auth",
+    isLocalAuth: pathname === "/auth/local",
+    isInvite: /^\/auth\/invite\/[^/?#]+$/.test(pathname),
+    isReset: pathname === "/auth/reset",
+    isClaimOwner: pathname === "/setup/claim-owner",
+  };
+}
+
+function navigatePath(nextPath: string, replace = false) {
+  if (typeof window === "undefined") {
+    return;
+  }
+  const url = new URL(nextPath, window.location.origin);
+  const next = `${url.pathname}${url.search}${url.hash}`;
+  if (replace) {
+    window.history.replaceState({}, "", next);
+  } else {
+    window.history.pushState({}, "", next);
+  }
+}
+
 export default function App() {
+  const [authPath, setAuthPath] = useState<AuthPathState>(() => readAuthPathState());
+  const [authEntryConfig, setAuthEntryConfig] = useState<AuthEntryConfig | null>(null);
+  const [loadingAuthEntryConfig, setLoadingAuthEntryConfig] = useState(true);
+  const [authEntryError, setAuthEntryError] = useState<string | null>(null);
   const [preferences, setPreferences] = useState<ShellPreferences>(() => {
     const stored = loadShellPreferences();
     return {
@@ -239,6 +343,7 @@ export default function App() {
     preferences.lastRoute.topLevelView === "venue" ? preferences.lastRoute.venueId : null
   );
   const [copilotOpen, setCopilotOpen] = useState(false);
+  const [copilotWorkspaceOpen, setCopilotWorkspaceOpen] = useState(false);
   const [copilotPreFill, setCopilotPreFill] = useState<string | null>(null);
   const [referenceSearch, setReferenceSearch] = useState("");
   const [authSession, setAuthSession] = useState<AuthSessionResponse | null>(null);
@@ -250,8 +355,6 @@ export default function App() {
   const [organizationDeleteReadiness, setOrganizationDeleteReadiness] = useState<OrganizationDeleteReadiness | null>(null);
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-  const loginEmailRef = useRef<HTMLInputElement | null>(null);
-  const loginPasswordRef = useRef<HTMLInputElement | null>(null);
 
   const [bootstrap, setBootstrap] = useState<BootstrapResponse | null>(null);
   const [venueOntologyBindings, setVenueOntologyBindings] = useState<VenueOntologyBindingRecord[]>([]);
@@ -265,7 +368,6 @@ export default function App() {
   const [integrationSummary, setIntegrationSummary] = useState<IntegrationHealthSummary | null>(null);
   const [integrationEvents, setIntegrationEvents] = useState<IntegrationEventRecord[]>([]);
   const [portfolioSummary, setPortfolioSummary] = useState<PortfolioSummaryResponse | null>(null);
-  const [proactiveGreeting, setProactiveGreeting] = useState<string | null>(null);
   const [engineResult, setEngineResult] = useState<EngineRunResponse | null>(null);
   const [enhancedReport, setEnhancedReport] = useState<EnhancedReportResponse | null>(null);
   const [intakePreview, setIntakePreview] = useState<IntakePreviewResponse | null>(null);
@@ -290,7 +392,41 @@ export default function App() {
   const [copilotThreads, setCopilotThreads] = useState<CopilotThreadSummary[]>([]);
   const [selectedThreadId, setSelectedThreadId] = useState<string | null>(null);
   const [selectedThread, setSelectedThread] = useState<CopilotThreadDetail | null>(null);
+  const [selectedThreadContext, setSelectedThreadContext] = useState<CopilotThreadContext | null>(null);
+  const [selectedThreadActions, setSelectedThreadActions] = useState<CopilotActionRecord[]>([]);
+  const [loadingCopilotActions, setLoadingCopilotActions] = useState(false);
+  const [copilotActionPreview, setCopilotActionPreview] = useState<CopilotActionPreview | null>(null);
+  const [copilotActionPreviewRequest, setCopilotActionPreviewRequest] = useState<{
+    action_type: CopilotActionType;
+    message_id?: string | null;
+    task_id?: string | null;
+    severity?: string | null;
+    due_at?: string | null;
+    signal_additions?: Array<{ signal_id: string; notes?: string | null; confidence?: string | null }>;
+    signal_removals?: string[];
+  } | null>(null);
+  const [copilotActionReceipt, setCopilotActionReceipt] = useState<CopilotActionReceipt | null>(null);
+  const [previewingCopilotActionType, setPreviewingCopilotActionType] = useState<CopilotActionType | null>(null);
+  const [committingCopilotActionType, setCommittingCopilotActionType] = useState<CopilotActionType | null>(null);
+  const [copilotQuotedMessageId, setCopilotQuotedMessageId] = useState<string | null>(null);
+  const [copilotSearchQuery, setCopilotSearchQuery] = useState("");
+  const [copilotSearchResults, setCopilotSearchResults] = useState<CopilotSearchResponse | null>(null);
+  const [copilotVisibilityFilter, setCopilotVisibilityFilter] = useState<"all" | "shared" | "private">("all");
+  const [copilotSortMode, setCopilotSortMode] = useState<"recent" | "title" | "created">("recent");
+  const [copilotIncludeArchived, setCopilotIncludeArchived] = useState(false);
+  const [copilotWorkspaceActionMessage, setCopilotWorkspaceActionMessage] = useState<string | null>(null);
   const [intakeText, setIntakeText] = useState("");
+  const [assessmentType, setAssessmentType] = useState<AssessmentTypeKey>(() => {
+    if (typeof window === "undefined") {
+      return DEFAULT_ASSESSMENT_TYPE;
+    }
+    const stored = window.localStorage.getItem("vois_default_assessment_type");
+    return isAssessmentTypeKey(stored) ? stored : DEFAULT_ASSESSMENT_TYPE;
+  });
+  const [triageEnabled, setTriageEnabled] = useState(() => normalizeAssessmentTriageSettings(assessmentType).enabled);
+  const [triageIntensity, setTriageIntensity] = useState<TriageIntensity | null>(
+    () => normalizeAssessmentTriageSettings(assessmentType).intensity
+  );
   const [rejectedSignalIds, setRejectedSignalIds] = useState<Set<string>>(new Set());
   const [manuallyAddedSignalIds, setManuallyAddedSignalIds] = useState<Set<string>>(new Set());
   const [managementHours, setManagementHours] = useState(10);
@@ -300,7 +436,6 @@ export default function App() {
   const [copilotInput, setCopilotInput] = useState("");
   const [copilotAttachments, setCopilotAttachments] = useState<CopilotAttachment[]>([]);
   const [loadingBootstrap, setLoadingBootstrap] = useState(true);
-  const [loginRequired, setLoginRequired] = useState(false);
   const [loadingOntology, setLoadingOntology] = useState(true);
   const [loadingEvaluations, setLoadingEvaluations] = useState(false);
   const [loadingIntegrationEvents, setLoadingIntegrationEvents] = useState(false);
@@ -312,6 +447,7 @@ export default function App() {
   const [loadingEngineRunDetail, setLoadingEngineRunDetail] = useState(false);
   const [loadingAudit, setLoadingAudit] = useState(false);
   const [loadingCopilot, setLoadingCopilot] = useState(false);
+  const [searchingCopilot, setSearchingCopilot] = useState(false);
   const [analyzingIntake, setAnalyzingIntake] = useState(false);
   const [savingAssessment, setSavingAssessment] = useState(false);
   const [loadingAssessmentRecordId, setLoadingAssessmentRecordId] = useState<string | null>(null);
@@ -340,6 +476,12 @@ export default function App() {
   const [developerChromeHidden, setDeveloperChromeHidden] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("vois_default_assessment_type", assessmentType);
+    }
+  }, [assessmentType]);
+
   // ─── Manager shell ECL state ───
   const [mgrNextActions, setMgrNextActions] = useState<NextActionItem[]>([]);
   const [mgrFollowUps, setMgrFollowUps] = useState<FollowUpRecord[]>([]);
@@ -356,6 +498,7 @@ export default function App() {
   const [pktHelpRequests, setPktHelpRequests] = useState<HelpRequestRecord[]>([]);
   const [pktLoading, setPktLoading] = useState(false);
   const [pktSubmitting, setPktSubmitting] = useState(false);
+  const [pktSelectedTaskId, setPktSelectedTaskId] = useState<string | null>(null);
 
   // ─── Owner shell state ───
   const [ownAttentionItems, setOwnAttentionItems] = useState<AttentionItem[]>([]);
@@ -380,7 +523,15 @@ export default function App() {
   const { open: cmdPaletteOpen, setOpen: setCmdPaletteOpen } = useCommandPalette();
   const organizationId = bootstrap?.organization?.id ?? null;
   const ownerSetupState = bootstrap?.setup_state ?? authSession?.setup_state ?? null;
+  const isAuthenticated = Boolean(authSession);
   const requiresOwnerClaim = activeRole === "owner" && Boolean(bootstrap?.requires_owner_claim ?? authSession?.requires_owner_claim);
+  const noWorkspaceAccess =
+    isAuthenticated &&
+    !requiresOwnerClaim &&
+    !loadingBootstrap &&
+    Boolean(bootstrap) &&
+    !bootstrap?.organization &&
+    !ownerSetupState?.organization_claimed;
   const ownerNeedsVenueOnboarding =
     activeRole === "owner" &&
     Boolean(bootstrap?.organization_claimed ?? authSession?.organization_claimed) &&
@@ -426,6 +577,27 @@ export default function App() {
   }, [selectedOntologyBinding, selectedOntologyMount, workspaceVenue]);
 
   useEffect(() => {
+    const syncPath = () => setAuthPath(readAuthPathState());
+    window.addEventListener("popstate", syncPath);
+    return () => window.removeEventListener("popstate", syncPath);
+  }, []);
+
+  useEffect(() => {
+    setLoadingAuthEntryConfig(true);
+    fetchAuthEntryConfig()
+      .then((payload) => {
+        setAuthEntryConfig(payload);
+        setAuthEntryError(null);
+      })
+      .catch((err: Error) => {
+        setAuthEntryError(err.message);
+      })
+      .finally(() => {
+        setLoadingAuthEntryConfig(false);
+      });
+  }, []);
+
+  useEffect(() => {
     const unsubscribe = subscribeToAuthTokenChanges((token) => {
       if (!token) {
         setAuthToken(null);
@@ -439,7 +611,6 @@ export default function App() {
             setVenueOntologyBindings([]);
             setShellInitialized(false);
             setSessionInventory(null);
-            setLoginRequired(true);
           })
           .finally(() => {
             setLoadingBootstrap(false);
@@ -447,7 +618,6 @@ export default function App() {
         return;
       }
 
-      setLoginRequired(false);
       setLoadingBootstrap(true);
       refreshWorkspaceIdentity()
         .catch((err: Error) => {
@@ -467,6 +637,56 @@ export default function App() {
       setLoginEmail(bootstrap.current_user.email);
     }
   }, [bootstrap?.current_user.email, loginEmail]);
+
+  useEffect(() => {
+    if (loadingBootstrap) {
+      return;
+    }
+
+    if (!authSession) {
+      if (!authPath.isAuthRoute) {
+        navigatePath("/auth", true);
+        setAuthPath(readAuthPathState());
+      }
+      return;
+    }
+
+    if (requiresOwnerClaim) {
+      if (!authPath.isClaimOwner) {
+        navigatePath("/setup/claim-owner", true);
+        setAuthPath(readAuthPathState());
+      }
+      return;
+    }
+
+    if (noWorkspaceAccess) {
+      if (authPath.pathname !== "/auth/no-access") {
+        navigatePath("/auth/no-access", true);
+        setAuthPath(readAuthPathState());
+      }
+      return;
+    }
+
+    if (authPath.isInvite) {
+      return;
+    }
+
+    if (authPath.isAuthRoute || authPath.isClaimOwner || authPath.pathname === "/auth/no-access") {
+      const inviteToken = authPath.inviteQueryToken;
+      if (inviteToken) {
+        navigatePath(`/auth/invite/${encodeURIComponent(inviteToken)}`, true);
+      } else {
+        navigatePath("/", true);
+      }
+      setAuthPath(readAuthPathState());
+    }
+  }, [
+    authPath,
+    authSession,
+    loadingBootstrap,
+    noWorkspaceAccess,
+    requiresOwnerClaim,
+  ]);
 
   useEffect(() => {
     if (!bootstrap || !organizationId || (activeRole !== "owner" && activeRole !== "developer")) {
@@ -611,8 +831,8 @@ export default function App() {
     fetchAuthSecurityPosture()
       .then((payload) => {
         setSecurityPosture(payload);
-        // Proactively surface AI unavailability for real roles so they
-        // discover it before attempting copilot interaction.
+        // Surface AI unavailability for real roles before they attempt
+        // copilot interaction.
         if (
           activeRole &&
           activeRole !== "developer" &&
@@ -705,20 +925,6 @@ export default function App() {
         setLoadingEvaluations(false);
       });
   }, [ontologyEvaluationPacks, ontologyEvaluationResult, selectedOntologyId, selectedOntologyIssue, shellRoute.topLevelView]);
-
-  useEffect(() => {
-    if (!bootstrap || !organizationId) {
-      return;
-    }
-
-    fetchProactiveGreeting()
-      .then((payload) => {
-        setProactiveGreeting(payload?.content ?? null);
-      })
-      .catch((err: Error) => {
-        setProactiveGreeting(err.message);
-      });
-  }, [organizationId]);
 
   useEffect(() => {
     if (!bootstrap || shellInitialized) {
@@ -846,41 +1052,41 @@ export default function App() {
     shellRoute.topLevelView === "owner"
       ? workspaceVenue?.id ?? null
       : null;
-  const copilotRoleContext =
-    shellRoute.topLevelView === "manager"
-      ? "Manager"
-      : shellRoute.topLevelView === "pocket"
-        ? "Pocket"
-        : shellRoute.topLevelView === "owner"
-          ? "Owner"
-          : shellRoute.topLevelView === "venue"
-            ? "Venue"
-            : "Portfolio";
   const scopedCopilotThreads = useMemo(
     () => filterThreadsForScope(copilotThreads, copilotVenueContext, activeRole),
     [copilotThreads, copilotVenueContext, activeRole]
   );
   const copilotContextLabel = copilotVenueContext
-    ? `${copilotRoleContext}: ${displayedVenue?.name ?? "Venue"}`
+    ? `${displayedVenue?.name ?? "Venue"}`
     : "Portfolio";
   const copilotContextSummary = copilotVenueContext
     ? shellRoute.topLevelView === "manager"
-      ? "Manager-grounded threads connected to the live venue state and execution pressure."
+      ? "Saved venue threads for current operating work."
       : shellRoute.topLevelView === "pocket"
-        ? "Pocket-grounded threads for current shift work, standards, and support."
+        ? "Saved help threads for this shift."
         : shellRoute.topLevelView === "owner"
-          ? "Owner-grounded threads focused on delegation, attention, and people risk in this venue."
-          : "Venue-grounded threads connected to the active workspace."
-    : portfolioSummary?.resume_reason ?? "Global threads covering cross-venue thinking and portfolio patterns.";
+          ? "Portfolio and venue threads relevant to this location."
+          : "Saved venue threads grounded in the current workspace."
+    : "Cross-venue threads for portfolio decisions.";
   const copilotInputPlaceholder = copilotVenueContext
     ? shellRoute.topLevelView === "manager"
-      ? "Ask VOIS what changed, what is blocked, or what deserves attention for this manager workflow."
+      ? "Ask about blockers, task order, evidence, or venue state."
       : shellRoute.topLevelView === "pocket"
-        ? "Ask VOIS what matters on this shift, what standard applies, or what needs help."
+        ? "Ask about this shift, a standard, or a help request."
         : shellRoute.topLevelView === "owner"
-          ? "Ask VOIS where pressure is building here, who needs intervention, or what deserves owner attention."
-          : "Ask VOIS what changed, what is blocked, or what deserves attention in this venue."
-    : "Ask VOIS what patterns are showing up across the portfolio, where pressure is building, or what deserves attention next.";
+          ? "Ask about pressure, people risk, delegation, or venue drift."
+          : "Ask about the current venue state, blockers, files, or next moves."
+    : "Ask about portfolio patterns, risk concentration, or where to intervene next.";
+  const selectedPocketTask = useMemo(
+    () => pktShift?.tasks.find((task) => task.id === pktSelectedTaskId) ?? null,
+    [pktSelectedTaskId, pktShift]
+  );
+  const activePocketNavView =
+    shellRoute.topLevelView === "pocket" && (shellRoute as { pocketView: PocketView }).pocketView === "task"
+      ? "shift"
+      : shellRoute.topLevelView === "pocket"
+        ? (shellRoute as { pocketView: PocketView }).pocketView
+        : undefined;
 
   const askCopilotAbout = (context: string) => {
     setCopilotPreFill(context);
@@ -903,6 +1109,10 @@ export default function App() {
     if (route.topLevelView === "reference") return `Reference — ${titleCase((route as any).referenceView ?? "blocks")}`;
     return null;
   }, [shellRoute, displayedVenue]);
+  const quotedCopilotMessage = useMemo(
+    () => selectedThread?.messages.find((message) => message.id === copilotQuotedMessageId) ?? null,
+    [copilotQuotedMessageId, selectedThread]
+  );
 
   // TODO: drawerContext requires a consumer for DrawerProvider state — skipping for now (Feature 1.3)
 
@@ -1040,6 +1250,94 @@ export default function App() {
     () => extractPendingSignalSuggestion(selectedThread, dismissedSignalSuggestionIds),
     [dismissedSignalSuggestionIds, selectedThread]
   );
+  const copilotActionSource = useMemo(() => deriveCopilotActionSource(selectedThread), [selectedThread]);
+  const canApplyThreadSignalSuggestion = Boolean(savedAssessment && pendingSignalSuggestion);
+  const copilotAvailableActions = useMemo(() => {
+    const canManage = activeRole === "owner" || activeRole === "manager" || activeRole === "developer";
+    const hasVenueScope = Boolean(workspaceVenue && selectedThread?.venue_id && workspaceVenue.id === selectedThread.venue_id);
+    const hasAssistantSource = Boolean(copilotActionSource);
+    const hasLivePlan = Boolean(hasVenueScope && livePlan && canManage);
+    const hasAssessmentApply = Boolean(savedAssessment && pendingSignalSuggestion && canManage);
+
+    return [
+      {
+        type: "save_note" as CopilotActionType,
+        title: "Save note",
+        description: "Store the latest copilot guidance as a venue note in the execution log.",
+        mode: "save" as const,
+        enabled: Boolean(hasVenueScope && hasAssistantSource),
+        status: hasVenueScope && hasAssistantSource ? "Ready" : "Open a venue thread with copilot guidance in scope",
+      },
+      {
+        type: "apply_to_assessment" as CopilotActionType,
+        title: "Apply to assessment",
+        description: "Apply the latest reviewed signal update to the saved assessment.",
+        mode: "apply" as const,
+        enabled: hasAssessmentApply,
+        status: hasAssessmentApply ? "Ready" : "No reviewed signal update in scope",
+      },
+      {
+        type: "create_diagnosis_note" as CopilotActionType,
+        title: "Create diagnosis note",
+        description: "Capture this reasoning as a diagnosis-facing note for the venue history.",
+        mode: "draft" as const,
+        enabled: Boolean(hasVenueScope && hasAssistantSource && canManage),
+        status: hasVenueScope && hasAssistantSource && canManage ? "Ready" : "Owner or manager venue context required",
+      },
+      {
+        type: "create_plan_suggestion" as CopilotActionType,
+        title: "Create plan suggestion",
+        description: "Convert the latest guidance into a reviewed suggestion on the active plan.",
+        mode: "suggest" as const,
+        enabled: hasLivePlan,
+        status: hasLivePlan ? "Ready" : "Owner or manager with an active plan required",
+      },
+      {
+        type: "create_task_suggestion" as CopilotActionType,
+        title: "Create task suggestion",
+        description: "Create a reviewed task suggestion from the latest thread output.",
+        mode: "suggest" as const,
+        enabled: hasLivePlan,
+        status: hasLivePlan ? "Ready" : "Owner or manager with an active plan required",
+      },
+      {
+        type: "create_escalation_draft" as CopilotActionType,
+        title: "Create escalation draft",
+        description: "Turn the latest thread reasoning into an escalation draft for review.",
+        mode: "draft" as const,
+        enabled: Boolean(hasVenueScope && hasAssistantSource && canManage),
+        status: hasVenueScope && hasAssistantSource && canManage ? "Ready" : "Owner or manager venue context required",
+      },
+      {
+        type: "create_follow_up_list" as CopilotActionType,
+        title: "Create follow-up list",
+        description: "Save a follow-up list draft from this thread for later execution review.",
+        mode: "draft" as const,
+        enabled: Boolean(hasAssistantSource && canManage),
+        status: hasAssistantSource && canManage ? "Ready" : "Owner or manager guidance required",
+      },
+      {
+        type: "save_compare_insight" as CopilotActionType,
+        title: "Save compare insight",
+        description: "Capture this comparison reasoning in the venue timeline for later review.",
+        mode: "save" as const,
+        enabled: Boolean(hasVenueScope && hasAssistantSource && canManage),
+        status: hasVenueScope && hasAssistantSource && canManage ? "Ready" : "Venue comparison context required",
+      },
+    ];
+  }, [activeRole, copilotActionSource, livePlan, pendingSignalSuggestion, savedAssessment, selectedThread?.venue_id, workspaceVenue]);
+  const compactCopilotActions = useMemo(() => {
+    const saveNoteAction = copilotAvailableActions.find((action) => action.type === "save_note");
+    const primaryStructuredAction =
+      copilotAvailableActions.find((action) => action.type === "apply_to_assessment" && action.enabled) ??
+      copilotAvailableActions.find((action) => action.type === "create_task_suggestion" && action.enabled) ??
+      copilotAvailableActions.find((action) => action.type === "create_diagnosis_note" && action.enabled) ??
+      copilotAvailableActions.find((action) => action.type === "save_compare_insight" && action.enabled) ??
+      copilotAvailableActions.find((action) => action.type === "create_escalation_draft" && action.enabled) ??
+      null;
+
+    return [saveNoteAction, primaryStructuredAction].filter((action): action is NonNullable<typeof action> => Boolean(action));
+  }, [copilotAvailableActions]);
 
   const commandItems = useMemo(() => {
     const items: Array<{ id: string; label: string; description?: string; group: string; shortcut?: string; onSelect: () => void }> = [];
@@ -1048,8 +1346,8 @@ export default function App() {
     items.push({ id: "nav-today", label: "Today", group: "Navigation", shortcut: "T", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "manager", venueId: displayedVenue.id, managerView: "today" }); } });
     items.push({ id: "nav-plan", label: "Plan", group: "Navigation", shortcut: "P", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "plan" }); } });
     items.push({ id: "nav-assessment", label: "Assessment", group: "Navigation", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "assessment" }); } });
-    items.push({ id: "nav-signals", label: "Signals", group: "Navigation", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "signals" }); } });
-    items.push({ id: "nav-report", label: "Report", group: "Navigation", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "report" }); } });
+    items.push({ id: "nav-diagnosis", label: "Diagnosis", group: "Navigation", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "diagnosis" }); } });
+    items.push({ id: "nav-history", label: "History", group: "Navigation", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "history" }); } });
     items.push({ id: "nav-portfolio", label: "Portfolio", group: "Navigation", onSelect: () => navigate({ topLevelView: "portfolio" }) });
     items.push({ id: "nav-settings", label: "Settings", group: "Navigation", onSelect: () => navigate({ topLevelView: "settings" }) });
     items.push({ id: "nav-kb", label: "Knowledge Base", group: "Navigation", onSelect: () => navigate({ topLevelView: "kb" }) });
@@ -1062,11 +1360,13 @@ export default function App() {
     }
 
     // Actions
-    items.push({ id: "action-copilot", label: "Open Copilot", group: "Actions", shortcut: "C", onSelect: () => setCopilotOpen(true) });
+    items.push({ id: "action-copilot", label: "Open Copilot", group: "Actions", shortcut: "C", onSelect: () => setCopilotWorkspaceOpen(true) });
+    items.push({ id: "action-copilot-shared", label: "New shared thread", group: "Actions", onSelect: () => { void handleCreateCopilotThread("shared"); } });
+    items.push({ id: "action-copilot-private", label: "New private thread", group: "Actions", onSelect: () => { void handleCreateCopilotThread("private"); } });
     items.push({ id: "action-theme", label: "Toggle Theme", group: "Actions", onSelect: () => setPreferences((c) => ({ ...c, theme: (c.theme === "dark" ? "light" : "dark") as ThemeMode })) });
 
     return items;
-  }, [bootstrap, displayedVenue, navigate, handleSelectVenue]);
+  }, [bootstrap, displayedVenue, navigate, handleSelectVenue, handleCreateCopilotThread]);
 
   useEffect(() => {
     if (!workspaceVenue) {
@@ -1209,16 +1509,21 @@ export default function App() {
     }
 
     setLoadingCopilot(true);
-    fetchCopilotThreads(copilotVenueContext ?? undefined)
+    fetchCopilotThreads({
+      venue_id: copilotVenueContext ?? undefined,
+      visibility: copilotVisibilityFilter,
+      include_archived: copilotIncludeArchived,
+      sort: copilotSortMode,
+    })
       .then((threads) => {
-        const scopedThreads = filterThreadsForScope(threads, copilotVenueContext);
+        const scopedThreads = filterThreadsForScope(threads, copilotVenueContext, activeRole);
         setCopilotIssue(null);
         setCopilotThreads(scopedThreads);
         setSelectedThreadId((currentThreadId) => {
           if (currentThreadId && scopedThreads.some((thread) => thread.id === currentThreadId)) {
             return currentThreadId;
           }
-          return preferredThreadId(scopedThreads, copilotVenueContext);
+          return preferredThreadId(scopedThreads, copilotVenueContext, activeRole);
         });
       })
       .catch((err: Error) => {
@@ -1229,7 +1534,7 @@ export default function App() {
       .finally(() => {
         setLoadingCopilot(false);
       });
-  }, [copilotVenueContext, shellRoute.topLevelView, workspaceVenue?.id, portfolioSummary?.resume_reason]);
+  }, [activeRole, copilotIncludeArchived, copilotSortMode, copilotVenueContext, copilotVisibilityFilter, shellRoute.topLevelView, workspaceVenue?.id, portfolioSummary?.resume_reason]);
 
   useEffect(() => {
     if (!selectedThreadId) {
@@ -1252,6 +1557,69 @@ export default function App() {
         setLoadingCopilot(false);
       });
   }, [selectedThreadId]);
+
+  useEffect(() => {
+    if (!selectedThreadId) {
+      setSelectedThreadContext(null);
+      return;
+    }
+    fetchCopilotThreadContext(selectedThreadId)
+      .then((context) => {
+        setSelectedThreadContext(context);
+      })
+      .catch(() => {
+        setSelectedThreadContext(null);
+      });
+  }, [selectedThreadId]);
+
+  useEffect(() => {
+    if (!selectedThreadId) {
+      setSelectedThreadActions([]);
+      return;
+    }
+    setLoadingCopilotActions(true);
+    fetchCopilotThreadActions(selectedThreadId)
+      .then((actions) => {
+        setSelectedThreadActions(actions);
+      })
+      .catch(() => {
+        setSelectedThreadActions([]);
+      })
+      .finally(() => {
+        setLoadingCopilotActions(false);
+      });
+  }, [selectedThreadId]);
+
+  useEffect(() => {
+    setCopilotWorkspaceActionMessage(null);
+    setCopilotActionPreview(null);
+    setCopilotActionPreviewRequest(null);
+    setCopilotActionReceipt(null);
+  }, [selectedThreadId]);
+
+  useEffect(() => {
+    if (!copilotWorkspaceOpen || !copilotSearchQuery.trim()) {
+      setCopilotSearchResults(null);
+      return;
+    }
+    setSearchingCopilot(true);
+    searchCopilotWorkspace({
+      query: copilotSearchQuery,
+      venue_id: copilotVenueContext ?? undefined,
+      include_archived: copilotIncludeArchived,
+      visibility: copilotVisibilityFilter,
+    })
+      .then((results) => {
+        setCopilotSearchResults(results);
+      })
+      .catch((err: Error) => {
+        setCopilotIssue(err.message);
+        setCopilotSearchResults(null);
+      })
+      .finally(() => {
+        setSearchingCopilot(false);
+      });
+  }, [copilotIncludeArchived, copilotSearchQuery, copilotVenueContext, copilotVisibilityFilter, copilotWorkspaceOpen]);
 
   useEffect(() => {
     setCopilotAttachments([]);
@@ -1312,6 +1680,46 @@ export default function App() {
     setEngineResult(null);
     setRejectedSignalIds(new Set());
     setManuallyAddedSignalIds(new Set());
+  }
+
+  function invalidateSavedAssessment() {
+    setSavedAssessment(null);
+    setEngineResult(null);
+  }
+
+  function handleAssessmentTypeChange(nextType: AssessmentTypeKey) {
+    if (nextType === assessmentType) {
+      return;
+    }
+    setAssessmentType(nextType);
+    const triageDefaults = normalizeAssessmentTriageSettings(nextType);
+    setTriageEnabled(triageDefaults.enabled);
+    setTriageIntensity(triageDefaults.intensity);
+    setIntakePreview(null);
+    setSavedAssessment(null);
+    setEngineResult(null);
+    setRejectedSignalIds(new Set());
+    setManuallyAddedSignalIds(new Set());
+  }
+
+  function handleTriageEnabledChange(nextEnabled: boolean) {
+    setTriageEnabled(nextEnabled);
+    invalidateSavedAssessment();
+  }
+
+  function handleTriageIntensityChange(nextIntensity: TriageIntensity) {
+    setTriageIntensity(nextIntensity);
+    invalidateSavedAssessment();
+  }
+
+  function handleManagementHoursChange(nextHours: number) {
+    setManagementHours(nextHours);
+    invalidateSavedAssessment();
+  }
+
+  function handleWeeklyBudgetChange(nextBudget: number) {
+    setWeeklyBudget(nextBudget);
+    invalidateSavedAssessment();
   }
 
   function buildSignalStates() {
@@ -1381,6 +1789,28 @@ export default function App() {
         .filter((signal): signal is NonNullable<typeof signal> => signal !== null),
       unmapped_observations: [],
     };
+  }
+
+  function applyAssessmentDraft(assessment: AssessmentRecord) {
+    const normalizedType = isAssessmentTypeKey(assessment.assessment_type)
+      ? assessment.assessment_type
+      : DEFAULT_ASSESSMENT_TYPE;
+    const triageSettings = normalizeAssessmentTriageSettings(
+      assessment.assessment_type,
+      assessment.triage_enabled,
+      assessment.triage_intensity
+    );
+    setSavedAssessment(assessment);
+    setAssessmentType(normalizedType);
+    setTriageEnabled(triageSettings.enabled);
+    setTriageIntensity(triageSettings.intensity);
+    setManagementHours(assessment.management_hours_available);
+    setWeeklyBudget(assessment.weekly_effort_budget);
+    setIntakeText(assessment.notes ?? "");
+    setIntakePreview(rebuildPreviewFromAssessment(assessment));
+    setRejectedSignalIds(new Set());
+    setManuallyAddedSignalIds(new Set());
+    setEngineResult(null);
   }
 
   async function refreshAssessmentHistory() {
@@ -1481,16 +1911,30 @@ export default function App() {
       setOwnerMembers([]);
       setLatestLoginPacket(null);
       setCopilotIssue(null);
-      setLoginRequired(true);
       return { session, payload: null };
     }
 
-    const payload = await fetchBootstrap();
+    let payload: BootstrapResponse;
+    try {
+      payload = await fetchBootstrap();
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Failed to load workspace bootstrap";
+      if (message === "VOIS bootstrap requires an active authenticated session.") {
+        setAuthSession(null);
+        setBootstrap(null);
+        setVenueOntologyBindings([]);
+        setOwnerMembers([]);
+        setLatestLoginPacket(null);
+        setCopilotIssue(null);
+        setError(null);
+        return { session: null, payload: null };
+      }
+      throw err;
+    }
     setError(null);
     setBootstrap(payload);
     setVenueOntologyBindings(payload.venue_ontology_bindings ?? []);
     setLoginEmail(session?.user.email ?? payload.current_user.email);
-    setLoginRequired(false);
     setLatestLoginPacket(null);
     setCopilotIssue(null);
 
@@ -1550,20 +1994,30 @@ export default function App() {
 
     try {
       const threads = filterThreadsForScope(
-        await fetchCopilotThreads(copilotVenueContext ?? undefined),
-        copilotVenueContext
+        await fetchCopilotThreads({
+          venue_id: copilotVenueContext ?? undefined,
+          visibility: copilotVisibilityFilter,
+          include_archived: copilotIncludeArchived,
+          sort: copilotSortMode,
+        }),
+        copilotVenueContext,
+        activeRole
       );
       setCopilotIssue(null);
       setCopilotThreads(threads);
       const nextThreadId =
         (preferredThread && threads.some((thread) => thread.id === preferredThread) && preferredThread) ||
-        preferredThreadId(threads, copilotVenueContext);
+        preferredThreadId(threads, copilotVenueContext, activeRole);
       setSelectedThreadId(nextThreadId);
 
       if (nextThreadId) {
         setSelectedThread(await fetchCopilotThread(nextThreadId));
+        setSelectedThreadContext(await fetchCopilotThreadContext(nextThreadId));
+        setSelectedThreadActions(await fetchCopilotThreadActions(nextThreadId));
       } else {
         setSelectedThread(null);
+        setSelectedThreadContext(null);
+        setSelectedThreadActions([]);
       }
     } catch (err) {
       const message = err instanceof Error ? err.message : "VOIS is unavailable in this workspace right now.";
@@ -1571,6 +2025,7 @@ export default function App() {
       setCopilotThreads([]);
       setSelectedThreadId(null);
       setSelectedThread(null);
+      setSelectedThreadContext(null);
     }
   }
 
@@ -1595,6 +2050,7 @@ export default function App() {
       const result = await runAIIntake({
         raw_text: intakeText,
         venue_id: workspaceVenue.id,
+        assessment_type: assessmentType,
       });
       setIntakePreview(result);
       setSavedAssessment(null);
@@ -1632,13 +2088,16 @@ export default function App() {
         venue_id: workspaceVenue.id,
         created_by: bootstrap?.current_user.id ?? null,
         notes: intakeText,
+        assessment_type: assessmentType,
+        triage_enabled: triageEnabled,
+        triage_intensity: triageIntensity,
         selected_signal_ids: allSignalIds,
         signal_states: buildSignalStates(),
         management_hours_available: managementHours,
         weekly_effort_budget: weeklyBudget,
       });
 
-      setSavedAssessment(assessment);
+      applyAssessmentDraft(assessment);
       await Promise.all([refreshAssessmentHistory(), refreshPortfolioWorkspace()]);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to save assessment");
@@ -1675,13 +2134,16 @@ export default function App() {
           venue_id: workspaceVenue.id,
           created_by: bootstrap?.current_user.id ?? null,
           notes: intakeText,
+          assessment_type: assessmentType,
+          triage_enabled: triageEnabled,
+          triage_intensity: triageIntensity,
           selected_signal_ids: allSignalIds,
           signal_states: buildSignalStates(),
           management_hours_available: managementHours,
           weekly_effort_budget: weeklyBudget,
         }));
 
-      setSavedAssessment(assessment);
+      applyAssessmentDraft(assessment);
       const result = await runSavedAssessment(assessment.id);
       setEngineResult(result);
 
@@ -1692,7 +2154,7 @@ export default function App() {
         refreshPortfolioWorkspace(),
       ]);
 
-      navigate({ topLevelView: "venue", venueId: workspaceVenue.id, venueView: "report" });
+      navigate({ topLevelView: "venue", venueId: workspaceVenue.id, venueView: "diagnosis" });
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to run diagnostic engine");
     } finally {
@@ -1793,10 +2255,12 @@ export default function App() {
         content: copilotInput,
         created_by: bootstrap?.current_user.id ?? null,
         attachments: copilotAttachments,
+        quoted_message_id: copilotQuotedMessageId,
       });
       setCopilotIssue(null);
       setCopilotInput("");
       setCopilotAttachments([]);
+      setCopilotQuotedMessageId(null);
       await Promise.all([refreshCopilotWorkspace(updatedThread.id), refreshAuditTrail()]);
     } catch (err) {
       const message = err instanceof Error ? err.message : "Failed to send copilot message";
@@ -1805,6 +2269,217 @@ export default function App() {
     } finally {
       setSendingCopilot(false);
     }
+  }
+
+  async function handleCreateCopilotThread(visibility: "shared" | "private") {
+    const title =
+      visibility === "private"
+        ? displayedVenue?.name
+          ? `${displayedVenue.name} private analysis`
+          : "Private analysis"
+        : displayedVenue?.name
+          ? `${displayedVenue.name} shared thread`
+          : "Portfolio shared thread";
+    try {
+      setLoadingCopilot(true);
+      const detail = await createCopilotThread({
+        title,
+        visibility,
+        venue_id: copilotVenueContext ?? undefined,
+        scope: copilotVenueContext ? "venue" : "global",
+        context_kind: copilotVenueContext ? "venue" : "portfolio",
+        context_id: copilotVenueContext ?? undefined,
+      });
+      setSelectedThreadId(detail.id);
+      await refreshCopilotWorkspace(detail.id);
+      setCopilotWorkspaceOpen(true);
+      setCopilotOpen(false);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Failed to create thread";
+      setCopilotIssue(message);
+      setError(message);
+    } finally {
+      setLoadingCopilot(false);
+    }
+  }
+
+  async function handleRenameSelectedCopilotThread(title: string) {
+    if (!selectedThreadId || !title.trim()) {
+      return;
+    }
+    try {
+      await updateCopilotThread(selectedThreadId, { title: title.trim() });
+      await refreshCopilotWorkspace(selectedThreadId);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Failed to rename thread";
+      setCopilotIssue(message);
+      setError(message);
+    }
+  }
+
+  async function handleToggleSelectedCopilotPin() {
+    if (!selectedThread) return;
+    try {
+      await updateCopilotThread(selectedThread.id, { pinned: !selectedThread.pinned });
+      await refreshCopilotWorkspace(selectedThread.id);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Failed to update thread pin";
+      setCopilotIssue(message);
+      setError(message);
+    }
+  }
+
+  async function handleToggleSelectedCopilotArchive() {
+    if (!selectedThread) return;
+    try {
+      await updateCopilotThread(selectedThread.id, { archived: !selectedThread.archived });
+      await refreshCopilotWorkspace(selectedThread.archived ? selectedThread.id : null);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Failed to update thread archive state";
+      setCopilotIssue(message);
+      setError(message);
+    }
+  }
+
+  async function handleDeleteSelectedCopilotThread() {
+    if (!selectedThreadId) return;
+    try {
+      await deleteCopilotThread(selectedThreadId);
+      setSelectedThreadId(null);
+      setSelectedThread(null);
+      setSelectedThreadContext(null);
+      await refreshCopilotWorkspace();
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Failed to delete thread";
+      setCopilotIssue(message);
+      setError(message);
+    }
+  }
+
+  async function handleBranchFromCopilotMessage(messageId: string) {
+    if (!selectedThreadId) return;
+    try {
+      const detail = await branchCopilotThread(selectedThreadId, {
+        message_id: messageId,
+        visibility: "private",
+      });
+      await refreshCopilotWorkspace(detail.id);
+      setCopilotWorkspaceOpen(true);
+      setCopilotOpen(false);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Failed to branch thread";
+      setCopilotIssue(message);
+      setError(message);
+    }
+  }
+
+  function buildCopilotActionRequest(
+    actionType: CopilotActionType
+  ): {
+    action_type: CopilotActionType;
+    message_id?: string | null;
+    task_id?: string | null;
+    severity?: string | null;
+    due_at?: string | null;
+    signal_additions?: Array<{ signal_id: string; notes?: string | null; confidence?: string | null }>;
+    signal_removals?: string[];
+  } | null {
+    if (!selectedThreadId || !copilotActionSource) {
+      return null;
+    }
+
+    const baseRequest = {
+      action_type: actionType,
+      message_id: copilotActionSource.message.id,
+    };
+
+    if (actionType === "apply_to_assessment") {
+      if (!pendingSignalSuggestion) {
+        return null;
+      }
+      return {
+        ...baseRequest,
+        message_id: pendingSignalSuggestion.messageId,
+        signal_additions: pendingSignalSuggestion.suggestion.add.map((item) => ({
+          signal_id: item.signal_id,
+          notes: item.notes,
+          confidence: item.confidence,
+        })),
+        signal_removals: pendingSignalSuggestion.suggestion.remove,
+      };
+    }
+
+    return baseRequest;
+  }
+
+  async function handlePreviewCopilotAction(actionType: CopilotActionType) {
+    const request = buildCopilotActionRequest(actionType);
+    if (!selectedThreadId || !request) {
+      return;
+    }
+
+    setPreviewingCopilotActionType(actionType);
+    setError(null);
+    setCopilotWorkspaceActionMessage(null);
+    setCopilotActionReceipt(null);
+
+    try {
+      const preview = await previewCopilotAction(selectedThreadId, request);
+      setCopilotActionPreview(preview);
+      setCopilotActionPreviewRequest(request);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Failed to preview copilot action";
+      setCopilotIssue(message);
+      setError(message);
+    } finally {
+      setPreviewingCopilotActionType(null);
+    }
+  }
+
+  async function handleCommitCopilotAction() {
+    if (!selectedThreadId || !copilotActionPreviewRequest) {
+      return;
+    }
+
+    setCommittingCopilotActionType(copilotActionPreviewRequest.action_type);
+    setError(null);
+    setCopilotWorkspaceActionMessage(null);
+
+    try {
+      const receipt = await commitCopilotAction(selectedThreadId, copilotActionPreviewRequest);
+      setCopilotActionReceipt(receipt);
+      setCopilotWorkspaceActionMessage(receipt.receipt_summary);
+      setCopilotActionPreview(null);
+      setCopilotActionPreviewRequest(null);
+
+      if (copilotActionPreviewRequest.action_type === "apply_to_assessment" && pendingSignalSuggestion) {
+        setDismissedSignalSuggestionIds((current) => [...current, pendingSignalSuggestion.messageId]);
+      }
+
+      await refreshCopilotWorkspace(selectedThreadId);
+      await Promise.all([
+        refreshAuditTrail(),
+        refreshPortfolioWorkspace(),
+        workspaceVenue ? refreshExecutionWorkspace() : Promise.resolve(),
+        workspaceVenue ? refreshSelectedPlanWorkspace() : Promise.resolve(),
+        workspaceVenue ? refreshAssessmentHistory() : Promise.resolve(),
+      ]);
+
+      if (workspaceVenue && receipt.target_artifact_type === "assessment") {
+        navigate({ topLevelView: "venue", venueId: workspaceVenue.id, venueView: "assessment" });
+      }
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Failed to commit copilot action";
+      setCopilotIssue(message);
+      setError(message);
+    } finally {
+      setCommittingCopilotActionType(null);
+    }
+  }
+
+  function handleDismissCopilotActionPreview() {
+    setCopilotActionPreview(null);
+    setCopilotActionPreviewRequest(null);
   }
 
   async function handleGenerateEnhancedReport() {
@@ -1832,6 +2507,7 @@ export default function App() {
 
     setApplyingSignalSuggestion(true);
     setError(null);
+    setCopilotWorkspaceActionMessage(null);
 
     try {
       const updatedAssessment = await applyAssessmentSignalSuggestion(savedAssessment.id, {
@@ -1844,11 +2520,9 @@ export default function App() {
         source: "copilot_review",
       });
 
-      setSavedAssessment(updatedAssessment);
-      setIntakeText(updatedAssessment.notes ?? "");
-      setIntakePreview(rebuildPreviewFromAssessment(updatedAssessment));
-      setEngineResult(null);
+      applyAssessmentDraft(updatedAssessment);
       setDismissedSignalSuggestionIds((current) => [...current, pendingSignalSuggestion.messageId]);
+      setCopilotWorkspaceActionMessage("Applied the latest copilot signal suggestion to the assessment.");
 
       await Promise.all([refreshAssessmentHistory(), refreshPortfolioWorkspace(), refreshAuditTrail()]);
       navigate({ topLevelView: "venue", venueId: updatedAssessment.venue_id, venueView: "assessment" });
@@ -1881,7 +2555,7 @@ export default function App() {
       return;
     }
     handleSelectEngineRun(engineRunId);
-    navigate({ topLevelView: "venue", venueId: workspaceVenue.id, venueView: "report" });
+    navigate({ topLevelView: "venue", venueId: workspaceVenue.id, venueView: "diagnosis" });
   }
 
   function handleSelectEngineRun(engineRunId: string) {
@@ -1899,10 +2573,7 @@ export default function App() {
 
     try {
       const assessment = await fetchAssessment(assessmentId);
-      setSavedAssessment(assessment);
-      setIntakeText(assessment.notes ?? "");
-      setIntakePreview(rebuildPreviewFromAssessment(assessment));
-      setEngineResult(null);
+      applyAssessmentDraft(assessment);
       const historyItem = assessmentHistory.find((item) => item.id === assessmentId);
       if (historyItem?.engine_run_id) {
         setSelectedEngineRunId(historyItem.engine_run_id);
@@ -2043,6 +2714,15 @@ export default function App() {
     navigate({ topLevelView: "pocket", venueId: workspaceVenue.id, pocketView: "shift" });
   }
 
+  function openPocketHelpThread(threadId: string | null) {
+    if (!threadId) {
+      return;
+    }
+    setCopilotOpen(true);
+    setSelectedThreadId(threadId);
+    void refreshCopilotWorkspace(threadId);
+  }
+
   async function refreshPocketData(venueId: string) {
     setPktLoading(true);
     try {
@@ -2103,10 +2783,7 @@ export default function App() {
         refreshCopilotWorkspace(request.linked_thread_id ?? undefined),
         refreshAuditTrail(),
       ]);
-      if (request.linked_thread_id) {
-        setSelectedThreadId(request.linked_thread_id);
-        setCopilotOpen(true);
-      }
+      openPocketHelpThread(request.linked_thread_id);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to create help request");
     } finally {
@@ -2174,6 +2851,44 @@ export default function App() {
     navigate(DEFAULT_PREFERENCES.lastRoute);
   }
 
+  function handleNavigateToAuth(email?: string, inviteToken?: string | null) {
+    const params = new URLSearchParams();
+    if (email) {
+      params.set("email", email);
+    }
+    if (inviteToken) {
+      params.set("invite", inviteToken);
+    }
+    const suffix = params.toString();
+    navigatePath(suffix ? `/auth?${suffix}` : "/auth");
+    setAuthPath(readAuthPathState());
+  }
+
+  function handleNavigateToLocalAuth() {
+    navigatePath("/auth/local");
+    setAuthPath(readAuthPathState());
+  }
+
+  function handleNavigateToReset(email?: string) {
+    const params = new URLSearchParams();
+    if (email) {
+      params.set("email", email);
+    }
+    const suffix = params.toString();
+    navigatePath(suffix ? `/auth/reset?${suffix}` : "/auth/reset");
+    setAuthPath(readAuthPathState());
+  }
+
+  function handleNavigateToInvite(token: string) {
+    navigatePath(`/auth/invite/${encodeURIComponent(token)}`);
+    setAuthPath(readAuthPathState());
+  }
+
+  async function handleAuthenticatedSession(session: AuthSessionResponse) {
+    await refreshWorkspaceIdentity(session);
+    setShellInitialized(false);
+  }
+
   async function handleClaimOwnerWorkspace(payload: {
     organization_name: string;
     organization_slug: string;
@@ -2200,6 +2915,8 @@ export default function App() {
       await refreshWorkspaceIdentity();
       setShellInitialized(false);
       navigate({ topLevelView: "portfolio" });
+      navigatePath("/", true);
+      setAuthPath(readAuthPathState());
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to claim owner workspace");
     } finally {
@@ -2341,8 +3058,8 @@ export default function App() {
       return;
     }
 
-    const email = loginEmailRef.current?.value.trim() ?? loginEmail.trim();
-    const password = loginPasswordRef.current?.value ?? loginPassword;
+    const email = loginEmail.trim();
+    const password = loginPassword;
 
     setLoginEmail(email);
     setLoginPassword(password);
@@ -2360,16 +3077,21 @@ export default function App() {
         email,
         password,
       });
-      await refreshWorkspaceIdentity(session);
+      await handleAuthenticatedSession(session);
       setLoginPassword("");
-      if (loginPasswordRef.current) {
-        loginPasswordRef.current.value = "";
-      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to sign in");
     } finally {
       setLoggingIn(false);
     }
+  }
+
+  async function handleLocalBootstrapLogin(payload: { email: string; password: string }) {
+    setLoginEmail(payload.email);
+    setLoginPassword(payload.password);
+    const session = await loginLocalSession(payload);
+    await handleAuthenticatedSession(session);
+    setLoginPassword("");
   }
 
   async function handleLogout() {
@@ -2390,8 +3112,9 @@ export default function App() {
       setCopilotIssue(null);
       setSessionInventory(null);
       setLoginPassword("");
-      setLoginRequired(true);
       setShellInitialized(false);
+      navigatePath("/auth", true);
+      setAuthPath(readAuthPathState());
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to sign out");
     } finally {
@@ -2460,76 +3183,118 @@ export default function App() {
     }
   }
 
-  if (!loadingBootstrap && loginRequired) {
+  if ((!isAuthenticated && !requiresOwnerClaim) || authPath.isAuthRoute || authPath.pathname === "/auth/no-access") {
+    if (loadingAuthEntryConfig || (isAuthenticated && loadingBootstrap && !noWorkspaceAccess)) {
+      return <div className="app-shell loading-screen">Preparing secure sign-in…</div>;
+    }
+
+    if (authEntryError || !authEntryConfig) {
+      return (
+        <AuthUnavailableScreen
+          message={authEntryError ?? "VOIS could not load the authentication entry configuration."}
+          onRetry={() => window.location.reload()}
+          localAuthPath={!firebaseConfigured() ? "/auth/local" : null}
+        />
+      );
+    }
+
+    if (authPath.pathname === "/auth/no-access" && isAuthenticated && authSession) {
+      return (
+        <NoAccessScreen
+          email={authSession.user.email}
+          message={ownerSetupState?.status_message ?? "This account is authenticated but has no workspace access yet."}
+          supportUrl={authEntryConfig.support_url}
+          onSignOut={() => {
+            void handleLogout();
+          }}
+        />
+      );
+    }
+
+    if (authPath.isInvite && authPath.inviteToken) {
+      return (
+        <InviteAcceptanceScreen
+          token={authPath.inviteToken}
+          authSession={authSession}
+          onNavigateToSignIn={(email, inviteToken) => handleNavigateToAuth(email, inviteToken)}
+          onAccepted={async () => {
+            await refreshWorkspaceIdentity();
+            setShellInitialized(false);
+            navigatePath("/", true);
+            setAuthPath(readAuthPathState());
+          }}
+          onSignOut={handleLogout}
+        />
+      );
+    }
+
+    if (authPath.isReset) {
+      return (
+        <PasswordResetScreen
+          token={authPath.resetToken}
+          initialEmail={authPath.emailHint}
+          environmentLabel={authEntryConfig.environment_mode !== "production" ? authEntryConfig.environment_label : null}
+          supportUrl={authEntryConfig.support_url}
+          onNavigateToAuth={(email) => handleNavigateToAuth(email)}
+        />
+      );
+    }
+
+    if (authPath.isLocalAuth) {
+      if (!authEntryConfig.local_auth_available) {
+        return (
+          <AuthUnavailableScreen
+            title="Local access is unavailable"
+            message="This build does not allow the non-production local password route."
+            supportUrl={authEntryConfig.support_url}
+            statusUrl={authEntryConfig.status_url}
+            onRetry={() => window.location.reload()}
+          />
+        );
+      }
+
+      return (
+        <LocalBootstrapScreen
+          environmentLabel={authEntryConfig.environment_label}
+          initialEmail={authPath.emailHint || loginEmail}
+          onLogin={handleLocalBootstrapLogin}
+          onNavigateToAuth={() => handleNavigateToAuth(authPath.emailHint || loginEmail)}
+        />
+      );
+    }
+
+    if (!authEntryConfig.enabled_providers.length && !authEntryConfig.local_auth_available) {
+      return (
+        <AuthUnavailableScreen
+          message="VOIS does not have an interactive sign-in method configured for this environment."
+          supportUrl={authEntryConfig.support_url}
+          statusUrl={authEntryConfig.status_url}
+          onRetry={() => window.location.reload()}
+        />
+      );
+    }
+
     return (
-      <div className="app-shell loading-screen fatal-screen">
-        <div className="fatal-card">
-          <p className="hero-badge">VOIS Login</p>
-          <h1>Sign in to VOIS</h1>
-          <p className="hero-copy">
-            Sign in with your VOIS account to enter the workspace.
-          </p>
-          {!firebaseConfigured() ? (
-            <p className="hero-copy">
-              Firebase web auth is not configured for this build yet. On a fresh local workspace, the API
-              launcher provisions one explicit owner account so you can claim the first organization without
-              demo data.
-            </p>
-          ) : null}
-          <form
-            className="auth-form-grid"
-            onSubmit={(event) => {
-              event.preventDefault();
-              void handleLogin();
-            }}
-          >
-            <label className="auth-field">
-              <span>Email</span>
-              <input
-                ref={loginEmailRef}
-                value={loginEmail}
-                onChange={(event) => setLoginEmail(event.target.value)}
-                onInput={(event) => setLoginEmail((event.target as HTMLInputElement).value)}
-                autoComplete="username"
-                placeholder="owner@your-domain"
-              />
-            </label>
-            <label className="auth-field">
-              <span>Password</span>
-              <input
-                ref={loginPasswordRef}
-                type="password"
-                value={loginPassword}
-                onChange={(event) => setLoginPassword(event.target.value)}
-                onInput={(event) => setLoginPassword((event.target as HTMLInputElement).value)}
-                autoComplete="current-password"
-                placeholder="Password"
-              />
-            </label>
-            <div className="auth-actions">
-              <button
-                type="submit"
-                className="btn-primary auth-action-button"
-                aria-busy={loggingIn}
-              >
-                {loggingIn ? "Signing in..." : "Sign in"}
-              </button>
-            </div>
-          </form>
-          {error ? <p className="hero-copy">{error}</p> : null}
-        </div>
-      </div>
+      <AuthRouterScreen
+        entryConfig={authEntryConfig}
+        initialEmail={authPath.emailHint || loginEmail}
+        inviteToken={authPath.inviteQueryToken}
+        onAuthenticated={handleAuthenticatedSession}
+        onNavigateToLocal={handleNavigateToLocalAuth}
+        onNavigateToReset={handleNavigateToReset}
+        onNavigateToInvite={handleNavigateToInvite}
+      />
     );
   }
 
-  if (!loadingBootstrap && !bootstrap) {
+  if (!loadingBootstrap && !bootstrap && isAuthenticated) {
     return (
       <div className="app-shell loading-screen fatal-screen">
         <div className="fatal-card">
           <p className="hero-badge">Startup issue</p>
           <h1>Workspace failed to load</h1>
           <p className="hero-copy">
-            OIS could not complete startup against <strong>http://127.0.0.1:8000/api/v1/bootstrap</strong>. The API may
+            VOIS could not complete startup against <strong>http://127.0.0.1:8001/api/v1/bootstrap</strong>. The API may
             still be starting up, or this browser tab may be holding an older startup failure.
           </p>
           <p className="hero-copy">{error ?? "Start the API server and refresh the page."}</p>
@@ -2689,7 +3454,7 @@ export default function App() {
                 onSelectPocketView={(view) => workspaceVenue && navigate({ topLevelView: "pocket", venueId: workspaceVenue.id, pocketView: view })}
                 onSelectOwnerView={(view) => workspaceVenue && navigate({ topLevelView: "owner", venueId: workspaceVenue.id, ownerView: view })}
                 activeManagerView={shellRoute.topLevelView === "manager" ? (shellRoute as { managerView: ManagerView }).managerView : undefined}
-                activePocketView={shellRoute.topLevelView === "pocket" ? (shellRoute as { pocketView: PocketView }).pocketView : undefined}
+                activePocketView={activePocketNavView}
                 activeOwnerView={shellRoute.topLevelView === "owner" ? (shellRoute as { ownerView: OwnerView }).ownerView : undefined}
                 onToggleCopilot={() => setCopilotOpen((current) => !current)}
                 copilotOpen={copilotOpen}
@@ -2700,6 +3465,7 @@ export default function App() {
             venues={bootstrap.venues}
             activeVenue={displayedVenue}
             portfolioSummary={portfolioSummary}
+            authRole={activeRole}
             theme={preferences.theme}
             skin={preferences.skin}
             userName={authSession?.user.full_name ?? bootstrap.current_user.full_name}
@@ -2716,7 +3482,17 @@ export default function App() {
             onToggleCopilot={() => setCopilotOpen((current) => !current)}
             copilotOpen={copilotOpen}
             formatTimestamp={formatTimestamp}
-            onNavigateToVenue={(venueId) => navigate({ topLevelView: "venue", venueId, venueView: "overview" })}
+            onNavigateToVenue={(venueId) => {
+              if (activeRole === "barista") {
+                navigate({ topLevelView: "pocket", venueId, pocketView: "shift" });
+                return;
+              }
+              if (activeRole === "manager") {
+                navigate({ topLevelView: "manager", venueId, managerView: "today" });
+                return;
+              }
+              navigate({ topLevelView: "venue", venueId, venueView: "overview" });
+            }}
           />
             <div className="content-area">
               <MobileTabStrip
@@ -2734,7 +3510,9 @@ export default function App() {
                       : shellRoute.topLevelView === "manager"
                         ? (shellRoute as { managerView: string }).managerView ?? "today"
                         : shellRoute.topLevelView === "pocket"
-                          ? (shellRoute as { pocketView: string }).pocketView ?? "shift"
+                          ? ((shellRoute as { pocketView: string }).pocketView === "task"
+                              ? "shift"
+                              : (shellRoute as { pocketView: string }).pocketView) ?? "shift"
                           : shellRoute.topLevelView === "owner"
                             ? (shellRoute as { ownerView: string }).ownerView ?? "command"
                             : "overview"
@@ -2752,7 +3530,6 @@ export default function App() {
                     ontologyLabel={selectedOntologyLabel}
                     venues={bootstrap.venues}
                     portfolioSummary={portfolioSummary}
-                    proactiveGreeting={proactiveGreeting}
                     activeVenue={workspaceVenue}
                     loadingPortfolio={loadingPortfolio}
                     assessmentCount={assessmentHistory.length}
@@ -2763,7 +3540,7 @@ export default function App() {
                     onOpenVenue={handleSelectVenue}
                     onOpenVenueWorkspace={handleOpenVenueWorkspace}
                     onOpenAssessment={() => handleSelectVenueView("assessment")}
-                    onOpenReport={() => handleSelectVenueView("report")}
+                    onOpenDiagnosis={() => handleSelectVenueView("diagnosis")}
                     onOpenPlan={() => handleSelectVenueView("plan")}
                     formatTimestamp={formatTimestamp}
                     venueVelocities={portfolioVelocities}
@@ -2786,8 +3563,8 @@ export default function App() {
                         auditEntries={auditEntries}
                         formatTimestamp={formatTimestamp}
                         onOpenAssessment={() => handleSelectVenueView("assessment")}
-                        onOpenSignals={() => handleSelectVenueView("signals")}
-                        onOpenReport={() => handleSelectVenueView("report")}
+                        onOpenSignalReview={() => handleSelectVenueView("signals")}
+                        onOpenDiagnosis={() => handleSelectVenueView("diagnosis")}
                         onOpenPlan={() => handleSelectVenueView("plan")}
                       />
                     ) : null}
@@ -2798,6 +3575,9 @@ export default function App() {
                       ) : (
                         <AssessmentView
                           intakeText={intakeText}
+                          assessmentType={assessmentType}
+                          triageEnabled={triageEnabled}
+                          triageIntensity={triageIntensity}
                           intakePreview={intakePreview}
                           inferredSignalCount={effectiveSignals.length + manuallyAddedSignalIds.size}
                           rejectedSignalIds={rejectedSignalIds}
@@ -2815,6 +3595,9 @@ export default function App() {
                           reviewPlan={latestPlan}
                           activePlan={livePlan}
                           onIntakeChange={resetDerivedState}
+                          onAssessmentTypeChange={handleAssessmentTypeChange}
+                          onTriageEnabledChange={handleTriageEnabledChange}
+                          onTriageIntensityChange={handleTriageIntensityChange}
                           onLoadSample={resetDerivedState}
                           onAnalyze={handleAnalyzeIntake}
                           onSaveAssessment={handleSaveAssessment}
@@ -2822,11 +3605,11 @@ export default function App() {
                           onApprovePlan={handleApprovePlan}
                           onToggleSignalRejection={handleToggleSignalRejection}
                           onToggleManualSignal={handleToggleManualSignal}
-                          onManagementHoursChange={setManagementHours}
-                          onWeeklyBudgetChange={setWeeklyBudget}
+                          onManagementHoursChange={handleManagementHoursChange}
+                          onWeeklyBudgetChange={handleWeeklyBudgetChange}
                           formatTimestamp={formatTimestamp}
                           onOpenHistory={() => handleSelectVenueView("history")}
-                          onOpenReport={() => handleSelectVenueView("report")}
+                          onOpenReport={() => handleSelectVenueView("diagnosis")}
                           onOpenSignalsReview={() => handleSelectVenueView("signals")}
                           onAskCopilot={askCopilotAbout}
                         />
@@ -2845,7 +3628,7 @@ export default function App() {
                           onToggleSignalRejection={handleToggleSignalRejection}
                           onToggleManualSignal={handleToggleManualSignal}
                           onOpenAssessment={() => handleSelectVenueView("assessment")}
-                          onOpenReport={() => handleSelectVenueView("report")}
+                          onOpenDiagnosis={() => handleSelectVenueView("diagnosis")}
                         />
                       )
                     ) : null}
@@ -2860,7 +3643,7 @@ export default function App() {
                         formatTimestamp={formatTimestamp}
                         onOpenAssessment={() => handleSelectVenueView("assessment")}
                         onOpenPlan={() => handleSelectVenueView("plan")}
-                        onOpenReportRecord={handleOpenReportRecord}
+                        onOpenDiagnosisRecord={handleOpenReportRecord}
                         onLoadAssessmentRecord={handleLoadAssessmentRecord}
                       />
                     ) : null}
@@ -2883,13 +3666,13 @@ export default function App() {
                         onUpdateTaskStatus={handleTaskStatusUpdate}
                         onUpdateTask={handleTaskUpdate}
                         formatTimestamp={formatTimestamp}
-                        onOpenReport={() => handleSelectVenueView("report")}
+                        onOpenDiagnosis={() => handleSelectVenueView("diagnosis")}
                         onOpenHistory={() => handleSelectVenueView("history")}
                         onAskCopilot={askCopilotAbout}
                       />
                     ) : null}
 
-                    {shellRoute.venueView === "report" ? (
+                    {shellRoute.venueView === "diagnosis" ? (
                       <ReportView
                         loadingReports={loadingReports}
                         engineResult={engineResult}
@@ -3068,7 +3851,6 @@ export default function App() {
                         onOpenPlan={() => handleSelectManagerView("plan")}
                         onOpenWorkspace={(taskId) => { setMgrSelectedTaskId(taskId); handleSelectManagerView("workspace"); }}
                         onAskCopilot={askCopilotAbout}
-                        greeting={proactiveGreeting}
                       />
                     ) : null}
 
@@ -3107,7 +3889,7 @@ export default function App() {
                         onUpdateTaskStatus={handleTaskStatusUpdate}
                         onUpdateTask={handleTaskUpdate}
                         formatTimestamp={formatTimestamp}
-                        onOpenReport={() => handleSelectVenueView("report")}
+                        onOpenDiagnosis={() => handleSelectVenueView("diagnosis")}
                         onOpenHistory={() => handleSelectVenueView("history")}
                         onAskCopilot={askCopilotAbout}
                       />
@@ -3160,7 +3942,7 @@ export default function App() {
                           roleLabel="Manager"
                           venueName={workspaceVenue.name}
                           unavailableMessage={copilotIssue}
-                          onOpenCopilot={() => setCopilotOpen(true)}
+                          onOpenCopilot={() => setCopilotWorkspaceOpen(true)}
                         />
                       </>
                     ) : null}
@@ -3195,10 +3977,20 @@ export default function App() {
                       <MyShift
                         shift={pktShift}
                         loading={pktLoading}
-                        onOpenTask={(taskId) => { handleSelectPocketView("standards"); }}
-                        greeting={proactiveGreeting}
+                        onOpenTask={(taskId) => {
+                          setPktSelectedTaskId(taskId);
+                          handleSelectPocketView("task");
+                        }}
                         onAskCopilot={askCopilotAbout}
                         venueId={workspaceVenue?.id ?? null}
+                      />
+                    ) : null}
+
+                    {!selectedOntologyIssue && (shellRoute as { pocketView: string }).pocketView === "task" ? (
+                      <PocketTaskDetail
+                        task={selectedPocketTask}
+                        onBack={() => handleSelectPocketView("shift")}
+                        onAskCopilot={askCopilotAbout}
                       />
                     ) : null}
 
@@ -3219,11 +4011,7 @@ export default function App() {
                         submitting={pktSubmitting}
                         onCreateHelpRequest={handlePktCreateHelpRequest}
                         onCloseHelpRequest={handlePktCloseHelpRequest}
-                        onOpenThread={(threadId) => {
-                          setSelectedThreadId(threadId);
-                          setCopilotOpen(true);
-                          void refreshCopilotWorkspace(threadId);
-                        }}
+                        onOpenThread={openPocketHelpThread}
                       />
                     ) : null}
 
@@ -3277,7 +4065,6 @@ export default function App() {
                         formatTimestamp={formatTimestamp}
                         onOpenVenue={(venueId) => navigate({ topLevelView: "venue", venueId, venueView: "overview" })}
                         onAskCopilot={askCopilotAbout}
-                        greeting={proactiveGreeting}
                       />
                     ) : null}
 
@@ -3336,7 +4123,7 @@ export default function App() {
                           roleLabel="Owner"
                           venueName={workspaceVenue?.name ?? ""}
                           unavailableMessage={copilotIssue}
-                          onOpenCopilot={() => setCopilotOpen(true)}
+                          onOpenCopilot={() => setCopilotWorkspaceOpen(true)}
                         />
                       </>
                     ) : null}
@@ -3351,10 +4138,20 @@ export default function App() {
             threads={scopedCopilotThreads}
             selectedThreadId={selectedThreadId}
             selectedThread={selectedThread}
+            selectedThreadContext={selectedThreadContext}
+            selectedThreadActions={selectedThreadActions}
             loading={loadingCopilot}
             sending={sendingCopilot}
             input={copilotInput}
             attachments={copilotAttachments}
+            compactActions={compactCopilotActions}
+            actionPreview={copilotActionPreview}
+            actionReceipt={copilotActionReceipt}
+            previewingActionType={previewingCopilotActionType}
+            committingActionType={committingCopilotActionType}
+            onPreviewAction={handlePreviewCopilotAction}
+            onCommitPreview={handleCommitCopilotAction}
+            onDismissPreview={handleDismissCopilotActionPreview}
             onSelectThread={setSelectedThreadId}
             onInputChange={setCopilotInput}
             onAttachFiles={handleAttachCopilotFiles}
@@ -3366,16 +4163,70 @@ export default function App() {
             contextSummary={copilotContextSummary}
             inputPlaceholder={copilotInputPlaceholder}
             unavailableMessage={copilotIssue}
-            signalSuggestion={pendingSignalSuggestion}
-            canApplySignalSuggestion={Boolean(savedAssessment)}
-            applyingSignalSuggestion={applyingSignalSuggestion}
-            onApplySignalSuggestion={handleApplySignalSuggestion}
-            onDismissSignalSuggestion={handleDismissSignalSuggestion}
             preFillMessage={copilotPreFill}
             onPreFillConsumed={() => setCopilotPreFill(null)}
             screenContext={copilotScreenContext}
-            onCollapseSidebar={() => setPreferences((c) => ({ ...c, sidebarCollapsed: true }))}
-            onExpandSidebar={() => setPreferences((c) => ({ ...c, sidebarCollapsed: false }))}
+            onOpenWorkspace={() => {
+              setCopilotWorkspaceOpen(true);
+              setCopilotOpen(false);
+            }}
+          />
+          <CopilotWorkspace
+            open={copilotWorkspaceOpen}
+            threads={scopedCopilotThreads}
+            selectedThreadId={selectedThreadId}
+            selectedThread={selectedThread}
+            selectedThreadContext={selectedThreadContext}
+            selectedThreadActions={selectedThreadActions}
+            loadingActionHistory={loadingCopilotActions}
+            actionPreview={copilotActionPreview}
+            actionReceipt={copilotActionReceipt}
+            previewingActionType={previewingCopilotActionType}
+            committingActionType={committingCopilotActionType}
+            availableActions={copilotAvailableActions}
+            loading={loadingCopilot}
+            sending={sendingCopilot}
+            searching={searchingCopilot}
+            searchQuery={copilotSearchQuery}
+            searchResults={copilotSearchResults}
+            visibilityFilter={copilotVisibilityFilter}
+            sortMode={copilotSortMode}
+            includeArchived={copilotIncludeArchived}
+            input={copilotInput}
+            attachments={copilotAttachments}
+            quotedMessage={quotedCopilotMessage}
+            contextLabel={copilotContextLabel}
+            contextSummary={copilotContextSummary}
+            inputPlaceholder={copilotInputPlaceholder}
+            unavailableMessage={copilotIssue}
+            onClose={() => setCopilotWorkspaceOpen(false)}
+            onSelectThread={setSelectedThreadId}
+            onSearchChange={setCopilotSearchQuery}
+            onVisibilityFilterChange={setCopilotVisibilityFilter}
+            onSortModeChange={setCopilotSortMode}
+            onIncludeArchivedChange={setCopilotIncludeArchived}
+            onInputChange={setCopilotInput}
+            onAttachFiles={handleAttachCopilotFiles}
+            onRemoveAttachment={handleRemoveCopilotAttachment}
+            onSend={handleSendCopilotMessage}
+            onCreateSharedThread={() => void handleCreateCopilotThread("shared")}
+            onCreatePrivateThread={() => void handleCreateCopilotThread("private")}
+            onRenameThread={handleRenameSelectedCopilotThread}
+            onTogglePin={handleToggleSelectedCopilotPin}
+            onToggleArchive={handleToggleSelectedCopilotArchive}
+            onDeleteThread={handleDeleteSelectedCopilotThread}
+            onQuoteMessage={setCopilotQuotedMessageId}
+            onClearQuotedMessage={() => setCopilotQuotedMessageId(null)}
+            onReuseMessage={(content) => {
+              setCopilotInput(content);
+              setCopilotQuotedMessageId(null);
+            }}
+            onBranchThread={handleBranchFromCopilotMessage}
+            onPreviewAction={handlePreviewCopilotAction}
+            onCommitPreview={handleCommitCopilotAction}
+            onDismissPreview={handleDismissCopilotActionPreview}
+            actionStatusMessage={copilotWorkspaceActionMessage}
+            formatTimestamp={formatTimestamp}
           />
           {tour.active && roleTour ? (
             <TourOverlay
@@ -3506,30 +4357,53 @@ function formatTimestamp(isoTimestamp: string) {
 }
 
 function filterThreadsForScope(threads: CopilotThreadSummary[], activeVenueId: string | null, role: string | null = null) {
-  // Baristas only see help_request threads (their own support conversations)
   if (role === "barista") {
-    return threads.filter((thread) => thread.scope === "help_request");
-  }
-
-  // Managers see venue threads + help requests for their venue, not global
-  if (role === "manager" && activeVenueId) {
-    return threads.filter((thread) =>
-      thread.venue_id === activeVenueId || thread.scope === "help_request"
+    return threads.filter(
+      (thread) =>
+        (thread.visibility === "private" && (!activeVenueId || thread.venue_id === null || thread.venue_id === activeVenueId)) ||
+        (thread.scope === "help_request" && (!activeVenueId || thread.venue_id === activeVenueId))
     );
   }
 
-  // Owners see everything
-  if (activeVenueId) {
-    return threads;
+  if (role === "manager" && activeVenueId) {
+    return threads.filter((thread) =>
+      thread.visibility === "private" ||
+      thread.scope === "global" ||
+      thread.venue_id === null ||
+      thread.venue_id === activeVenueId
+    );
   }
 
-  const globalThreads = threads.filter((thread) => thread.scope === "global" || thread.venue_id === null);
+  if (activeVenueId) {
+    return threads.filter(
+      (thread) =>
+        thread.visibility === "private" ||
+        thread.scope === "global" ||
+        thread.venue_id === null ||
+        thread.venue_id === activeVenueId
+    );
+  }
+
+  const globalThreads = threads.filter((thread) => thread.visibility === "private" || thread.scope === "global" || thread.venue_id === null);
   return globalThreads.length ? globalThreads : threads;
 }
 
-function preferredThreadId(threads: CopilotThreadSummary[], activeVenueId: string | null) {
+function preferredThreadId(
+  threads: CopilotThreadSummary[],
+  activeVenueId: string | null,
+  role: string | null = null
+) {
+  if (role === "barista") {
+    return (
+      threads.find((thread) => thread.visibility === "private" && !thread.archived)?.id ??
+      threads.find((thread) => thread.scope === "help_request" && !thread.archived)?.id ??
+      null
+    );
+  }
+
   if (!activeVenueId) {
     return (
+      threads.find((thread) => thread.visibility === "private" && !thread.archived)?.id ??
       threads.find((thread) => thread.scope === "global" || thread.venue_id === null)?.id ??
       threads.find((thread) => !thread.archived)?.id ??
       null
@@ -3537,16 +4411,22 @@ function preferredThreadId(threads: CopilotThreadSummary[], activeVenueId: strin
   }
 
   return (
+    threads.find((thread) => thread.visibility === "private" && (thread.venue_id === activeVenueId || thread.venue_id === null) && !thread.archived)?.id ??
     threads.find((thread) => thread.venue_id === activeVenueId && thread.scope === "venue" && !thread.archived)?.id ??
+    threads.find((thread) => thread.venue_id === activeVenueId && thread.scope === "help_request" && !thread.archived)?.id ??
     threads.find((thread) => thread.venue_id === activeVenueId && !thread.archived)?.id ??
+    threads.find((thread) => (thread.scope === "global" || thread.venue_id === null) && !thread.archived)?.id ??
     threads.find((thread) => !thread.archived)?.id ??
     null
   );
 }
 
 function toVenueView(value: string): VenueSubview {
-  if (value === "assessment" || value === "signals" || value === "history" || value === "plan" || value === "report" || value === "console") {
+  if (value === "assessment" || value === "signals" || value === "history" || value === "plan" || value === "diagnosis" || value === "console") {
     return value;
+  }
+  if (value === "report") {
+    return "diagnosis";
   }
   return "overview";
 }
@@ -3617,4 +4497,79 @@ function extractPendingSignalSuggestion(
   }
 
   return null;
+}
+
+function deriveCopilotActionSource(thread: CopilotThreadDetail | null): { message: CopilotMessageRecord } | null {
+  if (!thread) {
+    return null;
+  }
+
+  const assistantMessage = [...thread.messages]
+    .reverse()
+    .find((message) => message.author_role === "assistant" && message.content.trim().length);
+
+  if (assistantMessage) {
+    return { message: assistantMessage };
+  }
+
+  const fallbackMessage = [...thread.messages].reverse().find((message) => message.content.trim().length);
+  return fallbackMessage ? { message: fallbackMessage } : null;
+}
+
+function deriveCopilotArtifactTitle(
+  thread: CopilotThreadDetail | null,
+  message: CopilotMessageRecord
+) {
+  const preferredHeadline = firstMeaningfulLine(message.content);
+  if (preferredHeadline) {
+    return truncateTitle(preferredHeadline);
+  }
+
+  if (thread?.title?.trim()) {
+    return truncateTitle(`Copilot follow-up · ${thread.title.trim()}`);
+  }
+
+  return "Copilot follow-up";
+}
+
+function buildCopilotNoteSummary(
+  thread: CopilotThreadDetail | null,
+  message: CopilotMessageRecord
+) {
+  const preferredHeadline = firstMeaningfulLine(message.content);
+  if (preferredHeadline) {
+    return truncateTitle(preferredHeadline, 96);
+  }
+
+  return thread?.title?.trim() ? truncateTitle(`Copilot note · ${thread.title.trim()}`, 96) : "Copilot note";
+}
+
+function buildCopilotArtifactBody(
+  thread: CopilotThreadDetail | null,
+  message: CopilotMessageRecord
+) {
+  const contextLabel = thread?.context_label ?? "Current workspace";
+  const lines = [
+    `Source thread: ${thread?.title ?? "Untitled thread"}`,
+    `Context: ${contextLabel}`,
+    `Captured: ${formatTimestamp(message.created_at)}`,
+    "",
+    message.content.trim(),
+  ];
+  return lines.join("\n").trim();
+}
+
+function firstMeaningfulLine(content: string) {
+  const lines = content
+    .split(/\r?\n/)
+    .map((line) => line.replace(/^[#>*\-\d.\s`]+/, "").replace(/\*\*/g, "").trim())
+    .filter(Boolean);
+  return lines[0] ?? null;
+}
+
+function truncateTitle(value: string, limit = 72) {
+  if (value.length <= limit) {
+    return value;
+  }
+  return `${value.slice(0, limit - 1).trimEnd()}…`;
 }

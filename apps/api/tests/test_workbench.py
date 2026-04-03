@@ -49,7 +49,7 @@ def test_workbench_api_creates_reviews_and_publishes_tool_draft():
 
     with TestClient(create_app()) as client:
         with get_session_factory()() as db:
-            developer_id = db.scalar(select(User.id).where(User.email == "developer@ois-demo.local"))
+            developer_id = db.scalar(select(User.id).where(User.email == "developer@vois.local"))
         client.headers.update({"X-OIS-User-Id": developer_id})
         create_response = client.post(
             "/api/v1/ontology/workbench/tools/drafts?ontology_id=restaurant",
@@ -89,7 +89,7 @@ def test_workbench_api_creates_and_reviews_map_draft():
 
     with TestClient(create_app()) as client:
         with get_session_factory()() as db:
-            developer_id = db.scalar(select(User.id).where(User.email == "developer@ois-demo.local"))
+            developer_id = db.scalar(select(User.id).where(User.email == "developer@vois.local"))
         client.headers.update({"X-OIS-User-Id": developer_id})
         create_response = client.post(
             "/api/v1/ontology/workbench/maps/signal_failure_map/drafts?ontology_id=restaurant",

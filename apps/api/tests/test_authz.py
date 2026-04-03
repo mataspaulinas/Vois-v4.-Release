@@ -47,7 +47,7 @@ def test_org_admin_can_view_organization_sessions_but_viewer_cannot():
     with TestClient(create_app()) as client:
         login = client.post(
             "/api/v1/auth/login",
-            json={"email": "owner@ois-demo.local", "password": "ois-demo-2026"},
+            json={"email": "owner@vois.local", "password": "ois-demo-2026"},
         )
         assert login.status_code == 200
         org_admin_token = login.json()["session_token"]

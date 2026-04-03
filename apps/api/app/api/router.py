@@ -21,6 +21,7 @@ from app.api.routers import (
     health,
     intake,
     integrations,
+    invites,
     organization,
     ontology,
     plans,
@@ -35,6 +36,7 @@ from app.api.routers import (
 api_router = APIRouter()
 api_router.include_router(health.router, tags=["health"])
 api_router.include_router(auth.router, prefix="/auth", tags=["auth"])
+api_router.include_router(invites.router, prefix="/invites", tags=["invites"])
 api_router.include_router(setup.router, prefix="/setup", tags=["setup"])
 api_router.include_router(ai.router, tags=["ai"])
 api_router.include_router(audit.router, prefix="/audit", tags=["audit"])

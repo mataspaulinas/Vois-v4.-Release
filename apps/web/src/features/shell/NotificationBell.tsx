@@ -3,20 +3,14 @@ import { NotificationRecord, fetchNotifications, fetchUnreadCount, markNotificat
 
 type NotificationBellProps = {
   formatTimestamp: (iso: string) => string;
+  authRole?: string | null;
   onNavigateToVenue?: (venueId: string) => void;
 };
 
-/** Map notification title keywords to a suggested venue view. */
-function suggestView(title: string): string {
-  const t = title.toLowerCase();
-  if (t.includes("task")) return "plan";
-  if (t.includes("assessment")) return "assessment";
-  if (t.includes("report")) return "report";
-  if (t.includes("signal")) return "signals";
-  if (t.includes("escalat")) return "console";
-  if (t.includes("milestone") || t.includes("progress")) return "overview";
-  if (t.includes("follow")) return "plan";
-  return "overview";
+function actionLabelForRole(authRole: string | null | undefined): string {
+  if (authRole === "barista") return "Open My Shift";
+  if (authRole === "manager") return "Open venue workspace";
+  return "Open venue";
 }
 
 const levelDotColor: Record<string, string> = {
@@ -25,7 +19,7 @@ const levelDotColor: Record<string, string> = {
   critical: "var(--color-danger)",
 };
 
-export function NotificationBell({ formatTimestamp, onNavigateToVenue }: NotificationBellProps) {
+export function NotificationBell({ formatTimestamp, authRole, onNavigateToVenue }: NotificationBellProps) {
   const [unreadCount, setUnreadCount] = useState(0);
   const [notifications, setNotifications] = useState<NotificationRecord[]>([]);
   const [open, setOpen] = useState(false);
@@ -226,7 +220,7 @@ export function NotificationBell({ formatTimestamp, onNavigateToVenue }: Notific
                           {n.body}
                         </p>
                       )}
-                      {!n.read_at && (
+                      {!n.read_at && n.entity_id ? (
                         <span style={{
                           fontSize: "var(--text-eyebrow)",
                           color: "var(--color-accent)",
@@ -234,9 +228,9 @@ export function NotificationBell({ formatTimestamp, onNavigateToVenue }: Notific
                           display: "inline-block",
                           fontWeight: 500,
                         }}>
-                          Open {suggestView(n.title)}
+                          {actionLabelForRole(authRole)}
                         </span>
-                      )}
+                      ) : null}
                     </div>
                   </div>
                 ))}

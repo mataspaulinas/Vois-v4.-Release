@@ -29,7 +29,6 @@ type TodayBoardProps = {
   onOpenPlan: () => void;
   onOpenWorkspace: (taskId: string) => void;
   onAskCopilot?: (context: string) => void;
-  greeting?: string | null;
 };
 
 const PRIORITY_LABELS: Record<string, string> = {
@@ -88,7 +87,6 @@ export function TodayBoard({
   onOpenPlan,
   onOpenWorkspace,
   onAskCopilot,
-  greeting,
 }: TodayBoardProps) {
   const [selectedActionIdx, setSelectedActionIdx] = useState<number | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -176,17 +174,6 @@ export function TodayBoard({
                 }}>
                   {dayShape}
                 </p>
-                {greeting && (
-                  <p style={{
-                    fontSize: "var(--text-body)",
-                    fontStyle: "italic",
-                    color: "var(--color-accent)",
-                    margin: "8px 0 0",
-                    lineHeight: 1.5,
-                  }}>
-                    {greeting}
-                  </p>
-                )}
               </div>
 
               {/* ─── Metric cards (4-column flex) ─── */}

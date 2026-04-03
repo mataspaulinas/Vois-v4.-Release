@@ -1,10 +1,10 @@
-export type VenueSubview = "overview" | "assessment" | "signals" | "plan" | "report" | "history" | "console";
+export type VenueSubview = "overview" | "assessment" | "signals" | "diagnosis" | "plan" | "history" | "console";
 
 export type ReferenceView = "blocks" | "tools" | "signals";
 
 export type ManagerView = "today" | "workspace" | "plan" | "evidence" | "team" | "escalations" | "copilot";
 
-export type PocketView = "shift" | "standards" | "help" | "report" | "log";
+export type PocketView = "shift" | "task" | "standards" | "help" | "report" | "log";
 
 export type OwnerView = "command" | "delegations" | "people" | "intelligence" | "administration" | "copilot";
 

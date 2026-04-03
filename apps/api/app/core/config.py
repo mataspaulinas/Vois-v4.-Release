@@ -56,6 +56,10 @@ class Settings(BaseSettings):
     default_data_residency: str = "eu-central"
     cors_origins: list[str] = ["http://localhost:5173", "http://localhost:5174"]
     upload_backend: str = "local_disk"
+    app_environment: str = "local"
+    public_app_url: str | None = None
+    auth_support_url: str | None = None
+    auth_status_url: str | None = None
     ai_provider: str = "anthropic"
     ai_model: str = "claude-sonnet-4-20250514"
     ai_mock_model: str = "vois-mock-1"
@@ -74,14 +78,19 @@ class Settings(BaseSettings):
     allow_legacy_header_auth: bool = False
     allow_bootstrap_fallback: bool = False
     enable_inprocess_scheduler: bool = False
+    auth_invite_ttl_hours: int = 24 * 7
+    auth_password_reset_ttl_minutes: int = 30
+    auth_google_enabled: bool = False
+    auth_microsoft_enabled: bool = False
+    auth_sso_enabled: bool = False
     auth_auto_provision_users: bool = False
     auth_default_organization_slug: str | None = None
     auth_default_manager_venue_slug: str | None = None
     auth_default_barista_venue_slug: str | None = None
-    seed_owner_email: str = "owner@ois-demo.local"
-    seed_manager_email: str = "manager@ois-demo.local"
-    seed_barista_email: str = "barista@ois-demo.local"
-    seed_developer_email: str = "developer@ois-demo.local"
+    seed_owner_email: str = "owner@vois.local"
+    seed_manager_email: str = "manager@vois.local"
+    seed_barista_email: str = "barista@vois.local"
+    seed_developer_email: str = "developer@vois.local"
     firebase_project_id: str | None = None
     firebase_web_api_key: str | None = None
     firebase_auth_domain: str | None = None
@@ -133,6 +142,20 @@ class Settings(BaseSettings):
         if not self.firebase_admin_credentials_json and not self.firebase_admin_credentials_path:
             missing.append("FIREBASE_ADMIN_CREDENTIALS_JSON|FIREBASE_ADMIN_CREDENTIALS_PATH")
         return missing
+
+    def auth_environment_mode(self) -> str:
+        mode = (self.app_environment or "local").strip().lower()
+        if mode in {"production", "staging", "local"}:
+            return mode
+        return "local"
+
+    def auth_environment_label(self) -> str:
+        mode = self.auth_environment_mode()
+        if mode == "production":
+            return "Production"
+        if mode == "staging":
+            return "Staging"
+        return "Local build"
 
     def ai_runtime_policy(self) -> AIRuntimePolicy:
         requested_provider = (self.ai_provider or "mock").strip().lower()

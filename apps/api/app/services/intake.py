@@ -11,7 +11,13 @@ class IntakeService:
     def __init__(self, repository: OntologyRepository):
         self.repository = repository
 
-    def preview(self, raw_text: str, ontology_id: str, version: str | None = None) -> IntakePreviewResponse:
+    def preview(
+        self,
+        raw_text: str,
+        ontology_id: str,
+        version: str | None = None,
+        assessment_type: str | None = None,
+    ) -> IntakePreviewResponse:
         mount = self.repository.load_mount(ontology_id, version, allow_invalid=False, require_runtime=False)
         bundle = self.repository.load_bundle_for_identity(mount.ontology_id, mount.version)
         signal_keywords = _load_signal_keywords(mount.intake_keywords_path)

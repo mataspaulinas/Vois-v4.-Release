@@ -7,7 +7,7 @@ def test_portfolio_director_can_view_export_summary():
     with TestClient(create_app()) as client:
         login = client.post(
             "/api/v1/auth/login",
-            json={"email": "owner@ois-demo.local", "password": "ois-demo-2026"},
+            json={"email": "owner@vois.local", "password": "ois-demo-2026"},
         )
         assert login.status_code == 200
         token = login.json()["session_token"]

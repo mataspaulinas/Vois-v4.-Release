@@ -171,6 +171,46 @@ export type AuthSessionResponse = {
   session_token: string | null;
 };
 
+export type AuthEntryConfig = {
+  environment_mode: "local" | "staging" | "production";
+  environment_label: string;
+  local_auth_available: boolean;
+  enabled_providers: string[];
+  support_url: string | null;
+  status_url: string | null;
+  invite_enabled: boolean;
+  password_reset_available: boolean;
+};
+
+export type AuthDiscoveryResponse = {
+  email: string;
+  route: "password" | "google" | "microsoft" | "sso_redirect" | "invite_required" | "no_access";
+  provider_label: string | null;
+  password_mode: "firebase" | "local" | null;
+  redirect_url: string | null;
+  workspace_hint: string | null;
+  message: string | null;
+};
+
+export type PasswordRecoveryMode =
+  | "email_link"
+  | "local_reset_link"
+  | "owner_reset_required"
+  | "contact_support"
+  | "generic";
+
+export type PasswordResetRequestResult = {
+  accepted: boolean;
+  delivery_mode: PasswordRecoveryMode;
+  message: string;
+  reset_url: string | null;
+};
+
+export type PasswordResetCompletionResult = {
+  reset: boolean;
+  message: string;
+};
+
 export type OrganizationMember = {
   id: string;
   user_id: string;
@@ -198,6 +238,32 @@ export type ProvisionedLoginPacket = {
   temporary_password: string;
   reset_required: boolean;
   firebase_uid: string | null;
+  invite_url: string | null;
+  invite_expires_at: string | null;
+};
+
+export type InvitePreview = {
+  token_status: string;
+  organization_name: string;
+  organization_slug: string;
+  invited_by_name: string | null;
+  email: string;
+  full_name: string;
+  role: "owner" | "manager" | "barista" | "developer";
+  venue_names: string[];
+  expires_at: string;
+  accepted_at: string | null;
+  message: string | null;
+};
+
+export type InviteAcceptanceResult = {
+  accepted: boolean;
+  organization_id: string;
+  organization_slug: string;
+  role: "owner" | "manager" | "barista" | "developer";
+  venue_ids: string[];
+  requires_owner_claim: boolean;
+  message: string | null;
 };
 
 export type OrganizationMemberProvisionResponse = {
@@ -428,9 +494,22 @@ export type EngineRunResponse = {
     trace: Record<string, unknown>;
     sub_actions: string[];
     deliverables: string[];
+    layer?: string | null;
+    timeline_label?: string | null;
+    priority?: string | null;
+    source_response_pattern_id?: string | null;
+    source_response_pattern_name?: string | null;
+    module_id?: string | null;
+    assigned_to?: string | null;
+    verification?: string | null;
+    expected_output?: string | null;
     status: string;
   }>;
+  constraint_report: Record<string, unknown>;
+  generated_plan: Record<string, unknown>;
   report: {
+    assessment_type: string;
+    assessment_type_label: string;
     summary: string;
     diagnostic_spine: string[];
     investigation_threads: string[];
@@ -443,6 +522,8 @@ export type PersistedEngineRunRecord = {
   assessment_id: string;
   venue_id: string;
   plan_id: string | null;
+  assessment_type: string;
+  assessment_type_label: string;
   ontology_id: string;
   ontology_version: string;
   core_canon_version: string;
@@ -462,6 +543,8 @@ export type PersistedEngineRunDetailRecord = PersistedEngineRunRecord & {
   normalized_signals: Array<Record<string, unknown>>;
   diagnostic_snapshot: Record<string, unknown>;
   plan_snapshot: Record<string, unknown>;
+  constraint_report: Record<string, unknown>;
+  generated_plan: Record<string, unknown>;
   report_markdown: string | null;
   report_type: string | null;
   ai_trace: Record<string, unknown>;
@@ -500,6 +583,9 @@ export type AssessmentRecord = {
   venue_id: string;
   created_by: string | null;
   notes: string | null;
+  assessment_type: string;
+  triage_enabled: boolean;
+  triage_intensity: "focused" | "balanced" | "thorough" | null;
   selected_signal_ids: string[];
   signal_states: Record<
     string,
@@ -550,12 +636,22 @@ export type PlanTaskRecord = {
   rationale: string;
   notes: string | null;
   assigned_to: string | null;
+  assignee_user_id?: string | null;
+  assignee_name?: string | null;
+  layer?: string | null;
+  timeline_label?: string | null;
   priority: string | null;
+  source_response_pattern_id?: string | null;
+  source_response_pattern_name?: string | null;
+  module_id?: string | null;
   due_at: string | null;
   dependencies: string[];
   trace: Record<string, unknown>;
   sub_actions: SubActionItem[];
   deliverables: DeliverableItem[];
+  verification?: string | null;
+  expected_output?: string | null;
+  review_required?: boolean;
   created_at: string;
 };
 
@@ -611,6 +707,7 @@ export type ProgressEntryRecord = {
   id: string;
   venue_id: string;
   created_by: string | null;
+  entry_type?: string;
   summary: string;
   detail: string | null;
   status: string;
@@ -719,32 +816,155 @@ export type CopilotMessageRecord = {
   content: string;
   references: CopilotReference[];
   attachments: CopilotAttachment[];
+  render_mode:
+    | "conversation"
+    | "reasoning_summary"
+    | "known_missing_risks"
+    | "recommended_next_move"
+    | "draft_artifact"
+    | "compare_insight"
+    | "apply_ready_suggestion";
+  provenance: CopilotProvenance[];
+  action_intents: CopilotActionType[];
   created_at: string;
+};
+
+export type CopilotProvenance = {
+  kind: "direct_evidence" | "inferred_context" | "recalled_memory";
+  label: string;
+  detail: string | null;
+};
+
+export type CopilotThreadVisibility = "shared" | "private";
+export type CopilotContextKind = "portfolio" | "venue" | "assessment" | "plan" | "help_request" | "report" | "general";
+export type CopilotActionMode = "save" | "suggest" | "draft" | "apply";
+export type CopilotActionType =
+  | "save_note"
+  | "apply_to_assessment"
+  | "create_diagnosis_note"
+  | "create_plan_suggestion"
+  | "create_task_suggestion"
+  | "create_escalation_draft"
+  | "create_follow_up_list"
+  | "save_compare_insight";
+
+export type CopilotThreadParticipantState = {
+  user_id: string;
+  last_read_at: string | null;
+  joined_at: string;
 };
 
 export type CopilotThreadSummary = {
   id: string;
   organization_id: string;
   venue_id: string | null;
+  owner_user_id: string | null;
   title: string;
   scope: string;
+  visibility: CopilotThreadVisibility;
+  context_kind: CopilotContextKind;
+  context_id: string | null;
+  pinned: boolean;
+  kind_label: string;
+  thread_type: string;
+  context_label: string;
+  linked_artifact_type: string | null;
+  linked_artifact_id: string | null;
+  last_message_preview: string | null;
   archived: boolean;
+  archived_at: string | null;
+  deleted_at: string | null;
   message_count: number;
+  unread_count: number;
+  applied_action_count: number;
+  latest_applied_action_at: string | null;
+  related_thread_reason: string | null;
   latest_message_at: string | null;
+  last_activity_at: string | null;
   created_at: string;
 };
 
 export type CopilotThreadDetail = CopilotThreadSummary & {
+  participant_state: CopilotThreadParticipantState | null;
   messages: CopilotMessageRecord[];
 };
 
-export type ProactiveGreetingResponse = {
-  function: string;
-  provider: string;
-  model: string;
-  prompt_version: string;
-  content: string;
-  references: CopilotReference[];
+export type CopilotThreadContextReference = {
+  type: string;
+  id: string | null;
+  label: string;
+  payload: Record<string, unknown>;
+};
+
+export type CopilotThreadContext = {
+  thread_id: string;
+  visibility: CopilotThreadVisibility;
+  memory_scope: string;
+  memory_scope_label: string;
+  context_label: string;
+  provenance_summary: CopilotProvenance[];
+  context_references: CopilotThreadContextReference[];
+  related_threads: CopilotThreadSummary[];
+  files: CopilotThreadContextReference[];
+};
+
+export type CopilotActionRecord = {
+  id: string;
+  thread_id: string;
+  source_message_id: string | null;
+  action_type: CopilotActionType;
+  mode: CopilotActionMode;
+  title: string;
+  summary: string | null;
+  target_artifact_type: string | null;
+  target_artifact_id: string | null;
+  actor_user_id: string | null;
+  actor_name: string | null;
+  created_at: string;
+  payload: Record<string, unknown>;
+};
+
+export type CopilotActionPreview = {
+  action_type: CopilotActionType;
+  mode: CopilotActionMode;
+  source_message_id: string | null;
+  title: string;
+  summary: string;
+  target_artifact_type: string | null;
+  fields: Record<string, unknown>;
+  required_permissions: string[];
+  side_effect_summary: string[];
+  warning: string | null;
+};
+
+export type CopilotActionReceipt = {
+  action: CopilotActionRecord;
+  receipt_title: string;
+  receipt_summary: string;
+  target_artifact_type: string | null;
+  target_artifact_id: string | null;
+  payload: Record<string, unknown>;
+};
+
+export type CopilotSearchHit = {
+  type: string;
+  id: string;
+  thread_id: string | null;
+  title: string;
+  excerpt: string | null;
+  context_label: string | null;
+  visibility: CopilotThreadVisibility | null;
+  archived: boolean;
+  created_at: string | null;
+  payload: Record<string, unknown>;
+};
+
+export type CopilotSearchResponse = {
+  query: string;
+  threads: CopilotSearchHit[];
+  messages: CopilotSearchHit[];
+  files: CopilotSearchHit[];
+  context_objects: CopilotSearchHit[];
 };
 
 export type EnhancedReportResponse = {
@@ -927,6 +1147,9 @@ export type OntologyEvaluationPackResult = {
 
 export async function fetchBootstrap(): Promise<BootstrapResponse> {
   const response = await apiFetch("/api/v1/bootstrap");
+  if (response.status === 401) {
+    throw new Error("VOIS bootstrap requires an active authenticated session.");
+  }
   if (!response.ok) {
     throw new Error(await readErrorMessage(response, "Failed to load workspace bootstrap"));
   }
@@ -966,21 +1189,42 @@ export async function fetchAuthSession(): Promise<AuthSessionResponse | null> {
   return response.json();
 }
 
-export async function loginSession(payload: {
+export async function fetchAuthEntryConfig(): Promise<AuthEntryConfig> {
+  const response = await apiFetch("/api/v1/auth/entry-config");
+  if (response.status === 404) {
+    throw new Error(
+      "This VOIS API process is running an older auth build. Restart the backend to load the new auth entry routes."
+    );
+  }
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to load auth entry configuration"));
+  }
+  return response.json();
+}
+
+export async function discoverAuthRoute(email: string): Promise<AuthDiscoveryResponse> {
+  const response = await apiFetch("/api/v1/auth/discover", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ email })
+  });
+  if (response.status === 404) {
+    throw new Error(
+      "This VOIS API process is running an older auth build. Restart the backend to resolve sign-in methods."
+    );
+  }
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to resolve a sign-in method"));
+  }
+  return response.json();
+}
+
+export async function loginLocalSession(payload: {
   email: string;
   password: string;
 }): Promise<AuthSessionResponse> {
-  if (firebaseConfigured()) {
-    const user = await signInWithFirebaseEmailPassword(payload.email, payload.password);
-    const token = await user.getIdToken();
-    setAuthToken(token);
-    const session = await fetchAuthSession();
-    if (!session) {
-      throw new Error("Signed in with Firebase, but VOIS could not load the authenticated user.");
-    }
-    return session;
-  }
-
   let response: Response;
   try {
     response = await apiFetch("/api/v1/auth/login", {
@@ -998,6 +1242,82 @@ export async function loginSession(payload: {
     throw new Error(await readErrorMessage(response, "Failed to sign in"));
   }
 
+  return response.json();
+}
+
+export async function loginWithPasswordMode(payload: {
+  email: string;
+  password: string;
+  passwordMode: "firebase" | "local";
+}): Promise<AuthSessionResponse> {
+  if (payload.passwordMode === "firebase") {
+    const user = await signInWithFirebaseEmailPassword(payload.email, payload.password);
+    const token = await user.getIdToken();
+    setAuthToken(token);
+    const session = await fetchAuthSession();
+    if (!session) {
+      throw new Error("Signed in with Firebase, but VOIS could not load the authenticated user.");
+    }
+    return session;
+  }
+
+  return loginLocalSession({ email: payload.email, password: payload.password });
+}
+
+export async function loginSession(payload: {
+  email: string;
+  password: string;
+}): Promise<AuthSessionResponse> {
+  return loginWithPasswordMode({
+    email: payload.email,
+    password: payload.password,
+    passwordMode: firebaseConfigured() ? "firebase" : "local",
+  });
+}
+
+export async function requestPasswordReset(email: string): Promise<PasswordResetRequestResult> {
+  const response = await apiFetch("/api/v1/auth/password/forgot", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ email })
+  });
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to start password recovery"));
+  }
+  return response.json();
+}
+
+export async function completePasswordReset(token: string, newPassword: string): Promise<PasswordResetCompletionResult> {
+  const response = await apiFetch("/api/v1/auth/password/reset", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ token, new_password: newPassword })
+  });
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to reset password"));
+  }
+  return response.json();
+}
+
+export async function fetchInvitePreview(token: string): Promise<InvitePreview> {
+  const response = await apiFetch(`/api/v1/invites/${encodeURIComponent(token)}`);
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to load invite"));
+  }
+  return response.json();
+}
+
+export async function acceptInvite(token: string): Promise<InviteAcceptanceResult> {
+  const response = await apiFetch(`/api/v1/invites/${encodeURIComponent(token)}/accept`, {
+    method: "POST"
+  });
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to accept invite"));
+  }
   return response.json();
 }
 
@@ -1122,6 +1442,7 @@ export async function createVenue(payload: VenueCreatePayload): Promise<Venue> {
 export async function previewIntake(payload: {
   raw_text: string;
   venue_id: string;
+  assessment_type?: string;
 }): Promise<IntakePreviewResponse> {
   const response = await apiFetch("/api/v1/intake/preview", {
     method: "POST",
@@ -1141,6 +1462,7 @@ export async function previewIntake(payload: {
 export async function runAIIntake(payload: {
   raw_text: string;
   venue_id: string;
+  assessment_type?: string;
 }): Promise<IntakePreviewResponse> {
   const response = await apiFetch("/api/v1/ai-intake", {
     method: "POST",
@@ -1161,6 +1483,9 @@ export async function createAssessment(payload: {
   venue_id: string;
   created_by?: string | null;
   notes?: string;
+  assessment_type?: string;
+  triage_enabled?: boolean;
+  triage_intensity?: "focused" | "balanced" | "thorough" | null;
   selected_signal_ids: string[];
   signal_states: Record<
     string,
@@ -1364,6 +1689,7 @@ export async function fetchProgressEntries(venueId: string): Promise<ProgressEnt
 export async function createProgressEntry(payload: {
   venue_id: string;
   created_by?: string | null;
+  entry_type?: string;
   summary: string;
   detail?: string;
   status: string;
@@ -1513,9 +1839,23 @@ export async function fetchEngineRunDetail(engineRunId: string): Promise<Persist
   return response.json();
 }
 
-export async function fetchCopilotThreads(venueId?: string): Promise<CopilotThreadSummary[]> {
-  const query = venueId ? `?venue_id=${encodeURIComponent(venueId)}` : "";
-  const response = await apiFetch(`/api/v1/copilot/threads${query}`);
+export async function fetchCopilotThreads(options: {
+  venue_id?: string;
+  search?: string;
+  visibility?: CopilotThreadVisibility | "all";
+  include_archived?: boolean;
+  context_kind?: CopilotContextKind | "all";
+  sort?: "recent" | "title" | "created";
+} = {}): Promise<CopilotThreadSummary[]> {
+  const params = new URLSearchParams();
+  if (options.venue_id) params.set("venue_id", options.venue_id);
+  if (options.search) params.set("search", options.search);
+  if (options.visibility && options.visibility !== "all") params.set("visibility", options.visibility);
+  if (options.include_archived) params.set("include_archived", "true");
+  if (options.context_kind && options.context_kind !== "all") params.set("context_kind", options.context_kind);
+  if (options.sort) params.set("sort", options.sort);
+  const suffix = params.size ? `?${params.toString()}` : "";
+  const response = await apiFetch(`/api/v1/copilot/threads${suffix}`);
   if (response.status === 409) {
     return [];
   }
@@ -1533,11 +1873,180 @@ export async function fetchCopilotThread(threadId: string): Promise<CopilotThrea
   return response.json();
 }
 
+export async function createCopilotThread(payload: {
+  title: string;
+  visibility: CopilotThreadVisibility;
+  venue_id?: string | null;
+  scope?: "global" | "venue" | "task" | "help_request";
+  context_kind?: CopilotContextKind;
+  context_id?: string | null;
+  initial_message?: string | null;
+}): Promise<CopilotThreadDetail> {
+  const response = await apiFetch("/api/v1/copilot/threads", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to create copilot thread"));
+  }
+  return response.json();
+}
+
+export async function updateCopilotThread(
+  threadId: string,
+  payload: {
+    title?: string;
+    pinned?: boolean;
+    archived?: boolean;
+  }
+): Promise<CopilotThreadDetail> {
+  const response = await apiFetch(`/api/v1/copilot/threads/${threadId}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to update copilot thread"));
+  }
+  return response.json();
+}
+
+export async function deleteCopilotThread(threadId: string): Promise<void> {
+  const response = await apiFetch(`/api/v1/copilot/threads/${threadId}`, {
+    method: "DELETE",
+  });
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to delete copilot thread"));
+  }
+}
+
+export async function fetchCopilotThreadContext(threadId: string): Promise<CopilotThreadContext> {
+  const response = await apiFetch(`/api/v1/copilot/threads/${threadId}/context`);
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to load copilot thread context"));
+  }
+  return response.json();
+}
+
+export async function fetchCopilotThreadActions(threadId: string): Promise<CopilotActionRecord[]> {
+  const response = await apiFetch(`/api/v1/copilot/threads/${threadId}/actions`);
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to load copilot thread actions"));
+  }
+  return response.json();
+}
+
+export async function searchCopilotWorkspace(options: {
+  query: string;
+  venue_id?: string;
+  include_archived?: boolean;
+  visibility?: CopilotThreadVisibility | "all";
+  context_kind?: CopilotContextKind | "all";
+}): Promise<CopilotSearchResponse> {
+  const params = new URLSearchParams();
+  params.set("query", options.query);
+  if (options.venue_id) params.set("venue_id", options.venue_id);
+  if (options.include_archived) params.set("include_archived", "true");
+  if (options.visibility && options.visibility !== "all") params.set("visibility", options.visibility);
+  if (options.context_kind && options.context_kind !== "all") params.set("context_kind", options.context_kind);
+  const response = await apiFetch(`/api/v1/copilot/search?${params.toString()}`);
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to search copilot workspace"));
+  }
+  return response.json();
+}
+
+export async function branchCopilotThread(
+  threadId: string,
+  payload: {
+    message_id?: string | null;
+    title?: string | null;
+    visibility?: CopilotThreadVisibility | null;
+  }
+): Promise<CopilotThreadDetail> {
+  const response = await apiFetch(`/api/v1/copilot/threads/${threadId}/branch`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to branch copilot thread"));
+  }
+  return response.json();
+}
+
+export async function createCopilotPlanSuggestion(
+  threadId: string,
+  payload: {
+    title: string;
+    rationale: string;
+    message_id?: string | null;
+  }
+): Promise<PlanTaskRecord> {
+  const response = await apiFetch(`/api/v1/copilot/threads/${threadId}/plan-suggestion`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to create plan suggestion"));
+  }
+  return response.json();
+}
+
+export async function previewCopilotAction(
+  threadId: string,
+  payload: {
+    action_type: CopilotActionType;
+    message_id?: string | null;
+    task_id?: string | null;
+    severity?: string | null;
+    due_at?: string | null;
+    signal_additions?: Array<{ signal_id: string; notes?: string | null; confidence?: string | null }>;
+    signal_removals?: string[];
+  }
+): Promise<CopilotActionPreview> {
+  const response = await apiFetch(`/api/v1/copilot/threads/${threadId}/actions/preview`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to preview copilot action"));
+  }
+  return response.json();
+}
+
+export async function commitCopilotAction(
+  threadId: string,
+  payload: {
+    action_type: CopilotActionType;
+    message_id?: string | null;
+    task_id?: string | null;
+    severity?: string | null;
+    due_at?: string | null;
+    signal_additions?: Array<{ signal_id: string; notes?: string | null; confidence?: string | null }>;
+    signal_removals?: string[];
+  }
+): Promise<CopilotActionReceipt> {
+  const response = await apiFetch(`/api/v1/copilot/threads/${threadId}/actions/commit`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) {
+    throw new Error(await readErrorMessage(response, "Failed to commit copilot action"));
+  }
+  return response.json();
+}
+
 export async function sendCopilotMessage(payload: {
   thread_id: string;
   content: string;
   created_by?: string | null;
   attachments?: CopilotAttachment[];
+  quoted_message_id?: string | null;
 }): Promise<CopilotThreadDetail> {
   const response = await apiFetch(`/api/v1/copilot/threads/${payload.thread_id}/messages`, {
     method: "POST",
@@ -1547,28 +2056,12 @@ export async function sendCopilotMessage(payload: {
     body: JSON.stringify({
       content: payload.content,
       created_by: payload.created_by ?? null,
-      attachments: payload.attachments ?? []
+      attachments: payload.attachments ?? [],
+      quoted_message_id: payload.quoted_message_id ?? null,
     })
   });
   if (!response.ok) {
     throw new Error(await readErrorMessage(response, "Failed to send copilot message"));
-  }
-  return response.json();
-}
-
-export async function fetchProactiveGreeting(venueId?: string): Promise<ProactiveGreetingResponse | null> {
-  const response = await apiFetch("/api/v1/copilot/proactive", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ venue_id: venueId ?? null })
-  });
-  if (response.status === 404) {
-    return null;
-  }
-  if (!response.ok) {
-    throw new Error(await readErrorMessage(response, "Failed to load proactive greeting"));
   }
   return response.json();
 }
@@ -1682,6 +2175,9 @@ export async function runSavedAssessment(assessmentId: string): Promise<EngineRu
 
 export async function runEngine(payload: {
   venue_id: string;
+  assessment_type?: string;
+  triage_enabled?: boolean;
+  triage_intensity?: "focused" | "balanced" | "thorough" | null;
   selected_signal_ids: string[];
   signal_states?: Record<
     string,

@@ -4,14 +4,17 @@ from sqlalchemy.orm import Session
 from app.core.config import get_settings
 from app.models.domain import (
     CopilotAuthorRole,
+    CopilotContextKind,
     CopilotMessage,
     CopilotThread,
+    CopilotThreadVisibility,
     Organization,
     Role,
     ThreadScope,
     User,
     Venue,
     VenueStatus,
+    utc_now,
 )
 from app.services.auth import hash_password
 from app.services.ontology import get_ontology_repository
@@ -116,7 +119,10 @@ def seed_dev_workspace(session: Session) -> None:
             organization_id=organization.id,
             title="Morning operational pulse",
             scope=ThreadScope.GLOBAL,
+            visibility=CopilotThreadVisibility.SHARED,
+            context_kind=CopilotContextKind.PORTFOLIO,
             archived=False,
+            last_activity_at=utc_now(),
         )
         session.add(global_thread)
         session.flush()
@@ -132,7 +138,11 @@ def seed_dev_workspace(session: Session) -> None:
             venue_id=venue.id,
             title=f"{venue.name} working thread",
             scope=ThreadScope.VENUE,
+            visibility=CopilotThreadVisibility.SHARED,
+            context_kind=CopilotContextKind.VENUE,
+            context_id=venue.id,
             archived=False,
+            last_activity_at=utc_now(),
         )
         session.add(venue_thread)
         session.flush()

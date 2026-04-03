@@ -13,6 +13,18 @@ export default defineConfig({
     },
     server: {
         port: devPort,
+        headers: {
+            "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+            "Pragma": "no-cache",
+            "Expires": "0",
+        },
+        hmr: {
+            overlay: true,
+        },
+        watch: {
+            usePolling: true,
+            interval: 500,
+        },
         proxy: {
             "/api": {
                 target: apiProxyTarget,

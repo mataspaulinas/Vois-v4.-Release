@@ -30,8 +30,8 @@ type VenueOverviewViewProps = {
   auditEntries: AuditEntryRecord[];
   formatTimestamp: (isoTimestamp: string) => string;
   onOpenAssessment: () => void;
-  onOpenSignals: () => void;
-  onOpenReport: () => void;
+  onOpenSignalReview: () => void;
+  onOpenDiagnosis: () => void;
   onOpenPlan: () => void;
 };
 
@@ -48,8 +48,8 @@ export function VenueOverviewView({
   auditEntries,
   formatTimestamp,
   onOpenAssessment,
-  onOpenSignals,
-  onOpenReport,
+  onOpenSignalReview,
+  onOpenDiagnosis,
   onOpenPlan,
 }: VenueOverviewViewProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -99,12 +99,12 @@ export function VenueOverviewView({
               padding: "8px 18px", fontSize: "var(--text-small)", fontWeight: 600, cursor: "pointer",
             }}
           >
-            Start assessment
+            Start / resume assessment
           </button>
           {[
-            { label: "Signals", onClick: onOpenSignals },
-            { label: "Report", onClick: onOpenReport },
-            { label: "Plan", onClick: onOpenPlan },
+            { label: "Signal review", onClick: onOpenSignalReview },
+            { label: "Diagnosis", onClick: onOpenDiagnosis },
+            { label: "Open active plan", onClick: onOpenPlan },
           ].map((a) => (
             <button
               key={a.label}
@@ -163,8 +163,8 @@ export function VenueOverviewView({
           </p>
           <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
             <button onClick={onOpenAssessment} style={{ background: "var(--color-surface)", color: "var(--color-accent)", border: "1.5px solid var(--color-accent)", borderRadius: "var(--radius-sm)", padding: "6px 14px", fontSize: "var(--text-small)", fontWeight: 600, cursor: "pointer" }}>Assessment</button>
-            <button onClick={onOpenSignals} style={{ background: "var(--color-surface)", color: "var(--color-accent)", border: "1.5px solid var(--color-accent)", borderRadius: "var(--radius-sm)", padding: "6px 14px", fontSize: "var(--text-small)", fontWeight: 600, cursor: "pointer" }}>Signals</button>
-            <button onClick={onOpenReport} style={{ background: "var(--color-surface)", color: "var(--color-accent)", border: "1.5px solid var(--color-accent)", borderRadius: "var(--radius-sm)", padding: "6px 14px", fontSize: "var(--text-small)", fontWeight: 600, cursor: "pointer" }}>Report</button>
+            <button onClick={onOpenSignalReview} style={{ background: "var(--color-surface)", color: "var(--color-accent)", border: "1.5px solid var(--color-accent)", borderRadius: "var(--radius-sm)", padding: "6px 14px", fontSize: "var(--text-small)", fontWeight: 600, cursor: "pointer" }}>Signal review</button>
+            <button onClick={onOpenDiagnosis} style={{ background: "var(--color-surface)", color: "var(--color-accent)", border: "1.5px solid var(--color-accent)", borderRadius: "var(--radius-sm)", padding: "6px 14px", fontSize: "var(--text-small)", fontWeight: 600, cursor: "pointer" }}>Diagnosis</button>
             <button onClick={onOpenPlan} style={{ background: "var(--color-accent)", color: "var(--color-surface)", border: "none", borderRadius: "var(--radius-sm)", padding: "6px 14px", fontSize: "var(--text-small)", fontWeight: 600, cursor: "pointer" }}>Plan</button>
           </div>
         </div>
@@ -175,11 +175,11 @@ export function VenueOverviewView({
           boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
         }}>
           <div style={{ fontSize: "var(--text-eyebrow)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted)", marginBottom: 12 }}>
-            Latest diagnostic
+            Latest diagnosis
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {[
-              { label: "Last report", value: selectedEngineRun ? formatTimestamp(selectedEngineRun.created_at) : "not generated" },
+              { label: "Last diagnosis", value: selectedEngineRun ? formatTimestamp(selectedEngineRun.created_at) : "not generated" },
               { label: "Load", value: selectedEngineRun?.load_classification ?? "unknown" },
               { label: "Plan tasks", value: String(selectedEngineRun?.plan_task_count ?? 0) },
             ].map((row) => (
@@ -353,10 +353,10 @@ function describeVenueNextMove({
     return "Capture and save a fresh assessment first. The venue still needs a trustworthy picture of current reality.";
   }
   if (!selectedEngineRun) {
-    return "The assessment exists, but the report is not current yet. Run the engine and generate the diagnostic readout.";
+    return "The assessment exists, but the diagnosis is not current yet. Run the engine and generate the diagnostic readout.";
   }
   if (!latestPlan) {
-    return "The report exists, but the execution surface is still incomplete. Move into the plan view and materialize the current tasks.";
+    return "The diagnosis exists, but the execution surface is still incomplete. Move into the plan view and materialize the current tasks.";
   }
   if ((executionSummary?.next_executable_tasks.length ?? 0) > 0) {
     return "There is ready work available now. Open the plan and move the next executable task forward.";
@@ -364,5 +364,5 @@ function describeVenueNextMove({
   if ((executionSummary?.blocked_tasks.length ?? 0) > 0) {
     return "Execution is bottlenecked. The best move is to clear the dependency block before adding new activity.";
   }
-  return "The venue is stable enough to review progress quality, inspect the report again, or begin the next assessment cycle.";
+  return "The venue is stable enough to review progress quality, inspect the diagnosis again, or begin the next assessment cycle.";
 }

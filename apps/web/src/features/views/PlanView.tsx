@@ -110,7 +110,7 @@ function countOverdue(tasks: PlanTaskRecord[]) {
 }
 
 /* ── Types ── */
-type PlanTab = "tasks" | "signals" | "report" | "assessments" | "timeline";
+type PlanTab = "tasks" | "signals" | "diagnosis" | "assessments" | "timeline";
 type FilterMode = "all" | "overdue" | "not_started" | "high" | "medium";
 
 type PlanViewProps = {
@@ -130,7 +130,7 @@ type PlanViewProps = {
   onUpdateTaskStatus: (taskId: string, status: string) => void;
   onUpdateTask: (taskId: string, payload: PlanTaskUpdatePayload) => void;
   formatTimestamp: (isoTimestamp: string) => string;
-  onOpenReport: () => void;
+  onOpenDiagnosis: () => void;
   onOpenHistory: () => void;
   onOpenWorkspace?: (taskId: string) => void;
   onAskCopilot?: (context: string) => void;
@@ -153,7 +153,7 @@ export function PlanView({
   onUpdateTask,
   formatTimestamp,
   venueId,
-  onOpenReport,
+  onOpenDiagnosis,
   onOpenHistory,
   onOpenWorkspace,
   onAskCopilot,
@@ -324,8 +324,8 @@ export function PlanView({
   /* ── Tab definitions ── */
   const tabs: Array<{ key: PlanTab; label: string; icon: React.ReactNode; badge?: number }> = [
     { key: "tasks", label: "Tasks", icon: <Icon name="tasks" size={16} /> },
-    { key: "signals", label: "Signals", icon: <Icon name="signals" size={16} />, badge: signalCount || undefined },
-    { key: "report", label: "Report", icon: <Icon name="report" size={16} /> },
+    { key: "signals", label: "Signal Review", icon: <Icon name="signals" size={16} />, badge: signalCount || undefined },
+    { key: "diagnosis", label: "Diagnosis", icon: <Icon name="report" size={16} /> },
     { key: "assessments", label: "Assessments", icon: <Icon name="assessment" size={16} /> },
     { key: "timeline", label: "Timeline", icon: <Icon name="chart-line" size={16} /> },
   ];
@@ -398,6 +398,10 @@ export function PlanView({
     const isOverdue = task.due_at && new Date(task.due_at) < new Date() && task.status !== "completed";
     const completedSubActions = task.sub_actions.filter(a => a.completed).length;
     const totalSubActions = task.sub_actions.length;
+    const readOnlyTask = isExecutionLocked;
+    const readOnlyReason = isHistoricalSelection
+      ? "This task is part of a historical plan snapshot. Open the live plan to edit execution."
+      : "This plan is read-only until it becomes the active execution plan.";
 
     return (
       <article
@@ -416,8 +420,16 @@ export function PlanView({
       >
         {/* ── Card face (collapsed) ── */}
         <div
+          role="button"
+          tabIndex={0}
           style={{ padding: "14px 20px", cursor: "pointer" }}
           onClick={() => setExpandedTaskId(isExpanded ? null : task.id)}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              setExpandedTaskId(isExpanded ? null : task.id);
+            }
+          }}
         >
           {/* Row 1: status circle, block code, title, overdue badge, priority, sub-action count, chevron */}
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -476,6 +488,21 @@ export function PlanView({
         {/* ── Expanded section ── */}
         {isExpanded && (
           <div style={{ borderTop: `1px solid ${ds.border}`, padding: "16px 20px" }}>
+            {readOnlyTask && (
+              <div
+                style={{
+                  marginBottom: 16,
+                  padding: "10px 12px",
+                  borderRadius: 8,
+                  background: ds.surfaceBg,
+                  border: `1px solid ${ds.border}`,
+                  fontSize: ds.textSmall,
+                  color: ds.textSecondary,
+                }}
+              >
+                <strong style={{ color: ds.textPrimary }}>Read-only plan.</strong> {readOnlyReason}
+              </div>
+            )}
 
             {/* Signal chain */}
             {renderSignalChain(task)}
@@ -513,54 +540,85 @@ export function PlanView({
               <p style={{ fontSize: ds.textEyebrow, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: ds.muted, margin: "0 0 10px" }}>
                 Execution
               </p>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }}>
-                <label style={{ display: "flex", flexDirection: "column", gap: 4, fontSize: ds.textSmall }}>
-                  <span style={{ color: ds.muted, fontWeight: 500 }}>Assignee</span>
-                  <input
-                    type="text"
-                    className="progress-input"
-                    defaultValue={task.assigned_to ?? ""}
-                    placeholder="Unassigned"
-                    disabled={updatingTaskId === task.id || isExecutionLocked}
-                    onBlur={(e) => {
-                      const value = e.target.value.trim() || null;
-                      if (value !== task.assigned_to) onUpdateTask(task.id, { assigned_to: value });
-                    }}
-                    onKeyDown={(e) => { if (e.key === "Enter") (e.target as HTMLInputElement).blur(); }}
-                    style={{ fontSize: ds.textSmall, borderRadius: 8, border: `1px solid ${ds.border}`, padding: "8px 10px", background: ds.surfaceBg }}
-                  />
-                </label>
-                <label style={{ display: "flex", flexDirection: "column", gap: 4, fontSize: ds.textSmall }}>
-                  <span style={{ color: ds.muted, fontWeight: 500 }}>Due date</span>
-                  <input
-                    type="date"
-                    value={task.due_at ? task.due_at.slice(0, 10) : ""}
-                    disabled={updatingTaskId === task.id || isExecutionLocked}
-                    onChange={(e) => {
-                      const value = e.target.value ? new Date(e.target.value).toISOString() : null;
-                      onUpdateTask(task.id, { due_at: value });
-                    }}
-                    style={{ fontSize: ds.textSmall, borderRadius: 8, border: `1px solid ${ds.border}`, padding: "8px 10px", background: ds.surfaceBg }}
-                  />
-                </label>
-                <label style={{ display: "flex", flexDirection: "column", gap: 4, fontSize: ds.textSmall }}>
-                  <span style={{ color: ds.muted, fontWeight: 500 }}>Priority</span>
-                  <Select
-                    options={[
-                      { value: "", label: "No priority" },
-                      { value: "critical", label: "Critical" },
-                      { value: "high", label: "High" },
-                      { value: "normal", label: "Normal" },
-                      { value: "low", label: "Low" },
-                    ]}
-                    value={task.priority ?? ""}
-                    disabled={updatingTaskId === task.id || isExecutionLocked}
-                    onChange={(value) => onUpdateTask(task.id, { priority: value || null })}
-                    aria-label="Priority"
-                    size="sm"
-                  />
-                </label>
-              </div>
+              {readOnlyTask ? (
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }}>
+                  {[
+                    { label: "Assignee", value: task.assigned_to ?? "Unassigned" },
+                    {
+                      label: "Due date",
+                      value: task.due_at
+                        ? new Date(task.due_at).toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "numeric" })
+                        : "No due date",
+                    },
+                    { label: "Priority", value: task.priority ? task.priority[0].toUpperCase() + task.priority.slice(1) : "No priority" },
+                  ].map((item) => (
+                    <div
+                      key={item.label}
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 4,
+                        padding: "10px 12px",
+                        borderRadius: 8,
+                        border: `1px solid ${ds.border}`,
+                        background: ds.surfaceBg,
+                      }}
+                    >
+                      <span style={{ color: ds.muted, fontWeight: 500, fontSize: ds.textSmall }}>{item.label}</span>
+                      <span style={{ color: ds.textPrimary, fontSize: ds.textSmall, fontWeight: 600 }}>{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }}>
+                  <label style={{ display: "flex", flexDirection: "column", gap: 4, fontSize: ds.textSmall }}>
+                    <span style={{ color: ds.muted, fontWeight: 500 }}>Assignee</span>
+                    <input
+                      type="text"
+                      className="progress-input"
+                      defaultValue={task.assigned_to ?? ""}
+                      placeholder="Unassigned"
+                      disabled={updatingTaskId === task.id}
+                      onBlur={(e) => {
+                        const value = e.target.value.trim() || null;
+                        if (value !== task.assigned_to) onUpdateTask(task.id, { assigned_to: value });
+                      }}
+                      onKeyDown={(e) => { if (e.key === "Enter") (e.target as HTMLInputElement).blur(); }}
+                      style={{ fontSize: ds.textSmall, borderRadius: 8, border: `1px solid ${ds.border}`, padding: "8px 10px", background: ds.surfaceBg }}
+                    />
+                  </label>
+                  <label style={{ display: "flex", flexDirection: "column", gap: 4, fontSize: ds.textSmall }}>
+                    <span style={{ color: ds.muted, fontWeight: 500 }}>Due date</span>
+                    <input
+                      type="date"
+                      value={task.due_at ? task.due_at.slice(0, 10) : ""}
+                      disabled={updatingTaskId === task.id}
+                      onChange={(e) => {
+                        const value = e.target.value ? new Date(e.target.value).toISOString() : null;
+                        onUpdateTask(task.id, { due_at: value });
+                      }}
+                      style={{ fontSize: ds.textSmall, borderRadius: 8, border: `1px solid ${ds.border}`, padding: "8px 10px", background: ds.surfaceBg }}
+                    />
+                  </label>
+                  <label style={{ display: "flex", flexDirection: "column", gap: 4, fontSize: ds.textSmall }}>
+                    <span style={{ color: ds.muted, fontWeight: 500 }}>Priority</span>
+                    <Select
+                      options={[
+                        { value: "", label: "No priority" },
+                        { value: "critical", label: "Critical" },
+                        { value: "high", label: "High" },
+                        { value: "normal", label: "Normal" },
+                        { value: "low", label: "Low" },
+                      ]}
+                      value={task.priority ?? ""}
+                      disabled={updatingTaskId === task.id}
+                      onChange={(value) => onUpdateTask(task.id, { priority: value || null })}
+                      aria-label="Priority"
+                      size="sm"
+                    />
+                  </label>
+                </div>
+              )}
             </div>
 
             {/* Status pills row */}
@@ -568,23 +626,42 @@ export function PlanView({
               {ALL_STATUSES.map((status) => {
                 const blockedForStatus = blockedDependencies.length > 0 && (status === "in_progress" || status === "completed");
                 const isActive = task.status === status;
+
+                if (readOnlyTask) {
+                  return (
+                    <span
+                      key={status}
+                      style={{
+                        padding: "4px 10px",
+                        fontSize: ds.textEyebrow,
+                        fontWeight: 600,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.04em",
+                        border: isActive ? "none" : `1px solid ${ds.border}`,
+                        borderRadius: 6,
+                        background: isActive ? statusColor(status) + "18" : "transparent",
+                        color: isActive ? statusColor(status) : ds.muted,
+                        opacity: isActive ? 1 : 0.72,
+                      }}
+                    >
+                      {status.replace(/_/g, " ")}
+                    </span>
+                  );
+                }
+
                 return (
                   <button
                     key={status}
                     onClick={(e) => { e.stopPropagation(); onUpdateTaskStatus(task.id, status); }}
-                    disabled={updatingTaskId === task.id || blockedForStatus || isExecutionLocked}
-                    title={
-                      isExecutionLocked ? "Only the active plan can be mutated."
-                        : blockedForStatus ? `Blocked by: ${blockedDependencies.join(", ")}`
-                          : undefined
-                    }
+                    disabled={updatingTaskId === task.id || blockedForStatus}
+                    title={blockedForStatus ? `Blocked by: ${blockedDependencies.join(", ")}` : undefined}
                     style={{
                       padding: "4px 10px", fontSize: ds.textEyebrow, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em",
                       border: isActive ? "none" : `1px solid ${ds.border}`, borderRadius: 6,
                       background: isActive ? statusColor(status) + "18" : "transparent",
                       color: isActive ? statusColor(status) : ds.muted,
-                      cursor: (updatingTaskId === task.id || blockedForStatus || isExecutionLocked) ? "not-allowed" : "pointer",
-                      opacity: (updatingTaskId === task.id || blockedForStatus || isExecutionLocked) ? 0.4 : 1,
+                      cursor: (updatingTaskId === task.id || blockedForStatus) ? "not-allowed" : "pointer",
+                      opacity: (updatingTaskId === task.id || blockedForStatus) ? 0.4 : 1,
                       transition: "all 0.15s ease",
                     }}
                   >
@@ -613,27 +690,43 @@ export function PlanView({
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
                   {task.sub_actions.map((action, idx) => (
-                    <label
-                      key={`${action.text}-${idx}`}
-                      style={{
-                        display: "flex", alignItems: "center", gap: 8, padding: "6px 0",
-                        fontSize: ds.textSmall, color: action.completed ? ds.muted : ds.textPrimary,
-                        textDecoration: action.completed ? "line-through" : "none",
-                        cursor: (updatingTaskId === task.id || isExecutionLocked) ? "not-allowed" : "pointer",
-                      }}
-                    >
-                      <input
-                        type="checkbox"
-                        checked={action.completed}
-                        disabled={updatingTaskId === task.id || isExecutionLocked}
-                        onChange={() => {
-                          const completions = task.sub_actions.map((a, i) => i === idx ? !a.completed : a.completed);
-                          onUpdateTask(task.id, { sub_action_completions: completions });
+                    readOnlyTask ? (
+                      <div
+                        key={`${action.text}-${idx}`}
+                        style={{
+                          display: "flex", alignItems: "center", gap: 8, padding: "6px 0",
+                          fontSize: ds.textSmall, color: action.completed ? ds.muted : ds.textPrimary,
+                          textDecoration: action.completed ? "line-through" : "none",
                         }}
-                        style={{ accentColor: ds.accent, width: 16, height: 16, flexShrink: 0 }}
-                      />
-                      {action.text}
-                    </label>
+                      >
+                        <span style={{ width: 16, flexShrink: 0, color: action.completed ? ds.success : ds.muted, display: "inline-flex", justifyContent: "center" }}>
+                          {action.completed ? <Icon name="check" size={14} /> : "\u2022"}
+                        </span>
+                        {action.text}
+                      </div>
+                    ) : (
+                      <label
+                        key={`${action.text}-${idx}`}
+                        style={{
+                          display: "flex", alignItems: "center", gap: 8, padding: "6px 0",
+                          fontSize: ds.textSmall, color: action.completed ? ds.muted : ds.textPrimary,
+                          textDecoration: action.completed ? "line-through" : "none",
+                          cursor: updatingTaskId === task.id ? "not-allowed" : "pointer",
+                        }}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={action.completed}
+                          disabled={updatingTaskId === task.id}
+                          onChange={() => {
+                            const completions = task.sub_actions.map((a, i) => i === idx ? !a.completed : a.completed);
+                            onUpdateTask(task.id, { sub_action_completions: completions });
+                          }}
+                          style={{ accentColor: ds.accent, width: 16, height: 16, flexShrink: 0 }}
+                        />
+                        {action.text}
+                      </label>
+                    )
                   ))}
                 </div>
               </div>
@@ -647,27 +740,43 @@ export function PlanView({
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
                   {task.deliverables.map((deliverable, idx) => (
-                    <label
-                      key={`${deliverable.name}-${idx}`}
-                      style={{
-                        display: "flex", alignItems: "center", gap: 8, padding: "6px 0",
-                        fontSize: ds.textSmall, color: deliverable.completed ? ds.muted : ds.textPrimary,
-                        textDecoration: deliverable.completed ? "line-through" : "none",
-                        cursor: (updatingTaskId === task.id || isExecutionLocked) ? "not-allowed" : "pointer",
-                      }}
-                    >
-                      <input
-                        type="checkbox"
-                        checked={deliverable.completed}
-                        disabled={updatingTaskId === task.id || isExecutionLocked}
-                        onChange={() => {
-                          const completions = task.deliverables.map((d, i) => i === idx ? !d.completed : d.completed);
-                          onUpdateTask(task.id, { deliverable_completions: completions });
+                    readOnlyTask ? (
+                      <div
+                        key={`${deliverable.name}-${idx}`}
+                        style={{
+                          display: "flex", alignItems: "center", gap: 8, padding: "6px 0",
+                          fontSize: ds.textSmall, color: deliverable.completed ? ds.muted : ds.textPrimary,
+                          textDecoration: deliverable.completed ? "line-through" : "none",
                         }}
-                        style={{ accentColor: ds.accent, width: 16, height: 16, flexShrink: 0 }}
-                      />
-                      {deliverable.name}
-                    </label>
+                      >
+                        <span style={{ width: 16, flexShrink: 0, color: deliverable.completed ? ds.success : ds.muted, display: "inline-flex", justifyContent: "center" }}>
+                          {deliverable.completed ? <Icon name="check" size={14} /> : "\u2022"}
+                        </span>
+                        {deliverable.name}
+                      </div>
+                    ) : (
+                      <label
+                        key={`${deliverable.name}-${idx}`}
+                        style={{
+                          display: "flex", alignItems: "center", gap: 8, padding: "6px 0",
+                          fontSize: ds.textSmall, color: deliverable.completed ? ds.muted : ds.textPrimary,
+                          textDecoration: deliverable.completed ? "line-through" : "none",
+                          cursor: updatingTaskId === task.id ? "not-allowed" : "pointer",
+                        }}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={deliverable.completed}
+                          disabled={updatingTaskId === task.id}
+                          onChange={() => {
+                            const completions = task.deliverables.map((d, i) => i === idx ? !d.completed : d.completed);
+                            onUpdateTask(task.id, { deliverable_completions: completions });
+                          }}
+                          style={{ accentColor: ds.accent, width: 16, height: 16, flexShrink: 0 }}
+                        />
+                        {deliverable.name}
+                      </label>
+                    )
                   ))}
                 </div>
               </div>
@@ -678,12 +787,31 @@ export function PlanView({
               <p style={{ fontSize: ds.textEyebrow, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: ds.muted, margin: "0 0 8px" }}>
                 Notes
               </p>
-              <TaskNotesEditor
-                taskId={task.id}
-                initialNotes={task.notes ?? ""}
-                disabled={updatingTaskId === task.id || isExecutionLocked}
-                onSave={(notes) => onUpdateTask(task.id, { notes })}
-              />
+              {readOnlyTask ? (
+                <div
+                  style={{
+                    minHeight: 60,
+                    fontSize: ds.textSmall,
+                    borderRadius: 8,
+                    border: `1px solid ${ds.border}`,
+                    padding: "10px 14px",
+                    width: "100%",
+                    boxSizing: "border-box",
+                    background: ds.surfaceBg,
+                    color: task.notes?.trim() ? ds.textPrimary : ds.muted,
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {task.notes?.trim() || "No task notes yet."}
+                </div>
+              ) : (
+                <TaskNotesEditor
+                  taskId={task.id}
+                  initialNotes={task.notes ?? ""}
+                  disabled={updatingTaskId === task.id}
+                  onSave={(notes) => onUpdateTask(task.id, { notes })}
+                />
+              )}
             </div>
 
             {/* Comments (collapsible) */}
@@ -996,7 +1124,7 @@ export function PlanView({
                   key={tab.key}
                   onClick={() => {
                     setActiveTab(tab.key);
-                    if (tab.key === "report") onOpenReport();
+                    if (tab.key === "diagnosis") onOpenDiagnosis();
                     if (tab.key === "timeline") onOpenHistory();
                   }}
                   style={{
@@ -1073,7 +1201,7 @@ export function PlanView({
                   background: ds.warning + "10", border: `1px solid ${ds.warning}30`, borderRadius: ds.cardRadius,
                   padding: "12px 16px", marginBottom: 20, fontSize: ds.textSmall, color: ds.warning, fontWeight: 500,
                 }}>
-                  You are viewing the plan linked to an older report selection, not the latest venue plan.
+                  You are viewing the plan linked to an older diagnosis selection, not the latest venue plan.
                 </div>
               )}
 
@@ -1117,7 +1245,7 @@ export function PlanView({
               </p>
               <button
                 onClick={() => {
-                  if (activeTab === "report") onOpenReport();
+                  if (activeTab === "diagnosis") onOpenDiagnosis();
                   else if (activeTab === "timeline") onOpenHistory();
                 }}
                 style={{
@@ -1125,7 +1253,7 @@ export function PlanView({
                   border: `1px solid ${ds.accent}`, background: "transparent", color: ds.accent, cursor: "pointer",
                 }}
               >
-                {activeTab === "report" ? "Open Report" : activeTab === "timeline" ? "Open Timeline" : `View ${activeTab}`}
+                {activeTab === "diagnosis" ? "Open Diagnosis" : activeTab === "timeline" ? "Open Timeline" : `View ${activeTab}`}
               </button>
             </div>
           )}

@@ -19,7 +19,6 @@ type PortfolioViewProps = {
   ontologyLabel: string;
   venues: Venue[];
   portfolioSummary: PortfolioSummaryResponse | null;
-  proactiveGreeting: string | null;
   activeVenue: Venue | null;
   loadingPortfolio: boolean;
   assessmentCount: number;
@@ -30,7 +29,7 @@ type PortfolioViewProps = {
   onOpenVenue: (venueId: string) => void;
   onOpenVenueWorkspace: (venueId: string, view: VenueSubview) => void;
   onOpenAssessment: () => void;
-  onOpenReport: () => void;
+  onOpenDiagnosis: () => void;
   onOpenPlan: () => void;
   formatTimestamp: (isoTimestamp: string) => string;
   venueVelocities: ExecutionVelocity[];
@@ -63,7 +62,6 @@ export function PortfolioView({
   ontologyLabel,
   venues,
   portfolioSummary,
-  proactiveGreeting,
   activeVenue,
   loadingPortfolio,
   assessmentCount,
@@ -74,7 +72,7 @@ export function PortfolioView({
   onOpenVenue,
   onOpenVenueWorkspace,
   onOpenAssessment,
-  onOpenReport,
+  onOpenDiagnosis,
   onOpenPlan,
   formatTimestamp,
   venueVelocities,
@@ -106,9 +104,6 @@ export function PortfolioView({
           {bootstrap.current_user.role.replace(/_/g, " ")}. Start from the portfolio, decide where pressure is real,
           and move into venue execution only when the operating signal justifies it.
         </p>
-        {proactiveGreeting ? (
-          <p className="small-text" style={{ marginTop: 8, fontStyle: "italic" }}>{proactiveGreeting}</p>
-        ) : null}
 
         {/* Metric strip */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 16, marginTop: 24 }}>
@@ -239,7 +234,7 @@ export function PortfolioView({
             {activeVenue ? (
               <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
                 <button className="btn btn-secondary" onClick={onOpenAssessment}>Assessment</button>
-                <button className="btn btn-secondary" onClick={onOpenReport}>Report</button>
+                <button className="btn btn-secondary" onClick={onOpenDiagnosis}>Diagnosis</button>
                 <button className="btn btn-primary" onClick={onOpenPlan}>Plan</button>
               </div>
             ) : null}
@@ -250,7 +245,7 @@ export function PortfolioView({
             <p className="eyebrow">Current state</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 6, marginTop: 10 }}>
               {([
-                ["Report state", selectedEngineRun ? selectedEngineRun.load_classification : "not run yet"],
+                ["Diagnosis state", selectedEngineRun ? selectedEngineRun.load_classification : "not run yet"],
                 ["Ready tasks", String(executionSummary?.next_executable_tasks.length ?? 0)],
                 ["Latest plan", latestPlan ? latestPlan.title : "none yet"],
               ] as [string, string][]).map(([label, val]) => (
@@ -430,8 +425,11 @@ function fallbackPulse(venue: Venue) {
 }
 
 function toVenueView(value: string): VenueSubview {
-  if (value === "assessment" || value === "signals" || value === "history" || value === "plan" || value === "report" || value === "console") {
+  if (value === "assessment" || value === "signals" || value === "history" || value === "plan" || value === "diagnosis" || value === "console") {
     return value;
+  }
+  if (value === "report") {
+    return "diagnosis";
   }
   return "overview";
 }
@@ -442,8 +440,8 @@ function ctaFor(value: string) {
       return "Go to assessment";
     case "signals":
       return "Review signals";
-    case "report":
-      return "Open report";
+    case "diagnosis":
+      return "Open diagnosis";
     case "plan":
       return "Open plan";
     case "history":
@@ -470,10 +468,10 @@ function describeNextStep({
     return "No assessment saved yet. Start by capturing what is actually happening in the venue.";
   }
   if (!selectedEngineRun) {
-    return "The venue has assessment history but no current report loaded. Run the engine and generate the diagnostic read.";
+    return "The venue has assessment history but no current diagnosis loaded. Run the engine and generate the diagnostic read.";
   }
   if (!latestPlan) {
-    return "A report exists, but the plan has not materialized cleanly yet. Open the report and move into execution.";
+    return "A diagnosis exists, but the plan has not materialized cleanly yet. Open the diagnosis and move into execution.";
   }
   if ((executionSummary?.next_executable_tasks.length ?? 0) > 0) {
     return "There are ready tasks waiting. The fastest value now is to continue execution, not reopen diagnosis.";

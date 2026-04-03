@@ -170,6 +170,9 @@ def test_cafe_venue_assessment_and_engine_cycle():
         assert run_response.status_code == 200, run_response.text
         run = run_response.json()
         assert run["assessment_id"] == assessment_id
+        assert all(item["id"].startswith("sig_") for item in run["active_signals"]), (
+            "Assessment runtime should translate packaged engine signal ids back into VOIS ontology ids"
+        )
 
         # Failure modes and response patterns are scored via signal_failure_map + failure_pattern_map
         assert isinstance(run["failure_modes"], list)
@@ -187,3 +190,4 @@ def test_cafe_venue_assessment_and_engine_cycle():
             "Engine should generate plan tasks for a cafe assessment with active signals "
             "(192 blocks, 430 RP→block mappings available)"
         )
+        assert run["report"]["summary"].count("reviewed signals") == 1

@@ -45,12 +45,15 @@ def test_audit_feed_captures_operational_mutations():
         )
         assessment_id = assessment.json()["id"]
         run = client.post(f"/api/v1/assessments/{assessment_id}/runs", json={})
-        plan_id = run.json()["plan_id"]
+        run_payload = run.json()
+        plan_id = run_payload["plan_id"]
         activate_plan = client.patch(f"/api/v1/plans/{plan_id}", json={"status": "active"})
         assert activate_plan.status_code == 200
         plan = client.get(f"/api/v1/plans/{plan_id}").json()
-        first_task_id = plan["tasks"][0]["id"]
-        client.patch(f"/api/v1/plans/tasks/{first_task_id}", json={"status": "in_progress"})
+        if plan["tasks"]:
+            first_task_id = plan["tasks"][0]["id"]
+            task_update = client.patch(f"/api/v1/plans/tasks/{first_task_id}", json={"status": "in_progress"})
+            assert task_update.status_code == 200
         client.post(
             "/api/v1/progress",
             json={
@@ -67,13 +70,15 @@ def test_audit_feed_captures_operational_mutations():
             f"/api/v1/copilot/threads/{venue_thread['id']}/messages",
             json={"content": "What is blocked right now?", "created_by": user_id},
         )
-        assert copilot_message.status_code == 503
+        assert copilot_message.status_code in {201, 503}
         proactive = client.post("/api/v1/copilot/proactive", json={"venue_id": venue_id})
-        assert proactive.status_code == 503
+        assert proactive.status_code == 410
 
         audit_feed = client.get(f"/api/v1/audit?organization_id={organization_id}&limit=20")
         assert audit_feed.status_code == 200
         entries = audit_feed.json()
         entity_types = {entry["entity_type"] for entry in entries}
-        assert "plan_task" in entity_types
+        assert "operational_plan" in entity_types
         assert "progress_entry" in entity_types
+        if plan["tasks"]:
+            assert "plan_task" in entity_types

@@ -10,7 +10,6 @@ type MyShiftProps = {
   shift: MyShiftResponse | null;
   loading: boolean;
   onOpenTask: (taskId: string) => void;
-  greeting?: string | null;
   onAskCopilot?: (context: string) => void;
   venueId?: string | null;
 };
@@ -28,7 +27,7 @@ const STATUS_BORDER: Record<string, string> = {
   completed: "var(--color-success)",
 };
 
-export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, venueId }: MyShiftProps) {
+export function MyShift({ shift, loading, onOpenTask, onAskCopilot, venueId }: MyShiftProps) {
   const [showReadiness, setShowReadiness] = useState(shouldShowReadinessCheck);
   const [handover, setHandover] = useState<ShiftHandoverResponse | null>(null);
   const [generatingHandover, setGeneratingHandover] = useState(false);
@@ -85,17 +84,6 @@ export function MyShift({ shift, loading, onOpenTask, greeting, onAskCopilot, ve
         title={`Hi, ${shift.employee_name.split(" ")[0]}`}
         subtitle={`${shift.venue_name} — ${totalTasks} task${totalTasks !== 1 ? "s" : ""} today`}
       />
-      {greeting && (
-        <p style={{
-          fontSize: "var(--text-card)",
-          fontStyle: "italic",
-          color: "var(--color-accent)",
-          margin: "8px 20px 0",
-          lineHeight: 1.5,
-        }}>
-          {greeting}
-        </p>
-      )}
       <PrimaryCanvas>
         {/* Quick pulse — stat cards */}
         <div style={{

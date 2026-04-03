@@ -166,10 +166,12 @@ Additional auth settings:
 - `AUTH_PROVIDER`
 - `ALLOW_LOCAL_PASSWORD_AUTH`
 - `AUTH_AUTO_PROVISION_USERS`
+  Compatibility/dev-only. Normal runtime remains empty-by-default.
 - `SEED_OWNER_EMAIL`
 - `SEED_MANAGER_EMAIL`
 - `SEED_BARISTA_EMAIL`
 - `SEED_DEVELOPER_EMAIL`
+  Used by explicit launch-account tooling or dev-only seed/import paths, not by normal boot.
 - `FIREBASE_PROJECT_ID`
 - `FIREBASE_WEB_API_KEY`
 - `FIREBASE_AUTH_DOMAIN`

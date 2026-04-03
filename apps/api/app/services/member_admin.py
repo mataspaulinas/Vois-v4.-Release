@@ -13,6 +13,7 @@ from app.auth.firebase_admin import (
     update_user_password,
     upsert_email_password_user,
 )
+from app.core.config import get_settings
 from app.models.domain import (
     AuthRole,
     Organization,
@@ -36,6 +37,7 @@ from app.services.access_control import (
     set_venue_access_assignments,
     sync_user_access_pointers,
 )
+from app.services.auth_entry import issue_workspace_invite
 from app.services.audit import record_audit_entry
 from app.services.auth import hash_password
 from app.services.workspace_setup import ensure_global_thread, serialize_membership
@@ -113,7 +115,7 @@ def create_member(
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Owner and developer accounts do not accept venue assignments")
 
     temporary_password = generate_temporary_password()
-    firebase_record = _provision_firebase_identity(
+    firebase_uid = _provision_firebase_identity(
         email=payload.email.lower(),
         full_name=payload.full_name,
         password=temporary_password,
@@ -124,7 +126,7 @@ def create_member(
     user = existing or User(
         organization_id=organization.id,
         venue_id=None,
-        firebase_uid=firebase_record.uid,
+        firebase_uid=firebase_uid,
         email=payload.email.lower(),
         full_name=payload.full_name,
         role=_legacy_role(payload.role),
@@ -135,10 +137,11 @@ def create_member(
         db.add(user)
         db.flush()
     else:
+        preserved_firebase_uid = existing.firebase_uid
         user.organization_id = organization.id
         user.email = payload.email.lower()
         user.full_name = payload.full_name
-        user.firebase_uid = firebase_record.uid
+        user.firebase_uid = firebase_uid if firebase_uid is not None else preserved_firebase_uid
         user.role = _legacy_role(payload.role)
         user.password_hash = hash_password(temporary_password)
         user.is_active = True
@@ -159,6 +162,14 @@ def create_member(
     )
     ensure_global_thread(db, organization_id=organization.id)
     sync_user_access_pointers(db, user=user)
+    invite_url, invite_expires_at = issue_workspace_invite(
+        db,
+        organization_id=organization.id,
+        user=user,
+        role_claim=payload.role,
+        venue_ids=venue_ids,
+        invited_by_user_id=actor_user_id,
+    )
 
     record_audit_entry(
         db,
@@ -177,6 +188,8 @@ def create_member(
             temporary_password=temporary_password,
             reset_required=True,
             firebase_uid=user.firebase_uid,
+            invite_url=invite_url,
+            invite_expires_at=invite_expires_at,
         ),
     )
 
@@ -243,10 +256,33 @@ def reset_member_login(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
 
     temporary_password = generate_temporary_password()
-    if user.firebase_uid is None:
-        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="This user has no Firebase identity to reset")
-    update_user_password(user.firebase_uid, password=temporary_password)
+    if user.firebase_uid is not None:
+        try:
+            update_user_password(user.firebase_uid, password=temporary_password)
+        except FirebaseAdminConfigurationError as exc:
+            if not get_settings().allow_local_password_auth:
+                raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=str(exc)) from exc
+        except Exception as exc:  # pragma: no cover - SDK runtime posture
+            if not get_settings().allow_local_password_auth:
+                raise HTTPException(
+                    status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                    detail=f"Firebase login reset failed: {exc}",
+                ) from exc
     user.password_hash = hash_password(temporary_password)
+    assignments = list_active_venue_assignments(
+        db,
+        user_id=user.id,
+        organization_id=organization.id,
+    )
+    role_claim = membership.role_claim
+    invite_url, invite_expires_at = issue_workspace_invite(
+        db,
+        organization_id=organization.id,
+        user=user,
+        role_claim=role_claim,
+        venue_ids=[assignment.venue_id for assignment in assignments],
+        invited_by_user_id=actor_user_id,
+    )
 
     record_audit_entry(
         db,
@@ -263,6 +299,8 @@ def reset_member_login(
         temporary_password=temporary_password,
         reset_required=True,
         firebase_uid=user.firebase_uid,
+        invite_url=invite_url,
+        invite_expires_at=invite_expires_at,
     )
 
 
@@ -375,10 +413,14 @@ def _provision_firebase_identity(
     try:
         record = upsert_email_password_user(email=email, display_name=full_name, password=password)
         set_custom_claims(record.uid, {firebase_role_claim_key: role.value})
-        return record
+        return record.uid
     except FirebaseAdminConfigurationError as exc:
+        if get_settings().allow_local_password_auth:
+            return None
         raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=str(exc)) from exc
     except Exception as exc:  # pragma: no cover - SDK runtime posture
+        if get_settings().allow_local_password_auth:
+            return None
         raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=f"Firebase provisioning failed: {exc}") from exc
 
 

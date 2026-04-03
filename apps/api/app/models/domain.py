@@ -52,6 +52,21 @@ class ThreadScope(StrEnum):
     HELP_REQUEST = "help_request"
 
 
+class CopilotThreadVisibility(StrEnum):
+    SHARED = "shared"
+    PRIVATE = "private"
+
+
+class CopilotContextKind(StrEnum):
+    PORTFOLIO = "portfolio"
+    VENUE = "venue"
+    ASSESSMENT = "assessment"
+    PLAN = "plan"
+    HELP_REQUEST = "help_request"
+    REPORT = "report"
+    GENERAL = "general"
+
+
 class CopilotAuthorRole(StrEnum):
     USER = "user"
     ASSISTANT = "assistant"
@@ -225,6 +240,25 @@ class VenueAccessAssignment(Base):
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now, onupdate=utc_now)
 
 
+class WorkspaceInvite(Base):
+    __tablename__ = "workspace_invites"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid4()))
+    organization_id: Mapped[str] = mapped_column(ForeignKey("organizations.id"), index=True)
+    user_id: Mapped[str | None] = mapped_column(ForeignKey("users.id"), nullable=True, index=True)
+    invited_by_user_id: Mapped[str | None] = mapped_column(ForeignKey("users.id"), nullable=True)
+    accepted_by_user_id: Mapped[str | None] = mapped_column(ForeignKey("users.id"), nullable=True)
+    email: Mapped[str] = mapped_column(String(255), index=True)
+    full_name: Mapped[str] = mapped_column(String(255))
+    role_claim: Mapped[AuthRole] = mapped_column(Enum(AuthRole))
+    venue_ids: Mapped[list[str]] = mapped_column(JSON, default=list)
+    token_hash: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    accepted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    revoked_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
+
+
 class VenueOntologyBinding(Base):
     __tablename__ = "venue_ontology_bindings"
 
@@ -247,6 +281,8 @@ class Assessment(Base):
     created_by: Mapped[str | None] = mapped_column(ForeignKey("users.id"), nullable=True)
     notes: Mapped[str | None] = mapped_column(Text, nullable=True)
     assessment_type: Mapped[str] = mapped_column(String(64), default="full_diagnostic")
+    triage_enabled: Mapped[bool] = mapped_column(Boolean, default=False)
+    triage_intensity: Mapped[str | None] = mapped_column(String(16), nullable=True)
     assessment_date: Mapped[str | None] = mapped_column(String(32), nullable=True)
     selected_signal_ids: Mapped[list[str]] = mapped_column(JSON, default=list)
     signal_states: Mapped[dict] = mapped_column(JSON, default=dict)
@@ -384,9 +420,25 @@ class CopilotThread(Base):
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid4()))
     organization_id: Mapped[str] = mapped_column(ForeignKey("organizations.id"), index=True)
     venue_id: Mapped[str | None] = mapped_column(ForeignKey("venues.id"), nullable=True)
+    owner_user_id: Mapped[str | None] = mapped_column(ForeignKey("users.id"), nullable=True, index=True)
     title: Mapped[str] = mapped_column(String(255))
     scope: Mapped[ThreadScope] = mapped_column(Enum(ThreadScope), default=ThreadScope.VENUE)
+    visibility: Mapped[CopilotThreadVisibility] = mapped_column(
+        Enum(CopilotThreadVisibility),
+        default=CopilotThreadVisibility.SHARED,
+        index=True,
+    )
+    context_kind: Mapped[CopilotContextKind] = mapped_column(
+        Enum(CopilotContextKind),
+        default=CopilotContextKind.GENERAL,
+        index=True,
+    )
+    context_id: Mapped[str | None] = mapped_column(String(36), nullable=True, index=True)
+    pinned: Mapped[bool] = mapped_column(Boolean, default=False)
     archived: Mapped[bool] = mapped_column(Boolean, default=False)
+    archived_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    deleted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    last_activity_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now, index=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
 
 
@@ -404,6 +456,38 @@ class CopilotMessage(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
 
 
+class CopilotThreadParticipant(Base):
+    __tablename__ = "copilot_thread_participants"
+    __table_args__ = (
+        UniqueConstraint("thread_id", "user_id", name="uq_copilot_thread_participants_thread_user"),
+    )
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid4()))
+    thread_id: Mapped[str] = mapped_column(ForeignKey("copilot_threads.id"), index=True)
+    user_id: Mapped[str] = mapped_column(ForeignKey("users.id"), index=True)
+    last_read_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    joined_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now, onupdate=utc_now)
+
+
+class CopilotActionRecord(Base):
+    __tablename__ = "copilot_action_records"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid4()))
+    organization_id: Mapped[str] = mapped_column(ForeignKey("organizations.id"), index=True)
+    thread_id: Mapped[str] = mapped_column(ForeignKey("copilot_threads.id"), index=True)
+    source_message_id: Mapped[str | None] = mapped_column(ForeignKey("copilot_messages.id"), nullable=True, index=True)
+    actor_user_id: Mapped[str | None] = mapped_column(ForeignKey("users.id"), nullable=True, index=True)
+    action_type: Mapped[str] = mapped_column(String(64), index=True)
+    mode: Mapped[str] = mapped_column(String(32))
+    title: Mapped[str] = mapped_column(String(255))
+    summary: Mapped[str | None] = mapped_column(Text, nullable=True)
+    target_artifact_type: Mapped[str | None] = mapped_column(String(64), nullable=True, index=True)
+    target_artifact_id: Mapped[str | None] = mapped_column(String(128), nullable=True, index=True)
+    payload: Mapped[dict] = mapped_column(JSON, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now, index=True)
+
+
 class UserSession(Base):
     __tablename__ = "user_sessions"
 
@@ -415,6 +499,19 @@ class UserSession(Base):
     expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     revoked_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     last_seen_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
+
+
+class PasswordResetRequest(Base):
+    __tablename__ = "password_reset_requests"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid4()))
+    user_id: Mapped[str] = mapped_column(ForeignKey("users.id"), index=True)
+    email: Mapped[str] = mapped_column(String(255), index=True)
+    token_hash: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    consumed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    delivery_mode: Mapped[str] = mapped_column(String(64), default="manual")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
 
 

@@ -1,7 +1,14 @@
 import { useState, useMemo } from "react";
-import { SectionCard } from "../../components/SectionCard";
 import { AssessmentRecord, IntakePreviewResponse, OntologyBundleResponse } from "../../lib/api";
 import Icon from "../../components/Icon";
+import {
+  ASSESSMENT_TYPE_ORDER,
+  getAssessmentTypeDefinition,
+  type AssessmentTypeKey,
+  TRIAGE_INTENSITY_ORDER,
+  normalizeAssessmentTriageSettings,
+  type TriageIntensity,
+} from "../assessment/assessmentTypes";
 
 type SampleIntakeNote = {
   id: string;
@@ -11,6 +18,9 @@ type SampleIntakeNote = {
 
 type AssessmentViewProps = {
   intakeText: string;
+  assessmentType: AssessmentTypeKey;
+  triageEnabled: boolean;
+  triageIntensity: TriageIntensity | null;
   intakePreview: IntakePreviewResponse | null;
   inferredSignalCount: number;
   rejectedSignalIds: Set<string>;
@@ -26,6 +36,9 @@ type AssessmentViewProps = {
   savingAssessment: boolean;
   runningEngine: boolean;
   onIntakeChange: (value: string) => void;
+  onAssessmentTypeChange: (value: AssessmentTypeKey) => void;
+  onTriageEnabledChange: (value: boolean) => void;
+  onTriageIntensityChange: (value: TriageIntensity) => void;
   onLoadSample: (value: string) => void;
   onAnalyze: () => void;
   onSaveAssessment: () => void;
@@ -46,6 +59,9 @@ type AssessmentViewProps = {
 
 export function AssessmentView({
   intakeText,
+  assessmentType,
+  triageEnabled,
+  triageIntensity,
   intakePreview,
   inferredSignalCount,
   rejectedSignalIds,
@@ -61,6 +77,9 @@ export function AssessmentView({
   savingAssessment,
   runningEngine,
   onIntakeChange,
+  onAssessmentTypeChange,
+  onTriageEnabledChange,
+  onTriageIntensityChange,
   onLoadSample,
   onAnalyze,
   onSaveAssessment,
@@ -80,6 +99,10 @@ export function AssessmentView({
 }: AssessmentViewProps) {
   const [signalBrowseOpen, setSignalBrowseOpen] = useState(false);
   const [signalSearch, setSignalSearch] = useState("");
+  const assessmentTypeDefinition = getAssessmentTypeDefinition(assessmentType);
+  const triageSettings = normalizeAssessmentTriageSettings(assessmentType, triageEnabled, triageIntensity);
+  const triageLocked = triageSettings.locked;
+  const currentTriageIntensity = triageSettings.intensity ?? assessmentTypeDefinition.defaultTriageIntensity ?? "balanced";
 
   const detectedSignalIds = new Set((intakePreview?.detected_signals ?? []).map((s) => s.signal_id));
 
@@ -104,7 +127,7 @@ export function AssessmentView({
     { label: "Infer", done: (intakePreview?.detected_signals.length ?? 0) > 0 || manuallyAddedSignalIds.size > 0, note: "Signals identified from evidence." },
     { label: "Review", done: inferredSignalCount > 0, note: "Signal set confirmed for assessment." },
     { label: "Save", done: Boolean(savedAssessment), note: "Assessment confirmed and reviewable." },
-    { label: "Run", done: Boolean(latestEngineRunAt), note: "Diagnostic report generated." },
+    { label: "Run", done: Boolean(latestEngineRunAt), note: "Diagnosis generated." },
   ];
 
   const busy = analyzingIntake || savingAssessment || runningEngine;
@@ -124,6 +147,14 @@ export function AssessmentView({
   const descStyle: React.CSSProperties = {
     fontSize: "var(--text-small)", color: "var(--color-text-muted)", margin: "0 0 16px", lineHeight: 1.5,
   };
+  const mutedTagStyle: React.CSSProperties = {
+    fontSize: "var(--text-eyebrow)",
+    padding: "2px 10px",
+    borderRadius: 24,
+    background: "var(--color-surface-subtle)",
+    color: "var(--color-text-secondary)",
+    fontWeight: 600,
+  };
   const btnPrimary: React.CSSProperties = {
     background: "var(--color-accent)", color: "var(--color-surface)", border: "none", borderRadius: "var(--radius-sm)",
     padding: "8px 18px", fontSize: "var(--text-small)", fontWeight: 600, cursor: "pointer",
@@ -139,6 +170,11 @@ export function AssessmentView({
     display: "flex", justifyContent: "space-between", alignItems: "center",
     padding: "6px 0", borderBottom: "1px solid var(--color-surface-subtle)",
   };
+  const triageBadgeLabel = triageLocked
+    ? `${triageSettings.enabled ? "Triage locked on" : "Triage locked off"}`
+    : triageSettings.enabled
+      ? `Triage ${currentTriageIntensity}`
+      : "Triage off";
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 32, padding: "48px", maxWidth: 960, margin: "0 auto" }}>
@@ -238,8 +274,207 @@ export function AssessmentView({
           <div style={eyebrowStyle}>Assessment</div>
           <div style={sectionTitle}>Observed evidence</div>
           <p style={descStyle}>
-            Paste what actually happened. OIS stages the evidence through AI intake first, then saves a reviewable assessment.
+            Choose the visit type first, then write what actually happened. VOIS stages the evidence through AI intake before you save a reviewable assessment.
           </p>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 20 }}>
+            <div>
+              <div style={{ ...eyebrowStyle, marginBottom: 6 }}>Visit Type</div>
+              <div style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)" }}>
+                What kind of visit is this?
+              </div>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 8 }}>
+              {ASSESSMENT_TYPE_ORDER.map((typeKey) => {
+                const typeDefinition = getAssessmentTypeDefinition(typeKey);
+                const active = typeDefinition.id === assessmentTypeDefinition.id;
+                return (
+                  <button
+                    key={typeDefinition.id}
+                    type="button"
+                    onClick={() => onAssessmentTypeChange(typeDefinition.id)}
+                    disabled={busy}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 10,
+                      padding: "12px 14px",
+                      borderRadius: "var(--radius-md)",
+                      border: active ? "1.5px solid var(--color-accent)" : "1px solid var(--color-border-subtle)",
+                      background: active ? "var(--color-accent-soft)" : "var(--color-surface)",
+                      color: "var(--color-text-primary)",
+                      cursor: busy ? "not-allowed" : "pointer",
+                      opacity: busy ? 0.7 : 1,
+                      textAlign: "left",
+                    }}
+                  >
+                    <span
+                      style={{
+                        width: 28,
+                        height: 28,
+                        borderRadius: 999,
+                        display: "inline-flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                        background: active ? "var(--color-accent)" : "var(--color-surface-subtle)",
+                        color: active ? "var(--color-surface)" : "var(--color-text-secondary)",
+                      }}
+                    >
+                      <Icon name={typeDefinition.icon} size={14} color="currentColor" />
+                    </span>
+                    <span style={{ fontSize: "var(--text-small)", fontWeight: 600 }}>{typeDefinition.name}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div
+              style={{
+                padding: "16px 18px",
+                borderRadius: "var(--radius-md)",
+                border: "1px solid var(--color-border-subtle)",
+                background: "var(--color-surface-subtle)",
+                display: "flex",
+                flexDirection: "column",
+                gap: 12,
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", gap: 12, alignItems: "flex-start", flexWrap: "wrap" }}>
+                <div>
+                  <div style={{ fontSize: "var(--text-card)", fontWeight: 700, color: "var(--color-text-primary)" }}>
+                    {assessmentTypeDefinition.name}
+                  </div>
+                  <div style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", marginTop: 2 }}>
+                    {assessmentTypeDefinition.tagline}
+                  </div>
+                </div>
+                <span style={mutedTagStyle}>{triageBadgeLabel}</span>
+              </div>
+
+              <div style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
+                <strong style={{ color: "var(--color-text-primary)" }}>When to use:</strong> {assessmentTypeDefinition.when}
+              </div>
+              <div style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
+                <strong style={{ color: "var(--color-text-primary)" }}>AI focus:</strong> {assessmentTypeDefinition.aiFocus}
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 8 }}>
+                <div style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
+                  <strong style={{ color: "var(--color-text-primary)" }}>Report format:</strong> {assessmentTypeDefinition.reportStyle}
+                </div>
+                <div style={{ fontSize: "var(--text-small)", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
+                  <strong style={{ color: "var(--color-text-primary)" }}>Triage:</strong> {assessmentTypeDefinition.triageNote}
+                </div>
+              </div>
+
+              <div
+                style={{
+                  padding: "14px 16px",
+                  borderRadius: "var(--radius-md)",
+                  border: "1px solid var(--color-border-subtle)",
+                  background: "var(--color-surface)",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 12,
+                }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", gap: 12, alignItems: "flex-start", flexWrap: "wrap" }}>
+                  <div>
+                    <div style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-primary)" }}>
+                      Triage control
+                    </div>
+                    <div style={{ fontSize: "var(--text-eyebrow)", color: "var(--color-text-muted)", marginTop: 2 }}>
+                      Capacity trimming is now a real assessment setting and is saved with the run.
+                    </div>
+                  </div>
+                  <span style={mutedTagStyle}>{triageBadgeLabel}</span>
+                </div>
+
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                  {([
+                    { value: false, label: "Triage off" },
+                    { value: true, label: "Triage on" },
+                  ] as const).map((option) => {
+                    const active = triageSettings.enabled === option.value;
+                    return (
+                      <button
+                        key={option.label}
+                        type="button"
+                        onClick={() => onTriageEnabledChange(option.value)}
+                        disabled={busy || triageLocked}
+                        style={{
+                          padding: "8px 12px",
+                          borderRadius: "var(--radius-sm)",
+                          border: active ? "1.5px solid var(--color-accent)" : "1px solid var(--color-border-subtle)",
+                          background: active ? "var(--color-accent-soft)" : "var(--color-surface-subtle)",
+                          color: "var(--color-text-primary)",
+                          fontSize: "var(--text-small)",
+                          fontWeight: 600,
+                          cursor: busy || triageLocked ? "not-allowed" : "pointer",
+                          opacity: busy || triageLocked ? 0.7 : 1,
+                        }}
+                      >
+                        {option.label}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                  {TRIAGE_INTENSITY_ORDER.map((intensityOption) => {
+                    const active = triageSettings.enabled && currentTriageIntensity === intensityOption;
+                    const disabled = busy || triageLocked || !triageSettings.enabled;
+                    return (
+                      <button
+                        key={intensityOption}
+                        type="button"
+                        onClick={() => onTriageIntensityChange(intensityOption)}
+                        disabled={disabled}
+                        style={{
+                          padding: "8px 12px",
+                          borderRadius: "var(--radius-sm)",
+                          border: active ? "1.5px solid var(--color-accent)" : "1px solid var(--color-border-subtle)",
+                          background: active ? "var(--color-accent-soft)" : "var(--color-surface)",
+                          color: active ? "var(--color-accent)" : "var(--color-text-secondary)",
+                          fontSize: "var(--text-small)",
+                          fontWeight: 600,
+                          textTransform: "capitalize",
+                          cursor: disabled ? "not-allowed" : "pointer",
+                          opacity: disabled ? 0.55 : 1,
+                        }}
+                      >
+                        {intensityOption}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                <div style={{ fontSize: "var(--text-eyebrow)", color: "var(--color-text-muted)", lineHeight: 1.5 }}>
+                  {triageLocked
+                    ? assessmentType === "incident"
+                      ? "Incident assessments stay focused by design so the engine reconstructs the cause chain without drifting into broad optimization."
+                      : "Pre-opening gate assessments stay untriaged so readiness blockers and warnings remain fully visible."
+                    : triageSettings.enabled
+                      ? `The engine will constrain the generated plan against venue capacity using ${currentTriageIntensity} triage.`
+                      : "The engine will show the full generated plan without trimming for venue capacity."}
+                </div>
+              </div>
+
+              <div>
+                <div style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: 6 }}>
+                  Tips for this assessment type
+                </div>
+                <ul style={{ margin: 0, paddingLeft: 18, color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
+                  {assessmentTypeDefinition.tips.map((tip) => (
+                    <li key={tip} style={{ fontSize: "var(--text-small)" }}>
+                      {tip}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
 
           {/* Action buttons */}
           <div style={{ display: "flex", gap: 8, marginBottom: 16 }}>
@@ -277,8 +512,9 @@ export function AssessmentView({
                 </div>
                 <button
                   onClick={() => onAskCopilot(
-                    `I'm about to write an operational assessment for this venue. ` +
+                    `I'm about to write a ${assessmentTypeDefinition.name} operational assessment for this venue. ` +
                     `${inferredSignalCount > 0 ? `Current signals detected: ${inferredSignalCount}. ` : ""}` +
+                    `The intended AI focus is: ${assessmentTypeDefinition.aiFocus} ` +
                     `What should I focus on observing today? What evidence would be most valuable to capture? ` +
                     `Give me specific things to look for and write about.`
                   )}
@@ -308,7 +544,7 @@ export function AssessmentView({
           <textarea
             value={intakeText}
             onChange={(event) => onIntakeChange(event.target.value)}
-            placeholder="Paste reviews, audit notes, consultant observations, complaints, or field reports..."
+            placeholder={assessmentTypeDefinition.placeholder}
             style={{
               width: "100%", minHeight: 220, resize: "vertical",
               fontFamily: "inherit", fontSize: "var(--text-body)", lineHeight: 1.6,
@@ -618,12 +854,17 @@ export function AssessmentView({
               onClick={onOpenReport}
               disabled={!latestEngineRunAt}
             >
-              Open report
+              Open diagnosis
             </button>
           </div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={rowStyle}>
+            <span style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-secondary)" }}>Assessment type</span>
+            <span style={{ fontSize: "var(--text-small)", color: "var(--color-text-primary)" }}>{assessmentTypeDefinition.name}</span>
+          </div>
+
           {/* Confirmed signals */}
           <div style={rowStyle}>
             <span style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-secondary)" }}>Confirmed signals</span>
@@ -653,6 +894,14 @@ export function AssessmentView({
           )}
 
           {/* Ontology version */}
+          <div style={rowStyle}>
+            <span style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-secondary)" }}>Triage mode</span>
+            <span style={{ fontSize: "var(--text-small)", color: "var(--color-text-primary)", textTransform: "capitalize" }}>
+              {triageSettings.enabled ? currentTriageIntensity : "off"}
+              {triageLocked ? " (locked)" : ""}
+            </span>
+          </div>
+
           <div style={rowStyle}>
             <span style={{ fontSize: "var(--text-small)", fontWeight: 600, color: "var(--color-text-secondary)" }}>Ontology version</span>
             <span style={{ fontSize: "var(--text-small)", color: "var(--color-text-primary)" }}>{intakePreview?.ontology_version ?? "pending"}</span>

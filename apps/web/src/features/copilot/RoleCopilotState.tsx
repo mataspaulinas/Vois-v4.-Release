@@ -16,11 +16,11 @@ export function RoleCopilotState({
   return (
     <SectionCard
       eyebrow="VOIS"
-      title={`${roleLabel} copilot`}
+      title={`${roleLabel} thread workspace`}
       description={
         venueName
-          ? `Use VOIS from the persisted ${venueName} thread context instead of relying on synthetic advisor copy.`
-          : "Use VOIS from the persisted workspace thread context instead of relying on synthetic advisor copy."
+          ? `Open the saved thread workspace for ${venueName}.`
+          : "Open the saved thread workspace for this role."
       }
     >
       <div
@@ -42,7 +42,7 @@ export function RoleCopilotState({
             margin: "0 0 var(--spacing-8)",
           }}
         >
-          Copilot status
+          Thread status
         </p>
         <h3
           style={{
@@ -54,7 +54,7 @@ export function RoleCopilotState({
             margin: "0 0 var(--spacing-8)",
           }}
         >
-          {unavailableMessage ? "Unavailable" : "Ready to open"}
+          {unavailableMessage ? "Unavailable" : "Available"}
         </h3>
         <p
           style={{
@@ -65,7 +65,7 @@ export function RoleCopilotState({
           }}
         >
           {unavailableMessage ??
-            "Open the live VOIS thread drawer to work against real portfolio or venue context, persisted history, and the mounted ontology."}
+            "Open saved threads grounded in current workspace state, history, files, and mounted ontology context."}
         </p>
         <button
           onClick={onOpenCopilot}
@@ -81,7 +81,7 @@ export function RoleCopilotState({
             transition: "background var(--motion-fast) var(--easing-standard)",
           }}
         >
-          Open VOIS
+          Open threads
         </button>
       </div>
     </SectionCard>
