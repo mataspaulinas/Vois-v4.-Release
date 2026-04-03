@@ -32,6 +32,8 @@ export function buildHash(route: ShellRoute): string {
       return `#/reference/${route.referenceView}`;
     case "kb":
       return "#/kb";
+    case "help":
+      return "#/help";
     case "settings":
       return "#/settings";
     case "manager":
@@ -70,6 +72,10 @@ export function parseHash(hash: string, fallbackVenueId?: string | null): ShellR
 
   if (parts[0] === "kb") {
     return { topLevelView: "kb" };
+  }
+
+  if (parts[0] === "help") {
+    return { topLevelView: "help" };
   }
 
   if (parts[0] === "manager") {

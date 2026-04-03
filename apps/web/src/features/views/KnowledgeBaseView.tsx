@@ -1,399 +1,1069 @@
-import { useMemo } from "react";
-import {
-  IntegrationConnectorRecord,
-  IntegrationHealthSummary,
-  OntologyAlignmentSummaryResponse,
-  OntologyAuthoringBriefResponse,
-  OntologyBundleResponse,
-  OntologyEvaluationPackResult,
-  OntologyEvaluationPackSummary,
-  OntologyGovernanceSummaryResponse,
-} from "../../lib/api";
-import { Glossary } from "../kb/Glossary";
-import { KBArticle, ReadingEngine } from "../kb/ReadingEngine";
+import { useState, useEffect, useMemo, useCallback } from "react";
+import { KBArticleRecord, fetchKBArticle } from "../../lib/api";
+import Icon from "../../components/Icon";
+// SectionCard intentionally not used — sidebar cards use lightweight wrappers
 
-const productHelpArticles: KBArticle[] = [
-  {
-    id: "help-owner-setup",
-    title: "Getting started as an Owner",
-    summary: "Claim the workspace, create venues, bind ontology packs, and provision team access.",
-    body: "VOIS starts empty by default. The first authenticated owner claims the workspace by creating an organization and optionally attaching the first venue with an ontology pack binding. After claiming, the owner provisions venues, assigns team members, and manages ontology bindings. The system waits for you to shape it — there are no demo assumptions in normal runtime.",
-    tags: ["Owner", "Setup", "Getting started"],
-    category: "product_help",
-    relatedIds: ["help-assessment", "help-plans"],
-  },
-  {
-    id: "help-assessment",
-    title: "Running your first assessment",
-    summary: "Capture evidence, run AI intake, review signals, save the assessment, then run the engine.",
-    body: "The assessment flow follows five stages: Observe (capture raw evidence), Infer (AI detects signals from evidence), Review (confirm or reject machine interpretation), Save (persist the reviewed assessment), Run (generate the diagnosis and draft plan). The intake quality bar shows whether your evidence is rich enough for meaningful signal detection. After AI intake, move to Signal Review for detailed inspection before saving.",
-    tags: ["Manager", "Assessment", "Workflow"],
-    category: "product_help",
-    relatedIds: ["help-signals", "help-plans"],
-  },
-  {
-    id: "help-signals",
-    title: "Reviewing signals before diagnosis",
-    summary: "The machine proposes, the human reviews. Confirm, reject, or manually add signals.",
-    body: "Signals Review is the accountability layer between AI interpretation and downstream diagnosis. Each signal can be confirmed, rejected, or manually added. The downstream impact panel shows which failure modes, response patterns, and intervention blocks each signal activates. Reviewed signals become the authoritative interpreted set for the assessment cycle. Nothing silently bypasses this layer.",
-    tags: ["Manager", "Signals", "Review"],
-    category: "product_help",
-    relatedIds: ["help-assessment", "help-plans"],
-  },
-  {
-    id: "help-plans",
-    title: "Understanding active vs draft plans",
-    summary: "A draft plan is review-only. Only explicit activation makes it the execution truth.",
-    body: "The engine generates draft plans from the diagnostic output. A draft plan cannot be executed — it exists for review only. Explicit activation promotes it to the active plan, which becomes the sole execution truth. When a new plan is activated, the previous active plan is archived. Task status changes, sub-action completions, and deliverable tracking are only allowed on the active plan. This protects execution from accidental drift.",
-    tags: ["Manager", "Plans", "Truth"],
-    category: "product_help",
-    relatedIds: ["help-assessment", "help-pocket"],
-  },
-  {
-    id: "help-pocket",
-    title: "Using Pocket as a team member",
-    summary: "My Shift, standards lookup, help requests, and report/log flows.",
-    body: "Pocket is the team member's operating surface. My Shift shows current task assignments and shift context. Standards provides procedural guidance for the active venue. Help lets you submit help requests that route to managers. Report Something and My Log support friction reporting and personal shift notes. Pocket is touch-first and focused on what you need to do right now — it does not expose the full venue workspace.",
-    tags: ["Barista", "Pocket", "Shift"],
-    category: "product_help",
-    relatedIds: ["help-owner-setup"],
-  },
-];
-
-const guidanceArticles: KBArticle[] = [
-  {
-    id: "doctrine-universal",
-    title: "Universal Service Operations Doctrine",
-    summary: "The product is built around a universal service grammar: signals, failure families, response logic, sequencing, and verification across service industries.",
-    body: "VOIS operates on the premise that all service operations share a common grammar: signals indicate operational reality, failure modes describe systemic breakdowns, response patterns prescribe corrections, and intervention blocks are the atomic units of execution. This grammar is universal — it applies across hospitality, healthcare, retail, and other service industries. Each industry provides its own vocabulary through ontology packs, but the operational machine remains the same.",
-    tags: ["Doctrine", "Core", "Cross-industry"],
-    category: "doctrine",
-    relatedIds: ["doctrine-architecture", "doctrine-ai"],
-  },
-  {
-    id: "doctrine-architecture",
-    title: "Core vs Adapter Architecture",
-    summary: "A mounted sector pack is not the identity of the system. The platform core stays universal while each service industry gets its own surface language.",
-    body: "The platform separates into OIS Core (the universal operational machine) and mountable Ontology Packs (industry-specific meaning). Core owns workflows, persistence, auth, roles, and execution truth. Packs own signals, failure modes, response patterns, blocks, tools, standards, and domain reference content. A venue binds explicitly to one ontology pack, and that binding determines the domain vocabulary for all operations within it. Historical artifacts preserve the exact ontology identity they were created under.",
-    tags: ["Architecture", "Adapters", "Scalability"],
-    category: "doctrine",
-    relatedIds: ["doctrine-universal", "doctrine-ontology"],
-  },
-  {
-    id: "doctrine-ai",
-    title: "AI Control Plane",
-    summary: "AI sits at the heart of interpretation, guidance, and learning, but the system of record, auditability, and truth mutation remain governed.",
-    body: "AI in VOIS assists with signal detection, report enhancement, file understanding, and thread-based copilot work. However, AI is never the authority — it proposes, humans review and confirm. Signal suggestions from copilot require explicit application. Report narratives are grounded with references. Copilot cannot silently mutate plan truth, task state, or assessment signals. When live AI is unavailable, real roles see an explicit unavailable state rather than degraded mock behavior.",
-    tags: ["AI", "Safety", "Control plane"],
-    category: "doctrine",
-    relatedIds: ["doctrine-universal"],
-  },
-  {
-    id: "doctrine-ontology",
-    title: "Canonical Ontology vNext",
-    summary: "The ontology is being rebuilt around universal modules, failure families, response logics, and contract-grade interventions rather than inherited vertical wording.",
-    body: "The ontology system is evolving from inherited vertical wording toward a universal canon. Every ontology pack must provide signals, failure modes, response patterns, blocks, tools, and mappings. Packs are validated at three levels: structural (files and schemas), semantic (no orphans or impossible cycles), and runtime (mount, preview, and execution). Invalid packs fail closed — historical artifacts still render, but new runs are blocked.",
-    tags: ["Ontology", "Rebuild", "Methodology"],
-    category: "doctrine",
-    relatedIds: ["doctrine-architecture"],
-  },
-];
+// ── Props ────────────────────────────────────────────────────────────────────
 
 type KnowledgeBaseViewProps = {
-  bundle: OntologyBundleResponse | null;
-  alignment: OntologyAlignmentSummaryResponse | null;
-  governance: OntologyGovernanceSummaryResponse | null;
-  authoringBrief: OntologyAuthoringBriefResponse | null;
+  articles: KBArticleRecord[];
   loading: boolean;
-  evaluationPacks: OntologyEvaluationPackSummary[];
-  evaluationResult: OntologyEvaluationPackResult | null;
-  loadingEvaluations: boolean;
-  connectors: IntegrationConnectorRecord[];
-  integrationSummary: IntegrationHealthSummary | null;
 };
 
-export function KnowledgeBaseView({
-  bundle,
-  alignment,
-  governance,
-  authoringBrief,
-  loading,
-  evaluationPacks,
-  evaluationResult,
-  loadingEvaluations,
-  connectors,
-  integrationSummary,
-}: KnowledgeBaseViewProps) {
-  const allArticles = useMemo(() => [...productHelpArticles, ...guidanceArticles], []);
-  const moduleCoverage = authoringBrief?.service_module_coverage ?? [];
-  const coveredModules = moduleCoverage.filter((item) => item.is_covered).length;
-  const warningCount = governance ? governance.warnings.length : 0;
-  const errorCount = governance ? governance.errors.length : 0;
-  const topModules = [...moduleCoverage]
-    .sort((left, right) => right.covered_count - left.covered_count)
-    .slice(0, 5);
-  const weakestScenario = evaluationResult?.results.find((item) => !item.passed) ?? evaluationResult?.results[0] ?? null;
+// ── Constants ────────────────────────────────────────────────────────────────
+
+const KB_STRUGGLES = [
+  { slug: "high-food-cost", label: "High food cost", icon: "chart-bar" as const },
+  { slug: "staff-turnover", label: "Staff turnover", icon: "team" as const },
+  { slug: "inconsistent-service", label: "Inconsistent service", icon: "warning" as const },
+  { slug: "compliance-gaps", label: "Compliance gaps", icon: "lock" as const },
+  { slug: "menu-confusion", label: "Menu confusion", icon: "menu" as const },
+  { slug: "inventory-chaos", label: "Inventory chaos", icon: "block" as const },
+  { slug: "chaotic-openings", label: "Chaotic openings", icon: "today" as const },
+  { slug: "low-morale", label: "Low morale", icon: "person" as const },
+  { slug: "waste", label: "Excessive waste", icon: "warning" as const },
+  { slug: "reactive-management", label: "Reactive management", icon: "execution" as const },
+];
+
+const CATEGORY_LABELS: Record<string, string> = {
+  "failure-autopsy": "Failure Autopsies",
+  "domain-landscape": "Domain Landscapes",
+  "playbook": "Playbooks",
+  "signal-story": "Signal Stories",
+};
+
+const DOMAIN_LABELS: Record<string, string> = {
+  operations: "Operations",
+  leadership: "Leadership",
+  "guest-experience": "Guest Experience",
+  safety: "Safety & Compliance",
+  talent: "Talent & People",
+  financial: "Financial",
+};
+
+const DOMAIN_COLORS: Record<string, string> = {
+  operations: "rgba(59,130,246,0.08)",
+  leadership: "rgba(168,85,247,0.08)",
+  "guest-experience": "rgba(236,72,153,0.08)",
+  safety: "rgba(239,68,68,0.08)",
+  talent: "rgba(34,197,94,0.08)",
+  financial: "rgba(245,158,11,0.08)",
+};
+
+// ── Local state persistence ──────────────────────────────────────────────────
+
+type KBLocalState = {
+  bookmarkedSlugs: string[];
+  readProgress: Record<string, { percent: number; lastRead: number }>;
+  selectedStruggles: string[];
+};
+
+const STORAGE_KEY = "vois_kb_state";
+
+const DEFAULT_LOCAL_STATE: KBLocalState = {
+  bookmarkedSlugs: [],
+  readProgress: {},
+  selectedStruggles: [],
+};
+
+function loadLocalState(): KBLocalState {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return DEFAULT_LOCAL_STATE;
+    return { ...DEFAULT_LOCAL_STATE, ...JSON.parse(raw) };
+  } catch {
+    return DEFAULT_LOCAL_STATE;
+  }
+}
+
+function saveLocalState(state: KBLocalState) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch {
+    // silent
+  }
+}
+
+// ── Component ────────────────────────────────────────────────────────────────
+
+export function KnowledgeBaseView({ articles, loading }: KnowledgeBaseViewProps) {
+  // Local persistent state
+  const [localState, setLocalState] = useState<KBLocalState>(loadLocalState);
+
+  // Navigation
+  const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
+  const [selectedArticleFull, setSelectedArticleFull] = useState<KBArticleRecord | null>(null);
+  const [loadingArticle, setLoadingArticle] = useState(false);
+
+  // Filters
+  const [searchQuery, setSearchQuery] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState("all");
+  const [domainFilter, setDomainFilter] = useState("all");
+  const [showBookmarksOnly, setShowBookmarksOnly] = useState(false);
+
+  // Persist local state on change
+  useEffect(() => {
+    saveLocalState(localState);
+  }, [localState]);
+
+  // Fetch full article when slug changes
+  useEffect(() => {
+    if (!selectedSlug) {
+      setSelectedArticleFull(null);
+      return;
+    }
+    let cancelled = false;
+    setLoadingArticle(true);
+    fetchKBArticle(selectedSlug).then((result) => {
+      if (!cancelled) {
+        setSelectedArticleFull(result);
+        setLoadingArticle(false);
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedSlug]);
+
+  // ── Helpers ──────────────────────────────────────────────────────────────
+
+  const toggleBookmark = useCallback((slug: string) => {
+    setLocalState((prev) => {
+      const exists = prev.bookmarkedSlugs.includes(slug);
+      return {
+        ...prev,
+        bookmarkedSlugs: exists
+          ? prev.bookmarkedSlugs.filter((s) => s !== slug)
+          : [...prev.bookmarkedSlugs, slug],
+      };
+    });
+  }, []);
+
+  const toggleStruggle = useCallback((slug: string) => {
+    setLocalState((prev) => {
+      const exists = prev.selectedStruggles.includes(slug);
+      return {
+        ...prev,
+        selectedStruggles: exists
+          ? prev.selectedStruggles.filter((s) => s !== slug)
+          : [...prev.selectedStruggles, slug],
+      };
+    });
+  }, []);
+
+  const isBookmarked = useCallback(
+    (slug: string) => localState.bookmarkedSlugs.includes(slug),
+    [localState.bookmarkedSlugs]
+  );
+
+  // ── Computed data ────────────────────────────────────────────────────────
+
+  const uniqueCategories = useMemo(
+    () => [...new Set(articles.map((a) => a.category))],
+    [articles]
+  );
+
+  const uniqueDomains = useMemo(
+    () => [...new Set(articles.map((a) => a.domain))],
+    [articles]
+  );
+
+  const totalToolsReferenced = useMemo(
+    () => new Set(articles.flatMap((a) => a.tools)).size,
+    [articles]
+  );
+
+  const filteredArticles = useMemo(() => {
+    let result = articles;
+
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      result = result.filter(
+        (a) =>
+          a.title.toLowerCase().includes(q) ||
+          a.subtitle.toLowerCase().includes(q) ||
+          a.tags.some((t) => t.toLowerCase().includes(q))
+      );
+    }
+
+    if (categoryFilter !== "all") {
+      result = result.filter((a) => a.category === categoryFilter);
+    }
+
+    if (domainFilter !== "all") {
+      result = result.filter((a) => a.domain === domainFilter);
+    }
+
+    if (showBookmarksOnly) {
+      result = result.filter((a) => localState.bookmarkedSlugs.includes(a.slug));
+    }
+
+    if (localState.selectedStruggles.length > 0) {
+      result = result.filter((a) =>
+        a.struggles.some((s) => localState.selectedStruggles.includes(s))
+      );
+    }
+
+    return result;
+  }, [articles, searchQuery, categoryFilter, domainFilter, showBookmarksOnly, localState]);
+
+  const continueReadingArticles = useMemo(() => {
+    const entries = Object.entries(localState.readProgress)
+      .filter(([, p]) => p.percent < 100)
+      .sort(([, a], [, b]) => b.lastRead - a.lastRead)
+      .slice(0, 2);
+    return entries
+      .map(([slug, progress]) => {
+        const article = articles.find((a) => a.slug === slug);
+        return article ? { article, progress } : null;
+      })
+      .filter(Boolean) as Array<{
+      article: KBArticleRecord;
+      progress: { percent: number; lastRead: number };
+    }>;
+  }, [localState.readProgress, articles]);
+
+  const recommendedArticles = useMemo(() => {
+    if (localState.selectedStruggles.length === 0) return [];
+
+    const scored = articles.map((a) => {
+      const matchCount = a.struggles.filter((s) =>
+        localState.selectedStruggles.includes(s)
+      ).length;
+      const unread = !localState.readProgress[a.slug];
+      const score = matchCount * 3 + (unread ? 1 : 0) + (a.tags.length > 4 ? 0.5 : 0);
+      return { article: a, score };
+    });
+
+    return scored
+      .filter((s) => s.score > 1)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3)
+      .map((s) => s.article);
+  }, [articles, localState]);
+
+  // ── Pill style helper ────────────────────────────────────────────────────
+
+  const pillStyle = (active: boolean): React.CSSProperties => ({
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 6,
+    padding: "6px 14px",
+    borderRadius: 20,
+    fontSize: 13,
+    fontWeight: 500,
+    cursor: "pointer",
+    border: "1px solid var(--color-border-subtle)",
+    background: active ? "var(--color-accent)" : "var(--color-surface-subtle)",
+    color: active ? "#fff" : "var(--color-text-secondary)",
+    transition: "all 0.15s ease",
+    whiteSpace: "nowrap",
+  });
+
+  // ── Loading state ────────────────────────────────────────────────────────
+
+  if (loading) {
+    return (
+      <div style={{ padding: 48, textAlign: "center" }}>
+        <p className="small-text" style={{ color: "var(--color-text-muted)" }}>
+          Loading knowledge base...
+        </p>
+      </div>
+    );
+  }
+
+  // ── Article Mode ─────────────────────────────────────────────────────────
+
+  if (selectedSlug) {
+    return (
+      <ArticleView
+        slug={selectedSlug}
+        article={selectedArticleFull}
+        loading={loadingArticle}
+        bookmarked={isBookmarked(selectedSlug)}
+        onToggleBookmark={() => toggleBookmark(selectedSlug)}
+        onBack={() => setSelectedSlug(null)}
+        onNavigate={setSelectedSlug}
+        articles={articles}
+      />
+    );
+  }
+
+  // ── Home Mode ────────────────────────────────────────────────────────────
 
   return (
-    <div style={{ padding: 48, display: "flex", flexDirection: "column", gap: 32 }}>
-      {/* ── Hero ─────────────────────────────────── */}
-      <section className="ui-card" style={{ padding: "32px 32px 28px" }}>
-        <p className="eyebrow">KNOWLEDGE</p>
-        <h1 className="page-title">Guidance surfaces</h1>
-        <p className="small-text" style={{ marginTop: 8, maxWidth: 720 }}>
-          Where doctrine, ontology posture, and live rebuild guardrails sit together while the new operational knowledge system is still deepening.
+    <div style={{ display: "flex", flexDirection: "column", gap: 32, padding: 48 }}>
+      {/* Hero Card */}
+      <div className="ui-card" style={{ padding: 32 }}>
+        <span className="eyebrow">KNOWLEDGE BASE</span>
+        <h1 className="page-title" style={{ margin: "8px 0 4px" }}>
+          Operational Knowledge
+        </h1>
+        <p
+          style={{
+            color: "var(--color-text-muted)",
+            fontSize: 14,
+            marginBottom: 24,
+            maxWidth: 640,
+          }}
+        >
+          Browse operational articles linked to the ontology — blocks, tools, signals,
+          and the patterns they address.
         </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+          <StatMini label="Articles" value={articles.length} />
+          <StatMini label="Domains" value={uniqueDomains.length} />
+          <StatMini label="Tools referenced" value={totalToolsReferenced} />
+        </div>
+      </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16, marginTop: 24 }}>
-          <div className="ui-card" style={{ background: "rgba(108,92,231,0.06)", border: "1px solid rgba(108,92,231,0.12)" }}>
-            <p className="eyebrow" style={{ marginBottom: 6 }}>Doctrine set</p>
-            <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{guidanceArticles.length}</span>
-            <p className="small-text" style={{ marginTop: 4 }}>The knowledge base carries both the product thesis and the live ontology posture.</p>
-          </div>
-          <div className="ui-card">
-            <p className="eyebrow" style={{ marginBottom: 6 }}>Ontology posture</p>
-            <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{bundle ? `${bundle.meta.ontology_id} ${bundle.meta.version}` : "Loading..."}</span>
-            <p className="small-text" style={{ marginTop: 4 }}>
-              {alignment
-                ? `${alignment.counts.signals} signals, ${alignment.counts.failure_modes} failure modes, ${alignment.counts.response_patterns} response patterns aligned to the universal core.`
-                : "Loading alignment and posture data."}
-            </p>
-          </div>
-          <div className="ui-card">
-            <p className="eyebrow" style={{ marginBottom: 6 }}>Governance</p>
-            <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{errorCount ? `${errorCount} errors` : warningCount ? `${warningCount} warnings` : "Clean"}</span>
-            <p className="small-text" style={{ marginTop: 4 }}>
-              {governance ? "Reflects the published ontology bundle, not a mock placeholder." : "Governance posture is loading."}
-            </p>
+      {/* Struggle Selector */}
+      <div>
+        <p
+          style={{
+            fontSize: 13,
+            fontWeight: 600,
+            color: "var(--color-text-secondary)",
+            marginBottom: 10,
+          }}
+        >
+          What are you working on?
+        </p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+          {KB_STRUGGLES.map((s) => {
+            const active = localState.selectedStruggles.includes(s.slug);
+            return (
+              <button
+                key={s.slug}
+                type="button"
+                style={pillStyle(active)}
+                onClick={() => toggleStruggle(s.slug)}
+              >
+                <Icon name={s.icon} size={14} />
+                {s.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Filters Row */}
+      <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10 }}>
+        <input
+          className="ui-input sm"
+          placeholder="Search articles..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          style={{ width: 220 }}
+        />
+
+        {/* Category pills */}
+        <button
+          type="button"
+          style={pillStyle(categoryFilter === "all")}
+          onClick={() => setCategoryFilter("all")}
+        >
+          All
+        </button>
+        {uniqueCategories.map((cat) => (
+          <button
+            key={cat}
+            type="button"
+            style={pillStyle(categoryFilter === cat)}
+            onClick={() => setCategoryFilter(cat)}
+          >
+            {CATEGORY_LABELS[cat] || cat}
+          </button>
+        ))}
+
+        {/* Domain pills */}
+        <span
+          style={{
+            width: 1,
+            height: 20,
+            background: "var(--color-border-subtle)",
+            margin: "0 4px",
+          }}
+        />
+        <button
+          type="button"
+          style={pillStyle(domainFilter === "all")}
+          onClick={() => setDomainFilter("all")}
+        >
+          All domains
+        </button>
+        {uniqueDomains.map((dom) => (
+          <button
+            key={dom}
+            type="button"
+            style={pillStyle(domainFilter === dom)}
+            onClick={() => setDomainFilter(dom)}
+          >
+            {DOMAIN_LABELS[dom] || dom}
+          </button>
+        ))}
+
+        {/* Bookmark toggle */}
+        <span
+          style={{
+            width: 1,
+            height: 20,
+            background: "var(--color-border-subtle)",
+            margin: "0 4px",
+          }}
+        />
+        <button
+          type="button"
+          style={pillStyle(showBookmarksOnly)}
+          onClick={() => setShowBookmarksOnly((v) => !v)}
+        >
+          <Icon name="tasks" size={14} />
+          My Library
+        </button>
+      </div>
+
+      {/* Continue Reading */}
+      {continueReadingArticles.length > 0 && (
+        <div>
+          <p
+            style={{
+              fontSize: 13,
+              fontWeight: 600,
+              color: "var(--color-text-secondary)",
+              marginBottom: 10,
+            }}
+          >
+            Continue Reading
+          </p>
+          <div style={{ display: "flex", gap: 12 }}>
+            {continueReadingArticles.map(({ article, progress }) => (
+              <button
+                key={article.slug}
+                type="button"
+                className="ui-card"
+                onClick={() => setSelectedSlug(article.slug)}
+                style={{
+                  flex: "1 1 0",
+                  padding: 16,
+                  cursor: "pointer",
+                  textAlign: "left",
+                  border: "1px solid var(--color-border-subtle)",
+                }}
+              >
+                <p style={{ fontSize: 14, fontWeight: 600, marginBottom: 8 }}>
+                  {article.title}
+                </p>
+                <div
+                  style={{
+                    height: 4,
+                    borderRadius: 2,
+                    background: "var(--color-bg-muted)",
+                    overflow: "hidden",
+                  }}
+                >
+                  <div
+                    style={{
+                      height: "100%",
+                      width: `${progress.percent}%`,
+                      background: "var(--color-accent)",
+                      borderRadius: 2,
+                    }}
+                  />
+                </div>
+                <p
+                  className="small-text"
+                  style={{ color: "var(--color-text-muted)", marginTop: 4 }}
+                >
+                  {progress.percent}% complete
+                </p>
+              </button>
+            ))}
           </div>
         </div>
-      </section>
+      )}
 
-      {/* ── Ontology operating picture ────────────── */}
-      <section className="ui-card">
-        <p className="eyebrow">LIVE POSTURE</p>
-        <h2 className="section-title">Ontology operating picture</h2>
-        <p className="small-text" style={{ marginTop: 4, maxWidth: 720 }}>
-          Connected to the real ontology APIs -- this surface tells you whether the current published library is coherent enough to trust.
-        </p>
-
-        {loading ? (
-          <p className="small-text" style={{ textAlign: "center", padding: 32, color: "var(--color-text-muted)" }}>Loading ontology posture...</p>
-        ) : (
-          <>
-            {/* Top metrics */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16, marginTop: 20 }}>
-              <div className="ui-card">
-                <p className="eyebrow" style={{ marginBottom: 6 }}>Module coverage</p>
-                <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{coveredModules}/{moduleCoverage.length}</span>
-                <p className="small-text" style={{ marginTop: 4 }}>Universal service modules represented in the current published adapter.</p>
-              </div>
-              <div className="ui-card">
-                <p className="eyebrow" style={{ marginBottom: 6 }}>Unclassified entities</p>
-                <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>
-                  {(alignment?.unclassified_signal_ids.length ?? 0) +
-                    (alignment?.unclassified_failure_mode_ids.length ?? 0) +
-                    (alignment?.unclassified_response_pattern_ids.length ?? 0)}
+      {/* Recommended for You */}
+      {recommendedArticles.length > 0 && (
+        <div>
+          <p
+            style={{
+              fontSize: 13,
+              fontWeight: 600,
+              color: "var(--color-text-secondary)",
+              marginBottom: 10,
+            }}
+          >
+            Recommended for You
+          </p>
+          <div style={{ display: "flex", gap: 12 }}>
+            {recommendedArticles.map((a) => (
+              <button
+                key={a.slug}
+                type="button"
+                className="ui-card"
+                onClick={() => setSelectedSlug(a.slug)}
+                style={{
+                  flex: "1 1 0",
+                  padding: 16,
+                  cursor: "pointer",
+                  textAlign: "left",
+                  border: "1px solid var(--color-border-subtle)",
+                }}
+              >
+                <span
+                  className="ui-badge ui-badge--muted"
+                  style={{ fontSize: 11, marginBottom: 6 }}
+                >
+                  {CATEGORY_LABELS[a.category] || a.category}
                 </span>
-                <p className="small-text" style={{ marginTop: 4 }}>Anything above zero here means the adapter is drifting away from the universal core.</p>
-              </div>
-              <div className="ui-card">
-                <p className="eyebrow" style={{ marginBottom: 6 }}>Contract gaps</p>
-                <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{countGovernanceGaps(governance)}</span>
-                <p className="small-text" style={{ marginTop: 4 }}>Block and tool contract omissions still visible in the current published bundle.</p>
-              </div>
-              <div className="ui-card">
-                <p className="eyebrow" style={{ marginBottom: 6 }}>Scenario evals</p>
-                <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>
-                  {loadingEvaluations
-                    ? "Running..."
-                    : evaluationResult
-                      ? `${Math.round(evaluationResult.pass_rate * 100)}%`
-                      : evaluationPacks.length
-                        ? `${evaluationPacks[0].scenario_count} queued`
-                        : "None"}
-                </span>
-                <p className="small-text" style={{ marginTop: 4 }}>
-                  {evaluationResult
-                    ? `${evaluationResult.passed_scenarios}/${evaluationResult.scenario_count} baseline scenarios are passing.`
-                    : "Evaluation packs turn diagnosis and sequencing quality into something testable."}
+                <p style={{ fontSize: 14, fontWeight: 600, marginTop: 4 }}>{a.title}</p>
+                <p
+                  className="small-text"
+                  style={{ color: "var(--color-text-muted)", marginTop: 2 }}
+                >
+                  {a.readTime} min &middot; {a.difficulty}
                 </p>
-              </div>
-            </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
-            {/* Detail panels */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginTop: 20 }}>
-              <div className="ui-card">
-                <p className="eyebrow" style={{ marginBottom: 10 }}>Strongest-covered modules</p>
-                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                  {topModules.map((item) => (
-                    <div key={item.id} style={{ display: "flex", justifyContent: "space-between", fontSize: 13, padding: "6px 0", borderBottom: "1px solid var(--color-surface-subtle)" }}>
-                      <span style={{ fontWeight: 600, color: "var(--color-text-primary)" }}>{item.name}</span>
-                      <span style={{ color: "var(--color-text-muted)" }}>{item.covered_count} mapped objects</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="ui-card">
-                <p className="eyebrow" style={{ marginBottom: 10 }}>Contract field posture</p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                  <span className="ui-badge ui-badge--muted">{authoringBrief?.signal_contract_fields.length ?? 0} signal fields</span>
-                  <span className="ui-badge ui-badge--muted">{authoringBrief?.block_contract_fields.length ?? 0} block fields</span>
-                  <span className="ui-badge ui-badge--muted">{authoringBrief?.tool_contract_fields.length ?? 0} tool fields</span>
-                </div>
-                <p className="small-text" style={{ marginTop: 10 }}>
-                  These are the authoring standards the ontology has to satisfy before it is considered trustworthy.
-                </p>
-              </div>
-            </div>
+      {/* Article Grid */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+          gap: 12,
+        }}
+      >
+        {filteredArticles.map((a) => (
+          <ArticleCard
+            key={a.slug}
+            article={a}
+            bookmarked={isBookmarked(a.slug)}
+            progress={localState.readProgress[a.slug]}
+            onSelect={() => setSelectedSlug(a.slug)}
+            onToggleBookmark={() => toggleBookmark(a.slug)}
+          />
+        ))}
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginTop: 16 }}>
-              <div className="ui-card">
-                <p className="eyebrow" style={{ marginBottom: 10 }}>Evaluation packs</p>
-                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                  {evaluationPacks.length ? (
-                    evaluationPacks.map((pack) => (
-                      <div key={pack.pack_id} style={{ display: "flex", justifyContent: "space-between", fontSize: 13, padding: "6px 0", borderBottom: "1px solid var(--color-surface-subtle)" }}>
-                        <span style={{ fontWeight: 600, color: "var(--color-text-primary)" }}>{pack.title}</span>
-                        <span style={{ color: "var(--color-text-muted)" }}>{pack.scenario_count} scenarios -- {pack.ontology_version}</span>
-                      </div>
-                    ))
-                  ) : (
-                    <p className="small-text" style={{ color: "var(--color-text-muted)" }}>No evaluation packs yet. Scenario pressure tests will appear here.</p>
-                  )}
-                </div>
-              </div>
-              <div className="ui-card">
-                <p className="eyebrow" style={{ marginBottom: 10 }}>Sensor layer</p>
-                {connectors.length ? (
-                  <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                    {connectors.map((connector) => (
-                      <div key={connector.provider} style={{ fontSize: 13, padding: "6px 0", borderBottom: "1px solid var(--color-surface-subtle)" }}>
-                        <span style={{ fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{connector.display_name}</span>
-                        <span style={{ color: "var(--color-text-muted)" }}>{connector.provider} -- {connector.status}</span>
-                        <span style={{ color: "var(--color-text-muted)", display: "block" }}>{connector.supported_event_types.length} starter event types</span>
-                        {integrationSummary ? (
-                          <span style={{ color: "var(--color-text-muted)", display: "block" }}>{integrationSummary.total_events} canonical events observed</span>
-                        ) : null}
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="small-text" style={{ color: "var(--color-text-muted)" }}>Connector posture will appear here once the sensor layer is exposed.</p>
-                )}
-              </div>
-              <div className="ui-card">
-                <p className="eyebrow" style={{ marginBottom: 10 }}>Current scenario pressure</p>
-                {loadingEvaluations ? (
-                  <p className="small-text" style={{ color: "var(--color-text-muted)" }}>Running the baseline pack against the published ontology...</p>
-                ) : weakestScenario ? (
-                  <>
-                    <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>{weakestScenario.scenario_name}</span>
-                    <p className="small-text" style={{ marginTop: 6 }}>
-                      {weakestScenario.passed
-                        ? "Current weakest visible scenario is still passing; this is the floor to beat as the ontology deepens."
-                        : "This scenario is currently failing and should guide the next ontology or sequencing correction."}
-                    </p>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 8 }}>
-                      <span className="ui-badge ui-badge--muted">{Math.round(weakestScenario.score * 100)}% score</span>
-                      <span className="ui-badge ui-badge--muted">{weakestScenario.load_classification} load</span>
-                      <span className="ui-badge ui-badge--muted">{weakestScenario.plan_task_count} tasks</span>
-                    </div>
-                  </>
-                ) : (
-                  <p className="small-text" style={{ color: "var(--color-text-muted)" }}>Open this surface after packs exist to see diagnosis and sequencing quality.</p>
-                )}
-              </div>
-              <div className="ui-card">
-                <p className="eyebrow" style={{ marginBottom: 10 }}>Connector health</p>
-                {integrationSummary ? (
-                  <>
-                    <span style={{ fontSize: 20, fontWeight: 600, color: "var(--color-text-primary)", display: "block" }}>
-                      {integrationSummary.overdue_retry_count || integrationSummary.stale_event_count
-                        ? `${integrationSummary.overdue_retry_count} overdue / ${integrationSummary.stale_event_count} stale`
-                        : "Stable"}
-                    </span>
-                    <p className="small-text" style={{ marginTop: 6 }}>
-                      {integrationSummary.total_events
-                        ? `${integrationSummary.total_events} canonical event(s) observed across ${integrationSummary.counts_by_provider.length} provider surface(s).`
-                        : "No canonical events have been observed yet."}
-                    </p>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>
-                      <span className="ui-badge ui-badge--muted">{integrationSummary.retryable_event_count} retryable</span>
-                      {integrationSummary.counts_by_status.slice(0, 3).map((item) => (
-                        <span key={`status-${item.key}`} className="ui-badge ui-badge--muted">{item.key}: {item.count}</span>
-                      ))}
-                      {integrationSummary.provider_pressure[0] ? (
-                        <span className="ui-badge ui-badge--muted">top pressure: {integrationSummary.provider_pressure[0].provider}</span>
-                      ) : null}
-                      {integrationSummary.latest_failure_events[0] ? (
-                        <span className="ui-badge ui-badge--muted">latest failure: {integrationSummary.latest_failure_events[0].provider}/{integrationSummary.latest_failure_events[0].event_type}</span>
-                      ) : null}
-                    </div>
-                  </>
-                ) : (
-                  <p className="small-text" style={{ color: "var(--color-text-muted)" }}>Connector health will appear here once event ingestion is active.</p>
-                )}
-              </div>
-            </div>
-          </>
+        {filteredArticles.length === 0 && (
+          <div
+            className="ui-card"
+            style={{
+              gridColumn: "1 / -1",
+              padding: 48,
+              textAlign: "center",
+              color: "var(--color-text-muted)",
+            }}
+          >
+            <Icon name="search" size={24} />
+            <p style={{ marginTop: 8, fontSize: 14 }}>No articles match your filters.</p>
+          </div>
         )}
-      </section>
-
-      <ReadingEngine articles={allArticles} />
-
-      <Glossary />
-
-      {/* ── Connectors ───────────────────────────── */}
-      <section className="ui-card">
-        <p className="eyebrow">CONNECTORS</p>
-        <h2 className="section-title">Starter sensor layer</h2>
-        <p className="small-text" style={{ marginTop: 4, maxWidth: 720 }}>
-          Provider-specific translation belongs outside the engine. This surface shows what the current platform can already normalize.
-        </p>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 12, marginTop: 20 }}>
-          {connectors.length ? (
-            connectors.map((connector) => (
-              <article key={connector.provider} className="ui-card" style={{ padding: "16px 20px" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "var(--color-text-muted)", marginBottom: 6 }}>
-                  <span>{connector.provider}</span>
-                  <span>{connector.status}</span>
-                </div>
-                <h3 style={{ margin: "0 0 4px", fontSize: 15, fontWeight: 600, color: "var(--color-text-primary)" }}>{connector.display_name}</h3>
-                <p className="small-text" style={{ margin: "0 0 8px" }}>{connector.notes[0] ?? "Connector guidance is still being authored."}</p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                  {connector.ingest_modes.map((mode) => (
-                    <span key={`${connector.provider}-${mode}`} className="ui-badge ui-badge--muted">{mode}</span>
-                  ))}
-                  {connector.supported_event_types.slice(0, 3).map((eventType) => (
-                    <span key={`${connector.provider}-${eventType}`} className="ui-badge ui-badge--muted">{eventType}</span>
-                  ))}
-                </div>
-              </article>
-            ))
-          ) : (
-            <p className="small-text" style={{ textAlign: "center", padding: 32, color: "var(--color-text-muted)", gridColumn: "1 / -1" }}>No connector posture published yet.</p>
-          )}
-        </div>
-      </section>
+      </div>
     </div>
   );
 }
 
-function countGovernanceGaps(governance: OntologyGovernanceSummaryResponse | null) {
-  if (!governance) {
-    return 0;
+// ── Sub-components ───────────────────────────────────────────────────────────
+
+function StatMini({ label, value }: { label: string; value: number }) {
+  return (
+    <div
+      className="ui-card"
+      style={{
+        padding: "12px 16px",
+        textAlign: "center",
+        background: "var(--color-surface-subtle)",
+      }}
+    >
+      <p style={{ fontSize: 22, fontWeight: 700, color: "var(--color-text-primary)" }}>
+        {value}
+      </p>
+      <p className="small-text" style={{ color: "var(--color-text-muted)" }}>
+        {label}
+      </p>
+    </div>
+  );
+}
+
+function ArticleCard({
+  article,
+  bookmarked,
+  progress,
+  onSelect,
+  onToggleBookmark,
+}: {
+  article: KBArticleRecord;
+  bookmarked: boolean;
+  progress?: { percent: number; lastRead: number };
+  onSelect: () => void;
+  onToggleBookmark: () => void;
+}) {
+  return (
+    <div
+      className="ui-card"
+      style={{ cursor: "pointer", overflow: "hidden", position: "relative" }}
+      onClick={onSelect}
+    >
+      {/* Domain color stripe */}
+      <div
+        style={{
+          height: 4,
+          background: DOMAIN_COLORS[article.domain] || "var(--color-border-subtle)",
+        }}
+      />
+
+      <div style={{ padding: 16 }}>
+        {/* Top row: category + bookmark */}
+        <div
+          style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}
+        >
+          <span className="ui-badge ui-badge--muted" style={{ fontSize: 11 }}>
+            {CATEGORY_LABELS[article.category] || article.category}
+          </span>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleBookmark();
+            }}
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              padding: 2,
+              color: bookmarked ? "var(--color-accent)" : "var(--color-text-muted)",
+            }}
+          >
+            <Icon name="tasks" size={16} />
+          </button>
+        </div>
+
+        {/* Title + subtitle */}
+        <h3
+          style={{
+            fontSize: 15,
+            fontWeight: 600,
+            color: "var(--color-text-primary)",
+            margin: "10px 0 4px",
+            lineHeight: 1.3,
+          }}
+        >
+          {article.title}
+        </h3>
+        <p
+          style={{
+            fontSize: 13,
+            color: "var(--color-text-muted)",
+            lineHeight: 1.4,
+            marginBottom: 12,
+          }}
+        >
+          {article.subtitle}
+        </p>
+
+        {/* Bottom row: read time, tools, difficulty */}
+        <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+          <span className="small-text" style={{ color: "var(--color-text-muted)" }}>
+            {article.readTime} min
+          </span>
+          {article.tools.length > 0 && (
+            <span className="ui-badge ui-badge--muted" style={{ fontSize: 11 }}>
+              {article.tools.length} tools
+            </span>
+          )}
+          <span className="ui-badge ui-badge--muted" style={{ fontSize: 11 }}>
+            {article.difficulty}
+          </span>
+        </div>
+      </div>
+
+      {/* Progress bar */}
+      {progress && progress.percent > 0 && (
+        <div style={{ height: 3, background: "var(--color-bg-muted)" }}>
+          <div
+            style={{
+              height: "100%",
+              width: `${progress.percent}%`,
+              background: "var(--color-accent)",
+            }}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ArticleView({
+  slug,
+  article,
+  loading,
+  bookmarked,
+  onToggleBookmark,
+  onBack,
+  onNavigate,
+  articles,
+}: {
+  slug: string;
+  article: KBArticleRecord | null;
+  loading: boolean;
+  bookmarked: boolean;
+  onToggleBookmark: () => void;
+  onBack: () => void;
+  onNavigate: (slug: string) => void;
+  articles: KBArticleRecord[];
+}) {
+  if (loading || !article) {
+    return (
+      <div style={{ padding: 48 }}>
+        <button
+          type="button"
+          onClick={onBack}
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 6,
+            color: "var(--color-text-secondary)",
+            fontSize: 13,
+            fontWeight: 500,
+            marginBottom: 24,
+            padding: 0,
+          }}
+        >
+          <Icon name="back" size={14} />
+          Back to articles
+        </button>
+        {loading && (
+          <p className="small-text" style={{ color: "var(--color-text-muted)" }}>
+            Loading article...
+          </p>
+        )}
+        {!loading && !article && (
+          <p className="small-text" style={{ color: "var(--color-text-muted)" }}>
+            Article not found.
+          </p>
+        )}
+      </div>
+    );
   }
 
-  const blockGapCount = Object.values(governance.block_contract_gaps).reduce(
-    (total, entries) => total + entries.length,
-    0
-  );
-  const toolGapCount = Object.values(governance.tool_contract_gaps).reduce(
-    (total, entries) => total + entries.length,
-    0
-  );
+  const hasSections = article.sections && article.sections.length > 0;
+  const hasToc = article.toc && article.toc.length > 0;
 
-  return blockGapCount + toolGapCount;
+  return (
+    <div style={{ padding: 48, display: "flex", flexDirection: "column", gap: 24 }}>
+      {/* Back button */}
+      <button
+        type="button"
+        onClick={onBack}
+        style={{
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 6,
+          color: "var(--color-text-secondary)",
+          fontSize: 13,
+          fontWeight: 500,
+          padding: 0,
+          alignSelf: "flex-start",
+        }}
+      >
+        <Icon name="back" size={14} />
+        Back to articles
+      </button>
+
+      {/* Article header */}
+      <div>
+        <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 12 }}>
+          <span className="ui-badge ui-badge--muted" style={{ fontSize: 11 }}>
+            {CATEGORY_LABELS[article.category] || article.category}
+          </span>
+          <span className="ui-badge ui-badge--muted" style={{ fontSize: 11 }}>
+            {DOMAIN_LABELS[article.domain] || article.domain}
+          </span>
+        </div>
+
+        <div
+          style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}
+        >
+          <h1
+            style={{
+              fontSize: 26,
+              fontWeight: 700,
+              color: "var(--color-text-primary)",
+              lineHeight: 1.2,
+              margin: 0,
+            }}
+          >
+            {article.title}
+          </h1>
+          <button
+            type="button"
+            onClick={onToggleBookmark}
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              padding: 4,
+              color: bookmarked ? "var(--color-accent)" : "var(--color-text-muted)",
+              flexShrink: 0,
+            }}
+          >
+            <Icon name="tasks" size={18} />
+          </button>
+        </div>
+
+        <p
+          style={{
+            fontSize: 15,
+            color: "var(--color-text-muted)",
+            marginTop: 6,
+            lineHeight: 1.5,
+            maxWidth: 640,
+          }}
+        >
+          {article.subtitle}
+        </p>
+
+        <div
+          style={{
+            display: "flex",
+            gap: 16,
+            marginTop: 14,
+            fontSize: 13,
+            color: "var(--color-text-muted)",
+          }}
+        >
+          <span>{article.readTime} min read</span>
+          <span>&middot;</span>
+          <span>{article.difficulty}</span>
+          <span>&middot;</span>
+          <span>{article.module}</span>
+        </div>
+      </div>
+
+      {/* Two-column layout */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 280px",
+          gap: 24,
+          alignItems: "start",
+        }}
+      >
+        {/* Left: Article body */}
+        <div>
+          {hasSections ? (
+            article.sections!.map((section) => (
+              <div key={section.id} id={`section-${section.id}`} style={{ marginBottom: 28 }}>
+                <h2
+                  style={{
+                    fontSize: 18,
+                    fontWeight: 600,
+                    color: "var(--color-text-primary)",
+                    marginBottom: 8,
+                  }}
+                >
+                  {section.heading}
+                </h2>
+                <p
+                  style={{
+                    fontSize: 14,
+                    lineHeight: 1.6,
+                    color: "var(--color-text-secondary)",
+                  }}
+                >
+                  {section.body}
+                </p>
+              </div>
+            ))
+          ) : (
+            <div
+              className="ui-card"
+              style={{
+                padding: 48,
+                textAlign: "center",
+                color: "var(--color-text-muted)",
+              }}
+            >
+              <Icon name="report" size={24} />
+              <p style={{ marginTop: 8, fontSize: 14 }}>Content is being authored.</p>
+            </div>
+          )}
+        </div>
+
+        {/* Right: Sidebar */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          {/* Core Blocks */}
+          {article.sidebar.coreBlocks.length > 0 && (
+            <div className="ui-card"><p className="eyebrow" style={{ marginBottom: 8 }}>Core Blocks</p>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                {article.sidebar.coreBlocks.map((block) => (
+                  <li
+                    key={block.id}
+                    style={{
+                      fontSize: 13,
+                      color: "var(--color-text-secondary)",
+                      padding: "4px 0",
+                    }}
+                  >
+                    <span
+                      style={{
+                        color: "var(--color-text-muted)",
+                        fontSize: 11,
+                        marginRight: 6,
+                      }}
+                    >
+                      {block.id}
+                    </span>
+                    {block.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Tools */}
+          {article.sidebar.tools.length > 0 && (
+            <div className="ui-card"><p className="eyebrow" style={{ marginBottom: 8 }}>Tools</p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                {article.sidebar.tools.map((tool) => (
+                  <span key={tool} className="ui-badge ui-badge--muted" style={{ fontSize: 11 }}>
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Signals */}
+          {article.signals.length > 0 && (
+            <div className="ui-card"><p className="eyebrow" style={{ marginBottom: 8 }}>Signals</p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                {article.signals.map((signal) => (
+                  <span
+                    key={signal}
+                    className="ui-badge ui-badge--muted"
+                    style={{ fontSize: 11 }}
+                  >
+                    {signal}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Metrics */}
+          {article.sidebar.metrics.length > 0 && (
+            <div className="ui-card"><p className="eyebrow" style={{ marginBottom: 8 }}>Metrics</p>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                {article.sidebar.metrics.map((m, i) => (
+                  <li
+                    key={i}
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      fontSize: 13,
+                      padding: "4px 0",
+                      color: "var(--color-text-secondary)",
+                    }}
+                  >
+                    <span>{m.label}</span>
+                    <span style={{ fontWeight: 600, color: "var(--color-text-primary)" }}>
+                      {m.value}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Related Articles */}
+          {article.related.length > 0 && (
+            <div className="ui-card"><p className="eyebrow" style={{ marginBottom: 8 }}>Related Articles</p>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                {article.related.map((relSlug) => {
+                  const relArticle = articles.find((a) => a.slug === relSlug);
+                  return (
+                    <li key={relSlug} style={{ padding: "3px 0" }}>
+                      <button
+                        type="button"
+                        onClick={() => onNavigate(relSlug)}
+                        style={{
+                          background: "none",
+                          border: "none",
+                          cursor: "pointer",
+                          padding: 0,
+                          fontSize: 13,
+                          color: "var(--color-accent)",
+                          textDecoration: "underline",
+                          textAlign: "left",
+                        }}
+                      >
+                        {relArticle ? relArticle.title : relSlug}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* TOC (floating) */}
+      {hasToc && (
+        <div
+          style={{
+            position: "fixed",
+            top: 120,
+            right: 32,
+            width: 180,
+            background: "var(--color-surface-subtle)",
+            borderRadius: 8,
+            padding: 12,
+            border: "1px solid var(--color-border-subtle)",
+            zIndex: 10,
+          }}
+        >
+          <p
+            style={{
+              fontSize: 11,
+              fontWeight: 600,
+              color: "var(--color-text-muted)",
+              textTransform: "uppercase",
+              letterSpacing: 0.5,
+              marginBottom: 8,
+            }}
+          >
+            On this page
+          </p>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            {article.toc.map((entry) => (
+              <li key={entry.id} style={{ padding: "3px 0" }}>
+                <a
+                  href={`#section-${entry.id}`}
+                  style={{
+                    fontSize: 12,
+                    color: "var(--color-text-secondary)",
+                    textDecoration: "none",
+                  }}
+                >
+                  {entry.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
 }

@@ -1,0 +1,77 @@
+{
+  "slug": "inventory-systems",
+  "title": "Inventory Systems That Scale: From Chaos to Control",
+  "subtitle": "Running out of oat milk at 9am on a Saturday is a systems failure, not bad luck.",
+  "category": "playbook",
+  "domain": "supply-chain",
+  "module": "Supply Chain & Supplier Relations",
+  "tags": ["inventory", "stock-control", "par-levels", "FIFO", "ordering", "waste"],
+  "difficulty": "intermediate",
+  "readTime": 12,
+  "blocks": ["B115", "B116", "B117"],
+  "tools": ["T115-01", "T116-01", "T117-01"],
+  "signals": ["S089", "S097", "S098", "S078"],
+  "related": ["supplier-cost-control", "daily-discipline", "food-prep-that-holds-up"],
+  "coverColor": "teal",
+  "coverIcon": "layers",
+  "struggles": ["stock-outs", "reactive-ordering", "no-inventory-system", "waste"],
+  "toc": [
+    { "id": "kb-s1", "label": "The Cost of Running Out" },
+    { "id": "kb-s2", "label": "Par Levels: The Foundation" },
+    { "id": "kb-s3", "label": "FIFO and Stock Rotation" },
+    { "id": "kb-s4", "label": "The Weekly Stock Count" },
+    { "id": "kb-s5", "label": "Ordering Rhythm" },
+    { "id": "kb-s6", "label": "Inventory Excellence" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B115", "name": "Inventory Count System" },
+      { "id": "B116", "name": "FIFO & Stock Rotation" },
+      { "id": "B117", "name": "Inventory Excellence & Loss Prevention" }
+    ],
+    "tools": [
+      "T115-01 · Inventory Count Sheet",
+      "T116-01 · FIFO Rotation Guide",
+      "T117-01 · Loss Prevention Checklist"
+    ],
+    "metrics": [
+      { "value": "0", "label": "stock-outs during service" },
+      { "value": "Weekly", "label": "full stock count" },
+      { "value": "<2%", "label": "inventory variance target" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "kb-s1",
+      "heading": "The Cost of Running Out",
+      "body": "Running out of a key item during service is one of the most expensive failures in a cafe — and one of the most preventable.\n\nWhen you run out of oat milk on a Saturday morning:\n- Every oat-milk customer is disappointed (and oat-milk customers are often your most loyal specialty coffee drinkers)\n- Some will switch to dairy. Some will leave. Some will not come back.\n- The barista has to have an awkward conversation 30 times: \"Sorry, we're out of oat milk today\"\n- Your Google reviews may gain a one-star mention\n\nThe cost is not the €3.50 carton you should have ordered. It is the €600/year regular who decides your cafe is unreliable.\n\nReactive ordering — waiting until something runs out and then scrambling — is the root cause. The fix is a system: par levels, regular counts, and an ordering rhythm tied to actual consumption."
+    },
+    {
+      "id": "kb-s2",
+      "heading": "Par Levels: The Foundation",
+      "body": "A par level is the minimum quantity of an item you need to have on hand at any point. When stock drops to the par level, you reorder.\n\n**How to calculate par levels:**\n\n1. Track daily usage for 2 weeks\n2. Calculate average daily usage\n3. Multiply by lead time (days between ordering and receiving)\n4. Add a safety buffer (20–30%)\n\n**Example: Whole milk**\n- Average daily usage: 15 litres\n- Delivery lead time: 2 days\n- Usage during lead time: 30 litres\n- Safety buffer (25%): 7.5 litres\n- **Par level: 37.5 litres (round to 38)**\n\nWhen your stock hits 38 litres, order. This ensures you never run out, even if usage spikes slightly or delivery is delayed.\n\n**Set par levels for everything that matters:**\n\n| Category | Key Items |\n|----------|-----------|\n| Coffee | Beans (house, decaf, guest), filters |\n| Dairy | Whole milk, semi-skimmed, oat, soy, almond |\n| Food | Bread, key fillings, salad components |\n| Bakery | Pastries (by type), cakes |\n| Consumables | Cups (each size), lids, napkins, bags |\n| Cleaning | Detergent, sanitiser, cloths |\n\nWrite par levels on a card in the stock room. When the closer does the end-of-day count, they check against par levels and add anything below par to the order list."
+    },
+    {
+      "id": "kb-s3",
+      "heading": "FIFO and Stock Rotation",
+      "body": "FIFO — First In, First Out — is the principle that older stock gets used before newer stock. It sounds obvious. It is routinely ignored.\n\nUse T116-01 (FIFO Rotation Guide):\n\n**The problem FIFO solves:**\nNew delivery arrives. Staff stack new items on top of old ones. The old items get pushed to the back. They expire. They become waste. You paid for them twice — once to buy them, again to throw them away.\n\n**FIFO in practice:**\n1. When a delivery arrives, move existing stock to the front\n2. Place new stock behind existing stock\n3. Label everything with the date opened or the delivery date\n4. Train every team member: take from the front, stock from the back\n\n**Date labelling protocol:**\n- Every item opened gets a date label (day dots or marker pen)\n- Use-by dates face forward on shelves\n- Freezer items get a freeze date and use-by label\n- Prepped food gets a prep date and discard date\n\n**Fridge organisation:**\n- Top shelf: ready-to-eat items (least likely to drip)\n- Middle shelves: dairy, eggs, prepped items\n- Bottom shelf: raw meat and fish (if applicable) — lowest position to prevent drip contamination\n- Door: nothing temperature-sensitive (door temperature fluctuates)\n- Front: items expiring soonest\n\n**The daily check:**\nDuring opening, scan the fridge for anything approaching its use-by date. Items expiring today should be prioritised for sale or use. Items past their date are discarded immediately — no exceptions, no debates."
+    },
+    {
+      "id": "kb-s4",
+      "heading": "The Weekly Stock Count",
+      "body": "Use T115-01 (Inventory Count Sheet) to perform a full count weekly.\n\n**When:** Same day, same time each week. Most cafes count Sunday evening or Monday morning — after the weekend rush and before the Monday delivery.\n\n**Who:** One person counts, one person records (or the same person if staff is limited). The counter should not be the person who placed the orders — separation reduces error and prevents concealment of losses.\n\n**What to count:**\n- Coffee beans (weigh partial bags)\n- Milk (count full units, estimate open containers)\n- Bakery/pastry items\n- Key food ingredients (by weight or count)\n- Packaging (cups, lids, bags — by sleeve or box)\n- Cleaning supplies\n\n**You do NOT need to count:**\n- Condiments (salt, pepper, sugar) — track by order frequency, not by count\n- Items with very low value and stable usage\n- Anything you only order monthly\n\n**What to do with the count:**\n\n1. Compare to theoretical usage (what you should have used based on POS sales)\n2. Calculate variance: (Opening stock + Purchases - Closing stock) vs. Theoretical usage\n3. Investigate variances above 5%\n\nCommon causes of variance:\n- **Positive variance** (less stock used than expected): Under-portioning, sales recorded incorrectly, items sold but not rung up under correct product\n- **Negative variance** (more stock used than expected): Over-portioning, waste not logged, theft, stock received but not checked\n\nThe count itself takes 30–45 minutes for a typical cafe. The value it delivers — in waste prevention, cost control, and ordering accuracy — is worth hours of saved costs."
+    },
+    {
+      "id": "kb-s5",
+      "heading": "Ordering Rhythm",
+      "body": "Good inventory management is not about counting. It is about ordering the right amount at the right time.\n\n**Build an ordering schedule:**\n\n| Day | Supplier | Items | Lead Time |\n|-----|----------|-------|----------|\n| Monday | Coffee roaster | Beans | 2 days (arrives Wed) |\n| Monday | Dairy supplier | Milk, cream, butter | Next day (arrives Tue) |\n| Tuesday | Bakery | Pastries, bread | Next day (arrives Wed) |\n| Wednesday | Packaging supplier | Cups, lids, bags | 3 days (arrives Sat) |\n| Thursday | Food supplier | Meat, produce, dry goods | Next day (arrives Fri) |\n\n**Ordering process:**\n1. Check current stock against par levels\n2. Check upcoming events or unusual demand (holiday weekend, local event)\n3. Calculate order quantity: Par level - Current stock + Expected above-normal demand\n4. Place order before the supplier's cut-off time\n5. Record the order (what was ordered, quantity, expected delivery date)\n\n**Delivery receiving:**\n- Check every delivery against the order: correct items, correct quantities, correct quality\n- Check temperatures of chilled and frozen items\n- Check use-by dates (reject anything too close to expiry)\n- Sign the delivery note only after checking\n- Report any issues to the supplier immediately\n- Put stock away promptly using FIFO rotation\n\nNever let a delivery sit unchecked. A box of chicken left on the counter for an hour is a food safety violation and a quality issue."
+    },
+    {
+      "id": "kb-s6",
+      "heading": "Inventory Excellence",
+      "body": "Use T117-01 (Loss Prevention Checklist) to move from basic inventory management to excellence.\n\n**Loss prevention:**\n\nMost inventory loss in cafes is not theft. It is waste, spillage, over-portioning, and poor receiving. But theft does happen, and a good system makes it difficult:\n\n- **Camera coverage** of stock areas (deterrent effect alone is significant)\n- **Dual sign-off** on deliveries (receiving and checking are done by two people, or one person with a check by the manager)\n- **Restricted access** to high-value stock (coffee beans, alcohol if applicable)\n- **Staff meals tracked** (free staff meals are a benefit — untracked ones are a leak)\n- **Void and discount reports** reviewed weekly (patterns of excessive voids from one staff member warrant investigation)\n\n**Inventory KPIs:**\n\n| KPI | Target | Red Flag |\n|-----|--------|---------|\n| Stock-outs per week | 0 | >2 |\n| Inventory variance (%) | <2% | >5% |\n| Days of stock on hand (avg) | 3–5 days | >10 days |\n| Waste as % of purchases | <3% | >5% |\n| Order accuracy (supplier) | 98%+ | <95% |\n\n**Advanced: Inventory turnover.**\nHow quickly you use and replace stock. High turnover = fresh stock, low waste, efficient cash use. Low turnover = old stock sitting on shelves, cash tied up, higher waste risk.\n\nInventory turnover = Cost of goods sold ÷ Average inventory value\n\nA healthy cafe turns inventory 50–100 times per year (weekly stock lasting about a week). If your turnover is below 30, you are over-ordering."
+    }
+  ],
+  "legacyBuilder": "buildInventorySystemsArticle",
+  "status": "published"
+}

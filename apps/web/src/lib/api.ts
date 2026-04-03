@@ -1817,6 +1817,47 @@ export async function saveKBReadingState(payload: KBReadingStatePayload): Promis
   });
 }
 
+// ── KB Articles ─────────────────────────────────────────────────────────
+
+export type KBArticleRecord = {
+  slug: string;
+  title: string;
+  subtitle: string;
+  category: string;
+  domain: string;
+  module: string;
+  tags: string[];
+  difficulty: string;
+  readTime: number;
+  blocks: string[];
+  tools: string[];
+  signals: string[];
+  related: string[];
+  coverColor: string;
+  coverIcon: string;
+  struggles: string[];
+  toc: Array<{ id: string; label: string }>;
+  sidebar: {
+    coreBlocks: Array<{ id: string; name: string }>;
+    tools: string[];
+    metrics: Array<{ value: string; label: string }>;
+  };
+  status: string;
+  sections?: Array<{ id: string; heading: string; body: string }>;
+};
+
+export async function fetchKBArticles(): Promise<KBArticleRecord[]> {
+  const response = await apiFetch("/api/v1/kb/articles");
+  if (!response.ok) return [];
+  return response.json();
+}
+
+export async function fetchKBArticle(slug: string): Promise<KBArticleRecord | null> {
+  const response = await apiFetch(`/api/v1/kb/articles/${encodeURIComponent(slug)}`);
+  if (!response.ok) return null;
+  return response.json();
+}
+
 export async function exportEngineRun(engineRunId: string, format: "markdown" | "json" = "markdown"): Promise<string> {
   const response = await apiFetch(`/api/v1/engine/runs/${encodeURIComponent(engineRunId)}/export?format=${format}`);
   if (!response.ok) {

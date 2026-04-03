@@ -1,0 +1,79 @@
+{
+  "slug": "surviving-the-rush",
+  "title": "Surviving the Rush: Peak Hour Systems That Scale",
+  "subtitle": "The morning rush does not reward heroics. It rewards preparation, positioning, and pace.",
+  "category": "domain-landscape",
+  "domain": "operations",
+  "module": "Service Flow & Peak Management",
+  "tags": ["peak-hour", "workflow", "staffing", "queue", "speed", "morning-rush"],
+  "difficulty": "advanced",
+  "readTime": 15,
+  "blocks": ["B085", "B086", "B087", "B088"],
+  "tools": ["T085-01", "T085-02", "T085-03", "T085-04", "T085-05"],
+  "signals": ["S019", "S070", "S072", "S073", "S083"],
+  "related": ["first-20-minutes", "why-good-staff-leave", "chasing-the-perfect-shot"],
+  "coverColor": "red",
+  "coverIcon": "zap",
+  "struggles": ["chaotic-openings", "long-queues", "staff-burnout", "inconsistent-service"],
+  "toc": [
+    { "id": "kb-s1", "label": "Why the Rush Breaks Everything" },
+    { "id": "kb-s2", "label": "Mapping Your Peak: When Does It Actually Hit?" },
+    { "id": "kb-s3", "label": "Station Roles and the One-Job Rule" },
+    { "id": "kb-s4", "label": "Staffing to Demand, Not to Budget" },
+    { "id": "kb-s5", "label": "The Pre-Rush Checklist" },
+    { "id": "kb-s6", "label": "Reading the Queue in Real Time" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B085", "name": "Peak Staffing Model" },
+      { "id": "B086", "name": "Peak Hour Workflow Design" },
+      { "id": "B087", "name": "Queue Management System" }
+    ],
+    "tools": [
+      "T085-01 · Hourly Transaction Analysis Template",
+      "T085-02 · Daily Staffing Template",
+      "T085-03 · Staffing Matrix by Day Type",
+      "T085-04 · Labour Cost Tracker",
+      "T085-05 · Demand Prediction Worksheet"
+    ],
+    "metrics": [
+      { "value": "< 3 min", "label": "queue to coffee-in-hand during peak" },
+      { "value": "Know your 80/20", "label": "which hours generate most revenue" },
+      { "value": "Staff +1", "label": "one extra person during peak vs. off-peak" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "kb-s1",
+      "heading": "Why the Rush Breaks Everything",
+      "body": "In most cafes, 60–70% of daily revenue comes from two or three hours. The 7:30–9:30am window on weekdays. The 10am–12pm Saturday brunch wave. These are the hours that pay the rent.\n\nThey are also the hours where every weakness in your operation becomes visible:\n- Slow ticket times turn into visible queues that deter walk-ins\n- Undertrained baristas crumble under volume\n- Poor workflow design creates collisions and bottlenecks\n- Understaffing burns out your best people\n- Food prep falls behind because everyone is on the machine\n\nThe rush is not a surprise. It happens every day, at the same time, with predictable volume. Yet most cafes treat it reactively — scrambling, apologising, surviving.\n\nThe cafes that handle peak well do not work harder. They work differently. They have systems designed for volume, not adapted from quiet-hour routines."
+    },
+    {
+      "id": "kb-s2",
+      "heading": "Mapping Your Peak: When Does It Actually Hit?",
+      "body": "Before you can solve the rush, you need to see it clearly. Most cafe operators have a gut sense of when it is busy, but gut sense is not precise enough to staff or design workflow around.\n\nUse T085-01 (Hourly Transaction Analysis Template) to map your actual demand:\n\n1. Pull transaction counts by hour from your POS for the last 4 weeks\n2. Separate weekdays from weekends\n3. Calculate the average transactions per hour for each day type\n\nYou will see a pattern like this:\n\n| Hour | Mon–Fri Avg | Sat Avg | Sun Avg |\n|------|------------|---------|--------|\n| 07:00 | 8 | 3 | 2 |\n| 08:00 | 28 | 12 | 5 |\n| 08:30 | 35 | 18 | 8 |\n| 09:00 | 30 | 25 | 15 |\n| 10:00 | 15 | 32 | 28 |\n| 11:00 | 10 | 28 | 25 |\n| 12:00 | 12 | 20 | 18 |\n\nNow you can see exactly when peak hits and how intense it is. The weekday peak is sharp — a 90-minute spike. The weekend peak is broader and later. These require different staffing and different preparation.\n\nDo not average weekdays and weekends together. Monday and Saturday are different businesses. Staff them differently."
+    },
+    {
+      "id": "kb-s3",
+      "heading": "Station Roles and the One-Job Rule",
+      "body": "During peak, the biggest performance killer is task-switching. A barista who takes an order, makes the drink, warms a pastry, and operates the till is doing four jobs badly instead of one job well.\n\nThe one-job rule: during peak, each person has one role and stays in it.\n\n**Station 1: Till / Order Point**\nTakes orders, processes payments, manages the queue. Calls drinks to the bar. This person sets the pace — they should be fast, friendly, and accurate. They do NOT make drinks.\n\n**Station 2: Bar / Espresso**\nPulls shots, steams milk, builds espresso-based drinks. Focused entirely on the machine. They work from the call queue, not from customer requests.\n\n**Station 3: Support / Runner**\nWarms food, plates pastries, makes filter and tea orders, stocks milk, clears cups, restocks lids and cups. This is the flex role that keeps the other two flowing.\n\n**Station 4 (if staffed): Food Prep**\nDedicated to sandwich and food orders during peak. Takes pressure off the runner and prevents food tickets backing up behind drink tickets.\n\nFor a two-person peak (common in small cafes), combine till and support into one role. One person faces the customer and handles everything except the espresso machine. The other person stays on the bar.\n\nAssign roles before the rush starts, not during it. Write them on a whiteboard or say them in the pre-shift huddle. Everyone should know their station before the first customer of peak arrives."
+    },
+    {
+      "id": "kb-s4",
+      "heading": "Staffing to Demand, Not to Budget",
+      "body": "The most expensive mistake in cafe operations is understaffing peak hours to save on labour. The maths work against you:\n\n- A queue of 8 people with 3 walking away = 3 lost transactions × €5 average = €15 lost\n- That happens every peak day = €75/week = €3,900/year in lost revenue\n- An extra staff member for 2 hours at €12/hr = €24/day = €120/week = €6,240/year\n\nIf the extra person prevents even half the walkaway, they pay for themselves.\n\nUse T085-03 (Staffing Matrix by Day Type) to build a staffing model:\n\n| Day Type | Off-Peak Staff | Peak Staff | Peak Window |\n|----------|---------------|------------|-------------|\n| Mon–Fri | 2 | 3–4 | 07:30–09:30 |\n| Saturday | 2 | 4 | 09:30–12:00 |\n| Sunday | 2 | 3 | 10:00–12:30 |\n\nTrack labour cost as a percentage of revenue (T085-04), not as an absolute number. A shift that costs €200 in labour but generates €800 in revenue (25% labour cost) is better than a shift that costs €100 but generates €300 (33% labour cost).\n\nThe question is never \"Can I afford another person?\" It is \"Can I afford the revenue I lose without them?\"\n\nConsider split shifts for peak coverage. A barista who works 7–10am and 4–7pm covers both peaks without a full 8-hour day. Not everyone wants this, but some — students, parents — prefer it."
+    },
+    {
+      "id": "kb-s5",
+      "heading": "The Pre-Rush Checklist",
+      "body": "Peak performance starts 30 minutes before peak. Everything the team needs during the rush should be ready before it begins, because once it starts, there is no time to fetch, refill, or fix.\n\nThe pre-rush checklist (build this into your opening routine via T085-02):\n\n**Machine and grinder:**\n- [ ] Grinder calibrated and dialled in (shots pulled and tasted)\n- [ ] Steam wand clean and functioning\n- [ ] Knock box emptied\n- [ ] Backup beans within reach (not in the storeroom)\n\n**Milk and beverages:**\n- [ ] Full milk jugs in the fridge and one on the bar\n- [ ] Alternative milks stocked and labelled\n- [ ] Filter coffee brewed and holding\n- [ ] Tea selection stocked and visible\n\n**Food and display:**\n- [ ] Display cabinet fully stocked\n- [ ] Pastries warmed or ready to warm\n- [ ] Sandwich prep completed to par level\n- [ ] Takeaway packaging stocked (cups, lids, bags, napkins)\n\n**Service area:**\n- [ ] Till float counted and ready\n- [ ] Card machine charged and connected\n- [ ] Cups and saucers stocked at the bar\n- [ ] Bin emptied (it will fill fast during peak)\n- [ ] Tables wiped and cleared\n\n**Team:**\n- [ ] Roles assigned for peak stations\n- [ ] Everyone briefed on any specials or 86'd items\n- [ ] Break schedule confirmed (nobody takes a break during peak)\n\nThis list should live on the wall, not in someone's head. Run through it at the pre-shift huddle."
+    },
+    {
+      "id": "kb-s6",
+      "heading": "Reading the Queue in Real Time",
+      "body": "Even with good preparation, peak hours need active management. The shift lead or manager should be reading the floor, not buried in a task.\n\nSigns the system is working:\n- Queue moves steadily, no one waiting more than 2–3 minutes\n- Drinks come out in sequence — no tickets backing up\n- Team is communicating calmly (calling drinks, confirming orders)\n- Customers are relaxed — browsing the cabinet, chatting, not checking their watches\n\nSigns the system is breaking:\n- **Queue reaches the door.** Time to consider opening a second till or speeding up ticket resolution. The till person should stop upselling and focus on throughput.\n- **Drinks are backing up.** The bar is falling behind. Runner should step in to make simple drinks (filter, tea) and free the barista for espresso only.\n- **Food tickets are stacking.** Runner moves to food full-time. If no runner, the till person batches food orders between customer waves.\n- **A team member is frozen.** They are overwhelmed. Step in physically — not with instructions, but with help. \"I've got the next three milks, you focus on shots.\"\n\nAfter the rush, debrief for two minutes. What worked? What broke? What do we change tomorrow? These micro-debriefs, done daily, compound into a team that gets measurably better every week.\n\nTrack peak performance over time: average ticket time, walkaway count (if measurable), customer complaints during peak hours. Improvement should be visible within a month of applying these systems."
+    }
+  ],
+  "legacyBuilder": "buildSurvivingRushArticle",
+  "status": "published"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "why-good-staff-leave",
+  "title": "Why Good Staff Leave: Retention Beyond Pay",
+  "subtitle": "Cafe teams stay when the day feels fair, coached, and predictable enough to trust.",
+  "category": "signal-story",
+  "domain": "talent",
+  "module": "Retention & Engagement",
+  "tags": ["retention", "team", "morale", "scheduling", "coaching", "leadership"],
+  "difficulty": "advanced",
+  "readTime": 13,
+  "blocks": ["B090", "B091", "B095", "B098", "B100", "B105"],
+  "tools": ["T090-01", "T091-01", "T095-01", "T095-02", "T095-03", "T098-01", "T100-01", "T105-01"],
+  "signals": ["S070", "S072", "S075", "S078"],
+  "related": ["first-20-minutes", "real-cost-of-comp"],
+  "coverColor": "lavender",
+  "coverIcon": "users",
+  "struggles": ["staff-turnover", "low-morale", "reactive-management"],
+  "toc": [
+    { "id": "kb-s1", "label": "Retention Problems Start Earlier Than Resignations" },
+    { "id": "kb-s2", "label": "Signals Managers Miss" },
+    { "id": "kb-s3", "label": "Scheduling as a Trust System" },
+    { "id": "kb-s4", "label": "Recognition and Stay Conversations" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B090", "name": "Retention Risk Scan" },
+      { "id": "B095", "name": "Manager Coaching Rhythm" },
+      { "id": "B105", "name": "Stay Interview Practice" }
+    ],
+    "tools": [
+      "T090-01 · Retention Signal Review",
+      "T091-01 · Schedule Trust Check",
+      "T095-01 · 1:1 Prompt Set",
+      "T095-02 · Recognition Tracker",
+      "T095-03 · Load Balance Review",
+      "T098-01 · Team Friction Map",
+      "T100-01 · Progress Conversation Guide",
+      "T105-01 · Stay Interview Script"
+    ],
+    "metrics": [
+      { "value": "Weekly", "label": "review team friction and rota pressure" },
+      { "value": "1:1", "label": "short coaching beats rare formal reviews" }
+    ]
+  },
+  "legacyBuilder": "buildWhyGoodStaffLeaveArticle",
+  "status": "published"
+}

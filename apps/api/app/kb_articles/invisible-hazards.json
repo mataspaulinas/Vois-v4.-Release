@@ -1,0 +1,46 @@
+{
+  "slug": "invisible-hazards",
+  "title": "The Invisible Hazards: What Clean-Looking Kitchens Hide",
+  "subtitle": "Cafe safety failures usually hide in temperature drift, cloth reuse, and rushed handoffs.",
+  "category": "signal-story",
+  "domain": "safety",
+  "module": "Food Safety & Compliance",
+  "tags": ["safety", "temperature", "cross-contamination", "cleaning", "audit", "compliance"],
+  "difficulty": "intermediate",
+  "readTime": 14,
+  "blocks": ["B020", "B021", "B022", "B023", "B024", "B025"],
+  "tools": ["T020-01", "T020-02", "T021-01", "T023-01", "T025-01", "T025-02", "T025-03", "T025-04"],
+  "signals": ["S055"],
+  "related": ["inventory-truth", "first-20-minutes"],
+  "coverColor": "green",
+  "coverIcon": "shield",
+  "struggles": ["compliance-gaps", "waste"],
+  "toc": [
+    { "id": "kb-s1", "label": "Clean Does Not Always Mean Safe" },
+    { "id": "kb-s2", "label": "Fridge, Milk, and Holding Risks" },
+    { "id": "kb-s3", "label": "The Audit-Day Illusion" },
+    { "id": "kb-s4", "label": "Building Real Daily Discipline" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B020", "name": "Temperature Control Discipline" },
+      { "id": "B025", "name": "Sanitation Reliability" }
+    ],
+    "tools": [
+      "T020-01 · Temperature Log",
+      "T020-02 · Zone Verification",
+      "T021-01 · Cross-Contamination Audit",
+      "T023-01 · Shift Safety Handover",
+      "T025-01 · Sanitiser Setup Check",
+      "T025-02 · Cloth Rotation Log",
+      "T025-03 · Cleaning Verification",
+      "T025-04 · Near-Miss Review"
+    ],
+    "metrics": [
+      { "value": "Every shift", "label": "verify cold chain and sanitiser" },
+      { "value": "Near misses", "label": "reported issues are a health sign" }
+    ]
+  },
+  "legacyBuilder": "buildInvisibleHazardsArticle",
+  "status": "published"
+}

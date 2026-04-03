@@ -1,0 +1,41 @@
+{
+  "slug": "first-20-minutes",
+  "title": "The First 20 Minutes That Define Your Service",
+  "subtitle": "A calm opening routine shapes queue flow, coffee quality, and team confidence all day.",
+  "category": "playbook",
+  "domain": "leadership",
+  "module": "Opening Leadership",
+  "tags": ["opening", "shift-lead", "service", "briefing", "readiness", "queue"],
+  "difficulty": "foundational",
+  "readTime": 10,
+  "blocks": ["B001"],
+  "tools": ["T001-01", "T001-02", "T001-03", "T001-04"],
+  "signals": ["S001", "S003"],
+  "related": ["inventory-truth", "why-good-staff-leave"],
+  "coverColor": "gold",
+  "coverIcon": "coffee",
+  "struggles": ["chaotic-openings", "inconsistent-service", "reactive-management"],
+  "toc": [
+    { "id": "kb-s1", "label": "Why Openings Echo Through the Shift" },
+    { "id": "kb-s2", "label": "The Cafe Opening Walk" },
+    { "id": "kb-s3", "label": "Briefing the Team Without Drag" },
+    { "id": "kb-s4", "label": "Catching Problems Before First Orders" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B001", "name": "Manager Opening Walkthrough" }
+    ],
+    "tools": [
+      "T001-01 · Opening Scan",
+      "T001-02 · Station Readiness Check",
+      "T001-03 · Team Pulse Prompt",
+      "T001-04 · Service Brief"
+    ],
+    "metrics": [
+      { "value": "20 min", "label": "ideal opening reset window" },
+      { "value": "1 page", "label": "keep the opening checklist short" }
+    ]
+  },
+  "legacyBuilder": "buildFirst20MinutesArticle",
+  "status": "published"
+}

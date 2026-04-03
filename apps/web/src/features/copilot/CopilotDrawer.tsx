@@ -1,4 +1,4 @@
-import { useEffect, type CSSProperties } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 
 import Icon from "../../components/Icon";
 import {
@@ -96,6 +96,8 @@ export function CopilotDrawer({
   drawerContext,
   onOpenWorkspace,
 }: CopilotDrawerProps) {
+  const [showWhy, setShowWhy] = useState(false);
+
   useEffect(() => {
     if (preFillMessage && onPreFillConsumed) {
       onInputChange(preFillMessage);
@@ -114,10 +116,10 @@ export function CopilotDrawer({
     <div
       style={{
         position: "fixed",
-        top: 0,
+        top: "var(--topbar-height, 48px)",
         right: 0,
         width: "min(420px, 100vw)",
-        height: "100vh",
+        height: "calc(100vh - var(--topbar-height, 48px))",
         background: "var(--color-surface, #FFFFFF)",
         borderLeft: "1px solid var(--color-border-subtle, #E5E5E5)",
         boxShadow: "-10px 0 30px rgba(0,0,0,0.08)",
@@ -138,13 +140,13 @@ export function CopilotDrawer({
       >
         <div>
           <p style={{ margin: 0, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted, #737373)" }}>Copilot</p>
-          <h3 style={{ margin: "6px 0 4px", fontSize: 20 }}>Quick assist</h3>
+          <h3 style={{ margin: "6px 0 4px", fontSize: 20 }}>Here when you need me</h3>
           <p style={{ margin: 0, fontSize: 13, color: "var(--color-text-secondary, #525252)" }}>{contextLabel} · {contextSummary}</p>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           {onOpenWorkspace ? (
-            <button onClick={onOpenWorkspace} style={secondaryButtonStyle}>
-              Open workspace
+            <button onClick={onOpenWorkspace} style={iconButtonStyle} title="Open workspace">
+              <Icon name="fullscreen" size={16} />
             </button>
           ) : null}
           <button onClick={onClose} aria-label="Close" style={iconButtonStyle}>
@@ -166,7 +168,7 @@ export function CopilotDrawer({
         >
           {screenContext ? <div>Seeing: {screenContext}</div> : null}
           {drawerContext ? <div>Viewing: {drawerContext}</div> : null}
-          {selectedThreadContext?.memory_scope_label ? <div>Memory: {selectedThreadContext.memory_scope_label}</div> : null}
+          {selectedThreadContext?.memory_scope_label ? <div>{selectedThreadContext.memory_scope_label}</div> : null}
         </div>
       ) : null}
 
@@ -193,8 +195,9 @@ export function CopilotDrawer({
                     }}
                   >
                     <strong style={{ fontSize: 12 }}>{thread.title}</strong>
-                    <span style={{ fontSize: 11, color: "var(--color-text-muted, #737373)" }}>{thread.thread_type.replace(/_/g, " ")}</span>
-                    <span style={{ fontSize: 11, color: "var(--color-text-secondary, #525252)" }}>{thread.applied_action_count} applied</span>
+                    <span style={{ fontSize: 11, color: "var(--color-text-muted, #737373)" }}>
+                      {thread.visibility === "private" ? "Private" : "Shared"} · {thread.context_label}
+                    </span>
                   </button>
                 ))}
               </div>
@@ -220,6 +223,7 @@ export function CopilotDrawer({
               </div>
 
               <div style={{ padding: "12px 20px", borderBottom: "1px solid var(--color-border-subtle, #E5E5E5)", display: "flex", flexDirection: "column", gap: 10 }}>
+                <p style={{ ...eyebrowStyle, marginBottom: 0 }}>Quick actions</p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                   {compactActions.map((action) => (
                     <button
@@ -257,7 +261,7 @@ export function CopilotDrawer({
                   <div style={{ display: "flex", gap: 8, overflowX: "auto" }}>
                     {selectedThreadActions.slice(0, 3).map((action) => (
                       <div key={action.id} style={{ ...cardStyle, minWidth: 150 }}>
-                        <p style={eyebrowStyle}>{action.mode}</p>
+                        <p style={eyebrowStyle}>Saved from here</p>
                         <strong style={{ fontSize: 13 }}>{action.title}</strong>
                       </div>
                     ))}
@@ -268,19 +272,25 @@ export function CopilotDrawer({
               <div style={{ flex: 1, minHeight: 0, overflowY: "auto", padding: "16px 20px", display: "flex", flexDirection: "column", gap: 14 }}>
                 {latestAssistantMessage ? (
                   <div style={cardStyle}>
-                    <p style={eyebrowStyle}>Latest assistant answer</p>
+                    <p style={eyebrowStyle}>Latest reply</p>
                     <CopilotRichMessage content={latestAssistantMessage.content} />
                   </div>
                 ) : null}
                 {selectedThreadContext?.provenance_summary?.length ? (
                   <div style={cardStyle}>
-                    <p style={eyebrowStyle}>Why this answer knows this</p>
-                    {selectedThreadContext.provenance_summary.map((item, index) => (
-                      <div key={`${item.label}-${index}`} style={{ marginBottom: 8 }}>
-                        <strong style={{ display: "block", fontSize: 13 }}>{item.label}</strong>
-                        <span style={{ fontSize: 12, color: "var(--color-text-secondary, #525252)" }}>{item.detail}</span>
+                    <button onClick={() => setShowWhy((current) => !current)} style={{ ...iconButtonStyle, width: "100%" }} title={showWhy ? "Hide provenance" : "Show provenance"}>
+                      <Icon name={showWhy ? "eye-off" : "eye"} size={14} />
+                    </button>
+                    {showWhy ? (
+                      <div style={{ marginTop: 10 }}>
+                        {selectedThreadContext.provenance_summary.map((item, index) => (
+                          <div key={`${item.label}-${index}`} style={{ marginBottom: 8 }}>
+                            <strong style={{ display: "block", fontSize: 13 }}>{item.label}</strong>
+                            <span style={{ fontSize: 12, color: "var(--color-text-secondary, #525252)" }}>{item.detail}</span>
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    ) : null}
                   </div>
                 ) : null}
               </div>
@@ -311,12 +321,12 @@ export function CopilotDrawer({
                   </div>
                 ) : null}
                 <div style={{ display: "flex", gap: 8 }}>
-                  <label style={secondaryButtonStyle}>
-                    Attach
+                  <label style={iconButtonStyle} title="Attach files">
+                    <Icon name="attach" size={16} />
                     <input type="file" hidden multiple onChange={(event) => onAttachFiles(event.target.files)} />
                   </label>
-                  <button onClick={onSend} disabled={sending || !input.trim()} style={primaryButtonStyle}>
-                    {sending ? "Sending…" : "Send"}
+                  <button onClick={onSend} disabled={sending || !input.trim()} style={{ ...iconButtonStyle, background: "var(--color-text-primary, #111827)", color: "#FFF", borderColor: "var(--color-text-primary, #111827)" }} title="Send">
+                    <Icon name={sending ? "loading" : "send"} size={16} />
                   </button>
                 </div>
               </div>
@@ -331,7 +341,7 @@ export function CopilotDrawer({
 const primaryButtonStyle: CSSProperties = {
   padding: "9px 12px",
   borderRadius: 10,
-  border: "1px solid var(--color-text-primary, #111827)",
+  border: "none",
   background: "var(--color-text-primary, #111827)",
   color: "#FFFFFF",
   cursor: "pointer",
@@ -342,7 +352,7 @@ const primaryButtonStyle: CSSProperties = {
 const secondaryButtonStyle: CSSProperties = {
   padding: "9px 12px",
   borderRadius: 10,
-  border: "1px solid var(--color-border-subtle, #E5E5E5)",
+  border: "none",
   background: "var(--color-surface-subtle, #F7F7F5)",
   color: "var(--color-text-primary, #111827)",
   cursor: "pointer",
@@ -354,12 +364,14 @@ const iconButtonStyle: CSSProperties = {
   width: 30,
   height: 30,
   borderRadius: 8,
-  border: "1px solid var(--color-border-subtle, #E5E5E5)",
-  background: "#FFFFFF",
+  border: "none",
+  background: "transparent",
+  color: "var(--color-text-muted, #737373)",
   cursor: "pointer",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  transition: "color 120ms ease, background 120ms ease",
 };
 
 const cardStyle: CSSProperties = {

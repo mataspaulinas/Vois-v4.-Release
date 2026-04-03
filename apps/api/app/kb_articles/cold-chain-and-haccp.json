@@ -1,0 +1,79 @@
+{
+  "slug": "cold-chain-and-haccp",
+  "title": "Cold Chain, HACCP, and the Audit Trail",
+  "subtitle": "Food safety systems that protect your customers, your compliance record, and your licence to trade.",
+  "category": "playbook",
+  "domain": "food-safety",
+  "module": "Food Safety & Compliance",
+  "tags": ["haccp", "cold-chain", "food-safety", "food-safety-inspection", "audit", "temperature", "compliance", "eu-fic"],
+  "difficulty": "intermediate",
+  "readTime": 14,
+  "blocks": ["B002", "B003", "B004", "B006", "B013", "B014", "B016", "B017", "B018", "B019"],
+  "tools": ["T002-01", "T003-01", "T004-01", "T006-01"],
+  "signals": ["S001", "S002", "S008", "S010", "S016", "S018"],
+  "related": ["invisible-hazards", "food-prep-that-holds-up", "daily-discipline"],
+  "coverColor": "blue",
+  "coverIcon": "thermometer",
+  "struggles": ["food-safety-gaps", "inspection-anxiety", "temperature-drift", "poor-record-keeping"],
+  "toc": [
+    { "id": "kb-s1", "label": "Why HACCP Matters" },
+    { "id": "kb-s2", "label": "Cold Chain Management" },
+    { "id": "kb-s3", "label": "Critical Control Points" },
+    { "id": "kb-s4", "label": "EU Allergen Labelling Compliance" },
+    { "id": "kb-s5", "label": "Record-Keeping That Saves You" },
+    { "id": "kb-s6", "label": "Preparing for the Food Safety Inspector" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B002", "name": "HACCP Plan Review" },
+      { "id": "B003", "name": "Temperature Monitoring Protocol" },
+      { "id": "B004", "name": "Cold Chain Compliance" },
+      { "id": "B006", "name": "EU Allergen Labelling Standards" }
+    ],
+    "tools": [
+      "T002-01 · HACCP Plan Template",
+      "T003-01 · Temperature Log Sheet",
+      "T004-01 · Cold Chain Checklist",
+      "T006-01 · Allergen Label Checker"
+    ],
+    "metrics": [
+      { "value": "0–5°C", "label": "fridge temperature range" },
+      { "value": "–18°C", "label": "minimum freezer temperature" },
+      { "value": "75°C", "label": "minimum core cooking temperature" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "kb-s1",
+      "heading": "Why HACCP Matters",
+      "body": "HACCP stands for Hazard Analysis and Critical Control Points. It sounds bureaucratic, but it is the single most important framework between your cafe and a food poisoning incident that closes you down.\n\nEvery food business in the EU is legally required to have a food safety management system based on HACCP principles under EU Regulation 852/2004. For most cafes, that means a HACCP-based self-control system or a bespoke HACCP plan. If you do not have one, you are already non-compliant — and your next food safety inspection will not go well.\n\nHACCP matters because food hazards are invisible. You cannot see Listeria on a sandwich. You cannot smell Campylobacter in undercooked chicken. You cannot taste Salmonella in a poorly stored filling. The only defence is a system that prevents contamination from happening in the first place, and catches it when prevention fails.\n\nThe consequences of getting it wrong are severe. A failed food safety inspection is published for anyone to see. A closure notice stops trading entirely. A serious incident can result in prosecution, fines, and prison time under EU Regulation 852/2004 and national food safety law. And beyond the legal risk, there is the human one — making a customer seriously ill is something no cafe owner recovers from emotionally.\n\nHACCP is not a folder that sits on a shelf. It is a living system: identify the hazards, decide where control is critical, set limits, monitor, correct, verify, and keep records. Every section of this article connects back to those principles. If your HACCP plan has not been reviewed in the last twelve months, that is your first action item."
+    },
+    {
+      "id": "kb-s2",
+      "heading": "Cold Chain Management",
+      "body": "The cold chain is the unbroken sequence of refrigerated conditions from supplier to customer. Every break in that chain — a delivery left on the back step, a fridge door propped open, a sandwich sitting on the counter during prep — creates a window for bacterial growth.\n\nTemperature is the single biggest factor in food safety. Between 8°C and 63°C is the danger zone where bacteria multiply rapidly. Below 5°C, most harmful bacteria stop growing. Your job is to keep chilled food below 5°C at every point in its journey through your cafe.\n\n**Deliveries.** Check the temperature of chilled goods on arrival. Use a probe thermometer, not your hand. If a delivery arrives above 8°C, you have a decision: reject it, or accept it and use it within a documented time window. Record what you accepted and what you rejected, and why.\n\n**Storage.** Fridges should run between 0°C and 5°C. Check and log temperatures twice daily — once at opening, once mid-afternoon. Use a calibrated thermometer, not just the fridge's built-in display. Position the probe in the warmest part of the fridge, usually near the door.\n\n**Prep.** Food should not be out of refrigeration for longer than necessary. Prep in small batches. If you are making sandwiches, take out enough filling for five, not fifty. Return ingredients to the fridge between batches. Time out of refrigeration should never exceed two hours total.\n\n**Display.** Chilled display cabinets must maintain temperature below 8°C (the legal limit), but aim for below 5°C. If your display cabinet cannot hold temperature on a warm day, it is either overloaded, poorly maintained, or not fit for purpose. Monitor it with a data logger for a full week to see whether it drifts.\n\n**Transport.** If you deliver sandwiches, platters, or catering, use insulated bags with ice packs. Measure the temperature at the point of delivery. If it has risen above 8°C during transit, the food should not be served."
+    },
+    {
+      "id": "kb-s3",
+      "heading": "Critical Control Points",
+      "body": "A Critical Control Point is any step in your process where control is essential to prevent, eliminate, or reduce a food safety hazard to an acceptable level. Not every step is a CCP — only the ones where failure means danger.\n\nFor a typical cafe, the CCPs are:\n\n**1. Goods receiving.** This is where contaminated or temperature-abused food enters your premises. If you accept a delivery of chicken at 12°C, no amount of subsequent refrigeration fixes the fact that bacteria have already multiplied during transit.\n\n**2. Chilled storage.** If your fridge fails overnight and nobody checks the temperature in the morning, everything inside may have been in the danger zone for hours. This is why twice-daily temperature checks are critical, not optional.\n\n**3. Cooking.** Any food you cook must reach a core temperature of 75°C for at least 30 seconds, or an equivalent time-temperature combination. Probe the thickest part. Record the result. Soup, toasted sandwiches with raw fillings, reheated quiche — if it is cooked in your kitchen, prove it reached temperature.\n\n**4. Cooling.** Cooked food being cooled for later use must pass through the danger zone quickly. Cool to below 8°C within 90 minutes. Use shallow containers, ice baths, or blast chillers. Do not put hot food directly into the fridge — it raises the ambient temperature and puts everything else at risk.\n\n**5. Display and service.** Food on display must be time-controlled or temperature-controlled. If your display cabinet holds temperature, monitor it. If it does not (ambient cakes, for instance), use a time limit — typically four hours maximum — and discard anything that exceeds it.\n\nFor each CCP, you need: a critical limit (the number), a monitoring method (how you check), a corrective action (what you do when it fails), and a record (proof it was done). This is the core of your HACCP plan."
+    },
+    {
+      "id": "kb-s4",
+      "heading": "EU Allergen Labelling Compliance",
+      "body": "EU FIC Regulation 1169/2011 sets the allergen labelling requirements for all food businesses. If your cafe makes sandwiches, wraps, salads, or any other food that is packaged before a customer selects it, you must label it with the product name and a full ingredients list with the 14 allergens emphasised.\n\nThis is not optional. It is not a suggestion. It is law, and food safety authority inspectors check for it.\n\n**What counts as prepacked for direct sale?** Any food that is packaged at the same premises from which it is sold, before a customer orders or selects it. A sandwich wrapped in cling film and placed in the display cabinet is prepacked for direct sale. A sandwich made to order in front of the customer is not.\n\n**What the label must include:**\n- The name of the food (e.g., \"Chicken & Avocado Sandwich\")\n- A full ingredients list in descending order of weight\n- The 14 declarable allergens emphasised in bold, italics, or underlining within the ingredients list\n\n**Common mistakes:**\n- Listing allergens separately instead of emphasising them within the ingredients list\n- Missing allergens from compound ingredients (the pesto contains pine nuts, the bread contains sesame)\n- Not updating labels when recipes change\n- Using handwritten labels that are illegible or incomplete\n\n**How to get it right:**\n- Build a master recipe file with every ingredient traced back to its components\n- Use a label printer or pre-printed template — handwritten labels invite errors\n- Cross-reference supplier specifications whenever an ingredient changes\n- Review all labels quarterly, or whenever a recipe or supplier changes\n- Train every team member who preps or packages food on why labels matter\n\nThe penalty for non-compliance is not just a failed food safety inspection. If a customer with a severe allergy has a reaction because your label was wrong or missing, the consequences are criminal prosecution and, in the worst cases, a death that was entirely preventable."
+    },
+    {
+      "id": "kb-s5",
+      "heading": "Record-Keeping That Saves You",
+      "body": "Records are the proof that your food safety system works. Without records, you have opinions. A food safety inspector does not accept opinions.\n\nThe minimum records you should maintain:\n\n**Temperature logs.** Every fridge, every freezer, twice daily. Date, time, temperature, initials. If a temperature is out of range, record the corrective action: \"Walk-in fridge at 7°C at 08:15. Adjusted thermostat. Rechecked at 09:00 — 4°C. Stock assessed and retained.\" The corrective action is what separates a good operator from a negligent one.\n\n**Delivery records.** Date, supplier, items received, temperature on arrival, condition, accepted or rejected. This protects you if a supplier sends contaminated product — you can show it arrived within specification, or that you rejected it.\n\n**Cleaning schedules.** A cleaning schedule is not the same as cleaning happening. The schedule shows what should be cleaned, how often, and by whom. The record shows it was actually done. Signature, date, time.\n\n**Allergen records.** Your master allergen matrix, your allergen labels, and evidence that staff have been trained on allergen management. Keep training records with dates and signatures.\n\n**Corrective actions.** When something goes wrong — a fridge failure, a temperature exceedance, a customer complaint about food quality — document what happened, what you did about it, and what you changed to prevent recurrence.\n\nKeep records for at least two years. Paper is fine — you do not need software for this. A ring binder with dividers for each record type, kept in the kitchen, reviewed weekly by the manager. Digital systems are better for searchability and backup, but a well-maintained paper system passes every inspection.\n\nThe food safety inspector will ask to see your records. The speed and confidence with which you produce them tells them everything about how your business operates. A manager who opens a well-organised folder and walks the inspector through it projects competence. A manager who rummages through a drawer looking for a temperature log from three weeks ago does not."
+    },
+    {
+      "id": "kb-s6",
+      "heading": "Preparing for the Food Safety Inspector",
+      "body": "Food safety inspections are unannounced. You will not get a phone call. The inspector will arrive, show identification, and expect access to your kitchen, your records, and your staff. Your preparation is not what you do the night before — it is what you do every day.\n\n**What inspectors look at:**\n\n- **Hygienic food handling.** How food is prepared, cooked, cooled, stored, and served. They watch your team, not just your paperwork.\n- **Physical condition of the premises.** Clean surfaces, no pests, good repair, adequate handwashing facilities, proper waste management.\n- **Food safety management.** Your HACCP plan or HACCP-based self-control system, temperature records, cleaning schedules, allergen documentation, staff training records.\n\n**How to be ready every day:**\n\n- Run your temperature checks at the same times, every day. No exceptions.\n- Keep your cleaning schedule current and signed off.\n- Ensure handwash basins are stocked with soap and paper towels (not cloth towels, not hand dryers).\n- Keep your HACCP plan or HACCP-based self-control documentation accessible — not locked in the office, not at the owner's house.\n- Ensure at least one person with food safety certification is on every shift.\n- Fix maintenance issues promptly. A broken seal on a fridge door, a cracked tile, a missing light cover — these are all observations that cost you points.\n\n**During the inspection:**\n\nBe honest. Do not hide problems. Inspectors are experienced — they know when someone is covering up. If something is wrong, acknowledge it and explain what you are doing about it. An inspector who sees genuine effort and a plan to improve will score you more favourably than one who sees denial and excuses. After the inspection, act on every recommendation immediately. Do not wait for the report."
+    }
+  ],
+  "legacyBuilder": "buildColdChainAndHaccpArticle",
+  "status": "published"
+}

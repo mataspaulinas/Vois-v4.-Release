@@ -1,0 +1,77 @@
+{
+  "slug": "third-party-delivery",
+  "title": "Third-Party Delivery: Friend or Margin Killer?",
+  "subtitle": "Deliveroo and UberEats bring customers. They also take 30% of every sale. Know the trade-off.",
+  "category": "failure-autopsy",
+  "domain": "financial",
+  "module": "Pricing Revenue & Cost Control",
+  "tags": ["delivery", "Deliveroo", "UberEats", "commission", "margins", "direct-ordering"],
+  "difficulty": "intermediate",
+  "readTime": 11,
+  "blocks": ["B128", "B129", "B130"],
+  "tools": ["T128-01", "T129-01", "T130-01"],
+  "signals": ["S032", "S081", "S112"],
+  "related": ["pricing-that-pays", "supplier-cost-control", "surviving-the-rush"],
+  "coverColor": "orange",
+  "coverIcon": "truck",
+  "struggles": ["delivery-margin-erosion", "delivery-disrupting-service", "no-direct-channel"],
+  "toc": [
+    { "id": "kb-s1", "label": "The Delivery Revenue Illusion" },
+    { "id": "kb-s2", "label": "True Margin Analysis" },
+    { "id": "kb-s3", "label": "Delivery Menu Engineering" },
+    { "id": "kb-s4", "label": "Operational Impact on In-Store Service" },
+    { "id": "kb-s5", "label": "Building a Direct Ordering Channel" },
+    { "id": "kb-s6", "label": "The Keep-or-Kill Decision" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B128", "name": "Delivery Commission Analysis" },
+      { "id": "B129", "name": "Delivery-Only Menu Engineering" },
+      { "id": "B130", "name": "Direct Ordering Channel" }
+    ],
+    "tools": [
+      "T128-01 · Delivery Margin Calculator",
+      "T129-01 · Delivery Menu Planner",
+      "T130-01 · Direct Ordering Setup Guide"
+    ],
+    "metrics": [
+      { "value": "25-35%", "label": "typical platform commission" },
+      { "value": "Know your true margin", "label": "per delivery item, after all costs" },
+      { "value": ">50%", "label": "target: shift delivery to direct ordering" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "kb-s1",
+      "heading": "The Delivery Revenue Illusion",
+      "body": "Delivery platforms show you a revenue number. €2,000 in delivery sales this month. It looks like growth.\n\nBut delivery revenue is not the same as walk-in revenue. After the platform takes its commission (25–35%), after packaging costs, after the operational disruption — the margin on a delivery order is often zero or negative.\n\n**The breakdown on a €15 delivery order:**\n\n| Item | Amount |\n|------|--------|\n| Order value | €15.00 |\n| Platform commission (30%) | -€4.50 |\n| COGS (food + coffee, 35%) | -€5.25 |\n| Packaging | -€0.80 |\n| **Remaining** | **€4.45** |\n\n€4.45 to cover labour, utilities, and profit. On a walk-in order of the same value, you would keep €9.75.\n\nThe delivery order is worth less than half the walk-in order. If delivery is displacing walk-in business (the kitchen is slower because it is handling delivery tickets), you are actively losing money.\n\nThis does not mean delivery is always wrong. It means you need to understand the true economics before celebrating the revenue number."
+    },
+    {
+      "id": "kb-s2",
+      "heading": "True Margin Analysis",
+      "body": "Use T128-01 (Delivery Margin Calculator) to calculate your actual margin on delivery orders.\n\nFor each delivery item, calculate:\n1. Selling price on the platform\n2. Minus platform commission (check your contract — rates vary)\n3. Minus VAT (if applicable on the net amount)\n4. Minus COGS (ingredients at recipe card cost)\n5. Minus packaging (bag, container, cutlery, napkin)\n6. Minus allocated labour cost (time spent preparing and packaging delivery orders)\n7. = True margin per item\n\n**What you will likely find:**\n- Coffee drinks delivered are low or negative margin (platform commission on a €3.80 flat white = €1.14, COGS €0.57, packaging €0.30 — you keep €1.79 before labour)\n- Food items with higher price points fare better (a €9 sandwich retains more margin in absolute terms)\n- Bundles (coffee + food) improve average order value and spread the commission impact\n\n**The 40% rule:** If an item's COGS + commission + packaging exceeds 60% of the selling price, it is not worth offering on delivery. Either raise the delivery price, remove it from the delivery menu, or find a way to reduce the COGS.\n\nMany cafes mark up delivery prices 15–20% above in-store prices. Platforms allow this, and customers expect it. A flat white that is €3.80 in-store and €4.50 on delivery is standard."
+    },
+    {
+      "id": "kb-s3",
+      "heading": "Delivery Menu Engineering",
+      "body": "Use T129-01 (Delivery Menu Planner):\n\nYour delivery menu should NOT be your full in-store menu. It should be a curated selection of items that:\n\n**1. Travel well.** A perfect flat white deteriorates in a 15-minute delivery. A batch-brewed filter in a sealed flask does not. Toasted sandwiches go soggy. A sealed salad box arrives intact. Choose items that arrive in good condition.\n\n**2. Have sufficient margin.** After commission and packaging, the item must still be profitable. High-COGS, low-price items (like a basic cappuccino) may not be worth offering.\n\n**3. Are easy to prepare.** Delivery orders arrive at unpredictable times. Items that require complex preparation or disrupt the main workflow create bottlenecks. Simple assembly, quick turnaround.\n\n**4. Photograph well.** Platform ordering is entirely visual. Invest in good photos of your delivery items — they directly affect conversion rates.\n\n**Delivery menu design:**\n- 10–15 items maximum (too many options reduce conversion)\n- Lead with your best-sellers that travel well\n- Include bundles (\"breakfast deal: coffee + pastry €6.50\")\n- Price 15–20% above in-store to offset commission\n- Include one or two delivery-exclusive items to create a reason to order\n\n**Items to exclude from delivery:**\n- Hot espresso drinks in paper cups (quality degrades quickly)\n- Delicate pastries that crush in transit\n- Items with very low margins\n- Items with complex assembly or limited shelf life"
+    },
+    {
+      "id": "kb-s4",
+      "heading": "Operational Impact on In-Store Service",
+      "body": "The hidden cost of delivery is not the commission. It is the disruption to your in-store operation.\n\nA delivery order arrives on a tablet. The kitchen has to prepare it. The barista has to make the drinks. The packaging has to be assembled. The rider arrives and needs to collect it.\n\nAll of this happens alongside your in-store customers — who are physically present, who can see the wait, and who chose to visit your cafe for the experience.\n\n**Common operational problems:**\n\n- **Ticket queue conflicts.** A rush of delivery orders during your in-store peak means walk-in customers wait longer. They see drinks being made and bagged for someone who is not there, while they stand waiting. This is a terrible customer experience.\n\n- **Space congestion.** Riders waiting inside the cafe, bags lined up on the counter, tablets pinging — the cafe starts to feel like a dispatch centre, not a coffee shop.\n\n- **Staff distraction.** Checking the tablet, packaging orders, communicating with riders — all take time away from serving in-store guests.\n\n**Mitigation strategies:**\n\n1. **Set delivery hours.** Turn off delivery during your peak in-store hours (e.g., no delivery orders 8–10am). Most platforms allow you to set custom availability windows.\n\n2. **Separate prep area.** If possible, designate a small area for delivery assembly — away from the customer counter.\n\n3. **Rider protocol.** Riders wait outside or in a designated spot, not at the counter. Orders are placed on a collection shelf.\n\n4. **Order throttling.** Most platforms allow you to limit the number of simultaneous orders. Set a limit that your team can handle without impacting walk-in service.\n\n5. **Dedicated staff for delivery.** If delivery volume is high enough, a dedicated team member during delivery hours protects in-store service."
+    },
+    {
+      "id": "kb-s5",
+      "heading": "Building a Direct Ordering Channel",
+      "body": "Use T130-01 (Direct Ordering Setup Guide):\n\nThe long-term goal is to shift as many delivery and takeaway orders as possible from third-party platforms to your own channel. This eliminates the 25–35% commission.\n\n**Direct ordering options:**\n\n- **Your own website with ordering.** Platforms like Square Online, Shopify, or dedicated cafe ordering tools (e.g., Flipdish, Slerp) let you take orders directly. Commission: 0–5% vs. 25–35% on platforms.\n\n- **WhatsApp / phone ordering.** Low-tech but effective for regulars. \"Text us your order and we'll have it ready for collection.\" Zero cost.\n\n- **QR code ordering.** Table ordering via QR code for dine-in. Reduces queue time, increases ATV (customers browse the full menu), and captures data.\n\n- **Pre-order / click-and-collect.** Customers order ahead and collect at a set time. No delivery cost, no platform commission, reduced wait time for the customer.\n\n**How to shift customers from platform to direct:**\n\n1. **Insert a flyer in every delivery bag.** \"Order direct next time and save 10%. Scan this QR code.\" The customer gets a discount, you save 20%+ in commission. Both win.\n\n2. **Promote on social media.** \"Skip the app — order direct from our website for faster service and better prices.\"\n\n3. **Loyalty programme.** Offer loyalty points only on direct orders. Platform customers get the food but not the rewards.\n\n4. **Exclusive items.** One or two items available only via direct ordering. Creates a reason to switch.\n\nTrack direct vs. platform split monthly. Target: shift from 90/10 (platform/direct) to 50/50 within 12 months."
+    },
+    {
+      "id": "kb-s6",
+      "heading": "The Keep-or-Kill Decision",
+      "body": "Not every cafe should be on delivery platforms. For some, it is a profitable growth channel. For others, it is a margin-destroying distraction.\n\n**Keep delivery if:**\n- Your true margin per order (after all costs) is positive\n- Delivery revenue is genuinely incremental (not cannibalising walk-in)\n- You can manage the operational impact without harming in-store service\n- Delivery is building awareness that converts to walk-in customers\n- You are using it as a stepping stone to building your own direct channel\n\n**Kill delivery if:**\n- Your true margin is zero or negative\n- Delivery orders are slowing your in-store service during peak\n- The effort of managing tablets, packaging, and riders is not worth the return\n- You have no plan to build a direct channel and will be permanently paying 30% commission\n- Your products do not travel well and delivery reviews are damaging your reputation\n\n**The hybrid approach:**\nKeep platforms for marketing and discovery (new customers find you there), but actively convert delivery customers to direct ordering. Over time, reduce platform dependency.\n\nReview quarterly. Pull your delivery margin report, your in-store satisfaction data, and your direct ordering growth. The numbers will tell you whether delivery is working for your cafe or against it."
+    }
+  ],
+  "legacyBuilder": "buildDeliveryArticle",
+  "status": "published"
+}

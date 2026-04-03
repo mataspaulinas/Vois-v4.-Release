@@ -1,0 +1,77 @@
+{
+  "slug": "tax-and-sodra",
+  "title": "Monthly Tax Reporting: i.SAF, SODRA, and VMI Compliance",
+  "subtitle": "Miss the 20th and the penalties start. Here is how to never miss it.",
+  "category": "playbook",
+  "domain": "financial",
+  "module": "Pricing Revenue & Cost Control",
+  "tags": ["tax", "VAT", "i.SAF", "SODRA", "VMI", "compliance", "payroll"],
+  "difficulty": "intermediate",
+  "readTime": 13,
+  "blocks": ["B211", "B212"],
+  "tools": ["T211-01", "T211-02", "T211-03", "T212-01", "T212-02"],
+  "signals": ["S211", "S212", "S213"],
+  "related": ["cash-flow-and-budgeting", "pricing-that-pays", "hiring-under-lithuanian-law"],
+  "coverColor": "slate",
+  "coverIcon": "file-text",
+  "struggles": ["tax-compliance-anxiety", "missed-deadlines", "payroll-complexity"],
+  "toc": [
+    { "id": "kb-s1", "label": "The Lithuanian Tax Calendar" },
+    { "id": "kb-s2", "label": "i.SAF Monthly VAT Declaration" },
+    { "id": "kb-s3", "label": "SODRA Social Insurance" },
+    { "id": "kb-s4", "label": "Payroll and GPM" },
+    { "id": "kb-s5", "label": "POS System Tax Integration" },
+    { "id": "kb-s6", "label": "Record-Keeping and Audit Readiness" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B211", "name": "VAT & Electronic Tax Reporting" },
+      { "id": "B212", "name": "Social Insurance Administration" }
+    ],
+    "tools": [
+      "T211-01 · i.SAF Monthly Submission Checklist",
+      "T211-02 · VAT Reconciliation Worksheet",
+      "T212-01 · SODRA New Hire Notification Guide",
+      "T212-02 · Monthly Contribution Calculator"
+    ],
+    "metrics": [
+      { "value": "20th", "label": "monthly i.SAF deadline (of following month)" },
+      { "value": "1 hour", "label": "SODRA notification for new hires" },
+      { "value": "Monthly", "label": "VAT filing frequency" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "kb-s1",
+      "heading": "The Lithuanian Tax Calendar",
+      "body": "Lithuanian tax compliance runs on monthly cycles. Unlike some countries where VAT is quarterly, Lithuania requires monthly electronic filing. Missing a deadline is not a grey area — penalties begin immediately.\n\n**Monthly deadlines:**\n\n| Deadline | What | Authority | How |\n|----------|------|-----------|-----|\n| 15th of following month | GPM (personal income tax) declaration and payment | VMI | i.MAS portal |\n| 15th of following month | SODRA contributions payment | SODRA | EDAS portal |\n| 20th of following month | i.SAF VAT declaration | VMI | i.MAS portal |\n| 25th of following month | VAT payment (if applicable) | VMI | Bank transfer |\n\n**Set up your compliance rhythm:**\n\n- **1st–5th:** Close previous month's books, reconcile POS data with bank statements\n- **5th–10th:** Prepare payroll calculations, generate SODRA contribution reports\n- **10th–15th:** Submit GPM declaration, pay SODRA contributions\n- **15th–20th:** Reconcile VAT, prepare i.SAF submission\n- **20th:** Submit i.SAF — this is the hard deadline\n\n**Who does this?**\nMost cafe owners use a buhalterė (accountant) — either in-house (rare for small cafes) or outsourced. A good Lithuanian accountant costs €150–400/month for a small cafe and is worth every cent. They handle i.SAF, SODRA, GPM, and keep you compliant.\n\nEven with an accountant, the owner must understand what is being filed and when. You sign the declarations. You are responsible."
+    },
+    {
+      "id": "kb-s2",
+      "heading": "i.SAF Monthly VAT Declaration",
+      "body": "i.SAF (i.MAS SAF-T format) is Lithuania's electronic VAT reporting system. Every month, you submit a structured data file to VMI containing your sales and purchase invoices.\n\n**What i.SAF includes:**\n- All sales invoices issued (including simplified receipts from POS)\n- All purchase invoices received (supplier invoices)\n- VAT amounts calculated on each transaction\n- Customer/supplier identification (for B2B transactions)\n\n**VAT rates relevant to cafes:**\n\n| Rate | Applies To |\n|------|----------|\n| 21% (standard) | Default rate for most goods and services |\n| 9% (reduced) | Catering services, restaurant food and non-alcoholic beverages |\n| 21% | Alcoholic beverages (even in a restaurant context) |\n| 21% | Retail goods (coffee bags, merchandise) |\n\nThe reduced 9% rate on catering is significant — it means a flat white served in your cafe is taxed at 9%, but a retail bag of beans is taxed at 21%. Your POS must correctly classify items.\n\n**Common i.SAF errors:**\n- Misclassifying items at wrong VAT rate (9% vs 21%)\n- Missing purchase invoices (lost supplier receipts = unclaimed input VAT)\n- POS data not matching bank deposits (discrepancies trigger VMI attention)\n- Duplicate entries from manual corrections\n- Late submission (penalties accrue daily)\n\n**POS integration:**\nYour POS system should generate i.SAF-compatible data exports. Most modern systems (Poster, Lightspeed, iKas, Square) support Lithuanian tax reporting — but you need to configure it correctly. Check that every product is assigned the correct VAT rate and that daily Z-reports reconcile with your i.SAF data.\n\n**If you are VAT-registered but below the threshold (€45,000 annual turnover):** You may be eligible for the small business scheme with simplified reporting. Discuss with your accountant."
+    },
+    {
+      "id": "kb-s3",
+      "heading": "SODRA Social Insurance",
+      "body": "SODRA (Valstybinio socialinio draudimo fondo valdyba) manages Lithuania's mandatory social insurance system — pensions, health insurance, unemployment, sickness, and maternity benefits.\n\n**Employer obligations:**\n\n**New hire notification:** You must notify SODRA within **1 working hour** of your new employee's scheduled start time. Not within the first day — within the first hour. This is done electronically through the EDAS portal. Missing this deadline results in fines and creates problems with the employee's social insurance record.\n\n**Monthly contributions (approximate 2025–2026 rates):**\n\n| Component | Employer Pays | Employee Pays |\n|-----------|--------------|---------------|\n| Pension insurance | ~1.77% | ~8.72% |\n| Health insurance | — | ~6.98% |\n| Unemployment | Included | ~0.5% |\n| Sickness/maternity | Included | ~2.09% |\n| Long-term employment | ~0.16% | — |\n| Guarantee fund | ~0.16% | — |\n| **Total approximate** | **~1.77%** | **~19.5%** |\n\n*Note: Rates change annually. Verify current rates with SODRA or your accountant.*\n\nThe employer's direct SODRA burden is relatively low (~1.77%), but you are responsible for withholding and remitting the employee's portion (~19.5%) from their gross salary.\n\n**Payment:** Monthly, by the 15th of the following month, through the EDAS portal.\n\n**What SODRA covers for your employees:**\n- State pension contributions\n- Health insurance (access to public healthcare)\n- Unemployment insurance (if they lose their job)\n- Sickness pay (employer pays first 2 days, SODRA covers day 3 onwards)\n- Maternity/paternity benefits\n\n**Record-keeping:** Maintain records of all SODRA notifications, monthly contributions, and employee registration confirmations. VMI and SODRA cross-reference data — discrepancies trigger audits."
+    },
+    {
+      "id": "kb-s4",
+      "heading": "Payroll and GPM",
+      "body": "GPM (Gyventojų pajamų mokestis) is Lithuania's personal income tax, withheld by the employer from each employee's salary.\n\n**Gross to net calculation for a cafe barista (example):**\n\n| Component | Amount | Notes |\n|-----------|--------|-------|\n| Gross salary | €1,100 | Above minimum wage (€924 gross, 2025) |\n| Tax-free amount (NPD) | ~€625 | Varies by income level, reduces as salary rises |\n| Taxable income | €475 | Gross minus NPD |\n| GPM (20%) | €95 | On taxable income |\n| SODRA employee contributions (~19.5%) | €214.50 | On gross salary |\n| **Net salary** | **€790.50** | What the employee receives |\n| Employer SODRA (~1.77%) | €19.47 | Additional employer cost |\n| **Total employer cost** | **€1,119.47** | Gross + employer SODRA |\n\n*Note: NPD calculation is progressive and changes annually. Use the VMI calculator or your accountant for exact figures.*\n\n**Key payroll rules:**\n- Salary must be paid at least twice per month (advance + remainder) unless the employee agrees to monthly payment in writing\n- Payslips must detail gross pay, all deductions, and net pay\n- Minimum wage is set annually by government (€924 gross for 2025 — check current rate)\n- Overtime: 1.5x for first 2 hours, 2x thereafter. Maximum 8 hours overtime per week\n- Night work premium: at least 1.5x for hours between 22:00 and 06:00\n\n**Tips:**\nLithuanian law does not have specific tip pooling or tronc regulations like some countries. Tips received directly by employees are technically taxable income. In practice, cash tips are rarely declared. Card tips processed through the POS should be distributed transparently and ideally tracked for tax purposes. Set a clear tip policy so the team knows the rules."
+    },
+    {
+      "id": "kb-s5",
+      "heading": "POS System Tax Integration",
+      "body": "Your POS system is the bridge between daily operations and tax compliance. If it is not set up correctly, every transaction creates a compliance risk.\n\n**Requirements for Lithuanian tax compliance:**\n\n**1. VAT rate configuration.** Every product must be assigned the correct VAT rate:\n- Coffee drinks served in-cafe: 9% (catering)\n- Food served in-cafe: 9% (catering)\n- Takeaway coffee: 9% (catering — same as dine-in in Lithuania)\n- Retail coffee bags: 21% (standard)\n- Alcoholic beverages: 21% (standard, even with food)\n- Merchandise: 21% (standard)\n\nMisconfiguration is the most common POS tax error. If your flat white is set at 21% instead of 9%, you are overpaying VAT — and your prices may be artificially high.\n\n**2. Receipt generation.** Every transaction must generate a receipt with:\n- Your business name and tax ID (IMK or UAB code)\n- Date and time\n- Items purchased with VAT breakdown\n- Total amount\n- Payment method\n\n**3. i.SAF data export.** Your POS must be able to export daily sales data in a format compatible with i.SAF reporting. Check this before purchasing a POS system — not all international systems support Lithuanian requirements out of the box.\n\n**4. Z-report (daily closing).** The end-of-day Z-report should reconcile with your bank deposits. VMI cross-references POS data with bank statements — persistent discrepancies trigger audits.\n\n**5. Void and discount tracking.** All voids, discounts, and cancellations must be logged with a reason. Excessive voids or unrecorded discounts are red flags in a VMI audit.\n\n**Recommended POS systems for Lithuania:** Check local market for systems with built-in i.SAF support. International systems (Square, Lightspeed) may require plugins or accountant-managed exports. Lithuanian-developed systems often have native VMI integration."
+    },
+    {
+      "id": "kb-s6",
+      "heading": "Record-Keeping and Audit Readiness",
+      "body": "VMI can audit your business going back up to 5 years. Your records need to survive that window.\n\n**What to keep:**\n\n| Record | Retention | Format |\n|--------|-----------|--------|\n| i.SAF submissions | 10 years | Digital (VMI portal stores copies) |\n| Purchase invoices | 10 years | Digital scan + original |\n| POS daily Z-reports | 10 years | Digital export |\n| Bank statements | 10 years | Digital |\n| Employment contracts | Duration + 3 years after end | Paper + digital copy |\n| SODRA notifications | 10 years | Digital (EDAS portal stores copies) |\n| Payroll records | 10 years | Digital |\n| Cash register receipts | 10 years | Digital backup |\n\n**Digital vs paper:** Lithuanian law accepts digital records if they are stored securely, backed up, and can be produced on request. Most cafe owners maintain a combination: digital for daily operations, paper originals in a folder for contracts and key documents.\n\n**Common audit triggers:**\n- Consistently reporting losses (VMI wonders how you stay open)\n- Revenue significantly below comparable businesses in your area\n- Large discrepancies between POS data and bank deposits\n- Late or missing i.SAF submissions\n- Employee complaints to SODRA about undeclared wages\n- Random selection (VMI audits a percentage of businesses annually)\n\n**If you are audited:**\n1. Cooperate fully — obstruction makes it worse\n2. Contact your accountant immediately\n3. Provide requested documents within the deadline\n4. Do not volunteer information beyond what is asked\n5. If errors are found, correct them promptly and pay any additional tax due\n\n**Prevention:** Monthly reconciliation between POS data, bank statements, and i.SAF submissions catches errors before they compound into audit findings. Your accountant should do this routinely — if they are not, ask them to start."
+    }
+  ],
+  "legacyBuilder": "buildTaxSodraArticle",
+  "status": "published"
+}

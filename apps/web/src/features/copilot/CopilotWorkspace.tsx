@@ -17,9 +17,8 @@ import {
   compareThreads,
   contentUrlFromReference,
   fileReferencesForMessage,
-  formatSourceMode,
-  nonFileReferencesForMessage,
   groupCopilotThreads,
+  nonFileReferencesForMessage,
 } from "./copilotHelpers";
 
 type ActionDefinition = {
@@ -87,7 +86,8 @@ type Props = {
 };
 
 export function CopilotWorkspace(props: Props) {
-  const [showContext, setShowContext] = useState(true);
+  const [showContext, setShowContext] = useState(false);
+  const [showAllActions, setShowAllActions] = useState(false);
   const [editingTitle, setEditingTitle] = useState(false);
   const [draftTitle, setDraftTitle] = useState("");
 
@@ -127,6 +127,22 @@ export function CopilotWorkspace(props: Props) {
       { label: "Context", items: props.searchResults.context_objects },
     ].filter((section) => section.items.length);
   }, [props.searchQuery, props.searchResults]);
+  const prioritizedActions = useMemo(() => {
+    const preferredOrder: CopilotActionType[] = [
+      "save_note",
+      "apply_to_assessment",
+      "create_plan_suggestion",
+      "create_task_suggestion",
+      "create_diagnosis_note",
+      "save_compare_insight",
+      "create_escalation_draft",
+      "create_follow_up_list",
+    ];
+    return [...props.availableActions].sort(
+      (left, right) => preferredOrder.indexOf(left.type) - preferredOrder.indexOf(right.type)
+    );
+  }, [props.availableActions]);
+  const visibleActions = showAllActions ? prioritizedActions : prioritizedActions.slice(0, 3);
 
   if (!props.open) return null;
 
@@ -137,7 +153,7 @@ export function CopilotWorkspace(props: Props) {
           <div className="copilot-workspace__header">
             <div>
               <p className="copilot-workspace__eyebrow">VOIS</p>
-              <h2>Copilot workspace</h2>
+              <h2>Copilot</h2>
             </div>
             <button onClick={props.onClose} className="copilot-workspace__icon-button" aria-label="Close workspace">
               <Icon name="close" size={16} />
@@ -145,11 +161,11 @@ export function CopilotWorkspace(props: Props) {
           </div>
           <div className="copilot-workspace__search">
             <Icon name="search" size={15} />
-            <input value={props.searchQuery} onChange={(event) => props.onSearchChange(event.target.value)} placeholder="Search threads, messages, files" />
+            <input value={props.searchQuery} onChange={(event) => props.onSearchChange(event.target.value)} placeholder="Search conversations, notes, files" />
           </div>
           <div className="copilot-workspace__action-row">
-            <button onClick={props.onCreateSharedThread} className="copilot-workspace__button copilot-workspace__button--primary">New shared</button>
-            <button onClick={props.onCreatePrivateThread} className="copilot-workspace__button">New private</button>
+            <button onClick={props.onCreateSharedThread} className="copilot-workspace__button copilot-workspace__button--primary" title="New shared thread"><Icon name="add" size={14} /></button>
+            <button onClick={props.onCreatePrivateThread} className="copilot-workspace__button" title="New private thread"><Icon name="lock" size={14} /></button>
           </div>
           <div className="copilot-workspace__filters">
             <div className="copilot-workspace__chip-row">
@@ -163,8 +179,8 @@ export function CopilotWorkspace(props: Props) {
                 <option value="title">Title</option>
                 <option value="created">Created</option>
               </select>
-              <button onClick={() => props.onIncludeArchivedChange(!props.includeArchived)} className="copilot-workspace__button">
-                {props.includeArchived ? "Hide archived" : "Show archived"}
+              <button onClick={() => props.onIncludeArchivedChange(!props.includeArchived)} className="copilot-workspace__button" title={props.includeArchived ? "Hide archived" : "Show archived"}>
+                <Icon name={props.includeArchived ? "eye-off" : "eye"} size={14} />
               </button>
             </div>
           </div>
@@ -197,13 +213,9 @@ export function CopilotWorkspace(props: Props) {
                       className={`copilot-workspace__thread ${props.selectedThreadId === thread.id ? "is-active" : ""}`}
                     >
                       <strong>{thread.title}</strong>
-                      <span>{thread.context_label}</span>
-                      <span>{thread.visibility === "private" ? "Private" : "Shared"} · {thread.thread_type.replace(/_/g, " ")}</span>
+                      <span>{thread.visibility === "private" ? "Private" : "Shared"} · {thread.context_label}</span>
                       {thread.last_message_preview ? <span>{thread.last_message_preview}</span> : null}
-                      <span>
-                        {thread.applied_action_count} applied
-                        {thread.last_activity_at ? ` · ${props.formatTimestamp(thread.last_activity_at)}` : ""}
-                      </span>
+                      {thread.last_activity_at ? <span>{props.formatTimestamp(thread.last_activity_at)}</span> : null}
                     </button>
                   ))}
                 </div>
@@ -237,20 +249,20 @@ export function CopilotWorkspace(props: Props) {
                     <>
                       <h3>{props.selectedThread.title}</h3>
                       <div className="copilot-workspace__meta-row">
-                        <span className="copilot-workspace__meta">Context: {props.selectedThread.context_label}</span>
-                        <span className="copilot-workspace__meta">Visibility: {props.selectedThread.visibility === "private" ? "Private" : "Shared"}</span>
-                        <span className="copilot-workspace__meta">Memory: {props.selectedThreadContext?.memory_scope_label ?? "In scope"}</span>
+                        <span className="copilot-workspace__meta">{props.selectedThread.context_label}</span>
+                        <span className="copilot-workspace__meta">{props.selectedThread.visibility === "private" ? "Private" : "Shared"}</span>
+                        <span className="copilot-workspace__meta">{props.selectedThreadContext?.memory_scope_label ?? "In scope"}</span>
                         {props.selectedThread.linked_artifact_type ? <span className="copilot-workspace__meta">Linked: {props.selectedThread.linked_artifact_type.replace(/_/g, " ")}</span> : null}
                       </div>
                     </>
                   )}
                 </div>
                 <div className="copilot-workspace__message-actions">
-                  <button onClick={() => setEditingTitle((current) => !current)} className="copilot-workspace__button">Rename</button>
-                  <button onClick={() => void props.onTogglePin()} className="copilot-workspace__button">{props.selectedThread.pinned ? "Unpin" : "Pin"}</button>
-                  <button onClick={() => void props.onToggleArchive()} className="copilot-workspace__button">{props.selectedThread.archived ? "Unarchive" : "Archive"}</button>
-                  <button onClick={() => void props.onDeleteThread()} className="copilot-workspace__button">Delete</button>
-                  <button onClick={() => setShowContext((current) => !current)} className="copilot-workspace__button">{showContext ? "Hide context" : "Show context"}</button>
+                  <button onClick={() => setEditingTitle((current) => !current)} className="copilot-workspace__button" title="Rename"><Icon name="edit" size={14} /></button>
+                  <button onClick={() => void props.onTogglePin()} className="copilot-workspace__button" title={props.selectedThread.pinned ? "Unpin" : "Pin"}><Icon name="tasks" size={14} /></button>
+                  <button onClick={() => void props.onToggleArchive()} className="copilot-workspace__button" title={props.selectedThread.archived ? "Unarchive" : "Archive"}><Icon name="save" size={14} /></button>
+                  <button onClick={() => void props.onDeleteThread()} className="copilot-workspace__button copilot-workspace__button--danger" title="Delete"><Icon name="delete" size={14} /></button>
+                  <button onClick={() => setShowContext((current) => !current)} className="copilot-workspace__button" title={showContext ? "Hide context" : "Show context"}><Icon name={showContext ? "eye-off" : "eye"} size={14} /></button>
                 </div>
               </div>
 
@@ -262,18 +274,17 @@ export function CopilotWorkspace(props: Props) {
                       <div className="copilot-workspace__message-head">
                         <div>
                           <p className="copilot-workspace__eyebrow">{isUser ? "You" : "VOIS"}</p>
-                          <p className="copilot-workspace__muted">{props.formatTimestamp(message.created_at)} · {formatSourceMode(message.source_mode)}</p>
+                          <p className="copilot-workspace__muted">{props.formatTimestamp(message.created_at)}</p>
                         </div>
                         <div className="copilot-workspace__message-actions">
-                          {!isUser ? <span className="copilot-workspace__reference-chip">{formatRenderMode(message.render_mode)}</span> : null}
-                          <button onClick={() => navigator.clipboard.writeText(message.content)} className="copilot-workspace__button">Copy</button>
-                          <button onClick={() => props.onQuoteMessage(message.id)} className="copilot-workspace__button">Quote</button>
-                          {isUser ? <button onClick={() => props.onReuseMessage(message.content)} className="copilot-workspace__button">Edit</button> : null}
-                          <button onClick={() => void props.onBranchThread(message.id)} className="copilot-workspace__button">Branch</button>
+                          <button onClick={() => navigator.clipboard.writeText(message.content)} className="copilot-workspace__button" title="Copy"><Icon name="duplicate" size={13} /></button>
+                          <button onClick={() => props.onQuoteMessage(message.id)} className="copilot-workspace__button" title="Quote"><Icon name="comment" size={13} /></button>
+                          {isUser ? <button onClick={() => props.onReuseMessage(message.content)} className="copilot-workspace__button" title="Edit"><Icon name="edit" size={13} /></button> : null}
+                          <button onClick={() => void props.onBranchThread(message.id)} className="copilot-workspace__button" title="Branch"><Icon name="forward" size={13} /></button>
                         </div>
                       </div>
                       <CopilotRichMessage content={message.content} />
-                      {message.provenance.length ? (
+                      {showContext && message.provenance.length ? (
                         <div className="copilot-workspace__reference-row">
                           {message.provenance.map((item, index) => (
                             <div key={`${message.id}-prov-${index}`} className="copilot-workspace__reference-card">
@@ -292,7 +303,7 @@ export function CopilotWorkspace(props: Props) {
                           </div>;
                         })}
                       </div> : null}
-                      {nonFileReferencesForMessage(message.references).length ? <div className="copilot-workspace__reference-row">
+                      {showContext && nonFileReferencesForMessage(message.references).length ? <div className="copilot-workspace__reference-row">
                         {nonFileReferencesForMessage(message.references).map((reference) => <span key={`${message.id}-${reference.label}`} className="copilot-workspace__reference-chip">{reference.label}</span>)}
                       </div> : null}
                     </article>
@@ -301,6 +312,10 @@ export function CopilotWorkspace(props: Props) {
               </div>
 
               <div className="copilot-workspace__composer">
+                <div className="copilot-workspace__muted" style={{ marginBottom: 8 }}>
+                  {props.selectedThread?.visibility === "private" ? "Private conversation" : "Shared conversation"}
+                  {props.selectedThreadContext?.memory_scope_label ? ` · ${props.selectedThreadContext.memory_scope_label}` : ""}
+                </div>
                 {props.quotedMessage ? (
                   <div className="copilot-workspace__notice">
                     Quoting: {props.quotedMessage.content.slice(0, 120)}
@@ -343,9 +358,9 @@ export function CopilotWorkspace(props: Props) {
           <aside className="copilot-workspace__context">
             <div className="copilot-workspace__section">
               <div className="copilot-workspace__section-head">
-                <p className="copilot-workspace__eyebrow">Why this thread knows what it knows</p>
+                <p className="copilot-workspace__eyebrow">What this conversation is using</p>
               </div>
-              <p className="copilot-workspace__muted">{props.selectedThreadContext?.memory_scope_label ?? "Current thread scope"}</p>
+              <p className="copilot-workspace__muted">{props.selectedThreadContext?.memory_scope_label ?? "Current conversation scope"}</p>
               <div className="copilot-workspace__thread-stack">
                 {(props.selectedThreadContext?.provenance_summary ?? []).map((item, index) => (
                   <div key={`summary-${index}`} className="copilot-workspace__reference-card">
@@ -359,15 +374,15 @@ export function CopilotWorkspace(props: Props) {
 
             <div className="copilot-workspace__section">
               <div className="copilot-workspace__section-head">
-                <p className="copilot-workspace__eyebrow">What can be done from this thread</p>
+                <p className="copilot-workspace__eyebrow">Helpful next moves</p>
               </div>
               <div className="copilot-workspace__action-cards">
-                {props.availableActions.map((action) => (
+                {visibleActions.map((action) => (
                   <ActionCard
                     key={action.type}
                     title={action.title}
                     description={action.description}
-                    status={`${action.mode.toUpperCase()} · ${action.status}`}
+                    status={`${formatActionMode(action.mode)} · ${action.status}`}
                     busy={props.previewingActionType === action.type}
                     disabled={!action.enabled || Boolean(props.committingActionType)}
                     actionLabel={props.previewingActionType === action.type ? "Preparing…" : "Preview"}
@@ -375,6 +390,11 @@ export function CopilotWorkspace(props: Props) {
                   />
                 ))}
               </div>
+              {prioritizedActions.length > 3 ? (
+                <button onClick={() => setShowAllActions((current) => !current)} className="copilot-workspace__button" style={{ marginTop: 10 }}>
+                  {showAllActions ? "Show fewer actions" : "More actions"}
+                </button>
+              ) : null}
               {props.actionPreview ? (
                 <PreviewCard
                   preview={props.actionPreview}
@@ -393,7 +413,7 @@ export function CopilotWorkspace(props: Props) {
             </div>
 
             <ContextList
-              title="What is in scope"
+              title="In this conversation"
               items={[
                 ...(props.selectedThreadContext?.context_references.map((item) => ({
                   id: `context-${item.type}-${item.id ?? item.label}`,
@@ -415,13 +435,13 @@ export function CopilotWorkspace(props: Props) {
             />
 
             <section className="copilot-workspace__section">
-              <p className="copilot-workspace__eyebrow">What has already been applied</p>
+              <p className="copilot-workspace__eyebrow">Saved from this conversation</p>
               <div className="copilot-workspace__thread-stack">
                 {props.loadingActionHistory ? <div className="copilot-workspace__muted">Loading actions…</div> : null}
                 {!props.loadingActionHistory && props.selectedThreadActions.length ? props.selectedThreadActions.map((action) => (
                   <div key={action.id} className="copilot-workspace__reference-card">
                     <strong>{action.title}</strong>
-                    <span>{action.mode.toUpperCase()} · {action.target_artifact_type ?? "thread record"}</span>
+                    <span>{formatActionMode(action.mode)} · {formatArtifactLabel(action.target_artifact_type)}</span>
                     <span>{action.actor_name ?? "Unknown user"} · {props.formatTimestamp(action.created_at)}</span>
                   </div>
                 )) : !props.loadingActionHistory ? <div className="copilot-workspace__muted">Nothing has been applied from this thread yet.</div> : null}
@@ -496,6 +516,23 @@ function ActionCard(props: {
   );
 }
 
-function formatRenderMode(mode: CopilotMessageRecord["render_mode"]) {
-  return mode.replace(/_/g, " ");
+function formatActionMode(mode: "save" | "suggest" | "draft" | "apply") {
+  switch (mode) {
+    case "save":
+      return "Save";
+    case "suggest":
+      return "Suggestion";
+    case "draft":
+      return "Draft";
+    case "apply":
+      return "Apply";
+    default:
+      return mode;
+  }
 }
+
+function formatArtifactLabel(value: string | null | undefined) {
+  if (!value) return "saved item";
+  return value.replace(/_/g, " ");
+}
+

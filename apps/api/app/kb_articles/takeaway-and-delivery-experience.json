@@ -1,0 +1,75 @@
+{
+  "slug": "takeaway-and-delivery-experience",
+  "title": "The Off-Premise Experience: Takeaway, Delivery, and Beyond",
+  "subtitle": "Your food and drink leave the building every day. What happens after the handover defines your reputation.",
+  "category": "signal-story",
+  "domain": "customer-experience",
+  "module": "Customer Experience & Retention",
+  "tags": ["takeaway", "delivery", "packaging", "click-and-collect", "pre-ordering", "off-premise"],
+  "difficulty": "intermediate",
+  "readTime": 12,
+  "blocks": ["B033", "B038"],
+  "tools": ["T033-01", "T038-01"],
+  "signals": ["S025", "S031", "S032", "S033"],
+  "related": ["loyalty-that-lasts", "third-party-delivery", "building-community"],
+  "coverColor": "teal",
+  "coverIcon": "package",
+  "struggles": ["takeaway-quality-drop", "packaging-complaints", "delivery-integration", "pre-order-chaos"],
+  "toc": [
+    { "id": "kb-s1", "label": "The Takeaway Quality Gap" },
+    { "id": "kb-s2", "label": "Packaging That Protects Quality" },
+    { "id": "kb-s3", "label": "Click-and-Collect Systems" },
+    { "id": "kb-s4", "label": "Managing Delivery Quality" },
+    { "id": "kb-s5", "label": "Experience Innovation" },
+    { "id": "kb-s6", "label": "Pre-Ordering" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B033", "name": "Takeaway Experience Standards" },
+      { "id": "B038", "name": "Off-Premise Channel Management" }
+    ],
+    "tools": [
+      "T033-01 · Takeaway Quality Checklist",
+      "T038-01 · Off-Premise Channel Planner"
+    ],
+    "metrics": [
+      { "value": "60%+", "label": "of cafe revenue now includes takeaway" },
+      { "value": "15 min", "label": "maximum click-and-collect wait" },
+      { "value": "<2%", "label": "target delivery complaint rate" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "kb-s1",
+      "heading": "The Takeaway Quality Gap",
+      "body": "A flat white served in a ceramic cup at your counter is a controlled experience. The temperature is right, the texture is perfect, the presentation is exactly as intended. The same flat white in a paper cup, carried for ten minutes in a bag, and drunk at a desk is a different product entirely.\n\nMost cafes treat takeaway as an afterthought — the same drink or food, put into a disposable container, and handed over. But the customer judges the quality at the point of consumption, not the point of sale. If the coffee is lukewarm when they reach the office, that is your coffee's reputation. If the sandwich is soggy when they open it at their desk, that is your sandwich.\n\nThe takeaway quality gap is the difference between what you make and what the customer actually experiences. Closing that gap requires you to think about your product from the customer's end, not yours.\n\n**Coffee gaps:**\n- Paper cups absorb heat faster than ceramic. The drink cools more quickly.\n- Latte art is invisible in a takeaway cup. The visual experience disappears.\n- Lids change the drinking experience — some trap steam and alter flavour perception.\n\n**Food gaps:**\n- Toasted sandwiches steam inside packaging, turning crisp bread soggy within minutes.\n- Salads wilt if dressed too early.\n- Hot and cold items in the same bag create condensation problems.\n\nThe solution is not to stop doing takeaway — it accounts for a significant portion of most cafes' revenue. The solution is to design your takeaway offering with the gap in mind. Some items travel well. Some do not. Know the difference, and adjust your menu, your packaging, and your preparation accordingly."
+    },
+    {
+      "id": "kb-s2",
+      "heading": "Packaging That Protects Quality",
+      "body": "Packaging is not a cost to minimise. It is a quality tool and a brand statement. The right packaging protects your product, represents your values, and arrives at the customer looking intentional.\n\n**Coffee cups:**\n\nDouble-walled cups hold heat longer and eliminate the need for a sleeve. They cost more per unit but reduce waste (no separate sleeve) and improve the customer experience. If double-wall is too expensive, use a good single-wall cup with a well-fitting sleeve.\n\nLids matter. A lid that leaks, that is hard to drink from, or that collapses when pressed destroys the experience. Test your lids yourself — drink from them, carry them, put them in a bag. If the experience is poor, switch suppliers.\n\n**Food packaging:**\n\n- **Toasted items:** Use packaging with ventilation holes or perforated lids. Trapped steam is the enemy of crispness. Alternatively, wrap loosely in greaseproof paper rather than sealing in a box.\n- **Salads:** Use compartmentalised containers that separate dressing from leaves. Pre-dressed salads wilt within twenty minutes.\n- **Hot food:** Insulated containers or foil-lined bags retain heat without creating condensation. Avoid putting hot items in sealed plastic containers — they sweat.\n- **Cakes and pastries:** Rigid boxes prevent crushing. Paper bags are cheaper but a squashed cake is a complaint waiting to happen.\n\n**Sustainability:**\n\nCustomers increasingly judge your packaging choices. Compostable, recyclable, or reusable options signal values alignment. But be honest — if your \"compostable\" cups require industrial composting facilities that do not exist in your area, the claim is misleading. Focus on genuinely reducing waste: encourage reusable cups with a discount, use minimal packaging where quality allows, and clearly label what is recyclable in your local council's system.\n\n**Branding:**\n\nYour takeaway cup is a mobile advertisement. Branded cups, stickers, or stamps turn every customer walking down the high street into a billboard for your cafe. This is not vanity — it is the cheapest marketing you will ever do."
+    },
+    {
+      "id": "kb-s3",
+      "heading": "Click-and-Collect Systems",
+      "body": "Click-and-collect removes the queue, reduces wait times, and gives customers control over their schedule. Done well, it increases throughput during peak hours without increasing staffing. Done badly, it creates a parallel queue that frustrates both pre-order and walk-in customers.\n\n**The basics:**\n\nA click-and-collect system lets customers order and pay in advance via an app or website, then collect at a designated time or when notified. The order appears on your kitchen display or prints as a ticket, and the team prepares it for collection.\n\n**Platforms:**\n\n- **Square Online, Shopify, or your POS provider's own system** integrate directly with your till and avoid double-handling orders.\n- **Standalone apps like Toggle or Flipdish** offer more customisation but require separate management.\n- **Your own website with a simple order form** works for low volume but lacks automation.\n\n**Implementation pitfalls:**\n\n- **Timing.** If a customer orders a flat white for 8:15am collection and you make it at 8:05, it is ten minutes old when they arrive. Build preparation timing into your workflow — start the order at the collection time, not when it comes in.\n- **Notification.** Tell the customer when their order is ready. A text, an app notification, or a simple \"your order is on the collection shelf\" sign. Do not make them ask.\n- **Separation.** Designate a collection point away from the main counter. Pre-order customers hovering at the till creates confusion for walk-in customers and congestion for the team.\n- **Peak management.** Limit the number of pre-orders per fifteen-minute window during peak hours. An unlimited pre-order system can overwhelm the bar during the morning rush.\n\n**The customer experience:**\n\nThe best click-and-collect experiences feel seamless. The customer walks in, picks up their clearly labelled order from the collection point, and leaves. No queue, no wait, no friction. The worst ones involve standing around wondering whether the order was received, asking staff who do not know, and waiting longer than if they had just queued normally.\n\nTest your system from the customer's side. Place an order, walk in, and collect it. Time it. Note every friction point. Fix them before launch."
+    },
+    {
+      "id": "kb-s4",
+      "heading": "Managing Delivery Quality",
+      "body": "Delivery adds another layer of distance between your kitchen and your customer. You lose control of timing, temperature, and presentation. The rider does not care whether your cappuccino arrives with intact foam — they care about completing the delivery within the platform's time window.\n\n**What travels well:**\n\n- Iced drinks (temperature is less critical)\n- Batch brew and filter coffee (less affected by time than espresso-based drinks)\n- Sandwiches and wraps (if packaged correctly)\n- Cakes and pastries (in rigid packaging)\n- Soups (in leak-proof containers with secure lids)\n\n**What does not travel well:**\n\n- Espresso-based milk drinks (foam collapses, temperature drops)\n- Toasted items (steam and sogginess)\n- Plated salads (dressing migration)\n- Any item that relies on presentation for its appeal\n\n**Quality controls you can implement:**\n\n- **Packaging standards.** Use T033-01 to define packaging for every delivery menu item. Tamper-evident seals, leak-proof containers, insulated bags for hot items.\n- **Reduced menu.** You do not have to offer your full menu on delivery platforms. Remove items that do not travel well. A smaller, high-quality delivery menu is better than a full menu of compromised items.\n- **Preparation timing.** Do not make delivery orders until the rider is close to arrival. Most platforms show rider ETA. Use it.\n- **Quality check before handover.** The person handing the bag to the rider should check: correct items, sealed packaging, napkins and cutlery included, any sauces or extras.\n\n**Platform management:**\n\nIf you use Deliveroo, Uber Eats, or Just Eat, monitor your ratings weekly. Delivery complaints are public and affect your visibility on the platform. Respond to every negative review — not defensively, but constructively. \"We're sorry the coffee arrived cold. We've adjusted our packaging to prevent this.\" Shows future customers you care.\n\nCommission rates on delivery platforms run between 15% and 35%. Price your delivery menu to account for this — either by raising prices on the platform or by accepting a lower margin on delivery orders as a customer acquisition cost."
+    },
+    {
+      "id": "kb-s5",
+      "heading": "Experience Innovation",
+      "body": "The off-premise experience does not have to be a lesser version of the in-store experience. With some thought, it can be distinctive in its own right.\n\n**The unboxing moment:**\n\nWhen a customer opens their delivery bag or their click-and-collect order, what do they see? A jumble of containers, or something that looks intentional? Small touches transform the experience:\n\n- A branded sticker sealing the bag\n- A printed card with a thank-you message or a seasonal recommendation\n- Items arranged so the first thing visible is the most appealing\n- A napkin that is not stuffed in as an afterthought\n\nThese cost pennies per order and create a moment of delight that a plain brown bag does not.\n\n**Subscription and bundle offers:**\n\nConsider offering weekly coffee subscriptions for nearby offices. Five flat whites, Monday to Friday, collected at 8:30am. Pre-paid, pre-ordered, ready on arrival. The customer saves time. You get guaranteed revenue and predictable demand. Price it at a modest discount to incentivise commitment.\n\nLunch bundles — a sandwich, a drink, and a snack for a fixed price — simplify the ordering decision and increase average transaction value. Design them around your best-margin items.\n\n**At-home kits:**\n\nRetail bags of your house blend, branded reusable cups, cold brew concentrate for the fridge. These extend your brand into the customer's home and create touchpoints outside of their cafe visits. They also generate revenue from customers who may not visit daily but want to feel connected to your cafe.\n\n**Seasonal and limited offerings:**\n\nA takeaway-exclusive item — available only for collection or delivery — creates novelty and drives trial. A winter warmer soup available only via pre-order, or a summer cold brew bottle available only for collection. Exclusivity creates demand.\n\nInnovation does not mean complexity. It means thinking deliberately about the customer's experience at every point — not just the point of sale."
+    },
+    {
+      "id": "kb-s6",
+      "heading": "Pre-Ordering",
+      "body": "Pre-ordering is the simplest way to reduce queue pressure during peak hours while improving the customer experience. The customer orders before they arrive. The team prepares the order at the right time. The customer collects and goes. No waiting, no bottleneck, no pressure.\n\n**How to offer pre-ordering without technology:**\n\nNot every cafe needs an app. A simple system works:\n\n- A phone number or WhatsApp for regular customers to text their order\n- A dedicated email address checked every fifteen minutes during morning peak\n- A paper sign at the counter: \"Text your order to [number] and we'll have it ready when you arrive\"\n\nThis works for small cafes with a regular customer base. The volume is manageable and the personal touch is valuable.\n\n**How to offer pre-ordering with technology:**\n\nPOS-integrated pre-ordering systems automate the process. The customer orders via app or website, the order appears on your screen with a collection time, and payment is taken in advance. This eliminates manual handling and scales to higher volumes.\n\nKey features to look for: time-slot management (to prevent peak overload), menu customisation (to exclude items that do not suit pre-ordering), and automatic notifications (to tell the customer their order is ready).\n\n**Managing the workflow:**\n\nPre-orders must integrate into your existing workflow, not compete with it. Dedicate a section of the bar or pass to pre-orders. Label them clearly with the customer name and collection time. If pre-orders are overwhelming your bar during peak, reduce the number of available slots.\n\nThe barista making pre-orders should be working from a separate queue — not interleaving pre-orders with walk-in orders. Interleaving causes both to slow down and increases error rates.\n\n**Communication is everything:**\n\nIf a pre-order will be late, tell the customer before they arrive. A text saying \"Running five minutes behind, sorry — your order will be ready at 8:20\" is infinitely better than a customer standing at the collection point wondering what happened. Proactive communication turns a delay into a professional moment. Silence turns it into a failure."
+    }
+  ],
+  "legacyBuilder": "buildTakeawayAndDeliveryExperienceArticle",
+  "status": "published"
+}

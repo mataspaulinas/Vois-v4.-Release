@@ -1,0 +1,77 @@
+{
+  "slug": "lithuanian-food-regulations",
+  "title": "Lithuanian Food Business Regulations: What You Must Know",
+  "subtitle": "VMVT, HACCP, EU 852/2004 — the compliance framework that keeps your doors open.",
+  "category": "playbook",
+  "domain": "safety",
+  "module": "Food Safety & Hygiene Compliance",
+  "tags": ["VMVT", "HACCP", "EU-regulations", "licensing", "compliance", "food-safety", "allergens"],
+  "difficulty": "foundational",
+  "readTime": 14,
+  "blocks": ["B213", "B219"],
+  "tools": ["T213-01", "T213-02", "T213-03", "T219-01", "T219-02"],
+  "signals": ["S214", "S215", "S016", "S002"],
+  "related": ["cold-chain-and-haccp", "allergen-mastery", "owners-leadership-shift"],
+  "coverColor": "red",
+  "coverIcon": "shield",
+  "struggles": ["compliance-gaps", "inspection-anxiety", "licensing-confusion"],
+  "toc": [
+    { "id": "kb-s1", "label": "The Lithuanian Food Safety Framework" },
+    { "id": "kb-s2", "label": "Getting Your Approval Certificate" },
+    { "id": "kb-s3", "label": "HACCP Self-Control System" },
+    { "id": "kb-s4", "label": "EU Allergen Labelling" },
+    { "id": "kb-s5", "label": "Alcohol Licensing" },
+    { "id": "kb-s6", "label": "Preparing for VMVT Inspection" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B213", "name": "Food Business Licensing & Approval" },
+      { "id": "B219", "name": "Alcohol Licensing & Compliance" }
+    ],
+    "tools": [
+      "T213-01 · VMVT Approval Certificate Tracker",
+      "T213-02 · Food Business Registration Checklist",
+      "T219-01 · Alcohol Licence Compliance Card",
+      "T219-02 · Age Verification Protocol"
+    ],
+    "metrics": [
+      { "value": "100%", "label": "HACCP documentation must be current" },
+      { "value": "14", "label": "EU declarable allergens" },
+      { "value": "Annual", "label": "minimum VMVT compliance review" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "kb-s1",
+      "heading": "The Lithuanian Food Safety Framework",
+      "body": "Lithuania's food safety system sits within the EU framework but has its own institutional structure.\n\n**VMVT (Valstybinė maisto ir veterinarijos tarnyba)** — the State Food and Veterinary Service — is the primary regulatory authority. They register food businesses, conduct inspections, and enforce compliance. Think of them as the food safety police, public health inspector, and licensing authority combined.\n\n**The legal framework:**\n- **EU Regulation 852/2004** — General hygiene requirements for all food businesses. This is the foundation: clean premises, safe food handling, trained staff, documented procedures.\n- **EU Regulation 853/2004** — Additional rules for businesses handling animal products (relevant if you process raw meat, fish, or dairy beyond simple serving).\n- **Lithuanian Hygiene Norm HN 15:2005** — Lithuanian-specific implementation of EU hygiene standards. Covers premises requirements, equipment standards, waste management, and operational procedures specific to Lithuanian conditions.\n- **EU FIC Regulation 1169/2011** — Food information and allergen labelling. Governs how you communicate allergen and ingredient information to customers.\n\n**How this differs from the UK system:**\nLithuania does not have the UK's Food Hygiene Rating Scheme (FHRS) — there is no public-facing 0–5 score. VMVT inspections result in qualitative assessments with required corrective actions. There is no \"Safer Food Better Business\" pack — instead, you need a properly documented HACCP-based self-control system.\n\nThe compliance burden is comparable, but the documentation expectations are different. Lithuanian inspectors want to see your HACCP plan, temperature logs, cleaning schedules, and allergen records. These must be current, complete, and accessible."
+    },
+    {
+      "id": "kb-s2",
+      "heading": "Getting Your Approval Certificate",
+      "body": "Before you serve a single coffee, your food business must be registered with VMVT and receive a **maisto tvarkymo subjekto patvirtinimo pažymėjimas** (Food Business Operator Approval Certificate).\n\n**The process:**\n\n1. **Prepare your premises.** VMVT will inspect before issuing approval. Your space must meet Lithuanian hygiene norms: adequate ventilation, handwashing facilities, food-grade surfaces, proper waste disposal, pest control measures, and temperature-controlled storage.\n\n2. **Submit your application.** Through the VMVT portal or your local VMVT office. You will need:\n - Business registration documents\n - Premises plans showing layout, equipment placement, and workflow\n - Your HACCP self-control plan\n - Evidence of staff food safety training\n - Pest control contract\n - Water quality test results (if not on municipal supply)\n\n3. **Inspection.** A VMVT inspector visits to verify that your premises match your application and meet hygiene norms. They check physical infrastructure, documentation, and operational readiness.\n\n4. **Approval (or conditions).** If everything is satisfactory, you receive your certificate. If there are deficiencies, you receive a list of corrective actions and a deadline. Fix them, request re-inspection, proceed.\n\n**Timeline:** Allow 4–6 weeks from application to approval. Do not sign a lease and plan to open two weeks later — the approval process has its own timeline.\n\n**Renewal:** Your certificate must remain current. VMVT can revoke approval if subsequent inspections find non-compliance. Track your certificate expiry and renewal requirements in T213-01.\n\n**Common mistakes:** Submitting without a complete HACCP plan, inadequate handwashing facilities (you need dedicated handwash basins, not the kitchen sink), insufficient ventilation documentation, and missing pest control contracts."
+    },
+    {
+      "id": "kb-s3",
+      "heading": "HACCP Self-Control System",
+      "body": "HACCP (Hazard Analysis and Critical Control Points) is mandatory for every food business in the EU. You do not need to hire a consultant — but you need to do it properly.\n\n**The 7 HACCP principles applied to a cafe:**\n\n**1. Hazard analysis.** Identify what can go wrong at each step of your operation: receiving deliveries, storing ingredients, preparing food, serving customers. Biological (bacteria), chemical (cleaning products), physical (broken glass), and allergen hazards.\n\n**2. Critical Control Points (CCPs).** Where can you prevent, eliminate, or reduce a hazard to an acceptable level? For a cafe, the main CCPs are:\n- Delivery receiving (temperature check: chilled goods must arrive below 5°C)\n- Cold storage (fridges at 1–5°C, freezers at -18°C or below)\n- Cooking (core temperature 75°C for hot food)\n- Cooling (from 63°C to below 5°C within 90 minutes)\n- Reheating (to 75°C core temperature)\n- Allergen management (at point of order)\n\n**3. Critical limits.** The numbers above are your critical limits. Document them.\n\n**4. Monitoring.** How and when you check. Temperature logs twice daily for fridges. Probe checks on cooked food. Delivery temperature checks on arrival.\n\n**5. Corrective actions.** What happens when a limit is breached. Fridge at 9°C? Check stock, discard if above 5°C for more than 4 hours, call engineer, log the incident.\n\n**6. Verification.** Regular review that the system works. Internal audits, calibration of thermometers, review of logs.\n\n**7. Documentation.** Everything written down. The VMVT inspector will ask to see your HACCP plan, your temperature logs, your corrective action records, and your cleaning schedules. If it is not documented, it did not happen."
+    },
+    {
+      "id": "kb-s4",
+      "heading": "EU Allergen Labelling",
+      "body": "EU FIC Regulation 1169/2011 requires that customers are informed about the 14 declarable allergens in any food you sell.\n\n**The 14 EU allergens:**\n1. Cereals containing gluten (wheat, rye, barley, oats)\n2. Crustaceans\n3. Eggs\n4. Fish\n5. Peanuts\n6. Soybeans\n7. Milk (including lactose)\n8. Nuts (almonds, hazelnuts, walnuts, cashews, pecans, Brazil nuts, pistachios, macadamias)\n9. Celery\n10. Mustard\n11. Sesame\n12. Sulphur dioxide and sulphites (>10mg/kg)\n13. Lupin\n14. Molluscs\n\n**How to comply in a cafe:**\n\n**Prepacked food (sealed before customer selects it):** Full ingredients list with allergens emphasised (bold, underlined, or CAPITALS) on the packaging. This applies to retail coffee bags, bottled drinks, and pre-wrapped sandwiches.\n\n**Non-prepacked food (made to order or displayed openly):** You must make allergen information available. This can be:\n- Allergen matrix on the menu or a separate allergen sheet\n- A clear sign directing customers to ask staff for allergen information\n- Staff trained to answer allergen questions accurately\n\n**The critical requirement:** Regardless of method, the information must be **accurate, current, and accessible before the customer makes their purchase decision.**\n\n**Common cafe allergens to watch:**\n- Milk in every dairy drink (obvious) but also in some syrups and chocolate\n- Gluten in pastries, cakes, sandwiches, and some sauces\n- Nuts in many cakes, granola, and some alternative milks\n- Soy in some alternative milks and sauces\n- Sesame in bread and pastries\n\nUpdate your allergen matrix every time a recipe or supplier changes. A supplier changing their bread recipe to include sesame makes your sandwich an allergen risk overnight if you do not update your records."
+    },
+    {
+      "id": "kb-s5",
+      "heading": "Alcohol Licensing",
+      "body": "If you want to serve wine, beer, or cocktails in your cafe, you need an alcohol licence. Lithuanian alcohol regulation is specific and strictly enforced.\n\n**Obtaining a licence:**\nApply through your municipal authority (savivaldybė). The application requires:\n- Business registration\n- Premises approval certificate\n- Proof of compliance with distance restrictions\n- Staff training in responsible alcohol service\n- Description of alcohol storage and service areas\n\n**Key Lithuanian alcohol rules:**\n\n**Distance restrictions.** Your premises may need to be a minimum distance (typically 40 metres) from educational institutions, religious buildings, and certain other facilities. Check with your municipality — rules vary by location.\n\n**Operating hours.** Alcohol sales are restricted by time. Off-premises sales are prohibited between 20:00 and 10:00 (Mon-Sat) and 15:00 and 10:00 (Sundays). On-premises service (your cafe) has different rules — check your specific licence conditions.\n\n**Age verification.** The legal drinking age in Lithuania is 20 for spirits and 18 for beer and wine. Train your team to check ID for anyone who appears under 25. Acceptable ID: Lithuanian passport, ID card, or residence permit. Fines for selling to minors are severe.\n\n**Advertising restrictions.** Alcohol advertising in Lithuania is heavily regulated. You cannot promote alcohol on your exterior signage or in ways that target young people. A wine list inside the cafe is fine; a \"Happy Hour: Cheap Beer\" A-frame on the pavement may not be.\n\n**Record-keeping.** Maintain purchase records for all alcohol stock. Track sales, waste, and inventory. VMVT and municipal authorities can request these during inspections.\n\n**If you are unsure:** Consult with a Lithuanian business lawyer before applying. The regulations are detailed and the penalties for non-compliance include licence revocation."
+    },
+    {
+      "id": "kb-s6",
+      "heading": "Preparing for VMVT Inspection",
+      "body": "VMVT inspections can be announced or unannounced. The goal is to be ready at all times — not just when you expect a visit.\n\n**What VMVT inspectors check:**\n\n- **HACCP documentation.** Is your self-control plan current? Are temperature logs filled in? Are corrective actions documented? An inspector will pick up your folder and read it.\n\n- **Temperature compliance.** They will check your fridges (must be 1–5°C), freezers (-18°C or below), and may ask you to probe a food item. Thermometers must be calibrated.\n\n- **Cleaning and sanitation.** Visual inspection of all surfaces, equipment, floors, and toilets. They will look behind the espresso machine, under the counter, and inside the fridge. Cleaning schedules must be documented and followed.\n\n- **Allergen management.** Can you demonstrate how you communicate allergen information to customers? Can your staff answer allergen questions accurately? Is your allergen matrix current?\n\n- **Personal hygiene.** Staff wearing clean clothes, hair restrained, handwashing observed, no jewellery in food preparation areas.\n\n- **Pest control.** Contract in place, monitoring records current, no evidence of pests.\n\n- **Staff training.** Evidence that food handlers have completed appropriate food safety training.\n\n**If deficiencies are found:**\nThe inspector will issue a report listing non-compliance items with deadlines for correction. Minor issues (a missing date label, a cleaning schedule gap) typically get a 2–4 week deadline. Serious issues (temperature failure, pest evidence, allergen mismanagement) may result in immediate corrective action requirements or, in extreme cases, temporary closure.\n\n**Your response:** Fix every item by the deadline. Document the corrections. If the inspector asks for a follow-up, be ready. Treat every inspection as free consultancy — they are telling you what to improve.\n\n**Internal audits:** Use your own checklists monthly to catch problems before the inspector does. The best-run cafes welcome inspections because they know they will pass."
+    }
+  ],
+  "legacyBuilder": "buildLithuanianRegulationsArticle",
+  "status": "published"
+}

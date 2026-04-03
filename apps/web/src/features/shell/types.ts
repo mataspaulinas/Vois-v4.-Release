@@ -8,7 +8,7 @@ export type PocketView = "shift" | "task" | "standards" | "help" | "report" | "l
 
 export type OwnerView = "command" | "delegations" | "people" | "intelligence" | "administration" | "copilot";
 
-export type TopLevelView = "portfolio" | "venue" | "reference" | "kb" | "settings" | "manager" | "pocket" | "owner";
+export type TopLevelView = "portfolio" | "venue" | "reference" | "kb" | "help" | "settings" | "manager" | "pocket" | "owner";
 
 export type ThemeMode = "light" | "dark";
 
@@ -19,6 +19,7 @@ export type ShellRoute =
   | { topLevelView: "venue"; venueId: string; venueView: VenueSubview }
   | { topLevelView: "reference"; referenceView: ReferenceView }
   | { topLevelView: "kb" }
+  | { topLevelView: "help" }
   | { topLevelView: "settings" }
   | { topLevelView: "manager"; venueId: string; managerView: ManagerView }
   | { topLevelView: "pocket"; venueId: string; pocketView: PocketView }

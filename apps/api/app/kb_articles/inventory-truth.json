@@ -1,0 +1,42 @@
+{
+  "slug": "inventory-truth",
+  "title": "Inventory Truth: Why Every Number Lies Until Proven Otherwise",
+  "subtitle": "Cafe stock drift starts small, hides in routine, and shows up later as margin loss.",
+  "category": "failure-autopsy",
+  "domain": "operations",
+  "module": "Supply Chain & Inventory",
+  "tags": ["inventory", "stock", "waste", "variance", "ordering", "margin"],
+  "difficulty": "intermediate",
+  "readTime": 12,
+  "blocks": ["B005"],
+  "tools": ["T005-01", "T005-02", "T005-03", "T005-04"],
+  "signals": ["S041", "S045"],
+  "related": ["first-20-minutes", "real-cost-of-comp"],
+  "coverColor": "coral",
+  "coverIcon": "package",
+  "struggles": ["high-food-cost", "inventory-chaos", "waste"],
+  "toc": [
+    { "id": "kb-s1", "label": "Where Drift Starts" },
+    { "id": "kb-s2", "label": "Milk, Pastry, and Packaging Losses" },
+    { "id": "kb-s3", "label": "Why Counting Fails" },
+    { "id": "kb-s4", "label": "A Better Stock Rhythm" },
+    { "id": "kb-s5", "label": "Using Variance to Coach the Team" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B005", "name": "Inventory Accuracy Pulse Check" }
+    ],
+    "tools": [
+      "T005-01 · Scope Planner",
+      "T005-02 · Count Sheet",
+      "T005-03 · Discrepancy Analysis",
+      "T005-04 · Action Log"
+    ],
+    "metrics": [
+      { "value": "Daily", "label": "check fast-moving cafe items" },
+      { "value": "Weekly", "label": "review slow movers and packaging" }
+    ]
+  },
+  "legacyBuilder": "buildInventoryTruthArticle",
+  "status": "published"
+}

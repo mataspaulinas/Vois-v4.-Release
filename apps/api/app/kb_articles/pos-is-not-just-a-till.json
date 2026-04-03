@@ -1,0 +1,79 @@
+{
+  "slug": "pos-is-not-just-a-till",
+  "title": "Your POS Is Not Just a Till: Unlocking the Data You Already Have",
+  "subtitle": "Most cafes use 20% of their POS system. The other 80% could transform how you run the business.",
+  "category": "domain-landscape",
+  "domain": "technology",
+  "module": "Digital Tools & Customer Data",
+  "tags": ["POS", "data", "reporting", "sales", "technology", "analytics"],
+  "difficulty": "intermediate",
+  "readTime": 13,
+  "blocks": ["B155", "B156", "B157"],
+  "tools": ["T155-01", "T155-02", "T155-03", "T155-04", "T155-05"],
+  "signals": ["S141", "S145", "S149"],
+  "related": ["art-of-the-upsell", "inventory-truth", "surviving-the-rush"],
+  "coverColor": "indigo",
+  "coverIcon": "monitor",
+  "struggles": ["no-data-visibility", "reactive-management", "underused-systems"],
+  "toc": [
+    { "id": "kb-s1", "label": "The Data Sitting in Your Till" },
+    { "id": "kb-s2", "label": "Product Setup Done Right" },
+    { "id": "kb-s3", "label": "Five Reports Every Cafe Owner Should Read Weekly" },
+    { "id": "kb-s4", "label": "Staff Training on POS Beyond Button Pressing" },
+    { "id": "kb-s5", "label": "Connecting POS to Inventory and Labour" },
+    { "id": "kb-s6", "label": "Choosing What to Measure and What to Ignore" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B155", "name": "POS System Optimisation" },
+      { "id": "B156", "name": "Sales Reporting Framework" },
+      { "id": "B157", "name": "POS Integration Strategy" }
+    ],
+    "tools": [
+      "T155-01 · POS Product Audit Checklist",
+      "T155-02 · POS Operations Manual",
+      "T155-03 · Daily Sales Report Template",
+      "T155-04 · Staff POS Competency Assessment",
+      "T155-05 · Weekly POS Data Review Template"
+    ],
+    "metrics": [
+      { "value": "Daily", "label": "review sales summary" },
+      { "value": "Weekly", "label": "deep dive into product and hour data" },
+      { "value": "100%", "label": "of items correctly categorised in POS" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "kb-s1",
+      "heading": "The Data Sitting in Your Till",
+      "body": "Every transaction that passes through your POS is a data point. Every day, your POS collects information about:\n\n- What sells and what does not\n- When you are busy and when you are quiet\n- How much each customer spends\n- Which payment methods are used\n- Who processed each transaction\n- Whether discounts and voids are happening\n\nMost cafe owners look at one number: total revenue for the day. \"We did €800 today\" — and that is it. But that single number tells you almost nothing. Was €600 of it before 10am and then a dead afternoon? Did one barista process twice as many transactions as another? Did your new cake sell at all? Are discounts eroding your margin?\n\nThe answers are already in your system. You paid for the POS — use it.\n\nThis is not about becoming a data scientist. It is about spending 15 minutes a week looking at the right numbers, and making one or two better decisions because of what you see."
+    },
+    {
+      "id": "kb-s2",
+      "heading": "Product Setup Done Right",
+      "body": "The quality of your POS data starts with how you set up your products. Garbage in, garbage out.\n\nUse T155-01 (POS Product Audit Checklist) to review your product setup:\n\n**Categories.** Every item should be in a clear category: Hot Drinks, Cold Drinks, Food, Bakery, Retail. If your POS has a generic \"Miscellaneous\" or \"Other\" button that staff use for items that are not set up, fix it. Every sale under \"Miscellaneous\" is a data point you have lost.\n\n**Size variants.** A \"Regular Flat White\" and a \"Large Flat White\" should be separate buttons with separate prices. If they are both logged as \"Flat White,\" you cannot track size upgrade rates or calculate accurate COGS.\n\n**Modifiers.** Extra shot, alternative milk, decaf — these should be modifiers, not separate products. This gives you clean data on how often modifiers are used and what revenue they generate.\n\n**Pricing.** Ensure every product has the correct current price. A common error: the menu price increased three months ago, but the POS was never updated for one or two items. That is margin leaking silently.\n\n**Discontinued items.** Remove items you no longer sell. A cluttered product list slows down the till operator and increases the chance of mis-rings.\n\nDo a full product audit annually and a quick check whenever the menu changes. This 30-minute task protects the integrity of all your reporting."
+    },
+    {
+      "id": "kb-s3",
+      "heading": "Five Reports Every Cafe Owner Should Read Weekly",
+      "body": "You do not need a dashboard with 50 metrics. You need five reports, reviewed weekly, acted upon immediately.\n\n**1. Sales by Hour**\nShows your peak and quiet periods. Use this to staff correctly, time your breaks, and identify growth opportunities. If 3–5pm is consistently dead, either accept lower staffing or create a reason for people to visit (afternoon tea offer, happy hour, event).\n\n**2. Product Mix**\nWhat percentage of revenue comes from coffee vs. food vs. retail? What are your top 10 sellers? What are your bottom 10? The bottom 10 may not be worth the menu space, prep time, and ingredient inventory they require.\n\n**3. Average Transaction Value (ATV)**\nTotal revenue ÷ total transactions. Track this weekly and compare week-over-week. A declining ATV with stable footfall means customers are spending less per visit — an upselling or pricing problem.\n\n**4. Discounts and Voids**\nTotal value of discounts, comps, and voided transactions. A small amount is normal. A growing trend is a red flag — either policy is too loose, or there is a control issue.\n\n**5. Payment Method Split**\nCash vs. card vs. mobile. This matters for cash flow (card settlements take 1–3 days), for float management, and for spotting trends. If cash is declining, you may be able to reduce float and banking effort.\n\nUse T155-05 (Weekly POS Data Review Template) to structure this review. Block 15 minutes every Monday morning. Make it a habit, not a reaction to a bad week."
+    },
+    {
+      "id": "kb-s4",
+      "heading": "Staff Training on POS Beyond Button Pressing",
+      "body": "Most staff training on the POS covers one thing: how to ring up a sale. But POS literacy goes much further, and the gap creates daily problems.\n\nWhat every team member should know (T155-04):\n\n**Basic (all staff):**\n- How to process a sale correctly (correct product, correct modifier)\n- How to apply a discount (and when they are authorised to)\n- How to process a refund or void (and the policy around it)\n- How to handle a card payment failure\n- How to close a tab or split a bill\n\n**Intermediate (shift leads):**\n- How to run a Z-report (end-of-day)\n- How to add a daily special or temporary product\n- How to check today's sales total during the shift\n- How to investigate a transaction if a customer queries it\n\n**Advanced (managers/owners):**\n- How to pull the five weekly reports\n- How to export data for accounting\n- How to add, modify, or remove products\n- How to set up promotions or time-limited pricing\n- How to manage user accounts and permission levels\n\nThe most common POS errors:\n- **Ringing up the wrong item** (\"Coffee\" instead of \"Large Oat Flat White\") — destroys product mix data\n- **Using the open-price button** instead of finding the correct product — destroys category data\n- **Not logging modifiers** (extra shot, oat milk) — understates revenue and distorts COGS\n- **Manager card used for everything** — destroys staff performance data\n\nAudit POS usage monthly. Pull a random day's transactions and scan for anomalies: open-price sales, excessive voids, unmodified items that should have modifiers."
+    },
+    {
+      "id": "kb-s5",
+      "heading": "Connecting POS to Inventory and Labour",
+      "body": "The real power of a POS system emerges when it connects to your other operational data.\n\n**POS + Inventory = Theoretical Cost of Goods**\nIf your POS knows you sold 150 flat whites this week, and your recipe card says each flat white uses 18g coffee and 200ml milk, then your theoretical usage is 2.7kg coffee and 30L milk. Compare that to what you actually used (from your stock count) and the gap is your variance — the waste, spillage, over-portioning, or theft you need to investigate.\n\nNot every POS system does this automatically. But even a manual calculation in a spreadsheet, done weekly, gives you a powerful control tool.\n\n**POS + Labour = Revenue Per Labour Hour**\nTotal revenue for a shift ÷ total staff hours worked. This is the single best measure of operational efficiency. A busy shift with 4 staff doing €1,200 (€75/labour hour) is more productive than a quiet shift with 2 staff doing €300 (€37.50/labour hour). Use this to calibrate staffing — not by gut, but by data.\n\n**POS + Customer Data = Retention Insight**\nIf your POS integrates with a loyalty programme, you can see visit frequency, spend patterns, and lapsed customers. A regular who has not visited in 3 weeks may respond to a personalised \"We miss you\" message.\n\nYou do not need to connect everything at once. Start with POS + labour hours (easy to calculate manually). Add inventory comparison when your stock counting is reliable. Add customer data when you have a loyalty programme."
+    },
+    {
+      "id": "kb-s6",
+      "heading": "Choosing What to Measure and What to Ignore",
+      "body": "The risk with POS data is measuring everything and acting on nothing. Data overload leads to paralysis, not insight.\n\n**Measure if:**\n- It directly connects to a decision you can make (staffing, pricing, menu, purchasing)\n- It changes meaningfully over time (trending, not static)\n- It can be influenced by something you control (your team's actions, your menu, your hours)\n\n**Ignore if:**\n- It is interesting but not actionable (\"average customer age\" — what would you do differently?)\n- It fluctuates randomly with no pattern (daily noise vs. weekly trends)\n- It requires more effort to track than the value of the insight\n\nStart with three numbers:\n1. **Daily revenue** — are we hitting target?\n2. **ATV this week** — are customers spending enough per visit?\n3. **Revenue per labour hour** — are we staffing efficiently?\n\nOnce these three are habitual, add:\n4. **Food attachment rate** — is the upselling programme working?\n5. **Product mix** — is the menu balanced?\n\nDo not add a sixth metric until the first five are driving regular decisions.\n\nThe goal is not data. The goal is better decisions made faster. A cafe owner who reviews three numbers weekly and acts on them will outperform one who has a 20-page dashboard they never open.\n\nPut the numbers where the team can see them. A whiteboard in the staff area showing yesterday's revenue, this week's ATV, and a simple target creates awareness and ownership. Data should not be a manager's secret — it should be the team's shared scoreboard."
+    }
+  ],
+  "legacyBuilder": "buildPOSNotJustTillArticle",
+  "status": "published"
+}

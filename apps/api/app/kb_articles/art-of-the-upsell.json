@@ -1,0 +1,78 @@
+{
+  "slug": "art-of-the-upsell",
+  "title": "The Art of the Upsell: Growing Tickets Without Feeling Pushy",
+  "subtitle": "A good upsell helps the customer. A bad one annoys them. The difference is timing and taste.",
+  "category": "playbook",
+  "domain": "financial",
+  "module": "Pricing Revenue & Cost Control",
+  "tags": ["upselling", "ATV", "revenue", "add-ons", "food-attachment", "training"],
+  "difficulty": "foundational",
+  "readTime": 11,
+  "blocks": ["B120", "B121", "B122"],
+  "tools": ["T120-01", "T120-02", "T120-03", "T120-04"],
+  "signals": ["S100", "S110"],
+  "related": ["menu-stranger-eyes", "real-cost-of-comp", "surviving-the-rush"],
+  "coverColor": "green",
+  "coverIcon": "trending-up",
+  "struggles": ["low-ATV", "flat-revenue", "missed-sales-opportunities"],
+  "toc": [
+    { "id": "kb-s1", "label": "Why Average Transaction Value Matters More Than Footfall" },
+    { "id": "kb-s2", "label": "The Three Upsell Moments" },
+    { "id": "kb-s3", "label": "Scripts That Sound Human" },
+    { "id": "kb-s4", "label": "The Daily Feature Card" },
+    { "id": "kb-s5", "label": "Measuring What Works" },
+    { "id": "kb-s6", "label": "Training the Team Without Creating Robots" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B120", "name": "Upselling & Add-On Training" },
+      { "id": "B121", "name": "Food Attachment Strategy" },
+      { "id": "B122", "name": "Drink Size & Upgrade Strategy" }
+    ],
+    "tools": [
+      "T120-01 · Upselling Training Guide",
+      "T120-02 · ATV and Food Attachment Tracker",
+      "T120-03 · Daily Feature Card",
+      "T120-04 · Upsell Conversion Analysis"
+    ],
+    "metrics": [
+      { "value": "+€0.80", "label": "target ATV lift from upselling programme" },
+      { "value": "40%+", "label": "food attachment rate goal" },
+      { "value": "1 feature", "label": "one daily feature item the whole team promotes" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "kb-s1",
+      "heading": "Why Average Transaction Value Matters More Than Footfall",
+      "body": "Most cafe owners think growth means more customers. But footfall is expensive to grow — it requires marketing, location advantage, and time. Average transaction value (ATV) is cheaper to grow, and the impact is immediate.\n\nThe maths:\n- 200 transactions/day × €4.20 ATV = €840/day\n- 200 transactions/day × €5.00 ATV = €1,000/day\n- That €0.80 difference = €160/day = €800/week = **€41,600/year**\n\nSame customers. Same staff. Same hours. Forty thousand euros more revenue.\n\nThe €0.80 is not magic. It comes from one extra pastry sold per four customers. One size upgrade per six orders. One extra shot added per ten drinks. These are small, natural suggestions — not aggressive sales tactics.\n\nTrack your ATV weekly using POS data. If it is flat or declining, your team is not suggesting — and your menu may not be making add-ons easy."
+    },
+    {
+      "id": "kb-s2",
+      "heading": "The Three Upsell Moments",
+      "body": "There are exactly three natural moments in a cafe interaction where a suggestion feels helpful rather than intrusive. Miss these windows and any suggestion feels forced.\n\n**Moment 1: At the point of order.**\nThe customer says \"flat white, please.\" This is the window for a food attachment: \"Would you like a pastry with that? The almond croissants are fresh this morning.\" It works because they are already making a purchasing decision — adding to it feels natural.\n\n**Moment 2: At the point of choice.**\nThe customer is scanning the menu or the display. This is the window for guidance: \"The cinnamon bun is our best seller if you're looking for something sweet\" or \"Would you like that as a large? It's only 50c more.\" It works because they are undecided and you are helping them decide.\n\n**Moment 3: At the point of payment.**\nThe customer has ordered and is paying. This is the weakest upsell moment but still works for low-friction additions: \"Can I add a bottle of water for €1?\" or \"Would you like an extra shot in that?\" Keep it to one suggestion maximum — at this stage, the decision is made and they want to move on.\n\nNever upsell during peak when the queue is out the door. Speed trumps ATV when customers are waiting. Save the suggestions for steady periods when there is time for a genuine interaction."
+    },
+    {
+      "id": "kb-s3",
+      "heading": "Scripts That Sound Human",
+      "body": "The difference between a good upsell and a bad one is whether it sounds like a person talking or a script executing.\n\n**Bad:** \"Would you like to add anything else today?\" (Generic, easy to say no to, zero personality.)\n\n**Good:** \"The banana bread just came out of the oven if you fancy something warm with that.\" (Specific, sensory, natural.)\n\n**Bad:** \"Would you like to upgrade to a large?\" (Transactional, feels like you are extracting money.)\n\n**Good:** \"That's a long morning — shall I make it a large?\" (Empathetic, feels like you are looking out for them.)\n\n**Bad:** \"Do you want food with that?\" (Lazy, closed question, invites \"no.\")\n\n**Good:** \"Have you tried the new halloumi wrap? It's been going really well this week.\" (Specific, social proof, conversational.)\n\nThe pattern: **specific item + reason**. Not \"do you want more?\" but \"this particular thing, because this particular reason.\"\n\nGive the team three or four phrases to rotate — not a single mandatory script. People are different, and the same line repeated 200 times a day sounds robotic by the afternoon. The phrases should feel like personal recommendations, because that is what they are.\n\nEncourage staff to only suggest things they have actually tried and liked. Authenticity sells. \"I had this for my break and it was amazing\" is the best upsell in hospitality."
+    },
+    {
+      "id": "kb-s4",
+      "heading": "The Daily Feature Card",
+      "body": "One of the simplest upselling tools is the daily feature (T120-03). Every day, one item gets the spotlight. The whole team knows it, talks about it, and suggests it.\n\nHow it works:\n\n**Morning huddle:** \"Today's feature is the pistachio croissant. It's new this week, it's €3.50, and we want to see how it sells. Everyone suggest it at least once.\"\n\n**Visual cue:** A small card or sign at the till: \"Try today's feature: Pistachio Croissant.\" This gives the customer a nudge even if the barista forgets to mention it.\n\n**End-of-day count:** How many featured items sold? Track it on T120-02. Over a week, you will see which features land and which do not — this is live market research.\n\nThe daily feature works for several reasons:\n- It gives staff something specific to say (reduces the awkwardness of upselling)\n- It creates variety and novelty for regulars\n- It moves slow stock (feature the item you need to sell, not just the popular one)\n- It tests new menu items before full launch\n\nRotate the feature across categories: Monday a pastry, Tuesday a drink upgrade, Wednesday a lunch item, Thursday a seasonal special. This ensures the upsell programme touches the whole menu, not just cake."
+    },
+    {
+      "id": "kb-s5",
+      "heading": "Measuring What Works",
+      "body": "If you are not tracking upselling results, you are hoping, not managing.\n\nKey metrics to watch weekly:\n\n**Average Transaction Value (ATV)**\nTotal revenue ÷ total transactions. Track by day and by shift. If Wednesday ATV is consistently €0.60 lower than Thursday, find out why — is it the team, the menu, or the customer mix?\n\n**Food Attachment Rate**\nPercentage of transactions that include a food item. Most cafes sit at 20–30%. A good upselling programme pushes this to 40–50%. Calculate: food transactions ÷ total transactions.\n\n**Size Upgrade Rate**\nPercentage of drinks sold as large vs. regular. If you offer a size upgrade for €0.50 and only 10% of customers take it, the suggestion is not being made — or the price gap is wrong.\n\n**Feature Item Sales**\nDaily count of the featured item. Did the feature sell better than that item's baseline? If yes, the suggestion is working. If no, the item may not have appeal or the team is not promoting it.\n\nUse T120-04 (Upsell Conversion Analysis) monthly to connect staff behaviour to results. This is not about naming and shaming — it is about finding what works and replicating it.\n\nShare wins with the team: \"Last week our food attachment rate hit 38% — that's the highest ever. Nice work.\" Numbers motivate when they show progress."
+    },
+    {
+      "id": "kb-s6",
+      "heading": "Training the Team Without Creating Robots",
+      "body": "Many baristas resist upselling because they associate it with fast food chains asking \"do you want fries with that?\" The key to overcoming this is reframing: upselling in a cafe is not selling — it is hosting.\n\nA good host at a dinner party says \"You have to try this cheese, it's incredible.\" That is an upsell. It comes from genuine enthusiasm, not a sales target.\n\nTraining approach:\n\n**1. Taste everything.** Staff cannot authentically recommend items they have not tried. Budget for staff tastings when new items launch. Five minutes, everyone tries the new cake, everyone has an opinion. Now they can recommend it honestly.\n\n**2. Role-play without cringing.** Pair up, practice the three upsell moments. Make it fun, not formal. The goal is building muscle memory so the suggestion comes out naturally during service.\n\n**3. Set gentle targets.** Not \"upsell every customer\" but \"suggest the feature item at least 10 times during your shift.\" This is a behaviour target (making the suggestion) not an outcome target (making the sale). It removes the pressure of rejection.\n\n**4. Reward the behaviour, not just the result.** Recognise staff who suggest naturally and well, even if the customer says no. The skill is in the asking, not the closing.\n\n**5. Allow opt-outs.** If a regular orders the same thing every day and has firmly said no to add-ons, let it go. Recognising when not to suggest is as important as suggesting. Pestering loyal customers damages the relationship that makes them loyal.\n\nThe best upselling programmes feel invisible. Customers leave having spent more, but they feel like they were looked after, not sold to. That is the standard to aim for."
+    }
+  ],
+  "legacyBuilder": "buildArtOfUpsellArticle",
+  "status": "published"
+}

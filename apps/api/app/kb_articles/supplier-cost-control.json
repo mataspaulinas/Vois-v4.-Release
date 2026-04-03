@@ -1,0 +1,79 @@
+{
+  "slug": "supplier-cost-control",
+  "title": "Supplier Cost Control: Margins Are Won in the Order, Not at the Till",
+  "subtitle": "The money you save on purchasing drops straight to profit. Every penny counts.",
+  "category": "signal-story",
+  "domain": "supply-chain",
+  "module": "Supply Chain & Supplier Relations",
+  "tags": ["cost-control", "COGS", "food-cost", "coffee-cost", "negotiation", "margins"],
+  "difficulty": "intermediate",
+  "readTime": 12,
+  "blocks": ["B108", "B109", "B110", "B111", "B112", "B113", "B114"],
+  "tools": ["T108-01", "T109-01", "T111-01", "T112-01", "T113-01", "T114-01"],
+  "signals": ["S087", "S088", "S090", "S091", "S092", "S096"],
+  "related": ["your-roaster-relationship", "inventory-systems", "pricing-that-pays"],
+  "coverColor": "green",
+  "coverIcon": "scissors",
+  "struggles": ["high-food-cost", "high-coffee-cost", "unknown-margins", "supplier-price-creep"],
+  "toc": [
+    { "id": "kb-s1", "label": "Why Cost of Goods Is the Lever Most Owners Ignore" },
+    { "id": "kb-s2", "label": "Menu Item Costing: Know Your Numbers" },
+    { "id": "kb-s3", "label": "Coffee Cost Percentage" },
+    { "id": "kb-s4", "label": "Food Cost Percentage" },
+    { "id": "kb-s5", "label": "Milk and Packaging: The Hidden Costs" },
+    { "id": "kb-s6", "label": "Negotiation Without Confrontation" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B111", "name": "Menu Item Costing Calculator" },
+      { "id": "B112", "name": "Food Cost % Tracking" },
+      { "id": "B113", "name": "Coffee Cost % Tracking" },
+      { "id": "B114", "name": "Packaging Cost Optimisation" }
+    ],
+    "tools": [
+      "T111-01 · Menu Item Costing Template",
+      "T112-01 · Weekly Food Cost Tracker",
+      "T113-01 · Weekly Coffee Cost Tracker",
+      "T114-01 · Packaging Cost Audit"
+    ],
+    "metrics": [
+      { "value": "<25%", "label": "target coffee cost percentage" },
+      { "value": "<35%", "label": "target food cost percentage" },
+      { "value": "Every item", "label": "individually costed with known margin" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "kb-s1",
+      "heading": "Why Cost of Goods Is the Lever Most Owners Ignore",
+      "body": "Revenue is vanity. Margin is sanity. Profit is reality.\n\nMost cafe owners focus on revenue — how much came through the till today. But a cafe doing €1,000/day with 60% gross margin keeps €600. A cafe doing €800/day with 75% gross margin keeps €600 too — with less volume, less stress, and less waste.\n\nCost of goods sold (COGS) — what you spend on the ingredients and materials that become your products — is the single most controllable expense in a cafe. You cannot control rent. You have limited control over utilities. Labour has a floor set by minimum wage and customer demand.\n\nBut COGS? You control every ingredient in every recipe. You control portion sizes, waste, supplier selection, and purchasing strategy. A 3% improvement in COGS on a €500,000/year cafe is €15,000 straight to the bottom line.\n\nThe starting point is knowing your numbers. Most cafe owners can tell you their total revenue. Fewer can tell you their COGS percentage. Almost none can tell you the margin on each individual menu item."
+    },
+    {
+      "id": "kb-s2",
+      "heading": "Menu Item Costing: Know Your Numbers",
+      "body": "Use T111-01 (Menu Item Costing Template) to cost every item on your menu.\n\nFor each item, list every ingredient and its cost per portion:\n\n**Example: Flat White (regular)**\n\n| Ingredient | Quantity | Unit Cost | Portion Cost |\n|-----------|----------|-----------|-------------|\n| Coffee beans | 18g | €12/kg | €0.22 |\n| Whole milk | 200ml | €1.20/L | €0.24 |\n| Takeaway cup | 1 | €0.08 | €0.08 |\n| Lid | 1 | €0.03 | €0.03 |\n| **Total COGS** | | | **€0.57** |\n| **Selling price** | | | **€3.50** |\n| **Gross margin** | | | **€2.93 (83.7%)** |\n\n**Example: Chicken & Avocado Sandwich**\n\n| Ingredient | Quantity | Unit Cost | Portion Cost |\n|-----------|----------|-----------|-------------|\n| Sourdough bread | 2 slices | €3.50/loaf (12 slices) | €0.58 |\n| Chicken breast | 80g | €8/kg | €0.64 |\n| Avocado | 60g | €1.20 each (~150g) | €0.48 |\n| Salad leaves | 15g | €2/150g bag | €0.20 |\n| Mayo | 15g | €3/kg | €0.05 |\n| Packaging | 1 | €0.12 | €0.12 |\n| **Total COGS** | | | **€2.07** |\n| **Selling price** | | | **€6.50** |\n| **Gross margin** | | | **€4.43 (68.2%)** |\n\nDo this for every item. Yes, every item. It takes a full day. But once done, you know exactly which items are profitable, which are marginal, and which are losing money.\n\nReview costings when supplier prices change, when recipes change, or at minimum every 6 months."
+    },
+    {
+      "id": "kb-s3",
+      "heading": "Coffee Cost Percentage",
+      "body": "Use T113-01 (Weekly Coffee Cost Tracker):\n\n**Coffee cost % = Total coffee bean spend ÷ Total coffee revenue × 100**\n\nTarget: 18–25%. Above 25% needs investigation.\n\n**What drives coffee cost up:**\n- Premium single-origin beans at high cost without premium pricing\n- Over-dosing (using 20g when the recipe says 18g)\n- Waste shots (poor calibration requiring multiple attempts)\n- Batch brew left to go stale and remade\n- Retail bean bags sold at low margin\n\n**What brings coffee cost down:**\n- Accurate dosing (scales at every station)\n- Good grinder calibration habits (fewer wasted shots)\n- Appropriate pricing for premium offerings\n- Efficient batch brewing schedules aligned to demand\n- Negotiating better terms with volume commitment\n\n**The milk factor:**\nMilk is not in coffee cost — it is a separate line. But it is the second-largest ingredient cost in most cafes. Alternative milks are typically 3–5x the cost of dairy per litre. Track milk cost separately:\n\n| Milk Type | Cost/L | Avg per drink | Drinks/day | Daily Cost |\n|-----------|--------|---------------|------------|------------|\n| Whole dairy | €1.20 | 200ml | 80 | €19.20 |\n| Oat | €3.50 | 200ml | 40 | €28.00 |\n| Soy | €2.80 | 200ml | 10 | €5.60 |\n| **Total** | | | **130** | **€52.80** |\n\nIf alternative milk is 30%+ of your milk orders, the cost impact is significant. Consider whether your pricing reflects the cost difference. Many cafes now charge a 30–50p supplement for alternative milks — this is standard and most customers accept it."
+    },
+    {
+      "id": "kb-s4",
+      "heading": "Food Cost Percentage",
+      "body": "Use T112-01 (Weekly Food Cost Tracker):\n\n**Food cost % = Total food ingredient spend ÷ Total food revenue × 100**\n\nTarget: 28–35%. Above 35% needs investigation.\n\n**The usual suspects when food cost is high:**\n\n1. **Portion drift.** The most common cause. Staff giving generous portions because it feels nice. Fix with recipe cards, scales, and portion scoops.\n\n2. **Waste.** Over-prepping items that do not sell. Fix with data-driven prep lists based on actual sales.\n\n3. **Supplier price creep.** Prices rising 2–3% every few months without you noticing. Fix by tracking ingredient prices monthly and renegotiating annually.\n\n4. **Menu items that lose money.** That elaborate salad bowl with avocado, halloumi, and smoked salmon might sell well but cost 50% to make. Fix by costing every item and adjusting pricing or ingredients.\n\n5. **Unrecorded consumption.** Staff meals, tastings, spoilage, and theft. Fix by tracking everything — including staff meals (which should be budgeted, not ignored).\n\n**Calculating theoretical vs. actual:**\n\nTheoretical food cost = what you *should* have spent based on items sold × recipe cost.\nActual food cost = what you *actually* spent on food ingredients.\nVariance = actual minus theoretical.\n\nA small variance (1–2%) is normal — spillage, legitimate waste, recipe variation. A large variance (5%+) indicates a control problem.\n\nTrack this weekly. The weekly rhythm catches problems before they become expensive habits."
+    },
+    {
+      "id": "kb-s5",
+      "heading": "Milk and Packaging: The Hidden Costs",
+      "body": "Coffee and food get costed carefully. Milk and packaging often do not — and they add up.\n\n**Milk management:**\n- Steam only what you need (match jug size to drink size)\n- Do not throw away milk that has been steamed but not used — it can be used for iced drinks or discarded hot chocolate\n- Monitor alternative milk waste — oat milk in particular has a short life once opened\n- Compare supplier pricing quarterly — milk pricing varies significantly between suppliers\n\nUse T114-01 (Packaging Cost Audit):\n\n**Packaging items to track:**\n\n| Item | Unit Cost | Daily Usage | Daily Cost | Monthly Cost |\n|------|-----------|-------------|------------|-------------|\n| 12oz takeaway cup | €0.08 | 100 | €8.00 | €240 |\n| 16oz takeaway cup | €0.10 | 40 | €4.00 | €120 |\n| Lids | €0.03 | 140 | €4.20 | €126 |\n| Napkins | €0.01 | 200 | €2.00 | €60 |\n| Sandwich boxes | €0.12 | 30 | €3.60 | €108 |\n| Paper bags | €0.05 | 80 | €4.00 | €120 |\n| **Total** | | | **€25.80** | **€774** |\n\nNearly €10,000 a year on packaging alone. Worth optimising.\n\n**Reduction strategies:**\n- Reusable cup discount (reduces cup usage and signals sustainability)\n- Negotiate bulk pricing on your highest-volume items\n- Standardise cup sizes (do you really need three sizes?)\n- Reduce napkin over-dispensing (one per drink, not a handful)\n- Switch to compostable where price-competitive — some compostable options are now comparable to conventional"
+    },
+    {
+      "id": "kb-s6",
+      "heading": "Negotiation Without Confrontation",
+      "body": "Negotiating with suppliers does not mean being aggressive. It means being informed, professional, and clear about what you need.\n\n**Before you negotiate:**\n- Know your current spend with this supplier (annual and monthly)\n- Know the market price for the same product from alternatives\n- Know your volume trajectory (are you growing?)\n- Know what matters most to you (price, quality, reliability, terms)\n\n**Negotiation approaches that work:**\n\n**Volume commitment:** \"If I commit to ordering X kg per month for the next 12 months, can you improve the per-kg price by 5%?\" This gives the supplier predictability in exchange for a discount.\n\n**Payment terms:** \"Can we move from 14-day to 30-day payment terms?\" This improves your cash flow without costing the supplier much.\n\n**Delivery consolidation:** \"Can we move from three deliveries per week to two, with a larger order each time?\" This reduces their delivery costs and may unlock a discount.\n\n**Benchmarking:** \"I've received a quote from [alternative supplier] at €X per unit. I'd prefer to stay with you — can we discuss pricing?\" Not a threat — a fact. Suppliers expect this and respond to it.\n\n**Bundle negotiation:** \"I buy coffee, cups, and cleaning products from three different suppliers. If I consolidated with you, what pricing could you offer?\" Some suppliers offer range discounts.\n\n**What NOT to do:**\n- Threaten to leave without being prepared to actually leave\n- Negotiate on quality (getting a lower price by accepting worse product is false economy)\n- Skip negotiations because it feels uncomfortable — this costs you thousands annually\n- Negotiate by email when a phone call or meeting would build a better outcome\n\nNegotiate annually. Even a 3% improvement across all suppliers on a €150,000 COGS bill saves €4,500."
+    }
+  ],
+  "legacyBuilder": "buildSupplierCostArticle",
+  "status": "published"
+}

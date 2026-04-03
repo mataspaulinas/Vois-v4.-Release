@@ -153,6 +153,8 @@ import {
   fetchAttentionItems,
   fetchVenueOntologyBinding,
   resetOrganizationMemberLogin,
+  KBArticleRecord,
+  fetchKBArticles,
 } from "./lib/api";
 import { firebaseConfigured } from "./lib/firebase";
 import { SectionCard } from "./components/SectionCard";
@@ -196,6 +198,7 @@ import {
 import { SignalsReviewView } from "./features/views/SignalsReviewView";
 import { ConsoleView } from "./features/views/ConsoleView";
 import { HistoryView } from "./features/views/HistoryView";
+import { HelpView } from "./features/views/HelpView";
 import { KnowledgeBaseView } from "./features/views/KnowledgeBaseView";
 import { PlanView } from "./features/views/PlanView";
 import { PortfolioView } from "./features/views/PortfolioView";
@@ -437,6 +440,8 @@ export default function App() {
   const [copilotAttachments, setCopilotAttachments] = useState<CopilotAttachment[]>([]);
   const [loadingBootstrap, setLoadingBootstrap] = useState(true);
   const [loadingOntology, setLoadingOntology] = useState(true);
+  const [kbArticles, setKbArticles] = useState<KBArticleRecord[]>([]);
+  const [loadingKbArticles, setLoadingKbArticles] = useState(false);
   const [loadingEvaluations, setLoadingEvaluations] = useState(false);
   const [loadingIntegrationEvents, setLoadingIntegrationEvents] = useState(false);
   const [loadingPortfolio, setLoadingPortfolio] = useState(true);
@@ -632,6 +637,27 @@ export default function App() {
     return unsubscribe;
   }, []);
 
+  // Restore local session on startup (cookie-based auth without Firebase)
+  useEffect(() => {
+    if (firebaseConfigured()) return; // Firebase handler above covers this
+    setLoadingBootstrap(true);
+    fetchAuthSession()
+      .then((session) => {
+        if (session) {
+          return refreshWorkspaceIdentity(session);
+        }
+        setAuthSession(null);
+        setBootstrap(null);
+      })
+      .catch(() => {
+        setAuthSession(null);
+        setBootstrap(null);
+      })
+      .finally(() => {
+        setLoadingBootstrap(false);
+      });
+  }, []);
+
   useEffect(() => {
     if (!loginEmail && bootstrap?.current_user.email) {
       setLoginEmail(bootstrap.current_user.email);
@@ -763,6 +789,16 @@ export default function App() {
         setLoadingOntology(false);
       });
   }, [organizationId, selectedOntologyId, selectedOntologyIssue, selectedOntologyVersion]);
+
+  // ── KB articles ────────────────────────────────────────────────────────
+  useEffect(() => {
+    if (!organizationId) return;
+    setLoadingKbArticles(true);
+    fetchKBArticles()
+      .then(setKbArticles)
+      .catch(() => setKbArticles([]))
+      .finally(() => setLoadingKbArticles(false));
+  }, [organizationId]);
 
   useEffect(() => {
     if (activeRole !== "owner" || !organizationId) {
@@ -1105,6 +1141,7 @@ export default function App() {
     if (route.topLevelView === "pocket") return `Shift — ${titleCase((route as any).pocketView ?? "shift")}`;
     if (route.topLevelView === "owner") return `Owner — ${titleCase((route as any).ownerView ?? "command")}`;
     if (route.topLevelView === "kb") return "Knowledge Base";
+    if (route.topLevelView === "help") return "Help & Guidance";
     if (route.topLevelView === "settings") return "Settings";
     if (route.topLevelView === "reference") return `Reference — ${titleCase((route as any).referenceView ?? "blocks")}`;
     return null;
@@ -1263,46 +1300,46 @@ export default function App() {
       {
         type: "save_note" as CopilotActionType,
         title: "Save note",
-        description: "Store the latest copilot guidance as a venue note in the execution log.",
+        description: "Save the latest helpful part of this conversation as a note.",
         mode: "save" as const,
         enabled: Boolean(hasVenueScope && hasAssistantSource),
         status: hasVenueScope && hasAssistantSource ? "Ready" : "Open a venue thread with copilot guidance in scope",
       },
       {
         type: "apply_to_assessment" as CopilotActionType,
-        title: "Apply to assessment",
-        description: "Apply the latest reviewed signal update to the saved assessment.",
+        title: "Add to assessment",
+        description: "Add the reviewed signal change from this thread into the saved assessment.",
         mode: "apply" as const,
         enabled: hasAssessmentApply,
         status: hasAssessmentApply ? "Ready" : "No reviewed signal update in scope",
       },
       {
         type: "create_diagnosis_note" as CopilotActionType,
-        title: "Create diagnosis note",
-        description: "Capture this reasoning as a diagnosis-facing note for the venue history.",
+        title: "Save to diagnosis",
+        description: "Keep this reasoning with the venue diagnosis for later reference.",
         mode: "draft" as const,
         enabled: Boolean(hasVenueScope && hasAssistantSource && canManage),
         status: hasVenueScope && hasAssistantSource && canManage ? "Ready" : "Owner or manager venue context required",
       },
       {
         type: "create_plan_suggestion" as CopilotActionType,
-        title: "Create plan suggestion",
-        description: "Convert the latest guidance into a reviewed suggestion on the active plan.",
+        title: "Create suggestion",
+        description: "Turn the latest guidance into a reviewed suggestion on the active plan.",
         mode: "suggest" as const,
         enabled: hasLivePlan,
         status: hasLivePlan ? "Ready" : "Owner or manager with an active plan required",
       },
       {
         type: "create_task_suggestion" as CopilotActionType,
-        title: "Create task suggestion",
-        description: "Create a reviewed task suggestion from the latest thread output.",
+        title: "Suggest task",
+        description: "Turn the latest thread output into a reviewed task suggestion.",
         mode: "suggest" as const,
         enabled: hasLivePlan,
         status: hasLivePlan ? "Ready" : "Owner or manager with an active plan required",
       },
       {
         type: "create_escalation_draft" as CopilotActionType,
-        title: "Create escalation draft",
+        title: "Draft escalation",
         description: "Turn the latest thread reasoning into an escalation draft for review.",
         mode: "draft" as const,
         enabled: Boolean(hasVenueScope && hasAssistantSource && canManage),
@@ -1311,15 +1348,15 @@ export default function App() {
       {
         type: "create_follow_up_list" as CopilotActionType,
         title: "Create follow-up list",
-        description: "Save a follow-up list draft from this thread for later execution review.",
+        description: "Save a short follow-up list from this thread for later review.",
         mode: "draft" as const,
         enabled: Boolean(hasAssistantSource && canManage),
         status: hasAssistantSource && canManage ? "Ready" : "Owner or manager guidance required",
       },
       {
         type: "save_compare_insight" as CopilotActionType,
-        title: "Save compare insight",
-        description: "Capture this comparison reasoning in the venue timeline for later review.",
+        title: "Save comparison",
+        description: "Capture this comparison insight so you can come back to it later.",
         mode: "save" as const,
         enabled: Boolean(hasVenueScope && hasAssistantSource && canManage),
         status: hasVenueScope && hasAssistantSource && canManage ? "Ready" : "Venue comparison context required",
@@ -1330,6 +1367,7 @@ export default function App() {
     const saveNoteAction = copilotAvailableActions.find((action) => action.type === "save_note");
     const primaryStructuredAction =
       copilotAvailableActions.find((action) => action.type === "apply_to_assessment" && action.enabled) ??
+      copilotAvailableActions.find((action) => action.type === "create_plan_suggestion" && action.enabled) ??
       copilotAvailableActions.find((action) => action.type === "create_task_suggestion" && action.enabled) ??
       copilotAvailableActions.find((action) => action.type === "create_diagnosis_note" && action.enabled) ??
       copilotAvailableActions.find((action) => action.type === "save_compare_insight" && action.enabled) ??
@@ -1342,15 +1380,27 @@ export default function App() {
   const commandItems = useMemo(() => {
     const items: Array<{ id: string; label: string; description?: string; group: string; shortcut?: string; onSelect: () => void }> = [];
 
-    // Navigation commands
-    items.push({ id: "nav-today", label: "Today", group: "Navigation", shortcut: "T", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "manager", venueId: displayedVenue.id, managerView: "today" }); } });
-    items.push({ id: "nav-plan", label: "Plan", group: "Navigation", shortcut: "P", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "plan" }); } });
-    items.push({ id: "nav-assessment", label: "Assessment", group: "Navigation", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "assessment" }); } });
-    items.push({ id: "nav-diagnosis", label: "Diagnosis", group: "Navigation", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "diagnosis" }); } });
-    items.push({ id: "nav-history", label: "History", group: "Navigation", onSelect: () => { if (displayedVenue) navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "history" }); } });
-    items.push({ id: "nav-portfolio", label: "Portfolio", group: "Navigation", onSelect: () => navigate({ topLevelView: "portfolio" }) });
+    // Navigation commands (role-filtered)
+    const canSeeVenue = activeRole !== "barista";
+    const canSeeManager = activeRole === "owner" || activeRole === "manager" || activeRole === "developer";
+    const canSeePortfolioCmd = activeRole === "owner" || activeRole === "developer";
+
+    if (canSeeManager && displayedVenue) {
+      items.push({ id: "nav-today", label: "Today", group: "Navigation", shortcut: "T", onSelect: () => navigate({ topLevelView: "manager", venueId: displayedVenue.id, managerView: "today" }) });
+    }
+    if (canSeeVenue && displayedVenue) {
+      items.push({ id: "nav-plan", label: "Plan", group: "Navigation", shortcut: "P", onSelect: () => navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "plan" }) });
+      items.push({ id: "nav-assessment", label: "Assessment", group: "Navigation", onSelect: () => navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "assessment" }) });
+      items.push({ id: "nav-diagnosis", label: "Diagnosis", group: "Navigation", onSelect: () => navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "diagnosis" }) });
+      items.push({ id: "nav-history", label: "History", group: "Navigation", onSelect: () => navigate({ topLevelView: "venue", venueId: displayedVenue.id, venueView: "history" }) });
+    }
+    if (canSeePortfolioCmd) {
+      items.push({ id: "nav-portfolio", label: "Portfolio", group: "Navigation", onSelect: () => navigate({ topLevelView: "portfolio" }) });
+    }
+    items.push({ id: "nav-reference", label: "Reference — Blocks", group: "Navigation", onSelect: () => navigate({ topLevelView: "reference", referenceView: "blocks" }) });
     items.push({ id: "nav-settings", label: "Settings", group: "Navigation", onSelect: () => navigate({ topLevelView: "settings" }) });
     items.push({ id: "nav-kb", label: "Knowledge Base", group: "Navigation", onSelect: () => navigate({ topLevelView: "kb" }) });
+    items.push({ id: "nav-help", label: "Help & Guidance", group: "Navigation", onSelect: () => navigate({ topLevelView: "help" }) });
 
     // Venue commands
     if (bootstrap) {
@@ -3446,6 +3496,7 @@ export default function App() {
                   navigate({ topLevelView: "reference", referenceView: view });
                 }}
                 onShowKnowledgeBase={() => navigate({ topLevelView: "kb" })}
+                onShowHelp={() => navigate({ topLevelView: "help" })}
                 onShowSettings={() => navigate({ topLevelView: "settings" })}
                 onShowManager={handleEnterManagerShell}
                 onShowPocket={handleEnterPocketShell}
@@ -3480,6 +3531,9 @@ export default function App() {
             }
             onSelectSkin={(skin) => setPreferences((current) => ({ ...current, skin: skin as SkinId }))}
             onToggleCopilot={() => setCopilotOpen((current) => !current)}
+            onOpenSearch={() => setCmdPaletteOpen(true)}
+            onShowSettings={() => navigate({ topLevelView: "settings" })}
+            onLogout={handleLogout}
             copilotOpen={copilotOpen}
             formatTimestamp={formatTimestamp}
             onNavigateToVenue={(venueId) => {
@@ -3734,25 +3788,14 @@ export default function App() {
                 ) : null}
 
                 {shellRoute.topLevelView === "kb" ? (
-                  selectedOntologyIssue ? (
-                    <OntologyConfigurationState
-                      venueName={workspaceVenue?.name ?? "Selected venue"}
-                      message={selectedOntologyIssue}
-                    />
-                  ) : (
-                    <KnowledgeBaseView
-                      bundle={ontologyBundle}
-                      alignment={ontologyAlignment}
-                      governance={ontologyGovernance}
-                      authoringBrief={ontologyAuthoringBrief}
-                      loading={loadingOntology}
-                      evaluationPacks={ontologyEvaluationPacks}
-                      evaluationResult={ontologyEvaluationResult}
-                      loadingEvaluations={loadingEvaluations}
-                      connectors={integrationConnectors}
-                      integrationSummary={integrationSummary}
-                    />
-                  )
+                  <KnowledgeBaseView
+                    articles={kbArticles}
+                    loading={loadingKbArticles}
+                  />
+                ) : null}
+
+                {shellRoute.topLevelView === "help" ? (
+                  <HelpView />
                 ) : null}
 
                 {shellRoute.topLevelView === "settings" ? (
@@ -4309,7 +4352,7 @@ function coerceRouteForRole(route: ShellRoute, role: string | null, fallbackVenu
   }
 
   if (role === "barista") {
-    if (route.topLevelView === "pocket" || route.topLevelView === "reference" || route.topLevelView === "kb") {
+    if (route.topLevelView === "pocket" || route.topLevelView === "reference" || route.topLevelView === "kb" || route.topLevelView === "help") {
       return route;
     }
     return fallbackVenueId ? { topLevelView: "pocket", venueId: fallbackVenueId, pocketView: "shift" } : { topLevelView: "settings" };
@@ -4319,7 +4362,7 @@ function coerceRouteForRole(route: ShellRoute, role: string | null, fallbackVenu
     if (!fallbackVenueId && route.topLevelView === "portfolio") {
       return { topLevelView: "settings" };
     }
-    if (route.topLevelView === "settings" || route.topLevelView === "reference" || route.topLevelView === "kb" || route.topLevelView === "portfolio") {
+    if (route.topLevelView === "settings" || route.topLevelView === "reference" || route.topLevelView === "kb" || route.topLevelView === "help" || route.topLevelView === "portfolio") {
       return route;
     }
     return { topLevelView: "settings" };

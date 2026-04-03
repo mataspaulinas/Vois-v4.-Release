@@ -1,0 +1,44 @@
+{
+  "slug": "menu-stranger-eyes",
+  "title": "Reading Your Menu Through a Stranger's Eyes",
+  "subtitle": "Cafe menus fail when insiders optimize for familiarity instead of guest clarity.",
+  "category": "domain-landscape",
+  "domain": "guest-experience",
+  "module": "Menu & Communication",
+  "tags": ["menu", "clarity", "allergens", "upsell", "guest-trust", "signage"],
+  "difficulty": "foundational",
+  "readTime": 11,
+  "blocks": ["B011", "B012", "B015"],
+  "tools": ["T011-01", "T011-02", "T011-03", "T011-04", "T011-05"],
+  "signals": ["S023", "S028"],
+  "related": ["first-20-minutes", "real-cost-of-comp"],
+  "coverColor": "blue",
+  "coverIcon": "menu",
+  "struggles": ["menu-confusion", "inconsistent-service"],
+  "toc": [
+    { "id": "kb-s1", "label": "The Stranger Test" },
+    { "id": "kb-s2", "label": "Where Cafe Menus Usually Confuse" },
+    { "id": "kb-s3", "label": "Pricing, Portions, and Add-ons" },
+    { "id": "kb-s4", "label": "Allergen Clarity Without Panic" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B011", "name": "Menu Clarity Review" },
+      { "id": "B012", "name": "Guest Decision Support" },
+      { "id": "B015", "name": "Allergen Communication" }
+    ],
+    "tools": [
+      "T011-01 · Stranger Test",
+      "T011-02 · Portion Clarity Check",
+      "T011-03 · Add-on Friction Review",
+      "T011-04 · Menu Layout Audit",
+      "T011-05 · Language Cleanup Pass"
+    ],
+    "metrics": [
+      { "value": "5 sec", "label": "guest should grasp the menu promise fast" },
+      { "value": "0 gaps", "label": "allergen cues must be explicit" }
+    ]
+  },
+  "legacyBuilder": "buildMenuStrangerEyesArticle",
+  "status": "published"
+}

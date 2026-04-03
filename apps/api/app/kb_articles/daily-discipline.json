@@ -1,0 +1,79 @@
+{
+  "slug": "daily-discipline",
+  "title": "Daily Discipline: The Rhythms That Run Themselves",
+  "subtitle": "Consistency is not about willpower. It is about systems that make the right thing the easy thing.",
+  "category": "playbook",
+  "domain": "operations",
+  "module": "Operational Rhythm & Daily Discipline",
+  "tags": ["routines", "checklists", "prep", "maintenance", "waste", "discipline"],
+  "difficulty": "foundational",
+  "readTime": 13,
+  "blocks": ["B179", "B180", "B181", "B182"],
+  "tools": ["T179-01", "T180-01", "T181-01", "T182-01"],
+  "signals": ["S069", "S175", "S176", "S178", "S179", "S181", "S182", "S183"],
+  "related": ["surviving-the-rush", "first-20-minutes", "food-prep-that-holds-up"],
+  "coverColor": "steel",
+  "coverIcon": "clipboard",
+  "struggles": ["chaotic-openings", "missed-maintenance", "no-waste-tracking", "inconsistent-routines"],
+  "toc": [
+    { "id": "kb-s1", "label": "Why Checklists Beat Memory" },
+    { "id": "kb-s2", "label": "The Master Prep List" },
+    { "id": "kb-s3", "label": "Equipment Maintenance That Prevents Breakdowns" },
+    { "id": "kb-s4", "label": "The Daily Waste Log" },
+    { "id": "kb-s5", "label": "The Operational Dashboard" },
+    { "id": "kb-s6", "label": "Making Routines Stick" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B179", "name": "Daily Prep List Protocol" },
+      { "id": "B180", "name": "Machine Maintenance Log" },
+      { "id": "B181", "name": "Waste Log & Reconciliation" },
+      { "id": "B182", "name": "Operational Rhythm Dashboard" }
+    ],
+    "tools": [
+      "T179-01 · Master Daily Prep List",
+      "T180-01 · Daily Equipment Maintenance Checklist",
+      "T181-01 · Daily Waste Log Sheet",
+      "T182-01 · Daily Operational Dashboard Template"
+    ],
+    "metrics": [
+      { "value": "100%", "label": "checklist completion rate" },
+      { "value": "Daily", "label": "equipment maintenance checks" },
+      { "value": "Weekly", "label": "waste review and adjustment" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "kb-s1",
+      "heading": "Why Checklists Beat Memory",
+      "body": "Airline pilots use checklists. Surgeons use checklists. The most skilled professionals in the world use checklists — not because they do not know what to do, but because memory is unreliable under pressure.\n\nA cafe during the morning rush is a pressure environment. Things get forgotten. The fridge temperature does not get checked. The grinder does not get calibrated. The prep list does not get completed. Nobody remembers until a customer asks for a sandwich that has not been made.\n\nChecklists work because they:\n- **Remove the need to remember.** The list remembers for you.\n- **Create accountability.** A signed checklist shows who did it and when.\n- **Ensure consistency.** Monday's opening is the same as Thursday's, regardless of who is working.\n- **Catch drift early.** When items start being skipped, you can see it in the checklist and intervene.\n\nThe resistance to checklists is usually pride: \"I've been doing this for years — I don't need a list.\" But the experienced barista who skips calibration because they \"know the grinder\" is the same one serving sour shots to customers who will not come back.\n\nChecklists are not for beginners. They are for professionals who refuse to rely on luck."
+    },
+    {
+      "id": "kb-s2",
+      "heading": "The Master Prep List",
+      "body": "Use T179-01 (Master Daily Prep List) to build a comprehensive prep list that the closing team writes and the opening team executes.\n\n**The night-before prep list (written by closer):**\n\n| Item | Par Level | Current Stock | To Prep | Notes |\n|------|-----------|--------------|---------|-------|\n| Sandwich fillings | 20 portions | 5 remaining | 15 | Check chicken delivery |\n| Salad | 10 bowls | 0 | 10 | Lettuce in walk-in |\n| Soup | 8 litres | 0 | 8 | Tomato today (Tuesday) |\n| Pastries | 24 | Delivery due | Count | AM delivery 6:30am |\n| Filter coffee | 3 batches | — | Grind | Batch 1 by 7:15 |\n| Cold brew | 5 litres | 2 litres | 3 | 12-hour steep overnight |\n\nThe closing team assesses what is left, what sold today, and what is needed for tomorrow. The opening team should not be making these decisions at 6:30am — they should be executing.\n\n**During service:**\nA secondary prep list triggers at midday:\n- Replenish fast-selling items\n- Prep afternoon-specific items (afternoon tea, cake slicing)\n- Batch brew refresh\n- Check display cabinet levels\n\n**End of day:**\n- Log what was left over (this feeds tomorrow's prep quantities)\n- Dispose of expired items, log waste\n- Write tomorrow's prep list\n\nOver time, par levels self-correct. If you consistently over-prep chicken sandwiches and under-prep halloumi wraps, the data is in the daily logs. Adjust par levels monthly based on actual sales."
+    },
+    {
+      "id": "kb-s3",
+      "heading": "Equipment Maintenance That Prevents Breakdowns",
+      "body": "A broken espresso machine on a Saturday morning is a crisis. A maintained espresso machine never breaks on a Saturday morning.\n\nUse T180-01 (Daily Equipment Maintenance Checklist):\n\n**Daily (every shift):**\n- [ ] Backflush espresso machine with water (between services)\n- [ ] Wipe steam wand after every use, purge before and after\n- [ ] Empty knock box when 3/4 full\n- [ ] Purge grinder (5g) before first use\n- [ ] Check fridge and freezer temperatures, log results\n- [ ] Clean drip trays and catch trays\n\n**End of day:**\n- [ ] Backflush with cleaning detergent (per manufacturer instructions)\n- [ ] Soak portafilter baskets and group head screens\n- [ ] Clean grinder hopper and throat (weekly: full disassembly)\n- [ ] Wipe down all surfaces and equipment exteriors\n- [ ] Empty and clean drip trays\n- [ ] Run cleaning cycle on dishwasher\n\n**Weekly:**\n- [ ] Deep clean grinder (remove burrs if applicable, brush out)\n- [ ] Descale kettles and filter coffee machines\n- [ ] Clean fridge interiors\n- [ ] Check water filter status\n- [ ] Inspect steam wand tip for milk buildup\n\n**Monthly:**\n- [ ] Water filter replacement (or per manufacturer schedule)\n- [ ] Check group head gaskets for wear\n- [ ] Service dishwasher (check spray arms, filters)\n- [ ] HVAC filter check\n\n**Quarterly / Annual:**\n- [ ] Professional espresso machine service\n- [ ] Grinder burr replacement (based on kg throughput)\n- [ ] Water quality test (TDS, hardness)\n- [ ] Gas safety certificate renewal\n- [ ] EICR / PAT testing\n\nKeep a maintenance log. When equipment does break, the log shows you the last service date and helps the engineer diagnose faster. It also protects your warranty."
+    },
+    {
+      "id": "kb-s4",
+      "heading": "The Daily Waste Log",
+      "body": "What you throw away costs the same as what you sell. Most cafes have no idea how much they waste — and the number is always larger than they think.\n\nUse T181-01 (Daily Waste Log Sheet):\n\n| Time | Item | Quantity | Reason | Estimated Cost |\n|------|------|----------|--------|---------------|\n| 14:00 | Chicken sandwich | 3 | End of shelf life | €4.50 |\n| 16:30 | Filter coffee | 1.5L | End of hold time | €1.20 |\n| 17:00 | Almond croissant | 2 | Display unsold | €2.00 |\n| 17:00 | Banana (brown) | 4 | Overripe | €0.60 |\n\n**Categories of waste:**\n\n- **Prep waste:** Over-prepping, items going past shelf life before sale\n- **Service waste:** Dropped drinks, wrong orders remade, spilled milk\n- **Display waste:** Unsold cabinet items at end of day\n- **Ingredient waste:** Spoiled produce, opened-but-unused items, over-portioned ingredients\n- **Coffee waste:** Discarded shots, purge waste, end-of-day batch brew\n\n**What the data tells you:**\n\nReview the waste log weekly. You are looking for patterns:\n- Same item wasted every day = over-prepping (reduce par level)\n- Waste spikes on specific days = demand lower than expected (adjust)\n- Specific team members wasting more = training opportunity\n- High coffee waste = calibration issues or over-brewing\n\n**Target:** Total waste should be under 3% of revenue. Above 5% is a significant cost problem.\n\n**Reduction strategies:**\n- Adjust prep quantities based on actual sales data\n- Sell items approaching end of life at a discount (\"last one\" pricing)\n- Donate surplus to food redistribution (Too Good To Go, Olio, local charity)\n- Use batch brewing schedules aligned to demand (brew less in the afternoon)\n- Train portion control to reduce ingredient waste"
+    },
+    {
+      "id": "kb-s5",
+      "heading": "The Operational Dashboard",
+      "body": "Use T182-01 (Daily Operational Dashboard Template) to give the shift lead a single-page view of how the day is going.\n\nThe dashboard should live on the wall in the back area and be updated throughout the day:\n\n**Morning check (by 8am):**\n- [ ] Opening checklist complete: Yes / No\n- [ ] Grinder calibrated: Dose ___g, Yield ___g, Time ___s\n- [ ] Fridge temps logged: Walk-in ___°C, Display ___°C\n- [ ] Prep list completed: Yes / Partial (items missing: ___)\n- [ ] Team on shift: Names and roles\n- [ ] Yesterday's revenue: €___\n- [ ] Today's target: €___\n\n**Midday check (by 1pm):**\n- [ ] Midday revenue check: €___ (on track? Y/N)\n- [ ] Stock replenishment done: Yes / No\n- [ ] Any items 86'd: ___\n- [ ] Any equipment issues: ___\n- [ ] Customer complaints today: ___\n\n**Close check (by close):**\n- [ ] Closing checklist complete: Yes / No\n- [ ] Final revenue: €___\n- [ ] Waste logged: €___\n- [ ] Cash reconciled: Yes / Variance: €___\n- [ ] Tomorrow's prep list written: Yes / No\n- [ ] Any notes for tomorrow's team: ___\n\nThis dashboard takes less than 5 minutes total to maintain. It creates a record, a communication tool, and an accountability system in one document.\n\nThe shift lead owns the dashboard. The manager reviews it the following morning. Patterns emerge: \"Why have we been off-target every Wednesday for a month?\" or \"Waste is creeping up — who's closing on the high-waste days?\""
+    },
+    {
+      "id": "kb-s6",
+      "heading": "Making Routines Stick",
+      "body": "The hardest part of operational discipline is not creating the system. It is making it last.\n\nEvery cafe has experienced the cycle: new checklist introduced with enthusiasm, used diligently for two weeks, then gradually ignored until it disappears entirely.\n\nHow to break the cycle:\n\n**1. Start with one thing.** Do not launch five new checklists in one week. Introduce the daily prep list first. When that is habitual (4–6 weeks), add the maintenance log. Build incrementally.\n\n**2. Make it physical.** Printed, laminated, on the wall at the point of use. Digital checklists on a tablet in the office do not get used during a rush. A laminated card next to the grinder does.\n\n**3. Build it into existing moments.** The calibration check happens when the grinder is turned on — not as a separate task later. The waste log happens when items are thrown away — not at the end of the shift from memory. Attach new habits to existing triggers.\n\n**4. Check completion, not just existence.** A checklist on the wall that nobody reviews is decoration. The manager should check every checklist the next morning, every day, for the first month. After that, spot-check weekly.\n\n**5. Close the feedback loop.** When the waste log reveals a pattern, share it with the team and change something. When the maintenance log prevents a breakdown, tell the team. People sustain habits that produce visible results.\n\n**6. Tolerate imperfection.** A checklist completed 80% of the time is infinitely better than no checklist at all. Do not abandon the system because it is not perfect — improve it incrementally.\n\nThe cafes with the best operational discipline are not the ones with the most sophisticated systems. They are the ones where the owner or manager cares enough to check, every day, that the basics are being done."
+    }
+  ],
+  "legacyBuilder": "buildDailyDisciplineArticle",
+  "status": "published"
+}

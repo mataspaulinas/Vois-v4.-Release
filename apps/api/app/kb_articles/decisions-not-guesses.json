@@ -1,0 +1,79 @@
+{
+  "slug": "decisions-not-guesses",
+  "title": "Decisions, Not Guesses: Building a Data-Driven Cafe Culture",
+  "subtitle": "You do not need big data. You need small data, used consistently, by people who care.",
+  "category": "failure-autopsy",
+  "domain": "technology",
+  "module": "Digital Tools & Customer Data",
+  "tags": ["data", "analytics", "culture", "decision-making", "metrics", "team"],
+  "difficulty": "advanced",
+  "readTime": 14,
+  "blocks": ["B160", "B161", "B162"],
+  "tools": ["T160-01", "T160-02", "T160-03", "T160-04", "T160-05"],
+  "signals": ["S145", "S175", "S109"],
+  "related": ["pos-is-not-just-a-till", "art-of-the-upsell", "surviving-the-rush"],
+  "coverColor": "slate",
+  "coverIcon": "bar-chart",
+  "struggles": ["reactive-management", "no-data-visibility", "gut-feel-decisions"],
+  "toc": [
+    { "id": "kb-s1", "label": "The Gut-Feel Trap" },
+    { "id": "kb-s2", "label": "The Team Metrics Board" },
+    { "id": "kb-s3", "label": "Teaching Data Literacy Without a Spreadsheet" },
+    { "id": "kb-s4", "label": "Running Small Experiments" },
+    { "id": "kb-s5", "label": "Celebrating Data Wins" },
+    { "id": "kb-s6", "label": "The Quarterly Business Review" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B160", "name": "Data-Driven Culture" },
+      { "id": "B161", "name": "Team Data Literacy" },
+      { "id": "B162", "name": "Experimentation Framework" }
+    ],
+    "tools": [
+      "T160-01 · Team Metrics Board Template",
+      "T160-02 · Data Literacy Workshop Pack",
+      "T160-03 · Experiment Framework Template",
+      "T160-04 · Data Win Recognition Log",
+      "T160-05 · Quarterly Business Review Agenda"
+    ],
+    "metrics": [
+      { "value": "3 metrics", "label": "visible to the team daily" },
+      { "value": "1 experiment", "label": "running at any time" },
+      { "value": "Quarterly", "label": "full business review cadence" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "kb-s1",
+      "heading": "The Gut-Feel Trap",
+      "body": "Every cafe owner has instincts. Years of experience build a feel for what works — which items sell, when it gets busy, who the best baristas are. Instinct is valuable. But instinct without data is a gamble.\n\nThe gut-feel trap looks like this:\n\n\"Saturdays are our busiest day.\" — But POS data shows Friday afternoon actually generates more revenue per hour.\n\n\"The carrot cake is really popular.\" — But it sells 4 per day, while the banana bread sells 12. You are over-prepping carrot cake and under-prepping banana bread.\n\n\"We do not need more staff in the afternoon.\" — But your ATV drops 30% after 2pm because the lone barista cannot suggest add-ons while managing the queue.\n\nThese are not bad instincts. They are incomplete pictures. Data does not replace instinct — it sharpens it. The owner who combines experienced intuition with actual numbers makes better decisions, faster, with less waste.\n\nThe barrier is not technology. Most cafes already have a POS, a stock system, and a rota tool. The barrier is culture — the habit of looking at numbers, talking about numbers, and making decisions based on numbers. That is what this article is about."
+    },
+    {
+      "id": "kb-s2",
+      "heading": "The Team Metrics Board",
+      "body": "Data becomes culture when it is visible. Not in a back-office spreadsheet — on the wall, in the staff area, where every team member sees it every shift.\n\nUse T160-01 (Team Metrics Board Template) to create a simple physical or digital board showing three numbers:\n\n**1. Yesterday's Revenue**\nCompared to the same day last week. A simple arrow: up or down. The team should know if they are winning.\n\n**2. This Week's ATV**\nRunning average. If the target is €5.00 and you are at €4.60, the team knows there is work to do. If you are at €5.20, celebrate.\n\n**3. A Rotating Operational Metric**\nChange this monthly to focus attention on whatever matters most right now:\n- Food attachment rate (if upselling is the focus)\n- Average review score (if reputation is the focus)\n- Waste value (if cost control is the focus)\n- Ticket time (if speed is the focus)\n\nUpdate the board daily. It takes two minutes. The act of writing the number creates accountability. The act of reading it creates awareness.\n\nRules for the board:\n- **No blame.** The board is not a scoreboard for individual performance. It is team information.\n- **Celebrate progress.** When a number improves, acknowledge it in the huddle.\n- **Explain the context.** A bad Tuesday is not a crisis if there was a road closure. A great Saturday is worth understanding — what drove it?\n\nOver time, the team starts asking about the numbers without being prompted. That is the cultural shift you are building."
+    },
+    {
+      "id": "kb-s3",
+      "heading": "Teaching Data Literacy Without a Spreadsheet",
+      "body": "Data literacy in a cafe is not about Excel skills. It is about understanding what a number means and what to do about it.\n\nUse T160-02 (Data Literacy Workshop Pack) to run a 30-minute team session covering the basics:\n\n**Concept 1: What is ATV and why does it matter?**\nShow the team the €0.80 ATV impact calculation from the upselling article. When they see that small daily improvements equal €40,000 a year, the number becomes meaningful.\n\n**Concept 2: What is food cost percentage?**\nExplain that if a sandwich costs €2 to make and sells for €6, the food cost is 33%. If the barista makes it with €3 of ingredients (extra filling, wrong portion), the food cost is 50% and the margin is halved. Suddenly, recipe cards make sense.\n\n**Concept 3: What is revenue per labour hour?**\nIf the shift generates €800 with 4 staff for 8 hours (32 staff hours), the revenue per labour hour is €25. If one person calls in sick and 3 staff generate €750 (24 staff hours), revenue per labour hour is €31. The shift was harder — but more productive. This helps the team understand staffing decisions.\n\n**How to teach it:**\n- Use real numbers from your cafe (anonymised if needed)\n- Ask questions, do not lecture: \"What do you think our busiest hour is? Let's check.\"\n- Make it interactive: show a week of data and ask the team what they notice\n- Keep it to 30 minutes — attention spans in a pre-shift meeting are short\n\nDo this once a quarter. Each session builds fluency. After a year, your team will speak the language of the business naturally."
+    },
+    {
+      "id": "kb-s4",
+      "heading": "Running Small Experiments",
+      "body": "A data-driven culture does not just review numbers — it tests ideas. The best cafes treat operational changes as experiments, not guesses.\n\nUse T160-03 (Experiment Framework Template) to structure every experiment:\n\n**1. Hypothesis.** State what you expect. \"Adding a daily feature pastry suggestion will increase food attachment rate from 28% to 35%.\"\n\n**2. Method.** What will you change? For how long? \"For two weeks, every barista will suggest the daily feature to every customer during off-peak hours.\"\n\n**3. Measurement.** What number will tell you if it worked? \"Food attachment rate, measured weekly, compared to the two weeks before the experiment.\"\n\n**4. Duration.** Long enough to get a reliable signal, short enough to stay focused. Two weeks minimum for most cafe experiments.\n\n**5. Result.** What happened? \"Food attachment rate went from 28% to 33%. Not quite 35%, but a meaningful improvement. Continue the programme.\"\n\nExperiment ideas that work in cafes:\n- Does a QR code on tables increase Google reviews?\n- Does playing jazz instead of pop affect dwell time?\n- Does offering a loyalty stamp increase ATV?\n- Does a window display of iced drinks increase cold drink sales in summer?\n- Does publishing the daily revenue target increase team performance?\n\nThe discipline is in measuring, not just trying. \"We tried that and it didn't work\" is not useful. \"We tried that for two weeks, measured the food attachment rate, and it moved from 28% to 30% — not enough to justify the effort\" is useful.\n\nRun one experiment at a time. Multiple simultaneous changes make it impossible to know what caused the result."
+    },
+    {
+      "id": "kb-s5",
+      "heading": "Celebrating Data Wins",
+      "body": "If data only appears when something is wrong, the team will associate it with criticism. Data becomes culture when it is also associated with praise.\n\nUse T160-04 (Data Win Recognition Log) to track and celebrate:\n\n**Revenue milestones.** \"We hit €1,000 in a day for the first time!\" or \"Best January in three years.\" Frame it as a team achievement.\n\n**Metric improvements.** \"Our food attachment rate is up 5% since we started the daily feature programme. That's an extra €X per week.\" Connect the number to the behaviour that caused it.\n\n**Individual contributions.** \"Karolina's shifts consistently have the highest ATV — her suggestions are clearly landing.\" Use data to recognise people, not to rank them.\n\n**Experiment results.** \"The QR code experiment generated 15 extra reviews this month. Tomas came up with the idea. Nice one.\"\n\nHow to celebrate:\n- Mention it in the team huddle (30 seconds is enough)\n- Write it on the metrics board: \"WIN: ATV hit €5.10 this week!\"\n- Small rewards for data-driven achievements (a free coffee, a public thank you, their name on the board)\n\nThe psychological principle is simple: what gets recognised gets repeated. If the team sees that looking at numbers and acting on them leads to recognition and results, they will do more of it.\n\nThis is how a data-driven culture is built — not through dashboards and KPIs, but through people who care about getting better and have the numbers to show them how."
+    },
+    {
+      "id": "kb-s6",
+      "heading": "The Quarterly Business Review",
+      "body": "Once a quarter, step back from daily operations and look at the bigger picture. The quarterly business review (QBR) is a structured conversation — with yourself, a partner, or a mentor — about how the business is performing.\n\nUse T160-05 (Quarterly Business Review Agenda):\n\n**1. Financial Review (30 min)**\n- Revenue trend: up, down, or flat vs. same quarter last year?\n- Gross margin: has food cost or coffee cost moved?\n- Labour cost as % of revenue: are you overstaffed or understaffed?\n- Cash flow: are you comfortable or tight?\n\n**2. Operational Review (20 min)**\n- What are the top 3 operational problems this quarter? (Use complaint data, waste data, staff feedback)\n- What improved since last quarter?\n- What experiments ran and what were the results?\n\n**3. People Review (15 min)**\n- Did anyone leave? Why?\n- Who is growing and could take on more?\n- Is morale high or low? What is driving it?\n- Any training needs identified?\n\n**4. Customer Review (15 min)**\n- Review score trend\n- Key themes from reviews and feedback\n- Repeat customer behaviour (if tracked)\n- Any complaints that signal a systemic issue?\n\n**5. Next Quarter Priorities (10 min)**\n- Choose 1–3 priorities. Not 10. Three things you will focus on improving.\n- Assign one experiment to each priority.\n- Set a measurable target for each.\n\nThe QBR should take 90 minutes. Block it in your calendar. Protect it. The daily grind will always feel more urgent — but the QBR is where strategy happens. Without it, you are running hard without knowing if you are running in the right direction.\n\nBring data, not feelings. The QBR is the moment where numbers earn their keep — showing you the truth about your business, quarter by quarter, trend by trend."
+    }
+  ],
+  "legacyBuilder": "buildDecisionsNotGuessesArticle",
+  "status": "published"
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "atmosphere-you-can-feel",
+  "title": "Atmosphere You Can Feel: Lighting, Music, and the Invisible Design",
+  "subtitle": "Customers cannot always say why a cafe feels right. But they always know when it does not.",
+  "category": "signal-story",
+  "domain": "environment",
+  "module": "Cafe Design & Atmosphere",
+  "tags": ["lighting", "music", "ambiance", "atmosphere", "design", "comfort"],
+  "difficulty": "intermediate",
+  "readTime": 12,
+  "blocks": ["B150", "B151", "B152"],
+  "tools": ["T150-01", "T150-02", "T150-03", "T150-04", "T150-05"],
+  "signals": ["S131", "S132", "S134", "S136", "S137"],
+  "related": ["curb-appeal", "menu-stranger-eyes", "why-good-staff-leave"],
+  "coverColor": "amber",
+  "coverIcon": "sun",
+  "struggles": ["uncomfortable-space", "low-dwell-time", "brand-confusion"],
+  "toc": [
+    { "id": "kb-s1", "label": "Why Atmosphere Is Not a Luxury" },
+    { "id": "kb-s2", "label": "Lighting: The Most Underestimated Element" },
+    { "id": "kb-s3", "label": "Music: Curating What People Feel" },
+    { "id": "kb-s4", "label": "Temperature and Scent" },
+    { "id": "kb-s5", "label": "Seating That Matches Your Customer Mix" },
+    { "id": "kb-s6", "label": "Auditing Atmosphere: A Sensory Walk" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B150", "name": "Lighting, Music & Ambiance" },
+      { "id": "B151", "name": "Seating Layout Optimisation" },
+      { "id": "B152", "name": "Sensory Environment Design" }
+    ],
+    "tools": [
+      "T150-01 · Lighting Audit Template",
+      "T150-02 · Music Playlist Guide",
+      "T150-03 · Temperature Comfort Check",
+      "T150-04 · Seating Layout Planner",
+      "T150-05 · Sensory Walk Audit"
+    ],
+    "metrics": [
+      { "value": "2700K", "label": "warm lighting colour temperature for cosy feel" },
+      { "value": "65–70 dB", "label": "comfortable background music level" },
+      { "value": "20–22°C", "label": "comfortable room temperature range" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "kb-s1",
+      "heading": "Why Atmosphere Is Not a Luxury",
+      "body": "A customer chooses your cafe for the coffee. They come back for how it feels.\n\nAtmosphere is the reason someone chooses your cafe over the equally good one three doors down. It is the reason a laptop worker stays for three hours and buys two more drinks. It is the reason a couple picks your cafe for their Saturday ritual.\n\nThe problem is that atmosphere is invisible — until it is wrong. Nobody walks in and says \"great lighting temperature!\" But if the lights are too bright, the music is too loud, and the room is too cold, they leave after one drink and do not return.\n\nAtmosphere is built from a handful of controllable elements: lighting, music, temperature, scent, and spatial layout. None of these are expensive to get right. They are expensive to ignore.\n\nThe biggest risk is designing for yourself instead of your customers. You might like bright lights and drum-and-bass — but if your customers are working professionals and young families, they need warm lighting and background-level jazz or acoustic."
+    },
+    {
+      "id": "kb-s2",
+      "heading": "Lighting: The Most Underestimated Element",
+      "body": "Lighting does more work than any other design element in a cafe. It affects mood, comfort, perceived quality, and how long people stay.\n\n**The rules:**\n\n**Warm, not cold.** Colour temperature matters enormously. 2700K (warm white) feels cosy, inviting, like candlelight. 4000K (cool white) feels clinical, like an office. 6500K (daylight) feels like a hospital. Most cafes should be at 2700–3000K.\n\n**Layered, not uniform.** One central ceiling light creates flat, uninspiring illumination. Good cafe lighting uses layers:\n- **Ambient:** General overhead light at moderate levels\n- **Task:** Brighter spots at the counter and bar where staff work\n- **Accent:** Pendant lights over tables, wall sconces, shelf lighting\n- **Natural:** Maximise daylight from windows — it is free and universally preferred\n\n**Dimmable.** The right light level at 8am is wrong at 5pm. Install dimmers on key circuits so you can adjust through the day. Brighter in the morning (energising), softer in the afternoon (relaxing).\n\n**Check the bulbs.** Mixed colour temperatures look terrible — one warm pendant next to one cool spotlight creates visual discord. Standardise across all fixtures.\n\nCommon mistakes:\n- Exposed fluorescent tubes (instant atmosphere killer)\n- Spotlights pointing directly at seated customers (uncomfortable glare)\n- No consideration for screen glare (laptop workers will leave)\n- Lights left at full brightness all day regardless of natural light levels\n\nWalk your cafe at three different times of day. Sit in every seat. Look at the light from the customer's perspective. Fix what is uncomfortable."
+    },
+    {
+      "id": "kb-s3",
+      "heading": "Music: Curating What People Feel",
+      "body": "Music sets the emotional tone of the space. Too loud, and conversations become shouting matches. Too quiet, and every private conversation becomes public. Wrong genre, and the atmosphere feels mismatched.\n\n**Volume.** The test is simple: can two people at a table have a comfortable conversation without raising their voices? If yes, the volume is right. If no, turn it down. Target 65–70 dB — enough to create atmosphere and mask kitchen noise, not enough to dominate.\n\n**Genre.** Match the music to your brand and your customer. There is no universally correct genre, but there are universal rules:\n- Morning: lighter, calmer — acoustic, jazz, lo-fi\n- Midday: slightly more energy — indie, soul, bossa nova\n- Afternoon: back to mellow — ambient, classical, acoustic\n- Evening (if you trade): warmer, richer — deeper jazz, R&B, world music\n\nAvoid: chart pop with lyrics everyone knows (distracting), heavy bass (fatiguing), anything with explicit content, and complete silence (creates an awkward library effect).\n\n**Playlists.** Curate playlists (T150-02) or use a service designed for commercial spaces (Soundtrack Your Brand, Rockbot). Do NOT use personal Spotify — the terms prohibit commercial use, ads will interrupt, and algorithm-generated playlists are inconsistent.\n\n**Consistency.** The same music style should play every Tuesday morning. Regulars notice when the vibe changes randomly — it creates unease even if they cannot articulate why.\n\nLet the team contribute to playlist curation. They listen to it for 8 hours — give them some ownership over what plays, within your brand guidelines."
+    },
+    {
+      "id": "kb-s4",
+      "heading": "Temperature and Scent",
+      "body": "Two elements most cafe owners overlook because they acclimatise to their own space.\n\n**Temperature.** 20–22°C is the comfort zone for most people. Below 18°C, customers feel cold and leave sooner. Above 24°C, they feel sluggish and the space feels stuffy.\n\nThe challenge in cafes:\n- The espresso machine generates significant heat behind the bar\n- The door opens constantly, letting cold air in\n- Seating near windows gets too hot in summer, too cold in winter\n\nSolutions:\n- A thermostat set to 21°C with consistent monitoring\n- An air curtain above the door if you have high foot traffic and cold climate\n- Table placement that avoids direct drafts from the door\n- Ceiling fans in summer to circulate air without air conditioning harshness\n\nCheck temperature from the customer's perspective, not the bar. The barista standing next to the machine is warm; the customer by the window may be cold.\n\n**Scent.** A cafe should smell like fresh coffee. This happens naturally when the grinder is running and shots are pulling. If your cafe smells like cleaning products, burnt milk, or the bins — something is wrong.\n\nNever use artificial scent diffusers in a cafe. They clash with food and coffee aromas and signal inauthenticity. Instead:\n- Grind beans fresh (the best natural scent marketing)\n- Bake or warm pastries in the morning (if possible)\n- Clean with neutral-scent products\n- Take the bins out before they become noticeable\n- Ensure kitchen extraction works properly"
+    },
+    {
+      "id": "kb-s5",
+      "heading": "Seating That Matches Your Customer Mix",
+      "body": "Different customers need different seating, and most cafes default to one type — usually small two-tops arranged identically.\n\nThink about who visits and what they need:\n\n**Solo laptop workers:** Counter seating or window bars with power outlets. They want a view, a surface, and to feel part of the room without being in the way. Deep sofas are terrible for laptop work — no table height, no power.\n\n**Couples and friends:** Standard two-tops and four-tops. Comfortable chairs, not stools. Close enough to feel cosy, not so close they are in their neighbours' conversation.\n\n**Groups:** A large communal table or the ability to push tables together. If groups cannot seat themselves easily, they will choose a cafe where they can.\n\n**Parents with children:** Space for a pushchair without blocking the aisle. A highchair. A corner where a toddler's noise is less disruptive.\n\n**Quick grabbers:** Standing counter or bar-height seating near the door. They want to drink their coffee quickly and leave without the ceremony of sitting down.\n\nLayout principles:\n- **Flow.** Can staff move through the room with a tray without asking people to move? Can customers reach the toilet without squeezing past six tables?\n- **Variety.** Mix seating types. Some chairs, some banquettes, some bar stools, one sofa corner. Variety gives customers choice and makes the space feel considered.\n- **Density.** More seats means more revenue capacity, but too many seats means nobody is comfortable. Find the balance — and err toward fewer, more comfortable seats over cramming.\n\nRearrange seasonally. Outdoor seating expands capacity in summer. Winter layouts can be cosier and denser."
+    },
+    {
+      "id": "kb-s6",
+      "heading": "Auditing Atmosphere: A Sensory Walk",
+      "body": "Once a month, do a sensory walk (T150-05). Arrive at your cafe as a customer would — from the street, through the door, to a table. Notice everything.\n\n**At the door:**\n- What is the first thing I hear? (Music, machine noise, staff chatter, silence?)\n- What is the first thing I smell? (Coffee, cleaning products, nothing?)\n- What is the temperature shift from outside to inside?\n- What is the light level — inviting or harsh?\n\n**At a table:**\n- Can I hear the music clearly but not loudly?\n- Is the lighting comfortable for reading a phone or a book?\n- Is the chair comfortable for 30 minutes? For an hour?\n- Can I have a conversation without raising my voice?\n- Is the table clean, stable, and the right height?\n\n**From the toilet:**\n- Is it clean, warm, and well-stocked?\n- Does the music carry through?\n- Is the route there easy to find and navigate?\n\n**At different times:**\n- Do the sensory walk at 8am, at noon, and at 4pm. Each time feels different. The morning should feel energising. The afternoon should feel relaxing. If they feel the same, you are not adapting.\n\nScore each element 1–5 and track quarterly. Small improvements — dimming the lights by 20%, turning the music down one notch, adding a plant to a bare corner — compound into a space that feels intentionally designed rather than accidentally arranged.\n\nAtmosphere is not about spending money on renovation. It is about paying attention to the sensory experience you are already creating, and making deliberate choices to improve it."
+    }
+  ],
+  "legacyBuilder": "buildAtmosphereArticle",
+  "status": "published"
+}

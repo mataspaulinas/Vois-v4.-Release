@@ -97,13 +97,27 @@ function SparklesIcon() {
   );
 }
 
-function DefaultItemIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-      <rect x="3" y="3" width="14" height="14" rx="3" stroke={COLOR.textMuted} strokeWidth="1.3" />
-      <path d="M7 10h6" stroke={COLOR.textMuted} strokeWidth="1.3" strokeLinecap="round" />
-    </svg>
-  );
+function ItemIcon({ group, label }: { group: string; label: string }) {
+  const lower = label.toLowerCase();
+  // Navigation items
+  if (lower === "today") return <Icon name="today" size={18} />;
+  if (lower === "plan") return <Icon name="plan" size={18} />;
+  if (lower === "assessment") return <Icon name="assessment" size={18} />;
+  if (lower === "diagnosis") return <Icon name="signals" size={18} />;
+  if (lower === "history") return <Icon name="history" size={18} />;
+  if (lower === "portfolio") return <Icon name="chart-pie" size={18} />;
+  if (lower === "settings") return <Icon name="settings" size={18} />;
+  if (lower.includes("knowledge")) return <Icon name="knowledge" size={18} />;
+  if (lower.includes("help")) return <Icon name="help" size={18} />;
+  if (lower.includes("reference")) return <Icon name="reference" size={18} />;
+  // Venues
+  if (group === "Venues") return <Icon name="home" size={18} />;
+  // Actions
+  if (lower.includes("copilot")) return <Icon name="copilot" size={18} />;
+  if (lower.includes("thread")) return <Icon name="comment" size={18} />;
+  if (lower.includes("theme")) return <Icon name="theme-dark" size={18} />;
+  // Fallback
+  return <Icon name="forward" size={18} />;
 }
 
 /* ─── Recent Items Persistence ──────────────────────────────── */
@@ -343,7 +357,7 @@ export function CommandPalette({ open, onClose, items, onAskCopilot }: CommandPa
 
   const modalStyle: React.CSSProperties = {
     position: "fixed",
-    top: "30%",
+    top: "20%",
     left: "50%",
     transform: "translateX(-50%)",
     width: "100%",
@@ -480,8 +494,8 @@ export function CommandPalette({ open, onClose, items, onAskCopilot }: CommandPa
         onClick={() => handleSelect(idx)}
         onMouseEnter={() => setSelectedIndex(idx)}
       >
-        <div style={{ flexShrink: 0, color: COLOR.textMuted }}>
-          {item.icon ? <DefaultItemIcon /> : <DefaultItemIcon />}
+        <div style={{ flexShrink: 0, color: isSelected ? COLOR.accent : COLOR.textMuted }}>
+          <ItemIcon group={item.group} label={item.label} />
         </div>
         <div style={{ flex: 1, minWidth: 0, display: "flex", alignItems: "baseline", gap: 8 }}>
           <span
@@ -608,7 +622,7 @@ export function CommandPalette({ open, onClose, items, onAskCopilot }: CommandPa
                   fontFamily: FONT_SANS,
                 }}
               >
-                Try searching for venues, tasks, or blocks
+                Navigate anywhere, toggle features, or type "ask:" to talk to Copilot
               </div>
             </div>
           )}
@@ -720,11 +734,6 @@ export function useCommandPalette(): {
         e.preventDefault();
         e.stopPropagation();
         setOpen((prev) => !prev);
-      }
-
-      // Escape to close
-      if (e.key === "Escape") {
-        setOpen(false);
       }
     };
 

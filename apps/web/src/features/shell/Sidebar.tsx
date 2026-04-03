@@ -30,6 +30,7 @@ type SidebarProps = {
   onSelectPocketView?: (view: PocketView) => void;
   onSelectOwnerView?: (view: OwnerView) => void;
   onShowKnowledgeBase: () => void;
+  onShowHelp: () => void;
   onShowSettings: () => void;
   onShowManager: () => void;
   onShowPocket: () => void;
@@ -115,6 +116,7 @@ export function Sidebar(props: SidebarProps) {
     onSelectPocketView,
     onSelectOwnerView,
     onShowKnowledgeBase,
+    onShowHelp,
     onShowSettings,
     onShowManager,
     onShowPocket,
@@ -315,6 +317,7 @@ export function Sidebar(props: SidebarProps) {
   sections.push(
     <NavGroup key="guidance" label="Guidance" collapsed={collapsed}>
       <SidebarNavItem icon="knowledge" label="Knowledge Base" active={activeTopLevel === "kb"} collapsed={collapsed} onClick={onShowKnowledgeBase} />
+      <SidebarNavItem icon="help" label="Help" active={activeTopLevel === "help"} collapsed={collapsed} onClick={onShowHelp} />
     </NavGroup>
   );
 
@@ -349,34 +352,18 @@ export function Sidebar(props: SidebarProps) {
         </button>
       </div>
 
-      {/* ── Venue selector ── */}
+      {/* ── Venue context label (static, not interactive) ── */}
       {showVenue && !collapsed && (
-        <button className="sidebar__venue" title={activeVenueName ?? undefined}>
+        <div className="sidebar__venue-label" title={activeVenueName ?? undefined}>
           <span className="sidebar__venue-dot" />
           <span className="sidebar__venue-name">{activeVenueName}</span>
-          <span className="sidebar__venue-chevron">
-            <Icon name="chevron-down" size={12} />
-          </span>
-        </button>
+        </div>
       )}
 
       {/* ── Scrollable middle ── */}
       <div className="sidebar__scroll">
         {scrollContent}
 
-        {/* Pulse card */}
-        {canSeePortfolio && !collapsed && portfolioSummary && (
-          <div className="sidebar__pulse-card">
-            <p className="sidebar__pulse-label">Portfolio pulse</p>
-            <p className="sidebar__pulse-reason">
-              {portfolioSummary.resume_reason ?? "Portfolio is ready."}
-            </p>
-            <div className="sidebar__pulse-stats">
-              <span>{portfolioSummary.totals.ready_tasks} ready</span>
-              <span>{portfolioSummary.totals.blocked_tasks} blocked</span>
-            </div>
-          </div>
-        )}
       </div>
 
       {/* ── Bottom ── */}

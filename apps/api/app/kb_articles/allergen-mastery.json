@@ -1,0 +1,79 @@
+{
+  "slug": "allergen-mastery",
+  "title": "Allergen Mastery: Protecting Customers, Protecting Your Business",
+  "subtitle": "Allergen management is not a compliance exercise. It is the difference between a safe cafe and a dangerous one.",
+  "category": "signal-story",
+  "domain": "food-safety",
+  "module": "Food Safety & Compliance",
+  "tags": ["allergens", "food-safety", "cross-contamination", "handwashing", "training", "compliance"],
+  "difficulty": "foundational",
+  "readTime": 13,
+  "blocks": ["B007", "B008", "B009", "B010"],
+  "tools": ["T007-01", "T008-01", "T009-01", "T010-01"],
+  "signals": ["S002", "S003", "S004", "S011", "S015", "S017"],
+  "related": ["cold-chain-and-haccp", "invisible-hazards", "food-prep-that-holds-up"],
+  "coverColor": "red",
+  "coverIcon": "alert-triangle",
+  "struggles": ["allergen-anxiety", "cross-contamination-risk", "staff-knowledge-gaps", "customer-trust"],
+  "toc": [
+    { "id": "kb-s1", "label": "Why Allergens Are Life and Death" },
+    { "id": "kb-s2", "label": "The 14 Allergens Every Team Must Know" },
+    { "id": "kb-s3", "label": "Allergen Dialogue Scripts" },
+    { "id": "kb-s4", "label": "Cross-Contamination Prevention" },
+    { "id": "kb-s5", "label": "Handwashing Protocol" },
+    { "id": "kb-s6", "label": "Allergen Auditing" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B007", "name": "Allergen Matrix Management" },
+      { "id": "B008", "name": "Cross-Contamination Controls" },
+      { "id": "B009", "name": "Allergen Communication Protocol" },
+      { "id": "B010", "name": "Handwashing and Hygiene Standards" }
+    ],
+    "tools": [
+      "T007-01 · Allergen Matrix Template",
+      "T008-01 · Cross-Contamination Checklist",
+      "T009-01 · Allergen Dialogue Card",
+      "T010-01 · Handwashing Protocol Poster"
+    ],
+    "metrics": [
+      { "value": "14", "label": "declarable allergens in EU law" },
+      { "value": "100%", "label": "staff allergen training completion" },
+      { "value": "20 seconds", "label": "minimum effective handwash time" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "kb-s1",
+      "heading": "Why Allergens Are Life and Death",
+      "body": "In 2016 a teenager died after eating a baguette from a chain cafe that contained undeclared sesame. That tragedy changed European food law and should change how every cafe thinks about allergens.\n\nAllergic reactions are not minor inconveniences. Anaphylaxis can kill within minutes. A customer who tells you they have a nut allergy is not being difficult — they are trusting you with their life. That trust must be earned every single time, with every single order.\n\nThe legal framework is clear. EU FIC Regulation 1169/2011 requires you to provide accurate allergen information for every item you sell, whether prepacked, prepacked for direct sale, or served loose. Failure to do so is a criminal offence. Ignorance is not a defence. \"I didn't know there were nuts in the pesto\" is not a defence.\n\nBut compliance is the floor, not the ceiling. A cafe that truly protects its customers goes beyond the legal minimum. It builds a culture where allergen awareness is automatic — where every team member, from the newest Saturday staff to the owner, understands the risk and takes it personally.\n\nThe most dangerous phrase in a cafe is \"I think it's fine.\" If you do not know, you do not serve it. If you cannot confirm, you say so. If a customer asks about an ingredient and you are not certain, the answer is always: \"Let me check for you.\" Never guess. Never assume. Never improvise. One wrong answer can end a life, end a business, and end a career. That is not hyperbole. It is the documented reality of allergen failures in food service."
+    },
+    {
+      "id": "kb-s2",
+      "heading": "The 14 Allergens Every Team Must Know",
+      "body": "EU law identifies 14 allergens that must be declared. Every member of your team must know them. Not vaguely. Not \"most of them.\" All fourteen, reliably, under pressure.\n\nThe 14 declarable allergens are:\n\n1. **Celery** — including celeriac. Found in stocks, soups, salads, some spice mixes.\n2. **Cereals containing gluten** — wheat, rye, barley, oats. Found in bread, cakes, pastry, sauces thickened with flour.\n3. **Crustaceans** — crab, lobster, prawns, shrimp. Less common in cafes but present in some sandwich fillings and salads.\n4. **Eggs** — in cakes, mayonnaise, quiche, pasta, some bread glazes.\n5. **Fish** — in some Worcestershire sauces, Thai curry pastes, Caesar dressing.\n6. **Lupin** — a legume used in some continental flour blends. Check speciality bread suppliers.\n7. **Milk** — in almost everything. Butter, cheese, cream, chocolate, many breads.\n8. **Molluscs** — mussels, oysters, squid. Rare in cafes but check chowders and seafood dishes.\n9. **Mustard** — in dressings, marinades, sauces, some spice blends.\n10. **Nuts** — almonds, hazelnuts, walnuts, cashews, pecans, Brazils, pistachios, macadamias. In cakes, praline, pesto, granola, nut milks.\n11. **Peanuts** — technically a legume, not a tree nut. In satay, some granolas, some biscuits.\n12. **Sesame** — in bread, hummus, some oils, burger buns, tahini.\n13. **Soya** — in soy milk, tofu, soy sauce, many processed foods, some chocolate.\n14. **Sulphur dioxide and sulphites** — in dried fruit, wine, some processed meats, some fruit juices.\n\nBuild your allergen matrix using T007-01. List every menu item down the left side, every allergen across the top. Mark each intersection clearly. Update it every time a recipe changes, a supplier changes, or a new item is added. Post the matrix in the kitchen and behind the counter. Train every new starter on it during their first shift."
+    },
+    {
+      "id": "kb-s3",
+      "heading": "Allergen Dialogue Scripts",
+      "body": "Allergen communication fails when staff are unsure what to say. Give them scripts they can rely on.\n\n**When a customer mentions an allergy:**\n\n\"Thank you for letting me know. Let me check our allergen information for you — I want to make sure we get this right.\"\n\nNever say: \"It should be fine.\" Never say: \"I don't think there's any in there.\" These phrases kill people.\n\n**When checking the matrix:**\n\n\"I've checked our allergen matrix and I can confirm that the [item] does not contain [allergen] as an ingredient. However, we do handle [allergen] in our kitchen, so I cannot guarantee there has been no cross-contact. Would you like to go ahead?\"\n\nThis is honest. It manages expectations. It gives the customer the information they need to make their own decision.\n\n**When you cannot confirm:**\n\n\"I'm not able to confirm whether that item is safe for you — I'd rather be honest than guess. Can I suggest [alternative item] instead, which I can confirm is [allergen]-free?\"\n\nTraining the team to say \"I don't know, let me check\" is more important than training them to memorise every ingredient. The matrix does the remembering. The person does the checking.\n\n**When a customer says \"it's only a mild allergy\":**\n\nTreat every allergy as severe. You are not a medical professional. You cannot assess the severity of someone's allergy based on their self-description. A customer who says \"it's only mild\" may still have a severe reaction. Apply the same protocol regardless.\n\n**When a customer orders for someone else:**\n\n\"Is the person eating this affected by any allergies? I want to make sure we prepare it safely.\"\n\nPrint the allergen dialogue prompts on a card (T009-01) and keep it at the till. New starters should practise these conversations during training, not discover them during a busy Saturday service."
+    },
+    {
+      "id": "kb-s4",
+      "heading": "Cross-Contamination Prevention",
+      "body": "Knowing what is in your food is only half the battle. Cross-contamination — the transfer of an allergen from one food to another through shared surfaces, utensils, or hands — is how most cafe allergen incidents actually happen.\n\nA knife used to cut a nut brownie, wiped on a cloth, and then used to cut a plain scone has just contaminated that scone with tree nuts. The scone has no nuts in its recipe. The allergen matrix says it is nut-free. But it is not nut-free any more.\n\n**Key controls:**\n\n**Separate equipment.** Wherever practical, use dedicated utensils, chopping boards, and containers for allergen-free preparation. Colour-coded boards help — but only if everyone knows the code and follows it.\n\n**Cleaning between tasks.** When dedicated equipment is not possible, clean thoroughly between uses. \"Wiping with a cloth\" is not cleaning. Wash with hot soapy water, rinse, and dry with a clean disposable towel. Allergen proteins are sticky — they do not come off with a quick wipe.\n\n**Storage separation.** Store allergen-containing ingredients away from allergen-free ones. Nut-containing products should be on lower shelves (to prevent crumbs falling onto items below) and ideally in sealed containers.\n\n**Preparation order.** If you are making multiple sandwiches, prepare allergen-free orders first, before handling allergen-containing ingredients. This reduces the chance of transfer.\n\n**Shared cooking equipment.** If you use the same toaster for gluten-free bread and regular bread, it is no longer gluten-free. If you use the same fryer oil for fish and chips, everything that goes in that oil now contains fish allergen. Consider whether shared equipment undermines your allergen claims.\n\n**Display cabinets.** Items containing allergens should not be placed directly above allergen-free items. Crumbs fall. Drips happen. A nut-topped cake dripping onto a plain Victoria sponge is a cross-contamination event.\n\nUse T008-01 to audit your cross-contamination controls monthly. Walk through every process with allergen eyes and ask: where could transfer happen?"
+    },
+    {
+      "id": "kb-s5",
+      "heading": "Handwashing Protocol",
+      "body": "Handwashing is the most basic food safety measure and the most commonly done badly. In allergen management, it is critical — hands are the primary vehicle for cross-contamination.\n\nThe correct handwashing procedure:\n\n1. **Wet hands** under warm running water.\n2. **Apply soap.** Antibacterial soap is not necessary — regular soap is effective.\n3. **Rub hands together for at least 20 seconds.** Cover all surfaces: palms, backs of hands, between fingers, around thumbs, under nails, wrists.\n4. **Rinse thoroughly** under running water.\n5. **Dry with a single-use paper towel.** Not a shared cloth towel. Not a tea towel. Not your apron. Paper towels remove bacteria that washing missed. Hand dryers are acceptable but slower.\n\n**When to wash hands:**\n\n- Before starting work\n- After using the toilet\n- After handling raw meat, poultry, fish, or eggs\n- After handling an allergen-containing ingredient (before touching anything else)\n- After touching your face, hair, or body\n- After sneezing, coughing, or blowing your nose\n- After handling rubbish or cleaning chemicals\n- After handling money\n- When switching between tasks (especially allergen-critical tasks)\n\n**The facilities matter:**\n\nHandwash basins must be designated for handwashing only — not for washing equipment, not for food prep. They must have a supply of hot and cold (or warm mixed) running water, soap, and paper towels at all times. An empty soap dispenser is a food safety failure.\n\nGloves are not a substitute for handwashing. Gloves contaminate just as easily as bare hands. If your team wears gloves, they must change them as often as they would wash their hands — and they must wash their hands before putting on fresh gloves.\n\nPost T010-01 (Handwashing Protocol Poster) above every handwash basin. Include it in every new starter's induction. Observe compliance regularly — watching how staff actually wash their hands during service tells you more than any training certificate."
+    },
+    {
+      "id": "kb-s6",
+      "heading": "Allergen Auditing",
+      "body": "An allergen system that is not audited is an allergen system that is drifting. You need to verify that what you think is happening is actually happening.\n\n**Weekly checks (shift lead):**\n\n- Walk the kitchen during prep and observe allergen handling. Are staff washing hands between allergen tasks? Are they using the correct utensils?\n- Check the allergen matrix is displayed and legible. Is it the current version? Have any menu items changed since it was last updated?\n- Check allergen labels on prepacked items. Are they present, accurate, and legible?\n- Ask a team member to name five allergens. Not to test them — to check whether the training is sticking.\n\n**Monthly checks (manager or owner):**\n\n- Review supplier specifications for all ingredients. Have any suppliers changed their formulations? \"New improved recipe\" often means new allergen risk.\n- Cross-reference the allergen matrix against current recipes. Ingredient by ingredient. This catches drift — the barista who started adding pesto to a sandwich that was previously pesto-free.\n- Check cleaning records for allergen-critical equipment. Are they being cleaned between allergen changeovers?\n- Review any allergen-related customer queries or complaints from the past month.\n\n**Quarterly checks:**\n\n- Full allergen matrix rebuild. Go back to supplier specs for every ingredient in every product. It is tedious but it catches errors that accumulate over time.\n- Refresher training for all staff. Not a full course — a 15-minute briefing covering recent changes, any near-misses, and a reminder of the protocol.\n- Test the system by asking a new or junior team member to handle an allergen enquiry while you observe. Can they find the matrix? Do they use the right language? Do they check rather than guess?\n\nDocument every audit. Keep a log of what was checked, what was found, and what was corrected. This record serves two purposes: it drives improvement internally, and it demonstrates due diligence to a food safety inspector. An inspector who sees a regular audit trail knows they are dealing with an operator who takes allergen safety seriously, even when nobody is watching."
+    }
+  ],
+  "legacyBuilder": "buildAllergenMasteryArticle",
+  "status": "published"
+}

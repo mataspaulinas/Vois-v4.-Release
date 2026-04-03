@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Icon from "../../components/Icon";
 import { NotificationRecord, fetchNotifications, fetchUnreadCount, markNotificationRead } from "../../lib/api";
 
 type NotificationBellProps = {
@@ -62,18 +63,15 @@ export function NotificationBell({ formatTimestamp, authRole, onNavigateToVenue 
   return (
     <div style={{ position: "relative" }}>
       <button
-        className="topbar-btn"
+        className="topbar-icon-btn"
         onClick={handleToggle}
+        title="Notifications"
+        aria-label="Notifications"
         style={{
           position: "relative",
-          minWidth: 44,
-          minHeight: 44,
-          display: "inline-flex",
-          alignItems: "center",
-          justifyContent: "center",
         }}
       >
-        Notifications
+        <Icon name="notification" size={16} />
         {unreadCount > 0 && (
           <span style={{
             position: "absolute",

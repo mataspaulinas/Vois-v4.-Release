@@ -1,0 +1,80 @@
+{
+  "slug": "chasing-the-perfect-shot",
+  "title": "Chasing the Perfect Shot: Espresso Standards That Actually Stick",
+  "subtitle": "Consistency in the cup starts with calibration habits, not barista talent alone.",
+  "category": "signal-story",
+  "domain": "coffee-quality",
+  "module": "Coffee Craft & Menu Excellence",
+  "tags": ["espresso", "shot-quality", "grinder", "calibration", "barista", "consistency"],
+  "difficulty": "intermediate",
+  "readTime": 14,
+  "blocks": ["B040", "B041", "B042", "B043"],
+  "tools": ["T040-01", "T040-02", "T040-03", "T040-04", "T040-05"],
+  "signals": ["S035", "S036", "S037", "S038", "S039"],
+  "related": ["first-20-minutes", "why-good-staff-leave", "food-prep-that-holds-up"],
+  "coverColor": "brown",
+  "coverIcon": "coffee",
+  "struggles": ["inconsistent-coffee", "customer-complaints", "barista-skills-gap"],
+  "toc": [
+    { "id": "kb-s1", "label": "Why Good Beans Do Not Guarantee Good Coffee" },
+    { "id": "kb-s2", "label": "The Daily Calibration Ritual" },
+    { "id": "kb-s3", "label": "Dose, Yield, Time: The Three Numbers That Matter" },
+    { "id": "kb-s4", "label": "Milk Craft Is Not Optional" },
+    { "id": "kb-s5", "label": "Random Quality Checks That Build Culture" },
+    { "id": "kb-s6", "label": "When to Retrain vs When to Redesign" }
+  ],
+  "sidebar": {
+    "coreBlocks": [
+      { "id": "B040", "name": "Shot Quality Standards" },
+      { "id": "B041", "name": "Grinder Calibration Protocol" },
+      { "id": "B042", "name": "Water Quality Management" },
+      { "id": "B043", "name": "Milk Steaming Standards" }
+    ],
+    "tools": [
+      "T040-01 · Shot Quality Standards Card",
+      "T040-02 · Random Quality Check Log",
+      "T040-03 · Shot Quality SOP",
+      "T040-04 · Barista Shot Competency Assessment",
+      "T040-05 · Weekly Espresso Quality Report"
+    ],
+    "metrics": [
+      { "value": "18–20g", "label": "dose for a double espresso" },
+      { "value": "25–30s", "label": "target extraction time window" },
+      { "value": "1:2 ratio", "label": "dose to yield for most blends" }
+    ]
+  },
+  "sections": [
+    {
+      "id": "kb-s1",
+      "heading": "Why Good Beans Do Not Guarantee Good Coffee",
+      "body": "You can buy the best single-origin from the most awarded roaster, and still serve terrible espresso. Beans are the starting material. What happens between the hopper and the cup is what the customer actually tastes.\n\nThe gap between specialty ambition and customer experience is almost always a systems gap, not a talent gap. Most cafes have at least one barista who pulls beautiful shots. The problem is that the other three pull something different — and nobody notices until a regular mentions their flat white tastes different on Tuesdays.\n\nConsistency is not boring. Consistency is what turns a first visit into a habit. A customer who gets a great coffee once and a mediocre one next time does not think \"sometimes they're great.\" They think \"I can't rely on them.\"\n\nThe fix is not hiring better baristas. It is building a system where your current baristas can produce the same result, every time, even when they are tired, rushed, or covering someone else's shift."
+    },
+    {
+      "id": "kb-s2",
+      "heading": "The Daily Calibration Ritual",
+      "body": "Grind calibration is not a weekly task. It is a daily task — and sometimes an hourly one. Coffee changes as beans degas, as humidity shifts, as the grinder heats up. A setting that was perfect at 7am may be producing sour shots by 10am.\n\nThe opening barista should calibrate before the first customer order. This means:\n\n1. **Purge the grinder.** Run 5–10g through to clear stale grounds from the chamber.\n2. **Pull a calibration shot.** Standard dose, standard basket, timed extraction.\n3. **Taste it.** Not just time it — taste it. A shot that runs 27 seconds can still be under-extracted if the grind is channelling.\n4. **Adjust.** Finer if sour and fast, coarser if bitter and slow. Taste again.\n5. **Record it.** Write the grind setting on T040-01 (Shot Quality Standards Card) so the next person knows the starting point.\n\nThis takes five minutes. It prevents hours of serving sub-standard coffee.\n\nThe midday barista should re-check. A quick shot, a quick taste. If the beans are more than 10 days off roast, you may need to adjust two or three times a day.\n\nMake calibration visible. A small whiteboard by the grinder showing today's dose, yield, and time normalises the habit. It says: we care about this."
+    },
+    {
+      "id": "kb-s3",
+      "heading": "Dose, Yield, Time: The Three Numbers That Matter",
+      "body": "Strip away the jargon and espresso quality comes down to three numbers:\n\n**Dose** — how much ground coffee goes into the basket. For a double, this is typically 18–20g depending on your basket size and roast. Weigh it. Every time. Volumetric dosing (eyeballing the mound) introduces ±2g variance, which changes everything downstream.\n\n**Yield** — how much liquid espresso comes out. A 1:2 ratio is the industry starting point: 18g in, 36g out. Some blends work better at 1:1.5, some at 1:2.5. Your roaster should advise, but ultimately your palate decides.\n\n**Time** — how long the extraction takes. 25–30 seconds is the window for most espresso. Under 20 seconds is almost certainly under-extracted (sour, thin, sharp). Over 35 seconds is likely over-extracted (bitter, astringent, drying).\n\nThese three numbers interlock. Change one, and the others shift. The grind is your primary lever: finer grind = slower flow = longer time. But distribution and tamping matter too — an uneven puck channels water through the thin spots, producing a fast, watery shot even with a fine grind.\n\nPost the target numbers (T040-01). Make scales and a timer standard at every station. If a barista cannot tell you today's dose, yield, and time target, the system has a gap.\n\n| Parameter | Target | Acceptable Range | Red Flag |\n|-----------|--------|-----------------|----------|\n| Dose | 18.5g | 18–19g | <17g or >20g |\n| Yield | 37g | 34–40g | <30g or >45g |\n| Time | 27s | 25–30s | <20s or >35s |"
+    },
+    {
+      "id": "kb-s4",
+      "heading": "Milk Craft Is Not Optional",
+      "body": "Most of your drinks are milk-based. A flat white, a latte, a cappuccino — the milk is doing as much work as the espresso. Bad milk steaming ruins a good shot.\n\nThe non-negotiables:\n\n**Temperature.** 60–65°C for standard milk. Above 70°C, lactose caramelises and proteins denature — the milk tastes scalded and the texture goes thin. Use a thermometer until muscle memory is reliable, then still use one occasionally to check.\n\n**Texture.** Microfoam, not froth. The milk should look like wet paint — glossy, dense, no visible bubbles. Large bubbles mean too much air was introduced or it was introduced too late. The stretching (air introduction) should happen in the first 2–3 seconds, then the rest of the steaming is rolling and heating.\n\n**Alternative milks.** Each behaves differently. Oat milk steams closest to dairy but splits if overheated. Soy curdles with acidic espresso — pour gently. Almond produces thin foam. Know your alternative milk brands and their steam behaviour, because the customer who orders oat milk expects the same quality as the dairy drinker.\n\nCommon failures:\n- **Screaming steam wand.** Too much air too fast. Back off the air, focus on rolling.\n- **Flat, thin milk.** Not enough air introduced at the start. Stretch more aggressively in the first two seconds.\n- **Burnt milk smell.** Over 70°C. Start again — there is no saving scalded milk.\n\nMilk waste is also a cost issue. Steam only what you need. A large jug steamed for a single flat white wastes product and energy. Match jug size to drink size."
+    },
+    {
+      "id": "kb-s5",
+      "heading": "Random Quality Checks That Build Culture",
+      "body": "Spot checks sound punitive, but done well they build pride. The goal is not catching people out — it is creating a culture where quality is normal and visible.\n\nUse T040-02 (Random Quality Check Log) to run 2–3 unannounced checks per week. The shift lead or manager pulls a random drink from the line before it reaches the customer, and scores it:\n\n- Shot appearance (crema colour, volume)\n- Milk texture and temperature\n- Latte art (if applicable)\n- Taste (balance, sweetness, body)\n- Presentation (correct cup, clean saucer, correct size)\n\nScore out of 10. Share results with the barista immediately — in the moment, not at a review meeting three weeks later. Celebrate good scores publicly. Address low scores privately and practically: \"Your shots are running fast — let's recalibrate together.\"\n\nOver time, you will see:\n- Which baristas are consistently strong and can mentor others\n- Which drinks are problematic (the large oat latte that nobody steams well)\n- Which times of day quality drops (end of shift fatigue, pre-close rushing)\n\nPublish a weekly average. A visible quality score creates healthy competition and makes craft part of the cafe's identity, not just the manager's obsession."
+    },
+    {
+      "id": "kb-s6",
+      "heading": "When to Retrain vs When to Redesign",
+      "body": "Not every quality problem is a training problem. Before sending a barista on another course, ask whether the environment makes quality easy or hard.\n\n**Retrain when:**\n- A specific barista is underperforming despite good equipment and clear standards\n- New menu items require new techniques (a new pour-over programme, a new alternative milk)\n- The whole team has drifted from standards (collective recalibration session)\n\n**Redesign when:**\n- The grinder cannot hold calibration (it needs servicing or replacing)\n- The workflow forces baristas to steam milk while pulling shots on a single-group machine (workflow, not skill)\n- Scales are not at every station (you are asking people to guess, then blaming them for guessing wrong)\n- The water is not filtered or TDS is wrong (no amount of skill fixes bad water)\n\nThe most common mistake managers make is treating a system problem as a people problem. If three different baristas all produce inconsistent shots on the same machine, the machine — or the process — is the issue.\n\nInvest in the basics: good grinder, clean machine, filtered water, accurate scales, clear recipe cards. Then train technique on top of solid infrastructure. The reverse — great training on broken equipment — just frustrates good people."
+    }
+  ],
+  "legacyBuilder": "buildChasingPerfectShotArticle",
+  "status": "published"
+}
