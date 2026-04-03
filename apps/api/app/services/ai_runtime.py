@@ -16,6 +16,7 @@ from app.core.config import get_settings
 from app.models.domain import (
     Assessment,
     AuthRole,
+    CopilotContextKind,
     CopilotMessage,
     CopilotThread,
     EngineRun,
@@ -97,6 +98,35 @@ _SIGNAL_UPDATE_JSON_SCHEMA = {
 }
 
 
+_SIGNAL_INTAKE_ASSESSMENT_CONTEXT = {
+    "full_diagnostic": (
+        "Full Diagnostic",
+        "Use broad venue-wide scope. Surface the full operating picture rather than narrowing too early.",
+    ),
+    "follow_up": (
+        "Follow-up",
+        "Compare against previously surfaced issues. Emphasize improvement, regression, unresolved friction, and new concerns.",
+    ),
+    "incident": (
+        "Incident",
+        "Stay tightly focused on the incident. Trace the root-cause chain and the most relevant triggered signals rather than scanning broadly.",
+    ),
+    "preopening_gate": (
+        "Pre-opening Gate",
+        "Assess readiness and blockers with a pass/fail posture. Highlight risks that would make opening unsafe or premature.",
+    ),
+    "weekly_pulse": (
+        "Weekly Pulse",
+        "Stay lean and current. Surface only the most relevant status signals, trends, incidents, wins, and watch-items from the week.",
+    ),
+}
+
+
+def _signal_intake_assessment_context(assessment_type: str | None) -> tuple[str, str]:
+    key = (assessment_type or "full_diagnostic").strip().lower()
+    return _SIGNAL_INTAKE_ASSESSMENT_CONTEXT.get(key, _SIGNAL_INTAKE_ASSESSMENT_CONTEXT["full_diagnostic"])
+
+
 class AIRuntimePolicyError(RuntimeError):
     pass
 
@@ -116,7 +146,14 @@ class AIProvider(Protocol):
     provider_name: str
     model_name: str
 
-    def signal_intake(self, *, raw_text: str, ontology_id: str, version: str | None = None) -> IntakePreviewResponse: ...
+    def signal_intake(
+        self,
+        *,
+        raw_text: str,
+        ontology_id: str,
+        version: str | None = None,
+        assessment_type: str | None = None,
+    ) -> IntakePreviewResponse: ...
 
     def proactive_greeting(
         self,
@@ -154,9 +191,21 @@ class MockAIProvider:
         self.contracts = get_ai_contract_registry()
         self.intake_service = IntakeService(repository)
 
-    def signal_intake(self, *, raw_text: str, ontology_id: str, version: str | None = None) -> IntakePreviewResponse:
+    def signal_intake(
+        self,
+        *,
+        raw_text: str,
+        ontology_id: str,
+        version: str | None = None,
+        assessment_type: str | None = None,
+    ) -> IntakePreviewResponse:
         contract = self.contracts[AIFunction.SIGNAL_INTAKE]
-        preview = self.intake_service.preview(raw_text=raw_text, ontology_id=ontology_id, version=version)
+        preview = self.intake_service.preview(
+            raw_text=raw_text,
+            ontology_id=ontology_id,
+            version=version,
+            assessment_type=assessment_type,
+        )
         preview.provider = self.provider_name
         preview.model = self.model_name
         preview.prompt_version = contract.system_prompt_version
@@ -352,10 +401,18 @@ class OpenAIProvider:
         self.client = client or _build_openai_client(self.settings)
         self.contracts = get_ai_contract_registry()
 
-    def signal_intake(self, *, raw_text: str, ontology_id: str, version: str | None = None) -> IntakePreviewResponse:
+    def signal_intake(
+        self,
+        *,
+        raw_text: str,
+        ontology_id: str,
+        version: str | None = None,
+        assessment_type: str | None = None,
+    ) -> IntakePreviewResponse:
         contract = self.contracts[AIFunction.SIGNAL_INTAKE]
         bundle = self.repository.load_bundle_for_identity(ontology_id, version)
         signal_lookup = {signal.id: signal for signal in bundle.signals}
+        assessment_type_label, assessment_type_guidance = _signal_intake_assessment_context(assessment_type)
         signal_library = "\n".join(
             f"- {signal.id} | {signal.name} | {signal.module} | {signal.description}"
             for signal in bundle.signals
@@ -367,11 +424,14 @@ class OpenAIProvider:
                 "You are VOIS AI intake. Convert messy operational evidence into signal suggestions using only the "
                 "provided signal catalog. Every detected signal must cite an exact evidence snippet from the input. "
                 "Never invent signal IDs. Use varied confidence; if everything is high, you are being lazy. "
-                "Put unmatched but important facts into unmapped_observations."
+                "Put unmatched but important facts into unmapped_observations. Match the breadth and emphasis of the "
+                "analysis to the assessment type guidance."
             ),
             input_payload=(
                 f"Ontology: {ontology_id}\n"
                 f"Ontology version: {bundle.meta.version}\n\n"
+                f"Assessment type: {assessment_type_label}\n"
+                f"Assessment type guidance: {assessment_type_guidance}\n\n"
                 f"Signal catalog:\n{signal_library}\n\n"
                 f"Raw observations:\n{raw_text}"
             ),
@@ -379,6 +439,7 @@ class OpenAIProvider:
                 "function": AIFunction.SIGNAL_INTAKE.value,
                 "ontology_id": ontology_id,
                 "ontology_version": bundle.meta.version,
+                "assessment_type": assessment_type_label,
             },
             max_output_tokens=2200,
         )
@@ -450,9 +511,9 @@ class OpenAIProvider:
 
         content = self._create_text_response(
             instructions=(
-                "You are VOIS proactive greeting mode. Return 1-2 sentences only. Sound calm, warm, and grounded. "
-                "Never start with a list of actions. Never ask 'How can I help?'. Share what you noticed from the "
-                "portfolio in a way that feels like a capable colleague."
+                "This legacy function returns a short factual status line only. Return 1-2 plain sentences. "
+                "Do not coach, flatter, or adopt a companion tone. Do not ask questions. State only what the "
+                "portfolio evidence supports."
             ),
             input_payload="\n".join(lines),
             metadata={
@@ -551,11 +612,15 @@ class OpenAIProvider:
 
         content = self._create_text_response(
             instructions=(
-                "You are VOIS. Be calm, direct, and grounded. Respect the deterministic scaffold and never claim "
-                "hidden knowledge beyond it. Structure creates freedom. Emotions are data. Precision with warmth. "
-                "When the next move is clear, name it. If the user asks for creation, start creating instead of "
-                "stalling. Keep tone professional and human, never meme-heavy. When attachments are present, inspect "
-                "them directly and explicitly mention the visible or quoted evidence you are relying on."
+                "You are VOIS. Work like an operating analyst inside the current workspace. Use only the "
+                "deterministic scaffold, thread history, attachments, recalled file memory, and explicit references "
+                "provided here. Do not be proactive. Do not flatter. Do not coach. Do not claim hidden knowledge. "
+                "If recent thread history conflicts with the current grounded scaffold, trust the grounded scaffold and "
+                "correct the stale assumption explicitly. If the scaffold quotes saved assessment evidence, treat that "
+                "evidence as current workspace input. "
+                "Lead with the answer, then the evidence, then the next step if one is clear. If the evidence is weak "
+                "or missing, say so plainly. Keep the tone concise, direct, and professional. When attachments are "
+                "present, explicitly cite the visible or quoted evidence you used."
             ),
             input_payload=copilot_input,
             metadata={
@@ -768,10 +833,18 @@ class AnthropicProvider:
         self.client = client or _build_anthropic_client(self.settings)
         self.contracts = get_ai_contract_registry()
 
-    def signal_intake(self, *, raw_text: str, ontology_id: str, version: str | None = None) -> IntakePreviewResponse:
+    def signal_intake(
+        self,
+        *,
+        raw_text: str,
+        ontology_id: str,
+        version: str | None = None,
+        assessment_type: str | None = None,
+    ) -> IntakePreviewResponse:
         contract = self.contracts[AIFunction.SIGNAL_INTAKE]
         bundle = self.repository.load_bundle_for_identity(ontology_id, version)
         signal_lookup = {signal.id: signal for signal in bundle.signals}
+        assessment_type_label, assessment_type_guidance = _signal_intake_assessment_context(assessment_type)
         signal_library = "\n".join(
             f"- {signal.id} | {signal.name} | {signal.module} | {signal.description}"
             for signal in bundle.signals
@@ -781,13 +854,16 @@ class AnthropicProvider:
                 "You are VOIS AI intake. Convert messy operational evidence into signal suggestions using only the "
                 "provided signal catalog. Every detected signal must cite an exact evidence snippet from the input. "
                 "Never invent signal IDs. Use varied confidence; if everything is high, you are being lazy. "
-                "Put unmatched but important facts into unmapped_observations.\n\n"
+                "Put unmatched but important facts into unmapped_observations. Match the scope and emphasis to the "
+                "assessment type guidance.\n\n"
                 "IMPORTANT: Return a JSON object with exactly this structure:\n"
                 '{"detected_signals": [{"signal_id": "sig_...", "evidence_snippet": "...", "confidence": "low|medium|high", "score": 0.0-1.0, "match_reasons": ["..."]}], "unmapped_observations": ["..."]}'
             ),
             input_payload=(
                 f"Ontology: {ontology_id}\n"
                 f"Ontology version: {bundle.meta.version}\n\n"
+                f"Assessment type: {assessment_type_label}\n"
+                f"Assessment type guidance: {assessment_type_guidance}\n\n"
                 f"Signal catalog:\n{signal_library}\n\n"
                 f"Raw observations:\n{raw_text}"
             ),
@@ -875,9 +951,9 @@ class AnthropicProvider:
 
         content = self._create_text_response(
             instructions=(
-                "You are VOIS proactive greeting mode. Return 1-2 sentences only. Sound calm, warm, and grounded. "
-                "Never start with a list of actions. Never ask 'How can I help?'. Share what you noticed from the "
-                "portfolio in a way that feels like a capable colleague."
+                "This legacy function returns a short factual status line only. Return 1-2 plain sentences. "
+                "Do not coach, flatter, or adopt a companion tone. Do not ask questions. State only what the "
+                "portfolio evidence supports."
             ),
             input_payload="\n".join(lines),
             fallback_text=fallback.content,
@@ -965,11 +1041,15 @@ class AnthropicProvider:
 
         content = self._create_text_response(
             instructions=(
-                "You are VOIS. Be calm, direct, and grounded. Respect the deterministic scaffold and never claim "
-                "hidden knowledge beyond it. Structure creates freedom. Emotions are data. Precision with warmth. "
-                "When the next move is clear, name it. If the user asks for creation, start creating instead of "
-                "stalling. Keep tone professional and human, never meme-heavy. When attachments are present, inspect "
-                "them directly and explicitly mention the visible or quoted evidence you are relying on."
+                "You are VOIS. Work like an operating analyst inside the current workspace. Use only the "
+                "deterministic scaffold, thread history, attachments, recalled file memory, and explicit references "
+                "provided here. Do not be proactive. Do not flatter. Do not coach. Do not claim hidden knowledge. "
+                "If recent thread history conflicts with the current grounded scaffold, trust the grounded scaffold and "
+                "correct the stale assumption explicitly. If the scaffold quotes saved assessment evidence, treat that "
+                "evidence as current workspace input. "
+                "Lead with the answer, then the evidence, then the next step if one is clear. If the evidence is weak "
+                "or missing, say so plainly. Keep the tone concise, direct, and professional. When attachments are "
+                "present, explicitly cite the visible or quoted evidence you used."
             ),
             input_payload=copilot_input,
             fallback_text=scaffold,
@@ -1157,7 +1237,14 @@ class BlockedAIProvider:
     def _raise(self):
         raise AIRuntimePolicyError(self.message)
 
-    def signal_intake(self, *, raw_text: str, ontology_id: str, version: str | None = None) -> IntakePreviewResponse:
+    def signal_intake(
+        self,
+        *,
+        raw_text: str,
+        ontology_id: str,
+        version: str | None = None,
+        assessment_type: str | None = None,
+    ) -> IntakePreviewResponse:
         self._raise()
 
     def proactive_greeting(
@@ -1187,8 +1274,20 @@ class AIRuntimeService:
     def __init__(self, provider: AIProvider):
         self.provider = provider
 
-    def signal_intake(self, *, raw_text: str, ontology_id: str, version: str | None = None) -> IntakePreviewResponse:
-        return self.provider.signal_intake(raw_text=raw_text, ontology_id=ontology_id, version=version)
+    def signal_intake(
+        self,
+        *,
+        raw_text: str,
+        ontology_id: str,
+        version: str | None = None,
+        assessment_type: str | None = None,
+    ) -> IntakePreviewResponse:
+        return self.provider.signal_intake(
+            raw_text=raw_text,
+            ontology_id=ontology_id,
+            version=version,
+            assessment_type=assessment_type,
+        )
 
     def proactive_greeting(
         self,
@@ -1404,6 +1503,21 @@ def _compose_venue_reply(
         )
 
     references = [_reference("venue", venue.name, venue.id)]
+    context_assessment = (
+        db.get(Assessment, thread.context_id)
+        if thread.context_kind == CopilotContextKind.ASSESSMENT and thread.context_id
+        else None
+    )
+    context_run = (
+        db.get(EngineRun, thread.context_id)
+        if thread.context_kind == CopilotContextKind.REPORT and thread.context_id
+        else None
+    )
+    context_plan = (
+        db.get(OperationalPlan, thread.context_id)
+        if thread.context_kind == CopilotContextKind.PLAN and thread.context_id
+        else None
+    )
     latest_assessment = db.scalar(
         select(Assessment)
         .where(Assessment.venue_id == venue.id)
@@ -1420,21 +1534,30 @@ def _compose_venue_reply(
         .where(OperationalPlan.status == PlanStatus.ACTIVE)
         .order_by(OperationalPlan.created_at.desc())
     )
+    latest_plan = db.scalar(
+        select(OperationalPlan)
+        .where(OperationalPlan.venue_id == venue.id)
+        .order_by(OperationalPlan.created_at.desc())
+    )
     latest_progress = db.scalar(
         select(ProgressEntry)
         .where(ProgressEntry.venue_id == venue.id)
         .order_by(ProgressEntry.created_at.desc())
     )
 
-    if latest_assessment is not None:
-        references.append(_reference("assessment", "Latest assessment", latest_assessment.id))
-    if active_plan is not None:
-        references.append(_reference("plan", active_plan.title, active_plan.id))
+    effective_assessment = context_assessment or latest_assessment
+    effective_run = context_run or latest_run
+    effective_plan = context_plan or active_plan or latest_plan
+
+    if effective_assessment is not None:
+        references.append(_reference("assessment", "Latest assessment", effective_assessment.id))
+    if effective_plan is not None:
+        references.append(_reference("plan", effective_plan.title, effective_plan.id))
     if latest_progress is not None:
         references.append(_reference("progress_entry", latest_progress.summary, latest_progress.id))
 
     opening = f"What I see: VOIS is grounded in {venue.name}."
-    if latest_assessment is None:
+    if effective_assessment is None:
         return (
             "\n\n".join(
                 [
@@ -1446,20 +1569,34 @@ def _compose_venue_reply(
             references,
         )
 
-    signal_names = _signal_names_for_assessment(repository, latest_assessment)
-    execution_summary = execution_summary_for_plan(db, active_plan) if active_plan is not None else None
+    signal_names = _signal_names_for_assessment(repository, effective_assessment)
+    execution_summary = execution_summary_for_plan(db, effective_plan) if effective_plan is not None else None
     prompt_lower = prompt.lower()
-    report_summary = latest_run.report_json.get("summary") if latest_run is not None else None
-    latest_plan_tasks = _plan_tasks(db, active_plan.id, limit=4) if active_plan is not None else []
+    report_summary = effective_run.report_json.get("summary") if effective_run is not None else None
+    diagnostic_spine = _diagnostic_spine_excerpt(effective_run)
+    assessment_excerpt = _assessment_grounding_excerpt(effective_assessment)
+    bundle = _load_bundle_for_venue_state(repository, effective_assessment, effective_plan, effective_run)
+    latest_plan_tasks = _plan_tasks(db, effective_plan.id, limit=8) if effective_plan is not None else []
     leverage_task = latest_plan_tasks[0] if latest_plan_tasks else None
     next_ready_task = execution_summary.next_executable_tasks[0] if execution_summary and execution_summary.next_executable_tasks else None
     next_blocked_task = execution_summary.blocked_tasks[0] if execution_summary and execution_summary.blocked_tasks else None
     second_task = latest_plan_tasks[1] if len(latest_plan_tasks) > 1 else None
 
-    if latest_run is not None:
-        references.append(_reference("engine_run", "Latest engine run", latest_run.id))
+    if effective_run is not None:
+        references.append(_reference("engine_run", "Latest engine run", effective_run.id))
     if leverage_task is not None:
         references.append(_reference("block", leverage_task.title, leverage_task.block_id))
+
+    chain_reply = _compose_causal_chain_reply(
+        opening=opening,
+        prompt=prompt,
+        plan_tasks=latest_plan_tasks,
+        assessment_excerpt=assessment_excerpt,
+        bundle=bundle,
+        references=references,
+    )
+    if chain_reply is not None:
+        return chain_reply
 
     if any(keyword in prompt_lower for keyword in ["blocked", "stuck", "dependency", "can't", "cannot"]):
         return _compose_blocker_reply(
@@ -1472,15 +1609,20 @@ def _compose_venue_reply(
     if any(keyword in prompt_lower for keyword in ["signal", "diagnostic", "root cause", "why", "failure"]):
         lines = [
             opening,
-            f"Diagnostic read: {len(latest_assessment.selected_signal_ids)} active signal(s) are staged in the latest assessment.",
+            f"Diagnostic read: {len(effective_assessment.selected_signal_ids)} active signal(s) are staged in the latest assessment.",
             f"Signal surface: {', '.join(signal_names[:5]) or 'No mapped signal names yet.'}",
         ]
         if report_summary:
             lines.append(f"Engine readout: {report_summary}")
+        if diagnostic_spine:
+            lines.append(f"Diagnostic spine: {diagnostic_spine}")
         if leverage_task is not None:
             lines.append(
                 f"Leverage point: {leverage_task.title} is first in sequence because {leverage_task.rationale}"
             )
+        task_trace_lines = _task_trace_snapshot(latest_plan_tasks[:3], bundle)
+        if task_trace_lines:
+            lines.append(f"Task chain snapshot:\n{task_trace_lines}")
         if execution_summary is not None:
             lines.append(
                 f"Execution state: {round(execution_summary.completion_percentage)}% complete with "
@@ -1491,7 +1633,7 @@ def _compose_venue_reply(
 
     if any(keyword in prompt_lower for keyword in ["plan", "sequence", "order", "after", "priority", "next", "focus"]):
         lines = [opening]
-        if active_plan is None or leverage_task is None:
+        if effective_plan is None or leverage_task is None:
             lines.extend(
                 [
                     "Best next move: run the engine so the saved assessment becomes a sequenced plan.",
@@ -1511,6 +1653,26 @@ def _compose_venue_reply(
             )
         if latest_progress is not None:
             lines.append(f"Latest logged movement: {latest_progress.summary}")
+        return "\n\n".join(lines), references
+
+    if any(keyword in prompt_lower for keyword in ["values", "charter", "behaviour", "behavior", "culture"]):
+        lines = [opening]
+        if assessment_excerpt:
+            lines.append(
+                "Saved assessment input exists for this venue. Treat the quoted assessment evidence below as current source material, not as missing workspace data."
+            )
+            lines.append(f"Assessment evidence:\n{assessment_excerpt}")
+        if signal_names:
+            lines.append(f"Signal surface around this question: {', '.join(signal_names[:5])}.")
+        if report_summary:
+            lines.append(f"Latest diagnosis readout: {report_summary}")
+        if leverage_task is not None:
+            lines.append(
+                f"Operational pressure behind the values work: {leverage_task.title} is currently a leverage point because {leverage_task.rationale}"
+            )
+        lines.append(
+            "Use the saved assessment language above as the source of truth. Derive values and behaviours from repeated themes in that evidence, not from generic hospitality slogans."
+        )
         return "\n\n".join(lines), references
 
     if any(keyword in prompt_lower for keyword in ["progress", "movement", "update", "done", "completed"]):
@@ -1540,7 +1702,7 @@ def _compose_venue_reply(
         opening,
         (
             f"Best next move: {next_focus}."
-            if active_plan is not None
+            if effective_plan is not None
             else "Best next move: run the engine so the latest assessment becomes a sequenced operational plan."
         ),
         (
@@ -1550,12 +1712,140 @@ def _compose_venue_reply(
         ),
         (
             f"Pressure point: {pressure_point}"
-            if active_plan is not None
+            if effective_plan is not None
             else "Pressure point: without a persisted plan, we cannot see sequencing pressure yet."
         ),
     ]
     if latest_progress is not None:
         lines.append(f"Latest logged movement: {latest_progress.summary}")
+    if assessment_excerpt:
+        lines.append(f"Assessment evidence:\n{assessment_excerpt}")
+    if diagnostic_spine:
+        lines.append(f"Diagnostic spine: {diagnostic_spine}")
+    return "\n\n".join(lines), references
+
+
+def _compose_causal_chain_reply(
+    *,
+    opening: str,
+    prompt: str,
+    plan_tasks: list[PlanTask],
+    assessment_excerpt: str | None,
+    bundle,
+    references: list[dict[str, object]],
+) -> tuple[str, list[dict[str, object]]] | None:
+    prompt_lower = prompt.lower()
+    has_chain_prompt = (
+        "causal chain" in prompt_lower
+        or "why does this chain matter" in prompt_lower
+        or "what happens if any link breaks" in prompt_lower
+        or bool(re.search(r"\bFM\d+\b|\bRP\d+\b|\bB\d+\b|\bsig_[a-z0-9_]+\b", prompt, re.IGNORECASE))
+    )
+    if not has_chain_prompt:
+        return None
+
+    task = _match_plan_task_from_prompt(plan_tasks, prompt)
+    trace = task.trace if task is not None and isinstance(task.trace, dict) else {}
+    signal_ids = _dedupe_preserve_order(
+        [*re.findall(r"\bsig_[a-z0-9_]+\b", prompt, re.IGNORECASE), *[str(item) for item in trace.get("signal_ids", [])]]
+    )
+    failure_mode_ids = _dedupe_preserve_order(
+        [
+            *re.findall(r"\bFM\d+\b", prompt, re.IGNORECASE),
+            *[
+                str(item.get("fm_id") or item.get("id") or "")
+                for item in trace.get("failure_modes", [])
+                if isinstance(item, dict)
+            ],
+        ]
+    )
+    response_pattern_ids = _dedupe_preserve_order(
+        [
+            *re.findall(r"\bRP\d+\b", prompt, re.IGNORECASE),
+            (
+                str(
+                    trace.get("response_pattern_id")
+                    or (task.source_response_pattern_id if task is not None else "")
+                ).strip()
+            ),
+        ]
+    )
+    block_ids = _dedupe_preserve_order(
+        [*re.findall(r"\bB\d+\b", prompt, re.IGNORECASE), task.block_id if task is not None else ""]
+    )
+
+    if not any([task, signal_ids, failure_mode_ids, response_pattern_ids, block_ids]):
+        return None
+
+    signal_map = {item.id.lower(): item for item in bundle.signals} if bundle is not None else {}
+    failure_mode_map = {item.id.lower(): item for item in bundle.failure_modes} if bundle is not None else {}
+    response_pattern_map = {item.id.lower(): item for item in bundle.response_patterns} if bundle is not None else {}
+    block_map = {item.id.lower(): item for item in bundle.blocks} if bundle is not None else {}
+
+    signal_id = signal_ids[0] if signal_ids else None
+    failure_mode_id = failure_mode_ids[0] if failure_mode_ids else None
+    response_pattern_id = response_pattern_ids[0] if response_pattern_ids else None
+    block_id = block_ids[0] if block_ids else None
+
+    signal = signal_map.get(signal_id.lower()) if signal_id else None
+    failure_mode = failure_mode_map.get(failure_mode_id.lower()) if failure_mode_id else None
+    response_pattern = response_pattern_map.get(response_pattern_id.lower()) if response_pattern_id else None
+    block = block_map.get(block_id.lower()) if block_id else None
+
+    if signal is not None:
+        references.append(_reference("signal", signal.name, signal.id))
+    if failure_mode is not None:
+        references.append(_reference("failure_mode", failure_mode.name, failure_mode.id))
+    if response_pattern is not None:
+        references.append(_reference("response_pattern", response_pattern.name, response_pattern.id))
+    if block is not None:
+        references.append(_reference("block", block.name, block.id))
+    if task is not None:
+        references.append(_reference("plan_task", task.title, task.id))
+
+    lines = [opening]
+    if task is not None:
+        lines.append(f"Task anchor: {task.title}.")
+
+    chain_summary = " -> ".join(
+        part
+        for part in [
+            _entity_label(signal_id, signal.name if signal is not None else None),
+            _entity_label(failure_mode_id, failure_mode.name if failure_mode is not None else None),
+            _entity_label(response_pattern_id, response_pattern.name if response_pattern is not None else None),
+            _entity_label(block_id, block.name if block is not None else (task.title if task is not None else None)),
+        ]
+        if part
+    )
+    if chain_summary:
+        lines.append(f"Chain in plain terms: {chain_summary}.")
+
+    if signal is not None:
+        lines.append(f"Signal read: {signal.id} means {signal.description}")
+    if failure_mode is not None:
+        lines.append(f"Failure mode: {failure_mode.id} means {failure_mode.description}")
+    if response_pattern is not None:
+        lines.append(f"Response logic: {response_pattern.id} means {response_pattern.description}")
+    if block is not None:
+        lines.append(f"Operational block: {block.id} means {block.description}")
+    elif task is not None:
+        lines.append(f"Operational block: {task.block_id} is executed here as '{task.title}'.")
+
+    if task is not None and task.rationale:
+        lines.append(f"Why this matters: {task.rationale}")
+    else:
+        lines.append(
+            "Why this matters: the chain is how VOIS turns a surfaced signal into a concrete operational move. "
+            "If the chain is wrong, the plan may still look tidy while correcting the wrong problem."
+        )
+
+    lines.append(
+        "If a link breaks: if the signal read is wrong, you are diagnosing the wrong symptom; if the failure mode is "
+        "wrong, you choose the wrong correction logic; if the response pattern is wrong, the strategy does not fit the "
+        "actual problem; if the block is wrong, the strategy never becomes usable floor execution."
+    )
+    if assessment_excerpt:
+        lines.append(f"Assessment evidence available for verification:\n{assessment_excerpt}")
     return "\n\n".join(lines), references
 
 
@@ -1596,6 +1886,134 @@ def _compose_blocker_reply(
     if latest_progress is not None:
         lines.append(f"Latest logged movement: {latest_progress.summary}")
     return "\n\n".join(lines), references
+
+
+def _load_bundle_for_venue_state(
+    repository: OntologyRepository,
+    assessment: Assessment | None,
+    plan: OperationalPlan | None,
+    engine_run: EngineRun | None,
+):
+    ontology_id = None
+    ontology_version = None
+    if assessment is not None:
+        ontology_id = assessment.ontology_id
+        ontology_version = assessment.ontology_version
+    elif plan is not None:
+        ontology_id = plan.ontology_id
+        ontology_version = plan.ontology_version
+    elif engine_run is not None:
+        ontology_id = engine_run.ontology_id
+        ontology_version = engine_run.ontology_version
+    if not ontology_id or not ontology_version:
+        return None
+    try:
+        return repository.load_bundle_for_identity(ontology_id, ontology_version, allow_invalid=True)
+    except Exception:
+        return None
+
+
+def _assessment_grounding_excerpt(assessment: Assessment | None, *, limit: int = 900) -> str | None:
+    if assessment is None:
+        return None
+    sources = [
+        assessment.raw_input_text,
+        assessment.notes,
+        json.dumps(assessment.raw_intake_payload or {}, ensure_ascii=False, indent=2) if assessment.raw_intake_payload else None,
+    ]
+    for source in sources:
+        preview = _preview_text(source, limit=limit)
+        if preview:
+            return preview
+    return None
+
+
+def _diagnostic_spine_excerpt(engine_run: EngineRun | None, *, limit: int = 3) -> str | None:
+    if engine_run is None:
+        return None
+    report = engine_run.report_json or {}
+    spine = report.get("diagnostic_spine")
+    if isinstance(spine, list) and spine:
+        return " | ".join(str(item).strip() for item in spine[:limit] if str(item).strip())
+    summary = report.get("summary")
+    return _preview_text(summary, limit=260)
+
+
+def _task_trace_snapshot(plan_tasks: list[PlanTask], bundle) -> str | None:
+    if not plan_tasks:
+        return None
+    signal_map = {item.id.lower(): item.name for item in bundle.signals} if bundle is not None else {}
+    response_pattern_map = {item.id.lower(): item.name for item in bundle.response_patterns} if bundle is not None else {}
+    lines: list[str] = []
+    for task in plan_tasks[:3]:
+        trace = task.trace if isinstance(task.trace, dict) else {}
+        signal_ids = [str(item) for item in trace.get("signal_ids", []) if str(item).strip()]
+        signal_labels = [
+            signal_map.get(signal_id.lower(), signal_id)
+            for signal_id in signal_ids[:2]
+        ]
+        response_pattern_id = str(trace.get("response_pattern_id") or task.source_response_pattern_id or "").strip()
+        response_pattern_label = (
+            response_pattern_map.get(response_pattern_id.lower(), response_pattern_id)
+            if response_pattern_id
+            else None
+        )
+        chain_parts = [", ".join(signal_labels) if signal_labels else None, response_pattern_label, task.block_id]
+        lines.append(
+            f"- {task.title} :: {' -> '.join(part for part in chain_parts if part)}"
+        )
+    return "\n".join(lines)
+
+
+def _match_plan_task_from_prompt(plan_tasks: list[PlanTask], prompt: str) -> PlanTask | None:
+    if not plan_tasks:
+        return None
+    lowered = prompt.lower()
+    quoted_candidates = [
+        segment.strip().lower()
+        for segment in re.findall(r"[\"“”']([^\"“”']{3,})[\"“”']", prompt)
+        if segment.strip()
+    ]
+    for candidate in quoted_candidates:
+        for task in plan_tasks:
+            if task.title.lower() == candidate:
+                return task
+    for task in plan_tasks:
+        if task.title and task.title.lower() in lowered:
+            return task
+    return None
+
+
+def _preview_text(value: str | None, *, limit: int = 400) -> str | None:
+    if not value:
+        return None
+    flattened = re.sub(r"\s+", " ", value).strip()
+    if not flattened:
+        return None
+    if len(flattened) <= limit:
+        return flattened
+    return f"{flattened[:limit].rstrip()}..."
+
+
+def _dedupe_preserve_order(values: list[str]) -> list[str]:
+    seen: set[str] = set()
+    ordered: list[str] = []
+    for value in values:
+        normalized = str(value or "").strip()
+        if not normalized:
+            continue
+        key = normalized.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        ordered.append(normalized)
+    return ordered
+
+
+def _entity_label(entity_id: str | None, entity_name: str | None) -> str | None:
+    if entity_id and entity_name:
+        return f"{entity_id} ({entity_name})"
+    return entity_id or entity_name
 
 
 def _extract_quantitative_evidence(raw_text: str) -> list[QuantitativeEvidence]:

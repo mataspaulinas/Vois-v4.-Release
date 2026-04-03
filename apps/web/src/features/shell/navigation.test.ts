@@ -41,6 +41,12 @@ describe("shell navigation", () => {
     });
   });
 
+  it("round-trips pocket task hashes", () => {
+    const route = { topLevelView: "pocket", venueId: "venue-abc", pocketView: "task" } as const;
+    expect(buildHash(route)).toBe("#/pocket/venue-abc/task");
+    expect(parseHash("#/pocket/venue-abc/task")).toEqual(route);
+  });
+
   it("falls back to default manager view when graph route is requested", () => {
     expect(parseHash("#/manager/venue-abc/graph")).toEqual({
       topLevelView: "manager",
@@ -69,7 +75,7 @@ describe("shell navigation", () => {
       skin: "ember",
       sidebarCollapsed: true,
       welcomeDismissed: true,
-      lastRoute: { topLevelView: "venue", venueId: "venue-7", venueView: "report" },
+      lastRoute: { topLevelView: "venue", venueId: "venue-7", venueView: "diagnosis" },
     });
 
     expect(loadShellPreferences()).toEqual({
@@ -77,7 +83,15 @@ describe("shell navigation", () => {
       skin: "ember",
       sidebarCollapsed: true,
       welcomeDismissed: true,
-      lastRoute: { topLevelView: "venue", venueId: "venue-7", venueView: "report" },
+      lastRoute: { topLevelView: "venue", venueId: "venue-7", venueView: "diagnosis" },
+    });
+  });
+
+  it("maps legacy report routes into diagnosis", () => {
+    expect(parseHash("#/venue/venue-7/report")).toEqual({
+      topLevelView: "venue",
+      venueId: "venue-7",
+      venueView: "diagnosis",
     });
   });
 });

@@ -6,7 +6,9 @@ from sqlalchemy.orm import Session
 
 from app.models.domain import (
     AuthRole,
+    CopilotContextKind,
     CopilotThread,
+    CopilotThreadVisibility,
     Organization,
     OrganizationMembership,
     Role,
@@ -14,6 +16,7 @@ from app.models.domain import (
     User,
     Venue,
     VenueStatus,
+    utc_now,
 )
 from app.schemas.domain import (
     BootstrapOrganization,
@@ -171,7 +174,10 @@ def ensure_global_thread(db: Session, *, organization_id: str) -> CopilotThread:
         organization_id=organization_id,
         title="Portfolio strategy",
         scope=ThreadScope.GLOBAL,
+        visibility=CopilotThreadVisibility.SHARED,
+        context_kind=CopilotContextKind.PORTFOLIO,
         archived=False,
+        last_activity_at=utc_now(),
     )
     db.add(thread)
     db.flush()
@@ -191,7 +197,11 @@ def ensure_venue_thread(db: Session, *, organization_id: str, venue: Venue) -> C
         venue_id=venue.id,
         title=f"{venue.name} workspace",
         scope=ThreadScope.VENUE,
+        visibility=CopilotThreadVisibility.SHARED,
+        context_kind=CopilotContextKind.VENUE,
+        context_id=venue.id,
         archived=False,
+        last_activity_at=utc_now(),
     )
     db.add(thread)
     db.flush()

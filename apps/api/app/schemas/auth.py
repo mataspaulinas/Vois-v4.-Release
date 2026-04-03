@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Literal
 
 from pydantic import BaseModel, Field
 from app.schemas.domain import OwnerSetupStateRead
@@ -6,6 +7,52 @@ from app.schemas.domain import OwnerSetupStateRead
 class AuthLoginRequest(BaseModel):
     email: str = Field(min_length=3)
     password: str = Field(min_length=8)
+
+
+class AuthEntryConfigRead(BaseModel):
+    environment_mode: Literal["local", "staging", "production"]
+    environment_label: str
+    local_auth_available: bool
+    enabled_providers: list[str] = Field(default_factory=list)
+    support_url: str | None = None
+    status_url: str | None = None
+    invite_enabled: bool = True
+    password_reset_available: bool = True
+
+
+class AuthDiscoveryRequest(BaseModel):
+    email: str = Field(min_length=3)
+
+
+class AuthDiscoveryRead(BaseModel):
+    email: str
+    route: Literal["password", "google", "microsoft", "sso_redirect", "invite_required", "no_access"]
+    provider_label: str | None = None
+    password_mode: Literal["firebase", "local"] | None = None
+    redirect_url: str | None = None
+    workspace_hint: str | None = None
+    message: str | None = None
+
+
+class AuthPasswordForgotRequest(BaseModel):
+    email: str = Field(min_length=3)
+
+
+class AuthPasswordForgotResponse(BaseModel):
+    accepted: bool = True
+    delivery_mode: Literal["email_link", "local_reset_link", "owner_reset_required", "contact_support", "generic"]
+    message: str
+    reset_url: str | None = None
+
+
+class AuthPasswordResetRequest(BaseModel):
+    token: str = Field(min_length=16)
+    new_password: str = Field(min_length=8)
+
+
+class AuthPasswordResetResponse(BaseModel):
+    reset: bool
+    message: str
 
 
 class AuthUserRead(BaseModel):

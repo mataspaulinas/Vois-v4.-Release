@@ -192,10 +192,12 @@ def test_anthropic_copilot_turn_includes_text_attachment_excerpt(monkeypatch):
         assert send_response.status_code == 201
 
     assert fake_client.messages.calls
-    # Text copilot: first call is the main copilot turn (text response)
-    first_call = fake_client.messages.calls[0]
-    user_msg = first_call["messages"][0]["content"]
-    assert "Attachments:" in user_msg
+    main_call = next(
+        call for call in fake_client.messages.calls if "Grounded scaffold:" in str(call["messages"][0]["content"])
+    )
+    user_msg = main_call["messages"][0]["content"]
+    assert "Grounded scaffold:" in user_msg
+    assert "Recent thread history:" in user_msg
     assert "Team skipped the pre-shift reset." in user_msg
     get_settings.cache_clear()
 
@@ -252,7 +254,83 @@ def test_anthropic_copilot_turn_uses_local_image_input(monkeypatch):
     assert isinstance(user_content, list)
     assert any(item["type"] == "image" for item in user_content)
     assert any(
-        item["type"] == "image" and item["source"]["url"].startswith("data:image/png;base64,")
+        item["type"] == "image"
+        and (
+            (item["source"].get("type") == "base64" and item["source"].get("media_type") == "image/png")
+            or str(item["source"].get("url") or "").startswith("data:image/png;base64,")
+        )
         for item in user_content
     )
+    get_settings.cache_clear()
+
+
+def test_anthropic_copilot_turn_prioritizes_current_assessment_scaffold_over_stale_thread_history(monkeypatch):
+    from app.core.config import get_settings
+
+    fake_client = _FakeAnthropicClient(
+        [
+            _FakeAnthropicResponse("First reply before assessment exists."),
+            _FakeAnthropicResponse("Second reply after assessment exists."),
+            _FakeAnthropicResponse(json.dumps({"add": [], "remove": []})[2:]),
+            _FakeAnthropicResponse(json.dumps({"add": [], "remove": []})[2:]),
+        ]
+    )
+
+    monkeypatch.setenv("AI_PROVIDER", "anthropic")
+    monkeypatch.setenv("AI_API_KEY", "test-key")
+    monkeypatch.setattr("app.services.ai_runtime._build_anthropic_client", lambda settings: fake_client)
+    get_settings.cache_clear()
+
+    from app.main import create_app
+
+    with TestClient(create_app()) as client:
+        bootstrap = client.get("/api/v1/bootstrap")
+        assert bootstrap.status_code == 200
+        payload = bootstrap.json()
+        client.headers.update({"X-OIS-User-Id": payload["current_user"]["id"]})
+        venue_id = payload["venues"][0]["id"]
+        current_user_id = payload["current_user"]["id"]
+
+        threads_response = client.get(f"/api/v1/copilot/threads?venue_id={venue_id}")
+        assert threads_response.status_code == 200
+        venue_thread = next(thread for thread in threads_response.json() if thread["scope"] == "venue")
+
+        first_response = client.post(
+            f"/api/v1/copilot/threads/{venue_thread['id']}/messages",
+            json={
+                "content": "Can you derive the values from my assessment input?",
+                "created_by": current_user_id,
+            },
+        )
+        assert first_response.status_code == 201
+
+        assessment = client.post(
+            "/api/v1/assessments",
+            json={
+                "venue_id": venue_id,
+                "notes": "The team should feel warm, caring, quality-first, and curious about improving the guest experience.",
+                "selected_signal_ids": ["sig_service_delay"],
+                "signal_states": {},
+                "management_hours_available": 8,
+                "weekly_effort_budget": 8,
+            },
+        )
+        assert assessment.status_code == 201
+
+        second_response = client.post(
+            f"/api/v1/copilot/threads/{venue_thread['id']}/messages",
+            json={
+                "content": "Can you derive those values that are already known from my input in the assessment?",
+                "created_by": current_user_id,
+            },
+        )
+        assert second_response.status_code == 201
+
+    assert len(fake_client.messages.calls) >= 2
+    second_call = fake_client.messages.calls[1]
+    assert "If recent thread history conflicts with the current grounded scaffold" in second_call["system"]
+    second_user_msg = second_call["messages"][0]["content"]
+    assert "Saved assessment input exists for this venue." in second_user_msg
+    assert "Assessment evidence:" in second_user_msg
+    assert "quality-first" in second_user_msg
     get_settings.cache_clear()

@@ -98,6 +98,15 @@ def _serialize_task(task: PlanTask) -> PlanTaskRead:
         effort_hours=task.effort_hours,
         rationale=task.rationale,
         notes=task.notes,
+        assigned_to=task.assigned_to,
+        assignee_user_id=task.assignee_user_id,
+        assignee_name=task.assignee_name,
+        layer=task.layer,
+        timeline_label=task.timeline_label,
+        priority=task.priority,
+        source_response_pattern_id=task.source_response_pattern_id,
+        source_response_pattern_name=task.source_response_pattern_name,
+        module_id=task.module_id,
         dependencies=task.dependencies,
         trace=task.trace,
         sub_actions=[
@@ -108,6 +117,10 @@ def _serialize_task(task: PlanTask) -> PlanTaskRead:
             DeliverableItem(name=item.get("name", ""), completed=item.get("completed", False))
             for item in task.deliverables
         ],
+        due_at=task.due_at,
+        verification=task.verification,
+        expected_output=task.expected_output,
+        review_required=task.review_required,
         created_at=task.created_at,
     )
 
@@ -223,6 +236,86 @@ def create_task_from_block(
         entity_id=task.id,
         action="created_from_block",
         payload={"block_id": block_id, "plan_id": plan_id},
+    )
+    db.commit()
+    return task
+
+
+def create_task_from_copilot_suggestion(
+    db: Session,
+    *,
+    venue_id: str,
+    title: str,
+    rationale: str,
+    actor_user_id: str | None = None,
+    source_thread_id: str | None = None,
+    source_message_id: str | None = None,
+) -> PlanTask:
+    plan = _active_plan_model_for_venue(db, venue_id)
+    if plan is None:
+        raise LookupError("No active plan is available for this venue")
+    _require_execution_plan_active(plan)
+
+    normalized_title = " ".join(title.split()).strip()
+    normalized_rationale = rationale.strip()
+    if not normalized_title:
+        raise ValueError("Suggestion title is required")
+    if not normalized_rationale:
+        raise ValueError("Suggestion rationale is required")
+
+    max_order = max(
+        (task.order_index for task in db.scalars(select(PlanTask).where(PlanTask.plan_id == plan.id)).all()),
+        default=-1,
+    )
+    task = PlanTask(
+        plan_id=plan.id,
+        block_id="copilot_suggestion",
+        title=normalized_title,
+        status=TaskStatus.NOT_STARTED,
+        order_index=max_order + 1,
+        effort_hours=1.5,
+        rationale=normalized_rationale,
+        dependencies=[],
+        trace={
+            "source": "copilot_suggestion",
+            "source_thread_id": source_thread_id,
+            "source_message_id": source_message_id,
+        },
+        layer="L2",
+        timeline_label="Review and slot",
+        priority="normal",
+        sub_actions=[],
+        deliverables=[],
+        flags=["copilot_suggestion", "review_required"],
+        verification="Review the suggestion, refine the task, and confirm the owner before execution.",
+        expected_output="A reviewed task that is either adopted into execution, rewritten, or dismissed.",
+        updated_by=actor_user_id,
+    )
+    db.add(task)
+    db.flush()
+    record_task_event(
+        db,
+        task_id=task.id,
+        event_type=TaskEventType.STATUS_CHANGED,
+        status=TaskStatus.NOT_STARTED,
+        actor_user_id=actor_user_id,
+        note="Task created from copilot suggestion.",
+    )
+    venue = db.get(Venue, plan.venue_id)
+    record_audit_entry(
+        db,
+        organization_id=venue.organization_id if venue else None,
+        actor_user_id=actor_user_id,
+        entity_type="plan_task",
+        entity_id=task.id,
+        action="created_from_copilot_suggestion",
+        payload={
+            "plan_id": plan.id,
+            "venue_id": venue_id,
+            "title": normalized_title,
+            "source_thread_id": source_thread_id,
+            "source_message_id": source_message_id,
+        },
     )
     db.commit()
     return task

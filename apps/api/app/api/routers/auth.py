@@ -7,8 +7,15 @@ from app.core.config import get_settings
 from app.db.session import get_db
 from app.models.domain import UserSession
 from app.schemas.auth import (
+    AuthDiscoveryRead,
+    AuthDiscoveryRequest,
+    AuthEntryConfigRead,
     AuthLoginRequest,
     AuthLogoutResponse,
+    AuthPasswordForgotRequest,
+    AuthPasswordForgotResponse,
+    AuthPasswordResetRequest,
+    AuthPasswordResetResponse,
     AuthSecurityPostureRead,
     AuthSessionInfo,
     AuthSessionInventoryRead,
@@ -25,10 +32,29 @@ from app.services.auth import (
     revoke_session,
     serialize_actor,
 )
+from app.services.auth_entry import (
+    build_auth_entry_config,
+    complete_password_reset,
+    discover_auth_route,
+    request_password_reset,
+)
 from app.services.workspace_setup import build_owner_setup_state
 
 
 router = APIRouter()
+
+
+@router.get("/entry-config", response_model=AuthEntryConfigRead)
+def entry_config() -> AuthEntryConfigRead:
+    return build_auth_entry_config()
+
+
+@router.post("/discover", response_model=AuthDiscoveryRead)
+def discover(
+    payload: AuthDiscoveryRequest,
+    db: Session = Depends(get_db),
+) -> AuthDiscoveryRead:
+    return discover_auth_route(db, email=payload.email)
 
 
 @router.post("/login", response_model=AuthSessionRead)
@@ -70,6 +96,22 @@ def login(
         organization_claimed=setup_state.organization_claimed,
         session_token=raw_token,
     )
+
+
+@router.post("/password/forgot", response_model=AuthPasswordForgotResponse)
+def forgot_password(
+    payload: AuthPasswordForgotRequest,
+    db: Session = Depends(get_db),
+) -> AuthPasswordForgotResponse:
+    return request_password_reset(db, email=payload.email)
+
+
+@router.post("/password/reset", response_model=AuthPasswordResetResponse)
+def reset_password(
+    payload: AuthPasswordResetRequest,
+    db: Session = Depends(get_db),
+) -> AuthPasswordResetResponse:
+    return complete_password_reset(db, token=payload.token, new_password=payload.new_password)
 
 
 @router.post("/logout", response_model=AuthLogoutResponse)

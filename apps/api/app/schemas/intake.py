@@ -4,6 +4,7 @@ from pydantic import BaseModel, Field
 class IntakePreviewRequest(BaseModel):
     raw_text: str = Field(min_length=1)
     venue_id: str
+    assessment_type: str = "full_diagnostic"
 
 
 class IntakeSignalMatch(BaseModel):

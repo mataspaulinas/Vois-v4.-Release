@@ -190,6 +190,8 @@ export function OwnerAdministrationView({
                 ["Email", latestLoginPacket.email],
                 ["Temporary password", latestLoginPacket.temporary_password],
                 ["Reset required", latestLoginPacket.reset_required ? "yes" : "no"],
+                ["Invite link", latestLoginPacket.invite_url ?? "not issued"],
+                ["Invite expires", latestLoginPacket.invite_expires_at ?? "not set"],
               ] as [string, string][]).map(([k, v]) => (
                 <div key={k} style={{ display: "flex", justifyContent: "space-between", fontSize: "var(--text-small)" }}>
                   <strong style={{ color: "var(--color-text-primary)" }}>{k}</strong>

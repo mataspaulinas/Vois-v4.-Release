@@ -73,9 +73,8 @@ const pocketShiftItems: NavItem<PocketView>[] = [
 const venueItems: NavItem<VenueSubview>[] = [
   { icon: "home", label: "Overview", view: "overview" },
   { icon: "assessment", label: "Assessment", view: "assessment" },
-  { icon: "signals", label: "Signals", view: "signals" },
+  { icon: "report", label: "Diagnosis", view: "diagnosis" },
   { icon: "plan", label: "Plan", view: "plan" },
-  { icon: "report", label: "Report", view: "report" },
   { icon: "history", label: "History", view: "history" },
 ];
 

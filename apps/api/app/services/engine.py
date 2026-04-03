@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections import defaultdict, deque
+from dataclasses import dataclass
 
 from app.schemas.domain import DiagnosticFinding, EngineReportOutput, PlanTaskOutput
 from app.schemas.ontology import BlockDefinition, OntologyBundle
@@ -17,6 +18,7 @@ class EngineService:
         management_hours_available: float,
         weekly_effort_budget: float,
         signal_states: dict[str, dict] | None = None,
+        assessment_type: str = "full_diagnostic",
         vertical: str | None = None,
         version: str | None = None,
         ontology_id: str | None = None,
@@ -49,6 +51,7 @@ class EngineService:
         ordered_block_ids = [block.id for block in ordered_blocks]
         total_effort = sum(block.effort_hours for block in ordered_blocks)
         load_classification = self._classify_load(total_effort, management_hours_available, weekly_effort_budget)
+        assessment_profile = _assessment_profile(assessment_type)
 
         plan_tasks = [
             PlanTaskOutput(
@@ -65,6 +68,7 @@ class EngineService:
         ]
 
         diagnostic_spine = [
+            f"Assessment mode: {assessment_profile.label}. {assessment_profile.spine_focus}",
             f"Signals active: {', '.join(signal_map[signal_id].name for signal_id in normalized_signal_ids) or 'none'}",
             "Failure modes prioritized: "
             + ", ".join(item.name for item in self._top_findings(failure_scores, failure_mode_map, 4)),
@@ -74,24 +78,22 @@ class EngineService:
         ]
 
         report = EngineReportOutput(
+            assessment_type=assessment_profile.key,
+            assessment_type_label=assessment_profile.label,
             summary=(
-                "OIS detected the highest-probability operational failures from the selected signals, "
-                "activated the smallest coherent intervention set, and trimmed work to fit available capacity."
+                assessment_profile.summary_template.format(
+                    active_signal_count=len(normalized_signal_ids),
+                    load_classification=load_classification,
+                )
             ),
             diagnostic_spine=diagnostic_spine,
-            investigation_threads=[
-                "Validate service handoff clarity during the busiest hour of service.",
-                "Confirm whether pre-shift communication is happening consistently across the week.",
-                "Check if training is documented or dependent on verbal memory.",
-            ],
-            verification_briefs=[
-                "Observe one live service and compare role handoffs against the mapped workflow.",
-                "Review one week of guest complaints against void, comp, and ticket delay patterns.",
-                "Confirm every selected intervention has an owner before launch.",
-            ],
+            investigation_threads=list(assessment_profile.investigation_threads),
+            verification_briefs=list(assessment_profile.verification_briefs),
         )
 
         return {
+            "assessment_type": assessment_profile.key,
+            "assessment_type_label": assessment_profile.label,
             "ontology_version": bundle.meta.version,
             "load_classification": load_classification,
             "active_signals": self._top_findings(
@@ -102,6 +104,125 @@ class EngineService:
             "plan_tasks": plan_tasks,
             "report": report,
         }
+
+
+@dataclass(frozen=True)
+class AssessmentProfile:
+    key: str
+    label: str
+    plan_title: str
+    spine_focus: str
+    summary_template: str
+    investigation_threads: tuple[str, ...]
+    verification_briefs: tuple[str, ...]
+
+
+_ASSESSMENT_PROFILES: dict[str, AssessmentProfile] = {
+    "full_diagnostic": AssessmentProfile(
+        key="full_diagnostic",
+        label="Full Diagnostic",
+        plan_title="Operational reset plan",
+        spine_focus="Use broad scope and establish the full operating picture before narrowing.",
+        summary_template=(
+            "This full diagnostic synthesizes the broad operating picture, activates the most coherent intervention "
+            "set, and classifies the resulting load as {load_classification} across {active_signal_count} active signals."
+        ),
+        investigation_threads=(
+            "Validate service handoff clarity during the busiest hour of service.",
+            "Confirm whether pre-shift communication is happening consistently across the week.",
+            "Check whether training is documented or still dependent on verbal memory.",
+        ),
+        verification_briefs=(
+            "Observe one live service and compare role handoffs against the mapped workflow.",
+            "Review one week of guest complaints against void, comp, and ticket-delay patterns.",
+            "Confirm every selected intervention has a named owner before launch.",
+        ),
+    ),
+    "follow_up": AssessmentProfile(
+        key="follow_up",
+        label="Follow-up",
+        plan_title="Follow-up correction plan",
+        spine_focus="Stay comparative: highlight what improved, what regressed, and what remains stuck.",
+        summary_template=(
+            "This follow-up report compares current evidence against the prior operating posture, keeping attention on "
+            "what moved, what stalled, and where the remaining correction load is {load_classification}."
+        ),
+        investigation_threads=(
+            "Check whether previously flagged breakdowns actually improved in live service.",
+            "Identify which prior interventions were actioned, delayed, or abandoned.",
+            "Separate genuinely new concerns from unresolved legacy friction.",
+        ),
+        verification_briefs=(
+            "Review the last plan against current observations and mark each intervention as improved, unchanged, or worsened.",
+            "Ask frontline staff which changes helped in practice and which stayed cosmetic.",
+            "Confirm any newly surfaced issue is not just a restatement of an unresolved prior signal.",
+        ),
+    ),
+    "incident": AssessmentProfile(
+        key="incident",
+        label="Incident",
+        plan_title="Incident response plan",
+        spine_focus="Stay tightly focused on the incident and the root-cause chain it exposed.",
+        summary_template=(
+            "This incident-focused report isolates the most relevant operational failures triggered by the event and "
+            "frames the response as a prevention protocol with a {load_classification} correction load."
+        ),
+        investigation_threads=(
+            "Reconstruct the incident timeline from trigger to containment.",
+            "Identify the operational control that should have prevented the event but failed.",
+            "Check whether the incident reflects a one-off lapse or a repeating systemic vulnerability.",
+        ),
+        verification_briefs=(
+            "Confirm the immediate containment response was sufficient and documented.",
+            "Verify the preventive correction closes the same failure path before the next similar event.",
+            "Review whether customer, staff, compliance, or reputation impact needs separate follow-through.",
+        ),
+    ),
+    "preopening_gate": AssessmentProfile(
+        key="preopening_gate",
+        label="Pre-opening Gate",
+        plan_title="Opening readiness plan",
+        spine_focus="Treat the report as a readiness gate: blockers and warnings matter more than broad optimization.",
+        summary_template=(
+            "This pre-opening gate evaluates whether the venue is ready to launch, reopen, or soft-open, with a "
+            "{load_classification} correction load across the current blockers and warnings."
+        ),
+        investigation_threads=(
+            "Identify any blocker that would make opening unsafe, non-compliant, or operationally unstable.",
+            "Check whether staffing, stock, and equipment readiness are sufficient for day-one service.",
+            "Separate true launch blockers from lower-stakes improvements that can wait until after opening.",
+        ),
+        verification_briefs=(
+            "Confirm every critical compliance, safety, and equipment check has evidence behind it.",
+            "Verify all day-one roles are assigned and trained to the required standard.",
+            "Do not downgrade blockers just to preserve a launch date.",
+        ),
+    ),
+    "weekly_pulse": AssessmentProfile(
+        key="weekly_pulse",
+        label="Weekly Pulse",
+        plan_title="Weekly pulse action plan",
+        spine_focus="Keep the report lean and current: trends, watch-items, and immediate weekly actions.",
+        summary_template=(
+            "This weekly pulse condenses the most relevant operating signals into a light-touch readout, keeping the "
+            "current action load at {load_classification} while tracking the week’s main pressure points."
+        ),
+        investigation_threads=(
+            "Check whether this week’s issues represent noise, drift, or an early warning of a deeper pattern.",
+            "Identify which wins or losses changed the operating picture most materially this week.",
+            "Keep the watch-list short enough to act on immediately.",
+        ),
+        verification_briefs=(
+            "Cross-check the pulse against complaints, staffing changes, and any notable weekly metrics.",
+            "Confirm the surfaced watch-items are the ones that actually deserve action this week.",
+            "Escalate into a fuller diagnostic if the pulse reveals broader instability.",
+        ),
+    ),
+}
+
+
+def _assessment_profile(assessment_type: str | None) -> AssessmentProfile:
+    return _ASSESSMENT_PROFILES.get((assessment_type or "full_diagnostic").strip().lower(), _ASSESSMENT_PROFILES["full_diagnostic"])
 
     def _score_failure_modes(self, bundle: OntologyBundle, signal_ids: list[str]) -> dict[str, float]:
         scores: dict[str, float] = defaultdict(float)

@@ -53,7 +53,8 @@ export function parseHash(hash: string, fallbackVenueId?: string | null): ShellR
 
   if (parts[0] === "venue") {
     const venueId = decodeURIComponent(parts[1] ?? fallbackVenueId ?? "");
-    const maybeView = parts[2] as VenueSubview | undefined;
+    const rawView = parts[2];
+    const maybeView = rawView === "report" ? "diagnosis" : (rawView as VenueSubview | undefined);
     if (venueId) {
       return {
         topLevelView: "venue",
@@ -187,7 +188,7 @@ function parseRouteStorage(value: string): ShellRoute | undefined {
 }
 
 function isVenueSubview(value: string | undefined): value is VenueSubview {
-  return value === "overview" || value === "assessment" || value === "signals" || value === "plan" || value === "report" || value === "history" || value === "console";
+  return value === "overview" || value === "assessment" || value === "signals" || value === "diagnosis" || value === "plan" || value === "history" || value === "console";
 }
 
 function isReferenceView(value: string | undefined): value is ReferenceView {
@@ -203,11 +204,11 @@ function isManagerView(value: string | undefined): value is ManagerView {
 }
 
 function isPocketView(value: string | undefined): value is PocketView {
-  return value === "shift" || value === "standards" || value === "help" || value === "report" || value === "log";
+  return value === "shift" || value === "task" || value === "standards" || value === "help" || value === "report" || value === "log";
 }
 
 function isOwnerView(value: string | undefined): value is OwnerView {
-  return value === "command" || value === "delegations" || value === "people" || value === "intelligence" || value === "copilot";
+  return value === "command" || value === "delegations" || value === "people" || value === "intelligence" || value === "administration" || value === "copilot";
 }
 
 function isSkinId(value: string | null): value is SkinId {

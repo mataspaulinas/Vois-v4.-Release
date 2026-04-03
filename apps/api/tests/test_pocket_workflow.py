@@ -352,3 +352,47 @@ def test_pocket_help_request_lane_fails_closed_without_live_ai():
         manager_list = client.get(f"/api/v1/pocket/help-requests?venue_id={venue_id}")
         assert manager_list.status_code == 200
         assert manager_list.json() == []
+
+
+def test_barista_copilot_access_is_limited_to_owned_help_request_threads():
+    from app.main import create_app
+    from app.db.session import get_session_factory
+    from app.models.domain import ThreadScope, User
+
+    with TestClient(create_app()) as client:
+        bootstrap = client.get("/api/v1/bootstrap")
+        assert bootstrap.status_code == 200
+        bootstrap_payload = bootstrap.json()
+        admin_user_id = bootstrap_payload["current_user"]["id"]
+        venue_id = bootstrap_payload["venues"][0]["id"]
+        client.headers.update({"X-OIS-User-Id": admin_user_id})
+
+        admin_threads = client.get(f"/api/v1/copilot/threads?venue_id={venue_id}")
+        assert admin_threads.status_code == 200
+        venue_thread = next(
+            thread for thread in admin_threads.json() if thread["scope"] != ThreadScope.HELP_REQUEST.value
+        )
+
+        session_factory = get_session_factory()
+        db = session_factory()
+        try:
+            admin = db.get(User, admin_user_id)
+            employee = _create_barista_user(
+                db,
+                organization_id=admin.organization_id,
+                venue_id=venue_id,
+                email="barista.thread.scope@testcafe.com",
+                full_name="Scoped Barista",
+                created_by=admin_user_id,
+            )
+        finally:
+            db.close()
+
+        client.headers.update({"X-OIS-User-Id": employee.id})
+        employee_threads = client.get(f"/api/v1/copilot/threads?venue_id={venue_id}")
+        assert employee_threads.status_code == 200
+        assert employee_threads.json() == []
+
+        forbidden_detail = client.get(f"/api/v1/copilot/threads/{venue_thread['id']}")
+        assert forbidden_detail.status_code == 403
+        assert "limited to help request threads" in forbidden_detail.json()["detail"].lower()

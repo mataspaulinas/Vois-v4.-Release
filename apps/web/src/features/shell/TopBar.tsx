@@ -8,6 +8,7 @@ type TopBarProps = {
   venues: Venue[];
   activeVenue: Venue | null;
   portfolioSummary: PortfolioSummaryResponse | null;
+  authRole: string | null;
   theme: ThemeMode;
   skin: SkinId;
   userName: string;
@@ -28,6 +29,7 @@ export function TopBar({
   venues,
   activeVenue,
   portfolioSummary,
+  authRole,
   theme,
   skin,
   userName,
@@ -161,7 +163,7 @@ export function TopBar({
           Search or Cmd+K
         </button>
 
-        <NotificationBell formatTimestamp={formatTimestamp} onNavigateToVenue={onNavigateToVenue} />
+        <NotificationBell authRole={authRole} formatTimestamp={formatTimestamp} onNavigateToVenue={onNavigateToVenue} />
 
         {/* Theme toggle (icon-only circle button) */}
         <button

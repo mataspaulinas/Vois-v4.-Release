@@ -13,6 +13,7 @@ from app.schemas.domain import (
     AssessmentSignalUpdateRequest,
     EngineRunOutput,
 )
+from app.services.assessment_profiles import canonical_assessment_type, normalize_assessment_triage
 from app.services.assessment_runtime import execute_assessment
 from app.services.auth import AuthenticatedActor
 from app.services.audit import record_audit_entry
@@ -101,7 +102,14 @@ def create_assessment(
     ),
 ) -> AssessmentRead:
     require_venue_access(db, venue_id=payload.venue_id, user=current_user)
-    assessment = Assessment(**payload.model_dump())
+    payload_data = payload.model_dump()
+    payload_data["assessment_type"] = canonical_assessment_type(payload.assessment_type)
+    payload_data["triage_enabled"], payload_data["triage_intensity"] = normalize_assessment_triage(
+        payload_data["assessment_type"],
+        payload.triage_enabled,
+        payload.triage_intensity,
+    )
+    assessment = Assessment(**payload_data)
     assessment.created_by = current_user.id
     try:
         mount = resolve_venue_mount(

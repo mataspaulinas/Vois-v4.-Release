@@ -6,7 +6,18 @@ from fastapi import HTTPException, status
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from app.models.domain import AuthRole, CopilotThread, HelpRequest, HelpRequestStatus, ThreadScope, User, Venue
+from app.models.domain import (
+    AuthRole,
+    CopilotContextKind,
+    CopilotThread,
+    CopilotThreadVisibility,
+    HelpRequest,
+    HelpRequestStatus,
+    ThreadScope,
+    User,
+    Venue,
+    utc_now,
+)
 from app.schemas.domain import HelpRequestCreateRequest, HelpRequestRead, HelpRequestUpdateRequest
 from app.services.audit import record_audit_entry
 from app.services.copilot import send_copilot_message
@@ -51,7 +62,10 @@ def create_help_request(
         venue_id=venue.id,
         title=f"Help: {payload.title.strip()}",
         scope=ThreadScope.HELP_REQUEST,
+        visibility=CopilotThreadVisibility.SHARED,
+        context_kind=CopilotContextKind.HELP_REQUEST,
         archived=False,
+        last_activity_at=utc_now(),
     )
     db.add(thread)
     db.flush()
@@ -67,6 +81,7 @@ def create_help_request(
     )
     db.add(item)
     db.flush()
+    thread.context_id = item.id
 
     record_audit_entry(
         db,

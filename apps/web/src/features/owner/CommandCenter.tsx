@@ -15,7 +15,6 @@ type CommandCenterProps = {
   formatTimestamp: (iso: string) => string;
   onOpenVenue: (venueId: string) => void;
   onAskCopilot?: (context: string) => void;
-  greeting?: string | null;
 };
 
 const SEVERITY_STYLES: Record<string, { accent: string; badgeBackground: string; badgeForeground: string }> = {
@@ -56,7 +55,6 @@ export function CommandCenter({
   formatTimestamp,
   onOpenVenue,
   onAskCopilot,
-  greeting,
 }: CommandCenterProps) {
   const [selectedVenueId, setSelectedVenueId] = useState<string | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -105,17 +103,6 @@ export function CommandCenter({
           }}>
             Command Center
           </div>
-          {greeting && (
-            <p style={{
-              fontSize: "var(--text-body)",
-              fontStyle: "italic",
-              color: "var(--color-accent)",
-              margin: "8px 0 0",
-              lineHeight: 1.5,
-            }}>
-              {greeting}
-            </p>
-          )}
         </div>
 
         {/* Metric summary cards */}

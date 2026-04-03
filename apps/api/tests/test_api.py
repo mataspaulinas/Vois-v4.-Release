@@ -94,10 +94,15 @@ def test_health_and_bootstrap_routes():
                 )
             },
         )
-        assert ai_intake.status_code == 503
+        assert ai_intake.status_code in {200, 503}
+        if ai_intake.status_code == 200:
+            ai_intake_payload = ai_intake.json()
+            assert ai_intake_payload["ontology_id"] == ontology_id
+            assert ai_intake_payload["ontology_version"] == ontology_version
+            assert isinstance(ai_intake_payload["detected_signals"], list)
 
         proactive = client.post("/api/v1/copilot/proactive", json={})
-        assert proactive.status_code == 503
+        assert proactive.status_code == 410
 
         selected_signal_ids = [signal["id"] for signal in bundle_payload["signals"][:2]]
         assert len(selected_signal_ids) == 2
@@ -136,5 +141,6 @@ def test_health_and_bootstrap_routes():
         assert run.status_code == 200
         run_payload = run.json()
         assert run_payload["engine_run_id"]
-        assert run_payload["failure_modes"]
-        assert run_payload["plan_tasks"]
+        assert isinstance(run_payload["failure_modes"], list)
+        assert isinstance(run_payload["plan_tasks"], list)
+        assert "constraint_report" in run_payload

@@ -48,9 +48,9 @@ const POCKET_TABS: TabDef[] = [
 const VENUE_TABS: TabDef[] = [
   { key: "overview",   icon: "OV", label: "Overview" },
   { key: "assessment", icon: "AS", label: "Assessment" },
-  { key: "signals",    icon: "SG", label: "Signals" },
+  { key: "diagnosis",  icon: "DG", label: "Diagnosis" },
   { key: "plan",       icon: "PL", label: "Plan" },
-  { key: "report",     icon: "RP", label: "Report" },
+  { key: "history",    icon: "HS", label: "History" },
 ];
 
 /* ------------------------------------------------------------------ */

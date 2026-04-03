@@ -100,6 +100,11 @@ def update_user_password(uid: str, *, password: str):
     return auth.update_user(uid, password=password)
 
 
+def generate_password_reset_link(email: str) -> str:
+    auth = get_firebase_auth_module()
+    return auth.generate_password_reset_link(email)
+
+
 def set_custom_claims(uid: str, claims: dict[str, Any]) -> None:
     auth = get_firebase_auth_module()
     auth.set_custom_user_claims(uid, claims)

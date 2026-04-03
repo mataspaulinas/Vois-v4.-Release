@@ -5,14 +5,14 @@ export const WORKFLOWS: WorkflowDef[] = [
   {
     id: "diagnose",
     title: "Diagnose a venue",
-    description: "Full diagnostic cycle: intake observations, detect signals, run engine, review report.",
+    description: "Full diagnostic cycle: intake observations, detect signals, run engine, review diagnosis.",
     steps: [
       { title: "Open the venue", description: "Navigate to the venue from the portfolio or sidebar. You'll land on the Overview.", surface: "overview" },
       { title: "Start an assessment", description: "Go to the Assessment tab. Paste your operational observations into the intake area.", surface: "assessment" },
       { title: "Run AI intake", description: "Click 'Run AI intake' to detect signals from your text. The system proposes signals — you review.", surface: "assessment" },
       { title: "Review signals", description: "Go to Signals Review. Confirm or reject each detected signal. Check downstream impact.", surface: "signals" },
-      { title: "Save and run engine", description: "Save the assessment, then click 'Run engine'. This generates the diagnostic report and plan.", surface: "assessment" },
-      { title: "Review the report", description: "Open the Report tab to see failure modes, response patterns, and recommendations.", surface: "report" },
+      { title: "Save and run engine", description: "Save the assessment, then click 'Run engine'. This generates the diagnosis and plan.", surface: "assessment" },
+      { title: "Review the diagnosis", description: "Open the Diagnosis tab to see failure modes, response patterns, and recommendations.", surface: "diagnosis" },
     ],
   },
   {
@@ -40,13 +40,13 @@ export const WORKFLOWS: WorkflowDef[] = [
   },
   {
     id: "prepare-report",
-    title: "Prepare and export a report",
-    description: "Generate, review, and share the diagnostic report.",
+    title: "Prepare and export a diagnosis",
+    description: "Generate, review, and share the diagnostic narrative.",
     steps: [
-      { title: "Open the report", description: "Go to the Report tab after an engine run.", surface: "report" },
-      { title: "Generate AI narrative", description: "Click 'AI narrative' for an enhanced prose summary (requires AI provider).", surface: "report" },
-      { title: "Compare with prior", description: "Use the comparison section to see changes since the last report.", surface: "report" },
-      { title: "Export", description: "Click 'Export MD' or 'Export JSON' to download the report.", surface: "report" },
+      { title: "Open the diagnosis", description: "Go to the Diagnosis tab after an engine run.", surface: "diagnosis" },
+      { title: "Generate AI narrative", description: "Click 'AI narrative' for an enhanced prose summary (requires AI provider).", surface: "diagnosis" },
+      { title: "Compare with prior", description: "Use the comparison section to see changes since the last diagnosis.", surface: "diagnosis" },
+      { title: "Export", description: "Click 'Export MD' or 'Export JSON' to download the diagnosis.", surface: "diagnosis" },
     ],
   },
   {

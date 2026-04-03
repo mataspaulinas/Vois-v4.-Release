@@ -7,6 +7,7 @@ from app.db.session import get_db
 from app.models.domain import Assessment, AuthRole, EngineRun
 from app.schemas.ai import EnhancedReportResponse
 from app.schemas.domain import AssessmentRunRequest, EngineRunOutput, PersistedEngineRunDetailRead, PersistedEngineRunRead
+from app.services.assessment_profiles import canonical_assessment_type, normalize_assessment_triage
 from app.services.assessment_runtime import execute_assessment
 from app.services.ai_runtime import AIRuntimePolicyError, ai_invocation_payload, get_ai_runtime_service_for_actor
 from app.services.auth import AuthenticatedActor
@@ -63,26 +64,33 @@ def create_engine_run(
         require_roles(AuthRole.OWNER, AuthRole.MANAGER)
     ),
 ) -> EngineRunOutput:
-    assessment = Assessment(**payload.model_dump())
+    payload_data = payload.model_dump()
+    payload_data["assessment_type"] = canonical_assessment_type(payload.assessment_type)
+    payload_data["triage_enabled"], payload_data["triage_intensity"] = normalize_assessment_triage(
+        payload_data["assessment_type"],
+        payload.triage_enabled,
+        payload.triage_intensity,
+    )
+    assessment = Assessment(**payload_data)
     assessment.created_by = current_user.id
-    mount = resolve_venue_mount(
-        db,
-        payload.venue_id,
-        get_ontology_repository(),
-        allow_invalid=False,
-        require_runtime=True,
-    )
-    hydrate_assessment_identity(
-        assessment,
-        ontology_id=mount.ontology_id,
-        ontology_version=mount.version,
-        core_canon_version=mount.core_canon_version,
-        adapter_id=mount.adapter_id,
-        manifest_digest=mount.manifest_digest,
-    )
-    db.add(assessment)
-    db.flush()
     try:
+        mount = resolve_venue_mount(
+            db,
+            payload.venue_id,
+            get_ontology_repository(),
+            allow_invalid=False,
+            require_runtime=True,
+        )
+        hydrate_assessment_identity(
+            assessment,
+            ontology_id=mount.ontology_id,
+            ontology_version=mount.version,
+            core_canon_version=mount.core_canon_version,
+            adapter_id=mount.adapter_id,
+            manifest_digest=mount.manifest_digest,
+        )
+        db.add(assessment)
+        db.flush()
         return execute_assessment(
             db=db,
             assessment=assessment,
@@ -136,6 +144,8 @@ def export_engine_run(
     """Export a persisted engine run as markdown or JSON."""
     engine_run = require_engine_run_access(db, engine_run_id=engine_run_id, user=current_user)
     if format == "json":
+        diagnostic_snapshot = engine_run.diagnostic_snapshot_json or {}
+        plan_snapshot = engine_run.plan_snapshot_json or {}
         return {
             "engine_run_id": engine_run.id,
             "venue_id": engine_run.venue_id,
@@ -145,8 +155,10 @@ def export_engine_run(
             "created_at": engine_run.created_at.isoformat() if engine_run.created_at else None,
             "report_markdown": engine_run.report_markdown,
             "normalized_signals": engine_run.normalized_signals_json,
-            "diagnostic_snapshot": engine_run.diagnostic_snapshot_json,
-            "plan_snapshot": engine_run.plan_snapshot_json,
+            "diagnostic_snapshot": diagnostic_snapshot,
+            "plan_snapshot": plan_snapshot,
+            "constraint_report": diagnostic_snapshot.get("constraint_report", {}),
+            "generated_plan": plan_snapshot,
             "report_json": engine_run.report_json,
         }
     # Default: markdown

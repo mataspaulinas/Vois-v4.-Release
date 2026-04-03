@@ -1,44 +1,63 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { CopilotAttachment, CopilotThreadDetail, CopilotThreadSummary } from "../../lib/api";
+import { useEffect, type CSSProperties } from "react";
+
 import Icon from "../../components/Icon";
+import {
+  CopilotActionPreview,
+  CopilotActionReceipt,
+  CopilotActionRecord,
+  CopilotActionType,
+  CopilotAttachment,
+  CopilotMessageRecord,
+  CopilotThreadContext,
+  CopilotThreadSummary,
+} from "../../lib/api";
+import { CopilotRichMessage } from "./CopilotRichMessage";
+import { groupCopilotThreads } from "./copilotHelpers";
+
+type CompactAction = {
+  type: CopilotActionType;
+  title: string;
+  description: string;
+  mode: "save" | "suggest" | "draft" | "apply";
+  enabled: boolean;
+  status: string;
+};
 
 type CopilotDrawerProps = {
   open: boolean;
   threads: CopilotThreadSummary[];
   selectedThreadId: string | null;
-  selectedThread: CopilotThreadDetail | null;
-  loading: boolean;
-  sending: boolean;
+  selectedThread: (CopilotThreadSummary & { messages: CopilotMessageRecord[] }) | null;
+  selectedThreadContext: CopilotThreadContext | null;
+  selectedThreadActions: CopilotActionRecord[];
   input: string;
   attachments: CopilotAttachment[];
+  loading: boolean;
+  sending: boolean;
+  formatTimestamp: (isoTimestamp: string) => string;
+  contextLabel: string;
+  contextSummary: string;
+  inputPlaceholder: string;
+  unavailableMessage?: string | null;
+  compactActions: CompactAction[];
+  actionPreview: CopilotActionPreview | null;
+  actionReceipt: CopilotActionReceipt | null;
+  previewingActionType: CopilotActionType | null;
+  committingActionType: CopilotActionType | null;
+  onPreviewAction: (actionType: CopilotActionType) => Promise<void> | void;
+  onCommitPreview: () => Promise<void> | void;
+  onDismissPreview: () => void;
   onSelectThread: (threadId: string) => void;
   onInputChange: (value: string) => void;
   onAttachFiles: (files: FileList | null) => void;
   onRemoveAttachment: (fileName: string) => void;
   onSend: () => void;
   onClose: () => void;
-  formatTimestamp: (isoTimestamp: string) => string;
-  contextLabel: string;
-  contextSummary: string;
-  inputPlaceholder: string;
-  unavailableMessage?: string | null;
-  signalSuggestion: {
-    messageId: string;
-    suggestion: {
-      add: Array<{ signal_id: string; signal_name?: string | null; notes: string; confidence: string }>;
-      remove: string[];
-    };
-  } | null;
-  canApplySignalSuggestion: boolean;
-  applyingSignalSuggestion: boolean;
-  onApplySignalSuggestion: () => void;
-  onDismissSignalSuggestion: () => void;
   preFillMessage?: string | null;
   onPreFillConsumed?: () => void;
   screenContext?: string | null;
   drawerContext?: string | null;
-  onCollapseSidebar?: () => void;
-  onExpandSidebar?: () => void;
+  onOpenWorkspace?: () => void;
 };
 
 export function CopilotDrawer({
@@ -46,731 +65,336 @@ export function CopilotDrawer({
   threads,
   selectedThreadId,
   selectedThread,
-  loading,
-  sending,
+  selectedThreadContext,
+  selectedThreadActions,
   input,
   attachments,
+  loading,
+  sending,
+  formatTimestamp,
+  contextLabel,
+  contextSummary,
+  inputPlaceholder,
+  unavailableMessage,
+  compactActions,
+  actionPreview,
+  actionReceipt,
+  previewingActionType,
+  committingActionType,
+  onPreviewAction,
+  onCommitPreview,
+  onDismissPreview,
   onSelectThread,
   onInputChange,
   onAttachFiles,
   onRemoveAttachment,
   onSend,
   onClose,
-  formatTimestamp,
-  contextLabel,
-  contextSummary,
-  inputPlaceholder,
-  unavailableMessage,
-  signalSuggestion,
-  canApplySignalSuggestion,
-  applyingSignalSuggestion,
-  onApplySignalSuggestion,
-  onDismissSignalSuggestion,
   preFillMessage,
   onPreFillConsumed,
   screenContext,
   drawerContext,
-  onCollapseSidebar,
-  onExpandSidebar,
+  onOpenWorkspace,
 }: CopilotDrawerProps) {
-  // Pre-fill the input when an "Ask Copilot" button is clicked
   useEffect(() => {
     if (preFillMessage && onPreFillConsumed) {
       onInputChange(preFillMessage);
       onPreFillConsumed();
     }
-  }, [preFillMessage]);
+  }, [preFillMessage, onInputChange, onPreFillConsumed]);
 
-  /* ── Resizable width ── */
-  const goldenMax = Math.floor(window.innerWidth * 0.618);
-  const [copilotWidth, setCopilotWidth] = useState(380);
-  const [isResizing, setIsResizing] = useState(false);
-  const collapsedSidebarRef = useRef(false);
+  if (!open) {
+    return null;
+  }
 
-  const handleResizeStart = useCallback((e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsResizing(true);
-    const startX = e.clientX;
-    const startWidth = copilotWidth;
-    const maxW = Math.floor(window.innerWidth * 0.618);
-    const threshold = window.innerWidth * 0.45;
-    const onMove = (ev: MouseEvent) => {
-      const newWidth = Math.max(280, Math.min(maxW, startWidth - (ev.clientX - startX)));
-      setCopilotWidth(newWidth);
-      // Auto-collapse sidebar when copilot exceeds threshold
-      if (newWidth > threshold && !collapsedSidebarRef.current) {
-        collapsedSidebarRef.current = true;
-        onCollapseSidebar?.();
-      }
-      // Auto-expand sidebar when copilot shrinks back below threshold
-      if (newWidth <= threshold && collapsedSidebarRef.current) {
-        collapsedSidebarRef.current = false;
-        onExpandSidebar?.();
-      }
-    };
-    const onUp = () => {
-      setIsResizing(false);
-      document.removeEventListener("mousemove", onMove);
-      document.removeEventListener("mouseup", onUp);
-      document.body.style.cursor = "";
-      document.body.style.userSelect = "";
-    };
-    document.body.style.cursor = "col-resize";
-    document.body.style.userSelect = "none";
-    document.addEventListener("mousemove", onMove);
-    document.addEventListener("mouseup", onUp);
-  }, [copilotWidth, onCollapseSidebar]);
+  const groupedThreads = groupCopilotThreads(threads);
+  const latestAssistantMessage = selectedThread?.messages?.slice().reverse().find((message) => message.author_role === "assistant");
 
   return (
-    <aside
-      className={`copilot-drawer ${open ? "open" : ""}`}
-      aria-hidden={!open}
+    <div
       style={{
-        borderLeft: "3px solid transparent",
-        borderImage: "linear-gradient(180deg, #6C5CE7, #A29BFE) 1",
-        width: open ? copilotWidth : 0,
-        minWidth: open ? copilotWidth : 0,
-        transition: isResizing ? "none" : "width 260ms cubic-bezier(0.22,1,0.36,1), min-width 260ms cubic-bezier(0.22,1,0.36,1)",
-        position: "relative",
+        position: "fixed",
+        top: 0,
+        right: 0,
+        width: "min(420px, 100vw)",
+        height: "100vh",
+        background: "var(--color-surface, #FFFFFF)",
+        borderLeft: "1px solid var(--color-border-subtle, #E5E5E5)",
+        boxShadow: "-10px 0 30px rgba(0,0,0,0.08)",
+        zIndex: 90,
+        display: "flex",
+        flexDirection: "column",
       }}
     >
-      {/* ── Header ── */}
       <div
-        className="copilot-drawer-header"
         style={{
-          padding: "var(--spacing-24) var(--spacing-24) var(--spacing-16)",
+          padding: "20px 20px 16px",
           borderBottom: "1px solid var(--color-border-subtle, #E5E5E5)",
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "space-between",
+          gap: 12,
         }}
       >
         <div>
-          <h2
-            style={{
-              fontSize: "var(--text-section, 20px)",
-              fontWeight: "var(--weight-semibold, 600)",
-              color: "var(--color-text-primary, #0A0A0A)",
-              margin: 0,
-              lineHeight: "var(--lh-tight, 1.15)",
-            }}
-          >
-            Working conversations
-          </h2>
-          <p
-            style={{
-              fontSize: "var(--text-small, 13px)",
-              color: "var(--color-text-muted, #A3A3A3)",
-              margin: "var(--spacing-4) 0 0",
-            }}
-          >
-            {contextLabel}: {contextSummary}
-          </p>
+          <p style={{ margin: 0, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted, #737373)" }}>Copilot</p>
+          <h3 style={{ margin: "6px 0 4px", fontSize: 20 }}>Quick assist</h3>
+          <p style={{ margin: 0, fontSize: 13, color: "var(--color-text-secondary, #525252)" }}>{contextLabel} · {contextSummary}</p>
         </div>
-        <button
-          onClick={onClose}
-          aria-label="Close"
-          title="Close"
-          style={{
-            width: 28,
-            height: 28,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "var(--color-text-muted, #A3A3A3)",
-            background: "none",
-            border: "none",
-            borderRadius: "var(--radius-sm)",
-            cursor: "pointer",
-            transition: "all 180ms ease",
-            flexShrink: 0,
-          }}
-          onMouseEnter={(e) => { e.currentTarget.style.background = "var(--color-bg-muted, #F5F5F5)"; e.currentTarget.style.color = "var(--color-text-primary)"; }}
-          onMouseLeave={(e) => { e.currentTarget.style.background = "none"; e.currentTarget.style.color = "var(--color-text-muted, #A3A3A3)"; }}
-        >
-          <Icon name="close" size={16} />
-        </button>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          {onOpenWorkspace ? (
+            <button onClick={onOpenWorkspace} style={secondaryButtonStyle}>
+              Open workspace
+            </button>
+          ) : null}
+          <button onClick={onClose} aria-label="Close" style={iconButtonStyle}>
+            <Icon name="close" size={16} />
+          </button>
+        </div>
       </div>
 
-      {/* ── Layout: thread list + conversation ── */}
-      <div className="copilot-layout" style={{ display: "flex", flex: 1, overflow: "hidden" }}>
-        {/* Thread sidebar */}
+      {(screenContext || drawerContext || selectedThreadContext) ? (
         <div
-          className="copilot-thread-list"
           style={{
-            width: "40%",
-            minWidth: 160,
-            maxWidth: 240,
+            padding: "12px 20px",
+            borderBottom: "1px solid var(--color-border-subtle, #E5E5E5)",
+            background: "var(--color-surface-subtle, #F7F7F5)",
+            fontSize: 12,
+            color: "var(--color-text-secondary, #525252)",
+            lineHeight: 1.5,
+          }}
+        >
+          {screenContext ? <div>Seeing: {screenContext}</div> : null}
+          {drawerContext ? <div>Viewing: {drawerContext}</div> : null}
+          {selectedThreadContext?.memory_scope_label ? <div>Memory: {selectedThreadContext.memory_scope_label}</div> : null}
+        </div>
+      ) : null}
+
+      <div style={{ display: "grid", gridTemplateColumns: "148px 1fr", minHeight: 0, flex: 1 }}>
+        <aside
+          style={{
             borderRight: "1px solid var(--color-border-subtle, #E5E5E5)",
             overflowY: "auto",
-            padding: "var(--spacing-8)",
+            padding: "14px 10px",
           }}
         >
-          {threads.map((thread) => (
-            <button
-              key={thread.id}
-              className={`copilot-thread-button ${selectedThreadId === thread.id ? "selected" : ""}`}
-              onClick={() => onSelectThread(thread.id)}
-              disabled={loading || sending}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 2,
-                width: "100%",
-                textAlign: "left",
-                padding: "var(--spacing-12)",
-                marginBottom: "var(--spacing-4)",
-                borderRadius: "var(--radius-md, 12px)",
-                border: "1px solid transparent",
-                background:
-                  selectedThreadId === thread.id
-                    ? "var(--color-accent-soft, rgba(108,92,231,0.08))"
-                    : "transparent",
-                cursor: "pointer",
-                transition: "background var(--motion-fast, 120ms) var(--easing-standard)",
-              }}
-            >
-              <strong
-                style={{
-                  fontSize: "var(--text-body, 15px)",
-                  fontWeight: "var(--weight-medium, 500)",
-                  color: "var(--color-text-primary, #0A0A0A)",
-                  lineHeight: "var(--lh-tight, 1.15)",
-                }}
-              >
-                {thread.title}
-              </strong>
-              <span
-                style={{
-                  fontSize: "var(--text-small, 13px)",
-                  color: "var(--color-text-secondary, #525252)",
-                }}
-              >
-                {thread.scope}
-              </span>
-              <span
-                style={{
-                  fontSize: "var(--text-eyebrow, 11px)",
-                  color: "var(--color-text-muted, #A3A3A3)",
-                }}
-              >
-                {thread.message_count} messages
-                {thread.latest_message_at ? ` | ${formatTimestamp(thread.latest_message_at)}` : ""}
-              </span>
-            </button>
+          {groupedThreads.map((group) => (
+            <div key={group.label} style={{ marginBottom: 16 }}>
+              <p style={{ margin: "0 0 8px", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted, #737373)" }}>{group.label}</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                {group.items.map((thread) => (
+                  <button
+                    key={thread.id}
+                    onClick={() => onSelectThread(thread.id)}
+                    style={{
+                      ...threadButtonStyle,
+                      borderColor: selectedThreadId === thread.id ? "var(--color-text-primary, #111827)" : "var(--color-border-subtle, #E5E5E5)",
+                      background: selectedThreadId === thread.id ? "var(--color-surface-subtle, #F7F7F5)" : "transparent",
+                    }}
+                  >
+                    <strong style={{ fontSize: 12 }}>{thread.title}</strong>
+                    <span style={{ fontSize: 11, color: "var(--color-text-muted, #737373)" }}>{thread.thread_type.replace(/_/g, " ")}</span>
+                    <span style={{ fontSize: 11, color: "var(--color-text-secondary, #525252)" }}>{thread.applied_action_count} applied</span>
+                  </button>
+                ))}
+              </div>
+            </div>
           ))}
-          {!threads.length ? (
-            <div style={{ padding: "var(--spacing-24)", textAlign: "center" }}>
-              <p
-                style={{
-                  fontSize: "var(--text-small, 13px)",
-                  color: "var(--color-text-muted, #A3A3A3)",
-                }}
-              >
-                No copilot threads available yet.
-              </p>
-            </div>
-          ) : null}
-        </div>
+        </aside>
 
-        {/* Conversation area */}
-        <div
-          className="copilot-conversation"
-          style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            overflow: "hidden",
-          }}
-        >
-          {/* Screen / drawer context card */}
-          {(screenContext || drawerContext) && (
-            <div style={{
-              padding: "8px 12px",
-              margin: "12px 24px 0",
-              borderRadius: "var(--radius-sm)",
-              background: "var(--color-surface-subtle)",
-              fontSize: "var(--text-eyebrow)",
-              color: "var(--color-text-muted)",
-              lineHeight: 1.5,
-            }}>
-              {screenContext && <div>Seeing: {screenContext}</div>}
-              {drawerContext && <div>Viewing: {drawerContext}</div>}
-            </div>
-          )}
+        <div style={{ minHeight: 0, display: "flex", flexDirection: "column" }}>
           {unavailableMessage ? (
-            <div
-              style={{
-                flex: 1,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "var(--spacing-48)",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "var(--text-body, 15px)",
-                  color: "var(--color-text-muted, #A3A3A3)",
-                  textAlign: "center",
-                }}
-              >
-                {unavailableMessage}
-              </p>
-            </div>
-          ) : null}
-          {loading ? (
-            <div
-              style={{
-                flex: 1,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "var(--spacing-48)",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "var(--text-small, 13px)",
-                  color: "var(--color-text-muted, #A3A3A3)",
-                }}
-              >
-                Loading copilot thread...
-              </p>
-            </div>
-          ) : !unavailableMessage && selectedThread ? (
+            <div style={emptyStateStyle}>{unavailableMessage}</div>
+          ) : loading ? (
+            <div style={emptyStateStyle}>Loading thread…</div>
+          ) : (
             <>
-              {/* Message list */}
-              <div
-                className="copilot-message-list"
-                style={{
-                  flex: 1,
-                  overflowY: "auto",
-                  padding: "var(--spacing-24)",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "var(--spacing-12)",
-                }}
-              >
-                {selectedThread.messages.map((message) => {
-                  const isUser = message.author_role !== "assistant";
-                  return (
-                    <article
-                      className={`copilot-message ${message.author_role === "assistant" ? "assistant" : "user"}`}
-                      key={message.id}
-                      style={{
-                        alignSelf: isUser ? "flex-end" : "flex-start",
-                        maxWidth: "80%",
-                        padding: "var(--spacing-16)",
-                        borderRadius: "var(--radius-md, 12px)",
-                        background: isUser
-                          ? "var(--color-accent-soft, rgba(108,92,231,0.08))"
-                          : "var(--color-surface, #FFFFFF)",
-                        border: isUser ? "none" : "1px solid var(--color-border-subtle, #E5E5E5)",
-                        boxShadow: isUser ? "none" : "var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.04))",
-                      }}
-                    >
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          alignItems: "center",
-                          marginBottom: "var(--spacing-8)",
-                        }}
-                      >
-                        <span
-                          style={{
-                            fontSize: "var(--text-eyebrow, 11px)",
-                            fontWeight: "var(--weight-semibold, 600)",
-                            textTransform: "uppercase" as const,
-                            letterSpacing: "0.08em",
-                            color: isUser
-                              ? "var(--color-accent, #6C5CE7)"
-                              : "var(--color-text-muted, #A3A3A3)",
-                          }}
-                        >
-                          {message.author_role === "assistant" ? "VOIS" : "You"}
-                        </span>
-                        <span
-                          style={{
-                            fontSize: "var(--text-eyebrow, 11px)",
-                            color: "var(--color-text-muted, #A3A3A3)",
-                          }}
-                        >
-                          {message.source_mode} · {formatTimestamp(message.created_at)}
-                        </span>
-                      </div>
-                      <p
-                        className="copilot-message-body"
-                        style={{
-                          fontSize: "var(--text-body, 15px)",
-                          lineHeight: "var(--lh-loose, 1.6)",
-                          color: "var(--color-text-primary, #0A0A0A)",
-                          margin: 0,
-                          whiteSpace: "pre-wrap",
-                        }}
-                      >
-                        {message.content}
-                      </p>
-                      {fileReferencesForMessage(message.references).length ? (
-                        <div
-                          style={{
-                            display: "flex",
-                            flexWrap: "wrap",
-                            gap: "var(--spacing-8)",
-                            marginTop: "var(--spacing-12)",
-                          }}
-                        >
-                          {fileReferencesForMessage(message.references).map((reference) => (
-                            <a
-                              href={contentUrlFromReference(reference) ?? "#"}
-                              key={`${message.id}-${reference.id ?? reference.label}`}
-                              target="_blank"
-                              rel="noreferrer"
-                              style={{
-                                fontSize: "var(--text-small, 13px)",
-                                fontWeight: "var(--weight-medium, 500)",
-                                color: "var(--color-accent, #6C5CE7)",
-                                background: "var(--color-accent-soft, rgba(108,92,231,0.08))",
-                                padding: "4px 10px",
-                                borderRadius: "var(--radius-full, 9999px)",
-                                textDecoration: "none",
-                                transition: "background var(--motion-fast) var(--easing-standard)",
-                              }}
-                            >
-                              {reference.label}
-                            </a>
-                          ))}
-                        </div>
-                      ) : null}
-                      {message.attachments.length ? (
-                        <div
-                          style={{
-                            display: "flex",
-                            flexWrap: "wrap",
-                            gap: "var(--spacing-8)",
-                            marginTop: "var(--spacing-8)",
-                          }}
-                        >
-                          {message.attachments.map((attachment) => (
-                            <span
-                              key={`${message.id}-${attachment.file_asset_id ?? attachment.file_name}`}
-                              style={{
-                                fontSize: "var(--text-small, 13px)",
-                                color: "var(--color-text-secondary, #525252)",
-                                background: "var(--color-bg-muted, #F5F5F5)",
-                                padding: "4px 10px",
-                                borderRadius: "var(--radius-full, 9999px)",
-                              }}
-                            >
-                              {attachment.file_name}
-                            </span>
-                          ))}
-                        </div>
-                      ) : null}
-                      {nonFileReferencesForMessage(message.references).length ? (
-                        <div
-                          style={{
-                            display: "flex",
-                            flexWrap: "wrap",
-                            gap: "var(--spacing-8)",
-                            marginTop: "var(--spacing-8)",
-                          }}
-                        >
-                          {nonFileReferencesForMessage(message.references).map((reference) => (
-                            <span
-                              key={`${message.id}-${reference.type}-${reference.label}`}
-                              style={{
-                                fontSize: "var(--text-small, 13px)",
-                                color: "var(--color-text-secondary, #525252)",
-                                background: "var(--color-bg-muted, #F5F5F5)",
-                                padding: "4px 10px",
-                                borderRadius: "var(--radius-full, 9999px)",
-                              }}
-                            >
-                              {reference.type}: {reference.label}
-                            </span>
-                          ))}
-                        </div>
-                      ) : null}
-                    </article>
-                  );
-                })}
+              <div style={{ padding: "16px 20px 12px", borderBottom: "1px solid var(--color-border-subtle, #E5E5E5)" }}>
+                <p style={{ margin: 0, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted, #737373)" }}>
+                  {selectedThread?.visibility === "private" ? "Private thread" : "Shared thread"}
+                </p>
+                <h4 style={{ margin: "6px 0 4px", fontSize: 18 }}>{selectedThread?.title ?? "No thread selected"}</h4>
+                <p style={{ margin: 0, fontSize: 12, color: "var(--color-text-secondary, #525252)" }}>
+                  {selectedThread?.context_label ?? contextLabel}
+                </p>
               </div>
 
-              {/* Signal suggestion card */}
-              {signalSuggestion ? (
-                <div
-                  style={{
-                    margin: "0 var(--spacing-24)",
-                    padding: "var(--spacing-20)",
-                    background: "var(--color-surface, #FFFFFF)",
-                    borderRadius: "var(--radius-md, 12px)",
-                    border: "1px solid var(--color-border-subtle, #E5E5E5)",
-                    boxShadow: "var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.04))",
-                  }}
-                >
-                  <p
-                    style={{
-                      fontSize: "var(--text-eyebrow, 11px)",
-                      fontWeight: "var(--weight-semibold, 600)",
-                      textTransform: "uppercase" as const,
-                      letterSpacing: "0.08em",
-                      color: "var(--color-text-muted, #A3A3A3)",
-                      margin: "0 0 var(--spacing-12)",
-                    }}
-                  >
-                    Signal update suggestion
-                  </p>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--spacing-8)", marginBottom: "var(--spacing-12)" }}>
-                    {signalSuggestion.suggestion.add.map((item) => (
-                      <span
-                        key={`add-${item.signal_id}`}
-                        style={{
-                          fontSize: "var(--text-small, 13px)",
-                          color: "var(--color-success, #10B981)",
-                          background: "var(--color-success-soft, rgba(16,185,129,0.08))",
-                          padding: "4px 10px",
-                          borderRadius: "var(--radius-full, 9999px)",
-                        }}
-                      >
-                        + {item.signal_name ?? item.signal_id}
-                      </span>
-                    ))}
-                    {signalSuggestion.suggestion.remove.map((signalId) => (
-                      <span
-                        key={`remove-${signalId}`}
-                        style={{
-                          fontSize: "var(--text-small, 13px)",
-                          color: "var(--color-danger, #EF4444)",
-                          background: "var(--color-danger-soft, rgba(239,68,68,0.08))",
-                          padding: "4px 10px",
-                          borderRadius: "var(--radius-full, 9999px)",
-                        }}
-                      >
-                        - {signalId}
-                      </span>
-                    ))}
-                  </div>
-                  <p
-                    style={{
-                      fontSize: "var(--text-small, 13px)",
-                      color: "var(--color-text-muted, #A3A3A3)",
-                      margin: "0 0 var(--spacing-16)",
-                    }}
-                  >
-                    Review before applying. Accepted changes update the saved assessment, not hidden system state.
-                  </p>
-                  <div style={{ display: "flex", gap: 6 }}>
+              <div style={{ padding: "12px 20px", borderBottom: "1px solid var(--color-border-subtle, #E5E5E5)", display: "flex", flexDirection: "column", gap: 10 }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                  {compactActions.map((action) => (
                     <button
-                      onClick={onApplySignalSuggestion}
-                      disabled={!canApplySignalSuggestion || applyingSignalSuggestion}
-                      aria-label="Apply to assessment"
-                      title={applyingSignalSuggestion ? "Applying..." : "Apply to assessment"}
-                      style={{
-                        width: 32, height: 32, display: "flex", alignItems: "center", justifyContent: "center",
-                        color: "var(--color-surface)", background: "var(--color-accent, #6C5CE7)", border: "none", borderRadius: "var(--radius-sm)",
-                        cursor: !canApplySignalSuggestion || applyingSignalSuggestion ? "not-allowed" : "pointer",
-                        opacity: !canApplySignalSuggestion || applyingSignalSuggestion ? 0.4 : 1,
-                      }}
+                      key={action.type}
+                      onClick={() => void onPreviewAction(action.type)}
+                      disabled={!action.enabled || Boolean(committingActionType)}
+                      style={secondaryButtonStyle}
                     >
-                      <Icon name="check" size={16} />
+                      {previewingActionType === action.type ? "Preparing…" : action.title}
                     </button>
-                    <button
-                      onClick={onDismissSignalSuggestion}
-                      disabled={applyingSignalSuggestion}
-                      aria-label="Dismiss"
-                      title="Dismiss suggestion"
-                      style={{
-                        width: 32, height: 32, display: "flex", alignItems: "center", justifyContent: "center",
-                        color: "var(--color-text-muted)", background: "none",
-                        border: "1px solid var(--color-border-subtle, #E5E5E5)", borderRadius: "var(--radius-sm)",
-                        cursor: applyingSignalSuggestion ? "not-allowed" : "pointer",
-                        opacity: applyingSignalSuggestion ? 0.4 : 1,
-                      }}
-                    >
-                      <Icon name="close" size={14} />
-                    </button>
-                  </div>
+                  ))}
                 </div>
-              ) : null}
-
-              {/* Input area — pinned to bottom */}
-              <div
-                style={{
-                  flexShrink: 0,
-                  padding: "var(--spacing-16) var(--spacing-24) var(--spacing-24)",
-                  borderTop: "1px solid var(--color-border-subtle, #E5E5E5)",
-                  background: "var(--color-surface, #FFFFFF)",
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 8 }}>
-                  <label
-                    title="Attach files"
-                    style={{
-                      width: 28,
-                      height: 28,
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "var(--color-text-muted, #A3A3A3)",
-                      background: "none",
-                      border: "none",
-                      borderRadius: "var(--radius-sm)",
-                      cursor: "pointer",
-                      transition: "all 180ms ease",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <input
-                      type="file"
-                      multiple
-                      onChange={(event) => {
-                        onAttachFiles(event.target.files);
-                        event.currentTarget.value = "";
-                      }}
-                      style={{ display: "none" }}
-                    />
-                    <Icon name="attach" size={16} />
-                  </label>
-                  {attachments.length ? (
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--spacing-4)" }}>
-                      {attachments.map((attachment) => (
-                        <button
-                          key={attachment.file_name}
-                          onClick={() => onRemoveAttachment(attachment.file_name)}
-                          disabled={sending}
-                          style={{
-                            fontSize: "var(--text-eyebrow, 11px)",
-                            color: "var(--color-text-secondary, #525252)",
-                            background: "var(--color-bg-muted, #F5F5F5)",
-                            border: "1px solid var(--color-border-subtle, #E5E5E5)",
-                            borderRadius: "var(--radius-full, 9999px)",
-                            padding: "3px 10px",
-                            cursor: sending ? "not-allowed" : "pointer",
-                          }}
-                        >
-                          {attachment.file_name} x
-                        </button>
-                      ))}
+                {actionPreview ? (
+                  <div style={cardStyle}>
+                    <p style={eyebrowStyle}>Preview</p>
+                    <strong>{actionPreview.title}</strong>
+                    <div style={{ marginTop: 6, fontSize: 13, color: "var(--color-text-secondary, #525252)" }}>{actionPreview.summary}</div>
+                    {actionPreview.warning ? <div style={{ marginTop: 8, fontSize: 12 }}>{actionPreview.warning}</div> : null}
+                    <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
+                      <button onClick={onDismissPreview} style={secondaryButtonStyle}>Cancel</button>
+                      <button onClick={() => void onCommitPreview()} style={primaryButtonStyle} disabled={committingActionType === actionPreview.action_type}>
+                        {committingActionType === actionPreview.action_type ? "Applying…" : "Confirm"}
+                      </button>
                     </div>
-                  ) : null}
-                </div>
-                <div style={{ position: "relative" }}>
-                  <textarea
-                    value={input}
-                    onChange={(event) => onInputChange(event.target.value)}
-                    onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey && !sending && selectedThreadId) { event.preventDefault(); onSend(); } }}
-                    placeholder={inputPlaceholder}
-                    style={{
-                      width: "100%",
-                      minHeight: 56,
-                      padding: "12px 48px 12px 12px",
-                      fontSize: "var(--text-body, 15px)",
-                      fontFamily: "var(--font-sans)",
-                      lineHeight: "var(--lh-normal, 1.5)",
-                      color: "var(--color-text-primary, #0A0A0A)",
-                      background: "var(--color-bg-muted, #F5F5F5)",
-                      border: "1px solid var(--color-border-subtle, #E5E5E5)",
-                      borderRadius: "var(--radius-md, 12px)",
-                      resize: "vertical",
-                      outline: "none",
-                      boxSizing: "border-box",
-                    }}
-                  />
-                  <button
-                    onClick={onSend}
-                    disabled={sending || !selectedThreadId}
-                    aria-label="Send"
-                    title={sending ? "Sending..." : "Send (Enter)"}
-                    style={{
-                      position: "absolute",
-                      right: 8,
-                      bottom: 8,
-                      width: 32,
-                      height: 32,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "var(--color-accent-foreground, #FFFFFF)",
-                      background: "var(--color-accent, #6C5CE7)",
-                      border: "none",
-                      borderRadius: "var(--radius-sm)",
-                      cursor: sending || !selectedThreadId ? "not-allowed" : "pointer",
-                      opacity: sending || !selectedThreadId ? 0.4 : 1,
-                      transition: "all 180ms ease",
-                    }}
-                  >
-                    {sending
-                      ? <Icon name="refresh" size={16} />
-                      : <Icon name="send" size={16} />
-                    }
+                  </div>
+                ) : null}
+                {actionReceipt ? (
+                  <div style={cardStyle}>
+                    <p style={eyebrowStyle}>Applied</p>
+                    <strong>{actionReceipt.receipt_title}</strong>
+                    <div style={{ marginTop: 6, fontSize: 13, color: "var(--color-text-secondary, #525252)" }}>{actionReceipt.receipt_summary}</div>
+                  </div>
+                ) : null}
+                {selectedThreadActions.length ? (
+                  <div style={{ display: "flex", gap: 8, overflowX: "auto" }}>
+                    {selectedThreadActions.slice(0, 3).map((action) => (
+                      <div key={action.id} style={{ ...cardStyle, minWidth: 150 }}>
+                        <p style={eyebrowStyle}>{action.mode}</p>
+                        <strong style={{ fontSize: 13 }}>{action.title}</strong>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+
+              <div style={{ flex: 1, minHeight: 0, overflowY: "auto", padding: "16px 20px", display: "flex", flexDirection: "column", gap: 14 }}>
+                {latestAssistantMessage ? (
+                  <div style={cardStyle}>
+                    <p style={eyebrowStyle}>Latest assistant answer</p>
+                    <CopilotRichMessage content={latestAssistantMessage.content} />
+                  </div>
+                ) : null}
+                {selectedThreadContext?.provenance_summary?.length ? (
+                  <div style={cardStyle}>
+                    <p style={eyebrowStyle}>Why this answer knows this</p>
+                    {selectedThreadContext.provenance_summary.map((item, index) => (
+                      <div key={`${item.label}-${index}`} style={{ marginBottom: 8 }}>
+                        <strong style={{ display: "block", fontSize: 13 }}>{item.label}</strong>
+                        <span style={{ fontSize: 12, color: "var(--color-text-secondary, #525252)" }}>{item.detail}</span>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+
+              <div style={{ padding: "16px 20px", borderTop: "1px solid var(--color-border-subtle, #E5E5E5)", display: "flex", flexDirection: "column", gap: 12 }}>
+                <textarea
+                  value={input}
+                  onChange={(event) => onInputChange(event.target.value)}
+                  placeholder={inputPlaceholder}
+                  rows={4}
+                  style={{
+                    width: "100%",
+                    borderRadius: 12,
+                    border: "1px solid var(--color-border-subtle, #E5E5E5)",
+                    padding: 12,
+                    resize: "vertical",
+                    font: "inherit",
+                  }}
+                />
+                {attachments.length ? (
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                    {attachments.map((attachment) => (
+                      <div key={attachment.file_name} style={cardStyle}>
+                        <span style={{ fontSize: 12 }}>{attachment.file_name}</span>
+                        <button onClick={() => onRemoveAttachment(attachment.file_name)} style={iconButtonStyle}>×</button>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+                <div style={{ display: "flex", gap: 8 }}>
+                  <label style={secondaryButtonStyle}>
+                    Attach
+                    <input type="file" hidden multiple onChange={(event) => onAttachFiles(event.target.files)} />
+                  </label>
+                  <button onClick={onSend} disabled={sending || !input.trim()} style={primaryButtonStyle}>
+                    {sending ? "Sending…" : "Send"}
                   </button>
                 </div>
               </div>
             </>
-          ) : (
-            <div
-              style={{
-                flex: 1,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "var(--spacing-48)",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "var(--text-body, 15px)",
-                  color: "var(--color-text-muted, #A3A3A3)",
-                  textAlign: "center",
-                }}
-              >
-                {unavailableMessage
-                  ? "VOIS is blocked until the live AI runtime is configured."
-                  : "Select a thread to inspect the persisted conversation."}
-              </p>
-            </div>
           )}
         </div>
       </div>
-      {/* ── Resize handle (left edge) ── */}
-      {open && (
-        <div
-          onMouseDown={handleResizeStart}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: 4,
-            height: "100%",
-            cursor: "col-resize",
-            zIndex: 10,
-            background: isResizing ? "var(--color-accent)" : "transparent",
-            transition: "background 120ms ease",
-          }}
-          onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.background = "var(--color-border-strong, #D4D4D4)"; }}
-          onMouseLeave={(e) => { if (!isResizing) (e.currentTarget as HTMLDivElement).style.background = "transparent"; }}
-        />
-      )}
-    </aside>
+    </div>
   );
 }
 
-function fileReferencesForMessage(references: CopilotThreadDetail["messages"][number]["references"]) {
-  return references.filter((reference) => reference.type === "file_asset" || reference.type === "attachment");
-}
+const primaryButtonStyle: CSSProperties = {
+  padding: "9px 12px",
+  borderRadius: 10,
+  border: "1px solid var(--color-text-primary, #111827)",
+  background: "var(--color-text-primary, #111827)",
+  color: "#FFFFFF",
+  cursor: "pointer",
+  fontSize: 13,
+  fontWeight: 600,
+};
 
-function nonFileReferencesForMessage(references: CopilotThreadDetail["messages"][number]["references"]) {
-  return references.filter((reference) => reference.type !== "file_asset");
-}
+const secondaryButtonStyle: CSSProperties = {
+  padding: "9px 12px",
+  borderRadius: 10,
+  border: "1px solid var(--color-border-subtle, #E5E5E5)",
+  background: "var(--color-surface-subtle, #F7F7F5)",
+  color: "var(--color-text-primary, #111827)",
+  cursor: "pointer",
+  fontSize: 13,
+  fontWeight: 500,
+};
 
-function contentUrlFromReference(reference: CopilotThreadDetail["messages"][number]["references"][number]) {
-  const payload = reference.payload;
-  if (!payload) {
-    return null;
-  }
-  const contentUrl = payload["content_url"];
-  if (typeof contentUrl === "string" && contentUrl.length) {
-    return contentUrl;
-  }
-  const url = payload["url"];
-  return typeof url === "string" && url.length ? url : null;
-}
+const iconButtonStyle: CSSProperties = {
+  width: 30,
+  height: 30,
+  borderRadius: 8,
+  border: "1px solid var(--color-border-subtle, #E5E5E5)",
+  background: "#FFFFFF",
+  cursor: "pointer",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+};
+
+const cardStyle: CSSProperties = {
+  border: "1px solid var(--color-border-subtle, #E5E5E5)",
+  borderRadius: 12,
+  padding: 12,
+  background: "#FFFFFF",
+};
+
+const threadButtonStyle: CSSProperties = {
+  border: "1px solid var(--color-border-subtle, #E5E5E5)",
+  borderRadius: 12,
+  background: "transparent",
+  textAlign: "left" as const,
+  padding: 10,
+  display: "flex",
+  flexDirection: "column" as const,
+  gap: 3,
+  cursor: "pointer",
+};
+
+const emptyStateStyle: CSSProperties = {
+  flex: 1,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: 32,
+  color: "var(--color-text-muted, #737373)",
+  textAlign: "center" as const,
+};
+
+const eyebrowStyle: CSSProperties = {
+  margin: "0 0 6px",
+  fontSize: 11,
+  textTransform: "uppercase" as const,
+  letterSpacing: "0.08em",
+  color: "var(--color-text-muted, #737373)",
+};

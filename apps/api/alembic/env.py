@@ -25,6 +25,8 @@ target_metadata = Base.metadata
 
 _SQLITE_ENUM_COLUMNS = {
     ("copilot_threads", "scope"),
+    ("copilot_threads", "visibility"),
+    ("copilot_threads", "context_kind"),
     ("task_events", "status"),
 }
 

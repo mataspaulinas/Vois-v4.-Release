@@ -14,7 +14,7 @@ type SignalsReviewViewProps = {
   onToggleSignalRejection: (signalId: string) => void;
   onToggleManualSignal: (signalId: string) => void;
   onOpenAssessment: () => void;
-  onOpenReport: () => void;
+  onOpenDiagnosis: () => void;
 };
 
 type FilterMode = "all" | "confirmed" | "rejected" | "manual";
@@ -36,7 +36,7 @@ export function SignalsReviewView({
   onToggleSignalRejection,
   onToggleManualSignal,
   onOpenAssessment,
-  onOpenReport,
+  onOpenDiagnosis,
 }: SignalsReviewViewProps) {
   const [filterMode, setFilterMode] = useState<FilterMode>("all");
   const [domainFilter, setDomainFilter] = useState<string>("all");
@@ -227,14 +227,14 @@ export function SignalsReviewView({
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16 }}>
           <div>
             <p className="eyebrow">VENUE</p>
-            <h1 className="page-title">The machine proposes, the human reviews</h1>
+            <h1 className="page-title">Signal review</h1>
             <p className="small-text" style={{ marginTop: 8, maxWidth: 720 }}>
               Confirm or reject each signal before it drives downstream diagnosis. Reviewed signals become the authoritative interpreted set for this assessment cycle.
             </p>
           </div>
           <div style={{ display: "flex", gap: 8 }}>
             <button className="btn btn-secondary" onClick={onOpenAssessment}>Back to Assessment</button>
-            <button className="btn btn-primary" style={{ opacity: confirmedCount === 0 ? 0.5 : 1 }} onClick={onOpenReport} disabled={confirmedCount === 0}>Continue to Report</button>
+            <button className="btn btn-primary" style={{ opacity: confirmedCount === 0 ? 0.5 : 1 }} onClick={onOpenDiagnosis} disabled={confirmedCount === 0}>Continue to Diagnosis</button>
           </div>
         </div>
 

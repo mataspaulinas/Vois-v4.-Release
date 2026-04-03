@@ -14,7 +14,7 @@ type HistoryViewProps = {
   formatTimestamp: (isoTimestamp: string) => string;
   onOpenAssessment: () => void;
   onOpenPlan: () => void;
-  onOpenReportRecord: (engineRunId: string) => void;
+  onOpenDiagnosisRecord: (engineRunId: string) => void;
   onLoadAssessmentRecord: (assessmentId: string) => void;
 };
 
@@ -29,7 +29,7 @@ export function HistoryView({
   formatTimestamp,
   onOpenAssessment,
   onOpenPlan,
-  onOpenReportRecord,
+  onOpenDiagnosisRecord,
   onLoadAssessmentRecord,
 }: HistoryViewProps) {
   const [showTrends, setShowTrends] = useState(false);
@@ -64,7 +64,7 @@ export function HistoryView({
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
       <SurfaceHeader
-        title="Assessment timeline"
+        title="History"
         subtitle={`${assessments.length} assessment${assessments.length !== 1 ? "s" : ""} recorded`}
         moreActions={[
           { label: "New assessment", onClick: onOpenAssessment },
@@ -78,8 +78,8 @@ export function HistoryView({
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16, marginBottom: 20 }}>
               <div>
                 <p className="eyebrow">VENUE</p>
-                <h2 className="section-title">Assessment timeline</h2>
-                <p className="small-text" style={{ marginTop: 4 }}>Every analyzed venue state becomes a reviewable operational record.</p>
+                <h2 className="section-title">History and compare</h2>
+                <p className="small-text" style={{ marginTop: 4 }}>Every assessment, diagnosis, and plan lineage should stay reviewable so the venue can learn over time.</p>
               </div>
               <div style={{ display: "flex", gap: 8 }}>
                 <button className="btn btn-secondary" onClick={onOpenAssessment}>New assessment</button>
@@ -211,8 +211,8 @@ export function HistoryView({
                         {loadingAssessmentId === assessment.id ? "Loading..." : "Load snapshot"}
                       </button>
                       {assessment.engine_run_id ? (
-                        <button className="btn btn-secondary" onClick={() => onOpenReportRecord(assessment.engine_run_id!)}>
-                          Open report
+                        <button className="btn btn-secondary" onClick={() => onOpenDiagnosisRecord(assessment.engine_run_id!)}>
+                          Open diagnosis
                         </button>
                       ) : null}
                     </div>

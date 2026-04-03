@@ -6,7 +6,20 @@ from sqlalchemy.orm import Session
 
 from app.core.config import get_settings
 from app.db.session import get_db
-from app.models.domain import Assessment, AuthRole, CopilotThread, EngineRun, HelpRequest, OperationalPlan, ProgressEntry, Role, ThreadScope, UserSession, Venue
+from app.models.domain import (
+    Assessment,
+    AuthRole,
+    CopilotThread,
+    CopilotThreadVisibility,
+    EngineRun,
+    HelpRequest,
+    OperationalPlan,
+    ProgressEntry,
+    Role,
+    ThreadScope,
+    UserSession,
+    Venue,
+)
 from app.services.auth import (
     AuthenticatedActor,
     auth_roles_for_requirement,
@@ -156,15 +169,27 @@ def require_engine_run_access(db: Session, *, engine_run_id: str, user: Authenti
 
 def require_thread_access(db: Session, *, thread_id: str, user: AuthenticatedActor) -> CopilotThread:
     thread = db.get(CopilotThread, thread_id)
-    if thread is None:
+    if thread is None or thread.deleted_at is not None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Copilot thread not found")
     require_organization_id_access(user, thread.organization_id)
+    if thread.visibility == CopilotThreadVisibility.PRIVATE and thread.owner_user_id != user.id:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Copilot thread not found")
     if thread.venue_id is not None and user.role in {AuthRole.MANAGER, AuthRole.BARISTA} and thread.venue_id not in user.accessible_venue_ids:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Access is limited to the assigned venue")
-    if thread.scope == ThreadScope.HELP_REQUEST and user.role == AuthRole.BARISTA:
+    if user.role == AuthRole.BARISTA:
+        if thread.visibility == CopilotThreadVisibility.PRIVATE and thread.owner_user_id == user.id:
+            return thread
+        if thread.scope != ThreadScope.HELP_REQUEST:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Barista copilot access is limited to help request threads",
+            )
         help_request = db.scalar(select(HelpRequest).where(HelpRequest.linked_thread_id == thread.id))
-        if help_request is not None and help_request.requester_user_id not in {None, user.id}:
-            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Help request thread is not available to this barista")
+        if help_request is None or help_request.requester_user_id not in {None, user.id}:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Help request thread is not available to this barista",
+            )
     return thread
 
 

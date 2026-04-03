@@ -32,7 +32,7 @@ def test_phase4_api_cutover_parity_across_multiple_phase0_fixtures():
         client.headers.update({"X-OIS-User-Id": owner_id})
         organization_id = bootstrap_payload["organization"]["id"]
         with get_session_factory()() as db:
-            developer_id = db.scalar(select(User.id).where(User.email == "developer@ois-demo.local"))
+            developer_id = db.scalar(select(User.id).where(User.email == "developer@vois.local"))
         assert developer_id is not None
 
         for fixture_id in PARITY_FIXTURES:
