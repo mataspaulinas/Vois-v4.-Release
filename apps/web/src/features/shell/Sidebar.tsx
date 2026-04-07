@@ -1,5 +1,5 @@
 import React from "react";
-import { PortfolioSummaryResponse } from "../../lib/api";
+import { PortfolioSummaryResponse, PortfolioVenuePulse, Venue } from "../../lib/api";
 import Icon, { IconName } from "../../components/Icon";
 import {
   ManagerView,
@@ -16,12 +16,18 @@ type SidebarProps = {
   collapsed: boolean;
   activeTopLevel: TopLevelView;
   authRole: string | null;
-  activeVenueName: string | null;
+  // Venue accordion
+  venues: Venue[];
+  activeVenueId: string | null;
+  venuePulses: PortfolioVenuePulse[];
+  onSelectVenue: (venueId: string) => void;
+  // Sub-views
   activeVenueView: VenueSubview;
   activeReferenceView: ReferenceView;
   activeManagerView?: ManagerView;
   activePocketView?: PocketView;
   activeOwnerView?: OwnerView;
+  // Actions
   onToggleCollapsed: () => void;
   onShowPortfolio: () => void;
   onSelectVenueView: (view: VenueSubview) => void;
@@ -39,7 +45,6 @@ type SidebarProps = {
   copilotOpen: boolean;
   portfolioSummary: PortfolioSummaryResponse | null;
   onWidthChange?: (width: number) => void;
-  userName?: string;
 };
 
 /* ── Role-specific nav definitions ── */
@@ -66,7 +71,7 @@ const managerWorkspaceItems: NavItem<ManagerView>[] = [
 const pocketShiftItems: NavItem<PocketView>[] = [
   { icon: "shift", label: "Shift", view: "shift" },
   { icon: "standards", label: "Standards", view: "standards" },
-  { icon: "help", label: "Help", view: "help" },
+  { icon: "ask-help", label: "Ask manager", view: "help" },
   { icon: "report", label: "Report", view: "report" },
   { icon: "log", label: "Log", view: "log" },
 ];
@@ -89,10 +94,14 @@ const referenceItems: NavItem<ReferenceView>[] = [
 
 /* ── Helpers ── */
 
-function getInitials(name: string): string {
-  const parts = name.trim().split(/\s+/);
-  if (parts.length >= 2) return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
-  return (parts[0]?.[0] ?? "?").toUpperCase();
+function getHealthDotColor(attentionLevel?: string): string {
+  switch (attentionLevel) {
+    case "urgent": return "var(--color-danger, #E74C3C)";
+    case "needs_attention": return "var(--color-warning, #F59E0B)";
+    case "steady": return "var(--color-success, #10B981)";
+    case "dormant": return "var(--color-text-muted, #A3A3A3)";
+    default: return "var(--color-success, #10B981)";
+  }
 }
 
 /* ── Component ── */
@@ -102,7 +111,10 @@ export function Sidebar(props: SidebarProps) {
     collapsed,
     activeTopLevel,
     authRole,
-    activeVenueName,
+    venues,
+    activeVenueId,
+    venuePulses,
+    onSelectVenue,
     activeVenueView,
     activeReferenceView,
     activeManagerView,
@@ -124,7 +136,6 @@ export function Sidebar(props: SidebarProps) {
     onToggleCopilot,
     copilotOpen,
     portfolioSummary,
-    userName,
   } = props;
 
   const isOwner = authRole === "owner";
@@ -132,8 +143,6 @@ export function Sidebar(props: SidebarProps) {
   const isBarista = authRole === "barista";
   const isDeveloper = authRole === "developer";
   const canSeePortfolio = isOwner || isDeveloper;
-  const canSeeVenue = isOwner || isManager || isDeveloper;
-  const showVenue = canSeeVenue && !!activeVenueName;
 
   /* ── Resize ── */
   const [sidebarWidth, setSidebarWidth] = React.useState(240);
@@ -164,7 +173,7 @@ export function Sidebar(props: SidebarProps) {
 
   const effectiveWidth = collapsed ? 48 : sidebarWidth;
 
-  /* ── Track which sections rendered (for dividers) ── */
+  /* ── Build sections ── */
   const sections: React.ReactNode[] = [];
 
   // Owner org
@@ -221,53 +230,79 @@ export function Sidebar(props: SidebarProps) {
     );
   }
 
-  // Portfolio
-  if (canSeePortfolio) {
+  // Venues accordion
+  const isSingleVenue = venues.length === 1;
+  const activeVenues = venues.filter(v => v.status !== "archived");
+
+  if (activeVenues.length > 0) {
     sections.push(
-      <NavGroup key="portfolio" label="Portfolio" collapsed={collapsed}>
-        <SidebarNavItem
-          icon="chart-pie"
-          label="Portfolio"
-          active={activeTopLevel === "portfolio"}
-          collapsed={collapsed}
-          onClick={onShowPortfolio}
-        />
+      <NavGroup
+        key="venues"
+        label={isSingleVenue ? activeVenues[0].name : "Venues"}
+        collapsed={collapsed}
+      >
+        {activeVenues.map((venue) => {
+          const isExpanded = venue.id === activeVenueId;
+          const pulse = venuePulses.find(p => p.venue_id === venue.id);
+          const dotColor = getHealthDotColor(pulse?.attention_level);
+
+          return (
+            <div key={venue.id}>
+              {/* Venue row — only show as clickable row if multi-venue */}
+              {!isSingleVenue && (
+                <button
+                  className={`sidebar__nav-item sidebar__venue-row ${isExpanded ? "active" : ""}`}
+                  onClick={() => onSelectVenue(venue.id)}
+                >
+                  <span className="sidebar__venue-health-dot" style={{ background: dotColor }} />
+                  {!collapsed && <span className="sidebar__nav-label">{venue.name}</span>}
+                  {!collapsed && <span style={{ marginLeft: "auto", opacity: 0.5 }}><Icon name={isExpanded ? "chevron-up" : "chevron-down"} size={10} /></span>}
+                  {collapsed && <span className="sidebar__tooltip">{venue.name}</span>}
+                </button>
+              )}
+              {/* Sub-views — show if expanded (or always if single venue) */}
+              {(isExpanded || isSingleVenue) && !collapsed && (
+                <div className="sidebar__sub-group">
+                  {venueItems.map((item) => (
+                    <SidebarNavItem
+                      key={item.view}
+                      icon={item.icon}
+                      label={item.label}
+                      active={activeTopLevel === "venue" && activeVenueView === item.view && venue.id === activeVenueId}
+                      collapsed={collapsed}
+                      onClick={() => {
+                        if (venue.id !== activeVenueId) onSelectVenue(venue.id);
+                        onSelectVenueView(item.view);
+                      }}
+                    />
+                  ))}
+                  {isDeveloper && (
+                    <SidebarNavItem
+                      icon={venueConsoleItem.icon}
+                      label={venueConsoleItem.label}
+                      active={activeTopLevel === "venue" && activeVenueView === "console" && venue.id === activeVenueId}
+                      collapsed={collapsed}
+                      onClick={() => {
+                        if (venue.id !== activeVenueId) onSelectVenue(venue.id);
+                        onSelectVenueView("console");
+                      }}
+                    />
+                  )}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </NavGroup>
     );
   }
 
-  // Venue
-  if (showVenue) {
-    sections.push(
-      <NavGroup key="venue" label={`Venue: ${activeVenueName}`} collapsed={collapsed}>
-        {venueItems.map((item) => (
-          <SidebarNavItem
-            key={item.view}
-            icon={item.icon}
-            label={item.label}
-            active={activeTopLevel === "venue" && activeVenueView === item.view}
-            collapsed={collapsed}
-            onClick={() => onSelectVenueView(item.view)}
-          />
-        ))}
-        {isDeveloper && (
-          <SidebarNavItem
-            icon={venueConsoleItem.icon}
-            label={venueConsoleItem.label}
-            active={activeTopLevel === "venue" && activeVenueView === "console"}
-            collapsed={collapsed}
-            onClick={() => onSelectVenueView("console")}
-          />
-        )}
-      </NavGroup>
-    );
-  }
-
-  // Reference
-  if (!isBarista) {
-    sections.push(
-      <NavGroup key="reference" label="Reference" collapsed={collapsed}>
-        {referenceItems.map((item) => (
+  // Reference (Blocks/Tools/Signals — not for baristas) + Knowledge Base (everyone)
+  {
+    const refItems: React.ReactNode[] = [];
+    if (!isBarista) {
+      referenceItems.forEach((item) => {
+        refItems.push(
           <SidebarNavItem
             key={item.view}
             icon={item.icon}
@@ -276,7 +311,15 @@ export function Sidebar(props: SidebarProps) {
             collapsed={collapsed}
             onClick={() => onSelectReferenceView(item.view)}
           />
-        ))}
+        );
+      });
+    }
+    refItems.push(
+      <SidebarNavItem key="kb" icon="knowledge" label="Knowledge Base" active={activeTopLevel === "kb"} collapsed={collapsed} onClick={onShowKnowledgeBase} />
+    );
+    sections.push(
+      <NavGroup key="reference" label={isBarista ? "Learn" : "Reference"} collapsed={collapsed}>
+        {refItems}
       </NavGroup>
     );
   }
@@ -313,21 +356,6 @@ export function Sidebar(props: SidebarProps) {
     );
   }
 
-  // Guidance
-  sections.push(
-    <NavGroup key="guidance" label="Guidance" collapsed={collapsed}>
-      <SidebarNavItem icon="knowledge" label="Knowledge Base" active={activeTopLevel === "kb"} collapsed={collapsed} onClick={onShowKnowledgeBase} />
-      <SidebarNavItem icon="help" label="Help" active={activeTopLevel === "help"} collapsed={collapsed} onClick={onShowHelp} />
-    </NavGroup>
-  );
-
-  // Interleave dividers between sections
-  const scrollContent: React.ReactNode[] = [];
-  sections.forEach((section, i) => {
-    if (i > 0 && !collapsed) scrollContent.push(<div key={`div-${i}`} className="sidebar__divider" />);
-    scrollContent.push(section);
-  });
-
   const cn = ["sidebar", collapsed && "sidebar--collapsed", isResizing && "sidebar--resizing"].filter(Boolean).join(" ");
 
   return (
@@ -352,18 +380,22 @@ export function Sidebar(props: SidebarProps) {
         </button>
       </div>
 
-      {/* ── Venue context label (static, not interactive) ── */}
-      {showVenue && !collapsed && (
-        <div className="sidebar__venue-label" title={activeVenueName ?? undefined}>
-          <span className="sidebar__venue-dot" />
-          <span className="sidebar__venue-name">{activeVenueName}</span>
+      {/* ── Portfolio (standalone, not in a group) ── */}
+      {venues.length > 1 && (isOwner || isDeveloper) && (
+        <div className="sidebar__portfolio-item">
+          <SidebarNavItem
+            icon="chart-pie"
+            label="Portfolio"
+            active={activeTopLevel === "portfolio"}
+            collapsed={collapsed}
+            onClick={onShowPortfolio}
+          />
         </div>
       )}
 
       {/* ── Scrollable middle ── */}
       <div className="sidebar__scroll">
-        {scrollContent}
-
+        {sections}
       </div>
 
       {/* ── Bottom ── */}
@@ -377,6 +409,14 @@ export function Sidebar(props: SidebarProps) {
           {collapsed && <span className="sidebar__tooltip">Settings</span>}
         </button>
         <button
+          className={`sidebar__bottom-link ${activeTopLevel === "help" ? "active" : ""}`}
+          onClick={onShowHelp}
+        >
+          <span className="sidebar__nav-icon"><Icon name="help" size={16} /></span>
+          {!collapsed && <span className="sidebar__nav-label">Help</span>}
+          {collapsed && <span className="sidebar__tooltip">Help</span>}
+        </button>
+        <button
           className={`sidebar__bottom-link ${copilotOpen ? "active" : ""}`}
           onClick={onToggleCopilot}
         >
@@ -384,19 +424,6 @@ export function Sidebar(props: SidebarProps) {
           {!collapsed && <span className="sidebar__nav-label">Copilot</span>}
           {collapsed && <span className="sidebar__tooltip">Copilot</span>}
         </button>
-
-        {/* User avatar */}
-        {userName && (
-          <div className="sidebar__user" title={userName}>
-            <span className="sidebar__avatar">{getInitials(userName)}</span>
-            {!collapsed && (
-              <div className="sidebar__user-info">
-                <span className="sidebar__user-name">{userName}</span>
-                <span className="sidebar__user-role">{authRole ?? "user"}</span>
-              </div>
-            )}
-          </div>
-        )}
       </div>
 
       {/* ── Resize handle ── */}
@@ -410,13 +437,49 @@ export function Sidebar(props: SidebarProps) {
   );
 }
 
-/* ── Nav group (label + items) ── */
+/* ── Nav group (label + items, collapsible with localStorage persistence) ── */
 
-function NavGroup({ label, collapsed, children }: { label: string; collapsed: boolean; children: React.ReactNode }) {
+const COLLAPSED_GROUPS_KEY = "vois_sidebar_collapsed_groups";
+
+function loadCollapsedGroups(): Set<string> {
+  try {
+    const raw = localStorage.getItem(COLLAPSED_GROUPS_KEY);
+    return raw ? new Set(JSON.parse(raw)) : new Set();
+  } catch { return new Set(); }
+}
+
+function persistCollapsedGroups(groups: Set<string>) {
+  try { localStorage.setItem(COLLAPSED_GROUPS_KEY, JSON.stringify([...groups])); } catch {}
+}
+
+function NavGroup({ label, collapsed: sidebarCollapsed, children }: { label: string; collapsed: boolean; children: React.ReactNode }) {
+  const [open, setOpen] = React.useState(() => !loadCollapsedGroups().has(label));
+
+  const toggle = React.useCallback(() => {
+    setOpen((prev) => {
+      const next = !prev;
+      const groups = loadCollapsedGroups();
+      if (next) { groups.delete(label); } else { groups.add(label); }
+      persistCollapsedGroups(groups);
+      return next;
+    });
+  }, [label]);
+
+  if (sidebarCollapsed) {
+    return <div>{children}</div>;
+  }
+
   return (
     <div>
-      {!collapsed && <div className="sidebar__group-label">{label}</div>}
-      {children}
+      <button
+        className="sidebar__group-label"
+        onClick={toggle}
+        aria-expanded={open}
+      >
+        <span>{label}</span>
+        <Icon name={open ? "chevron-up" : "chevron-down"} size={10} />
+      </button>
+      {open && children}
     </div>
   );
 }

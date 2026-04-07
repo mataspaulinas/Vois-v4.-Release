@@ -12,7 +12,7 @@ export type TopLevelView = "portfolio" | "venue" | "reference" | "kb" | "help" |
 
 export type ThemeMode = "light" | "dark";
 
-export type SkinId = "ocean" | "forest" | "ember" | "midnight";
+export type SkinId = "ocean" | "forest" | "ember" | "midnight" | "slate";
 
 export type ShellRoute =
   | { topLevelView: "portfolio" }

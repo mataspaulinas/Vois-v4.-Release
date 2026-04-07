@@ -385,7 +385,7 @@ export function CopilotWorkspace(props: Props) {
                     status={`${formatActionMode(action.mode)} · ${action.status}`}
                     busy={props.previewingActionType === action.type}
                     disabled={!action.enabled || Boolean(props.committingActionType)}
-                    actionLabel={props.previewingActionType === action.type ? "Preparing…" : "Preview"}
+                    actionLabel={props.previewingActionType === action.type ? "Getting this ready…" : "Review"}
                     onAction={() => void props.onPreviewAction(action.type)}
                   />
                 ))}
@@ -437,14 +437,14 @@ export function CopilotWorkspace(props: Props) {
             <section className="copilot-workspace__section">
               <p className="copilot-workspace__eyebrow">Saved from this conversation</p>
               <div className="copilot-workspace__thread-stack">
-                {props.loadingActionHistory ? <div className="copilot-workspace__muted">Loading actions…</div> : null}
+                {props.loadingActionHistory ? <div className="copilot-workspace__muted">Loading saved items…</div> : null}
                 {!props.loadingActionHistory && props.selectedThreadActions.length ? props.selectedThreadActions.map((action) => (
                   <div key={action.id} className="copilot-workspace__reference-card">
                     <strong>{action.title}</strong>
                     <span>{formatActionMode(action.mode)} · {formatArtifactLabel(action.target_artifact_type)}</span>
                     <span>{action.actor_name ?? "Unknown user"} · {props.formatTimestamp(action.created_at)}</span>
                   </div>
-                )) : !props.loadingActionHistory ? <div className="copilot-workspace__muted">Nothing has been applied from this thread yet.</div> : null}
+                )) : !props.loadingActionHistory ? <div className="copilot-workspace__muted">Nothing has been saved from this conversation yet.</div> : null}
               </div>
             </section>
           </aside>
@@ -478,7 +478,7 @@ function PreviewCard(props: {
 }) {
   return (
     <div className="copilot-workspace__notice">
-      <p className="copilot-workspace__eyebrow">Preview</p>
+      <p className="copilot-workspace__eyebrow">Before you save</p>
       <strong>{props.preview.title}</strong>
       <div style={{ marginTop: 6 }}>{props.preview.summary}</div>
       {props.preview.side_effect_summary.length ? (
@@ -488,9 +488,9 @@ function PreviewCard(props: {
       ) : null}
       {props.preview.warning ? <div style={{ marginTop: 8 }}>{props.preview.warning}</div> : null}
       <div className="copilot-workspace__action-row" style={{ marginTop: 12 }}>
-        <button onClick={props.onCancel} className="copilot-workspace__button">Cancel</button>
+        <button onClick={props.onCancel} className="copilot-workspace__button">Not now</button>
         <button onClick={props.onConfirm} className="copilot-workspace__button copilot-workspace__button--primary" disabled={props.busy}>
-          {props.busy ? "Applying…" : "Confirm"}
+          {props.busy ? "Saving…" : "Save this"}
         </button>
       </div>
     </div>
@@ -511,7 +511,7 @@ function ActionCard(props: {
       <strong>{props.title}</strong>
       <span>{props.description}</span>
       <span>{props.status}</span>
-      <span>{props.busy ? "Working…" : props.actionLabel}</span>
+      <span>{props.busy ? "Working on it…" : props.actionLabel}</span>
     </button>
   );
 }

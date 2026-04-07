@@ -218,5 +218,5 @@ function isOwnerView(value: string | undefined): value is OwnerView {
 }
 
 function isSkinId(value: string | null): value is SkinId {
-  return value === "ocean" || value === "forest" || value === "ember" || value === "midnight";
+  return value === "ocean" || value === "forest" || value === "ember" || value === "midnight" || value === "slate";
 }

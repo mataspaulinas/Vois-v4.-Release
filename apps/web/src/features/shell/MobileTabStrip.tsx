@@ -40,7 +40,7 @@ const MANAGER_TABS: TabDef[] = [
 const POCKET_TABS: TabDef[] = [
   { key: "shift",     icon: "SH", label: "Shift" },
   { key: "standards", icon: "SD", label: "Standards" },
-  { key: "help",      icon: "HP", label: "Help" },
+  { key: "help",      icon: "AM", label: "Ask" },
   { key: "report",    icon: "RP", label: "Report" },
   { key: "log",       icon: "LG", label: "Log" },
 ];

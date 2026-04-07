@@ -55,7 +55,7 @@ type SettingsViewProps = {
   onGenerateOrganizationExport: () => void;
 };
 
-const skins: SkinId[] = ["ocean", "forest", "ember", "midnight"];
+const skins: SkinId[] = ["ocean", "forest", "ember", "midnight", "slate"];
 
 import { ds, pillStyle, statusDot } from "../../styles/tokens";
 
@@ -66,7 +66,7 @@ const local = {
     display: "flex", flexDirection: "column" as const, gap: 4, transition: "transform 0.15s ease, box-shadow 0.15s ease",
   } as React.CSSProperties,
   skinTile: (skinId: SkinId, active: boolean) => {
-    const colors: Record<SkinId, string> = { ocean: "var(--sky)", forest: "var(--color-success)", ember: "var(--color-warning)", midnight: "var(--color-info)" };
+    const colors: Record<SkinId, string> = { ocean: "var(--sky)", forest: "var(--color-success)", ember: "var(--color-warning)", midnight: "var(--color-info)", slate: "var(--graphite)" };
     return {
       background: active ? `${colors[skinId]}15` : "var(--color-surface)",
       border: active ? `2px solid ${colors[skinId]}` : "1px solid var(--color-border-subtle)",

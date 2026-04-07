@@ -1276,7 +1276,7 @@ export default function App() {
             },
             {
               key: "help",
-              label: "Help",
+              label: "Ask manager",
               active: shellRoute.topLevelView === "pocket" && (shellRoute as { pocketView?: string }).pocketView === "help",
               onClick: () => workspaceVenue && navigate({ topLevelView: "pocket", venueId: workspaceVenue.id, pocketView: "help" }),
             },
@@ -3479,7 +3479,10 @@ export default function App() {
                 collapsed={preferences.sidebarCollapsed}
                 activeTopLevel={shellRoute.topLevelView}
                 authRole={activeRole}
-                activeVenueName={displayedVenue?.name ?? null}
+                venues={bootstrap.venues}
+                activeVenueId={workspaceVenue?.id ?? null}
+                venuePulses={portfolioSummary?.venue_pulses ?? []}
+                onSelectVenue={handleSelectVenue}
                 activeVenueView={shellRoute.topLevelView === "venue" ? shellRoute.venueView : "overview"}
                 activeReferenceView={shellRoute.topLevelView === "reference" ? shellRoute.referenceView : "blocks"}
                 portfolioSummary={portfolioSummary}
@@ -3509,20 +3512,12 @@ export default function App() {
                 activeOwnerView={shellRoute.topLevelView === "owner" ? (shellRoute as { ownerView: OwnerView }).ownerView : undefined}
                 onToggleCopilot={() => setCopilotOpen((current) => !current)}
                 copilotOpen={copilotOpen}
-                userName={authSession?.user.full_name ?? bootstrap.current_user.full_name}
               />
           <div className="main-area">
           <TopBar
-            venues={bootstrap.venues}
-            activeVenue={displayedVenue}
-            portfolioSummary={portfolioSummary}
             authRole={activeRole}
             theme={preferences.theme}
             skin={preferences.skin}
-            userName={authSession?.user.full_name ?? bootstrap.current_user.full_name}
-            authMode={authSession?.session.authentication_mode ?? "firebase_id_token"}
-            onSelectVenue={handleSelectVenue}
-            onShowPortfolio={() => navigate({ topLevelView: "portfolio" })}
             onToggleTheme={() =>
               setPreferences((current) => ({
                 ...current,
@@ -3531,8 +3526,6 @@ export default function App() {
             }
             onSelectSkin={(skin) => setPreferences((current) => ({ ...current, skin: skin as SkinId }))}
             onToggleCopilot={() => setCopilotOpen((current) => !current)}
-            onOpenSearch={() => setCmdPaletteOpen(true)}
-            onShowSettings={() => navigate({ topLevelView: "settings" })}
             onLogout={handleLogout}
             copilotOpen={copilotOpen}
             formatTimestamp={formatTimestamp}
@@ -3999,7 +3992,7 @@ export default function App() {
                       {([
                         ["shift", "My shift"],
                         ["standards", "Standards"],
-                        ["help", "Help"],
+                        ["help", "Ask manager"],
                         ["report", "Report"],
                         ["log", "My log"],
                       ] as [PocketView, string][]).map(([view, label]) => (

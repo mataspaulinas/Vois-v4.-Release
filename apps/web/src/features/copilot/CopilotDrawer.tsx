@@ -232,27 +232,27 @@ export function CopilotDrawer({
                       disabled={!action.enabled || Boolean(committingActionType)}
                       style={secondaryButtonStyle}
                     >
-                      {previewingActionType === action.type ? "Preparing…" : action.title}
+                      {previewingActionType === action.type ? "Getting this ready…" : action.title}
                     </button>
                   ))}
                 </div>
                 {actionPreview ? (
                   <div style={cardStyle}>
-                    <p style={eyebrowStyle}>Preview</p>
+                    <p style={eyebrowStyle}>Before you save</p>
                     <strong>{actionPreview.title}</strong>
                     <div style={{ marginTop: 6, fontSize: 13, color: "var(--color-text-secondary, #525252)" }}>{actionPreview.summary}</div>
                     {actionPreview.warning ? <div style={{ marginTop: 8, fontSize: 12 }}>{actionPreview.warning}</div> : null}
                     <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
-                      <button onClick={onDismissPreview} style={secondaryButtonStyle}>Cancel</button>
+                      <button onClick={onDismissPreview} style={secondaryButtonStyle}>Not now</button>
                       <button onClick={() => void onCommitPreview()} style={primaryButtonStyle} disabled={committingActionType === actionPreview.action_type}>
-                        {committingActionType === actionPreview.action_type ? "Applying…" : "Confirm"}
+                        {committingActionType === actionPreview.action_type ? "Saving…" : "Save this"}
                       </button>
                     </div>
                   </div>
                 ) : null}
                 {actionReceipt ? (
                   <div style={cardStyle}>
-                    <p style={eyebrowStyle}>Applied</p>
+                    <p style={eyebrowStyle}>Saved</p>
                     <strong>{actionReceipt.receipt_title}</strong>
                     <div style={{ marginTop: 6, fontSize: 13, color: "var(--color-text-secondary, #525252)" }}>{actionReceipt.receipt_summary}</div>
                   </div>

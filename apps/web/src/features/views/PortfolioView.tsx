@@ -1,11 +1,10 @@
 import { useMemo, useState } from "react";
-
-import { SectionCard } from "../../components/SectionCard";
-import { StatCard } from "../../components/StatCard";
+import Icon from "../../components/Icon";
 import {
   BootstrapResponse,
   ExecutionVelocity,
   PortfolioSummaryResponse,
+  PortfolioVenuePulse,
   PersistedEngineRunRecord,
   PlanExecutionSummary,
   PlanRecord,
@@ -13,6 +12,7 @@ import {
   Venue,
 } from "../../lib/api";
 import { VenueSubview } from "../shell/types";
+import { ds, pillStyle, statusDot } from "../../styles/tokens";
 
 type PortfolioViewProps = {
   bootstrap: BootstrapResponse;
@@ -35,27 +35,107 @@ type PortfolioViewProps = {
   venueVelocities: ExecutionVelocity[];
 };
 
-import { ds, pillStyle, statusDot } from "../../styles/tokens";
+/* ── Helper functions ── */
 
 const attentionColor = (level: string) => {
   switch (level) {
-    case "urgent": return ds.danger;
-    case "needs_attention": return ds.warning;
-    case "steady": return ds.success;
-    case "dormant": return "var(--color-text-muted)";
-    default: return "var(--color-text-muted)";
+    case "urgent": return "var(--critical)";
+    case "needs_attention": return "var(--high)";
+    case "steady": return "var(--medium)";
+    case "dormant": return "var(--text-muted)";
+    default: return "var(--text-muted)";
   }
 };
 
 const velocityColor = (label: string) => {
   switch (label) {
-    case "stalled": return ds.danger;
-    case "slow": return ds.warning;
-    case "steady": return ds.success;
-    case "fast": return ds.info;
-    default: return "var(--color-text-muted)";
+    case "stalled": return "var(--critical)";
+    case "slow": return "var(--high)";
+    case "steady": return "var(--medium)";
+    case "fast": return "var(--low)";
+    default: return "var(--text-muted)";
   }
 };
+
+function toVenueView(suggested: string): VenueSubview {
+  const valid: VenueSubview[] = ["assessment", "signals", "history", "plan", "diagnosis", "console", "overview"];
+  if (suggested === "report") return "diagnosis";
+  return valid.includes(suggested as VenueSubview) ? (suggested as VenueSubview) : "overview";
+}
+
+function ctaLabel(view: string): string {
+  switch (view) {
+    case "assessment": return "Assessment";
+    case "signals": return "Signals";
+    case "diagnosis": return "Diagnosis";
+    case "plan": return "Plan";
+    case "history": return "History";
+    default: return "Overview";
+  }
+}
+
+function fallbackPulse(venue: Venue): PortfolioVenuePulse {
+  return {
+    venue_id: venue.id, venue_name: venue.name, status: venue.status,
+    concept: venue.concept, location: venue.location,
+    latest_assessment_at: null, latest_engine_run_at: null,
+    latest_plan_title: null, plan_load_classification: null,
+    latest_signal_count: 0, latest_plan_task_count: 0,
+    completion_percentage: 0, ready_task_count: 0, blocked_task_count: 0,
+    progress_entry_count: 0, latest_progress_summary: null,
+    latest_activity_at: null, suggested_view: "overview",
+    attention_level: "steady", next_step_label: "Open the venue workspace.",
+  };
+}
+
+function timeAgo(isoTimestamp: string): string {
+  const diff = Date.now() - new Date(isoTimestamp).getTime();
+  const minutes = Math.floor(diff / 60000);
+  if (minutes < 1) return "just now";
+  if (minutes < 60) return `${minutes}m ago`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  if (days < 7) return `${days}d ago`;
+  return `${Math.floor(days / 7)}w ago`;
+}
+
+function computeResumeVenue(
+  summary: PortfolioSummaryResponse | null,
+  pulses: PortfolioVenuePulse[]
+): { venueId: string; venueName: string; reason: string; suggestedView: string; attentionLevel: string } | null {
+  if (!pulses.length) return null;
+
+  // Prefer API-provided resume venue
+  if (summary?.resume_venue_id) {
+    const pulse = pulses.find(p => p.venue_id === summary.resume_venue_id);
+    if (pulse) {
+      return {
+        venueId: pulse.venue_id,
+        venueName: pulse.venue_name,
+        reason: summary.resume_reason || pulse.next_step_label,
+        suggestedView: pulse.suggested_view,
+        attentionLevel: pulse.attention_level,
+      };
+    }
+  }
+
+  // Compute from highest-attention pulse
+  const priority = ["urgent", "needs_attention", "steady", "dormant"];
+  const sorted = [...pulses].sort((a, b) =>
+    priority.indexOf(a.attention_level) - priority.indexOf(b.attention_level)
+  );
+  const top = sorted[0];
+  return {
+    venueId: top.venue_id,
+    venueName: top.venue_name,
+    reason: top.next_step_label,
+    suggestedView: top.suggested_view,
+    attentionLevel: top.attention_level,
+  };
+}
+
+/* ── Component ── */
 
 export function PortfolioView({
   bootstrap,
@@ -78,406 +158,231 @@ export function PortfolioView({
   venueVelocities,
 }: PortfolioViewProps) {
   const [attentionFilter, setAttentionFilter] = useState<string>("all");
-  const nextStep = describeNextStep({
-    assessmentCount,
-    selectedEngineRun,
-    latestPlan,
-    executionSummary,
-  });
+  const [systemHealthOpen, setSystemHealthOpen] = useState(false);
+
   const summaryVenues = portfolioSummary?.venue_pulses ?? [];
-  const visiblePulses = useMemo(() => {
-    const source = summaryVenues.length ? summaryVenues : venues.map((venue) => fallbackPulse(venue));
-    if (attentionFilter === "all") {
-      return source;
-    }
-    return source.filter((pulse) => pulse.attention_level === attentionFilter);
-  }, [attentionFilter, summaryVenues, venues]);
+  const allPulses = useMemo(() =>
+    summaryVenues.length ? summaryVenues : venues.map(fallbackPulse),
+    [summaryVenues, venues]
+  );
+  const visiblePulses = useMemo(() =>
+    attentionFilter === "all" ? allPulses : allPulses.filter(p => p.attention_level === attentionFilter),
+    [attentionFilter, allPulses]
+  );
+  const resumeVenue = useMemo(() => computeResumeVenue(portfolioSummary, allPulses), [portfolioSummary, allPulses]);
+  const velocityMap = useMemo(() => {
+    const map = new Map<string, ExecutionVelocity>();
+    venueVelocities.forEach(v => map.set(v.venue_id, v));
+    return map;
+  }, [venueVelocities]);
+
+  const issueCount = (bootstrap.configuration_issues?.length ?? 0);
+  const recentActivity = portfolioSummary?.recent_activity?.slice(0, 8) ?? [];
 
   return (
     <div style={{ padding: 48, display: "flex", flexDirection: "column", gap: 32 }}>
-      {/* ── Hero ─────────────────────────────────── */}
-      <section className="ui-card" style={{ padding: "32px 32px 28px" }}>
-        <p className="eyebrow">ORGANIZATION</p>
-        <h1 className="page-title">{bootstrap.organization?.name ?? "Portfolio workspace"}</h1>
-        <p className="body-text" style={{ marginTop: 8, maxWidth: 720 }}>
-          {bootstrap.current_user.full_name} is signed in as{" "}
-          {bootstrap.current_user.role.replace(/_/g, " ")}. Start from the portfolio, decide where pressure is real,
-          and move into venue execution only when the operating signal justifies it.
-        </p>
 
-        {/* Metric strip */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 16, marginTop: 24 }}>
-          <StatCard label="Venues" value={String(portfolioSummary?.totals.venues ?? venues.length)} />
-          <StatCard label="Assessments" value={String(portfolioSummary?.totals.assessments ?? assessmentCount)} tone="neutral" />
-          <StatCard label="Ontology" value={ontologyLabel} tone="neutral" />
-          <StatCard
-            label="Ready tasks"
-            value={String(portfolioSummary?.totals.ready_tasks ?? executionSummary?.next_executable_tasks.length ?? 0)}
-            tone="success"
-          />
-          <StatCard
-            label="Progress logs"
-            value={String(portfolioSummary?.totals.progress_entries ?? progressEntries.length)}
-            tone="neutral"
-          />
-        </div>
-      </section>
-
-      {/* ── Venue control panel ──────────────────── */}
-      <section className="ui-card">
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16, marginBottom: 20 }}>
+      {/* ── Section 1: Morning Briefing ── */}
+      <section>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
           <div>
-            <p className="eyebrow">Portfolio</p>
-            <h2 className="section-title">Venue control panel</h2>
-            <p className="small-text" style={{ marginTop: 4 }}>Choose a venue and move directly into the live workspace without relying on seeded demo structure.</p>
-          </div>
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            <button style={pillStyle(attentionFilter === "all")} onClick={() => setAttentionFilter("all")}>All</button>
-            {(portfolioSummary?.attention_breakdown ?? []).map((item) => (
-              <button
-                key={item.attention_level}
-                style={pillStyle(attentionFilter === item.attention_level)}
-                onClick={() => setAttentionFilter(item.attention_level)}
-              >
-                <span style={statusDot(attentionColor(item.attention_level))} />
-                {item.attention_level} <span className="ui-badge ui-badge--muted">{item.count}</span>
-              </button>
-            ))}
+            <p className="eyebrow">{bootstrap.organization?.name ?? "Portfolio"}</p>
+            <p className="small-text" style={{ color: "var(--text-muted)", marginTop: 2 }}>
+              {venues.length} venue{venues.length !== 1 ? "s" : ""} · {bootstrap.current_user.role.replace(/_/g, " ")}
+            </p>
           </div>
         </div>
 
-        {loadingPortfolio ? (
-          <p className="small-text" style={{ textAlign: "center", padding: 32 }}>Loading portfolio pulse...</p>
-        ) : (
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 16 }}>
-            {visiblePulses.map((pulse) => (
-              <article
-                key={pulse.venue_id}
-                className="ui-card"
-                style={{
-                  padding: 0,
-                  borderLeft: `4px solid ${attentionColor(pulse.attention_level)}`,
-                  transition: "transform 0.15s ease, box-shadow 0.15s ease",
-                  cursor: "pointer",
-                  ...(activeVenue?.id === pulse.venue_id ? { boxShadow: `0 0 0 2px ${ds.accent}` } : {}),
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = `0 4px 12px rgba(0,0,0,0.08)${activeVenue?.id === pulse.venue_id ? `, 0 0 0 2px ${ds.accent}` : ""}`; }}
-                onMouseLeave={(e) => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = activeVenue?.id === pulse.venue_id ? `0 0 0 2px ${ds.accent}` : "0 1px 3px rgba(0,0,0,0.04)"; }}
-              >
-                <button
-                  onClick={() => onOpenVenue(pulse.venue_id)}
-                  style={{ all: "unset", display: "block", width: "100%", padding: "16px 20px 12px", cursor: "pointer", boxSizing: "border-box" }}
-                >
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
-                    <span style={{ fontSize: 11, fontWeight: 600, textTransform: "capitalize", color: attentionColor(pulse.attention_level) }}>
-                      {pulse.attention_level ?? pulse.status}
-                    </span>
-                    <span style={{ fontSize: 11, color: "var(--color-text-muted)" }}>{pulse.status}</span>
-                  </div>
-                  <h3 style={{ fontSize: 15, fontWeight: 600, color: "var(--color-text-primary)", margin: 0 }}>{pulse.venue_name}</h3>
-                  <p className="small-text" style={{ marginTop: 2 }}>{pulse.concept ?? "Service operation"}</p>
-                </button>
+        {resumeVenue && (
+          <div className="morning-briefing">
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+              <span style={{ ...statusDot(attentionColor(resumeVenue.attentionLevel)), width: 8, height: 8 }} />
+              <strong style={{ fontSize: 15, color: "var(--text-primary)" }}>{resumeVenue.venueName}</strong>
+            </div>
+            <p style={{ fontSize: 13, color: "var(--text-secondary)", margin: 0 }}>{resumeVenue.reason}</p>
+            <button
+              className="morning-briefing__cta"
+              onClick={() => onOpenVenueWorkspace(resumeVenue.venueId, toVenueView(resumeVenue.suggestedView))}
+            >
+              Go to {ctaLabel(toVenueView(resumeVenue.suggestedView))}
+              <Icon name="forward" size={14} />
+            </button>
+          </div>
+        )}
 
-                <div style={{ padding: "0 20px 12px", display: "flex", flexDirection: "column", gap: 6 }}>
-                  {([
-                    ["Next move", pulse.next_step_label],
-                    ["Ready / blocked", `${pulse.ready_task_count} / ${pulse.blocked_task_count}`],
-                    ["Completion", `${Math.round(pulse.completion_percentage)}%`],
-                    ["Last movement", pulse.latest_activity_at ? formatTimestamp(pulse.latest_activity_at) : "quiet"],
-                  ] as [string, string][]).map(([label, val]) => (
-                    <div key={label} style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
-                      <span style={{ color: "var(--color-text-muted)", fontWeight: 500 }}>{label}</span>
-                      <span style={{ color: "var(--color-text-primary)", fontWeight: 500 }}>{val}</span>
-                    </div>
-                  ))}
-                </div>
+        {!resumeVenue && !loadingPortfolio && (
+          <div className="morning-briefing">
+            <p style={{ fontSize: 13, color: "var(--text-muted)", margin: 0 }}>No venues require attention right now.</p>
+          </div>
+        )}
 
-                <div style={{ padding: "0 20px 12px", display: "flex", flexWrap: "wrap", gap: 6 }}>
-                  {pulse.location ? <span className="ui-badge ui-badge--muted">{pulse.location}</span> : null}
-                  {pulse.plan_load_classification ? <span className="ui-badge ui-badge--muted">{pulse.plan_load_classification}</span> : null}
-                  {pulse.latest_signal_count ? <span className="ui-badge ui-badge--muted">{pulse.latest_signal_count} signals</span> : null}
-                  {pulse.latest_plan_task_count ? <span className="ui-badge ui-badge--muted">{pulse.latest_plan_task_count} tasks</span> : null}
-                </div>
-
-                <div style={{ display: "flex", gap: 8, padding: "0 20px 16px" }}>
-                  <button className="btn btn-secondary" onClick={() => onOpenVenue(pulse.venue_id)}>Open</button>
-                  <button
-                    className="btn btn-primary"
-                    onClick={() => onOpenVenueWorkspace(pulse.venue_id, toVenueView(pulse.suggested_view))}
-                  >
-                    {ctaFor(pulse.suggested_view)}
-                  </button>
-                </div>
-              </article>
-            ))}
-            {!visiblePulses.length ? (
-              <p className="small-text" style={{ textAlign: "center", padding: 32, gridColumn: "1 / -1" }}>
-                No venues match that attention filter right now.
-              </p>
-            ) : null}
+        {loadingPortfolio && !resumeVenue && (
+          <div className="morning-briefing" style={{ opacity: 0.6 }}>
+            <p style={{ fontSize: 13, color: "var(--text-muted)", margin: 0 }}>Loading portfolio...</p>
           </div>
         )}
       </section>
 
-      {/* ── Focus panel ──────────────────────────── */}
-      <section className="ui-card">
-        <p className="eyebrow">Focus</p>
-        <h2 className="section-title">Continue where you left off</h2>
-        <p className="small-text" style={{ marginTop: 4, marginBottom: 20 }}>The portfolio should tell you what deserves attention before you even open the venue.</p>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
-          {/* Active venue */}
-          <div className="ui-card" style={{ borderLeft: `4px solid ${ds.accent}` }}>
-            <p className="eyebrow">Active venue</p>
-            <h3 style={{ fontSize: 17, fontWeight: 600, color: "var(--color-text-primary)", margin: "6px 0 4px" }}>{activeVenue?.name ?? "No venue loaded"}</h3>
-            <p className="small-text">{nextStep}</p>
-            {activeVenue ? (
-              <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
-                <button className="btn btn-secondary" onClick={onOpenAssessment}>Assessment</button>
-                <button className="btn btn-secondary" onClick={onOpenDiagnosis}>Diagnosis</button>
-                <button className="btn btn-primary" onClick={onOpenPlan}>Plan</button>
-              </div>
-            ) : null}
-          </div>
-
-          {/* Current state */}
-          <div className="ui-card">
-            <p className="eyebrow">Current state</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6, marginTop: 10 }}>
-              {([
-                ["Diagnosis state", selectedEngineRun ? selectedEngineRun.load_classification : "not run yet"],
-                ["Ready tasks", String(executionSummary?.next_executable_tasks.length ?? 0)],
-                ["Latest plan", latestPlan ? latestPlan.title : "none yet"],
-              ] as [string, string][]).map(([label, val]) => (
-                <div key={label} style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
-                  <span style={{ color: "var(--color-text-muted)", fontWeight: 500 }}>{label}</span>
-                  <span style={{ color: "var(--color-text-primary)", fontWeight: 500 }}>{val}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Recent movement */}
-          <div className="ui-card">
-            <p className="eyebrow">Recent movement</p>
-            {portfolioSummary?.recent_activity?.length ? (
-              <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 10 }}>
-                {portfolioSummary.recent_activity.slice(0, 3).map((entry) => (
-                  <div key={`${entry.venue_id}-${entry.created_at}`} style={{ borderLeft: "3px solid var(--color-border-subtle)", paddingLeft: 12 }}>
-                    <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "var(--color-text-muted)" }}>
-                      <span style={{ fontWeight: 600 }}>{entry.venue_name}</span>
-                      <span>{formatTimestamp(entry.created_at)}</span>
-                    </div>
-                    <p className="small-text" style={{ marginTop: 2 }}>{entry.summary}</p>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p className="small-text" style={{ marginTop: 10 }}>No execution movement logged yet for the active venue.</p>
-            )}
-          </div>
+      {/* ── Section 2: Venue Fleet ── */}
+      <section>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12, flexWrap: "wrap" }}>
+          <p className="eyebrow" style={{ marginRight: 8 }}>Venues</p>
+          {/* Filter pills */}
+          <button style={pillStyle(attentionFilter === "all")} onClick={() => setAttentionFilter("all")}>
+            All ({allPulses.length})
+          </button>
+          {(portfolioSummary?.attention_breakdown ?? []).map(bucket => (
+            <button
+              key={bucket.attention_level}
+              style={pillStyle(attentionFilter === bucket.attention_level)}
+              onClick={() => setAttentionFilter(bucket.attention_level)}
+            >
+              <span style={{ ...statusDot(attentionColor(bucket.attention_level)), width: 6, height: 6, display: "inline-block" }} />
+              {bucket.attention_level.replace(/_/g, " ")} ({bucket.count})
+            </button>
+          ))}
         </div>
-      </section>
 
-      {/* ── Venue velocity ───────────────────────── */}
-      {venueVelocities.length > 0 ? (
-        <section className="ui-card">
-          <p className="eyebrow">Execution</p>
-          <h2 className="section-title">Venue velocity</h2>
-          <p className="small-text" style={{ marginTop: 4, marginBottom: 20 }}>How fast each venue is moving through its plan. Stalled venues need intervention.</p>
+        {loadingPortfolio ? (
+          <p className="small-text" style={{ textAlign: "center", padding: 32, color: "var(--text-muted)" }}>Loading venues...</p>
+        ) : (
+          <div className="venue-fleet-table">
+            {/* Header row */}
+            <div style={{ display: "grid", gridTemplateColumns: "1.5fr 100px repeat(3,50px) 80px auto", alignItems: "center", gap: 10, padding: "8px 16px", borderBottom: "1px solid var(--border)" }}>
+              <span className="small-text" style={{ color: "var(--text-muted)" }}>Venue</span>
+              <span className="small-text" style={{ color: "var(--text-muted)" }}>Progress</span>
+              <span className="small-text" style={{ color: "var(--text-muted)", textAlign: "center" }}>Ready</span>
+              <span className="small-text" style={{ color: "var(--text-muted)", textAlign: "center" }}>Blocked</span>
+              <span className="small-text" style={{ color: "var(--text-muted)", textAlign: "center" }}>Signals</span>
+              <span className="small-text" style={{ color: "var(--text-muted)" }}>Status</span>
+              <span />
+            </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16 }}>
-            {venueVelocities.map((v) => {
-              const pulse = visiblePulses.find((p) => p.venue_id === v.venue_id);
+            {visiblePulses.map((pulse, index) => {
+              const velocity = velocityMap.get(pulse.venue_id);
+              const barColor = velocity ? velocityColor(velocity.velocity_label) : "var(--medium)";
               return (
-                <article
-                  key={v.venue_id}
-                  className="ui-card"
-                  style={{
-                    padding: 0,
-                    borderLeft: `4px solid ${velocityColor(v.velocity_label)}`,
-                    transition: "transform 0.15s ease, box-shadow 0.15s ease",
-                    cursor: "pointer",
-                  }}
-                  onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.08)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = "0 1px 3px rgba(0,0,0,0.04)"; }}
+                <div
+                  key={pulse.venue_id}
+                  className="venue-fleet-row"
+                  style={{ animationDelay: `${index * 40}ms` }}
+                  onClick={() => onOpenVenue(pulse.venue_id)}
                 >
-                  <button
-                    onClick={() => onOpenVenue(v.venue_id)}
-                    style={{ all: "unset", display: "block", width: "100%", padding: "16px 20px 12px", cursor: "pointer", boxSizing: "border-box" }}
-                  >
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
-                      <span style={{ fontSize: 11, fontWeight: 600, textTransform: "capitalize", color: velocityColor(v.velocity_label) }}>
-                        {v.velocity_label}
-                      </span>
-                      <span style={{ fontSize: 13, fontWeight: 600, color: "var(--color-text-primary)" }}>{Math.round(v.completion_percentage)}%</span>
-                    </div>
-                    <h3 style={{ fontSize: 15, fontWeight: 600, color: "var(--color-text-primary)", margin: 0 }}>{pulse?.venue_name ?? v.venue_id}</h3>
-                  </button>
-                  <div style={{ padding: "0 20px 16px", display: "flex", flexDirection: "column", gap: 6 }}>
-                    {([
-                      ["Total tasks", String(v.total_tasks)],
-                      ["Completed", String(v.completed_tasks)],
-                      ["In progress", String(v.in_progress_tasks)],
-                      ["Blocked", String(v.blocked_tasks)],
-                    ] as [string, string][]).map(([label, val]) => (
-                      <div key={label} style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
-                        <span style={{ color: "var(--color-text-muted)", fontWeight: 500 }}>{label}</span>
-                        <span style={{ color: "var(--color-text-primary)", fontWeight: 500 }}>{val}</span>
-                      </div>
-                    ))}
+                  <div className="venue-fleet-row__name">
+                    <span style={{ ...statusDot(attentionColor(pulse.attention_level)), width: 8, height: 8, flexShrink: 0 }} />
+                    <span>{pulse.venue_name}</span>
                   </div>
-                </article>
+                  <div className="venue-fleet-progress">
+                    <div className="venue-fleet-progress__fill" style={{ width: `${Math.round(pulse.completion_percentage)}%`, background: barColor }} />
+                  </div>
+                  <span className="venue-fleet-row__metric">{pulse.ready_task_count}</span>
+                  <span className="venue-fleet-row__metric" style={{ color: pulse.blocked_task_count > 0 ? "var(--critical)" : undefined }}>{pulse.blocked_task_count}</span>
+                  <span className="venue-fleet-row__metric">{pulse.latest_signal_count}</span>
+                  <span className="ui-badge ui-badge--muted" style={{ fontSize: 10, textTransform: "capitalize" }}>{pulse.attention_level.replace(/_/g, " ")}</span>
+                  <button
+                    className="morning-briefing__cta"
+                    style={{ padding: "4px 10px", fontSize: 11, marginTop: 0 }}
+                    onClick={(e) => { e.stopPropagation(); onOpenVenueWorkspace(pulse.venue_id, toVenueView(pulse.suggested_view)); }}
+                  >
+                    {ctaLabel(toVenueView(pulse.suggested_view))}
+                  </button>
+                </div>
               );
             })}
-          </div>
-        </section>
-      ) : null}
 
-      {/* ── Configuration issues ─────────────────── */}
-      {bootstrap.configuration_issues.length > 0 ? (
-        <section className="ui-card">
-          <p className="eyebrow">Configuration</p>
-          <h2 className="section-title">Issues requiring attention</h2>
-          <p className="small-text" style={{ marginTop: 4, marginBottom: 20 }}>These issues may prevent normal venue operation until resolved.</p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {bootstrap.configuration_issues.map((issue) => (
-              <div key={issue} style={{ borderLeft: `4px solid ${ds.danger}`, paddingLeft: 14, padding: "10px 14px", background: "var(--color-danger-soft)", borderRadius: 8 }}>
-                <p className="small-text" style={{ color: "var(--color-text-primary)" }}>{issue}</p>
+            {!visiblePulses.length && (
+              <p className="small-text" style={{ textAlign: "center", padding: 24, color: "var(--text-muted)" }}>No venues match this filter.</p>
+            )}
+          </div>
+        )}
+      </section>
+
+      {/* ── Section 3: Activity Feed ── */}
+      {recentActivity.length > 0 && (
+        <section>
+          <p className="eyebrow" style={{ marginBottom: 12 }}>Recent activity</p>
+          <div className="activity-timeline">
+            {recentActivity.map((item, i) => (
+              <div key={`${item.venue_id}-${i}`} className="activity-timeline__item">
+                <span className="activity-timeline__venue">{item.venue_name}</span>
+                <span className="activity-timeline__time">{timeAgo(item.created_at)}</span>
+                <p style={{ margin: "2px 0 0", fontSize: 12, color: "var(--text-muted)" }}>{item.summary}</p>
               </div>
             ))}
           </div>
         </section>
-      ) : null}
+      )}
 
-      {/* ── Platform posture ─────────────────────── */}
-      <section className="ui-card">
-        <p className="eyebrow">Runtime</p>
-        <h2 className="section-title">Platform posture</h2>
-        <p className="small-text" style={{ marginTop: 4, marginBottom: 20 }}>The home screen should also reassure you that the workspace itself is alive, grounded, and ready.</p>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
-          <div className="ui-card">
-            <p className="eyebrow">Platform posture</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6, marginTop: 10 }}>
-              {Object.entries(bootstrap.readiness).map(([key, value]) => (
-                <div key={key} style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}>
-                  <span style={{ color: "var(--color-text-muted)", fontWeight: 500 }}>{key}</span>
-                  <span style={{ color: "var(--color-text-primary)", fontWeight: 500 }}>{value}</span>
-                </div>
-              ))}
-            </div>
+      {/* ── Section 4: System Health ── */}
+      <section>
+        <button
+          className="system-health-summary"
+          onClick={() => setSystemHealthOpen(prev => !prev)}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <span style={{ ...statusDot(issueCount > 0 ? "var(--high)" : "var(--medium)"), width: 8, height: 8 }} />
+            <span style={{ fontSize: 13, fontWeight: 500, color: "var(--text-primary)" }}>
+              System{issueCount > 0 ? `: ${issueCount} issue${issueCount !== 1 ? "s" : ""}` : ": OK"}
+            </span>
           </div>
+          <Icon name={systemHealthOpen ? "chevron-up" : "chevron-down"} size={14} />
+        </button>
 
-          <div className="ui-card">
-            <p className="eyebrow">Attention map</p>
-            {portfolioSummary?.attention_breakdown?.length ? (
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 10 }}>
-                {portfolioSummary.attention_breakdown.map((item) => (
-                  <span key={item.attention_level} className="ui-badge ui-badge--muted" style={{ gap: 6, display: "inline-flex", alignItems: "center" }}>
-                    <span style={statusDot(attentionColor(item.attention_level))} />
-                    {item.attention_level}: {item.count}
-                  </span>
+        {systemHealthOpen && (
+          <div className="system-health-detail">
+            {/* Readiness */}
+            {bootstrap.readiness && Object.keys(bootstrap.readiness).length > 0 && (
+              <div className="ui-card" style={{ padding: "12px 16px" }}>
+                <p className="eyebrow" style={{ marginBottom: 8 }}>Readiness</p>
+                {Object.entries(bootstrap.readiness).map(([key, value]) => (
+                  <div key={key} style={{ display: "flex", justifyContent: "space-between", fontSize: 13, padding: "3px 0" }}>
+                    <span style={{ color: "var(--text-muted)" }}>{key}</span>
+                    <span style={{ color: "var(--text-primary)", fontWeight: 500 }}>{value}</span>
+                  </div>
                 ))}
               </div>
-            ) : (
-              <p className="small-text" style={{ marginTop: 10 }}>Attention breakdown will appear as the portfolio summary settles.</p>
+            )}
+
+            {/* Attention breakdown */}
+            {(portfolioSummary?.attention_breakdown?.length ?? 0) > 0 && (
+              <div className="ui-card" style={{ padding: "12px 16px" }}>
+                <p className="eyebrow" style={{ marginBottom: 8 }}>Attention breakdown</p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                  {portfolioSummary!.attention_breakdown.map(b => (
+                    <span key={b.attention_level} className="ui-badge ui-badge--muted" style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+                      <span style={{ ...statusDot(attentionColor(b.attention_level)), width: 6, height: 6 }} />
+                      {b.attention_level.replace(/_/g, " ")}: {b.count}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Portfolio notes */}
+            {(portfolioSummary?.portfolio_notes?.length ?? 0) > 0 && (
+              <div className="ui-card" style={{ padding: "12px 16px" }}>
+                <p className="eyebrow" style={{ marginBottom: 8 }}>Notes</p>
+                <ul style={{ margin: 0, paddingLeft: 18 }}>
+                  {portfolioSummary!.portfolio_notes.map((note, i) => (
+                    <li key={i} style={{ fontSize: 13, color: "var(--text-secondary)", marginBottom: 4 }}>{note}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Configuration issues */}
+            {issueCount > 0 && (
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                {bootstrap.configuration_issues.map((issue, i) => (
+                  <div key={i} style={{ borderLeft: "4px solid var(--critical)", paddingLeft: 14, padding: "10px 14px", background: "var(--critical-bg-subtle)", borderRadius: 8 }}>
+                    <p className="small-text" style={{ color: "var(--text-secondary)" }}>{issue}</p>
+                  </div>
+                ))}
+              </div>
             )}
           </div>
-
-          <div className="ui-card">
-            <p className="eyebrow">Portfolio notes</p>
-            <ul style={{ margin: "10px 0 0", paddingLeft: 18, display: "flex", flexDirection: "column", gap: 4 }}>
-              {(portfolioSummary?.portfolio_notes ?? ["Portfolio summary is still loading."]).map((note) => (
-                <li key={note} style={{ fontSize: 13, color: "var(--color-text-secondary)" }}>{note}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        )}
       </section>
     </div>
   );
-}
-
-function fallbackPulse(venue: Venue) {
-  return {
-    venue_id: venue.id,
-    venue_name: venue.name,
-    status: venue.status,
-    concept: venue.concept,
-    location: venue.location,
-    latest_assessment_at: null,
-    latest_engine_run_at: null,
-    latest_plan_title: null,
-    plan_load_classification: null,
-    latest_signal_count: 0,
-    latest_plan_task_count: 0,
-    completion_percentage: 0,
-    ready_task_count: 0,
-    blocked_task_count: 0,
-    progress_entry_count: 0,
-    latest_progress_summary: null,
-    latest_activity_at: null,
-    suggested_view: "overview",
-    attention_level: "steady",
-    next_step_label: "Open the venue workspace.",
-  };
-}
-
-function toVenueView(value: string): VenueSubview {
-  if (value === "assessment" || value === "signals" || value === "history" || value === "plan" || value === "diagnosis" || value === "console") {
-    return value;
-  }
-  if (value === "report") {
-    return "diagnosis";
-  }
-  return "overview";
-}
-
-function ctaFor(value: string) {
-  switch (toVenueView(value)) {
-    case "assessment":
-      return "Go to assessment";
-    case "signals":
-      return "Review signals";
-    case "diagnosis":
-      return "Open diagnosis";
-    case "plan":
-      return "Open plan";
-    case "history":
-      return "View history";
-    case "console":
-      return "Open console";
-    default:
-      return "Open overview";
-  }
-}
-
-function describeNextStep({
-  assessmentCount,
-  selectedEngineRun,
-  latestPlan,
-  executionSummary,
-}: {
-  assessmentCount: number;
-  selectedEngineRun: PersistedEngineRunRecord | null;
-  latestPlan: PlanRecord | null;
-  executionSummary: PlanExecutionSummary | null;
-}) {
-  if (!assessmentCount) {
-    return "No assessment saved yet. Start by capturing what is actually happening in the venue.";
-  }
-  if (!selectedEngineRun) {
-    return "The venue has assessment history but no current diagnosis loaded. Run the engine and generate the diagnostic read.";
-  }
-  if (!latestPlan) {
-    return "A diagnosis exists, but the plan has not materialized cleanly yet. Open the diagnosis and move into execution.";
-  }
-  if ((executionSummary?.next_executable_tasks.length ?? 0) > 0) {
-    return "There are ready tasks waiting. The fastest value now is to continue execution, not reopen diagnosis.";
-  }
-  if ((executionSummary?.blocked_tasks.length ?? 0) > 0) {
-    return "Execution is bottlenecked. Open the plan and clear the blocking dependencies first.";
-  }
-  return "The venue is caught up enough to review progress, pressure-test the diagnosis, or start the next assessment cycle.";
 }
