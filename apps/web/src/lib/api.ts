@@ -603,6 +603,7 @@ export type AssessmentRecord = {
 
 export type AssessmentHistoryItem = {
   id: string;
+  venue_id: string;
   created_at: string;
   notes: string | null;
   selected_signal_count: number;

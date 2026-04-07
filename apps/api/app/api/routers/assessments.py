@@ -72,17 +72,22 @@ def list_assessments(
             assessment.ontology_version,
             allow_invalid=True,
         )
-        signal_map = {signal.id: signal.name for signal in bundle.signals}
+        signal_map: dict[str, str] = {}
+        for signal in bundle.signals:
+            signal_map[signal.id] = signal.name
+            for alias in getattr(signal, "adapter_aliases", []):
+                signal_map[alias] = signal.name
         engine_run = engine_runs_by_assessment.get(assessment.id)
         plan = plans_by_engine_run.get(engine_run.id) if engine_run else None
         active_signal_names = [signal_map[signal_id] for signal_id in assessment.selected_signal_ids if signal_id in signal_map]
         history.append(
             AssessmentHistoryItem(
                 id=assessment.id,
+                venue_id=assessment.venue_id,
                 created_at=assessment.created_at,
                 notes=assessment.notes,
                 selected_signal_count=len(assessment.selected_signal_ids),
-                active_signal_names=active_signal_names[:4],
+                active_signal_names=active_signal_names,
                 engine_run_id=engine_run.id if engine_run else None,
                 plan_load_classification=engine_run.plan_load_classification if engine_run else None,
                 plan_task_count=task_counts_by_plan.get(plan.id, 0) if plan else 0,

@@ -376,6 +376,7 @@ export default function App() {
   const [enhancedReport, setEnhancedReport] = useState<EnhancedReportResponse | null>(null);
   const [intakePreview, setIntakePreview] = useState<IntakePreviewResponse | null>(null);
   const [assessmentHistory, setAssessmentHistory] = useState<AssessmentHistoryItem[]>([]);
+  const [allVenueAssessmentHistory, setAllVenueAssessmentHistory] = useState<AssessmentHistoryItem[]>([]);
   const [savedAssessment, setSavedAssessment] = useState<AssessmentRecord | null>(null);
   const [latestPlan, setLatestPlan] = useState<PlanRecord | null>(null);
   const [executionSummary, setExecutionSummary] = useState<PlanExecutionSummary | null>(null);
@@ -1719,6 +1720,20 @@ export default function App() {
       refreshOwnerData(shellRoute.venueId);
     }
   }, [shellRoute.topLevelView === "owner" ? (shellRoute as { venueId: string }).venueId : null]);
+
+  // Load cross-venue assessment history for intelligence view
+  const isIntelligenceView = shellRoute.topLevelView === "owner" && (shellRoute as { ownerView: string }).ownerView === "intelligence";
+  useEffect(() => {
+    if (!isIntelligenceView || !bootstrap || bootstrap.venues.length === 0) return;
+    if (allVenueAssessmentHistory.length > 0) return; // already loaded
+    setLoadingHistory(true);
+    Promise.all(bootstrap.venues.map(v => fetchAssessmentHistory(v.id).catch(() => [] as AssessmentHistoryItem[])))
+      .then(results => {
+        const merged = results.flat().sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+        setAllVenueAssessmentHistory(merged);
+      })
+      .finally(() => setLoadingHistory(false));
+  }, [isIntelligenceView, bootstrap]);
 
   function navigate(nextRoute: ShellRoute) {
     setShellRoute(nextRoute);
@@ -4139,7 +4154,7 @@ export default function App() {
                       <SignalIntelligenceMap
                         bundle={ontologyBundle}
                         venuePulses={portfolioSummary?.venue_pulses ?? []}
-                        assessmentHistory={assessmentHistory}
+                        assessmentHistory={allVenueAssessmentHistory.length > 0 ? allVenueAssessmentHistory : assessmentHistory}
                         loading={loadingOntology || loadingHistory}
                         venueId={workspaceVenue?.id ?? null}
                         onOpenVenue={(venueId) => navigate({ topLevelView: "venue", venueId, venueView: "overview" })}

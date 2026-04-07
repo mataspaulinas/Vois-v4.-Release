@@ -251,6 +251,7 @@ class AssessmentRead(BaseModel):
 
 class AssessmentHistoryItem(BaseModel):
     id: str
+    venue_id: str
     created_at: datetime
     notes: str | None = None
     selected_signal_count: int

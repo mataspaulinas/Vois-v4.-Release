@@ -1811,14 +1811,10 @@ export function SignalIntelligenceMap({
 
           <div style={{ marginTop: 4 }}>
             <SignalHeatmapGrid
-              assessments={venuePulses.flatMap((pulse) =>
-                assessmentHistory
-                  .filter(() => true)
-                  .map((a) => ({
-                    venue_id: pulse.venue_id,
-                    signal_names: a.active_signal_names ?? [],
-                  })),
-              )}
+              assessments={assessmentHistory.map((a) => ({
+                venue_id: a.venue_id,
+                signal_names: a.active_signal_names ?? [],
+              }))}
               venuePulses={venuePulses}
               onSelectSignal={(sigId) => {
                 openSignalDrawer(sigId);
