@@ -221,6 +221,7 @@ import { ReportSomething } from "./features/pocket/ReportSomething";
 import { MyLog } from "./features/pocket/MyLog";
 import { SignalIntelligenceMap } from "./features/intelligence/SignalIntelligenceMap";
 import { OwnerAdministrationView } from "./features/owner/OwnerAdministrationView";
+import { OwnerPeopleView } from "./features/owner/OwnerPeopleView";
 import { CommandCenter } from "./features/owner/CommandCenter";
 import { DelegationConsole } from "./features/owner/DelegationConsole";
 import { OwnerSetupView } from "./features/setup/OwnerSetupView";
@@ -4078,8 +4079,9 @@ export default function App() {
                       {([
                         ["command", "Command center"],
                         ["delegations", "Delegations"],
-                        ["people", "People & access"],
-                        ["copilot", "VOIS"],
+                        ["people", "People"],
+                        ["intelligence", "Intelligence"],
+                        ["administration", "Administration"],
                       ] as [OwnerView, string][]).map(([view, label]) => (
                         <button
                           key={view}
@@ -4097,9 +4099,12 @@ export default function App() {
                       <CommandCenter
                         attentionItems={ownAttentionItems}
                         velocities={ownVelocities}
+                        delegations={ownDelegations}
                         loading={ownLoading}
                         formatTimestamp={formatTimestamp}
                         onOpenVenue={(venueId) => navigate({ topLevelView: "venue", venueId, venueView: "overview" })}
+                        onOpenDelegations={() => workspaceVenue && navigate({ topLevelView: "owner", venueId: workspaceVenue.id, ownerView: "delegations" })}
+                        onOpenIntelligence={() => workspaceVenue && navigate({ topLevelView: "owner", venueId: workspaceVenue.id, ownerView: "intelligence" })}
                         onAskCopilot={askCopilotAbout}
                       />
                     ) : null}
@@ -4113,6 +4118,35 @@ export default function App() {
                     ) : null}
 
                     {!selectedOntologyIssue && (shellRoute as { ownerView: string }).ownerView === "people" ? (
+                      <OwnerPeopleView
+                        teamProfiles={ownTeamProfiles}
+                        overloadMap={ownOverloadMap}
+                        flightRisk={ownFlightRisk}
+                        members={ownerMembers}
+                        venues={bootstrap.venues}
+                        loadingMembers={loadingOwnerMembers}
+                        loadingHealth={ownLoading}
+                        working={workspaceSetupBusy}
+                        latestLoginPacket={latestLoginPacket}
+                        onCreateMember={handleCreateOrganizationMember}
+                        onUpdateMember={handleUpdateOrganizationMember}
+                        onResetMemberLogin={handleResetOrganizationMemberLogin}
+                        onUpdateMemberVenueAccess={handleUpdateOrganizationMemberVenueAccess}
+                      />
+                    ) : null}
+
+                    {(shellRoute as { ownerView: string }).ownerView === "intelligence" ? (
+                      <SignalIntelligenceMap
+                        bundle={ontologyBundle}
+                        venuePulses={portfolioSummary?.venue_pulses ?? []}
+                        assessmentHistory={assessmentHistory}
+                        loading={loadingOntology || loadingHistory}
+                        venueId={workspaceVenue?.id ?? null}
+                        onOpenVenue={(venueId) => navigate({ topLevelView: "venue", venueId, venueView: "overview" })}
+                      />
+                    ) : null}
+
+                    {!selectedOntologyIssue && (shellRoute as { ownerView: string }).ownerView === "administration" ? (
                       <OwnerAdministrationView
                         organizationName={bootstrap.organization?.name ?? "Organization"}
                         organizationId={organizationId ?? ""}
@@ -4131,37 +4165,6 @@ export default function App() {
                         onOpenVenue={handleSelectVenue}
                         onLogout={handleLogout}
                       />
-                    ) : null}
-
-                    {(shellRoute as { ownerView: string }).ownerView === "intelligence" ? (
-                      <SignalIntelligenceMap
-                        bundle={ontologyBundle}
-                        venuePulses={portfolioSummary?.venue_pulses ?? []}
-                        assessmentHistory={assessmentHistory}
-                        loading={loadingOntology || loadingHistory}
-                        venueId={workspaceVenue?.id ?? null}
-                        onOpenVenue={(venueId) => navigate({ topLevelView: "venue", venueId, venueView: "overview" })}
-                      />
-                    ) : null}
-
-                    {!selectedOntologyIssue && (shellRoute as { ownerView: string }).ownerView === "copilot" ? (
-                      <>
-                        <OwnerCopilot
-                          attentionItems={ownAttentionItems}
-                          delegations={ownDelegations}
-                          velocities={portfolioVelocities}
-                          overloadMap={ownOverloadMap}
-                          flightRisk={ownFlightRisk}
-                          venueName={workspaceVenue?.name ?? null}
-                          onAskCopilot={askCopilotAbout}
-                        />
-                        <RoleCopilotState
-                          roleLabel="Owner"
-                          venueName={workspaceVenue?.name ?? ""}
-                          unavailableMessage={copilotIssue}
-                          onOpenCopilot={() => setCopilotWorkspaceOpen(true)}
-                        />
-                      </>
                     ) : null}
                   </>
                 ) : null}

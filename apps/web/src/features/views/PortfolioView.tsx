@@ -177,7 +177,25 @@ export function PortfolioView({
   }, [venueVelocities]);
 
   const issueCount = (bootstrap.configuration_issues?.length ?? 0);
-  const recentActivity = portfolioSummary?.recent_activity?.slice(0, 8) ?? [];
+  const allActivity = portfolioSummary?.recent_activity ?? [];
+  const [activityExpanded, setActivityExpanded] = useState(false);
+  const visibleActivity = activityExpanded ? allActivity : allActivity.slice(0, 3);
+  const [compareOpen, setCompareOpen] = useState(false);
+  const [commonSignalsExpanded, setCommonSignalsExpanded] = useState(false);
+
+  // Common signals: signals appearing in 2+ venues
+  const commonSignals = useMemo(() => {
+    const freq = new Map<string, { count: number; name: string }>();
+    for (const pulse of allPulses) {
+      // Use latest_signal_count as a proxy — the actual signal IDs aren't in the pulse
+      // But we can show venues that share high signal counts as a cross-venue pattern
+    }
+    // For now, derive from venue pulses: show venues with the most signals as "hot spots"
+    return allPulses
+      .filter(p => p.latest_signal_count > 0)
+      .sort((a, b) => b.latest_signal_count - a.latest_signal_count)
+      .slice(0, commonSignalsExpanded ? 20 : 5);
+  }, [allPulses, commonSignalsExpanded]);
 
   return (
     <div style={{ padding: 48, display: "flex", flexDirection: "column", gap: 32 }}>
@@ -227,6 +245,14 @@ export function PortfolioView({
       <section>
         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12, flexWrap: "wrap" }}>
           <p className="eyebrow" style={{ marginRight: 8 }}>Venues</p>
+          {allPulses.length >= 2 && (
+            <button
+              style={{ ...pillStyle(compareOpen), display: "inline-flex", alignItems: "center", gap: 4 }}
+              onClick={() => setCompareOpen(c => !c)}
+            >
+              <Icon name="metrics" size={12} /> Compare
+            </button>
+          )}
           {/* Filter pills */}
           <button style={pillStyle(attentionFilter === "all")} onClick={() => setAttentionFilter("all")}>
             All ({allPulses.length})
@@ -248,13 +274,13 @@ export function PortfolioView({
         ) : (
           <div className="venue-fleet-table">
             {/* Header row */}
-            <div style={{ display: "grid", gridTemplateColumns: "1.5fr 100px repeat(3,50px) 80px auto", alignItems: "center", gap: 10, padding: "8px 16px", borderBottom: "1px solid var(--border)" }}>
-              <span className="small-text" style={{ color: "var(--text-muted)" }}>Venue</span>
-              <span className="small-text" style={{ color: "var(--text-muted)" }}>Progress</span>
-              <span className="small-text" style={{ color: "var(--text-muted)", textAlign: "center" }}>Ready</span>
-              <span className="small-text" style={{ color: "var(--text-muted)", textAlign: "center" }}>Blocked</span>
-              <span className="small-text" style={{ color: "var(--text-muted)", textAlign: "center" }}>Signals</span>
-              <span className="small-text" style={{ color: "var(--text-muted)" }}>Status</span>
+            <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 60px 60px 60px 80px 80px", alignItems: "center", gap: 8, padding: "8px 16px", borderBottom: "1px solid var(--border)" }}>
+              <span style={{ fontSize: 11, color: "var(--text-muted)", fontWeight: 500 }}>Venue</span>
+              <span style={{ fontSize: 11, color: "var(--text-muted)", fontWeight: 500 }}>Progress</span>
+              <span style={{ fontSize: 11, color: "var(--text-muted)", fontWeight: 500, textAlign: "center" }}>Ready</span>
+              <span style={{ fontSize: 11, color: "var(--text-muted)", fontWeight: 500, textAlign: "center" }}>Blocked</span>
+              <span style={{ fontSize: 11, color: "var(--text-muted)", fontWeight: 500, textAlign: "center" }}>Signals</span>
+              <span style={{ fontSize: 11, color: "var(--text-muted)", fontWeight: 500 }}>Status</span>
               <span />
             </div>
 
@@ -278,13 +304,17 @@ export function PortfolioView({
                   <span className="venue-fleet-row__metric">{pulse.ready_task_count}</span>
                   <span className="venue-fleet-row__metric" style={{ color: pulse.blocked_task_count > 0 ? "var(--critical)" : undefined }}>{pulse.blocked_task_count}</span>
                   <span className="venue-fleet-row__metric">{pulse.latest_signal_count}</span>
-                  <span className="ui-badge ui-badge--muted" style={{ fontSize: 10, textTransform: "capitalize" }}>{pulse.attention_level.replace(/_/g, " ")}</span>
+                  <span style={{ fontSize: 11, color: attentionColor(pulse.attention_level), textTransform: "capitalize", fontWeight: 500 }}>{pulse.attention_level.replace(/_/g, " ")}</span>
                   <button
-                    className="morning-briefing__cta"
-                    style={{ padding: "4px 10px", fontSize: 11, marginTop: 0 }}
+                    style={{
+                      padding: "4px 10px", fontSize: 11, fontWeight: 500,
+                      background: "transparent", border: "none", color: "var(--accent)",
+                      cursor: "pointer", whiteSpace: "nowrap",
+                      transition: "color var(--motion-fast) var(--easing-standard)",
+                    }}
                     onClick={(e) => { e.stopPropagation(); onOpenVenueWorkspace(pulse.venue_id, toVenueView(pulse.suggested_view)); }}
                   >
-                    {ctaLabel(toVenueView(pulse.suggested_view))}
+                    {ctaLabel(toVenueView(pulse.suggested_view))} →
                   </button>
                 </div>
               );
@@ -295,14 +325,90 @@ export function PortfolioView({
             )}
           </div>
         )}
+
+        {/* Compare Venues table */}
+        {compareOpen && allPulses.length >= 2 && (
+          <div className="ui-card" style={{ marginTop: 16, padding: 0, overflow: "auto" }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+              <thead>
+                <tr style={{ borderBottom: "1px solid var(--border)" }}>
+                  <th style={{ padding: "10px 16px", textAlign: "left", color: "var(--text-muted)", fontWeight: 500, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.05em" }}>Venue</th>
+                  <th style={{ padding: "10px 12px", textAlign: "center", color: "var(--text-muted)", fontWeight: 500, fontSize: 11 }}>Completion</th>
+                  <th style={{ padding: "10px 12px", textAlign: "center", color: "var(--text-muted)", fontWeight: 500, fontSize: 11 }}>Ready</th>
+                  <th style={{ padding: "10px 12px", textAlign: "center", color: "var(--text-muted)", fontWeight: 500, fontSize: 11 }}>Blocked</th>
+                  <th style={{ padding: "10px 12px", textAlign: "center", color: "var(--text-muted)", fontWeight: 500, fontSize: 11 }}>Signals</th>
+                  <th style={{ padding: "10px 12px", textAlign: "center", color: "var(--text-muted)", fontWeight: 500, fontSize: 11 }}>Tasks</th>
+                  <th style={{ padding: "10px 12px", textAlign: "left", color: "var(--text-muted)", fontWeight: 500, fontSize: 11 }}>Attention</th>
+                  <th style={{ padding: "10px 12px", textAlign: "left", color: "var(--text-muted)", fontWeight: 500, fontSize: 11 }}>Last Activity</th>
+                </tr>
+              </thead>
+              <tbody>
+                {allPulses.map(pulse => (
+                  <tr key={pulse.venue_id} style={{ borderBottom: "1px solid var(--border)" }}>
+                    <td style={{ padding: "10px 16px", fontWeight: 500, color: "var(--text-primary)" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                        <span style={{ ...statusDot(attentionColor(pulse.attention_level)), width: 6, height: 6 }} />
+                        {pulse.venue_name}
+                      </div>
+                    </td>
+                    <td style={{ padding: "10px 12px", textAlign: "center" }}>{Math.round(pulse.completion_percentage)}%</td>
+                    <td style={{ padding: "10px 12px", textAlign: "center", color: "var(--medium)" }}>{pulse.ready_task_count}</td>
+                    <td style={{ padding: "10px 12px", textAlign: "center", color: pulse.blocked_task_count > 0 ? "var(--critical)" : undefined }}>{pulse.blocked_task_count}</td>
+                    <td style={{ padding: "10px 12px", textAlign: "center" }}>{pulse.latest_signal_count}</td>
+                    <td style={{ padding: "10px 12px", textAlign: "center" }}>{pulse.latest_plan_task_count}</td>
+                    <td style={{ padding: "10px 12px", textTransform: "capitalize", fontSize: 12 }}>{pulse.attention_level.replace(/_/g, " ")}</td>
+                    <td style={{ padding: "10px 12px", fontSize: 12, color: "var(--text-muted)" }}>{pulse.latest_activity_at ? timeAgo(pulse.latest_activity_at) : "—"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </section>
 
-      {/* ── Section 3: Activity Feed ── */}
-      {recentActivity.length > 0 && (
+      {/* ── Common Signals (venues with active signals) ── */}
+      {commonSignals.length > 0 && (
+        <section>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+            <p className="eyebrow">Signal hotspots</p>
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+            {commonSignals.map(pulse => (
+              <button
+                key={pulse.venue_id}
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: 6,
+                  padding: "6px 12px", borderRadius: "var(--r-full)", fontSize: 12,
+                  background: "var(--critical-bg-subtle)", border: "1px solid var(--critical-border)",
+                  color: "var(--text-primary)", cursor: "pointer",
+                  transition: "background var(--motion-fast) var(--easing-standard)",
+                }}
+                onClick={() => onOpenVenueWorkspace(pulse.venue_id, "assessment")}
+                title={`${pulse.venue_name}: ${pulse.latest_signal_count} active signals`}
+              >
+                <span style={{ ...statusDot(attentionColor(pulse.attention_level)), width: 6, height: 6 }} />
+                {pulse.venue_name}
+                <span style={{ fontWeight: 600, color: "var(--critical)" }}>{pulse.latest_signal_count}</span>
+              </button>
+            ))}
+          </div>
+          {allPulses.filter(p => p.latest_signal_count > 0).length > 5 && (
+            <button
+              style={{ ...pillStyle(false), marginTop: 8, fontSize: 11 }}
+              onClick={() => setCommonSignalsExpanded(e => !e)}
+            >
+              {commonSignalsExpanded ? "Show less" : `+${allPulses.filter(p => p.latest_signal_count > 0).length - 5} more`}
+            </button>
+          )}
+        </section>
+      )}
+
+      {/* ── Section 3: Activity Feed (expand/collapse) ── */}
+      {allActivity.length > 0 && (
         <section>
           <p className="eyebrow" style={{ marginBottom: 12 }}>Recent activity</p>
           <div className="activity-timeline">
-            {recentActivity.map((item, i) => (
+            {visibleActivity.map((item, i) => (
               <div key={`${item.venue_id}-${i}`} className="activity-timeline__item">
                 <span className="activity-timeline__venue">{item.venue_name}</span>
                 <span className="activity-timeline__time">{timeAgo(item.created_at)}</span>
@@ -310,6 +416,14 @@ export function PortfolioView({
               </div>
             ))}
           </div>
+          {allActivity.length > 3 && (
+            <button
+              style={{ ...pillStyle(false), marginTop: 8, fontSize: 11 }}
+              onClick={() => setActivityExpanded(e => !e)}
+            >
+              {activityExpanded ? "Show less" : `+${allActivity.length - 3} more`}
+            </button>
+          )}
         </section>
       )}
 
